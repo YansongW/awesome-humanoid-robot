@@ -12,6 +12,8 @@ To build the most comprehensive, structured, and verifiable knowledge base for a
 
 > **How do we go from 0 to 1 to achieve humanoid robot mass production and industrial application?**
 
+We believe that humanoid robotics is not merely an AI research problem. It is a systems problem that connects materials science, precision manufacturing, global supply chains, software engineering, and real-world deployment.
+
 This means tracking every layer required to turn a humanoid robot from an idea into a mass-produced, deployable, economically viable product: raw materials, components, manufacturing processes, design engineering, software, AI, data infrastructure, assembly, testing, mass production, applications, markets, policy, and regulation.
 
 We are not building a bibliography of algorithms. We are building a map of the entire journey.
@@ -171,17 +173,7 @@ For every entry, we record:
 
 ---
 
-## 8. Comparison with Existing Awesome Lists
-
-| Project | Focus | Our Difference |
-|---------|-------|----------------|
-| [awesome-embodied-vla-va-vln](https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln) | VLA, VA, VLN models and datasets | We cover the full industry chain, not just models |
-| [awesome-robot-learning](https://github.com/search?q=awesome+robot+learning) | Robot learning algorithms | We include manufacturing, supply chain, and markets |
-| [awesome-humanoid-robot](https://github.com/search?q=awesome+humanoid+robot) (if exists) | Usually model/company lists | We use an ontology and AI4Sci verification workflow |
-
----
-
-## 9. Success Metrics
+## 8. Success Metrics
 
 - Ontology covers all ten domains with explicit relationships.
 - At least one verified entry per domain at v0.1.0.
@@ -190,7 +182,7 @@ For every entry, we record:
 
 ---
 
-## 10. Open Questions
+## 9. Open Questions
 
 1. Should we include detailed company financials and funding data?
 2. How should we handle conflicting supply-chain claims (e.g., multiple sources for the same component)?

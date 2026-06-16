@@ -1,8 +1,10 @@
 # Awesome Humanoid Robot 🤖
 
-> A curated knowledge base for the **full humanoid robot industry chain**, from raw materials and component supply chains to manufacturing, assembly, testing, mass production, AI/models, applications, and markets.
+> A curated knowledge base for going **from 0 to 1 on humanoid robot mass production and industrial application**.
 >
 > Curated with **AI4Sci** — AI-assisted scientific research, literature synthesis, and industrial intelligence.
+>
+> 🌐 [English](README.md) · [简体中文](README.zh.md) · [한국어](README.ko.md)
 
 ---
 

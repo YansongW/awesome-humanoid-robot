@@ -2,6 +2,8 @@
 
 > **Status**: Draft — subject to review before v0.1.0  
 > **Purpose**: Provide a concept map for organizing everything needed to go from an idea to mass-produced, industrially applied humanoid robots.
+>
+> 🌐 [English](00_overview.md) · [简体中文](00_overview.zh.md) · [한국어](00_overview.ko.md)
 
 ---
 
