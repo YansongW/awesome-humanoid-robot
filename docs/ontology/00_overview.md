@@ -1,20 +1,26 @@
-# Humanoid Robot Industry-Chain Ontology
+# Humanoid Robot Ontology: From 0 to 1 Mass Production
 
 > **Status**: Draft — subject to review before v0.1.0  
-> **Purpose**: Provide a concept map for organizing all knowledge about humanoid robots, from upstream materials to downstream markets.
+> **Purpose**: Provide a concept map for organizing everything needed to go from an idea to mass-produced, industrially applied humanoid robots.
 
 ---
 
-## 1. Why an Ontology?
+## 1. The Central Question
 
-A flat list of papers, companies, or products cannot capture the relationships that make humanoid robotics complex. For example:
+This ontology is organized around one question:
+
+> **What does it take to go from 0 to 1 for humanoid robot mass production and industrial application?**
+
+Answering this requires more than a list of papers or companies. It requires understanding how every layer of the system interacts:
 
 - The price of neodymium magnets affects actuator cost.
-- Actuator cost affects the robot's BOM and therefore its market price.
-- Manufacturing yield affects whether a design can be mass-produced.
-- Mass production economics determine which applications are profitable.
+- Actuator cost and torque density determine feasible robot morphology.
+- Morphology and design choices determine manufacturability.
+- Manufacturing yield determines whether mass production is economically viable.
+- Mass production cost determines which applications are profitable.
+- Application requirements feed back into design, AI, and component priorities.
 
-An ontology lets us express these dependencies and place every entry in context.
+An ontology lets us express these dependencies and place every entry in the context of the full journey.
 
 ---
 

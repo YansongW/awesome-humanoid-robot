@@ -8,11 +8,13 @@
 
 ## 1. Mission
 
-To build the most comprehensive, structured, and verifiable knowledge base for the **full humanoid robot industry chain**.
+To build the most comprehensive, structured, and verifiable knowledge base for answering the question:
 
-We believe that humanoid robotics is not merely an AI research problem. It is a systems problem that connects materials science, precision manufacturing, global supply chains, software engineering, and real-world deployment. Existing resources are either too narrow (focusing only on models) or too shallow (listing companies without explaining their position in the value chain).
+> **How do we go from 0 to 1 to achieve humanoid robot mass production and industrial application?**
 
-This project aims to fill that gap.
+This means tracking every layer required to turn a humanoid robot from an idea into a mass-produced, deployable, economically viable product: raw materials, components, manufacturing processes, design engineering, software, AI, data infrastructure, assembly, testing, mass production, applications, markets, policy, and regulation.
+
+We are not building a bibliography of algorithms. We are building a map of the entire journey.
 
 ---
 
@@ -20,12 +22,13 @@ This project aims to fill that gap.
 
 A living, community-curated map that enables anyone to answer questions like:
 
-- What are the critical components of a humanoid robot, and who supplies them?
-- What manufacturing processes determine cost, reliability, and scalability?
-- Which AI models and algorithms are state-of-the-art for locomotion, manipulation, and planning?
-- What benchmarks actually matter for real-world deployment?
-- Which application markets are ready now, and which are 5–10 years away?
-- What regulations and safety standards apply in different regions?
+- What raw materials and components are needed, where do they come from, and what do they cost?
+- Which manufacturing processes and supply-chain decisions determine whether a design can scale?
+- How do mechanical design, AI, software, and data infrastructure interact in a production system?
+- What does it take to move from prototype to mass production?
+- Which applications are economically viable today, and which require further technical or cost breakthroughs?
+- What policy, safety, and regulatory frameworks enable or block deployment?
+- Where are the bottlenecks, risks, and investment opportunities across the full journey?
 
 ---
 

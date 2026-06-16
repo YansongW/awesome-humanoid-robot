@@ -8,27 +8,24 @@
 
 ## Why This Project Exists
 
-Existing awesome lists for embodied AI and humanoid robots tend to focus narrowly on:
+This project is built around one question:
 
-- Vision-Language-Action (VLA) models
-- World models (WM)
-- Datasets and training frameworks
-- Simulation environments
+> **How do we go from 0 to 1 to achieve humanoid robot mass production and industrial application?**
 
-While these are critical, they represent only one layer of the humanoid robot ecosystem. A humanoid robot is not just a model — it is the convergence of:
+A humanoid robot that works in a lab is not the same as a humanoid robot that can be mass-produced, deployed, and maintained in the real world. The gap between a working prototype and a scalable product spans every layer of the system:
 
-- **Precision manufacturing** and industrial engineering
-- **Global component supply chains** (actuators, sensors, batteries, compute)
-- **Materials science** (lightweight alloys, composites, rare-earth magnets)
-- **Production processes** (machining, assembly, calibration, testing)
-- **AI and control systems** (perception, planning, locomotion, manipulation)
-- **Mass production economics** and scaling strategies
-- **Application markets** (manufacturing, logistics, healthcare, home, defense)
-- **Regulations, safety standards, and ethics**
+- **Raw materials and resources**: What minerals, metals, magnets, and chemicals does a humanoid robot consume? Where do they come from? What are the supply risks?
+- **Components and subsystems**: Motors, reducers, sensors, batteries, compute, end effectors, structural parts — who makes them, how do they perform, and what do they cost?
+- **Manufacturing processes**: How are these components machined, cast, wound, assembled, and tested at precision and scale?
+- **Design and systems engineering**: What determines the robot's morphology, kinematics, dynamics, reliability, and safety?
+- **Software and AI**: What algorithms enable perception, planning, locomotion, manipulation, and long-horizon autonomy?
+- **Data and infrastructure**: What datasets, simulators, middleware, and toolchains are needed to develop and validate these systems?
+- **Assembly, integration, and testing**: How does a robot go from a pile of parts to a calibrated, validated product?
+- **Mass production**: What factory design, supply-chain coordination, yield control, and cost engineering are required to produce thousands or millions of units?
+- **Applications and markets**: In which industries and tasks are humanoid robots actually useful and economically viable today? Tomorrow?
+- **Policy and regulation**: What safety standards, certifications, liability frameworks, and social norms enable or block deployment?
 
-Humanoid robotics may be one of the fastest transitions from laboratory to factory floor in human history. To understand it, we need a map of the **entire value chain**, not just the algorithmic layer.
-
-This project aims to build that map.
+We use **AI4Sci** — AI-assisted research, synthesis, and verification — to map this full journey. But the goal is not just to collect papers or products. It is to understand how every piece fits together, where the bottlenecks are, and what decisions determine whether humanoid robotics succeeds as an industry.
 
 ---
 
@@ -104,8 +101,6 @@ awesome-humanoid-robot/
 │   ├── ai4sci/
 │   │   ├── literature_review_pipeline.md
 │   │   └── verification_criteria.md
-│   └── reference_awesome/
-│       └── comparison_with_embodied_vla_va_vln.md
 ├── research/
 │   ├── papers/                        # Paper notes and summaries
 │   ├── companies/                     # Company profiles and ecosystem maps
@@ -145,4 +140,4 @@ TBD — to be decided before public release.
 
 ## Acknowledgments
 
-Inspired by projects like [awesome-embodied-vla-va-vln](https://github.com/jonyzhang2023/awesome-embodied-vla-va-vln), but intentionally expanded beyond the algorithmic layer to cover the full humanoid robot value chain.
+TBD.
