@@ -55,17 +55,68 @@
 
 ---
 
+## 架构优先方法
+
+在填充任何内容之前，本项目首先建立一个**正式的信息模型**，以容纳全产业的信息节点、关系、层次、域和跨域依赖。
+
+关键架构决策：
+
+- **图优先**：实体是节点，关系是有向边。
+- **双标签**：每个实体同时具有**价值链层**（上游 / 中游 / 智能层 / 验证与市场层）和**功能角色**（材料 / 零部件 / 工艺 / 系统 / 智能 / 等）。
+- **关系作为一等公民**：跨域链接是显式的、带类型的、可验证的。
+- **多语言内建**：名称、摘要和描述以语言映射形式存储。
+- **版本化 schema**：条目和关系 schema 均可版本化、可扩展。
+- **YAML frontmatter + Markdown**：条目兼顾人类可读与机器可读。
+
+详见 [`docs/architecture/information_model.md`](docs/architecture/information_model.md) 和 [`data/schema/v1/`](data/schema/v1/)。
+
+---
+
 ## AI4Sci 方法
 
 本项目采用AI辅助的研究流程：
 
 1. **系统性的文献与产业扫描**：追踪学术论文、专利、公司公告、供应链报告和技术博客。
-2. **结构化提取**：每一条目都标注产业链位置、机构/公司、验证状态和相关性。
+2. **结构化提取**：每个实体都标注类型、层/域/角色，并链接到来源。
 3. **交叉验证**：论断追溯到原始来源，冲突信息被明确标记。
-4. **本体驱动组织**：条目被放入概念地图，而非扁平列表。
+4. **图驱动组织**：条目和关系构成知识图谱，而非扁平列表。
 5. **人工复核**：AI加速收集与综合，但所有高风险的公开论断都经过人工审核。
 
 详细流程见 [`docs/ai4sci/`](docs/ai4sci/)。
+
+---
+
+## 路线图与当前任务
+
+### 第 0 阶段：信息架构 ✅ 进行中
+
+在添加内容之前，我们先搭建结构基础：
+
+- [x] 定义核心问题与本体领域
+- [x] 设计信息模型（实体、关系、层、角色）
+- [x] 创建条目与关系的 JSON schema
+- [x] 添加样本实体和关系以验证模型
+- [x] 添加验证脚本
+- [ ] 基于首批样本验证并 refine 模型
+
+### 第 1 阶段：本体扩展
+
+- [ ] 完成各域本体文档（01–12）
+- [ ] 为每个域定义跨域关系模式
+- [ ] 确立受控词表与扩展规则
+
+### 第 2 阶段：内容填充
+
+- [ ] 构建人形机器人 BOM / 零部件地图
+- [ ] 绘制公司与供应商生态
+- [ ] 整理与量产相关的 AI / 模型内容
+- [ ] 追踪原材料、制造工艺与成本驱动因素
+
+### 第 3 阶段：验证与公开发布
+
+- [ ] 用 schema 校验初始条目
+- [ ] 内部复核论断与来源
+- [ ] 发布 v0.1.0 与贡献指南
 
 ---
 
@@ -108,14 +159,23 @@ awesome-humanoid-robot/
 │   │   ├── 07_ai_models_algorithms.md
 │   │   ├── 08_evaluation_benchmarks.md
 │   │   └── 09_regulations_ethics.md
-│   ├── ai4sci/
-│   │   ├── literature_review_pipeline.md
-│   │   └── verification_criteria.md
+│   ├── architecture/
+│   │   ├── 00_analysis_before_design.md
+│   │   └── information_model.md       # 正式数据架构
+│   └── ai4sci/
+│       ├── literature_review_pipeline.md
+│       └── verification_criteria.md
 ├── research/
-│   ├── papers/                        # 论文笔记
+│   ├── materials/                     # 原材料条目
+│   ├── components/                    # 零部件条目
 │   ├── companies/                     # 公司画像与产业地图
+│   ├── papers/                        # 论文笔记
 │   └── datasets/                      # 数据集笔记
-├── data/                              # 结构化数据文件
+├── data/
+│   ├── schema/v1/                     # JSON Schema
+│   │   ├── entry_schema.json
+│   │   └── relationship_schema.json
+│   └── relationships/                 # 独立关系文件
 └── scripts/                           # AI4Sci 辅助脚本
 ```
 
@@ -138,7 +198,7 @@ awesome-humanoid-robot/
 
 - 按来源链接和验证状态添加条目。
 - 标记不确定或相互冲突的论断。
-- 遵循 [`docs/ontology/`](docs/ontology/) 中的本体结构。
+- 遵循 [`docs/architecture/information_model.md`](docs/architecture/information_model.md) 中的条目格式与关系类型。
 
 ---
 

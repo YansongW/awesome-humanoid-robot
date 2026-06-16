@@ -55,17 +55,68 @@
 
 ---
 
+## 아키텍처 우선 접근법
+
+콘텐츠를 채우기 전에 본 프로젝트는 먼저 **공식 정보 모델**을 구축하여 전체 산업 체인의 엔티티, 관계, 계층, 도메인 및 교차 의존성을 수용합니다.
+
+핵심 아키텍처 결정:
+
+- **그래프 우선**: 엔티티는 노드이고, 관계는 방향성 있는 엣지입니다.
+- **이중 태그**: 각 엔티티는 **가치 사슬 계층**(Upstream / Midstream / Intelligence / Validation-Markets)과 **기능적 역할**(재료 / 부품 / 공정 / 시스템 / 지능 / 등)을 모두 가집니다.
+- **관계를 일급 객체로**: 교차 도메인 링크는 명시적이고, 유형화되며, 검증 가능합니다.
+- **다국어 기본 설계**: 이름, 요약, 설명은 언어 맵으로 저장됩니다.
+- **버전 관리 schema**: 항목 및 관계 schema는 버전 관리 및 확장이 가능합니다.
+- **YAML frontmatter + Markdown**: 항목은 사람이 읽을 수 있고 기계가 읽을 수 있습니다.
+
+전체 사양은 [`docs/architecture/information_model.md`](docs/architecture/information_model.md) 및 [`data/schema/v1/`](data/schema/v1/)를 참조하세요.
+
+---
+
 ## AI4Sci 방법
 
 본 프로젝트는 AI 보조 연구 프로세스를 사용합니다:
 
 1. **체계적인 문헌 및 산업 스캔**: 학술 논문, 특허, 회사 발표, 공급망 보고서, 기술 블로그 추적.
-2. **구조화된 추출**: 각 항목은 산업 체인 위치, 기관/회사, 검증 상태, 관련성으로 태그됨.
+2. **구조화된 추출**: 각 엔티티는 유형, 계층/도메인/역할로 태그되고 출처에 연결됩니다.
 3. **교차 검증**: 주장은 원천 출처로 추적되며, 충돌 정보는 명시적으로 표시.
-4. **온톨로지 기반 조직**: 항목은 플랫 리스트가 아닌 개념 지도에 배치.
+4. **그래프 중심 조직**: 항목과 관계는 지식 그래프를 형성하며, 플랫 리스트가 아닙니다.
 5. **인간 검토**: AI가 수집과 종합을 가속화하지만, 모든 고위험 공개 주장은 인간 검토를 거침.
 
 자세한 내용은 [`docs/ai4sci/`](docs/ai4sci/)를 참조하세요.
+
+---
+
+## 로드맵 및 현재 작업
+
+### 0 단계: 정보 아키텍처 ✅ 진행 중
+
+콘텐츠를 추가하기 전에 구조적 기반을 구축합니다.
+
+- [x] 핵심 질문과 온톨로지 영역 정의
+- [x] 정보 모델 설계(엔티티, 관계, 계층, 역할)
+- [x] 항목 및 관계를 위한 JSON schema 생성
+- [x] 모델을 검증할 샘플 엔티티 및 관계 추가
+- [x] 검증 스크립트 추가
+- [ ] 첫 번째 샘플을 기반으로 모델 검증 및 정제
+
+### 1 단계: 온톨로지 확장
+
+- [ ] 영역별 온톨로지 문서 완성(01–12)
+- [ ] 각 영역의 교차 도메인 관계 패턴 정의
+- [ ] 제어 어휘 및 확장 규칙 수립
+
+### 2 단계: 콘텐츠 채우기
+
+- [ ] 휨로봇 BOM / 부품 지도 구축
+- [ ] 회사 및 공급업체 생태계 매핑
+- [ ] 양산과 관련된 AI / 모델 콘텐츠 큐레이션
+- [ ] 원자재, 제조 공정 및 비용 요인 추적
+
+### 3 단계: 검증 및 공개 릴리스
+
+- [ ] schema에 따라 초기 항목 검증
+- [ ] 주장과 출처에 대한 낶부 검토
+- [ ] v0.1.0 및 기여 가이드라인 게시
 
 ---
 
@@ -108,14 +159,23 @@ awesome-humanoid-robot/
 │   │   ├── 07_ai_models_algorithms.md
 │   │   ├── 08_evaluation_benchmarks.md
 │   │   └── 09_regulations_ethics.md
-│   ├── ai4sci/
-│   │   ├── literature_review_pipeline.md
-│   │   └── verification_criteria.md
+│   ├── architecture/
+│   │   ├── 00_analysis_before_design.md
+│   │   └── information_model.md       # 공식 데이터 아키텍처
+│   └── ai4sci/
+│       ├── literature_review_pipeline.md
+│       └── verification_criteria.md
 ├── research/
-│   ├── papers/                        # 논문 노트
+│   ├── materials/                     # 원자재 항목
+│   ├── components/                    # 부품 항목
 │   ├── companies/                     # 회사 프로필 및 산업 지도
+│   ├── papers/                        # 논문 노트
 │   └── datasets/                      # 데이터셋 노트
-├── data/                              # 구조화된 데이터 파일
+├── data/
+│   ├── schema/v1/                     # JSON Schema
+│   │   ├── entry_schema.json
+│   │   └── relationship_schema.json
+│   └── relationships/                 # 독립 관계 파일
 └── scripts/                           # AI4Sci 보조 스크립트
 ```
 
@@ -138,7 +198,7 @@ awesome-humanoid-robot/
 
 - 출처 링크와 검증 상태를 포함하여 항목을 추가하세요.
 - 불확실하거나 상충되는 주장을 표시하세요.
-- [`docs/ontology/`](docs/ontology/)의 온톨로지 구조를 따르세요.
+- [`docs/architecture/information_model.md`](docs/architecture/information_model.md)의 항목 형식과 관계 유형을 따르세요.
 
 ---
 
