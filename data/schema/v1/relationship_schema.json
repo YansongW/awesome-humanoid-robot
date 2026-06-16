@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/YansongW/awesome-humanoid-robot/data/schema/v1/relationship_schema.json",
+  "title": "Awesome Humanoid Robot Relationship Schema v1",
+  "description": "Schema for standalone relationship files in the awesome-humanoid-robot knowledge graph.",
+  "type": "object",
+  "required": [
+    "$id",
+    "$schema",
+    "$version",
+    "type",
+    "source",
+    "target",
+    "verification",
+    "sources"
+  ],
+  "properties": {
+    "$id": {
+      "type": "string",
+      "description": "Globally unique, stable identifier for this relationship.",
+      "pattern": "^rel_[a-z0-9_]+$"
+    },
+    "$schema": {
+      "type": "string",
+      "description": "URL or path to the schema version used."
+    },
+    "$version": {
+      "type": "integer",
+      "description": "Schema version number.",
+      "minimum": 1
+    },
+    "type": {
+      "type": "string",
+      "description": "Relationship type from the controlled vocabulary.",
+      "enum": [
+        "supplies",
+        "consumes",
+        "produces",
+        "integrates",
+        "sources_from",
+        "distributes",
+        "enables",
+        "requires",
+        "constrains",
+        "compensates_for",
+        "is_alternative_to",
+        "is_part_of",
+        "is_subsystem_of",
+        "is_instance_of",
+        "is_prerequisite_for",
+        "is_version_of",
+        "serves",
+        "is_regulated_by",
+        "drives_demand_for",
+        "competes_with",
+        "is_substitute_for",
+        "cites",
+        "is_based_on",
+        "verified_by",
+        "conflicts_with"
+      ]
+    },
+    "source": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": {
+          "type": "object",
+          "properties": {
+            "en": { "type": "string" },
+            "zh": { "type": "string" },
+            "ko": { "type": "string" }
+          }
+        }
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": {
+          "type": "object",
+          "properties": {
+            "en": { "type": "string" },
+            "zh": { "type": "string" },
+            "ko": { "type": "string" }
+          }
+        }
+      }
+    },
+    "domains": {
+      "type": "object",
+      "description": "Domain codes for source and target entities.",
+      "properties": {
+        "source_domain": {
+          "type": "string",
+          "enum": [
+            "01_raw_materials",
+            "02_components",
+            "03_manufacturing_processes",
+            "04_assembly_integration_testing",
+            "05_mass_production",
+            "06_design_engineering",
+            "07_ai_models_algorithms",
+            "08_software_middleware",
+            "09_data_datasets",
+            "10_evaluation_benchmarks",
+            "11_applications_markets",
+            "12_policy_regulation_ethics"
+          ]
+        },
+        "target_domain": {
+          "type": "string",
+          "enum": [
+            "01_raw_materials",
+            "02_components",
+            "03_manufacturing_processes",
+            "04_assembly_integration_testing",
+            "05_mass_production",
+            "06_design_engineering",
+            "07_ai_models_algorithms",
+            "08_software_middleware",
+            "09_data_datasets",
+            "10_evaluation_benchmarks",
+            "11_applications_markets",
+            "12_policy_regulation_ethics"
+          ]
+        }
+      }
+    },
+    "description": {
+      "type": "object",
+      "description": "Multi-language description of the relationship. English is required.",
+      "required": ["en"],
+      "properties": {
+        "en": { "type": "string" },
+        "zh": { "type": "string" },
+        "ko": { "type": "string" }
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "verification": {
+      "type": "object",
+      "required": ["status", "reviewed_by", "reviewed_at"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["verified", "partially_verified", "unverified", "speculative"]
+        },
+        "reviewed_by": {
+          "type": "string",
+          "enum": ["human", "ai", "human_and_ai"]
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "Sources supporting this relationship.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "type"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": [
+              "primary",
+              "secondary",
+              "press_release",
+              "patent",
+              "report",
+              "paper",
+              "annual_report",
+              "website",
+              "interview",
+              "other"
+            ]
+          },
+          "title": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "date": { "type": "string", "format": "date" },
+          "accessed_at": { "type": "string", "format": "date" },
+          "archived_url": { "type": "string", "format": "uri" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

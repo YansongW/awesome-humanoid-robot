@@ -53,17 +53,68 @@ This project covers the following domains, organized as an industry-chain ontolo
 
 ---
 
+## Architecture-First Approach
+
+Before populating content, this project first establishes a **formal information model** that can accommodate entities, relationships, layers, domains, and cross-cutting dependencies across the entire industry chain.
+
+Key architectural decisions:
+
+- **Graph-first**: entities are nodes, relationships are directed edges.
+- **Dual tagging**: every entity has both a **value-chain layer** (upstream / midstream / intelligence / validation-markets) and a **functional role** (material / component / process / system / intelligence / etc.).
+- **Relationship as first-class citizen**: cross-domain links are explicit, typed, and verifiable.
+- **Multi-lingual by design**: names, summaries, and descriptions are stored as language maps.
+- **Versioned schemas**: entry and relationship schemas are versioned and extensible.
+- **YAML frontmatter + Markdown**: entries are human-readable and machine-readable.
+
+See [`docs/architecture/information_model.md`](docs/architecture/information_model.md) and [`data/schema/v1/`](data/schema/v1/) for the full specification.
+
+---
+
 ## AI4Sci Methodology
 
 This project is built with AI-assisted research workflows:
 
 1. **Systematic literature and industry scanning** — track academic papers, patents, company announcements, supply-chain reports, and technical blogs.
-2. **Structured extraction** — every entry is tagged by industry-chain position, company/institution, verification status, and relevance.
+2. **Structured extraction** — every entity is typed, tagged by layer/domain/role, and linked to sources.
 3. **Cross-reference and verification** — claims are traced to original sources; conflicting information is flagged.
-4. **Ontology-driven organization** — entries are placed into a concept map rather than a flat list.
+4. **Graph-driven organization** — entries and relationships form a knowledge graph, not a flat list.
 5. **Human review** — AI accelerates collection and synthesis, but all high-stakes claims are reviewed before public release.
 
 See [`docs/ai4sci/`](docs/ai4sci/) for the detailed research pipeline and verification criteria.
+
+---
+
+## Roadmap & Current Tasks
+
+### Phase 0: Information Architecture ✅ In Progress
+
+Before adding content, we are building the structural foundation:
+
+- [x] Define the central question and ontology domains
+- [x] Design the information model (entities, relationships, layers, roles)
+- [x] Create JSON schemas for entries and relationships
+- [x] Add sample entities and relationships to validate the model
+- [x] Add validation scripts
+- [ ] Validate and refine the model based on first samples
+
+### Phase 1: Ontology Expansion
+
+- [ ] Complete per-domain ontology documents (01–12)
+- [ ] Define cross-domain relationship patterns for each domain
+- [ ] Establish controlled vocabularies and extension rules
+
+### Phase 2: Content Population
+
+- [ ] Build the humanoid robot BOM / component map
+- [ ] Map the company and supplier ecosystem
+- [ ] Curate AI/model content with production relevance
+- [ ] Track raw materials, manufacturing processes, and cost drivers
+
+### Phase 3: Verification & Public Release
+
+- [ ] Validate initial entries against schemas
+- [ ] Internal review of claims and sources
+- [ ] Publish v0.1.0 and contribution guidelines
 
 ---
 
@@ -87,10 +138,16 @@ Until v0.1.0, the repository is private. All content is treated as a draft and s
 ```
 awesome-humanoid-robot/
 ├── README.md                          # This file
+├── README.zh.md                       # Simplified Chinese
+├── README.ko.md                       # Korean
 ├── docs/
-│   ├── project_charter.md             # Detailed project scope, principles, and governance
+│   ├── project_charter.md             # Project scope, principles, governance
+│   ├── project_charter.zh.md
+│   ├── project_charter.ko.md
 │   ├── ontology/
 │   │   ├── 00_overview.md             # Industry-chain concept map
+│   │   ├── 00_overview.zh.md
+│   │   ├── 00_overview.ko.md
 │   │   ├── 01_raw_materials.md
 │   │   ├── 02_components_supply_chain.md
 │   │   ├── 03_manufacturing_processes.md
@@ -100,14 +157,21 @@ awesome-humanoid-robot/
 │   │   ├── 07_ai_models_algorithms.md
 │   │   ├── 08_evaluation_benchmarks.md
 │   │   └── 09_regulations_ethics.md
-│   ├── ai4sci/
-│   │   ├── literature_review_pipeline.md
-│   │   └── verification_criteria.md
+│   ├── architecture/
+│   │   ├── 00_analysis_before_design.md
+│   │   └── information_model.md       # Formal data architecture
+│   └── ai4sci/
+│       ├── literature_review_pipeline.md
+│       └── verification_criteria.md
 ├── research/
 │   ├── papers/                        # Paper notes and summaries
 │   ├── companies/                     # Company profiles and ecosystem maps
 │   └── datasets/                      # Dataset notes
-├── data/                              # Structured data files (CSV, JSON, etc.)
+├── data/
+│   ├── schema/v1/                     # JSON Schemas
+│   │   ├── entry_schema.json
+│   │   └── relationship_schema.json
+│   └── relationships/                 # Standalone relationship files
 └── scripts/                           # AI4Sci helper scripts
 ```
 

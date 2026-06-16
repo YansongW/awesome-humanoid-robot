@@ -1,0 +1,255 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/YansongW/awesome-humanoid-robot/data/schema/v1/entry_schema.json",
+  "title": "Awesome Humanoid Robot Entry Schema v1",
+  "description": "Schema for entity entries in the awesome-humanoid-robot knowledge graph.",
+  "type": "object",
+  "required": [
+    "$id",
+    "$schema",
+    "$version",
+    "type",
+    "names",
+    "summary",
+    "domains",
+    "layers",
+    "functional_roles",
+    "verification",
+    "sources"
+  ],
+  "properties": {
+    "$id": {
+      "type": "string",
+      "description": "Globally unique, stable identifier for this entity.",
+      "pattern": "^ent_[a-z0-9_]+$"
+    },
+    "$schema": {
+      "type": "string",
+      "description": "URL or path to the schema version used."
+    },
+    "$version": {
+      "type": "integer",
+      "description": "Schema version number.",
+      "minimum": 1
+    },
+    "type": {
+      "type": "string",
+      "description": "Entity type from the controlled vocabulary.",
+      "enum": [
+        "oem",
+        "tier1_supplier",
+        "tier2_supplier",
+        "component_manufacturer",
+        "material_supplier",
+        "software_vendor",
+        "research_institution",
+        "standards_body",
+        "industry_consortium",
+        "robot_system",
+        "component",
+        "material",
+        "software_platform",
+        "tool_equipment",
+        "facility",
+        "paper",
+        "patent",
+        "report",
+        "dataset",
+        "benchmark",
+        "standard",
+        "technology",
+        "market_segment",
+        "application_scenario",
+        "business_model",
+        "regulation",
+        "certification"
+      ]
+    },
+    "names": {
+      "type": "object",
+      "description": "Multi-language names. English is required.",
+      "required": ["en"],
+      "properties": {
+        "en": { "type": "string" },
+        "zh": { "type": "string" },
+        "ko": { "type": "string" }
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "summary": {
+      "type": "object",
+      "description": "Multi-language short summaries. English is required.",
+      "required": ["en"],
+      "properties": {
+        "en": { "type": "string" },
+        "zh": { "type": "string" },
+        "ko": { "type": "string" }
+      },
+      "additionalProperties": { "type": "string" }
+    },
+    "domains": {
+      "type": "array",
+      "description": "One or more ontology domains this entity belongs to.",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "01_raw_materials",
+          "02_components",
+          "03_manufacturing_processes",
+          "04_assembly_integration_testing",
+          "05_mass_production",
+          "06_design_engineering",
+          "07_ai_models_algorithms",
+          "08_software_middleware",
+          "09_data_datasets",
+          "10_evaluation_benchmarks",
+          "11_applications_markets",
+          "12_policy_regulation_ethics"
+        ]
+      }
+    },
+    "layers": {
+      "type": "array",
+      "description": "One or more value-chain layers.",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": ["upstream", "midstream", "intelligence", "validation_markets"]
+      }
+    },
+    "functional_roles": {
+      "type": "array",
+      "description": "One or more functional roles.",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": [
+          "material",
+          "component",
+          "process",
+          "system",
+          "tool_equipment",
+          "facility",
+          "intelligence",
+          "organization",
+          "market",
+          "policy",
+          "knowledge"
+        ]
+      }
+    },
+    "tags": {
+      "type": "array",
+      "description": "Free-form tags for discoverability.",
+      "items": { "type": "string" }
+    },
+    "verification": {
+      "type": "object",
+      "required": ["status", "reviewed_by", "reviewed_at"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["verified", "partially_verified", "unverified", "speculative"]
+        },
+        "reviewed_by": {
+          "type": "string",
+          "enum": ["human", "ai", "human_and_ai"]
+        },
+        "reviewed_at": {
+          "type": "string",
+          "format": "date"
+        },
+        "confidence": {
+          "type": "string",
+          "enum": ["high", "medium", "low"]
+        },
+        "notes": {
+          "type": "string"
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "description": "Sources supporting this entity's claims.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "type"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": {
+            "type": "string",
+            "enum": [
+              "primary",
+              "secondary",
+              "press_release",
+              "patent",
+              "report",
+              "paper",
+              "annual_report",
+              "website",
+              "interview",
+              "other"
+            ]
+          },
+          "title": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "date": { "type": "string", "format": "date" },
+          "accessed_at": { "type": "string", "format": "date" },
+          "archived_url": { "type": "string", "format": "uri" }
+        }
+      }
+    },
+    "related_entities": {
+      "type": "array",
+      "description": "Outgoing relationships to other entities.",
+      "items": {
+        "type": "object",
+        "required": ["id", "relationship"],
+        "properties": {
+          "id": { "type": "string" },
+          "relationship": {
+            "type": "string",
+            "enum": [
+              "supplies",
+              "consumes",
+              "produces",
+              "integrates",
+              "sources_from",
+              "distributes",
+              "enables",
+              "requires",
+              "constrains",
+              "compensates_for",
+              "is_alternative_to",
+              "is_part_of",
+              "is_subsystem_of",
+              "is_instance_of",
+              "is_prerequisite_for",
+              "is_version_of",
+              "serves",
+              "is_regulated_by",
+              "drives_demand_for",
+              "competes_with",
+              "is_substitute_for",
+              "cites",
+              "is_based_on",
+              "verified_by",
+              "conflicts_with"
+            ]
+          },
+          "description": {
+            "type": "object",
+            "properties": {
+              "en": { "type": "string" },
+              "zh": { "type": "string" },
+              "ko": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
