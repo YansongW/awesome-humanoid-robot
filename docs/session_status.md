@@ -34,7 +34,8 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 - [x] Promoted `ai_to_hardware_requirements` daemon outputs: **2 entries**.
 - [x] Promoted `reducer_selection` outputs: **3 entries**.
 - [x] Promoted `battery_cells` output: **1 entry** (1 duplicate, 1 LLM JSON error).
-- [x] Updated README stats to **88 entries / 58 relationships / 23 workstreams**; validation passing.
+- [x] Promoted daemon outputs: **force_torque_sensors** 2 entries, **actuator_assembly** 1 entry.
+- [x] Updated README stats to **91 entries / 58 relationships / 23 workstreams**; validation passing.
 - [x] Restarted workstream daemon (task `bash-qhu214g1`) with 60s interval, no timeout, and `PYTHONUNBUFFERED=1`.
 
 ### In Progress
