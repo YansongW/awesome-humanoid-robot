@@ -1,0 +1,34 @@
+name: functional_safety
+description: |
+  Survey functional safety and reliability methods for humanoid robots:
+  hazard analysis, fault detection, fail-safe design, safety-rated monitored
+  stops, mean time between failures, and standards such as IEC 61508 and
+  ISO 13849 applied to human-robot collaboration.
+seed_queries:
+  - "functional safety humanoid robot hazard analysis"
+  - "fault detection humanoid robot safety"
+  - "IEC 61508 ISO 13849 human robot collaboration"
+  - "reliability MTBF humanoid robot actuators"
+  - "fail safe design humanoid robot fall detection"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - standard
+  - benchmark
+  - method
+target_domains:
+  - 04_assembly_integration_testing
+  - 12_policy_regulation_ethics
+  - 10_evaluation_benchmarks
+relationship_patterns:
+  - evaluates_on
+  - requires
+  - enables
+  - constrains
+  - verifies
+relevance_threshold: medium
+max_papers: 12
+priority: 2
+sources:
+  - arxiv

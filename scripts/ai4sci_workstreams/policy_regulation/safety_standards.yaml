@@ -1,0 +1,34 @@
+name: safety_standards
+description: |
+  Survey safety standards, regulations, and certification frameworks relevant to
+  humanoid robots operating near humans. Covers ISO 13482, ISO/TS 15066,
+  ISO 13849, IEC 61508, product liability, and emerging national regulations
+  for service and industrial humanoids.
+seed_queries:
+  - "ISO 13482 ISO TS 15066 humanoid robot safety"
+  - "humanoid robot certification personal care robot"
+  - "product liability humanoid robot regulation"
+  - "IEC 61508 service robot functional safety"
+  - "national regulation humanoid robot deployment"
+paper_ids: []
+target_entity_types:
+  - paper
+  - standard
+  - report
+  - policy
+  - organization
+target_domains:
+  - 12_policy_regulation_ethics
+  - 04_assembly_integration_testing
+  - 11_applications_markets
+relationship_patterns:
+  - regulates
+  - requires
+  - enables
+  - constrains
+  - evaluates_on
+relevance_threshold: medium
+max_papers: 12
+priority: 3
+sources:
+  - arxiv

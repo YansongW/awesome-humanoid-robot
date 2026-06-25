@@ -1,0 +1,34 @@
+name: precision_machining
+description: |
+  Survey precision machining and additive manufacturing processes for humanoid
+  robot parts: CNC machining of joint housings, gear cutting, surface grinding,
+  3D-printed structural brackets, and post-processing steps that influence
+  dimensional accuracy and fatigue life.
+seed_queries:
+  - "CNC machining humanoid robot joint housing precision"
+  - "gear manufacturing harmonic drive cycloidal robot"
+  - "additive manufacturing humanoid robot structural parts"
+  - "surface finishing robot actuator component fatigue"
+  - "tolerance analysis humanoid robot assembly"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - manufacturing_process
+  - component
+  - material
+target_domains:
+  - 03_manufacturing_processes
+  - 02_components
+  - 06_design_engineering
+relationship_patterns:
+  - produces
+  - requires
+  - enables
+  - constrains
+  - improves
+relevance_threshold: medium
+max_papers: 12
+priority: 2
+sources:
+  - arxiv

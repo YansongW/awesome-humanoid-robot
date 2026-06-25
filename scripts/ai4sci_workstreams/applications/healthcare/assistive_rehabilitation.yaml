@@ -1,0 +1,34 @@
+name: assistive_rehabilitation
+description: |
+  Survey humanoid robot applications in healthcare and rehabilitation,
+  including physical therapy, gait training, assistance for older adults,
+  social interaction for cognitive support, and clinical evaluation metrics
+  such as adherence, engagement, and functional improvement.
+seed_queries:
+  - "humanoid robot rehabilitation physical therapy"
+  - "humanoid robot gait training stroke patients"
+  - "socially assistive robot elderly care humanoid"
+  - "humanoid robot cognitive therapy autism"
+  - "clinical evaluation humanoid robot rehabilitation"
+paper_ids: []
+target_entity_types:
+  - paper
+  - application
+  - benchmark
+  - company
+  - standard
+target_domains:
+  - 11_applications_markets
+  - 12_policy_regulation_ethics
+  - 10_evaluation_benchmarks
+relationship_patterns:
+  - enables
+  - requires
+  - evaluates_on
+  - constrains
+  - is_alternative_to
+relevance_threshold: medium
+max_papers: 12
+priority: 3
+sources:
+  - arxiv

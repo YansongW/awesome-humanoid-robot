@@ -1,0 +1,34 @@
+name: quality_control
+description: |
+  Survey quality control, inspection, and statistical process control methods
+  for humanoid robot manufacturing. Focus on in-process metrology, vision-based
+  inspection, tolerancing, defect detection, and end-of-line functional tests
+  that affect yield and reliability.
+seed_queries:
+  - "quality control humanoid robot manufacturing inspection"
+  - "statistical process control robot assembly tolerance"
+  - "machine vision inspection humanoid robot components"
+  - "end of line testing humanoid robot quality"
+  - "defect detection robot actuator gearbox manufacturing"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - manufacturing_process
+  - benchmark
+  - standard
+target_domains:
+  - 03_manufacturing_processes
+  - 04_assembly_integration_testing
+  - 05_mass_production
+relationship_patterns:
+  - evaluates_on
+  - requires
+  - enables
+  - constrains
+  - improves
+relevance_threshold: medium
+max_papers: 12
+priority: 2
+sources:
+  - arxiv

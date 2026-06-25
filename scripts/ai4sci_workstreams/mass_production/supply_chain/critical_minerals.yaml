@@ -1,0 +1,35 @@
+name: critical_minerals
+description: |
+  Survey critical minerals and materials for humanoid robot mass production
+  beyond rare-earth magnets: lithium, cobalt, nickel, copper, graphite, and
+  high-strength lightweight alloys. Focus on supply concentration, price
+  volatility, recycling, substitution, and geopolitical risk.
+seed_queries:
+  - "lithium cobalt nickel supply chain humanoid robot battery"
+  - "copper demand humanoid robot motors wiring"
+  - "graphite anode battery humanoid robot supply risk"
+  - "lightweight alloy aluminum magnesium humanoid robot structure"
+  - "critical mineral recycling humanoid robot sustainability"
+paper_ids: []
+target_entity_types:
+  - paper
+  - report
+  - material
+  - component
+  - organization
+target_domains:
+  - 01_raw_materials
+  - 02_components
+  - 05_mass_production
+relationship_patterns:
+  - consumes
+  - produces
+  - sources_from
+  - constrains
+  - enables
+  - is_substitute_for
+relevance_threshold: medium
+max_papers: 12
+priority: 2
+sources:
+  - arxiv
