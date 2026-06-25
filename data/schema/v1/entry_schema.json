@@ -106,6 +106,7 @@
       "items": {
         "type": "string",
         "enum": [
+          "00_foundations",
           "01_raw_materials",
           "02_components",
           "03_manufacturing_processes",
@@ -127,7 +128,7 @@
       "minItems": 1,
       "items": {
         "type": "string",
-        "enum": ["upstream", "midstream", "intelligence", "validation_markets"]
+        "enum": ["foundations", "upstream", "midstream", "intelligence", "validation_markets"]
       }
     },
     "functional_roles": {

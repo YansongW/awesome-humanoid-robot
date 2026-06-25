@@ -49,9 +49,9 @@ Relationships are not inferred from links inside Markdown. They are explicitly d
 
 ### 2.3 Domain
 
-A **domain** corresponds to one of the twelve ontology branches (e.g., `01_raw_materials`, `02_components`, `07_ai_models`).
+A **domain** corresponds to one of the ontology branches (e.g., `00_foundations`, `01_raw_materials`, `02_components`, `07_ai_models`).
 
-Entities can belong to multiple domains when they sit at boundaries.
+Entities can belong to multiple domains when they sit at boundaries. Foundational knowledge that underpins multiple engineering domains is assigned to `00_foundations`.
 
 ### 2.4 Layer
 
@@ -59,6 +59,7 @@ A **layer** is a position along the value chain:
 
 | Layer | Code | Description |
 |-------|------|-------------|
+| Foundations | `foundations` | Foundational disciplines: mathematics, physics, chemistry, economics, computer science |
 | Upstream | `upstream` | Raw materials, components, manufacturing processes |
 | Midstream | `midstream` | Design, assembly, integration, testing, mass production |
 | Intelligence | `intelligence` | AI models, software, middleware, data |
@@ -306,7 +307,35 @@ related_entities:
 Long-form narrative content goes here...
 ```
 
-### 5.2 Relationship File
+### 5.3 Required First Section: Life Example + Natural Language Explanation
+
+Every concrete entry file (especially `equation`, `formalism`, `theorem`, `principle`, `method`, `algorithm`, `operator`, and `concept`) must begin with a section titled:
+
+```markdown
+## 生活实例 + 自然语言阐述逻辑
+```
+
+This section must:
+
+1. **Use a real-life analogy** that a non-specialist can relate to (e.g., a revolving door for Butler-Volmer, a shopping-mall constraint for KKT, attention while reading for self-attention).
+2. **Explain the intuition** in one or two paragraphs: what problem the entity solves, why the formula/concept is shaped the way it is, and what each symbol represents at a high level.
+3. **Bridge to the formal definition** in the next section.
+
+Example:
+
+```markdown
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：想象你在一个商场里想找到离出口最近的位置，但被告知“不能走进商店内部”（不等式约束）且“必须站在过道正中线上”（等式约束）。KKT 条件就是一套判断标准：如果你站的位置最优，那么要么你不在边界上（约束不影响你），要么边界上的“推力”刚好把你顶在最优位置。
+>
+> **自然语言逻辑**：把带约束的优化问题写成拉格朗日函数 → 对原变量和乘子分别求导并令其为零 → 得到 KKT 条件 → 这些条件是局部最优的必要条件（在凸问题下也是充分条件）。
+
+## 形式化定义
+
+...
+```
+
+### 5.4 Relationship File
 
 Relationships can be declared inline within entity files (via `related_entities`) or stored separately in:
 
