@@ -13,11 +13,22 @@
 
 回答这个问题需要的不是几篇论文或几家公司，而是理解“定义 → 设计 → 校核 → MVP → 测试 → EVT → DVT → PVT → 量产爬坡”全生命周期中，硬件、软件、数据、供应链、制造、质量、安全、市场、政策等多维系统的交互。
 
+### 1.1 森林与根系
+
+如果把人形机器人的知识体系想象成一片森林：
+
+- **每棵树**是一个领域：硬件、软件、数据、供应链、市场、政策……
+- **树的枝干**是该领域的子系统或子问题：驱动、感知、规划、控制、制造、认证……
+- **每片叶子**是一个具体的知识点：某篇论文、某个组件、某个数据集、某个标准。
+- **而树根**则是支撑所有这些树的底层基础学科：数学、物理、化学、计算机科学、经济学、运筹学。
+
+因此，知识谱系不仅要把“看得见”的产品生命周期和工程领域画出来，还要把“看不见”的理论根系也连进去：当你查看某个 WBC 算法的公式时，应该能一路追溯到拉格朗日乘子、KKT 条件、凸优化，乃至线性代数与多元微积分。
+
 ---
 
-## 2. 三维知识空间
+## 2. 四维知识空间
 
-知识谱系由三个正交维度张成。每个叶子工作流都是“阶段 × 领域 × 知识类型”的一个具体切面。
+知识谱系由四个正交维度张成。每个叶子工作流都是“阶段 × 领域 × 知识类型 × 理论深度”的一个具体切面。
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
@@ -31,6 +42,10 @@
 ├─────────────────────────────────────────────────────────────────────────────┤
 │ 维度 C：知识类型（横切）                                                      │
 │  论文 │ 数据集 │ 基准 │ 技术 │ 组件 │ 公司 │ 报告 │ 标准                        │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ 维度 D：理论深度（从基础到应用）                                              │
+│  基础学科 foundation → 定理/原理 principle → 形式化 formalism →              │
+│  方法/算法 method → 系统实现 system                                          │
 └─────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -143,31 +158,71 @@
 
 ---
 
-## 6. 工作流与三维空间的映射示例
+## 6. 维度 D：理论深度（从基础到应用）
 
-| 工作流 | 阶段 | 领域 | 主要知识类型 |
-|--------|------|------|--------------|
-| `vla` | Definition → Algorithm Survey | Software & AI | paper, dataset, benchmark, technology |
-| `whole_body_control` | Definition → Algorithm Survey | Software & AI | paper, technology |
-| `actuator_module_design` | Design → Hardware | Hardware | paper, component, technology |
-| `force_torque_sensors` | Design → Hardware | Hardware | paper, component, technology |
-| `rare_earth_magnets` | Mass Production → Supply Chain | Supply Chain & Manufacturing | material, report, organization |
-| `simulation_platforms` | Design → Infra | Infra / Cloud / Fleet | software_platform, paper, technology |
-| `iso_13482` | Verification Planning → Safety | Safety & Certification | standard, report |
-| `ai_to_hardware_requirements` | Cross-Domain | Software & AI ↔ Hardware | paper, technology, component |
+理论深度维度回答“这个知识点站在哪些基础理论之上”。它让知识谱系从“工程应用”延伸到“基础学科”。
+
+| 深度层级 | 代码 | 说明 | 示例 |
+|----------|------|------|------|
+| **基础学科** | `foundation` | 数学、物理、化学、经济学、计算机科学等底层学科 | 多元微积分、线性代数、凸优化、刚体动力学、电化学 |
+| **定理/原理** | `principle` | 已被证明的数学定理或物理/化学原理 | KKT 条件、Lyapunov 稳定性定理、热力学第二定律、欧拉拉格朗日方程 |
+| **形式化** | `formalism` | 把问题写成数学对象 | QP 优化问题、拉格朗日函数、状态空间模型、哈密顿量 |
+| **方法/算法** | `method` | 具体的算法、技术路线或设计模式 | WBC、MPC、VLA、Diffusion Policy、Kalman Filter |
+| **系统实现** | `system` | 集成后的硬件/软件/产品 | Tesla Optimus、Unitree G1、ROS 2 控制栈、工厂产线 |
+
+一个实体可以跨越多个深度层级。例如，一篇 WBC 论文可能：
+
+- 在 `method` 层提出新的 WBC 方法；
+- 在 `formalism` 层把它形式化为 QP；
+- 在 `principle` 层引用 KKT 条件；
+- 在 `foundation` 层依赖凸优化与多元微积分。
 
 ---
 
-## 7. 长期演进方式
+## 7. 基础学科领域
+
+基础学科不是单一工作流，而是多棵树的根系。我们为每门基础学科预留独立的研究分支：
+
+| 基础学科 | 支撑的上层领域 | 示例知识点 |
+|----------|----------------|------------|
+| **数学 / Mathematics** | 控制、AI、规划、优化、仿真、经济学 | 线性代数、微积分、概率论、凸优化、微分几何、图论、数值分析 |
+| **物理 / Physics** | 驱动、结构、传感器、电池、仿真 | 刚体动力学、电磁学、热力学、接触力学、材料力学 |
+| **化学 / Chemistry** | 电池、材料、表面处理 | 电化学、配位化学、高分子化学、腐蚀与防护 |
+| **计算机科学 / Computer Science** | 软件、AI、数据、仿真、中间件 | 算法与数据结构、分布式系统、实时系统、机器学习理论 |
+| **经济学 / Economics** | 市场、供应链、商业模式 | 成本分析、产业组织、博弈论、技术扩散 |
+| **运筹学与工业工程 / OR & IE** | 制造、物流、产线、质量 | 排程优化、库存管理、可靠性工程、统计过程控制 |
+
+---
+
+## 8. 工作流与四维空间的映射示例
+
+| 工作流 | 阶段 | 领域 | 主要知识类型 | 理论深度 |
+|--------|------|------|--------------|----------|
+| `vla` | Definition → Algorithm Survey | Software & AI | paper, dataset, benchmark, technology | method / formalism |
+| `whole_body_control` | Definition → Algorithm Survey | Software & AI | paper, technology | method / formalism |
+| `actuator_module_design` | Design → Hardware | Hardware | paper, component, technology | system / method |
+| `force_torque_sensors` | Design → Hardware | Hardware | paper, component, technology | system / method |
+| `rare_earth_magnets` | Mass Production → Supply Chain | Supply Chain & Manufacturing | material, report, organization | system / principle |
+| `simulation_platforms` | Design → Infra | Infra / Cloud / Fleet | software_platform, paper, technology | system / method |
+| `iso_13482` | Verification Planning → Safety | Safety & Certification | standard, report | system / principle |
+| `ai_to_hardware_requirements` | Cross-Domain | Software & AI ↔ Hardware | paper, technology, component | method / system |
+| `convex_optimization` | Foundation | Mathematics | paper, theorem, foundation | foundation / principle |
+| `rigid_body_dynamics` | Foundation | Physics | paper, theorem, foundation | foundation / principle |
+| `battery_electrochemistry` | Foundation | Chemistry | paper, principle, foundation | foundation / principle |
+
+---
+
+## 9. 长期演进方式
 
 1. **新增叶子**：当某个子领域积累到足以独立调研时，从 `WORKSTREAM_TREE.md` 中拆出新 YAML。
 2. **执行与回填**：每次用 `AgentSwarm` 执行一个或几个分支，产出实体与关系后更新 `WORKSTREAM_TREE.md` 的复选框。
 3. **阶段迁移**：随着项目成熟，某些工作流可能从 `Definition` 向 `DVT/PVT` 推进（例如从算法调研到量产测试）。
-4. **与本体对齐**：所有工作流的 `target_domains` 必须映射到 `docs/ontology/` 的 12 领域代码。
+4. **理论下钻**：对关键算法或组件，逐步补全其 `foundation → principle → formalism → method → system` 链路。
+5. **与本体对齐**：所有工作流的 `target_domains` 必须映射到 `docs/ontology/` 的 12 领域代码；基础学科工作流可映射到最接近的工程领域或使用新增的基础学科域。
 
 ---
 
-## 8. 关键参考来源
+## 10. 关键参考来源
 
 1. **EVT/DVT/PVT 阶段门模型**：OpenBOM、Encata、Instrumental、Teksun、MacroFab 等行业解释。
 2. **人形机器人供应链**：Morgan Stanley *The Humanoid 100*、McKinsey *Turning humanoid supply chain constraints into billion-dollar wins*。

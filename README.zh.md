@@ -86,13 +86,16 @@
 
 内容通过**工作流**进行填充——每个工作流是一个聚焦的、可并行执行的 AI4Sci 调研任务，映射到完整的 0→1 知识树。每个工作流对应 `scripts/ai4sci_workstreams/` 下的一个 YAML 配置文件，定义种子查询、目标领域、实体类型和关系模式。
 
-知识谱系由三个维度张成：
+知识谱系由四个维度张成：
 
 - **产品开发阶段**：定义 → 设计 → 校核规划 → MVP → 测试 → EVT → DVT → PVT → 量产/爬坡
 - **学科/领域**：硬件、软件与 AI、数据系统、Infra/云/车队、嵌入式、机械结构、仿真、供应链与制造、质量与可靠性、安全与认证、应用与市场、政策与伦理
 - **知识类型**：论文、数据集、基准、技术、组件、公司、报告、标准
+- **理论深度**：基础学科 → 定理/原理 → 形式化 → 方法/算法 → 系统实现
 
-完整谱系见 [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md)，可执行的长期 TODO 见 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)。
+这让“全身控制”这样的高层方法可以一路下钻到 QP 优化形式、KKT 条件、拉格朗日乘子，直至多元微积分与线性代数。
+
+完整谱系见 [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md)，可执行的长期 TODO 见 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)，具体知识链路示例见 [`docs/ai4sci/knowledge_chain_examples.md`](docs/ai4sci/knowledge_chain_examples.md)。
 
 详细流程见 [`docs/ai4sci/`](docs/ai4sci/)。
 
@@ -188,7 +191,8 @@ awesome-humanoid-robot/
 │       ├── literature_review_pipeline.md
 │       ├── verification_criteria.md
 │       ├── workstream_roadmap.md      # 0→1 知识谱系
-│       └── WORKSTREAM_TREE.md         # 长期工作流 TODO
+│       ├── WORKSTREAM_TREE.md         # 长期工作流 TODO
+│       └── knowledge_chain_examples.md # 宏观到微观的理论链路示例
 ├── research/
 │   ├── materials/                     # 原材料条目
 │   ├── components/                    # 零部件条目

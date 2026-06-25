@@ -29,6 +29,9 @@ The most recent step was a **systematic knowledge-taxonomy study** that replaced
 - [x] **Automated literature pipeline and multi-agent workstream infrastructure: `scripts/ai4sci_lib/`, `ai4sci_paper_pipeline.py`, `ai4sci_review.py`, `ai4sci_batch_pipeline.py`, `ai4sci_orchestrator.py`, `ai4sci_status.py`, and `scripts/ai4sci_workstreams/*.yaml`**
 - [x] **Graph integrity fix: normalized IDs, created missing target entities, all relationships resolve**
 - [x] **Systematic workstream taxonomy research: defined 9 lifecycle stages × 12 engineering domains × 8 knowledge types, documented in `workstream_roadmap.md`, tracked in `WORKSTREAM_TREE.md`**
+- [x] **Extended information model: added foundational entity types (`concept`, `method`, `formalism`, `theorem`, `principle`, `foundation`) and theoretical-depth relationships (`formalizes`, `uses_theorem`, `derived_from`, `instantiates`, `builds_on`, `has_prerequisite`) to support macro → micro knowledge chains**
+- [x] **Extended workstream taxonomy to four dimensions: stage × domain × knowledge type × theoretical depth, with foundational discipline branches in `WORKSTREAM_TREE.md`**
+- [x] **Added knowledge-chain examples: `docs/ai4sci/knowledge_chain_examples.md` (WBC, Li-ion battery, VLA)**
 
 ---
 
@@ -53,8 +56,9 @@ If you are resuming work, read in this order:
 4. **Read the per-domain ontology**: `docs/ontology/01_raw_materials.md` through `12_policy_regulation_ethics.md`
 5. **Understand the workstream taxonomy**: `docs/ai4sci/workstream_roadmap.md`
 6. **See the long-term TODO**: `docs/ai4sci/WORKSTREAM_TREE.md`
-7. **Understand the data model**: `docs/architecture/information_model.md`
-8. **Check the schemas**: `data/schema/v1/entry_schema.json`, `data/schema/v1/relationship_schema.json`
+7. **See knowledge-chain examples**: `docs/ai4sci/knowledge_chain_examples.md`
+8. **Understand the data model**: `docs/architecture/information_model.md`
+9. **Check the schemas**: `data/schema/v1/entry_schema.json`, `data/schema/v1/relationship_schema.json`
 
 ---
 

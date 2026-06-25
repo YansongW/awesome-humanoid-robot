@@ -86,13 +86,16 @@
 
 콘텐츠는 **워크스트림**을 통해 채워집니다. 각 워크스트림은 0→1 지식 트리에 매핑된 집중적이고 병렬화 가능한 AI4Sci 연구 작업이며, `scripts/ai4sci_workstreams/` 아래의 YAML 설정 파일로 정의됩니다.
 
-택스노미는 세 가지 차원으로 구성됩니다:
+택스노미는 네 가지 차원으로 구성됩니다:
 
 - **제품 개발 단계**: Definition → Design → Verification Planning → MVP → Testing → EVT → DVT → PVT → Mass Production / Ramp
 - **공학 분야**: Hardware, Software & AI, Data Systems, Infra/Cloud/Fleet, Embedded, Mechanical Structure, Simulation, Supply Chain & Manufacturing, Quality & Reliability, Safety & Certification, Applications & Markets, Policy & Ethics
 - **지식 유형**: Papers, Datasets, Benchmarks, Technologies, Components, Companies, Reports, Standards
+- **이론적 깊이**: Foundation → Principle/Theorem → Formalism → Method/Algorithm → System/Implementation
 
-전체 택스노미는 [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md)에서, 실행 가능한 장기 TODO는 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)에서 확인하세요.
+이를 통해 WBC와 같은 고위층 개념을 QP formulation, KKT conditions, Lagrange multipliers, 그리고 궁극적으로 다변수 미적분학과 선형대수학까지 추적할 수 있습니다.
+
+전체 택스노미는 [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md)에서, 실행 가능한 장기 TODO는 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)에서, 구체적인 지식 체인 예시는 [`docs/ai4sci/knowledge_chain_examples.md`](docs/ai4sci/knowledge_chain_examples.md)에서 확인하세요.
 
 자세한 내용은 [`docs/ai4sci/`](docs/ai4sci/)를 참조하세요.
 
@@ -188,7 +191,8 @@ awesome-humanoid-robot/
 │       ├── literature_review_pipeline.md
 │       ├── verification_criteria.md
 │       ├── workstream_roadmap.md      # 0→1 지식 택스노미
-│       └── WORKSTREAM_TREE.md         # 장기 워크스트림 TODO
+│       ├── WORKSTREAM_TREE.md         # 장기 워크스트림 TODO
+│       └── knowledge_chain_examples.md # 거시에서 미시로의 이론 체인 예시
 ├── research/
 │   ├── materials/                     # 원자재 항목
 │   ├── components/                    # 부품 항목

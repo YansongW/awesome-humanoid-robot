@@ -1,8 +1,8 @@
 # 工作流谱系树（长期 TODO）
 
-> **Purpose**: 将 `docs/ai4sci/workstream_roadmap.md` 中的三维知识空间落地为可执行的 YAML 工作流清单。  
+> **Purpose**: 将 `docs/ai4sci/workstream_roadmap.md` 中的四维知识空间（阶段 × 领域 × 知识类型 × 理论深度）落地为可执行的 YAML 工作流清单。  
 > **维护规则**: 每个叶子节点对应 `scripts/ai4sci_workstreams/` 下的一个 YAML 文件；执行完毕后把 `- [ ]` 改为 `- [x]`，并在提交信息中注明工作流名称。  
-> **当前状态**: 4 个工作流已执行一轮，其余待建立或扩展。
+> **当前状态**: 4 个工程工作流已执行一轮，8 个新工程工作流已创建，基础学科工作流待建立。
 
 ---
 
@@ -232,3 +232,47 @@
 - [x] `cross_domain/ai_to_hardware_requirements.yaml`
 - [ ] `cross_domain/data_to_sim_real.yaml`
 - [ ] `cross_domain/design_to_manufacturing_feedback.yaml`
+
+---
+
+## 17. 基础学科 / Foundations
+
+### 17.1 数学 / Mathematics
+- [ ] `foundations/mathematics/linear_algebra.yaml`
+- [ ] `foundations/mathematics/multivariable_calculus.yaml`
+- [ ] `foundations/mathematics/convex_optimization.yaml`
+- [ ] `foundations/mathematics/probability_statistics.yaml`
+- [ ] `foundations/mathematics/differential_geometry.yaml`
+- [ ] `foundations/mathematics/numerical_analysis.yaml`
+- [ ] `foundations/mathematics/graph_theory.yaml`
+- [ ] `foundations/mathematics/optimal_control.yaml`
+
+### 17.2 物理 / Physics
+- [ ] `foundations/physics/rigid_body_dynamics.yaml`
+- [ ] `foundations/physics/contact_mechanics.yaml`
+- [ ] `foundations/physics/electromagnetism.yaml`
+- [ ] `foundations/physics/thermodynamics.yaml`
+- [ ] `foundations/physics/materials_mechanics.yaml`
+
+### 17.3 化学 / Chemistry
+- [ ] `foundations/chemistry/battery_electrochemistry.yaml`
+- [ ] `foundations/chemistry/polymer_materials.yaml`
+- [ ] `foundations/chemistry/rare_earth_magnet_chemistry.yaml`
+- [ ] `foundations/chemistry/surface_treatment.yaml`
+
+### 17.4 计算机科学 / Computer Science
+- [ ] `foundations/computer_science/algorithms_data_structures.yaml`
+- [ ] `foundations/computer_science/distributed_systems.yaml`
+- [ ] `foundations/computer_science/real_time_systems.yaml`
+- [ ] `foundations/computer_science/machine_learning_theory.yaml`
+
+### 17.5 经济学 / Economics
+- [ ] `foundations/economics/cost_analysis.yaml`
+- [ ] `foundations/economics/industrial_organization.yaml`
+- [ ] `foundations/economics/game_theory.yaml`
+
+### 17.6 运筹学与工业工程 / OR & IE
+- [ ] `foundations/or_ie/scheduling_optimization.yaml`
+- [ ] `foundations/or_ie/inventory_management.yaml`
+- [ ] `foundations/or_ie/reliability_engineering.yaml`
+- [ ] `foundations/or_ie/statistical_process_control.yaml`

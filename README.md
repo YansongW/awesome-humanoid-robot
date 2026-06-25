@@ -84,13 +84,16 @@ This project is built with AI-assisted research workflows:
 
 Content is populated through **workstreams** — focused, parallel AI4Sci research tasks mapped to the full 0→1 knowledge tree. Each workstream is a YAML config in `scripts/ai4sci_workstreams/` that defines seed queries, target domains, entity types, and relationship patterns.
 
-The taxonomy spans three dimensions:
+The taxonomy spans four dimensions:
 
 - **Product lifecycle**: Definition → Design → Verification Planning → MVP → Testing → EVT → DVT → PVT → Mass Production / Ramp
 - **Engineering domains**: Hardware, Software & AI, Data Systems, Infra/Cloud/Fleet, Embedded, Mechanical Structure, Simulation, Supply Chain & Manufacturing, Quality & Reliability, Safety & Certification, Applications & Markets, Policy & Ethics
 - **Knowledge types**: Papers, Datasets, Benchmarks, Technologies, Components, Companies, Reports, Standards
+- **Theoretical depth**: Foundation → Principle/Theorem → Formalism → Method/Algorithm → System/Implementation
 
-See [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md) for the full taxonomy and [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md) for the executable TODO list.
+This lets a high-level concept like WBC be traced down to QP formulation, KKT conditions, Lagrange multipliers, and ultimately multivariable calculus and linear algebra.
+
+See [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md) for the full taxonomy, [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md) for the executable TODO list, and [`docs/ai4sci/knowledge_chain_examples.md`](docs/ai4sci/knowledge_chain_examples.md) for concrete macro-to-micro chains.
 
 See [`docs/ai4sci/`](docs/ai4sci/) for the detailed research pipeline and verification criteria.
 
@@ -186,7 +189,8 @@ awesome-humanoid-robot/
 │       ├── literature_review_pipeline.md
 │       ├── verification_criteria.md
 │       ├── workstream_roadmap.md      # 0→1 knowledge taxonomy
-│       └── WORKSTREAM_TREE.md         # Long-term workstream TODO
+│       ├── WORKSTREAM_TREE.md         # Long-term workstream TODO
+│       └── knowledge_chain_examples.md # Macro-to-micro theory chains
 ├── research/
 │   ├── materials/                     # Raw material entries
 │   ├── components/                    # Component entries
