@@ -1,0 +1,33 @@
+name: reducer_selection
+description: |
+  Survey reducer/gearbox technologies for humanoid robot joints: harmonic
+  drives, strain-wave gears, cycloidal drives, planetary gearboxes, and
+  linear transmission elements such as ball/roller screws. Focus on selection
+  criteria including backlash, torque density, efficiency, stiffness, lifetime,
+  and integration with torque motors.
+seed_queries:
+  - "harmonic drive cycloidal drive comparison humanoid robot joint"
+  - "strain wave gear reducer torque density humanoid robot"
+  - "zero backlash reducer humanoid robot actuator"
+  - "planetary roller screw linear actuator humanoid robot"
+  - "gearbox stiffness efficiency humanoid robot joint design"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - component
+  - company
+  - benchmark
+target_domains:
+  - 02_components
+  - 06_design_engineering
+relationship_patterns:
+  - improves
+  - constrains
+  - enables
+  - is_alternative_to
+  - evaluates_on
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv

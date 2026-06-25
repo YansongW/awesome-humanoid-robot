@@ -1,0 +1,32 @@
+name: motor_selection
+description: |
+  Survey electric motor technologies used in humanoid robot actuation, with a
+  focus on selection criteria: torque density, specific torque, bandwidth,
+  thermal limits, frameless integration, and trade-offs between brushless DC,
+  frameless torque, and direct-drive motors.
+seed_queries:
+  - "frameless torque motor humanoid robot joint actuator torque density"
+  - "brushless DC motor selection humanoid robot actuator design"
+  - "high torque density motor exoskeleton humanoid"
+  - "direct drive actuator humanoid robot force control bandwidth"
+  - "motor thermal modeling humanoid robot joint"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - component
+  - company
+  - benchmark
+target_domains:
+  - 02_components
+  - 06_design_engineering
+relationship_patterns:
+  - improves
+  - constrains
+  - enables
+  - is_alternative_to
+  - evaluates_on
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv

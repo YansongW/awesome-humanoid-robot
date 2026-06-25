@@ -1,0 +1,32 @@
+name: battery_cells
+description: |
+  Survey battery cell technologies for humanoid robots, focusing on cell
+  formats (18650, 21700, pouch, prismatic), chemistries (NMC, LFP, solid-state),
+  energy and power density, cycle life, thermal runaway risk, and pack-level
+  integration constraints for mobile bipedal platforms.
+seed_queries:
+  - "lithium ion battery cell energy density humanoid robot"
+  - "21700 battery pack humanoid robot power density"
+  - "battery thermal management humanoid robot mobile platform"
+  - "solid state battery humanoid robot safety energy density"
+  - "NMC vs LFP battery humanoid robot power to weight"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - component
+  - company
+  - standard
+target_domains:
+  - 02_components
+  - 06_design_engineering
+relationship_patterns:
+  - improves
+  - constrains
+  - enables
+  - is_alternative_to
+  - requires
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv
