@@ -60,7 +60,8 @@ Before populating content, this project first establishes a **formal information
 Key architectural decisions:
 
 - **Graph-first**: entities are nodes, relationships are directed edges.
-- **Dual tagging**: every entity has both a **value-chain layer** (upstream / midstream / intelligence / validation-markets) and a **functional role** (material / component / process / system / intelligence / etc.).
+- **Dual tagging**: every entity has both a **value-chain layer** (foundations / upstream / midstream / intelligence / validation-markets) and a **functional role** (material / component / process / system / intelligence / etc.).
+- **Foundational knowledge domain**: cross-cutting math, physics, chemistry, and CS topics are assigned to `00_foundations` so they can be shared across engineering trees.
 - **Relationship as first-class citizen**: cross-domain links are explicit, typed, and verifiable.
 - **Multi-lingual by design**: names, summaries, and descriptions are stored as language maps.
 - **Versioned schemas**: entry and relationship schemas are versioned and extensible.
@@ -77,7 +78,8 @@ This project is built with AI-assisted research workflows:
 
 1. **Systematic literature and industry scanning** — track academic papers, patents, company announcements, supply-chain reports, and technical blogs.
 2. **Structured extraction** — every entity is typed, tagged by layer/domain/role, and linked to sources.
-3. **Cross-reference and verification** — claims are traced to original sources; conflicting information is flagged.
+3. **Natural-language-first entries** — every concrete entity (equation, theorem, algorithm, formalism) starts with a real-life analogy and plain-language explanation before the math.
+4. **Cross-reference and verification** — claims are traced to original sources; conflicting information is flagged.
 4. **Graph-driven organization** — entries and relationships form a knowledge graph, not a flat list.
 5. **Human review** — AI accelerates collection and synthesis, but all high-stakes claims are reviewed before public release.
 
@@ -193,6 +195,7 @@ awesome-humanoid-robot/
 │       ├── WORKSTREAM_TREE.md         # Long-term workstream TODO
 │       └── knowledge_chain_examples.md # Macro-to-micro theory chains
 ├── research/
+│   ├── foundations/                   # Foundational knowledge entries (math, physics, chemistry, CS)
 │   ├── materials/                     # Raw material entries
 │   ├── components/                    # Component entries
 │   ├── companies/                     # Company profiles and ecosystem maps

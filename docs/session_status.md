@@ -34,6 +34,9 @@ The most recent step was a **systematic knowledge-taxonomy study** that replaced
 - [x] **Added knowledge-chain examples: `docs/ai4sci/knowledge_chain_examples.md` (WBC, Li-ion battery, VLA)**
 - [x] **Refined knowledge-chain granularity: equations, operators, variables, constants, algorithms, and approximations are now explicit nodes**
 - [x] **Extended information model again: added `equation`, `operator`, `variable`, `constant`, `algorithm`, `approximation` entity types and `uses`, `includes`, `solves`, `estimates`, `minimizes`, `approximates` relationships**
+- [x] **Added `00_foundations` domain and `foundations` layer to support cross-cutting foundational knowledge entities**
+- [x] **Required every concrete entry file to begin with a `## 生活实例 + 自然语言阐述逻辑` section**
+- [x] **Created entry template `docs/ai4sci/entry_template.md` and 5 foundational example entries under `research/foundations/` (KKT, Butler-Volmer, self-attention, standard QP, gradient descent)**
 
 ---
 
@@ -77,9 +80,9 @@ We are now executing **Phase 0–2 of the approved plan**:
 
 ## Immediate Next Tasks (Pending)
 
-1. **Validate schemas** after adding fine-grained entity/relationship types (`validate_entries.py --include-workstreams`).
-2. **Git sync**: review changes, split into focused commits, push to `origin/main`.
-3. **Create concrete foundational entities** starting with the WBC chain (e.g., `ent_wbc_hierarchical_qp.md`, `ent_kkt_conditions.md`, `ent_newton_euler.md`).
+1. **Git sync**: review changes, split into focused commits, push to `origin/main`.
+2. **Backfill `## 生活实例 + 自然语言阐述逻辑` sections** into existing entries in `research/` as they are reviewed.
+3. **Create more foundational entities** along the WBC, battery, and VLA chains (e.g., `ent_lagrangian.md`, `ent_newton_euler.md`, `ent_fick_law.md`, `ent_score_matching.md`).
 4. **Create first foundational workstream YAMLs**: `convex_optimization.yaml`, `rigid_body_dynamics.yaml`, `electrochemistry.yaml`, `stochastic_calculus.yaml`.
 5. **Update `docs/ai4sci/literature_review_pipeline.md`** to describe multi-agent workstream execution.
 6. **Execute next AgentSwarm batch** against the new leaf workstreams.
