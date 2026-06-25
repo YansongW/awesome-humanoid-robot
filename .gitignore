@@ -11,3 +11,16 @@
 # Temporary files
 *.tmp
 *.log
+proposal_ruka.json
+ruka_paper.pdf
+ruka_paper.txt
+
+# AI4Sci staging area
+.staging/
+
+# Environment variables
+.env
+
+# Python cache
+__pycache__/
+*.pyc

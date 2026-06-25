@@ -4,8 +4,11 @@ Validate entity and relationship files against JSON schemas.
 
 Usage:
     python scripts/validate_entries.py
+    python scripts/validate_entries.py --staging-dir .staging/workstreams/vla
+    python scripts/validate_entries.py --include-workstreams
 """
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -23,6 +26,23 @@ ROOT = Path(__file__).parent.parent
 SCHEMA_DIR = ROOT / "data" / "schema" / "v1"
 RESEARCH_DIR = ROOT / "research"
 RELATIONSHIPS_DIR = ROOT / "data" / "relationships"
+STAGING_DIR = ROOT / ".staging"
+
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Validate entries and relationships.")
+    parser.add_argument(
+        "--staging-dir",
+        type=Path,
+        default=None,
+        help="Validate a specific staging directory (e.g., .staging/workstreams/vla).",
+    )
+    parser.add_argument(
+        "--include-workstreams",
+        action="store_true",
+        help="Also validate all workstream staging directories under .staging/workstreams/.",
+    )
+    return parser.parse_args()
 
 
 def load_yaml_frontmatter(path: Path) -> dict:
@@ -59,17 +79,41 @@ def validate_directory(directory: Path, schema: dict) -> list[str]:
     return errors
 
 
+def validate_base(base_dir: Path, entry_schema: dict, relationship_schema: dict) -> list[str]:
+    """Validate entity and relationship files under a base directory."""
+    errors = []
+    research_dir = base_dir / "research"
+    relationships_dir = base_dir / "data" / "relationships"
+    if research_dir.exists():
+        print(f"Validating entity files under {research_dir}...")
+        errors.extend(validate_directory(research_dir, entry_schema))
+    if relationships_dir.exists():
+        print(f"Validating relationship files under {relationships_dir}...")
+        errors.extend(validate_directory(relationships_dir, relationship_schema))
+    return errors
+
+
 def main() -> int:
+    args = parse_args()
     entry_schema = json.loads((SCHEMA_DIR / "entry_schema.json").read_text())
     relationship_schema = json.loads((SCHEMA_DIR / "relationship_schema.json").read_text())
 
     errors = []
 
-    print("Validating entity files...")
-    errors.extend(validate_directory(RESEARCH_DIR, entry_schema))
+    # Always validate production files.
+    errors.extend(validate_base(ROOT, entry_schema, relationship_schema))
 
-    print("Validating relationship files...")
-    errors.extend(validate_directory(RELATIONSHIPS_DIR, relationship_schema))
+    # Validate a specific staging directory if requested.
+    if args.staging_dir:
+        errors.extend(validate_base(args.staging_dir, entry_schema, relationship_schema))
+
+    # Validate all workstream staging directories if requested.
+    if args.include_workstreams:
+        workstreams_dir = STAGING_DIR / "workstreams"
+        if workstreams_dir.exists():
+            for ws_dir in sorted(workstreams_dir.iterdir()):
+                if ws_dir.is_dir():
+                    errors.extend(validate_base(ws_dir, entry_schema, relationship_schema))
 
     if errors:
         print(f"\nFound {len(errors)} validation error(s):\n")

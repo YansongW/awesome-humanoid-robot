@@ -1,0 +1,29 @@
+name: cross_domain
+description: |
+  Identify cross-domain relationships between AI/software/data entries and hardware
+  components, manufacturing processes, and production constraints.
+seed_queries:
+  - "vision language action robot requires camera sensor actuator"
+  - "sim-to-real humanoid robot domain gap hardware"
+  - "robot learning data engine teleoperation hardware requirements"
+  - "humanoid robot whole body control perception compute"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - component
+target_domains:
+  - 02_components
+  - 07_ai_models_algorithms
+  - 08_software_middleware
+  - 09_data_datasets
+relationship_patterns:
+  - requires
+  - enables
+  - integrates
+  - constrains
+  - is_prerequisite_for
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv

@@ -1,0 +1,30 @@
+name: raw_materials
+description: |
+  Track raw materials, critical minerals, manufacturing processes, and cost drivers
+  for humanoid robot mass production.
+seed_queries:
+  - "rare earth magnet neodymium humanoid robot motor supply"
+  - "lithium ion battery humanoid robot energy density"
+  - "aluminum magnesium composite humanoid robot structure"
+  - "harmonic drive cycloidal gearbox manufacturing process"
+paper_ids: []
+target_entity_types:
+  - paper
+  - report
+  - material
+  - technology
+  - component
+target_domains:
+  - 01_raw_materials
+  - 03_manufacturing_processes
+  - 02_components
+relationship_patterns:
+  - consumes
+  - produces
+  - sources_from
+  - constrains
+  - enables
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv

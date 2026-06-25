@@ -1,0 +1,30 @@
+name: vla
+description: |
+  Expand the Vision-Language-Action (VLA) ecosystem: models, datasets, benchmarks,
+  and data engines relevant to humanoid robot manipulation and production scaling.
+seed_queries:
+  - "vision language action robotics manipulation humanoid"
+  - "robot learning dataset benchmark manipulation 2025"
+  - "open x embodiment droid rh20t bridge data vla"
+  - "humanoid benchmark sim-to-real manipulation policy"
+paper_ids: []
+target_entity_types:
+  - paper
+  - dataset
+  - benchmark
+  - technology
+target_domains:
+  - 07_ai_models_algorithms
+  - 09_data_datasets
+  - 10_evaluation_benchmarks
+relationship_patterns:
+  - cites
+  - is_based_on
+  - produces
+  - serves
+  - requires
+  - enables
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv

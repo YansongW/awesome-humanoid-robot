@@ -1,0 +1,31 @@
+name: companies
+description: |
+  Map the humanoid robot company and supplier ecosystem: OEMs, component vendors,
+  software platforms, and supply-chain analyses.
+seed_queries:
+  - "humanoid robot company supply chain industry analysis"
+  - "humanoid robot actuator motor reducer manufacturer"
+  - "humanoid robot battery compute sensor supplier"
+  - "humanoid robot mass production cost analysis"
+paper_ids: []
+target_entity_types:
+  - paper
+  - report
+  - oem
+  - component_manufacturer
+  - tier1_supplier
+  - tier2_supplier
+target_domains:
+  - 02_components
+  - 05_mass_production
+  - 11_applications_markets
+relationship_patterns:
+  - produces
+  - supplies
+  - integrates
+  - sources_from
+  - competes_with
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv
