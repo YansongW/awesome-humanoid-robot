@@ -6,8 +6,8 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-75-green" alt="75 entries" />
-  <img src="https://img.shields.io/badge/relationships-57-brightgreen" alt="57 relationships" />
+  <img src="https://img.shields.io/badge/entries-80-green" alt="80 entries" />
+  <img src="https://img.shields.io/badge/relationships-98-brightgreen" alt="98 relationships" />
   <img src="https://img.shields.io/badge/workstreams-16-orange" alt="16 workstreams" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
@@ -136,8 +136,8 @@ python scripts/ai4sci_review.py
 
 | 指标 | 数量 |
 |------|------|
-| 生产级条目 | 75 |
-| 关系 | 57 |
+| 生产级条目 | 80 |
+| 关系 | 98 |
 | 工作流配置 | 16 |
 | 本体域 | 12 + `00_foundations` |
 | 支持语言 | 中 / 英 / 韩 |

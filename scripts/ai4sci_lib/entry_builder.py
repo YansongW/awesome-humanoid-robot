@@ -57,18 +57,34 @@ def normalize_domains(domains: list[str]) -> tuple[list[str], list[str]]:
 
 # Map common LLM-generated relationship types to the project's controlled vocabulary.
 RELATIONSHIP_TYPE_MAP = {
+    # Supply / integration
     "component_used": "integrates",
     "uses_component": "integrates",
     "uses_hardware": "integrates",
     "uses_part": "integrates",
+    "uses_metric": "uses",
+    # Verification / evaluation
     "evaluates_with": "verified_by",
     "validated_by": "verified_by",
+    "validates_with": "verified_by",
+    "evaluated_on": "evaluates_on",
+    # Derivation / extension
+    "based_on": "is_based_on",
+    "uses_method": "is_based_on",
+    "builds_on": "builds_on",
+    "improves": "builds_on",
+    "extends_to": "extends",
+    "applies": "uses",
+    "implements": "instantiates",
+    "describes": "proposes",
+    "studies": "proposes",
+    # Data / sourcing
     "uses_data_from": "sources_from",
     "data_from": "sources_from",
-    "uses_method": "is_based_on",
-    "based_on": "is_based_on",
+    # Comparison / citation
     "compares_to": "is_alternative_to",
     "compared_to": "is_alternative_to",
+    "contrasts_with": "is_alternative_to",
     "utilizes": "requires",
     "employs": "requires",
     "mentions": "cites",

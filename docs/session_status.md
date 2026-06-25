@@ -46,6 +46,9 @@ The most recent step was a **systematic knowledge-taxonomy study** that replaced
 - [x] **Tuned foundational workstream configs for `electrochemistry` and `stochastic_calculus`: lowered relevance threshold to `medium`, expanded seed queries, added explicit seminal paper IDs, and raised `max_papers` to 25**
 - [x] **Refreshed `docs/ai4sci/literature_review_pipeline.md` to match the current multi-agent workstream architecture, desktop credential setup, and foundational relationship types**
 - [x] **Refactored project homepage (`README.md`, `README.zh.md`, `README.ko.md`) into an OpenClaw-style layout with badges, clear narrative, quick-start, stats, and roadmap**
+- [x] **Re-ran `electrochemistry` and `stochastic_calculus` workstreams with Kimi CLI; promoted 5 valid entries (2 + 3) and 41 relationships (13 + 28) to production after normalizing LLM relationship types**
+- [x] **Expanded `RELATIONSHIP_TYPE_MAP` in `scripts/ai4sci_lib/entry_builder.py` to handle common LLM-generated synonyms (`describes`, `validates_with`, `studies`, `implements`, `extends_to`, `applies`, `contrasts_with`, `improves`, `evaluated_on`, `uses_metric`)**
+- [x] **Updated README stats: 80 entries, 98 relationships, validation passing**
 
 ---
 
@@ -89,9 +92,9 @@ We are now executing **Phase 0–2 of the approved plan**:
 
 ## Immediate Next Tasks (Pending)
 
-1. **Git sync**: commit and push the README refactor, pipeline doc update, and session_status refresh.
-2. **Re-run electrochemistry and stochastic_calculus workstreams** with an LLM API key to generate entries/relationships; candidate discovery now yields ~150+ candidates each.
-3. **Review staged outputs** from convex_optimization and rigid_body_dynamics workstreams and promote valid entries/relationships to `research/` and `data/relationships/`.
+1. **Git sync**: commit and push the newly promoted entries/relationships, `entry_builder.py` mapping update, README stat refresh, and `session_status.md` update.
+2. **Backfill missing target entities** referenced by newly promoted relationships (e.g., `proposed_dfn_model`, `entity_flow_matching_lipman_2023`, `entity_torchcfm`, `ent_robomimic`, `ent_push_t`) to eliminate dangling edges, or prune dangling relationships after human review.
+3. **Review staged outputs** from `convex_optimization` and `rigid_body_dynamics` workstreams and promote valid entries/relationships.
 4. **Continue filling foundational-discipline branches in `WORKSTREAM_TREE.md`**.
 
 ---
