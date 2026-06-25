@@ -107,7 +107,7 @@ def run_workstream(
         sys.executable,
         str(config.ROOT / "scripts" / "ai4sci_batch_pipeline.py"),
         str(config_path),
-        "--max-batch-workers", str(max_batch_workers),
+        "--max-workers", str(max_batch_workers),
     ]
     if max_papers is not None:
         cmd.extend(["--max-papers", str(max_papers)])
