@@ -32,18 +32,17 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 - [x] Updated `scripts/ai4sci_lib/pipeline.py` to filter dangling edges at generation time.
 - [x] Promoted `motor_selection` outputs: **2 entries, 1 relationship**.
 - [x] Promoted `ai_to_hardware_requirements` daemon outputs: **2 entries**.
-- [x] Updated README stats to **84 entries / 58 relationships / 23 workstreams**; validation passing.
+- [x] Promoted `reducer_selection` outputs: **3 entries**.
+- [x] Updated README stats to **87 entries / 58 relationships / 23 workstreams**; validation passing.
 
 ### In Progress
 
-- [ ] `reducer_selection` workstream run (task `bash-pbdcdlki`).
-- [ ] Hourly daemon (`bash-1b5d938i`) continues re-processing older workstreams.
+- [ ] `battery_cells` workstream run (task `bash-nh9ia6m1`).
 - [ ] Hourly cron reminder (`b1753c79`) reports task status.
 
 ### Pending
 
-- [ ] Review and promote `reducer_selection` staged entries/relationships.
-- [ ] Run and promote `battery_cells` workstream.
+- [ ] Review and promote `battery_cells` staged entries/relationships.
 - [ ] Run downstream manufacturing/application workstreams.
 - [ ] Periodically check daemon logs and re-enable/restart if it stalls on all-error workstreams.
 
@@ -54,7 +53,7 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 | Task ID | Command | Status |
 |---------|---------|--------|
 | `bash-1b5d938i` | Hourly workstream daemon loop (`ai4sci_run_next_workstream.py`) | paused |
-| `bash-pbdcdlki` | `reducer_selection` batch run | running |
+| `bash-nh9ia6m1` | `battery_cells` batch run | running |
 | `b1753c79` | Hourly cron reminder to check `TaskOutput` | active |
 
 ---
