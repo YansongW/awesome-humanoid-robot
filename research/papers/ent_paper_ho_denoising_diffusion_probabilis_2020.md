@@ -45,32 +45,6 @@ sources:
   url: https://arxiv.org/abs/2006.11239
   date: '2020'
   accessed_at: '2026-06-25'
-related_entities:
-- id: ent_cifar10
-  relationship: evaluates_on
-  description:
-    en: The model was evaluated on the unconditional CIFAR-10 dataset.
-    zh: 该模型在无条件CIFAR-10数据集上进行了评估。
-    ko: 해당 모델은 무조건 CIFAR-10 데이터셋에서 평가되었다.
-- id: ent_lsun
-  relationship: evaluates_on
-  description:
-    en: The model was evaluated on 256x256 LSUN bedroom, church, and cat datasets.
-    zh: 该模型在256x256 LSUN卧室、教堂和猫数据集上进行了评估。
-    ko: 해당 모델은 256x256 LSUN bedroom, church, cat 데이터셋에서 평가되었다.
-- id: ent_celebahq
-  relationship: evaluates_on
-  description:
-    en: The model was evaluated on the CelebA-HQ dataset.
-    zh: 该模型在CelebA-HQ数据集上进行了评估。
-    ko: 해당 모델은 CelebA-HQ 데이터셋에서 평가되었다.
-- id: ent_sohl_dickstein_2015
-  relationship: extends
-  description:
-    en: The work builds upon earlier diffusion probabilistic models introduced by
-      Sohl-Dickstein et al.
-    zh: 该工作建立在Sohl-Dickstein等人早期提出的扩散概率模型之上。
-    ko: 해당 연구는 Sohl-Dickstein 등이 제안한 초기 확산 확률 모델을 기반으로 한다.
 ---
 
 ## Overview

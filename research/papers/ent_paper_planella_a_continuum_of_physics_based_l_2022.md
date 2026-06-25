@@ -49,41 +49,6 @@ sources:
   url: https://arxiv.org/abs/2203.16091
   date: '2022'
   accessed_at: '2026-06-25'
-related_entities:
-- id: proposed_dfn_model
-  relationship: proposes
-  description:
-    en: The Doyle-Fuller-Newman (DFN) model is derived and critically discussed as
-      a central member of the model hierarchy.
-    zh: Doyle-Fuller-Newman（DFN）模型作为模型层级中的核心成员被推导并批判性讨论。
-    ko: Doyle-Fuller-Newman(DFN) 모델은 모델 계층의 핵심 구성원으로서 유도되고 비판적으로 논의되었다.
-- id: proposed_single_particle_model
-  relationship: proposes
-  description:
-    en: The Single Particle Model (SPM) is presented as the most reduced model in
-      the continuum, obtained through systematic simplification.
-    zh: 单粒子模型（SPM）被呈现为连续体中经过系统简化得到的最简化模型。
-    ko: 단일 입자 모델(SPM)은 체계적인 단순화를 통해 얻어진 연속체에서 가장 단순화된 모델로 제시되었다.
-- id: proposed_spme_model
-  relationship: proposes
-  description:
-    en: The Single Particle Model with electrolyte (SPMe) is derived as an intermediate
-      fidelity model retaining electrolyte dynamics.
-    zh: 含电解质的单粒子模型（SPMe）被推导为保留电解质动力学的中间保真度模型。
-    ko: 전해질을 포함한 단일 입자 모델(SPMe)은 전해질 역학을 유지하는 중간 충실도 모델로 유도되었다.
-- id: proposed_porous_electrode_theory
-  relationship: uses
-  description:
-    en: The reviewed models are grounded in porous electrode theory.
-    zh: 所综述的模型均基于多孔电极理论。
-    ko: 검토된 모델들은 다공성 전극 이론에 기반하고 있다.
-- id: proposed_thermal_electrochemical_model
-  relationship: proposes
-  description:
-    en: Coupled thermal-electrochemical model extensions for large-format cells are
-      surveyed.
-    zh: 针对大规格电池的热-电化学耦合模型扩展被概述。
-    ko: 대형 전지를 위한 열-전기화학 결합 모델 확장이 개괄되었다.
 ---
 
 ## Overview
