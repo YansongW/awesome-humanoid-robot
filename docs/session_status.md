@@ -40,6 +40,8 @@ The most recent step was a **systematic knowledge-taxonomy study** that replaced
 - [x] **Created first foundational workstream YAMLs: `convex_optimization`, `rigid_body_dynamics`, `electrochemistry`, `stochastic_calculus`**
 - [x] **Backfilled `## 抽象` sections into all 56 existing non-foundational entries under `research/`**
 - [x] **Created 14 additional foundational entity files (Lagrangian, Newton-Euler, constraint qualification, active-set, interior-point, Fick's law, Nernst-Planck, Bayesian filtering, score matching, DDPM reverse, flow matching, continuity equation, chain rule, backpropagation)**
+- [x] **Ran AgentSwarm on 4 foundational workstreams (convex_optimization, rigid_body_dynamics, electrochemistry, stochastic_calculus) using DeepSeek API**
+- [x] **Added `proposes`, `evaluates_on`, `extends` relationship types to schema to support LLM-extracted paper/method links**
 
 ---
 
@@ -83,10 +85,11 @@ We are now executing **Phase 0–2 of the approved plan**:
 
 ## Immediate Next Tasks (Pending)
 
-1. **Git sync**: review changes, split into focused commits, push to `origin/main`.
-2. **Update `docs/ai4sci/literature_review_pipeline.md`** to describe multi-agent workstream execution.
-3. **Execute next AgentSwarm batch** against the new foundational and leaf workstreams.
-4. **Continue filling foundational-discipline branches in `WORKSTREAM_TREE.md`**. 
+1. **Git sync**: push the session_status update.
+2. **Tune foundational workstream configs** so electrochemistry and stochastic_calculus can discover relevant papers (currently 0 accepted because of high relevance threshold / generic queries).
+3. **Review staged outputs** from convex_optimization and rigid_body_dynamics workstreams and promote valid entries/relationships to `research/` and `data/relationships/`.
+4. **Update `docs/ai4sci/literature_review_pipeline.md`** to describe multi-agent workstream execution.
+5. **Continue filling foundational-discipline branches in `WORKSTREAM_TREE.md`**. 
 
 ---
 
