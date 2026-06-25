@@ -1,0 +1,42 @@
+name: convex_optimization
+description: |
+  Survey convex optimization fundamentals that underpin humanoid robot whole-body control,
+  model predictive control, trajectory planning, and learning: quadratic programs, duality,
+  KKT conditions, Lagrangian, active-set and interior-point methods, semidefinite programming,
+  and their numerical linear-algebra substrates.
+seed_queries:
+  - "convex optimization whole body control humanoid robot"
+  - "quadratic programming robotics KKT active set interior point"
+  - "Lagrangian duality constrained optimization robotics"
+  - "semidefinite programming robot control trajectory optimization"
+  - "numerical optimization Nocedal Wright Boyd Vandenberghe"
+paper_ids: []
+target_entity_types:
+  - method
+  - algorithm
+  - formalism
+  - equation
+  - theorem
+  - principle
+  - operator
+  - variable
+  - constant
+  - concept
+  - foundation
+target_domains:
+  - 00_foundations
+relationship_patterns:
+  - formalizes
+  - derived_from
+  - uses_theorem
+  - has_prerequisite
+  - uses
+  - includes
+  - solves
+  - instantiates
+  - builds_on
+relevance_threshold: high
+max_papers: 20
+sources:
+  - arxiv
+  - semantic_scholar

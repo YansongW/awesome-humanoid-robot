@@ -1,0 +1,42 @@
+name: stochastic_calculus
+description: |
+  Survey stochastic calculus and measure-theoretic probability that underpin diffusion models,
+  flow matching, and stochastic policies in robot learning: Brownian motion, Itô calculus,
+  stochastic differential equations, score matching, Langevin dynamics, and sampling algorithms.
+seed_queries:
+  - "stochastic calculus diffusion model robotics"
+  - "Ito calculus stochastic differential equation score matching"
+  - "Langevin dynamics robot policy learning"
+  - "DDPM reverse SDE score function robotics manipulation"
+  - "flow matching probability ODE robot action generation"
+paper_ids: []
+target_entity_types:
+  - method
+  - algorithm
+  - formalism
+  - equation
+  - theorem
+  - principle
+  - operator
+  - variable
+  - constant
+  - concept
+  - foundation
+target_domains:
+  - 00_foundations
+relationship_patterns:
+  - formalizes
+  - derived_from
+  - uses_theorem
+  - has_prerequisite
+  - uses
+  - includes
+  - solves
+  - estimates
+  - instantiates
+  - builds_on
+relevance_threshold: high
+max_papers: 20
+sources:
+  - arxiv
+  - semantic_scholar

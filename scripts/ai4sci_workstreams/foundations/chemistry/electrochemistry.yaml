@@ -1,0 +1,41 @@
+name: electrochemistry
+description: |
+  Survey electrochemical kinetics and transport phenomena that underpin humanoid robot
+  battery systems: Butler-Volmer equation, Nernst equation, Fick's laws, Nernst-Planck
+  equation, solid-electrolyte interphase, equivalent circuit models, and battery state estimation.
+seed_queries:
+  - "Butler Volmer equation lithium ion battery kinetics"
+  - "Nernst Planck equation electrolyte transport battery"
+  - "solid electrolyte interphase lithium ion battery model"
+  - "electrochemical impedance spectroscopy humanoid robot battery"
+  - "battery state estimation Kalman filter electrochemistry"
+paper_ids: []
+target_entity_types:
+  - method
+  - algorithm
+  - formalism
+  - equation
+  - theorem
+  - principle
+  - operator
+  - variable
+  - constant
+  - concept
+  - foundation
+target_domains:
+  - 00_foundations
+relationship_patterns:
+  - formalizes
+  - derived_from
+  - uses_theorem
+  - has_prerequisite
+  - uses
+  - includes
+  - approximates
+  - instantiates
+  - builds_on
+relevance_threshold: high
+max_papers: 20
+sources:
+  - arxiv
+  - semantic_scholar

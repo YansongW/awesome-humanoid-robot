@@ -240,7 +240,8 @@
 ### 17.1 数学 / Mathematics
 - [ ] `foundations/mathematics/linear_algebra.yaml`
 - [ ] `foundations/mathematics/multivariable_calculus.yaml`
-- [ ] `foundations/mathematics/convex_optimization.yaml`
+- [x] `foundations/mathematics/convex_optimization.yaml`
+- [x] `foundations/mathematics/stochastic_calculus.yaml`
 - [ ] `foundations/mathematics/probability_statistics.yaml`
 - [ ] `foundations/mathematics/differential_geometry.yaml`
 - [ ] `foundations/mathematics/numerical_analysis.yaml`
@@ -248,13 +249,14 @@
 - [ ] `foundations/mathematics/optimal_control.yaml`
 
 ### 17.2 物理 / Physics
-- [ ] `foundations/physics/rigid_body_dynamics.yaml`
+- [x] `foundations/physics/rigid_body_dynamics.yaml`
 - [ ] `foundations/physics/contact_mechanics.yaml`
 - [ ] `foundations/physics/electromagnetism.yaml`
 - [ ] `foundations/physics/thermodynamics.yaml`
 - [ ] `foundations/physics/materials_mechanics.yaml`
 
 ### 17.3 化学 / Chemistry
+- [x] `foundations/chemistry/electrochemistry.yaml`
 - [ ] `foundations/chemistry/battery_electrochemistry.yaml`
 - [ ] `foundations/chemistry/polymer_materials.yaml`
 - [ ] `foundations/chemistry/rare_earth_magnet_chemistry.yaml`

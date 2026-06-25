@@ -1,0 +1,40 @@
+name: rigid_body_dynamics
+description: |
+  Survey rigid-body dynamics, contact mechanics, and kinematics that underpin humanoid
+  locomotion, manipulation, and whole-body control: Newton-Euler equations, floating-base
+  dynamics, Lagrangian mechanics, impulse-momentum, friction models, and multi-body simulation.
+seed_queries:
+  - "rigid body dynamics humanoid robot floating base Newton Euler"
+  - "Lagrangian dynamics humanoid robot contact constraints"
+  - "friction cone Coulomb contact humanoid locomotion"
+  - "impulse momentum control humanoid falls pushes"
+  - "multi body dynamics simulation humanoid robotics"
+paper_ids: []
+target_entity_types:
+  - method
+  - algorithm
+  - formalism
+  - equation
+  - theorem
+  - principle
+  - operator
+  - variable
+  - constant
+  - concept
+  - foundation
+target_domains:
+  - 00_foundations
+relationship_patterns:
+  - formalizes
+  - derived_from
+  - uses_theorem
+  - has_prerequisite
+  - uses
+  - includes
+  - instantiates
+  - builds_on
+relevance_threshold: high
+max_papers: 20
+sources:
+  - arxiv
+  - semantic_scholar
