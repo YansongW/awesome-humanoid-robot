@@ -37,6 +37,9 @@ The most recent step was a **systematic knowledge-taxonomy study** that replaced
 - [x] **Added `00_foundations` domain and `foundations` layer to support cross-cutting foundational knowledge entities**
 - [x] **Required every concrete entry file to begin with a `## 生活实例 + 自然语言阐述逻辑` section**
 - [x] **Created entry template `docs/ai4sci/entry_template.md` and 5 foundational example entries under `research/foundations/` (KKT, Butler-Volmer, self-attention, standard QP, gradient descent)**
+- [x] **Created first foundational workstream YAMLs: `convex_optimization`, `rigid_body_dynamics`, `electrochemistry`, `stochastic_calculus`**
+- [x] **Backfilled `## 生活实例 + 自然语言阐述逻辑` sections into all 56 existing non-foundational entries under `research/`**
+- [x] **Created 14 additional foundational entity files (Lagrangian, Newton-Euler, constraint qualification, active-set, interior-point, Fick's law, Nernst-Planck, Bayesian filtering, score matching, DDPM reverse, flow matching, continuity equation, chain rule, backpropagation)**
 
 ---
 
@@ -81,12 +84,9 @@ We are now executing **Phase 0–2 of the approved plan**:
 ## Immediate Next Tasks (Pending)
 
 1. **Git sync**: review changes, split into focused commits, push to `origin/main`.
-2. **Backfill `## 生活实例 + 自然语言阐述逻辑` sections** into existing entries in `research/` as they are reviewed.
-3. **Create more foundational entities** along the WBC, battery, and VLA chains (e.g., `ent_lagrangian.md`, `ent_newton_euler.md`, `ent_fick_law.md`, `ent_score_matching.md`).
-4. **Create first foundational workstream YAMLs**: `convex_optimization.yaml`, `rigid_body_dynamics.yaml`, `electrochemistry.yaml`, `stochastic_calculus.yaml`.
-5. **Update `docs/ai4sci/literature_review_pipeline.md`** to describe multi-agent workstream execution.
-6. **Execute next AgentSwarm batch** against the new leaf workstreams.
-7. **Fill the foundational-discipline branches in `WORKSTREAM_TREE.md`** and mark completed items as `[x]`.
+2. **Update `docs/ai4sci/literature_review_pipeline.md`** to describe multi-agent workstream execution.
+3. **Execute next AgentSwarm batch** against the new foundational and leaf workstreams.
+4. **Continue filling foundational-discipline branches in `WORKSTREAM_TREE.md`**. 
 
 ---
 
