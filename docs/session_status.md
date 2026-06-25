@@ -46,6 +46,10 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 - [x] Updated README workstream count to 29.
 - [x] Restarted daemon (task `bash-jm85j3bv`) with 60s interval to run new workstreams.
 - [x] Recreated hourly cron reminder (`d4d0c5b1`) to monitor new daemon.
+- [x] Daemon completed all new workstreams; stopped due to idle.
+- [x] Cleaned and promoted new outputs: **precision_machining** 1 entry, **functional_safety** 1 entry, **quality_control** 1 entry, **assistive_rehabilitation** 1 entry, **safety_standards** 2 entries. `critical_minerals` produced 0 usable entries (exhausted).
+- [x] Removed accidentally committed temporary `paper.*` files and updated `.gitignore`.
+- [x] Final stats: **118 entries / 58 relationships / 29 workstreams**, validation passing.
 
 ### In Progress
 
@@ -64,7 +68,7 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 
 | Task ID | Command | Status |
 |---------|---------|--------|
-| `bash-jm85j3bv` | Workstream daemon loop 60s interval (`ai4sci_run_next_workstream.py`) | running |
+| `bash-jm85j3bv` | Workstream daemon loop 60s interval (`ai4sci_run_next_workstream.py`) | completed |
 | `bash-qhu214g1` | Previous daemon loop | completed |
 | `b1753c79` | Hourly cron reminder to check `TaskOutput` | active |
 
