@@ -494,6 +494,6 @@ VLA training (process)
 ## 下一步建议
 
 - [ ] 从链路 1 开始，真正创建一批实体文件（如 `ent_wbc_hierarchical_qp.md`、`ent_kkt_conditions.md`、`ent_newton_euler.md`）。
-- [ ] 每个实体文件开头必须包含 `## 生活实例 + 自然语言阐述逻辑` 小节。
+- [ ] 每个实体文件开头必须包含 `## 抽象` 小节。
 - [ ] 创建对应的基础学科工作流 YAML：`convex_optimization.yaml`、`rigid_body_dynamics.yaml`、`electrochemistry.yaml`、`stochastic_calculus.yaml`。
 - [ ] 在 `WORKSTREAM_TREE.md` 中把这些节点标记为 `[x]`，并标注它们支撑哪些工程领域。

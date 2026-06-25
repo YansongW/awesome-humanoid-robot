@@ -84,7 +84,7 @@ related_entities:
 
 # World Action Models: The Next Frontier in Embodied AI
 
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：它就像下棋高手在落子前先在脑中推演几步后的局面——不是只看当前棋盘，而是预测未来变化再决定动作。
 

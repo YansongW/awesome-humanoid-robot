@@ -95,7 +95,7 @@ related_entities:
 
 # Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines
 
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：它就像一份报告指出：自动驾驶进步的关键不再是造更炫的车，而是要有更好的地图、更真实的测试场和源源不断的驾驶数据。
 

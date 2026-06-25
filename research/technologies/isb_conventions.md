@@ -45,7 +45,7 @@ sources:
 
 # ISB Conventions for Joint Coordinate Systems
 
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：它就像地理学家统一使用的经纬度坐标系——无论哪张地图，只要用同样的坐标定义，大家就能直接比较位置、距离和方向。
 

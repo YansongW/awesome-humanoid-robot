@@ -60,7 +60,7 @@ sources:
 
 # Lithium-Ion Battery System for Humanoid Robots
 
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：它就像电动滑板车或无人机里那块高能量密度的电池——要轻巧、要能大功率放电，但充满一次只能支撑机器人活动两三个小时。
 

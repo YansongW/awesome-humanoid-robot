@@ -307,12 +307,12 @@ related_entities:
 Long-form narrative content goes here...
 ```
 
-### 5.3 Required First Section: Life Example + Natural Language Explanation
+### 5.3 Required First Section: 抽象（Abstraction / Intuition）
 
 Every concrete entry file (especially `equation`, `formalism`, `theorem`, `principle`, `method`, `algorithm`, `operator`, and `concept`) must begin with a section titled:
 
 ```markdown
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 ```
 
 This section must:
@@ -324,7 +324,7 @@ This section must:
 Example:
 
 ```markdown
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：想象你在一个商场里想找到离出口最近的位置，但被告知“不能走进商店内部”（不等式约束）且“必须站在过道正中线上”（等式约束）。KKT 条件就是一套判断标准：如果你站的位置最优，那么要么你不在边界上（约束不影响你），要么边界上的“推力”刚好把你顶在最优位置。
 >

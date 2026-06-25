@@ -96,7 +96,7 @@ related_entities:
 
 # Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm
 
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：它就像为汽车建立的油耗模型——不是只看速度，而是综合考虑发动机损耗、路况、上下坡和空调负载，预测不同驾驶方式会消耗多少油。
 

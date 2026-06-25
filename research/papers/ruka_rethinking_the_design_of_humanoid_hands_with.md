@@ -123,7 +123,7 @@ related_entities:
 
 # RUKA: Rethinking the Design of Humanoid Hands with Learning
 
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：它就像一个创客用 3D 打印零件和普通舵机拼出一只仿生手，然后戴上数据手套做一遍动作，让这只手通过观察“学会”跟着做。
 

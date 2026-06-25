@@ -68,7 +68,7 @@ related_entities:
 
 # OpenVLA: An Open-Source Vision-Language-Action Model
 
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：它就像一本公开的“机器人操作教科书”——免费开放，里面收录了近百万条真实机器人操作示范，供任何人下载并在自己的机器人上微调使用。
 

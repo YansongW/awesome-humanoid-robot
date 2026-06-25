@@ -57,7 +57,7 @@ sources:
 
 # Aluminum-Magnesium Alloy for Humanoid Robot Lightweight Structure
 
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：它就像高性能自行车或无人机框架使用的铝合金/镁合金——在保持足够强度的前提下尽量减重，让运动员或飞行器更快、更灵活。
 

@@ -72,7 +72,7 @@ related_entities:
 
 # Humanoid Foundation Model Benchmark
 
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：它就像一份公开的“AI 模型高考排行榜”——从走路、用手、语言理解到仿真到现实迁移等多个科目，给人形机器人用的大模型打分排名。
 

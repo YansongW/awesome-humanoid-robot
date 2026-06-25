@@ -81,7 +81,7 @@ related_entities:
 
 # RoboOmni: Proactive Robot Manipulation in Omni-modal Context
 
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：它就像一位能听懂你语气、观察你手势、还能注意到背景音的家政助手——不需要你一字一句打字，就能主动明白你想让它做什么。
 

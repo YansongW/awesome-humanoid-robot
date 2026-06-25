@@ -35,10 +35,10 @@ The most recent step was a **systematic knowledge-taxonomy study** that replaced
 - [x] **Refined knowledge-chain granularity: equations, operators, variables, constants, algorithms, and approximations are now explicit nodes**
 - [x] **Extended information model again: added `equation`, `operator`, `variable`, `constant`, `algorithm`, `approximation` entity types and `uses`, `includes`, `solves`, `estimates`, `minimizes`, `approximates` relationships**
 - [x] **Added `00_foundations` domain and `foundations` layer to support cross-cutting foundational knowledge entities**
-- [x] **Required every concrete entry file to begin with a `## 生活实例 + 自然语言阐述逻辑` section**
+- [x] **Required every concrete entry file to begin with a `## 抽象` section**
 - [x] **Created entry template `docs/ai4sci/entry_template.md` and 5 foundational example entries under `research/foundations/` (KKT, Butler-Volmer, self-attention, standard QP, gradient descent)**
 - [x] **Created first foundational workstream YAMLs: `convex_optimization`, `rigid_body_dynamics`, `electrochemistry`, `stochastic_calculus`**
-- [x] **Backfilled `## 生活实例 + 自然语言阐述逻辑` sections into all 56 existing non-foundational entries under `research/`**
+- [x] **Backfilled `## 抽象` sections into all 56 existing non-foundational entries under `research/`**
 - [x] **Created 14 additional foundational entity files (Lagrangian, Newton-Euler, constraint qualification, active-set, interior-point, Fick's law, Nernst-Planck, Bayesian filtering, score matching, DDPM reverse, flow matching, continuity equation, chain rule, backpropagation)**
 
 ---

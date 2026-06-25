@@ -61,7 +61,7 @@ related_entities:
 
 # Bank of America Institute — Humanoid Robots 101
 
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：它就像给投资者写的《人形机器人入门手册》——拆解了机器人由哪些“器官”组成、每台成本大概多少、未来几十年可能怎么普及。
 

@@ -54,7 +54,7 @@ sources:
 
 # The Reality Gap in Robotics: Challenges, Solutions, and Best Practices
 
-## 生活实例 + 自然语言阐述逻辑
+## 抽象
 
 > **生活实例**：它就像飞行模拟器与真实驾驶之间的差距——模拟里你能完美降落，但真机上风切变、仪表延迟、轮胎摩擦都会让同样操作出问题。
 
