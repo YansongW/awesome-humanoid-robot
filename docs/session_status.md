@@ -2,7 +2,7 @@
 
 > **Project**: awesome-humanoid-robot  
 > **Goal**: Build a knowledge base for going from 0 to 1 on humanoid robot mass production and industrial application.  
-> **Current Phase**: Workstream Taxonomy & Documentation Refresh — systematic 0→1 knowledge tree defined; docs and Git sync in progress.
+> **Current Phase**: Knowledge Graph Granularity & Foundational Depth — moving from coarse macro-to-micro chains to equation/operator/algorithm-level nodes; docs and Git sync in progress.
 
 ---
 
@@ -32,6 +32,8 @@ The most recent step was a **systematic knowledge-taxonomy study** that replaced
 - [x] **Extended information model: added foundational entity types (`concept`, `method`, `formalism`, `theorem`, `principle`, `foundation`) and theoretical-depth relationships (`formalizes`, `uses_theorem`, `derived_from`, `instantiates`, `builds_on`, `has_prerequisite`) to support macro → micro knowledge chains**
 - [x] **Extended workstream taxonomy to four dimensions: stage × domain × knowledge type × theoretical depth, with foundational discipline branches in `WORKSTREAM_TREE.md`**
 - [x] **Added knowledge-chain examples: `docs/ai4sci/knowledge_chain_examples.md` (WBC, Li-ion battery, VLA)**
+- [x] **Refined knowledge-chain granularity: equations, operators, variables, constants, algorithms, and approximations are now explicit nodes**
+- [x] **Extended information model again: added `equation`, `operator`, `variable`, `constant`, `algorithm`, `approximation` entity types and `uses`, `includes`, `solves`, `estimates`, `minimizes`, `approximates` relationships**
 
 ---
 
@@ -75,15 +77,13 @@ We are now executing **Phase 0–2 of the approved plan**:
 
 ## Immediate Next Tasks (Pending)
 
-1. **Finish Phase 0** ✅ — `workstream_roadmap.md` and `WORKSTREAM_TREE.md` created.
-2. **Update READMEs** to reflect the new workstream taxonomy and current phase.
-3. **Update `docs/ai4sci/literature_review_pipeline.md`** to describe multi-agent workstream execution.
-4. **Git sync**: review changes, split into focused commits, push to `origin/main`.
-5. **Refactor workstream directory tree** and migrate existing four configs.
-6. **Update `scripts/ai4sci_orchestrator.py`** to recursively discover YAML configs in subdirectories.
-7. **Create 5–8 high-priority leaf workstream YAMLs** (e.g., WBC, MPC, actuator design, force/torque sensors, rare-earth magnets, simulation platforms, ISO 13482, AI-to-hardware requirements).
-8. **Run validation** (`validate_entries.py --include-workstreams`, `orchestrator.py --dry-run`).
-9. **Execute next AgentSwarm batch** against the new leaf workstreams.
+1. **Validate schemas** after adding fine-grained entity/relationship types (`validate_entries.py --include-workstreams`).
+2. **Git sync**: review changes, split into focused commits, push to `origin/main`.
+3. **Create concrete foundational entities** starting with the WBC chain (e.g., `ent_wbc_hierarchical_qp.md`, `ent_kkt_conditions.md`, `ent_newton_euler.md`).
+4. **Create first foundational workstream YAMLs**: `convex_optimization.yaml`, `rigid_body_dynamics.yaml`, `electrochemistry.yaml`, `stochastic_calculus.yaml`.
+5. **Update `docs/ai4sci/literature_review_pipeline.md`** to describe multi-agent workstream execution.
+6. **Execute next AgentSwarm batch** against the new leaf workstreams.
+7. **Fill the foundational-discipline branches in `WORKSTREAM_TREE.md`** and mark completed items as `[x]`.
 
 ---
 

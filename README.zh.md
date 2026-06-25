@@ -66,6 +66,7 @@
 - **关系作为一等公民**：跨域链接是显式的、带类型的、可验证的。
 - **多语言内建**：名称、摘要和描述以语言映射形式存储。
 - **版本化 schema**：条目和关系 schema 均可版本化、可扩展。
+- **细粒度理论深度**：方程、算子、变量、常数、算法、近似方法都可以是显式节点，而不只是宽泛概念。
 - **YAML frontmatter + Markdown**：条目兼顾人类可读与机器可读。
 
 详见 [`docs/architecture/information_model.md`](docs/architecture/information_model.md) 和 [`data/schema/v1/`](data/schema/v1/)。
@@ -93,7 +94,7 @@
 - **知识类型**：论文、数据集、基准、技术、组件、公司、报告、标准
 - **理论深度**：基础学科 → 定理/原理 → 形式化 → 方法/算法 → 系统实现
 
-这让“全身控制”这样的高层方法可以一路下钻到 QP 优化形式、KKT 条件、拉格朗日乘子，直至多元微积分与线性代数。
+这让“全身控制”这样的高层方法可以一路下钻到具体的 QP 目标函数与约束、KKT 驻点/互补方程、梯度与 Hessian 算子、active-set 与 interior-point 算法，直至多元微积分、线性代数与凸分析。
 
 完整谱系见 [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md)，可执行的长期 TODO 见 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)，具体知识链路示例见 [`docs/ai4sci/knowledge_chain_examples.md`](docs/ai4sci/knowledge_chain_examples.md)。
 

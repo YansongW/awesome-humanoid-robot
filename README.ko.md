@@ -66,6 +66,7 @@
 - **관계를 일급 객체로**: 교차 도메인 링크는 명시적이고, 유형화되며, 검증 가능합니다.
 - **다국어 기본 설계**: 이름, 요약, 설명은 언어 맵으로 저장됩니다.
 - **버전 관리 schema**: 항목 및 관계 schema는 버전 관리 및 확장이 가능합니다.
+- **세분화된 이론적 깊이**: 방정식, 연산자, 변수, 상수, 알고리즘, 근사 방법이 모두 명시적 노드가 될 수 있습니다.
 - **YAML frontmatter + Markdown**: 항목은 사람이 읽을 수 있고 기계가 읽을 수 있습니다.
 
 전체 사양은 [`docs/architecture/information_model.md`](docs/architecture/information_model.md) 및 [`data/schema/v1/`](data/schema/v1/)를 참조하세요.
@@ -93,7 +94,7 @@
 - **지식 유형**: Papers, Datasets, Benchmarks, Technologies, Components, Companies, Reports, Standards
 - **이론적 깊이**: Foundation → Principle/Theorem → Formalism → Method/Algorithm → System/Implementation
 
-이를 통해 WBC와 같은 고위층 개념을 QP formulation, KKT conditions, Lagrange multipliers, 그리고 궁극적으로 다변수 미적분학과 선형대수학까지 추적할 수 있습니다.
+이를 통해 WBC와 같은 고위층 개념을 QP 목적 함수와 제약조건, KKT stationarity/complementarity 방정식, gradient 및 Hessian 연산자, active-set 및 interior-point 알고리즘까지 추적하고, 궁극적으로 다변수 미적분학, 선형대수학, 볼록 분석까지 이어질 수 있습니다.
 
 전체 택스노미는 [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md)에서, 실행 가능한 장기 TODO는 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)에서, 구체적인 지식 체인 예시는 [`docs/ai4sci/knowledge_chain_examples.md`](docs/ai4sci/knowledge_chain_examples.md)에서 확인하세요.
 

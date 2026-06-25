@@ -64,6 +64,7 @@ Key architectural decisions:
 - **Relationship as first-class citizen**: cross-domain links are explicit, typed, and verifiable.
 - **Multi-lingual by design**: names, summaries, and descriptions are stored as language maps.
 - **Versioned schemas**: entry and relationship schemas are versioned and extensible.
+- **Fine-grained theoretical depth**: equations, operators, variables, constants, algorithms, and approximations can be explicit nodes, not just broad concepts.
 - **YAML frontmatter + Markdown**: entries are human-readable and machine-readable.
 
 See [`docs/architecture/information_model.md`](docs/architecture/information_model.md) and [`data/schema/v1/`](data/schema/v1/) for the full specification.
@@ -91,7 +92,7 @@ The taxonomy spans four dimensions:
 - **Knowledge types**: Papers, Datasets, Benchmarks, Technologies, Components, Companies, Reports, Standards
 - **Theoretical depth**: Foundation → Principle/Theorem → Formalism → Method/Algorithm → System/Implementation
 
-This lets a high-level concept like WBC be traced down to QP formulation, KKT conditions, Lagrange multipliers, and ultimately multivariable calculus and linear algebra.
+This lets a high-level concept like WBC be traced down to the exact QP objective and constraints, individual KKT stationarity/complementarity equations, the gradient and Hessian operators, active-set and interior-point algorithms, and ultimately to multivariable calculus, linear algebra, and convex analysis.
 
 See [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md) for the full taxonomy, [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md) for the executable TODO list, and [`docs/ai4sci/knowledge_chain_examples.md`](docs/ai4sci/knowledge_chain_examples.md) for concrete macro-to-micro chains.
 
