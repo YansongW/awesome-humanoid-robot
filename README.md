@@ -6,7 +6,7 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-91-green" alt="91 entries" />
+  <img src="https://img.shields.io/badge/entries-98-green" alt="98 entries" />
   <img src="https://img.shields.io/badge/relationships-58-brightgreen" alt="58 relationships" />
   <img src="https://img.shields.io/badge/workstreams-23-orange" alt="23 workstreams" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
@@ -136,7 +136,7 @@ For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4
 
 | Metric | Count |
 |--------|-------|
-| Production entries | 91 |
+| Production entries | 98 |
 | Relationships | 58 |
 | Workstream configs | 23 |
 | Ontology domains | 12 + `00_foundations` |
