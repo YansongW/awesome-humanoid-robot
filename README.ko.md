@@ -82,34 +82,52 @@
 4. **그래프 중심 조직**: 항목과 관계는 지식 그래프를 형성하며, 플랫 리스트가 아닙니다.
 5. **인간 검토**: AI가 수집과 종합을 가속화하지만, 모든 고위험 공개 주장은 인간 검토를 거침.
 
+### 워크스트림 택스노미
+
+콘텐츠는 **워크스트림**을 통해 채워집니다. 각 워크스트림은 0→1 지식 트리에 매핑된 집중적이고 병렬화 가능한 AI4Sci 연구 작업이며, `scripts/ai4sci_workstreams/` 아래의 YAML 설정 파일로 정의됩니다.
+
+택스노미는 세 가지 차원으로 구성됩니다:
+
+- **제품 개발 단계**: Definition → Design → Verification Planning → MVP → Testing → EVT → DVT → PVT → Mass Production / Ramp
+- **공학 분야**: Hardware, Software & AI, Data Systems, Infra/Cloud/Fleet, Embedded, Mechanical Structure, Simulation, Supply Chain & Manufacturing, Quality & Reliability, Safety & Certification, Applications & Markets, Policy & Ethics
+- **지식 유형**: Papers, Datasets, Benchmarks, Technologies, Components, Companies, Reports, Standards
+
+전체 택스노미는 [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md)에서, 실행 가능한 장기 TODO는 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)에서 확인하세요.
+
 자세한 내용은 [`docs/ai4sci/`](docs/ai4sci/)를 참조하세요.
 
 ---
 
 ## 로드맵 및 현재 작업
 
-### 0 단계: 정보 아키텍처 ✅ 진행 중
+### 0 단계: 정보 아키텍처 ✅ 완료
 
-콘텐츠를 추가하기 전에 구조적 기반을 구축합니다.
+콘텐츠를 추가하기 전에 구조적 기반을 구축했습니다.
 
 - [x] 핵심 질문과 온톨로지 영역 정의
 - [x] 정보 모델 설계(엔티티, 관계, 계층, 역할)
 - [x] 항목 및 관계를 위한 JSON schema 생성
 - [x] 모델을 검증할 샘플 엔티티 및 관계 추가
 - [x] 검증 스크립트 추가
-- [ ] 첫 번째 샘플을 기반으로 모델 검증 및 정제
+- [x] 첫 번째 샘플을 기반으로 모델 검증 및 정제
 
-### 1 단계: 온톨로지 확장
+### 1 단계: 온톨로지 확장 ✅ 완료
 
-- [ ] 영역별 온톨로지 문서 완성(01–12)
-- [ ] 각 영역의 교차 도메인 관계 패턴 정의
-- [ ] 제어 어휘 및 확장 규칙 수립
+- [x] 영역별 온톨로지 문서 완성(01–12)
+- [x] 각 영역의 교차 도메인 관계 패턴 정의
+- [x] 제어 어휘 및 확장 규칙 수립
+- [x] 콘텐츠 채우기 전 온톨로지 문서 낶부 검토
 
-### 2 단계: 콘텐츠 채우기
+### 2 단계: 워크스트림 기반 콘텐츠 채우기 ✅ 진행 중
 
+콘텐츠는 이제 0→1 라이프사이클에 맞춘 병렬 워크스트림을 통해 추가됩니다:
+
+- [x] 첫 멀티 에이전트 워크스트림 배치 실행 (VLA, 기업, 원자재, 교차 도메인)
+- [ ] 워크스트림 설정을 라이프사이클 × 도메인 트리 구조로 재구성
+- [ ] 우선순위 리프 워크스트림 추가: 전신 제어, MPC, 액추에이터 모듈 설계, 힘/토크 센서, 희토류 자석, 시뮬레이션 플랫폼, 안전 표준
+- [x] 양산과 관련된 AI / 모델 콘텐츠 큐레이션(첫 배치: VLA 서베이 + 데이터셋/벤치마크/데이터 엔진)
 - [ ] 휨로봇 BOM / 부품 지도 구축
 - [ ] 회사 및 공급업체 생태계 매핑
-- [ ] 양산과 관련된 AI / 모델 콘텐츠 큐레이션
 - [ ] 원자재, 제조 공정 및 비용 요인 추적
 
 ### 3 단계: 검증 및 공개 릴리스
@@ -150,21 +168,27 @@ awesome-humanoid-robot/
 │   │   ├── 00_overview.md             # 산업 체인 온톨로지 지도 (영문)
 │   │   ├── 00_overview.zh.md          # 산업 체인 온톨로지 지도 (중국어 간체)
 │   │   ├── 00_overview.ko.md          # 산업 체인 온톨로지 지도 (한국어)
-│   │   ├── 01_raw_materials.md
+│   │   ├── 01_raw_materials.md        # 원자재 및 핵심 자원 (.zh.md 포함)
 │   │   ├── 02_components_supply_chain.md
 │   │   ├── 03_manufacturing_processes.md
 │   │   ├── 04_assembly_integration_testing.md
 │   │   ├── 05_mass_production.md
-│   │   ├── 06_applications_markets.md
+│   │   ├── 06_design_engineering.md
 │   │   ├── 07_ai_models_algorithms.md
-│   │   ├── 08_evaluation_benchmarks.md
-│   │   └── 09_regulations_ethics.md
+│   │   ├── 08_software_middleware.md
+│   │   ├── 09_data_datasets.md
+│   │   ├── 10_evaluation_benchmarks.md
+│   │   ├── 11_applications_markets.md
+│   │   ├── 12_policy_regulation_ethics.md
+│   │   └── session_status.md          # 현재 세션 상태 및 다음 작업
 │   ├── architecture/
 │   │   ├── 00_analysis_before_design.md
 │   │   └── information_model.md       # 공식 데이터 아키텍처
 │   └── ai4sci/
 │       ├── literature_review_pipeline.md
-│       └── verification_criteria.md
+│       ├── verification_criteria.md
+│       ├── workstream_roadmap.md      # 0→1 지식 택스노미
+│       └── WORKSTREAM_TREE.md         # 장기 워크스트림 TODO
 ├── research/
 │   ├── materials/                     # 원자재 항목
 │   ├── components/                    # 부품 항목
@@ -177,6 +201,14 @@ awesome-humanoid-robot/
 │   │   └── relationship_schema.json
 │   └── relationships/                 # 독립 관계 파일
 └── scripts/                           # AI4Sci 보조 스크립트
+    ├── ai4sci_lib/                    # 재사용 가능한 파이프라인 단계
+    ├── ai4sci_workstreams/            # 워크스트림 YAML 설정
+    ├── ai4sci_paper_pipeline.py
+    ├── ai4sci_review.py
+    ├── ai4sci_batch_pipeline.py
+    ├── ai4sci_orchestrator.py
+    ├── ai4sci_status.py
+    └── validate_entries.py
 ```
 
 ---

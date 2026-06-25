@@ -80,34 +80,52 @@ This project is built with AI-assisted research workflows:
 4. **Graph-driven organization** — entries and relationships form a knowledge graph, not a flat list.
 5. **Human review** — AI accelerates collection and synthesis, but all high-stakes claims are reviewed before public release.
 
+### Workstream Taxonomy
+
+Content is populated through **workstreams** — focused, parallel AI4Sci research tasks mapped to the full 0→1 knowledge tree. Each workstream is a YAML config in `scripts/ai4sci_workstreams/` that defines seed queries, target domains, entity types, and relationship patterns.
+
+The taxonomy spans three dimensions:
+
+- **Product lifecycle**: Definition → Design → Verification Planning → MVP → Testing → EVT → DVT → PVT → Mass Production / Ramp
+- **Engineering domains**: Hardware, Software & AI, Data Systems, Infra/Cloud/Fleet, Embedded, Mechanical Structure, Simulation, Supply Chain & Manufacturing, Quality & Reliability, Safety & Certification, Applications & Markets, Policy & Ethics
+- **Knowledge types**: Papers, Datasets, Benchmarks, Technologies, Components, Companies, Reports, Standards
+
+See [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md) for the full taxonomy and [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md) for the executable TODO list.
+
 See [`docs/ai4sci/`](docs/ai4sci/) for the detailed research pipeline and verification criteria.
 
 ---
 
 ## Roadmap & Current Tasks
 
-### Phase 0: Information Architecture ✅ In Progress
+### Phase 0: Information Architecture ✅ Complete
 
-Before adding content, we are building the structural foundation:
+Before adding content, we built the structural foundation:
 
 - [x] Define the central question and ontology domains
 - [x] Design the information model (entities, relationships, layers, roles)
 - [x] Create JSON schemas for entries and relationships
 - [x] Add sample entities and relationships to validate the model
 - [x] Add validation scripts
-- [ ] Validate and refine the model based on first samples
+- [x] Validate and refine the model based on first samples
 
-### Phase 1: Ontology Expansion
+### Phase 1: Ontology Expansion ✅ Complete
 
-- [ ] Complete per-domain ontology documents (01–12)
-- [ ] Define cross-domain relationship patterns for each domain
-- [ ] Establish controlled vocabularies and extension rules
+- [x] Complete per-domain ontology documents (01–12)
+- [x] Define cross-domain relationship patterns for each domain
+- [x] Establish controlled vocabularies and extension rules
+- [x] Internal review of ontology documents before content population
 
-### Phase 2: Content Population
+### Phase 2: Workstream-Driven Content Population ✅ In Progress
 
+Content is now added through parallel workstreams aligned with the 0→1 lifecycle:
+
+- [x] Run first multi-agent workstream batch (VLA, companies, raw materials, cross-domain)
+- [ ] Refactor workstream configs into the lifecycle × domain tree structure
+- [ ] Add high-priority leaf workstreams: whole-body control, MPC, actuator design, force/torque sensors, rare-earth magnets, simulation platforms, safety standards
+- [x] Curate AI/model content with production relevance (VLA survey + datasets/benchmarks/data engines)
 - [ ] Build the humanoid robot BOM / component map
 - [ ] Map the company and supplier ecosystem
-- [ ] Curate AI/model content with production relevance
 - [ ] Track raw materials, manufacturing processes, and cost drivers
 
 ### Phase 3: Verification & Public Release
@@ -148,24 +166,32 @@ awesome-humanoid-robot/
 │   │   ├── 00_overview.md             # Industry-chain concept map
 │   │   ├── 00_overview.zh.md
 │   │   ├── 00_overview.ko.md
-│   │   ├── 01_raw_materials.md
+│   │   ├── 01_raw_materials.md        # + .zh.md
 │   │   ├── 02_components_supply_chain.md
 │   │   ├── 03_manufacturing_processes.md
 │   │   ├── 04_assembly_integration_testing.md
 │   │   ├── 05_mass_production.md
-│   │   ├── 06_applications_markets.md
+│   │   ├── 06_design_engineering.md
 │   │   ├── 07_ai_models_algorithms.md
-│   │   ├── 08_evaluation_benchmarks.md
-│   │   └── 09_regulations_ethics.md
+│   │   ├── 08_software_middleware.md
+│   │   ├── 09_data_datasets.md
+│   │   ├── 10_evaluation_benchmarks.md
+│   │   ├── 11_applications_markets.md
+│   │   ├── 12_policy_regulation_ethics.md
+│   │   └── session_status.md          # Current session status and next tasks
 │   ├── architecture/
 │   │   ├── 00_analysis_before_design.md
 │   │   └── information_model.md       # Formal data architecture
 │   └── ai4sci/
 │       ├── literature_review_pipeline.md
-│       └── verification_criteria.md
+│       ├── verification_criteria.md
+│       ├── workstream_roadmap.md      # 0→1 knowledge taxonomy
+│       └── WORKSTREAM_TREE.md         # Long-term workstream TODO
 ├── research/
-│   ├── papers/                        # Paper notes and summaries
+│   ├── materials/                     # Raw material entries
+│   ├── components/                    # Component entries
 │   ├── companies/                     # Company profiles and ecosystem maps
+│   ├── papers/                        # Paper notes and summaries
 │   └── datasets/                      # Dataset notes
 ├── data/
 │   ├── schema/v1/                     # JSON Schemas
@@ -173,6 +199,14 @@ awesome-humanoid-robot/
 │   │   └── relationship_schema.json
 │   └── relationships/                 # Standalone relationship files
 └── scripts/                           # AI4Sci helper scripts
+    ├── ai4sci_lib/                    # Reusable pipeline stages
+    ├── ai4sci_workstreams/            # Workstream YAML configs
+    ├── ai4sci_paper_pipeline.py
+    ├── ai4sci_review.py
+    ├── ai4sci_batch_pipeline.py
+    ├── ai4sci_orchestrator.py
+    ├── ai4sci_status.py
+    └── validate_entries.py
 ```
 
 ---

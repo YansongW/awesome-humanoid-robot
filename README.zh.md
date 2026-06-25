@@ -82,13 +82,25 @@
 4. **图驱动组织**：条目和关系构成知识图谱，而非扁平列表。
 5. **人工复核**：AI加速收集与综合，但所有高风险的公开论断都经过人工审核。
 
+### 工作流谱系
+
+内容通过**工作流**进行填充——每个工作流是一个聚焦的、可并行执行的 AI4Sci 调研任务，映射到完整的 0→1 知识树。每个工作流对应 `scripts/ai4sci_workstreams/` 下的一个 YAML 配置文件，定义种子查询、目标领域、实体类型和关系模式。
+
+知识谱系由三个维度张成：
+
+- **产品开发阶段**：定义 → 设计 → 校核规划 → MVP → 测试 → EVT → DVT → PVT → 量产/爬坡
+- **学科/领域**：硬件、软件与 AI、数据系统、Infra/云/车队、嵌入式、机械结构、仿真、供应链与制造、质量与可靠性、安全与认证、应用与市场、政策与伦理
+- **知识类型**：论文、数据集、基准、技术、组件、公司、报告、标准
+
+完整谱系见 [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md)，可执行的长期 TODO 见 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)。
+
 详细流程见 [`docs/ai4sci/`](docs/ai4sci/)。
 
 ---
 
 ## 路线图与当前任务
 
-### 第 0 阶段：信息架构 ✅ 进行中
+### 第 0 阶段：信息架构 ✅ 已完成
 
 在添加内容之前，我们先搭建结构基础：
 
@@ -97,19 +109,25 @@
 - [x] 创建条目与关系的 JSON schema
 - [x] 添加样本实体和关系以验证模型
 - [x] 添加验证脚本
-- [ ] 基于首批样本验证并 refine 模型
+- [x] 基于首批样本验证并精炼模型
 
-### 第 1 阶段：本体扩展
+### 第 1 阶段：本体扩展 ✅ 已完成
 
-- [ ] 完成各域本体文档（01–12）
-- [ ] 为每个域定义跨域关系模式
-- [ ] 确立受控词表与扩展规则
+- [x] 完成各域本体文档（01–12）
+- [x] 为每个域定义跨域关系模式
+- [x] 确立受控词表与扩展规则
+- [x] 内容填充前内部复核本体文档
 
-### 第 2 阶段：内容填充
+### 第 2 阶段：工作流驱动的内容填充 ✅ 进行中
 
+内容现在通过与 0→1 生命周期对齐的并行工作流来填充：
+
+- [x] 运行第一批多 Agent 工作流（VLA、公司、原材料、跨域关系）
+- [ ] 将工作流配置重构为“生命周期 × 领域”的树状结构
+- [ ] 新增高优先级叶子工作流：全身控制、MPC、关节模组设计、力/力矩传感器、稀土磁材、仿真平台、安全标准
+- [x] 整理与量产相关的 AI / 模型内容（首批：VLA 综述 + 数据集/基准/数据引擎）
 - [ ] 构建人形机器人 BOM / 零部件地图
 - [ ] 绘制公司与供应商生态
-- [ ] 整理与量产相关的 AI / 模型内容
 - [ ] 追踪原材料、制造工艺与成本驱动因素
 
 ### 第 3 阶段：验证与公开发布
@@ -150,21 +168,27 @@ awesome-humanoid-robot/
 │   │   ├── 00_overview.md             # 产业链本体地图（英文）
 │   │   ├── 00_overview.zh.md          # 产业链本体地图（简体中文）
 │   │   ├── 00_overview.ko.md          # 产业链本体地图（韩文）
-│   │   ├── 01_raw_materials.md
+│   │   ├── 01_raw_materials.md        # 原材料与关键资源（配 .zh.md）
 │   │   ├── 02_components_supply_chain.md
 │   │   ├── 03_manufacturing_processes.md
 │   │   ├── 04_assembly_integration_testing.md
 │   │   ├── 05_mass_production.md
-│   │   ├── 06_applications_markets.md
+│   │   ├── 06_design_engineering.md
 │   │   ├── 07_ai_models_algorithms.md
-│   │   ├── 08_evaluation_benchmarks.md
-│   │   └── 09_regulations_ethics.md
+│   │   ├── 08_software_middleware.md
+│   │   ├── 09_data_datasets.md
+│   │   ├── 10_evaluation_benchmarks.md
+│   │   ├── 11_applications_markets.md
+│   │   ├── 12_policy_regulation_ethics.md
+│   │   └── session_status.md          # 当前会话状态与下一步任务
 │   ├── architecture/
 │   │   ├── 00_analysis_before_design.md
 │   │   └── information_model.md       # 正式数据架构
 │   └── ai4sci/
 │       ├── literature_review_pipeline.md
-│       └── verification_criteria.md
+│       ├── verification_criteria.md
+│       ├── workstream_roadmap.md      # 0→1 知识谱系
+│       └── WORKSTREAM_TREE.md         # 长期工作流 TODO
 ├── research/
 │   ├── materials/                     # 原材料条目
 │   ├── components/                    # 零部件条目
@@ -177,6 +201,14 @@ awesome-humanoid-robot/
 │   │   └── relationship_schema.json
 │   └── relationships/                 # 独立关系文件
 └── scripts/                           # AI4Sci 辅助脚本
+    ├── ai4sci_lib/                    # 可复用流水线阶段
+    ├── ai4sci_workstreams/            # 工作流 YAML 配置
+    ├── ai4sci_paper_pipeline.py
+    ├── ai4sci_review.py
+    ├── ai4sci_batch_pipeline.py
+    ├── ai4sci_orchestrator.py
+    ├── ai4sci_status.py
+    └── validate_entries.py
 ```
 
 ---
