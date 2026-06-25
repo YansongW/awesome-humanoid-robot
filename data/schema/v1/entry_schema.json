@@ -58,6 +58,12 @@
         "benchmark",
         "standard",
         "technology",
+        "concept",
+        "method",
+        "formalism",
+        "theorem",
+        "principle",
+        "foundation",
         "market_segment",
         "application_scenario",
         "business_model",
@@ -137,6 +143,15 @@
           "policy",
           "knowledge"
         ]
+      }
+    },
+    "theoretical_depth": {
+      "type": "array",
+      "description": "Position along the theoretical-depth axis from foundation to system.",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "enum": ["foundation", "principle", "formalism", "method", "system"]
       }
     },
     "tags": {
@@ -236,7 +251,13 @@
               "cites",
               "is_based_on",
               "verified_by",
-              "conflicts_with"
+              "conflicts_with",
+              "formalizes",
+              "uses_theorem",
+              "derived_from",
+              "instantiates",
+              "builds_on",
+              "has_prerequisite"
             ]
           },
           "description": {

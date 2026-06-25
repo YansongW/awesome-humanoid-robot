@@ -57,7 +57,13 @@
         "cites",
         "is_based_on",
         "verified_by",
-        "conflicts_with"
+        "conflicts_with",
+        "formalizes",
+        "uses_theorem",
+        "derived_from",
+        "instantiates",
+        "builds_on",
+        "has_prerequisite"
       ]
     },
     "source": {

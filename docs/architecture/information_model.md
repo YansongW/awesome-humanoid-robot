@@ -84,6 +84,20 @@ A **functional role** describes what the entity does in the system, independent 
 | `policy` | Regulation, standard, certification, or ethical framework |
 | `knowledge` | Paper, patent, report, dataset, benchmark, or concept |
 
+### 2.6 Theoretical Depth
+
+In addition to the value-chain layer, every entity can be positioned along a **theoretical-depth axis** that runs from foundational disciplines up to concrete systems:
+
+| Depth Level | Code | Description |
+|-------------|------|-------------|
+| Foundation | `foundation` | Basic disciplines: mathematics, physics, chemistry, economics, computer science |
+| Principle / Theorem | `principle` | Physical laws, mathematical theorems, lemmas, axioms |
+| Formalism | `formalism` | Mathematical formulations: optimization problems, equations, models |
+| Method / Algorithm | `method` | Algorithms, techniques, design patterns |
+| System / Implementation | `system` | Integrated hardware/software products and deployments |
+
+An entity can span multiple depth levels. For example, a paper may instantiate a `method`, formalize it as a `formalism`, and rely on a `principle`.
+
 ---
 
 ## 3. Entity Types
@@ -126,6 +140,12 @@ Entity types are organized into four families. The list is versioned and can be 
 | `benchmark` | Benchmark, test, or evaluation protocol |
 | `standard` | Technical standard, safety standard, or certification |
 | `technology` | Concept, method, or technology route |
+| `concept` | High-level concept or problem framing |
+| `method` | Algorithm, technique, or methodological approach |
+| `formalism` | Mathematical formulation (e.g., QP problem, Lagrangian) |
+| `theorem` | Proven mathematical statement or lemma |
+| `principle` | Physical, chemical, or engineering principle |
+| `foundation` | Foundational discipline topic (math, physics, chemistry, etc.) |
 
 ### 3.4 Market / Policy
 
@@ -192,6 +212,12 @@ Relationship types are grouped by semantic category. All relationship types are 
 | `is_based_on` | A is based on B | product → research paper |
 | `verified_by` | claim A is verified by source B | statement → annual report |
 | `conflicts_with` | A conflicts with B | source A ↔ source B |
+| `formalizes` | A formalizes B as a mathematical/algorithmic object | QP formulation formalizes WBC |
+| `uses_theorem` | A uses theorem/principle B in its derivation or proof | stability proof uses Lyapunov theorem |
+| `derived_from` | A is derived from B | KKT conditions derived from Lagrange multipliers |
+| `instantiates` | A is a concrete instance/implementation of B | paper implements WBC method |
+| `builds_on` | A builds on prior work B | later paper → earlier paper |
+| `has_prerequisite` | A requires foundational knowledge B | convex optimization → linear algebra |
 
 ---
 
