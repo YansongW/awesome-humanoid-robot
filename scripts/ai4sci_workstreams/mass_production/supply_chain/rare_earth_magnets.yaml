@@ -1,0 +1,31 @@
+name: rare_earth_magnets
+description: |
+  Track rare-earth magnets (NdFeB) and critical minerals (Nd, Pr, Dy, Tb) used
+  in humanoid robot motors: supply chain, pricing, export controls,
+  substitution research, and key suppliers.
+seed_queries:
+  - "rare earth magnet neodymium humanoid robot motor supply chain"
+  - "NdFeB magnet dysprosium terbium export control humanoid"
+  - "rare earth magnet substitution motor robotics"
+  - "permanent magnet synchronous motor humanoid actuator"
+paper_ids: []
+target_entity_types:
+  - paper
+  - report
+  - material
+  - component
+  - organization
+target_domains:
+  - 01_raw_materials
+  - 02_components_supply_chain
+  - 05_mass_production
+relationship_patterns:
+  - consumes
+  - produces
+  - sources_from
+  - constrains
+  - enables
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv

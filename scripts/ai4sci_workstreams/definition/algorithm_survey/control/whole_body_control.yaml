@@ -1,0 +1,26 @@
+name: whole_body_control
+description: |
+  Survey whole-body control (WBC) methods for humanoid robots: model-based,
+  optimization-based, and learning-augmented approaches, plus their hardware
+  and software requirements.
+seed_queries:
+  - "whole body control humanoid robot optimization"
+  - "humanoid robot balance control torque distribution"
+  - "learning whole body control humanoid sim to real"
+  - "quadratic programming whole body control biped"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+target_domains:
+  - 07_ai_models_algorithms
+  - 06_design_engineering
+relationship_patterns:
+  - requires
+  - enables
+  - constrains
+  - is_prerequisite_for
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv

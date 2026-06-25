@@ -27,8 +27,8 @@
 - [ ] `definition/algorithm_survey/high_level_ai/wam.yaml`（Whole-Body Affordance / World Action Models）
 
 #### 1.3.2 底层控制
-- [ ] `definition/algorithm_survey/control/whole_body_control.yaml`
-- [ ] `definition/algorithm_survey/control/model_predictive_control.yaml`
+- [x] `definition/algorithm_survey/control/whole_body_control.yaml`
+- [x] `definition/algorithm_survey/control/model_predictive_control.yaml`
 - [ ] `definition/algorithm_survey/control/force_position_control.yaml`
 - [ ] `definition/algorithm_survey/control/impedance_admittance_control.yaml`
 - [ ] `definition/algorithm_survey/control/traditional_control.yaml`（ZMP/DCM/Preview）
@@ -47,7 +47,7 @@
 ### 2.1 硬件设计
 
 #### 2.1.1 驱动 / Actuation
-- [ ] `design/hardware/actuation/actuator_module_design.yaml`
+- [x] `design/hardware/actuation/actuator_module_design.yaml`
 - [ ] `design/hardware/actuation/motor_selection.yaml`
 - [ ] `design/hardware/actuation/reducer_selection.yaml`
 - [ ] `design/hardware/actuation/linear_actuators.yaml`
@@ -58,7 +58,7 @@
 - [ ] `design/hardware/sensing/depth_3d_sensors.yaml`
 - [ ] `design/hardware/sensing/lidar_for_humanoids.yaml`
 - [ ] `design/hardware/sensing/imu_selection.yaml`
-- [ ] `design/hardware/sensing/force_torque_sensors.yaml`
+- [x] `design/hardware/sensing/force_torque_sensors.yaml`
 - [ ] `design/hardware/sensing/tactile_sensors.yaml`
 - [ ] `design/hardware/sensing/encoder_technologies.yaml`
 
@@ -155,7 +155,7 @@
 - [ ] `mass_production/supply_chain/tier1_suppliers.yaml`
 - [ ] `mass_production/supply_chain/tier2_suppliers.yaml`
 - [x] `mass_production/supply_chain/raw_materials.yaml`（计划细化为稀土/磁材、电池材料、结构材料）
-- [ ] `mass_production/supply_chain/rare_earth_magnets.yaml`
+- [x] `mass_production/supply_chain/rare_earth_magnets.yaml`
 - [ ] `mass_production/supply_chain/battery_materials.yaml`
 - [ ] `mass_production/supply_chain/structural_materials.yaml`
 
@@ -181,7 +181,7 @@
 
 - [ ] `infra_cloud_fleet/middleware/ros2_dds_middleware.yaml`
 - [ ] `infra_cloud_fleet/middleware/rtos_real_time_linux.yaml`
-- [ ] `infra_cloud_fleet/simulation/simulation_platforms.yaml`
+- [x] `infra_cloud_fleet/simulation/simulation_platforms.yaml`
 - [ ] `infra_cloud_fleet/simulation/digital_twins.yaml`
 - [ ] `infra_cloud_fleet/fleet/fleet_management.yaml`
 - [ ] `infra_cloud_fleet/fleet/ota_updates.yaml`
@@ -200,7 +200,7 @@
 
 ## 13. 安全与认证 / Safety & Certification
 
-- [ ] `safety_certification/iso_13482.yaml`
+- [x] `safety_certification/iso_13482.yaml`
 - [ ] `safety_certification/iso_10218_15066.yaml`
 - [ ] `safety_certification/eu_ai_act_machinery_reg.yaml`
 - [ ] `safety_certification/cybersecurity_for_humanoids.yaml`
@@ -229,6 +229,6 @@
 ## 16. 跨域关系 / Cross-Domain
 
 - [x] `cross_domain/cross_domain_relationships.yaml`（持续提升覆盖度）
-- [ ] `cross_domain/ai_to_hardware_requirements.yaml`
+- [x] `cross_domain/ai_to_hardware_requirements.yaml`
 - [ ] `cross_domain/data_to_sim_real.yaml`
 - [ ] `cross_domain/design_to_manufacturing_feedback.yaml`

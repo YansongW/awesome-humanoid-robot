@@ -1,0 +1,29 @@
+name: iso_13482
+description: |
+  Investigate ISO 13482 safety requirements for service robots and their
+  relevance to humanoid robots: scope, hazards, force limits, fall safety,
+  certification paths, and emerging harmonized standards.
+seed_queries:
+  - "ISO 13482 service robot safety humanoid robot"
+  - "humanoid robot safety standard certification personal care robot"
+  - "ISO 13482 force limit fall safety humanoid"
+  - "EU machinery regulation humanoid robot safety"
+paper_ids: []
+target_entity_types:
+  - standard
+  - report
+  - paper
+  - organization
+target_domains:
+  - 12_policy_regulation_ethics
+  - 10_evaluation_benchmarks
+  - 06_design_engineering
+relationship_patterns:
+  - regulates
+  - constrains
+  - requires
+  - is_prerequisite_for
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv

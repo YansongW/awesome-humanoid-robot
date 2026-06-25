@@ -86,10 +86,10 @@ def parse_args() -> argparse.Namespace:
 
 
 def list_workstreams(workstreams_dir: Path) -> list[Path]:
-    """Return all workstream config files in the directory."""
+    """Return all workstream config files recursively under the directory."""
     if not workstreams_dir.exists():
         return []
-    return sorted(p for p in workstreams_dir.glob("*.yaml") if p.is_file())
+    return sorted(p for p in workstreams_dir.rglob("*.yaml") if p.is_file())
 
 
 def run_workstream(
@@ -151,7 +151,8 @@ def main() -> int:
 
     print(f"[orchestrator] Discovered {len(workstream_paths)} workstream(s):")
     for p in workstream_paths:
-        print(f"  - {p.stem}")
+        rel = p.relative_to(args.workstreams_dir)
+        print(f"  - {p.stem} ({rel})")
 
     print(f"[orchestrator] Running up to {args.max_workers} workstream(s) in parallel...")
 

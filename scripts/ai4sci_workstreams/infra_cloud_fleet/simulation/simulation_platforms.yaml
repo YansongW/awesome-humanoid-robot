@@ -1,0 +1,29 @@
+name: simulation_platforms
+description: |
+  Survey physics simulation platforms used for humanoid robot development and
+  training: Isaac Sim/Lab, MuJoCo, Gazebo, Genesis, and related sim-to-real
+  toolchains.
+seed_queries:
+  - "humanoid robot simulation platform Isaac Sim MuJoCo Gazebo Genesis"
+  - "GPU parallel simulation humanoid robot reinforcement learning"
+  - "sim to real humanoid robot domain randomization"
+  - "digital twin humanoid robot factory simulation"
+paper_ids: []
+target_entity_types:
+  - paper
+  - software_platform
+  - technology
+  - benchmark
+target_domains:
+  - 08_software_middleware
+  - 07_ai_models_algorithms
+  - 09_data_datasets
+relationship_patterns:
+  - requires
+  - enables
+  - produces
+  - is_prerequisite_for
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv

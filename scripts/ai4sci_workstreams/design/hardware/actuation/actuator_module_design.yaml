@@ -1,0 +1,29 @@
+name: actuator_module_design
+description: |
+  Investigate integrated actuator module designs for humanoid joints: motor +
+  reducer + encoder + torque sensor + driver, covering torque density,
+  backdrivability, thermal management, and manufacturing considerations.
+seed_queries:
+  - "humanoid robot actuator module design integrated joint"
+  - "torque density backdrivability humanoid actuator"
+  - "frameless torque motor harmonic drive humanoid joint"
+  - "actuator thermal management humanoid robot"
+paper_ids: []
+target_entity_types:
+  - paper
+  - component
+  - technology
+  - report
+target_domains:
+  - 02_components_supply_chain
+  - 06_design_engineering
+  - 03_manufacturing_processes
+relationship_patterns:
+  - requires
+  - enables
+  - produces
+  - constrains
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv

@@ -1,0 +1,29 @@
+name: force_torque_sensors
+description: |
+  Survey force/torque sensing technologies for humanoid robots: wrist/joint
+  six-axis sensors, strain-gauge principles, MEMS alternatives, integration
+  trade-offs, and suppliers.
+seed_queries:
+  - "force torque sensor humanoid robot wrist joint"
+  - "six axis force torque sensor robot manipulation"
+  - "MEMS force torque sensor humanoid"
+  - "force sensor integration humanoid control impedance"
+paper_ids: []
+target_entity_types:
+  - paper
+  - component
+  - technology
+  - organization
+target_domains:
+  - 02_components_supply_chain
+  - 06_design_engineering
+  - 07_ai_models_algorithms
+relationship_patterns:
+  - requires
+  - enables
+  - is_prerequisite_for
+  - constrains
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv

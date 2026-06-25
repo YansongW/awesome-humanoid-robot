@@ -1,0 +1,26 @@
+name: model_predictive_control
+description: |
+  Survey model predictive control (MPC) and its applications to humanoid
+  locomotion, balance, and contact planning, including real-time solvers and
+  sim-to-real transfer.
+seed_queries:
+  - "model predictive control humanoid robot locomotion"
+  - "MPC bipedal walking contact forces humanoid"
+  - "real-time MPC humanoid robot optimization"
+  - "nonlinear MPC humanoid balance disturbance rejection"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+target_domains:
+  - 07_ai_models_algorithms
+  - 06_design_engineering
+relationship_patterns:
+  - requires
+  - enables
+  - constrains
+  - is_prerequisite_for
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv

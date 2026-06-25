@@ -1,0 +1,29 @@
+name: ai_to_hardware_requirements
+description: |
+  Identify how AI/learning algorithms for humanoid robots impose requirements
+  on hardware: compute (TOPS, latency), sensors (cameras, force/torque),
+  actuators (torque density, bandwidth), and communication buses.
+seed_queries:
+  - "VLA humanoid robot hardware requirements edge GPU latency"
+  - "foundation model robot requires torque sensor camera compute"
+  - "humanoid robot AI stack sensor actuator requirements"
+  - "on-device inference humanoid robot NVIDIA Jetson Thor"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - component
+  - software_platform
+target_domains:
+  - 07_ai_models_algorithms
+  - 02_components_supply_chain
+  - 08_software_middleware
+relationship_patterns:
+  - requires
+  - enables
+  - constrains
+  - integrates
+relevance_threshold: medium
+max_papers: 15
+sources:
+  - arxiv
