@@ -50,7 +50,6 @@ The most recent step was a **systematic knowledge-taxonomy study** that replaced
 - [x] **Expanded `RELATIONSHIP_TYPE_MAP` in `scripts/ai4sci_lib/entry_builder.py` to handle common LLM-generated synonyms (`describes`, `validates_with`, `studies`, `implements`, `extends_to`, `applies`, `contrasts_with`, `improves`, `evaluated_on`, `uses_metric`)**
 - [x] **Cleaned 41 dangling relationships and 32 embedded dangling `related_entities` from newly promoted entries; README stats updated to 80 entries, 57 relationships, validation passing**
 - [x] **Started an hourly workstream daemon (`scripts/ai4sci_run_next_workstream.py`, task `bash-1b5d938i`) and an hourly cron reminder (`b1753c79`) to check progress**
-- [x] **Added `Makefile` with standardized commands and `docs/productization_roadmap.md` outlining the productization plan**
 
 ---
 
@@ -94,10 +93,10 @@ We are now executing **Phase 0–2 of the approved plan**:
 
 ## Immediate Next Tasks (Pending)
 
-1. **Git sync**: commit and push the dangling-relationship cleanup, daemon script, Makefile, productization roadmap, and `session_status.md` updates.
+1. **Git sync**: commit and push the dangling-relationship cleanup, daemon script, and `session_status.md` updates.
 2. **Monitor the hourly workstream daemon** (`bash-1b5d938i`) via the hourly cron reminder and review/promote any new staged outputs it produces.
 3. **Review staged outputs** from `convex_optimization` and `rigid_body_dynamics` workstreams and promote valid entries/relationships.
-4. **Next productization step**: add a JSON Schema for workstream configs and a `make validate-workstreams` command.
+4. **Plan productization**: discuss and design standardized inputs/outputs, CLI/schema contracts, and CI/contributor workflow before implementing. (Productization files removed pending plan.)
 
 ---
 
