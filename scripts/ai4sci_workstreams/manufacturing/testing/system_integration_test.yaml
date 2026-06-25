@@ -29,5 +29,6 @@ relationship_patterns:
   - verifies
 relevance_threshold: medium
 max_papers: 12
+priority: 2
 sources:
   - arxiv
