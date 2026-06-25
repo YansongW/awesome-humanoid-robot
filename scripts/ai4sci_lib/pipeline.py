@@ -173,12 +173,25 @@ def process_source(
     if not entry_data.get("layers"):
         entry_data["layers"] = entry_builder.infer_layers(entry_data.get("domains", []))
 
-    # Normalize related_entities and relationship types.
+    # Normalize related_entities and relationship types, and drop dangling edges
+    # whose target IDs do not yet exist in the production graph.
+    existing_ids = entry_builder.load_existing_ids()
+
+    kept_related = []
     for rel in entry_data.get("related_entities", []):
         desc = rel.get("description", "")
         if isinstance(desc, str):
             rel["description"] = {"en": desc, "zh": desc, "ko": desc}
         rel["relationship"] = entry_builder.normalize_relationship_type(rel.get("relationship", ""))
+        target_id = rel.get("id")
+        if target_id and target_id in existing_ids:
+            kept_related.append(rel)
+        else:
+            review_notes.append(
+                f"Dropped embedded related_entity '{target_id}' ({rel.get('relationship')}) "
+                "because the target entity does not exist in the production graph."
+            )
+    entry_data["related_entities"] = kept_related
 
     for rel in relationships:
         rel["type"] = entry_builder.normalize_relationship_type(rel.get("type", ""))
