@@ -42,6 +42,10 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 - [x] Promoted final batch: **cross_domain** 3 entries, **model_predictive_control** 2 entries, **whole_body_control** 3 entries, **vla** 1 entry, **simulation_platforms** 1 entry, **iso_13482** 3 entries (1 duplicate skipped).
 - [x] Fixed validation error: mapped `uses_product_of` → `uses` in `RELATIONSHIP_TYPE_MAP`.
 - [x] Final stats: **112 entries / 58 relationships / 23 workstreams**, validation passing.
+- [x] Created 6 new workstreams for underrepresented domains: `critical_minerals`, `quality_control`, `precision_machining`, `functional_safety`, `safety_standards`, `assistive_rehabilitation`.
+- [x] Updated README workstream count to 29.
+- [x] Restarted daemon (task `bash-jm85j3bv`) with 60s interval to run new workstreams.
+- [x] Recreated hourly cron reminder (`d4d0c5b1`) to monitor new daemon.
 
 ### In Progress
 
@@ -60,8 +64,8 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 
 | Task ID | Command | Status |
 |---------|---------|--------|
-| `bash-qhu214g1` | Workstream daemon loop 60s interval (`ai4sci_run_next_workstream.py`) | completed |
-| `bash-nh9ia6m1` | `battery_cells` batch run | completed |
+| `bash-jm85j3bv` | Workstream daemon loop 60s interval (`ai4sci_run_next_workstream.py`) | running |
+| `bash-qhu214g1` | Previous daemon loop | completed |
 | `b1753c79` | Hourly cron reminder to check `TaskOutput` | active |
 
 ---
