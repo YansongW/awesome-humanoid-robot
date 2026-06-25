@@ -11,7 +11,7 @@
 # Temporary files
 *.tmp
 *.log
-proposal_ruka.json
+proposal_*.json
 ruka_paper.pdf
 ruka_paper.txt
 
