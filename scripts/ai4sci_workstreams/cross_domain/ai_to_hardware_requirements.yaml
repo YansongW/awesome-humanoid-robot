@@ -16,7 +16,7 @@ target_entity_types:
   - software_platform
 target_domains:
   - 07_ai_models_algorithms
-  - 02_components_supply_chain
+  - 02_components
   - 08_software_middleware
 relationship_patterns:
   - requires

@@ -15,7 +15,7 @@ target_entity_types:
   - technology
   - report
 target_domains:
-  - 02_components_supply_chain
+  - 02_components
   - 06_design_engineering
   - 03_manufacturing_processes
 relationship_patterns:

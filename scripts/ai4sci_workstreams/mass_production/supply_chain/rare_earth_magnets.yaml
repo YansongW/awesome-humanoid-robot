@@ -17,7 +17,7 @@ target_entity_types:
   - organization
 target_domains:
   - 01_raw_materials
-  - 02_components_supply_chain
+  - 02_components
   - 05_mass_production
 relationship_patterns:
   - consumes
