@@ -33,16 +33,18 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 - [x] Promoted `motor_selection` outputs: **2 entries, 1 relationship**.
 - [x] Promoted `ai_to_hardware_requirements` daemon outputs: **2 entries**.
 - [x] Promoted `reducer_selection` outputs: **3 entries**.
-- [x] Updated README stats to **87 entries / 58 relationships / 23 workstreams**; validation passing.
+- [x] Promoted `battery_cells` output: **1 entry** (1 duplicate, 1 LLM JSON error).
+- [x] Updated README stats to **88 entries / 58 relationships / 23 workstreams**; validation passing.
+- [x] Restarted hourly workstream daemon (task `bash-u6rdd7w6`) with no timeout and `PYTHONUNBUFFERED=1`.
 
 ### In Progress
 
-- [ ] `battery_cells` workstream run (task `bash-nh9ia6m1`).
+- [ ] Hourly daemon processing next priority workstreams.
 - [ ] Hourly cron reminder (`b1753c79`) reports task status.
 
 ### Pending
 
-- [ ] Review and promote `battery_cells` staged entries/relationships.
+- [ ] Review daemon outputs each hour and promote valid entries/relationships.
 - [ ] Run downstream manufacturing/application workstreams.
 - [ ] Periodically check daemon logs and re-enable/restart if it stalls on all-error workstreams.
 
@@ -52,8 +54,8 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 
 | Task ID | Command | Status |
 |---------|---------|--------|
-| `bash-1b5d938i` | Hourly workstream daemon loop (`ai4sci_run_next_workstream.py`) | paused |
-| `bash-nh9ia6m1` | `battery_cells` batch run | running |
+| `bash-u6rdd7w6` | Hourly workstream daemon loop (`ai4sci_run_next_workstream.py`) | running |
+| `bash-nh9ia6m1` | `battery_cells` batch run | completed |
 | `b1753c79` | Hourly cron reminder to check `TaskOutput` | active |
 
 ---
