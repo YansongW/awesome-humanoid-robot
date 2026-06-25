@@ -56,6 +56,14 @@ sources:
   accessed_at: '2026-06-22'
 ---
 
+# Unitree G1 Humanoid Robot
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像人形机器人界的“树莓派”——价格相对亲民、可以批量买到，让研究者和开发者能快速拿到一具完整的人体形态硬件来验证算法。
+
+> **自然语言逻辑**：Unitree G1 是宇树科技推出的一款紧凑型量产人形机器人，基础版 23 自由度、EDU 版可扩展至 43 自由度；它将永磁同步电机、减速器、传感器和可选的 Jetson 计算单元集成在一起，成为 embodied AI 和机器人量产研究的重要参考平台。
+
 ## Overview
 
 The Unitree G1 is a commercially available humanoid robot platform developed by Unitree Robotics. It is positioned as an affordable, compact research and development platform for embodied AI, locomotion, and manipulation research. The base G1 model offers 23 degrees of freedom, while the G1-EDU variant can be expanded to 43 DoF with additional wrist and waist joints and optional Dex3-1 three-finger dexterous hands.

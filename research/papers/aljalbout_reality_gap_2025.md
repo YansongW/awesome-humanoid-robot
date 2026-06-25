@@ -54,6 +54,12 @@ sources:
 
 # The Reality Gap in Robotics: Challenges, Solutions, and Best Practices
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像飞行模拟器与真实驾驶之间的差距——模拟里你能完美降落，但真机上风切变、仪表延迟、轮胎摩擦都会让同样操作出问题。
+
+> **自然语言逻辑**：这篇 2025 年综述系统梳理了机器人从仿真到现实部署之间的“现实鸿沟”，将其分为感知差异和动作动力学差异；它回顾了域随机化、系统辨识、仿真-现实协同训练等缓解方法，帮助人形机器人开发者理解为什么仿真里好用的策略到了真机上可能失效。
+
 ## Overview
 
 This survey (Aljalbout et al., 2025) provides a structured taxonomy of the "reality gap" between physics simulators and real-world robot deployment. It groups discrepancies into **perception gaps** (sensor noise, lighting, rendering, calibration) and **action-dynamics gaps** (contact friction, actuator latency, deformable objects, controller timing), then reviews mitigation approaches and evaluation metrics.

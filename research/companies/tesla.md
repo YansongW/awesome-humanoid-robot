@@ -52,6 +52,14 @@ sources:
   accessed_at: '2026-06-24'
 ---
 
+# Tesla
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一家汽车巨头决定用造车的工厂和供应链来造“机器人工人”，并且打算先在自己的车间里试用。
+
+> **自然语言逻辑**：特斯拉是美国汽车和能源公司，通过 Optimus 项目进入人形机器人领域；它希望将电动汽车领域的电机、电池和大规模制造经验迁移到人形机器人，实现低成本、大批量生产，并首先在自家工厂部署。
+
 ## Overview
 
 Tesla is best known for electric vehicles, energy storage, and autonomous driving, but it has also publicly pursued humanoid robotics through its Optimus program. The company has demonstrated several generations of Optimus prototypes and stated intentions to use the robot in its own manufacturing facilities before broader commercialization.

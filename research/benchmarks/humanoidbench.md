@@ -68,6 +68,12 @@ related_entities:
 
 # HumanoidBench
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像为一个标准虚拟运动员设置的综合性障碍赛——既要跑步、跳跃，又要弯腰搬东西、伸手够物，用来比较不同“大脑”控制下的全身表现。
+
+> **自然语言逻辑**：HumanoidBench 是基于 Unitree H1 形态构建的仿真基准，包含 40 多项全身运动与操作任务；它为人形机器人 VLA 和控制算法提供统一的受控比较环境，帮助研究者在投入真实硬件前验证和筛选策略。
+
 ## Overview
 
 HumanoidBench provides a standardized simulation environment for evaluating algorithms that control a full humanoid body. It is built around the Unitree H1 morphology and includes tasks that require locomotion, manipulation, or both.

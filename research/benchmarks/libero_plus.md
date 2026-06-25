@@ -74,6 +74,12 @@ related_entities:
 
 # LIBERO-Plus
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像自动驾驶汽车的极端天气路测——不仅要在晴天跑，还要在雨雾、黑夜、眩光、拥堵和不同道路标线下反复测试，才能发现系统脆弱点。
+
+> **自然语言逻辑**：LIBERO-Plus 是针对视觉-语言-动作模型鲁棒性的基准，从相机视角、机器人初始状态、语言指令、光照、背景、噪声和物体布局七个维度系统扰动任务；它揭示了 VLA 模型在面对真实环境变化时有多脆弱，为改进泛化能力提供依据。
+
 ## Overview
 
 LIBERO-Plus is a robustness-focused extension of the LIBERO benchmark. It systematically exposes vulnerabilities in VLA models by evaluating them under controlled perturbations across seven dimensions.

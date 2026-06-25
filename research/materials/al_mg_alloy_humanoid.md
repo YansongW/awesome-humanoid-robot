@@ -57,6 +57,12 @@ sources:
 
 # Aluminum-Magnesium Alloy for Humanoid Robot Lightweight Structure
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像高性能自行车或无人机框架使用的铝合金/镁合金——在保持足够强度的前提下尽量减重，让运动员或飞行器更快、更灵活。
+
+> **自然语言逻辑**：铝镁合金是人形机器人轻量化的核心结构材料，铝合金提供强度、可加工性和耐腐蚀性，镁合金则显著降低密度；它们被用于机器人框架、关节和外壳，帮助机器人在保持刚性的同时减轻重量、提高动态敏捷性。
+
 ## Overview
 
 Aluminum-magnesium alloys are a core material system for lightweighting humanoid robots. Aluminum alloys provide a balance of strength, machinability, corrosion resistance, and thermal conductivity, while magnesium alloys offer a significantly lower density, making them attractive for aggressive weight reduction in motion-critical structures.

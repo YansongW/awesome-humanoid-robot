@@ -68,6 +68,12 @@ related_entities:
 
 # LIBERO
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一组带随机道具变化的桌面小游戏——每次物体的位置和类型略有不同，用来测试学习者能不能把学到的技能快速迁移到新场景。
+
+> **自然语言逻辑**：LIBERO 是一个面向终身机器人学习的基准与数据集，提供主题化任务套件和程序化变化的桌面场景；它主要用于评估短程操作任务的泛化能力，是研究机器人学习策略迁移与持续学习的重要受控测试平台。
+
 ## Overview
 
 LIBERO is a benchmark for lifelong robot learning that provides multiple task suites with shared object sets and procedurally varied scenes. It is frequently used to evaluate generalization in short-horizon tabletop manipulation.

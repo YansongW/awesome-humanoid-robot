@@ -43,6 +43,14 @@ sources:
   accessed_at: '2026-06-25'
 ---
 
+# de Leva Anthropometry
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像汽车碰撞测试中使用的“标准假人”——有标准的身高、体重、四肢长度和质心位置，用来作为衡量真人和机器人的共同参照。
+
+> **自然语言逻辑**：de Leva 人体测量学提供了一套标准化的身体环节参数（质量、质心、转动惯量等），广泛应用于生物力学建模；在人形机器人领域，它被用来定义参考人体，使机器人驱动系统和运动能力可以与真实的人类生物力学目标进行直接比较。
+
 ## Overview
 
 de Leva anthropometry provides standardized body-segment parameters used to build biomechanical models of humans. It is frequently used as the reference human body in robotics benchmarking.

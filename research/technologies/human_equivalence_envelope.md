@@ -43,6 +43,14 @@ sources:
   accessed_at: '2026-06-25'
 ---
 
+# Human-Equivalence Envelope
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像汽车的动力性能包络——不是只看最大马力或最大扭矩，而是要求在某个转速下同时有足够的马力和扭矩，才能真正爬上陡坡。
+
+> **自然语言逻辑**：人等效包络（HEE）为机器人关节定义了任务相关的运行区间，要求在相同关节角度和角速度下同时达到人类的扭矩和功率；它把“类人水平”这种模糊目标转化为具体的单关节指标，帮助设计者判断执行器能否完成行走、爬楼梯、举物等真实任务。
+
 ## Overview
 
 Human-Equivalence Envelopes (HEE) define task-relevant operating bands for robot joints by requiring simultaneous satisfaction of human torque and power at matching joint angles and rates. They translate abstract "human-level" requirements into concrete, per-joint specifications.

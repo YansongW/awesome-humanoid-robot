@@ -68,6 +68,12 @@ related_entities:
 
 # OpenVLA: An Open-Source Vision-Language-Action Model
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一本公开的“机器人操作教科书”——免费开放，里面收录了近百万条真实机器人操作示范，供任何人下载并在自己的机器人上微调使用。
+
+> **自然语言逻辑**：OpenVLA 是一个 70 亿参数的开源视觉-语言-动作模型，基于 Open X-Embodiment 数据集的 97 万条真实机器人演示进行预训练；它融合 Llama 2、DINOv2 和 SigLIP，为通用操作提供可微调的开放基础模型，降低了人形机器人语言条件操作策略的开发门槛。
+
 ## Overview
 
 OpenVLA (Kim et al., 2024) is an open-source 7B-parameter vision-language-action model designed for generalist robotic manipulation. It addresses two adoption barriers for VLAs: closed-source model access and the lack of efficient fine-tuning recipes. OpenVLA combines a Llama 2 language backbone with a visual encoder that fuses DINOv2 and SigLIP features, then outputs discrete action tokens.

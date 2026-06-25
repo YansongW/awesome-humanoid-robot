@@ -44,6 +44,14 @@ sources:
   accessed_at: '2026-06-22'
 ---
 
+# Harmonic Drive Reducer
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像自行车里那个小巧而强劲的变速器——让一只小脚踩出的快速旋转，变成车轮上足以爬坡的慢速大扭矩。
+
+> **自然语言逻辑**：谐波减速器通过柔性齿轮、刚轮和波发生器实现高减速比，且几乎无背隙；它能把电机的高速低扭矩输出转换为人形机器人关节所需的低速高扭矩，保证动作精确、力量充足，是高性能人形关节的核心传动部件。
+
 ## Overview
 
 A harmonic drive reducer consists of three main elements: a wave generator (input), a flexspline (flexible output ring), and a circular spline (fixed ring with internal teeth). The wave generator deforms the flexspline so that its teeth mesh with the circular spline at two opposite regions, producing a high reduction ratio in a very compact envelope. Typical reduction ratios range from 30:1 to 320:1.

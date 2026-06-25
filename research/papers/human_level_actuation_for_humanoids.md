@@ -81,6 +81,14 @@ related_entities:
 ---
 
 
+# Human-Level Actuation for Humanoids
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像把“达到普通人身体素质”这个模糊目标，变成一份可量化的体检报告——力量、耐力、柔韧性和恢复能力都有具体分数，满分对应健康成年人的参考值。
+
+> **自然语言逻辑**：这篇论文提出了一套可复现的基准框架，通过基于 ISB 的自由度图谱、人等效包络（HEE）和类人驱动评分（HLAS），把人形机器人“类人级驱动”从口号变成可测量、可比较的指标；它帮助设计者和采购方在统一尺度上评估不同执行器技术是否满足真实任务需求。
+
 ## Overview
 
 Claims that humanoid robots achieve 'human-level' actuation are frequently made but rarely quantified. Peak torque or speed specifications alone do not indicate whether a joint can deliver the required combination of torque, power, and endurance at task-relevant postures and rates. To address this gap, the authors introduce a comprehensive framework with three components: a kinematic degree-of-freedom (DoF) atlas, Human-Equivalence Envelopes (HEE), and the Human-Level Actuation Score (HLAS). The DoF atlas standardizes joint coordinate systems, sign conventions, and functional ranges of motion using ISB-based conventions, enabling direct comparison between human and robot joints. HEE defines per-joint operating requirements by requiring a robot to meet human torque and power simultaneously at the same joint angle and angular rate, weighted by positive mechanical work in task-specific bands such as walking, stairs, lifting, reaching, and hand actions. HLAS aggregates six physically grounded factors—workspace coverage (ROM and DoF), HEE coverage, torque-mode bandwidth, efficiency, and thermal sustainability—into a scalar score normalized so that a human scores 1.0.

@@ -51,6 +51,14 @@ sources:
   accessed_at: '2026-06-24'
 ---
 
+# Tesla Optimus
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像汽车工厂里一位不知疲倦的流水线工人——被设计成能搬箱子、搬零件，并且最终要像汽车一样大规模生产出来。
+
+> **自然语言逻辑**：Tesla Optimus 是特斯拉推出的通用人形机器人项目，目标是在制造和物流场景中承担重复或危险任务；它的重要性在于特斯拉明确强调低成本和大批量制造，试图将汽车行业的规模化经验迁移到人形机器人生产上。
+
 ## Overview
 
 Tesla Optimus is a humanoid robot program announced by Tesla with the aim of performing repetitive or dangerous tasks in manufacturing and logistics. The company has showcased several prototype generations, emphasizing affordability, mass production, and integration with Tesla's manufacturing and AI capabilities.

@@ -50,6 +50,14 @@ sources:
   accessed_at: '2026-06-22'
 ---
 
+# LEAP Hand
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一个高中生用 3D 打印零件和常见舵机组装的仿生机械手——成本低廉、零件易得，还能通过反复练习学会弹琴般的手指动作。
+
+> **自然语言逻辑**：LEAP Hand 是一款低成本、开源的 16 自由度灵巧手，使用 3D 打印部件和 Dynamixel 直驱舵机；它降低了研究 dexterous manipulation 的门槛，让实验室能以较低成本训练机器人完成复杂的抓握与手指操作。
+
 ## Overview
 
 The LEAP Hand is an open-source, low-cost dexterous robot hand developed by Kenneth Shaw, Abhishek Agarwal, and Deepak Pathak at Carnegie Mellon University. It features 16 degrees of freedom arranged in a four-finger anthropomorphic layout and is actuated by direct-drive Robotis Dynamixel servos. The design emphasizes low cost (approximately USD 2,000 in materials), ease of assembly, repairability, and compatibility with robot learning pipelines.

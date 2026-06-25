@@ -56,6 +56,12 @@ related_entities:
 
 # High-Performance Servo Motor
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像电动自行车的轮毂电机——体积不大，但能按照你的意图精确地输出力气、速度和位置，让车轮转到你想让它转到的角度。
+
+> **自然语言逻辑**：高性能伺服电机是人形机器人关节的核心执行器，能把电能转化为精确可控的机械运动；它直接决定了机器人能走多快、抓多重、动作有多灵活，通常与减速器、编码器和控制器一起组成完整的关节模组。
+
 Servo motors are the primary actuators in most humanoid robots. They convert electrical energy into precise mechanical motion, enabling walking, balancing, manipulation, and expressive movement.
 
 ## Key Metrics

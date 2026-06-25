@@ -50,6 +50,14 @@ sources:
   accessed_at: '2026-06-24'
 ---
 
+# Robotis
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像机器人界的“乐高舵机供应商”——把电机、减速器、控制器和通信接口装进一个模块里，研究者可以像搭积木一样拼接出机器手或机器臂。
+
+> **自然语言逻辑**：Robotis 是韩国机器人公司，以 Dynamixel 系列智能执行器闻名；这些模块化的舵机集成了电机、减速齿轮、驱动器和反馈传感器，通过串行总线级联，广泛用于研究型机器人、教育平台和人形灵巧手。
+
 ## Overview
 
 Robotis is a South Korean robotics company founded in 1999. It is best known for the Dynamixel line of smart actuators, which integrate a motor, reducer, driver, and communication bus in a single package. Dynamixel servos are common in research robots, manipulators, and dexterous hands because of their modularity, feedback capabilities, and broad software support.

@@ -95,6 +95,12 @@ related_entities:
 
 # Vision-Language-Action in Robotics: A Survey of Datasets, Benchmarks, and Data Engines
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一份报告指出：自动驾驶进步的关键不再是造更炫的车，而是要有更好的地图、更真实的测试场和源源不断的驾驶数据。
+
+> **自然语言逻辑**：这篇 2026 年综述把 VLA 研究重心从模型架构转向数据基础设施，系统梳理了数据集、基准测试和数据引擎三大支柱；它对人形机器人尤为相关，因为人形需要全身、接触丰富的动作数据，而这些真实数据采集成本高、数量少，亟需更好的数据生成与评测体系。
+
 ## Overview
 
 This survey (Wang et al., 2026) reframes the VLA research agenda around its data infrastructure. The authors argue that future gains will come less from architectural novelty and more from co-designing high-fidelity data engines with structured evaluation protocols.

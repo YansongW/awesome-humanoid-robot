@@ -42,6 +42,14 @@ sources:
   accessed_at: '2026-06-25'
 ---
 
+# GRASP Taxonomy
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像图书馆对“拿东西方式”做的分类目录——把捏、握、托、夹、拧等动作按手形和用途分门别类，方便检索和比较。
+
+> **自然语言逻辑**：GRASP 抓取分类法是一种根据手部姿态、物体接触和任务目标对手部抓取进行标准化分类的系统；它为机器人领域提供了统一的词汇表和测试集，用来评估一只灵巧手能实现多少种不同的抓取类型。
+
 ## Overview
 
 The GRASP Taxonomy organizes hand grasps into categories based on hand posture, object contact, and task. It is commonly used in robotics to benchmark how many distinct grasp types a dexterous robot hand can achieve.

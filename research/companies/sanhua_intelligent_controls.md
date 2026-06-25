@@ -73,6 +73,12 @@ related_entities:
 
 # Sanhua Intelligent Controls
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一家原本给汽车做空调阀和散热管的零部件厂，突然被要求为新一代“机器人工人”批量生产关节总成——靠的是精密加工和大规模供货能力。
+
+> **自然语言逻辑**：三花智控是中国热管理和机电执行器的一级供应商，据报道是特斯拉 Optimus 执行器总成的核心合作伙伴；它把人形机器人关节当成新的规模化产品，利用在汽车供应链中积累的精密制造和量产经验，进入人形机器人上游供应链。
+
 ## Overview
 
 Sanhua Intelligent Controls Co., Ltd. (SZSE: 002050) is a Chinese Tier-1 supplier best known for thermal-management components for automotive and HVAC industries. In the humanoid-robot supply chain, it is frequently cited as a leading supplier of **linear and rotary actuator assemblies** for Tesla Optimus, leveraging a roughly decade-long relationship as a Tesla vehicle supplier.

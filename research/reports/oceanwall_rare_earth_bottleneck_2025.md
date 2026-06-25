@@ -52,6 +52,12 @@ sources:
 
 # Robotics and The Rare Earth Bottleneck
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一份提醒电动车行业的报告——如果制造高效电机所需的稀土材料高度依赖少数国家，那么供应链中断会让整车生产面临巨大风险。
+
+> **自然语言逻辑**：这份 Oceanwall 2025 年 7 月的研究简报指出，先进机器人尤其是人形机器人依赖钕铁硼永磁体，而中国稀土精炼的主导地位造成地缘政治供应链风险；它把人形机器人上游的永磁材料视为规模化生产中的关键瓶颈，提醒产业链关注材料来源和替代方案。
+
 ## Overview
 
 This Oceanwall research note (24 July 2025) examines the explosive growth potential of humanoid and industrial robotics alongside a critical upstream bottleneck: rare earth permanent magnets. The note argues that advanced robots, particularly humanoids, depend on neodymium-iron-boron (NdFeB) magnets to power compact, high-torque electric motors.

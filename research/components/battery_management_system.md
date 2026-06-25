@@ -45,6 +45,14 @@ sources:
   accessed_at: '2026-06-22'
 ---
 
+# Battery Management System
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像智能手机里的电池管家——时刻监控每节电池的电量、温度和健康状态，防止过充、过放，并在多节电池之间“匀一匀”电量。
+
+> **自然语言逻辑**：电池管理系统（BMS）是机器人电池包的电子监护与调度中心，负责监测单节电压、电流和温度，提供过充、过放、过流和热失控保护；它通过持续采样和均衡控制，延长续航、保障安全，并为能耗模型提供准确的电量数据。
+
 ## Overview
 
 A battery management system (BMS) is an electronic system that manages a rechargeable battery pack. Its core functions include monitoring cell voltage, current, and temperature; protecting against over-charge, over-discharge, over-current, and thermal runaway; estimating state-of-charge (SoC) and state-of-health (SoH); and performing cell balancing to maximize pack capacity and lifetime.

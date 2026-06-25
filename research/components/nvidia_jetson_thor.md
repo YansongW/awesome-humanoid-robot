@@ -62,6 +62,12 @@ sources:
 
 # NVIDIA Jetson Thor
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像战斗机座舱里的独立飞行电脑——不需要时时请示地面塔台，自己就能在极短时间内完成感知、判断并下达动作指令。
+
+> **自然语言逻辑**：NVIDIA Jetson Thor 是人形机器人的“ onboard AI 大脑”，负责在机器人本地上运行视觉-语言-动作（VLA）等大模型；它决定了机器人能跑多复杂的 AI、反应有多快、功耗有多大，是让机器人摆脱对远程服务器依赖的关键计算模块。
+
 ## Overview
 
 Jetson Thor is NVIDIA's next-generation system-on-module (SOM) targeted at humanoid and other physical AI robots. It is based on the Blackwell GPU architecture and is positioned as an on-robot "AI super brain" capable of running large multimodal models including vision-language-action (VLA) policies locally.

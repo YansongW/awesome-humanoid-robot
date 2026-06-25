@@ -43,6 +43,14 @@ sources:
   accessed_at: '2026-06-24'
 ---
 
+# MANUS
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它原本为电影和游戏做动作捕捉手套，现在这套手套成了机器人遥操作的“遥控器”——人手动一动，机器人手就跟着动。
+
+> **自然语言逻辑**：MANUS 是荷兰公司，专注于高精度数据手套，用于动作捕捉、虚拟制作和机器人遥操作；它能精细记录人手姿态并实时传输给机器人学习框架，为训练灵巧操作策略提供大量人类示范数据。
+
 ## Overview
 
 MANUS is a Netherlands-based company that develops data gloves for capturing hand and finger motion. Its products are used in film and game production, biomechanics research, and increasingly in robotics for teleoperation and human-demonstration data collection.

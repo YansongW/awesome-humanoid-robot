@@ -59,6 +59,12 @@ sources:
 
 # On-Device VLA Inference
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像在一台性能强劲的笔记本上本地玩竞技游戏，而不是通过云端串流——虽然本机硬件压力大，但能避免网络延迟，反应更快、更稳定。
+
+> **自然语言逻辑**：端侧 VLA 推理指将视觉-语言-动作模型直接部署在机器人本体的边缘计算设备上运行，而不是依赖远程服务器；它能满足实时控制对低延迟的要求，并保护数据隐私，但需要在功耗、散热和算力受限的条件下运行大模型。
+
 ## Overview
 
 On-device VLA inference refers to executing Vision-Language-Action models entirely on the robot's embedded compute, avoiding round-trips to edge or cloud servers. This deployment mode is motivated by the tight latency budgets of high-frequency control loops (e.g., balance recovery, dexterous manipulation) and by operational constraints such as network availability and data privacy.

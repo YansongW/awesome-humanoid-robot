@@ -66,6 +66,12 @@ related_entities:
 
 # MimicGen
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像舞蹈老师只教一遍动作，然后通过改变站位、角度和起始姿势，自动生成上百种变体让学生反复练习。
+
+> **自然语言逻辑**：MimicGen 是一种演示增强框架，从少量人类示范出发，在仿真中扰动物体位姿、相机视角和初始条件，从而大规模生成多样化训练数据；它能降低机器人示范数据采集成本，但将其用于全身人形任务时还需处理平衡与接触约束。
+
 ## Overview
 
 MimicGen is a data-generation system that takes a small number of human demonstrations and automatically produces a large, diverse dataset by perturbing scene configurations in simulation. It is designed to reduce the cost of collecting large-scale robot demonstration data.

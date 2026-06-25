@@ -65,6 +65,12 @@ related_entities:
 
 # DROID
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像由全球许多摄影师在不同城市、不同光线下拍摄的“街头摄影合集”——用丰富的真实场景差异来训练一个 robust 的图像识别系统。
+
+> **自然语言逻辑**：DROID 是一个分布式、多样化的真实世界机器人操作数据集，由多个实验室按统一协议收集；它强调视觉和环境多样性，帮助策略学习在不同背景、光照、相机视角和场景布局下都能泛化，是训练鲁棒 VLA 模型的重要真实数据来源。
+
 ## Overview
 
 DROID is a large-scale in-the-wild robot manipulation dataset collected by multiple institutions using a shared data-collection protocol. It emphasizes visual and environmental diversity to train policies that generalize across backgrounds, lighting, and scene configurations.

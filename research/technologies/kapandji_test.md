@@ -42,6 +42,14 @@ sources:
   accessed_at: '2026-06-25'
 ---
 
+# Kapandji Test
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像体检时医生让你用拇指依次触碰其他四指指尖和掌心——通过这一系列动作判断拇指是否灵活、能否对掌。
+
+> **自然语言逻辑**：Kapandji Test 是一种临床拇指对掌能力测试，被改编后用于评估灵巧机器人手的拇指活动范围和对掌质量；它为人形手提供了一种简单、可解释的标准化指标，帮助比较不同手设计在类人抓握和手指内操作方面的能力。
+
 ## Overview
 
 The Kapandji Test scores thumb opposition by asking a subject to touch successive points on the hand, from the index distal phalanx to the hypothenar eminence. In robotics, it is used as a simple, interpretable benchmark for thumb dexterity in humanoid hands.

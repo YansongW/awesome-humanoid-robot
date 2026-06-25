@@ -48,6 +48,14 @@ sources:
   accessed_at: '2026-06-24'
 ---
 
+# Wonik Robotics
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一家专门制作高端仿生假手的工作室，把产品卖给大学和实验室，让研究人员测试各种抓握和操作方法。
+
+> **自然语言逻辑**：Wonik Robotics 是韩国机器人公司，生产研究级多指灵巧手 Allegro Hand；它为人形机器人末端执行器研究提供了稳定、可重复的硬件基准，常被用来与 LEAP Hand、Dex3-1 等新型手进行比较。
+
 ## Overview
 
 Wonik Robotics is a South Korean company that develops robotic hands and related components. Its Allegro Hand is one of the most common research-grade multi-fingered hands used in dexterous manipulation research. The hand is electrically actuated and features 16 independent degrees of freedom.

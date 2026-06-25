@@ -73,6 +73,12 @@ related_entities:
 
 # OmniAction Dataset
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一部大型家庭生活纪录片合集——不仅有画面，还包含对话、语气、环境音，帮助机器人理解人在不同情境下真正想做什么。
+
+> **自然语言逻辑**：OmniAction 是一个大规模多模态机器人操作数据集，包含 14.1 万条片段、112 项技能和 748 个物体，融合视觉、语音与环境声音上下文；它用于训练主动式机器人策略，使人形机器人能够从多模态线索中推断隐含的人类意图，而不只依赖显式文本指令。
+
 ## Overview
 
 OmniAction is a large-scale multimodal dataset designed for training robots to follow contextual instructions derived from vision, speech, and environmental sounds rather than explicit text commands.

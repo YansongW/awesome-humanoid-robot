@@ -81,6 +81,12 @@ related_entities:
 
 # RoboOmni: Proactive Robot Manipulation in Omni-modal Context
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一位能听懂你语气、观察你手势、还能注意到背景音的家政助手——不需要你一字一句打字，就能主动明白你想让它做什么。
+
+> **自然语言逻辑**：RoboOmni 是一个 2025 年的 VLA 系统，融合视觉、语音和环境声音等多模态信息，主动推断用户意图并执行操作；它让人形机器人在家庭和服务场景中能够像人一样理解隐含的、多模态的沟通，而不只是依赖明确的文本指令。
+
 ## Overview
 
 RoboOmni addresses a gap in current VLA systems: real-world human-robot interaction rarely relies on explicit text instructions. Instead, humans communicate through spoken dialogue, environmental sounds, and visual cues. RoboOmni fuses these omni-modal signals to infer user intentions proactively.

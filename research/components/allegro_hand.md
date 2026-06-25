@@ -50,6 +50,14 @@ sources:
   accessed_at: '2026-06-22'
 ---
 
+# Allegro Hand
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一位钢琴家的机械替身——每只手指都有独立的扭矩控制，能细腻地按键、捏取或旋转物体，并且能被常见的机器人软件直接调用。
+
+> **自然语言逻辑**：Allegro Hand 是 Wonik Robotics 生产的商用四指灵巧手，拥有 16 个扭矩控制关节；它广泛用于机器人学习与遥操作研究，作为基准硬件帮助研究者比较不同算法和手设计的性能。
+
 ## Overview
 
 The Allegro Hand is a commercially available dexterous robotic hand manufactured by Wonik Robotics (South Korea). It features four fingers with 16 independently torque-controlled joints (4 DoF per finger), enabling a wide range of grasp types and in-hand manipulation strategies. The hand is widely used in academic and industrial manipulation research because it is compact, lightweight, and well supported by ROS-based software.

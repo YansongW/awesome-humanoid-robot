@@ -67,6 +67,12 @@ related_entities:
 
 # RoboGen
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一位自动出题的 AI 教练——不再需要人类一题一题地设计训练任务，而是自己为机器人编写“作业”和对应的虚拟训练场景。
+
+> **自然语言逻辑**：RoboGen 是一个由大语言模型驱动的机器人任务自动生成框架，能够提出任务描述、奖励函数和仿真环境代码；它旨在用低成本方式快速扩展合成训练数据的多样性，帮助机器人学习更多样的操作技能。
+
 ## Overview
 
 RoboGen uses large language models to automatically generate diverse robotics tasks and the corresponding simulation environments. It aims to reduce the manual engineering required to create large-scale synthetic training data.

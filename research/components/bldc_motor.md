@@ -44,6 +44,14 @@ sources:
   accessed_at: '2026-06-22'
 ---
 
+# Brushless DC Motor
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像无人机或电动滑板车里那颗高效、耐用的小电机——没有电刷磨损，能把电能持续不断地变成强劲旋转。
+
+> **自然语言逻辑**：无刷直流电机（BLDC）利用电子换向替代机械电刷，具有高效率、长寿命和高功率密度；它是人形机器人关节中最主流的动力来源，与减速器、驱动器和编码器配合，构成紧凑而强劲的高扭矩关节模组。
+
 ## Overview
 
 A brushless DC (BLDC) motor uses a permanent-magnet rotor and electronically switched stator windings instead of mechanical commutator brushes. Electronic commutation—typically via Hall-effect sensors or sensorless back-EMF estimation—allows precise control of torque, speed, and position. Compared with brushed DC motors, BLDC motors offer higher efficiency, higher torque-to-inertia ratios, longer service life, reduced electromagnetic interference, and better thermal performance.

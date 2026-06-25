@@ -46,6 +46,14 @@ sources:
   accessed_at: '2026-06-22'
 ---
 
+# Main-Board Power Sensor
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像家里电表箱里的智能总表——实时显示全屋电器用了多少电，帮助你知道哪个设备最耗电、有没有漏电。
+
+> **自然语言逻辑**：主板功率传感器安装在机器人主控制器板上，用于测量计算、通信和辅助电子设备的总电压、电流和功耗；它为能耗模型提供真实数据，帮助研究者验证仿真预测、发现耗电大户，并优化机器人的续航与动作规划。
+
 ## Overview
 
 A main-board power sensor is a compact current/voltage sensing module placed on the primary controller board of a robot. It measures the aggregate electrical power drawn by the compute, communication, and auxiliary electronics. By sampling voltage and current at high frequency, it provides ground-truth power data for energy-aware control, diagnostics, and model validation.

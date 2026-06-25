@@ -49,6 +49,14 @@ sources:
   accessed_at: '2026-06-22'
 ---
 
+# ROBOTIS DYNAMIXEL XM430-W210-T
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像小型电动助力车里的轮毂电机——比普通指尖电机更大、更有劲，能让机器人手臂稳稳地举起一本书或完成一个推门动作。
+
+> **自然语言逻辑**：XM430-W210-T 是 ROBOTIS X 系列的中型智能舵机，集成了无芯直流电机、212.6:1 减速齿轮、绝对编码器和控制器；它为研究级机器手和小型人形关节提供中等扭矩与精确反馈，并可通过串行总线级联多个舵机。
+
 ## Overview
 
 The DYNAMIXEL XM430-W210-T is a smart servo actuator in ROBOTIS' X-series lineup. It integrates a coreless DC motor, precious-metal spur gear train with a 212.6:1 reduction ratio, a 12-bit contactless absolute encoder, and a 32-bit ARM Cortex-M3 controller into a compact 28.5 × 46.5 × 34 mm package weighing 82 g. Communication is via half-duplex TTL serial bus, allowing multiple servos to be daisy-chained on a single bus.

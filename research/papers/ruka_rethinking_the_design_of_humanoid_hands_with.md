@@ -121,6 +121,14 @@ related_entities:
 
 
 
+# RUKA: Rethinking the Design of Humanoid Hands with Learning
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一个创客用 3D 打印零件和普通舵机拼出一只仿生手，然后戴上数据手套做一遍动作，让这只手通过观察“学会”跟着做。
+
+> **自然语言逻辑**：RUKA 是一款低成本、开源、肌腱驱动的拟人灵巧手，具有 15 个欠驱动自由度和 11 个执行器；它通过 MANUS 动作捕捉手套采集人类手势，再用 LSTM+MLP 学习关节/指尖到电机的映射，从而实现数据驱动的灵巧控制，并在可达性、耐久性和力量上与 LEAP、Allegro 等手进行比较。
+
 ## Overview
 
 Dexterous manipulation remains a fundamental challenge for robotic systems, constrained by trade-offs among precision, compactness, strength, and affordability. RUKA addresses these trade-offs by combining a tendon-driven, anthropomorphic mechanical design with learning-based control. The hand is built from 3D-printed parts and off-the-shelf components, achieving a compact, human-sized form factor with five fingers, fifteen underactuated degrees of freedom, and eleven actuators.

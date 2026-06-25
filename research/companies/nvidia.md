@@ -53,6 +53,14 @@ sources:
   accessed_at: '2026-06-24'
 ---
 
+# NVIDIA
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像既生产游戏显卡，又提供虚拟训练场的公司——让人形机器人能在仿真世界里学走路、学抓东西，再把学到的东西放到真实机器人上运行。
+
+> **自然语言逻辑**：NVIDIA 是美国人形机器人上游的关键供应商，提供 GPU、Jetson 边缘计算模块、Isaac Sim 仿真平台和 Isaac Lab 学习框架；它的软硬件生态贯穿机器人 AI 训练、仿真验证和 onboard 部署，是许多机器人项目的共同技术底座。
+
 ## Overview
 
 NVIDIA is a leading supplier of AI compute and simulation infrastructure for robotics. Its Jetson embedded GPU modules are widely used as onboard perception and planning computers in humanoid robots, while its Isaac Sim and Isaac Lab platforms provide physics-based simulation and reinforcement-learning workflows for robot development.

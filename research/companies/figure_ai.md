@@ -51,6 +51,14 @@ sources:
   accessed_at: '2026-06-24'
 ---
 
+# Figure AI
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一家初创公司招募了一批“AI 仓库工人”——这些工人有人的形态、能看能听、能用双手分拣包裹，目标是先在工厂和物流站上岗。
+
+> **自然语言逻辑**：Figure AI 是美国通用人形机器人初创公司，开发面向物流和制造业的 Figure 系列人形机器人；它强调 AI 驱动的任务执行，集成 onboard 视觉-语言模型和 16 自由度灵巧手，并与汽车、零售企业合作进行真实场景试点。
+
 ## Overview
 
 Figure AI is a California-based startup focused on general-purpose humanoid robots for labor-intensive environments. The company has raised significant venture funding and partnered with firms such as BMW (manufacturing pilots) and OpenAI (AI models for robotics). Its Figure 02 robot integrates onboard vision-language models, six RGB cameras, 16-degree-of-freedom hands, and a 2.25 kWh torso battery.

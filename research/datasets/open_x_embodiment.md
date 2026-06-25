@@ -65,6 +65,12 @@ related_entities:
 
 # Open X-Embodiment Dataset
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像把来自不同运动项目、不同体型运动员的训练视频整合成一部“通用运动教材”，让学习者能跨项目迁移基本动作技能。
+
+> **自然语言逻辑**：Open X-Embodiment 是目前最大的公开机器人演示数据聚合集之一，汇集了多个机构、多种机器人形态和控制接口的数据；它统一的格式支持跨具身预训练，是 OpenVLA 等通用视觉-语言-动作模型最常用的预训练语料。
+
 ## Overview
 
 Open X-Embodiment (OXE) is one of the largest public aggregations of robot demonstration data. It pools data from multiple institutions, robot morphologies, and control interfaces into a unified format suitable for training generalist vision-language-action models.

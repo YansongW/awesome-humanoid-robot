@@ -43,6 +43,14 @@ sources:
   accessed_at: '2026-06-25'
 ---
 
+# ISB Conventions for Joint Coordinate Systems
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像地理学家统一使用的经纬度坐标系——无论哪张地图，只要用同样的坐标定义，大家就能直接比较位置、距离和方向。
+
+> **自然语言逻辑**：ISB 关节坐标系约定是国际生物力学学会制定的标准，规定了关节坐标轴、旋转顺序和符号约定；它让人形机器人研究者能用与人类生物力学相同的参考框架，直接对比机器人关节和人类关节的运动能力。
+
 ## Overview
 
 ISB conventions provide a common reference frame for describing human joint kinematics. They standardize coordinate axes, rotation sequences, and sign conventions so that studies and robot designs can be compared directly.

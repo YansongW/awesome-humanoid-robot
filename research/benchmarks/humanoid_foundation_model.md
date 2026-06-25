@@ -72,6 +72,12 @@ related_entities:
 
 # Humanoid Foundation Model Benchmark
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一份公开的“AI 模型高考排行榜”——从走路、用手、语言理解到仿真到现实迁移等多个科目，给人形机器人用的大模型打分排名。
+
+> **自然语言逻辑**：人形机器人基础模型基准是一个独立、公开的平台，从移动、全身控制、双手协调、灵巧操作、推理、长程规划等十个维度评估和比较面向人形机器人的基础模型；它帮助研究者和从业者判断哪些模型已具备部署潜力，并暴露当前能力短板。
+
 ## Overview
 
 The Humanoid Foundation Model Benchmark, launched by humanoid.guide on 14 April 2026, is an independent, free, and publicly accessible comparison platform for AI foundation models designed to control humanoid robots. It evaluates 40+ models from organizations such as NVIDIA, Google DeepMind, Tesla, Physical Intelligence, Figure AI, and Unitree.

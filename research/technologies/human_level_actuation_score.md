@@ -46,6 +46,14 @@ sources:
   accessed_at: '2026-06-25'
 ---
 
+# Human-Level Actuation Score
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一个综合信用评分——不是只看收入，而是把储蓄、负债、还款记录、消费习惯等合并成一个数字，来衡量一个人的财务健康度。
+
+> **自然语言逻辑**：类人驱动评分（HLAS）是一个标量、可分解的基准指标，把工作空间覆盖、扭矩-功率包络、带宽、效率和热可持续性汇总起来；它以参考人体为 1.0，量化不同机器人驱动系统距离“类人水平”有多远，便于在统一尺度上比较各类执行器技术。
+
 ## Overview
 
 The Human-Level Actuation Score (HLAS) is introduced as a way to make the often-vague claim of "human-level" actuation measurable and reproducible. It normalizes performance so that a human reference body scores 1.0, and decomposes the score into physically grounded factors.

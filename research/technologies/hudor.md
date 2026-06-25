@@ -43,6 +43,14 @@ sources:
   accessed_at: '2026-06-25'
 ---
 
+# HuDOR
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一套“人手动作录像教材”——记录真人如何拧瓶盖、叠衣服、拿杯子，然后把这些示范转换成机器人手能学习的动作数据。
+
+> **自然语言逻辑**：HuDOR 是一种人类到机器人的演示数据集或遥操作框架，提供人手运动数据用于训练灵巧机器人手的模仿学习策略；它把人类示范与机器人控制连接起来，帮助低成本、基于学习的机器手掌握复杂的抓握与操作技能。
+
 ## Overview
 
 HuDOR appears in the RUKA paper as the data source or framework for teleoperation and imitation-learning demonstrations. It provides human hand-motion data that is used to train controllers for the RUKA tendon-driven hand.

@@ -54,6 +54,14 @@ sources:
   accessed_at: '2026-06-24'
 ---
 
+# Unitree Robotics
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一家因机器狗闻名的公司，转而推出价格更亲民的“机器人体”——让更多实验室能买得起、用得上真实的人形硬件。
+
+> **自然语言逻辑**：宇树科技是中国机器人公司，以四足机器人和 Unitree H1/G1 人形平台著称；它注重自研高扭矩执行器和成本控制，使人形机器人硬件对研究者和早期工业用户更加可及，成为讨论人形机器人 BOM 和规模化时的重要参照。
+
 ## Overview
 
 Unitree Robotics is a Hangzhou-based robotics company founded in 2016. It first became known for consumer and industrial quadruped robots, then expanded into humanoids with the Unitree H1 (launched 2023) and the smaller, lower-cost Unitree G1 (launched 2024). The company emphasizes in-house actuator development, high torque density, and aggressive pricing relative to comparable humanoid platforms.

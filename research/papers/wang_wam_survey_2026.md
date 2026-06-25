@@ -84,6 +84,12 @@ related_entities:
 
 # World Action Models: The Next Frontier in Embodied AI
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像下棋高手在落子前先在脑中推演几步后的局面——不是只看当前棋盘，而是预测未来变化再决定动作。
+
+> **自然语言逻辑**：这篇 2026 年综述提出世界动作模型（WAM），把预测性世界建模与动作生成统一为具身基础模型；不同于直接根据观察映射动作的反应式 VLA，WAM 会先建模世界在干预下如何演化，再基于预测的未来状态生成动作，对需要长程规划和全身协调的人形机器人尤为重要。
+
 ## Overview
 
 Wang et al. (2026) introduce **World Action Models (WAMs)** as a paradigm that unifies predictive world modeling with action generation. Unlike reactive VLAs that map observations directly to actions, WAMs model how the world evolves under intervention and generate actions conditioned on predicted futures.

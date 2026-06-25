@@ -94,6 +94,14 @@ related_entities:
 
 
 
+# Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像为汽车建立的油耗模型——不是只看速度，而是综合考虑发动机损耗、路况、上下坡和空调负载，预测不同驾驶方式会消耗多少油。
+
+> **自然语言逻辑**：这篇论文为 Unitree G1 的七自由度左臂建立了一个基于物理的线性参数电力消耗模型，综合了执行器损耗、重力补偿扭矩和成对关节速度交互项；它能在真实机器人轨迹上准确预测功耗，为能量感知运动规划、电池管理和热监控提供可解释的模型基础。
+
 ## Overview
 
 This paper addresses the lack of physics-based electrical power consumption models for modern humanoid robot arms. It develops a linear-in-parameters model for the seven-degree-of-freedom left arm of the Unitree G1 humanoid robot. The model integrates actuator loss terms with a baseline-torque correction that captures variations in gravity-compensation load, allowing it to predict negative net power trajectories that occur during deceleration or lowering motions. Pairwise joint-speed interaction terms are added to account for power coupling when multiple joints move simultaneously.

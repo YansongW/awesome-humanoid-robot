@@ -48,6 +48,14 @@ sources:
   accessed_at: '2026-06-22'
 ---
 
+# ROBOTIS DYNAMIXEL XL330-M288-T
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像木偶手指里那枚微小却有力的“肌肉”——体积小、重量轻，却能让木偶的手指精确地弯曲、捏住一颗小珠子。
+
+> **自然语言逻辑**：XL330-M288-T 是 ROBOTIS X 系列的小型智能舵机，内部集成了电机、减速齿轮、磁编码器和控制器；它适用于低成本灵巧手和小型关节，通过 TTL 串行总线接收数字指令，输出精确的转角和扭矩。
+
 ## Overview
 
 The DYNAMIXEL XL330-M288-T is a compact smart servo in ROBOTIS' entry-level X-series. It integrates a cored DC motor, engineering-plastic spur gear train with a 288.4:1 reduction ratio, a 12-bit contactless magnetic encoder, and a 32-bit ARM Cortex-M0+ controller in a 20 × 34 × 26 mm package weighing only 18 g. Communication is via half-duplex TTL serial bus, and it supports RC protocols without an additional converter.

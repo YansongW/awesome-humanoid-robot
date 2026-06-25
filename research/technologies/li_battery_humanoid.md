@@ -60,6 +60,12 @@ sources:
 
 # Lithium-Ion Battery System for Humanoid Robots
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像电动滑板车或无人机里那块高能量密度的电池——要轻巧、要能大功率放电，但充满一次只能支撑机器人活动两三个小时。
+
+> **自然语言逻辑**：锂离子电池是目前人形机器人最主流的机载储能方案，在能量密度、功率密度和循环寿命之间取得平衡；它决定了机器人能连续活动多久、能承受多大的动态功耗，也直接影响热管理、安全设计和量产成本。
+
 ## Overview
 
 Lithium-ion batteries (LIBs) are the dominant onboard energy storage technology for humanoid robots. They offer a favorable balance of gravimetric energy density, power density, and proven cycle life, supported by mature manufacturing ecosystems. However, current LIBs are widely recognized as a system-level bottleneck, typically limiting dynamic runtime to 2-4 hours.

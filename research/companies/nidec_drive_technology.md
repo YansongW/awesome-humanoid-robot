@@ -71,6 +71,12 @@ related_entities:
 
 # Nidec Drive Technology
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一家精密手表齿轮厂开始为机器人生产“微型强力变速器”——用极小的体积把电机的高速旋转变成关节所需的慢速大扭矩。
+
+> **自然语言逻辑**：尼得科传动技术是日本电产旗下的精密传动子公司，生产面向人形机器人的 FLEXWAVE 应变波减速器、电机和编码器；它为机器人关节提供高减速比、低背隙的精密传动方案，是人形机器人上游减速器和电机供应链的重要参与者。
+
 ## Overview
 
 Nidec Drive Technology (Nidec-DTC) is a subsidiary of Nidec Corporation focused on precision drive systems. It markets the **FLEXWAVE** family of strain-wave gear reducers—also known as harmonic-drive-style reducers—specifically for humanoid robots and other precision robotics applications. Nidec is also a major global producer of small precision motors, including brushless DC and servo motors.

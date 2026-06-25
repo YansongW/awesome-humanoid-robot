@@ -56,6 +56,12 @@ related_entities:
 
 # Neodymium-Iron-Boron Magnet
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像高端耳机或硬盘驱动器里那块小而强的永磁体——体积小、磁力大，让电机在有限空间里产生足够强劲的扭矩。
+
+> **自然语言逻辑**：钕铁硼磁体是目前最强的商用永磁材料，广泛应用于高性能伺服电机和无刷直流电机；它直接决定了人形机器人执行器能否在轻小体积下输出大扭矩，从而影响机器人的形态、重量和能效。
+
 Neodymium-iron-boron (NdFeB) magnets are the strongest commercially available permanent magnets. They are essential for compact, high-torque electric motors, making them critical for humanoid robot actuators.
 
 ## Key Properties

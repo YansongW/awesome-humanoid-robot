@@ -42,6 +42,14 @@ sources:
   accessed_at: '2026-06-25'
 ---
 
+# Range of Motion Test
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像体检时测量你手臂能举多高、膝盖能弯多少——用角度范围来判断关节灵活性和可达工作空间。
+
+> **自然语言逻辑**：活动范围（ROM）测试测量机器人手或肢体每个关节能达到的最小和最大角度；它决定了机器人能覆盖多大比例的人类工作空间，是抓取规划、全身控制和手设计的基础输入之一。
+
 ## Overview
 
 The Range of Motion (ROM) Test measures the minimum and maximum angles achievable at each joint. In robot hands, it determines how much of the human hand workspace the robot can cover.

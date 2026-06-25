@@ -50,6 +50,14 @@ sources:
   accessed_at: '2026-06-22'
 ---
 
+# MANUS Metagloves
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像电影动捕棚里演员戴的数据手套——能把手指每一次弯曲、张开、旋转都记录下来，再映射到虚拟角色或机器人手上。
+
+> **自然语言逻辑**：MANUS Metagloves 是用于手部动作捕捉和机器人遥操作的高精度数据手套，可追踪多达 25 个手部自由度；它通过 MANUS Core 软件把采集到的人手姿态实时传输给机器人学习框架，为训练灵巧操作策略提供高质量的人类示范数据。
+
 ## Overview
 
 MANUS Metagloves are professional data gloves developed by MANUS (Netherlands) for capturing high-fidelity hand and finger motion. They are used in motion capture, virtual production, biomechanics research, and increasingly in robotics for teleoperation and human-hand dataset collection. Different product lines use different tracking technologies: Quantum Metagloves use sub-millimeter fingertip tracking sensors; Metagloves Pro use electromagnetic-field (EMF) tracking for millimeter-level precision; and Metagloves Pro Haptic add vibrotactile feedback.

@@ -61,6 +61,12 @@ related_entities:
 
 # Bank of America Institute — Humanoid Robots 101
 
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像给投资者写的《人形机器人入门手册》——拆解了机器人由哪些“器官”组成、每台成本大概多少、未来几十年可能怎么普及。
+
+> **自然语言逻辑**：这份 2025 年 4 月发布的美国银行研究所报告系统介绍了人形机器人架构、核心零部件、物料成本轨迹以及到 2060 年的应用阶段；它为理解人形机器人市场预测、供应链机会和规模化路径提供了投资者视角的宏观参考。
+
 ## Overview
 
 Published on 29 April 2025 by the Bank of America Institute, *Humanoid Robots 101* is a strategic primer aimed at investors and business audiences. It frames humanoid robots as service robots that operate in unstructured environments, contrasting them with traditional industrial robots. The report argues that advances in AI (especially LLMs and VLMs), 3D perception, control algorithms, and falling component costs are poised to move humanoids from proof-of-concept to multi-industry adoption by the end of the decade.

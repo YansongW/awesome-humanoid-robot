@@ -52,6 +52,14 @@ sources:
   accessed_at: '2026-06-22'
 ---
 
+# Unitree Dex3-1 Dexterous Hand
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像一只鹰爪或机械三指钳——用三根手指配合力控，既能轻轻握住一颗鸡蛋，也能稳稳抓起一把扳手。
+
+> **自然语言逻辑**：Unitree Dex3-1 是 Unitree G1-EDU 的可选三指力控灵巧手，每只手提供 7 个主动自由度（可选 2 个腕部自由度）；它通过力-位混合控制，让机器人能够抓握不同形状和硬度的物体，把人形机器人的操作能力从简单夹持扩展到复杂抓取。
+
 ## Overview
 
 The Unitree Dex3-1 is a three-fingered, force-controlled dexterous hand designed as an optional end effector for the Unitree G1-EDU humanoid robot. Each hand provides 7 active degrees of freedom in the fingers, with some configurations adding 2 additional wrist degrees of freedom. The hand uses force-position hybrid control to grasp and manipulate objects of varying shapes and stiffness.

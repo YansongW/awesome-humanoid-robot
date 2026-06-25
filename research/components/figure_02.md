@@ -51,6 +51,14 @@ sources:
   accessed_at: '2026-06-24'
 ---
 
+# Figure 02
+
+## 生活实例 + 自然语言阐述逻辑
+
+> **生活实例**：它就像仓库里一位既能看懂货架标签、又能用双手分拣包裹的 AI 助手——眼睛看懂，脑子理解，双手执行。
+
+> **自然语言逻辑**：Figure 02 是 Figure AI 开发的第二代通用人形机器人，面向仓储和制造场景；它集成了 onboard 视觉-语言模型和 16 自由度的灵巧手，使机器人能够理解自然语言指令并执行精细抓取与搬运任务。
+
 ## Overview
 
 Figure 02 is the second-generation humanoid robot from Figure AI. It is designed for warehouse and factory tasks, with improvements in compute, battery capacity, and hand dexterity over the earlier Figure 01 prototype. The robot integrates six onboard RGB cameras and an onboard vision-language model for perception and task reasoning.
