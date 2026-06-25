@@ -28,20 +28,23 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 - [x] Improved `scripts/ai4sci_run_next_workstream.py`: sorts by `priority`, uses config `name` for output tracking, and skips workstreams after two all-error runs.
 - [x] Added `priority` to hardware (1), manufacturing/supply-chain (2), and application (3) workstreams.
 - [x] Renamed `cross_domain_relationships.yaml` → `cross_domain.yaml` to align filename with config name.
+- [x] Added `scripts/clean_staging_dangling.py` to remove dangling edges from staged workstreams before promotion.
+- [x] Updated `scripts/ai4sci_lib/pipeline.py` to filter dangling edges at generation time.
+- [x] Promoted `motor_selection` outputs: **2 entries, 1 relationship**.
+- [x] Promoted `ai_to_hardware_requirements` daemon outputs: **2 entries**.
+- [x] Updated README stats to **84 entries / 58 relationships / 23 workstreams**; validation passing.
 
 ### In Progress
 
-- [ ] `motor_selection` workstream run (Kimi CLI subprocess, ~10–20 min per paper).
+- [ ] `reducer_selection` workstream run (task `bash-pbdcdlki`).
 - [ ] Hourly daemon (`bash-1b5d938i`) continues re-processing older workstreams.
 - [ ] Hourly cron reminder (`b1753c79`) reports task status.
 
 ### Pending
 
-- [ ] Review and promote `motor_selection` staged entries/relationships.
-- [ ] Clean dangling edges after promotion.
-- [ ] Run `reducer_selection` and `battery_cells` workstreams.
+- [ ] Review and promote `reducer_selection` staged entries/relationships.
+- [ ] Run and promote `battery_cells` workstream.
 - [ ] Run downstream manufacturing/application workstreams.
-- [ ] Update README stats (entries/relationships count).
 - [ ] Periodically check daemon logs and re-enable/restart if it stalls on all-error workstreams.
 
 ---
@@ -51,7 +54,7 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 | Task ID | Command | Status |
 |---------|---------|--------|
 | `bash-1b5d938i` | Hourly workstream daemon loop (`ai4sci_run_next_workstream.py`) | running |
-| `bash-xnup903m` | `motor_selection` batch run | running |
+| `bash-pbdcdlki` | `reducer_selection` batch run | running |
 | `b1753c79` | Hourly cron reminder to check `TaskOutput` | active |
 
 ---
