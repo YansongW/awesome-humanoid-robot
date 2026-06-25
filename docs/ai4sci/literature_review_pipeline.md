@@ -1,6 +1,7 @@
 # AI4Sci Literature Review Pipeline
 
-> **Status**: Multi-Agent Workstream Mode — `scripts/ai4sci_orchestrator.py` and `AgentSwarm` are used to run parallel domain workstreams.  
+> **Status**: Multi-Agent Workstream Mode — `scripts/ai4sci_orchestrator.py` and Kimi Code CLI (`AgentSwarm`) are used to run parallel domain workstreams.  
+> **Last updated**: 2026-06-25  
 > **Purpose**: Define the automated, human-in-the-loop workflow for discovering, reading, extracting, and staging academic/industry sources for the `awesome-humanoid-robot` knowledge base.
 
 ---
@@ -16,7 +17,7 @@ The pipeline has four phases:
 | Phase | Deliverable | Status |
 |-------|-------------|--------|
 | 1 | Single-paper draft generator | ✅ Ready |
-| 2 | Relevance-based discovery feed & workstream runner | ✅ Ready |
+| 2 | Relevance-based discovery feed & workstream runner | ✅ Ready (arXiv sort-by-relevance fix landed) |
 | 3 | Review & approval workflow | ✅ Ready |
 | 4 | CI/dashboard integrations | 🚧 Future |
 
@@ -48,12 +49,9 @@ The pipeline has four phases:
 
 Sources used by workstreams:
 
-- arXiv RSS/API feeds (`cs.RO`, `cs.LG`, `cs.AI`, `cs.CV`)
-- Semantic Scholar API alerts
-- Google Scholar keyword alerts
-- Conference proceedings RSS
-- Company technical blogs and preprints
-- Web search for industry reports, teardowns, and standards updates
+- **arXiv API** — primary source; search uses `relevance` sort and deduplicates against existing entries.
+- **Semantic Scholar API** — secondary source for arXiv-backed papers (no API key required for light usage).
+- *Planned/future*: Google Scholar keyword alerts, conference proceedings RSS, company technical blogs and preprints, web search for industry reports, teardowns, and standards updates.
 
 ### 2.2 Relevance Ranking
 
@@ -65,19 +63,18 @@ Two-stage filter:
 ### 2.3 Full-Text Acquisition
 
 - Prefer arXiv PDFs (open access).
-- Resolve OpenAccess DOIs via Unpaywall when available.
-- Extract clean text with PyMuPDF.
-- Fallback to abstract-only extraction for paywalled papers.
-- For web sources, extract main article text and cite URLs.
+- Extract clean text from downloaded PDFs.
+- Fallback to abstract-only extraction when PDF access fails.
+- For manual URLs, the pipeline resolves arXiv IDs and PDF links automatically.
 
 ### 2.4 LLM Extraction
 
 The LLM reads the source and produces:
 
 - Core metadata (title, authors, year, venue, abstract, problem, method).
-- Structured entry frontmatter (type, names, summaries in en/zh/ko, domains, layers, roles, tags, sources).
+- Structured entry frontmatter (type, names, summaries in en/zh/ko, domains, layers, roles, theoretical depth, tags, sources).
 - Markdown body (overview, key contributions, relevance to humanoid robotics).
-- Proposed relationships to existing or new entities.
+- Proposed relationships to existing or new entities, including foundational links (`formalizes`, `uses_theorem`, `derived_from`, `instantiates`, `builds_on`, `has_prerequisite`, `uses`, `includes`, `solves`, `estimates`, `minimizes`, `approximates`).
 - Review notes flagging uncertain claims.
 
 ### 2.5 Staging
@@ -157,12 +154,12 @@ A workstream can be executed:
 
 - **As a single batch**:
   ```bash
-  python scripts/ai4sci_batch_pipeline.py scripts/ai4sci_workstreams/definition/algorithm_survey/vla.yaml --max-papers 10
+  python scripts/ai4sci_batch_pipeline.py scripts/ai4sci_workstreams/definition/algorithm_survey/vla.yaml --max-papers 10 --max-workers 2
   ```
 
 - **Via the multi-agent orchestrator**:
   ```bash
-  python scripts/ai4sci_orchestrator.py --max-workers 2 --max-papers 10
+  python scripts/ai4sci_orchestrator.py --max-workers 2 --max-batch-workers 1 --max-papers 10
   ```
 
 - **By dispatching parallel AI subagents** (e.g., via Kimi Code CLI `AgentSwarm`), each subagent reads one workstream config, performs web/arXiv discovery, drafts entries and relationships, validates them, and stages them for review.
@@ -191,7 +188,17 @@ export AI4SCI_MODEL="kimi-latest"
 python scripts/ai4sci_paper_pipeline.py https://arxiv.org/abs/2604.23001
 ```
 
-**Option B — Kimi Code CLI-only credential (no standard API key):**
+**Option B — Desktop credential file (recommended for this workspace):**
+
+A preconfigured credential file lives at `~/Desktop/ai4sci_api_key.txt`. Source it before running any pipeline:
+
+```bash
+source .venv/bin/activate
+export $(grep -v '^#' ~/Desktop/ai4sci_api_key.txt | xargs)
+python scripts/ai4sci_paper_pipeline.py https://arxiv.org/abs/2604.23001
+```
+
+**Option C — Kimi Code CLI-only credential (no standard API key):**
 
 If your key only works inside Kimi Code CLI / IDE plugins, force the pipeline to call the local `kimi` binary:
 
@@ -268,6 +275,8 @@ The pipeline reads environment variables:
 | `AI4SCI_BASE_URL` | `https://api.moonshot.cn/v1` | OpenAI-compatible endpoint |
 | `AI4SCI_MODEL` | `kimi-latest` | Model name |
 | `AI4SCI_USE_KIMI_CLI` | `false` | Force local Kimi Code CLI backend instead of HTTP API |
+
+For non-Kimi endpoints (e.g., DeepSeek), set `AI4SCI_BASE_URL` and `AI4SCI_MODEL` accordingly (e.g., `https://api.deepseek.com/v1` and `deepseek-chat`).
 
 For non-Kimi endpoints, set `AI4SCI_BASE_URL` and `AI4SCI_MODEL` accordingly.
 

@@ -1,234 +1,174 @@
+<div align="center">
+
 # Awesome Humanoid Robot 🤖
 
-> A curated knowledge base for going **from 0 to 1 on humanoid robot mass production and industrial application**.
->
-> Curated with **AI4Sci** — AI-assisted scientific research, literature synthesis, and industrial intelligence.
->
-> 🌐 [English](README.md) · [简体中文](README.zh.md) · [한국어](README.ko.md)
+**A curated knowledge graph for going from 0 to 1 on humanoid robot mass production and industrial application.**
+
+<p>
+  <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
+  <img src="https://img.shields.io/badge/entries-75-green" alt="75 entries" />
+  <img src="https://img.shields.io/badge/relationships-57-brightgreen" alt="57 relationships" />
+  <img src="https://img.shields.io/badge/workstreams-16-orange" alt="16 workstreams" />
+  <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
+</p>
+
+🌐 [English](README.md) · [简体中文](README.zh.md) · [한국어](README.ko.md)
+
+</div>
 
 ---
 
-## Why This Project Exists
+## 📌 What is this project?
 
-This project is built around one question:
+**Awesome Humanoid Robot** is a structured, living knowledge base built around one central question:
 
 > **How do we go from 0 to 1 to achieve humanoid robot mass production and industrial application?**
 
-A humanoid robot that works in a lab is not the same as a humanoid robot that can be mass-produced, deployed, and maintained in the real world. The gap between a working prototype and a scalable product spans every layer of the system:
+It tracks every layer of the journey — from raw materials and components to manufacturing, design, AI, software, data, testing, mass production, applications, markets, policy, and regulation. Instead of a flat list of papers or products, we model the domain as a **knowledge graph**: entities are nodes, relationships are typed edges, and every claim is traceable to a source.
 
-- **Raw materials and resources**: What minerals, metals, magnets, and chemicals does a humanoid robot consume? Where do they come from? What are the supply risks?
-- **Components and subsystems**: Motors, reducers, sensors, batteries, compute, end effectors, structural parts — who makes them, how do they perform, and what do they cost?
-- **Manufacturing processes**: How are these components machined, cast, wound, assembled, and tested at precision and scale?
-- **Design and systems engineering**: What determines the robot's morphology, kinematics, dynamics, reliability, and safety?
-- **Software and AI**: What algorithms enable perception, planning, locomotion, manipulation, and long-horizon autonomy?
-- **Data and infrastructure**: What datasets, simulators, middleware, and toolchains are needed to develop and validate these systems?
-- **Assembly, integration, and testing**: How does a robot go from a pile of parts to a calibrated, validated product?
-- **Mass production**: What factory design, supply-chain coordination, yield control, and cost engineering are required to produce thousands or millions of units?
-- **Applications and markets**: In which industries and tasks are humanoid robots actually useful and economically viable today? Tomorrow?
-- **Policy and regulation**: What safety standards, certifications, liability frameworks, and social norms enable or block deployment?
-
-We use **AI4Sci** — AI-assisted research, synthesis, and verification — to map this full journey. But the goal is not just to collect papers or products. It is to understand how every piece fits together, where the bottlenecks are, and what decisions determine whether humanoid robotics succeeds as an industry.
+The project is **AI-assisted, human-verified**. We use AI4Sci pipelines to accelerate discovery, extraction, and synthesis, while keeping humans in the loop for approval before anything is promoted to production.
 
 ---
 
-## Scope
+## 🎯 Why we are building it
 
-This project covers the following domains, organized as an industry-chain ontology:
+Humanoid robotics is at an inflection point. Labs around the world can already build robots that walk, manipulate, and interact. But a robot that works in a demo is not the same as a robot that can be **mass-produced, deployed, and maintained at scale**.
 
-| Domain | What We Track |
+The gap is not just an AI problem. It is a **systems problem** that connects:
+
+- 🪨 **Materials science** — rare-earth magnets, battery chemistries, lightweight alloys
+- ⚙️ **Precision manufacturing** — machining, winding, casting, assembly, quality control
+- 🌐 **Global supply chains** — tier-1/tier-2 suppliers, regional ecosystems, cost structures
+- 🧠 **AI & software** — VLAs, world models, control, planning, sim-to-real
+- 📊 **Data infrastructure** — datasets, simulators, benchmarks, fleet telemetry
+- 🏭 **Mass production** — factory design, yield optimization, BOM cost engineering
+- ⚖️ **Policy & society** — safety standards, certification, liability, labor impact
+
+Today, information about these layers is scattered across academic papers, company press releases, teardowns, industry reports, and technical blogs. Decision makers — researchers, engineers, founders, investors, policymakers — lack a single, structured map that shows how the pieces fit together, where the bottlenecks are, and what trade-offs determine success.
+
+This project is that map.
+
+> Our goal is not to collect every paper. It is to understand the **full journey from mine to market**, and to make that understanding verifiable, reusable, and community-curated.
+
+---
+
+## 🗺️ What you will find here
+
+| Domain | What we track |
 |--------|---------------|
 | **Raw Materials & Resources** | Rare-earth elements, magnets, lightweight metals, composites, semiconductors, battery chemistries |
 | **Components & Subsystems** | Actuators, motors, reducers/gearboxes, sensors, batteries, compute units, end effectors, cables, structural parts |
 | **Supply Chain & Manufacturing** | Tier-1/Tier-2 suppliers, manufacturing processes, quality control, cost structures, regional ecosystems |
-| **Design & Engineering** | Mechanical design, kinematics, dynamics, humanoid morphology, degrees of freedom, safety design |
+| **Design & Engineering** | Mechanical design, kinematics, dynamics, morphology, degrees of freedom, safety design |
 | **Assembly, Integration & Testing** | Assembly lines, calibration, system integration, test benches, validation protocols |
 | **Mass Production & Scaling** | Factory design, production ramp, unit economics, BOM analysis, yield optimization |
 | **AI, Models & Algorithms** | VLAs, world models, locomotion policies, manipulation policies, planning, sim-to-real, SLAM, teleoperation |
 | **Software & Middleware** | ROS 2, real-time OS, simulation stacks, digital twins, fleet management, data pipelines |
 | **Data & Datasets** | Teleoperation data, motion capture, simulation data, multi-modal datasets, data licensing |
 | **Benchmarks & Evaluation** | Sim benchmarks, real-world tasks, hardware-in-the-loop testing, safety standards |
-| **Applications & Markets** | Industrial, logistics, healthcare, home, retail, research, defense, entertainment |
+| **Applications & Markets** | Industrial manufacturing, logistics, healthcare, home service, retail, research, defense, entertainment |
 | **Companies & Ecosystem** | Startups, OEMs, component vendors, research labs, funding, partnerships |
 | **Policy, Regulation & Ethics** | Safety standards, liability, labor impact, privacy, human-robot interaction norms |
+| **Foundations** | Cross-cutting math, physics, chemistry, and CS concepts that underpin every engineering domain |
 
 ---
 
-## Architecture-First Approach
+## 🏗️ Architecture-first approach
 
-Before populating content, this project first establishes a **formal information model** that can accommodate entities, relationships, layers, domains, and cross-cutting dependencies across the entire industry chain.
+Before adding content, we built a formal information model that can represent the entire industry chain as a graph.
 
-Key architectural decisions:
-
-- **Graph-first**: entities are nodes, relationships are directed edges.
+- **Graph-first**: entities are nodes, relationships are directed, typed edges.
 - **Dual tagging**: every entity has both a **value-chain layer** (foundations / upstream / midstream / intelligence / validation-markets) and a **functional role** (material / component / process / system / intelligence / etc.).
-- **Foundational knowledge domain**: cross-cutting math, physics, chemistry, and CS topics are assigned to `00_foundations` so they can be shared across engineering trees.
-- **Relationship as first-class citizen**: cross-domain links are explicit, typed, and verifiable.
-- **Multi-lingual by design**: names, summaries, and descriptions are stored as language maps.
+- **Foundational knowledge domain**: cross-cutting math, physics, chemistry, and CS topics live in `00_foundations` so they can be shared across engineering trees.
+- **Relationships as first-class citizens**: cross-domain links are explicit, typed, and verifiable.
+- **Multi-lingual by design**: names, summaries, and descriptions are stored as language maps (en / zh / ko).
 - **Versioned schemas**: entry and relationship schemas are versioned and extensible.
-- **Fine-grained theoretical depth**: equations, operators, variables, constants, algorithms, and approximations can be explicit nodes, not just broad concepts.
+- **Fine-grained theoretical depth**: equations, operators, variables, constants, algorithms, and approximations can be explicit nodes.
 - **YAML frontmatter + Markdown**: entries are human-readable and machine-readable.
 
 See [`docs/architecture/information_model.md`](docs/architecture/information_model.md) and [`data/schema/v1/`](data/schema/v1/) for the full specification.
 
 ---
 
-## AI4Sci Methodology
+## ⚙️ How it works: AI4Sci + human review
 
-This project is built with AI-assisted research workflows:
+1. **Systematic scanning** — workstreams query arXiv, Semantic Scholar, and (planned) web sources for relevant papers and industry intelligence.
+2. **Relevance classification** — an LLM scores each source against the central question and drops low-relevance items.
+3. **Structured extraction** — the LLM drafts typed entries, multi-lingual summaries, and proposed relationships.
+4. **Staging** — all AI drafts land in `.staging/` for isolated review.
+5. **Human review** — a reviewer approves, edits, or rejects each draft.
+6. **Integration & validation** — approved entries move to `research/` and `data/relationships/` and must pass `scripts/validate_entries.py`.
 
-1. **Systematic literature and industry scanning** — track academic papers, patents, company announcements, supply-chain reports, and technical blogs.
-2. **Structured extraction** — every entity is typed, tagged by layer/domain/role, and linked to sources.
-3. **Natural-language-first entries** — every concrete entity (equation, theorem, algorithm, formalism) starts with a real-life analogy and plain-language explanation before the math.
-4. **Cross-reference and verification** — claims are traced to original sources; conflicting information is flagged.
-4. **Graph-driven organization** — entries and relationships form a knowledge graph, not a flat list.
-5. **Human review** — AI accelerates collection and synthesis, but all high-stakes claims are reviewed before public release.
-
-### Workstream Taxonomy
-
-Content is populated through **workstreams** — focused, parallel AI4Sci research tasks mapped to the full 0→1 knowledge tree. Each workstream is a YAML config in `scripts/ai4sci_workstreams/` that defines seed queries, target domains, entity types, and relationship patterns.
-
-The taxonomy spans four dimensions:
-
-- **Product lifecycle**: Definition → Design → Verification Planning → MVP → Testing → EVT → DVT → PVT → Mass Production / Ramp
-- **Engineering domains**: Hardware, Software & AI, Data Systems, Infra/Cloud/Fleet, Embedded, Mechanical Structure, Simulation, Supply Chain & Manufacturing, Quality & Reliability, Safety & Certification, Applications & Markets, Policy & Ethics
-- **Knowledge types**: Papers, Datasets, Benchmarks, Technologies, Components, Companies, Reports, Standards
-- **Theoretical depth**: Foundation → Principle/Theorem → Formalism → Method/Algorithm → System/Implementation
-
-This lets a high-level concept like WBC be traced down to the exact QP objective and constraints, individual KKT stationarity/complementarity equations, the gradient and Hessian operators, active-set and interior-point algorithms, and ultimately to multivariable calculus, linear algebra, and convex analysis.
-
-See [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md) for the full taxonomy, [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md) for the executable TODO list, and [`docs/ai4sci/knowledge_chain_examples.md`](docs/ai4sci/knowledge_chain_examples.md) for concrete macro-to-micro chains.
-
-See [`docs/ai4sci/`](docs/ai4sci/) for the detailed research pipeline and verification criteria.
+The full pipeline is documented in [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md).
 
 ---
 
-## Roadmap & Current Tasks
+## 🚀 Quick start
 
-### Phase 0: Information Architecture ✅ Complete
+```bash
+# 1. Clone the repository
+git clone https://github.com/YansongW/awesome-humanoid-robot.git
+cd awesome-humanoid-robot
 
-Before adding content, we built the structural foundation:
+# 2. Activate the virtual environment
+source .venv/bin/activate
 
-- [x] Define the central question and ontology domains
-- [x] Design the information model (entities, relationships, layers, roles)
-- [x] Create JSON schemas for entries and relationships
-- [x] Add sample entities and relationships to validate the model
-- [x] Add validation scripts
-- [x] Validate and refine the model based on first samples
+# 3. Validate the current knowledge graph
+python scripts/validate_entries.py
 
-### Phase 1: Ontology Expansion ✅ Complete
+# 4. Run a single workstream (example: VLA survey)
+python scripts/ai4sci_batch_pipeline.py \
+  scripts/ai4sci_workstreams/definition/algorithm_survey/vla.yaml \
+  --max-papers 5 --max-workers 2
 
-- [x] Complete per-domain ontology documents (01–12)
-- [x] Define cross-domain relationship patterns for each domain
-- [x] Establish controlled vocabularies and extension rules
-- [x] Internal review of ontology documents before content population
+# 5. Or run multiple workstreams in parallel
+python scripts/ai4sci_orchestrator.py --max-workers 2 --max-batch-workers 1 --max-papers 5
 
-### Phase 2: Workstream-Driven Content Population ✅ In Progress
-
-Content is now added through parallel workstreams aligned with the 0→1 lifecycle:
-
-- [x] Run first multi-agent workstream batch (VLA, companies, raw materials, cross-domain)
-- [ ] Refactor workstream configs into the lifecycle × domain tree structure
-- [ ] Add high-priority leaf workstreams: whole-body control, MPC, actuator design, force/torque sensors, rare-earth magnets, simulation platforms, safety standards
-- [x] Curate AI/model content with production relevance (VLA survey + datasets/benchmarks/data engines)
-- [ ] Build the humanoid robot BOM / component map
-- [ ] Map the company and supplier ecosystem
-- [ ] Track raw materials, manufacturing processes, and cost drivers
-
-### Phase 3: Verification & Public Release
-
-- [ ] Validate initial entries against schemas
-- [ ] Internal review of claims and sources
-- [ ] Publish v0.1.0 and contribution guidelines
-
----
-
-## Project Status & Release Strategy
-
-> **Current phase**: Private research and framework construction.  
-> **Public release target**: `v0.1.0` after the ontology, initial content, and verification workflow are complete.
-
-| Phase | Goal | Visibility |
-|-------|------|------------|
-| Pre-v0.1.0 | Build ontology, populate initial entries, establish verification workflow | **Private** |
-| v0.1.0 | Public launch for community co-creation | **Public** |
-| Post-v0.1.0 | Continuous updates, quarterly releases, deeper domain expansion | Public |
-
-Until v0.1.0, the repository is private. All content is treated as a draft and subject to verification before public release.
-
----
-
-## Directory Structure
-
-```
-awesome-humanoid-robot/
-├── README.md                          # This file
-├── README.zh.md                       # Simplified Chinese
-├── README.ko.md                       # Korean
-├── docs/
-│   ├── project_charter.md             # Project scope, principles, governance
-│   ├── project_charter.zh.md
-│   ├── project_charter.ko.md
-│   ├── ontology/
-│   │   ├── 00_overview.md             # Industry-chain concept map
-│   │   ├── 00_overview.zh.md
-│   │   ├── 00_overview.ko.md
-│   │   ├── 01_raw_materials.md        # + .zh.md
-│   │   ├── 02_components_supply_chain.md
-│   │   ├── 03_manufacturing_processes.md
-│   │   ├── 04_assembly_integration_testing.md
-│   │   ├── 05_mass_production.md
-│   │   ├── 06_design_engineering.md
-│   │   ├── 07_ai_models_algorithms.md
-│   │   ├── 08_software_middleware.md
-│   │   ├── 09_data_datasets.md
-│   │   ├── 10_evaluation_benchmarks.md
-│   │   ├── 11_applications_markets.md
-│   │   ├── 12_policy_regulation_ethics.md
-│   │   └── session_status.md          # Current session status and next tasks
-│   ├── architecture/
-│   │   ├── 00_analysis_before_design.md
-│   │   └── information_model.md       # Formal data architecture
-│   └── ai4sci/
-│       ├── literature_review_pipeline.md
-│       ├── verification_criteria.md
-│       ├── workstream_roadmap.md      # 0→1 knowledge taxonomy
-│       ├── WORKSTREAM_TREE.md         # Long-term workstream TODO
-│       └── knowledge_chain_examples.md # Macro-to-micro theory chains
-├── research/
-│   ├── foundations/                   # Foundational knowledge entries (math, physics, chemistry, CS)
-│   ├── materials/                     # Raw material entries
-│   ├── components/                    # Component entries
-│   ├── companies/                     # Company profiles and ecosystem maps
-│   ├── papers/                        # Paper notes and summaries
-│   └── datasets/                      # Dataset notes
-├── data/
-│   ├── schema/v1/                     # JSON Schemas
-│   │   ├── entry_schema.json
-│   │   └── relationship_schema.json
-│   └── relationships/                 # Standalone relationship files
-└── scripts/                           # AI4Sci helper scripts
-    ├── ai4sci_lib/                    # Reusable pipeline stages
-    ├── ai4sci_workstreams/            # Workstream YAML configs
-    ├── ai4sci_paper_pipeline.py
-    ├── ai4sci_review.py
-    ├── ai4sci_batch_pipeline.py
-    ├── ai4sci_orchestrator.py
-    ├── ai4sci_status.py
-    └── validate_entries.py
+# 6. Review staged outputs
+python scripts/ai4sci_review.py
 ```
 
----
-
-## How to Use This Repository
-
-- **For researchers**: Find the state of the art in humanoid robotics, organized by problem domain and industry layer.
-- **For founders / investors**: Map the supply chain, identify gaps, and track competitors.
-- **For engineers**: Discover component vendors, simulation tools, datasets, and benchmarks relevant to your subsystem.
-- **For policymakers**: Understand the regulatory and ethical landscape.
+For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md).
 
 ---
 
-## Contributing
+## 📊 Project stats
+
+| Metric | Count |
+|--------|-------|
+| Production entries | 75 |
+| Relationships | 57 |
+| Workstream configs | 16 |
+| Ontology domains | 12 + `00_foundations` |
+| Supported languages | en, zh, ko |
+| Validation status | ✅ passing |
+
+---
+
+## 🛣️ Roadmap
+
+| Phase | Goal | Status |
+|-------|------|--------|
+| **Phase 0** | Information architecture, schemas, validation | ✅ Complete |
+| **Phase 1** | Per-domain ontology documents (01–12) | ✅ Complete |
+| **Phase 2** | Workstream-driven content population | 🔄 In progress |
+| **Phase 3** | Internal review, verification workflow, v0.1.0 public release | ⏳ Planned |
+
+See [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md) for the full workstream TODO list and [`docs/session_status.md`](docs/session_status.md) for the latest session notes.
+
+---
+
+## 👥 Who is this for?
+
+- **Researchers** — find the state of the art organized by problem domain and industry layer.
+- **Engineers** — discover component vendors, simulation tools, datasets, and benchmarks relevant to your subsystem.
+- **Founders / investors** — map the supply chain, identify gaps, and track competitors.
+- **Manufacturing & operations** — understand factory design, yield, cost drivers, and scaling trade-offs.
+- **Policymakers** — understand the regulatory, safety, and ethical landscape.
+
+---
+
+## 🤝 Contributing
 
 > Public contribution guidelines will be published at `v0.1.0`.
 
@@ -236,16 +176,54 @@ Until then, content is curated by the core team with AI4Sci assistance. If you h
 
 - Add entries with source links and verification status.
 - Flag uncertain or conflicting claims.
-- Follow the ontology structure in [`docs/ontology/`](docs/ontology/).
+- Follow the ontology structure in [`docs/ontology/`](docs/ontology/) and the entry format in [`docs/architecture/information_model.md`](docs/architecture/information_model.md).
 
 ---
 
-## License
+## 📂 Directory structure
+
+```
+awesome-humanoid-robot/
+├── README.md                          # This file
+├── README.zh.md                       # 简体中文
+├── README.ko.md                       # 한국어
+├── docs/
+│   ├── project_charter.md             # Project scope, principles, governance
+│   ├── ontology/                      # Industry-chain ontology documents (01–12 + overview)
+│   ├── architecture/                  # Information model and pre-design analysis
+│   └── ai4sci/                        # AI4Sci pipeline docs and workstream taxonomy
+├── research/                          # Production knowledge-base entries
+│   ├── foundations/                   # Math, physics, chemistry, CS concepts
+│   ├── materials/                     # Raw materials
+│   ├── components/                    # Components and subsystems
+│   ├── companies/                     # Company profiles and ecosystem maps
+│   ├── papers/                        # Paper notes
+│   └── datasets/                      # Dataset notes
+├── data/
+│   ├── schema/v1/                     # JSON Schemas
+│   └── relationships/                 # Standalone relationship files
+├── scripts/                           # AI4Sci helper scripts
+│   ├── ai4sci_lib/                    # Reusable pipeline stages
+│   ├── ai4sci_workstreams/            # Workstream YAML configs
+│   ├── ai4sci_paper_pipeline.py
+│   ├── ai4sci_batch_pipeline.py
+│   ├── ai4sci_orchestrator.py
+│   ├── ai4sci_review.py
+│   ├── ai4sci_status.py
+│   └── validate_entries.py
+└── .staging/                          # AI-generated drafts pending human review
+```
+
+---
+
+## 📜 License
 
 TBD — to be decided before public release.
 
 ---
 
-## Acknowledgments
+<div align="center">
 
-TBD.
+**Built with curiosity, rigor, and a belief that humanoid robotics needs a map, not just more demos.**
+
+</div>

@@ -44,6 +44,8 @@ The most recent step was a **systematic knowledge-taxonomy study** that replaced
 - [x] **Added `proposes`, `evaluates_on`, `extends` relationship types to schema to support LLM-extracted paper/method links**
 - [x] **Fixed arXiv discovery sort bug: changed default `sortBy` from `submittedDate` to `relevance` so seed queries return matching papers instead of the latest unrelated submissions**
 - [x] **Tuned foundational workstream configs for `electrochemistry` and `stochastic_calculus`: lowered relevance threshold to `medium`, expanded seed queries, added explicit seminal paper IDs, and raised `max_papers` to 25**
+- [x] **Refreshed `docs/ai4sci/literature_review_pipeline.md` to match the current multi-agent workstream architecture, desktop credential setup, and foundational relationship types**
+- [x] **Refactored project homepage (`README.md`, `README.zh.md`, `README.ko.md`) into an OpenClaw-style layout with badges, clear narrative, quick-start, stats, and roadmap**
 
 ---
 
@@ -87,11 +89,10 @@ We are now executing **Phase 0–2 of the approved plan**:
 
 ## Immediate Next Tasks (Pending)
 
-1. **Git sync**: commit and push the discovery fix and workstream config updates.
+1. **Git sync**: commit and push the README refactor, pipeline doc update, and session_status refresh.
 2. **Re-run electrochemistry and stochastic_calculus workstreams** with an LLM API key to generate entries/relationships; candidate discovery now yields ~150+ candidates each.
 3. **Review staged outputs** from convex_optimization and rigid_body_dynamics workstreams and promote valid entries/relationships to `research/` and `data/relationships/`.
-4. **Update `docs/ai4sci/literature_review_pipeline.md`** to describe multi-agent workstream execution.
-5. **Continue filling foundational-discipline branches in `WORKSTREAM_TREE.md`**.
+4. **Continue filling foundational-discipline branches in `WORKSTREAM_TREE.md`**.
 
 ---
 

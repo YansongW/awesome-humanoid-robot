@@ -1,41 +1,58 @@
+<div align="center">
+
 # Awesome Humanoid Robot 人形机器人 🤖
 
-> 一个围绕**人形机器人从0到1量产与产业化应用**的知识库，覆盖原材料、零部件供应链、制造工艺、设计工程、AI与软件、组装测试、量产、应用场景、政策与监管等全部环节。
->
-> 采用 **AI4Sci** 方法构建——以人工智能辅助科学研究、文献综述与产业情报整理。
->
-> 🌐 [English](README.md) · [简体中文](README.zh.md) · [한국어](README.ko.md)
+**一个围绕「人形机器人从 0 到 1 量产与产业化应用」构建的 curated 知识图谱。**
+
+<p>
+  <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
+  <img src="https://img.shields.io/badge/entries-75-green" alt="75 entries" />
+  <img src="https://img.shields.io/badge/relationships-57-brightgreen" alt="57 relationships" />
+  <img src="https://img.shields.io/badge/workstreams-16-orange" alt="16 workstreams" />
+  <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
+</p>
+
+🌐 [English](README.md) · [简体中文](README.zh.md) · [한국어](README.ko.md)
+
+</div>
 
 ---
 
-## 为什么做这个项目
+## 📌 这是什么项目？
 
-这个项目围绕一个核心问题展开：
+**Awesome Humanoid Robot** 是一个结构化、可持续演进的开放知识库，围绕一个核心问题展开：
 
-> **如何实现人形机器人从0到1的量产与产业化应用？**
+> **如何实现人形机器人从 0 到 1 的量产与产业化应用？**
 
-实验室里能工作的人形机器人，和能够大规模生产、部署、维护的真实产品，是完全不同的两回事。从原型机到可规模化的产品，需要跨越系统的每一个层次：
+它追踪整条旅程中的每一个环节——从原材料、零部件、制造工艺，到设计工程、AI、软件、数据、组装测试、量产、应用场景、市场、政策与监管。我们不再满足于简单的论文列表或产品清单，而是将整个人形机器人产业建模为一张**知识图谱**：实体是节点，关系是带类型的边，每条论断都可追溯到来源。
 
-- **原材料与关键资源**：人形机器人消耗哪些矿产、金属、磁材和化学品？它们来自哪里？存在哪些供应风险？
-- **零部件与子系统**：电机、减速器、传感器、电池、计算单元、末端执行器、结构件——谁在生产、性能如何、成本多少？
-- **制造工艺**：这些零部件如何精密加工、铸造、绕线、组装和测试？
-- **设计与系统工程**：什么决定了机器人的形态、运动学、动力学、可靠性与安全性？
-- **软件与AI**：什么算法支撑感知、规划、 locomotion、manipulation 和长程自主？
-- **数据与基础设施**：需要哪些数据集、仿真器、中间件和工具链来开发和验证？
-- **组装、集成与测试**：机器人如何从一堆零件变成经过校准、验证的产品？
-- **量产**：什么样的工厂设计、供应链协同、良率控制和成本工程，才能支撑千台、万台的规模？
-- **应用与市场**：在哪些行业和任务中，人形机器人今天就有经济价值？明天呢？
-- **政策与监管**：哪些安全标准、认证体系、责任框架和社会规范会促进或阻碍部署？
-
-我们相信，人形机器人不仅仅是一个AI研究问题。它是一个系统问题，连接材料科学、精密制造、全球供应链、软件工程和真实世界部署。
-
-我们采用 **AI4Sci** 方法来绘制这段完整旅程的地图。但目标不是堆砌论文或产品，而是理解每一个环节如何咬合、瓶颈在哪里、哪些决策决定了人形机器人能否真正成为一个产业。
+项目采用 **AI 辅助、人工核验** 的方式。我们用 AI4Sci 流水线加速发现、提取与综合，但在任何内容被提升到生产环境之前，都必须经过人工审阅。
 
 ---
 
-## 覆盖范围
+## 🎯 为什么要做这个项目？
 
-本项目按产业链本体组织，覆盖以下领域：
+人形机器人正处于一个关键拐点。全球实验室已经能够造出能走路、能操作、能交互的机器人。但**能在演示中工作的机器人**，与**能够大规模生产、部署和维护的真实产品**，是完全不同的两件事。
+
+这个差距不只是一个 AI 问题，而是一个**系统工程问题**，它连接着：
+
+- 🪨 **材料科学** —— 稀土磁材、电池化学、轻质合金
+- ⚙️ **精密制造** —— 机加工、绕线、铸造、装配、质控
+- 🌐 **全球供应链** —— Tier-1/Tier-2 供应商、区域产业生态、成本结构
+- 🧠 **AI 与软件** —— VLA、世界模型、控制、规划、sim-to-real
+- 📊 **数据基础设施** —— 数据集、仿真器、基准测试、车队遥测
+- 🏭 **量产制造** —— 工厂设计、良率优化、BOM 成本工程
+- ⚖️ **政策与社会** —— 安全标准、认证、责任、劳动力影响
+
+今天，关于这些层次的信息分散在学术论文、公司新闻稿、拆解报告、行业分析和技术博客中。研究者、工程师、创业者、投资人和政策制定者都缺少一张**单一、结构化、可验证的地图**来展示：各个环节如何咬合、瓶颈在哪里、哪些权衡决定了成败。
+
+这个项目就是那张地图。
+
+> 我们的目标不是收集每一篇论文，而是理解**从矿山到市场的完整旅程**，并让这些理解可验证、可复用、可由社区共同维护。
+
+---
+
+## 🗺️ 你能在这里找到什么？
 
 | 领域 | 追踪内容 |
 |------|---------|
@@ -44,193 +61,114 @@
 | **供应链与制造工艺** | 一级/二级供应商、制造工艺、质量控制、成本结构、区域产业生态 |
 | **设计与工程** | 机械设计、运动学、动力学、人形形态、自由度、安全设计 |
 | **组装、集成与测试** | 产线、校准、系统集成、测试台、验证协议 |
-| **量产与规模化** | 工厂设计、产能爬坡、单位经济性、BOM分析、良率优化 |
-| **AI、模型与算法** | VLA、世界模型、locomotion策略、manipulation策略、规划、sim-to-real、SLAM、遥操作 |
+| **量产与规模化** | 工厂设计、产能爬坡、单位经济性、BOM 分析、良率优化 |
+| **AI、模型与算法** | VLA、世界模型、 locomotion 策略、 manipulation 策略、规划、sim-to-real、SLAM、遥操作 |
 | **软件与中间件** | ROS 2、实时操作系统、仿真栈、数字孪生、机群管理、数据管道 |
 | **数据与数据集** | 遥操作数据、动作捕捉、仿真数据、多模态数据集、数据授权 |
 | **评测与基准** | 仿真基准、真实任务、硬件在环测试、安全标准 |
 | **应用与市场** | 工业制造、物流、医疗、家庭、零售、科研、国防、娱乐 |
 | **公司与产业生态** | 初创公司、整机厂、零部件供应商、研究机构、融资、合作 |
 | **政策、监管与伦理** | 安全标准、责任、劳动力影响、隐私、人机交互规范 |
+| **基础学科** | 支撑所有工程领域的跨学科数学、物理、化学与计算机科学概念 |
 
 ---
 
-## 架构优先方法
+## 🏗️ 架构优先方法
 
-在填充任何内容之前，本项目首先建立一个**正式的信息模型**，以容纳全产业的信息节点、关系、层次、域和跨域依赖。
+在填充任何内容之前，我们先建立了一个正式的信息模型，能够把整条产业链表示为一张图。
 
-关键架构决策：
-
-- **图优先**：实体是节点，关系是有向边。
+- **图优先**：实体是节点，关系是有向、带类型的边。
 - **双标签**：每个实体同时具有**价值链层**（基础层 / 上游 / 中游 / 智能层 / 验证与市场层）和**功能角色**（材料 / 零部件 / 工艺 / 系统 / 智能 / 等）。
-- **基础学科域**：跨领域的数学、物理、化学、计算机科学等主题归入 `00_foundations`，可被多棵工程树共享。
+- **基础学科域**：跨领域的数学、物理、化学、计算机科学主题归入 `00_foundations`，可被多棵工程树共享。
 - **关系作为一等公民**：跨域链接是显式的、带类型的、可验证的。
-- **多语言内建**：名称、摘要和描述以语言映射形式存储。
+- **多语言内建**：名称、摘要和描述以语言映射形式存储（中 / 英 / 韩）。
 - **版本化 schema**：条目和关系 schema 均可版本化、可扩展。
-- **细粒度理论深度**：方程、算子、变量、常数、算法、近似方法都可以是显式节点，而不只是宽泛概念。
+- **细粒度理论深度**：方程、算子、变量、常数、算法、近似方法都可以是显式节点。
 - **YAML frontmatter + Markdown**：条目兼顾人类可读与机器可读。
 
 详见 [`docs/architecture/information_model.md`](docs/architecture/information_model.md) 和 [`data/schema/v1/`](data/schema/v1/)。
 
 ---
 
-## AI4Sci 方法
+## ⚙️ 工作流程：AI4Sci + 人工审阅
 
-本项目采用AI辅助的研究流程：
+1. **系统性扫描** —— 工作流向 arXiv、Semantic Scholar 以及（计划中）网络来源发起查询，发现相关论文和产业情报。
+2. **相关性分类** —— LLM 针对核心问题给每篇来源打分，过滤低相关性内容。
+3. **结构化提取** —— LLM 起草带类型的条目、多语言摘要和候选关系。
+4. **暂存** —— 所有 AI 草稿进入 `.staging/`，隔离等待审阅。
+5. **人工审阅** —— 审阅者批准、编辑或拒绝每份草稿。
+6. **集成与验证** —— 通过审阅的条目进入 `research/` 和 `data/relationships/`，并必须通过 `scripts/validate_entries.py`。
 
-1. **系统性的文献与产业扫描**：追踪学术论文、专利、公司公告、供应链报告和技术博客。
-2. **结构化提取**：每个实体都标注类型、层/域/角色，并链接到来源。
-3. **自然语言优先**：每个具体实体（方程、定理、算法、形式化）在给出数学之前，先用生活实例和自然语言解释清楚。
-4. **交叉验证**：论断追溯到原始来源，冲突信息被明确标记。
-4. **图驱动组织**：条目和关系构成知识图谱，而非扁平列表。
-5. **人工复核**：AI加速收集与综合，但所有高风险的公开论断都经过人工审核。
-
-### 工作流谱系
-
-内容通过**工作流**进行填充——每个工作流是一个聚焦的、可并行执行的 AI4Sci 调研任务，映射到完整的 0→1 知识树。每个工作流对应 `scripts/ai4sci_workstreams/` 下的一个 YAML 配置文件，定义种子查询、目标领域、实体类型和关系模式。
-
-知识谱系由四个维度张成：
-
-- **产品开发阶段**：定义 → 设计 → 校核规划 → MVP → 测试 → EVT → DVT → PVT → 量产/爬坡
-- **学科/领域**：硬件、软件与 AI、数据系统、Infra/云/车队、嵌入式、机械结构、仿真、供应链与制造、质量与可靠性、安全与认证、应用与市场、政策与伦理
-- **知识类型**：论文、数据集、基准、技术、组件、公司、报告、标准
-- **理论深度**：基础学科 → 定理/原理 → 形式化 → 方法/算法 → 系统实现
-
-这让“全身控制”这样的高层方法可以一路下钻到具体的 QP 目标函数与约束、KKT 驻点/互补方程、梯度与 Hessian 算子、active-set 与 interior-point 算法，直至多元微积分、线性代数与凸分析。
-
-完整谱系见 [`docs/ai4sci/workstream_roadmap.md`](docs/ai4sci/workstream_roadmap.md)，可执行的长期 TODO 见 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)，具体知识链路示例见 [`docs/ai4sci/knowledge_chain_examples.md`](docs/ai4sci/knowledge_chain_examples.md)。
-
-详细流程见 [`docs/ai4sci/`](docs/ai4sci/)。
+完整流程见 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md)。
 
 ---
 
-## 路线图与当前任务
+## 🚀 快速开始
 
-### 第 0 阶段：信息架构 ✅ 已完成
+```bash
+# 1. 克隆仓库
+git clone https://github.com/YansongW/awesome-humanoid-robot.git
+cd awesome-humanoid-robot
 
-在添加内容之前，我们先搭建结构基础：
+# 2. 激活虚拟环境
+source .venv/bin/activate
 
-- [x] 定义核心问题与本体领域
-- [x] 设计信息模型（实体、关系、层、角色）
-- [x] 创建条目与关系的 JSON schema
-- [x] 添加样本实体和关系以验证模型
-- [x] 添加验证脚本
-- [x] 基于首批样本验证并精炼模型
+# 3. 验证当前知识图谱
+python scripts/validate_entries.py
 
-### 第 1 阶段：本体扩展 ✅ 已完成
+# 4. 运行单个工作流（示例：VLA 调研）
+python scripts/ai4sci_batch_pipeline.py \
+  scripts/ai4sci_workstreams/definition/algorithm_survey/vla.yaml \
+  --max-papers 5 --max-workers 2
 
-- [x] 完成各域本体文档（01–12）
-- [x] 为每个域定义跨域关系模式
-- [x] 确立受控词表与扩展规则
-- [x] 内容填充前内部复核本体文档
+# 5. 或并行运行多个工作流
+python scripts/ai4sci_orchestrator.py --max-workers 2 --max-batch-workers 1 --max-papers 5
 
-### 第 2 阶段：工作流驱动的内容填充 ✅ 进行中
-
-内容现在通过与 0→1 生命周期对齐的并行工作流来填充：
-
-- [x] 运行第一批多 Agent 工作流（VLA、公司、原材料、跨域关系）
-- [ ] 将工作流配置重构为“生命周期 × 领域”的树状结构
-- [ ] 新增高优先级叶子工作流：全身控制、MPC、关节模组设计、力/力矩传感器、稀土磁材、仿真平台、安全标准
-- [x] 整理与量产相关的 AI / 模型内容（首批：VLA 综述 + 数据集/基准/数据引擎）
-- [ ] 构建人形机器人 BOM / 零部件地图
-- [ ] 绘制公司与供应商生态
-- [ ] 追踪原材料、制造工艺与成本驱动因素
-
-### 第 3 阶段：验证与公开发布
-
-- [ ] 用 schema 校验初始条目
-- [ ] 内部复核论断与来源
-- [ ] 发布 v0.1.0 与贡献指南
-
----
-
-## 项目状态与发布策略
-
-> **当前阶段**：私有研究与框架搭建。  
-> **公开目标**：在本体、初始内容和验证流程完成后发布 `v0.1.0`。
-
-| 阶段 | 目标 | 可见性 |
-|------|------|--------|
-| v0.1.0 之前 | 搭建本体、填充初始条目、建立验证流程 | **私有** |
-| v0.1.0 | 公开，接受社区共创 | **公开** |
-| v0.1.0 之后 | 持续更新、季度发布、深化各域 | 公开 |
-
-在 v0.1.0 之前，本仓库为私有。所有内容均视为草稿，公开前需经过验证。
-
----
-
-## 目录结构
-
-```
-awesome-humanoid-robot/
-├── README.md                          # 英文主文档
-├── README.zh.md                       # 简体中文
-├── README.ko.md                       # 韩文
-├── docs/
-│   ├── project_charter.md             # 项目章程（英文）
-│   ├── project_charter.zh.md          # 项目章程（简体中文）
-│   ├── project_charter.ko.md          # 项目章程（韩文）
-│   ├── ontology/
-│   │   ├── 00_overview.md             # 产业链本体地图（英文）
-│   │   ├── 00_overview.zh.md          # 产业链本体地图（简体中文）
-│   │   ├── 00_overview.ko.md          # 产业链本体地图（韩文）
-│   │   ├── 01_raw_materials.md        # 原材料与关键资源（配 .zh.md）
-│   │   ├── 02_components_supply_chain.md
-│   │   ├── 03_manufacturing_processes.md
-│   │   ├── 04_assembly_integration_testing.md
-│   │   ├── 05_mass_production.md
-│   │   ├── 06_design_engineering.md
-│   │   ├── 07_ai_models_algorithms.md
-│   │   ├── 08_software_middleware.md
-│   │   ├── 09_data_datasets.md
-│   │   ├── 10_evaluation_benchmarks.md
-│   │   ├── 11_applications_markets.md
-│   │   ├── 12_policy_regulation_ethics.md
-│   │   └── session_status.md          # 当前会话状态与下一步任务
-│   ├── architecture/
-│   │   ├── 00_analysis_before_design.md
-│   │   └── information_model.md       # 正式数据架构
-│   └── ai4sci/
-│       ├── literature_review_pipeline.md
-│       ├── verification_criteria.md
-│       ├── workstream_roadmap.md      # 0→1 知识谱系
-│       ├── WORKSTREAM_TREE.md         # 长期工作流 TODO
-│       └── knowledge_chain_examples.md # 宏观到微观的理论链路示例
-├── research/
-│   ├── foundations/                   # 基础学科条目（数学、物理、化学、计算机科学）
-│   ├── materials/                     # 原材料条目
-│   ├── components/                    # 零部件条目
-│   ├── companies/                     # 公司画像与产业地图
-│   ├── papers/                        # 论文笔记
-│   └── datasets/                      # 数据集笔记
-├── data/
-│   ├── schema/v1/                     # JSON Schema
-│   │   ├── entry_schema.json
-│   │   └── relationship_schema.json
-│   └── relationships/                 # 独立关系文件
-└── scripts/                           # AI4Sci 辅助脚本
-    ├── ai4sci_lib/                    # 可复用流水线阶段
-    ├── ai4sci_workstreams/            # 工作流 YAML 配置
-    ├── ai4sci_paper_pipeline.py
-    ├── ai4sci_review.py
-    ├── ai4sci_batch_pipeline.py
-    ├── ai4sci_orchestrator.py
-    ├── ai4sci_status.py
-    └── validate_entries.py
+# 6. 审阅暂存输出
+python scripts/ai4sci_review.py
 ```
 
----
-
-## 使用场景
-
-- **研究人员**：按问题域和产业层次了解人形机器人最新进展。
-- **创业者 / 投资人**：绘制供应链、发现缺口、跟踪竞争对手。
-- **工程师**：发现与自身子系统相关的零部件供应商、仿真工具、数据集和基准。
-- **政策制定者**：理解监管与伦理格局。
+凭证配置方式见 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md)。
 
 ---
 
-## 参与贡献
+## 📊 项目数据
+
+| 指标 | 数量 |
+|------|------|
+| 生产级条目 | 75 |
+| 关系 | 57 |
+| 工作流配置 | 16 |
+| 本体域 | 12 + `00_foundations` |
+| 支持语言 | 中 / 英 / 韩 |
+| 验证状态 | ✅ 通过 |
+
+---
+
+## 🛣️ 路线图
+
+| 阶段 | 目标 | 状态 |
+|------|------|------|
+| **Phase 0** | 信息架构、Schema、验证机制 | ✅ 已完成 |
+| **Phase 1** | 各域本体文档（01–12） | ✅ 已完成 |
+| **Phase 2** | 工作流驱动的内容填充 | 🔄 进行中 |
+| **Phase 3** | 内部审阅、验证流程、v0.1.0 公开发布 | ⏳ 计划中 |
+
+完整工作流 TODO 见 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)，最新会话记录见 [`docs/session_status.md`](docs/session_status.md)。
+
+---
+
+## 👥 适合谁？
+
+- **研究者** —— 按问题域和产业层次了解人形机器人最新进展。
+- **工程师** —— 发现与自身子系统相关的零部件供应商、仿真工具、数据集和基准。
+- **创业者 / 投资人** —— 绘制供应链、发现缺口、跟踪竞争对手。
+- **制造与运营** —— 理解工厂设计、良率、成本驱动因素和规模化权衡。
+- **政策制定者** —— 理解监管、安全与伦理格局。
+
+---
+
+## 🤝 参与贡献
 
 > 公开贡献指南将在 `v0.1.0` 发布。
 
@@ -238,10 +176,54 @@ awesome-humanoid-robot/
 
 - 按来源链接和验证状态添加条目。
 - 标记不确定或相互冲突的论断。
-- 遵循 [`docs/architecture/information_model.md`](docs/architecture/information_model.md) 中的条目格式与关系类型。
+- 遵循 [`docs/ontology/`](docs/ontology/) 和 [`docs/architecture/information_model.md`](docs/architecture/information_model.md) 中的条目格式与关系类型。
 
 ---
 
-## 许可
+## 📂 目录结构
+
+```
+awesome-humanoid-robot/
+├── README.md                          # 英文主文档
+├── README.zh.md                       # 简体中文（本文件）
+├── README.ko.md                       # 韩文
+├── docs/
+│   ├── project_charter.md             # 项目章程
+│   ├── ontology/                      # 产业链本体文档（01–12 + 总览）
+│   ├── architecture/                  # 信息模型与预设计分析
+│   └── ai4sci/                        # AI4Sci 流水线文档与工作流谱系
+├── research/                          # 生产级知识库条目
+│   ├── foundations/                   # 数学、物理、化学、计算机科学概念
+│   ├── materials/                     # 原材料
+│   ├── components/                    # 零部件与子系统
+│   ├── companies/                     # 公司画像与产业地图
+│   ├── papers/                        # 论文笔记
+│   └── datasets/                      # 数据集笔记
+├── data/
+│   ├── schema/v1/                     # JSON Schema
+│   └── relationships/                 # 独立关系文件
+├── scripts/                           # AI4Sci 辅助脚本
+│   ├── ai4sci_lib/                    # 可复用流水线阶段
+│   ├── ai4sci_workstreams/            # 工作流 YAML 配置
+│   ├── ai4sci_paper_pipeline.py
+│   ├── ai4sci_batch_pipeline.py
+│   ├── ai4sci_orchestrator.py
+│   ├── ai4sci_review.py
+│   ├── ai4sci_status.py
+│   └── validate_entries.py
+└── .staging/                          # AI 生成的草稿，等待人工审阅
+```
+
+---
+
+## 📜 许可
 
 公开前确定。
+
+---
+
+<div align="center">
+
+**以好奇心与严谨构建——我们相信，人形机器人需要的是一张地图，而不仅是更多演示。**
+
+</div>

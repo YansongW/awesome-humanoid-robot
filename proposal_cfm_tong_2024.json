@@ -1,0 +1,316 @@
+{
+  "entry": {
+    "type": "paper",
+    "names": {
+      "en": "Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport",
+      "zh": "基于小批量最优传输的流式生成模型改进与泛化",
+      "ko": "미니배치 최적 수송을 활용한 플로우 기반 생성 모델의 개선 및 일반화"
+    },
+    "summary": {
+      "en": "This paper introduces generalized conditional flow matching (CFM), a simulation-free regression objective for training continuous normalizing flows (CNFs), and proposes optimal transport CFM (OT-CFM), which uses minibatch optimal transport couplings to produce straighter flows and faster inference.",
+      "zh": "本文提出了广义条件流匹配（CFM），一种用于训练连续归一化流的免模拟回归目标，并引入了最优传输条件流匹配（OT-CFM），利用小批量最优传输耦合生成更直的流并实现更快的推理。",
+      "ko": "본 논문은 연속 정규화 흐름(CNF)을 학습하기 위한 시뮬레이션 없는 회귀 목적함수인 일반화된 조걸부 플로우 매칭(CFM)을 제안하고, 미니배치 최적 수송 결합을 사용하여 더 직선적인 플로우와 더 빠른 추론을 가능하게 하는 최적 수송 조걸부 플로우 매칭(OT-CFM)을 제시한다."
+    },
+    "domains": [
+      "07_ai_models_algorithms",
+      "08_software_middleware"
+    ],
+    "functional_roles": [
+      "knowledge",
+      "intelligence"
+    ],
+    "tags": [
+      "flow_matching",
+      "optimal_transport",
+      "continuous_normalizing_flow",
+      "generative_model",
+      "diffusion_model",
+      "world_model",
+      "synthetic_data",
+      "motion_generation",
+      "minibatch_optimal_transport",
+      "torchcfm"
+    ],
+    "verification": {
+      "status": "partially_verified",
+      "reviewed_by": "ai",
+      "reviewed_at": "2026-06-25",
+      "confidence": "medium",
+      "notes": "AI-extracted from full text; requires human review before verification."
+    },
+    "sources": [
+      {
+        "id": "src_001",
+        "type": "paper",
+        "title": "Improving and Generalizing Flow-Based Generative Models with Minibatch Optimal Transport",
+        "url": "https://arxiv.org/abs/2302.00482",
+        "date": "2024",
+        "accessed_at": "2026-06-25"
+      },
+      {
+        "id": "src_002",
+        "type": "code_repository",
+        "title": "conditional-flow-matching (torchcfm)",
+        "url": "https://github.com/atong01/conditional-flow-matching",
+        "date": "2024",
+        "accessed_at": "2026-06-25"
+      }
+    ],
+    "related_entities": [
+      {
+        "id": "entity_flow_matching_lipman_2023",
+        "relationship": "extends",
+        "description": {
+          "en": "Extends the flow matching (FM) framework of Lipman et al. (2023) to arbitrary source-target couplings.",
+          "zh": "将Lipman等人（2023）的流匹配（FM）框架扩展到任意源-目标耦合。",
+          "ko": "Lipman et al. (2023)의 플로우 매칭(FM) 프레임워크를 임의의 소스-타겟 결합으로 확장한다."
+        }
+      },
+      {
+        "id": "entity_continuous_normalizing_flows",
+        "relationship": "improves",
+        "description": {
+          "en": "Provides a simulation-free training objective for continuous normalizing flows (CNFs).",
+          "zh": "为连续归一化流（CNF）提供了免模拟的训练目标。",
+          "ko": "연속 정규화 흐름(CNF)을 위한 시뮬레이션 없는 학습 목적함수를 제공한다."
+        }
+      },
+      {
+        "id": "entity_diffusion_models",
+        "relationship": "contrasts_with",
+        "description": {
+          "en": "Contrasts with diffusion models by using a deterministic flow while retaining a stable regression objective.",
+          "zh": "通过使用确定性流同时保留稳定的回归目标，与扩散模型形成对比。",
+          "ko": "확정론적 플로우를 사용하면서 안정적인 회귀 목적함수를 유지하여 확산 모델과 대조된다."
+        }
+      },
+      {
+        "id": "entity_optimal_transport",
+        "relationship": "applies",
+        "description": {
+          "en": "Applies optimal transport theory via minibatch couplings to approximate dynamic optimal transport.",
+          "zh": "通过小批量耦合应用最优传输理论来近似动态最优传输。",
+          "ko": "미니배치 결합을 통해 최적 수송 이론을 적용하여 동적 최적 수송을 근사한다."
+        }
+      },
+      {
+        "id": "entity_schrodinger_bridge",
+        "relationship": "extends_to",
+        "description": {
+          "en": "Extends the CFM framework to simulation-free Schrödinger bridge inference (SB-CFM).",
+          "zh": "将CFM框架扩展到免模拟的薛定谔桥推断（SB-CFM）。",
+          "ko": "CFM 프레임워크를 시뮬레이션 없는 슈뢰딩거 브리지 추론(SB-CFM)으로 확장한다."
+        }
+      },
+      {
+        "id": "entity_torchcfm",
+        "relationship": "implements",
+        "description": {
+          "en": "Implements CFM and OT-CFM algorithms in the open-source torchcfm Python package.",
+          "zh": "在开源的torchcfm Python包中实现了CFM和OT-CFM算法。",
+          "ko": "오픈소스 torchcfm Python 패키지에서 CFM 및 OT-CFM 알고리즘을 구현한다."
+        }
+      }
+    ]
+  },
+  "body": {
+    "overview": "Continuous normalizing flows (CNFs) model a data distribution by integrating a neural ordinary differential equation (ODE), but traditional maximum-likelihood training requires expensive simulation and backpropagation through the ODE solver. The paper proposes generalized conditional flow matching (CFM), a family of simulation-free regression objectives that directly regress a neural vector field against tractable conditional probability paths. Unlike prior CNF training, CFM does not require the source distribution to be Gaussian or require evaluation of its density, and it unifies several recent flow-matching and diffusion-style training objectives under one framework.\n\nA key special case is optimal transport CFM (OT-CFM). OT-CFM constructs source-target sample pairs via a minibatch optimal transport coupling, which induces straighter probability paths and lower-variance regression targets. The authors prove that when the true optimal transport plan is available, OT-CFM approximates dynamic optimal transport; an entropic variant, SB-CFM, approximates Schrödinger bridge probability flows without simulation. The method is compatible with arbitrary empirical source and target distributions.\n\nThe authors evaluate CFM and OT-CFM on low-dimensional synthetic densities, single-cell trajectory interpolation, unconditional CIFAR-10 image generation, and CelebA attribute-based image translation. Across tasks, OT-CFM accelerates training, reduces inference cost, and improves sample quality. They also release the torchcfm Python package and improved reproducible training recipes for high-dimensional flow models.",
+    "key_contributions": [
+      "A unified conditional flow matching framework that generalizes and subsumes many existing flow matching and diffusion training objectives (Table 1).",
+      "OT-CFM and SB-CFM variants that solve dynamic optimal transport and Schrödinger bridge problems in a simulation-free manner using only static couplings between marginal distributions.",
+      "Empirical demonstration that OT-CFM reduces training variance, accelerates convergence, and enables faster inference with fewer function evaluations across 2D densities, single-cell data, CIFAR-10, and CelebA.",
+      "Release of the torchcfm Python package and improved, reproducible training practices for high-dimensional flow-based generative models."
+    ],
+    "relevance_to_humanoid": "Efficient, simulation-free generative modeling is directly relevant to humanoid robotics, where world models must forecast high-dimensional state distributions for perception, motion planning, and control. OT-CFM's ability to learn straight, fast-to-integrate flows can accelerate generative world-model training and reduce the number of function evaluations needed at deployment, which matters for real-time robot inference.\n\nThe framework can also support synthetic data generation and domain translation pipelines used to augment robot perception datasets or generate diverse motion trajectories. While the paper does not evaluate on humanoid platforms, its algorithms provide a general-purpose building block for generative intelligence, synthetic-data tools, and probabilistic planning components that appear in humanoid robot software stacks."
+  },
+  "relationships": [
+    {
+      "type": "extends",
+      "target_id": "entity_flow_matching_lipman_2023",
+      "target_name": {
+        "en": "Flow Matching for Generative Modeling"
+      },
+      "target_domain": "07_ai_models_algorithms",
+      "description": {
+        "en": "CFM generalizes flow matching to arbitrary source-target couplings, recovering FM as a special case.",
+        "zh": "CFM将流匹配推广到任意源-目标耦合，并将FM作为特例恢复。",
+        "ko": "CFM은 플로우 매칭을 임의의 소스-타겟 결합으로 일반화하며 FM을 특수한 경우로 포함한다."
+      },
+      "source_citation": "The first main contribution of the present paper is to propose a unifying conditional flow matching (CFM) framework for FM models with arbitrary transport maps, generalizing existing FM and diffusion modeling approaches (Table 1)."
+    },
+    {
+      "type": "improves",
+      "target_id": "entity_continuous_normalizing_flows",
+      "target_name": {
+        "en": "Continuous Normalizing Flows"
+      },
+      "target_domain": "07_ai_models_algorithms",
+      "description": {
+        "en": "CFM provides a simulation-free regression objective that avoids the costly maximum-likelihood training of CNFs.",
+        "zh": "CFM提供了免模拟的回归目标，避免了CNF昂贵的最大似然训练。",
+        "ko": "CFM은 시뮬레이션 없는 회귀 목적함수를 제공하여 CNF의 비용이 큰 최대 우도 학습을 피한다."
+      },
+      "source_citation": "We introduce the generalized conditional flow matching (CFM) technique, a family of simulation-free training objectives for CNFs."
+    },
+    {
+      "type": "contrasts_with",
+      "target_id": "entity_diffusion_models",
+      "target_name": {
+        "en": "Diffusion Models"
+      },
+      "target_domain": "07_ai_models_algorithms",
+      "description": {
+        "en": "CFM uses a stable regression objective like diffusion models but retains the efficient deterministic inference of flow models and does not require a Gaussian source.",
+        "zh": "CFM像扩散模型一样使用稳定的回归目标，但保留了流模型高效的确定性推理，且不需要高斯源分布。",
+        "ko": "CFM은 확산 모델처럼 안정적인 회귀 목적함수를 사용하지만, 플로우 모델의 효율적인 확정론적 추론을 유지하고 가우시안 소스 분포를 필요로 하지 않는다."
+      },
+      "source_citation": "CFM features a stable regression objective like that used to train the stochastic flow in diffusion models but enjoys the efficient inference of deterministic flow models. In contrast to both diffusion models and prior CNF training algorithms, CFM does not require the source distribution to be Gaussian or require evaluation of its density."
+    },
+    {
+      "type": "applies",
+      "target_id": "entity_optimal_transport",
+      "target_name": {
+        "en": "Optimal Transport"
+      },
+      "target_domain": "07_ai_models_algorithms",
+      "description": {
+        "en": "OT-CFM uses minibatch optimal transport couplings to approximate dynamic optimal transport and produce straighter flows.",
+        "zh": "OT-CFM使用小批量最优传输耦合来近似动态最优传输并生成更直的流。",
+        "ko": "OT-CFM은 미니배치 최적 수송 결합을 사용하여 동적 최적 수송을 근사하고 더 직선적인 플로우를 생성한다."
+      },
+      "source_citation": "We consider a special case of CFM that draws source and target samples according to an optimal transport plan, allowing us to solve the dynamic OT and Schrödinger bridge problems in a simulation-free way, using only static OT maps between marginal distributions."
+    },
+    {
+      "type": "extends_to",
+      "target_id": "entity_schrodinger_bridge",
+      "target_name": {
+        "en": "Schrödinger Bridge"
+      },
+      "target_domain": "07_ai_models_algorithms",
+      "description": {
+        "en": "SB-CFM, an entropic variant of OT-CFM, approximates Schrödinger bridge probability flows without simulation.",
+        "zh": "OT-CFM的熵变体SB-CFM无需模拟即可近似薛定谔桥概率流。",
+        "ko": "OT-CFM의 엔트로피 변형인 SB-CFM은 시뮬레이션 없이 슈뢰딩거 브리지 확률 흐름을 근사한다."
+      },
+      "source_citation": "Furthermore, an entropic variant of OT-CFM can be used to efficiently train a CNF to match the probability flow of a Schrödinger bridge."
+    },
+    {
+      "type": "implements",
+      "target_id": "entity_torchcfm",
+      "target_name": {
+        "en": "torchcfm"
+      },
+      "target_domain": "08_software_middleware",
+      "description": {
+        "en": "The authors release torchcfm, a Python package unifying CFM, OT-CFM, and related flow-based algorithms.",
+        "zh": "作者发布了torchcfm，一个统一CFM、OT-CFM及相关基于流的算法的Python包。",
+        "ko": "저자들은 CFM, OT-CFM 및 관련 플로우 기반 알고리즘을 통합하는 Python 패키지인 torchcfm을 공개한다."
+      },
+      "source_citation": "We release a Python package, torchcfm, that unifies new and existing algorithms for training flow-based generative models under a shared interface and provides implementations of our main experiments."
+    },
+    {
+      "type": "uses",
+      "target_id": "dataset_cifar10",
+      "target_name": {
+        "en": "CIFAR-10"
+      },
+      "target_domain": "09_data_datasets",
+      "description": {
+        "en": "Used for unconditional image generation experiments to evaluate training speed and inference cost.",
+        "zh": "用于无条件图像生成实验，以评估训练速度和推理成本。",
+        "ko": "학습 속도 및 추론 비용을 평가하기 위한 무조건 이미지 생성 실험에 사용된다."
+      },
+      "source_citation": "We perform an experiment on unconditional CIFAR-10 generation from a Gaussian source to examine how OT-CFM performs in the high-dimensional image setting."
+    },
+    {
+      "type": "uses",
+      "target_id": "dataset_celeba",
+      "target_name": {
+        "en": "CelebA"
+      },
+      "target_domain": "09_data_datasets",
+      "description": {
+        "en": "Used for unsupervised image-to-image translation between facial attributes in latent space.",
+        "zh": "用于在潜在空间中进行面部属性之间的无监督图像到图像转换。",
+        "ko": "잠재 공간에서 얼굴 속성 간의 비지도 이미지-대-이미지 변환에 사용된다."
+      },
+      "source_citation": "We show how CFM can be used to learn a mapping between two unpaired datasets in high-dimensional space using the CelebA dataset (Liu et al., 2015; Sun et al., 2014)."
+    },
+    {
+      "type": "uses",
+      "target_id": "dataset_citeseq_multiome_embryoid",
+      "target_name": {
+        "en": "CITE-seq, Multiome, and Embryoid body single-cell datasets"
+      },
+      "target_domain": "09_data_datasets",
+      "description": {
+        "en": "Used for single-cell trajectory interpolation with leave-one-out validation over timepoints.",
+        "zh": "用于单细胞轨迹插值，通过时间点留一法进行验证。",
+        "ko": "시간점에 대한 leave-one-out 검증을 사용한 단세포 궤적 보간에 사용된다."
+      },
+      "source_citation": "Following Huguet et al. (2022b), we repurpose the CITE-seq and Multiome datasets from a recent NeurIPS competition for this task (Burkhardt et al., 2022). We also include the Embryoid body data from Moon et al. (2019); Tong et al. (2020)."
+    },
+    {
+      "type": "evaluates_with",
+      "target_id": "benchmark_fid",
+      "target_name": {
+        "en": "Fréchet Inception Distance"
+      },
+      "target_domain": "10_evaluation_benchmarks",
+      "description": {
+        "en": "Used to evaluate image quality on CIFAR-10 for different training steps and ODE solvers.",
+        "zh": "用于在不同训练步长和ODE求解器下评估CIFAR-10的图像质量。",
+        "ko": "다양한 학습 단계 및 ODE 솔버에서 CIFAR-10의 이미지 품질을 평가하는 데 사용된다."
+      },
+      "source_citation": "We train our OT-CFM, as well as I-CFM and the original FM, with this new training procedure and report the Fréchet inception distance (FID) in Table 5."
+    },
+    {
+      "type": "evaluates_with",
+      "target_id": "benchmark_npe",
+      "target_name": {
+        "en": "Normalized Path Energy"
+      },
+      "target_domain": "10_evaluation_benchmarks",
+      "description": {
+        "en": "Used to measure how well learned flows approximate dynamic optimal transport paths on 2D datasets.",
+        "zh": "用于衡量学习到的流在二维数据集上近似动态最优传输路径的程度。",
+        "ko": "2D 데이터셋에서 학습된 플로우가 동적 최적 수송 경로를 얼마나 잘 근사하는지 측정하는 데 사용된다."
+      },
+      "source_citation": "To measure how well a model solves the OT problem we use normalized path energy (NPE), defined via the 2-Wasserstein distance as NPE(vθ) = |PE(vθ) − W_2^2(q0, q1)| / W_2^2(q0, q1)."
+    },
+    {
+      "type": "evaluates_with",
+      "target_id": "benchmark_wasserstein",
+      "target_name": {
+        "en": "Wasserstein Distance"
+      },
+      "target_domain": "10_evaluation_benchmarks",
+      "description": {
+        "en": "2-Wasserstein distance is used for low-density OT evaluation; earth mover's distance (1-Wasserstein) is used for single-cell interpolation error.",
+        "zh": "2-Wasserstein距离用于低密度最优传输评估；推土机距离（1-Wasserstein）用于单细胞插值误差。",
+        "ko": "2-Wasserstein 거리는 저밀도 OT 평가에 사용되며, earth mover's distance(1-Wasserstein)는 단세포 보간 오차에 사용된다."
+      },
+      "source_citation": "Table 2 summarizes our results showing that OT-CFM flows generalize better to the test set and are very close to the dynamic OT paths as measured by normalized path energy. Table 4 shows the average earth mover's distance (1-Wasserstein) on left-out timepoints for three datasets."
+    },
+    {
+      "type": "evaluates_with",
+      "target_id": "benchmark_mmd",
+      "target_name": {
+        "en": "Maximum Mean Discrepancy"
+      },
+      "target_domain": "10_evaluation_benchmarks",
+      "description": {
+        "en": "Used to measure divergence between translated and target CelebA latent vectors in unsupervised image translation.",
+        "zh": "用于在无监督图像转换中测量转换后和目标CelebA潜在向量之间的差异。",
+        "ko": "비지도 이미지 변환에서 변환된 CelebA 잠재 벡터와 타겟 벡터 간의 발산을 측정하는 데 사용된다."
+      },
+      "source_citation": "As a metric of divergence, we use maximum mean discrepancy (MMD) with a broad Gaussian kernel (exp(−||x−y||^2/(2·128))). The results aggregated over all attributes are shown in Table 6."
+    }
+  ],
+  "review_notes": [
+    "Source citations are extracted from the arXiv v4 (TMLR 2024) full text and should be cross-checked against the final TMLR PDF.",
+    "Institutional/funding acknowledgments (NVIDIA, Genentech, Samsung, IBM) are listed as support, not author affiliations; only Mila, Université de Montréal, McGill, CIFAR, and Canada CIFAR AI Chair appear as affiliations.",
+    "Exact quantitative results (e.g., FID values in Table 5) are reproduced in the entry body only at a high level; a human reviewer should verify specific numbers if needed for the knowledge base.",
+    "Humanoid relevance is inferred from the generative-modeling and optimal-transport capabilities described; no humanoid-robot experiments are present in the paper."
+  ]
+}
