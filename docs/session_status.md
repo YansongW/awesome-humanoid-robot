@@ -25,6 +25,9 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
   - `applications/logistics/warehouse.yaml`
   - `applications/domestic/home_assistive.yaml`
 - [x] Started a foreground run of `motor_selection` (task `bash-xnup903m`) to validate the new hardware configs.
+- [x] Improved `scripts/ai4sci_run_next_workstream.py`: sorts by `priority`, uses config `name` for output tracking, and skips workstreams after two all-error runs.
+- [x] Added `priority` to hardware (1), manufacturing/supply-chain (2), and application (3) workstreams.
+- [x] Renamed `cross_domain_relationships.yaml` → `cross_domain.yaml` to align filename with config name.
 
 ### In Progress
 
