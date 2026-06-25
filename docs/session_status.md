@@ -35,7 +35,7 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 - [x] Promoted `reducer_selection` outputs: **3 entries**.
 - [x] Promoted `battery_cells` output: **1 entry** (1 duplicate, 1 LLM JSON error).
 - [x] Updated README stats to **88 entries / 58 relationships / 23 workstreams**; validation passing.
-- [x] Restarted hourly workstream daemon (task `bash-u6rdd7w6`) with no timeout and `PYTHONUNBUFFERED=1`.
+- [x] Restarted workstream daemon (task `bash-qhu214g1`) with 60s interval, no timeout, and `PYTHONUNBUFFERED=1`.
 
 ### In Progress
 
@@ -54,7 +54,7 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 
 | Task ID | Command | Status |
 |---------|---------|--------|
-| `bash-u6rdd7w6` | Hourly workstream daemon loop (`ai4sci_run_next_workstream.py`) | running |
+| `bash-qhu214g1` | Workstream daemon loop 60s interval (`ai4sci_run_next_workstream.py`) | running |
 | `bash-nh9ia6m1` | `battery_cells` batch run | completed |
 | `b1753c79` | Hourly cron reminder to check `TaskOutput` | active |
 
