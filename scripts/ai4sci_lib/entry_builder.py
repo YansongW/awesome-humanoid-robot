@@ -63,6 +63,7 @@ RELATIONSHIP_TYPE_MAP = {
     "uses_hardware": "integrates",
     "uses_part": "integrates",
     "uses_metric": "uses",
+    "uses_product_of": "uses",
     # Verification / evaluation
     "evaluates_with": "verified_by",
     "validated_by": "verified_by",
