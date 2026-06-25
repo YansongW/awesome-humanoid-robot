@@ -1,0 +1,33 @@
+name: actuator_assembly
+description: |
+  Survey assembly processes for humanoid robot actuators and joints, covering
+  precision alignment, reducer-motor integration, bearing and encoder mounting,
+  fastening, lubrication, contamination control, and in-process calibration
+  steps that determine actuator performance and yield.
+seed_queries:
+  - "precision assembly humanoid robot actuator joint manufacturing"
+  - "harmonic drive motor integration assembly process robot joint"
+  - "robot joint encoder calibration assembly line"
+  - "contamination control gearbox assembly humanoid robot"
+  - "actuator yield improvement assembly automation humanoid"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - manufacturing_process
+  - component
+  - company
+target_domains:
+  - 03_manufacturing_processes
+  - 04_assembly_integration_testing
+  - 02_components
+relationship_patterns:
+  - requires
+  - enables
+  - improves
+  - constrains
+  - is_alternative_to
+relevance_threshold: medium
+max_papers: 12
+sources:
+  - arxiv

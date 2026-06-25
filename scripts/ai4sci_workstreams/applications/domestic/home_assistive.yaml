@@ -1,0 +1,33 @@
+name: home_assistive
+description: |
+  Survey humanoid robot applications for home and assistive environments,
+  including elderly care, household chores, mobility assistance, social
+  interaction, and safety requirements for cohabitation with humans. Focus on
+  task diversity, manipulation in cluttered spaces, and human-robot interaction.
+seed_queries:
+  - "humanoid robot home assistance elderly care"
+  - "domestic humanoid robot household tasks manipulation"
+  - "assistive humanoid robot mobility support"
+  - "human robot interaction home environment safety"
+  - "humanoid robot activities of daily living ADL"
+paper_ids: []
+target_entity_types:
+  - paper
+  - application
+  - company
+  - benchmark
+  - standard
+target_domains:
+  - 11_applications_markets
+  - 12_policy_regulation_ethics
+  - 07_ai_models_algorithms
+relationship_patterns:
+  - enables
+  - requires
+  - evaluates_on
+  - constrains
+  - is_alternative_to
+relevance_threshold: medium
+max_papers: 12
+sources:
+  - arxiv

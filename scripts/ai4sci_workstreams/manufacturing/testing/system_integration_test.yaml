@@ -1,0 +1,33 @@
+name: system_integration_test
+description: |
+  Survey system integration and testing methods for humanoid robots, including
+  functional validation, endurance and fatigue testing, fall safety tests,
+  EMC/EMI compliance, thermal management validation, and end-of-line quality
+  gates for mass production.
+seed_queries:
+  - "humanoid robot system integration testing validation"
+  - "endurance testing humanoid robot joints fatigue life"
+  - "fall safety test humanoid robot impact assessment"
+  - "EMC EMI testing humanoid robot compliance"
+  - "end of line testing humanoid robot mass production"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - benchmark
+  - standard
+  - company
+target_domains:
+  - 04_assembly_integration_testing
+  - 10_evaluation_benchmarks
+  - 12_policy_regulation_ethics
+relationship_patterns:
+  - evaluates_on
+  - requires
+  - enables
+  - constrains
+  - verifies
+relevance_threshold: medium
+max_papers: 12
+sources:
+  - arxiv
