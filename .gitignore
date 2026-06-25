@@ -24,3 +24,6 @@ ruka_paper.txt
 # Python cache
 __pycache__/
 *.pyc
+paper.pdf
+paper.txt
+paper_clean.txt
