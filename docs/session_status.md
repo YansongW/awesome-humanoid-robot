@@ -53,7 +53,7 @@ The arXiv discovery bug (`submittedDate` → `relevance`) is fixed, the hourly w
 
 | Task ID | Command | Status |
 |---------|---------|--------|
-| `bash-1b5d938i` | Hourly workstream daemon loop (`ai4sci_run_next_workstream.py`) | running |
+| `bash-1b5d938i` | Hourly workstream daemon loop (`ai4sci_run_next_workstream.py`) | paused |
 | `bash-pbdcdlki` | `reducer_selection` batch run | running |
 | `b1753c79` | Hourly cron reminder to check `TaskOutput` | active |
 
