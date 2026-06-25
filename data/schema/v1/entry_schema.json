@@ -61,6 +61,12 @@
         "concept",
         "method",
         "formalism",
+        "equation",
+        "operator",
+        "variable",
+        "constant",
+        "algorithm",
+        "approximation",
         "theorem",
         "principle",
         "foundation",
@@ -257,7 +263,13 @@
               "derived_from",
               "instantiates",
               "builds_on",
-              "has_prerequisite"
+              "has_prerequisite",
+              "uses",
+              "includes",
+              "solves",
+              "estimates",
+              "minimizes",
+              "approximates"
             ]
           },
           "description": {

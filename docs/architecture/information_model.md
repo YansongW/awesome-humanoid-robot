@@ -143,6 +143,12 @@ Entity types are organized into four families. The list is versioned and can be 
 | `concept` | High-level concept or problem framing |
 | `method` | Algorithm, technique, or methodological approach |
 | `formalism` | Mathematical formulation (e.g., QP problem, Lagrangian) |
+| `equation` | A specific equation or identity |
+| `operator` | Mathematical operator or transformation (e.g., gradient, Jacobian, softmax) |
+| `variable` | Variable or unknown in a formalism/equation |
+| `constant` | Physical constant or fixed hyperparameter |
+| `algorithm` | Concrete algorithm or solver |
+| `approximation` | Approximation scheme or simplifying assumption |
 | `theorem` | Proven mathematical statement or lemma |
 | `principle` | Physical, chemical, or engineering principle |
 | `foundation` | Foundational discipline topic (math, physics, chemistry, etc.) |
@@ -218,6 +224,12 @@ Relationship types are grouped by semantic category. All relationship types are 
 | `instantiates` | A is a concrete instance/implementation of B | paper implements WBC method |
 | `builds_on` | A builds on prior work B | later paper → earlier paper |
 | `has_prerequisite` | A requires foundational knowledge B | convex optimization → linear algebra |
+| `uses` | A uses B | equation uses operator |
+| `includes` | A includes B as a component/sub-equation | QP formulation includes objective equation |
+| `solves` | A solves B | active-set method solves QP |
+| `estimates` | A estimates B | score matching estimates score function |
+| `minimizes` | A minimizes B | gradient descent minimizes loss |
+| `approximates` | A approximates B | Fick's laws approximate Nernst-Planck |
 
 ---
 
