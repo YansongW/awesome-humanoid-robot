@@ -69,7 +69,10 @@
         "solves",
         "estimates",
         "minimizes",
-        "approximates"
+        "approximates",
+        "proposes",
+        "evaluates_on",
+        "extends"
       ]
     },
     "source": {

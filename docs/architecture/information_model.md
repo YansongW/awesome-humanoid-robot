@@ -231,6 +231,9 @@ Relationship types are grouped by semantic category. All relationship types are 
 | `estimates` | A estimates B | score matching estimates score function |
 | `minimizes` | A minimizes B | gradient descent minimizes loss |
 | `approximates` | A approximates B | Fick's laws approximate Nernst-Planck |
+| `proposes` | A proposes B | paper proposes method/algorithm |
+| `evaluates_on` | A evaluates on B | paper evaluates on benchmark |
+| `extends` | A extends B | method extends prior work |
 
 ---
 
