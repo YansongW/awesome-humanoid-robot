@@ -59,7 +59,7 @@ def resolve_candidate(input_str: str) -> pipeline.SourceCandidate | None:
 def search_arxiv(
     query: str,
     max_results: int = 10,
-    sort_by: str = "submittedDate",
+    sort_by: str = "relevance",
     sort_order: str = "descending",
 ) -> list[pipeline.SourceCandidate]:
     """Search arXiv and return SourceCandidate objects.

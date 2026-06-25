@@ -4,12 +4,26 @@ description: |
   battery systems: Butler-Volmer equation, Nernst equation, Fick's laws, Nernst-Planck
   equation, solid-electrolyte interphase, equivalent circuit models, and battery state estimation.
 seed_queries:
-  - "Butler Volmer equation lithium ion battery kinetics"
-  - "Nernst Planck equation electrolyte transport battery"
+  # Core electrochemical kinetics and transport phenomena for Li-ion batteries
+  - "Butler-Volmer equation lithium-ion battery kinetics"
+  - "Nernst-Planck equation electrolyte transport battery"
+  - "Poisson-Nernst-Planck lithium-ion battery model"
   - "solid electrolyte interphase lithium ion battery model"
-  - "electrochemical impedance spectroscopy humanoid robot battery"
-  - "battery state estimation Kalman filter electrochemistry"
-paper_ids: []
+  - "electrochemical impedance spectroscopy lithium ion battery"
+  # Battery state estimation and physics-based models relevant to mobile robots
+  - "battery state of charge estimation Kalman filter electrochemistry"
+  - "physics based lithium ion battery model review"
+  - "lithium ion battery thermal management humanoid robot"
+paper_ids:
+  # Foundational / survey papers to anchor the workstream
+  - "1503.05912"   # Some comments on the Butler-Volmer equation for modeling Li-ion batteries
+  - "1407.0674"    # Numerical Solution of 3D Poisson-Nernst-Planck Equations Coupled with Classical Density Functional Theory
+  - "2203.16091"   # A Continuum of Physics-Based Lithium-Ion Battery Models Reviewed
+  - "2010.16256"   # Interfacial Effects on Solid Electrolyte Interphase in Lithium-ion Batteries
+  - "2112.13671"   # A four parameter model for the solid-electrolyte interphase to predict battery aging
+  - "2209.03961"   # Nonlinear electrochemical impedance spectroscopy for lithium-ion battery model parameterization
+  - "1908.00962"   # Theory of Impedance Spectroscopy for Lithium Batteries
+  - "1702.08262"   # Sequential Discrete Kalman Filter for Real-Time State Estimation in Power Distribution Systems
 target_entity_types:
   - method
   - algorithm
@@ -34,8 +48,8 @@ relationship_patterns:
   - approximates
   - instantiates
   - builds_on
-relevance_threshold: high
-max_papers: 20
+relevance_threshold: medium
+max_papers: 25
 sources:
   - arxiv
   - semantic_scholar

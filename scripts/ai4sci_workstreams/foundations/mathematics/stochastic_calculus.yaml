@@ -4,12 +4,25 @@ description: |
   flow matching, and stochastic policies in robot learning: Brownian motion, Itô calculus,
   stochastic differential equations, score matching, Langevin dynamics, and sampling algorithms.
 seed_queries:
+  # Stochastic calculus foundations that underpin robot learning generative models
   - "stochastic calculus diffusion model robotics"
   - "Ito calculus stochastic differential equation score matching"
+  - "score matching generative model robotics manipulation"
   - "Langevin dynamics robot policy learning"
-  - "DDPM reverse SDE score function robotics manipulation"
-  - "flow matching probability ODE robot action generation"
-paper_ids: []
+  - "DDPM reverse SDE score function"
+  - "flow matching generative modeling robot action generation"
+  # Direct robot-policy instantiations
+  - "diffusion policy robot manipulation"
+  - "diffusion model robot policy learning"
+paper_ids:
+  # Seminal generative-modeling / stochastic-calculus papers
+  - "2303.04137"   # Diffusion Policy: Visuomotor Policy Learning via Action Diffusion
+  - "2011.13456"   # Score-Based Generative Modeling through Stochastic Differential Equations
+  - "2006.11239"   # Denoising Diffusion Probabilistic Models
+  - "2210.02747"   # Flow Matching for Generative Modeling
+  - "2302.00482"   # Improving and generalizing flow-based generative models with minibatch optimal transport
+  - "2006.09011"   # Improved Techniques for Training Score-Based Generative Models
+  - "2105.05233"   # Diffusion Models Beat GANs on Image Synthesis
 target_entity_types:
   - method
   - algorithm
@@ -35,8 +48,8 @@ relationship_patterns:
   - estimates
   - instantiates
   - builds_on
-relevance_threshold: high
-max_papers: 20
+relevance_threshold: medium
+max_papers: 25
 sources:
   - arxiv
   - semantic_scholar

@@ -42,6 +42,8 @@ The most recent step was a **systematic knowledge-taxonomy study** that replaced
 - [x] **Created 14 additional foundational entity files (Lagrangian, Newton-Euler, constraint qualification, active-set, interior-point, Fick's law, Nernst-Planck, Bayesian filtering, score matching, DDPM reverse, flow matching, continuity equation, chain rule, backpropagation)**
 - [x] **Ran AgentSwarm on 4 foundational workstreams (convex_optimization, rigid_body_dynamics, electrochemistry, stochastic_calculus) using DeepSeek API**
 - [x] **Added `proposes`, `evaluates_on`, `extends` relationship types to schema to support LLM-extracted paper/method links**
+- [x] **Fixed arXiv discovery sort bug: changed default `sortBy` from `submittedDate` to `relevance` so seed queries return matching papers instead of the latest unrelated submissions**
+- [x] **Tuned foundational workstream configs for `electrochemistry` and `stochastic_calculus`: lowered relevance threshold to `medium`, expanded seed queries, added explicit seminal paper IDs, and raised `max_papers` to 25**
 
 ---
 
@@ -85,11 +87,11 @@ We are now executing **Phase 0–2 of the approved plan**:
 
 ## Immediate Next Tasks (Pending)
 
-1. **Git sync**: push the session_status update.
-2. **Tune foundational workstream configs** so electrochemistry and stochastic_calculus can discover relevant papers (currently 0 accepted because of high relevance threshold / generic queries).
+1. **Git sync**: commit and push the discovery fix and workstream config updates.
+2. **Re-run electrochemistry and stochastic_calculus workstreams** with an LLM API key to generate entries/relationships; candidate discovery now yields ~150+ candidates each.
 3. **Review staged outputs** from convex_optimization and rigid_body_dynamics workstreams and promote valid entries/relationships to `research/` and `data/relationships/`.
 4. **Update `docs/ai4sci/literature_review_pipeline.md`** to describe multi-agent workstream execution.
-5. **Continue filling foundational-discipline branches in `WORKSTREAM_TREE.md`**. 
+5. **Continue filling foundational-discipline branches in `WORKSTREAM_TREE.md`**.
 
 ---
 
