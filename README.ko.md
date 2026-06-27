@@ -6,9 +6,9 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-118-green" alt="118 entries" />
-  <img src="https://img.shields.io/badge/relationships-58-brightgreen" alt="58 relationships" />
-  <img src="https://img.shields.io/badge/workstreams-29-orange" alt="29 workstreams" />
+  <img src="https://img.shields.io/badge/entries-676-green" alt="676 entries" />
+  <img src="https://img.shields.io/badge/relationships-840-brightgreen" alt="840 relationships" />
+  <img src="https://img.shields.io/badge/workstreams-175-orange" alt="175 workstreams" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
 
@@ -26,7 +26,7 @@
 
 원자재, 부품, 제조 공정부터 설계 공학, AI, 소프트웨어, 데이터, 조립·테스트, 양산, 적용 시나리오, 시장, 정책 및 규제에 이르는 전체 여정의 모든 단계를 추적합니다. 우리는 단순한 논문 목록이나 제품 목록에 머물지 않고, 휨로봇 산업 전체를 **지식 그래프**로 모델링합니다: 엔티티는 노드이고, 관계는 타입이 지정된 엣지이며, 모든 주장은 출처로 추적 가능합니다.
 
-이 프로젝트는 **AI 보조, 인간 검증** 방식으로 운영됩니다. AI4Sci 파이프라인을 활용해 발견, 추출, 종합을 가속화하지만, 어떤 콘텐츠도 생산 환경으로 승격되기 전에 인간의 검토를 거칩니다.
+이 프로젝트는 **AI 보조, 인간 검증** 방식으로 운영됩니다. AI4Sci 파이프라인을 활용해 발견, 추출, 종합을 가속화하지만, 어떤 콘텐츠도 생산 환경으로 승격되기 전에 인간의 검토를 거칩니다. 현재 프로젝트는 제품화를 위해 **Web 프론트엔드**를 추가하고 있어, 지식 그래프를 위키백과처럼 탐색하고 자연어 질문으로 답변을 얻을 수 있습니다.
 
 ---
 
@@ -103,6 +103,20 @@
 
 ---
 
+## 🌐 Web 프론트엔드: 연구 파이프라인에서 제품으로
+
+이 프로젝트는 순수한 AI4Sci 연구 파이프라인에서 **제품화된 지식 서비스**로 발전하고 있습니다. `web/` 디렉토리에는 FastAPI 기반 프론트엔드가 포함되어 있어 정적인 지식 그래프를 대화형 연구 어시스턴트로 전환합니다:
+
+- **위키백과 스타일 탐색** — 엔티티를 검색하고 타입이 지정된 관계를 통해 탐색합니다.
+- **엔티티 상세 페이지** — 요약, 도메인, 레이어, 관련 항목 및 관계를 한눈에 확인합니다.
+- **자연어 Q&A** — 평이한 언어로 질문하면 AI가 검색된 KG 컨텍스트를 바탕으로 출처를 인용하여 답변합니다.
+
+이는 그래프의 첫 번째 사용자 대면 제품 레이어이자 상업적 지식 서비스의 기초입니다.
+
+자세한 내용은 [`web/README.md`](web/README.md)를 참조하세요.
+
+---
+
 ## 🚀 빠른 시작
 
 ```bash
@@ -126,9 +140,15 @@ python scripts/ai4sci_orchestrator.py --max-workers 2 --max-batch-workers 1 --ma
 
 # 6. 임시 출력 검토
 python scripts/ai4sci_review.py
+
+# 7. Web 프론트엔드 시작
+pip install -r web/requirements.txt
+export AI4SCI_API_KEY="your-openai-compatible-key"  # Q&A용, 선택
+export AI4SCI_BASE_URL="https://api.deepseek.com/v1" # 또는 사용 중인 엔드포인트
+uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 ```
 
-자격 증명 설정 방법은 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md)를 참조하세요.
+자격 증명 설정 방법은 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md)와 [`web/README.md`](web/README.md)를 참조하세요.
 
 ---
 
@@ -136,9 +156,9 @@ python scripts/ai4sci_review.py
 
 | 지표 | 수량 |
 |------|------|
-| 생산급 항목 | 80 |
-| 관계 | 57 |
-| 워크스트림 설정 | 16 |
+| 생산급 항목 | 676 |
+| 관계 | 840 |
+| 워크스트림 설정 | 175 |
 | 온톨로지 도메인 | 12 + `00_foundations` |
 | 지원 언어 | 영 / 중 / 한 |
 | 검증 상태 | ✅ 통과 |
@@ -151,7 +171,8 @@ python scripts/ai4sci_review.py
 |------|------|------|
 | **Phase 0** | 정보 아키텍처, Schema, 검증 메커니즘 | ✅ 완료 |
 | **Phase 1** | 도메인별 온톨로지 문서(01–12) | ✅ 완료 |
-| **Phase 2** | 워크스트림 기반 콘텐츠 채우기 | 🔄 진행 중 |
+| **Phase 2** | 워크스트림 기반 콘텐츠 채우기 + Schema/관계 유형 발전 | 🔄 진행 중 |
+| **Phase 2.5** | 지식 그래프 기반 Web 프론트엔드 및 자연어 Q&A | ✅ Beta 라이브 |
 | **Phase 3** | 낶부 검토, 검증 워크플로우, v0.1.0 공개 릴리스 | ⏳ 계획 |
 
 전체 워크스트림 TODO는 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)에서, 최신 세션 기록은 [`docs/session_status.md`](docs/session_status.md)에서 확인하세요.
@@ -211,6 +232,13 @@ awesome-humanoid-robot/
 │   ├── ai4sci_review.py
 │   ├── ai4sci_status.py
 │   └── validate_entries.py
+├── web/                               # FastAPI 프론트엔드: 탐색 및 Q&A
+│   ├── app.py
+│   ├── kg_store.py
+│   ├── llm_qa.py
+│   ├── static/
+│   ├── templates/
+│   └── README.md
 └── .staging/                          # AI 생성 초안, 인간 검토 대기 중
 ```
 

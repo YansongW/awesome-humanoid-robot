@@ -6,9 +6,9 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-118-green" alt="118 entries" />
-  <img src="https://img.shields.io/badge/relationships-58-brightgreen" alt="58 relationships" />
-  <img src="https://img.shields.io/badge/workstreams-29-orange" alt="29 workstreams" />
+  <img src="https://img.shields.io/badge/entries-676-green" alt="676 entries" />
+  <img src="https://img.shields.io/badge/relationships-840-brightgreen" alt="840 relationships" />
+  <img src="https://img.shields.io/badge/workstreams-175-orange" alt="175 workstreams" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
 
@@ -26,7 +26,7 @@
 
 It tracks every layer of the journey — from raw materials and components to manufacturing, design, AI, software, data, testing, mass production, applications, markets, policy, and regulation. Instead of a flat list of papers or products, we model the domain as a **knowledge graph**: entities are nodes, relationships are typed edges, and every claim is traceable to a source.
 
-The project is **AI-assisted, human-verified**. We use AI4Sci pipelines to accelerate discovery, extraction, and synthesis, while keeping humans in the loop for approval before anything is promoted to production.
+The project is **AI-assisted, human-verified**. We use AI4Sci pipelines to accelerate discovery, extraction, and synthesis, while keeping humans in the loop for approval before anything is promoted to production. We are now adding a **web frontend** so the graph can be browsed and queried like a product, not just maintained as a research artifact.
 
 ---
 
@@ -103,6 +103,20 @@ The full pipeline is documented in [`docs/ai4sci/literature_review_pipeline.md`]
 
 ---
 
+## 🌐 Web frontend: from research pipeline to product
+
+This project is evolving from a pure AI4Sci research pipeline into a **productized knowledge service**. The `web/` directory contains a FastAPI-based frontend that turns the static knowledge graph into an interactive research assistant:
+
+- **Wikipedia-style browsing** — search entities and navigate through typed relationships.
+- **Entity pages** — see summaries, domains, layers, and related entries in one place.
+- **Natural-language Q&A** — ask questions in plain language; AI retrieves relevant KG context and answers with cited sources.
+
+It is the first consumer-facing layer of the graph and lays the groundwork for commercial knowledge services.
+
+See [`web/README.md`](web/README.md) for setup details.
+
+---
+
 ## 🚀 Quick start
 
 ```bash
@@ -126,9 +140,15 @@ python scripts/ai4sci_orchestrator.py --max-workers 2 --max-batch-workers 1 --ma
 
 # 6. Review staged outputs
 python scripts/ai4sci_review.py
+
+# 7. Start the web frontend
+pip install -r web/requirements.txt
+export AI4SCI_API_KEY="your-openai-compatible-key"  # optional, for Q&A
+export AI4SCI_BASE_URL="https://api.deepseek.com/v1" # or your endpoint
+uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 ```
 
-For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md).
+For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md) and [`web/README.md`](web/README.md).
 
 ---
 
@@ -136,9 +156,9 @@ For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4
 
 | Metric | Count |
 |--------|-------|
-| Production entries | 118 |
-| Relationships | 58 |
-| Workstream configs | 29 |
+| Production entries | 676 |
+| Relationships | 840 |
+| Workstream configs | 175 |
 | Ontology domains | 12 + `00_foundations` |
 | Supported languages | en, zh, ko |
 | Validation status | ✅ passing |
@@ -151,7 +171,8 @@ For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4
 |-------|------|--------|
 | **Phase 0** | Information architecture, schemas, validation | ✅ Complete |
 | **Phase 1** | Per-domain ontology documents (01–12) | ✅ Complete |
-| **Phase 2** | Workstream-driven content population | 🔄 In progress |
+| **Phase 2** | Workstream-driven content population + schema/relationship evolution | 🔄 In progress |
+| **Phase 2.5** | Web frontend & natural-language Q&A over the knowledge graph | ✅ Beta live |
 | **Phase 3** | Internal review, verification workflow, v0.1.0 public release | ⏳ Planned |
 
 See [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md) for the full workstream TODO list and [`docs/session_status.md`](docs/session_status.md) for the latest session notes.
@@ -211,6 +232,13 @@ awesome-humanoid-robot/
 │   ├── ai4sci_review.py
 │   ├── ai4sci_status.py
 │   └── validate_entries.py
+├── web/                               # FastAPI frontend for browsing & Q&A
+│   ├── app.py
+│   ├── kg_store.py
+│   ├── llm_qa.py
+│   ├── static/
+│   ├── templates/
+│   └── README.md
 └── .staging/                          # AI-generated drafts pending human review
 ```
 

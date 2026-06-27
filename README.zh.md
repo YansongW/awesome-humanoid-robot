@@ -6,9 +6,9 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-118-green" alt="118 entries" />
-  <img src="https://img.shields.io/badge/relationships-58-brightgreen" alt="58 relationships" />
-  <img src="https://img.shields.io/badge/workstreams-29-orange" alt="29 workstreams" />
+  <img src="https://img.shields.io/badge/entries-676-green" alt="676 entries" />
+  <img src="https://img.shields.io/badge/relationships-840-brightgreen" alt="840 relationships" />
+  <img src="https://img.shields.io/badge/workstreams-175-orange" alt="175 workstreams" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
 
@@ -26,7 +26,7 @@
 
 它追踪整条旅程中的每一个环节——从原材料、零部件、制造工艺，到设计工程、AI、软件、数据、组装测试、量产、应用场景、市场、政策与监管。我们不再满足于简单的论文列表或产品清单，而是将整个人形机器人产业建模为一张**知识图谱**：实体是节点，关系是带类型的边，每条论断都可追溯到来源。
 
-项目采用 **AI 辅助、人工核验** 的方式。我们用 AI4Sci 流水线加速发现、提取与综合，但在任何内容被提升到生产环境之前，都必须经过人工审阅。
+项目采用 **AI 辅助、人工核验** 的方式。我们用 AI4Sci 流水线加速发现、提取与综合，但在任何内容被提升到生产环境之前，都必须经过人工审阅。目前我们正在进一步产品化：新增 **Web 前端**，让知识图谱可以像维基百科一样被浏览、搜索，并通过自然语言提问获得基于图谱的回答。
 
 ---
 
@@ -103,6 +103,20 @@
 
 ---
 
+## 🌐 Web 前端：从科研流水线到产品化服务
+
+本项目正从一个纯粹的 AI4Sci 研究流水线，演进为**可产品化的知识服务**。`web/` 目录提供了一套基于 FastAPI 的前端，把静态知识图谱变成了可交互的研究助手：
+
+- **类维基百科浏览** —— 搜索实体、按类型关系导航。
+- **实体详情页** —— 集中查看摘要、领域、层级、相关条目与关系。
+- **自然语言问答** —— 用中文/英文提问，AI 基于检索到的图谱上下文给出带引用来源的回答。
+
+这是图谱面向用户的第一个产品化入口，也是后续商业化知识服务的基础。
+
+详情见 [`web/README.md`](web/README.md)。
+
+---
+
 ## 🚀 快速开始
 
 ```bash
@@ -126,9 +140,15 @@ python scripts/ai4sci_orchestrator.py --max-workers 2 --max-batch-workers 1 --ma
 
 # 6. 审阅暂存输出
 python scripts/ai4sci_review.py
+
+# 7. 启动 Web 前端
+pip install -r web/requirements.txt
+export AI4SCI_API_KEY="your-openai-compatible-key"  # 可选，用于问答
+export AI4SCI_BASE_URL="https://api.deepseek.com/v1" # 或你的端点
+uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 ```
 
-凭证配置方式见 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md)。
+凭证配置方式见 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md) 和 [`web/README.md`](web/README.md)。
 
 ---
 
@@ -136,9 +156,9 @@ python scripts/ai4sci_review.py
 
 | 指标 | 数量 |
 |------|------|
-| 生产级条目 | 80 |
-| 关系 | 57 |
-| 工作流配置 | 16 |
+| 生产级条目 | 676 |
+| 关系 | 840 |
+| 工作流配置 | 175 |
 | 本体域 | 12 + `00_foundations` |
 | 支持语言 | 中 / 英 / 韩 |
 | 验证状态 | ✅ 通过 |
@@ -151,7 +171,8 @@ python scripts/ai4sci_review.py
 |------|------|------|
 | **Phase 0** | 信息架构、Schema、验证机制 | ✅ 已完成 |
 | **Phase 1** | 各域本体文档（01–12） | ✅ 已完成 |
-| **Phase 2** | 工作流驱动的内容填充 | 🔄 进行中 |
+| **Phase 2** | 工作流驱动的内容填充 + Schema/关系类型演进 | 🔄 进行中 |
+| **Phase 2.5** | 基于知识图谱的 Web 前端与自然语言问答 | ✅ Beta 已上线 |
 | **Phase 3** | 内部审阅、验证流程、v0.1.0 公开发布 | ⏳ 计划中 |
 
 完整工作流 TODO 见 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)，最新会话记录见 [`docs/session_status.md`](docs/session_status.md)。
@@ -211,6 +232,13 @@ awesome-humanoid-robot/
 │   ├── ai4sci_review.py
 │   ├── ai4sci_status.py
 │   └── validate_entries.py
+├── web/                               # FastAPI 前端：浏览与问答
+│   ├── app.py
+│   ├── kg_store.py
+│   ├── llm_qa.py
+│   ├── static/
+│   ├── templates/
+│   └── README.md
 └── .staging/                          # AI 生成的草稿，等待人工审阅
 ```
 
