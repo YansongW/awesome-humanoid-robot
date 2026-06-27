@@ -8,11 +8,10 @@ names:
   zh: MANUS
   ko: 마누스
 summary:
-  en: Dutch company specializing in high-precision data gloves for motion capture, virtual
-    production, and robot teleoperation.
+  en: Dutch company specializing in high-precision data gloves for motion capture,
+    virtual production, and robot teleoperation.
   zh: 荷兰公司，专注于为动作捕捉、虚拟制作和机器人遥操作提供高精度数据手套。
-  ko: 모션 캡처, 가상 제작 및 로봇 원격 조작을 위한 고정밀 데이터 글로브를 전문으로 하는 네덜란드
-    기업입니다.
+  ko: 모션 캡처, 가상 제작 및 로봇 원격 조작을 위한 고정밀 데이터 글로브를 전문으로 하는 네덜란드 기업입니다.
 domains:
 - 02_components
 - 11_applications_markets
@@ -41,6 +40,8 @@ sources:
   url: https://www.manus-meta.com/
   date: '2026'
   accessed_at: '2026-06-24'
+theoretical_depth:
+- system
 ---
 
 # MANUS

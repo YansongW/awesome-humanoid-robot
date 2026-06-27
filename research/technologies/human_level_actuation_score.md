@@ -12,7 +12,8 @@ summary:
     torque-power requirements, bandwidth, efficiency, and thermal sustainability to
     quantify how close a humanoid robot's actuation is to human-level performance.
   zh: 一种标量、可分解的基准指标，综合工作空间覆盖、扭矩-功率需求、带宽、效率和热可持续性，以量化人形机器人驱动能力接近类人水平的程度。
-  ko: 작업 공간 커버리지, 토크-전력 요구사항, 대역폭, 효율 및 열 지속성을 종합하여 휴인oid 로봇의 구동이 인간 수준에 얼마나 가까운지 정량화하는 스칼라 분해 가능 벤치마크 지표입니다.
+  ko: 작업 공간 커버리지, 토크-전력 요구사항, 대역폭, 효율 및 열 지속성을 종합하여 휴인oid 로봇의 구동이 인간 수준에 얼마나 가까운지
+    정량화하는 스칼라 분해 가능 벤치마크 지표입니다.
 domains:
 - 10_evaluation_benchmarks
 - 06_design_engineering
@@ -44,6 +45,8 @@ sources:
   url: https://arxiv.org/abs/2511.06796
   date: '2025'
   accessed_at: '2026-06-25'
+theoretical_depth:
+- system
 ---
 
 # Human-Level Actuation Score

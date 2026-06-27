@@ -57,6 +57,8 @@ sources:
   url: https://arxiv.org/abs/2512.04463
   date: '2025'
   accessed_at: '2026-06-26'
+theoretical_depth:
+- system
 ---
 
 

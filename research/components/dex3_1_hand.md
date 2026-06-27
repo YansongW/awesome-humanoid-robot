@@ -8,8 +8,8 @@ names:
   zh: Unitree Dex3-1 灵巧手
   ko: Unitree Dex3-1 민첩한 손
 summary:
-  en: A force-controlled, three-fingered dexterous end effector option for the Unitree G1-EDU
-    humanoid robot, adding 7+2 degrees of freedom per hand for object manipulation.
+  en: A force-controlled, three-fingered dexterous end effector option for the Unitree
+    G1-EDU humanoid robot, adding 7+2 degrees of freedom per hand for object manipulation.
   zh: Unitree G1-EDU 人形机器人的力控三指灵巧末端执行器选件，每只手增加 7+2 个自由度用于物体操作。
   ko: Unitree G1-EDU 휴머노이드 로봇을 위한 힘 제어식 3지 민첩한 엔드 이펙터 옵션으로, 물체 조작을 위해 손당 7+2자유도를 추가함.
 domains:
@@ -45,11 +45,13 @@ sources:
   accessed_at: '2026-06-22'
 - id: src_002
   type: paper
-  title: Identification of a Physics-Based Electrical Power Consumption Model for the
-    Unitree G1 Humanoid Arm
+  title: Identification of a Physics-Based Electrical Power Consumption Model for
+    the Unitree G1 Humanoid Arm
   url: https://arxiv.org/abs/2606.15915
   date: '2026'
   accessed_at: '2026-06-22'
+theoretical_depth:
+- system
 ---
 
 # Unitree Dex3-1 Dexterous Hand

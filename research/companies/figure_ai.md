@@ -8,11 +8,10 @@ names:
   zh: Figure AI
   ko: 피규어 AI
 summary:
-  en: American humanoid robotics startup developing the Figure humanoid robot for logistics
-    and manufacturing, with partnerships in automotive and retail.
+  en: American humanoid robotics startup developing the Figure humanoid robot for
+    logistics and manufacturing, with partnerships in automotive and retail.
   zh: 美国人形机器人初创公司，开发 Figure 人形机器人用于物流和制造业，与汽车和零售行业建立合作。
-  ko: 물류 및 제조업용 Figure 휴인oid 로봇을 개발하는 미국 휴인oid 로봇 스타트업으로, 자동차 및
-    유통 분야와 파트너십을 맺고 있습니다.
+  ko: 물류 및 제조업용 Figure 휴인oid 로봇을 개발하는 미국 휴인oid 로봇 스타트업으로, 자동차 및 유통 분야와 파트너십을 맺고 있습니다.
 domains:
 - 06_design_engineering
 - 11_applications_markets
@@ -34,8 +33,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-24'
   confidence: medium
-  notes: Product specifications and partnership announcements sourced from company communications
-    and press coverage; detailed cost and production-volume claims are not independently verified.
+  notes: Product specifications and partnership announcements sourced from company
+    communications and press coverage; detailed cost and production-volume claims
+    are not independently verified.
 sources:
 - id: src_001
   type: website
@@ -49,6 +49,8 @@ sources:
   url: https://builtin.com/articles/figure-ai
   date: '2024'
   accessed_at: '2026-06-24'
+theoretical_depth:
+- system
 ---
 
 # Figure AI

@@ -77,6 +77,8 @@ related_entities:
       quadruped and G1 humanoid platforms used in the experiments.
     zh: 论文通过型号名称将 Unitree 认定为实验中使用的 Go2 四足机器人和 G1 人形机器人平台的制造商。
     ko: 논문은 실험에 사용된 Go2 사족 로봇과 G1 휴머노이드 플랫폼의 제조사로서 Unitree를 모델명으로 식별한다.
+theoretical_depth:
+- system
 ---
 
 

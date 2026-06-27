@@ -1,57 +1,51 @@
 ---
-$id: "ent_mat_neodymium_magnet"
-$schema: "../../data/schema/v1/entry_schema.json"
+$id: ent_mat_neodymium_magnet
+$schema: ../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "material"
-
+type: material
 names:
-  en: "Neodymium-Iron-Boron Magnet"
-  zh: "钕铁硼磁体"
-  ko: "네오디뮴 철 붕자석"
-
+  en: Neodymium-Iron-Boron Magnet
+  zh: 钕铁硼磁体
+  ko: 네오디뮴 철 붕자석
 summary:
-  en: "A high-performance rare-earth permanent magnet widely used in servo motors, electric vehicle motors, and high-precision actuators."
-  zh: "一种高性能稀土永磁体，广泛用于伺服电机、电动汽车电机和高精度执行器。"
-  ko: "서보 모터, 전기차 모터 및 고정밀 액추에이터에 널리 사용되는 고성능 희토류 영구자석입니다."
-
+  en: A high-performance rare-earth permanent magnet widely used in servo motors,
+    electric vehicle motors, and high-precision actuators.
+  zh: 一种高性能稀土永磁体，广泛用于伺服电机、电动汽车电机和高精度执行器。
+  ko: 서보 모터, 전기차 모터 및 고정밀 액추에이터에 널리 사용되는 고성능 희토류 영구자석입니다.
 domains:
-  - "01_raw_materials"
-
+- 01_raw_materials
 layers:
-  - "upstream"
-
+- upstream
 functional_roles:
-  - "material"
-
+- material
 tags:
-  - "rare_earth"
-  - "magnet"
-  - "motor"
-  - "actuator"
-
+- rare_earth
+- magnet
+- motor
+- actuator
 verification:
-  status: "verified"
-  reviewed_by: "human_and_ai"
-  reviewed_at: "2026-06-16"
-  confidence: "high"
-  notes: "Widely documented in motor teardown reports, supplier catalogs, and materials science literature."
-
+  status: verified
+  reviewed_by: human_and_ai
+  reviewed_at: '2026-06-16'
+  confidence: high
+  notes: Widely documented in motor teardown reports, supplier catalogs, and materials
+    science literature.
 sources:
-  - id: "src_mat_001"
-    type: "report"
-    title: "Rare Earth Magnets in Robotics and EV Motors"
-    url: "https://example.com/rare-earth-robotics-report"
-    date: "2025-08-10"
-    accessed_at: "2026-06-16"
-
+- id: src_mat_001
+  type: report
+  title: Rare Earth Magnets in Robotics and EV Motors
+  url: https://example.com/rare-earth-robotics-report
+  date: '2025-08-10'
+  accessed_at: '2026-06-16'
 related_entities:
-  - id: "ent_comp_servo_motor"
-    relationship: "supplies"
-    description:
-      en: "NdFeB magnets are supplied to high-performance servo motors."
-      zh: "钕铁硼磁体供应给高性能伺服电机。"
-      ko: "NdFeB 자석은 고성능 서보 모터에 공급됩니다."
+- id: ent_comp_servo_motor
+  relationship: supplies
+  description:
+    en: NdFeB magnets are supplied to high-performance servo motors.
+    zh: 钕铁硼磁体供应给高性能伺服电机。
+    ko: NdFeB 자석은 고성능 서보 모터에 공급됩니다.
+theoretical_depth:
+- system
 ---
 
 # Neodymium-Iron-Boron Magnet

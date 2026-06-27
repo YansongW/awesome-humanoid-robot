@@ -1,0 +1,77 @@
+---
+$id: ent_process_p12_1_1
+$schema: ../../data/schema/v1/entry_schema.json
+$version: 1
+type: method
+names:
+  en: P12.1.1 传感器选型与标定
+  zh: 传感器选型与标定
+  ko: ''
+summary:
+  en: 感知模块架构、标定结果、精度指标
+  zh: 感知模块架构、标定结果、精度指标
+  ko: ''
+domains:
+- 07_ai_models_algorithms
+layers:
+- intelligence
+functional_roles:
+- process
+- knowledge
+tags: []
+verification:
+  status: verified
+  reviewed_by: human_and_ai
+  reviewed_at: '2026-06-27'
+  confidence: high
+  notes: Derived from docs/humanoid_full_development_workflow_v3.md
+sources:
+- id: wbs_v3_report
+  type: report
+  title: 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+  date: '2026-06-27'
+theoretical_depth:
+- method
+---
+
+**所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）
+
+**方法 / 工具**：RGB-D 相机、LiDAR、IMU、麦克风阵列、触觉阵列
+
+**设计思考逻辑**：提供语义理解、深度估计、SLAM、人体/物体检测
+
+**关键约束**：算力、延迟、光照鲁棒性、成本
+
+**完成标准 / 输出物**：感知模块架构、标定结果、精度指标
+
+**三级子任务与四级关键动作：**
+
+- P12.1.1.1 输入梳理与目标量化
+  - 整理「传感器选型与标定」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。
+    - 列出所有上游输入清单并确认版本
+    - 将验收标准转化为可量化 KPI
+    - 建立任务 Owner、时间节点与风险登记
+
+- P12.1.1.2 候选方案建立与评估
+  - 针对「传感器选型与标定」建立候选方案库，使用「RGB-D 相机、LiDAR、IMU、麦克风阵列、触觉阵列」进行量化评估，考虑成本、性能、供应链、可维护性后确定最终方案。
+    - 形成不少于 2 个候选方案
+    - 建立评估矩阵并量化打分
+    - 组织评审并冻结方案
+
+- P12.1.1.3 实施/原型/样件制作
+  - 根据设计方案执行「传感器选型与标定」的实施工作，制作原型、样件或完成关键步骤，记录过程数据。
+    - 建立模型/样机并记录关键参数
+    - 执行仿真或原型验证
+    - 记录异常与偏差
+
+- P12.1.1.4 验证与问题闭环
+  - 对「传感器选型与标定」输出进行验证，检查是否满足完成标准，记录问题并跟踪至关闭。
+    - 制定测试/评审计划与通过准则
+    - 执行测试并记录原始数据
+    - 输出问题清单与改进措施
+
+- P12.1.1.5 文档输出与下游交付
+  - 输出「传感器选型与标定」最终报告/图纸/规范，更新 ICD/BOM/SOP/需求追溯链，完成向下游环节的正式交付。
+    - 按模板编写文档并引用原始数据
+    - 完成内部评审与版本控制
+    - 发布并通知下游依赖方

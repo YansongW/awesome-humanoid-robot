@@ -115,6 +115,8 @@ related_entities:
     en: RUKA is evaluated with a Range of Motion Test for joint reachability.
     zh: RUKA 使用活动范围测试评估关节可达性。
     ko: RUKA는 관절 도달성을 평가하기 위해 가동 범위 테스트를 사용합니다.
+theoretical_depth:
+- system
 ---
 
 

@@ -67,6 +67,8 @@ related_entities:
     en: The hardware experiments use the Unitree G1 humanoid robot produced by Unitree.
     zh: 硬件实验使用了由宇树科技生产的Unitree G1人形机器人。
     ko: 하드웨어 실험에는 Unitree가 제조한 Unitree G1 인간형 로봇이 사용되었다.
+theoretical_depth:
+- system
 ---
 
 

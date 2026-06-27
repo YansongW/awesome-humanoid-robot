@@ -12,7 +12,8 @@ summary:
     for biomechanical modeling, commonly used to define reference human body mass,
     center-of-mass locations, and moments of inertia.
   zh: 一种广泛应用于生物力学建模的人体测量数据集和身体环节参数估计方法，常用于定义参考人体质量、质心位置和转动惯量。
-  ko: 생체역학 모델링에 널리 사용되는 인체측정 데이터 세트 및 신체 부분 매개변수 추정 집합으로, 기준 인체 질량, 질량 중심 위치 및 관성 모멘트를 정의하는 데 사용됩니다.
+  ko: 생체역학 모델링에 널리 사용되는 인체측정 데이터 세트 및 신체 부분 매개변수 추정 집합으로, 기준 인체 질량, 질량 중심 위치 및 관성
+    모멘트를 정의하는 데 사용됩니다.
 domains:
 - 06_design_engineering
 - 10_evaluation_benchmarks
@@ -32,8 +33,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-25'
   confidence: high
-  notes: Well-established biomechanics reference; application to humanoid actuation benchmarking
-    is sourced from the Human-Level Actuation for Humanoids paper.
+  notes: Well-established biomechanics reference; application to humanoid actuation
+    benchmarking is sourced from the Human-Level Actuation for Humanoids paper.
 sources:
 - id: src_001
   type: paper
@@ -41,6 +42,8 @@ sources:
   url: https://arxiv.org/abs/2511.06796
   date: '2025'
   accessed_at: '2026-06-25'
+theoretical_depth:
+- method
 ---
 
 # de Leva Anthropometry

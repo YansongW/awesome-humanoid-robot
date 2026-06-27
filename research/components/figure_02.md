@@ -8,11 +8,10 @@ names:
   zh: Figure 02
   ko: 피규어 02
 summary:
-  en: Humanoid robot developed by Figure AI for logistics and manufacturing, featuring onboard
-    vision-language models and 16-degree-of-freedom hands.
+  en: Humanoid robot developed by Figure AI for logistics and manufacturing, featuring
+    onboard vision-language models and 16-degree-of-freedom hands.
   zh: Figure AI 为物流和制造业开发的人形机器人，配备 onboard 视觉语言模型和 16 自由度手部。
-  ko: Figure AI가 물류 및 제조업용으로 개발한 휴인oid 로봇으로, 온보드 비전-언어 모델과 16자유도
-    손을 갖추고 있습니다.
+  ko: Figure AI가 물류 및 제조업용으로 개발한 휴인oid 로봇으로, 온보드 비전-언어 모델과 16자유도 손을 갖추고 있습니다.
 domains:
 - 06_design_engineering
 - 11_applications_markets
@@ -49,6 +48,8 @@ sources:
   url: https://builtin.com/articles/figure-ai
   date: '2024'
   accessed_at: '2026-06-24'
+theoretical_depth:
+- system
 ---
 
 # Figure 02

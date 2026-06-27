@@ -8,8 +8,8 @@ names:
   zh: Tesla Optimus
   ko: 테슬라 옵티머스
 summary:
-  en: Tesla's general-purpose humanoid robot program, with stated goals of factory deployment
-    and high-volume manufacturing.
+  en: Tesla's general-purpose humanoid robot program, with stated goals of factory
+    deployment and high-volume manufacturing.
   zh: 特斯拉的通用人形机器人项目，目标是工厂部署和规模化制造。
   ko: 테슬라의 범용 휴인oid 로봇 프로그램으로, 공장 배치와 대량 생산을 목표로 합니다.
 domains:
@@ -34,8 +34,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-24'
   confidence: medium
-  notes: Public demonstrations and company statements; detailed specifications and production
-    plans are not independently verified.
+  notes: Public demonstrations and company statements; detailed specifications and
+    production plans are not independently verified.
 sources:
 - id: src_001
   type: website
@@ -49,6 +49,8 @@ sources:
   url: https://interactanalysis.com/insight/humanoid-robots-and-lithium-ion-batteries/
   date: '2026'
   accessed_at: '2026-06-24'
+theoretical_depth:
+- system
 ---
 
 # Tesla Optimus

@@ -8,8 +8,8 @@ names:
   zh: LEAP 灵巧手
   ko: LEAP Hand
 summary:
-  en: A low-cost, open-source, 16-DOF anthropomorphic dexterous hand designed for robot
-    learning research, using direct-drive Dynamixel servos and 3D-printed parts.
+  en: A low-cost, open-source, 16-DOF anthropomorphic dexterous hand designed for
+    robot learning research, using direct-drive Dynamixel servos and 3D-printed parts.
   zh: 一种低成本、开源的16自由度拟人灵巧手，专为机器人学习研究设计，采用直驱Dynamixel舵机和3D打印部件。
   ko: 저비용, 오픈소스, 16자유도 의인형 민첩한 손으로, 로봇 학습 연구를 위해 직접 구동식 Dynamixel 서보와 3D 프린팅 부품을 사용함.
 domains:
@@ -48,6 +48,8 @@ sources:
   url: https://arxiv.org/abs/2504.13165
   date: '2025'
   accessed_at: '2026-06-22'
+theoretical_depth:
+- system
 ---
 
 # LEAP Hand

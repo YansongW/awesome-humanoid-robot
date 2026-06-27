@@ -1,60 +1,71 @@
 ---
-$id: "ent_tech_on_device_vla_inference"
-$schema: "../../../../../data/schema/v1/entry_schema.json"
+$id: ent_tech_on_device_vla_inference
+$schema: ../../../../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "technology"
-
+type: technology
 names:
-  en: "On-Device VLA Inference"
-  zh: "端侧 VLA 推理"
-  ko: "온디바이스 VLA 추론"
-
+  en: On-Device VLA Inference
+  zh: 端侧 VLA 推理
+  ko: 온디바이스 VLA 추론
 summary:
-  en: "The practice of running Vision-Language-Action models directly on robot-embedded edge compute rather than offloading to edge or cloud servers, driven by latency, connectivity, and privacy constraints."
-  zh: "将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。"
-  ko: "지연 시간, 연결성 및 프라이버시 제약을 해결하기 위해 VLA 모델을 엣지 또는 클라우드 서버가 아닌 로봇 임베디드 엣지 컴퓨팅에서 직접 실행하는 기술 방식."
-
+  en: The practice of running Vision-Language-Action models directly on robot-embedded
+    edge compute rather than offloading to edge or cloud servers, driven by latency,
+    connectivity, and privacy constraints.
+  zh: 将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。
+  ko: 지연 시간, 연결성 및 프라이버시 제약을 해결하기 위해 VLA 모델을 엣지 또는 클라우드 서버가 아닌 로봇 임베디드 엣지 컴퓨팅에서 직접
+    실행하는 기술 방식.
 domains:
-  - "07_ai_models_algorithms"
-  - "08_software_middleware"
-  - "02_components"
-
+- 07_ai_models_algorithms
+- 08_software_middleware
+- 02_components
 layers:
-  - "intelligence"
-
+- intelligence
 functional_roles:
-  - "intelligence"
-  - "tool_equipment"
-
+- intelligence
+- tool_equipment
 tags:
-  - "vla"
-  - "on_device_inference"
-  - "edge_compute"
-  - "latency"
-  - "real_time_control"
-  - "humanoid"
-
+- vla
+- on_device_inference
+- edge_compute
+- latency
+- real_time_control
+- humanoid
 verification:
-  status: "partially_verified"
-  reviewed_by: "ai"
-  reviewed_at: "2026-06-25"
-  confidence: "medium"
-  notes: "AI-extracted from VLA-Perf paper and NVIDIA deployment blog; specific latency claims depend on model and quantization configuration."
-
+  status: partially_verified
+  reviewed_by: human_and_ai
+  reviewed_at: '2026-06-26'
+  confidence: high
+  notes: AI-extracted from VLA-Perf paper and NVIDIA deployment blog; specific latency
+    claims depend on model and quantization configuration.
 sources:
-  - id: "src_vla_perf_paper"
-    type: "paper"
-    title: "How Fast Can I Run My VLA? Demystifying VLA Inference Performance with VLA-Perf"
-    url: "https://arxiv.org/abs/2602.18397"
-    date: "2026-02-20"
-    accessed_at: "2026-06-25"
-  - id: "src_nvidia_gr00t_n16_blog"
-    type: "website"
-    title: "Building Generalist Humanoid Capabilities with NVIDIA Isaac GR00T N1.6 Using a Sim-to-Real Workflow"
-    url: "https://developer.nvidia.com/blog/building-generalist-humanoid-capabilities-with-nvidia-isaac-gr00t-n1-6-using-a-sim-to-real-workflow/"
-    date: "2026-01-08"
-    accessed_at: "2026-06-25"
+- id: src_vla_perf_paper
+  type: paper
+  title: How Fast Can I Run My VLA? Demystifying VLA Inference Performance with VLA-Perf
+  url: https://arxiv.org/abs/2602.18397
+  date: '2026-02-20'
+  accessed_at: '2026-06-26'
+- id: src_nvidia_gr00t_n16_blog
+  type: website
+  title: Building Generalist Humanoid Capabilities with NVIDIA Isaac GR00T N1.6 Using
+    a Sim-to-Real Workflow
+  url: https://developer.nvidia.com/blog/building-generalist-humanoid-capabilities-with-nvidia-isaac-gr00t-n1-6-using-a-sim-to-real-workflow/
+  date: '2026-01-08'
+  accessed_at: '2026-06-26'
+theoretical_depth:
+- system
+related_entities:
+- id: ent_method_action_token_prediction
+  relationship: uses
+  description:
+    en: On-device VLA inference deploys models that rely on action token prediction.
+    zh: 端侧 VLA 推理部署依赖动作 token 预测的模型。
+    ko: 온디바이스 VLA 추론은 액션 토큰 예측에 의존하는 모델을 배포한다.
+- id: ent_paper_openvla_2024
+  relationship: is_based_on
+  description:
+    en: On-device VLA inference builds on architectures such as OpenVLA.
+    zh: 端侧 VLA 推理建立在 OpenVLA 等架构之上。
+    ko: 온디바이스 VLA 추론은 OpenVLA와 같은 아키텍처에 기반한다.
 ---
 
 # On-Device VLA Inference

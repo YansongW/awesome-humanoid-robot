@@ -1,0 +1,77 @@
+---
+$id: ent_paper_tafrishi_a_novel_assistive_controller_b_2022
+$schema: ../../data/schema/v1/entry_schema.json
+$version: 1
+type: paper
+names:
+  en: A Novel Assistive Controller Based on Differential Geometry for Users of the
+    Differential-Drive Wheeled Mobile Robots
+  zh: 面向差动轮式移动机器人用户的基于微分几何的新型辅助控制器
+  ko: 차동 구동 휠 모바일 로봇 사용자를 위한 미분기하학 기반의 새로운 보조 제어기
+summary:
+  en: This 2022 arXiv paper presents a differential-geometry-based assistive controller
+    that helps users steer differential-drive wheeled mobile robots—particularly electric
+    wheelchairs—using only joystick inputs and current vehicle states, without requiring
+    pre-specified desired states.
+  zh: 本2022年arXiv论文提出了一种基于微分几何的辅助控制器，仅利用操纵杆输入和当前车辆状态，帮助用户操控差动轮式移动机器人（尤其是电动轮椅），无需预先指定期望状态。
+  ko: 이 2022년 arXiv 논문은 조이스틱 입력과 현재 차량 상태만을 사용하여 사용자가 차동 구동 휠 모바일 로봇, 특히 전동 휠체어를 조향할
+    수 있도록 돕는 미분기하학 기반 보조 제어기를 제안하며, 사전에 지정된 목표 상태가 필요하지 않다.
+domains:
+- 07_ai_models_algorithms
+- 02_components
+- 11_applications_markets
+layers:
+- intelligence
+- upstream
+- validation_markets
+functional_roles:
+- knowledge
+- intelligence
+tags:
+- assistive_control
+- differential_geometry
+- darboux_frame
+- shared_control
+- wheelchair
+- joystick
+- mobile_robot
+- safety_constraints
+- human_subject_study
+verification:
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-06-27'
+  confidence: medium
+  notes: AI-extracted from the arXiv abstract and provided metadata; requires human
+    review of the full paper before verification.
+sources:
+- id: src_001
+  type: paper
+  title: A Novel Assistive Controller Based on Differential Geometry for Users of
+    the Differential-Drive Wheeled Mobile Robots
+  url: https://arxiv.org/abs/2202.01969
+  date: '2022'
+  accessed_at: '2026-06-27'
+theoretical_depth:
+- method
+---
+
+## Overview
+
+The paper addresses the difficulty of controlling differential-drive wheeled mobile robots—such as electric wheelchairs—through indirect joystick input. Because the vehicle's velocity and direction are determined by only two actuating wheels, the user must simultaneously manage both quantities, a task that becomes especially demanding when complex curves are required.
+
+To overcome the limitation that classic controllers typically require desired states beforehand, the authors develop an assistive control strategy grounded in differential geometry. They introduce Darboux-frame kinematics defined at the contact point of a virtual wheel and a plane, then design a geometric controller that enforces safety constraints to generate smooth trajectories.
+
+The approach is validated through experiments with multiple participants who drive a commercial wheelchair along routes including Viviani's curve and a sharp spiral curve. Assisted joystick control is compared against unassisted control using NASA-TLX assessments to measure user effort and trajectory smoothness.
+
+## Key Contributions
+
+- Developed a novel assistive geometric controller for differential-drive mobile robots that does not require a priori desired states.
+- Introduced Darboux-frame-based kinematics of a virtual wheel for controller design in the arc-length domain.
+- Designed safety constraints on velocity and orientation sensitivity using differential geometry.
+- Validated the controller through human-subject experiments on a commercial wheelchair along Viviani's curve and a sharp spiral curve.
+- Demonstrated reduced user effort and improved trajectory smoothness compared to unassisted joystick control via NASA-TLX assessments.
+
+## Relevance to Humanoid Robotics
+
+Although the work focuses on differential-drive wheelchairs, its shared-control and assistive-control principles are transferable to lower-body mobility platforms and assistive piloting mechanisms that may accompany humanoid robot deployment. The geometric treatment of wheeled locomotion and the safety-constrained correction of velocity and steering can inform the design of mobility aids or wheeled bases integrated with humanoid systems.

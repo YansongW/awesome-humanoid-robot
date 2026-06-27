@@ -1,61 +1,72 @@
 ---
-$id: "ent_tech_li_battery_humanoid"
-$schema: "../../../../../data/schema/v1/entry_schema.json"
+$id: ent_tech_li_battery_humanoid
+$schema: ../../../../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "technology"
-
+type: technology
 names:
-  en: "Lithium-Ion Battery System for Humanoid Robots"
-  zh: "人形机器人锂离子电池系统"
-  ko: "휴로이드 로봇용 리튬 이온 배터리 시스템"
-
+  en: Lithium-Ion Battery System for Humanoid Robots
+  zh: 人形机器人锂离子电池系统
+  ko: 휴로이드 로봇용 리튬 이온 배터리 시스템
 summary:
-  en: "The incumbent onboard energy storage technology for humanoid robots, balancing energy density, power density, and cycle life, but currently limiting runtime to 2-4 hours for typical dynamic operation."
-  zh: "人形机器人当前主流的机载储能技术，在能量密度、功率密度和循环寿命之间取得平衡，但目前通常将动态运行时间限制在 2-4 小时。"
-  ko: "휴로이드 로봇의 기존 온보드 에너지 저장 기술로, 에너지 밀도, 출력 밀도, 사이클 수명 간의 균형을 맞추지만, 일반적인 동적 작업 시 2-4시간으로 운영 시간을 제한함."
-
+  en: The incumbent onboard energy storage technology for humanoid robots, balancing
+    energy density, power density, and cycle life, but currently limiting runtime
+    to 2-4 hours for typical dynamic operation.
+  zh: 人形机器人当前主流的机载储能技术，在能量密度、功率密度和循环寿命之间取得平衡，但目前通常将动态运行时间限制在 2-4 小时。
+  ko: 휴로이드 로봇의 기존 온보드 에너지 저장 기술로, 에너지 밀도, 출력 밀도, 사이클 수명 간의 균형을 맞추지만, 일반적인 동적 작업 시
+    2-4시간으로 운영 시간을 제한함.
 domains:
-  - "01_raw_materials"
-  - "02_components"
-  - "03_manufacturing_processes"
-
+- 01_raw_materials
+- 02_components
+- 03_manufacturing_processes
 layers:
-  - "upstream"
-  - "midstream"
-
+- upstream
+- midstream
 functional_roles:
-  - "knowledge"
-  - "component"
-
+- knowledge
+- component
 tags:
-  - "lithium_ion_battery"
-  - "battery"
-  - "energy_density"
-  - "power_density"
-  - "solid_state_battery"
-  - "humanoid_robot"
-
+- lithium_ion_battery
+- battery
+- energy_density
+- power_density
+- solid_state_battery
+- humanoid_robot
 verification:
-  status: "partially_verified"
-  reviewed_by: "ai"
-  reviewed_at: "2026-06-25"
-  confidence: "medium"
-  notes: "AI-extracted from academic letter and industry analysis; product-specific capacity and runtime figures are estimates based on public sources."
-
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-06-25'
+  confidence: medium
+  notes: AI-extracted from academic letter and industry analysis; product-specific
+    capacity and runtime figures are estimates based on public sources.
 sources:
-  - id: "src_deng_powering_humanoid_robots_2026"
-    type: "paper"
-    title: "Powering Humanoid Robots: The Central Role of Battery Technology"
-    url: "https://www.the-innovation.org/data/article/energy-use/preview/pdf/EU-2026-0002.pdf"
-    date: "2026-03-25"
-    accessed_at: "2026-06-25"
-  - id: "src_interact_analysis_li_batteries_2026"
-    type: "report"
-    title: "Humanoid robots and lithium-ion batteries: Long-term commitment or short-term convenience?"
-    url: "https://interactanalysis.com/insight/humanoid-robots-and-lithium-ion-batteries/"
-    date: "2026-01-30"
-    accessed_at: "2026-06-25"
+- id: src_deng_powering_humanoid_robots_2026
+  type: paper
+  title: 'Powering Humanoid Robots: The Central Role of Battery Technology'
+  url: https://www.the-innovation.org/data/article/energy-use/preview/pdf/EU-2026-0002.pdf
+  date: '2026-03-25'
+  accessed_at: '2026-06-25'
+- id: src_interact_analysis_li_batteries_2026
+  type: report
+  title: 'Humanoid robots and lithium-ion batteries: Long-term commitment or short-term
+    convenience?'
+  url: https://interactanalysis.com/insight/humanoid-robots-and-lithium-ion-batteries/
+  date: '2026-01-30'
+  accessed_at: '2026-06-25'
+theoretical_depth:
+- system
+related_entities:
+- id: ent_method_equivalent_circuit_battery_model
+  relationship: uses
+  description:
+    en: The lithium-ion battery system uses equivalent-circuit models for state estimation and voltage prediction.
+    zh: 锂离子电池系统使用等效电路模型进行状态估计和电压预测。
+    ko: 리튬 이온 배터리 시스템은 상태 추정 및 전압 예측을 위해 등가 회로 모델을 사용한다.
+- id: ent_component_battery_management_system
+  relationship: integrates
+  description:
+    en: The battery system integrates a battery management system for monitoring, protection, and balancing.
+    zh: 电池系统集成电池管理系统以实现监测、保护和均衡。
+    ko: 배터리 시스템은 모니터링, 보호 및 균형을 위해 배터리 관리 시스템을 통합한다.
 ---
 
 # Lithium-Ion Battery System for Humanoid Robots

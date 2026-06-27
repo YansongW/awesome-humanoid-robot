@@ -8,8 +8,9 @@ names:
   zh: 主板功率传感器
   ko: 메인보드 전력 센서
 summary:
-  en: A sensing module that measures voltage, current, and power consumption at the main
-    controller board level, enabling system-level energy monitoring and model validation.
+  en: A sensing module that measures voltage, current, and power consumption at the
+    main controller board level, enabling system-level energy monitoring and model
+    validation.
   zh: 一种在主板控制器层面测量电压、电流和功耗的传感模块，用于系统级能耗监测和模型验证。
   ko: 메인 컨트롤러 보드 수준에서 전압, 전류, 전력 소비를 측정하여 시스템 수준의 에너지 모니터링 및 모델 검증을 가능하게 하는 센싱 모듈.
 domains:
@@ -39,11 +40,13 @@ verification:
 sources:
 - id: src_001
   type: paper
-  title: Identification of a Physics-Based Electrical Power Consumption Model for the
-    Unitree G1 Humanoid Arm
+  title: Identification of a Physics-Based Electrical Power Consumption Model for
+    the Unitree G1 Humanoid Arm
   url: https://arxiv.org/abs/2606.15915
   date: '2026'
   accessed_at: '2026-06-22'
+theoretical_depth:
+- system
 ---
 
 # Main-Board Power Sensor

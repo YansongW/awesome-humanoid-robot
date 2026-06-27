@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}条目未找到 · 人形机器人知识图谱{% endblock %}
+
+{% block content %}
+<div class="not-found">
+  <h1>未找到条目</h1>
+  <p>知识图谱中没有 <code>{{ entry_id }}</code> 这个条目。</p>
+  <p><a href="/">返回首页</a></p>
+</div>
+{% endblock %}

@@ -1,63 +1,61 @@
 ---
-$id: "ent_component_nvidia_jetson_thor"
-$schema: "../../../../../data/schema/v1/entry_schema.json"
+$id: ent_component_nvidia_jetson_thor
+$schema: ../../../../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "component"
-
+type: component
 names:
-  en: "NVIDIA Jetson Thor"
-  zh: "NVIDIA Jetson Thor"
-  ko: "NVIDIA Jetson Thor"
-
+  en: NVIDIA Jetson Thor
+  zh: NVIDIA Jetson Thor
+  ko: NVIDIA Jetson Thor
 summary:
-  en: "NVIDIA's flagship edge AI compute module for humanoid and physical AI robots, built on Blackwell architecture and designed to run multimodal generative AI, VLMs, and VLA policies on-device."
-  zh: "NVIDIA 面向人形机器人和物理 AI 机器人的旗舰边缘 AI 计算模块，基于 Blackwell 架构，支持在设备端运行多模态生成式 AI、视觉语言模型和 VLA 策略。"
-  ko: "NVIDIA의 휴인oid 및 물리 AI 로봇용 플래그십 엣지 AI 컴퓨팅 모듈로, Blackwell 아키텍처 기반이며 온디바이스에서 멀티모달 생성 AI, VLM 및 VLA 정책 실행을 위해 설계됨."
-
+  en: NVIDIA's flagship edge AI compute module for humanoid and physical AI robots,
+    built on Blackwell architecture and designed to run multimodal generative AI,
+    VLMs, and VLA policies on-device.
+  zh: NVIDIA 面向人形机器人和物理 AI 机器人的旗舰边缘 AI 计算模块，基于 Blackwell 架构，支持在设备端运行多模态生成式 AI、视觉语言模型和
+    VLA 策略。
+  ko: NVIDIA의 휴인oid 및 물리 AI 로봇용 플래그십 엣지 AI 컴퓨팅 모듈로, Blackwell 아키텍처 기반이며 온디바이스에서 멀티모달
+    생성 AI, VLM 및 VLA 정책 실행을 위해 설계됨.
 domains:
-  - "02_components"
-  - "07_ai_models_algorithms"
-  - "08_software_middleware"
-
+- 02_components
+- 07_ai_models_algorithms
+- 08_software_middleware
 layers:
-  - "upstream"
-  - "intelligence"
-
+- upstream
+- intelligence
 functional_roles:
-  - "component"
-  - "intelligence"
-  - "tool_equipment"
-
+- component
+- intelligence
+- tool_equipment
 tags:
-  - "nvidia"
-  - "jetson"
-  - "edge_compute"
-  - "vla"
-  - "on_device_inference"
-  - "blackwell"
-  - "humanoid"
-
+- nvidia
+- jetson
+- edge_compute
+- vla
+- on_device_inference
+- blackwell
+- humanoid
 verification:
-  status: "partially_verified"
-  reviewed_by: "ai"
-  reviewed_at: "2026-06-25"
-  confidence: "medium"
-  notes: "AI-extracted from NVIDIA official blog and VLA-Perf paper; detailed datasheet review pending."
-
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-06-25'
+  confidence: medium
+  notes: AI-extracted from NVIDIA official blog and VLA-Perf paper; detailed datasheet
+    review pending.
 sources:
-  - id: "src_nvidia_jetson_thor_blog"
-    type: "website"
-    title: "Introducing NVIDIA Jetson Thor, the Ultimate Platform for Physical AI"
-    url: "https://developer.nvidia.com/blog/introducing-nvidia-jetson-thor-the-ultimate-platform-for-physical-ai/"
-    date: "2025-08-25"
-    accessed_at: "2026-06-25"
-  - id: "src_vla_perf_paper"
-    type: "paper"
-    title: "How Fast Can I Run My VLA? Demystifying VLA Inference Performance with VLA-Perf"
-    url: "https://arxiv.org/abs/2602.18397"
-    date: "2026-02-20"
-    accessed_at: "2026-06-25"
+- id: src_nvidia_jetson_thor_blog
+  type: website
+  title: Introducing NVIDIA Jetson Thor, the Ultimate Platform for Physical AI
+  url: https://developer.nvidia.com/blog/introducing-nvidia-jetson-thor-the-ultimate-platform-for-physical-ai/
+  date: '2025-08-25'
+  accessed_at: '2026-06-25'
+- id: src_vla_perf_paper
+  type: paper
+  title: How Fast Can I Run My VLA? Demystifying VLA Inference Performance with VLA-Perf
+  url: https://arxiv.org/abs/2602.18397
+  date: '2026-02-20'
+  accessed_at: '2026-06-25'
+theoretical_depth:
+- system
 ---
 
 # NVIDIA Jetson Thor

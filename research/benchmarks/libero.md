@@ -1,69 +1,63 @@
 ---
-$id: "ent_benchmark_libero"
-$schema: "../../data/schema/v1/entry_schema.json"
+$id: ent_benchmark_libero
+$schema: ../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "benchmark"
-
+type: benchmark
 names:
-  en: "LIBERO"
-  zh: "LIBERO"
-  ko: "LIBERO"
-
+  en: LIBERO
+  zh: LIBERO
+  ko: LIBERO
 summary:
-  en: "A benchmark and dataset for learning library-generalizable robot manipulation skills from short-horizon tabletop tasks with procedural object and scene variations."
-  zh: "一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。"
-  ko: "프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋."
-
+  en: A benchmark and dataset for learning library-generalizable robot manipulation
+    skills from short-horizon tabletop tasks with procedural object and scene variations.
+  zh: 一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。
+  ko: 프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.
 domains:
-  - "09_data_datasets"
-  - "10_evaluation_benchmarks"
-
+- 09_data_datasets
+- 10_evaluation_benchmarks
 layers:
-  - "intelligence"
-  - "validation_markets"
-
+- intelligence
+- validation_markets
 functional_roles:
-  - "knowledge"
-  - "intelligence"
-
+- knowledge
+- intelligence
 tags:
-  - "robot_learning"
-  - "vla"
-  - "tabletop"
-  - "benchmark"
-  - "dataset"
-  - "short_horizon"
-  - "generalization"
-
+- robot_learning
+- vla
+- tabletop
+- benchmark
+- dataset
+- short_horizon
+- generalization
 verification:
-  status: "verified"
-  reviewed_by: "human_and_ai"
-  reviewed_at: "2026-06-22"
-  confidence: "high"
-  notes: "Scope confirmed by original NeurIPS 2023 paper and Wang et al. 2026 VLA survey."
-
+  status: verified
+  reviewed_by: human_and_ai
+  reviewed_at: '2026-06-22'
+  confidence: high
+  notes: Scope confirmed by original NeurIPS 2023 paper and Wang et al. 2026 VLA survey.
 sources:
-  - id: "src_libero_paper"
-    type: "paper"
-    title: "LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning"
-    url: "https://arxiv.org/abs/2304.13470"
-    date: "2023-04-26"
-    accessed_at: "2026-06-22"
-  - id: "src_libero_code"
-    type: "website"
-    title: "LIBERO GitHub Repository"
-    url: "https://github.com/Lifelong-Robot-Learning/LIBERO"
-    date: "2023-04-26"
-    accessed_at: "2026-06-22"
-
+- id: src_libero_paper
+  type: paper
+  title: 'LIBERO: Benchmarking Knowledge Transfer for Lifelong Robot Learning'
+  url: https://arxiv.org/abs/2304.13470
+  date: '2023-04-26'
+  accessed_at: '2026-06-22'
+- id: src_libero_code
+  type: website
+  title: LIBERO GitHub Repository
+  url: https://github.com/Lifelong-Robot-Learning/LIBERO
+  date: '2023-04-26'
+  accessed_at: '2026-06-22'
 related_entities:
-  - id: "ent_paper_wang_vla_survey_2026"
-    relationship: "cites"
-    description:
-      en: "Wang et al. 2026 survey cites LIBERO as a representative short-horizon tabletop VLA benchmark."
-      zh: "Wang 等人 2026 综述将 LIBERO 引用为代表性短程桌面 VLA 基准。"
-      ko: "Wang et al. 2026 서베이는 LIBERO를 대표적인 단기 테이블탑 VLA 벤치마크로 인용함."
+- id: ent_paper_wang_vla_survey_2026
+  relationship: cites
+  description:
+    en: Wang et al. 2026 survey cites LIBERO as a representative short-horizon tabletop
+      VLA benchmark.
+    zh: Wang 等人 2026 综述将 LIBERO 引用为代表性短程桌面 VLA 基准。
+    ko: Wang et al. 2026 서베이는 LIBERO를 대표적인 단기 테이블탑 VLA 벤치마크로 인용함.
+theoretical_depth:
+- system
 ---
 
 # LIBERO

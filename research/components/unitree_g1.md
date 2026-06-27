@@ -8,11 +8,12 @@ names:
   zh: Unitree G1 人形机器人
   ko: Unitree G1 휴머노이드 로봇
 summary:
-  en: A compact, mass-produced humanoid robot developed by Unitree Robotics, featuring 23–43
-    degrees of freedom, a 35 kg body, 2 m/s walking speed, and options for dexterous hands,
-    designed for research, education, and light industrial tasks.
+  en: A compact, mass-produced humanoid robot developed by Unitree Robotics, featuring
+    23–43 degrees of freedom, a 35 kg body, 2 m/s walking speed, and options for dexterous
+    hands, designed for research, education, and light industrial tasks.
   zh: 由宇树科技开发的紧凑型量产人形机器人，具有23–43自由度、35公斤体重、2米/秒步行速度，可选配灵巧手，面向研究、教育和轻工业任务。
-  ko: Unitree Robotics가 개발한 컴팩트한 양산형 휴머노이드 로봇으로, 23~43자유도, 35kg 몸체, 2m/s 보행 속도를 갖추며 연구, 교육 및 경량 산업 작업을 위해 설계됨.
+  ko: Unitree Robotics가 개발한 컴팩트한 양산형 휴머노이드 로봇으로, 23~43자유도, 35kg 몸체, 2m/s 보행 속도를 갖추며
+    연구, 교육 및 경량 산업 작업을 위해 설계됨.
 domains:
 - 02_components
 - 06_design_engineering
@@ -38,8 +39,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: medium
-  notes: Specifications compiled from official Unitree documentation and reseller pages;
-    exact configuration depends on G1/G1-EDU variant.
+  notes: Specifications compiled from official Unitree documentation and reseller
+    pages; exact configuration depends on G1/G1-EDU variant.
 sources:
 - id: src_001
   type: website
@@ -49,11 +50,13 @@ sources:
   accessed_at: '2026-06-22'
 - id: src_002
   type: paper
-  title: Identification of a Physics-Based Electrical Power Consumption Model for the
-    Unitree G1 Humanoid Arm
+  title: Identification of a Physics-Based Electrical Power Consumption Model for
+    the Unitree G1 Humanoid Arm
   url: https://arxiv.org/abs/2606.15915
   date: '2026'
   accessed_at: '2026-06-22'
+theoretical_depth:
+- system
 ---
 
 # Unitree G1 Humanoid Robot

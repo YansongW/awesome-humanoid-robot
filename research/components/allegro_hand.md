@@ -9,9 +9,11 @@ names:
   ko: Allegro Hand
 summary:
   en: A commercial 16-DOF four-fingered dexterous robotic hand produced by Wonik Robotics,
-    widely used in manipulation research for its torque-controlled joints and ROS compatibility.
+    widely used in manipulation research for its torque-controlled joints and ROS
+    compatibility.
   zh: 由 Wonik Robotics 生产的商用16自由度四指灵巧机器人手，因扭矩控制关节和 ROS 兼容性而广泛用于操作研究。
-  ko: Wonik Robotics가 생산하는 상용 16자유도 4지 민첩한 로봇 손으로, 토크 제어 관절과 ROS 호환성 때문에 조작 연구에 널리 사용됨.
+  ko: Wonik Robotics가 생산하는 상용 16자유도 4지 민첩한 로봇 손으로, 토크 제어 관절과 ROS 호환성 때문에 조작 연구에 널리
+    사용됨.
 domains:
 - 02_components
 - 06_design_engineering
@@ -34,7 +36,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: medium
-  notes: Specifications sourced from Wonik Robotics product information and reseller listings.
+  notes: Specifications sourced from Wonik Robotics product information and reseller
+    listings.
 sources:
 - id: src_001
   type: website
@@ -48,6 +51,8 @@ sources:
   url: https://arxiv.org/abs/2504.13165
   date: '2025'
   accessed_at: '2026-06-22'
+theoretical_depth:
+- system
 ---
 
 # Allegro Hand

@@ -78,6 +78,8 @@ related_entities:
     zh: 论文使用de Leva人体测量学将已发表的人体生物力学数据综合为75公斤参考人体的扭矩、功率和速率目标。
     ko: 본 논문은 75kg 기준 신체에 대한 de Leva 인체측정법을 사용하여 발표된 인체 생체역학 데이터를 토크, 전력 및 속도 목표로
       종합한다.
+theoretical_depth:
+- system
 ---
 
 

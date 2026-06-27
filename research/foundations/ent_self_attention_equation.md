@@ -47,6 +47,19 @@ sources:
     url: "https://arxiv.org/abs/1706.03762"
     date: "2017-06-12"
     accessed_at: "2026-06-25"
+related_entities:
+  - id: ent_operator_softmax_function
+    relationship: uses
+    description:
+      en: Self-attention uses the softmax operator to normalize attention weights.
+      zh: 自注意力使用 softmax 算子对注意力权重进行归一化。
+      ko: 셀프 어텐션은 어텐션 가중치를 정규화하기 위해 소프트맥스 연산자를 사용한다.
+  - id: ent_principle_maximum_likelihood_estimation
+    relationship: derived_from
+    description:
+      en: The attention mechanism is trained by objectives derived from maximum likelihood estimation.
+      zh: 注意力机制通过源自最大似然估计的目标函数进行训练。
+      ko: 어텐션 메커니즘은 최대우도추정에서 유래한 목적 함수로 학습된다.
 
 ---
 

@@ -11,8 +11,7 @@ summary:
   en: South Korean company known for Dynamixel smart actuators, widely used in research
     robots, educational platforms, and humanoid hands.
   zh: 韩国公司，以 Dynamixel 智能执行器闻名，广泛应用于研究机器人、教育平台和人形手。
-  ko: 다이나믹셀 스마트 액추에이터로 잘 알려진 한국 기업으로, 연구용 로봇, 교육용 플랫폼 및
-    휴인oid 손에 널리 사용됩니다.
+  ko: 다이나믹셀 스마트 액추에이터로 잘 알려진 한국 기업으로, 연구용 로봇, 교육용 플랫폼 및 휴인oid 손에 널리 사용됩니다.
 domains:
 - 02_components
 - 06_design_engineering
@@ -33,8 +32,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-24'
   confidence: high
-  notes: Product specifications and company history are documented on the official Robotis
-    website and in academic papers citing Dynamixel hardware.
+  notes: Product specifications and company history are documented on the official
+    Robotis website and in academic papers citing Dynamixel hardware.
 sources:
 - id: src_001
   type: website
@@ -48,6 +47,8 @@ sources:
   url: https://arxiv.org/abs/2504.13165
   date: '2025'
   accessed_at: '2026-06-24'
+theoretical_depth:
+- system
 ---
 
 # Robotis

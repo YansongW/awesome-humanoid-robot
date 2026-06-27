@@ -8,8 +8,8 @@ names:
   zh: MANUS Metagloves 数据手套
   ko: MANUS Metagloves
 summary:
-  en: A family of high-precision data gloves for hand tracking, motion capture, and robot
-    teleoperation, using electromagnetic, quantum, or inertial tracking technologies.
+  en: A family of high-precision data gloves for hand tracking, motion capture, and
+    robot teleoperation, using electromagnetic, quantum, or inertial tracking technologies.
   zh: 一系列用于手部追踪、动作捕捉和机器人遥操作的高精度数据手套，采用电磁、量子或惯性追踪技术。
   ko: 전자기, 양자 또는 관성 추적 기술을 사용하여 손 추적, 모션 캡처 및 로봇 원격 조작을 위한 고정밀 데이터 글로브 제품군.
 domains:
@@ -33,8 +33,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: medium
-  notes: Product family overview; specific models include Quantum Metagloves, Metagloves Pro,
-    and Metagloves Pro Haptic.
+  notes: Product family overview; specific models include Quantum Metagloves, Metagloves
+    Pro, and Metagloves Pro Haptic.
 sources:
 - id: src_001
   type: website
@@ -48,6 +48,8 @@ sources:
   url: https://arxiv.org/abs/2504.13165
   date: '2025'
   accessed_at: '2026-06-22'
+theoretical_depth:
+- system
 ---
 
 # MANUS Metagloves

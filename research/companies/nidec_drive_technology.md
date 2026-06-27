@@ -1,72 +1,69 @@
 ---
 $id: ent_component_manufacturer_nidec_drive_technology
-$schema: "../../../../../data/schema/v1/entry_schema.json"
+$schema: ../../../../../data/schema/v1/entry_schema.json
 $version: 1
-
 type: component_manufacturer
-
 names:
-  en: "Nidec Drive Technology"
-  zh: "尼得科传动技术"
-  ko: "니덱 드라이브 테크놀로지"
-
+  en: Nidec Drive Technology
+  zh: 尼得科传动技术
+  ko: 니덱 드라이브 테크놀로지
 summary:
-  en: "Japanese precision drive subsidiary of Nidec Corporation, manufacturer of FLEXWAVE strain-wave gear reducers and motion products targeted at humanoid robots."
-  zh: "日本电产株式会社旗下精密传动子公司，生产面向人形机器人的 FLEXWAVE 应变波齿轮减速器及运动控制产品。"
-  ko: "Nidec Corporation의 일본 정밀 드라이브 자회사로, 휴이노이드 로봇용 FLEXWAVE 스트레인 웨이브 기어 감속기 및 모션 제품을 생산함."
-
+  en: Japanese precision drive subsidiary of Nidec Corporation, manufacturer of FLEXWAVE
+    strain-wave gear reducers and motion products targeted at humanoid robots.
+  zh: 日本电产株式会社旗下精密传动子公司，生产面向人形机器人的 FLEXWAVE 应变波齿轮减速器及运动控制产品。
+  ko: Nidec Corporation의 일본 정밀 드라이브 자회사로, 휴이노이드 로봇용 FLEXWAVE 스트레인 웨이브 기어 감속기 및 모션
+    제품을 생산함.
 domains:
-  - "02_components"
-
+- 02_components
 layers:
-  - "upstream"
-
+- upstream
 functional_roles:
-  - "organization"
-  - "component"
-
+- organization
+- component
 tags:
-  - "nidec"
-  - "flexwave"
-  - "harmonic_reducer"
-  - "strain_wave_gear"
-  - "component_manufacturer"
-  - "japan"
-
+- nidec
+- flexwave
+- harmonic_reducer
+- strain_wave_gear
+- component_manufacturer
+- japan
 verification:
-  status: "partially_verified"
-  reviewed_by: "ai"
-  reviewed_at: "2026-06-25"
-  confidence: "medium"
-  notes: "AI-extracted from Nidec's official humanoid-robot product page and industry market reports; specific customer names and design-win status are not confirmed."
-
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-06-25'
+  confidence: medium
+  notes: AI-extracted from Nidec's official humanoid-robot product page and industry
+    market reports; specific customer names and design-win status are not confirmed.
 sources:
-  - id: "src_001_nidec_official"
-    type: "website"
-    title: "Nidec — Highly Developed Humanoid Robots"
-    url: "https://www.nidec-dtc.com/humanoid-robots/"
-    date: "2026"
-    accessed_at: "2026-06-25"
-  - id: "src_002_nidec_market_report"
-    type: "report"
-    title: "Humanoid Robot Market Key Player Ecosystem — Actuators & Actuator Parts"
-    url: "https://www.maximizemarketresearch.com/market-report/global-humanoid-robot-market/10567/"
-    date: "2026-05-07"
-    accessed_at: "2026-06-25"
-
+- id: src_001_nidec_official
+  type: website
+  title: Nidec — Highly Developed Humanoid Robots
+  url: https://www.nidec-dtc.com/humanoid-robots/
+  date: '2026'
+  accessed_at: '2026-06-25'
+- id: src_002_nidec_market_report
+  type: report
+  title: Humanoid Robot Market Key Player Ecosystem — Actuators & Actuator Parts
+  url: https://www.maximizemarketresearch.com/market-report/global-humanoid-robot-market/10567/
+  date: '2026-05-07'
+  accessed_at: '2026-06-25'
 related_entities:
-  - id: "ent_component_harmonic_drive_reducer"
-    relationship: "produces"
-    description:
-      en: "Nidec Drive Technology produces FLEXWAVE strain-wave gear reducers, a form of harmonic reducer used in humanoid robot joints."
-      zh: "尼得科传动技术生产 FLEXWAVE 应变波齿轮减速器，这是一种用于人形机器人关节的谐波减速器。"
-      ko: "니덱 드라이브 테크놀로지는 휴이노이드 로봇 관절에 사용되는 하모닉 감속기의 일종인 FLEXWAVE 스트레인 웨이브 기어 감속기를 생산함."
-  - id: "ent_component_bldc_motor"
-    relationship: "produces"
-    description:
-      en: "Nidec's broader motor portfolio includes brushless DC and precision servo motors used in robotic actuators."
-      zh: "尼得科更广泛的电机产品组合包括用于机器人执行器的无刷直流电机和精密伺服电机。"
-      ko: "니덱의 폭넓은 모터 포트폴리오에는 로봇 액추에이터에 사용되는 브러시리스 DC 모터 및 정밀 서보 모터가 포함됨."
+- id: ent_component_harmonic_drive_reducer
+  relationship: produces
+  description:
+    en: Nidec Drive Technology produces FLEXWAVE strain-wave gear reducers, a form
+      of harmonic reducer used in humanoid robot joints.
+    zh: 尼得科传动技术生产 FLEXWAVE 应变波齿轮减速器，这是一种用于人形机器人关节的谐波减速器。
+    ko: 니덱 드라이브 테크놀로지는 휴이노이드 로봇 관절에 사용되는 하모닉 감속기의 일종인 FLEXWAVE 스트레인 웨이브 기어 감속기를 생산함.
+- id: ent_component_bldc_motor
+  relationship: produces
+  description:
+    en: Nidec's broader motor portfolio includes brushless DC and precision servo
+      motors used in robotic actuators.
+    zh: 尼得科更广泛的电机产品组合包括用于机器人执行器的无刷直流电机和精密伺服电机。
+    ko: 니덱의 폭넓은 모터 포트폴리오에는 로봇 액추에이터에 사용되는 브러시리스 DC 모터 및 정밀 서보 모터가 포함됨.
+theoretical_depth:
+- system
 ---
 
 # Nidec Drive Technology

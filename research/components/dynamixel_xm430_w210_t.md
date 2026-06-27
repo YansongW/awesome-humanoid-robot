@@ -9,10 +9,11 @@ names:
   ko: ROBOTIS DYNAMIXEL XM430-W210-T
 summary:
   en: A medium-size smart servo actuator from ROBOTIS' X-series, featuring TTL communication,
-    3.0 N·m stall torque, absolute encoder feedback, and multiple control modes for robotic
-    joints.
+    3.0 N·m stall torque, absolute encoder feedback, and multiple control modes for
+    robotic joints.
   zh: ROBOTIS X 系列的中型智能舵机执行器，具有 TTL 通信、3.0 N·m 堵转扭矩、绝对编码器反馈和多种控制模式，适用于机器人关节。
-  ko: ROBOTIS X 시리즈의 중형 스마트 서보 액추에이터로, TTL 통신, 3.0 N·m 정지 토크, 절대형 인코더 피드백 및 다양한 제어 모드를 갖추어 로봇 관절에 적합함.
+  ko: ROBOTIS X 시리즈의 중형 스마트 서보 액추에이터로, TTL 통신, 3.0 N·m 정지 토크, 절대형 인코더 피드백 및 다양한 제어
+    모드를 갖추어 로봇 관절에 적합함.
 domains:
 - 02_components
 - 06_design_engineering
@@ -47,6 +48,8 @@ sources:
   url: https://arxiv.org/abs/2504.13165
   date: '2025'
   accessed_at: '2026-06-22'
+theoretical_depth:
+- system
 ---
 
 # ROBOTIS DYNAMIXEL XM430-W210-T

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}人形机器人知识图谱{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="/">🤖 Humanoid KG</a>
+      <form class="search-form" action="/" method="get">
+        <input type="search" name="q" placeholder="搜索知识图谱…" value="{{ query|default('') }}" required>
+        <button type="submit">搜索</button>
+      </form>
+    </div>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      Powered by Awesome Humanoid Robot knowledge graph.
+    </div>
+  </footer>
+</body>
+</html>

@@ -8,11 +8,11 @@ names:
   zh: 宇树科技
   ko: 유닛리 로보틱스
 summary:
-  en: Chinese robotics company developing quadruped and humanoid robots, including the Unitree
-    H1 and G1 platforms, with a focus on high-torque actuators and cost-conscious design.
+  en: Chinese robotics company developing quadruped and humanoid robots, including
+    the Unitree H1 and G1 platforms, with a focus on high-torque actuators and cost-conscious
+    design.
   zh: 中国机器人公司，开发四足和人形机器人，包括 Unitree H1 和 G1 平台，专注于高扭矩执行器和成本导向设计。
-  ko: 중국 로봇 기업으로, 고토크 액추에이터와 비용 중심 설계에 초점을 맞춘 Unitree H1 및 G1
-    휴인oid 플랫폼을 개발하고 있습니다.
+  ko: 중국 로봇 기업으로, 고토크 액추에이터와 비용 중심 설계에 초점을 맞춘 Unitree H1 및 G1 휴인oid 플랫폼을 개발하고 있습니다.
 domains:
 - 02_components
 - 06_design_engineering
@@ -37,8 +37,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-24'
   confidence: medium
-  notes: Product specifications and company background sourced from official product pages
-    and industry reports; financial and operational details are limited.
+  notes: Product specifications and company background sourced from official product
+    pages and industry reports; financial and operational details are limited.
 sources:
 - id: src_001
   type: website
@@ -52,6 +52,8 @@ sources:
   url: https://www.idtechex.com/en/research-report/humanoid-robots/1093
   date: '2025'
   accessed_at: '2026-06-24'
+theoretical_depth:
+- system
 ---
 
 # Unitree Robotics

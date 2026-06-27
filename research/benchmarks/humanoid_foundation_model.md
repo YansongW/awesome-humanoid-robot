@@ -1,73 +1,70 @@
 ---
-$id: "ent_benchmark_humanoid_foundation_model"
-$schema: "../../../../../data/schema/v1/entry_schema.json"
+$id: ent_benchmark_humanoid_foundation_model
+$schema: ../../../../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "benchmark"
-
+type: benchmark
 names:
-  en: "Humanoid Foundation Model Benchmark"
-  zh: "人形机器人基础模型基准"
-  ko: "휴리노이드 파울데이션 모델 벤치마크"
-
+  en: Humanoid Foundation Model Benchmark
+  zh: 人形机器人基础模型基准
+  ko: 휴리노이드 파울데이션 모델 벤치마크
 summary:
-  en: "An independent, publicly accessible benchmark that rates and compares AI foundation models for humanoid robots across ten capability dimensions, including locomotion, manipulation, reasoning, and sim-to-real transfer."
-  zh: "一个独立、公开可访问的基准，从十个能力维度对人形机器人 AI 基础模型进行评级和比较，包括移动、操作、推理和仿真到现实迁移。"
-  ko: "휴리노이드 로봇을 위한 AI 파울데이션 모델을 이동, 조작, 추론, 시뮬레이션-투-리얼 전이 등 10가지 역량 차원에서 평가하고 비교하는 독립적이고 공개적으로 접근 가능한 벤치마크."
-
+  en: An independent, publicly accessible benchmark that rates and compares AI foundation
+    models for humanoid robots across ten capability dimensions, including locomotion,
+    manipulation, reasoning, and sim-to-real transfer.
+  zh: 一个独立、公开可访问的基准，从十个能力维度对人形机器人 AI 基础模型进行评级和比较，包括移动、操作、推理和仿真到现实迁移。
+  ko: 휴리노이드 로봇을 위한 AI 파울데이션 모델을 이동, 조작, 추론, 시뮬레이션-투-리얼 전이 등 10가지 역량 차원에서 평가하고 비교하는
+    독립적이고 공개적으로 접근 가능한 벤치마크.
 domains:
-  - "10_evaluation_benchmarks"
-  - "11_applications_markets"
-
+- 10_evaluation_benchmarks
+- 11_applications_markets
 layers:
-  - "validation_markets"
-
+- validation_markets
 functional_roles:
-  - "knowledge"
-  - "market"
-
+- knowledge
+- market
 tags:
-  - "benchmark"
-  - "foundation_model"
-  - "humanoid"
-  - "vla"
-  - "comparison"
-  - "sim_to_real"
-
+- benchmark
+- foundation_model
+- humanoid
+- vla
+- comparison
+- sim_to_real
 verification:
-  status: "partially_verified"
-  reviewed_by: "ai"
-  reviewed_at: "2026-06-25"
-  confidence: "medium"
-  notes: "AI-extracted from the benchmark launch page and model directory page; methodology and model counts are consistent with the source. Individual model scores are not independently verified."
-
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-06-25'
+  confidence: medium
+  notes: AI-extracted from the benchmark launch page and model directory page; methodology
+    and model counts are consistent with the source. Individual model scores are not
+    independently verified.
 sources:
-  - id: "src_humanoid_foundation_model_benchmark_2026"
-    type: "website"
-    title: "Humanoid Foundation Models – humanoid.guide"
-    url: "https://humanoid.guide/foundation-models/"
-    date: "2026-04-14"
-    accessed_at: "2026-06-25"
-  - id: "src_humanoid_foundation_model_benchmark_launch_2026"
-    type: "press_release"
-    title: "Humanoid Foundation Model Benchmark Launch"
-    url: "https://humanoid.guide/humanoid-foundation-model-benchmark-launch/"
-    date: "2026-04-14"
-    accessed_at: "2026-06-25"
-
+- id: src_humanoid_foundation_model_benchmark_2026
+  type: website
+  title: Humanoid Foundation Models – humanoid.guide
+  url: https://humanoid.guide/foundation-models/
+  date: '2026-04-14'
+  accessed_at: '2026-06-25'
+- id: src_humanoid_foundation_model_benchmark_launch_2026
+  type: press_release
+  title: Humanoid Foundation Model Benchmark Launch
+  url: https://humanoid.guide/humanoid-foundation-model-benchmark-launch/
+  date: '2026-04-14'
+  accessed_at: '2026-06-25'
 related_entities:
-  - id: "ent_paper_openvla_2024"
-    relationship: "cites"
-    description:
-      en: "The benchmark directory lists and rates OpenVLA among the evaluated VLA models."
-      zh: "该基准目录将 OpenVLA 列为参评的 VLA 模型之一并进行评级。"
-      ko: "해당 벤치마크 디렉토리는 OpenVLA를 평가된 VLA 모델 중 하나로 나열하고 등급을 매김."
-  - id: "ent_paper_pi0_2024"
-    relationship: "cites"
-    description:
-      en: "The benchmark directory lists and rates π0 among the evaluated VLA models."
-      zh: "该基准目录将 π0 列为参评的 VLA 模型之一并进行评级。"
-      ko: "해당 벤치마크 디렉토리는 π0를 평가된 VLA 모델 중 하나로 나열하고 등급을 매김."
+- id: ent_paper_openvla_2024
+  relationship: cites
+  description:
+    en: The benchmark directory lists and rates OpenVLA among the evaluated VLA models.
+    zh: 该基准目录将 OpenVLA 列为参评的 VLA 模型之一并进行评级。
+    ko: 해당 벤치마크 디렉토리는 OpenVLA를 평가된 VLA 모델 중 하나로 나열하고 등급을 매김.
+- id: ent_paper_pi0_2024
+  relationship: cites
+  description:
+    en: The benchmark directory lists and rates π0 among the evaluated VLA models.
+    zh: 该基准目录将 π0 列为参评的 VLA 模型之一并进行评级。
+    ko: 해당 벤치마크 디렉토리는 π0를 평가된 VLA 모델 중 하나로 나열하고 등급을 매김.
+theoretical_depth:
+- system
 ---
 
 # Humanoid Foundation Model Benchmark

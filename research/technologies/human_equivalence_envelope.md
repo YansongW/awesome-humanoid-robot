@@ -41,6 +41,8 @@ sources:
   url: https://arxiv.org/abs/2511.06796
   date: '2025'
   accessed_at: '2026-06-25'
+theoretical_depth:
+- method
 ---
 
 # Human-Equivalence Envelope

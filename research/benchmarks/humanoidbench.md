@@ -1,69 +1,67 @@
 ---
-$id: "ent_benchmark_humanoidbench"
-$schema: "../../data/schema/v1/entry_schema.json"
+$id: ent_benchmark_humanoidbench
+$schema: ../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "benchmark"
-
+type: benchmark
 names:
-  en: "HumanoidBench"
-  zh: "HumanoidBench"
-  ko: "HumanoidBench"
-
+  en: HumanoidBench
+  zh: HumanoidBench
+  ko: HumanoidBench
 summary:
-  en: "A simulated benchmark for whole-body humanoid locomotion and manipulation based on the Unitree H1 robot, providing over 40 tasks for controlled comparison of VLA and control algorithms."
-  zh: "一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。"
-  ko: "Unitree H1 로봇을 기반으로 한 전신 휨로봇 로코모션 및 조작 시뮬레이션 벤치마크로, VLA 및 제어 알고리즘의 통제된 비교를 위해 40개 이상의 작업을 제공함."
-
+  en: A simulated benchmark for whole-body humanoid locomotion and manipulation based
+    on the Unitree H1 robot, providing over 40 tasks for controlled comparison of
+    VLA and control algorithms.
+  zh: 一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。
+  ko: Unitree H1 로봇을 기반으로 한 전신 휨로봇 로코모션 및 조작 시뮬레이션 벤치마크로, VLA 및 제어 알고리즘의 통제된 비교를 위해
+    40개 이상의 작업을 제공함.
 domains:
-  - "07_ai_models_algorithms"
-  - "10_evaluation_benchmarks"
-
+- 07_ai_models_algorithms
+- 10_evaluation_benchmarks
 layers:
-  - "intelligence"
-  - "validation_markets"
-
+- intelligence
+- validation_markets
 functional_roles:
-  - "knowledge"
-  - "intelligence"
-
+- knowledge
+- intelligence
 tags:
-  - "humanoid"
-  - "locomotion"
-  - "manipulation"
-  - "simulation"
-  - "benchmark"
-  - "vla"
-  - "whole_body_control"
-
+- humanoid
+- locomotion
+- manipulation
+- simulation
+- benchmark
+- vla
+- whole_body_control
 verification:
-  status: "verified"
-  reviewed_by: "human_and_ai"
-  reviewed_at: "2026-06-22"
-  confidence: "high"
-  notes: "Paper and code repository retrieved from arXiv and GitHub; scope confirmed by Wang et al. 2026 VLA survey."
-
+  status: verified
+  reviewed_by: human_and_ai
+  reviewed_at: '2026-06-22'
+  confidence: high
+  notes: Paper and code repository retrieved from arXiv and GitHub; scope confirmed
+    by Wang et al. 2026 VLA survey.
 sources:
-  - id: "src_humanoidbench_paper"
-    type: "paper"
-    title: "HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation"
-    url: "https://arxiv.org/abs/2403.10506"
-    date: "2024-03-15"
-    accessed_at: "2026-06-22"
-  - id: "src_humanoidbench_code"
-    type: "website"
-    title: "HumanoidBench GitHub Repository"
-    url: "https://github.com/carlosferrazza/humanoid-bench"
-    date: "2024-03-15"
-    accessed_at: "2026-06-22"
-
+- id: src_humanoidbench_paper
+  type: paper
+  title: 'HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and
+    Manipulation'
+  url: https://arxiv.org/abs/2403.10506
+  date: '2024-03-15'
+  accessed_at: '2026-06-22'
+- id: src_humanoidbench_code
+  type: website
+  title: HumanoidBench GitHub Repository
+  url: https://github.com/carlosferrazza/humanoid-bench
+  date: '2024-03-15'
+  accessed_at: '2026-06-22'
 related_entities:
-  - id: "ent_paper_wang_vla_survey_2026"
-    relationship: "cites"
-    description:
-      en: "Wang et al. 2026 survey discusses HumanoidBench as a simulation benchmark for whole-body VLA."
-      zh: "Wang 等人 2026 综述将 HumanoidBench 作为全身 VLA 仿真基准进行讨论。"
-      ko: "Wang et al. 2026 서베이는 HumanoidBench를 전신 VLA 시뮬레이션 벤치마크로 논의함."
+- id: ent_paper_wang_vla_survey_2026
+  relationship: cites
+  description:
+    en: Wang et al. 2026 survey discusses HumanoidBench as a simulation benchmark
+      for whole-body VLA.
+    zh: Wang 等人 2026 综述将 HumanoidBench 作为全身 VLA 仿真基准进行讨论。
+    ko: Wang et al. 2026 서베이는 HumanoidBench를 전신 VLA 시뮬레이션 벤치마크로 논의함.
+theoretical_depth:
+- system
 ---
 
 # HumanoidBench

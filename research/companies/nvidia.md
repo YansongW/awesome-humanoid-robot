@@ -8,11 +8,10 @@ names:
   zh: 英伟达
   ko: 엔비디아
 summary:
-  en: American semiconductor and software company supplying GPUs, edge AI compute modules,
-    simulation platforms, and robot-learning tools used in humanoid development.
+  en: American semiconductor and software company supplying GPUs, edge AI compute
+    modules, simulation platforms, and robot-learning tools used in humanoid development.
   zh: 美国半导体和软件公司，供应 GPU、边缘 AI 计算模块、仿真平台和机器人学习工具，用于人形机器人开发。
-  ko: GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및
-    소프트웨어 기업입니다.
+  ko: GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및 소프트웨어 기업입니다.
 domains:
 - 02_components
 - 07_ai_models_algorithms
@@ -36,8 +35,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-24'
   confidence: high
-  notes: Product specifications and software capabilities are publicly documented on official
-    product pages.
+  notes: Product specifications and software capabilities are publicly documented
+    on official product pages.
 sources:
 - id: src_001
   type: website
@@ -51,6 +50,8 @@ sources:
   url: https://developer.nvidia.com/isaac
   date: '2026'
   accessed_at: '2026-06-24'
+theoretical_depth:
+- system
 ---
 
 # NVIDIA

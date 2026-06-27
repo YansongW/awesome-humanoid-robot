@@ -8,9 +8,9 @@ names:
   zh: ISB关节坐标系约定
   ko: ISB 관절 좌표계 관례
 summary:
-  en: Standardized conventions from the International Society of Biomechanics for defining
-    joint coordinate systems, sign conventions, and functional ranges of motion in human
-    biomechanics.
+  en: Standardized conventions from the International Society of Biomechanics for
+    defining joint coordinate systems, sign conventions, and functional ranges of
+    motion in human biomechanics.
   zh: 国际生物力学学会（ISB）制定的标准化约定，用于定义人体生物力学中的关节坐标系、符号约定和功能活动范围。
   ko: 인체 생체역학에서 관절 좌표계, 부호 규칙 및 기능적 가동 범위를 정의하기 위한 국제생체역학회(ISB)의 표준화된 관례입니다.
 domains:
@@ -41,6 +41,8 @@ sources:
   url: https://arxiv.org/abs/2511.06796
   date: '2025'
   accessed_at: '2026-06-25'
+theoretical_depth:
+- system
 ---
 
 # ISB Conventions for Joint Coordinate Systems

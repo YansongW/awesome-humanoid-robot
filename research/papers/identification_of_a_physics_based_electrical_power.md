@@ -89,6 +89,8 @@ related_entities:
     en: Sensor used to collect onboard power data for regression.
     zh: 用于采集回归用功率数据的车载传感器。
     ko: 회귀 분석용 전력 데이터 수집에 사용된 센서.
+theoretical_depth:
+- system
 ---
 
 

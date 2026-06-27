@@ -8,11 +8,12 @@ names:
   zh: 谐波减速器
   ko: 하모닉 드라이브 감속기
 summary:
-  en: A high-ratio, zero-backlash gear reducer based on a flexible spline, circular spline,
-    and wave generator, valued in humanoid joints for compact size, high torque capacity,
-    and precise motion transmission.
+  en: A high-ratio, zero-backlash gear reducer based on a flexible spline, circular
+    spline, and wave generator, valued in humanoid joints for compact size, high torque
+    capacity, and precise motion transmission.
   zh: 一种基于柔性轴承、刚轮和波发生器的高减速比、零背隙减速器，因其结构紧凑、扭矩容量大、运动传递精确而广泛用于人形机器人关节。
-  ko: 플렉스플라인, 서큘러 스플라인, 웨이브 제너레이터를 기반으로 한 고감속비, 제로 백래시 기어 감속기로, 컴팩트한 크기와 높은 토크 용량, 정밀한 동력 전달 때문에 휴머노이드 관절에서 높이 평가됨.
+  ko: 플렉스플라인, 서큘러 스플라인, 웨이브 제너레이터를 기반으로 한 고감속비, 제로 백래시 기어 감속기로, 컴팩트한 크기와 높은 토크 용량,
+    정밀한 동력 전달 때문에 휴머노이드 관절에서 높이 평가됨.
 domains:
 - 02_components
 - 06_design_engineering
@@ -33,15 +34,18 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: medium
-  notes: General technology entry; specific product variants can be added as separate entries.
+  notes: General technology entry; specific product variants can be added as separate
+    entries.
 sources:
 - id: src_001
   type: paper
-  title: Identification of a Physics-Based Electrical Power Consumption Model for the
-    Unitree G1 Humanoid Arm
+  title: Identification of a Physics-Based Electrical Power Consumption Model for
+    the Unitree G1 Humanoid Arm
   url: https://arxiv.org/abs/2606.15915
   date: '2026'
   accessed_at: '2026-06-22'
+theoretical_depth:
+- system
 ---
 
 # Harmonic Drive Reducer

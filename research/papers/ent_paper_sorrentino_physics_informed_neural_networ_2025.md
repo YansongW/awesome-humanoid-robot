@@ -65,6 +65,8 @@ related_entities:
       harmonic drives.
     zh: 该框架面向配备电机和高减速比谐波减速器的系统而设计。
     ko: 해당 프레임워크는 전기 모터와 고감속비 하모닉 드라이브를 갖춘 시스템을 대상으로 설계되었다.
+theoretical_depth:
+- system
 ---
 
 

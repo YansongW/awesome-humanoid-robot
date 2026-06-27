@@ -1,58 +1,57 @@
 ---
-$id: "ent_material_al_mg_alloy_humanoid"
-$schema: "../../../../../data/schema/v1/entry_schema.json"
+$id: ent_material_al_mg_alloy_humanoid
+$schema: ../../../../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "material"
-
+type: material
 names:
-  en: "Aluminum-Magnesium Alloy for Humanoid Robot Lightweight Structure"
-  zh: "人形机器人轻量化结构用铝镁合金"
-  ko: "휴로이드 로봇 경량 구조용 알루미늄-마그네슘 합금"
-
+  en: Aluminum-Magnesium Alloy for Humanoid Robot Lightweight Structure
+  zh: 人形机器人轻量化结构用铝镁合金
+  ko: 휴로이드 로봇 경량 구조용 알루미늄-마그네슘 합금
 summary:
-  en: "A structural lightweighting material system combining high-strength aluminum alloys and magnesium alloys, widely used in humanoid robot frames, joints, and shells to reduce weight while maintaining rigidity."
-  zh: "一种将高强度铝合金与镁合金结合的轻量化结构材料体系，广泛用于人形机器人框架、关节和外壳，在保持刚度的同时减轻重量。"
-  ko: "고강도 알루미늄 합금과 마그네슘 합금을 결합한 구조 경량화 재료 시스템으로, 휴로이드 로봇의 프레임, 관절, 외피에 무게를 줄이면서 강성을 유지하기 위해 널리 사용됨."
-
+  en: A structural lightweighting material system combining high-strength aluminum
+    alloys and magnesium alloys, widely used in humanoid robot frames, joints, and
+    shells to reduce weight while maintaining rigidity.
+  zh: 一种将高强度铝合金与镁合金结合的轻量化结构材料体系，广泛用于人形机器人框架、关节和外壳，在保持刚度的同时减轻重量。
+  ko: 고강도 알루미늄 합금과 마그네슘 합금을 결합한 구조 경량화 재료 시스템으로, 휴로이드 로봇의 프레임, 관절, 외피에 무게를 줄이면서 강성을
+    유지하기 위해 널리 사용됨.
 domains:
-  - "01_raw_materials"
-  - "02_components"
-
+- 01_raw_materials
+- 02_components
 layers:
-  - "upstream"
-
+- upstream
 functional_roles:
-  - "material"
-
+- material
 tags:
-  - "aluminum"
-  - "magnesium"
-  - "lightweight"
-  - "alloy"
-  - "structure"
-  - "humanoid_robot"
-
+- aluminum
+- magnesium
+- lightweight
+- alloy
+- structure
+- humanoid_robot
 verification:
-  status: "partially_verified"
-  reviewed_by: "ai"
-  reviewed_at: "2026-06-25"
-  confidence: "medium"
-  notes: "AI-extracted from industry blog and trade-show coverage; specific quantitative claims require human review against original sources."
-
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-06-25'
+  confidence: medium
+  notes: AI-extracted from industry blog and trade-show coverage; specific quantitative
+    claims require human review against original sources.
 sources:
-  - id: "src_lft_g_advanced_materials_2026"
-    type: "website"
-    title: "Inside a Robot's Bones and Skin: How Advanced Materials Enable Stronger and Lighter Robots"
-    url: "https://www.lft-g.com/blog/inside-a-robot-s-bones-and-skin-how-advanced-materials-enable-stronger-and-lighter-robots_b282"
-    date: "2026-05-13"
-    accessed_at: "2026-06-25"
-  - id: "src_aluminium_china_metal_materials_2025"
-    type: "website"
-    title: "Metal Materials for Humanoid Robots: Applications and Market Outlook of Aluminum"
-    url: "https://www.aluminiumchina.com/en-gb/news-center/industry-news/2025/4/5.html"
-    date: "2025-04-05"
-    accessed_at: "2026-06-25"
+- id: src_lft_g_advanced_materials_2026
+  type: website
+  title: 'Inside a Robot''s Bones and Skin: How Advanced Materials Enable Stronger
+    and Lighter Robots'
+  url: https://www.lft-g.com/blog/inside-a-robot-s-bones-and-skin-how-advanced-materials-enable-stronger-and-lighter-robots_b282
+  date: '2026-05-13'
+  accessed_at: '2026-06-25'
+- id: src_aluminium_china_metal_materials_2025
+  type: website
+  title: 'Metal Materials for Humanoid Robots: Applications and Market Outlook of
+    Aluminum'
+  url: https://www.aluminiumchina.com/en-gb/news-center/industry-news/2025/4/5.html
+  date: '2025-04-05'
+  accessed_at: '2026-06-25'
+theoretical_depth:
+- system
 ---
 
 # Aluminum-Magnesium Alloy for Humanoid Robot Lightweight Structure

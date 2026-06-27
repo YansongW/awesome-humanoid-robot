@@ -9,10 +9,11 @@ names:
   ko: 브러시리스 DC 모터
 summary:
   en: An electric motor driven by electronic commutation rather than mechanical brushes,
-    offering high efficiency, long lifetime, and high power density; widely used as the
-    prime mover in robotic joints and humanoid actuators.
+    offering high efficiency, long lifetime, and high power density; widely used as
+    the prime mover in robotic joints and humanoid actuators.
   zh: 一种通过电子换向而非机械电刷驱动的电动机，具有高效率、长寿命和高功率密度，广泛用作机器人关节和人形执行器的原动机。
-  ko: 기계적 브러시가 아닌 전자적 정류로 구동되는 전동기로, 높은 효율, 긴 수명, 높은 전력 밀도를 제공하며 로봇 관절 및 휴머노이드 액추에이터의 주 동력원으로 널리 사용됨.
+  ko: 기계적 브러시가 아닌 전자적 정류로 구동되는 전동기로, 높은 효율, 긴 수명, 높은 전력 밀도를 제공하며 로봇 관절 및 휴머노이드 액추에이터의
+    주 동력원으로 널리 사용됨.
 domains:
 - 02_components
 - 06_design_engineering
@@ -37,11 +38,13 @@ verification:
 sources:
 - id: src_001
   type: paper
-  title: Identification of a Physics-Based Electrical Power Consumption Model for the
-    Unitree G1 Humanoid Arm
+  title: Identification of a Physics-Based Electrical Power Consumption Model for
+    the Unitree G1 Humanoid Arm
   url: https://arxiv.org/abs/2606.15915
   date: '2026'
   accessed_at: '2026-06-22'
+theoretical_depth:
+- system
 ---
 
 # Brushless DC Motor

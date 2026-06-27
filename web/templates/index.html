@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+  <h1>全尺寸双足人形机器人知识图谱</h1>
+  <p>像维基百科一样浏览设计、制造、算法与量产知识；也可以直接提问，让 AI 基于图谱作答。</p>
+
+  <div class="ask-box">
+    <h2>💬 向知识图谱提问</h2>
+    <form id="ask-form">
+      <input type="text" id="ask-input" placeholder="例如：P4 关节模组设计需要考虑哪些关键约束？" required>
+      <button type="submit">提问</button>
+    </form>
+    <div id="ask-answer" class="ask-answer hidden"></div>
+    <div id="ask-sources" class="ask-sources hidden"></div>
+  </div>
+</section>
+
+{% if query %}
+<section>
+  <h2>“{{ query }}” 的搜索结果</h2>
+  {% if results %}
+  <ul class="result-list">
+    {% for entry in results %}
+    <li>
+      <a href="/entry/{{ entry.id }}">{{ entry.name }}</a>
+      <span class="meta">{{ entry.type }} · {{ entry.domains|join(', ') }}</span>
+      <p>{{ entry.summary }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>没有找到相关条目。</p>
+  {% endif %}
+</section>
+{% else %}
+<section class="browse">
+  <div class="browse-column">
+    <h2>按领域浏览</h2>
+    <ul class="tag-list">
+      {% for d in domains %}
+      <li><a href="/?q={{ d }}">{{ d }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="browse-column">
+    <h2>按类型浏览</h2>
+    <ul class="tag-list">
+      {% for t in types %}
+      <li><a href="/?q={{ t }}">{{ t }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>全部条目</h2>
+  <ul class="entry-grid">
+    {% for entry in all_entries %}
+    <li><a href="/entry/{{ entry.id }}">{{ entry.name }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+<script>
+document.getElementById('ask-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const q = document.getElementById('ask-input').value;
+  const answerBox = document.getElementById('ask-answer');
+  const sourcesBox = document.getElementById('ask-sources');
+  answerBox.classList.remove('hidden');
+  answerBox.textContent = '思考中…';
+  sourcesBox.classList.add('hidden');
+  try {
+    const res = await fetch('/api/ask', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: 'question=' + encodeURIComponent(q)
+    });
+    const data = await res.json();
+    answerBox.innerHTML = data.answer.replace(/\n/g, '<br>');
+    if (data.sources && data.sources.length) {
+      sourcesBox.classList.remove('hidden');
+      sourcesBox.innerHTML = '<strong>参考条目：</strong> ' +
+        data.sources.map(s => `<a href="/entry/${s.id}">${s.name}</a>`).join('、');
+    }
+  } catch (err) {
+    answerBox.textContent = '请求失败：' + err.message;
+  }
+});
+</script>
+{% endblock %}

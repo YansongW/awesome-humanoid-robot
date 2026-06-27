@@ -8,8 +8,8 @@ names:
   zh: Wonik Robotics
   ko: 원익로보틱스
 summary:
-  en: South Korean robotics company manufacturing the Allegro Hand, a widely used research-grade
-    multi-fingered robot hand.
+  en: South Korean robotics company manufacturing the Allegro Hand, a widely used
+    research-grade multi-fingered robot hand.
   zh: 韩国机器人公司，生产 Allegro Hand，一种广泛使用的研究级多指机器人手。
   ko: 연구용 다지향 로봇 손인 Allegro Hand를 제조하는 한국 로봇 기업입니다.
 domains:
@@ -32,7 +32,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-24'
   confidence: high
-  notes: Product specifications are available on the official Allegro Hand product page.
+  notes: Product specifications are available on the official Allegro Hand product
+    page.
 sources:
 - id: src_001
   type: website
@@ -46,6 +47,8 @@ sources:
   url: https://arxiv.org/abs/2504.13165
   date: '2025'
   accessed_at: '2026-06-24'
+theoretical_depth:
+- system
 ---
 
 # Wonik Robotics

@@ -8,10 +8,12 @@ names:
   zh: ROBOTIS DYNAMIXEL XL330-M288-T 舵机
   ko: ROBOTIS DYNAMIXEL XL330-M288-T
 summary:
-  en: A compact, low-cost smart servo actuator from ROBOTIS' X-series, featuring TTL communication,
-    0.52 N·m stall torque, and a 288.4:1 gear ratio for small robotic joints and fingers.
+  en: A compact, low-cost smart servo actuator from ROBOTIS' X-series, featuring TTL
+    communication, 0.52 N·m stall torque, and a 288.4:1 gear ratio for small robotic
+    joints and fingers.
   zh: ROBOTIS X 系列的小型低成本智能舵机执行器，具有 TTL 通信、0.52 N·m 堵转扭矩和 288.4:1 减速比，适用于小型机器人关节和手指。
-  ko: ROBOTIS X 시리즈의 컴팩트한 저비용 스마트 서보 액추에이터로, TTL 통신, 0.52 N·m 정지 토크, 288.4:1 감속비를 갖추어 소형 로봇 관절 및 손가락에 적합함.
+  ko: ROBOTIS X 시리즈의 컴팩트한 저비용 스마트 서보 액추에이터로, TTL 통신, 0.52 N·m 정지 토크, 288.4:1 감속비를
+    갖추어 소형 로봇 관절 및 손가락에 적합함.
 domains:
 - 02_components
 - 06_design_engineering
@@ -46,6 +48,8 @@ sources:
   url: https://arxiv.org/abs/2504.13165
   date: '2025'
   accessed_at: '2026-06-22'
+theoretical_depth:
+- system
 ---
 
 # ROBOTIS DYNAMIXEL XL330-M288-T

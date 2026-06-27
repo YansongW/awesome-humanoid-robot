@@ -1,53 +1,50 @@
 ---
-$id: "ent_report_oceanwall_rare_earth_bottleneck_2025"
-$schema: "../../../../../data/schema/v1/entry_schema.json"
+$id: ent_report_oceanwall_rare_earth_bottleneck_2025
+$schema: ../../../../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "report"
-
+type: report
 names:
-  en: "Robotics and The Rare Earth Bottleneck"
-  zh: "机器人与稀土瓶颈"
-  ko: "로보틱스와 희토류 병목"
-
+  en: Robotics and The Rare Earth Bottleneck
+  zh: 机器人与稀土瓶颈
+  ko: 로보틱스와 희토류 병목
 summary:
-  en: "An Oceanwall research note from July 2025 arguing that advanced robots, particularly humanoids, rely on NdFeB permanent magnets, and that China's dominance in rare earth refining creates a geopolitical supply-chain risk."
-  zh: "Oceanwall 2025 年 7 月的研究简报，认为先进机器人尤其是人形机器人依赖钕铁硼永磁体，而中国稀土精炼主导地位带来地缘政治供应链风险。"
-  ko: "Oceanwall의 2025년 7월 연구 노트로, 고급 로봇 특히 휴로이드 로봇이 NdFeB 영구자석에 의존하며 중국의 희토류 정제 지배력이 지정학적 공급망 리스크를 초기한다고 주장함."
-
+  en: An Oceanwall research note from July 2025 arguing that advanced robots, particularly
+    humanoids, rely on NdFeB permanent magnets, and that China's dominance in rare
+    earth refining creates a geopolitical supply-chain risk.
+  zh: Oceanwall 2025 年 7 月的研究简报，认为先进机器人尤其是人形机器人依赖钕铁硼永磁体，而中国稀土精炼主导地位带来地缘政治供应链风险。
+  ko: Oceanwall의 2025년 7월 연구 노트로, 고급 로봇 특히 휴로이드 로봇이 NdFeB 영구자석에 의존하며 중국의 희토류 정제 지배력이
+    지정학적 공급망 리스크를 초기한다고 주장함.
 domains:
-  - "01_raw_materials"
-  - "11_applications_markets"
-
+- 01_raw_materials
+- 11_applications_markets
 layers:
-  - "upstream"
-  - "validation_markets"
-
+- upstream
+- validation_markets
 functional_roles:
-  - "knowledge"
-
+- knowledge
 tags:
-  - "rare_earth"
-  - "ndfeb"
-  - "permanent_magnet"
-  - "supply_chain"
-  - "geopolitics"
-  - "humanoid_robot"
-
+- rare_earth
+- ndfeb
+- permanent_magnet
+- supply_chain
+- geopolitics
+- humanoid_robot
 verification:
-  status: "partially_verified"
-  reviewed_by: "ai"
-  reviewed_at: "2026-06-25"
-  confidence: "medium"
-  notes: "AI-extracted from PDF report; market-size figures are third-party citations within the report and should be cross-checked."
-
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-06-25'
+  confidence: medium
+  notes: AI-extracted from PDF report; market-size figures are third-party citations
+    within the report and should be cross-checked.
 sources:
-  - id: "src_oceanwall_rare_earth_bottleneck_2025"
-    type: "report"
-    title: "Robotics and The Rare Earth Bottleneck"
-    url: "https://oceanwall.com/wp-content/uploads/2025/10/Robotics-Market-and-Rare-Earth-Magnet-Supply-Chain_.pdf"
-    date: "2025-07-24"
-    accessed_at: "2026-06-25"
+- id: src_oceanwall_rare_earth_bottleneck_2025
+  type: report
+  title: Robotics and The Rare Earth Bottleneck
+  url: https://oceanwall.com/wp-content/uploads/2025/10/Robotics-Market-and-Rare-Earth-Magnet-Supply-Chain_.pdf
+  date: '2025-07-24'
+  accessed_at: '2026-06-25'
+theoretical_depth:
+- system
 ---
 
 # Robotics and The Rare Earth Bottleneck

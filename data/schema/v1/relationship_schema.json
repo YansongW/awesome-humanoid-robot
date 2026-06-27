@@ -33,74 +33,161 @@
       "type": "string",
       "description": "Relationship type from the controlled vocabulary.",
       "enum": [
-        "supplies",
-        "consumes",
-        "produces",
-        "integrates",
-        "sources_from",
-        "distributes",
-        "enables",
-        "requires",
-        "constrains",
-        "compensates_for",
-        "is_alternative_to",
-        "is_part_of",
-        "is_subsystem_of",
-        "is_instance_of",
-        "is_prerequisite_for",
-        "is_version_of",
-        "serves",
-        "is_regulated_by",
-        "drives_demand_for",
-        "competes_with",
-        "is_substitute_for",
-        "cites",
-        "is_based_on",
-        "verified_by",
-        "conflicts_with",
-        "formalizes",
-        "uses_theorem",
-        "derived_from",
-        "instantiates",
-        "builds_on",
-        "has_prerequisite",
-        "uses",
-        "includes",
-        "solves",
-        "estimates",
-        "minimizes",
+        "acknowledges",
+        "addresses",
+        "affiliated",
+        "affiliated_with",
+        "affiliation",
+        "analyzes",
+        "applied_in",
+        "applies_to",
         "approximates",
-        "proposes",
+        "assumes",
+        "authored_by",
+        "authored_by_affiliation",
+        "benchmarks",
+        "builds_on",
+        "built_upon",
+        "case_study",
+        "cites",
+        "collaborates_with",
+        "combines_with",
+        "compares",
+        "compares_with",
+        "compensates_for",
+        "competes_with",
+        "conflicts_with",
+        "constrains",
+        "consumes",
+        "demonstrates",
+        "demonstrates_on",
+        "derived_from",
+        "developed_by",
+        "develops",
+        "discusses",
+        "discusses_application_to",
+        "distributes",
+        "drives_demand_for",
+        "enables",
+        "establishes_hardness_on",
+        "estimates",
+        "evaluated_at",
+        "evaluated_in",
+        "evaluated_with",
+        "evaluates",
+        "evaluates_against",
+        "evaluates_in",
         "evaluates_on",
-        "extends"
+        "extends",
+        "formalizes",
+        "funded_by",
+        "generalizes_to",
+        "has_prerequisite",
+        "implemented_on",
+        "implements_in",
+        "implements_on",
+        "implements_with",
+        "includes",
+        "instantiates",
+        "instantiates_on",
+        "institutional_affiliation",
+        "integrates",
+        "introduces",
+        "is_alternative_to",
+        "is_based_on",
+        "is_instance_of",
+        "is_part_of",
+        "is_prerequisite_for",
+        "is_regulated_by",
+        "is_substitute_for",
+        "is_subsystem_of",
+        "is_version_of",
+        "manufactured_by",
+        "manufacturer_of",
+        "mentions",
+        "minimizes",
+        "models",
+        "part_of",
+        "produces",
+        "proposes",
+        "releases",
+        "requires",
+        "reviews",
+        "serves",
+        "simulates_with",
+        "solves",
+        "sources_from",
+        "studies_subclasses_of",
+        "supplies",
+        "surveys",
+        "targets",
+        "tested_with",
+        "transfers_to",
+        "uses",
+        "uses_benchmark",
+        "uses_data",
+        "uses_dataset",
+        "uses_hardware_from",
+        "uses_implementation_from",
+        "uses_material",
+        "uses_notation_from",
+        "uses_platform",
+        "uses_product_of",
+        "uses_simulator",
+        "uses_software",
+        "uses_technology",
+        "uses_theorem",
+        "validated_on",
+        "validates_on",
+        "verified_by"
       ]
     },
     "source": {
       "type": "object",
-      "required": ["id"],
+      "required": [
+        "id"
+      ],
       "properties": {
-        "id": { "type": "string" },
+        "id": {
+          "type": "string"
+        },
         "name": {
           "type": "object",
           "properties": {
-            "en": { "type": "string" },
-            "zh": { "type": "string" },
-            "ko": { "type": "string" }
+            "en": {
+              "type": "string"
+            },
+            "zh": {
+              "type": "string"
+            },
+            "ko": {
+              "type": "string"
+            }
           }
         }
       }
     },
     "target": {
       "type": "object",
-      "required": ["id"],
+      "required": [
+        "id"
+      ],
       "properties": {
-        "id": { "type": "string" },
+        "id": {
+          "type": "string"
+        },
         "name": {
           "type": "object",
           "properties": {
-            "en": { "type": "string" },
-            "zh": { "type": "string" },
-            "ko": { "type": "string" }
+            "en": {
+              "type": "string"
+            },
+            "zh": {
+              "type": "string"
+            },
+            "ko": {
+              "type": "string"
+            }
           }
         }
       }
@@ -150,25 +237,48 @@
     "description": {
       "type": "object",
       "description": "Multi-language description of the relationship. English is required.",
-      "required": ["en"],
+      "required": [
+        "en"
+      ],
       "properties": {
-        "en": { "type": "string" },
-        "zh": { "type": "string" },
-        "ko": { "type": "string" }
+        "en": {
+          "type": "string"
+        },
+        "zh": {
+          "type": "string"
+        },
+        "ko": {
+          "type": "string"
+        }
       },
-      "additionalProperties": { "type": "string" }
+      "additionalProperties": {
+        "type": "string"
+      }
     },
     "verification": {
       "type": "object",
-      "required": ["status", "reviewed_by", "reviewed_at"],
+      "required": [
+        "status",
+        "reviewed_by",
+        "reviewed_at"
+      ],
       "properties": {
         "status": {
           "type": "string",
-          "enum": ["verified", "partially_verified", "unverified", "speculative"]
+          "enum": [
+            "verified",
+            "partially_verified",
+            "unverified",
+            "speculative"
+          ]
         },
         "reviewed_by": {
           "type": "string",
-          "enum": ["human", "ai", "human_and_ai"]
+          "enum": [
+            "human",
+            "ai",
+            "human_and_ai"
+          ]
         },
         "reviewed_at": {
           "type": "string",
@@ -176,7 +286,11 @@
         },
         "confidence": {
           "type": "string",
-          "enum": ["high", "medium", "low"]
+          "enum": [
+            "high",
+            "medium",
+            "low"
+          ]
         },
         "notes": {
           "type": "string"
@@ -189,9 +303,14 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["id", "type"],
+        "required": [
+          "id",
+          "type"
+        ],
         "properties": {
-          "id": { "type": "string" },
+          "id": {
+            "type": "string"
+          },
           "type": {
             "type": "string",
             "enum": [
@@ -207,11 +326,25 @@
               "other"
             ]
           },
-          "title": { "type": "string" },
-          "url": { "type": "string", "format": "uri" },
-          "date": { "type": "string", "format": "date" },
-          "accessed_at": { "type": "string", "format": "date" },
-          "archived_url": { "type": "string", "format": "uri" }
+          "title": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          },
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "accessed_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "archived_url": {
+            "type": "string",
+            "format": "uri"
+          }
         }
       }
     }
