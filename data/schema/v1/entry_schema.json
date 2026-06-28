@@ -222,6 +222,7 @@
           "enum": [
             "human",
             "ai",
+            "ai_autonomous",
             "human_and_ai"
           ]
         },

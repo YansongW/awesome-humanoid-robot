@@ -6,8 +6,8 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-676-green" alt="676 entries" />
-  <img src="https://img.shields.io/badge/relationships-840-brightgreen" alt="840 relationships" />
+  <img src="https://img.shields.io/badge/entries-758-green" alt="758 entries" />
+  <img src="https://img.shields.io/badge/relationships-841-brightgreen" alt="841 relationships" />
   <img src="https://img.shields.io/badge/workstreams-175-orange" alt="175 workstreams" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
@@ -96,8 +96,9 @@ See [`docs/architecture/information_model.md`](docs/architecture/information_mod
 2. **Relevance classification** — an LLM scores each source against the central question and drops low-relevance items.
 3. **Structured extraction** — the LLM drafts typed entries, multi-lingual summaries, and proposed relationships.
 4. **Staging** — all AI drafts land in `.staging/` for isolated review.
-5. **Human review** — a reviewer approves, edits, or rejects each draft.
-6. **Integration & validation** — approved entries move to `research/` and `data/relationships/` and must pass `scripts/validate_entries.py`.
+5. **Autonomous review** — `scripts/ai4sci_autonomous_review.py` validates schema, checks sources/duplicates, and archives high-confidence drafts automatically.
+6. **Human review** — a reviewer inspects the remaining queue and rejects or fine-tunes edge cases.
+7. **Integration & validation** — approved entries move to `research/` and `data/relationships/` and must pass `scripts/validate_entries.py`.
 
 The full pipeline is documented in [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md).
 
@@ -156,8 +157,8 @@ For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4
 
 | Metric | Count |
 |--------|-------|
-| Production entries | 676 |
-| Relationships | 840 |
+| Production entries | 758 |
+| Relationships | 841 |
 | Workstream configs | 175 |
 | Ontology domains | 12 + `00_foundations` |
 | Supported languages | en, zh, ko |

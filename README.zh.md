@@ -6,8 +6,8 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-676-green" alt="676 entries" />
-  <img src="https://img.shields.io/badge/relationships-840-brightgreen" alt="840 relationships" />
+  <img src="https://img.shields.io/badge/entries-758-green" alt="758 entries" />
+  <img src="https://img.shields.io/badge/relationships-841-brightgreen" alt="841 relationships" />
   <img src="https://img.shields.io/badge/workstreams-175-orange" alt="175 workstreams" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
@@ -96,8 +96,9 @@
 2. **相关性分类** —— LLM 针对核心问题给每篇来源打分，过滤低相关性内容。
 3. **结构化提取** —— LLM 起草带类型的条目、多语言摘要和候选关系。
 4. **暂存** —— 所有 AI 草稿进入 `.staging/`，隔离等待审阅。
-5. **人工审阅** —— 审阅者批准、编辑或拒绝每份草稿。
-6. **集成与验证** —— 通过审阅的条目进入 `research/` 和 `data/relationships/`，并必须通过 `scripts/validate_entries.py`。
+5. **自动审阅** —— `scripts/ai4sci_autonomous_review.py` 校验 schema、来源与重复项，自动归档高置信度草稿。
+6. **人工审阅** —— 审阅者检查剩余队列，对边界情况进行拒绝或微调。
+7. **集成与验证** —— 通过审阅的条目进入 `research/` 和 `data/relationships/`，并必须通过 `scripts/validate_entries.py`。
 
 完整流程见 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md)。
 
@@ -156,8 +157,8 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 
 | 指标 | 数量 |
 |------|------|
-| 生产级条目 | 676 |
-| 关系 | 840 |
+| 生产级条目 | 758 |
+| 关系 | 841 |
 | 工作流配置 | 175 |
 | 本体域 | 12 + `00_foundations` |
 | 支持语言 | 中 / 英 / 韩 |

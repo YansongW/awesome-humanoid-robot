@@ -6,8 +6,8 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-676-green" alt="676 entries" />
-  <img src="https://img.shields.io/badge/relationships-840-brightgreen" alt="840 relationships" />
+  <img src="https://img.shields.io/badge/entries-758-green" alt="758 entries" />
+  <img src="https://img.shields.io/badge/relationships-841-brightgreen" alt="841 relationships" />
   <img src="https://img.shields.io/badge/workstreams-175-orange" alt="175 workstreams" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
@@ -96,8 +96,9 @@
 2. **관련성 분류** — LLM이 핵심 질문에 따라 각 출처에 점수를 매기고 낮은 관련성 콘텐츠를 필터링합니다.
 3. **구조화된 추출** — LLM이 타입이 지정된 항목, 다국어 요약 및 후보 관계를 작성합니다.
 4. **임시 저장** — 모든 AI 초안은 `.staging/`에 격리되어 검토를 기다립니다.
-5. **인간 검토** — 검토자가 각 초안을 승인, 편집 또는 거부합니다.
-6. **통합 및 검증** — 승인된 항목은 `research/` 및 `data/relationships/`로 이동하고 `scripts/validate_entries.py`를 통과해야 합니다.
+5. **자율 검토** — `scripts/ai4sci_autonomous_review.py`가 schema, 출처 및 중복 항목을 확인하고 높은 신뢰도의 초안을 자동으로 보관합니다.
+6. **인간 검토** — 검토자가 남은 큐를 검사하고 경계 사례를 거부하거나 미세 조정합니다.
+7. **통합 및 검증** — 승인된 항목은 `research/` 및 `data/relationships/`로 이동하고 `scripts/validate_entries.py`를 통과해야 합니다.
 
 전체 파이프라인은 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md)에 문서화되어 있습니다.
 
@@ -156,8 +157,8 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 
 | 지표 | 수량 |
 |------|------|
-| 생산급 항목 | 676 |
-| 관계 | 840 |
+| 생산급 항목 | 758 |
+| 관계 | 841 |
 | 워크스트림 설정 | 175 |
 | 온톨로지 도메인 | 12 + `00_foundations` |
 | 지원 언어 | 영 / 중 / 한 |
