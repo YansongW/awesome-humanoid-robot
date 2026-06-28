@@ -37,6 +37,8 @@ tags:
 - qp_control
 - trajectory_generation
 - gazebo_simulation
+theoretical_depth:
+- system
 verification:
   status: partially_verified
   reviewed_by: ai

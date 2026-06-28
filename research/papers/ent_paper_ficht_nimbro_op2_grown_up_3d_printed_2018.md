@@ -38,6 +38,8 @@ tags:
 - humanoid_soccer
 - lightweight_design
 - robocup
+theoretical_depth:
+- system
 verification:
   status: partially_verified
   reviewed_by: ai

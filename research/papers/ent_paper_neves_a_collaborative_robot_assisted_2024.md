@@ -39,6 +39,8 @@ tags:
 - task_allocation
 - kuka_lbr_iiwa
 - schunk_gripper
+theoretical_depth:
+- system
 verification:
   status: partially_verified
   reviewed_by: ai

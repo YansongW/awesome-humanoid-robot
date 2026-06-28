@@ -32,6 +32,8 @@ tags:
 - uncertain_dynamics
 - robot_manipulator
 - inverse_jacobian_feedback
+theoretical_depth:
+- system
 verification:
   status: partially_verified
   reviewed_by: ai

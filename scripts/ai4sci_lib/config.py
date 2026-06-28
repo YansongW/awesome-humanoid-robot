@@ -79,6 +79,65 @@ LAYER_MAP = {
     "12_policy_regulation_ethics": "validation_markets",
 }
 
+# Theoretical-depth axis used for cross-layer knowledge-chain validation.
+# Ordered from most concrete/system-level to most abstract/foundational.
+THEORETICAL_DEPTH_ORDER = ["system", "method", "formalism", "principle", "foundation"]
+
+# Allowed relationship types between theoretical-depth levels.
+# These are directional from source depth to target depth.
+CROSS_LAYER_RELATIONSHIPS: dict[tuple[str, str], list[str]] = {
+    # System -> method
+    ("system", "method"): ["requires", "uses", "enables", "instantiates", "integrates", "is_based_on", "constrains", "produces"],
+    # System -> formalism
+    ("system", "formalism"): ["requires", "uses", "formalizes", "is_based_on"],
+    # System -> component/material
+    ("system", "component"): ["integrates", "requires", "uses", "produces"],
+    ("system", "material"): ["requires", "consumes", "uses"],
+    # Method -> system (e.g. a technology enables a robot)
+    ("method", "system"): ["enables", "requires", "produces", "constrains", "integrates", "instantiates", "addresses", "uses_dataset"],
+    # Method -> method
+    ("method", "method"): ["builds_on", "is_based_on", "extends", "uses", "instantiates", "is_alternative_to"],
+    # Method -> formalism
+    ("method", "formalism"): ["formalizes", "uses", "requires", "is_based_on", "solves"],
+    # Method -> algorithm
+    ("method", "algorithm"): ["uses", "solves", "instantiates", "requires"],
+    # Method -> foundation
+    ("method", "foundation"): ["has_prerequisite", "is_based_on", "derived_from"],
+    # Formalism -> equation
+    ("formalism", "equation"): ["includes", "uses", "formalizes"],
+    # Formalism -> algorithm
+    ("formalism", "algorithm"): ["solves", "uses", "requires"],
+    # Formalism -> foundation
+    ("formalism", "foundation"): ["has_prerequisite", "is_based_on", "derived_from"],
+    # Equation -> operator/variable/constant
+    ("equation", "operator"): ["uses"],
+    ("equation", "variable"): ["uses"],
+    ("equation", "constant"): ["uses"],
+    # Equation -> principle
+    ("equation", "principle"): ["derived_from", "is_based_on"],
+    # Formalism -> principle
+    ("formalism", "principle"): ["derived_from", "is_based_on"],
+    # Principle -> foundation
+    ("principle", "foundation"): ["has_prerequisite", "derived_from", "is_based_on"],
+    # Algorithm -> algorithm
+    ("algorithm", "algorithm"): ["builds_on", "is_based_on", "extends", "uses", "instantiates"],
+    # Algorithm -> formalism
+    ("algorithm", "formalism"): ["is_based_on", "uses", "requires"],
+    # Algorithm -> principle/foundation
+    ("algorithm", "principle"): ["is_based_on", "derived_from"],
+    ("algorithm", "foundation"): ["has_prerequisite"],
+    # Component -> material
+    ("component", "material"): ["requires", "consumes", "uses", "sources_from"],
+    # Component -> component
+    ("component", "component"): ["is_part_of", "is_subsystem_of", "integrates", "requires", "uses"],
+    # Material -> material
+    ("material", "material"): ["is_part_of", "sources_from", "is_substitute_for"],
+    # Generic same-depth links
+    ("system", "system"): ["is_part_of", "is_subsystem_of", "integrates", "enables", "requires", "constrains", "is_alternative_to"],
+    ("foundation", "foundation"): ["has_prerequisite", "is_based_on", "derived_from"],
+    ("principle", "principle"): ["derived_from", "is_based_on", "has_prerequisite"],
+}
+
 TYPE_TO_SUBDIR = {
     "paper": "papers",
     "dataset": "datasets",
@@ -103,6 +162,18 @@ TYPE_TO_SUBDIR = {
     "patent": "papers",
     "report": "papers",
     "standard": "benchmarks",
+    "concept": "papers",
+    "method": "methods",
+    "formalism": "formalisms",
+    "equation": "equations",
+    "operator": "operators",
+    "variable": "operators",
+    "constant": "operators",
+    "algorithm": "methods",
+    "approximation": "methods",
+    "theorem": "principles",
+    "principle": "principles",
+    "foundation": "foundations",
     "market_segment": "companies",
     "application_scenario": "companies",
     "business_model": "companies",

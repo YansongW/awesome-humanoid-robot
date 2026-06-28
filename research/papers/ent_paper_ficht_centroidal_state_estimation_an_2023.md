@@ -34,6 +34,8 @@ tags:
 - capture_point
 - nimbro_op2x
 - robocup_2023
+theoretical_depth:
+- system
 verification:
   status: partially_verified
   reviewed_by: ai

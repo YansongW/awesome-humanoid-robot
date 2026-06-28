@@ -35,6 +35,8 @@ tags:
 - sorting
 - task_fluency
 - human_in_the_loop
+theoretical_depth:
+- system
 verification:
   status: partially_verified
   reviewed_by: ai

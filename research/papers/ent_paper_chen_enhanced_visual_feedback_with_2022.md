@@ -40,6 +40,8 @@ tags:
 - virtual_reality
 - visual_inertial_odometry
 - human_robot_interface
+theoretical_depth:
+- system
 verification:
   status: partially_verified
   reviewed_by: ai
