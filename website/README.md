@@ -1,6 +1,6 @@
 # Rounds Tech KG 静态站点
 
-这是 `awesome-humanoid-robot` 知识图谱的产品级静态前端，部署在 GitHub Pages，通过 `rounds-tech.com` 访问。
+这是 `awesome-humanoid-robot` 知识图谱的产品级静态前端，部署在 GitHub Pages，通过 `kg.rounds-tech.com` 访问。
 
 ## 本地开发
 
@@ -47,7 +47,7 @@ website/
 
 ## 域名配置
 
-`CNAME` 文件已放置在仓库根目录，内容为 `rounds-tech.com`。请在域名注册商处将 `rounds-tech.com` 的 A 记录指向 GitHub Pages IP：
+`CNAME` 文件已放置在仓库根目录，内容为 `kg.rounds-tech.com`。请在域名注册商处将 `kg.rounds-tech.com` 的 A 记录指向 GitHub Pages IP：
 
 - 185.199.108.153
 - 185.199.109.153

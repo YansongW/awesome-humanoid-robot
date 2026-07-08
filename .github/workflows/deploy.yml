@@ -30,7 +30,7 @@ jobs:
         run: python -m website.builder.build
 
       - name: Add CNAME
-        run: echo "rounds-tech.com" > website/dist/CNAME
+        run: echo "kg.rounds-tech.com" > website/dist/CNAME
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v4
