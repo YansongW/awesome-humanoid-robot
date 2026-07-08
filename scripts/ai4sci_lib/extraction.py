@@ -66,15 +66,24 @@ Paper text:
     return llm_client.chat_completion_json(messages)
 
 
-def classify_relevance(metadata: dict[str, Any]) -> dict[str, Any]:
-    """Classify how relevant the paper is to the project scope."""
+def classify_relevance(metadata: dict[str, Any], context: str | None = None) -> dict[str, Any]:
+    """Classify how relevant the paper is to the project scope.
+
+    Args:
+        metadata: Paper metadata extracted from the full text.
+        context: Optional workstream-specific guidance appended to the prompt
+            (e.g. for foundational or cross-domain workstreams).
+    """
     system_prompt = (
         "You are a relevance classifier for a humanoid-robot knowledge base. "
         "Respond only with JSON."
     )
+    context_note = ""
+    if context:
+        context_note = f"\nAdditional guidance for this workstream:\n{context}\n"
     user_prompt = f"""Rate the relevance of this paper to the project scope:
 "How do we go from 0 to 1 on humanoid robot mass production and industrial application?"
-
+{context_note}
 Paper title: {metadata.get("title", "")}
 Abstract: {metadata.get("abstract", "")}
 Problem: {metadata.get("problem", "")}
@@ -85,10 +94,68 @@ Return JSON:
 {{
   "score": "high" | "medium" | "low",
   "score_value": 3 for high, 2 for medium, 1 for low,
-  "reason": "one sentence explaining the score",
+  "reason": "one sentence explaining the score and the explicit connection to humanoid robots or robotics/automation",
   "primary_domain": "one of: ai_models_algorithms, software_middleware, data_datasets, evaluation_benchmarks, components, raw_materials, manufacturing_processes, assembly_integration_testing, mass_production, design_engineering, applications_markets, policy_regulation_ethics, none",
   "secondary_domains": ["..."] // may be empty
 }}
+
+Score LOW if:
+- The paper is a generic theory/method paper with no robotics, automation, or humanoid-robot application.
+- The paper studies materials, chemistry, economics, math, or CS without connecting them to robots/actuators/manufacturing.
+- The abstract and problem statement never mention robots, humanoids, automation, or relevant hardware.
+
+Score MEDIUM if:
+- The paper is in a foundational area (math/CS/economics/chemistry) but explicitly targets robotics, automation, or humanoid-related systems.
+
+Score HIGH if:
+- The paper directly addresses humanoid robots, legged locomotion, manipulation, robot mass production, or key enabling technologies.
+"""
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_prompt},
+    ]
+    return llm_client.chat_completion_json(messages)
+
+
+def pre_classify_relevance(
+    title: str,
+    summary: str,
+    context: str | None = None,
+) -> dict[str, Any]:
+    """Lightweight relevance pre-filter using title and abstract only.
+
+    This is much cheaper than extracting the full paper text.  Papers scored
+    ``low`` can be skipped before PDF download.
+    """
+    system_prompt = (
+        "You are a fast relevance pre-filter for a humanoid-robot knowledge base. "
+        "Respond only with JSON."
+    )
+    context_note = ""
+    if context:
+        context_note = f"\nAdditional guidance for this workstream:\n{context}\n"
+    user_prompt = f"""Rate the relevance of this paper to the project scope:
+"How do we go from 0 to 1 on humanoid robot mass production and industrial application?"
+{context_note}
+Title: {title}
+Abstract: {summary}
+
+Return JSON:
+{{
+  "score": "high" | "medium" | "low",
+  "score_value": 3 for high, 2 for medium, 1 for low,
+  "reason": "one sentence explaining the score"
+}}
+
+Examples of LOW relevance:
+- A pure mathematics paper with no robot application.
+- A general economics or game-theory paper not applied to robotics/automation.
+- A hardware/materials paper that never mentions robots, actuators, or automation.
+
+Examples of MEDIUM/HIGH relevance:
+- A paper on optimal control with legged robot or manipulation examples.
+- A paper on battery electrochemistry for mobile/robotic applications.
+- A paper on learning/simulation specifically for humanoid or general robots.
 """
     messages = [
         {"role": "system", "content": system_prompt},
@@ -113,7 +180,10 @@ def propose_entry(
     type_options = [
         "paper", "dataset", "benchmark", "technology", "component", "material",
         "software_platform", "robot_system", "patent", "report", "standard",
+        "concept", "method", "formalism", "equation", "operator", "variable",
+        "constant", "algorithm", "approximation", "theorem", "principle", "foundation",
     ]
+    depth_options = ["foundation", "principle", "formalism", "method", "system"]
 
     user_prompt = f"""Generate a knowledge-base entry proposal for this paper.
 
@@ -129,6 +199,9 @@ Allowed domain codes:
 Allowed entry types:
 {json.dumps(type_options, indent=2)}
 
+Allowed theoretical_depth values (from foundation to system):
+{json.dumps(depth_options, indent=2)}
+
 Return JSON with this structure:
 {{
   "entry": {{
@@ -136,6 +209,7 @@ Return JSON with this structure:
     "names": {{"en": "...", "zh": "...", "ko": "..."}},
     "summary": {{"en": "...", "zh": "...", "ko": "..."}},
     "domains": ["07_ai_models_algorithms"], // use codes from allowed list
+    "theoretical_depth": ["method"], // one or more values from allowed list
     "functional_roles": ["knowledge", "intelligence"], // from: material, component, process, system, tool_equipment, facility, intelligence, organization, market, policy, knowledge
     "tags": ["vla", "..."],
     "verification": {{
@@ -178,6 +252,18 @@ Return JSON with this structure:
       "source_citation": "section or sentence in the paper supporting this relationship"
     }}
   ],
+  "knowledge_chain": [
+    {{
+      "proposed_child_id": "ent_method_...",
+      "child_type": "method",
+      "child_theoretical_depth": "method",
+      "names": {{"en": "...", "zh": "...", "ko": "..."}},
+      "summary": {{"en": "...", "zh": "...", "ko": "..."}},
+      "relationship_to_paper": "uses",
+      "description": {{"en": "...", "zh": "...", "ko": "..."}},
+      "source_citation": "..."
+    }}
+  ],
   "review_notes": [
     "Uncertain claim or missing info to verify",
     "..."
@@ -188,10 +274,12 @@ Guidelines:
 - Summaries should be 1-2 sentences and fact-based.
 - Names and summaries must be provided in English, Simplified Chinese, and Korean.
 - Domains should reflect the paper's primary focus; use multiple only if genuinely cross-domain.
+- theoretical_depth: choose the deepest level the paper primarily operates at. Papers that introduce a method are "method"; papers that mainly compare hardware are "system"; papers that derive a new formalism are "formalism".
 - Tags should be lowercase, snake_case, and specific to humanoid robotics.
 - Related_entities and relationships should only include items explicitly discussed in the paper.
 - For each proposed relationship, include a source_citation from the paper text.
 - If a target entity does not yet exist in the knowledge base, propose a stable target_id and target_name.
+- knowledge_chain: extract 1-3 key methods/formalisms/equations the paper introduces or relies on. For each child, specify the relationship to the paper (e.g. uses, formalizes, instantiates, builds_on, derived_from). These will later be expanded into standalone knowledge-base nodes.
 - Mark any uncertain claims in review_notes.
 """
 

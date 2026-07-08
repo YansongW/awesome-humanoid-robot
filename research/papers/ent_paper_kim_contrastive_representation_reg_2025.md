@@ -1,0 +1,57 @@
+---
+$id: ent_paper_kim_contrastive_representation_reg_2025
+$schema: ../../data/schema/v1/entry_schema.json
+$version: 1
+type: paper
+names:
+  en: Contrastive Representation Regularization for Vision-Language-Action Models
+  zh: RS-CL
+  ko: ''
+summary:
+  en: Contrastive Representation Regularization for Vision-Language-Action Models
+    (RS-CL), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by KAIST, UC Berkeley, RLWRLD.
+  zh: Contrastive Representation Regularization for Vision-Language-Action Models
+    (RS-CL), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by KAIST, UC Berkeley, RLWRLD.
+  ko: ''
+domains:
+- 07_ai_models_algorithms
+- 08_software_middleware
+layers:
+- intelligence
+functional_roles:
+- knowledge
+- intelligence
+tags:
+- large_vla_model
+- robotic_manipulation
+- rs_cl
+- vision_language_action
+- vla
+theoretical_depth:
+- system
+verification:
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-07-01'
+  confidence: medium
+  notes: 'Imported from Awesome-VLA curated list. Model: RS-CL. Institution: KAIST,
+    UC Berkeley, RLWRLD. arXiv: 2510.01711.'
+sources:
+- id: src_001
+  type: paper
+  title: Contrastive Representation Regularization for Vision-Language-Action Models
+    (arXiv)
+  url: https://arxiv.org/abs/2510.01711
+  date: '2025'
+  accessed_at: '2026-07-01'
+- id: src_002
+  type: website
+  title: RS-CL source
+  url: https://doi.org/10.48550/arXiv.2510.01711
+  date: '2025'
+  accessed_at: '2026-07-01'
+---
+
+Contrastive Representation Regularization for Vision-Language-Action Models (RS-CL), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST, UC Berkeley, RLWRLD.

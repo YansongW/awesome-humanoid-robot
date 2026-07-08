@@ -1,0 +1,43 @@
+name: perception_stack
+description: 'Workstream for perception stack. Generated from WORKSTREAM_TREE leaf:
+  design/software_ai/perception_stack.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- perception stack robotics
+- humanoid robot perception stack
+- perception stack robots survey
+- perception stack automation manufacturing
+- perception stack applied to humanoid robots
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 2
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: design/software_ai/perception_stack.yaml
+relevance_context: Relevant if it addresses perception stack in a robotics or automation
+  context, or develops foundational methods/principles applicable to humanoid robots,
+  even when examples are not explicitly humanoid.

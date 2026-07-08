@@ -1,0 +1,43 @@
+name: works_like_prototype
+description: 'Workstream for works like prototype. Generated from WORKSTREAM_TREE
+  leaf: mvp/works_like_prototype.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- works like prototype robotics
+- humanoid robot works like prototype
+- works like prototype robots survey
+- works like prototype automation manufacturing
+- works like prototype applied to humanoid robots
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 2
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: mvp/works_like_prototype.yaml
+relevance_context: Relevant if it addresses works like prototype in a robotics or
+  automation context, or develops foundational methods/principles applicable to humanoid
+  robots, even when examples are not explicitly humanoid.

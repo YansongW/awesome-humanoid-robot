@@ -1,0 +1,47 @@
+name: mocap_human_video_action_planning_curated
+description: 'Curated workstream for: 动捕、人类视频与交互动作规划.
+
+  Seeded with 2 resolved arXiv papers from the WeChat 161-paper list.'
+seed_queries:
+- humanoid motion capture imitation learning
+- human video to humanoid action
+- humanoid interaction planning from video
+- motion retargeting humanoid robot
+- humanoid action planning human demonstration
+- humanoid falcon learning force adaptive
+- humanoid hdmi learning interactive humanoid
+- humanoid hitter humanoid table tennis
+- humanoid humanx toward agile generalizable
+- humanoid humanoid goalkeeper learning from
+paper_ids:
+- '2505.06776'
+- '2509.26633'
+target_entity_types:
+- paper
+- method
+- formalism
+- technology
+- component
+target_domains:
+- 07_ai_models_algorithms
+- 09_data_datasets
+- 11_applications_markets
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+- derived_from
+relevance_threshold: medium
+max_papers: 10
+priority: 1
+sources:
+- arxiv
+metadata:
+  curated_source: wechat_161_humanoid_papers
+  category: 动捕、人类视频与交互动作规划
+  resolved_count: 2
+  total_count: 11

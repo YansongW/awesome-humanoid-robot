@@ -91,6 +91,11 @@ RELATIONSHIP_TYPE_MAP = {
     "mentions": "cites",
     "references": "cites",
     "discusses": "cites",
+    "introduces": "proposes",
+    "presents": "proposes",
+    "implements_on": "integrates",
+    "deployed_on": "integrates",
+    "affiliated_with": "cites",
 }
 
 
@@ -122,6 +127,8 @@ def build_entry_frontmatter(data: dict[str, Any]) -> dict[str, Any]:
         "verification": data["verification"],
         "sources": data["sources"],
     }
+    if "theoretical_depth" in data and data["theoretical_depth"]:
+        frontmatter["theoretical_depth"] = data["theoretical_depth"]
     if "related_entities" in data and data["related_entities"]:
         frontmatter["related_entities"] = data["related_entities"]
     return frontmatter
@@ -184,28 +191,48 @@ def write_relationship_file(
 
 
 def load_existing_ids() -> set[str]:
-    """Load all existing entity and relationship IDs from the project."""
+    """Load all existing entity and relationship IDs from production and staging."""
     ids: set[str] = set()
-    for path in config.RESEARCH_DIR.rglob("*.md"):
-        try:
-            text = path.read_text(encoding="utf-8")
-            if text.startswith("---"):
-                _, rest = text.split("---", 1)
-                yaml_text, _ = rest.split("---", 1)
-                data = yaml.safe_load(yaml_text)
-                if data and "$id" in data:
-                    ids.add(data["$id"])
-        except Exception:
+    search_paths = [
+        (config.RESEARCH_DIR, True),  # recursive
+        (config.RELATIONSHIPS_DIR, False),
+        (config.STAGING_DIR / "research", True),
+        (config.STAGING_DIR / "data" / "relationships", True),
+    ]
+    # Also include per-workstream staging outputs.
+    staging_workstreams = config.STAGING_DIR / "workstreams"
+    if staging_workstreams.exists():
+        for ws_dir in staging_workstreams.iterdir():
+            if not ws_dir.is_dir():
+                continue
+            for base in (ws_dir / "research", ws_dir / "data" / "relationships"):
+                if not base.exists():
+                    continue
+                for path in base.rglob("*.md"):
+                    try:
+                        text = path.read_text(encoding="utf-8")
+                        if text.startswith("---"):
+                            _, rest = text.split("---", 1)
+                            yaml_text, _ = rest.split("---", 1)
+                            data = yaml.safe_load(yaml_text)
+                            if data and "$id" in data:
+                                ids.add(data["$id"])
+                    except Exception:
+                        continue
+
+    for base, recursive in search_paths:
+        if not base.exists():
             continue
-    for path in config.RELATIONSHIPS_DIR.glob("*.md"):
-        try:
-            text = path.read_text(encoding="utf-8")
-            if text.startswith("---"):
-                _, rest = text.split("---", 1)
-                yaml_text, _ = rest.split("---", 1)
-                data = yaml.safe_load(yaml_text)
-                if data and "$id" in data:
-                    ids.add(data["$id"])
-        except Exception:
-            continue
+        globber = base.rglob if recursive else base.glob
+        for path in globber("*.md"):
+            try:
+                text = path.read_text(encoding="utf-8")
+                if text.startswith("---"):
+                    _, rest = text.split("---", 1)
+                    yaml_text, _ = rest.split("---", 1)
+                    data = yaml.safe_load(yaml_text)
+                    if data and "$id" in data:
+                        ids.add(data["$id"])
+            except Exception:
+                continue
     return ids

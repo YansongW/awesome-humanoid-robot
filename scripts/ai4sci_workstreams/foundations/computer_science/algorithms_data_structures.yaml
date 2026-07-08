@@ -1,0 +1,43 @@
+name: algorithms_data_structures
+description: "Workstream for algorithms data structures. Generated from WORKSTREAM_TREE\
+  \ leaf: foundations/computer_science/algorithms_data_structures.yaml.\n  Query set\
+  \ refined for humanoid-robot-specific relevance."
+seed_queries:
+- motion planning algorithms robotics
+- collision detection algorithms robot
+- real-time path planning humanoid robot
+- trajectory optimization data structures
+- graph search robot motion planning
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 00_foundations
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 1
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: foundations/computer_science/algorithms_data_structures.yaml
+relevance_context: Relevant if it introduces algorithms or data structures for robot
+  motion planning, collision detection, trajectory optimization, or real-time planning
+  that can apply to humanoid robots.

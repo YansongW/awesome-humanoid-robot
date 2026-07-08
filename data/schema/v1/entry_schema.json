@@ -36,6 +36,7 @@
       "type": "string",
       "description": "Entity type from the controlled vocabulary.",
       "enum": [
+        "company",
         "oem",
         "tier1_supplier",
         "tier2_supplier",

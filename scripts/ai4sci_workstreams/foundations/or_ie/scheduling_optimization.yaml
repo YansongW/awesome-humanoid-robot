@@ -1,0 +1,43 @@
+name: scheduling_optimization
+description: 'Workstream for scheduling optimization. Generated from WORKSTREAM_TREE
+  leaf: foundations/or_ie/scheduling_optimization.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- robot task scheduling
+- humanoid robot planning scheduling
+- multi robot scheduling optimization
+- robot fleet optimization
+- manufacturing scheduling humanoid robot
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 00_foundations
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 1
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: foundations/or_ie/scheduling_optimization.yaml
+relevance_context: Relevant if it addresses task scheduling, planning, or optimization
+  for robots/fleets/manufacturing with applicability to humanoid workflows.

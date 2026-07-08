@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>人形机器人：从矿山到市场的知识图谱</h1>
+      <p class="hero-subtitle">
+        系统梳理人形机器人全产业链——材料、零部件、制造、设计、AI、软件、数据、测试、量产、应用、市场与政策。
+        覆盖 <strong>{{ stats.entries }}</strong> 个实体、<strong>{{ stats.relationships }}</strong> 条关系、<strong>{{ stats.domains }}</strong> 个领域。
+      </p>
+      <div class="hero-search">
+        <form action="/search/" method="get">
+          <input type="search" name="q" placeholder="搜索公司、论文、零部件、标准…" autocomplete="off" autofocus>
+          <button type="submit">搜索</button>
+        </form>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-card">
+          <span class="stat-number">{{ stats.entries }}</span>
+          <span class="stat-label">实体</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">{{ stats.relationships }}</span>
+          <span class="stat-label">关系</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">{{ stats.types }}</span>
+          <span class="stat-label">实体类型</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">{{ stats.domains }}</span>
+          <span class="stat-label">领域</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>按领域探索</h2>
+      <a href="/search/" class="link-arrow">查看全部 →</a>
+    </div>
+    <div class="domain-grid">
+      {% for d in domains %}
+      <a class="domain-card" href="/search/?q={{ d | urlencode }}">
+        <span class="domain-name">{{ d }}</span>
+        <span class="domain-arrow">→</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-muted">
+  <div class="container">
+    <div class="section-header">
+      <h2>按类型浏览</h2>
+    </div>
+    <div class="type-cloud">
+      {% for t in types %}
+      <a class="type-tag" href="/search/?q={{ t | urlencode }}">{{ t }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>精选实体</h2>
+    </div>
+    <div class="entry-grid">
+      {% for entry in featured %}
+      <a class="entry-card" href="/{{ entry.url }}">
+        <span class="entry-type">{{ entry.type }}</span>
+        <h3>{{ entry.name }}</h3>
+        <p>{{ entry.summary[:120] }}{% if entry.summary | length > 120 %}…{% endif %}</p>
+        <span class="entry-meta">{{ entry.domains | join(', ') }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section cta-section">
+  <div class="container">
+    <div class="cta-card">
+      <div class="cta-content">
+        <h2>探索完整关系图谱</h2>
+        <p>可视化浏览实体之间的供应链、技术依赖与跨层关系。</p>
+      </div>
+      <a href="/graph/" class="btn btn-primary">打开关系图谱</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

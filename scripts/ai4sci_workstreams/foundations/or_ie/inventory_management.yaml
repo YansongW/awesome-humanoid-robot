@@ -1,0 +1,43 @@
+name: inventory_management
+description: 'Workstream for inventory management. Generated from WORKSTREAM_TREE
+  leaf: foundations/or_ie/inventory_management.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- robot inventory management
+- humanoid robot spare parts supply chain
+- robot fleet inventory optimization
+- automated warehouse inventory robotics
+- service robot inventory management
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 00_foundations
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 1
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: foundations/or_ie/inventory_management.yaml
+relevance_context: Relevant if it addresses inventory management, spare parts, or
+  supply chain for robot fleets/warehouses, or service-humanoid robot operations.

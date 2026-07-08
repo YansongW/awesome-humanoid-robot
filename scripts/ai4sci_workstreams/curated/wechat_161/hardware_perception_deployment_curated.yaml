@@ -1,0 +1,49 @@
+name: hardware_perception_deployment_curated
+description: 'Curated workstream for: 硬件平台、感知配置与部署扩展.
+
+  Seeded with 3 resolved arXiv papers from the WeChat 161-paper list.'
+seed_queries:
+- humanoid robot hardware platform perception
+- humanoid sensor configuration deployment
+- humanoid robot edge deployment
+- humanoid platform design sensing
+- humanoid robot field deployment scalability
+- humanoid adaptive motion optimization hyper
+- humanoid demohlm from demonstration generalizable
+- humanoid gallant voxel grid based
+- humanoid mobile television predictive motion
+- humanoid open television teleoperation with
+paper_ids:
+- '2505.03738'
+- '2511.02832'
+- '2508.03068'
+target_entity_types:
+- paper
+- method
+- formalism
+- technology
+- component
+target_domains:
+- 02_components
+- 06_design_engineering
+- 08_software_middleware
+- 11_applications_markets
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+- derived_from
+relevance_threshold: medium
+max_papers: 10
+priority: 1
+sources:
+- arxiv
+metadata:
+  curated_source: wechat_161_humanoid_papers
+  category: 硬件平台、感知配置与部署扩展
+  resolved_count: 3
+  total_count: 11

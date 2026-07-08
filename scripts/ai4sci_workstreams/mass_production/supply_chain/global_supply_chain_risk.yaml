@@ -1,0 +1,33 @@
+name: global_supply_chain_risk
+description: |
+  Survey supply chain risk, resilience, and geographic concentration issues for
+  humanoid robot mass production: dual sourcing, near-shoring, logistics,
+  geopolitical export controls, and cost modeling at scale.
+seed_queries:
+  - "humanoid robot supply chain risk resilience"
+  - "robot manufacturing supply chain dual sourcing"
+  - "geopolitical risk rare earth robot supply chain"
+  - "nearshoring humanoid robot manufacturing"
+  - "cost modeling humanoid robot mass production supply chain"
+paper_ids: []
+target_entity_types:
+  - paper
+  - report
+  - organization
+  - material
+  - component
+target_domains:
+  - 05_mass_production
+  - 01_raw_materials
+  - 11_applications_markets
+relationship_patterns:
+  - constrains
+  - enables
+  - requires
+  - sources_from
+  - is_alternative_to
+relevance_threshold: medium
+max_papers: 15
+priority: 2
+sources:
+  - arxiv

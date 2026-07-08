@@ -1,0 +1,42 @@
+name: game_theory
+description: "Workstream for game theory. Generated from WORKSTREAM_TREE leaf: foundations/economics/game_theory.yaml.\n\
+  \  Query set refined for humanoid-robot-specific relevance."
+seed_queries:
+- game theory robotics
+- multi-agent game theory human robot interaction
+- strategic interaction robots
+- cooperative game theory robot teams
+- negotiation game theory humanoid robot
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 00_foundations
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 1
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: foundations/economics/game_theory.yaml
+relevance_context: Relevant if it develops or applies game-theoretic models (strategic,
+  cooperative, or negotiation) to robotics, multi-agent systems, or human-robot interaction,
+  even if not exclusively humanoid.

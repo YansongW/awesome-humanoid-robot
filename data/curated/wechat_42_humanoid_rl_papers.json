@@ -1,0 +1,447 @@
+{
+  "source": "https://mp.weixin.qq.com/s/hz9JXtJeUPRfUGzfD-pZuA",
+  "categories": [
+    {
+      "num": "01",
+      "name": "动作数据、重定向、遥操作和交互保真"
+    },
+    {
+      "num": "02",
+      "name": "物理模仿、通用 motion tracker 和身体基础模型"
+    },
+    {
+      "num": "03",
+      "name": "感知式高动态运动"
+    },
+    {
+      "num": "04",
+      "name": "视觉闭环、全身移动操作、任务接口和世界模型"
+    },
+    {
+      "num": "05",
+      "name": "接触、柔顺、负载和失败恢复"
+    }
+  ],
+  "papers": [
+    {
+      "num": "001",
+      "category": "动作数据、重定向、遥操作和交互保真",
+      "short_name": "重定向不是小工具，而是控制器上限",
+      "title": "Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking",
+      "institution": "斯坦福大学",
+      "project_url": "https://jaraujo98.github.io/retargeting_matters/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "002",
+      "category": "动作数据、重定向、遥操作和交互保真",
+      "short_name": "把重定向从优化问题变成学习问题",
+      "title": "Make Tracking Easy: Neural Motion Retargeting for Humanoid Whole-body Control",
+      "institution": "南京大学；华为",
+      "project_url": "https://nju3dv-humanoidgroup.github.io/nmr.github.io/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "003",
+      "category": "动作数据、重定向、遥操作和交互保真",
+      "short_name": "真正要重定向的不是动作，而是交互关系",
+      "title": "OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction",
+      "institution": "Amazon FAR；MIT；伯克利；斯坦福大学；CMU",
+      "project_url": "https://omniretarget.github.io",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "004",
+      "category": "动作数据、重定向、遥操作和交互保真",
+      "short_name": "生成视频不能直接给机器人用",
+      "title": "From Generated Human Videos to Physically Plausible Robot Trajectories",
+      "institution": "伯克利；纽约大学；约翰内斯开普勒大学",
+      "project_url": "https://genmimic.github.io/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "005",
+      "category": "动作数据、重定向、遥操作和交互保真",
+      "short_name": "从人类视频合成交互技能",
+      "title": "HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos",
+      "institution": "香港科技大学；上海人工智能实验室",
+      "project_url": "https://wyhuai.github.io/human-x/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "006",
+      "category": "动作数据、重定向、遥操作和交互保真",
+      "short_name": "从人类视频学会真正的全身物体交互",
+      "title": "HDMI: Learning Interactive Humanoid Whole-Body Control from Human Videos",
+      "institution": "CMU",
+      "project_url": "https://hdmi-humanoid.github.io",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "007",
+      "category": "动作数据、重定向、遥操作和交互保真",
+      "short_name": "遥操作不是遥控，而是高质量身体数据入口",
+      "title": "Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation",
+      "institution": "CMU",
+      "project_url": "https://human2humanoid.com/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "008",
+      "category": "动作数据、重定向、遥操作和交互保真",
+      "short_name": "把遥操作升级成通用身体接口",
+      "title": "OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning",
+      "institution": "CMU；上海交通大学",
+      "project_url": "https://omni.human2humanoid.com/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "009",
+      "category": "动作数据、重定向、遥操作和交互保真",
+      "short_name": "全身遥操作真正难的是让“人”和“机器人”共用一套身体接口",
+      "title": "TWIST: Teleoperated Whole-Body Imitation System",
+      "institution": "斯坦福大学；西蒙弗雷泽大学",
+      "project_url": "https://yanjieze.com/TWIST/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "010",
+      "category": "物理模仿、通用 motion tracker 和身体基础模型",
+      "short_name": "真正的大规模人形数据，不可能只靠昂贵动捕房",
+      "title": "TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System",
+      "institution": "Amazon FAR；斯坦福大学；USC；伯克利；CMU",
+      "project_url": "https://yanjieze.com/TWIST2/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "011",
+      "category": "物理模仿、通用 motion tracker 和身体基础模型",
+      "short_name": "很多人形控制论文的源头问题",
+      "title": "DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills",
+      "institution": "伯克利；英属哥伦比亚大学",
+      "project_url": "https://xbpeng.github.io/projects/DeepMimic/index.html",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "012",
+      "category": "物理模仿、通用 motion tracker 和身体基础模型",
+      "short_name": "不要让控制器追踪错误参考",
+      "title": "OmniTrack: General Motion Tracking via Physics-Consistent Reference",
+      "institution": "华中科技大学；BIGAI；上海交通大学",
+      "project_url": "https://omnitrack-humanoid.github.io/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "013",
+      "category": "物理模仿、通用 motion tracker 和身体基础模型",
+      "short_name": "跟踪能力必须和动力学适应能力绑定",
+      "title": "Track Any Motions under Any Disturbances",
+      "institution": "清华大学；北京大学；Galbot；上海期智研究院",
+      "project_url": "https://zzk273.github.io/Any2Track/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "014",
+      "category": "物理模仿、通用 motion tracker 和身体基础模型",
+      "short_name": "参考动作不一致时，控制器要学会选择性相信",
+      "title": "Robust and Generalized Humanoid Motion Tracking",
+      "institution": "北京理工大学；人形机器人（上海）有限公司",
+      "project_url": "https://zeonsunlightyu.github.io/RGMT.github.io/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "015",
+      "category": "物理模仿、通用 motion tracker 和身体基础模型",
+      "short_name": "从动作跟踪走向生成式动作修正",
+      "title": "BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion",
+      "institution": "伯克利；斯坦福大学",
+      "project_url": "https://arxiv.org/abs/2508.08241",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "016",
+      "category": "物理模仿、通用 motion tracker 和身体基础模型",
+      "short_name": "高动态动作会撞上硬件边界",
+      "title": "OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control",
+      "institution": "BIGAI；BIGAI & 宇树科技；上海交通大学；中科大；宇树科技；华中科技大学；北京理工大学",
+      "project_url": "https://extreme-humanoid.github.io/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "017",
+      "category": "物理模仿、通用 motion tracker 和身体基础模型",
+      "short_name": "把 motion tracker 做成可扩展基础模型",
+      "title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
+      "institution": "NVIDIA",
+      "project_url": "https://nvlabs.github.io/SONIC/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "018",
+      "category": "物理模仿、通用 motion tracker 和身体基础模型",
+      "short_name": "敏捷和稳定不是天然兼容的",
+      "title": "Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data",
+      "institution": "香港大学；NVIDIA；清华大学",
+      "project_url": "https://opendrivelab.com/AMS/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "019",
+      "category": "物理模仿、通用 motion tracker 和身体基础模型",
+      "short_name": "身体也需要一种可提示的“行为词表”",
+      "title": "BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning",
+      "institution": "CMU；Meta",
+      "project_url": "https://lecar-lab.github.io/BFM-Zero/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "020",
+      "category": "感知式高动态运动",
+      "short_name": "训练时的 privileged state 如何变成部署时的本体能力",
+      "title": "PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged Contrastive Representations",
+      "institution": "香港理工大学；逐际动力；宁波东方理工大学；中科大；ZJU-UIUC；ZGCA",
+      "project_url": "https://github.com/myismyname/SRL4Humanoid",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "021",
+      "category": "感知式高动态运动",
+      "short_name": "多行为蒸馏不是简单拼策略",
+      "title": "Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning",
+      "institution": "哈尔滨工程大学；中国电信 TeleAI；中科大；上海科技大学；哈尔滨工业大学；西北工业大学深圳研究院",
+      "project_url": "https://ahc-humanoid.github.io",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "022",
+      "category": "感知式高动态运动",
+      "short_name": "跑酷的难点不是单技能，而是长程组合",
+      "title": "Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching",
+      "institution": "Amazon FAR；伯克利；CMU；斯坦福大学",
+      "project_url": "https://php-parkour.github.io/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "023",
+      "category": "感知式高动态运动",
+      "short_name": "全身动作必须理解环境几何",
+      "title": "Deep Whole-body Parkour",
+      "institution": "清华大学交叉信息研究院；上海期智研究院",
+      "project_url": "https://project-instinct.github.io/deep-whole-body-parkour",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "024",
+      "category": "感知式高动态运动",
+      "short_name": "脚落在哪里，比走得多快更重要",
+      "title": "Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids",
+      "institution": "清华大学交叉信息研究院；上海期智研究院；清华大学计算机系",
+      "project_url": "https://project-instinct.github.io/hiking-in-the-wild",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "025",
+      "category": "感知式高动态运动",
+      "short_name": "sim-to-real 对齐不是调参数那么简单",
+      "title": "ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills",
+      "institution": "CMU；NVIDIA",
+      "project_url": "https://agile.human2humanoid.com",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "026",
+      "category": "视觉闭环、全身移动操作、任务接口和世界模型",
+      "short_name": "足球任务里，视觉和动作是同一件事",
+      "title": "Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots",
+      "institution": "清华大学；字节跳动 Seed；中国农业大学",
+      "project_url": "https://humanoid-kick.github.io",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "027",
+      "category": "视觉闭环、全身移动操作、任务接口和世界模型",
+      "short_name": "复杂地形里，参考动作要在线生成",
+      "title": "Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking",
+      "institution": "苏黎世联邦理工机器人系统实验室；西蒙弗雷泽大学；ETH AI Center",
+      "project_url": "https://wholebodylocomotion.github.io/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "028",
+      "category": "视觉闭环、全身移动操作、任务接口和世界模型",
+      "short_name": "RGB 视觉 sim-to-real 的系统工程",
+      "title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation",
+      "institution": "NVIDIA；CMU；伯克利；香港中文大学",
+      "project_url": "https://viral-humanoid.github.io",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "029",
+      "category": "视觉闭环、全身移动操作、任务接口和世界模型",
+      "short_name": "开门是一个被低估的全身任务",
+      "title": "Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer",
+      "institution": "NVIDIA；伯克利；CMU；香港中文大学",
+      "project_url": "https://arxiv.org/abs/2512.01061",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "030",
+      "category": "视觉闭环、全身移动操作、任务接口和世界模型",
+      "short_name": "行走不是目的，行走是为了操作",
+      "title": "WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control",
+      "institution": "复旦大学；OpenDriveLab & 香港大学 MMLab；智元机器人；SII",
+      "project_url": "https://opendrivelab.com/WholeBodyVLA",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "031",
+      "category": "视觉闭环、全身移动操作、任务接口和世界模型",
+      "short_name": "端到端语言动作模型也绕不开机器人动力学数据",
+      "title": "SENTINEL: A Fully End-to-End Language-Action Model for Humanoid Whole Body Control",
+      "institution": "北京大学；BeingBeyond",
+      "project_url": "https://arxiv.org/abs/2511.19236",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "032",
+      "category": "视觉闭环、全身移动操作、任务接口和世界模型",
+      "short_name": "语言语义、技能选择和物理控制要分层",
+      "title": "MetaWorld: Skill Transfer and Composition in a Hierarchical World Model for Grounding High-Level Instructions",
+      "institution": "北京工业大学；复旦大学；清华大学",
+      "project_url": "https://arxiv.org/abs/2601.17507",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "033",
+      "category": "接触、柔顺、负载和失败恢复",
+      "short_name": "世界模型要预测身体接触后果",
+      "title": "Ego-Vision World Model for Humanoid Contact Planning",
+      "institution": "伯克利；密歇根大学安娜堡分校；香港中文大学",
+      "project_url": "https://ego-vcp.github.io/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "034",
+      "category": "接触、柔顺、负载和失败恢复",
+      "short_name": "VLA 开始寻找可调用的身体接口",
+      "title": "GR00T N1: An Open Foundation Model for Generalist Humanoid Robots",
+      "institution": "NVIDIA 等",
+      "project_url": "https://github.com/NVIDIA/Isaac-GR00T",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "035",
+      "category": "接触、柔顺、负载和失败恢复",
+      "short_name": "世界模型开始变成机器人策略的试验场",
+      "title": "DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos",
+      "institution": "NVIDIA；香港科技大学；伯克利；华盛顿大学；斯坦福大学；KAIST；德州大学奥斯汀分校等",
+      "project_url": "https://dreamdojo-world.github.io/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "036",
+      "category": "接触、柔顺、负载和失败恢复",
+      "short_name": "柔顺不是附加功能，而是任务接口",
+      "title": "CHIP: Adaptive Compliance for Humanoid Control through Hindsight Perturbation",
+      "institution": "NVIDIA；斯坦福大学；德州大学奥斯汀分校",
+      "project_url": "https://nvlabs.github.io/CHIP/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "037",
+      "category": "接触、柔顺、负载和失败恢复",
+      "short_name": "安全接触必须进入训练目标",
+      "title": "GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction",
+      "institution": "斯坦福大学",
+      "project_url": "https://gentle-humanoid.axell.top",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "038",
+      "category": "接触、柔顺、负载和失败恢复",
+      "short_name": "对象也有自己的动力学",
+      "title": "HAIC: Humanoid Agile Object Interaction Control via Dynamics-Aware World Model",
+      "institution": "清华大学；香港科技大学（广州）；苏黎世联邦理工；小米机器人实验室",
+      "project_url": "https://haic-humanoid.github.io/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "039",
+      "category": "接触、柔顺、负载和失败恢复",
+      "short_name": "带负载的人形机器人不是同一个系统",
+      "title": "Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation",
+      "institution": "浙江大学；中国电信 TeleAI；上海交通大学；Lumos Robotics",
+      "project_url": "https://mwondering.github.io/halo-humanoid/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "040",
+      "category": "接触、柔顺、负载和失败恢复",
+      "short_name": "偏离参考轨迹时，继续追踪可能是错的",
+      "title": "Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control",
+      "institution": "X-Humanoid Heracles 项目组 / 北京人形机器人创新中心",
+      "project_url": "https://heracles-humanoid-control.github.io/",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "041",
+      "category": "接触、柔顺、负载和失败恢复",
+      "short_name": "失败不可避免，但不能灾难化",
+      "title": "SafeFall: Learning Protective Control for Humanoid Robots",
+      "institution": "山东大学；BIGAI；清华大学",
+      "project_url": "https://safefall.github.io",
+      "date": "2026-05-28",
+      "summary": ""
+    },
+    {
+      "num": "042",
+      "category": "接触、柔顺、负载和失败恢复",
+      "short_name": "强接触环境里，机器人需要全身反应",
+      "title": "Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments",
+      "institution": "北京理工大学；北京智源人工智能研究院",
+      "project_url": "https://baai-aether.github.io/baai-thor/",
+      "date": "2026-05-28",
+      "summary": ""
+    }
+  ]
+}

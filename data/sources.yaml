@@ -1,0 +1,215 @@
+version: 1
+sources:
+- id: awesome_vla_models
+  name: Awesome-VLA Models curated list
+  type: curated_json
+  url: https://github.com/juruoben/awesome-vla-models
+  fetch_url: data/curated/awesome_vla_papers.json
+  enabled: false
+  schedule: on_demand
+  last_run: '2026-07-01T06:00:00Z'
+  total_added: 385
+  total_duplicates: 10
+  status: imported
+- id: awesome_humanoid_robot_learning
+  name: YanjieZe/awesome-humanoid-robot-learning
+  type: curated_json
+  url: https://github.com/YanjieZe/awesome-humanoid-robot-learning
+  fetch_url: data/curated/awesome_humanoid_robot_learning.json
+  enabled: false
+  schedule: on_demand
+  last_run: '2026-07-01T07:00:00Z'
+  total_added: 410
+  total_duplicates: 131
+  status: imported
+- id: wechat_161_humanoid_papers
+  name: 具身智能研究室 / 161篇人形机器人移动操作论文
+  type: wechat
+  url: https://mp.weixin.qq.com/s/pACh9EhsISiyPGdiiR0C3A
+  enabled: false
+  schedule: on_demand
+  last_run: '2026-07-01T08:00:00Z'
+  total_added: 0
+  total_duplicates: 158
+  status: duplicate_of_existing
+- id: wechat_42_humanoid_rl
+  name: 具身智能研究室 / 42篇人形RL运动控制长文
+  type: wechat
+  url: https://mp.weixin.qq.com/s/hz9JXtJeUPRfUGzfD-pZuA
+  enabled: false
+  schedule: on_demand
+  last_run: '2026-07-01T08:00:00Z'
+  total_added: 0
+  total_duplicates: 0
+  status: duplicate_of_existing
+- id: humanoid_paper_notebooks_progress
+  name: ImChong/Humanoid_Robot_Learning_Paper_Notebooks / progress.json
+  type: github_json
+  url: https://github.com/ImChong/Humanoid_Robot_Learning_Paper_Notebooks
+  fetch_url: https://api.github.com/repos/ImChong/Humanoid_Robot_Learning_Paper_Notebooks/contents/progress.json
+  enabled: true
+  schedule: daily
+  last_run: '2026-07-01T09:33:59.678491Z'
+  total_added: 55
+  total_duplicates: 1049
+  status: healthy
+- id: arxiv_ro_rss
+  name: arXiv cs.RO RSS feed
+  type: rss
+  url: http://export.arxiv.org/rss/cs.RO
+  enabled: true
+  schedule: daily
+  keywords:
+  - humanoid
+  - locomotion
+  - loco-manipulation
+  - manipulation
+  - teleoperation
+  - whole-body
+  - whole body
+  - vision-language-action
+  - vla
+  - sim-to-real
+  - sim2real
+  - bipedal
+  - legged
+  - robot learning
+  - human motion
+  - character control
+  - motion tracking
+  - human-to-humanoid
+  - humanoid robot
+  - humanoid control
+  - humanoid locomotion
+  - humanoid manipulation
+  last_run: '2026-07-01T09:34:00.373929Z'
+  total_added: 50
+  total_duplicates: 106
+  status: healthy
+- id: unitree_news
+  name: Unitree Robotics official news
+  type: api
+  url: https://www.unitree.com/mobile/news
+  fetch_url: https://api.unitree.com/website/news/list
+  enabled: true
+  schedule: weekly
+  last_run: '2026-07-01T09:34:04.416935Z'
+  total_added: 8
+  total_duplicates: 16
+  status: healthy
+- id: nvidia_robotics_blog
+  name: NVIDIA Blog / Robotics
+  type: rss
+  url: https://blogs.nvidia.com/blog/category/robotics/feed/
+  enabled: true
+  schedule: weekly
+  keywords:
+  - humanoid
+  - robot
+  - robotics
+  - GR00T
+  - Isaac
+  - Unitree
+  - Figure
+  - Tesla
+  - locomotion
+  - manipulation
+  - dexterous
+  - VLA
+  - vision-language-action
+  - sim-to-real
+  - sim2real
+  - embodied
+  - physical ai
+  last_run: '2026-07-01T09:34:08.094119Z'
+  total_added: 10
+  total_duplicates: 20
+  status: healthy
+- id: humanoid_actuators_suppliers
+  name: Curated humanoid actuator/joint/supplier data
+  type: curated_json
+  url: https://github.com/YansongW/awesome-humanoid-robot
+  fetch_url: data/curated/humanoid_actuators_suppliers.json
+  enabled: true
+  schedule: on_demand
+  last_run: '2026-07-01T11:14:30.849172Z'
+  total_added: 31
+  total_duplicates: 5
+  status: healthy
+- id: wechat_articles
+  name: WeChat humanoid paper articles
+  type: wechat
+  url: ''
+  enabled: false
+  schedule: on_demand
+  last_run: null
+  total_added: 0
+  total_duplicates: 0
+  status: pending
+- id: robotics_tomorrow_rss
+  name: RoboticsTomorrow News
+  type: rss
+  url: https://www.roboticstomorrow.com/rss/news
+  enabled: true
+  schedule: daily
+  keywords:
+  - humanoid
+  - robot
+  - robotics
+  - automation
+  - actuators
+  - sensors
+  - battery
+  - manipulation
+  - locomotion
+  - startup
+  - funding
+  - investment
+  last_run: '2026-07-01T10:16:08.549213Z'
+  total_added: 34
+  total_duplicates: 0
+  status: healthy
+- id: ieee_spectrum_robotics_rss
+  name: IEEE Spectrum / Robotics
+  type: rss
+  url: https://spectrum.ieee.org/feeds/topic/robotics.rss
+  enabled: true
+  schedule: daily
+  keywords:
+  - humanoid
+  - robot
+  - robotics
+  - automation
+  - actuator
+  - sensor
+  - battery
+  - manipulation
+  - locomotion
+  - standard
+  - safety
+  - ai
+  last_run: '2026-07-01T10:14:06.014140Z'
+  total_added: 6
+  total_duplicates: 24
+  status: healthy
+- id: iso_robotics_news
+  name: ISO / Robotics standards news
+  type: rss
+  url: https://www.iso.org/news.xml
+  enabled: false
+  schedule: weekly
+  keywords:
+  - robot
+  - robotics
+  - safety
+  - standard
+  - ISO 13482
+  - IEC
+  - collaborative robot
+  - service robot
+  last_run: null
+  total_added: 0
+  total_duplicates: 0
+  status: blocked_anti_scraping
+  extra:
+    note: Needs WebBridge or manual text dump; public RSS blocks automated requests

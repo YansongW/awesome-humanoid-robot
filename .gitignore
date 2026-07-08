@@ -27,3 +27,7 @@ __pycache__/
 paper.pdf
 paper.txt
 paper_clean.txt
+
+# Generated static site
+website/dist/
+

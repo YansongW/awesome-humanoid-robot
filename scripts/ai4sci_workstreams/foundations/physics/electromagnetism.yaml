@@ -1,0 +1,43 @@
+name: electromagnetism
+description: 'Workstream for electromagnetism. Generated from WORKSTREAM_TREE leaf:
+  foundations/physics/electromagnetism.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- robot motor electromagnetic design
+- actuator electromagnetic modeling
+- humanoid robot electromagnetic compatibility
+- permanent magnet motor robotics
+- brushless motor torque ripple robot
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 00_foundations
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 1
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: foundations/physics/electromagnetism.yaml
+relevance_context: Relevant if it concerns electromagnetic design/modeling of robot
+  actuators/motors, or EMC in humanoid/robot systems.

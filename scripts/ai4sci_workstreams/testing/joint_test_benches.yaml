@@ -1,0 +1,43 @@
+name: joint_test_benches
+description: 'Workstream for joint test benches. Generated from WORKSTREAM_TREE leaf:
+  testing/joint_test_benches.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- joint test benches robotics
+- humanoid robot joint test benches
+- joint test benches robots survey
+- joint test benches automation manufacturing
+- joint test benches applied to humanoid robots
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 2
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: testing/joint_test_benches.yaml
+relevance_context: Relevant if it addresses joint test benches in a robotics or automation
+  context, or develops foundational methods/principles applicable to humanoid robots,
+  even when examples are not explicitly humanoid.

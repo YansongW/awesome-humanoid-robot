@@ -1,0 +1,33 @@
+name: industrial_inspection
+description: |
+  Survey humanoid robot applications in industrial inspection and maintenance:
+  visual inspection of equipment, NDT assistance, confined-space entry,
+  reading gauges and instruments, and integration with plant control systems.
+seed_queries:
+  - "humanoid robot industrial inspection maintenance"
+  - "humanoid robot visual inspection equipment"
+  - "humanoid robot confined space inspection"
+  - "humanoid robot gauge reading industrial"
+  - "bipedal robot maintenance factory inspection"
+paper_ids: []
+target_entity_types:
+  - paper
+  - application
+  - company
+  - benchmark
+  - technology
+target_domains:
+  - 11_applications_markets
+  - 02_components
+  - 07_ai_models_algorithms
+relationship_patterns:
+  - enables
+  - requires
+  - evaluates_on
+  - constrains
+  - is_alternative_to
+relevance_threshold: medium
+max_papers: 15
+priority: 3
+sources:
+  - arxiv

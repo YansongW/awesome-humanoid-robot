@@ -32,14 +32,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--max-papers",
         type=int,
-        default=3,
-        help="Maximum papers to process per workstream (default: 3).",
+        default=5,
+        help="Maximum papers to process per workstream (default: 5).",
     )
     parser.add_argument(
         "--max-workers",
         type=int,
-        default=1,
-        help="Parallel workers inside the batch pipeline (default: 1).",
+        default=2,
+        help="Parallel workers inside the batch pipeline (default: 2).",
     )
     parser.add_argument(
         "--workstreams-dir",
@@ -95,7 +95,7 @@ def has_successful_output(name: str) -> bool:
 
 
 def is_exhausted(name: str) -> bool:
-    """Skip workstreams that have failed repeatedly without producing entries."""
+    """Skip workstreams that have failed or stagnated without producing entries."""
     summary_path = config.STAGING_DIR / "workstreams" / name / "logs" / "summary.json"
     if not summary_path.exists():
         return False
@@ -107,8 +107,21 @@ def is_exhausted(name: str) -> bool:
     success = summary.get("success", 0)
     pending = summary.get("pending_review", 0)
     error = summary.get("error", 0)
+    total = summary.get("total", 0)
+    # If the last run discovered no candidates at all, do not retry.
+    if run_count >= 1 and total == 0:
+        return True
+    # After one full run with no successes and no errors (i.e. all candidates
+    # were skipped as low-relevance or duplicates), stop retrying immediately.
+    if run_count >= 1 and success == 0 and pending == 0 and error == 0 and total > 0:
+        return True
     # After two full runs with errors and no usable outputs, stop retrying.
-    return run_count >= 2 and success == 0 and pending == 0 and error > 0
+    if run_count >= 2 and success == 0 and pending == 0 and error > 0:
+        return True
+    # Legacy fallback: skip if we have run many times with no successes at all.
+    if run_count >= 3 and success == 0 and pending == 0:
+        return True
+    return False
 
 
 def main() -> int:

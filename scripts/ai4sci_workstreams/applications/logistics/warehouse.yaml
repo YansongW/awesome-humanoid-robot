@@ -29,7 +29,7 @@ relationship_patterns:
   - is_alternative_to
   - constrains
 relevance_threshold: medium
-max_papers: 12
+max_papers: 15
 priority: 3
 sources:
   - arxiv

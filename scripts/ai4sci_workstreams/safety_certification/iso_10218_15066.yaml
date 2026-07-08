@@ -1,0 +1,43 @@
+name: iso_10218_15066
+description: 'Workstream for iso 10218 15066. Generated from WORKSTREAM_TREE leaf:
+  safety_certification/iso_10218_15066.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- iso 10218 15066 robotics
+- humanoid robot iso 10218 15066
+- iso 10218 15066 robots survey
+- iso 10218 15066 automation manufacturing
+- iso 10218 15066 applied to humanoid robots
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 2
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: safety_certification/iso_10218_15066.yaml
+relevance_context: Relevant if it addresses iso 10218 15066 in a robotics or automation
+  context, or develops foundational methods/principles applicable to humanoid robots,
+  even when examples are not explicitly humanoid.

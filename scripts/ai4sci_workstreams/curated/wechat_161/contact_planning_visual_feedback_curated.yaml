@@ -1,0 +1,45 @@
+name: contact_planning_visual_feedback_curated
+description: 'Curated workstream for: 特殊任务、接触规划与视觉闭环.
+
+  Seeded with 0 resolved arXiv papers from the WeChat 161-paper list.'
+seed_queries:
+- humanoid contact planning visual feedback
+- humanoid robot special task planning
+- visual closed loop humanoid manipulation
+- humanoid contact rich manipulation
+- humanoid task planning perception action loop
+- humanoid gentlehumanoid learning upper body
+- humanoid humanoid towards universal humanoid
+- humanoid leverb humanoid whole body
+- humanoid learning agile striker skills
+- humanoid learning soccer skills humanoid
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- formalism
+- technology
+- component
+target_domains:
+- 07_ai_models_algorithms
+- 06_design_engineering
+- 11_applications_markets
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+- derived_from
+relevance_threshold: medium
+max_papers: 10
+priority: 1
+sources:
+- arxiv
+metadata:
+  curated_source: wechat_161_humanoid_papers
+  category: 特殊任务、接触规划与视觉闭环
+  resolved_count: 0
+  total_count: 8

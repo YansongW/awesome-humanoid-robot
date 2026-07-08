@@ -1,0 +1,47 @@
+name: generative_motion_language_planning_curated
+description: 'Curated workstream for: 生成式运动、语言控制与轨迹规划.
+
+  Seeded with 3 resolved arXiv papers from the WeChat 161-paper list.'
+seed_queries:
+- generative humanoid motion language control
+- humanoid trajectory planning diffusion model
+- language conditioned humanoid motion
+- humanoid robot motion generation transformer
+- generative model humanoid locomotion trajectory
+- humanoid dreamcontrol human inspired whole
+- humanoid emotion expressive motion sequence
+- humanoid egoprimo egocentric motion generation
+- humanoid from towards general humanoid
+- humanoid harmon whole body motion
+paper_ids:
+- '2601.12799'
+- '2511.07820'
+- '2602.07439'
+target_entity_types:
+- paper
+- method
+- formalism
+- technology
+- component
+target_domains:
+- 07_ai_models_algorithms
+- 08_software_middleware
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+- derived_from
+relevance_threshold: medium
+max_papers: 10
+priority: 1
+sources:
+- arxiv
+metadata:
+  curated_source: wechat_161_humanoid_papers
+  category: 生成式运动、语言控制与轨迹规划
+  resolved_count: 3
+  total_count: 16

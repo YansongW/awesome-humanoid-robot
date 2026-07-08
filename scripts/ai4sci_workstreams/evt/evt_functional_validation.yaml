@@ -1,0 +1,43 @@
+name: evt_functional_validation
+description: 'Workstream for evt functional validation. Generated from WORKSTREAM_TREE
+  leaf: evt/evt_functional_validation.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- evt functional validation robotics
+- humanoid robot evt functional validation
+- evt functional validation robots survey
+- evt functional validation automation manufacturing
+- evt functional validation applied to humanoid robots
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 2
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: evt/evt_functional_validation.yaml
+relevance_context: Relevant if it addresses evt functional validation in a robotics
+  or automation context, or develops foundational methods/principles applicable to
+  humanoid robots, even when examples are not explicitly humanoid.

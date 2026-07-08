@@ -1,0 +1,43 @@
+name: real_time_systems
+description: "Workstream for real time systems. Generated from WORKSTREAM_TREE leaf:\
+  \ foundations/computer_science/real_time_systems.yaml.\n  Query set refined for\
+  \ humanoid-robot-specific relevance."
+seed_queries:
+- real-time control robotics
+- real-time operating system robot
+- deterministic control humanoid robot
+- low latency control robotics
+- ROS2 real-time robot control
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 00_foundations
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 1
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: foundations/computer_science/real_time_systems.yaml
+relevance_context: Relevant if it addresses real-time/deterministic/low-latency control,
+  RTOS, or scheduling for robotics; direct humanoid relevance is preferred, but general
+  robot control is accepted if transferable.

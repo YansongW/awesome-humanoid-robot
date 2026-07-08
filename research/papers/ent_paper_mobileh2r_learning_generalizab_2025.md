@@ -1,0 +1,51 @@
+---
+$id: ent_paper_mobileh2r_learning_generalizab_2025
+$schema: ../../data/schema/v1/entry_schema.json
+$version: 1
+type: paper
+names:
+  en: 'MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively
+    from Scalable and Diverse Synthetic Data'
+  zh: 'MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively
+    from Scalable and Diverse Synthetic Data'
+  ko: ''
+summary:
+  en: 'MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively
+    from Scalable and Diverse Synthetic Data is a 2025 work on manipulation for humanoid
+    robots.'
+  zh: 'MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively
+    from Scalable and Diverse Synthetic Data is a 2025 work on manipulation for humanoid
+    robots.'
+  ko: ''
+domains:
+- 07_ai_models_algorithms
+- 08_software_middleware
+layers:
+- intelligence
+functional_roles:
+- knowledge
+- intelligence
+tags:
+- humanoid
+- manipulation
+- mobileh2r
+theoretical_depth:
+- system
+verification:
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-07-01'
+  confidence: medium
+  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Manipulation.
+    arXiv: 2501.04595.'
+sources:
+- id: src_001
+  type: paper
+  title: 'MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively
+    from Scalable and Diverse Synthetic Data (arXiv)'
+  url: https://arxiv.org/abs/2501.04595
+  date: '2025'
+  accessed_at: '2026-07-01'
+---
+
+MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively from Scalable and Diverse Synthetic Data is a 2025 work on manipulation for humanoid robots.

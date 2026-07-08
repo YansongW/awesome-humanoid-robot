@@ -1,0 +1,42 @@
+name: oem_ecosystem
+description: 'Workstream for oem ecosystem. Generated from WORKSTREAM_TREE leaf: mass_production/supply_chain/oem_ecosystem.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- oem ecosystem robotics
+- humanoid robot oem ecosystem
+- oem ecosystem robots survey
+- oem ecosystem automation manufacturing
+- oem ecosystem applied to humanoid robots
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 2
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: mass_production/supply_chain/oem_ecosystem.yaml
+relevance_context: Relevant if it addresses oem ecosystem in a robotics or automation
+  context, or develops foundational methods/principles applicable to humanoid robots,
+  even when examples are not explicitly humanoid.

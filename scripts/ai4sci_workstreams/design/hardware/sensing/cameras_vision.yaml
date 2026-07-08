@@ -1,0 +1,33 @@
+name: cameras_vision
+description: |
+  Survey camera and vision-sensor technologies for humanoid robots, including
+  RGB-D sensors, stereo cameras, event cameras, fiducial detection, visual
+  odometry, and the role of vision in navigation, manipulation, and teleoperation.
+seed_queries:
+  - "humanoid robot vision sensor RGBD camera manipulation navigation"
+  - "stereo camera humanoid robot visual odometry"
+  - "event camera humanoid robot low latency vision"
+  - "fiducial marker detection humanoid robot"
+  - "depth camera humanoid robot grasping"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - component
+  - company
+  - benchmark
+target_domains:
+  - 02_components
+  - 06_design_engineering
+  - 07_ai_models_algorithms
+relationship_patterns:
+  - integrates
+  - enables
+  - requires
+  - evaluates_on
+  - is_alternative_to
+relevance_threshold: medium
+max_papers: 15
+priority: 1
+sources:
+  - arxiv

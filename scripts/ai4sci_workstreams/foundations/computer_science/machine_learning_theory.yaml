@@ -1,0 +1,43 @@
+name: machine_learning_theory
+description: "Workstream for machine learning theory. Generated from WORKSTREAM_TREE\
+  \ leaf: foundations/computer_science/machine_learning_theory.yaml.\n  Query set\
+  \ refined for humanoid-robot-specific relevance."
+seed_queries:
+- reinforcement learning theory robotics
+- imitation learning theory robot
+- sim to real theory transfer robotics
+- sample efficiency robot learning
+- humanoid robot learning generalization
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 00_foundations
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 1
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: foundations/computer_science/machine_learning_theory.yaml
+relevance_context: Relevant if it presents learning-theory results (RL, imitation,
+  sim-to-real, generalization, sample efficiency) with robotics applications or direct
+  humanoid-robot focus.

@@ -1,0 +1,379 @@
+---
+$id: ent_report_actuator_irobot_founder_wants_to_put_a_2026
+$schema: ../../data/schema/v1/entry_schema.json
+$version: 1
+type: report
+names:
+  en: iRobot Founder Wants to Put a Robotic Familiar Into Your Home
+  zh: iRobot Founder Wants to Put a Robotic Familiar Into Your Home
+  ko: ''
+summary:
+  en: 'Two years ago, Colin Angle stepped down as CEO of iRobot , the company that
+    he cofounded and the most successful home robot company the world has ever seen.
+    Angle almost immediately founded a stealthy new “physical AI” company called Familiar
+    Machines & Magic (FM&M), which in short order managed to attract a combination
+    of exceptionally talented robotics folks, including Morgan Pope from Disney Research
+    , which got us very curious. Today, Familiar Machines & Magic is announcing its
+    first robot, a “physically embodied AI system designed to perceive, adapt, and
+    interact with people in ways that feel natural and consistent,” the press release
+    says. This robot is not a toy, and it’s not specifically for kids. Rather, it’s
+    for adults to purchase for themselves and their families. It will get to know
+    you, seek you out for attention, and actively help you positively pursue an idealized
+    routine in your life. Intended for adults, Familiar is pet-like in that it will
+    seek you out for attention. Familiar Machines & Magic Here are the (limited) technical
+    details from the press release: The first Familiar is a quadruped, specifically
+    designed for human-robot interaction, with 23 degrees of freedom enabling both
+    lifelike movement and expressive behaviors. The Familiar is covered with a custom
+    touch-sensitive coat, a vision system, and a microphone array and audio system,
+    to support rich interactions. Its onboard edge AI stack is powered by a custom
+    small multimodal model optimized for social reasoning, combining vision, audio,
+    language, and memory to create socially responsive behaviors in real time. FM&M
+    CEO and cofounder Colin Angle tells us that this first prototype Familiar is designed
+    to look like a sort of highly abstracted bear. It’s very deliberately nothing
+    like a dog or a cat, following the successful strategy of other social robots
+    like Paro and Pleo —if you can’t connect the form factor to an animal that you
+    have direct experience with, you won’t bring expectations to your interactions
+    with the robot. What Does it Do? “Our goal is to position this as a robot familiar
+    that lives with you and helps reinforce healthy routines,” Angle says. He explains
+    that thinking of a Familiar like a pet is a strong analogy, but pet-like also
+    undersells what the robot can do. The Familiar behaves a little more like a service
+    animal, in the narrow sense of being able to recognize activities and intervene
+    to motivate you to do more or less of them, as the case may be. One easy example
+    is screen time—the Familiar can note how much time you spend on your phone, and
+    if it’s too much, it can actively try to engage you in other activities, including
+    taking it for a walk outside. “The idea,” says Angle, “is that you can have a
+    bit of technology in your home which is hyperloyal to you, gets to know you, helps
+    you figure out an idealized routine, and then plays a positive role.” Spending
+    too much time on your phone? Familiar can help with that. Familiar Machines &
+    Magic Cramming this amount of intelligence into a robot that you can take for
+    a walk outside (at regular human walking pace) is extremely ambitious. I asked
+    FM&M’s creative director Morgan Pope what made him feel that a robot like a Familiar
+    was possible, with enough confidence that he was willing to leave Disney Research
+    to join the startup. “ Two recent advancements made it feel tractable,” Pope says.
+    “First, seeing Disney’s bipedal robots walk flexibly over various terrain using
+    reinforcement learning proved you can execute dynamic motion without needing perfect,
+    zero-backlash actuators or crazy expensive hardware. And second, while I am often
+    skeptical of generative AI hype, it is a perfect fit here because it excels at
+    creating the plausible assumption of intelligence, which helps the character feel
+    coherent and lifelike. ” The Challenge of Social Home Robots As a social home
+    robot, the Familiar will have quite a lot of work to do to single-pawedly reestablish
+    a category that burned itself out between 2012 and 2019. A series of high-profile
+    and very-well-funded startups including Anki , Mayfield , and Jibo were not able
+    to sustain social home robots as a business, primarily because of a struggle with
+    longer-term engagement. It’s not enough for a robot to be cute and charming in
+    the short term; it has to continue enthralling its users or at least providing
+    value after the initial novelty has worn off. In other words, a flashy demo is
+    arguably counterproductive, which is a real problem, since robots excel at flashy
+    demos. Part of the value of Familiar is that it will help you establish healthy
+    routines. Familiar Machines & Magic “It’s about creating the right expectation
+    and delivering on that expectation,” says Angle. “Familiars live in your world
+    and play by your rules, and if you don’t find yourself hanging out with it, petting
+    it, and engaging with it, then we haven’t succeeded.” In what is very much not
+    a coincidence, the term familiar really is the best way of thinking about this
+    robot—a sort of vaguely magical nonhuman entity that has some amount of independence
+    but whose existence and motivation are fundamentally tied to its human. “This
+    isn’t trying to be a replacement for a real friend,” Angle explains. “It’s artificial
+    life that lives in your world, has its own personality and goals, and has a special
+    link to its guardian where it wants attention and wants its guardian to be active.”
+    Creating Long-Term Value This philosophy is a key differentiator for FM&M. A Familiar
+    is more than a companion; it has long-term objectives that it’s trying to fulfill
+    to improve your life in a targeted way, says Angle. It’ll attempt to connect with
+    you socially to encourage you to spend time with it in service of those goals,
+    but the goals are the end, er, goals, rather than just the social connection itself,
+    which was the primary draw of the previous generation of social robots. “Within
+    a few days of bringing your Familiar home,” Angle tells us, “it’s figured out
+    what its role in your life is. It’s trying to reinforce a healthy routine, whether
+    that be summoning people to dinner or cuddling up while you watch TV, or greeting
+    you when you get home. And then the way you sustain that relationship is by having
+    it evolve, with both characters playing an active role—you’re also helping it
+    with the things required to keep a robot operating.” Human-Familiar Interaction
+    The temptation to leverage recent advances in AI to make a robot like a Familiar
+    talk, especially in the context of regularly interacting with humans in pursuit
+    of specific goals, must have been overwhelming. But to its credit, FM&M managed
+    to resist. “I don’t believe that the technology exists today for AI to talk to
+    humans in a safe, responsible fashion,” Angle explains. Consequently, a Familiar
+    does not currently speak, although it does make sounds, and has plenty of other
+    ways of communicating. “Through careful design, you’d be amazed what you can powerfully
+    convey using a tail, wiggly ears, blinking eyes, and a brow that can be happy,
+    sad, angry, or annoyed,” Angle says. This will likely resonate strongly with dog
+    owners, somewhat less strongly with cat owners, and only very slightly with reptile
+    owners like me. Familiar is capable enough to keep up with you on walks outdoors.
+    Familiar Machines & Magic Going the other direction is more complicated. Those
+    same recent advances in AI mean that a Familiar can very likely understand everything
+    you say and obey you perfectly, if it chose to. But doing so would break the illusion
+    that the robot has its own desires and goals and personality, so FM&M had to be
+    careful. “The way we’ve trained it from an AI perspective is really cool,” Angle
+    explains. “We’re using a tableau of speech and vision inputs presented to a small
+    multimodal model trained on stories, and for a given tableau of inputs, it goes
+    through a generative process to decide at a high level what it is going to do.
+    That decision is handed to a behavior engine which builds out those behavior trees
+    into goals and drives a reinforcement learning unified motion model. There is
+    nothing fully deterministic about your Familiar’s behavior; it truly tries to
+    live its life with a variety of personality-driven emotions.” Safety at Home A
+    Familiar is not big, as robots go, but it’s not exactly small, either. And as
+    something with legs, there’s always a concern about what happens if it falls over.
+    “Its low center of gravity helps immensely,” says Pope. “If we pull power, it
+    collapses downward safely rather than tipping over. Furthermore, it is wrapped
+    in soft rubber, fur, and padding, so even if a leg impacts you, it won’t have
+    a lot of force behind it.” Interestingly, FM&M is also leveraging the “character
+    experience” to mitigate risks to both robot and user. “We can use emotions to
+    communicate hazards effectively,” explains Pope. “For example, if someone carries
+    it somewhere high or puts it near an open flame, the Familiar can act visibly
+    scared to directly communicate that it doesn’t like the situation.” While not
+    a toy or specifically intended for children, Familiar can provide gentle, warm
+    attention to your family. Familiar Machines & Magic Besides physical safety, social
+    robots must also consider emotional safety. The better job you do emotionally
+    connecting with people, the more responsibility you have to make sure that those
+    connections are positive. “We take this very seriously,” Pope tells us. “We must
+    follow a ‘do no harm’ philosophy, ensuring we don’t trigger unhealthy dependency
+    or monopolize people’s attention the way a phone does. We are designing carefully
+    to ensure the overall impact remains positive and never crosses the line into
+    harm.” Additionally, the Familiar’s AI runs onboard the robot, and the robot does
+    not stream private data to the cloud. It will, in fact, run just fine if you disconnect
+    it from the internet entirely, although you’ll lose access to any new features
+    that come out. Managing Expectations Alongside the many engineering and human-robot
+    interaction (HRI) challenges that FM&M is having to manage is one other challenge
+    that, in the near term, sounds rather dull but may be the most challenging: marketing.
+    The company obviously has to promote this robot, but there’s a real danger (which
+    has had dire consequences for many robotics companies in the past ) of selling
+    an idea of what the robot could be rather than the reality of what the robot actually
+    is . From my conversations with Pope, FM&M seems to understand that robots have
+    always been the most successful when the experience or task is incidental to the
+    robot itself—in other words, what’s most compelling is what the robot will do
+    , rather than the fact that it’s a robot. “The best way to understand a Familiar
+    is that we are not building a robot; we are building a relationship,” Pope explains.
+    Whether in the context of locomotion or relationships, we can be absolutely certain
+    that a robot of this level of sophistication is not going to do what it’s supposed
+    to every single time. Fortunately, the folks at FM&M have been building robots
+    for long enough that they’re prepared for this. “We’ve explicitly tried to design
+    it to motivate forgiveness,” Angle tells us. “This is not a precise robotic entity
+    in its motion or dexterity. It’s supposed to be imperfect, but it’s going to get
+    some of it right. By actively working to manage expectations to a place we can
+    achieve, we want consumers to appreciate what it can do.” What customers expect,
+    what they appreciate, and how much forgiveness they’re willing to bestow is for
+    better or worse highly dependent on how much a Familiar will cost. “For the cost
+    of ownership of something like a pet, you’re getting something that can help you
+    live a healthier life, feel attended to, and provide social benefit,” Angle says.
+    This could mean many things, depending on the pet, but one source puts the low
+    end of the monthly cost for a cat at around $65 per month, with a dog somewhat
+    more expensive at closer to $100 per month. FM&M’s press release stresses that
+    today’s announcement ‘is not a commercial product launch,’ and specific pricing
+    and a timeline will come later. A Future Platform While it’s much too early for
+    us to be speculating about what the future might hold for FM&M’s robots, Angle
+    is of course already thinking about other places where Familiars might be at home.
+    “This first robot is meant to be a platform with general appeal and an opportunity
+    to specialize into things like elder care and parental support,” Angle says. “From
+    the ground up we are designing machines focused on human connection, and the underlying
+    technology can further generalize into other form factors.” This will require
+    the Familiar to find success, and it’s important to reiterate how much of a challenge
+    this will be. A legged robot, designed for human interaction, in the home—everything
+    about what FM&M is doing is hard. Because of his experience launching and leading
+    iRobot, Angle is one of the very few people with the experience to really understand
+    this, but his excitement and optimism about the Familiar is undiminished. “Do
+    we know exactly how it’s going to land? I don’t,” says Angle. “But do I think
+    it’s going to work? Absolutely. We’re going to find out, with a mission and goals
+    that are noble at heart.” This article appears in the July 2026 print issue as
+    “Robotic Familiar Helps You Live Your Best Life.”'
+  zh: 'Two years ago, Colin Angle stepped down as CEO of iRobot , the company that
+    he cofounded and the most successful home robot company the world has ever seen.
+    Angle almost immediately founded a stealthy new “physical AI” company called Familiar
+    Machines & Magic (FM&M), which in short order managed to attract a combination
+    of exceptionally talented robotics folks, including Morgan Pope from Disney Research
+    , which got us very curious. Today, Familiar Machines & Magic is announcing its
+    first robot, a “physically embodied AI system designed to perceive, adapt, and
+    interact with people in ways that feel natural and consistent,” the press release
+    says. This robot is not a toy, and it’s not specifically for kids. Rather, it’s
+    for adults to purchase for themselves and their families. It will get to know
+    you, seek you out for attention, and actively help you positively pursue an idealized
+    routine in your life. Intended for adults, Familiar is pet-like in that it will
+    seek you out for attention. Familiar Machines & Magic Here are the (limited) technical
+    details from the press release: The first Familiar is a quadruped, specifically
+    designed for human-robot interaction, with 23 degrees of freedom enabling both
+    lifelike movement and expressive behaviors. The Familiar is covered with a custom
+    touch-sensitive coat, a vision system, and a microphone array and audio system,
+    to support rich interactions. Its onboard edge AI stack is powered by a custom
+    small multimodal model optimized for social reasoning, combining vision, audio,
+    language, and memory to create socially responsive behaviors in real time. FM&M
+    CEO and cofounder Colin Angle tells us that this first prototype Familiar is designed
+    to look like a sort of highly abstracted bear. It’s very deliberately nothing
+    like a dog or a cat, following the successful strategy of other social robots
+    like Paro and Pleo —if you can’t connect the form factor to an animal that you
+    have direct experience with, you won’t bring expectations to your interactions
+    with the robot. What Does it Do? “Our goal is to position this as a robot familiar
+    that lives with you and helps reinforce healthy routines,” Angle says. He explains
+    that thinking of a Familiar like a pet is a strong analogy, but pet-like also
+    undersells what the robot can do. The Familiar behaves a little more like a service
+    animal, in the narrow sense of being able to recognize activities and intervene
+    to motivate you to do more or less of them, as the case may be. One easy example
+    is screen time—the Familiar can note how much time you spend on your phone, and
+    if it’s too much, it can actively try to engage you in other activities, including
+    taking it for a walk outside. “The idea,” says Angle, “is that you can have a
+    bit of technology in your home which is hyperloyal to you, gets to know you, helps
+    you figure out an idealized routine, and then plays a positive role.” Spending
+    too much time on your phone? Familiar can help with that. Familiar Machines &
+    Magic Cramming this amount of intelligence into a robot that you can take for
+    a walk outside (at regular human walking pace) is extremely ambitious. I asked
+    FM&M’s creative director Morgan Pope what made him feel that a robot like a Familiar
+    was possible, with enough confidence that he was willing to leave Disney Research
+    to join the startup. “ Two recent advancements made it feel tractable,” Pope says.
+    “First, seeing Disney’s bipedal robots walk flexibly over various terrain using
+    reinforcement learning proved you can execute dynamic motion without needing perfect,
+    zero-backlash actuators or crazy expensive hardware. And second, while I am often
+    skeptical of generative AI hype, it is a perfect fit here because it excels at
+    creating the plausible assumption of intelligence, which helps the character feel
+    coherent and lifelike. ” The Challenge of Social Home Robots As a social home
+    robot, the Familiar will have quite a lot of work to do to single-pawedly reestablish
+    a category that burned itself out between 2012 and 2019. A series of high-profile
+    and very-well-funded startups including Anki , Mayfield , and Jibo were not able
+    to sustain social home robots as a business, primarily because of a struggle with
+    longer-term engagement. It’s not enough for a robot to be cute and charming in
+    the short term; it has to continue enthralling its users or at least providing
+    value after the initial novelty has worn off. In other words, a flashy demo is
+    arguably counterproductive, which is a real problem, since robots excel at flashy
+    demos. Part of the value of Familiar is that it will help you establish healthy
+    routines. Familiar Machines & Magic “It’s about creating the right expectation
+    and delivering on that expectation,” says Angle. “Familiars live in your world
+    and play by your rules, and if you don’t find yourself hanging out with it, petting
+    it, and engaging with it, then we haven’t succeeded.” In what is very much not
+    a coincidence, the term familiar really is the best way of thinking about this
+    robot—a sort of vaguely magical nonhuman entity that has some amount of independence
+    but whose existence and motivation are fundamentally tied to its human. “This
+    isn’t trying to be a replacement for a real friend,” Angle explains. “It’s artificial
+    life that lives in your world, has its own personality and goals, and has a special
+    link to its guardian where it wants attention and wants its guardian to be active.”
+    Creating Long-Term Value This philosophy is a key differentiator for FM&M. A Familiar
+    is more than a companion; it has long-term objectives that it’s trying to fulfill
+    to improve your life in a targeted way, says Angle. It’ll attempt to connect with
+    you socially to encourage you to spend time with it in service of those goals,
+    but the goals are the end, er, goals, rather than just the social connection itself,
+    which was the primary draw of the previous generation of social robots. “Within
+    a few days of bringing your Familiar home,” Angle tells us, “it’s figured out
+    what its role in your life is. It’s trying to reinforce a healthy routine, whether
+    that be summoning people to dinner or cuddling up while you watch TV, or greeting
+    you when you get home. And then the way you sustain that relationship is by having
+    it evolve, with both characters playing an active role—you’re also helping it
+    with the things required to keep a robot operating.” Human-Familiar Interaction
+    The temptation to leverage recent advances in AI to make a robot like a Familiar
+    talk, especially in the context of regularly interacting with humans in pursuit
+    of specific goals, must have been overwhelming. But to its credit, FM&M managed
+    to resist. “I don’t believe that the technology exists today for AI to talk to
+    humans in a safe, responsible fashion,” Angle explains. Consequently, a Familiar
+    does not currently speak, although it does make sounds, and has plenty of other
+    ways of communicating. “Through careful design, you’d be amazed what you can powerfully
+    convey using a tail, wiggly ears, blinking eyes, and a brow that can be happy,
+    sad, angry, or annoyed,” Angle says. This will likely resonate strongly with dog
+    owners, somewhat less strongly with cat owners, and only very slightly with reptile
+    owners like me. Familiar is capable enough to keep up with you on walks outdoors.
+    Familiar Machines & Magic Going the other direction is more complicated. Those
+    same recent advances in AI mean that a Familiar can very likely understand everything
+    you say and obey you perfectly, if it chose to. But doing so would break the illusion
+    that the robot has its own desires and goals and personality, so FM&M had to be
+    careful. “The way we’ve trained it from an AI perspective is really cool,” Angle
+    explains. “We’re using a tableau of speech and vision inputs presented to a small
+    multimodal model trained on stories, and for a given tableau of inputs, it goes
+    through a generative process to decide at a high level what it is going to do.
+    That decision is handed to a behavior engine which builds out those behavior trees
+    into goals and drives a reinforcement learning unified motion model. There is
+    nothing fully deterministic about your Familiar’s behavior; it truly tries to
+    live its life with a variety of personality-driven emotions.” Safety at Home A
+    Familiar is not big, as robots go, but it’s not exactly small, either. And as
+    something with legs, there’s always a concern about what happens if it falls over.
+    “Its low center of gravity helps immensely,” says Pope. “If we pull power, it
+    collapses downward safely rather than tipping over. Furthermore, it is wrapped
+    in soft rubber, fur, and padding, so even if a leg impacts you, it won’t have
+    a lot of force behind it.” Interestingly, FM&M is also leveraging the “character
+    experience” to mitigate risks to both robot and user. “We can use emotions to
+    communicate hazards effectively,” explains Pope. “For example, if someone carries
+    it somewhere high or puts it near an open flame, the Familiar can act visibly
+    scared to directly communicate that it doesn’t like the situation.” While not
+    a toy or specifically intended for children, Familiar can provide gentle, warm
+    attention to your family. Familiar Machines & Magic Besides physical safety, social
+    robots must also consider emotional safety. The better job you do emotionally
+    connecting with people, the more responsibility you have to make sure that those
+    connections are positive. “We take this very seriously,” Pope tells us. “We must
+    follow a ‘do no harm’ philosophy, ensuring we don’t trigger unhealthy dependency
+    or monopolize people’s attention the way a phone does. We are designing carefully
+    to ensure the overall impact remains positive and never crosses the line into
+    harm.” Additionally, the Familiar’s AI runs onboard the robot, and the robot does
+    not stream private data to the cloud. It will, in fact, run just fine if you disconnect
+    it from the internet entirely, although you’ll lose access to any new features
+    that come out. Managing Expectations Alongside the many engineering and human-robot
+    interaction (HRI) challenges that FM&M is having to manage is one other challenge
+    that, in the near term, sounds rather dull but may be the most challenging: marketing.
+    The company obviously has to promote this robot, but there’s a real danger (which
+    has had dire consequences for many robotics companies in the past ) of selling
+    an idea of what the robot could be rather than the reality of what the robot actually
+    is . From my conversations with Pope, FM&M seems to understand that robots have
+    always been the most successful when the experience or task is incidental to the
+    robot itself—in other words, what’s most compelling is what the robot will do
+    , rather than the fact that it’s a robot. “The best way to understand a Familiar
+    is that we are not building a robot; we are building a relationship,” Pope explains.
+    Whether in the context of locomotion or relationships, we can be absolutely certain
+    that a robot of this level of sophistication is not going to do what it’s supposed
+    to every single time. Fortunately, the folks at FM&M have been building robots
+    for long enough that they’re prepared for this. “We’ve explicitly tried to design
+    it to motivate forgiveness,” Angle tells us. “This is not a precise robotic entity
+    in its motion or dexterity. It’s supposed to be imperfect, but it’s going to get
+    some of it right. By actively working to manage expectations to a place we can
+    achieve, we want consumers to appreciate what it can do.” What customers expect,
+    what they appreciate, and how much forgiveness they’re willing to bestow is for
+    better or worse highly dependent on how much a Familiar will cost. “For the cost
+    of ownership of something like a pet, you’re getting something that can help you
+    live a healthier life, feel attended to, and provide social benefit,” Angle says.
+    This could mean many things, depending on the pet, but one source puts the low
+    end of the monthly cost for a cat at around $65 per month, with a dog somewhat
+    more expensive at closer to $100 per month. FM&M’s press release stresses that
+    today’s announcement ‘is not a commercial product launch,’ and specific pricing
+    and a timeline will come later. A Future Platform While it’s much too early for
+    us to be speculating about what the future might hold for FM&M’s robots, Angle
+    is of course already thinking about other places where Familiars might be at home.
+    “This first robot is meant to be a platform with general appeal and an opportunity
+    to specialize into things like elder care and parental support,” Angle says. “From
+    the ground up we are designing machines focused on human connection, and the underlying
+    technology can further generalize into other form factors.” This will require
+    the Familiar to find success, and it’s important to reiterate how much of a challenge
+    this will be. A legged robot, designed for human interaction, in the home—everything
+    about what FM&M is doing is hard. Because of his experience launching and leading
+    iRobot, Angle is one of the very few people with the experience to really understand
+    this, but his excitement and optimism about the Familiar is undiminished. “Do
+    we know exactly how it’s going to land? I don’t,” says Angle. “But do I think
+    it’s going to work? Absolutely. We’re going to find out, with a mission and goals
+    that are noble at heart.” This article appears in the July 2026 print issue as
+    “Robotic Familiar Helps You Live Your Best Life.”'
+  ko: ''
+domains:
+- 11_applications_markets
+- 07_ai_models_algorithms
+layers:
+- intelligence
+- validation_markets
+functional_roles:
+- knowledge
+- intelligence
+tags:
+- actuator
+- ieee
+- locomotion
+- report
+- robotics
+- safety
+- startup
+- technology
+theoretical_depth:
+- system
+verification:
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-07-01'
+  confidence: medium
+  notes: Imported via ingestion framework from source_type=website.
+sources:
+- id: src_001
+  type: website
+  title: iRobot Founder Wants to Put a Robotic Familiar Into Your Home
+  url: https://spectrum.ieee.org/familiar-machines-and-magic
+  date: '2026'
+  accessed_at: '2026-07-01'
+---
+
+Two years ago, Colin Angle stepped down as CEO of iRobot , the company that he cofounded and the most successful home robot company the world has ever seen. Angle almost immediately founded a stealthy new “physical AI” company called Familiar Machines & Magic (FM&M), which in short order managed to attract a combination of exceptionally talented robotics folks, including Morgan Pope from Disney Research , which got us very curious. Today, Familiar Machines & Magic is announcing its first robot, a “physically embodied AI system designed to perceive, adapt, and interact with people in ways that feel natural and consistent,” the press release says. This robot is not a toy, and it’s not specifically for kids. Rather, it’s for adults to purchase for themselves and their families. It will get to know you, seek you out for attention, and actively help you positively pursue an idealized routine in your life. Intended for adults, Familiar is pet-like in that it will seek you out for attention. Familiar Machines & Magic Here are the (limited) technical details from the press release: The first Familiar is a quadruped, specifically designed for human-robot interaction, with 23 degrees of freedom enabling both lifelike movement and expressive behaviors. The Familiar is covered with a custom touch-sensitive coat, a vision system, and a microphone array and audio system, to support rich interactions. Its onboard edge AI stack is powered by a custom small multimodal model optimized for social reasoning, combining vision, audio, language, and memory to create socially responsive behaviors in real time. FM&M CEO and cofounder Colin Angle tells us that this first prototype Familiar is designed to look like a sort of highly abstracted bear. It’s very deliberately nothing like a dog or a cat, following the successful strategy of other social robots like Paro and Pleo —if you can’t connect the form factor to an animal that you have direct experience with, you won’t bring expectations to your interactions with the robot. What Does it Do? “Our goal is to position this as a robot familiar that lives with you and helps reinforce healthy routines,” Angle says. He explains that thinking of a Familiar like a pet is a strong analogy, but pet-like also undersells what the robot can do. The Familiar behaves a little more like a service animal, in the narrow sense of being able to recognize activities and intervene to motivate you to do more or less of them, as the case may be. One easy example is screen time—the Familiar can note how much time you spend on your phone, and if it’s too much, it can actively try to engage you in other activities, including taking it for a walk outside. “The idea,” says Angle, “is that you can have a bit of technology in your home which is hyperloyal to you, gets to know you, helps you figure out an idealized routine, and then plays a positive role.” Spending too much time on your phone? Familiar can help with that. Familiar Machines & Magic Cramming this amount of intelligence into a robot that you can take for a walk outside (at regular human walking pace) is extremely ambitious. I asked FM&M’s creative director Morgan Pope what made him feel that a robot like a Familiar was possible, with enough confidence that he was willing to leave Disney Research to join the startup. “ Two recent advancements made it feel tractable,” Pope says. “First, seeing Disney’s bipedal robots walk flexibly over various terrain using reinforcement learning proved you can execute dynamic motion without needing perfect, zero-backlash actuators or crazy expensive hardware. And second, while I am often skeptical of generative AI hype, it is a perfect fit here because it excels at creating the plausible assumption of intelligence, which helps the character feel coherent and lifelike. ” The Challenge of Social Home Robots As a social home robot, the Familiar will have quite a lot of work to do to single-pawedly reestablish a category that burned itself out between 2012 and 2019. A series of high-profile and very-well-funded startups including Anki , Mayfield , and Jibo were not able to sustain social home robots as a business, primarily because of a struggle with longer-term engagement. It’s not enough for a robot to be cute and charming in the short term; it has to continue enthralling its users or at least providing value after the initial novelty has worn off. In other words, a flashy demo is arguably counterproductive, which is a real problem, since robots excel at flashy demos. Part of the value of Familiar is that it will help you establish healthy routines. Familiar Machines & Magic “It’s about creating the right expectation and delivering on that expectation,” says Angle. “Familiars live in your world and play by your rules, and if you don’t find yourself hanging out with it, petting it, and engaging with it, then we haven’t succeeded.” In what is very much not a coincidence, the term familiar really is the best way of thinking about this robot—a sort of vaguely magical nonhuman entity that has some amount of independence but whose existence and motivation are fundamentally tied to its human. “This isn’t trying to be a replacement for a real friend,” Angle explains. “It’s artificial life that lives in your world, has its own personality and goals, and has a special link to its guardian where it wants attention and wants its guardian to be active.” Creating Long-Term Value This philosophy is a key differentiator for FM&M. A Familiar is more than a companion; it has long-term objectives that it’s trying to fulfill to improve your life in a targeted way, says Angle. It’ll attempt to connect with you socially to encourage you to spend time with it in service of those goals, but the goals are the end, er, goals, rather than just the social connection itself, which was the primary draw of the previous generation of social robots. “Within a few days of bringing your Familiar home,” Angle tells us, “it’s figured out what its role in your life is. It’s trying to reinforce a healthy routine, whether that be summoning people to dinner or cuddling up while you watch TV, or greeting you when you get home. And then the way you sustain that relationship is by having it evolve, with both characters playing an active role—you’re also helping it with the things required to keep a robot operating.” Human-Familiar Interaction The temptation to leverage recent advances in AI to make a robot like a Familiar talk, especially in the context of regularly interacting with humans in pursuit of specific goals, must have been overwhelming. But to its credit, FM&M managed to resist. “I don’t believe that the technology exists today for AI to talk to humans in a safe, responsible fashion,” Angle explains. Consequently, a Familiar does not currently speak, although it does make sounds, and has plenty of other ways of communicating. “Through careful design, you’d be amazed what you can powerfully convey using a tail, wiggly ears, blinking eyes, and a brow that can be happy, sad, angry, or annoyed,” Angle says. This will likely resonate strongly with dog owners, somewhat less strongly with cat owners, and only very slightly with reptile owners like me. Familiar is capable enough to keep up with you on walks outdoors. Familiar Machines & Magic Going the other direction is more complicated. Those same recent advances in AI mean that a Familiar can very likely understand everything you say and obey you perfectly, if it chose to. But doing so would break the illusion that the robot has its own desires and goals and personality, so FM&M had to be careful. “The way we’ve trained it from an AI perspective is really cool,” Angle explains. “We’re using a tableau of speech and vision inputs presented to a small multimodal model trained on stories, and for a given tableau of inputs, it goes through a generative process to decide at a high level what it is going to do. That decision is handed to a behavior engine which builds out those behavior trees into goals and drives a reinforcement learning unified motion model. There is nothing fully deterministic about your Familiar’s behavior; it truly tries to live its life with a variety of personality-driven emotions.” Safety at Home A Familiar is not big, as robots go, but it’s not exactly small, either. And as something with legs, there’s always a concern about what happens if it falls over. “Its low center of gravity helps immensely,” says Pope. “If we pull power, it collapses downward safely rather than tipping over. Furthermore, it is wrapped in soft rubber, fur, and padding, so even if a leg impacts you, it won’t have a lot of force behind it.” Interestingly, FM&M is also leveraging the “character experience” to mitigate risks to both robot and user. “We can use emotions to communicate hazards effectively,” explains Pope. “For example, if someone carries it somewhere high or puts it near an open flame, the Familiar can act visibly scared to directly communicate that it doesn’t like the situation.” While not a toy or specifically intended for children, Familiar can provide gentle, warm attention to your family. Familiar Machines & Magic Besides physical safety, social robots must also consider emotional safety. The better job you do emotionally connecting with people, the more responsibility you have to make sure that those connections are positive. “We take this very seriously,” Pope tells us. “We must follow a ‘do no harm’ philosophy, ensuring we don’t trigger unhealthy dependency or monopolize people’s attention the way a phone does. We are designing carefully to ensure the overall impact remains positive and never crosses the line into harm.” Additionally, the Familiar’s AI runs onboard the robot, and the robot does not stream private data to the cloud. It will, in fact, run just fine if you disconnect it from the internet entirely, although you’ll lose access to any new features that come out. Managing Expectations Alongside the many engineering and human-robot interaction (HRI) challenges that FM&M is having to manage is one other challenge that, in the near term, sounds rather dull but may be the most challenging: marketing. The company obviously has to promote this robot, but there’s a real danger (which has had dire consequences for many robotics companies in the past ) of selling an idea of what the robot could be rather than the reality of what the robot actually is . From my conversations with Pope, FM&M seems to understand that robots have always been the most successful when the experience or task is incidental to the robot itself—in other words, what’s most compelling is what the robot will do , rather than the fact that it’s a robot. “The best way to understand a Familiar is that we are not building a robot; we are building a relationship,” Pope explains. Whether in the context of locomotion or relationships, we can be absolutely certain that a robot of this level of sophistication is not going to do what it’s supposed to every single time. Fortunately, the folks at FM&M have been building robots for long enough that they’re prepared for this. “We’ve explicitly tried to design it to motivate forgiveness,” Angle tells us. “This is not a precise robotic entity in its motion or dexterity. It’s supposed to be imperfect, but it’s going to get some of it right. By actively working to manage expectations to a place we can achieve, we want consumers to appreciate what it can do.” What customers expect, what they appreciate, and how much forgiveness they’re willing to bestow is for better or worse highly dependent on how much a Familiar will cost. “For the cost of ownership of something like a pet, you’re getting something that can help you live a healthier life, feel attended to, and provide social benefit,” Angle says. This could mean many things, depending on the pet, but one source puts the low end of the monthly cost for a cat at around $65 per month, with a dog somewhat more expensive at closer to $100 per month. FM&M’s press release stresses that today’s announcement ‘is not a commercial product launch,’ and specific pricing and a timeline will come later. A Future Platform While it’s much too early for us to be speculating about what the future might hold for FM&M’s robots, Angle is of course already thinking about other places where Familiars might be at home. “This first robot is meant to be a platform with general appeal and an opportunity to specialize into things like elder care and parental support,” Angle says. “From the ground up we are designing machines focused on human connection, and the underlying technology can further generalize into other form factors.” This will require the Familiar to find success, and it’s important to reiterate how much of a challenge this will be. A legged robot, designed for human interaction, in the home—everything about what FM&M is doing is hard. Because of his experience launching and leading iRobot, Angle is one of the very few people with the experience to really understand this, but his excitement and optimism about the Familiar is undiminished. “Do we know exactly how it’s going to land? I don’t,” says Angle. “But do I think it’s going to work? Absolutely. We’re going to find out, with a mission and goals that are noble at heart.” This article appears in the July 2026 print issue as “Robotic Familiar Helps You Live Your Best Life.”

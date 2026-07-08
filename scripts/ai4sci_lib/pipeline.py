@@ -33,6 +33,8 @@ class SourceCandidate:
     arxiv_id: str | None
     discovered_by: str = "manual"
     query: str | None = None
+    title: str | None = None
+    summary: str | None = None
 
 
 @dataclass
@@ -62,6 +64,7 @@ def process_source(
     model: str | None = None,
     preferred_type: str | None = None,
     dry_run: bool = False,
+    relevance_context: str | None = None,
 ) -> PipelineResult:
     """Run the full AI4Sci pipeline for a single source and write staged files.
 
@@ -73,11 +76,31 @@ def process_source(
         model: LLM model override.
         preferred_type: Preferred entity type if the LLM is uncertain.
         dry_run: If True, print drafts instead of writing files.
+        relevance_context: Optional guidance passed to the relevance classifier.
 
     Returns:
         PipelineResult with paths and status.
     """
     result = PipelineResult()
+
+    # Lightweight pre-filter: skip low-relevance papers before downloading PDF.
+    if source.title and source.summary:
+        try:
+            pre_relevance = extraction.pre_classify_relevance(
+                source.title, source.summary, context=relevance_context
+            )
+        except Exception as exc:
+            result.status = "error"
+            result.message = f"Error in pre-filter relevance: {exc}"
+            return result
+
+        if score_to_int(pre_relevance.get("score", "low")) < threshold_to_int(relevance_threshold):
+            result.status = "skipped"
+            result.message = (
+                f"Pre-filter relevance score {pre_relevance.get('score')} is below threshold "
+                f"{relevance_threshold}."
+            )
+            return result
 
     try:
         text, meta = pdf.get_paper_text(source.input)
@@ -98,7 +121,7 @@ def process_source(
         return result
 
     try:
-        relevance = extraction.classify_relevance(metadata)
+        relevance = extraction.classify_relevance(metadata, context=relevance_context)
     except Exception as exc:
         result.status = "error"
         result.message = f"Error classifying relevance: {exc}"
@@ -122,6 +145,7 @@ def process_source(
     body_data = proposal.get("body", {})
     relationships = proposal.get("relationships", [])
     review_notes = proposal.get("review_notes", [])
+    knowledge_chain = proposal.get("knowledge_chain", [])
 
     # Override type if requested and paper-type is uncertain.
     if preferred_type and entry_data.get("type") == "paper":
@@ -195,6 +219,19 @@ def process_source(
 
     for rel in relationships:
         rel["type"] = entry_builder.normalize_relationship_type(rel.get("type", ""))
+
+    # Capture proposed knowledge-chain children for later expansion.
+    if knowledge_chain:
+        review_notes.append(f"Proposed knowledge-chain children: {len(knowledge_chain)}")
+        for child in knowledge_chain:
+            child_id = child.get("proposed_child_id", "unknown")
+            child_type = child.get("child_type", "concept")
+            child_depth = child.get("child_theoretical_depth", "")
+            rel_to_paper = child.get("relationship_to_paper", "uses")
+            child_en = child.get("names", {}).get("en", "")
+            review_notes.append(
+                f"  [{child_type}/{child_depth}] {child_id} ({rel_to_paper}): {child_en}"
+            )
 
     # Build body markdown.
     body_md = extraction.build_markdown_body(body_data)

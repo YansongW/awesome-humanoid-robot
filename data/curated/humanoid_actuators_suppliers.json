@@ -1,0 +1,370 @@
+{
+  "version": 1,
+  "description": "Curated humanoid robot actuator, joint, motor, reducer and supplier data compiled from public specs, teardowns and industry reports.",
+  "entries": [
+    {
+      "title": "Unitree H1 Humanoid Robot",
+      "type": "robot_system",
+      "year": 2024,
+      "names": {"en": "Unitree H1 Humanoid Robot", "zh": "宇树 H1 人形机器人", "ko": "Unitree H1 휨로봇"},
+      "summary": {"en": "Full-size electric humanoid with 25-27 DoF, proprietary high-torque joints, peak leg-joint torque up to 360 N·m and torque density ~189 N·m/kg.", "zh": "全尺寸电驱人形机器人，25-27自由度，自研高扭矩关节，腿部峰值扭矩360N·m，扭矩密度约189N·m/kg。", "ko": "25-27자유도를 가진 전기식 휨로봇, 최대 360 N·m 다리 관절 토크 및 약 189 N·m/kg 토크 밀도."},
+      "domains": ["06_design_engineering", "02_components"],
+      "tags": ["unitree", "humanoid", "robot_system", "high_torque_joint", "quasi_direct_drive"],
+      "source_url": "https://www.unitree.com/products/h1",
+      "specs": {"dof": 27, "height_m": 1.8, "mass_kg": 50, "leg_joint_torque_nm": 360, "torque_density_nm_kg": 189, "max_speed_m_s": 3.3}
+    },
+    {
+      "title": "Unitree G1 Humanoid Robot",
+      "type": "robot_system",
+      "year": 2024,
+      "names": {"en": "Unitree G1 Humanoid Robot", "zh": "宇树 G1 人形机器人", "ko": "Unitree G1 휨로봇"},
+      "summary": {"en": "Compact lower-cost humanoid for research and education, ~23 DoF, integrated CPU, vision via LiDAR and depth camera.", "zh": "面向研究和教育的紧凑型低成本人形机器人，约23自由度，集成CPU，搭载激光雷达和深度相机。", "ko": "연구 및 교육용 컴팩트 저비용 휨로봇, 약 23자유도, 통합 CPU, LiDAR 및 깊이 카 메라."},
+      "domains": ["06_design_engineering", "02_components"],
+      "tags": ["unitree", "humanoid", "robot_system", "education"],
+      "source_url": "https://www.unitree.com/products/g1",
+      "specs": {"dof": 23}
+    },
+    {
+      "title": "Unitree M107 Joint Actuator",
+      "type": "component",
+      "year": 2024,
+      "names": {"en": "Unitree M107 Joint Actuator", "zh": "宇树 M107 关节执行器", "ko": "Unitree M107 관절 액추에이터"},
+      "summary": {"en": "Proprietary high-torque joint module used in Unitree H1, enabling dynamic locomotion and manipulation.", "zh": "宇树H1采用的高扭矩关节模组，支持动态运动和操作。", "ko": "Unitree H1에 사용되는 고토크 관절 모듈, 동적 보행 및 조작 지원."},
+      "domains": ["02_components"],
+      "tags": ["unitree", "actuator", "joint_module", "high_torque"],
+      "source_url": "https://www.unitree.com/products/h1",
+      "specs": {"peak_torque_nm": 360, "torque_density_nm_kg": 189}
+    },
+    {
+      "title": "Tesla Optimus Gen-2 Humanoid Robot",
+      "type": "robot_system",
+      "year": 2024,
+      "names": {"en": "Tesla Optimus Gen-2 Humanoid Robot", "zh": "特斯拉 Optimus Gen-2 人形机器人", "ko": "Tesla Optimus Gen-2 휨로봇"},
+      "summary": {"en": "Tesla's humanoid robot using 28 rotary joints with harmonic reducers and 12 lower-limb linear joints with planetary roller screws.", "zh": "特斯拉人形机器人，28个旋转关节采用谐波减速器，12个下肢线性关节采用行星滚柱丝杠。", "ko": "테슬라 휨로봇, 28개 회전 관절(하모닉 감속기) 및 12개 하지 선형 관절(행성 롤러 스크류)."},
+      "domains": ["06_design_engineering", "02_components"],
+      "tags": ["tesla", "humanoid", "robot_system", "optimus", "harmonic_drive", "planetary_roller_screw"],
+      "source_url": "https://www.tesla.com/optimus",
+      "specs": {"rotary_joints": 28, "linear_joints": 12, "reducer_ratio": "80:1", "grip_precision_n": 0.1, "payload_kg": 15}
+    },
+    {
+      "title": "Figure 02 Humanoid Robot",
+      "type": "robot_system",
+      "year": 2024,
+      "names": {"en": "Figure 02 Humanoid Robot", "zh": "Figure 02 人形机器人", "ko": "Figure 02 휨로봇"},
+      "summary": {"en": "Figure AI's second-generation humanoid designed for warehouse and manufacturing tasks with improved hands and onboard AI.", "zh": "Figure AI 第二代人形机器人，面向仓储和制造任务，改进了手部并集成车载AI。", "ko": "Figure AI의 2세대 휨로봇, 창고 및 제조 작업용, 개선된 손과 온보드 AI."},
+      "domains": ["06_design_engineering", "11_applications_markets"],
+      "tags": ["figure_ai", "humanoid", "robot_system", "warehouse", "manipulation"],
+      "source_url": "https://www.figure.ai/"
+    },
+    {
+      "title": "Agility Robotics Digit",
+      "type": "robot_system",
+      "year": 2023,
+      "names": {"en": "Agility Robotics Digit", "zh": "Agility Robotics Digit", "ko": "Agility Robotics Digit"},
+      "summary": {"en": "Bipedal warehouse robot with humanoid torso and arms, designed for logistics workflows.", "zh": "面向物流工作流的双足仓库机器人，具有人形躯干和手臂。", "ko": "물류 워크플로우용 이족 보행 창고 로봇."},
+      "domains": ["06_design_engineering", "11_applications_markets"],
+      "tags": ["agility_robotics", "humanoid", "robot_system", "logistics", "warehouse"],
+      "source_url": "https://www.agilityrobotics.com/"
+    },
+    {
+      "title": "Boston Dynamics Atlas",
+      "type": "robot_system",
+      "year": 2024,
+      "names": {"en": "Boston Dynamics Atlas", "zh": "波士顿动力 Atlas", "ko": "Boston Dynamics Atlas"},
+      "summary": {"en": "High-performance humanoid robot; latest generation uses all-electric actuation for dynamic athletic tasks.", "zh": "高性能人形机器人，最新一代采用全电驱动执行器完成动态运动任务。", "ko": "고성능 휨로봇, 최신 세대는 동적 운 동 작업을 위한 전기식 액추에이션 사용."},
+      "domains": ["06_design_engineering", "02_components"],
+      "tags": ["boston_dynamics", "humanoid", "robot_system", "electric_actuation", "athletic"],
+      "source_url": "https://bostondynamics.com/atlas"
+    },
+    {
+      "title": "1X Technologies NEO",
+      "type": "robot_system",
+      "year": 2024,
+      "names": {"en": "1X Technologies NEO", "zh": "1X Technologies NEO", "ko": "1X Technologies NEO"},
+      "summary": {"en": "Humanoid robot using soft, biomimetic pneumatic muscle actuation for safe human interaction.", "zh": "采用仿生气动肌肉执行器的人形机器人，强调安全人机交互。", "ko": "안전한 인간 상호작용을 위한 생체 모방 공압 근육 액추에이터를 사용하는 휨로봇."},
+      "domains": ["06_design_engineering", "11_applications_markets"],
+      "tags": ["1x_technologies", "humanoid", "robot_system", "pneumatic", "soft_robotics"],
+      "source_url": "https://www.1x.tech/"
+    },
+    {
+      "title": "Apptronik Apollo",
+      "type": "robot_system",
+      "year": 2024,
+      "names": {"en": "Apptronik Apollo", "zh": "Apptronik Apollo", "ko": "Apptronik Apollo"},
+      "summary": {"en": "Modular humanoid robot designed for logistics and manufacturing, with hot-swappable batteries.", "zh": "面向物流和制造的模块化人形机器人，支持热插拔电池。", "ko": "물류 및 제조용 모듈형 휨로봇, 핫스왑 가능한 배터리."},
+      "domains": ["06_design_engineering", "11_applications_markets"],
+      "tags": ["apptronik", "humanoid", "robot_system", "modular", "logistics"],
+      "source_url": "https://www.apptronik.com/"
+    },
+    {
+      "title": "Fourier Intelligence GR-1",
+      "type": "robot_system",
+      "year": 2023,
+      "names": {"en": "Fourier Intelligence GR-1", "zh": "傅利叶智能 GR-1", "ko": "Fourier Intelligence GR-1"},
+      "summary": {"en": "Full-size humanoid robot with 44 DoF and self-developed integrated joint actuators.", "zh": "全尺寸人形机器人，44自由度，自研一体化关节执行器。", "ko": "44자유도와 자체 개발 통합 관절 액추에이터를 갖춘 전신 휨로봇."},
+      "domains": ["06_design_engineering", "02_components"],
+      "tags": ["fourier_intelligence", "humanoid", "robot_system", "integrated_joint"],
+      "source_url": "https://www.fourierintelligence.com/"
+    },
+    {
+      "title": "UBTECH Walker S",
+      "type": "robot_system",
+      "year": 2024,
+      "names": {"en": "UBTECH Walker S", "zh": "优必选 Walker S", "ko": "UBTECH Walker S"},
+      "summary": {"en": "Industrial humanoid robot for factory operations, featuring all-electric modular joints.", "zh": "面向工厂作业的工业人形机器人，采用全电驱模块化关节。", "ko": "공장 작업용 산업용 휨로봇, 전기식 모듈형 관절 특징."},
+      "domains": ["06_design_engineering", "11_applications_markets"],
+      "tags": ["ubtech", "humanoid", "robot_system", "industrial", "modular_joint"],
+      "source_url": "https://www.ubtrobot.com/"
+    },
+    {
+      "title": "AgiBot Yuanzheng A1",
+      "type": "robot_system",
+      "year": 2024,
+      "names": {"en": "AgiBot Yuanzheng A1", "zh": "智元远征 A1", "ko": "AgiBot Yuanzheng A1"},
+      "summary": {"en": "Chinese humanoid robot using harmonic integrated joints and planetary-reducer joint motors.", "zh": "国产人形机器人，采用谐波一体关节和带行星减速器的关节电机。", "ko": "하모닉 통합 관절 및 행성 감속기 관절 모터를 사용하는 중국 휨로봇."},
+      "domains": ["06_design_engineering", "02_components"],
+      "tags": ["agibot", "humanoid", "robot_system", "harmonic_joint", "planetary_gear"],
+      "source_url": "https://www.agibot.com/"
+    },
+    {
+      "title": "Harmonic Drive Systems",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Harmonic Drive Systems", "zh": "哈默纳科", "ko": "Harmonic Drive Systems"},
+      "summary": {"en": "Leading Japanese manufacturer of harmonic/strain-wave gearboxes for robot joints.", "zh": "全球领先的机器人关节谐波减速器/应变波齿轮制造商。", "ko": "로봇 관절용 하모닉/스트레인 웨이브 기어박스의 선도적인 일본 제조업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["harmonic_drive", "reducer", "gearbox", "japan", "component_manufacturer"],
+      "source_url": "https://www.harmonicdrive.net/"
+    },
+    {
+      "title": "Nabtesco Corporation",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Nabtesco Corporation", "zh": "纳博特斯克", "ko": "Nabtesco Corporation"},
+      "summary": {"en": "Japanese manufacturer of RV and cycloidal reducers used in high-load robot joints.", "zh": "高负载机器人关节用RV减速器和摆线减速器制造商。", "ko": "고하중 로봇 관절에 사용되는 RV 및 사이클로이드 감속기 제조업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["nabtesco", "rv_reducer", "cycloidal", "reducer", "japan", "component_manufacturer"],
+      "source_url": "https://www.nabtesco.co.jp/"
+    },
+    {
+      "title": "Maxon Group",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Maxon Group", "zh": "Maxon", "ko": "Maxon Group"},
+      "summary": {"en": "Swiss manufacturer of high-precision brushless DC motors, gearheads and controllers for robotics.", "zh": "面向机器人的高精度无刷直流电机、齿轮头和控制器制造商。", "ko": "로보틱스용 고정밀 브러시리스 DC 모터, 기어헤드 및 컨트롤러 제조업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["maxon", "motor", "gearhead", "controller", "switzerland", "component_manufacturer"],
+      "source_url": "https://www.maxongroup.com/"
+    },
+    {
+      "title": "Kollmorgen Corporation",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Kollmorgen Corporation", "zh": "科尔摩根", "ko": "Kollmorgen Corporation"},
+      "summary": {"en": "US supplier of motion systems including frameless torque motors and servo drives for robot joints.", "zh": "提供机器人关节用无框力矩电机和伺服驱动等运动系统的美国供应商。", "ko": "로봇 관절용 프레임리스 토크 모터 및 서보 드라이브를 포함한 모션 시스템 미국 공급업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["kollmorgen", "frameless_torque_motor", "servo_drive", "usa", "component_manufacturer"],
+      "source_url": "https://www.kollmorgen.com/"
+    },
+    {
+      "title": "Moog Inc.",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Moog Inc.", "zh": "穆格", "ko": "Moog Inc."},
+      "summary": {"en": "Supplier of precision motion control components including high-performance actuators and servos.", "zh": "高性能执行器和伺服等精密运动控制部件供应商。", "ko": "고성능 액추에이터 및 서보를 포함한 정밀 모션 제어 부품 공급업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["moog", "actuator", "servo", "motion_control", "usa", "component_manufacturer"],
+      "source_url": "https://www.moog.com/"
+    },
+    {
+      "title": "Leaderdrive",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Leaderdrive", "zh": "绿的谐波", "ko": "Leaderdrive"},
+      "summary": {"en": "Chinese harmonic drive manufacturer with growing market share in domestic robot supply chains.", "zh": "国产谐波减速器龙头，在国内机器人供应链中市占率不断提升。", "ko": "국내 로봇 공급망에서 점유율이 증가하고 있는 중국 하모닉 드라이브 제조업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["leaderdrive", "harmonic_drive", "reducer", "china", "component_manufacturer"],
+      "source_url": "http://www.leaderdrive.com/"
+    },
+    {
+      "title": "Sanhua Intelligent Controls",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Sanhua Intelligent Controls", "zh": "三花智控", "ko": "Sanhua Intelligent Controls"},
+      "summary": {"en": "Chinese supplier of integrated rotary actuator assemblies, reportedly a key Tesla Optimus supplier.", "zh": "一体化旋转执行器总成供应商， reportedly 特斯拉Optimus核心供应商。", "ko": "통합 회전 액추에이터 어셈블리 공급업체, 테슬라 Optimus의 핵심 공급업체로 알려짐."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["sanhua", "rotary_actuator", "tesla_supply_chain", "china", "component_manufacturer"],
+      "source_url": "https://www.sanhuacorp.com/"
+    },
+    {
+      "title": "Tuopu Group",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Tuopu Group", "zh": "拓普集团", "ko": "Tuopu Group"},
+      "summary": {"en": "Chinese supplier of integrated linear actuator assemblies, reportedly a key Tesla Optimus supplier.", "zh": "一体化线性执行器总成供应商， reportedly 特斯拉Optimus核心供应商。", "ko": "통합 선형 액추에이터 어셈블리 공급업체, 테슬라 Optimus의 핵심 공급업체로 알려짐."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["tuopu", "linear_actuator", "tesla_supply_chain", "china", "component_manufacturer"],
+      "source_url": "http://www.tuopu.com/"
+    },
+    {
+      "title": "Inovance Technology",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Inovance Technology", "zh": "汇川技术", "ko": "Inovance Technology"},
+      "summary": {"en": "Chinese industrial automation supplier of servo drives and frameless torque motors for robot joints.", "zh": "面向机器人关节的伺服驱动和无框力矩电机工业自动化供应商。", "ko": "로봇 관절용 서보 드라이브 및 프레임리스 토크 모터를 공급하는 중국 산업 자동화 업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["inovance", "servo_drive", "frameless_torque_motor", "china", "component_manufacturer"],
+      "source_url": "https://www.inovance.com/"
+    },
+    {
+      "title": "Mingzhi Appliance",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Mingzhi Appliance", "zh": "鸣志电器", "ko": "Mingzhi Appliance"},
+      "summary": {"en": "Chinese manufacturer of hollow-cup motors used in dexterous robot hands.", "zh": "用于机器人灵巧手的空心杯电机制造商。", "ko": "로봇 능숙한 손에 사용되는 홀컵 모터 제조업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["mingzhi", "hollow_cup_motor", "dexterous_hand", "china", "component_manufacturer"],
+      "source_url": "http://www.moons.com.cn/"
+    },
+    {
+      "title": "Harmonic Reducer",
+      "type": "component",
+      "year": 2024,
+      "names": {"en": "Harmonic Reducer", "zh": "谐波减速器", "ko": "Harmonic Reducer"},
+      "summary": {"en": "Compact precision gearbox with high reduction ratio and near-zero backlash, widely used in robot rotary joints.", "zh": "体积小、传动比大、回程间隙极小的精密减速器，广泛用于机器人旋转关节。", "ko": "고감속비와 근접 제로 백래시를 가진 컴팩트한 정밀 기어박스, 로봇 회전 관절에 널리 사용."},
+      "domains": ["02_components"],
+      "tags": ["harmonic_reducer", "strain_wave", "gearbox", "precision", "rotary_joint"],
+      "source_url": "https://en.wikipedia.org/wiki/Harmonic_drive"
+    },
+    {
+      "title": "Planetary Roller Screw",
+      "type": "component",
+      "year": 2024,
+      "names": {"en": "Planetary Roller Screw", "zh": "行星滚柱丝杠", "ko": "Planetary Roller Screw"},
+      "summary": {"en": "High-efficiency linear transmission component converting rotary motion to linear motion, used in robot linear joints.", "zh": "将旋转运动转换为直线运动的高效线性传动部件，用于机器人线性关节。", "ko": "회전 운 동을 선형 운 동으로 변환하는 고효율 선형 변환 부품, 로봇 선형 관절에 사용."},
+      "domains": ["02_components"],
+      "tags": ["planetary_roller_screw", "linear_actuator", "transmission", "high_efficiency"],
+      "source_url": "https://en.wikipedia.org/wiki/Roller_screw"
+    },
+    {
+      "title": "Frameless Torque Motor",
+      "type": "component",
+      "year": 2024,
+      "names": {"en": "Frameless Torque Motor", "zh": "无框力矩电机", "ko": "Frameless Torque Motor"},
+      "summary": {"en": "Direct-drive motor without housing or bearings, integrated into robot joints for high torque density.", "zh": "无外壳和轴承的直驱电机，直接集成到机器人关节中，实现高扭矩密度。", "ko": "하우징이나 베어링이 없는 직접 구동 모터, 로봇 관절에 통합되어 높은 토크 밀도 제공."},
+      "domains": ["02_components"],
+      "tags": ["frameless_torque_motor", "direct_drive", "motor", "joint", "torque_density"],
+      "source_url": "https://en.wikipedia.org/wiki/Torque_motor"
+    },
+    {
+      "title": "Hollow Cup Motor",
+      "type": "component",
+      "year": 2024,
+      "names": {"en": "Hollow Cup Motor", "zh": "空心杯电机", "ko": "Hollow Cup Motor"},
+      "summary": {"en": "Small, lightweight coreless DC motor used in dexterous robot hands and small joints.", "zh": "体积小、重量轻的无铁芯直流电机，用于机器人灵巧手和小型关节。", "ko": "작고 가벼운 코어리스 DC 모터, 능숙한 로봇 손과 소형 관절에 사용."},
+      "domains": ["02_components"],
+      "tags": ["hollow_cup_motor", "coreless_motor", "dexterous_hand", "miniature"],
+      "source_url": "https://en.wikipedia.org/wiki/Coreless_electric_motor"
+    },
+    {
+      "title": "Six Axis Force Torque Sensor",
+      "type": "component",
+      "year": 2024,
+      "names": {"en": "Six Axis Force Torque Sensor", "zh": "六维力传感器", "ko": "Six Axis Force Torque Sensor"},
+      "summary": {"en": "Sensor measuring forces and torques in all six degrees of freedom, critical for force-controlled manipulation.", "zh": "测量六个自由度力和力矩的传感器，对力控操作至关重要。", "ko": "6자유도의 힘과 토크를 측정하는 센서, 힘 제어 조작에 필수적."},
+      "domains": ["02_components"],
+      "tags": ["force_torque_sensor", "six_axis", "force_control", "sensor"],
+      "source_url": "https://en.wikipedia.org/wiki/Force-sensing_resistor"
+    },
+    {
+      "title": "Quasi Direct Drive Actuator",
+      "type": "technology",
+      "year": 2024,
+      "names": {"en": "Quasi Direct Drive Actuator", "zh": "准直驱执行器", "ko": "Quasi Direct Drive Actuator"},
+      "summary": {"en": "Actuator design using low-ratio gears with high-torque motors to achieve high bandwidth and force transparency.", "zh": "采用低减速比齿轮和高扭矩电机，实现高带宽和力透明度的执行器设计。", "ko": "저감속비 기어와 고토크 모터를 사용하여 높은 대역폭과 힘 투명성을 달성하는 액추에이터 설계."},
+      "domains": ["07_ai_models_algorithms", "02_components"],
+      "tags": ["quasi_direct_drive", "actuator", "low_ratio_gear", "high_bandwidth", "force_control"],
+      "source_url": "https://en.wikipedia.org/wiki/Direct_drive_mechanism"
+    },
+    {
+      "title": "Series Elastic Actuator",
+      "type": "technology",
+      "year": 2024,
+      "names": {"en": "Series Elastic Actuator", "zh": "串联弹性执行器", "ko": "Series Elastic Actuator"},
+      "summary": {"en": "Actuator with an elastic element in series with the motor and load, enabling accurate force control and shock tolerance.", "zh": "在电机和负载之间串联弹性元件的执行器，可实现精确的力控和抗冲击能力。", "ko": "모터와 부하 사이에 탄성 요소를 직렬로 배치한 액추에이터, 정확한 힘 제어 및 충격 내성 가능."},
+      "domains": ["07_ai_models_algorithms", "02_components"],
+      "tags": ["series_elastic_actuator", "sea", "force_control", "compliance", "safety"],
+      "source_url": "https://en.wikipedia.org/wiki/Series_elastic_actuator"
+    },
+    {
+      "title": "Rotary Actuator",
+      "type": "component",
+      "year": 2024,
+      "names": {"en": "Rotary Actuator", "zh": "旋转执行器", "ko": "Rotary Actuator"},
+      "summary": {"en": "Actuator producing rotational motion, typically composed of frameless torque motor, harmonic reducer, encoder and torque sensor.", "zh": "产生旋转运动的执行器，通常由无框力矩电机、谐波减速器、编码器和力矩传感器组成。", "ko": "회전 운 동을 생성하는 액추에이터, 일반적으로 프레임리스 토크 모터, 하모닉 감속기, 인코더 및 토크 센서로 구성."},
+      "domains": ["02_components"],
+      "tags": ["rotary_actuator", "joint", "harmonic_reducer", "torque_motor"],
+      "source_url": "https://en.wikipedia.org/wiki/Actuator"
+    },
+    {
+      "title": "Linear Actuator",
+      "type": "component",
+      "year": 2024,
+      "names": {"en": "Linear Actuator", "zh": "线性执行器", "ko": "Linear Actuator"},
+      "summary": {"en": "Actuator producing linear motion, typically composed of frameless torque motor, planetary roller screw, encoder and force sensor.", "zh": "产生直线运动的执行器，通常由无框力矩电机、行星滚柱丝杠、编码器和力传感器组成。", "ko": "선형 운 동을 생성하는 액추에이터, 일반적으로 프레임리스 토크 모터, 행성 롤러 스크류, 인코더 및 힘 센서로 구성."},
+      "domains": ["02_components"],
+      "tags": ["linear_actuator", "planetary_roller_screw", "torque_motor", "linear_motion"],
+      "source_url": "https://en.wikipedia.org/wiki/Linear_actuator"
+    },
+    {
+      "title": "CubeMars",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "CubeMars", "zh": "CubeMars", "ko": "CubeMars"},
+      "summary": {"en": "Chinese supplier of compact integrated robot joint motors and actuators.", "zh": "紧凑型一体化机器人关节电机和执行器供应商。", "ko": "컴팩트한 통합 로봇 관절 모터 및 액추에이터 공급업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["cubemars", "joint_motor", "actuator", "china", "component_manufacturer"],
+      "source_url": "https://www.cubemars.com/"
+    },
+    {
+      "title": "ZeroErr",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "ZeroErr", "zh": "ZeroErr", "ko": "ZeroErr"},
+      "summary": {"en": "Chinese manufacturer of high-precision robot joint modules and servo systems.", "zh": "高精度机器人关节模组和伺服系统制造商。", "ko": "고정밀 로봇 관절 모듈 및 서보 시스템 제조업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["zeroerr", "joint_module", "servo", "china", "component_manufacturer"],
+      "source_url": "https://www.zeroerr.cn/"
+    },
+    {
+      "title": "Techrobots",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Techrobots", "zh": "Techrobots", "ko": "Techrobots"},
+      "summary": {"en": "Chinese supplier of robot joint actuators and modular robotic components.", "zh": "机器人关节执行器和模块化机器人部件供应商。", "ko": "로봇 관절 액추에이터 및 모듈형 로봇 부품 공급업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["techrobots", "joint_actuator", "modular", "china", "component_manufacturer"],
+      "source_url": "https://www.techrobots.com/"
+    },
+    {
+      "title": "Wittenstein",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Wittenstein", "zh": "Wittenstein", "ko": "Wittenstein"},
+      "summary": {"en": "German manufacturer of precision gearboxes and servo actuators for robotics and automation.", "zh": "面向机器人和自动化的精密减速器和伺服执行器德国制造商。", "ko": "로보틱스 및 자동화용 정밀 기어박스 및 서보 액추에이터 독일 제조업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["wittenstein", "gearbox", "servo_actuator", "germany", "component_manufacturer"],
+      "source_url": "https://www.wittenstein.de/"
+    },
+    {
+      "title": "Bonfiglioli",
+      "type": "component_manufacturer",
+      "year": 2024,
+      "names": {"en": "Bonfiglioli", "zh": "邦飞利", "ko": "Bonfiglioli"},
+      "summary": {"en": "Italian manufacturer of gearboxes and drive systems used in industrial and mobile robotics.", "zh": "用于工业和移动机器人的齿轮箱和驱动系统意大利制造商。", "ko": "산업 및 모바일 로보틱스에 사용되는 기어박스 및 드라이브 시스템 이탈리아 제조업체."},
+      "domains": ["02_components", "03_manufacturing_processes"],
+      "tags": ["bonfiglioli", "gearbox", "drive_system", "italy", "component_manufacturer"],
+      "source_url": "https://www.bonfiglioli.com/"
+    }
+  ]
+}

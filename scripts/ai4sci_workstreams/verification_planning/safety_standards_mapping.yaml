@@ -1,0 +1,43 @@
+name: safety_standards_mapping
+description: 'Workstream for safety standards mapping. Generated from WORKSTREAM_TREE
+  leaf: verification_planning/safety_standards_mapping.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- safety standards mapping robotics
+- humanoid robot safety standards mapping
+- safety standards mapping robots survey
+- safety standards mapping automation manufacturing
+- safety standards mapping applied to humanoid robots
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 2
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: verification_planning/safety_standards_mapping.yaml
+relevance_context: Relevant if it addresses safety standards mapping in a robotics
+  or automation context, or develops foundational methods/principles applicable to
+  humanoid robots, even when examples are not explicitly humanoid.

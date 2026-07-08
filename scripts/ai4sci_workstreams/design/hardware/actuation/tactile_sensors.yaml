@@ -1,0 +1,34 @@
+name: tactile_sensors
+description: |
+  Survey tactile and force sensing technologies for humanoid robot hands and
+  skin: pressure-sensitive arrays, strain gauges, optical tactile sensors,
+  sensorized gloves, and their use in grasp control, slip detection, and
+  safe human contact.
+seed_queries:
+  - "tactile sensor humanoid robot hand grasp control"
+  - "optical tactile sensor robot manipulation"
+  - "pressure sensor array humanoid robot skin"
+  - "slip detection tactile sensor robotic hand"
+  - "force torque sensor fingertip humanoid robot"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - component
+  - company
+  - method
+target_domains:
+  - 02_components
+  - 06_design_engineering
+  - 07_ai_models_algorithms
+relationship_patterns:
+  - integrates
+  - enables
+  - requires
+  - evaluates_on
+  - is_alternative_to
+relevance_threshold: medium
+max_papers: 15
+priority: 1
+sources:
+  - arxiv

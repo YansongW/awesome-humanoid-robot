@@ -1,0 +1,45 @@
+name: data_to_sim_real
+description: 'Workstream for data to sim real. Generated from WORKSTREAM_TREE leaf:
+  cross_domain/data_to_sim_real.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- data to sim real robotics
+- humanoid robot data to sim real
+- data to sim real robots survey
+- data to sim real automation manufacturing
+- data to sim real applied to humanoid robots
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 07_ai_models_algorithms
+- 06_design_engineering
+- 05_mass_production
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 1
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: cross_domain/data_to_sim_real.yaml
+relevance_context: Relevant if it addresses data to sim real in a robotics or automation
+  context, or develops foundational methods/principles applicable to humanoid robots,
+  even when examples are not explicitly humanoid.

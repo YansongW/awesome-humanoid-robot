@@ -12,8 +12,11 @@ existing project entries and already-staged drafts.
 
 from __future__ import annotations
 
+import json
 import re
+import time
 import xml.etree.ElementTree as ET
+from pathlib import Path
 from typing import Any
 from urllib.parse import quote_plus
 
@@ -25,6 +28,49 @@ from . import config, entry_builder, pdf, pipeline
 def _existing_ids() -> set[str]:
     """Load all existing and staged entity/relationship IDs."""
     return entry_builder.load_existing_ids()
+
+
+def _tried_candidates_path() -> Path:
+    """Path to the project-wide tried-candidates log."""
+    return config.STAGING_DIR / "tried_candidates.jsonl"
+
+
+def load_tried_candidates() -> set[str]:
+    """Load the set of candidate keys already processed by any workstream."""
+    path = _tried_candidates_path()
+    tried: set[str] = set()
+    if not path.exists():
+        return tried
+    try:
+        with open(path, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    record = json.loads(line)
+                except json.JSONDecodeError:
+                    continue
+                key = record.get("arxiv_id") or record.get("source_url")
+                if key:
+                    tried.add(key)
+    except Exception:
+        return tried
+    return tried
+
+
+def record_tried_candidate(candidate: pipeline.SourceCandidate) -> None:
+    """Append a candidate to the project-wide tried log."""
+    path = _tried_candidates_path()
+    path.parent.mkdir(parents=True, exist_ok=True)
+    record = {
+        "arxiv_id": candidate.arxiv_id,
+        "source_url": candidate.source_url,
+        "discovered_by": candidate.discovered_by,
+        "input": candidate.input,
+    }
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
 def _arxiv_id_from_url_or_id(url_or_id: str) -> str | None:
@@ -59,6 +105,7 @@ def resolve_candidate(input_str: str) -> pipeline.SourceCandidate | None:
 def search_arxiv(
     query: str,
     max_results: int = 10,
+    start: int = 0,
     sort_by: str = "relevance",
     sort_order: str = "descending",
 ) -> list[pipeline.SourceCandidate]:
@@ -66,7 +113,8 @@ def search_arxiv(
 
     Args:
         query: Search query string.
-        max_results: Maximum number of results to return.
+        max_results: Maximum number of results to return per page.
+        start: Result offset for pagination.
         sort_by: arXiv sort field (relevance, lastUpdatedDate, submittedDate).
         sort_order: ascending or descending.
 
@@ -76,7 +124,7 @@ def search_arxiv(
     url = (
         "http://export.arxiv.org/api/query?"
         f"search_query={quote_plus(query)}&"
-        f"start=0&max_results={max_results}&"
+        f"start={start}&max_results={max_results}&"
         f"sortBy={sort_by}&sortOrder={sort_order}"
     )
     response = requests.get(url, timeout=60)
@@ -104,6 +152,9 @@ def search_arxiv(
         title_elem = entry.find("atom:title", ns)
         title = title_elem.text.strip() if title_elem is not None and title_elem.text else ""
 
+        summary_elem = entry.find("atom:summary", ns)
+        summary = summary_elem.text.strip() if summary_elem is not None and summary_elem.text else ""
+
         # Skip arXiv category announcement pages.
         if not title:
             continue
@@ -116,6 +167,8 @@ def search_arxiv(
                 arxiv_id=arxiv_id,
                 discovered_by=f"arxiv:{query}",
                 query=query,
+                title=title,
+                summary=summary,
             )
         )
 
@@ -125,6 +178,7 @@ def search_arxiv(
 def search_semantic_scholar(
     query: str,
     max_results: int = 10,
+    start: int = 0,
     api_key: str | None = None,
 ) -> list[pipeline.SourceCandidate]:
     """Search Semantic Scholar and return arXiv-backed SourceCandidate objects.
@@ -140,6 +194,7 @@ def search_semantic_scholar(
         "query": query,
         "fields": "title,authors,year,externalIds,url",
         "limit": max_results,
+        "offset": start,
     }
     response = requests.get(url, params=params, headers=headers, timeout=60)
     response.raise_for_status()
@@ -184,50 +239,89 @@ def discover_candidates(
     seed_queries: list[str],
     paper_ids: list[str] | None = None,
     max_results_per_query: int = 10,
+    max_total: int | None = None,
     sources: list[str] | None = None,
+    polite_delay: float = 0.5,
 ) -> list[pipeline.SourceCandidate]:
     """Run discovery across configured sources and return deduplicated candidates.
 
     Args:
         seed_queries: List of search query strings.
         paper_ids: Optional list of explicit arXiv IDs or URLs to include.
-        max_results_per_query: Maximum arXiv results per query.
+        max_results_per_query: Maximum results per query per page.
+        max_total: Maximum total candidates to return across all queries.
+            If None, defaults to max_results_per_query (backwards compatible).
         sources: List of source names to query (e.g., ["arxiv"]). Defaults to ["arxiv"].
+        polite_delay: Seconds to sleep between paginated API calls.
 
     Returns:
-        Deduplicated list of SourceCandidate objects.
+        Deduplicated list of SourceCandidate objects, excluding project-wide
+        tried candidates and existing entries.
     """
     sources = sources or ["arxiv"]
+    if max_total is None:
+        max_total = max_results_per_query
+
+    tried = load_tried_candidates()
+    existing = _existing_ids()
     candidates: list[pipeline.SourceCandidate] = []
     seen_ids: set[str] = set()
 
+    def _add(candidate: pipeline.SourceCandidate | None) -> bool:
+        if candidate is None:
+            return False
+        key = candidate.arxiv_id or candidate.source_url
+        if not key:
+            return False
+        if key in existing or key in tried or key in seen_ids:
+            return False
+        candidates.append(candidate)
+        seen_ids.add(key)
+        return True
+
     # Explicitly requested papers/URLs first.
     for input_str in paper_ids or []:
-        candidate = resolve_candidate(input_str)
-        if candidate and candidate.arxiv_id and candidate.arxiv_id not in seen_ids:
-            if candidate.arxiv_id not in _existing_ids():
-                candidates.append(candidate)
-                seen_ids.add(candidate.arxiv_id)
+        _add(resolve_candidate(input_str))
+        if max_total and len(candidates) >= max_total:
+            return candidates[:max_total]
 
-    # Search-based discovery.
+    # Search-based discovery with pagination.
     for query in seed_queries:
         for source in sources:
-            try:
-                if source == "arxiv":
-                    found = search_arxiv(query, max_results=max_results_per_query)
-                elif source == "semanticscholar":
-                    found = search_semantic_scholar(query, max_results=max_results_per_query)
-                elif source == "web":
-                    found = search_web(query, max_results=max_results_per_query)
-                else:
-                    found = []
-            except Exception:
-                found = []
+            start = 0
+            while True:
+                if max_total and len(candidates) >= max_total:
+                    return candidates[:max_total]
 
-            for candidate in found:
-                key = candidate.arxiv_id or candidate.source_url
-                if key and key not in seen_ids:
-                    candidates.append(candidate)
-                    seen_ids.add(key)
+                remaining = max_total - len(candidates) if max_total else max_results_per_query
+                page_size = min(max_results_per_query, remaining) if max_total else max_results_per_query
+
+                try:
+                    if source == "arxiv":
+                        found = search_arxiv(query, max_results=page_size, start=start)
+                    elif source == "semanticscholar":
+                        found = search_semantic_scholar(query, max_results=page_size, start=start)
+                    elif source == "web":
+                        found = search_web(query, max_results=page_size)
+                    else:
+                        found = []
+                except Exception:
+                    found = []
+
+                if not found:
+                    break
+
+                for candidate in found:
+                    _add(candidate)
+
+                start += len(found)
+
+                # Stop paginating if the page was not full or we have enough.
+                if len(found) < page_size:
+                    break
+                if max_total and len(candidates) >= max_total:
+                    return candidates[:max_total]
+
+                time.sleep(min(polite_delay, 0.1))
 
     return candidates

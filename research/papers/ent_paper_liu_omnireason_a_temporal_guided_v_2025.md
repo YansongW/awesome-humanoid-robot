@@ -1,0 +1,61 @@
+---
+$id: ent_paper_liu_omnireason_a_temporal_guided_v_2025
+$schema: ../../data/schema/v1/entry_schema.json
+$version: 1
+type: paper
+names:
+  en: 'OmniReason: A Temporal-Guided Vision-Language-Action Framework for Autonomous
+    Driving'
+  zh: OmniReason
+  ko: ''
+summary:
+  en: 'OmniReason: A Temporal-Guided Vision-Language-Action Framework for Autonomous
+    Driving (OmniReason), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by The Hong Kong University of Science and Technology
+    (Guangzhou), The Hong Kong University of Science and Technology.'
+  zh: 'OmniReason: A Temporal-Guided Vision-Language-Action Framework for Autonomous
+    Driving (OmniReason), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by The Hong Kong University of Science and Technology
+    (Guangzhou), The Hong Kong University of Science and Technology.'
+  ko: ''
+domains:
+- 07_ai_models_algorithms
+- 08_software_middleware
+layers:
+- intelligence
+functional_roles:
+- knowledge
+- intelligence
+tags:
+- large_vla_model
+- omnireason
+- robotic_manipulation
+- vision_language_action
+- vla
+theoretical_depth:
+- system
+verification:
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-07-01'
+  confidence: medium
+  notes: 'Imported from Awesome-VLA curated list. Model: OmniReason. Institution:
+    The Hong Kong University of Science and Technology (Guangzhou), The Hong Kong
+    University of Science and Technology. arXiv: 2509.00789.'
+sources:
+- id: src_001
+  type: paper
+  title: 'OmniReason: A Temporal-Guided Vision-Language-Action Framework for Autonomous
+    Driving (arXiv)'
+  url: https://arxiv.org/abs/2509.00789
+  date: '2025'
+  accessed_at: '2026-07-01'
+- id: src_002
+  type: website
+  title: OmniReason source
+  url: https://doi.org/10.48550/arXiv.2509.00789
+  date: '2025'
+  accessed_at: '2026-07-01'
+---
+
+OmniReason: A Temporal-Guided Vision-Language-Action Framework for Autonomous Driving (OmniReason), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Hong Kong University of Science and Technology (Guangzhou), The Hong Kong University of Science and Technology.

@@ -1,0 +1,69 @@
+name: mobile_manipulation_interfaces_curated
+description: 'Curated workstream for: 上半身中心控制与移动操作接口.
+
+  Seeded with 24 resolved arXiv papers from the WeChat 161-paper list.'
+seed_queries:
+- humanoid mobile manipulation interface
+- upper body control humanoid robot
+- humanoid teleoperation interface manipulation
+- bimanual mobile manipulation humanoid
+- whole-body manipulation interface
+- humanoid adaptive motion optimization hyper
+- humanoid ceer compliant effector root
+- humanoid learning human humanoid coordination
+- humanoid coordex coordinating body hand
+- humanoid falcon learning force adaptive
+paper_ids:
+- '2505.03738'
+- '2605.19981'
+- '2510.14293'
+- '2606.23680'
+- '2505.06776'
+- '2606.06493'
+- '2604.07993'
+- '2511.14756'
+- '2502.13013'
+- '2602.06341'
+- '2505.24198'
+- '2601.17440'
+- '2602.03002'
+- '2606.03297'
+- '2604.08508'
+- '2510.26280'
+- '2507.06905'
+- '2511.15200'
+- '2605.01518'
+- '2512.11047'
+- '2606.11891'
+- '2512.01061'
+- '2504.14305'
+- '2602.05791'
+target_entity_types:
+- paper
+- method
+- formalism
+- technology
+- component
+target_domains:
+- 07_ai_models_algorithms
+- 02_components
+- 11_applications_markets
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+- derived_from
+relevance_threshold: medium
+max_papers: 24
+priority: 1
+sources:
+- arxiv
+metadata:
+  curated_source: wechat_161_humanoid_papers
+  category: 上半身中心控制与移动操作接口
+  resolved_count: 24
+  total_count: 24

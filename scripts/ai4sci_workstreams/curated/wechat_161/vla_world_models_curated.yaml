@@ -1,0 +1,59 @@
+name: vla_world_models_curated
+description: 'Curated workstream for: 人形 VLA、世界模型与通用操作.
+
+  Seeded with 14 resolved arXiv papers from the WeChat 161-paper list.'
+seed_queries:
+- humanoid vision language action model
+- humanoid world model manipulation
+- humanoid general manipulation policy
+- VLA humanoid robot
+- foundation model humanoid manipulation
+- humanoid agibot world colosseo large
+- humanoid dial decoupling intent action
+- humanoid gr00t open foundation model
+- humanoid gemini robotics bringing into
+- humanoid genie envisioner unified world
+paper_ids:
+- '2503.06669'
+- '2603.29844'
+- '2503.14734'
+- '2503.20020'
+- '2508.05635'
+- '2606.01458'
+- '2601.18692'
+- '2603.08572'
+- '2606.22174'
+- '2603.05410'
+- '2603.13707'
+- '2606.17011'
+- '2602.15922'
+- '2605.21133'
+target_entity_types:
+- paper
+- method
+- formalism
+- technology
+- component
+target_domains:
+- 07_ai_models_algorithms
+- 08_software_middleware
+- 09_data_datasets
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+- derived_from
+relevance_threshold: medium
+max_papers: 14
+priority: 1
+sources:
+- arxiv
+metadata:
+  curated_source: wechat_161_humanoid_papers
+  category: 人形 VLA、世界模型与通用操作
+  resolved_count: 14
+  total_count: 15

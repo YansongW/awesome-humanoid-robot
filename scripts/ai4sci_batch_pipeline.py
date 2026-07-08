@@ -88,6 +88,7 @@ def process_one(
     relevance_threshold: str,
     model: str | None,
     dry_run: bool,
+    relevance_context: str | None,
 ) -> pipeline.PipelineResult:
     """Wrapper to process one source; suitable for process pool execution."""
     return pipeline.process_source(
@@ -96,6 +97,7 @@ def process_one(
         relevance_threshold=relevance_threshold,
         model=model,
         dry_run=dry_run,
+        relevance_context=relevance_context,
     )
 
 
@@ -112,11 +114,31 @@ def main() -> int:
     seed_queries = workstream.get("seed_queries", [])
     paper_ids = workstream.get("paper_ids", [])
     sources = workstream.get("sources", ["arxiv"])
+    relevance_context = workstream.get("relevance_context")
+
+    # Pagination/discovery limits from workstream config. Decouple "how many to
+    # pull" from "how many to process" so workstreams can surface dense pools.
+    max_results_per_query = workstream.get("max_results_per_query", 50)
+    max_total = workstream.get("max_total", max(max_results_per_query, max_papers * 3))
 
     print(f"[batch] Workstream: {name}")
     print(f"[batch] Output dir: {output_dir}")
-    print(f"[batch] Max papers: {max_papers}")
+    print(f"[batch] Max papers to process: {max_papers}")
+    print(f"[batch] Max candidates to discover: {max_total}")
     print(f"[batch] Relevance threshold: {relevance_threshold}")
+    if relevance_context:
+        print(f"[batch] Relevance context: {relevance_context[:120]}{'...' if len(relevance_context) > 120 else ''}")
+
+    # Per-workstream tried log for backwards compatibility.
+    logs_dir = output_dir / "logs"
+    logs_dir.mkdir(parents=True, exist_ok=True)
+    tried_path = logs_dir / "tried.json"
+    local_tried: set[str] = set()
+    if tried_path.exists():
+        try:
+            local_tried = set(json.loads(tried_path.read_text(encoding="utf-8")))
+        except Exception:
+            local_tried = set()
 
     # Discovery.
     if args.skip_discovery:
@@ -127,8 +149,10 @@ def main() -> int:
         candidates = discovery.discover_candidates(
             seed_queries=seed_queries,
             paper_ids=paper_ids,
-            max_results_per_query=max_papers,
+            max_results_per_query=max_results_per_query,
+            max_total=max_total,
             sources=sources,
+            polite_delay=workstream.get("polite_delay", 0.5),
         )
         print(f"[batch] Discovered {len(candidates)} candidate(s).")
 
@@ -140,18 +164,36 @@ def main() -> int:
             candidates.append(candidate)
             seen.add(candidate.arxiv_id or candidate.source_url)
 
-    if not candidates:
-        print("[batch] No candidates to process.")
+    # Skip candidates already attempted in previous runs (global + local).
+    fresh_candidates = [
+        c for c in candidates
+        if (c.arxiv_id or c.source_url) not in local_tried
+    ]
+    skipped_already_tried = len(candidates) - len(fresh_candidates)
+    if skipped_already_tried:
+        print(f"[batch] Skipping {skipped_already_tried} already-tried candidate(s).")
+
+    if not fresh_candidates:
+        print("[batch] No new candidates to process.")
         return 0
 
-    candidates = candidates[:max_papers]
-    print(f"[batch] Processing {len(candidates)} candidate(s) with up to {args.max_workers} worker(s)...")
+    if args.dry_run:
+        print("[batch] Dry run: discovered candidates but skipping LLM extraction.")
+        return 0
+
+    candidates_to_process = fresh_candidates[:max_papers]
+    print(f"[batch] Processing {len(candidates_to_process)} candidate(s) with up to {args.max_workers} worker(s)...")
 
     results: list[pipeline.PipelineResult] = []
     if args.max_workers <= 1:
-        for source in candidates:
+        for source in candidates_to_process:
             result = process_one(
-                source, output_dir, relevance_threshold, args.model, args.dry_run
+                source,
+                output_dir,
+                relevance_threshold,
+                args.model,
+                args.dry_run,
+                relevance_context,
             )
             results.append(result)
             print(f"  {result.status:12s} {source.input} — {result.message}")
@@ -165,8 +207,9 @@ def main() -> int:
                     relevance_threshold,
                     args.model,
                     args.dry_run,
+                    relevance_context,
                 ): source
-                for source in candidates
+                for source in candidates_to_process
             }
             for future in as_completed(futures):
                 source = futures[future]
@@ -180,9 +223,16 @@ def main() -> int:
                 results.append(result)
                 print(f"  {result.status:12s} {source.input} — {result.message}")
 
+    # Persist tried candidate IDs locally and in the project-wide log.
+    if not args.dry_run:
+        for source in candidates_to_process:
+            local_tried.add(source.arxiv_id or source.source_url)
+            discovery.record_tried_candidate(source)
+        tried_path.write_text(json.dumps(sorted(local_tried), indent=2, ensure_ascii=False), encoding="utf-8")
+
     # Tracking and summary.
     summary = tracking.update_workstream_progress(name, output_dir, results)
-    summary_path = output_dir / "logs" / "summary.json"
+    summary_path = logs_dir / "summary.json"
     summary_path.parent.mkdir(parents=True, exist_ok=True)
     summary_path.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
 

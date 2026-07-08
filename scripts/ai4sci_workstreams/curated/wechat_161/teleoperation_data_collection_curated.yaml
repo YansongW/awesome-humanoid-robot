@@ -1,0 +1,48 @@
+name: teleoperation_data_collection_curated
+description: 'Curated workstream for: 数据采集与遥操作系统.
+
+  Seeded with 3 resolved arXiv papers from the WeChat 161-paper list.'
+seed_queries:
+- humanoid teleoperation data collection system
+- humanoid robot demonstration data
+- whole body teleoperation humanoid
+- humanoid imitation learning dataset
+- remote teleoperation humanoid robot
+- humanoid bifrostumi bridging robot free
+- humanoid homie humanoid loco manipulation
+- humanoid humanoidexo scalable whole body
+- humanoid open television teleoperation with
+- humanoid twist2 scalable portable holistic
+paper_ids:
+- '2502.13013'
+- '2511.02832'
+- '2505.02833'
+target_entity_types:
+- paper
+- method
+- formalism
+- technology
+- component
+target_domains:
+- 07_ai_models_algorithms
+- 09_data_datasets
+- 08_software_middleware
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+- derived_from
+relevance_threshold: medium
+max_papers: 10
+priority: 1
+sources:
+- arxiv
+metadata:
+  curated_source: wechat_161_humanoid_papers
+  category: 数据采集与遥操作系统
+  resolved_count: 3
+  total_count: 7

@@ -1,0 +1,43 @@
+name: synthetic_data_generation
+description: 'Workstream for synthetic data generation. Generated from WORKSTREAM_TREE
+  leaf: data_systems/synthetic_data_generation.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- synthetic data generation robotics
+- humanoid robot synthetic data generation
+- synthetic data generation robots survey
+- synthetic data generation automation manufacturing
+- synthetic data generation applied to humanoid robots
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 2
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: data_systems/synthetic_data_generation.yaml
+relevance_context: Relevant if it addresses synthetic data generation in a robotics
+  or automation context, or develops foundational methods/principles applicable to
+  humanoid robots, even when examples are not explicitly humanoid.

@@ -1,0 +1,43 @@
+name: market_sizing_forecasts
+description: 'Workstream for market sizing forecasts. Generated from WORKSTREAM_TREE
+  leaf: applications_markets/market_sizing_forecasts.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- market sizing forecasts robotics
+- humanoid robot market sizing forecasts
+- market sizing forecasts robots survey
+- market sizing forecasts automation manufacturing
+- market sizing forecasts applied to humanoid robots
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 2
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: applications_markets/market_sizing_forecasts.yaml
+relevance_context: Relevant if it addresses market sizing forecasts in a robotics
+  or automation context, or develops foundational methods/principles applicable to
+  humanoid robots, even when examples are not explicitly humanoid.

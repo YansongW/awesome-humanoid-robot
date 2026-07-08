@@ -1,0 +1,48 @@
+---
+$id: ent_report_industry_locus_robotics_helps_hellofres_2026
+$schema: ../../data/schema/v1/entry_schema.json
+$version: 1
+type: report
+names:
+  en: Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X
+    Across Growing Brand Portfolio
+  zh: Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X
+    Across Growing Brand Portfolio
+  ko: ''
+summary:
+  en: Customized Locus Origin deployment supports refrigerated operations, expanded
+    SKU variety, and continued automation growth across HelloFresh brands
+  zh: Customized Locus Origin deployment supports refrigerated operations, expanded
+    SKU variety, and continued automation growth across HelloFresh brands
+  ko: ''
+domains:
+- 11_applications_markets
+layers:
+- validation_markets
+functional_roles:
+- knowledge
+- market
+tags:
+- industry
+- news
+- report
+- robotics
+theoretical_depth:
+- system
+verification:
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-07-01'
+  confidence: medium
+  notes: Imported via ingestion framework from source_type=website.
+sources:
+- id: src_001
+  type: website
+  title: Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity
+    5X Across Growing Brand Portfolio
+  url: http://www.RoboticsTomorrow.com/news/2026/06/23/locus-robotics-helps-hellofresh-expand-temperature-controlled-sku-capacity-5x-across-growing-brand-portfolio/26768
+  date: '2026'
+  accessed_at: '2026-07-01'
+---
+
+Customized Locus Origin deployment supports refrigerated operations, expanded SKU variety, and continued automation growth across HelloFresh brands

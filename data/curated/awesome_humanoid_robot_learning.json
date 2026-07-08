@@ -1,0 +1,4874 @@
+{
+  "source": "https://raw.githubusercontent.com/YanjieZe/awesome-humanoid-robot-learning/main/README.md",
+  "papers": [
+    {
+      "title": "SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2606.03297",
+      "arxiv_url": "https://arxiv.org/abs/2606.03297",
+      "website_url": "https://splitadapter.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "SUGAR: A Scalable Human-Video-Driven Generalizable Humanoid Loco-Manipulation Learning Framework",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2605.20373",
+      "arxiv_url": "https://arxiv.org/abs/2605.20373",
+      "website_url": "https://tianshuwu.github.io/sugar-humanoid/",
+      "code_url": "https://github.com/tianshuwu/SUGAR"
+    },
+    {
+      "title": "ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2605.06593",
+      "arxiv_url": "https://arxiv.org/abs/2605.06593",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2603.27756",
+      "arxiv_url": "https://arxiv.org/abs/2603.27756",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified Flow and Selective Safety Gating",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2603.23983",
+      "arxiv_url": "https://arxiv.org/abs/2603.23983",
+      "website_url": "https://hanbyelcho.info/safeflow/",
+      "code_url": ""
+    },
+    {
+      "title": "LATENT: Learning Athletic Humanoid Tennis Skills from Imperfect Human Motion Data",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://zzk273.github.io/LATENT/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Ψ₀: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2603.12263",
+      "arxiv_url": "https://arxiv.org/abs/2603.12263",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual Reinforcement Learning",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2603.10306",
+      "arxiv_url": "https://arxiv.org/abs/2603.10306",
+      "website_url": "https://steadytray.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "ZeroWBC: Learning Natural Visuomotor Humanoid Control Directly from Human Egocentric Video",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2603.09170",
+      "arxiv_url": "https://arxiv.org/abs/2603.09170",
+      "website_url": "https://zerowbc.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2603.08619",
+      "arxiv_url": "https://arxiv.org/abs/2603.08619",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2603.03279",
+      "arxiv_url": "https://arxiv.org/abs/2603.03279",
+      "website_url": "https://ultra-humanoid.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.23843",
+      "arxiv_url": "https://arxiv.org/abs/2602.23843",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "LessMimic: Long-Horizon Humanoid Interaction with Unified Distance Field Representations",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.21723",
+      "arxiv_url": "https://arxiv.org/abs/2602.21723",
+      "website_url": "https://yzhu.io/preprint/humanoid2026lessmimic/",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.16705",
+      "arxiv_url": "https://arxiv.org/abs/2602.16705",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.16511",
+      "arxiv_url": "https://arxiv.org/abs/2602.16511",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.15827",
+      "arxiv_url": "https://arxiv.org/abs/2602.15827",
+      "website_url": "https://php-parkour.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "MeshMimic: Geometry-Aware Humanoid Motion Learning through 3D Scene Reconstruction",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.15733",
+      "arxiv_url": "https://arxiv.org/abs/2602.15733",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid Hanoi: Investigating Shared Whole-Body Control for Skill-Based Box Rearrangement",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.13850",
+      "arxiv_url": "https://arxiv.org/abs/2602.13850",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "General Humanoid Whole-Body Control via Pretraining and Fast Adaptation",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.11929",
+      "arxiv_url": "https://arxiv.org/abs/2602.11929",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HAIC: Humanoid Agile Object Interaction Control via Dynamics-Aware World Model",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.11758",
+      "arxiv_url": "https://arxiv.org/abs/2602.11758",
+      "website_url": "https://haic-humanoid.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.10106",
+      "arxiv_url": "https://arxiv.org/abs/2602.10106",
+      "website_url": "https://opendrivelab.com/EgoHumanoid/",
+      "code_url": ""
+    },
+    {
+      "title": "MOSAIC: Bridging the Sim-to-Real Gap in Generalist Humanoid Motion Tracking and Teleoperation with Rapid Residual Adaptation",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.08594",
+      "arxiv_url": "https://arxiv.org/abs/2602.08594",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Human-Like Badminton Skills for Humanoid Robots",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.08370",
+      "arxiv_url": "https://arxiv.org/abs/2602.08370",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.07439",
+      "arxiv_url": "https://arxiv.org/abs/2602.07439",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "DynaRetarget: Dynamically-Feasible Retargeting using Sampling-Based Trajectory Optimization",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.06827",
+      "arxiv_url": "https://arxiv.org/abs/2602.06827",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.06643",
+      "arxiv_url": "https://arxiv.org/abs/2602.06643",
+      "website_url": "https://humanoid-manipulation-interface.github.io",
+      "code_url": ""
+    },
+    {
+      "title": "HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.06341",
+      "arxiv_url": "https://arxiv.org/abs/2602.06341",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action Framework",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.05310",
+      "arxiv_url": "https://arxiv.org/abs/2602.05310",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "PDF-HR: Pose Distance Fields for Humanoid Robots",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.04851",
+      "arxiv_url": "https://arxiv.org/abs/2602.04851",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.03205",
+      "arxiv_url": "https://arxiv.org/abs/2602.03205",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Embodiment-Aware Generalist Specialist Distillation for Unified Humanoid Whole-Body Control",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.02960",
+      "arxiv_url": "https://arxiv.org/abs/2602.02960",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.02473",
+      "arxiv_url": "https://arxiv.org/abs/2602.02473",
+      "website_url": "https://wyhuai.github.io/human-x/",
+      "code_url": ""
+    },
+    {
+      "title": "TTT-Parkour: Rapid Test-Time Training for Perceptive Robot Parkour",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.02331",
+      "arxiv_url": "https://arxiv.org/abs/2602.02331",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ZEST: Zero-shot Embodied Skill Transfer for Athletic Robot Control",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2602.00401",
+      "arxiv_url": "https://arxiv.org/abs/2602.00401",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Robust and Generalized Humanoid Motion Tracking",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2601.23080",
+      "arxiv_url": "https://arxiv.org/abs/2601.23080",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2601.22517",
+      "arxiv_url": "https://arxiv.org/abs/2601.22517",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2601.17440",
+      "arxiv_url": "https://arxiv.org/abs/2601.17440",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Collision-Free Humanoid Traversal in Cluttered Indoor Scenes",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2601.16035",
+      "arxiv_url": "https://arxiv.org/abs/2601.16035",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2601.12799",
+      "arxiv_url": "https://arxiv.org/abs/2601.12799",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2601.09518",
+      "arxiv_url": "https://arxiv.org/abs/2601.09518",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Hiking in the Wild: A Scalable Perceptive Parkour Framework for Humanoids",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2601.07718",
+      "arxiv_url": "https://arxiv.org/abs/2601.07718",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Deep Whole-body Parkour",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2601.07701",
+      "arxiv_url": "https://arxiv.org/abs/2601.07701",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Coordinated Humanoid Manipulation with Choice Policies",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2512.25072",
+      "arxiv_url": "https://arxiv.org/abs/2512.25072",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "UniAct: Unified Motion Generation and Action Streaming for Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2512.24321",
+      "arxiv_url": "https://arxiv.org/abs/2512.24321",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid Whole-Body Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2512.19043",
+      "arxiv_url": "https://arxiv.org/abs/2512.19043",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2512.17183",
+      "arxiv_url": "https://arxiv.org/abs/2512.17183",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "CHIP: Adaptive Compliance for Humanoid Control through Hindsight Perturbation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2512.14689",
+      "arxiv_url": "https://arxiv.org/abs/2512.14689",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged Contrastive Representations",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2512.13093",
+      "arxiv_url": "https://arxiv.org/abs/2512.13093",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2512.06571",
+      "arxiv_url": "https://arxiv.org/abs/2512.06571",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2512.01336",
+      "arxiv_url": "https://arxiv.org/abs/2512.01336",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2512.01061",
+      "arxiv_url": "https://arxiv.org/abs/2512.01061",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.22963",
+      "arxiv_url": "https://arxiv.org/abs/2511.22963",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid Loco-Manipulation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.21169",
+      "arxiv_url": "https://arxiv.org/abs/2511.21169",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HAFO: A Force-Adaptive Control Framework for Humanoid Robots in Intense Interaction Environments",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.20275",
+      "arxiv_url": "https://arxiv.org/abs/2511.20275",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SENTINEL: A Fully End-to-End Language-Action Model for Humanoid Whole Body Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.19236",
+      "arxiv_url": "https://arxiv.org/abs/2511.19236",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SafeFall: Learning Protective Control for Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.18509",
+      "arxiv_url": "https://arxiv.org/abs/2511.18509",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.17373",
+      "arxiv_url": "https://arxiv.org/abs/2511.17373",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.15200",
+      "arxiv_url": "https://arxiv.org/abs/2511.15200",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.14756",
+      "arxiv_url": "https://arxiv.org/abs/2511.14756",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.11218",
+      "arxiv_url": "https://arxiv.org/abs/2511.11218",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Robot Crash Course: Learning Soft and Stylized Falling",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.10635",
+      "arxiv_url": "https://arxiv.org/abs/2511.10635",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Unveiling the Impact of Data and Model Scaling on High-Level Control for Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.09241",
+      "arxiv_url": "https://arxiv.org/abs/2511.09241",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.07820",
+      "arxiv_url": "https://arxiv.org/abs/2511.07820",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Unified Humanoid Fall-Safety Policy from a Few Demonstrations",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.07407",
+      "arxiv_url": "https://arxiv.org/abs/2511.07407",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.06371",
+      "arxiv_url": "https://arxiv.org/abs/2511.06371",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.04679",
+      "arxiv_url": "https://arxiv.org/abs/2511.04679",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.04131",
+      "arxiv_url": "https://arxiv.org/abs/2511.04131",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.03996",
+      "arxiv_url": "https://arxiv.org/abs/2511.03996",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2511.02832",
+      "arxiv_url": "https://arxiv.org/abs/2511.02832",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.26280",
+      "arxiv_url": "https://arxiv.org/abs/2510.26280",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "One-shot Humanoid Whole-body Motion Learning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.25241",
+      "arxiv_url": "https://arxiv.org/abs/2510.25241",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid Goalkeeper: Learning from Position Conditioned Task-Motion Constraints",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.18002",
+      "arxiv_url": "https://arxiv.org/abs/2510.18002",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SoftMimic: Learning Compliant Whole-body Control from Examples",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.17792",
+      "arxiv_url": "https://arxiv.org/abs/2510.17792",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.14952",
+      "arxiv_url": "https://arxiv.org/abs/2510.14952",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Towards Adaptable Humanoid Control via Adaptive Motion Tracking",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.14454",
+      "arxiv_url": "https://arxiv.org/abs/2510.14454",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Human-Humanoid Coordination for Collaborative Object Carrying",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.14293",
+      "arxiv_url": "https://arxiv.org/abs/2510.14293",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Ego-Vision World Model for Humanoid Contact Planning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.11682",
+      "arxiv_url": "https://arxiv.org/abs/2510.11682",
+      "website_url": "https://ego-vcp.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.11258",
+      "arxiv_url": "https://arxiv.org/abs/2510.11258",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "PhysHSI: Towards a Real-World Generalizable and Natural Humanoid-Scene Interaction System",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.11072",
+      "arxiv_url": "https://arxiv.org/abs/2510.11072",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "It Takes Two: Learning Interactive Whole-Body Control Between Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.10206",
+      "arxiv_url": "https://arxiv.org/abs/2510.10206",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ResMimic: From General Motion Tracking to Humanoid Whole-body Loco-Manipulation via Residual Learning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.05070",
+      "arxiv_url": "https://arxiv.org/abs/2510.05070",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.03022",
+      "arxiv_url": "https://arxiv.org/abs/2510.03022",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2510.02252",
+      "arxiv_url": "https://arxiv.org/abs/2510.02252",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.26633",
+      "arxiv_url": "https://arxiv.org/abs/2509.26633",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with Prediction Augmentation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.21690",
+      "arxiv_url": "https://arxiv.org/abs/2509.21690",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for Humanoid Loco-Manipulation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.21231",
+      "arxiv_url": "https://arxiv.org/abs/2509.21231",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking and Generation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.20322",
+      "arxiv_url": "https://arxiv.org/abs/2509.20322",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HDMI: Learning Interactive Humanoid Whole-Body Control from Human Videos",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.16757",
+      "arxiv_url": "https://arxiv.org/abs/2509.16757",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.16638",
+      "arxiv_url": "https://arxiv.org/abs/2509.16638",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Implicit Kinodynamic Motion Retargeting for Human-to-humanoid Imitation Learning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.15443",
+      "arxiv_url": "https://arxiv.org/abs/2509.15443",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.14353",
+      "arxiv_url": "https://arxiv.org/abs/2509.14353",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Track Any Motions under Any Disturbances",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.13833",
+      "arxiv_url": "https://arxiv.org/abs/2509.13833",
+      "website_url": "https://zzk273.github.io/Any2Track/",
+      "code_url": ""
+    },
+    {
+      "title": "Behavior Foundation Model for Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.13780",
+      "arxiv_url": "https://arxiv.org/abs/2509.13780",
+      "website_url": "https://bfm4humanoid.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Embracing Bulky Objects with Humanoid Robots: Whole-Body Manipulation with Reinforcement Learning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.13534",
+      "arxiv_url": "https://arxiv.org/abs/2509.13534",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "StageACT: Stage-Conditioned Imitation for Robust Humanoid Door Opening",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.13200",
+      "arxiv_url": "https://arxiv.org/abs/2509.13200",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2509.11839",
+      "arxiv_url": "https://arxiv.org/abs/2509.11839",
+      "website_url": "https://jiachengliu3.github.io/TrajBooster/",
+      "code_url": ""
+    },
+    {
+      "title": "HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2508.21043",
+      "arxiv_url": "https://arxiv.org/abs/2508.21043",
+      "website_url": "https://humanoid-table-tennis.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "HuBE: Cross-Embodiment Human-like Behavior Execution for Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2508.19002",
+      "arxiv_url": "https://arxiv.org/abs/2508.19002",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HumanoidVerse: A Versatile Humanoid for Vision-Language Guided Multi-Object Rearrangement",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2508.16943",
+      "arxiv_url": "https://arxiv.org/abs/2508.16943",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Task and Motion Planning for Humanoid Loco-manipulation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2508.14099",
+      "arxiv_url": "https://arxiv.org/abs/2508.14099",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Differentiable Reachability Maps for Optimization-based Humanoid Motion Generation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2508.11275",
+      "arxiv_url": "https://arxiv.org/abs/2508.11275",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "GBC: Generalized Behavior-Cloning Framework for Whole-Body Humanoid Imitation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2508.09960",
+      "arxiv_url": "https://arxiv.org/abs/2508.09960",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2508.08241",
+      "arxiv_url": "https://arxiv.org/abs/2508.08241",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "A Whole-Body Motion Imitation Framework from Human Data for Full-Size Humanoid Robot",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2508.00362",
+      "arxiv_url": "https://arxiv.org/abs/2508.00362",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "EMP: Executable Motion Prior for Humanoid Robot Standing Upper-body Motion Imitation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2507.15649",
+      "arxiv_url": "https://arxiv.org/abs/2507.15649",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Keep on Going: Learning Robust Humanoid Motion Skills via Selective Adversarial Training",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2507.08303",
+      "arxiv_url": "https://arxiv.org/abs/2507.08303",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2507.07356",
+      "arxiv_url": "https://arxiv.org/abs/2507.07356",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ULC: A Unified and Fine-Grained Controller for Humanoid Loco-Manipulation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2507.06905",
+      "arxiv_url": "https://arxiv.org/abs/2507.06905",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2506.23125",
+      "arxiv_url": "https://arxiv.org/abs/2506.23125",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "A Survey of Behavior Foundation Model: Next-Generation Whole-Body Control System of Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2506.20487",
+      "arxiv_url": "https://arxiv.org/abs/2506.20487",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning with Tactile Modality",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2506.15146",
+      "arxiv_url": "https://arxiv.org/abs/2506.15146",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "GMT: General Motion Tracking for Humanoid Whole-Body Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2506.14770",
+      "arxiv_url": "https://arxiv.org/abs/2506.14770",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2506.13751",
+      "arxiv_url": "https://arxiv.org/abs/2506.13751",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2506.12851",
+      "arxiv_url": "https://arxiv.org/abs/2506.12851",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2506.12779",
+      "arxiv_url": "https://arxiv.org/abs/2506.12779",
+      "website_url": "https://beingbeyond.github.io/BumbleBee/",
+      "code_url": ""
+    },
+    {
+      "title": "SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2506.09366",
+      "arxiv_url": "https://arxiv.org/abs/2506.09366",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement Learning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2506.04147",
+      "arxiv_url": "https://arxiv.org/abs/2506.04147",
+      "website_url": "https://robo-rl.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2506.01563",
+      "arxiv_url": "https://arxiv.org/abs/2506.01563",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2506.00043",
+      "arxiv_url": "https://arxiv.org/abs/2506.00043",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SignBot: Learning Human-to-Humanoid Sign Language Interaction",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2505.24266",
+      "arxiv_url": "https://arxiv.org/abs/2505.24266",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2505.24198",
+      "arxiv_url": "https://arxiv.org/abs/2505.24198",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Mobi-π: Mobilizing Your Robot Learning Policy",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2505.23692",
+      "arxiv_url": "https://arxiv.org/abs/2505.23692",
+      "website_url": "https://mobipi.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Whole-body Multi-contact Motion Control for Humanoid Robots Based on Distributed Tactile Sensors",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2505.19580",
+      "arxiv_url": "https://arxiv.org/abs/2505.19580",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2505.19463",
+      "arxiv_url": "https://arxiv.org/abs/2505.19463",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "H2-COMPACT: Human-Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/pdf/2505.17627",
+      "arxiv_url": "https://arxiv.org/pdf/2505.17627",
+      "website_url": "https://h2compact.github.io/h2compact/",
+      "code_url": ""
+    },
+    {
+      "title": "Unleashing Humanoid Reaching Potential via Real-world-Ready Skill Space",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2505.10918",
+      "arxiv_url": "https://arxiv.org/abs/2505.10918",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HuB: Learning Extreme Humanoid Balance",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2505.07294",
+      "arxiv_url": "https://arxiv.org/abs/2505.07294",
+      "website_url": "https://hub-robot.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2505.06776",
+      "arxiv_url": "https://arxiv.org/abs/2505.06776",
+      "website_url": "https://lecar-lab.github.io/falcon-humanoid/",
+      "code_url": ""
+    },
+    {
+      "title": "FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid",
+      "year": "2026",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2603.08961v1",
+      "arxiv_url": "https://arxiv.org/abs/2603.08961v1",
+      "website_url": "https://fame10.github.io/Fame/",
+      "code_url": ""
+    },
+    {
+      "title": "JAEGER: Dual-Level Humanoid Whole-Body Controller",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2505.06584",
+      "arxiv_url": "https://arxiv.org/abs/2505.06584",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2505.03738",
+      "arxiv_url": "https://arxiv.org/abs/2505.03738",
+      "website_url": "https://amo-humanoid.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "PyRoki: A Modular Toolkit for Robot Kinematic Optimization",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2505.03728",
+      "arxiv_url": "https://arxiv.org/abs/2505.03728",
+      "website_url": "https://pyroki-toolkit.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "TWIST: Teleoperated Whole-Body Imitation System",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2505.02833",
+      "arxiv_url": "https://arxiv.org/abs/2505.02833",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "LangWBC: Language-directed Humanoid Whole-Body Control via End-to-end Learning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2504.21738",
+      "arxiv_url": "https://arxiv.org/abs/2504.21738",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Physically Consistent Humanoid Loco-Manipulation using Latent Diffusion Models",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2504.16843v1",
+      "arxiv_url": "https://arxiv.org/abs/2504.16843v1",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2504.14305",
+      "arxiv_url": "https://arxiv.org/abs/2504.14305",
+      "website_url": "https://almi-humanoid.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model for Humanoid Loco-manipulation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/pdf/2504.09532",
+      "arxiv_url": "https://arxiv.org/pdf/2504.09532",
+      "website_url": "https://humanoid-coa.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2503.22249",
+      "arxiv_url": "https://arxiv.org/abs/2503.22249",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Being-0: A Humanoid Robotic Agent with Vision-Language Models and Modular Skills",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2503.12533",
+      "arxiv_url": "https://arxiv.org/abs/2503.12533",
+      "website_url": "https://beingbeyond.github.io/being-0/",
+      "code_url": ""
+    },
+    {
+      "title": "Trinity: A Modular Humanoid Robot AI System",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2503.08338",
+      "arxiv_url": "https://arxiv.org/abs/2503.08338",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2503.05652",
+      "arxiv_url": "https://arxiv.org/abs/2503.05652",
+      "website_url": "https://behavior-robot-suite.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Whole-Body Model-Predictive Control of Legged Robots with MuJoCo",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2503.04613",
+      "arxiv_url": "https://arxiv.org/abs/2503.04613",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2502.20061",
+      "arxiv_url": "https://arxiv.org/abs/2502.20061",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2502.13013",
+      "arxiv_url": "https://arxiv.org/abs/2502.13013",
+      "website_url": "https://homietele.github.io/",
+      "code_url": "https://github.com/OpenRobotLab/OpenHomie"
+    },
+    {
+      "title": "Learning Getting-Up Policies for Real-World Humanoid Robots",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2502.12152",
+      "arxiv_url": "https://arxiv.org/abs/2502.12152",
+      "website_url": "https://humanoid-getup.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Humanoid Standing-up Control across Diverse Postures",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2502.08378",
+      "arxiv_url": "https://arxiv.org/abs/2502.08378",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HugWBC: A Unified and General Humanoid Whole-Body Controller",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2502.03206",
+      "arxiv_url": "https://arxiv.org/abs/2502.03206",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2502.03132",
+      "arxiv_url": "https://arxiv.org/abs/2502.03132",
+      "website_url": "https://intelligent-control-lab.github.io/spark/",
+      "code_url": ""
+    },
+    {
+      "title": "Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2502.01465",
+      "arxiv_url": "https://arxiv.org/abs/2502.01465",
+      "website_url": "https://project-instinct.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Human-Humanoid Robots Cross-Embodiment Behavior-Skill Transfer Using Decomposed Adversarial Learning from Demonstration",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2412.15166",
+      "arxiv_url": "https://arxiv.org/abs/2412.15166",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning from Massive Human Videos for Universal Humanoid Pose Control",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2412.14172",
+      "arxiv_url": "https://arxiv.org/abs/2412.14172",
+      "website_url": "https://usc-gvl.github.io/UH-1/",
+      "code_url": ""
+    },
+    {
+      "title": "ExBody2: Advanced Expressive Humanoid Whole-Body Control",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2412.13196",
+      "arxiv_url": "https://arxiv.org/abs/2412.13196",
+      "website_url": "https://exbody2.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Mobile-TeleVision: Predictive Motion Priors for Humanoid Whole-Body Control",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2412.07773",
+      "arxiv_url": "https://arxiv.org/abs/2412.07773",
+      "website_url": "https://mobile-tv.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "A Behavior Architecture for Fast Humanoid Robot Door Traversals",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2411.03532",
+      "arxiv_url": "https://arxiv.org/abs/2411.03532",
+      "website_url": "https://www.youtube.com/playlist?list=PLXuyT8w3JVgMPaB5nWNRNHtqzRK8i68dy",
+      "code_url": ""
+    },
+    {
+      "title": "The Role of Domain Randomization in Training Diffusion Policies for Whole-Body Humanoid Control",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2411.01349",
+      "arxiv_url": "https://arxiv.org/abs/2411.01349",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "EMOTION: Expressive Motion Sequence Generation for Humanoid Robots with In-Context Learning",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2410.23234",
+      "arxiv_url": "https://arxiv.org/abs/2410.23234",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2410.21229",
+      "arxiv_url": "https://arxiv.org/abs/2410.21229",
+      "website_url": "https://hover-versatile-humanoid.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Harmon: Whole-Body Motion Generation of Humanoid Robots from Language Descriptions",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2410.12773",
+      "arxiv_url": "https://arxiv.org/abs/2410.12773",
+      "website_url": "https://ut-austin-rpl.github.io/Harmon/",
+      "code_url": ""
+    },
+    {
+      "title": "Whole-Body Dynamic Throwing with Legged Manipulators",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2410.05681",
+      "arxiv_url": "https://arxiv.org/abs/2410.05681",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Opt2Skill: Imitating Dynamically-feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2409.20514",
+      "arxiv_url": "https://arxiv.org/abs/2409.20514",
+      "website_url": "https://opt2skill.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2409.15610",
+      "arxiv_url": "https://arxiv.org/abs/2409.15610",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2408.07295",
+      "arxiv_url": "https://arxiv.org/abs/2408.07295",
+      "website_url": "https://masked-humanoid.github.io/mhc/",
+      "code_url": ""
+    },
+    {
+      "title": "Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2407.12381",
+      "arxiv_url": "https://arxiv.org/abs/2407.12381",
+      "website_url": "https://www.youtube.com/watch?v=OyXojqRasHU",
+      "code_url": ""
+    },
+    {
+      "title": "HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2406.14655v1",
+      "arxiv_url": "https://arxiv.org/abs/2406.14655v1",
+      "website_url": "https://hy-motion.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "HumanPlus: Humanoid Shadowing and Imitation from Humans",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2406.10454",
+      "arxiv_url": "https://arxiv.org/abs/2406.10454",
+      "website_url": "https://humanoid-ai.github.io/",
+      "code_url": "https://github.com/MarkFzp/humanplus"
+    },
+    {
+      "title": "OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2406.08858",
+      "arxiv_url": "https://arxiv.org/abs/2406.08858",
+      "website_url": "https://omni.human2humanoid.com/",
+      "code_url": "https://github.com/LeCAR-Lab/human2humanoid"
+    },
+    {
+      "title": "WoCoCo: Learning Whole-Body Humanoid Control with Sequential Contacts",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2406.06005",
+      "arxiv_url": "https://arxiv.org/abs/2406.06005",
+      "website_url": "https://lecar-lab.github.io/wococo/",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2403.04436",
+      "arxiv_url": "https://arxiv.org/abs/2403.04436",
+      "website_url": "https://human2humanoid.com/",
+      "code_url": "https://github.com/LeCAR-Lab/human2humanoid"
+    },
+    {
+      "title": "Expressive Whole-Body Control for Humanoid Robots",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2402.16796",
+      "arxiv_url": "https://arxiv.org/abs/2402.16796",
+      "website_url": "https://expressive-humanoid.github.io/",
+      "code_url": "https://github.com/chengxuxin/expressive-humanoid"
+    },
+    {
+      "title": "Sim-to-Real Learning for Humanoid Box Loco-Manipulation",
+      "year": "2023",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2310.03191",
+      "arxiv_url": "https://arxiv.org/abs/2310.03191",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo",
+      "year": "2022",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://arxiv.org/abs/2212.00541",
+      "arxiv_url": "https://arxiv.org/abs/2212.00541",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "WholeBodyVLA: Towards Unified Latent VLA for Whole-body Loco-manipulation Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://opendrivelab.com/WholeBodyVLA/static/pdf/WholeBodyVLA.pdf",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SPIDER: Scalable Physics-Informed DExterous Retargeting",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://jc-bao.github.io/spider-project/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://nvlabs.github.io/SONIC/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "AdaMimic: Towards Adaptable Humanoid Control via Adaptive Motion Tracking",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://taohuang13.github.io/adamimic.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://humanoid-exo.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://omniretarget.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "arXiv 2025.07, ULC: A Unified and Fine-Grained Controller for Humanoid Loco-Manipulation",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://ulc-humanoid.github.io",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "arXiv 2025.06, LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://ember-lab-berkeley.github.io/LeVERB-Website/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "arXiv 2025.06, General Motion Tracking for Humanoid Whole-Body Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://gmt-humanoid.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "arXiv 2025.06, KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://kungfu-bot.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "arXiv 2025.06, CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon Humanoid Control",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://humanoidclone.github.io/CLONE.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills",
+      "year": "2025",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://agile.human2humanoid.com/",
+      "arxiv_url": "",
+      "website_url": "https://agile.human2humanoid.com/",
+      "code_url": ""
+    },
+    {
+      "title": "VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://la.disneyresearch.com/publication/vmp-versatile-motion-priors-for-robustly-tracking-motion-on-physical-characters/",
+      "arxiv_url": "",
+      "website_url": "https://la.disneyresearch.com/publication/vmp-versatile-motion-priors-for-robustly-tracking-motion-on-physical-characters/",
+      "code_url": ""
+    },
+    {
+      "title": "Robot Motion Diffusion Model: Motion Generation for Robotic Characters",
+      "year": "2024",
+      "category": "Loco-Manipulation and Whole-Body-Control",
+      "source_url": "https://la.disneyresearch.com/publication/robot-motion-diffusion-model-motion-generation-for-robotic-characters/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HumDex: Humanoid Dexterous Manipulation Made Easy",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2603.12260",
+      "arxiv_url": "https://arxiv.org/abs/2603.12260",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2603.05493",
+      "arxiv_url": "https://arxiv.org/abs/2603.05493",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2602.06949",
+      "arxiv_url": "https://arxiv.org/abs/2602.06949",
+      "website_url": "https://dreamdojo-world.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2601.14874",
+      "arxiv_url": "https://arxiv.org/abs/2601.14874",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Generalizable Geometric Prior and Recurrent Spiking Feature Learning for Humanoid Robot Manipulation",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2601.09031",
+      "arxiv_url": "https://arxiv.org/abs/2601.09031",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "DexterCap: An Affordable and Automated System for Capturing Dexterous Hand-Object Manipulation",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2601.05844",
+      "arxiv_url": "https://arxiv.org/abs/2601.05844",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2601.02078",
+      "arxiv_url": "https://arxiv.org/abs/2601.02078",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2511.23300",
+      "arxiv_url": "https://arxiv.org/abs/2511.23300",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-the-Wild Human Demonstrations",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2511.16661",
+      "arxiv_url": "https://arxiv.org/abs/2511.16661",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2511.15704",
+      "arxiv_url": "https://arxiv.org/abs/2511.15704",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2511.09141",
+      "arxiv_url": "https://arxiv.org/abs/2511.09141",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Lightning Grasp: High Performance Procedural Grasp Synthesis with Contact Fields",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2511.07418",
+      "arxiv_url": "https://arxiv.org/abs/2511.07418",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human Demonstrations",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2511.00153",
+      "arxiv_url": "https://arxiv.org/abs/2511.00153",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Endowing GPT-4 with a Humanoid Body: Building the Bridge Between Off-the-Shelf VLMs and the Physical World",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2511.00041",
+      "arxiv_url": "https://arxiv.org/abs/2511.00041",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "A Humanoid Visual-Tactile-Action Dataset for Contact-Rich Manipulation",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2510.25725",
+      "arxiv_url": "https://arxiv.org/abs/2510.25725",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2510.07882",
+      "arxiv_url": "https://arxiv.org/abs/2510.07882",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "EgoDemoGen: Novel Egocentric Demonstration Generation Enables Viewpoint-Robust Manipulation",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2509.22578",
+      "arxiv_url": "https://arxiv.org/abs/2509.22578",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Residual Off-Policy RL for Finetuning Behavior Cloning Policies",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2509.19301",
+      "arxiv_url": "https://arxiv.org/abs/2509.19301",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human Play Videos",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2509.09769",
+      "arxiv_url": "https://arxiv.org/abs/2509.09769",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Masquerade: Learning from In-the-wild Human Videos using Data-Editing",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2508.09976",
+      "arxiv_url": "https://arxiv.org/abs/2508.09976",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation with Humanoid Robots",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2508.00355",
+      "arxiv_url": "https://arxiv.org/abs/2508.00355",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2507.23523",
+      "arxiv_url": "https://arxiv.org/abs/2507.23523",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2507.15597",
+      "arxiv_url": "https://arxiv.org/abs/2507.15597",
+      "website_url": "https://beingbeyond.github.io/Being-H0/",
+      "code_url": "https://github.com/BeingBeyond/Being-H0"
+    },
+    {
+      "title": "EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2507.12440",
+      "arxiv_url": "https://arxiv.org/abs/2507.12440",
+      "website_url": "https://rchalyang.github.io/EgoVLA/",
+      "code_url": ""
+    },
+    {
+      "title": "Robot Drummer: Learning Rhythmic Skills for Humanoid Drumming",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2507.11498",
+      "arxiv_url": "https://arxiv.org/abs/2507.11498",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2506.22827",
+      "arxiv_url": "https://arxiv.org/abs/2506.22827",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Vision in Action: Learning Active Perception from Human Demonstrations",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2506.15666",
+      "arxiv_url": "https://arxiv.org/abs/2506.15666",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2505.12705",
+      "arxiv_url": "https://arxiv.org/abs/2505.12705",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2505.11709",
+      "arxiv_url": "https://arxiv.org/abs/2505.11709",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2503.24361",
+      "arxiv_url": "https://arxiv.org/abs/2503.24361",
+      "website_url": "https://co-training.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "GR00T N1: An Open Foundation Model for Generalist Humanoid Robots",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2503.14734",
+      "arxiv_url": "https://arxiv.org/abs/2503.14734",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid Policy ~ Human Policy",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2503.13441",
+      "arxiv_url": "https://arxiv.org/abs/2503.13441",
+      "website_url": "https://human-as-robot.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoids in Hospitals: A Technical Study of Humanoid Surrogates for Dexterous Medical Interventions",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2503.12725",
+      "arxiv_url": "https://arxiv.org/abs/2503.12725",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Unified Video Action Model",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2503.00200",
+      "arxiv_url": "https://arxiv.org/abs/2503.00200",
+      "website_url": "https://unified-video-action-model.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Dexterous Safe Control for Humanoids in Cluttered Environments via Projected Safe Set Algorithm",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2502.02858",
+      "arxiv_url": "https://arxiv.org/abs/2502.02858",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively from Scalable and Diverse Synthetic Data",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2501.04595",
+      "arxiv_url": "https://arxiv.org/abs/2501.04595",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2412.10631",
+      "arxiv_url": "https://arxiv.org/abs/2412.10631",
+      "website_url": "https://nataliya.dev/armada",
+      "code_url": ""
+    },
+    {
+      "title": "Object-Centric Dexterous Manipulation from Human Motion Data",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2411.04005",
+      "arxiv_url": "https://arxiv.org/abs/2411.04005",
+      "website_url": "https://cypypccpy.github.io/obj-dex.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "DexHub and DART: Towards Internet-Scale Robot Data Collection",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2411.02214",
+      "arxiv_url": "https://arxiv.org/abs/2411.02214",
+      "website_url": "https://dexhub.ai/project",
+      "code_url": ""
+    },
+    {
+      "title": "Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like Actuated Neck",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2411.00704",
+      "arxiv_url": "https://arxiv.org/abs/2411.00704",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "EgoMimic: Scaling Imitation Learning via Egocentric Video",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2410.24221",
+      "arxiv_url": "https://arxiv.org/abs/2410.24221",
+      "website_url": "https://egomimic.github.io/",
+      "code_url": "https://github.com/SimarKareer/EgoMimic"
+    },
+    {
+      "title": "Learning to Look: Seeking Information for Decision Making via Policy Factorization",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2410.18964",
+      "arxiv_url": "https://arxiv.org/abs/2410.18964",
+      "website_url": "https://robin-lab.cs.utexas.edu/learning2look/",
+      "code_url": ""
+    },
+    {
+      "title": "OKAMI: Teaching Humanoid Robots Manipulation Skills through Single Video Imitation",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2410.11792",
+      "arxiv_url": "https://arxiv.org/abs/2410.11792",
+      "website_url": "https://ut-austin-rpl.github.io/OKAMI/",
+      "code_url": ""
+    },
+    {
+      "title": "Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2410.10803",
+      "arxiv_url": "https://arxiv.org/abs/2410.10803",
+      "website_url": "https://humanoid-manipulation.github.io/",
+      "code_url": "https://github.com/YanjieZe/Improved-3D-Diffusion-Policy"
+    },
+    {
+      "title": "ACE: A Cross-Platform Visual-Exoskeletons System for Low-Cost Dexterous Teleoperation",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2408.11805",
+      "arxiv_url": "https://arxiv.org/abs/2408.11805",
+      "website_url": "https://ace-teleop.github.io/",
+      "code_url": "https://github.com/ACETeleop/ACETeleop"
+    },
+    {
+      "title": "Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2407.03162",
+      "arxiv_url": "https://arxiv.org/abs/2407.03162",
+      "website_url": "https://dingry.github.io/projects/bunny_visionpro.html",
+      "code_url": "https://github.com/Dingry/BunnyVisionPro"
+    },
+    {
+      "title": "Open-TeleVision: Teleoperation with Immersive Active Visual Feedback",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2407.01512",
+      "arxiv_url": "https://arxiv.org/abs/2407.01512",
+      "website_url": "https://robot-tv.github.io/",
+      "code_url": "https://github.com/OpenTeleVision/TeleVision"
+    },
+    {
+      "title": "Learning Visuotactile Skills with Two Multifingered Hands",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2404.16823",
+      "arxiv_url": "https://arxiv.org/abs/2404.16823",
+      "website_url": "https://toruowo.github.io/hato/",
+      "code_url": "https://github.com/toruowo/hato"
+    },
+    {
+      "title": "DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://arxiv.org/abs/2403.07788",
+      "arxiv_url": "https://arxiv.org/abs/2403.07788",
+      "website_url": "https://dex-cap.github.io/",
+      "code_url": "https://github.com/j96w/DexCap"
+    },
+    {
+      "title": "DreamZero: World Action Models are Zero-shot Policies",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://dreamzero0.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://co-training-lbm.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Visual-tactile pretraining and online multitask learning for humanlike manipulation dexterity",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://www.science.org/doi/10.1126/scirobotics.ady2869",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "IN-N-ON: SCALING EGOCENTRIC MANIPULATION WITH IN-THE-WILD AND ON-TASK DATA",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://openreview.net/attachment?id=JoK1hJg0Td&name=pdf",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning to Grasp Anything by Playing with Random Toys",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://lego-grasp.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid Everyday: A Comprehensive Robotic Dataset for Open-World Humanoid Manipulation",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://humanoideveryday.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ActiveUMI: Robotic Manipulation with Active Perception from Robot‑Free Human Demonstrations",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://activeumi.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "arXiv 2025.05, DexUMI: Using Human Hand as the Universal Manipulation Interface for Dexterous Manipulation",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://dex-umi.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "arXiv 2025.02, Sim-to-Real Reinforcement Learning for Vision-Based Dexterous Manipulation on Humanoids",
+      "year": "2025",
+      "category": "Manipulation",
+      "source_url": "https://toruowo.github.io/recipe/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Bimanual Dexterity for Complex Tasks",
+      "year": "2024",
+      "category": "Manipulation",
+      "source_url": "https://openreview.net/forum?id=55tYfHvanf",
+      "arxiv_url": "",
+      "website_url": "https://bidex-teleop.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "01327-3), Is imitation learning the route to humanoid robots?",
+      "year": "2026",
+      "category": "Manipulation",
+      "source_url": "https://www.cell.com/trends/cognitive-sciences/abstract/S1364-6613(99",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation",
+      "year": "2026",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2602.15060",
+      "arxiv_url": "https://arxiv.org/abs/2602.15060",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control",
+      "year": "2026",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2602.11321",
+      "arxiv_url": "https://arxiv.org/abs/2602.11321",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with Motion Prior",
+      "year": "2026",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2602.09628",
+      "arxiv_url": "https://arxiv.org/abs/2602.09628",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation",
+      "year": "2026",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2602.01632",
+      "arxiv_url": "https://arxiv.org/abs/2602.01632",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Adaptive Neural Teleoperation for Humanoid Robots",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2511.12390",
+      "arxiv_url": "https://arxiv.org/abs/2511.12390",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2511.02832",
+      "arxiv_url": "https://arxiv.org/abs/2511.02832",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2510.13594",
+      "arxiv_url": "https://arxiv.org/abs/2510.13594",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Stability-Aware Retargeting for Humanoid Multi-Contact Teleoperation",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2510.04353",
+      "arxiv_url": "https://arxiv.org/abs/2510.04353",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2510.03529",
+      "arxiv_url": "https://arxiv.org/abs/2510.03529",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid Locomanipulation",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2508.09846",
+      "arxiv_url": "https://arxiv.org/abs/2508.09846",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "CHILD: a Whole-Body Humanoid Teleoperation System",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2508.00162",
+      "arxiv_url": "https://arxiv.org/abs/2508.00162",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "CLONE: Closed-Loop Whole-Body Humanoid Teleoperation for Long-Horizon Tasks",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2506.08931",
+      "arxiv_url": "https://arxiv.org/abs/2506.08931",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Heavy lifting tasks via haptic teleoperation of a wheeled humanoid",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2505.19530",
+      "arxiv_url": "https://arxiv.org/abs/2505.19530",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2505.12748",
+      "arxiv_url": "https://arxiv.org/abs/2505.12748",
+      "website_url": "https://gorgeous2002.github.io/TeleOpBench/",
+      "code_url": ""
+    },
+    {
+      "title": "Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2505.05773",
+      "arxiv_url": "https://arxiv.org/abs/2505.05773",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "TWIST: Teleoperated Whole-Body Imitation System",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2505.02833",
+      "arxiv_url": "https://arxiv.org/abs/2505.02833",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2503.10554",
+      "arxiv_url": "https://arxiv.org/abs/2503.10554",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2502.13013",
+      "arxiv_url": "https://arxiv.org/abs/2502.13013",
+      "website_url": "",
+      "code_url": "https://github.com/OpenRobotLab/OpenHomie"
+    },
+    {
+      "title": "Mobile-TeleVision: Predictive Motion Priors for Humanoid Whole-Body Control",
+      "year": "2024",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2412.07773",
+      "arxiv_url": "https://arxiv.org/abs/2412.07773",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Generalizable Humanoid Manipulation with 3D Diffusion Policies",
+      "year": "2024",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2410.10803",
+      "arxiv_url": "https://arxiv.org/abs/2410.10803",
+      "website_url": "https://humanoid-manipulation.github.io/",
+      "code_url": "https://github.com/YanjieZe/Improved-3D-Diffusion-Policy"
+    },
+    {
+      "title": "High-Speed and Impact Resilient Teleoperation of Humanoid Robots",
+      "year": "2024",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2409.04639v1",
+      "arxiv_url": "https://arxiv.org/abs/2409.04639v1",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ACE: A Cross-Platform Visual-Exoskeletons System for Low-Cost Dexterous Teleoperation",
+      "year": "2024",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2408.11805",
+      "arxiv_url": "https://arxiv.org/abs/2408.11805",
+      "website_url": "https://ace-teleop.github.io/",
+      "code_url": "https://github.com/ACETeleop/ACETeleop"
+    },
+    {
+      "title": "Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning",
+      "year": "2024",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2407.03162",
+      "arxiv_url": "https://arxiv.org/abs/2407.03162",
+      "website_url": "https://dingry.github.io/projects/bunny_visionpro.html",
+      "code_url": "https://github.com/Dingry/BunnyVisionPro"
+    },
+    {
+      "title": "Open-TeleVision: Teleoperation with Immersive Active Visual Feedback",
+      "year": "2024",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2407.01512",
+      "arxiv_url": "https://arxiv.org/abs/2407.01512",
+      "website_url": "https://robot-tv.github.io/",
+      "code_url": "https://github.com/OpenTeleVision/TeleVision"
+    },
+    {
+      "title": "HumanPlus: Humanoid Shadowing and Imitation from Humans",
+      "year": "2024",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2406.10454",
+      "arxiv_url": "https://arxiv.org/abs/2406.10454",
+      "website_url": "https://humanoid-ai.github.io/",
+      "code_url": "https://github.com/MarkFzp/humanplus"
+    },
+    {
+      "title": "OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning",
+      "year": "2024",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2406.08858",
+      "arxiv_url": "https://arxiv.org/abs/2406.08858",
+      "website_url": "https://omni.human2humanoid.com/",
+      "code_url": "https://github.com/LeCAR-Lab/human2humanoid"
+    },
+    {
+      "title": "Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation",
+      "year": "2024",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2403.04436",
+      "arxiv_url": "https://arxiv.org/abs/2403.04436",
+      "website_url": "https://human2humanoid.com/",
+      "code_url": ""
+    },
+    {
+      "title": "Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation",
+      "year": "2023",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2309.01952",
+      "arxiv_url": "https://arxiv.org/abs/2309.01952",
+      "website_url": "https://ut-austin-rpl.github.io/TRILL/",
+      "code_url": "https://github.com/UT-Austin-RPL/TRILL"
+    },
+    {
+      "title": "Teleoperation of Humanoid Robots: A Survey",
+      "year": "2023",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2301.04317",
+      "arxiv_url": "https://arxiv.org/abs/2301.04317",
+      "website_url": "https://humanoid-teleoperation.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid Robots",
+      "year": "2022",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2203.06972",
+      "arxiv_url": "https://arxiv.org/abs/2203.06972",
+      "website_url": "https://www.science.org/doi/10.1126/scirobotics.adh3834",
+      "code_url": "https://github.com/ami-iit/paper_dafarra_2024_science-robotics_icub3-avatar-system"
+    },
+    {
+      "title": "arXiv 2025.08, CHILD: Controller for Humanoid Imitation and Live Demonstration a Whole-Body Humanoid Teleoperation System",
+      "year": "2025",
+      "category": "Teleoperation",
+      "source_url": "https://uiuckimlab.github.io/CHILD-pages/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere",
+      "year": "2024",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/pdf/2308.06493",
+      "arxiv_url": "https://arxiv.org/pdf/2308.06493",
+      "website_url": "https://siplab.org/projects/EgoPoser",
+      "code_url": "https://github.com/eth-siplab/EgoPoser"
+    },
+    {
+      "title": "AvatarPoser: Articulated Full-Body Pose Tracking from Sparse Motion Sensing",
+      "year": "2022",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/abs/2207.13784",
+      "arxiv_url": "https://arxiv.org/abs/2207.13784",
+      "website_url": "https://siplab.org/projects/AvatarPoser",
+      "code_url": "https://github.com/eth-siplab/AvatarPoser"
+    },
+    {
+      "title": "A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU",
+      "year": "2020",
+      "category": "Teleoperation",
+      "source_url": "https://arxiv.org/pdf/2003.05212",
+      "arxiv_url": "https://arxiv.org/pdf/2003.05212",
+      "website_url": "https://smilels.github.io/multimodal-translation-teleop/",
+      "code_url": "https://github.com/Smilels/multimodal-translation-teleop"
+    },
+    {
+      "title": "Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2602.21666",
+      "arxiv_url": "https://arxiv.org/abs/2602.21666",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2602.11143",
+      "arxiv_url": "https://arxiv.org/abs/2602.11143",
+      "website_url": "https://apex-humanoid.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid Walking",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2602.06445",
+      "arxiv_url": "https://arxiv.org/abs/2602.06445",
+      "website_url": "https://sites.google.com/view/eco-humanoid",
+      "code_url": "https://github.com/bigai-ai/ECO-humanoid"
+    },
+    {
+      "title": "Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2602.06382",
+      "arxiv_url": "https://arxiv.org/abs/2602.06382",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid Robot Locomotion",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2602.05855",
+      "arxiv_url": "https://arxiv.org/abs/2602.05855",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Scalable and General Whole-Body Control for Cross-Humanoid Locomotion",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2602.05791",
+      "arxiv_url": "https://arxiv.org/abs/2602.05791",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2602.04412",
+      "arxiv_url": "https://arxiv.org/abs/2602.04412",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2602.03511",
+      "arxiv_url": "https://arxiv.org/abs/2602.03511",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "RPL: Learning Robust Humanoid Perceptive Locomotion on Challenging Terrains",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2602.03002",
+      "arxiv_url": "https://arxiv.org/abs/2602.03002",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal Locomotion",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2602.00678",
+      "arxiv_url": "https://arxiv.org/abs/2602.00678",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "FastStair: Learning to Run Up Stairs with Humanoid Robots",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2601.10365",
+      "arxiv_url": "https://arxiv.org/abs/2601.10365",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2601.08485",
+      "arxiv_url": "https://arxiv.org/abs/2601.08485",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2601.06286",
+      "arxiv_url": "https://arxiv.org/abs/2601.06286",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SKATER: Synthesized Kinematics for Advanced Traversing Efficiency on a Humanoid Robot via Roller Skate Swizzles",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2601.04948",
+      "arxiv_url": "https://arxiv.org/abs/2601.04948",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2512.23650",
+      "arxiv_url": "https://arxiv.org/abs/2512.23650",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2512.23649",
+      "arxiv_url": "https://arxiv.org/abs/2512.23649",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning for Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2512.16446",
+      "arxiv_url": "https://arxiv.org/abs/2512.16446",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2512.12230",
+      "arxiv_url": "https://arxiv.org/abs/2512.12230",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for Humanoid Robots",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2512.10477",
+      "arxiv_url": "https://arxiv.org/abs/2512.10477",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "A Hierarchical, Model-Based System for High-Performance Humanoid Soccer",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2512.09431",
+      "arxiv_url": "https://arxiv.org/abs/2512.09431",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Gait-Adaptive Perceptive Humanoid Locomotion with Real-Time Under-Base Terrain Reconstruction",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2512.07464",
+      "arxiv_url": "https://arxiv.org/abs/2512.07464",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Sim-to-Real Humanoid Locomotion in 15 Minutes",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2512.01996",
+      "arxiv_url": "https://arxiv.org/abs/2512.01996",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2512.00971",
+      "arxiv_url": "https://arxiv.org/abs/2512.00971",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2512.00077",
+      "arxiv_url": "https://arxiv.org/abs/2512.00077",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Reference-Free Sampling-Based Model Predictive Control",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2511.19204",
+      "arxiv_url": "https://arxiv.org/abs/2511.19204",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning a Vision-Based Footstep Planner for Hierarchical Walking Control",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2510.12215",
+      "arxiv_url": "https://arxiv.org/abs/2510.12215",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "PHUMA: Physically-Grounded Humanoid Locomotion Dataset",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2510.26236",
+      "arxiv_url": "https://arxiv.org/abs/2510.26236",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "GaussGym: An open-source real-to-sim framework for learning locomotion from pixels",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2510.15352",
+      "arxiv_url": "https://arxiv.org/abs/2510.15352",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2510.14947",
+      "arxiv_url": "https://arxiv.org/abs/2510.14947",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "PolygMap: A Perceptive Locomotion Framework for Humanoid Robot Stair Climbing",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2510.12346",
+      "arxiv_url": "https://arxiv.org/abs/2510.12346",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2510.10851",
+      "arxiv_url": "https://arxiv.org/abs/2510.10851",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis and Cross-Attention Terrain Reconstruction",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2510.07152",
+      "arxiv_url": "https://arxiv.org/abs/2510.07152",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2509.24697",
+      "arxiv_url": "https://arxiv.org/abs/2509.24697",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "RuN: Residual Policy for Natural Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2509.20696",
+      "arxiv_url": "https://arxiv.org/abs/2509.20696",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2509.19573",
+      "arxiv_url": "https://arxiv.org/abs/2509.19573",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2509.19023",
+      "arxiv_url": "https://arxiv.org/abs/2509.19023",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2509.18046",
+      "arxiv_url": "https://arxiv.org/abs/2509.18046",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning to Walk in Costume: Adversarial Motion Priors for Aesthetically Constrained Humanoids",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2509.05581",
+      "arxiv_url": "https://arxiv.org/abs/2509.05581",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2508.20661",
+      "arxiv_url": "https://arxiv.org/abs/2508.20661",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "No More Marching: Learning Humanoid Locomotion for Short-Range SE(2) Targets",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2508.14098",
+      "arxiv_url": "https://arxiv.org/abs/2508.14098",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Geometry-Aware Predictive Safety Filters on Humanoids",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2508.11129",
+      "arxiv_url": "https://arxiv.org/abs/2508.11129",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "MASH: Cooperative-Heterogeneous Multi-Agent RL for Single Humanoid Robot Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2508.10423",
+      "arxiv_url": "https://arxiv.org/abs/2508.10423",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2508.07611",
+      "arxiv_url": "https://arxiv.org/abs/2508.07611",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2508.03070",
+      "arxiv_url": "https://arxiv.org/abs/2508.03070",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Coordinated Humanoid Robot Locomotion with Symmetry Equivariant Reinforcement Learning Policy",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2508.01247",
+      "arxiv_url": "https://arxiv.org/abs/2508.01247",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Success in Humanoid Reinforcement Learning under Partial Observation",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2507.18883",
+      "arxiv_url": "https://arxiv.org/abs/2507.18883",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Humanoid Arm Motion via Centroidal Momentum Regularized Multi-Agent Reinforcement Learning",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://www.arxiv.org/abs/2507.04140",
+      "arxiv_url": "https://www.arxiv.org/abs/2507.04140",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2507.00273",
+      "arxiv_url": "https://arxiv.org/abs/2507.00273",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2506.15132",
+      "arxiv_url": "https://arxiv.org/abs/2506.15132",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2506.12095",
+      "arxiv_url": "https://arxiv.org/abs/2506.12095",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "MoRE: Mixture of Residual Experts for Humanoid Lifelike Gaits Learning on Complex Terrains",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2506.08840",
+      "arxiv_url": "https://arxiv.org/abs/2506.08840",
+      "website_url": "https://more-humanoid.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "A Gait Driven RL Framework for Humanoid Robots",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2506.08416",
+      "arxiv_url": "https://arxiv.org/abs/2506.08416",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Aerodynamics for the Control of Flying Humanoid Robots",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2506.00305",
+      "arxiv_url": "https://arxiv.org/abs/2506.00305",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2505.22642",
+      "arxiv_url": "https://arxiv.org/abs/2505.22642",
+      "website_url": "https://younggyo.me/fast_td3/",
+      "code_url": ""
+    },
+    {
+      "title": "Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2505.20619",
+      "arxiv_url": "https://arxiv.org/abs/2505.20619",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2505.19214",
+      "arxiv_url": "https://arxiv.org/abs/2505.19214",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "One Policy but Many Worlds: A Scalable Unified Policy for Versatile Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2505.18780",
+      "arxiv_url": "https://arxiv.org/abs/2505.18780",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "TD-GRPC: Temporal Difference Learning with Group Relative Policy Constraint for Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2505.13549",
+      "arxiv_url": "https://arxiv.org/abs/2505.13549",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2505.12679",
+      "arxiv_url": "https://arxiv.org/abs/2505.12679",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2505.11494",
+      "arxiv_url": "https://arxiv.org/abs/2505.11494",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Let Humanoids Hike! Integrative Skill Development on Complex Trails",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2505.06218",
+      "arxiv_url": "https://arxiv.org/abs/2505.06218",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "VideoMimic: Visual imitation enables contextual humanoid control",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2505.03729",
+      "arxiv_url": "https://arxiv.org/abs/2505.03729",
+      "website_url": "https://www.videomimic.net/",
+      "code_url": ""
+    },
+    {
+      "title": "SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2504.20808",
+      "arxiv_url": "https://arxiv.org/abs/2504.20808",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2504.13619",
+      "arxiv_url": "https://arxiv.org/abs/2504.13619",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2504.09833",
+      "arxiv_url": "https://arxiv.org/abs/2504.09833",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2504.08246",
+      "arxiv_url": "https://arxiv.org/abs/2504.08246",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Bipedal Locomotion on Gear-Driven Humanoid Robot Using Foot-Mounted IMUs",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2504.00614",
+      "arxiv_url": "https://arxiv.org/abs/2504.00614",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "StyleLoco: Generative Adversarial Distillation for Natural Humanoid Robot Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2503.15082",
+      "arxiv_url": "https://arxiv.org/abs/2503.15082",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Natural Humanoid Robot Locomotion with Generative Motion Prior",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2503.09015",
+      "arxiv_url": "https://arxiv.org/abs/2503.09015",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2503.08349",
+      "arxiv_url": "https://arxiv.org/abs/2503.08349",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Distillation-PPO: A Novel Two-Stage RL Framework for Humanoid Robot Perceptive Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2503.08299",
+      "arxiv_url": "https://arxiv.org/abs/2503.08299",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2503.00923",
+      "arxiv_url": "https://arxiv.org/abs/2503.00923",
+      "website_url": "https://simonlinsx.github.io/HWC_Loco/",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Perceptive Humanoid Locomotion over Challenging Terrain",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2503.00692",
+      "arxiv_url": "https://arxiv.org/abs/2503.00692",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement Learning",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2502.17219",
+      "arxiv_url": "https://arxiv.org/abs/2502.17219",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Humanoid Locomotion with World Model Reconstruction",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2502.16230",
+      "arxiv_url": "https://arxiv.org/abs/2502.16230",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient Perception",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2502.14814",
+      "arxiv_url": "https://arxiv.org/abs/2502.14814",
+      "website_url": "https://renjunli99.github.io/vbcom.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2502.10363",
+      "arxiv_url": "https://arxiv.org/abs/2502.10363",
+      "website_url": "https://why618188.github.io/beamdojo/",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Humanoid Locomotion with Perceptive Internal Model",
+      "year": "2024",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2411.14386",
+      "arxiv_url": "https://arxiv.org/abs/2411.14386",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Real-Time Polygonal Semantic Mapping for Humanoid Robot Stair Climbing",
+      "year": "2024",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2411.01919",
+      "arxiv_url": "https://arxiv.org/abs/2411.01919",
+      "website_url": "",
+      "code_url": "https://github.com/BTFrontier/polygon_mapping"
+    },
+    {
+      "title": "Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies",
+      "year": "2024",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2410.11825",
+      "arxiv_url": "https://arxiv.org/abs/2410.11825",
+      "website_url": "https://lipschitz-constrained-policy.github.io/",
+      "code_url": "https://github.com/zixuan417/smooth-humanoid-locomotion"
+    },
+    {
+      "title": "Learning Humanoid Locomotion over Challenging Terrain",
+      "year": "2024",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2410.03654",
+      "arxiv_url": "https://arxiv.org/abs/2410.03654",
+      "website_url": "https://humanoid-challenging-terrain.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Advancing Humanoid Locomotion: Mastering Challenging Terrains with Denoising World Model Learning",
+      "year": "2024",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2408.14472",
+      "arxiv_url": "https://arxiv.org/abs/2408.14472",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid Parkour Learning",
+      "year": "2024",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2406.10759",
+      "arxiv_url": "https://arxiv.org/abs/2406.10759",
+      "website_url": "https://humanoid4parkour.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey",
+      "year": "2024",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2404.17070",
+      "arxiv_url": "https://arxiv.org/abs/2404.17070",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid Locomotion as Next Token Prediction",
+      "year": "2024",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2402.19469",
+      "arxiv_url": "https://arxiv.org/abs/2402.19469",
+      "website_url": "https://humanoid-next-token-prediction.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Whole-body Humanoid Robot Locomotion with Human Reference",
+      "year": "2024",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2402.18294",
+      "arxiv_url": "https://arxiv.org/abs/2402.18294",
+      "website_url": "https://greatsjk.github.io/Adam-PNDbotics/",
+      "code_url": ""
+    },
+    {
+      "title": "Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control",
+      "year": "2024",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2401.16889",
+      "arxiv_url": "https://arxiv.org/abs/2401.16889",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning to Walk and Fly with Adversarial Motion Priors",
+      "year": "2023",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2309.12784",
+      "arxiv_url": "https://arxiv.org/abs/2309.12784",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Benchmarking Potential Based Rewards for Learning Humanoid Locomotion",
+      "year": "2023",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2307.10142",
+      "arxiv_url": "https://arxiv.org/abs/2307.10142",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Real-World Humanoid Locomotion with Reinforcement Learning",
+      "year": "2023",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2303.03381",
+      "arxiv_url": "https://arxiv.org/abs/2303.03381",
+      "website_url": "https://learning-humanoid-locomotion.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Robust and Versatile Bipedal Jumping Control through Reinforcement Learning",
+      "year": "2023",
+      "category": "Locomotion",
+      "source_url": "https://arxiv.org/abs/2302.09450",
+      "arxiv_url": "https://arxiv.org/abs/2302.09450",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Walk the PLANC: Physics‑Guided RL for Agile Humanoid LocomotioN on Constrained Footholds",
+      "year": "2026",
+      "category": "Locomotion",
+      "source_url": "https://caltech-amber.github.io/planc/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "LocoFormer: Generalist Locomotion via Long-Context Adaptation",
+      "year": "2025",
+      "category": "Locomotion",
+      "source_url": "https://generalist-locomotion.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training",
+      "year": "2024",
+      "category": "Locomotion",
+      "source_url": "https://openreview.net/forum?id=O0oK2bVist",
+      "arxiv_url": "",
+      "website_url": "https://sites.google.com/view/adapting-humanoid-locomotion/two-phase-training",
+      "code_url": ""
+    },
+    {
+      "title": "Bi-Level Motion Imitation for Humanoid Robots",
+      "year": "2024",
+      "category": "Locomotion",
+      "source_url": "https://openreview.net/forum?id=wH7Wv0nAm8",
+      "arxiv_url": "",
+      "website_url": "https://sites.google.com/view/bmi-corl2024",
+      "code_url": ""
+    },
+    {
+      "title": "EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models",
+      "year": "2026",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2602.04515",
+      "arxiv_url": "https://arxiv.org/abs/2602.04515",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local Navigation",
+      "year": "2026",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2601.12790",
+      "arxiv_url": "https://arxiv.org/abs/2601.12790",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2506.01046",
+      "arxiv_url": "https://arxiv.org/abs/2506.01046",
+      "website_url": "",
+      "code_url": "https://github.com/yzwfromk/STATE-NAV"
+    },
+    {
+      "title": "Thinking in 360: Humanoid Visual Search in the Wild",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2511.20351",
+      "arxiv_url": "https://arxiv.org/abs/2511.20351",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2511.14625",
+      "arxiv_url": "https://arxiv.org/abs/2511.14625",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Quantum deep reinforcement learning for humanoid robot navigation task",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2509.11388",
+      "arxiv_url": "https://arxiv.org/abs/2509.11388",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Social Navigation from Positive and Negative Demonstrations and Rule-Based Specifications",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2508.06779",
+      "arxiv_url": "https://arxiv.org/abs/2508.06779",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "LookOut: Real-World Humanoid Egocentric Navigation",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2508.14466",
+      "arxiv_url": "https://arxiv.org/abs/2508.14466",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded VLM",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2508.04931",
+      "arxiv_url": "https://arxiv.org/abs/2508.04931",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2508.03068",
+      "arxiv_url": "https://arxiv.org/abs/2508.03068",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception System on Humanoid Robots",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://www.arxiv.org/abs/2507.20217",
+      "arxiv_url": "https://www.arxiv.org/abs/2507.20217",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2506.02206",
+      "arxiv_url": "https://arxiv.org/abs/2506.02206",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2505.08712",
+      "arxiv_url": "https://arxiv.org/abs/2505.08712",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid Robots",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2503.09010",
+      "arxiv_url": "https://arxiv.org/abs/2503.09010",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "NaVILA: Legged Robot Vision-Language-Action Model for Navigation",
+      "year": "2024",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2412.04453",
+      "arxiv_url": "https://arxiv.org/abs/2412.04453",
+      "website_url": "https://navila-bot.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning",
+      "year": "2024",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2412.00396",
+      "arxiv_url": "https://arxiv.org/abs/2412.00396",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration",
+      "year": "2023",
+      "category": "Navigation",
+      "source_url": "https://arxiv.org/abs/2310.07896",
+      "arxiv_url": "https://arxiv.org/abs/2310.07896",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "arXiv 2025.07, LOVON: Legged Open-Vocabulary Object Navigator",
+      "year": "2025",
+      "category": "Navigation",
+      "source_url": "https://daojiepeng.github.io/LOVON/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion",
+      "year": "2025",
+      "category": "State Estimation",
+      "source_url": "https://arxiv.org/abs/2511.18857",
+      "arxiv_url": "https://arxiv.org/abs/2511.18857",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "InEKFormer: A Hybrid State Estimator for Humanoid Robots",
+      "year": "2025",
+      "category": "State Estimation",
+      "source_url": "https://arxiv.org/abs/2511.16306",
+      "arxiv_url": "https://arxiv.org/abs/2511.16306",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless Joint Torque Estimation",
+      "year": "2025",
+      "category": "State Estimation",
+      "source_url": "https://arxiv.org/abs/2507.10105",
+      "arxiv_url": "https://arxiv.org/abs/2507.10105",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems",
+      "year": "2022",
+      "category": "State Estimation",
+      "source_url": "https://arxiv.org/abs/2207.06780",
+      "arxiv_url": "https://arxiv.org/abs/2207.06780",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation",
+      "year": "2019",
+      "category": "State Estimation",
+      "source_url": "https://arxiv.org/abs/1904.09251",
+      "arxiv_url": "https://arxiv.org/abs/1904.09251",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors",
+      "year": "2017",
+      "category": "State Estimation",
+      "source_url": "https://arxiv.org/abs/1712.05873",
+      "arxiv_url": "https://arxiv.org/abs/1712.05873",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "The invariant extended Kalman filter as a stable observer",
+      "year": "2014",
+      "category": "State Estimation",
+      "source_url": "https://arxiv.org/abs/1410.1465",
+      "arxiv_url": "https://arxiv.org/abs/1410.1465",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "GTSAM: Factor graphs for Sensor Fusion in Robotics",
+      "year": "2026",
+      "category": "State Estimation",
+      "source_url": "https://gtsam.org/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping",
+      "year": "2026",
+      "category": "State Estimation",
+      "source_url": "https://github.com/MIT-SPARK/Kimera",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "VINS-Fusion: An optimization-based multi-sensor state estimator",
+      "year": "2026",
+      "category": "State Estimation",
+      "source_url": "https://github.com/HKUST-Aerial-Robotics/VINS-Fusion",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM",
+      "year": "2026",
+      "category": "State Estimation",
+      "source_url": "https://github.com/UZ-SLAMLab/ORB_SLAM3",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "MOSAIC: Bridging the Sim-to-Real Gap in Generalist Humanoid Motion Tracking and Teleoperation with Rapid Residual Adaptation",
+      "year": "2026",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/2602.08594",
+      "arxiv_url": "https://arxiv.org/abs/2602.08594",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis for Sim-to-Real Humanoid Robots",
+      "year": "2026",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/2602.01515",
+      "arxiv_url": "https://arxiv.org/abs/2602.01515",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ZEST: Zero-shot Embodied Skill Transfer for Athletic Robot Control",
+      "year": "2026",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/2602.00401",
+      "arxiv_url": "https://arxiv.org/abs/2602.00401",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control",
+      "year": "2026",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/2601.21363",
+      "arxiv_url": "https://arxiv.org/abs/2601.21363",
+      "website_url": "https://lift-humanoid.github.io/",
+      "code_url": "https://github.com/bigai-ai/LIFT-humanoid"
+    },
+    {
+      "title": "PolySim: Bridging the Sim-to-Real Gap for Humanoid Control via Multi-Simulator Dynamics Randomization",
+      "year": "2025",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/2510.01708",
+      "arxiv_url": "https://arxiv.org/abs/2510.01708",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Contrastive Representation Learning for Robust Sim-to-Real Transfer of Adaptive Humanoid Locomotion",
+      "year": "2025",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/2509.12858",
+      "arxiv_url": "https://arxiv.org/abs/2509.12858",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots",
+      "year": "2025",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/2509.06342",
+      "arxiv_url": "https://arxiv.org/abs/2509.06342",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Robot Trains Robot: Automatic Real-World Policy Adaptation and Learning for Humanoids",
+      "year": "2025",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/2508.12252",
+      "arxiv_url": "https://arxiv.org/abs/2508.12252",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control",
+      "year": "2025",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/2505.24068",
+      "arxiv_url": "https://arxiv.org/abs/2505.24068",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning",
+      "year": "2025",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/2505.14266",
+      "arxiv_url": "https://arxiv.org/abs/2505.14266",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection",
+      "year": "2025",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/2504.06585",
+      "arxiv_url": "https://arxiv.org/abs/2504.06585",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Bridging the Sim-to-Real Gap for Athletic Loco-Manipulation",
+      "year": "2025",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/2502.10894",
+      "arxiv_url": "https://arxiv.org/abs/2502.10894",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning Agile and Dynamic Motor Skills for Legged Robots",
+      "year": "2019",
+      "category": "Sim-to-Real",
+      "source_url": "https://arxiv.org/abs/1901.08652",
+      "arxiv_url": "https://arxiv.org/abs/1901.08652",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids",
+      "year": "2026",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2602.08518",
+      "arxiv_url": "https://arxiv.org/abs/2602.08518",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Fauna Sprout: A lightweight, approachable, developer-ready humanoid robot",
+      "year": "2026",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2601.18963",
+      "arxiv_url": "https://arxiv.org/abs/2601.18963",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Antagonistic Bowden-Cable Actuation of a Lightweight Robotic Hand: Toward Dexterous Manipulation for Payload Constrained Humanoids",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2512.24657",
+      "arxiv_url": "https://arxiv.org/abs/2512.24657",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Olaf: Bringing an Animated Character to Life in the Physical World",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2512.16705",
+      "arxiv_url": "https://arxiv.org/abs/2512.16705",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2512.08920",
+      "arxiv_url": "https://arxiv.org/abs/2512.08920",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "DIJIT: A Robotic Head for an Active Observer",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2512.07998",
+      "arxiv_url": "https://arxiv.org/abs/2512.07998",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "DecARt Leg: Design and Evaluation of a Novel Humanoid Robot Leg with Decoupled Actuation for Agile Locomotion",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2511.10021",
+      "arxiv_url": "https://arxiv.org/abs/2511.10021",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Human-Level Actuation for Humanoids",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2511.06796",
+      "arxiv_url": "https://arxiv.org/abs/2511.06796",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2510.22336",
+      "arxiv_url": "https://arxiv.org/abs/2510.22336",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Embracing Evolution: A Call for Body-Control Co-Design in Embodied Humanoid Robot",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2510.03081",
+      "arxiv_url": "https://arxiv.org/abs/2510.03081",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2509.26082",
+      "arxiv_url": "https://arxiv.org/abs/2509.26082",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "A Framework for Optimal Ankle Design of Humanoid Robots",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2509.16469",
+      "arxiv_url": "https://arxiv.org/abs/2509.16469",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "CAD-Driven Co-Design for Flight-Ready Jet-Powered Humanoids",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2509.14935",
+      "arxiv_url": "https://arxiv.org/abs/2509.14935",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "AGILOped: Agile Open-Source Humanoid Robot for Research",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2509.09364",
+      "arxiv_url": "https://arxiv.org/abs/2509.09364",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2507.14538",
+      "arxiv_url": "https://arxiv.org/abs/2507.14538",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Dexterous Teleoperation of 20-DoF ByteDexter Hand via Human Motion Retargeting",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2507.03227",
+      "arxiv_url": "https://arxiv.org/abs/2507.03227",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "PIMBS: Efficient Body Schema Learning for Musculoskeletal Humanoids",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2506.20343",
+      "arxiv_url": "https://arxiv.org/abs/2506.20343",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design Paradigm for Humanoid Robots Knee Joint",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2506.12314",
+      "arxiv_url": "https://arxiv.org/abs/2506.12314",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation Platform for Generalist Robot Autonomy",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2506.07490",
+      "arxiv_url": "https://arxiv.org/abs/2506.07490",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "iRonCub 3: The Jet-Powered Flying Humanoid Robot",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2506.01125",
+      "arxiv_url": "https://arxiv.org/abs/2506.01125",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed Humanoid Robot",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2504.17249",
+      "arxiv_url": "https://arxiv.org/abs/2504.17249",
+      "website_url": "https://lite.berkeley-humanoid.org/",
+      "code_url": ""
+    },
+    {
+      "title": "RUKA: Rethinking the Design of Humanoid Hands with Learning",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2504.13165",
+      "arxiv_url": "https://arxiv.org/abs/2504.13165",
+      "website_url": "https://ruka-hand.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted Dexterous Task Learning",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2504.04259",
+      "arxiv_url": "https://arxiv.org/abs/2504.04259",
+      "website_url": "https://www.orcahand.com/",
+      "code_url": ""
+    },
+    {
+      "title": "Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation Models",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2503.22459",
+      "arxiv_url": "https://arxiv.org/abs/2503.22459",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven Structures of Musculoskeletal Humanoids",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2502.12808",
+      "arxiv_url": "https://arxiv.org/abs/2502.12808",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2502.00893",
+      "arxiv_url": "https://arxiv.org/abs/2502.00893",
+      "website_url": "https://toddlerbot.github.io/",
+      "code_url": "https://github.com/hshi74/toddlerbot"
+    },
+    {
+      "title": "Design and Control of a Bipedal Robotic Character",
+      "year": "2025",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2501.05204",
+      "arxiv_url": "https://arxiv.org/abs/2501.05204",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics",
+      "year": "2024",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2409.19795",
+      "arxiv_url": "https://arxiv.org/abs/2409.19795",
+      "website_url": "http://www.generalroboticslab.com/blogs/blog/2024-09-29-dukehumanoidv1/index.html",
+      "code_url": "https://github.com/generalroboticslab/dukeHumanoidHardwareControl"
+    },
+    {
+      "title": "Berkeley Humanoid: A Research Platform for Learning-based Control",
+      "year": "2024",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2407.21781",
+      "arxiv_url": "https://arxiv.org/abs/2407.21781",
+      "website_url": "https://berkeley-humanoid.com/",
+      "code_url": "https://github.com/HybridRobotics/isaac_berkeley_humanoid"
+    },
+    {
+      "title": "The MIT Humanoid Robot: Design, Motion Planning, and Control For Acrobatic Behaviors",
+      "year": "2021",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/2104.09025",
+      "arxiv_url": "https://arxiv.org/abs/2104.09025",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation",
+      "year": "2019",
+      "category": "Hardware Design",
+      "source_url": "https://arxiv.org/abs/1904.03815",
+      "arxiv_url": "https://arxiv.org/abs/1904.03815",
+      "website_url": "https://berkeleyopenarms.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Micro-Wheeled_leg-Robot",
+      "year": "2026",
+      "category": "Hardware Design",
+      "source_url": "https://github.com/MuShibo/Micro-Wheeled_leg-Robot",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Aero Hand Open",
+      "year": "2026",
+      "category": "Hardware Design",
+      "source_url": "https://github.com/TetherIA/aero-hand-open/tree/main",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation",
+      "year": "2026",
+      "category": "Hardware Design",
+      "source_url": "https://dexwrist.csail.mit.edu/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ByteWrist: A Parallel Robotic Wrist Enabling Flexible and Anthropomorphic Motion for Confined Spaces",
+      "year": "2026",
+      "category": "Hardware Design",
+      "source_url": "https://bytewrist.github.io/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "2024.11, Zeroth Bot",
+      "year": "2024",
+      "category": "Hardware Design",
+      "source_url": "https://github.com/zeroth-robotics/zeroth-bot",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Design and Control of a Bipedal Robotic Character",
+      "year": "2024",
+      "category": "Hardware Design",
+      "source_url": "https://la.disneyresearch.com/publication/design-and-control-of-a-bipedal-robotic-character/",
+      "arxiv_url": "",
+      "website_url": "https://youtu.be/7_LW7u-nk6Q?si=DTpHYW_fCOST26tR",
+      "code_url": ""
+    },
+    {
+      "title": "Integrated linkage-driven dexterous anthropomorphic robotic hand",
+      "year": "2021",
+      "category": "Hardware Design",
+      "source_url": "https://www.nature.com/articles/s41467-021-27261-0",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Proprioceptive actuator design in the MIT Cheetah: Impact mitigation and high‑bandwidth physical interaction for dynamic legged robots",
+      "year": "2017",
+      "category": "Hardware Design",
+      "source_url": "https://ieeexplore.ieee.org/document/7827048",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable Contact-Rich Robotics Simulation and Control",
+      "year": "2026",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2603.12185",
+      "arxiv_url": "https://arxiv.org/abs/2603.12185",
+      "website_url": "https://irislab.tech/comfree-sim/",
+      "code_url": ""
+    },
+    {
+      "title": "Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots",
+      "year": "2026",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2603.06181",
+      "arxiv_url": "https://arxiv.org/abs/2603.06181",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots",
+      "year": "2026",
+      "category": "Simulation Benchmark",
+      "source_url": "https://openreview.net/forum?id=tQJYKwc3n4",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "MolmoSpaces: A Large-Scale Open Ecosystem for Robot Navigation and Manipulation",
+      "year": "2026",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2602.11337",
+      "arxiv_url": "https://arxiv.org/abs/2602.11337",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Benchmarking Humanoid Imitation Learning with Motion Difficulty",
+      "year": "2025",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2512.07248",
+      "arxiv_url": "https://arxiv.org/abs/2512.07248",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid Everyday: A Comprehensive Robotic Dataset for Open-World Humanoid Manipulation",
+      "year": "2025",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2510.08807",
+      "arxiv_url": "https://arxiv.org/abs/2510.08807",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report",
+      "year": "2025",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2510.07092",
+      "arxiv_url": "https://arxiv.org/abs/2510.07092",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "HumanoidGen: Data Generation for Bimanual Dexterous Manipulation via LLM Reasoning",
+      "year": "2025",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2507.00833",
+      "arxiv_url": "https://arxiv.org/abs/2507.00833",
+      "website_url": "https://openhumanoidgen.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning",
+      "year": "2025",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2506.16012",
+      "arxiv_url": "https://arxiv.org/abs/2506.16012",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics",
+      "year": "2025",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2506.01756",
+      "arxiv_url": "https://arxiv.org/abs/2506.01756",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid World Models: Open World Foundation Models for Humanoid Robotics",
+      "year": "2025",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2506.01182",
+      "arxiv_url": "https://arxiv.org/abs/2506.01182",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning via Human Mimicking",
+      "year": "2024",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2412.17730",
+      "arxiv_url": "https://arxiv.org/abs/2412.17730",
+      "website_url": "https://mimicking-bench.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement Tasks",
+      "year": "2024",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2412.13211",
+      "arxiv_url": "https://arxiv.org/abs/2412.13211",
+      "website_url": "https://arth-shukla.github.io/mshab/",
+      "code_url": ""
+    },
+    {
+      "title": "DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation via Imitation Learning",
+      "year": "2024",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2410.24185",
+      "arxiv_url": "https://arxiv.org/abs/2410.24185",
+      "website_url": "https://dexmimicgen.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI",
+      "year": "2024",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2410.00425",
+      "arxiv_url": "https://arxiv.org/abs/2410.00425",
+      "website_url": "https://www.maniskill.ai/home",
+      "code_url": "https://github.com/haosulab/ManiSkill"
+    },
+    {
+      "title": "GRUtopia: Dream General Robots in a City at Scale",
+      "year": "2024",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2407.10943",
+      "arxiv_url": "https://arxiv.org/abs/2407.10943",
+      "website_url": "https://github.com/OpenRobotLab/GRUtopia",
+      "code_url": ""
+    },
+    {
+      "title": "BiGym: A Demo-Driven Mobile Bi-Manual Manipulation Benchmark",
+      "year": "2024",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2407.07788",
+      "arxiv_url": "https://arxiv.org/abs/2407.07788",
+      "website_url": "https://chernyadev.github.io/bigym/",
+      "code_url": "https://github.com/chernyadev/bigym"
+    },
+    {
+      "title": "RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots",
+      "year": "2024",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2406.02523",
+      "arxiv_url": "https://arxiv.org/abs/2406.02523",
+      "website_url": "https://robocasa.ai/",
+      "code_url": "https://github.com/robocasa/robocasa"
+    },
+    {
+      "title": "Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer",
+      "year": "2024",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2404.05695",
+      "arxiv_url": "https://arxiv.org/abs/2404.05695",
+      "website_url": "https://sites.google.com/view/humanoid-gym/",
+      "code_url": "https://github.com/roboterax/humanoid-gym"
+    },
+    {
+      "title": "HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation",
+      "year": "2024",
+      "category": "Simulation Benchmark",
+      "source_url": "https://arxiv.org/abs/2403.10506",
+      "arxiv_url": "https://arxiv.org/abs/2403.10506",
+      "website_url": "https://humanoid-bench.github.io/",
+      "code_url": "https://github.com/carlosferrazza/humanoid-bench"
+    },
+    {
+      "title": "2025.01, MuJoCo Playground",
+      "year": "2025",
+      "category": "Simulation Benchmark",
+      "source_url": "https://github.com/google-deepmind/mujoco_playground",
+      "arxiv_url": "",
+      "website_url": "https://playground.mujoco.org/",
+      "code_url": ""
+    },
+    {
+      "title": "arXiv 2024.12, Genesis: A Generative and Universal Physics Engine for Robotics and Beyond",
+      "year": "2024",
+      "category": "Simulation Benchmark",
+      "source_url": "https://github.com/Genesis-Embodied-AI/Genesis",
+      "arxiv_url": "",
+      "website_url": "https://genesis-embodied-ai.github.io/",
+      "code_url": ""
+    },
+    {
+      "title": "Spatial relationship preserving character motion adaptation",
+      "year": "2010",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://dl.acm.org/doi/abs/10.1145/1833349.1778770?casa_token=j3esx-hx0GAAAAAA:OvRU6YYrNo2ZP9IyXGVDryWJqHmvU-oVhnzog8RFKKySQJjganzaAmHff6CQ4a0qzfJZu-J6Buf4Ug",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control",
+      "year": "2026",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2602.21599",
+      "arxiv_url": "https://arxiv.org/abs/2602.21599",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions",
+      "year": "2026",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2602.06035",
+      "arxiv_url": "https://arxiv.org/abs/2602.06035",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2512.14696",
+      "arxiv_url": "https://arxiv.org/abs/2512.14696",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2512.08500",
+      "arxiv_url": "https://arxiv.org/abs/2512.08500",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "PhysHMR: Learning Humanoid Control Policies from Vision for Physically Plausible Human Motion Reconstruction",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2510.02566",
+      "arxiv_url": "https://arxiv.org/abs/2510.02566",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Learning to Ball: Composing Policies for Long-Horizon Basketball Moves",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2509.22442",
+      "arxiv_url": "https://arxiv.org/abs/2509.22442",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion Tracking",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2509.20717",
+      "arxiv_url": "https://arxiv.org/abs/2509.20717",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "FARM: Frame-Accelerated Augmentation and Residual Mixture-of-Experts for Physics-Based High-Dynamic Humanoid Control",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2508.19926",
+      "arxiv_url": "https://arxiv.org/abs/2508.19926",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2508.14120",
+      "arxiv_url": "https://arxiv.org/abs/2508.14120",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2508.08258",
+      "arxiv_url": "https://arxiv.org/abs/2508.08258",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2507.05906",
+      "arxiv_url": "https://arxiv.org/abs/2507.05906",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2506.12769",
+      "arxiv_url": "https://arxiv.org/abs/2506.12769",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2505.23708",
+      "arxiv_url": "https://arxiv.org/abs/2505.23708",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "MaskedManipulator: Versatile Whole-Body Control for Loco-Manipulation",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2505.19086",
+      "arxiv_url": "https://arxiv.org/abs/2505.19086",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2505.12278",
+      "arxiv_url": "https://arxiv.org/abs/2505.12278",
+      "website_url": "https://www.zhengyiluo.com/PDC-Site/",
+      "code_url": ""
+    },
+    {
+      "title": "ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2505.04961v1",
+      "arxiv_url": "https://arxiv.org/abs/2505.04961v1",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2504.11054",
+      "arxiv_url": "https://arxiv.org/abs/2504.11054",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "CVPR 2025 Oral, TokenHSI: Unified Synthesis of Physical Human-Scene Interactions through Task Tokenization",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2503.19901",
+      "arxiv_url": "https://arxiv.org/abs/2503.19901",
+      "website_url": "https://liangpan99.github.io/TokenHSI/",
+      "code_url": ""
+    },
+    {
+      "title": "InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object Interactions",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2502.20390",
+      "arxiv_url": "https://arxiv.org/abs/2502.20390",
+      "website_url": "https://sirui-xu.github.io/InterMimic/",
+      "code_url": "https://github.com/Sirui-Xu/InterMimic"
+    },
+    {
+      "title": "CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character control",
+      "year": "2024",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2410.03441",
+      "arxiv_url": "https://arxiv.org/abs/2410.03441",
+      "website_url": "https://guytevet.github.io/CLoSD-page/",
+      "code_url": ""
+    },
+    {
+      "title": "MaskedMimic: Unified Physics-Based Character Control Through Masked Motion Inpainting",
+      "year": "2024",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2409.14393",
+      "arxiv_url": "https://arxiv.org/abs/2409.14393",
+      "website_url": "https://research.nvidia.com/labs/par/maskedmimic/",
+      "code_url": ""
+    },
+    {
+      "title": "SkillMimic: Learning Basketball Interaction Skills from Demonstrations",
+      "year": "2024",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2408.15270",
+      "arxiv_url": "https://arxiv.org/abs/2408.15270",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Unified Human-Scene Interaction via Prompted Chain-of-Contacts",
+      "year": "2023",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2309.07918",
+      "arxiv_url": "https://arxiv.org/abs/2309.07918",
+      "website_url": "https://xizaoqu.github.io/unihsi/",
+      "code_url": ""
+    },
+    {
+      "title": "Hierarchical Planning and Control for Box Loco-Manipulation",
+      "year": "2023",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2306.09532",
+      "arxiv_url": "https://arxiv.org/abs/2306.09532",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Perpetual Humanoid Control for Real-time Simulated Avatars",
+      "year": "2023",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2305.06456",
+      "arxiv_url": "https://arxiv.org/abs/2305.06456",
+      "website_url": "",
+      "code_url": "https://github.com/ZhengyiLuo/PHC"
+    },
+    {
+      "title": "ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters",
+      "year": "2022",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2205.01906",
+      "arxiv_url": "https://arxiv.org/abs/2205.01906",
+      "website_url": "https://xbpeng.github.io/projects/ASE/index.html",
+      "code_url": "https://github.com/nv-tlabs/ASE/?tab=readme-ov-file"
+    },
+    {
+      "title": "AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control",
+      "year": "2021",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/2104.02180",
+      "arxiv_url": "https://arxiv.org/abs/2104.02180",
+      "website_url": "https://xbpeng.github.io/projects/AMP/index.html",
+      "code_url": "https://github.com/xbpeng/DeepMimic"
+    },
+    {
+      "title": "Hierarchical visuomotor control of humanoids",
+      "year": "2018",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/1811.09656",
+      "arxiv_url": "https://arxiv.org/abs/1811.09656",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Multi-task Deep Reinforcement Learning with PopArt",
+      "year": "2018",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/1809.04474",
+      "arxiv_url": "https://arxiv.org/abs/1809.04474",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills",
+      "year": "2018",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/1804.02717",
+      "arxiv_url": "https://arxiv.org/abs/1804.02717",
+      "website_url": "https://xbpeng.github.io/projects/DeepMimic/index.html",
+      "code_url": "https://github.com/xbpeng/DeepMimic"
+    },
+    {
+      "title": "Learning Symmetric and Low-energy Locomotion",
+      "year": "2018",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://arxiv.org/abs/1801.08093",
+      "arxiv_url": "https://arxiv.org/abs/1801.08093",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "SIGGRAPH 2025, PARC: Physics-based Augmentation with Reinforcement Learning for Character Controllers",
+      "year": "2025",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://michaelx.io/parc/index.html",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": "https://github.com/mshoe/PARC"
+    },
+    {
+      "title": "AdaptNet: Policy Adaptation for Physics-Based Character Control",
+      "year": "2023",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://dl.acm.org/doi/abs/10.1145/3618375",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Composite Motion Learning with Task Control",
+      "year": "2023",
+      "category": "Physics-Based Character Animation",
+      "source_url": "https://dl.acm.org/doi/abs/10.1145/3592447",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Kimodo: Scaling Controllable Human Motion Generation",
+      "year": "2026",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://research.nvidia.com/labs/sil/projects/kimodo/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents",
+      "year": "2026",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2602.23205",
+      "arxiv_url": "https://arxiv.org/abs/2602.23205",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "WHOLE: World-Grounded Hand-Object Lifted from Egocentric Videos",
+      "year": "2026",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2602.22209",
+      "arxiv_url": "https://arxiv.org/abs/2602.22209",
+      "website_url": "https://judyye.github.io/whole-www/",
+      "code_url": ""
+    },
+    {
+      "title": "Diffusion Forcing for Multi-Agent Interaction Sequence Modeling",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2512.17900",
+      "arxiv_url": "https://arxiv.org/abs/2512.17900",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Control Operators for Interactive Character Animation",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://dl.acm.org/doi/abs/10.1145/3763319",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Implicit Bézier Motion Model for Precise Spatial and Temporal Control",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://studios.disneyresearch.com/2025/12/03/implicit-bezier-motion-model-for-precise-spatial-and-temporal-control/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Efficient and Scalable Monocular Human-Object Interaction Motion Reconstruction",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2512.00960",
+      "arxiv_url": "https://arxiv.org/abs/2512.00960",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2508.07863",
+      "arxiv_url": "https://arxiv.org/abs/2508.07863",
+      "website_url": "https://beingbeyond.github.io/Being-M0.5/",
+      "code_url": ""
+    },
+    {
+      "title": "arXiv 2025.07, Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://vankouf.github.io/MotionMillion/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "GENMO: A GENeralist Model for Human MOtion",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2505.01425",
+      "arxiv_url": "https://arxiv.org/abs/2505.01425",
+      "website_url": "https://research.nvidia.com/labs/dair/genmo/",
+      "code_url": ""
+    },
+    {
+      "title": "FRAME: Floor-aligned Representation for Avatar Motion from Egocentric Video",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2503.23094",
+      "arxiv_url": "https://arxiv.org/abs/2503.23094",
+      "website_url": "https://vcai.mpi-inf.mpg.de/projects/FRAME/",
+      "code_url": ""
+    },
+    {
+      "title": "HUMOTO: A 4D Dataset of Mocap Human Object Interactions",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2504.10414",
+      "arxiv_url": "https://arxiv.org/abs/2504.10414",
+      "website_url": "https://jiaxin-lu.github.io/humoto/",
+      "code_url": ""
+    },
+    {
+      "title": "PICO: Reconstructing 3D People In Contact with Objects",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2504.17695",
+      "arxiv_url": "https://arxiv.org/abs/2504.17695",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "arXiv 2025.04, Climber Force and Motion Estimation from Video",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://rihat99.github.io/climb_force/",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "PRIMAL Physically Reactive and Interactive Motor Model for Avatar Learning",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2503.17544",
+      "arxiv_url": "https://arxiv.org/abs/2503.17544",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate",
+      "year": "2025",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2503.21268",
+      "arxiv_url": "https://arxiv.org/abs/2503.21268",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Scaling Large Motion Models with Million-Level Human Motions",
+      "year": "2024",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2410.03311",
+      "arxiv_url": "https://arxiv.org/abs/2410.03311",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Flexible Motion In-betweening with Diffusion Models",
+      "year": "2024",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2405.11126",
+      "arxiv_url": "https://arxiv.org/abs/2405.11126",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Taming Diffusion Probabilistic Models for Character Control",
+      "year": "2024",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2404.15121",
+      "arxiv_url": "https://arxiv.org/abs/2404.15121",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "OmniControl: Control Any Joint at Any Time for Human Motion Generation",
+      "year": "2023",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2310.08580",
+      "arxiv_url": "https://arxiv.org/abs/2310.08580",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis",
+      "year": "2023",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2307.15042",
+      "arxiv_url": "https://arxiv.org/abs/2307.15042",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Example-based Motion Synthesis via Generative Motion Matching",
+      "year": "2023",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2306.00378",
+      "arxiv_url": "https://arxiv.org/abs/2306.00378",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "Guided Motion Diffusion for Controllable Human Motion Synthesis",
+      "year": "2023",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2305.12577",
+      "arxiv_url": "https://arxiv.org/abs/2305.12577",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "PhysDiff: Physics-Guided Human Motion Diffusion Model",
+      "year": "2022",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2212.02500",
+      "arxiv_url": "https://arxiv.org/abs/2212.02500",
+      "website_url": "https://nvlabs.github.io/PhysDiff/",
+      "code_url": ""
+    },
+    {
+      "title": "Generating Diverse and Natural 3D Human Motions From Text",
+      "year": "2022",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://openaccess.thecvf.com/content/CVPR2022/html/Guo_Generating_Diverse_and_Natural_3D_Human_Motions_From_Text_CVPR_2022_paper.html",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "MANIKIN: Biomechanically Accurate Neural Inverse Kinematics for Human Motion Estimation",
+      "year": "2024",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://www.ecva.net/papers/eccv_2024/papers_ECCV/papers/00194.pdf",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    },
+    {
+      "title": "EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere",
+      "year": "2024",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/pdf/2308.06493",
+      "arxiv_url": "https://arxiv.org/pdf/2308.06493",
+      "website_url": "https://siplab.org/projects/EgoPoser",
+      "code_url": "https://github.com/eth-siplab/EgoPoser"
+    },
+    {
+      "title": "AvatarPoser: Articulated Full-Body Pose Tracking from Sparse Motion Sensing",
+      "year": "2022",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://arxiv.org/abs/2207.13784",
+      "arxiv_url": "https://arxiv.org/abs/2207.13784",
+      "website_url": "https://siplab.org/projects/AvatarPoser",
+      "code_url": "https://github.com/eth-siplab/AvatarPoser"
+    },
+    {
+      "title": "Learned motion matching",
+      "year": "2020",
+      "category": "Human Motion Analysis and Synthesis",
+      "source_url": "https://dl.acm.org/doi/abs/10.1145/3386569.3392440",
+      "arxiv_url": "",
+      "website_url": "",
+      "code_url": ""
+    }
+  ]
+}

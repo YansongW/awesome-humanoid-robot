@@ -1,0 +1,75 @@
+name: whole_body_control_curated
+description: 'Curated workstream for: 运控基座与通用全身跟踪.
+
+  Seeded with 30 resolved arXiv papers from the WeChat 161-paper list.'
+seed_queries:
+- humanoid whole-body control heterogeneous data
+- humanoid motion tracking controller
+- humanoid locomotion foundation model
+- versatile humanoid control reinforcement learning
+- humanoid balance and agility control
+- humanoid agility meets stability versatile
+- humanoid any2any efficient cross embodiment
+- humanoid zero promptable behavioral foundation
+- humanoid beyondmimic from motion tracking
+- humanoid chip adaptive compliance humanoid
+paper_ids:
+- '2511.17373'
+- '2605.23733'
+- '2511.04131'
+- '2508.08241'
+- '2512.14689'
+- '2506.08931'
+- '2412.13196'
+- '2601.12799'
+- '2506.14770'
+- '2410.21229'
+- '2605.15336'
+- '2406.10454'
+- '2509.16638'
+- '2602.08594'
+- '2603.22201'
+- '2509.26633'
+- '2510.02252'
+- '2511.07820'
+- '2511.02832'
+- '2505.02833'
+- '2602.07439'
+- '2512.24321'
+- '2507.07356'
+- '2602.06643'
+- '2402.16796'
+- '2509.13780'
+- '2506.12779'
+- '2403.04436'
+- '2509.13833'
+- '2601.23080'
+target_entity_types:
+- paper
+- method
+- formalism
+- technology
+- component
+target_domains:
+- 07_ai_models_algorithms
+- 06_design_engineering
+- 11_applications_markets
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+- derived_from
+relevance_threshold: medium
+max_papers: 30
+priority: 1
+sources:
+- arxiv
+metadata:
+  curated_source: wechat_161_humanoid_papers
+  category: 运控基座与通用全身跟踪
+  resolved_count: 30
+  total_count: 31

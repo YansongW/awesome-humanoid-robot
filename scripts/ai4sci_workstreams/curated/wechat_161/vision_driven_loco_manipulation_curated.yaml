@@ -1,0 +1,51 @@
+name: vision_driven_loco_manipulation_curated
+description: 'Curated workstream for: 视觉感知驱动的人形移动操作.
+
+  Seeded with 6 resolved arXiv papers from the WeChat 161-paper list.'
+seed_queries:
+- vision guided humanoid locomotion manipulation
+- perception driven humanoid mobile manipulation
+- humanoid robot visual servoing manipulation
+- visual perception whole-body control humanoid
+- humanoid navigation and manipulation vision
+- humanoid agile comprehensive workflow humanoid
+- humanoid being humanoid robotic agent
+- humanoid cybo waiter physical agentic
+- humanoid demohlm from demonstration generalizable
+- humanoid egohumanoid unlocking wild loco
+paper_ids:
+- '2511.14756'
+- '2602.06341'
+- '2511.15200'
+- '2512.11047'
+- '2602.06643'
+- '2512.01061'
+target_entity_types:
+- paper
+- method
+- formalism
+- technology
+- component
+target_domains:
+- 07_ai_models_algorithms
+- 08_software_middleware
+- 11_applications_markets
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+- derived_from
+relevance_threshold: medium
+max_papers: 10
+priority: 1
+sources:
+- arxiv
+metadata:
+  curated_source: wechat_161_humanoid_papers
+  category: 视觉感知驱动的人形移动操作
+  resolved_count: 6
+  total_count: 37

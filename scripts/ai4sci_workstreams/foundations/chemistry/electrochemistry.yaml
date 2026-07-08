@@ -49,7 +49,7 @@ relationship_patterns:
   - instantiates
   - builds_on
 relevance_threshold: medium
-max_papers: 25
+max_papers: 15
 sources:
   - arxiv
   - semantic_scholar

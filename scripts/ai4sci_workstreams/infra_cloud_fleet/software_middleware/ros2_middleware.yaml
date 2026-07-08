@@ -1,0 +1,33 @@
+name: ros2_middleware
+description: |
+  Survey software middleware and communication frameworks for humanoid robots,
+  with a focus on ROS 2, real-time middleware, DDS, simulation-to-real bridges,
+  fleet management interfaces, and determinism in control loops.
+seed_queries:
+  - "ROS2 humanoid robot middleware real time control"
+  - "DDS middleware humanoid robot communication"
+  - "simulation to real ROS2 humanoid robot"
+  - "robot fleet management middleware humanoid"
+  - "real time Linux humanoid robot control loop"
+paper_ids: []
+target_entity_types:
+  - paper
+  - software_platform
+  - technology
+  - standard
+  - company
+target_domains:
+  - 08_software_middleware
+  - 07_ai_models_algorithms
+  - 06_design_engineering
+relationship_patterns:
+  - enables
+  - requires
+  - constrains
+  - is_alternative_to
+  - integrates
+relevance_threshold: medium
+max_papers: 15
+priority: 3
+sources:
+  - arxiv

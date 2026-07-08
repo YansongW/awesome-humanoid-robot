@@ -1,0 +1,33 @@
+name: edge_compute
+description: |
+  Survey edge computing platforms for humanoid robots: AI accelerators,
+  NVIDIA Jetson and Thor, Intel NUC alternatives, power envelope, thermal
+  constraints, and the trade-offs between on-device and cloud inference.
+seed_queries:
+  - "edge AI accelerator humanoid robot Jetson Thor"
+  - "on device inference humanoid robot power thermal"
+  - "NVIDIA Jetson humanoid robot perception compute"
+  - "AI accelerator chip humanoid robot edge"
+  - "cloud vs edge inference humanoid robot latency"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - component
+  - company
+  - benchmark
+target_domains:
+  - 02_components
+  - 08_software_middleware
+  - 06_design_engineering
+relationship_patterns:
+  - enables
+  - requires
+  - constrains
+  - is_alternative_to
+  - evaluates_on
+relevance_threshold: medium
+max_papers: 15
+priority: 1
+sources:
+  - arxiv

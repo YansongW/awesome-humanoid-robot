@@ -1,0 +1,56 @@
+---
+$id: ent_paper_zhang_reinforcing_action_policies_by_2025
+$schema: ../../data/schema/v1/entry_schema.json
+$version: 1
+type: paper
+names:
+  en: Reinforcing Action Policies by Prophesying
+  zh: Prophet
+  ko: ''
+summary:
+  en: Reinforcing Action Policies by Prophesying (Prophet), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Fudan University, Shanghai Innovation
+    Institute, Logos Robotics.
+  zh: Reinforcing Action Policies by Prophesying (Prophet), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Fudan University, Shanghai Innovation
+    Institute, Logos Robotics.
+  ko: ''
+domains:
+- 07_ai_models_algorithms
+- 08_software_middleware
+layers:
+- intelligence
+functional_roles:
+- knowledge
+- intelligence
+tags:
+- large_vla_model
+- prophet
+- robotic_manipulation
+- vision_language_action
+- vla
+theoretical_depth:
+- system
+verification:
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-07-01'
+  confidence: medium
+  notes: 'Imported from Awesome-VLA curated list. Model: Prophet. Institution: Fudan
+    University, Shanghai Innovation Institute, Logos Robotics. arXiv: 2511.20633.'
+sources:
+- id: src_001
+  type: paper
+  title: Reinforcing Action Policies by Prophesying (arXiv)
+  url: https://arxiv.org/abs/2511.20633
+  date: '2025'
+  accessed_at: '2026-07-01'
+- id: src_002
+  type: website
+  title: Prophet source
+  url: https://doi.org/10.48550/arXiv.2511.20633
+  date: '2025'
+  accessed_at: '2026-07-01'
+---
+
+Reinforcing Action Policies by Prophesying (Prophet), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, Shanghai Innovation Institute, Logos Robotics.

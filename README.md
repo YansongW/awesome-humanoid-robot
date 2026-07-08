@@ -6,7 +6,7 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-758-green" alt="758 entries" />
+  <img src="https://img.shields.io/badge/entries-1810-green" alt="1810 entries" />
   <img src="https://img.shields.io/badge/relationships-841-brightgreen" alt="841 relationships" />
   <img src="https://img.shields.io/badge/workstreams-175-orange" alt="175 workstreams" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
@@ -90,17 +90,26 @@ See [`docs/architecture/information_model.md`](docs/architecture/information_mod
 
 ---
 
-## ⚙️ How it works: AI4Sci + human review
+## ⚙️ How it works: unified ingestion + AI4Sci enrichment
 
-1. **Systematic scanning** — workstreams query arXiv, Semantic Scholar, and (planned) web sources for relevant papers and industry intelligence.
-2. **Relevance classification** — an LLM scores each source against the central question and drops low-relevance items.
-3. **Structured extraction** — the LLM drafts typed entries, multi-lingual summaries, and proposed relationships.
-4. **Staging** — all AI drafts land in `.staging/` for isolated review.
-5. **Autonomous review** — `scripts/ai4sci_autonomous_review.py` validates schema, checks sources/duplicates, and archives high-confidence drafts automatically.
-6. **Human review** — a reviewer inspects the remaining queue and rejects or fine-tunes edge cases.
-7. **Integration & validation** — approved entries move to `research/` and `data/relationships/` and must pass `scripts/validate_entries.py`.
+1. **Curated ingestion** — `scripts/ingestion/pipeline.py` pulls high-confidence sources daily:
+   - arXiv RSS, curated GitHub lists, paper-notebook progress files
+   - Company/lab blogs and news APIs (Unitree, NVIDIA, etc.)
+   - WeChat articles (when a URL list or text dump is provided)
+   - New items are deduplicated against titles, arXiv IDs, and source URLs before writing.
+2. **AI4Sci enrichment** *(currently paused pending quality-gate redesign)* — workstreams query arXiv/Semantic Scholar for deeper synthesis, cross-layer relationships, and proprietary/industry intelligence.
+3. **Staging & review** — AI drafts land in `.staging/` for isolated review.
+4. **Autonomous review** — `scripts/ai4sci_autonomous_review.py` validates schema, checks sources/duplicates, and archives high-confidence drafts automatically.
+5. **Human review** — a reviewer inspects the remaining queue and rejects or fine-tunes edge cases.
+6. **Integration & validation** — approved entries move to `research/` and `data/relationships/` and must pass `scripts/validate_entries.py`.
 
-The full pipeline is documented in [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md).
+Run the daily ingestion pipeline:
+
+```bash
+bash scripts/ingest_all_sources.sh
+```
+
+The framework is documented in [`docs/ingestion/README.md`](docs/ingestion/README.md); the legacy AI4Sci pipeline is in [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md).
 
 ---
 
@@ -131,15 +140,18 @@ source .venv/bin/activate
 # 3. Validate the current knowledge graph
 python scripts/validate_entries.py
 
-# 4. Run a single workstream (example: VLA survey)
+# 4. Run the unified ingestion pipeline (daily cron)
+python -m ingestion.pipeline --all
+
+# 5. Run a single workstream (example: VLA survey)
 python scripts/ai4sci_batch_pipeline.py \
   scripts/ai4sci_workstreams/definition/algorithm_survey/vla.yaml \
   --max-papers 5 --max-workers 2
 
-# 5. Or run multiple workstreams in parallel
+# 6. Or run multiple workstreams in parallel
 python scripts/ai4sci_orchestrator.py --max-workers 2 --max-batch-workers 1 --max-papers 5
 
-# 6. Review staged outputs
+# 7. Review staged outputs
 python scripts/ai4sci_review.py
 
 # 7. Start the web frontend
@@ -157,7 +169,7 @@ For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4
 
 | Metric | Count |
 |--------|-------|
-| Production entries | 758 |
+| Production entries | 1173 |
 | Relationships | 841 |
 | Workstream configs | 175 |
 | Ontology domains | 12 + `00_foundations` |

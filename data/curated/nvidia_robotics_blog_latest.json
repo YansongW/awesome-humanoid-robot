@@ -1,0 +1,68 @@
+{
+  "fetched_at": "2026-07-01",
+  "source": "https://blogs.nvidia.com/blog/category/robotics/feed/",
+  "total": 18,
+  "relevant": 10,
+  "items": [
+    {
+      "title": "How Jaiveer Singh Is Helping Robots — and Developers — Move Faster",
+      "link": "https://blogs.nvidia.com/blog/nvidia-life-jaiveer-singh/",
+      "description": "When Jaiveer Singh talks about robots, he doesn’t begin with spectacle. He begins with infrastructure: the boards inside machines, the software that lets developers see through a robot&#8217;s cameras and the engineering required before a robot can leave a demo floor to do something useful. As a robotics software engineer who leads the team behind [&#8230;]",
+      "pub_date": "Tue, 30 Jun 2026 15:00:49 +0000"
+    },
+    {
+      "title": "For Robotaxis, Safety Must Be Built In, Not Bolted On",
+      "link": "https://blogs.nvidia.com/blog/halos-os-robotaxi-safety/",
+      "description": "A car pulls up to the curb. The app says, “Your ride is here.” No one’s in the driver’s seat. For people who live in one of the dozens of cities now hosting robotaxi services, this is already a reality. The robotaxi industry has moved from prototype milestones to commercial operations, with an expanding ecosystem [&#8230;]",
+      "pub_date": "Wed, 10 Jun 2026 19:00:12 +0000"
+    },
+    {
+      "title": "NVIDIA and Doosan Group Collaborate to Advance Physical AI and AI Factory Infrastructure",
+      "link": "https://blogs.nvidia.com/blog/nvidia-and-doosan-group-physical-ai/",
+      "description": "NVIDIA and Doosan Group are expanding their collaboration to advance new opportunities across physical AI, robotics and AI factory infrastructure, spanning Doosan Robotics, Doosan Bobcat, Doosan Enerbility and Doosan Corporation Electro-Materials BG. The collaboration will bring together NVIDIA’s full-stack accelerated computing platforms with Doosan Group’s capabilities in industrial automation, power generation and advanced electronics materials [&#8230;]",
+      "pub_date": "Sun, 07 Jun 2026 23:00:36 +0000"
+    },
+    {
+      "title": "NVIDIA Research Unlocks Advanced Grasping, Smarter Autonomous Driving and Agent Training at Scale",
+      "link": "https://blogs.nvidia.com/blog/cvpr-research-grasping-driving-agent-training/",
+      "description": "What makes a robot gripper useful isn’t that it can pick up one object — it’s that it can pick up the next one, and the one after that, with a tool it’s never held before.  What makes an autonomous vehicle system safe isn’t just that it can reason through a situation — it’s that [&#8230;]",
+      "pub_date": "Wed, 03 Jun 2026 15:00:57 +0000"
+    },
+    {
+      "title": "NVIDIA Enables the Next Era Of Physical AI Research With Agent Skills For Autonomous Vehicles, Robotics And Vision AI",
+      "link": "https://blogs.nvidia.com/blog/cvpr-physical-ai-research-agent-skills/",
+      "description": "At CVPR, NVIDIA is unveiling new physical AI agent skills that help researchers and developers speed the development of autonomous vehicles, robots and vision AI systems. The core challenge in physical AI research isn’t simply developing stronger models. It’s building a full workflow around them — reconstructing real-world scenes, generating edge-case scenarios, training policies, evaluating [&#8230;]",
+      "pub_date": "Wed, 03 Jun 2026 15:00:35 +0000"
+    },
+    {
+      "title": "How Cosmos 3 Helps Physical AI Think Before It Acts",
+      "link": "https://blogs.nvidia.com/blog/cosmos-3-physical-ai-open-world-foundation-model/",
+      "description": "",
+      "pub_date": "Mon, 01 Jun 2026 04:45:07 +0000"
+    },
+    {
+      "title": "NVIDIA Research Advances Robotics From Simulation to the Real World",
+      "link": "https://blogs.nvidia.com/blog/icra-research-robotics-simulation-to-real-world/",
+      "description": "Robotics is entering a new phase: moving from controlled demos and scripted automation toward generalizable, reliable embodied autonomy in the real world.  At the International Conference on Robotics and Automation (ICRA), eight of NVIDIA Research’s 28 accepted papers show how simulation-to-real transfer is becoming a foundation for that shift, helping robots perceive, reason, plan and [&#8230;]",
+      "pub_date": "Thu, 28 May 2026 13:00:51 +0000"
+    },
+    {
+      "title": "National Robotics Week — Latest Physical AI Research, Breakthroughs and Resources",
+      "link": "https://blogs.nvidia.com/blog/national-robotics-week-2026/",
+      "description": "This National Robotics Week, NVIDIA is highlighting the breakthroughs that are bringing AI into the physical world — as well as the growing wave of robots transforming industries, from agricultural and manufacturing to energy and beyond. Advancements in robot learning, simulation and foundation models are accelerating development, enabling robots to move from training in virtual [&#8230;]",
+      "pub_date": "Fri, 10 Apr 2026 19:40:59 +0000"
+    },
+    {
+      "title": "Into the Omniverse: NVIDIA GTC Showcases Virtual Worlds Powering the Physical AI Era",
+      "link": "https://blogs.nvidia.com/blog/gtc-2026-virtual-worlds-physical-ai/",
+      "description": "Editor’s note: This post is part of Into the Omniverse, a series focused on how developers, 3D practitioners, and enterprises can transform their workflows using the latest advances in OpenUSD and NVIDIA Omniverse. NVIDIA GTC last week showcased a turning point in physical AI: Robots, vehicles and factories are scaling from single use cases and [&#8230;]",
+      "pub_date": "Thu, 26 Mar 2026 15:00:56 +0000"
+    },
+    {
+      "title": "From Simulation to Production: How to Build Robots With AI",
+      "link": "https://blogs.nvidia.com/blog/build-robots-with-ai/",
+      "description": "The latest open models and frameworks from NVIDIA bring together simulation, robot learning and embedded compute to accelerate cloud-to-robot workflows.",
+      "pub_date": "Wed, 18 Mar 2026 13:00:13 +0000"
+    }
+  ]
+}

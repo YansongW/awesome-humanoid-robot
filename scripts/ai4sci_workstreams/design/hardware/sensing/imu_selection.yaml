@@ -1,0 +1,42 @@
+name: imu_selection
+description: 'Workstream for imu selection. Generated from WORKSTREAM_TREE leaf: design/hardware/sensing/imu_selection.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- imu selection robotics
+- humanoid robot imu selection
+- imu selection robots survey
+- imu selection automation manufacturing
+- imu selection applied to humanoid robots
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 2
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: design/hardware/sensing/imu_selection.yaml
+relevance_context: Relevant if it addresses imu selection in a robotics or automation
+  context, or develops foundational methods/principles applicable to humanoid robots,
+  even when examples are not explicitly humanoid.

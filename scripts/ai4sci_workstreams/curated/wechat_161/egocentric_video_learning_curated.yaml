@@ -1,0 +1,42 @@
+name: egocentric_video_learning_curated
+description: 'Curated workstream for: 从人类第一视角视频学习.
+
+  Seeded with 1 resolved arXiv papers from the WeChat 161-paper list.'
+seed_queries:
+- egocentric video learning humanoid robot
+- first person video robot manipulation
+- humanoid learning from egocentric video
+- ego centric robot policy learning
+- human demonstration video humanoid imitation
+- humanoid egovla learning vision language
+paper_ids:
+- '2507.12440'
+target_entity_types:
+- paper
+- method
+- formalism
+- technology
+- component
+target_domains:
+- 07_ai_models_algorithms
+- 09_data_datasets
+- 11_applications_markets
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+- derived_from
+relevance_threshold: medium
+max_papers: 10
+priority: 1
+sources:
+- arxiv
+metadata:
+  curated_source: wechat_161_humanoid_papers
+  category: 从人类第一视角视频学习
+  resolved_count: 1
+  total_count: 1

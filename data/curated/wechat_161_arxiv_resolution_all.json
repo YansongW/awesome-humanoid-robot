@@ -1,0 +1,968 @@
+[
+  {
+    "num": "001",
+    "title": "Agility Meets Stability: Versatile Humanoid Control with Heterogeneous Data",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Agility%20Meets%20Stability%20%20Versatile%20Humanoid%20Control%20with%20Heterogeneous%20Data&start=0&max_results=5"
+  },
+  {
+    "num": "002",
+    "title": "Any2Any: Efficient Cross-Embodiment Transfer for Humanoid Whole-Body Tracking",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Any2Any%20%20Efficient%20Cross%20Embodiment%20Transfer%20for%20Humanoid%20Whole%20Body%20Tracking&start=0&max_results=5"
+  },
+  {
+    "num": "003",
+    "title": "BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using Unsupervised Reinforcement Learning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:BFM%20Zero%20%20A%20Promptable%20Behavioral%20Foundation%20Model%20for%20Humanoid%20Control%20Using%20Unsupervised%20Reinforcement%20Learning&start=0&max_results=5"
+  },
+  {
+    "num": "004",
+    "title": "BeyondMimic: From Motion Tracking to Versatile Humanoid Control via Guided Diffusion",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:BeyondMimic%20%20From%20Motion%20Tracking%20to%20Versatile%20Humanoid%20Control%20via%20Guided%20Diffusion&start=0&max_results=5"
+  },
+  {
+    "num": "005",
+    "title": "CHIP: Adaptive Compliance for Humanoid Control through Hindsight Perturbation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:CHIP%20%20Adaptive%20Compliance%20for%20Humanoid%20Control%20through%20Hindsight%20Perturbation&start=0&max_results=5"
+  },
+  {
+    "num": "006",
+    "title": "CLONE: Closed-Loop Whole-Body Humanoid Teleoperation for Long-Horizon Tasks",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:CLONE%20%20Closed%20Loop%20Whole%20Body%20Humanoid%20Teleoperation%20for%20Long%20Horizon%20Tasks&start=0&max_results=5"
+  },
+  {
+    "num": "007",
+    "title": "ExBody2: Advanced Expressive Humanoid Whole-Body Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:ExBody2%20%20Advanced%20Expressive%20Humanoid%20Whole%20Body%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "008",
+    "title": "FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:FRoM%20W1%20%20Towards%20General%20Humanoid%20Whole%20Body%20Control%20with%20Language%20Instructions&start=0&max_results=5"
+  },
+  {
+    "num": "009",
+    "title": "GMT: General Motion Tracking for Humanoid Whole-Body Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:GMT%20%20General%20Motion%20Tracking%20for%20Humanoid%20Whole%20Body%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "010",
+    "title": "HOVER: Versatile Neural Whole-Body Controller for Humanoid Robots",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HOVER%20%20Versatile%20Neural%20Whole%20Body%20Controller%20for%20Humanoid%20Robots&start=0&max_results=5"
+  },
+  {
+    "num": "011",
+    "title": "HoloMotion-1 Technical Report",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HoloMotion%201%20Technical%20Report&start=0&max_results=5"
+  },
+  {
+    "num": "012",
+    "title": "HumanPlus: Humanoid Shadowing and Imitation from Humans",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HumanPlus%20%20Humanoid%20Shadowing%20and%20Imitation%20from%20Humans&start=0&max_results=5"
+  },
+  {
+    "num": "013",
+    "title": "KungfuBot2: Learning Versatile Motion Skills for Humanoid Whole-Body Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:KungfuBot2%20%20Learning%20Versatile%20Motion%20Skills%20for%20Humanoid%20Whole%20Body%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "014",
+    "title": "MOSAIC: Bridging the Sim-to-Real Gap in Generalist Humanoid Motion Tracking and Teleoperation with Rapid Residual Adaptation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:MOSAIC%20%20Bridging%20the%20Sim%20to%20Real%20Gap%20in%20Generalist%20Humanoid%20Motion%20Tracking%20and%20Teleoperation%20with%20Rapid%20Residual%20Adaptation&start=0&max_results=5"
+  },
+  {
+    "num": "015",
+    "title": "Make Tracking Easy: Neural Motion Retargeting for Humanoid Whole-body Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Make%20Tracking%20Easy%20%20Neural%20Motion%20Retargeting%20for%20Humanoid%20Whole%20body%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "016",
+    "title": "OmniH2O: Universal and Dexterous Human-to- Humanoid Whole-Body Teleoperation and Learning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:OmniH2O%20%20Universal%20and%20Dexterous%20Human%20to%20%20Humanoid%20Whole%20Body%20Teleoperation%20and%20Learning&start=0&max_results=5"
+  },
+  {
+    "num": "017",
+    "title": "OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:OmniRetarget%20%20Interaction%20Preserving%20Data%20Generation%20for%20Humanoid%20Whole%20Body%20Loco%20Manipulation%20and%20Scene%20Interaction&start=0&max_results=5"
+  },
+  {
+    "num": "018",
+    "title": "Retargeting Matters: General Motion Retargeting for Humanoid Motion Tracking",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Retargeting%20Matters%20%20General%20Motion%20Retargeting%20for%20Humanoid%20Motion%20Tracking&start=0&max_results=5"
+  },
+  {
+    "num": "019",
+    "title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:SONIC%20%20Supersizing%20Motion%20Tracking%20for%20Natural%20Humanoid%20Whole%20Body%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "020",
+    "title": "TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:TWIST2%20%20Scalable%20%20Portable%20%20and%20Holistic%20Humanoid%20Data%20Collection%20System&start=0&max_results=5"
+  },
+  {
+    "num": "021",
+    "title": "TWIST: Teleoperated Whole-Body Imitation System",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:TWIST%20%20Teleoperated%20Whole%20Body%20Imitation%20System&start=0&max_results=5"
+  },
+  {
+    "num": "022",
+    "title": "TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:TextOp%20%20Real%20time%20Interactive%20Text%20Driven%20Humanoid%20Robot%20Motion%20Generation%20and%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "023",
+    "title": "UniAct: Unified Motion Generation and Action Streaming for Humanoid Robots",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:UniAct%20%20Unified%20Motion%20Generation%20and%20Action%20Streaming%20for%20Humanoid%20Robots&start=0&max_results=5"
+  },
+  {
+    "num": "024",
+    "title": "UniTracker: Learning Universal Whole-Body Motion Tracker for Humanoid Robots",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:UniTracker%20%20Learning%20Universal%20Whole%20Body%20Motion%20Tracker%20for%20Humanoid%20Robots&start=0&max_results=5"
+  },
+  {
+    "num": "025",
+    "title": "Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Humanoid%20Manipulation%20Interface%20%20Humanoid%20Whole%20Body%20Manipulation%20from%20Robot%20Free%20Demonstrations&start=0&max_results=5"
+  },
+  {
+    "num": "026",
+    "title": "Expressive Whole-Body Control for Humanoid Robots",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Expressive%20Whole%20Body%20Control%20for%20Humanoid%20Robots&start=0&max_results=5"
+  },
+  {
+    "num": "027",
+    "title": "Behavior Foundation Model for Humanoid Robots",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Behavior%20Foundation%20Model%20for%20Humanoid%20Robots&start=0&max_results=5"
+  },
+  {
+    "num": "028",
+    "title": "From Experts to a Generalist: Toward General Whole-Body Control for Humanoid Robots",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:From%20Experts%20to%20a%20Generalist%20%20Toward%20General%20Whole%20Body%20Control%20for%20Humanoid%20Robots&start=0&max_results=5"
+  },
+  {
+    "num": "029",
+    "title": "Learning Human-to-Humanoid Real-Time Whole-Body Teleoperation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Learning%20Human%20to%20Humanoid%20Real%20Time%20Whole%20Body%20Teleoperation&start=0&max_results=5"
+  },
+  {
+    "num": "030",
+    "title": "Track Any Motions under Any Disturbances",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Track%20Any%20Motions%20under%20Any%20Disturbances&start=0&max_results=5"
+  },
+  {
+    "num": "031",
+    "title": "Robust and Generalized Humanoid Motion Tracking",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Robust%20and%20Generalized%20Humanoid%20Motion%20Tracking&start=0&max_results=5"
+  },
+  {
+    "num": "032",
+    "title": "AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:AMO%20%20Adaptive%20Motion%20Optimization%20for%20Hyper%20Dexterous%20Humanoid%20Whole%20Body%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "033",
+    "title": "CEER: Compliant End-Effector and Root Control as a Unified Interface for Hierarchical Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:CEER%20%20Compliant%20End%20Effector%20and%20Root%20Control%20as%20a%20Unified%20Interface%20for%20Hierarchical%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "034",
+    "title": "Learning Human-Humanoid Coordination for Collaborative Object Carrying",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Learning%20Human%20Humanoid%20Coordination%20for%20Collaborative%20Object%20Carrying&start=0&max_results=5"
+  },
+  {
+    "num": "035",
+    "title": "CoorDex: Coordinating Body and Hand Priors for Continuous Dexterous Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:CoorDex%20%20Coordinating%20Body%20and%20Hand%20Priors%20for%20Continuous%20Dexterous%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "036",
+    "title": "FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:FALCON%20%20Learning%20Force%20Adaptive%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "037",
+    "title": "HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary Teachers",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HANDOFF%20%20Humanoid%20Agentic%20Task%20Space%20Whole%20Body%20Control%20via%20Distilled%20Complementary%20Teachers&start=0&max_results=5"
+  },
+  {
+    "num": "038",
+    "title": "HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HEX%20%20Humanoid%20Aligned%20Experts%20for%20Cross%20Embodiment%20Whole%20Body%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "039",
+    "title": "HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HMC%20%20Learning%20Heterogeneous%20Meta%20Control%20for%20Contact%20Rich%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "040",
+    "title": "HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HOMIE%20%20Humanoid%20Loco%20Manipulation%20with%20Isomorphic%20Exoskeleton%20Cockpit&start=0&max_results=5"
+  },
+  {
+    "num": "041",
+    "title": "HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HiWET%20%20Hierarchical%20World%20Frame%20End%20Effector%20Tracking%20for%20Long%20Horizon%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "042",
+    "title": "Hold My Beer: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Hold%20My%20Beer%20%20Learning%20Gentle%20Humanoid%20Locomotion%20and%20End%20Effector%20Stabilization%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "043",
+    "title": "PILOT: A Perceptive Integrated Low-level Controller for Loco-manipulation over Unstructured Scenes",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:PILOT%20%20A%20Perceptive%20Integrated%20Low%20level%20Controller%20for%20Loco%20manipulation%20over%20Unstructured%20Scenes&start=0&max_results=5"
+  },
+  {
+    "num": "044",
+    "title": "RPL: Learning Robust Humanoid Perceptive Locomotion on Challenging Terrains",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:RPL%20%20Learning%20Robust%20Humanoid%20Perceptive%20Locomotion%20on%20Challenging%20Terrains&start=0&max_results=5"
+  },
+  {
+    "num": "045",
+    "title": "SplitAdapter: Load-Aware Humanoid Loco-Manipulation via Factorized Adaptation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:SplitAdapter%20%20Load%20Aware%20Humanoid%20Loco%20Manipulation%20via%20Factorized%20Adaptation&start=0&max_results=5"
+  },
+  {
+    "num": "046",
+    "title": "Sumo: Dynamic and Generalizable Whole-Body Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Sumo%20%20Dynamic%20and%20Generalizable%20Whole%20Body%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "047",
+    "title": "Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Thor%20%20Towards%20Human%20Level%20Whole%20Body%20Reactions%20for%20Intense%20Contact%20Rich%20Environments&start=0&max_results=5"
+  },
+  {
+    "num": "048",
+    "title": "ULC: A Unified and Fine-Grained Controller for Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:ULC%20%20A%20Unified%20and%20Fine%20Grained%20Controller%20for%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "049",
+    "title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:VIRAL%20%20Visual%20Sim%20to%20Real%20at%20Scale%20for%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "050",
+    "title": "VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:VOFA%20%20Visual%20Object%20Goal%20Pushing%20with%20Force%20Adaptive%20Control%20for%20Humanoids&start=0&max_results=5"
+  },
+  {
+    "num": "051",
+    "title": "WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:WholeBodyVLA%20%20Towards%20Unified%20Latent%20VLA%20for%20Whole%20Body%20Loco%20Manipulation%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "052",
+    "title": "Critic Architecture Matters: Dual vs. Unified Critics for Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Critic%20Architecture%20Matters%20%20Dual%20vs%20%20Unified%20Critics%20for%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "053",
+    "title": "Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Opening%20the%20Sim%20to%20Real%20Door%20for%20Humanoid%20Pixel%20to%20Action%20Policy%20Transfer&start=0&max_results=5"
+  },
+  {
+    "num": "054",
+    "title": "Adversarial Locomotion and Motion Imitation for Humanoid Policy Learning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Adversarial%20Locomotion%20and%20Motion%20Imitation%20for%20Humanoid%20Policy%20Learning&start=0&max_results=5"
+  },
+  {
+    "num": "055",
+    "title": "Scalable and General Whole-Body Control for Cross-Humanoid Locomotion",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Scalable%20and%20General%20Whole%20Body%20Control%20for%20Cross%20Humanoid%20Locomotion&start=0&max_results=5"
+  },
+  {
+    "num": "056",
+    "title": "AGILE: A Comprehensive Workflow for Humanoid Loco-Manipulation Learning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:AGILE%20%20A%20Comprehensive%20Workflow%20for%20Humanoid%20Loco%20Manipulation%20Learning&start=0&max_results=5"
+  },
+  {
+    "num": "057",
+    "title": "Being-0: A Humanoid Robotic Agent with Vision-Language Models and Modular Skills",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Being%200%20%20A%20Humanoid%20Robotic%20Agent%20with%20Vision%20Language%20Models%20and%20Modular%20Skills&start=0&max_results=5"
+  },
+  {
+    "num": "058",
+    "title": "Cybo-Waiter: A Physical Agentic Framework for Humanoid Whole-Body Locomotion-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Cybo%20Waiter%20%20A%20Physical%20Agentic%20Framework%20for%20Humanoid%20Whole%20Body%20Locomotion%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "059",
+    "title": "DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:DemoHLM%20%20From%20One%20Demonstration%20to%20Generalizable%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "060",
+    "title": "EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric Demonstration",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:EgoHumanoid%20%20Unlocking%20In%20the%20Wild%20Loco%20Manipulation%20with%20Robot%20Free%20Egocentric%20Demonstration&start=0&max_results=5"
+  },
+  {
+    "num": "061",
+    "title": "GRAIL: Generating Humanoid Loco-Manipulation from 3D Assets and Video Priors",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:GRAIL%20%20Generating%20Humanoid%20Loco%20Manipulation%20from%203D%20Assets%20and%20Video%20Priors&start=0&max_results=5"
+  },
+  {
+    "num": "062",
+    "title": "H2-COMPACT: Human–Humanoid Co-Manipulation via Adaptive Contact Trajectory Policies",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:H2%20COMPACT%20%20Human%20Humanoid%20Co%20Manipulation%20via%20Adaptive%20Contact%20Trajectory%20Policies&start=0&max_results=5"
+  },
+  {
+    "num": "063",
+    "title": "HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human Demonstrations",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HALOMI%20%20Learning%20Humanoid%20Loco%20Manipulation%20with%20Active%20Perception%20from%20Human%20Demonstrations&start=0&max_results=5"
+  },
+  {
+    "num": "064",
+    "title": "HMC: Learning Heterogeneous Meta-Control for Contact-Rich Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HMC%20%20Learning%20Heterogeneous%20Meta%20Control%20for%20Contact%20Rich%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "065",
+    "title": "HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HYPERmotion%20%20Learning%20Hybrid%20Behavior%20Planning%20for%20Autonomous%20Loco%20manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "066",
+    "title": "HiWET: Hierarchical World-Frame End-Effector Tracking for Long-Horizon Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HiWET%20%20Hierarchical%20World%20Frame%20End%20Effector%20Tracking%20for%20Long%20Horizon%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "067",
+    "title": "HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HumanoidExo%20%20Scalable%20Whole%20Body%20Humanoid%20Manipulation%20via%20Wearable%20Exoskeleton&start=0&max_results=5"
+  },
+  {
+    "num": "068",
+    "title": "HumanoidMimicGen: Data Generation for Loco-Manipulation via Whole-Body Planning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HumanoidMimicGen%20%20Data%20Generation%20for%20Loco%20Manipulation%20via%20Whole%20Body%20Planning&start=0&max_results=5"
+  },
+  {
+    "num": "069",
+    "title": "Humanoid Everyday: A Comprehensive Robotic Dataset for Open-World Humanoid Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Humanoid%20Everyday%20%20A%20Comprehensive%20Robotic%20Dataset%20for%20Open%20World%20Humanoid%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "070",
+    "title": "OASIS: From Simulation Data Collection to Real-World Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:OASIS%20%20From%20Simulation%20Data%20Collection%20to%20Real%20World%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "071",
+    "title": "OmniDP: Beyond-FOV Large-Workspace Humanoid Manipulation with Omnidirectional 3D Perception",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:OmniDP%20%20Beyond%20FOV%20Large%20Workspace%20Humanoid%20Manipulation%20with%20Omnidirectional%203D%20Perception&start=0&max_results=5"
+  },
+  {
+    "num": "072",
+    "title": "Opt2Skill: Imitating Dynamically-feasible Whole-Body Trajectories for Versatile Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Opt2Skill%20%20Imitating%20Dynamically%20feasible%20Whole%20Body%20Trajectories%20for%20Versatile%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "073",
+    "title": "PhysHSI: Towards a Real-World Generalizable and Natural Humanoid-Scene Interaction System",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:PhysHSI%20%20Towards%20a%20Real%20World%20Generalizable%20and%20Natural%20Humanoid%20Scene%20Interaction%20System&start=0&max_results=5"
+  },
+  {
+    "num": "074",
+    "title": "Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Pro%20HOI%20%20Perceptive%20Root%20guided%20Humanoid%20Object%20Interaction&start=0&max_results=5"
+  },
+  {
+    "num": "075",
+    "title": "SIMPLE: Simulation-Based Policy Learning and Evaluation for Humanoid Loco-manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:SIMPLE%20%20Simulation%20Based%20Policy%20Learning%20and%20Evaluation%20for%20Humanoid%20Loco%20manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "076",
+    "title": "SUGAR: A Scalable Human-Video-Driven Generalizable Humanoid Loco-Manipulation Learning Framework",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:SUGAR%20%20A%20Scalable%20Human%20Video%20Driven%20Generalizable%20Humanoid%20Loco%20Manipulation%20Learning%20Framework&start=0&max_results=5"
+  },
+  {
+    "num": "077",
+    "title": "SkillBlender: Towards Versatile Humanoid Whole-Body Loco-Manipulation via Skill Blending",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:SkillBlender%20%20Towards%20Versatile%20Humanoid%20Whole%20Body%20Loco%20Manipulation%20via%20Skill%20Blending&start=0&max_results=5"
+  },
+  {
+    "num": "078",
+    "title": "StageACT: Stage-Conditioned Imitation for Robust Humanoid Door Opening",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:StageACT%20%20Stage%20Conditioned%20Imitation%20for%20Robust%20Humanoid%20Door%20Opening&start=0&max_results=5"
+  },
+  {
+    "num": "079",
+    "title": "SynAgent: Generalizable Cooperative Humanoid Manipulation via Solo-to-Cooperative Agent Synergy",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:SynAgent%20%20Generalizable%20Cooperative%20Humanoid%20Manipulation%20via%20Solo%20to%20Cooperative%20Agent%20Synergy&start=0&max_results=5"
+  },
+  {
+    "num": "080",
+    "title": "TrajBooster: Boosting Humanoid Whole-Body Manipulation via Trajectory-Centric Learning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:TrajBooster%20%20Boosting%20Humanoid%20Whole%20Body%20Manipulation%20via%20Trajectory%20Centric%20Learning&start=0&max_results=5"
+  },
+  {
+    "num": "081",
+    "title": "VIRAL: Visual Sim-to-Real at Scale for Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:VIRAL%20%20Visual%20Sim%20to%20Real%20at%20Scale%20for%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "082",
+    "title": "VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking and Generation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:VisualMimic%20%20Visual%20Humanoid%20Loco%20Manipulation%20via%20Motion%20Tracking%20and%20Generation&start=0&max_results=5"
+  },
+  {
+    "num": "083",
+    "title": "WholeBodyVLA: Towards Unified Latent VLA for Whole-Body Loco-Manipulation Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:WholeBodyVLA%20%20Towards%20Unified%20Latent%20VLA%20for%20Whole%20Body%20Loco%20Manipulation%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "084",
+    "title": "Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Humanoid%20Manipulation%20Interface%20%20Humanoid%20Whole%20Body%20Manipulation%20from%20Robot%20Free%20Demonstrations&start=0&max_results=5"
+  },
+  {
+    "num": "085",
+    "title": "人形机器人运动与操作",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:%E4%BA%BA%E5%BD%A2%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%BF%90%E5%8A%A8%E4%B8%8E%E6%93%8D%E4%BD%9C&start=0&max_results=5"
+  },
+  {
+    "num": "086",
+    "title": "Generalizable Humanoid Manipulation with 3D Diffusion Policies",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Generalizable%20Humanoid%20Manipulation%20with%203D%20Diffusion%20Policies&start=0&max_results=5"
+  },
+  {
+    "num": "087",
+    "title": "Coordinated Humanoid Manipulation with Choice Policies",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Coordinated%20Humanoid%20Manipulation%20with%20Choice%20Policies&start=0&max_results=5"
+  },
+  {
+    "num": "088",
+    "title": "A Rapid Deployment Pipeline for Autonomous Humanoid Grasping Based on Foundation Models",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:A%20Rapid%20Deployment%20Pipeline%20for%20Autonomous%20Humanoid%20Grasping%20Based%20on%20Foundation%20Models&start=0&max_results=5"
+  },
+  {
+    "num": "089",
+    "title": "Opening the Sim-to-Real Door for Humanoid Pixel-to-Action Policy Transfer",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Opening%20the%20Sim%20to%20Real%20Door%20for%20Humanoid%20Pixel%20to%20Action%20Policy%20Transfer&start=0&max_results=5"
+  },
+  {
+    "num": "090",
+    "title": "Ego-Vision World Model for Humanoid Contact Planning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Ego%20Vision%20World%20Model%20for%20Humanoid%20Contact%20Planning&start=0&max_results=5"
+  },
+  {
+    "num": "091",
+    "title": "Unleashing Humanoid Reaching Potential via Real-world-Ready Skill Space",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Unleashing%20Humanoid%20Reaching%20Potential%20via%20Real%20world%20Ready%20Skill%20Space&start=0&max_results=5"
+  },
+  {
+    "num": "092",
+    "title": "Learning Versatile Humanoid Manipulation with Touch Dreaming",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Learning%20Versatile%20Humanoid%20Manipulation%20with%20Touch%20Dreaming&start=0&max_results=5"
+  },
+  {
+    "num": "093",
+    "title": "DreamControl: Human-Inspired Whole-Body Humanoid Control for Scene Interaction via Guided Diffusion",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:DreamControl%20%20Human%20Inspired%20Whole%20Body%20Humanoid%20Control%20for%20Scene%20Interaction%20via%20Guided%20Diffusion&start=0&max_results=5"
+  },
+  {
+    "num": "094",
+    "title": "EMOTION: Expressive Motion Sequence Generation for Humanoid Robots with In-Context Learning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:EMOTION%20%20Expressive%20Motion%20Sequence%20Generation%20for%20Humanoid%20Robots%20with%20In%20Context%20Learning&start=0&max_results=5"
+  },
+  {
+    "num": "095",
+    "title": "EgoPriMo: Egocentric Motion Generation for Interactive Humanoid Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:EgoPriMo%20%20Egocentric%20Motion%20Generation%20for%20Interactive%20Humanoid%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "096",
+    "title": "FRoM-W1: Towards General Humanoid Whole-Body Control with Language Instructions",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:FRoM%20W1%20%20Towards%20General%20Humanoid%20Whole%20Body%20Control%20with%20Language%20Instructions&start=0&max_results=5"
+  },
+  {
+    "num": "097",
+    "title": "HARMON: Whole-Body Motion Generation of Humanoid Robots from Language Descriptions",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HARMON%20%20Whole%20Body%20Motion%20Generation%20of%20Humanoid%20Robots%20from%20Language%20Descriptions&start=0&max_results=5"
+  },
+  {
+    "num": "098",
+    "title": "LangWBC: Language-directed Humanoid Whole-Body Control via End-to-end Learning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:LangWBC%20%20Language%20directed%20Humanoid%20Whole%20Body%20Control%20via%20End%20to%20end%20Learning&start=0&max_results=5"
+  },
+  {
+    "num": "099",
+    "title": "MotionDisco: Motion Discovery for Extreme Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:MotionDisco%20%20Motion%20Discovery%20for%20Extreme%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "100",
+    "title": "MotionWAM: Towards Foundation World Action Models for Real-Time Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:MotionWAM%20%20Towards%20Foundation%20World%20Action%20Models%20for%20Real%20Time%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "101",
+    "title": "OMG: Omni-Modal Motion Generation for Generalist Humanoid Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:OMG%20%20Omni%20Modal%20Motion%20Generation%20for%20Generalist%20Humanoid%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "102",
+    "title": "Robot Motion Diffusion Model: Motion Generation for Robotic Characters",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Robot%20Motion%20Diffusion%20Model%20%20Motion%20Generation%20for%20Robotic%20Characters&start=0&max_results=5"
+  },
+  {
+    "num": "103",
+    "title": "SONIC: Supersizing Motion Tracking for Natural Humanoid Whole-Body Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:SONIC%20%20Supersizing%20Motion%20Tracking%20for%20Natural%20Humanoid%20Whole%20Body%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "104",
+    "title": "SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified Flow and Selective Safety Gating",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:SafeFlow%20%20Real%20Time%20Text%20Driven%20Humanoid%20Whole%20Body%20Control%20via%20Physics%20Guided%20Rectified%20Flow%20and%20Selective%20Safety%20Gating&start=0&max_results=5"
+  },
+  {
+    "num": "105",
+    "title": "TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation and Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:TextOp%20%20Real%20time%20Interactive%20Text%20Driven%20Humanoid%20Robot%20Motion%20Generation%20and%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "106",
+    "title": "From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent Guidance",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:From%20Language%20to%20Locomotion%20%20Retargeting%20free%20Humanoid%20Control%20via%20Motion%20Latent%20Guidance&start=0&max_results=5"
+  },
+  {
+    "num": "107",
+    "title": "Physically Consistent Humanoid Loco-Manipulation using Latent Diffusion Models",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Physically%20Consistent%20Humanoid%20Loco%20Manipulation%20using%20Latent%20Diffusion%20Models&start=0&max_results=5"
+  },
+  {
+    "num": "108",
+    "title": "Unveiling the Impact of Data and Model Scaling on High-Level Control for Humanoid Robots",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Unveiling%20the%20Impact%20of%20Data%20and%20Model%20Scaling%20on%20High%20Level%20Control%20for%20Humanoid%20Robots&start=0&max_results=5"
+  },
+  {
+    "num": "109",
+    "title": "FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:FALCON%20%20Learning%20Force%20Adaptive%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "110",
+    "title": "HDMI: Learning Interactive Humanoid Whole-Body Control from Human Videos",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HDMI%20%20Learning%20Interactive%20Humanoid%20Whole%20Body%20Control%20from%20Human%20Videos&start=0&max_results=5"
+  },
+  {
+    "num": "111",
+    "title": "HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HITTER%20%20A%20HumanoId%20Table%20TEnnis%20Robot%20via%20Hierarchical%20Planning%20and%20Learning&start=0&max_results=5"
+  },
+  {
+    "num": "112",
+    "title": "HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HumanX%20%20Toward%20Agile%20and%20Generalizable%20Humanoid%20Interaction%20Skills%20from%20Human%20Videos&start=0&max_results=5"
+  },
+  {
+    "num": "113",
+    "title": "Humanoid Goalkeeper: Learning from Position Conditioned Task-Motion Constraints",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Humanoid%20Goalkeeper%20%20Learning%20from%20Position%20Conditioned%20Task%20Motion%20Constraints&start=0&max_results=5"
+  },
+  {
+    "num": "114",
+    "title": "OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body Loco-Manipulation and Scene Interaction",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:OmniRetarget%20%20Interaction%20Preserving%20Data%20Generation%20for%20Humanoid%20Whole%20Body%20Loco%20Manipulation%20and%20Scene%20Interaction&start=0&max_results=5"
+  },
+  {
+    "num": "115",
+    "title": "ResMimic: From General Motion Tracking to Humanoid Whole-body Loco-Manipulation via Residual Learning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:ResMimic%20%20From%20General%20Motion%20Tracking%20to%20Humanoid%20Whole%20body%20Loco%20Manipulation%20via%20Residual%20Learning&start=0&max_results=5"
+  },
+  {
+    "num": "116",
+    "title": "WoCoCo: Learning Whole-Body Humanoid Control with Sequential Contacts",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:WoCoCo%20%20Learning%20Whole%20Body%20Humanoid%20Control%20with%20Sequential%20Contacts&start=0&max_results=5"
+  },
+  {
+    "num": "117",
+    "title": "Humanoid Whole-Body Badminton via Multi-Stage Reinforcement Learning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Humanoid%20Whole%20Body%20Badminton%20via%20Multi%20Stage%20Reinforcement%20Learning&start=0&max_results=5"
+  },
+  {
+    "num": "118",
+    "title": "Whole-Body Dynamic Throwing with Legged Manipulators",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Whole%20Body%20Dynamic%20Throwing%20with%20Legged%20Manipulators&start=0&max_results=5"
+  },
+  {
+    "num": "119",
+    "title": "PACE: Physics Augmentation for Coordinated End-to-end Reinforcement Learning toward Versatile Humanoid Table Tennis",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:PACE%20%20Physics%20Augmentation%20for%20Coordinated%20End%20to%20end%20Reinforcement%20Learning%20toward%20Versatile%20Humanoid%20Table%20Tennis&start=0&max_results=5"
+  },
+  {
+    "num": "120",
+    "title": "GentleHumanoid: Learning Upper-body Compliance for Contact-rich Human and Object Interaction",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:GentleHumanoid%20%20Learning%20Upper%20body%20Compliance%20for%20Contact%20rich%20Human%20and%20Object%20Interaction&start=0&max_results=5"
+  },
+  {
+    "num": "121",
+    "title": "Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Humanoid%20VLA%20%20Towards%20Universal%20Humanoid%20Control%20with%20Visual%20Integration&start=0&max_results=5"
+  },
+  {
+    "num": "122",
+    "title": "LeVERB: Humanoid Whole-Body Control with Latent Vision-Language Instruction",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:LeVERB%20%20Humanoid%20Whole%20Body%20Control%20with%20Latent%20Vision%20Language%20Instruction&start=0&max_results=5"
+  },
+  {
+    "num": "123",
+    "title": "Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Learning%20Agile%20Striker%20Skills%20for%20Humanoid%20Soccer%20Robots%20from%20Noisy%20Sensory%20Input&start=0&max_results=5"
+  },
+  {
+    "num": "124",
+    "title": "Learning Soccer Skills for Humanoid Robots: A Progressive Perception-Action Framework",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Learning%20Soccer%20Skills%20for%20Humanoid%20Robots%20%20A%20Progressive%20Perception%20Action%20Framework&start=0&max_results=5"
+  },
+  {
+    "num": "125",
+    "title": "Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory Input",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Learning%20Agile%20Striker%20Skills%20for%20Humanoid%20Soccer%20Robots%20from%20Noisy%20Sensory%20Input&start=0&max_results=5"
+  },
+  {
+    "num": "126",
+    "title": "Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Hand%20Eye%20Autonomous%20Delivery%20%20Learning%20Humanoid%20Navigation%20%20Locomotion%20and%20Reaching&start=0&max_results=5"
+  },
+  {
+    "num": "127",
+    "title": "Ego-Vision World Model for Humanoid Contact Planning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Ego%20Vision%20World%20Model%20for%20Humanoid%20Contact%20Planning&start=0&max_results=5"
+  },
+  {
+    "num": "128",
+    "title": "BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:BifrostUMI%20%20Bridging%20Robot%20Free%20Demonstrations%20and%20Humanoid%20Whole%20Body%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "129",
+    "title": "HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HOMIE%20%20Humanoid%20Loco%20Manipulation%20with%20Isomorphic%20Exoskeleton%20Cockpit&start=0&max_results=5"
+  },
+  {
+    "num": "130",
+    "title": "HumanoidExo: Scalable Whole-Body Humanoid Manipulation via Wearable Exoskeleton",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:HumanoidExo%20%20Scalable%20Whole%20Body%20Humanoid%20Manipulation%20via%20Wearable%20Exoskeleton&start=0&max_results=5"
+  },
+  {
+    "num": "131",
+    "title": "Open-TeleVision: Teleoperation with Immersive Active Visual Feedback",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Open%20TeleVision%20%20Teleoperation%20with%20Immersive%20Active%20Visual%20Feedback&start=0&max_results=5"
+  },
+  {
+    "num": "132",
+    "title": "TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:TWIST2%20%20Scalable%20%20Portable%20%20and%20Holistic%20Humanoid%20Data%20Collection%20System&start=0&max_results=5"
+  },
+  {
+    "num": "133",
+    "title": "TWIST: Teleoperated Whole-Body Imitation System",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:TWIST%20%20Teleoperated%20Whole%20Body%20Imitation%20System&start=0&max_results=5"
+  },
+  {
+    "num": "134",
+    "title": "WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:WT%20UMI%20%20Tactile%20based%20Whole%20Body%20Manipulation%20via%20Force%20Supervised%20Contact%20Aware%20Planning&start=0&max_results=5"
+  },
+  {
+    "num": "135",
+    "title": "AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:AMO%20%20Adaptive%20Motion%20Optimization%20for%20Hyper%20Dexterous%20Humanoid%20Whole%20Body%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "136",
+    "title": "DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:DemoHLM%20%20From%20One%20Demonstration%20to%20Generalizable%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "137",
+    "title": "Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D Constrained Terrains",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Gallant%20%20Voxel%20Grid%20based%20Humanoid%20Locomotion%20and%20Local%20navigation%20across%203D%20Constrained%20Terrains&start=0&max_results=5"
+  },
+  {
+    "num": "138",
+    "title": "Mobile-TeleVision: Predictive Motion Priors for Humanoid Whole-Body Control",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Mobile%20TeleVision%20%20Predictive%20Motion%20Priors%20for%20Humanoid%20Whole%20Body%20Control&start=0&max_results=5"
+  },
+  {
+    "num": "139",
+    "title": "Open-TeleVision: Teleoperation with Immersive Active Visual Feedback",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Open%20TeleVision%20%20Teleoperation%20with%20Immersive%20Active%20Visual%20Feedback&start=0&max_results=5"
+  },
+  {
+    "num": "140",
+    "title": "TWIST2: Scalable, Portable, and Holistic Humanoid Data Collection System",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:TWIST2%20%20Scalable%20%20Portable%20%20and%20Holistic%20Humanoid%20Data%20Collection%20System&start=0&max_results=5"
+  },
+  {
+    "num": "141",
+    "title": "ToddlerBot: Open-Source ML-Compatible Humanoid Platform for Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:ToddlerBot%20%20Open%20Source%20ML%20Compatible%20Humanoid%20Platform%20for%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "142",
+    "title": "Gait-Adaptive Perceptive Humanoid Locomotion with Real-Time Under-Base Terrain Reconstruction",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Gait%20Adaptive%20Perceptive%20Humanoid%20Locomotion%20with%20Real%20Time%20Under%20Base%20Terrain%20Reconstruction&start=0&max_results=5"
+  },
+  {
+    "num": "143",
+    "title": "Active Stereo-Camera Outperforms Multi-Sensor Setup in ACT Imitation Learning for Humanoid Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Active%20Stereo%20Camera%20Outperforms%20Multi%20Sensor%20Setup%20in%20ACT%20Imitation%20Learning%20for%20Humanoid%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "144",
+    "title": "Open-TeleVision: Teleoperation with Immersive Active Visual Feedback",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Open%20TeleVision%20%20Teleoperation%20with%20Immersive%20Active%20Visual%20Feedback&start=0&max_results=5"
+  },
+  {
+    "num": "145",
+    "title": "Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Hand%20Eye%20Autonomous%20Delivery%20%20Learning%20Humanoid%20Navigation%20%20Locomotion%20and%20Reaching&start=0&max_results=5"
+  },
+  {
+    "num": "146",
+    "title": "AgiBot World Colosseo: A Large-scale Manipulation Platform for Scalable and Intelligent Embodied Systems",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:AgiBot%20World%20Colosseo%20%20A%20Large%20scale%20Manipulation%20Platform%20for%20Scalable%20and%20Intelligent%20Embodied%20Systems&start=0&max_results=5"
+  },
+  {
+    "num": "147",
+    "title": "DIAL: Decoupling Intent and Action via Latent World Modeling for End-to-End VLA",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:DIAL%20%20Decoupling%20Intent%20and%20Action%20via%20Latent%20World%20Modeling%20for%20End%20to%20End%20VLA&start=0&max_results=5"
+  },
+  {
+    "num": "148",
+    "title": "GR00T N1: An Open Foundation Model for Generalist Humanoid Robots",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:GR00T%20N1%20%20An%20Open%20Foundation%20Model%20for%20Generalist%20Humanoid%20Robots&start=0&max_results=5"
+  },
+  {
+    "num": "149",
+    "title": "Gemini Robotics: Bringing AI into the Physical World",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Gemini%20Robotics%20%20Bringing%20AI%20into%20the%20Physical%20World&start=0&max_results=5"
+  },
+  {
+    "num": "150",
+    "title": "Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Genie%20Envisioner%20%20A%20Unified%20World%20Foundation%20Platform%20for%20Robotic%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "151",
+    "title": "LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied Gaussian Splatting World",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:LEGS%20%20Fine%20Tuning%20Teleop%20Free%20VLAs%20for%20Humanoid%20Loco%20manipulation%20in%20an%20Embodied%20Gaussian%20Splatting%20World&start=0&max_results=5"
+  },
+  {
+    "num": "152",
+    "title": "A Pragmatic VLA Foundation Model",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:A%20Pragmatic%20VLA%20Foundation%20Model&start=0&max_results=5"
+  },
+  {
+    "num": "153",
+    "title": "MetaWorld-X: Hierarchical World Modeling via VLM-Orchestrated Experts for Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:MetaWorld%20X%20%20Hierarchical%20World%20Modeling%20via%20VLM%20Orchestrated%20Experts%20for%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "154",
+    "title": "OpenHLM: An Empirical Recipe for Whole-Body Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:OpenHLM%20%20An%20Empirical%20Recipe%20for%20Whole%20Body%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "155",
+    "title": "PhysiFlow: Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent Flow Matching and Robust Tracking",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:PhysiFlow%20%20Physics%20Aware%20Humanoid%20Whole%20Body%20VLA%20via%20Multi%20Brain%20Latent%20Flow%20Matching%20and%20Robust%20Tracking&start=0&max_results=5"
+  },
+  {
+    "num": "156",
+    "title": "$\\Psi_0$: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:%20%20Psi_0%20%20%20An%20Open%20Foundation%20Model%20Towards%20Universal%20Humanoid%20Loco%20Manipulation&start=0&max_results=5"
+  },
+  {
+    "num": "157",
+    "title": "REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via Reinforcement Learning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:REFINE%20DP%20%20Diffusion%20Policy%20Fine%20tuning%20for%20Humanoid%20Loco%20manipulation%20via%20Reinforcement%20Learning&start=0&max_results=5"
+  },
+  {
+    "num": "158",
+    "title": "ROVE: Unlocking Human Interventions for Humanoid Manipulation via Reinforcement Learning",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:ROVE%20%20Unlocking%20Human%20Interventions%20for%20Humanoid%20Manipulation%20via%20Reinforcement%20Learning&start=0&max_results=5"
+  },
+  {
+    "num": "159",
+    "title": "World Action Models are Zero-shot Policies",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:World%20Action%20Models%20are%20Zero%20shot%20Policies&start=0&max_results=5"
+  },
+  {
+    "num": "160",
+    "title": "Humanoid Whole-Body Manipulation via Active Spatial Brain and Generalizable Action Cerebellum",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:Humanoid%20Whole%20Body%20Manipulation%20via%20Active%20Spatial%20Brain%20and%20Generalizable%20Action%20Cerebellum&start=0&max_results=5"
+  },
+  {
+    "num": "161",
+    "title": "EgoVLA: Learning Vision-Language-Action Models from Egocentric Human Videos",
+    "arxiv_id": null,
+    "error": "429 Client Error: Unknown Error for url: https://export.arxiv.org/api/query?search_query=all:EgoVLA%20%20Learning%20Vision%20Language%20Action%20Models%20from%20Egocentric%20Human%20Videos&start=0&max_results=5"
+  }
+]

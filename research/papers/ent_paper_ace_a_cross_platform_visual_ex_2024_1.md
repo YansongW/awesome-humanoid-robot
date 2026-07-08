@@ -1,0 +1,54 @@
+---
+$id: ent_paper_ace_a_cross_platform_visual_ex_2024_1
+$schema: ../../data/schema/v1/entry_schema.json
+$version: 1
+type: paper
+names:
+  en: 'ACE: A Cross-Platform Visual-Exoskeletons System for Low-Cost Dexterous Teleoperation'
+  zh: 'ACE: A Cross-Platform Visual-Exoskeletons System for Low-Cost Dexterous Teleoperation'
+  ko: ''
+summary:
+  en: 'ACE: A Cross-Platform Visual-Exoskeletons System for Low-Cost Dexterous Teleoperation
+    is a 2024 work on teleoperation for humanoid robots, with open-source code available.'
+  zh: 'ACE: A Cross-Platform Visual-Exoskeletons System for Low-Cost Dexterous Teleoperation
+    is a 2024 work on teleoperation for humanoid robots, with open-source code available.'
+  ko: ''
+domains:
+- 07_ai_models_algorithms
+- 08_software_middleware
+layers:
+- intelligence
+functional_roles:
+- knowledge
+- intelligence
+tags:
+- ace
+- humanoid
+- teleoperation
+theoretical_depth:
+- system
+verification:
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-07-01'
+  confidence: medium
+  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Teleoperation.
+    arXiv: 2408.11805.'
+sources:
+- id: src_001
+  type: paper
+  title: 'ACE: A Cross-Platform Visual-Exoskeletons System for Low-Cost Dexterous
+    Teleoperation (arXiv)'
+  url: https://arxiv.org/abs/2408.11805
+  date: '2024'
+  accessed_at: '2026-07-01'
+- id: src_002
+  type: website
+  title: 'ACE: A Cross-Platform Visual-Exoskeletons System for Low-Cost Dexterous
+    Teleoperation project page'
+  url: https://ace-teleop.github.io/
+  date: '2024'
+  accessed_at: '2026-07-01'
+---
+
+ACE: A Cross-Platform Visual-Exoskeletons System for Low-Cost Dexterous Teleoperation is a 2024 work on teleoperation for humanoid robots, with open-source code available.

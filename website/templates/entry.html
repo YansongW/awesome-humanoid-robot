@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block title %}{{ entry.name }} · 人形机器人知识图谱{% endblock %}
+
+{% block content %}
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="/">首页</a>
+    <span>/</span>
+    <a href="/search/?q={{ entry.type | urlencode }}">{{ entry.type }}</a>
+    <span>/</span>
+    <span class="breadcrumb-current">{{ entry.name }}</span>
+  </nav>
+
+  <article class="entry-page">
+    <header class="entry-header">
+      <div class="entry-type-badge">{{ entry.type }}</div>
+      <h1>{{ entry.name }}</h1>
+      {% if entry.name_en %}<p class="entry-name-en">{{ entry.name_en }}</p>{% endif %}
+
+      <div class="entry-meta-bar">
+        {% if entry.domains %}
+        <div class="meta-group">
+          <span class="meta-label">领域</span>
+          <div class="meta-tags">
+            {% for d in entry.domains %}<span class="tag">{{ d }}</span>{% endfor %}
+          </div>
+        </div>
+        {% endif %}
+        {% if entry.layers %}
+        <div class="meta-group">
+          <span class="meta-label">层级</span>
+          <div class="meta-tags">
+            {% for l in entry.layers %}<span class="tag tag-layer">{{ l }}</span>{% endfor %}
+          </div>
+        </div>
+        {% endif %}
+      </div>
+    </header>
+
+    {% if entry.summary %}
+    <section class="entry-summary">
+      <h2>摘要</h2>
+      <p>{{ entry.summary }}</p>
+    </section>
+    {% endif %}
+
+    {% if entry.body_html %}
+    <section class="entry-body">
+      {{ entry.body_html | safe }}
+    </section>
+    {% endif %}
+
+    {% if outgoing or incoming %}
+    <section class="entry-relations">
+      <h2>关系</h2>
+      <div class="relations-layout">
+        {% if outgoing %}
+        <div class="relations-column">
+          <h3>Outgoing</h3>
+          <ul class="relation-list">
+            {% for rel in outgoing %}
+            <li>
+              <span class="rel-pill">{{ rel.type }}</span>
+              <span class="rel-arrow">→</span>
+              <a href="/entry/{{ rel.target_id }}/">{{ rel.target_name }}</a>
+              {% if rel.description %}<span class="rel-desc">{{ rel.description }}</span>{% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {% if incoming %}
+        <div class="relations-column">
+          <h3>Incoming</h3>
+          <ul class="relation-list">
+            {% for rel in incoming %}
+            <li>
+              <a href="/entry/{{ rel.source_id }}/">{{ rel.source_name }}</a>
+              <span class="rel-arrow">→</span>
+              <span class="rel-pill">{{ rel.type }}</span>
+              {% if rel.description %}<span class="rel-desc">{{ rel.description }}</span>{% endif %}
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+      </div>
+    </section>
+    {% endif %}
+
+    <section class="entry-graph">
+      <h2>关系子图</h2>
+      <div id="entry-graph" class="cy-graph" data-center-id="{{ entry.id }}"></div>
+      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+    </section>
+
+    {% if related %}
+    <section class="entry-related">
+      <h2>相关实体</h2>
+      <div class="entry-grid small">
+        {% for r in related %}
+        <a class="entry-card" href="/{{ r.url }}">
+          <span class="entry-type">{{ r.type }}</span>
+          <h3>{{ r.name }}</h3>
+          <p>{{ r.summary[:100] }}{% if r.summary | length > 100 %}…{% endif %}</p>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </article>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
+<script src="/js/graph.js"></script>
+{% endblock %}

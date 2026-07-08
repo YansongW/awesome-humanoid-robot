@@ -1,0 +1,43 @@
+name: production_tooling
+description: 'Workstream for production tooling. Generated from WORKSTREAM_TREE leaf:
+  pvt/production_tooling.yaml.
+
+  Query set refined for broader robotics relevance and relevance_context added.'
+seed_queries:
+- production tooling robotics
+- humanoid robot production tooling
+- production tooling robots survey
+- production tooling automation manufacturing
+- production tooling applied to humanoid robots
+paper_ids: []
+target_entity_types:
+- paper
+- method
+- technology
+- component
+- formalism
+target_domains:
+- 07_ai_models_algorithms
+relationship_patterns:
+- cites
+- is_based_on
+- uses
+- requires
+- enables
+- formalizes
+- builds_on
+- has_prerequisite
+- instantiates
+relevance_threshold: medium
+max_papers: 5
+max_results_per_query: 50
+max_total: 100
+priority: 2
+sources:
+- arxiv
+metadata:
+  generated_from: WORKSTREAM_TREE.md
+  leaf_path: pvt/production_tooling.yaml
+relevance_context: Relevant if it addresses production tooling in a robotics or automation
+  context, or develops foundational methods/principles applicable to humanoid robots,
+  even when examples are not explicitly humanoid.

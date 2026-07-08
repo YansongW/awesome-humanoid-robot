@@ -6,7 +6,7 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-758-green" alt="758 entries" />
+  <img src="https://img.shields.io/badge/entries-1810-green" alt="1810 entries" />
   <img src="https://img.shields.io/badge/relationships-841-brightgreen" alt="841 relationships" />
   <img src="https://img.shields.io/badge/workstreams-175-orange" alt="175 workstreams" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
