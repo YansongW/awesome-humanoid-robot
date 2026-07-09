@@ -2,16 +2,17 @@
 
 # Awesome Humanoid Robot 人形机器人 🤖
 
-**一个围绕「人形机器人从 0 到 1 量产与产业化应用」构建的 curated 知识图谱。**
+**一个围绕「人形机器人从 0 到 1 量产与产业化应用」构建的 curated 多语言知识图谱。**
 
 <p>
-  <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-1875-green" alt="1875 entries" />
-  <img src="https://img.shields.io/badge/relationships-918-brightgreen" alt="918 relationships" />
-  <img src="https://img.shields.io/badge/workstreams-175-orange" alt="175 workstreams" />
+  <img src="https://img.shields.io/badge/status-public%20v0.1.0-success" alt="Status: public v0.1.0" />
+  <img src="https://img.shields.io/badge/entries-2016-green" alt="2016 entries" />
+  <img src="https://img.shields.io/badge/relationships-924-brightgreen" alt="924 relationships" />
+  <img src="https://img.shields.io/badge/languages-zh%2Fen%2Fko-blue" alt="Languages: zh/en/ko" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
 
+🌐 **在线站点**：[kg.rounds-tech.com](https://kg.rounds-tech.com)  
 🌐 [English](README.md) · [简体中文](README.zh.md) · [한국어](README.ko.md)
 
 </div>
@@ -26,7 +27,13 @@
 
 它追踪整条旅程中的每一个环节——从原材料、零部件、制造工艺，到设计工程、AI、软件、数据、组装测试、量产、应用场景、市场、政策与监管。我们不再满足于简单的论文列表或产品清单，而是将整个人形机器人产业建模为一张**知识图谱**：实体是节点，关系是带类型的边，每条论断都可追溯到来源。
 
-项目采用 **AI 辅助、人工核验** 的方式。我们用 AI4Sci 流水线加速发现、提取与综合，但在任何内容被提升到生产环境之前，都必须经过人工审阅。目前我们正在进一步产品化：新增 **Web 前端**，让知识图谱可以像维基百科一样被浏览、搜索，并通过自然语言提问获得基于图谱的回答。
+在 **v0.1.0** 阶段，项目已从研究流水线演进为产品化的知识服务：
+
+- 🌐 公开发布的多语言网站 **[kg.rounds-tech.com](https://kg.rounds-tech.com)**，支持搜索、交互式关系图谱与关联 Wiki。
+- 📖 仓库内置 **Wiki**，源自《人形机器人：从矿山到市场》一书，提供系统化、按章节展开的叙事内容。
+- 🔗 Wiki 章节与 KG 实体双向链接，读者可在叙事阅读与结构化查询之间自由切换。
+
+项目采用 **AI 辅助、人工核验** 的方式。我们用 AI4Sci 流水线加速发现、提取与综合，但在任何内容被提升到生产环境之前，都必须经过人工审阅。
 
 ---
 
@@ -52,10 +59,40 @@
 
 ---
 
+## 🌐 产品：KG 网站
+
+`website/` 目录构建了知识图谱的静态产品级前端。
+
+**在线地址**：[https://kg.rounds-tech.com](https://kg.rounds-tech.com)
+
+v0.1.0 功能：
+
+- **三语界面** —— 独立的 `zh`、`en`、`ko` 站点，顶部可一键切换语言。
+- **按领域浏览** —— 按产业领域或实体类型探索知识图谱。
+- **全文搜索** —— 客户端搜索，支持类型筛选与语言感知标签。
+- **交互式关系图谱** —— 基于 Cytoscape.js 的聚类视图与全图视图。
+- **实体详情页** —— 摘要、领域、层级、关系、相关实体及关联 Wiki 章节。
+- **集成 Wiki** —— 30 章正文 + 7 个附录，正确渲染提示框、Mermaid 图表与 KaTeX 公式。
+
+本地构建：
+
+```bash
+cd website
+pip install -r requirements.txt
+python3 -m builder.build
+# 启动本地服务
+python3 -m http.server 8080 --directory dist
+```
+
+实验性的 FastAPI 后端（自然语言问答）位于 `web/`，详见 [`web/README.md`](web/README.md)。
+
+---
+
 ## 🗺️ 你能在这里找到什么？
 
 | 领域 | 追踪内容 |
 |------|---------|
+| **基础学科** | 支撑所有工程领域的跨学科数学、物理、化学与计算机科学概念 |
 | **原材料与关键资源** | 稀土元素、磁材、轻质金属、复合材料、半导体、电池化学 |
 | **零部件与子系统** | 执行器、电机、减速器/齿轮箱、传感器、电池、计算单元、末端执行器、线缆、结构件 |
 | **供应链与制造工艺** | 一级/二级供应商、制造工艺、质量控制、成本结构、区域产业生态 |
@@ -69,7 +106,6 @@
 | **应用与市场** | 工业制造、物流、医疗、家庭、零售、科研、国防、娱乐 |
 | **公司与产业生态** | 初创公司、整机厂、零部件供应商、研究机构、融资、合作 |
 | **政策、监管与伦理** | 安全标准、责任、劳动力影响、隐私、人机交互规范 |
-| **基础学科** | 支撑所有工程领域的跨学科数学、物理、化学与计算机科学概念 |
 
 ---
 
@@ -92,29 +128,21 @@
 
 ## ⚙️ 工作流程：AI4Sci + 人工审阅
 
-1. **系统性扫描** —— 工作流向 arXiv、Semantic Scholar 以及（计划中）网络来源发起查询，发现相关论文和产业情报。
+1. **系统性扫描** —— 工作流向 arXiv、Semantic Scholar 及网络来源发起查询，发现相关论文和产业情报。
 2. **相关性分类** —— LLM 针对核心问题给每篇来源打分，过滤低相关性内容。
 3. **结构化提取** —— LLM 起草带类型的条目、多语言摘要和候选关系。
 4. **暂存** —— 所有 AI 草稿进入 `.staging/`，隔离等待审阅。
 5. **自动审阅** —— `scripts/ai4sci_autonomous_review.py` 校验 schema、来源与重复项，自动归档高置信度草稿。
 6. **人工审阅** —— 审阅者检查剩余队列，对边界情况进行拒绝或微调。
-7. **集成与验证** —— 通过审阅的条目进入 `research/` 和 `data/relationships/`，并必须通过 `scripts/validate_entries.py`。
+7. **集成与验证** —— 通过审核的条目进入 `research/` 与 `data/relationships/`，并必须通过 `scripts/validate_entries.py`。
 
-完整流程见 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md)。
+运行每日入库流水线：
 
----
+```bash
+bash scripts/ingest_all_sources.sh
+```
 
-## 🌐 Web 前端：从科研流水线到产品化服务
-
-本项目正从一个纯粹的 AI4Sci 研究流水线，演进为**可产品化的知识服务**。`web/` 目录提供了一套基于 FastAPI 的前端，把静态知识图谱变成了可交互的研究助手：
-
-- **类维基百科浏览** —— 搜索实体、按类型关系导航。
-- **实体详情页** —— 集中查看摘要、领域、层级、相关条目与关系。
-- **自然语言问答** —— 用中文/英文提问，AI 基于检索到的图谱上下文给出带引用来源的回答。
-
-这是图谱面向用户的第一个产品化入口，也是后续商业化知识服务的基础。
-
-详情见 [`web/README.md`](web/README.md)。
+框架文档见 [`docs/ingestion/README.md`](docs/ingestion/README.md)；旧版 AI4Sci 流水线见 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md)。
 
 ---
 
@@ -125,44 +153,41 @@
 git clone https://github.com/YansongW/awesome-humanoid-robot.git
 cd awesome-humanoid-robot
 
-# 2. 激活虚拟环境
-source .venv/bin/activate
-
-# 3. 验证当前知识图谱
+# 2. 校验当前知识图谱
 python scripts/validate_entries.py
 
-# 4. 运行单个工作流（示例：VLA 调研）
-python scripts/ai4sci_batch_pipeline.py \
-  scripts/ai4sci_workstreams/definition/algorithm_survey/vla.yaml \
-  --max-papers 5 --max-workers 2
+# 3. 构建产品网站
+cd website
+pip install -r requirements.txt
+python3 -m builder.build
+python3 -m http.server 8080 --directory dist
 
-# 5. 或并行运行多个工作流
-python scripts/ai4sci_orchestrator.py --max-workers 2 --max-batch-workers 1 --max-papers 5
+# 4. 运行统一入库流水线（每日 cron）
+python -m ingestion.pipeline --all
 
-# 6. 审阅暂存输出
-python scripts/ai4sci_review.py
-
-# 7. 启动 Web 前端
+# 5. 启动实验性 FastAPI 问答后端（可选）
 pip install -r web/requirements.txt
-export AI4SCI_API_KEY="your-openai-compatible-key"  # 可选，用于问答
-export AI4SCI_BASE_URL="https://api.deepseek.com/v1" # 或你的端点
+export AI4SCI_API_KEY="your-openai-compatible-key"
+export AI4SCI_BASE_URL="https://api.deepseek.com/v1"
 uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 ```
 
-凭证配置方式见 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md) 和 [`web/README.md`](web/README.md)。
+凭证配置见 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md) 和 [`web/README.md`](web/README.md)。
 
 ---
 
-## 📊 项目数据
+## 📊 项目统计
 
 | 指标 | 数量 |
 |------|------|
-| 生产级条目 | 758 |
-| 关系 | 841 |
-| 工作流配置 | 175 |
-| 本体域 | 12 + `00_foundations` |
+| 生产环境实体 | 2,016 |
+| 关系 | 924 |
+| 本体领域 | 13（12 + `00_foundations`） |
+| 实体类型 | 24 |
+| Wiki 章节 | 30 |
+| Wiki 附录 | 7 |
 | 支持语言 | 中 / 英 / 韩 |
-| 验证状态 | ✅ 通过 |
+| 校验状态 | ✅ 通过 |
 
 ---
 
@@ -170,35 +195,36 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 
 | 阶段 | 目标 | 状态 |
 |------|------|------|
-| **Phase 0** | 信息架构、Schema、验证机制 | ✅ 已完成 |
-| **Phase 1** | 各域本体文档（01–12） | ✅ 已完成 |
-| **Phase 2** | 工作流驱动的内容填充 + Schema/关系类型演进 | 🔄 进行中 |
-| **Phase 2.5** | 基于知识图谱的 Web 前端与自然语言问答 | ✅ Beta 已上线 |
-| **Phase 3** | 内部审阅、验证流程、v0.1.0 公开发布 | ⏳ 计划中 |
+| **Phase 0** | 信息架构、schema、校验 | ✅ 完成 |
+| **Phase 1** | 各领域本体文档（01–12） | ✅ 完成 |
+| **Phase 2** | 工作流驱动的内容填充与 schema/关系演进 | ✅ 完成 |
+| **Phase 2.5** | 产品级静态网站（搜索、图谱、Wiki） | ✅ 完成 |
+| **Phase 3** | 公开发布 v0.1.0（开源 + 上线） | ✅ 完成 |
+| **Phase 4** | 内容完整性：补齐缺口、深化基础学科、扩展 Wiki–KG 链接 | 🔄 进行中 |
+| **Phase 5** | 审校工作流、社区贡献、v0.2.0 | ⏳ 计划中 |
 
 完整工作流 TODO 见 [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md)，最新会话记录见 [`docs/session_status.md`](docs/session_status.md)。
 
 ---
 
-## 👥 适合谁？
+## 👥 这适合谁？
 
-- **研究者** —— 按问题域和产业层次了解人形机器人最新进展。
-- **工程师** —— 发现与自身子系统相关的零部件供应商、仿真工具、数据集和基准。
-- **创业者 / 投资人** —— 绘制供应链、发现缺口、跟踪竞争对手。
-- **制造与运营** —— 理解工厂设计、良率、成本驱动因素和规模化权衡。
+- **研究人员** —— 按问题领域和产业层级查找最新进展。
+- **工程师** —— 发现与所负责子系统相关的零部件供应商、仿真工具、数据集与基准。
+- **创业者 / 投资人** —— 绘制供应链地图、识别缺口、跟踪竞争对手。
+- **制造与运营** —— 理解工厂设计、良率、成本驱动因素与规模化权衡。
 - **政策制定者** —— 理解监管、安全与伦理格局。
 
 ---
 
-## 🤝 参与贡献
+## 🤝 贡献指南
 
-> 公开贡献指南将在 `v0.1.0` 发布。
+公开贡献指南将在 Phase 5 发布。在此之前：
 
-在此之前，内容由核心团队借助 AI4Sci 整理。如果你有权访问本私有仓库，请：
-
-- 按来源链接和验证状态添加条目。
-- 标记不确定或相互冲突的论断。
-- 遵循 [`docs/ontology/`](docs/ontology/) 和 [`docs/architecture/information_model.md`](docs/architecture/information_model.md) 中的条目格式与关系类型。
+- 内容由核心团队借助 AI4Sci 策划。
+- 如果你有访问权限，请添加带来源链接和审校状态的条目。
+- 对不确定或相互矛盾的论断，请通过 issue 标记。
+- 遵循 [`docs/ontology/`](docs/ontology/) 中的本体结构和 [`docs/architecture/information_model.md`](docs/architecture/information_model.md) 中的条目格式。
 
 ---
 
@@ -206,53 +232,64 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 
 ```
 awesome-humanoid-robot/
-├── README.md                          # 英文主文档
-├── README.zh.md                       # 简体中文（本文件）
-├── README.ko.md                       # 韩文
+├── README.md                          # 本文件
+├── README.zh.md                       # 简体中文
+├── README.ko.md                       # 한국어
+├── LICENSE                            # MIT 许可证（代码）
 ├── docs/
-│   ├── project_charter.md             # 项目章程
+│   ├── project_charter.md             # 项目范围、原则与治理
+│   ├── WIKI-KG-SYNC.md                # Wiki ↔ KG 同步工作流
 │   ├── ontology/                      # 产业链本体文档（01–12 + 总览）
 │   ├── architecture/                  # 信息模型与预设计分析
-│   └── ai4sci/                        # AI4Sci 流水线文档与工作流谱系
-├── research/                          # 生产级知识库条目
+│   └── ai4sci/                        # AI4Sci 流水线文档与工作流分类
+├── research/                          # 生产环境知识库条目
 │   ├── foundations/                   # 数学、物理、化学、计算机科学概念
 │   ├── materials/                     # 原材料
 │   ├── components/                    # 零部件与子系统
-│   ├── companies/                     # 公司画像与产业地图
+│   ├── companies/                     # 公司档案与产业生态
 │   ├── papers/                        # 论文笔记
 │   └── datasets/                      # 数据集笔记
 ├── data/
 │   ├── schema/v1/                     # JSON Schema
-│   └── relationships/                 # 独立关系文件
+│   ├── relationships/                 # 独立关系文件
+│   └── wiki-chapter-mapping.yaml      # Wiki 章节 ↔ KG 实体映射
+├── wiki/                              # 仓库内置 Wiki 源文件（Markdown + MkDocs 配置）
+│   ├── docs/chapters/                 # 30 章叙事正文
+│   ├── docs/appendices/               # 7 个附录
+│   └── mkdocs.yml                     # MkDocs 配置
+├── website/                           # 产品级静态网站构建器与资源
+│   ├── builder/                       # Python 静态站点生成器
+│   ├── templates/                     # Jinja2 HTML 模板
+│   ├── src/                           # CSS / JS 资源
+│   └── dist/                          # 生成的站点（git 忽略）
+├── web/                               # 实验性 FastAPI 问答后端
+│   ├── app.py
+│   ├── kg_store.py
+│   ├── llm_qa.py
+│   └── README.md
 ├── scripts/                           # AI4Sci 辅助脚本
-│   ├── ai4sci_lib/                    # 可复用流水线阶段
-│   ├── ai4sci_workstreams/            # 工作流 YAML 配置
+│   ├── ai4sci_lib/
+│   ├── ai4sci_workstreams/
 │   ├── ai4sci_paper_pipeline.py
 │   ├── ai4sci_batch_pipeline.py
 │   ├── ai4sci_orchestrator.py
 │   ├── ai4sci_review.py
 │   ├── ai4sci_status.py
 │   └── validate_entries.py
-├── web/                               # FastAPI 前端：浏览与问答
-│   ├── app.py
-│   ├── kg_store.py
-│   ├── llm_qa.py
-│   ├── static/
-│   ├── templates/
-│   └── README.md
-└── .staging/                          # AI 生成的草稿，等待人工审阅
+└── .staging/                          # 等待人工审阅的 AI 草稿
 ```
 
 ---
 
-## 📜 许可
+## 📜 许可协议
 
-公开前确定。
+- **代码**（构建器、脚本、网站前端等）：[MIT](LICENSE)
+- **Wiki 内容**（`wiki/`）：[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ---
 
 <div align="center">
 
-**以好奇心与严谨构建——我们相信，人形机器人需要的是一张地图，而不仅是更多演示。**
+**Built with curiosity, rigor, and a belief that humanoid robotics needs a map, not just more demos.**
 
 </div>

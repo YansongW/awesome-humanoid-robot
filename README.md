@@ -2,16 +2,17 @@
 
 # Awesome Humanoid Robot 🤖
 
-**A curated knowledge graph for going from 0 to 1 on humanoid robot mass production and industrial application.**
+**A curated, multilingual knowledge graph for going from 0 to 1 on humanoid robot mass production and industrial application.**
 
 <p>
-  <img src="https://img.shields.io/badge/status-private%20pre--v0.1.0-blueviolet" alt="Status: private pre-v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-1875-green" alt="1875 entries" />
-  <img src="https://img.shields.io/badge/relationships-918-brightgreen" alt="918 relationships" />
-  <img src="https://img.shields.io/badge/workstreams-175-orange" alt="175 workstreams" />
+  <img src="https://img.shields.io/badge/status-public%20v0.1.0-success" alt="Status: public v0.1.0" />
+  <img src="https://img.shields.io/badge/entries-2016-green" alt="2016 entries" />
+  <img src="https://img.shields.io/badge/relationships-924-brightgreen" alt="924 relationships" />
+  <img src="https://img.shields.io/badge/languages-zh%2Fen%2Fko-blue" alt="Languages: zh/en/ko" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
 
+🌐 **Live site**: [kg.rounds-tech.com](https://kg.rounds-tech.com)  
 🌐 [English](README.md) · [简体中文](README.zh.md) · [한국어](README.ko.md)
 
 </div>
@@ -20,13 +21,19 @@
 
 ## 📌 What is this project?
 
-**Awesome Humanoid Robot** is a structured, living knowledge base built around one central question:
+**Awesome Humanoid Robot** is a structured, living, open-source knowledge base built around one central question:
 
 > **How do we go from 0 to 1 to achieve humanoid robot mass production and industrial application?**
 
 It tracks every layer of the journey — from raw materials and components to manufacturing, design, AI, software, data, testing, mass production, applications, markets, policy, and regulation. Instead of a flat list of papers or products, we model the domain as a **knowledge graph**: entities are nodes, relationships are typed edges, and every claim is traceable to a source.
 
-The project is **AI-assisted, human-verified**. We use AI4Sci pipelines to accelerate discovery, extraction, and synthesis, while keeping humans in the loop for approval before anything is promoted to production. We are now adding a **web frontend** so the graph can be browsed and queried like a product, not just maintained as a research artifact.
+At **v0.1.0**, the project has evolved from a research pipeline into a productized knowledge service:
+
+- 🌐 A public, multilingual website at **[kg.rounds-tech.com](https://kg.rounds-tech.com)** with search, interactive graph browsing, and a linked Wiki.
+- 📖 An in-repo **Wiki** derived from the book *Humanoid Robots: From Mine to Market*, providing systematic, chapter-by-chapter narrative coverage.
+- 🔗 Bidirectional links between Wiki chapters and KG entities, so readers can move smoothly from narrative to structured data and back.
+
+The project is **AI-assisted, human-verified**. We use AI4Sci pipelines to accelerate discovery, extraction, and synthesis, while keeping humans in the loop for approval before anything is promoted to production.
 
 ---
 
@@ -52,10 +59,40 @@ This project is that map.
 
 ---
 
+## 🌐 Product: the KG website
+
+The `website/` directory builds a static, product-level frontend for the knowledge graph.
+
+**Live URL**: [https://kg.rounds-tech.com](https://kg.rounds-tech.com)
+
+Features at v0.1.0:
+
+- **Trilingual interface** — independent `zh`, `en`, and `ko` sites with a language switcher in the header.
+- **Domain browsing** — explore the graph by industry domain or entity type.
+- **Full-text search** — client-side search with type filters and language-aware labels.
+- **Interactive relation graph** — Cytoscape.js visualization with cluster view and full-graph view.
+- **Entity pages** — summaries, domains, layers, relationships, related entities, and linked Wiki chapters.
+- **Integrated Wiki** — 30 chapters + 7 appendices rendered with admonitions, Mermaid diagrams, and KaTeX formulas.
+
+Build it locally:
+
+```bash
+cd website
+pip install -r requirements.txt
+python3 -m builder.build
+# Serve the dist/ directory
+python3 -m http.server 8080 --directory dist
+```
+
+The experimental FastAPI backend (natural-language Q&A) lives in `web/` and is documented in [`web/README.md`](web/README.md).
+
+---
+
 ## 🗺️ What you will find here
 
 | Domain | What we track |
 |--------|---------------|
+| **Foundations** | Cross-cutting math, physics, chemistry, and CS concepts that underpin every engineering domain |
 | **Raw Materials & Resources** | Rare-earth elements, magnets, lightweight metals, composites, semiconductors, battery chemistries |
 | **Components & Subsystems** | Actuators, motors, reducers/gearboxes, sensors, batteries, compute units, end effectors, cables, structural parts |
 | **Supply Chain & Manufacturing** | Tier-1/Tier-2 suppliers, manufacturing processes, quality control, cost structures, regional ecosystems |
@@ -69,7 +106,6 @@ This project is that map.
 | **Applications & Markets** | Industrial manufacturing, logistics, healthcare, home service, retail, research, defense, entertainment |
 | **Companies & Ecosystem** | Startups, OEMs, component vendors, research labs, funding, partnerships |
 | **Policy, Regulation & Ethics** | Safety standards, liability, labor impact, privacy, human-robot interaction norms |
-| **Foundations** | Cross-cutting math, physics, chemistry, and CS concepts that underpin every engineering domain |
 
 ---
 
@@ -113,20 +149,6 @@ The framework is documented in [`docs/ingestion/README.md`](docs/ingestion/READM
 
 ---
 
-## 🌐 Web frontend: from research pipeline to product
-
-This project is evolving from a pure AI4Sci research pipeline into a **productized knowledge service**. The `web/` directory contains a FastAPI-based frontend that turns the static knowledge graph into an interactive research assistant:
-
-- **Wikipedia-style browsing** — search entities and navigate through typed relationships.
-- **Entity pages** — see summaries, domains, layers, and related entries in one place.
-- **Natural-language Q&A** — ask questions in plain language; AI retrieves relevant KG context and answers with cited sources.
-
-It is the first consumer-facing layer of the graph and lays the groundwork for commercial knowledge services.
-
-See [`web/README.md`](web/README.md) for setup details.
-
----
-
 ## 🚀 Quick start
 
 ```bash
@@ -134,30 +156,22 @@ See [`web/README.md`](web/README.md) for setup details.
 git clone https://github.com/YansongW/awesome-humanoid-robot.git
 cd awesome-humanoid-robot
 
-# 2. Activate the virtual environment
-source .venv/bin/activate
-
-# 3. Validate the current knowledge graph
+# 2. Validate the current knowledge graph
 python scripts/validate_entries.py
+
+# 3. Build the product website
+cd website
+pip install -r requirements.txt
+python3 -m builder.build
+python3 -m http.server 8080 --directory dist
 
 # 4. Run the unified ingestion pipeline (daily cron)
 python -m ingestion.pipeline --all
 
-# 5. Run a single workstream (example: VLA survey)
-python scripts/ai4sci_batch_pipeline.py \
-  scripts/ai4sci_workstreams/definition/algorithm_survey/vla.yaml \
-  --max-papers 5 --max-workers 2
-
-# 6. Or run multiple workstreams in parallel
-python scripts/ai4sci_orchestrator.py --max-workers 2 --max-batch-workers 1 --max-papers 5
-
-# 7. Review staged outputs
-python scripts/ai4sci_review.py
-
-# 7. Start the web frontend
+# 5. Start the experimental FastAPI Q&A backend (optional)
 pip install -r web/requirements.txt
-export AI4SCI_API_KEY="your-openai-compatible-key"  # optional, for Q&A
-export AI4SCI_BASE_URL="https://api.deepseek.com/v1" # or your endpoint
+export AI4SCI_API_KEY="your-openai-compatible-key"
+export AI4SCI_BASE_URL="https://api.deepseek.com/v1"
 uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 ```
 
@@ -169,10 +183,12 @@ For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4
 
 | Metric | Count |
 |--------|-------|
-| Production entries | 1173 |
-| Relationships | 841 |
-| Workstream configs | 175 |
-| Ontology domains | 12 + `00_foundations` |
+| Production entries | 2,016 |
+| Relationships | 924 |
+| Ontology domains | 13 (12 + `00_foundations`) |
+| Entity types | 24 |
+| Wiki chapters | 30 |
+| Wiki appendices | 7 |
 | Supported languages | en, zh, ko |
 | Validation status | ✅ passing |
 
@@ -184,9 +200,11 @@ For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4
 |-------|------|--------|
 | **Phase 0** | Information architecture, schemas, validation | ✅ Complete |
 | **Phase 1** | Per-domain ontology documents (01–12) | ✅ Complete |
-| **Phase 2** | Workstream-driven content population + schema/relationship evolution | 🔄 In progress |
-| **Phase 2.5** | Web frontend & natural-language Q&A over the knowledge graph | ✅ Beta live |
-| **Phase 3** | Internal review, verification workflow, v0.1.0 public release | ⏳ Planned |
+| **Phase 2** | Workstream-driven content population + schema/relationship evolution | ✅ Complete |
+| **Phase 2.5** | Static product website with search, graph, and Wiki | ✅ Complete |
+| **Phase 3** | Public v0.1.0 release (open source + live site) | ✅ Complete |
+| **Phase 4** | Content completeness: fill gaps, deepen foundational knowledge, expand Wiki–KG links | 🔄 In progress |
+| **Phase 5** | Verification workflow, community contributions, v0.2.0 | ⏳ Planned |
 
 See [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md) for the full workstream TODO list and [`docs/session_status.md`](docs/session_status.md) for the latest session notes.
 
@@ -204,12 +222,11 @@ See [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md) for the f
 
 ## 🤝 Contributing
 
-> Public contribution guidelines will be published at `v0.1.0`.
+Public contribution guidelines will be published in Phase 5. Until then:
 
-Until then, content is curated by the core team with AI4Sci assistance. If you have access to this private repository, please:
-
-- Add entries with source links and verification status.
-- Flag uncertain or conflicting claims.
+- Content is curated by the core team with AI4Sci assistance.
+- If you have access, add entries with source links and verification status.
+- Flag uncertain or conflicting claims via issues.
 - Follow the ontology structure in [`docs/ontology/`](docs/ontology/) and the entry format in [`docs/architecture/information_model.md`](docs/architecture/information_model.md).
 
 ---
@@ -221,8 +238,10 @@ awesome-humanoid-robot/
 ├── README.md                          # This file
 ├── README.zh.md                       # 简体中文
 ├── README.ko.md                       # 한국어
+├── LICENSE                            # MIT license (code)
 ├── docs/
 │   ├── project_charter.md             # Project scope, principles, governance
+│   ├── WIKI-KG-SYNC.md                # Wiki ↔ KG synchronization workflow
 │   ├── ontology/                      # Industry-chain ontology documents (01–12 + overview)
 │   ├── architecture/                  # Information model and pre-design analysis
 │   └── ai4sci/                        # AI4Sci pipeline docs and workstream taxonomy
@@ -235,23 +254,31 @@ awesome-humanoid-robot/
 │   └── datasets/                      # Dataset notes
 ├── data/
 │   ├── schema/v1/                     # JSON Schemas
-│   └── relationships/                 # Standalone relationship files
+│   ├── relationships/                 # Standalone relationship files
+│   └── wiki-chapter-mapping.yaml      # Wiki chapter ↔ KG entity mapping
+├── wiki/                              # In-repo Wiki source (Markdown + MkDocs config)
+│   ├── docs/chapters/                 # 30 narrative chapters
+│   ├── docs/appendices/               # 7 appendices
+│   └── mkdocs.yml                     # MkDocs configuration
+├── website/                           # Static product website builder + assets
+│   ├── builder/                       # Python static-site generator
+│   ├── templates/                     # Jinja2 HTML templates
+│   ├── src/                           # CSS / JS assets
+│   └── dist/                          # Generated site (ignored by git)
+├── web/                               # Experimental FastAPI frontend for Q&A
+│   ├── app.py
+│   ├── kg_store.py
+│   ├── llm_qa.py
+│   └── README.md
 ├── scripts/                           # AI4Sci helper scripts
-│   ├── ai4sci_lib/                    # Reusable pipeline stages
-│   ├── ai4sci_workstreams/            # Workstream YAML configs
+│   ├── ai4sci_lib/
+│   ├── ai4sci_workstreams/
 │   ├── ai4sci_paper_pipeline.py
 │   ├── ai4sci_batch_pipeline.py
 │   ├── ai4sci_orchestrator.py
 │   ├── ai4sci_review.py
 │   ├── ai4sci_status.py
 │   └── validate_entries.py
-├── web/                               # FastAPI frontend for browsing & Q&A
-│   ├── app.py
-│   ├── kg_store.py
-│   ├── llm_qa.py
-│   ├── static/
-│   ├── templates/
-│   └── README.md
 └── .staging/                          # AI-generated drafts pending human review
 ```
 
@@ -259,7 +286,8 @@ awesome-humanoid-robot/
 
 ## 📜 License
 
-TBD — to be decided before public release.
+- **Code** (builder, scripts, website frontend, etc.): [MIT](LICENSE)
+- **Wiki content** (`wiki/`): [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ---
 
