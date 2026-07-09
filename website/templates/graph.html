@@ -39,6 +39,18 @@
     </div>
   </aside>
   <main class="graph-main">
+    <div class="graph-toolbar">
+      <div class="graph-view-title" id="graph-current-view">领域聚类视图</div>
+      <div class="graph-view-switcher">
+        <button class="graph-view-btn active" id="view-clusters" type="button" title="按领域聚合，流畅概览">
+          <span>聚类视图</span>
+          <small class="view-hint">推荐</small>
+        </button>
+        <button class="graph-view-btn" id="view-full" type="button" title="加载全部节点与关系">
+          <span>全图视图</span>
+        </button>
+      </div>
+    </div>
     <div id="full-graph" class="full-cy-graph"></div>
     <div class="graph-tooltip" id="graph-tooltip"></div>
   </main>

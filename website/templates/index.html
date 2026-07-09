@@ -39,13 +39,20 @@
 
 <section class="section">
   <div class="container">
+    <div class="monograph-banner">
+      <div>
+        <strong>📖 专著项目</strong>
+        <p>本知识图谱是《人形机器人：从矿山到市场的知识图谱》专著的底层数据系统，按“物理层 → 感知层 → 决策层 → 执行层 → 系统层 → 产业层”展开。</p>
+      </div>
+      <a href="https://github.com/YansongW/awesome-humanoid-robot-monograph" target="_blank" rel="noopener" class="btn btn-secondary">阅读专著目录</a>
+    </div>
     <div class="section-header">
       <h2>按领域探索</h2>
       <a href="/search/" class="link-arrow">查看全部 →</a>
     </div>
     <div class="domain-grid">
       {% for d in domains %}
-      <a class="domain-card" href="/search/?q={{ d | urlencode }}">
+      <a class="domain-card" href="/search/?q={{ d | urlencode }}" style="--domain-color: {{ domain_colors[d] }}">
         <span class="domain-name">{{ d }}</span>
         <span class="domain-arrow">→</span>
       </a>

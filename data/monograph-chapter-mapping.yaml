@@ -1,0 +1,909 @@
+# 专著章节 ↔ 知识图谱映射
+# 本文件由 docs/MONOGRAPH-KG-SYNC.md 定义的工作流维护。
+# 每一章列出对应的 domain、已有实体、待补充缺口与跨层链路。
+
+metadata:
+  project: awesome-humanoid-robot
+  monograph_repo: awesome-humanoid-robot-monograph
+  last_sync: "2026-07-09"
+  total_chapters: 30
+
+chapters:
+  - number: 1
+    title: 人形机器人产业化的核心矛盾
+    domains: ["11_applications_markets", "12_policy_regulation_ethics"]
+    key_types: ["concept", "robot_system"]
+    existing_entities: []
+    gaps:
+      - id: ent_concept_demo_to_product_gap
+        name: 演示指标与产品指标的鸿沟
+        type: concept
+      - id: ent_concept_seven_transitions
+        name: 从0到1的七个跃迁
+        type: concept
+    cross_layer_links:
+      - source: concept
+        relation: manifests_in
+        target: robot_system
+
+  - number: 2
+    title: 知识图谱构建方法论
+    domains: ["00_foundations"]
+    key_types: ["concept", "standard"]
+    existing_entities:
+      - ent_foundation_convex_optimization
+      - ent_foundation_linear_algebra
+      - ent_foundation_probability_theory
+    gaps: []
+    cross_layer_links:
+      - source: data
+        relation: feeds
+        target: method
+      - source: method
+        relation: implements_on
+        target: software_platform
+
+  - number: 3
+    title: 关键材料科学
+    domains: ["01_raw_materials"]
+    key_types: ["material", "component", "company"]
+    existing_entities:
+      - ent_material_neodymium_magnet
+      - ent_material_al_mg_alloy_humanoid
+      - ent_technology_li_battery_humanoid
+    gaps:
+      - id: ent_material_rare_earth_supply
+        name: 稀土元素供应链
+        type: material
+      - id: ent_material_sic_gan_power_devices
+        name: SiC/GaN功率器件材料
+        type: material
+    cross_layer_links:
+      - source: material
+        relation: is_part_of
+        target: component
+      - source: component
+        relation: manufactured_by
+        target: company
+
+  - number: 4
+    title: 执行器：人形机器人的“肌肉”
+    domains: ["02_components"]
+    key_types: ["component", "technology", "component_manufacturer"]
+    existing_entities:
+      - ent_component_linear_actuator_2024
+      - ent_component_rotary_actuator_2024
+      - ent_component_harmonic_reducer_2024
+      - ent_technology_quasi_direct_drive_actuator_2024
+      - ent_technology_series_elastic_actuator_2024
+      - ent_human_level_actuation_score
+    gaps:
+      - id: ent_component_rv_reducer
+        name: RV减速器
+        type: component
+      - id: ent_component_planetary_roller_screw
+        name: 行星滚柱丝杠
+        type: component
+      - id: ent_method_foc_motor_control
+        name: 磁场定向控制(FOC)
+        type: method
+      - id: ent_principle_current_velocity_position_loops
+        name: 电流环/速度环/位置环
+        type: principle
+      - id: ent_metric_torque_density
+        name: 转矩密度
+        type: concept
+    cross_layer_links:
+      - source: motor
+        relation: combined_with
+        target: reducer
+      - source: actuator
+        relation: is_part_of
+        target: joint
+      - source: joint
+        relation: is_part_of
+        target: robot_system
+
+  - number: 5
+    title: 传感与感知硬件
+    domains: ["02_components"]
+    key_types: ["component", "technology"]
+    existing_entities:
+      - ent_component_imu_2024
+      - ent_component_force_torque_sensor_2024
+      - ent_component_tactile_sensor_array_2024
+      - ent_component_joint_encoder_2024
+    gaps:
+      - id: ent_component_rgbd_camera
+        name: RGB-D相机
+        type: component
+      - id: ent_component_lidar_livox_mid360
+        name: 固态激光雷达
+        type: component
+    cross_layer_links:
+      - source: sensor
+        relation: used_by
+        target: perception_algorithm
+      - source: perception_algorithm
+        relation: feeds
+        target: state_estimation
+      - source: state_estimation
+        relation: feeds
+        target: control
+
+  - number: 6
+    title: 计算、电源与热管理
+    domains: ["02_components", "08_software_middleware"]
+    key_types: ["component", "software_platform", "technology"]
+    existing_entities:
+      - ent_component_nvidia_jetson_agx_orin_2024
+      - ent_technology_bms_battery_management_system_2024
+    gaps:
+      - id: ent_component_safety_mcu
+        name: 安全MCU
+        type: component
+      - id: ent_method_thermal_simulation
+        name: 热仿真
+        type: method
+    cross_layer_links:
+      - source: compute
+        relation: requires
+        target: power
+      - source: compute
+        relation: constrained_by
+        target: thermal
+
+  - number: 7
+    title: 供应商地图与供应链治理
+    domains: ["02_components", "11_applications_markets"]
+    key_types: ["company", "component_manufacturer", "tier1_supplier", "oem"]
+    existing_entities:
+      - ent_company_harmonic_drive_systems_2024
+      - ent_company_nabtesco_2024
+      - ent_company_maxon_motor_2024
+      - ent_company_kollmorgen_corporation_2024
+      - ent_company_inovance_technology_2024
+    gaps:
+      - id: ent_tier1_supplier_sanhuazhikong
+        name: 三花智控
+        type: tier1_supplier
+      - id: ent_tier1_supplier_tuopujituan
+        name: 拓普集团
+        type: tier1_supplier
+    cross_layer_links:
+      - source: raw_material
+        relation: sources_from
+        target: component_maker
+      - source: component_maker
+        relation: supplies
+        target: tier1_supplier
+      - source: tier1_supplier
+        relation: supplies
+        target: oem
+
+  - number: 8
+    title: 人形机器人设计原理
+    domains: ["06_design_engineering"]
+    key_types: ["technology", "software_platform", "method", "principle"]
+    existing_entities:
+      - ent_technology_urdf_robot_description_format_2024
+      - ent_technology_mjcf_simulation_format_2024
+      - ent_technology_model_based_definition_2024
+    gaps:
+      - id: ent_principle_zero_moment_point
+        name: 零力矩点(ZMP)
+        type: principle
+      - id: ent_principle_center_of_mass
+        name: 质心(COM)
+        type: principle
+      - id: ent_method_forward_kinematics
+        name: 正运动学
+        type: method
+      - id: ent_method_inverse_kinematics
+        name: 逆运动学
+        type: method
+      - id: ent_formalism_floating_base_dynamics
+        name: 浮动基动力学
+        type: formalism
+      - id: ent_method_fea_finite_element_analysis
+        name: 有限元分析(FEA)
+        type: method
+    cross_layer_links:
+      - source: principle
+        relation: formalized_as
+        target: formalism
+      - source: formalism
+        relation: applied_in
+        target: cad_cae
+      - source: cad_cae
+        relation: produces
+        target: design
+      - source: design
+        relation: selects
+        target: component
+      - source: component
+        relation: is_part_of
+        target: robot
+
+  - number: 9
+    title: 关键子系统设计
+    domains: ["06_design_engineering"]
+    key_types: ["component", "robot_system", "technology"]
+    existing_entities:
+      - ent_component_dexterous_hand_2024
+      - ent_component_7dof_arm_2024
+    gaps:
+      - id: ent_subsystem_leg_mechanism
+        name: 腿部机构
+        type: component
+      - id: ent_subsystem_ankle_compliance
+        name: 脚踝柔顺机构
+        type: component
+    cross_layer_links:
+      - source: subsystem_design
+        relation: drives
+        target: component_selection
+      - source: component_selection
+        relation: enables
+        target: integration
+      - source: integration
+        relation: validated_by
+        target: validation
+
+  - number: 10
+    title: 制造工艺体系
+    domains: ["03_manufacturing_processes"]
+    key_types: ["technology", "method", "component"]
+    existing_entities: []
+    gaps:
+      - id: ent_process_cnc_machining
+        name: CNC精密机加工
+        type: technology
+      - id: ent_method_design_for_manufacturing
+        name: 可制造性设计(DFM)
+        type: method
+      - id: ent_method_design_for_assembly
+        name: 可装配性设计(DFA)
+        type: method
+    cross_layer_links:
+      - source: dfm_dfa
+        relation: guides
+        target: process
+      - source: process
+        relation: produces
+        target: component
+      - source: component
+        relation: is_part_of
+        target: assembly
+
+  - number: 11
+    title: 装配、集成与测试
+    domains: ["04_assembly_integration_testing"]
+    key_types: ["equipment", "technology", "robot_system"]
+    existing_entities:
+      - ent_equipment_system_integration_test_bench_2024
+    gaps:
+      - id: ent_method_hardware_in_the_loop
+        name: 硬件在环测试(HIL)
+        type: method
+      - id: ent_method_calibration_joint_camera_imu
+        name: 联合标定
+        type: method
+    cross_layer_links:
+      - source: assembly
+        relation: leads_to
+        target: integration
+      - source: integration
+        relation: tested_by
+        target: test_bench
+      - source: test_bench
+        relation: complemented_by
+        target: hil
+      - source: hil
+        relation: followed_by
+        target: calibration
+      - source: calibration
+        relation: leads_to
+        target: acceptance
+
+  - number: 12
+    title: 认证、合规与质量标准
+    domains: ["12_policy_regulation_ethics"]
+    key_types: ["standard", "component", "robot_system"]
+    existing_entities:
+      - ent_standard_iso_13482_2014
+      - ent_standard_iso_ts_15066_2016
+    gaps:
+      - id: ent_standard_iec_61508
+        name: IEC 61508
+        type: standard
+      - id: ent_standard_iso_13849
+        name: ISO 13849
+        type: standard
+      - id: ent_standard_ul_fcc_ce
+        name: 区域准入认证
+        type: standard
+    cross_layer_links:
+      - source: standard
+        relation: regulates
+        target: safety_design
+      - source: safety_design
+        relation: implemented_in
+        target: component
+      - source: component
+        relation: is_part_of
+        target: robot_system
+      - source: robot_system
+        relation: certified_by
+        target: certification
+
+  - number: 13
+    title: 量产与规模化
+    domains: ["05_mass_production"]
+    key_types: ["technology", "software_platform", "robot_system", "oem"]
+    existing_entities:
+      - ent_software_fleet_management_platform_2024
+    gaps:
+      - id: ent_method_bom_cost_engineering
+        name: BOM成本工程
+        type: method
+      - id: ent_method_value_analysis_value_engineering
+        name: VA/VE
+        type: method
+      - id: ent_method_fmea
+        name: 失效模式与影响分析(FMEA)
+        type: method
+    cross_layer_links:
+      - source: bom
+        relation: guides
+        target: dfm
+      - source: dfm
+        relation: leads_to
+        target: assembly
+      - source: assembly
+        relation: leads_to
+        target: test
+      - source: test
+        relation: leads_to
+        target: certification
+      - source: certification
+        relation: leads_to
+        target: ramp
+      - source: ramp
+        relation: enables
+        target: fleet_management
+
+  - number: 14
+    title: 机器人控制基础
+    domains: ["07_ai_models_algorithms"]
+    key_types: ["principle", "formalism", "method", "component"]
+    existing_entities:
+      - ent_active_set_method
+      - ent_algorithm_active_set_method
+      - ent_foundation_convex_optimization
+      - ent_formalism_inverse_dynamics_qp
+      - ent_kkt_conditions
+      - ent_method_hierarchical_qp_wbc
+      - ent_newton_euler_equations
+      - ent_qp_standard_form
+    gaps:
+      - id: ent_method_pid_control
+        name: PID控制
+        type: method
+      - id: ent_method_impedance_control
+        name: 阻抗控制
+        type: method
+      - id: ent_method_admittance_control
+        name: 导纳控制
+        type: method
+      - id: ent_method_force_position_hybrid_control
+        name: 力位混合控制
+        type: method
+      - id: ent_method_model_predictive_control
+        name: 模型预测控制(MPC)
+        type: method
+      - id: ent_method_whole_body_control
+        name: 全身控制
+        type: method
+      - id: ent_formalism_euler_lagrange_equations
+        name: 欧拉-拉格朗日方程
+        type: formalism
+    cross_layer_links:
+      - source: dynamics
+        relation: formalized_as
+        target: control_law
+      - source: control_law
+        relation: instantiated_as
+        target: mpc
+      - source: mpc
+        relation: implemented_as
+        target: software
+      - source: software
+        relation: runs_on
+        target: compute
+      - source: compute
+        relation: drives
+        target: actuator
+
+  - number: 15
+    title: 运动生成与 Locomotion
+    domains: ["07_ai_models_algorithms"]
+    key_types: ["method", "algorithm", "software_platform"]
+    existing_entities:
+      - ent_paper_design_for_assembly_2024
+    gaps:
+      - id: ent_method_gait_planning
+        name: 步态规划
+        type: method
+      - id: ent_principle_capture_point
+        name: 捕获点
+        type: principle
+      - id: ent_method_direct_collocation
+        name: 直接配点法
+        type: method
+      - id: ent_method_shooting_method
+        name: shooting method
+        type: method
+      - id: ent_algorithm_ppo
+        name: 近端策略优化(PPO)
+        type: algorithm
+      - id: ent_algorithm_sac
+        name: 软演员-评论家(SAC)
+        type: algorithm
+      - id: ent_method_sim_to_real
+        name: Sim-to-Real迁移
+        type: method
+    cross_layer_links:
+      - source: method
+        relation: trained_in
+        target: simulator
+      - source: simulator
+        relation: transferred_via
+        target: sim_to_real
+      - source: sim_to_real
+        relation: deployed_on
+        target: robot_system
+
+  - number: 16
+    title: 操作与抓取
+    domains: ["07_ai_models_algorithms"]
+    key_types: ["method", "software_platform", "technology"]
+    existing_entities:
+      - ent_grasp_taxonomy
+      - ent_software_moveit_motion_planning_2024
+    gaps:
+      - id: ent_principle_force_closure
+        name: 力闭合
+        type: principle
+      - id: ent_principle_form_closure
+        name: 形闭合
+        type: principle
+      - id: ent_software_ompl
+        name: OMPL
+        type: software_platform
+      - id: ent_method_dexterous_manipulation
+        name: 灵巧操作
+        type: method
+    cross_layer_links:
+      - source: grasp_planning
+        relation: requires
+        target: motion_planning
+      - source: motion_planning
+        relation: requires
+        target: whole_body_control
+      - source: whole_body_control
+        relation: applies_to
+        target: robot
+
+  - number: 17
+    title: 遥操作与人机协作
+    domains: ["07_ai_models_algorithms"]
+    key_types: ["technology", "dataset", "method"]
+    existing_entities:
+      - ent_technology_aloha_teleoperation_system_2023
+      - ent_technology_mobile_aloha_2024
+      - ent_technology_humanplus_shadowing_system_2024
+    gaps:
+      - id: ent_method_bilateral_teleoperation
+        name: 双边遥操作
+        type: method
+      - id: ent_concept_human_robot_collaboration_safety
+        name: 人机协作安全
+        type: concept
+    cross_layer_links:
+      - source: teleoperation
+        relation: produces
+        target: dataset
+      - source: dataset
+        relation: trains
+        target: imitation_learning
+      - source: imitation_learning
+        relation: produces
+        target: policy
+
+  - number: 18
+    title: 模仿学习与策略学习
+    domains: ["07_ai_models_algorithms", "09_data_datasets"]
+    key_types: ["paper", "method", "dataset"]
+    existing_entities:
+      - ent_paper_action_chunking_with_transform_2023
+      - ent_paper_chi_diffusion_policy_visuomotor_po_2023
+      - ent_method_action_token_prediction
+      - ent_formalism_transformer_action_decoder
+    gaps:
+      - id: ent_method_behavior_cloning
+        name: 行为克隆
+        type: method
+      - id: ent_method_diffusion_policy
+        name: 扩散策略
+        type: method
+      - id: ent_method_action_chunking_transformer
+        name: 动作分块变压器(ACT)
+        type: method
+      - id: ent_method_domain_randomization
+        name: 域随机化
+        type: method
+      - id: ent_method_domain_adaptation
+        name: 域适应
+        type: method
+      - id: ent_method_system_identification
+        name: 系统辨识
+        type: method
+    cross_layer_links:
+      - source: dataset
+        relation: trains
+        target: diffusion_policy
+      - source: dataset
+        relation: trains
+        target: act
+      - source: diffusion_policy
+        relation: deployed_on
+        target: robot_system
+      - source: act
+        relation: deployed_on
+        target: robot_system
+
+  - number: 19
+    title: 视觉-语言-动作模型（VLA）
+    domains: ["07_ai_models_algorithms", "09_data_datasets"]
+    key_types: ["paper", "method", "dataset", "robot_system"]
+    existing_entities:
+      - ent_paper_brohan_rt_2_vision_language_action_mo_2023
+      - ent_paper_openvla_2024
+    gaps:
+      - id: ent_method_openvla
+        name: OpenVLA
+        type: method
+      - id: ent_method_gr00t_n1
+        name: GR00T N1
+        type: method
+      - id: ent_method_pi0
+        name: π0
+        type: method
+      - id: ent_dataset_open_x_embodiment
+        name: Open X-Embodiment
+        type: dataset
+    cross_layer_links:
+      - source: open_x_embodiment
+        relation: trains
+        target: vla
+      - source: vla
+        relation: requires
+        target: compute
+      - source: compute
+        relation: enables
+        target: robot_system
+
+  - number: 20
+    title: 世界模型与长期推理
+    domains: ["07_ai_models_algorithms"]
+    key_types: ["method", "paper", "concept"]
+    existing_entities: []
+    gaps:
+      - id: ent_concept_world_model
+        name: 世界模型
+        type: concept
+      - id: ent_method_task_planning
+        name: 任务规划
+        type: method
+      - id: ent_method_neuro_symbolic_reasoning
+        name: 符号-神经混合推理
+        type: method
+    cross_layer_links:
+      - source: world_model
+        relation: feeds
+        target: planner
+      - source: planner
+        relation: outputs
+        target: policy
+      - source: policy
+        relation: controls
+        target: robot
+
+  - number: 21
+    title: 数据基础设施
+    domains: ["09_data_datasets"]
+    key_types: ["dataset", "technology", "software_platform"]
+    existing_entities:
+      - ent_dataset_droid
+      - ent_dataset_rh20t
+      - ent_dataset_amass
+      - ent_technology_optitrack_motion_capture_2024
+    gaps:
+      - id: ent_dataset_humanplus_shadowing
+        name: HumanPlus Shadowing数据集
+        type: dataset
+      - id: ent_method_fleet_data_flywheel
+        name: 车队数据飞轮
+        type: method
+    cross_layer_links:
+      - source: data_collection
+        relation: produces
+        target: dataset
+      - source: dataset
+        relation: trains
+        target: model_training
+      - source: model_training
+        relation: leads_to
+        target: deployment
+      - source: deployment
+        relation: produces
+        target: fleet_data
+      - source: fleet_data
+        relation: triggers
+        target: retraining
+
+  - number: 22
+    title: 软件中间件
+    domains: ["08_software_middleware"]
+    key_types: ["software_platform", "technology"]
+    existing_entities:
+      - ent_software_ros_2_middleware_2024
+      - ent_software_moveit_motion_planning_2024
+      - ent_software_drake_systems_toolbox_2024
+      - ent_software_mujoco_physics_engine_2022
+      - ent_technology_ethercat_2024
+      - ent_technology_can_bus_2024
+    gaps:
+      - id: ent_software_rt_preempt_linux
+        name: Linux RT-PREEMPT
+        type: software_platform
+      - id: ent_software_qnx
+        name: QNX
+        type: software_platform
+      - id: ent_software_pinocchio
+        name: Pinocchio
+        type: software_platform
+    cross_layer_links:
+      - source: ros2
+        relation: relies_on
+        target: middleware
+      - source: middleware
+        relation: supports
+        target: planning
+      - source: planning
+        relation: feeds
+        target: control
+      - source: control
+        relation: drives
+        target: robot
+
+  - number: 23
+    title: 仿真与物理引擎
+    domains: ["08_software_middleware"]
+    key_types: ["software_platform", "technology", "robot_system"]
+    existing_entities:
+      - ent_software_nvidia_isaac_sim_2024
+      - ent_software_nvidia_isaac_lab_2024
+      - ent_software_genesis_generative_physics_eng_2024
+      - ent_technology_urdf_robot_description_format_2024
+      - ent_technology_mjcf_simulation_format_2024
+    gaps:
+      - id: ent_software_gazebo
+        name: Gazebo
+        type: software_platform
+      - id: ent_concept_digital_twin
+        name: 数字孪生
+        type: concept
+    cross_layer_links:
+      - source: simulator
+        relation: trains
+        target: policy_training
+      - source: policy_training
+        relation: transferred_by
+        target: sim_to_real
+      - source: sim_to_real
+        relation: validates_on
+        target: robot_system
+
+  - number: 24
+    title: 端到端软件栈
+    domains: ["08_software_middleware", "07_ai_models_algorithms"]
+    key_types: ["software_platform", "method", "component"]
+    existing_entities:
+      - ent_software_lerobot_2024
+      - ent_technology_ota_software_update_2024
+    gaps:
+      - id: ent_concept_perception_stack
+        name: 感知栈
+        type: concept
+      - id: ent_concept_decision_stack
+        name: 决策栈
+        type: concept
+      - id: ent_concept_actuation_stack
+        name: 执行栈
+        type: concept
+    cross_layer_links:
+      - source: perception
+        relation: feeds
+        target: planning
+      - source: planning
+        relation: outputs
+        target: control
+      - source: control
+        relation: drives
+        target: actuation
+      - source: actuation
+        relation: monitored_by
+        target: safety
+
+  - number: 25
+    title: 机器人评测体系
+    domains: ["10_evaluation_benchmarks"]
+    key_types: ["benchmark", "method", "robot_system"]
+    existing_entities:
+      - ent_benchmark_humanoid_foundation_model
+      - ent_benchmark_humanoidbench
+      - ent_benchmark_libero
+      - ent_benchmark_libero_plus
+      - ent_human_level_actuation_score
+    gaps:
+      - id: ent_benchmark_maniskill
+        name: ManiSkill
+        type: benchmark
+      - id: ent_benchmark_isaac_gym
+        name: Isaac Gym Benchmarks
+        type: benchmark
+    cross_layer_links:
+      - source: benchmark
+        relation: evaluates
+        target: method
+      - source: benchmark
+        relation: evaluates
+        target: robot
+      - source: method
+        relation: measured_by
+        target: metric
+      - source: metric
+        relation: enables
+        target: comparison
+
+  - number: 26
+    title: 整机系统案例
+    domains: ["11_applications_markets"]
+    key_types: ["robot_system", "company", "component"]
+    existing_entities:
+      - ent_robot_system_tesla_optimus_gen2_2024
+      - ent_robot_system_unitree_h1_2024
+      - ent_robot_system_figure_02_2024
+      - ent_robot_system_boston_dynamics_atlas_2024
+      - ent_robot_system_agility_digit_2024
+      - ent_robot_system_apptronik_apollo_2024
+      - ent_robot_system_1x_neo_2024
+    gaps: []
+    cross_layer_links:
+      - source: component
+        relation: supplied_to
+        target: supplier
+      - source: supplier
+        relation: supplies
+        target: oem
+      - source: oem
+        relation: produces
+        target: robot_system
+      - source: robot_system
+        relation: used_in
+        target: application
+
+  - number: 27
+    title: 应用场景
+    domains: ["11_applications_markets"]
+    key_types: ["application", "robot_system", "technology"]
+    existing_entities: []
+    gaps:
+      - id: ent_application_industrial_manufacturing
+        name: 工业制造
+        type: application
+      - id: ent_application_logistics_warehouse
+        name: 物流仓储
+        type: application
+      - id: ent_application_healthcare
+        name: 医疗健康
+        type: application
+      - id: ent_application_home_service
+        name: 家庭服务
+        type: application
+    cross_layer_links:
+      - source: robot_system
+        relation: applies_to
+        target: application
+      - source: application
+        relation: creates
+        target: market
+      - source: market
+        relation: delivers
+        target: customer_value
+
+  - number: 28
+    title: 市场、企业与投资
+    domains: ["11_applications_markets"]
+    key_types: ["company", "oem", "market", "application"]
+    existing_entities: []
+    gaps:
+      - id: ent_market_humanoid_global_forecast
+        name: 人形机器人全球市场预测
+        type: market
+      - id: ent_concept_robot_as_a_service
+        name: Robot-as-a-Service(RaaS)
+        type: concept
+    cross_layer_links:
+      - source: company
+        relation: operates_in
+        target: market
+      - source: company
+        relation: competes_with
+        target: company
+      - source: product
+        relation: generates
+        target: revenue_model
+
+  - number: 29
+    title: 政策、监管与伦理
+    domains: ["12_policy_regulation_ethics"]
+    key_types: ["standard", "concept", "application"]
+    existing_entities:
+      - ent_standard_iso_13482_2014
+      - ent_standard_iso_ts_15066_2016
+    gaps:
+      - id: ent_concept_product_liability
+        name: 产品责任
+        type: concept
+      - id: ent_concept_privacy_biometrics
+        name: 隐私与生物识别
+        type: concept
+    cross_layer_links:
+      - source: policy
+        relation: codified_as
+        target: standard
+      - source: standard
+        relation: shapes
+        target: design
+      - source: design
+        relation: applies_to
+        target: application
+      - source: application
+        relation: impacts
+        target: society
+
+  - number: 30
+    title: 未来展望
+    domains: ["11_applications_markets", "12_policy_regulation_ethics"]
+    key_types: ["concept", "technology", "market"]
+    existing_entities: []
+    gaps:
+      - id: ent_concept_embodied_general_intelligence
+        name: 具身通用智能
+        type: concept
+      - id: ent_concept_data_flywheel
+        name: 数据飞轮
+        type: concept
+    cross_layer_links:
+      - source: technology_progress
+        relation: drives
+        target: cost_reduction
+      - source: cost_reduction
+        relation: enables
+        target: market_expansion
+      - source: market_expansion
+        relation: creates
+        target: societal_impact

@@ -1,0 +1,1222 @@
+{
+  "version": 1,
+  "description": "High-priority humanoid workflow entities spanning data collection, learning, control, simulation, perception, and deployment.",
+  "entries": [
+    {
+      "title": "ALOHA Teleoperation System",
+      "type": "technology",
+      "year": 2023,
+      "names": {
+        "en": "ALOHA Teleoperation System",
+        "zh": "ALOHA 遥操作系统",
+        "ko": "ALOHA 텔레오퍼레이션 시스템"
+      },
+      "summary": {
+        "en": "Low-cost bimanual leader-follower teleoperation hardware used to collect human demonstrations for imitation learning.",
+        "zh": "低成本双臂主从遥操作硬件，用于采集人类演示数据以进行模仿学习。",
+        "ko": "모방 학습을 위한 인간 시연 데이터를 수집하는 저비용 양손 리더-팔로워 텔레오퍼레이션 하드웨어."
+      },
+      "domains": [
+        "09_data_datasets",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "teleoperation",
+        "bimanual",
+        "imitation_learning",
+        "aloha"
+      ],
+      "source_url": "https://tonyzhaozh.github.io/aloha/"
+    },
+    {
+      "title": "Mobile ALOHA",
+      "type": "technology",
+      "year": 2024,
+      "names": {
+        "en": "Mobile ALOHA",
+        "zh": "Mobile ALOHA",
+        "ko": "Mobile ALOHA"
+      },
+      "summary": {
+        "en": "Whole-body mobile bimanual teleoperation platform for collecting home and warehouse manipulation data.",
+        "zh": "全身移动双臂遥操作平台，用于采集家庭和仓库操作数据。",
+        "ko": "가정 및 창고 조작 데이터 수집을 위한 전신 이동 양손 텔레오퍼레이션 플랫폼."
+      },
+      "domains": [
+        "09_data_datasets",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "teleoperation",
+        "mobile_manipulation",
+        "bimanual",
+        "aloha"
+      ],
+      "source_url": "https://mobile-aloha.github.io/"
+    },
+    {
+      "title": "UMI Gripper Interface",
+      "type": "technology",
+      "year": 2024,
+      "names": {
+        "en": "UMI Gripper Interface",
+        "zh": "UMI 夹爪接口",
+        "ko": "UMI 그리퍼 인터페이스"
+      },
+      "summary": {
+        "en": "Handheld gripper interface for collecting in-the-wild manipulation demonstrations without a robot present.",
+        "zh": "手持夹爪接口，无需机器人即可采集野外操作演示。",
+        "ko": "로봇 없이 실외 조작 시연을 수집할 수 있는 휴 대용 그리퍼 인터페이스."
+      },
+      "domains": [
+        "09_data_datasets",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "teleoperation",
+        "gripper",
+        "demonstration",
+        "umi"
+      ],
+      "source_url": "https://umi-gripper.github.io/"
+    },
+    {
+      "title": "HumanPlus Shadowing System",
+      "type": "technology",
+      "year": 2024,
+      "names": {
+        "en": "HumanPlus Shadowing System",
+        "zh": "HumanPlus 影子系统",
+        "ko": "HumanPlus 섀도잉 시스템"
+      },
+      "summary": {
+        "en": "RGB-camera-based human pose estimation plus sim-trained low-level policy for whole-body humanoid teleoperation and data collection.",
+        "zh": "基于RGB相机的人体姿态估计加仿真训练的低层策略，实现全身人形机器人遥操作和数据采集。",
+        "ko": "RGB 칩차 기반 인체 자세 추정 및 시뮬레이션 학습된 저수준 정책을 통한 전신 휨로봇 텔레오퍼레이션 및 데이터 수집."
+      },
+      "domains": [
+        "09_data_datasets",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "teleoperation",
+        "shadowing",
+        "humanoid",
+        "humanplus"
+      ],
+      "source_url": "https://humanoid-ai.github.io/"
+    },
+    {
+      "title": "OmniH2O",
+      "type": "technology",
+      "year": 2024,
+      "names": {
+        "en": "OmniH2O",
+        "zh": "OmniH2O",
+        "ko": "OmniH2O"
+      },
+      "summary": {
+        "en": "Whole-body human-to-humanoid teleoperation and learning system using a single RGB camera.",
+        "zh": "使用单目RGB相机实现全身人到人形机器人遥操作与学习的系统。",
+        "ko": "단일 RGB 칩차를 사용한 전신 인간-휨로봇 텔레오퍼레이션 및 학습 시스템."
+      },
+      "domains": [
+        "09_data_datasets",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "teleoperation",
+        "human_to_humanoid",
+        "rgb_camera",
+        "omnih2o"
+      ],
+      "source_url": "https://omni.human2humanoid.com/"
+    },
+    {
+      "title": "OptiTrack Motion Capture",
+      "type": "technology",
+      "year": 2024,
+      "names": {
+        "en": "OptiTrack Motion Capture",
+        "zh": "OptiTrack 动作捕捉",
+        "ko": "OptiTrack 모션 캡처"
+      },
+      "summary": {
+        "en": "Optical marker-based motion-capture system for high-precision 3-D body tracking and robot retargeting.",
+        "zh": "基于光学标记点的高精度三维人体跟踪与机器人重定向动作捕捉系统。",
+        "ko": "고정밀 3차원 신체 추적 및 로봇 리타게팅을 위한 광학 마커 기반 모션 캡처 시스템."
+      },
+      "domains": [
+        "09_data_datasets"
+      ],
+      "tags": [
+        "motion_capture",
+        "optical",
+        "retargeting",
+        "optitrack"
+      ],
+      "source_url": "https://www.optitrack.com/"
+    },
+    {
+      "title": "AMASS Motion Dataset",
+      "type": "dataset",
+      "year": 2019,
+      "names": {
+        "en": "AMASS Motion Dataset",
+        "zh": "AMASS 动作数据集",
+        "ko": "AMASS 모션 데이터셋"
+      },
+      "summary": {
+        "en": "Large-scale clean motion-capture dataset of human body shapes and poses, widely used for humanoid sim pre-training.",
+        "zh": "大规模干净的动作捕捉数据集，包含人体形状和姿态，广泛用于人形机器人仿真预训练。",
+        "ko": "인체 형태와 자세를 포함한 대규모 클린 모션 캡처 데이터셋, 휨로봇 시뮬레이션 사전 학습에 널리 사용."
+      },
+      "domains": [
+        "09_data_datasets",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "motion_capture",
+        "dataset",
+        "human_motion",
+        "amass"
+      ],
+      "source_url": "https://amass.is.tue.mpg.de/"
+    },
+    {
+      "title": "Ego4D Egocentric Video Dataset",
+      "type": "dataset",
+      "year": 2022,
+      "names": {
+        "en": "Ego4D Egocentric Video Dataset",
+        "zh": "Ego4D 第一视角视频数据集",
+        "ko": "Ego4D 자아중심 비디오 데이터셋"
+      },
+      "summary": {
+        "en": "3,000+ hours of egocentric video for first-person skill and interaction understanding.",
+        "zh": "3000多小时第一视角视频，用于第一人称技能和交互理解。",
+        "ko": "1인칭 기술 및 상호작용 이해를 위한 3,000시간 이상의 자아중심 비디오."
+      },
+      "domains": [
+        "09_data_datasets",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "egocentric",
+        "video",
+        "dataset",
+        "ego4d"
+      ],
+      "source_url": "https://ego4d-data.org/"
+    },
+    {
+      "title": "Epic-Kitchens Dataset",
+      "type": "dataset",
+      "year": 2018,
+      "names": {
+        "en": "Epic-Kitchens Dataset",
+        "zh": "Epic-Kitchens 数据集",
+        "ko": "Epic-Kitchens 데이터셋"
+      },
+      "summary": {
+        "en": "Egocentric kitchen-interaction video dataset widely used for manipulation and activity understanding.",
+        "zh": "第一视角厨房交互视频数据集，广泛用于操作与活动理解。",
+        "ko": "조작 및 활동 이해에 널리 사용되는 자아중심 주방 상호작용 비디오 데이터셋."
+      },
+      "domains": [
+        "09_data_datasets",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "egocentric",
+        "kitchen",
+        "video",
+        "dataset",
+        "epic_kitchens"
+      ],
+      "source_url": "https://epic-kitchens.github.io/"
+    },
+    {
+      "title": "RH20T Manipulation Dataset",
+      "type": "dataset",
+      "year": 2023,
+      "names": {
+        "en": "RH20T Manipulation Dataset",
+        "zh": "RH20T 操作数据集",
+        "ko": "RH20T 조작 데이터셋"
+      },
+      "summary": {
+        "en": "~110k contact-rich manipulation sequences with visual, force, audio, and human-demo pairs.",
+        "zh": "约11万条接触丰富的操作序列，包含视觉、力觉、音频和人类演示对。",
+        "ko": "시각, 힘, 오디오 및 인간 시연 쌍이 포함된 약 11만 개의 접촉이 풍부한 조작 시퀀스."
+      },
+      "domains": [
+        "09_data_datasets",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "manipulation",
+        "dataset",
+        "contact_rich",
+        "rh20t"
+      ],
+      "source_url": "https://rh20t.github.io/"
+    },
+    {
+      "title": "BridgeData V2",
+      "type": "dataset",
+      "year": 2023,
+      "names": {
+        "en": "BridgeData V2",
+        "zh": "BridgeData V2",
+        "ko": "BridgeData V2"
+      },
+      "summary": {
+        "en": "Widely used tabletop manipulation dataset with language instructions for imitation learning.",
+        "zh": "广泛用于模仿学习的带语言指令的桌面操作数据集。",
+        "ko": "모방 학습을 위한 언어 지시가 포함된 널리 사용되는 탁상 조작 데이터셋."
+      },
+      "domains": [
+        "09_data_datasets",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "manipulation",
+        "dataset",
+        "language_instructions",
+        "bridge_data"
+      ],
+      "source_url": "https://github.com/rail-berkeley/bridge_data_v2"
+    },
+    {
+      "title": "ARIO Dataset",
+      "type": "dataset",
+      "year": 2024,
+      "names": {
+        "en": "ARIO Dataset",
+        "zh": "ARIO 全机器人合一数据集",
+        "ko": "ARIO 데이터셋"
+      },
+      "summary": {
+        "en": "Unified data standard and ~3M-episode dataset combining real, simulated, and converted robot sources.",
+        "zh": "统一数据标准，约300万条片段，融合真实、仿真和转换的机器人数据来源。",
+        "ko": "실제, 시뮬레이션 및 변환된 로봇 소스를 결합한 통합 데이터 표준 및 약 300만 에피소드 데이터셋."
+      },
+      "domains": [
+        "09_data_datasets",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "dataset",
+        "unified",
+        "multi_robot",
+        "ario"
+      ],
+      "source_url": "https://imaei.github.io/project_pages/ario/"
+    },
+    {
+      "title": "Diffusion Policy",
+      "type": "method",
+      "year": 2023,
+      "names": {
+        "en": "Diffusion Policy",
+        "zh": "扩散策略",
+        "ko": "Diffusion Policy"
+      },
+      "summary": {
+        "en": "Visuomotor policy represented as a conditional denoising diffusion process, enabling multimodal action distributions.",
+        "zh": "以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。",
+        "ko": "조건적 노이즈 제거 확산 프로세스로 표현된 시각욱동 정책, 다중 모드 동작 분포 가능."
+      },
+      "domains": [
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "imitation_learning",
+        "diffusion",
+        "visuomotor",
+        "policy"
+      ],
+      "source_url": "https://diffusion-policy.cs.columbia.edu/"
+    },
+    {
+      "title": "Action Chunking with Transformers",
+      "type": "method",
+      "year": 2023,
+      "names": {
+        "en": "Action Chunking with Transformers",
+        "zh": "基于Transformer的动作分块",
+        "ko": "Action Chunking with Transformers"
+      },
+      "summary": {
+        "en": "Transformer-based policy that predicts action chunks to reduce compounding errors in imitation learning.",
+        "zh": "基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。",
+        "ko": "모방 학습에서 누적 오류를 줄이기 위해 동작 청크를 예측하는 Transformer 기반 정책."
+      },
+      "domains": [
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "imitation_learning",
+        "transformer",
+        "action_chunking",
+        "act"
+      ],
+      "source_url": "https://arxiv.org/abs/2304.13705"
+    },
+    {
+      "title": "RT-1 Robotics Transformer",
+      "type": "method",
+      "year": 2022,
+      "names": {
+        "en": "RT-1 Robotics Transformer",
+        "zh": "RT-1 机器人Transformer",
+        "ko": "RT-1 로보틱스 트랜스포머"
+      },
+      "summary": {
+        "en": "Google DeepMind transformer-based model for real-world robot control at scale.",
+        "zh": "Google DeepMind 基于Transformer的规模化真实世界机器人控制模型。",
+        "ko": "Google DeepMind의 대규모 실제 세계 로봇 제어용 Transformer 기반 모델."
+      },
+      "domains": [
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "vla",
+        "transformer",
+        "robotics",
+        "rt1"
+      ],
+      "source_url": "https://arxiv.org/abs/2212.06817"
+    },
+    {
+      "title": "RT-2 Vision-Language-Action Model",
+      "type": "method",
+      "year": 2023,
+      "names": {
+        "en": "RT-2 Vision-Language-Action Model",
+        "zh": "RT-2 视觉-语言-动作模型",
+        "ko": "RT-2 비전-언어-동작 모델"
+      },
+      "summary": {
+        "en": "VLA model that transfers web-scale vision-language knowledge to robotic control.",
+        "zh": "将网络规模的视觉-语言知识迁移到机器人控制的VLA模型。",
+        "ko": "웹 규모의 비전-언어 지식을 로봇 제어로 전이하는 VLA 모델."
+      },
+      "domains": [
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "vla",
+        "vision_language_action",
+        "rt2"
+      ],
+      "source_url": "https://arxiv.org/abs/2307.15818"
+    },
+    {
+      "title": "Octo Generalist Robot Policy",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "Octo Generalist Robot Policy",
+        "zh": "Octo 通才机器人策略",
+        "ko": "Octo 제너럴리스트 로봇 정책"
+      },
+      "summary": {
+        "en": "Open-source generalist robot policy trained on heterogeneous cross-embodiment data.",
+        "zh": "在异构跨具身数据上训练的开源通才机器人策略。",
+        "ko": "이기종 크로스 임바디먼트 데이터로 학습된 오픈소스 제너럴리스트 로봇 정책."
+      },
+      "domains": [
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "vla",
+        "generalist",
+        "cross_embodiment",
+        "octo"
+      ],
+      "source_url": "https://github.com/octo-models/octo"
+    },
+    {
+      "title": "OpenVLA",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "OpenVLA",
+        "zh": "OpenVLA",
+        "ko": "OpenVLA"
+      },
+      "summary": {
+        "en": "7B-parameter open VLA trained on 970k episodes from Open X-Embodiment.",
+        "zh": "在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。",
+        "ko": "Open X-Embodiment의 97만 에피소드로 학습된 7B 파라미터 오픈 VLA."
+      },
+      "domains": [
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "vla",
+        "open_source",
+        "vision_language_action",
+        "openvla"
+      ],
+      "source_url": "https://github.com/openvla/openvla"
+    },
+    {
+      "title": "NVIDIA GR00T N1",
+      "type": "method",
+      "year": 2025,
+      "names": {
+        "en": "NVIDIA GR00T N1",
+        "zh": "NVIDIA GR00T N1",
+        "ko": "NVIDIA GR00T N1"
+      },
+      "summary": {
+        "en": "Open foundation model for generalist humanoid robots with VLA plus diffusion-transformer action head.",
+        "zh": "面向通用人形机器人的开放基础模型，结合VLA与扩散Transformer动作头。",
+        "ko": "VLA + 확산 트랜스포머 액션 헤드를 갖춘 범용 휨로봇용 오픈 파울데이션 모델."
+      },
+      "domains": [
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "vla",
+        "foundation_model",
+        "humanoid",
+        "nvidia",
+        "gr00t"
+      ],
+      "source_url": "https://github.com/NVIDIA/Isaac-GR00T"
+    },
+    {
+      "title": "Physical Intelligence pi0",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "Physical Intelligence pi0",
+        "zh": "Physical Intelligence pi0",
+        "ko": "Physical Intelligence pi0"
+      },
+      "summary": {
+        "en": "VLA flow model for general robot control and open-world generalization.",
+        "zh": "面向通用机器人控制和开放世界泛化的VLA流模型。",
+        "ko": "범용 로봇 제어 및 개방형 세계 일반화를 위한 VLA 흐름 모델."
+      },
+      "domains": [
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "vla",
+        "flow_matching",
+        "generalist",
+        "pi0"
+      ],
+      "source_url": "https://github.com/Physical-Intelligence/openpi"
+    },
+    {
+      "title": "Model Predictive Control",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "Model Predictive Control",
+        "zh": "模型预测控制",
+        "ko": "Model Predictive Control"
+      },
+      "summary": {
+        "en": "Online optimal-control approach for generating contact-rich whole-body motion.",
+        "zh": "用于生成接触丰富的全身运动的在线最优控制方法。",
+        "ko": "접촉이 풍부한 전신 동작을 생성하기 위한 온라인 최적 제어 접근법."
+      },
+      "domains": [
+        "07_ai_models_algorithms",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "control",
+        "mpc",
+        "optimization",
+        "whole_body"
+      ],
+      "source_url": "https://roboti.us/lab/papers/KoenemannIROS15.pdf"
+    },
+    {
+      "title": "Zero Moment Point",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "Zero Moment Point",
+        "zh": "零力矩点",
+        "ko": "Zero Moment Point"
+      },
+      "summary": {
+        "en": "Foundational stability criterion for bipedal walking and balance control.",
+        "zh": "双足行走和平衡控制的基础稳定性判据。",
+        "ko": "이족 보행 및 균형 제어의 기초적 안정성 기준."
+      },
+      "domains": [
+        "07_ai_models_algorithms",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "control",
+        "stability",
+        "bipedal",
+        "zmp"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Zero_moment_point"
+    },
+    {
+      "title": "HOVER Versatile Humanoid Controller",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "HOVER Versatile Humanoid Controller",
+        "zh": "HOVER 通用人形控制器",
+        "ko": "HOVER 다용도 휨로봇 제어기"
+      },
+      "summary": {
+        "en": "Versatile neural whole-body controller for multiple humanoid behavior modes.",
+        "zh": "支持多种人形机器人行为模式的通用人形机器人神经全身控制器。",
+        "ko": "다양한 휨로봇 행동 모드를 위한 다용도 신경망 전신 제어기."
+      },
+      "domains": [
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "control",
+        "neural",
+        "whole_body",
+        "hover"
+      ],
+      "source_url": "https://hover-versatile-humanoid.github.io/"
+    },
+    {
+      "title": "ExBody2",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "ExBody2",
+        "zh": "ExBody2",
+        "ko": "ExBody2"
+      },
+      "summary": {
+        "en": "Advanced expressive whole-body humanoid control via motion tracking.",
+        "zh": "通过动作跟踪实现高级表现性全身人形控制。",
+        "ko": "모션 추적을 통한 고급 표현력 있는 전신 휨로봇 제어."
+      },
+      "domains": [
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "control",
+        "motion_tracking",
+        "whole_body",
+        "exbody2"
+      ],
+      "source_url": "https://exbody2.github.io/"
+    },
+    {
+      "title": "ASAP Framework",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "ASAP Framework",
+        "zh": "ASAP 框架",
+        "ko": "ASAP 프레임워크"
+      },
+      "summary": {
+        "en": "Sim-to-real framework for agile humanoid whole-body control.",
+        "zh": "面向敏捷人形机器人全身控制的Sim-to-Real框架。",
+        "ko": "민첩한 휨로봇 전신 제어를 위한 Sim-to-Real 프레임워크."
+      },
+      "domains": [
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "sim_to_real",
+        "control",
+        "agile",
+        "asap"
+      ],
+      "source_url": "https://agile.human2humanoid.com/"
+    },
+    {
+      "title": "NVIDIA Isaac Sim",
+      "type": "software_platform",
+      "year": 2024,
+      "names": {
+        "en": "NVIDIA Isaac Sim",
+        "zh": "NVIDIA Isaac Sim",
+        "ko": "NVIDIA Isaac Sim"
+      },
+      "summary": {
+        "en": "GPU-accelerated photorealistic robotics simulator underpinning GR00T synthetic-data pipelines.",
+        "zh": "GPU加速的逼真机器人仿真器，支撑GR00T合成数据管道。",
+        "ko": "GR00T 합성 데이터 파이프라인을 지원하는 GPU 가속 사실감 로봇 시뮬레이터."
+      },
+      "domains": [
+        "08_software_middleware",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "simulator",
+        "nvidia",
+        "isaac",
+        "synthetic_data"
+      ],
+      "source_url": "https://developer.nvidia.com/isaac-sim"
+    },
+    {
+      "title": "NVIDIA Isaac Lab",
+      "type": "software_platform",
+      "year": 2024,
+      "names": {
+        "en": "NVIDIA Isaac Lab",
+        "zh": "NVIDIA Isaac Lab",
+        "ko": "NVIDIA Isaac Lab"
+      },
+      "summary": {
+        "en": "Modular learning framework built on Isaac Sim for large-scale robot policy training.",
+        "zh": "基于Isaac Sim的模块化学习框架，用于大规模机器人策略训练。",
+        "ko": "Isaac Sim 기반의 모듈형 학습 프레임워크, 대규모 로봇 정책 학습용."
+      },
+      "domains": [
+        "08_software_middleware",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "framework",
+        "nvidia",
+        "isaac",
+        "rl",
+        "training"
+      ],
+      "source_url": "https://developer.nvidia.com/isaac-lab"
+    },
+    {
+      "title": "MuJoCo Physics Engine",
+      "type": "software_platform",
+      "year": 2022,
+      "names": {
+        "en": "MuJoCo Physics Engine",
+        "zh": "MuJoCo 物理引擎",
+        "ko": "MuJoCo 물리 엔진"
+      },
+      "summary": {
+        "en": "High-fidelity physics engine with rich contact dynamics, widely used for humanoid control research.",
+        "zh": "具有丰富接触动力学的高保真物理引擎，广泛用于人形控制研究。",
+        "ko": "풍부한 접촉 역학을 가진 고충실도 물리 엔진, 휨로봇 제어 연구에 널리 사용."
+      },
+      "domains": [
+        "08_software_middleware",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "simulator",
+        "physics",
+        "contact",
+        "mujoco"
+      ],
+      "source_url": "https://mujoco.org/"
+    },
+    {
+      "title": "Genesis Generative Physics Engine",
+      "type": "software_platform",
+      "year": 2024,
+      "names": {
+        "en": "Genesis Generative Physics Engine",
+        "zh": "Genesis 生成式物理引擎",
+        "ko": "Genesis 생성형 물리 엔진"
+      },
+      "summary": {
+        "en": "Emerging generative universal physics engine for robotics and beyond.",
+        "zh": "面向机器人等领域的新兴生成式通用物理引擎。",
+        "ko": "로보틱스 등을 위한 신흥 생성형 범용 물리 엔진."
+      },
+      "domains": [
+        "08_software_middleware",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "simulator",
+        "generative",
+        "physics",
+        "genesis"
+      ],
+      "source_url": "https://genesis-world.readthedocs.io/"
+    },
+    {
+      "title": "RoboCasa Simulation Framework",
+      "type": "software_platform",
+      "year": 2024,
+      "names": {
+        "en": "RoboCasa Simulation Framework",
+        "zh": "RoboCasa 仿真框架",
+        "ko": "RoboCasa 시뮬레이션 프레임워크"
+      },
+      "summary": {
+        "en": "Large-scale simulation framework for everyday household tasks and generalist robot training.",
+        "zh": "面向日常家庭任务和通才机器人训练的大规模仿真框架。",
+        "ko": "일상 가정 작업 및 제너럴리스트 로봇 학습을 위한 대규모 시뮬레이션 프레임워크."
+      },
+      "domains": [
+        "08_software_middleware",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "simulator",
+        "household",
+        "benchmark",
+        "robocasa"
+      ],
+      "source_url": "https://robocasa.ai/"
+    },
+    {
+      "title": "ManiSkill3",
+      "type": "software_platform",
+      "year": 2024,
+      "names": {
+        "en": "ManiSkill3",
+        "zh": "ManiSkill3",
+        "ko": "ManiSkill3"
+      },
+      "summary": {
+        "en": "GPU-parallelized robotics simulation and rendering benchmark for embodied AI.",
+        "zh": "面向具身AI的GPU并行机器人仿真与渲染基准。",
+        "ko": "구현 AI를 위한 GPU 병렬 로봇 시뮬레이션 및 렌더링 벤치마크."
+      },
+      "domains": [
+        "08_software_middleware",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "simulator",
+        "benchmark",
+        "gpu",
+        "maniskill"
+      ],
+      "source_url": "https://maniskill.ai/"
+    },
+    {
+      "title": "HumanoidBench",
+      "type": "benchmark",
+      "year": 2024,
+      "names": {
+        "en": "HumanoidBench",
+        "zh": "HumanoidBench",
+        "ko": "HumanoidBench"
+      },
+      "summary": {
+        "en": "Simulated benchmark for whole-body humanoid locomotion and manipulation.",
+        "zh": "全身人形机器人运动和操作仿真基准。",
+        "ko": "전신 휨로봇 보행 및 조작을 위한 시뮬레이션 벤치마크."
+      },
+      "domains": [
+        "07_ai_models_algorithms",
+        "11_applications_markets"
+      ],
+      "tags": [
+        "benchmark",
+        "humanoid",
+        "locomotion",
+        "manipulation",
+        "humanoidbench"
+      ],
+      "source_url": "https://humanoidbench.github.io/"
+    },
+    {
+      "title": "HumanoidVerse",
+      "type": "software_platform",
+      "year": 2024,
+      "names": {
+        "en": "HumanoidVerse",
+        "zh": "HumanoidVerse",
+        "ko": "HumanoidVerse"
+      },
+      "summary": {
+        "en": "Multi-simulator training framework targeting sim-to-real humanoid learning.",
+        "zh": "面向Sim-to-Real人形机器人学习的多仿真器训练框架。",
+        "ko": "Sim-to-Real 휨로봇 학습을 목표로 하는 다중 시뮬레이터 학습 프레임워크."
+      },
+      "domains": [
+        "08_software_middleware",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "framework",
+        "sim_to_real",
+        "humanoid",
+        "humanoidverse"
+      ],
+      "source_url": "https://github.com/OpenHumanoidLab/HumanoidVerse"
+    },
+    {
+      "title": "LeRobot",
+      "type": "software_platform",
+      "year": 2024,
+      "names": {
+        "en": "LeRobot",
+        "zh": "LeRobot",
+        "ko": "LeRobot"
+      },
+      "summary": {
+        "en": "End-to-end PyTorch library covering dataset formats, teleoperation, training, and deployment.",
+        "zh": "覆盖数据集格式、遥操作、训练和部署的端到端PyTorch库。",
+        "ko": "데이터셋 형식, 텔레오퍼레이션, 학습 및 배포를 포괄하는 엔드투엔드 PyTorch 라이브러리."
+      },
+      "domains": [
+        "08_software_middleware",
+        "09_data_datasets",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "framework",
+        "pytorch",
+        "teleoperation",
+        "training",
+        "lerobot"
+      ],
+      "source_url": "https://github.com/huggingface/lerobot"
+    },
+    {
+      "title": "ROS 2 Middleware",
+      "type": "software_platform",
+      "year": 2024,
+      "names": {
+        "en": "ROS 2 Middleware",
+        "zh": "ROS 2 中间件",
+        "ko": "ROS 2 미들웨어"
+      },
+      "summary": {
+        "en": "De facto robot middleware with DDS-based pub/sub and real-time support.",
+        "zh": "基于DDS的发布/订阅和实时支持的事实标准机器人中间件。",
+        "ko": "DDS 기반 pub/sub 및 실시간 지원을 갖춘 사실상의 로봇 미들웨어."
+      },
+      "domains": [
+        "08_software_middleware",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "middleware",
+        "dds",
+        "real_time",
+        "ros2"
+      ],
+      "source_url": "https://www.ros.org/"
+    },
+    {
+      "title": "MoveIt Motion Planning",
+      "type": "software_platform",
+      "year": 2024,
+      "names": {
+        "en": "MoveIt Motion Planning",
+        "zh": "MoveIt 运动规划",
+        "ko": "MoveIt 모션 계획"
+      },
+      "summary": {
+        "en": "Motion-planning framework commonly used for manipulation arms and whole-body planning.",
+        "zh": "常用于机械臂和全身运动规划的框架。",
+        "ko": "조작 팔 및 전신 계획에 일반적으로 사용되는 모션 계획 프레임워크."
+      },
+      "domains": [
+        "08_software_middleware",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "motion_planning",
+        "ros",
+        "manipulation",
+        "moveit"
+      ],
+      "source_url": "https://moveit.ros.org/"
+    },
+    {
+      "title": "Drake Systems Toolbox",
+      "type": "software_platform",
+      "year": 2024,
+      "names": {
+        "en": "Drake Systems Toolbox",
+        "zh": "Drake 系统工具箱",
+        "ko": "Drake 시스템 툴 박스"
+      },
+      "summary": {
+        "en": "MIT systems-modeling toolbox for optimization-based control and analysis.",
+        "zh": "MIT面向基于优化控制与分析的系统建模工具箱。",
+        "ko": "최적화 기반 제어 및 분석을 위한 MIT 시스템 모델링 툴 박스."
+      },
+      "domains": [
+        "08_software_middleware",
+        "07_ai_models_algorithms"
+      ],
+      "tags": [
+        "systems",
+        "optimization",
+        "control",
+        "drake"
+      ],
+      "source_url": "https://drake.mit.edu/"
+    },
+    {
+      "title": "Inertial Measurement Unit",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "Inertial Measurement Unit",
+        "zh": "惯性测量单元",
+        "ko": "Inertial Measurement Unit"
+      },
+      "summary": {
+        "en": "Torso/hip-mounted sensor fusing accelerometer and gyroscope for balance and state estimation.",
+        "zh": "安装于躯干/臀部的传感器，融合加速度计和陀螺仪用于平衡和状态估计。",
+        "ko": "몸통/엉덩이에 장착된 가속도계 및 자이로스코프를 융합한 균형 및 상태 추정 센서."
+      },
+      "domains": [
+        "02_components",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "sensor",
+        "imu",
+        "balance",
+        "state_estimation"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Inertial_measurement_unit"
+    },
+    {
+      "title": "Intel RealSense Depth Camera",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "Intel RealSense Depth Camera",
+        "zh": "Intel RealSense 深度相机",
+        "ko": "Intel RealSense 깊이 칩차"
+      },
+      "summary": {
+        "en": "RGB-D stereo camera widely used for head, wrist, and torso perception in humanoids.",
+        "zh": "广泛用于人形机器人头部、腕部和躯干感知的RGB-D立体相机。",
+        "ko": "휨로봇의 머리, 손목, 몸통 인식에 널리 사용되는 RGB-D 스테레오 칩차."
+      },
+      "domains": [
+        "02_components",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "sensor",
+        "camera",
+        "depth",
+        "realsense"
+      ],
+      "source_url": "https://www.intelrealsense.com/"
+    },
+    {
+      "title": "ZED Stereo Camera",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "ZED Stereo Camera",
+        "zh": "ZED 立体相机",
+        "ko": "ZED 스테레오 칩차"
+      },
+      "summary": {
+        "en": "Stereo vision camera with onboard depth estimation and spatial AI used in robot navigation.",
+        "zh": "具有 onboard 深度估计和空间AI的立体视觉相机，用于机器人导航。",
+        "ko": "온보드 깊이 추정 및 공간 AI를 갖춘 스테레오 비전 칩차, 로봇 납치에 사용."
+      },
+      "domains": [
+        "02_components",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "sensor",
+        "camera",
+        "stereo",
+        "zed"
+      ],
+      "source_url": "https://www.stereolabs.com/zed/"
+    },
+    {
+      "title": "Livox Mid-360 LiDAR",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "Livox Mid-360 LiDAR",
+        "zh": "Livox Mid-360 激光雷达",
+        "ko": "Livox Mid-360 LiDAR"
+      },
+      "summary": {
+        "en": "Compact 360-degree LiDAR commonly mounted on the head or torso of humanoid robots.",
+        "zh": "紧凑的360度激光雷达，通常安装于人形机器人头部或躯干。",
+        "ko": "휨로봇 머리나 몸통에 장착되는 컴팩트한 360도 LiDAR."
+      },
+      "domains": [
+        "02_components",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "sensor",
+        "lidar",
+        "360",
+        "livox"
+      ],
+      "source_url": "https://www.livoxtech.com/"
+    },
+    {
+      "title": "ATI Force Torque Sensor",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "ATI Force Torque Sensor",
+        "zh": "ATI 力/力矩传感器",
+        "ko": "ATI 힘/토크 센서"
+      },
+      "summary": {
+        "en": "Wrist and ankle force/torque sensor for contact control and interaction.",
+        "zh": "用于腕部和踝部接触控制和交互的力/力矩传感器。",
+        "ko": "접촉 제어 및 상호작용을 위한 손목 및 발목 힘/토크 센서."
+      },
+      "domains": [
+        "02_components",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "sensor",
+        "force_torque",
+        "wrist",
+        "ankle",
+        "ati"
+      ],
+      "source_url": "https://www.ati-ia.com/"
+    },
+    {
+      "title": "NVIDIA Jetson AGX Orin",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "NVIDIA Jetson AGX Orin",
+        "zh": "NVIDIA Jetson AGX Orin",
+        "ko": "NVIDIA Jetson AGX Orin"
+      },
+      "summary": {
+        "en": "Onboard GPU/ARM SoC widely used for VLA inference and perception in humanoid robots.",
+        "zh": "广泛用于人形机器人VLA推理和感知的 onboard GPU/ARM SoC。",
+        "ko": "휨로봇 VLA 추론 및 인식에 널리 사용되는 온보드 GPU/ARM SoC."
+      },
+      "domains": [
+        "02_components",
+        "08_software_middleware"
+      ],
+      "tags": [
+        "compute",
+        "gpu",
+        "nvidia",
+        "jetson",
+        "agx_orin"
+      ],
+      "source_url": "https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-agx-orin/"
+    },
+    {
+      "title": "CAN Bus",
+      "type": "technology",
+      "year": 2024,
+      "names": {
+        "en": "CAN Bus",
+        "zh": "CAN 总线",
+        "ko": "CAN Bus"
+      },
+      "summary": {
+        "en": "Field bus connecting joint motor drives to the central controller in humanoid robots.",
+        "zh": "连接人形机器人关节电机驱动与中央控制器的现场总线。",
+        "ko": "휨로봇 관절 모터 드라이브와 중앙 제어기를 연결하는 필드 버스."
+      },
+      "domains": [
+        "08_software_middleware",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "communication",
+        "bus",
+        "can",
+        "real_time"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/CAN_bus"
+    },
+    {
+      "title": "EtherCAT",
+      "type": "technology",
+      "year": 2024,
+      "names": {
+        "en": "EtherCAT",
+        "zh": "EtherCAT",
+        "ko": "EtherCAT"
+      },
+      "summary": {
+        "en": "High-performance industrial Ethernet field bus for deterministic joint control.",
+        "zh": "用于确定性关节控制的高性能工业以太网现场总线。",
+        "ko": "결정론적 관절 제어를 위한 고성능 산업용 이더넷 필드 버스."
+      },
+      "domains": [
+        "08_software_middleware",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "communication",
+        "ethernet",
+        "ethercat",
+        "real_time"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/EtherCAT"
+    },
+    {
+      "title": "Battery Management System",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "Battery Management System",
+        "zh": "电池管理系统",
+        "ko": "Battery Management System"
+      },
+      "summary": {
+        "en": "Cell-level voltage/temperature monitoring, SoC/SoP estimation, and active thermal control for humanoid battery packs.",
+        "zh": "人形机器人电池包的电芯级电压/温度监测、荷电/功率状态估计和主动热控制。",
+        "ko": "휨로봇 배터리 팩의 셀 단위 전압/온도 모니터링, SoC/SoP 추정 및 능동 열 제어."
+      },
+      "domains": [
+        "02_components",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "battery",
+        "bms",
+        "thermal",
+        "safety"
+      ],
+      "source_url": "https://www.renesas.com/en/document/whp/high-performance-battery-systems-next-generation-humanoid-robots"
+    },
+    {
+      "title": "ISO 13482 Personal Care Robot Safety",
+      "type": "standard",
+      "year": 2014,
+      "names": {
+        "en": "ISO 13482 Personal Care Robot Safety",
+        "zh": "ISO 13482 个人护理机器人安全",
+        "ko": "ISO 13482 개인 돌봄 로봇 안전"
+      },
+      "summary": {
+        "en": "Safety requirements for personal care robots including service humanoids.",
+        "zh": "包括服务人形机器人在内的个人护理机器人安全要求。",
+        "ko": "서비스 휨로봇을 포함한 개인 돌봄 로봇의 안전 요구사항."
+      },
+      "domains": [
+        "12_policy_regulation_ethics"
+      ],
+      "tags": [
+        "standard",
+        "safety",
+        "iso",
+        "personal_care_robot"
+      ],
+      "source_url": "https://www.iso.org/standard/53820.html"
+    }
+  ]
+}

@@ -49,9 +49,9 @@ sources:
   fetch_url: https://api.github.com/repos/ImChong/Humanoid_Robot_Learning_Paper_Notebooks/contents/progress.json
   enabled: true
   schedule: daily
-  last_run: '2026-07-01T09:33:59.678491Z'
-  total_added: 55
-  total_duplicates: 1049
+  last_run: '2026-07-08T20:29:22.467102Z'
+  total_added: 57
+  total_duplicates: 3652
   status: healthy
 - id: arxiv_ro_rss
   name: arXiv cs.RO RSS feed
@@ -82,9 +82,9 @@ sources:
   - humanoid control
   - humanoid locomotion
   - humanoid manipulation
-  last_run: '2026-07-01T09:34:00.373929Z'
-  total_added: 50
-  total_duplicates: 106
+  last_run: '2026-07-07T20:29:25.530635Z'
+  total_added: 168
+  total_duplicates: 224
   status: healthy
 - id: unitree_news
   name: Unitree Robotics official news
@@ -93,9 +93,9 @@ sources:
   fetch_url: https://api.unitree.com/website/news/list
   enabled: true
   schedule: weekly
-  last_run: '2026-07-01T09:34:04.416935Z'
+  last_run: '2026-07-08T20:30:33.923738Z'
   total_added: 8
-  total_duplicates: 16
+  total_duplicates: 72
   status: healthy
 - id: nvidia_robotics_blog
   name: NVIDIA Blog / Robotics
@@ -121,9 +121,9 @@ sources:
   - sim2real
   - embodied
   - physical ai
-  last_run: '2026-07-01T09:34:08.094119Z'
-  total_added: 10
-  total_duplicates: 20
+  last_run: '2026-07-08T20:30:36.467704Z'
+  total_added: 11
+  total_duplicates: 71
   status: healthy
 - id: humanoid_actuators_suppliers
   name: Curated humanoid actuator/joint/supplier data
@@ -132,9 +132,9 @@ sources:
   fetch_url: data/curated/humanoid_actuators_suppliers.json
   enabled: true
   schedule: on_demand
-  last_run: '2026-07-01T11:14:30.849172Z'
+  last_run: '2026-07-08T20:30:36.480140Z'
   total_added: 31
-  total_duplicates: 5
+  total_duplicates: 185
   status: healthy
 - id: wechat_articles
   name: WeChat humanoid paper articles
@@ -165,9 +165,9 @@ sources:
   - startup
   - funding
   - investment
-  last_run: '2026-07-01T10:16:08.549213Z'
-  total_added: 34
-  total_duplicates: 0
+  last_run: '2026-07-08T20:30:37.992313Z'
+  total_added: 47
+  total_duplicates: 158
   status: healthy
 - id: ieee_spectrum_robotics_rss
   name: IEEE Spectrum / Robotics
@@ -188,9 +188,31 @@ sources:
   - standard
   - safety
   - ai
-  last_run: '2026-07-01T10:14:06.014140Z'
-  total_added: 6
-  total_duplicates: 24
+  last_run: '2026-07-08T20:30:41.339716Z'
+  total_added: 9
+  total_duplicates: 171
+  status: healthy
+- id: humanoid_workflow_entities
+  name: Curated humanoid workflow entities
+  type: curated_json
+  url: https://github.com/YansongW/awesome-humanoid-robot
+  fetch_url: data/curated/humanoid_workflow_entities.json
+  enabled: true
+  schedule: on_demand
+  last_run: '2026-07-08T20:30:41.347150Z'
+  total_added: 0
+  total_duplicates: 235
+  status: healthy
+- id: humanoid_manufacturing_systems
+  name: Curated manufacturing and system integration entities
+  type: curated_json
+  url: https://github.com/YansongW/awesome-humanoid-robot
+  fetch_url: data/curated/humanoid_manufacturing_systems.json
+  enabled: true
+  schedule: on_demand
+  last_run: '2026-07-08T20:30:41.353160Z'
+  total_added: 21
+  total_duplicates: 102
   status: healthy
 - id: iso_robotics_news
   name: ISO / Robotics standards news

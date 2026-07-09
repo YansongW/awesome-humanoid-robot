@@ -1,0 +1,551 @@
+{
+  "version": 1,
+  "description": "Manufacturing, system integration, and deployment entities that bridge hardware design to mass production.",
+  "entries": [
+    {
+      "title": "Design for Manufacturing",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "Design for Manufacturing",
+        "zh": "面向制造的设计",
+        "ko": "Design for Manufacturing"
+      },
+      "summary": {
+        "en": "Engineering practice of designing parts and assemblies to reduce production cost, improve yield, and simplify assembly for humanoid robots.",
+        "zh": "为人形机器人降低生产成本、提高良率、简化装配而进行的零部件与总成设计实践。",
+        "ko": "휨로봇의 생산 비용 절감, 수율 향상 및 조립 단순화를 위한 부품 및 어셈블리 설계 관행."
+      },
+      "domains": [
+        "03_manufacturing_processes",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "dfm",
+        "manufacturing",
+        "design",
+        "cost",
+        "yield"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Design_for_manufacturing"
+    },
+    {
+      "title": "Design for Assembly",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "Design for Assembly",
+        "zh": "面向装配的设计",
+        "ko": "Design for Assembly"
+      },
+      "summary": {
+        "en": "Methodology to optimize product design so that humanoid robot joints and subsystems can be assembled quickly and reliably.",
+        "zh": "优化产品设计，使人形机器人关节和子系统能够快速可靠地装配的方法论。",
+        "ko": "휨로봇 관절 및 하위 시스템을 빠르고 신뢰성 있게 조립할 수 있도록 제품 설계를 최적화하는 방법론."
+      },
+      "domains": [
+        "03_manufacturing_processes",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "dfa",
+        "assembly",
+        "design",
+        "modular"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Design_for_assembly"
+    },
+    {
+      "title": "Bill of Materials",
+      "type": "concept",
+      "year": 2024,
+      "names": {
+        "en": "Bill of Materials",
+        "zh": "物料清单",
+        "ko": "Bill of Materials"
+      },
+      "summary": {
+        "en": "Structured list of all parts, subassemblies, and raw materials required to build one humanoid robot unit.",
+        "zh": "构建一台人形机器人所需的所有零件、子装配件和原材料的结构化清单。",
+        "ko": "한 대의 휨로봇을 제작하는 데 필요한 모든 부품, 하위 조립품 및 원자재의 구조화된 목록."
+      },
+      "domains": [
+        "03_manufacturing_processes",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "bom",
+        "manufacturing",
+        "supply_chain",
+        "cost"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Bill_of_materials"
+    },
+    {
+      "title": "System Integration Test Bench",
+      "type": "tool_equipment",
+      "year": 2024,
+      "names": {
+        "en": "System Integration Test Bench",
+        "zh": "系统集成测试台",
+        "ko": "System Integration Test Bench"
+      },
+      "summary": {
+        "en": "Physical rig used to validate joint performance, communication buses, control loops, and safety systems before full robot assembly.",
+        "zh": "在整机装配前验证关节性能、通信总线、控制回路和安全系统的物理测试台。",
+        "ko": "완전한 로봇 조립 전 관절 성능, 통신 버스, 제어 루프 및 안전 시스템을 검증하는 물리적 테스트 벤치."
+      },
+      "domains": [
+        "04_assembly_integration_testing",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "test_bench",
+        "integration",
+        "validation",
+        "hardware"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Test_bench"
+    },
+    {
+      "title": "Hardware-in-the-Loop",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "Hardware-in-the-Loop",
+        "zh": "硬件在环仿真",
+        "ko": "Hardware-in-the-Loop"
+      },
+      "summary": {
+        "en": "Testing method where physical actuators and controllers are exercised against a real-time simulation model before full integration.",
+        "zh": "在完整集成前，将物理执行器和控制器与实时仿真模型对接进行测试的方法。",
+        "ko": "완전한 통합 전 실제 액추에이터와 컨트롤러를 실시간 시뮬레이션 모델에 대해 테스트하는 방법."
+      },
+      "domains": [
+        "04_assembly_integration_testing",
+        "08_software_middleware"
+      ],
+      "tags": [
+        "hil",
+        "testing",
+        "simulation",
+        "validation"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation"
+    },
+    {
+      "title": "Joint Calibration Procedure",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "Joint Calibration Procedure",
+        "zh": "关节标定流程",
+        "ko": "Joint Calibration Procedure"
+      },
+      "summary": {
+        "en": "Post-assembly procedure to determine absolute zero positions, encoder offsets, and direction signs for each actuator.",
+        "zh": "装配后确定每个执行器绝对零位、编码器偏置和方向标志的流程。",
+        "ko": "조립 후 각 액추에이터의 절대 원점, 인코더 오프셋 및 방향 부호를 결정하는 절차."
+      },
+      "domains": [
+        "04_assembly_integration_testing",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "calibration",
+        "joint",
+        "encoder",
+        "assembly"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Robot_calibration"
+    },
+    {
+      "title": "Model-Based Definition",
+      "type": "technology",
+      "year": 2024,
+      "names": {
+        "en": "Model-Based Definition",
+        "zh": "基于模型的定义",
+        "ko": "Model-Based Definition"
+      },
+      "summary": {
+        "en": "CAD-centric approach that embeds geometry, kinematics, mass properties, GD&T, and annotations in a single digital master model.",
+        "zh": "将几何、运动学、质量特性、GD&T和标注嵌入单一数字主模型的CAD中心方法。",
+        "ko": "기하학, 운 동학, 질량 특성, GD&T 및 주석을 단일 디지털 마스터 모델에 포함하는 CAD 중심 접근법."
+      },
+      "domains": [
+        "06_design_engineering",
+        "03_manufacturing_processes"
+      ],
+      "tags": [
+        "mbd",
+        "cad",
+        "digital_thread",
+        "plm"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Model-based_definition"
+    },
+    {
+      "title": "URDF Robot Description Format",
+      "type": "technology",
+      "year": 2024,
+      "names": {
+        "en": "URDF Robot Description Format",
+        "zh": "URDF 机器人描述格式",
+        "ko": "URDF 로봇 설명 형식"
+      },
+      "summary": {
+        "en": "XML-based format describing robot links, joints, inertial properties, and geometry for simulation and control.",
+        "zh": "用于仿真和控制的描述机器人连杆、关节、惯性和几何的XML格式。",
+        "ko": "시뮬레이션 및 제어를 위한 로봇 링크, 관절, 관성 및 기하를 설명하는 XML 기반 형식."
+      },
+      "domains": [
+        "08_software_middleware",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "urdf",
+        "robot_description",
+        "simulation",
+        "ros"
+      ],
+      "source_url": "https://wiki.ros.org/urdf"
+    },
+    {
+      "title": "MJCF Simulation Format",
+      "type": "technology",
+      "year": 2024,
+      "names": {
+        "en": "MJCF Simulation Format",
+        "zh": "MJCF 仿真格式",
+        "ko": "MJCF 시뮬레이션 형식"
+      },
+      "summary": {
+        "en": "MuJoCo's XML modeling format for articulated rigid-body systems with contact, actuators, and sensors.",
+        "zh": "MuJoCo的XML建模格式，用于描述具有接触、执行器和传感器的铰接刚体系统。",
+        "ko": "접촉, 액추에이터 및 센서가 있는 관절 강체 시스템을 위한 MuJoCo의 XML 모델링 형식."
+      },
+      "domains": [
+        "08_software_middleware",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "mjcf",
+        "mujoco",
+        "simulation",
+        "modeling"
+      ],
+      "source_url": "https://mujoco.readthedocs.io/en/stable/modeling.html"
+    },
+    {
+      "title": "Finite Element Analysis",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "Finite Element Analysis",
+        "zh": "有限元分析",
+        "ko": "Finite Element Analysis"
+      },
+      "summary": {
+        "en": "Numerical method for structural, thermal, and modal analysis of robot links, brackets, and gearboxes before prototyping.",
+        "zh": "在样机前对机器人连杆、支架和齿轮箱进行结构、热和模态分析的数值方法。",
+        "ko": "프로토타입 전 로봇 링크, 브래킷 및 기어박스의 구조, 열 및 모달 분석을 위한 수치 방법."
+      },
+      "domains": [
+        "06_design_engineering",
+        "03_manufacturing_processes"
+      ],
+      "tags": [
+        "fea",
+        "simulation",
+        "structural",
+        "thermal"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Finite_element_method"
+    },
+    {
+      "title": "Thermal Management System",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "Thermal Management System",
+        "zh": "热管理系统",
+        "ko": "Thermal Management System"
+      },
+      "summary": {
+        "en": "Heatsinks, heat pipes, fans, and liquid cooling used to keep compute, power electronics, and actuators within safe operating temperatures.",
+        "zh": "使计算、电力电子和执行器保持在安全工作温度范围内的散热器、热管、风扇和液冷。",
+        "ko": "컴퓨팅, 전력 전자 및 액추에이터를 안전한 작동 온도 범위 내로 유지하는 히트싱크, 히트 파이프, 팬 및 액체 냉각."
+      },
+      "domains": [
+        "02_components",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "thermal",
+        "cooling",
+        "compute",
+        "actuator"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Thermal_management_in_electronics"
+    },
+    {
+      "title": "Power Distribution System",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "Power Distribution System",
+        "zh": "配电系统",
+        "ko": "Power Distribution System"
+      },
+      "summary": {
+        "en": "DC-DC converters, busbars, fuses, and contactors that route battery power to compute, actuators, and sensors.",
+        "zh": "将电池电能分配给计算、执行器和传感器的DC-DC变换器、母线、保险丝和接触器。",
+        "ko": "배터리 전력을 컴퓨팅, 액추에이터 및 센서로 라우팅하는 DC-DC 컨버터, 버스바, 퓨즈 및 콘택터."
+      },
+      "domains": [
+        "02_components",
+        "06_design_engineering"
+      ],
+      "tags": [
+        "power",
+        "distribution",
+        "battery",
+        "electronics"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Power_distribution_unit"
+    },
+    {
+      "title": "Safety MCU",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "Safety MCU",
+        "zh": "安全微控制器",
+        "ko": "Safety MCU"
+      },
+      "summary": {
+        "en": "Independent microcontroller that monitors emergency stops, joint limits, and fault conditions to enforce safe torque-off.",
+        "zh": "监控急停、关节限位和故障状态以执行安全关扭矩的独立微控制器。",
+        "ko": "비상 정지, 관절 한계 및 결함 상태를 모니터링하여 안전한 토크 차단을 실행하는 독립형 마이크로컨트롤러."
+      },
+      "domains": [
+        "02_components",
+        "12_policy_regulation_ethics"
+      ],
+      "tags": [
+        "safety",
+        "mcu",
+        "fault",
+        "emergency_stop"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Functional_safety"
+    },
+    {
+      "title": "Emergency Stop System",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "Emergency Stop System",
+        "zh": "急停系统",
+        "ko": "Emergency Stop System"
+      },
+      "summary": {
+        "en": "Hardwired safety circuit that immediately removes power or commands safe state when triggered by operator or fault.",
+        "zh": "操作员或故障触发时立即切断电源或命令安全状态的硬接线安全电路。",
+        "ko": "운영자 또는 결함에 의해 트리거될 때 즉시 전원을 제거하거나 안전 상태를 명령하는 하드와이어 안전 회로."
+      },
+      "domains": [
+        "02_components",
+        "12_policy_regulation_ethics"
+      ],
+      "tags": [
+        "safety",
+        "emergency_stop",
+        "fault",
+        "hardware"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Emergency_stop"
+    },
+    {
+      "title": "Supplier Qualification",
+      "type": "method",
+      "year": 2024,
+      "names": {
+        "en": "Supplier Qualification",
+        "zh": "供应商认证",
+        "ko": "Supplier Qualification"
+      },
+      "summary": {
+        "en": "Process of auditing and approving component manufacturers for quality, capacity, traceability, and compliance before mass production.",
+        "zh": "量产前对零部件制造商进行质量、产能、可追溯性和合规性审核与批准的过程。",
+        "ko": "양산 전 부품 제조업체의 품질, 생산 능력, 추적 가능성 및 규정 준수를 감사 및 승인하는 프로세스."
+      },
+      "domains": [
+        "03_manufacturing_processes",
+        "12_policy_regulation_ethics"
+      ],
+      "tags": [
+        "supplier",
+        "qualification",
+        "quality",
+        "compliance"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Supplier_quality_management"
+    },
+    {
+      "title": "Production Ramp",
+      "type": "concept",
+      "year": 2024,
+      "names": {
+        "en": "Production Ramp",
+        "zh": "产能爬坡",
+        "ko": "Production Ramp"
+      },
+      "summary": {
+        "en": "Transition from pilot-line builds to volume manufacturing while improving yield, cycle time, and cost.",
+        "zh": "从试产线向批量制造过渡，同时提升良率、周期时间和成本。",
+        "ko": "파일럿 라인에서 볼륨 제조로 전환하면서 수율, 사이클 타임 및 비용을 개선하는 과정."
+      },
+      "domains": [
+        "05_mass_production",
+        "03_manufacturing_processes"
+      ],
+      "tags": [
+        "ramp",
+        "volume",
+        "yield",
+        "manufacturing"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Ramp-up"
+    },
+    {
+      "title": "OTA Software Update",
+      "type": "technology",
+      "year": 2024,
+      "names": {
+        "en": "OTA Software Update",
+        "zh": "OTA 软件更新",
+        "ko": "OTA Software Update"
+      },
+      "summary": {
+        "en": "Over-the-air deployment of control policies, firmware, and system software to deployed humanoid fleets.",
+        "zh": "向已部署的人形机器人机群无线部署控制策略、固件和系统软件。",
+        "ko": "배포된 휨로봇 플릿에 제어 정책, 펌웨어 및 시스템 소프트웨어를 무선으로 배포."
+      },
+      "domains": [
+        "08_software_middleware",
+        "05_mass_production"
+      ],
+      "tags": [
+        "ota",
+        "update",
+        "fleet",
+        "deployment"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Over-the-air_update"
+    },
+    {
+      "title": "Fleet Management Platform",
+      "type": "software_platform",
+      "year": 2024,
+      "names": {
+        "en": "Fleet Management Platform",
+        "zh": "机群管理平台",
+        "ko": "Fleet Management Platform"
+      },
+      "summary": {
+        "en": "Cloud platform for task orchestration, charging, health monitoring, and analytics across multiple deployed humanoids.",
+        "zh": "跨多台已部署人形机器人进行任务编排、充电、健康监控和分析的云平台。",
+        "ko": "여러 대의 배포된 휨로봇에 걸쳐 작업 오케스트레이션, 충전, 건강 모니터링 및 분석을 위한 클라우드 플랫폼."
+      },
+      "domains": [
+        "08_software_middleware",
+        "11_applications_markets"
+      ],
+      "tags": [
+        "fleet",
+        "management",
+        "cloud",
+        "deployment"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Fleet_management"
+    },
+    {
+      "title": "RV Reducer",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "RV Reducer",
+        "zh": "RV减速器",
+        "ko": "RV Reducer"
+      },
+      "summary": {
+        "en": "High-load, high-rigidity cycloidal reducer used in heavy-duty robot joints such as hips and shoulders.",
+        "zh": "高负载、高刚性摆线减速器，用于髋部和肩部等重载机器人关节。",
+        "ko": "고하중, 고강성 사이클로이드 감속기, 엉덩이와 어깨 등 중하물 로봇 관절에 사용."
+      },
+      "domains": [
+        "02_components"
+      ],
+      "tags": [
+        "rv_reducer",
+        "cycloidal",
+        "reducer",
+        "high_load"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Cycloidal_drive"
+    },
+    {
+      "title": "Joint Motor",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "Joint Motor",
+        "zh": "关节电机",
+        "ko": "Joint Motor"
+      },
+      "summary": {
+        "en": "Compact motor integrated into a robot joint, often paired with a reducer and encoder to form an actuator module.",
+        "zh": "集成到机器人关节中的紧凑型电机，通常与减速器和编码器配对形成执行器模组。",
+        "ko": "로봇 관절에 통합된 컴팩트한 모터, 일반적으로 감속기 및 인코더와 짝을 이루어 액추에이터 모듈을 형성."
+      },
+      "domains": [
+        "02_components"
+      ],
+      "tags": [
+        "joint_motor",
+        "actuator",
+        "motor",
+        "integrated"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Servomotor"
+    },
+    {
+      "title": "Servo Drive",
+      "type": "component",
+      "year": 2024,
+      "names": {
+        "en": "Servo Drive",
+        "zh": "伺服驱动器",
+        "ko": "Servo Drive"
+      },
+      "summary": {
+        "en": "Electronic amplifier that converts low-power command signals into high-current motor control for robot joints.",
+        "zh": "将低功率指令信号转换为机器人关节电机控制所需大电流的电子放大器。",
+        "ko": "로봇 관절용 모터 제어를 위한 고전류로 저전력 명령 신호를 변환하는 전자 증폭기."
+      },
+      "domains": [
+        "02_components",
+        "08_software_middleware"
+      ],
+      "tags": [
+        "servo_drive",
+        "motor_control",
+        "electronics",
+        "joint"
+      ],
+      "source_url": "https://en.wikipedia.org/wiki/Servo_drive"
+    }
+  ]
+}

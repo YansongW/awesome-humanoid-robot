@@ -89,3 +89,67 @@ def build_relations_data(entries: dict[str, Entry], relationships: list) -> dict
             }
         )
     return {"nodes": nodes, "edges": edges}
+
+
+def build_cluster_data(entries: dict[str, Entry], relationships: list) -> dict:
+    """Build clustered graph data for performant overview visualization.
+
+    Clusters by primary domain. Each cluster node contains the IDs of its
+    members. Cluster-cluster edges aggregate cross-cluster relationships.
+    """
+    # Map each entity to its primary domain (first domain, fallback to type)
+    entity_domain: dict[str, str] = {}
+    for e in entries.values():
+        entity_domain[e.id] = e.domains[0] if e.domains else f"type:{e.type}"
+
+    # Collect clusters
+    clusters: dict[str, dict] = {}
+    for eid, domain in entity_domain.items():
+        clusters.setdefault(
+            domain,
+            {"id": domain, "name": domain, "count": 0, "members": []},
+        )
+        clusters[domain]["count"] += 1
+        clusters[domain]["members"].append(eid)
+
+    # Aggregate edges between clusters
+    cluster_edges: dict[tuple[str, str], int] = {}
+    for rel in relationships:
+        if rel.source_id not in entries or rel.target_id not in entries:
+            continue
+        src_domain = entity_domain.get(rel.source_id)
+        tgt_domain = entity_domain.get(rel.target_id)
+        if not src_domain or not tgt_domain or src_domain == tgt_domain:
+            continue
+        key = (src_domain, tgt_domain)
+        cluster_edges[key] = cluster_edges.get(key, 0) + 1
+
+    nodes = []
+    for c in clusters.values():
+        nodes.append(
+            {
+                "data": {
+                    "id": c["id"],
+                    "name": c["name"],
+                    "count": c["count"],
+                    "members": c["members"],
+                    "isCluster": True,
+                }
+            }
+        )
+
+    edges = []
+    for (src, tgt), weight in cluster_edges.items():
+        edges.append(
+            {
+                "data": {
+                    "id": f"{src}--{tgt}",
+                    "source": src,
+                    "target": tgt,
+                    "weight": weight,
+                    "isClusterEdge": True,
+                }
+            }
+        )
+
+    return {"nodes": nodes, "edges": edges}

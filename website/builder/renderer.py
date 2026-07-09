@@ -38,16 +38,41 @@ def copy_static_assets() -> None:
     (DIST_DIR / "data").mkdir(exist_ok=True)
 
 
+DOMAIN_COLORS = {
+    "00_foundations": "#7c8798",
+    "01_raw_materials": "#2a9d8f",
+    "02_components": "#5d8c48",
+    "03_manufacturing_processes": "#c38e3c",
+    "04_assembly_integration_testing": "#b3592a",
+    "05_mass_production": "#a84442",
+    "06_design_engineering": "#7d5a8a",
+    "07_ai_models_algorithms": "#3d7ea6",
+    "08_software_middleware": "#5a8fbd",
+    "09_data_datasets": "#2d5a7b",
+    "10_evaluation_benchmarks": "#c9a227",
+    "10_benchmarks_evaluation": "#c9a227",
+    "11_applications_markets": "#b34d73",
+    "12_policy_regulation_ethics": "#6b5b4f",
+    "unknown": "#6b7280",
+}
+
+
+def domain_color(domain: str) -> str:
+    return DOMAIN_COLORS.get(domain, DOMAIN_COLORS["unknown"])
+
+
 def render_home(store: KGStore, stats: dict[str, Any]) -> None:
     env = get_jinja_env()
     template = env.get_template("index.html")
     domains = sorted({d for e in store.entries.values() for d in e.domains})
     types = sorted({e.type for e in store.entries.values()})
     featured = sorted(store.entries.values(), key=lambda e: e.name or e.id)[:12]
+    domain_colors = {d: domain_color(d) for d in domains}
     html = template.render(
         title="人形机器人知识图谱",
         stats=stats,
         domains=domains,
+        domain_colors=domain_colors,
         types=types,
         featured=featured,
     )
@@ -126,7 +151,7 @@ def write_sitemap(store: KGStore) -> None:
     (DIST_DIR / "sitemap.xml").write_text("\n".join(lines), encoding="utf-8")
 
 
-def render_all(store: KGStore, search_index: dict, relations_data: dict, stats: dict) -> None:
+def render_all(store: KGStore, search_index: dict, relations_data: dict, cluster_data: dict, stats: dict) -> None:
     copy_static_assets()
     render_home(store, stats)
     render_search_page(store)
@@ -136,4 +161,5 @@ def render_all(store: KGStore, search_index: dict, relations_data: dict, stats: 
         render_entry(store, entry)
     write_json_data(search_index, "search-index.json")
     write_json_data(relations_data, "relations.json")
+    write_json_data(cluster_data, "clusters.json")
     write_sitemap(store)

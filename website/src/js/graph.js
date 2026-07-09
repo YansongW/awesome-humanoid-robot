@@ -4,242 +4,362 @@
   'use strict';
 
   const COLORS = {
-    company: '#3498db',
-    component_manufacturer: '#2ecc71',
-    tier1_supplier: '#2ecc71',
-    oem: '#3498db',
-    component: '#2ecc71',
-    technology: '#e74c3c',
-    method: '#e74c3c',
-    paper: '#9b59b6',
-    dataset: '#9b59b6',
-    benchmark: '#f39c12',
-    report: '#f39c12',
-    material: '#1abc9c',
-    foundation: '#95a5a6',
-    default: '#64748b',
+    '00_foundations': '#7c8798',
+    '01_raw_materials': '#2a9d8f',
+    '02_components': '#5d8c48',
+    '03_manufacturing_processes': '#c38e3c',
+    '04_assembly_integration_testing': '#b3592a',
+    '05_mass_production': '#a84442',
+    '06_design_engineering': '#7d5a8a',
+    '07_ai_models_algorithms': '#3d7ea6',
+    '08_software_middleware': '#5a8fbd',
+    '09_data_datasets': '#2d5a7b',
+    '10_evaluation_benchmarks': '#c9a227',
+    '10_benchmarks_evaluation': '#c9a227',
+    '11_applications_markets': '#b34d73',
+    '12_policy_regulation_ethics': '#6b5b4f',
+    default: '#6b7280',
   };
 
-  const TYPE_MAP = {
-    'component_manufacturer': 'company',
-    'tier1_supplier': 'company',
-    'oem': 'company',
-    'robot_system': 'oem',
-  };
+  const CLUSTER_SIZE_SCALE = 6;
+  const CLUSTER_FONT_SIZE = 14;
+  const NODE_SIZE = 18;
+  const NODE_FONT_SIZE = 10;
 
-  function getColor(type) {
-    const mapped = TYPE_MAP[type] || type;
-    return COLORS[mapped] || COLORS.default;
+  let cy = null;
+  let currentMode = 'clusters'; // 'clusters' | 'domain' | 'full'
+  let fullGraphData = null;
+  let clusterData = null;
+
+  function getDomainColor(domain) {
+    return COLORS[domain] || COLORS.default;
   }
 
-  async function loadGraphData() {
+  function getPrimaryDomain(node) {
+    const domains = node.data('domains') || [];
+    return domains[0] || 'unknown';
+  }
+
+  async function loadData() {
     try {
-      const res = await fetch('/data/relations.json');
-      if (!res.ok) throw new Error('Failed to load graph data');
-      return await res.json();
+      const [relationsRes, clustersRes] = await Promise.all([
+        fetch('/data/relations.json'),
+        fetch('/data/clusters.json'),
+      ]);
+      if (!relationsRes.ok || !clustersRes.ok) throw new Error('Failed to load graph data');
+      fullGraphData = await relationsRes.json();
+      clusterData = await clustersRes.json();
     } catch (err) {
       console.error(err);
-      return { nodes: [], edges: [] };
+      fullGraphData = { nodes: [], edges: [] };
+      clusterData = { nodes: [], edges: [] };
     }
   }
 
-  function initGraph(container, options) {
-    const { centerId, filterDomains } = options || {};
-
-    loadGraphData().then(data => {
-      let nodes = data.nodes || [];
-      let edges = data.edges || [];
-
-      if (centerId) {
-        const relatedEdgeIds = new Set();
-        const relatedNodeIds = new Set([centerId]);
-        for (const edge of edges) {
-          if (edge.data.source === centerId || edge.data.target === centerId) {
-            relatedEdgeIds.add(edge.data.id);
-            relatedNodeIds.add(edge.data.source);
-            relatedNodeIds.add(edge.data.target);
-          }
-        }
-        nodes = nodes.filter(n => relatedNodeIds.has(n.data.id));
-        edges = edges.filter(e => relatedEdgeIds.has(e.data.id));
-      }
-
-      if (filterDomains && filterDomains.length > 0 && !filterDomains.includes('all')) {
-        const allowedIds = new Set(
-          nodes
-            .filter(n => n.data.domains && n.data.domains.some(d => filterDomains.includes(d)))
-            .map(n => n.data.id)
-        );
-        nodes = nodes.filter(n => allowedIds.has(n.data.id));
-        edges = edges.filter(e => allowedIds.has(e.data.source) && allowedIds.has(e.data.target));
-      }
-
-      if (nodes.length === 0) {
-        container.innerHTML = '<div class="empty-state">没有可显示的关系数据。</div>';
-        return;
-      }
-
-      const cy = cytoscape({
-        container: container,
-        elements: [...nodes, ...edges],
-        style: [
-          {
-            selector: 'node',
-            style: {
-              'background-color': ele => getColor(ele.data('type')),
-              'label': ele => {
-                const name = ele.data('name') || ele.data('id');
-                return name.length > 18 ? name.slice(0, 16) + '…' : name;
-              },
-              'width': 24,
-              'height': 24,
-              'font-size': 10,
-              'color': 'var(--color-text)',
-              'text-valign': 'bottom',
-              'text-halign': 'center',
-              'text-margin-y': 4,
-              'text-wrap': 'wrap',
-              'text-max-width': 90,
-            },
-          },
-          {
-            selector: 'edge',
-            style: {
-              'width': 1.5,
-              'line-color': 'var(--color-border)',
-              'target-arrow-color': 'var(--color-border)',
-              'target-arrow-shape': 'triangle',
-              'curve-style': 'bezier',
-              'arrow-scale': 0.8,
-            },
-          },
-          {
-            selector: ':selected',
-            style: {
-              'border-width': 3,
-              'border-color': 'var(--color-accent)',
-              'border-opacity': 1,
-            },
-          },
-        ],
-        layout: {
-          name: 'cose',
-          padding: 20,
-          nodeRepulsion: 8000,
-          idealEdgeLength: 80,
-          animate: true,
-          animationDuration: 500,
-          fit: true,
+  function makeStylesheet() {
+    return [
+      {
+        selector: 'node',
+        style: {
+          'background-color': ele => getDomainColor(getPrimaryDomain(ele)),
+          'label': 'data(name)',
+          'font-size': NODE_FONT_SIZE,
+          'color': 'var(--color-text)',
+          'text-valign': 'bottom',
+          'text-halign': 'center',
+          'text-margin-y': 4,
+          'text-wrap': 'wrap',
+          'text-max-width': 100,
+          'text-background-color': 'var(--color-bg)',
+          'text-background-opacity': 0.85,
+          'text-background-shape': 'roundrectangle',
+          'text-background-padding': 2,
         },
-        minZoom: 0.2,
-        maxZoom: 3,
-        wheelSensitivity: 0.3,
+      },
+      {
+        selector: 'node[isCluster]',
+        style: {
+          'width': ele => Math.min(80, 30 + Math.sqrt(ele.data('count')) * CLUSTER_SIZE_SCALE),
+          'height': ele => Math.min(80, 30 + Math.sqrt(ele.data('count')) * CLUSTER_SIZE_SCALE),
+          'font-size': CLUSTER_FONT_SIZE,
+          'font-weight': 'bold',
+          'text-valign': 'center',
+          'text-halign': 'center',
+          'text-margin-y': 0,
+          'border-width': 3,
+          'border-color': 'var(--color-border)',
+          'background-opacity': 0.9,
+        },
+      },
+      {
+        selector: 'node[!isCluster]',
+        style: {
+          'width': NODE_SIZE,
+          'height': NODE_SIZE,
+        },
+      },
+      {
+        selector: 'edge',
+        style: {
+          'width': 1.2,
+          'line-color': 'var(--color-border)',
+          'target-arrow-color': 'var(--color-border)',
+          'target-arrow-shape': 'triangle',
+          'curve-style': 'bezier',
+          'arrow-scale': 0.7,
+        },
+      },
+      {
+        selector: 'edge[isClusterEdge]',
+        style: {
+          'width': ele => Math.min(8, 1 + Math.log(ele.data('weight') || 1) * 1.5),
+          'line-color': '#94a3b8',
+          'target-arrow-color': '#94a3b8',
+        },
+      },
+      {
+        selector: ':selected',
+        style: {
+          'border-width': 4,
+          'border-color': 'var(--color-accent)',
+          'border-opacity': 1,
+        },
+      },
+      {
+        selector: '.highlighted',
+        style: {
+          'border-width': 4,
+          'border-color': 'var(--color-accent)',
+        },
+      },
+      {
+        selector: '.dimmed',
+        style: {
+          'opacity': 0.15,
+        },
+      },
+    ];
+  }
+
+  function runLayout(name) {
+    if (!cy) return;
+    const opts = { animate: true, animationDuration: 600, padding: 24, fit: true };
+    let layout;
+    if (name === 'cose') {
+      layout = cy.layout({
+        name: 'cose',
+        ...opts,
+        nodeRepulsion: 5000,
+        idealEdgeLength: 100,
+        componentSpacing: 80,
       });
+    } else if (name === 'circle') {
+      layout = cy.layout({ name: 'circle', ...opts });
+    } else if (name === 'grid') {
+      layout = cy.layout({ name: 'grid', ...opts });
+    } else {
+      layout = cy.layout({ name: 'cose', ...opts });
+    }
+    layout.run();
+  }
 
-      cy.on('tap', 'node', evt => {
-        const id = evt.target.id();
-        window.location.href = '/entry/' + id + '/';
-      });
+  function initGraph(container, mode) {
+    currentMode = mode || 'clusters';
+    if (cy) {
+      cy.destroy();
+      cy = null;
+    }
 
-      cy.on('mouseover', 'node', evt => {
-        evt.target.animate({
-          style: { 'width': 30, 'height': 30 },
-        }, { duration: 150 });
-      });
+    let elements = [];
+    if (currentMode === 'clusters') {
+      elements = [...clusterData.nodes, ...clusterData.edges];
+    } else if (currentMode === 'full') {
+      elements = [...fullGraphData.nodes, ...fullGraphData.edges];
+    }
 
-      cy.on('mouseout', 'node', evt => {
-        evt.target.animate({
-          style: { 'width': 24, 'height': 24 },
-        }, { duration: 150 });
-      });
+    if (elements.length === 0) {
+      container.innerHTML = '<div class="empty-state">没有可显示的关系数据。</div>';
+      return;
+    }
 
-      if (centerId) {
-        const centerNode = cy.getElementById(centerId);
-        if (centerNode.length) {
-          centerNode.style({ 'width': 36, 'height': 36 });
-          setTimeout(() => cy.fit(centerNode.closedNeighborhood(), 60), 600);
-        }
-      }
-
-      window._cy = cy;
+    cy = cytoscape({
+      container: container,
+      elements: elements,
+      style: makeStylesheet(),
+      minZoom: 0.1,
+      maxZoom: 4,
+      wheelSensitivity: 0.25,
     });
+
+    // Interactions
+    cy.on('tap', 'node[isCluster]', evt => {
+      const clusterId = evt.target.id();
+      showClusterMembers(clusterId);
+    });
+
+    cy.on('tap', 'node[!isCluster]', evt => {
+      const id = evt.target.id();
+      window.location.href = '/entry/' + id + '/';
+    });
+
+    cy.on('mouseover', 'node', evt => {
+      evt.target.addClass('highlighted');
+    });
+
+    cy.on('mouseout', 'node', evt => {
+      evt.target.removeClass('highlighted');
+    });
+
+    runLayout('cose');
+  }
+
+  function showClusterMembers(clusterId) {
+    const cluster = clusterData.nodes.find(n => n.data.id === clusterId);
+    if (!cluster) return;
+    const members = new Set(cluster.data.members || []);
+
+    // Filter full graph to only cluster members + their relationships
+    const nodes = fullGraphData.nodes.filter(n => members.has(n.data.id));
+    const edges = fullGraphData.edges.filter(
+      e => members.has(e.data.source) && members.has(e.data.target)
+    );
+
+    if (cy) cy.destroy();
+    const container = document.getElementById('full-graph');
+    cy = cytoscape({
+      container: container,
+      elements: [...nodes, ...edges],
+      style: makeStylesheet(),
+      minZoom: 0.2,
+      maxZoom: 4,
+      wheelSensitivity: 0.25,
+    });
+
+    cy.on('tap', 'node', evt => {
+      window.location.href = '/entry/' + evt.target.id() + '/';
+    });
+
+    runLayout('cose');
+
+    // Show breadcrumb/title
+    const titleEl = document.getElementById('graph-current-view');
+    if (titleEl) {
+      titleEl.textContent = `领域：${cluster.data.name}（${cluster.data.count} 个实体）`;
+      titleEl.classList.remove('hidden');
+    }
   }
 
   // Entry page subgraph
   const entryGraph = document.getElementById('entry-graph');
   if (entryGraph && typeof cytoscape !== 'undefined') {
-    const centerId = entryGraph.dataset.centerId;
-    initGraph(entryGraph, { centerId });
+    loadData().then(() => {
+      const centerId = entryGraph.dataset.centerId;
+      const members = new Set([centerId]);
+      const edges = [];
+      for (const edge of fullGraphData.edges) {
+        if (edge.data.source === centerId || edge.data.target === centerId) {
+          edges.push(edge);
+          members.add(edge.data.source);
+          members.add(edge.data.target);
+        }
+      }
+      const nodes = fullGraphData.nodes.filter(n => members.has(n.data.id));
+      if (nodes.length === 0) {
+        entryGraph.innerHTML = '<div class="empty-state">暂无关系数据</div>';
+        return;
+      }
+      cy = cytoscape({
+        container: entryGraph,
+        elements: [...nodes, ...edges],
+        style: makeStylesheet(),
+        minZoom: 0.2,
+        maxZoom: 3,
+        wheelSensitivity: 0.3,
+      });
+      cy.on('tap', 'node', evt => {
+        window.location.href = '/entry/' + evt.target.id() + '/';
+      });
+      cy.layout({ name: 'cose', padding: 20, nodeRepulsion: 4000, idealEdgeLength: 70, animate: true }).run();
+      setTimeout(() => {
+        const centerNode = cy.getElementById(centerId);
+        if (centerNode.length) {
+          centerNode.style({ 'width': 30, 'height': 30 });
+          cy.fit(centerNode.closedNeighborhood(), 60);
+        }
+      }, 650);
+    });
   }
 
   // Full graph page
   const fullGraph = document.getElementById('full-graph');
   if (fullGraph && typeof cytoscape !== 'undefined') {
-    initGraph(fullGraph, {});
+    loadData().then(() => {
+      initGraph(fullGraph, 'clusters');
 
-    // Domain filters
-    const domainFilters = document.querySelectorAll('#domain-filters input[type="checkbox"]');
-    domainFilters.forEach(cb => {
-      cb.addEventListener('change', () => {
-        const allCb = document.querySelector('#domain-filters input[value="all"]');
-        let selected;
-        if (cb.value === 'all' && cb.checked) {
-          domainFilters.forEach(c => { if (c.value !== 'all') c.checked = false; });
-          selected = ['all'];
-        } else {
-          if (allCb) allCb.checked = false;
-          selected = Array.from(domainFilters)
-            .filter(c => c.checked)
-            .map(c => c.value);
-          if (selected.length === 0) {
-            if (allCb) allCb.checked = true;
-            selected = ['all'];
-          }
-        }
-        initGraph(fullGraph, { filterDomains: selected });
+      // View toggles
+      document.getElementById('view-clusters')?.addEventListener('click', () => {
+        initGraph(fullGraph, 'clusters');
+        updateActiveButton('view-clusters');
       });
-    });
+      document.getElementById('view-full')?.addEventListener('click', () => {
+        if (fullGraphData.nodes.length > 1500) {
+          if (!confirm(`当前有 ${fullGraphData.nodes.length} 个节点，全图加载可能会卡顿。是否继续？`)) return;
+        }
+        initGraph(fullGraph, 'full');
+        updateActiveButton('view-full');
+      });
 
-    // Graph search
-    const graphSearch = document.getElementById('graph-search');
-    const graphSearchResults = document.getElementById('graph-search-results');
-    if (graphSearch) {
-      let searchData = { entries: [] };
-      fetch('/data/search-index.json')
-        .then(r => r.json())
-        .then(d => { searchData = d; })
-        .catch(() => {});
+      // Fit / reset
+      document.getElementById('fit-graph')?.addEventListener('click', () => cy && cy.fit());
+      document.getElementById('reset-graph')?.addEventListener('click', () => {
+        initGraph(fullGraph, 'clusters');
+        updateActiveButton('view-clusters');
+      });
 
-      graphSearch.addEventListener('input', () => {
-        const q = graphSearch.value.trim().toLowerCase();
-        if (!q || !graphSearchResults) return;
-        const matches = searchData.entries
-          .filter(e => (e.name || '').toLowerCase().includes(q) || e.id.toLowerCase().includes(q))
-          .slice(0, 10);
-        graphSearchResults.innerHTML = matches.map(e =>
-          `<div class="graph-search-result" data-id="${e.id}">${e.name}</div>`
-        ).join('');
+      // Graph search
+      const graphSearch = document.getElementById('graph-search');
+      const graphSearchResults = document.getElementById('graph-search-results');
+      if (graphSearch) {
+        let searchData = { entries: [] };
+        fetch('/data/search-index.json')
+          .then(r => r.json())
+          .then(d => { searchData = d; })
+          .catch(() => {});
 
-        graphSearchResults.querySelectorAll('.graph-search-result').forEach(el => {
-          el.addEventListener('click', () => {
-            const id = el.dataset.id;
-            if (window._cy) {
-              const node = window._cy.getElementById(id);
-              if (node.length) {
-                window._cy.fit(node, 60);
-                node.select();
+        graphSearch.addEventListener('input', () => {
+          const q = graphSearch.value.trim().toLowerCase();
+          if (!q || !graphSearchResults) return;
+          const matches = searchData.entries
+            .filter(e => (e.name || '').toLowerCase().includes(q) || e.id.toLowerCase().includes(q))
+            .slice(0, 10);
+          graphSearchResults.innerHTML = matches.map(e =>
+            `<div class="graph-search-result" data-id="${e.id}">${e.name}</div>`
+          ).join('');
+          graphSearchResults.querySelectorAll('.graph-search-result').forEach(el => {
+            el.addEventListener('click', () => {
+              const id = el.dataset.id;
+              if (currentMode === 'clusters') {
+                // Find which cluster contains this entity and expand it
+                const cluster = clusterData.nodes.find(n => (n.data.members || []).includes(id));
+                if (cluster) showClusterMembers(cluster.data.id);
               }
-            }
-            graphSearchResults.innerHTML = '';
+              if (cy) {
+                const node = cy.getElementById(id);
+                if (node.length) {
+                  cy.fit(node, 60);
+                  node.select();
+                }
+              }
+              graphSearchResults.innerHTML = '';
+            });
           });
         });
-      });
-    }
+      }
+    });
+  }
 
-    // Reset / fit buttons
-    const resetBtn = document.getElementById('reset-graph');
-    const fitBtn = document.getElementById('fit-graph');
-    if (resetBtn) resetBtn.addEventListener('click', () => initGraph(fullGraph, {}));
-    if (fitBtn && window._cy) fitBtn.addEventListener('click', () => window._cy.fit());
+  function updateActiveButton(id) {
+    document.querySelectorAll('.graph-view-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(id)?.classList.add('active');
   }
 })();

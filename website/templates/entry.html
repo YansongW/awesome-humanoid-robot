@@ -35,6 +35,26 @@
           </div>
         </div>
         {% endif %}
+        {% set verification_raw = entry.frontmatter.get('verification', 'draft') %}
+        {% if verification_raw is mapping %}
+          {% set verification_status = verification_raw.get('status', 'draft') %}
+          {% set verification_notes = verification_raw.get('notes', '') %}
+        {% else %}
+          {% set verification_status = verification_raw %}
+          {% set verification_notes = '' %}
+        {% endif %}
+        <div class="meta-group">
+          <span class="meta-label">审校</span>
+          <div class="meta-tags">
+            {% if verification_status == 'verified' %}
+            <span class="tag tag-verified" title="{{ verification_notes }}">已审校</span>
+            {% elif verification_status == 'pending' or verification_status == 'partially_verified' %}
+            <span class="tag tag-pending" title="{{ verification_notes }}">待审校</span>
+            {% else %}
+            <span class="tag tag-draft" title="{{ verification_notes }}">草稿</span>
+            {% endif %}
+          </div>
+        </div>
       </div>
     </header>
 
@@ -43,6 +63,69 @@
       <h2>摘要</h2>
       <p>{{ entry.summary }}</p>
     </section>
+    {% endif %}
+
+    {% set aliases = entry.frontmatter.get('aliases', {}) or entry.frontmatter.get('names', {}) %}
+    {% set sources = entry.frontmatter.get('sources', []) %}
+    {% set monograph_chapters = entry.frontmatter.get('monograph_chapters', []) %}
+    {% set related_entities = entry.frontmatter.get('related_entities', []) %}
+    {% if aliases or sources or monograph_chapters or related_entities %}
+    <div class="entry-info-grid">
+      {% if aliases %}
+      <div class="info-panel">
+        <h3>多语言名称</h3>
+        <ul>
+          {% for lang, name in aliases.items() if name and name != entry.name %}
+          <li><strong>{{ lang | upper }}：</strong>{{ name }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {% if sources %}
+      <div class="info-panel">
+        <h3>来源与参考</h3>
+        <ul>
+          {% for src in sources %}
+          <li>
+            {% if src is string %}
+            <a href="{{ src }}" target="_blank" rel="noopener">{{ src }}</a>
+            {% else %}
+            <a href="{{ src.url }}" target="_blank" rel="noopener">{{ src.title or src.url }}</a>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {% if monograph_chapters %}
+      <div class="info-panel">
+        <h3>专著章节</h3>
+        <ul>
+          {% for ch in monograph_chapters %}
+          <li>
+            <a class="monograph-link" href="https://github.com/YansongW/awesome-humanoid-robot-monograph/blob/main/docs/chapters/chapter-{{ '%02d' | format(ch.number | int) }}.md" target="_blank" rel="noopener">
+              {{ ch.title or "第 " ~ ch.number ~ " 章" }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      {% if related_entities %}
+      <div class="info-panel">
+        <h3>知识关联</h3>
+        <ul>
+          {% for rel in related_entities %}
+          <li>
+            <span class="rel-pill">{{ rel.relationship }}</span>
+            <a href="/entry/{{ rel.id }}/">{{ rel.id }}</a>
+            {% if rel.description and rel.description.zh %}<span class="rel-desc">{{ rel.description.zh }}</span>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
     {% endif %}
 
     {% if entry.body_html %}

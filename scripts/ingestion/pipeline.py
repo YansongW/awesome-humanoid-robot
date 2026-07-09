@@ -45,6 +45,8 @@ ADAPTER_MAP: dict[str, type] = {
     "nvidia_robotics_blog": NvidiaRssAdapter,
     "wechat_articles": WechatArticleAdapter,
     "humanoid_actuators_suppliers": ActuatorSuppliersAdapter,
+    "humanoid_workflow_entities": ActuatorSuppliersAdapter,
+    "humanoid_manufacturing_systems": ActuatorSuppliersAdapter,
     # industry / business / standards
     "robotics_tomorrow_rss": RoboticsTomorrowAdapter,
     "ieee_spectrum_robotics_rss": IeeeSpectrumRoboticsAdapter,

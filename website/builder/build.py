@@ -11,7 +11,7 @@ sys.path.insert(0, str(ROOT))
 
 from website.builder.loader import KGStore
 from website.builder.renderer import render_all
-from website.builder.search_index import build_relations_data, build_search_index
+from website.builder.search_index import build_cluster_data, build_relations_data, build_search_index
 
 
 def main() -> int:
@@ -27,12 +27,13 @@ def main() -> int:
     }
     print(f"Loaded {stats['entries']} entries, {stats['relationships']} relationships.")
 
-    print("Building search index and relation graph...")
+    print("Building search index, relation graph, and clusters...")
     search_index = build_search_index(store.entries)
     relations_data = build_relations_data(store.entries, store.relationships)
+    cluster_data = build_cluster_data(store.entries, store.relationships)
 
     print("Rendering static pages...")
-    render_all(store, search_index, relations_data, stats)
+    render_all(store, search_index, relations_data, cluster_data, stats)
 
     print("Build complete.")
     return 0
