@@ -8,11 +8,13 @@ source:
   name:
     en: Model Predictive Control
     zh: 模型预测控制
+    ko: ''
 target:
   id: ent_formalism_euler_lagrange_equations
   name:
     en: Euler-Lagrange Equations
     zh: 欧拉-拉格朗日方程
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 00_foundations

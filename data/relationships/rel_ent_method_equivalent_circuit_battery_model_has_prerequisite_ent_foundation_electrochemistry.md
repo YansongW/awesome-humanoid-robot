@@ -7,15 +7,18 @@ source:
   id: ent_method_equivalent_circuit_battery_model
   name:
     en: Equivalent-Circuit Battery Model
+    ko: ''
 target:
   id: ent_foundation_electrochemistry
   name:
     en: Electrochemistry
+    ko: ''
 domains:
   source_domain: 02_components
   target_domain: 00_foundations
 description:
-  en: ent_method_equivalent_circuit_battery_model has_prerequisite ent_foundation_electrochemistry for interpreting polarization and diffusion parameters.
+  en: ent_method_equivalent_circuit_battery_model has_prerequisite ent_foundation_electrochemistry for interpreting polarization
+    and diffusion parameters.
   zh: ent_method_equivalent_circuit_battery_model 以 ent_foundation_electrochemistry 为先修基础，以解释极化和扩散参数。
   ko: ent_method_equivalent_circuit_battery_model은 분극 및 확산 매개변수를 해석하기 위해 ent_foundation_electrochemistry를 선행 요건으로 한다.
 verification:

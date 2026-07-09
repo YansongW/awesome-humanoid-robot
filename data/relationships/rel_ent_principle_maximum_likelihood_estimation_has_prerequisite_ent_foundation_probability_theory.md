@@ -7,10 +7,12 @@ source:
   id: ent_principle_maximum_likelihood_estimation
   name:
     en: Maximum Likelihood Estimation
+    ko: ''
 target:
   id: ent_foundation_probability_theory
   name:
     en: Probability Theory
+    ko: ''
 domains:
   source_domain: 00_foundations
   target_domain: 00_foundations
@@ -27,7 +29,7 @@ verification:
 sources:
 - id: src_bishop_2006
   type: paper
-  title: 'Bishop, Pattern Recognition and Machine Learning'
+  title: Bishop, Pattern Recognition and Machine Learning
   url: https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/
   date: '2006'
   accessed_at: '2026-06-26'

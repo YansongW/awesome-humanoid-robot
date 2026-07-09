@@ -7,8 +7,8 @@ names:
   zh: RGB-D相机
   en: RGB-D Camera
 summary:
-  zh: RGB-D相机是人形机器人产业链中的component相关知识节点，详见Wiki第5章《传感与感知硬件》。
-  en: RGB-D相机 is a knowledge node related to component in the humanoid robot value chain. See Wiki Chapter 5.
+  zh: '!!! note "术语解释：头部感知、RGB-D 相机、宽视场、深度感知、头部姿态"'
+  en: 'RGB-D Camera: !!! note "术语解释：头部感知、RGB-D 相机、宽视场、深度感知、头部姿态"'
 domains:
 - 02_components
 layers:

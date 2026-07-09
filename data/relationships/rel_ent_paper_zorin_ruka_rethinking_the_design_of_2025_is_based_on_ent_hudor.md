@@ -13,6 +13,7 @@ target:
   id: ent_hudor
   name:
     en: HuDOR
+    ko: ''
 domains:
   source_domain: 02_components
   target_domain: 07_ai_models_algorithms
@@ -25,8 +26,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: Key contributions state: ''Demonstration
-    of teleoperation and imitation-learning (HuDOR) applications with RUKA.'''
+  notes: 'Proposed by AI extraction. Source citation: Key contributions state: ''Demonstration of teleoperation and imitation-learning
+    (HuDOR) applications with RUKA.'''
 sources:
 - id: src_001
   type: paper
@@ -35,6 +36,3 @@ sources:
   date: '2025'
   accessed_at: '2026-06-22'
 ---
-
-
-

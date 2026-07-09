@@ -6,8 +6,8 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-public%20v0.1.0-success" alt="Status: public v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-2016-green" alt="2016 entries" />
-  <img src="https://img.shields.io/badge/relationships-924-brightgreen" alt="924 relationships" />
+  <img src="https://img.shields.io/badge/entries-2100-green" alt="2100 entries" />
+  <img src="https://img.shields.io/badge/relationships-968-brightgreen" alt="968 relationships" />
   <img src="https://img.shields.io/badge/languages-zh%2Fen%2Fko-blue" alt="Languages: zh/en/ko" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
@@ -180,8 +180,8 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 
 | 지표 | 수량 |
 |------|------|
-| 프로덕션 엔티티 | 2,016 |
-| 관계 | 924 |
+| 프로덕션 엔티티 | 2,100 |
+| 관계 | 968 |
 | 온톨로지 영역 | 13 (12 + `00_foundations`) |
 | 엔티티 타입 | 24 |
 | Wiki 장 | 30 |

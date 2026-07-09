@@ -7,10 +7,12 @@ source:
   id: ent_tech_on_device_vla_inference
   name:
     en: On-Device VLA Inference
+    ko: ''
 target:
   id: ent_method_action_token_prediction
   name:
     en: Action Token Prediction
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 07_ai_models_algorithms

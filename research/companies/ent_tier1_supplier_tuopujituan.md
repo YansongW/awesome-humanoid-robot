@@ -7,8 +7,8 @@ names:
   zh: 拓普集团
   en: Tuopu Group
 summary:
-  zh: 拓普集团是人形机器人产业链中的tier1_supplier相关知识节点，详见Wiki第7章《供应商地图与供应链治理》。
-  en: 拓普集团 is a knowledge node related to tier1_supplier in the humanoid robot value chain. See Wiki Chapter 7.
+  zh: '| 拓普集团 | 中国浙江 | 铝合金/镁合金压铸、CNC | 汽车/机器人结构件 | 公开资料 |'
+  en: 'Tuopu Group: | 拓普集团 | 中国浙江 | 铝合金/镁合金压铸、CNC | 汽车/机器人结构件 | 公开资料 |'
 domains:
 - 02_components
 - 11_applications_markets

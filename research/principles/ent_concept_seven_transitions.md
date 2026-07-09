@@ -7,8 +7,8 @@ names:
   zh: 从0到1的七个跃迁
   en: Seven Transitions
 summary:
-  zh: 从0到1的七个跃迁是人形机器人产业链中的concept相关知识节点，详见Wiki第1章《人形机器人产业化的核心矛盾》。
-  en: 从0到1的七个跃迁 is a knowledge node related to concept in the humanoid robot value chain. See Wiki Chapter 1.
+  zh: '## 1.5 从 0 到 1 的七个跃迁'
+  en: 'Seven Transitions: ## 1.5 从 0 到 1 的七个跃迁'
 domains:
 - 11_applications_markets
 - 12_policy_regulation_ethics

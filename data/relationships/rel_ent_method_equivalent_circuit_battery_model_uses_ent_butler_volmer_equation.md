@@ -7,15 +7,18 @@ source:
   id: ent_method_equivalent_circuit_battery_model
   name:
     en: Equivalent-Circuit Battery Model
+    ko: ''
 target:
   id: ent_butler_volmer_equation
   name:
     en: Butler-Volmer Equation
+    ko: ''
 domains:
   source_domain: 02_components
   target_domain: 00_foundations
 description:
-  en: ent_method_equivalent_circuit_battery_model uses ent_butler_volmer_equation to parameterize charge-transfer polarization resistance.
+  en: ent_method_equivalent_circuit_battery_model uses ent_butler_volmer_equation to parameterize charge-transfer polarization
+    resistance.
   zh: ent_method_equivalent_circuit_battery_model 使用 ent_butler_volmer_equation 来参数化电荷转移极化电阻。
   ko: ent_method_equivalent_circuit_battery_model은 전하 이동 분극 저항을 매개변수화하기 위해 ent_butler_volmer_equation을 사용한다.
 verification:

@@ -6,8 +6,8 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-public%20v0.1.0-success" alt="Status: public v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-2016-green" alt="2016 entries" />
-  <img src="https://img.shields.io/badge/relationships-924-brightgreen" alt="924 relationships" />
+  <img src="https://img.shields.io/badge/entries-2100-green" alt="2100 entries" />
+  <img src="https://img.shields.io/badge/relationships-968-brightgreen" alt="968 relationships" />
   <img src="https://img.shields.io/badge/languages-zh%2Fen%2Fko-blue" alt="Languages: zh/en/ko" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
@@ -180,8 +180,8 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 
 | 指标 | 数量 |
 |------|------|
-| 生产环境实体 | 2,016 |
-| 关系 | 924 |
+| 生产环境实体 | 2,100 |
+| 关系 | 968 |
 | 本体领域 | 13（12 + `00_foundations`） |
 | 实体类型 | 24 |
 | Wiki 章节 | 30 |

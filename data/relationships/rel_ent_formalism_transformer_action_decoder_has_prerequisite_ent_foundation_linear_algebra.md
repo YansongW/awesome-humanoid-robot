@@ -7,10 +7,12 @@ source:
   id: ent_formalism_transformer_action_decoder
   name:
     en: Transformer Action Decoder Formalism
+    ko: ''
 target:
   id: ent_foundation_linear_algebra
   name:
     en: Linear Algebra
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 00_foundations
@@ -27,7 +29,7 @@ verification:
 sources:
 - id: src_vaswani_2017
   type: paper
-  title: 'Vaswani et al., Attention Is All You Need, NeurIPS 2017'
+  title: Vaswani et al., Attention Is All You Need, NeurIPS 2017
   url: https://arxiv.org/abs/1706.03762
   date: '2017-06-12'
   accessed_at: '2026-06-26'

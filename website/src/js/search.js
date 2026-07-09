@@ -21,10 +21,38 @@
   let currentResults = [];
   let displayedCount = 0;
   const PAGE_SIZE = 20;
-  const DEBOUNCE_MS = 200;
+  const DEBOUNCE_MS = 150;
   let debounceTimer = null;
 
+  /**
+   * Tokenize a query or text into searchable units.
+   * - Latin/number sequences are kept as whole tokens.
+   * - Chinese characters are emitted individually (client-side fallback)
+   *   and also as overlapping bigrams for better phrase matching.
+   */
   function tokenize(text) {
+    if (!text) return [];
+    const tokens = [];
+    const parts = text.toLowerCase().match(/[a-z0-9]+|[\u4e00-\u9fff]+/g) || [];
+    for (const part of parts) {
+      if (/^[a-z0-9]+$/.test(part)) {
+        tokens.push(part);
+      } else {
+        // Chinese: single chars + bigrams
+        const chars = Array.from(part);
+        for (const ch of chars) tokens.push(ch);
+        for (let i = 0; i < chars.length - 1; i++) {
+          tokens.push(chars[i] + chars[i + 1]);
+        }
+      }
+    }
+    return tokens;
+  }
+
+  /**
+   * Split English/CJK text into words/characters for token-set comparison.
+   */
+  function textTokens(text) {
     if (!text) return [];
     const tokens = [];
     const parts = text.toLowerCase().match(/[a-z0-9]+|[\u4e00-\u9fff]/g) || [];
@@ -38,39 +66,90 @@
     return tokens;
   }
 
+  function tokenSet(text) {
+    return new Set(textTokens(text));
+  }
+
   async function loadIndex() {
+    if (!resultsList) return;
+    resultsList.innerHTML = '<div class="loading-state">Loading search index…</div>';
     try {
       const res = await fetch(basePath + '/data/search-index.json');
       if (!res.ok) throw new Error('Failed to load search index');
       searchData = await res.json();
       init();
     } catch (err) {
-      if (resultsList) {
-        resultsList.innerHTML = `<div class="empty-state">${escapeHtml(err.message)}</div>`;
-      }
+      resultsList.innerHTML = `<div class="empty-state">${escapeHtml(err.message)}</div>`;
     }
   }
 
   function scoreEntry(e, q, qTokens) {
     let score = 0;
+    let strongMatches = 0;
     const name = (e.name || '').toLowerCase();
     const nameEn = (e.name_en || '').toLowerCase();
     const summary = (e.summary || '').toLowerCase();
+    const eid = (e.id || '').toLowerCase();
+    const type = (e.type || '').toLowerCase();
 
-    if (q && name.includes(q)) score += 100;
-    if (q && nameEn.includes(q)) score += 80;
-    if (q && e.id.toLowerCase().includes(q)) score += 70;
-    if (q && summary.includes(q)) score += 40;
+    const nameTokens = tokenSet(name);
+    const nameEnTokens = tokenSet(nameEn);
+    const summaryTokens = tokenSet(summary);
+    const idTokens = tokenSet(eid);
+    const typeTokens = tokenSet(type);
 
-    for (const t of qTokens) {
-      if (name.includes(t)) score += 10;
-      if (nameEn.includes(t)) score += 8;
-      if (e.id.toLowerCase().includes(t)) score += 5;
-      if (summary.includes(t)) score += 3;
-      if (e.type && e.type.toLowerCase().includes(t)) score += 4;
-      if (e.domains && e.domains.some(d => d.toLowerCase().includes(t))) score += 4;
-      if (e.layers && e.layers.some(l => l.toLowerCase().includes(t))) score += 3;
+    // Exact/prefix matches on name get the biggest boost.
+    if (q) {
+      if (name === q) { score += 500; strongMatches++; }
+      else if (name.startsWith(q)) { score += 250; strongMatches++; }
+      else if (nameEn === q) { score += 400; strongMatches++; }
+      else if (nameEn.startsWith(q)) { score += 200; strongMatches++; }
+      else if (eid === q) { score += 150; strongMatches++; }
+      else if (eid.startsWith(q)) { score += 100; strongMatches++; }
+
+      // Containment (only meaningful for longer queries or non-Latin)
+      if (name.includes(q)) { score += 100; strongMatches++; }
+      if (nameEn.includes(q)) { score += 80; strongMatches++; }
+      if (eid.includes(q)) { score += 60; strongMatches++; }
+      if (summary.includes(q)) { score += 40; }
     }
+
+    // Token overlap scoring. Prefer whole-token matches over substring matches
+    // by checking membership in pre-tokenized sets.
+    for (const t of qTokens) {
+      if (t.length === 0) continue;
+      const isLatin = /^[a-z0-9]+$/.test(t);
+      const tokenScore = isLatin ? 12 : 8;
+      const partialScore = isLatin ? 2 : 5;
+      let matched = false;
+
+      if (nameTokens.has(t)) { score += tokenScore; matched = true; strongMatches++; }
+      else if (isLatin && name.includes(t)) score += partialScore;
+
+      if (nameEnTokens.has(t)) { score += tokenScore - 2; matched = true; strongMatches++; }
+      else if (isLatin && nameEn.includes(t)) score += partialScore;
+
+      if (idTokens.has(t)) { score += tokenScore - 4; matched = true; strongMatches++; }
+      else if (isLatin && eid.includes(t)) score += partialScore;
+
+      if (summaryTokens.has(t)) { score += 4; matched = true; }
+      else if (summary.includes(t)) score += 2;
+
+      if (typeTokens.has(t)) { score += 5; matched = true; strongMatches++; }
+      if (e.domains && e.domains.some(d => d.toLowerCase().includes(t))) { score += 4; matched = true; strongMatches++; }
+      if (e.layers && e.layers.some(l => l.toLowerCase().includes(t))) { score += 3; matched = true; strongMatches++; }
+
+      // For Latin tokens, require at least one strong (whole-token) match somewhere
+      // to avoid substring pollution (e.g. "pid" matching "rapid").
+      if (isLatin && !matched) score -= 5;
+    }
+
+    // Slight boost for entities with summaries so stubs don't dominate.
+    if (summary.length > 20) score += 2;
+
+    // Require at least one strong match (name/id/type/domain/layer) unless the
+    // full query is found in the summary.
+    if (strongMatches === 0 && !(q && summary.includes(q))) return 0;
 
     return score;
   }
@@ -103,6 +182,24 @@
     }
   }
 
+  function highlight(text, q) {
+    if (!text || !q) return escapeHtml(text);
+    const tokens = tokenize(q).filter(t => t.length >= 2 || !/^[a-z0-9]$/.test(t));
+    if (tokens.length === 0) return escapeHtml(text);
+    // Sort by length desc so longer matches are replaced first.
+    tokens.sort((a, b) => b.length - a.length);
+    let html = escapeHtml(text);
+    for (const t of tokens) {
+      const re = new RegExp('(' + escapeRegex(t) + ')', 'gi');
+      html = html.replace(re, '<mark>$1</mark>');
+    }
+    return html;
+  }
+
+  function escapeRegex(s) {
+    return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }
+
   function renderResults(results, query, append = false) {
     if (!append) {
       if (resultsList) resultsList.innerHTML = '';
@@ -124,6 +221,7 @@
     const page = results.slice(displayedCount, displayedCount + PAGE_SIZE);
     displayedCount += page.length;
 
+    const q = query.trim().toLowerCase();
     for (const e of page) {
       const item = document.createElement('a');
       item.className = 'result-item';
@@ -136,8 +234,8 @@
           <span class="tag">${escapeHtml(e.type_label || e.type)}</span>
           <span>${escapeHtml(metaTags)}</span>
         </div>
-        <h3>${escapeHtml(e.name)}</h3>
-        <p>${escapeHtml(excerpt)}${hasMore ? '…' : ''}</p>
+        <h3>${highlight(e.name, q)} <small>${highlight(e.name_en || '', q)}</small></h3>
+        <p>${highlight(excerpt, q)}${hasMore ? '…' : ''}</p>
       `;
       if (resultsList) resultsList.appendChild(item);
     }

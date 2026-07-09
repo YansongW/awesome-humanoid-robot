@@ -7,10 +7,12 @@ source:
   id: ent_self_attention_equation
   name:
     en: Scaled Dot-Product Self-Attention
+    ko: ''
 target:
   id: ent_operator_softmax_function
   name:
     en: Softmax Function
+    ko: ''
 domains:
   source_domain: 00_foundations
   target_domain: 00_foundations
@@ -27,7 +29,7 @@ verification:
 sources:
 - id: src_vaswani_2017
   type: paper
-  title: 'Vaswani et al., Attention Is All You Need, NeurIPS 2017'
+  title: Vaswani et al., Attention Is All You Need, NeurIPS 2017
   url: https://arxiv.org/abs/1706.03762
   date: '2017-06-12'
   accessed_at: '2026-06-26'

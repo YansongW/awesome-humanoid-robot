@@ -7,8 +7,8 @@ names:
   zh: 逆运动学
   en: Inverse Kinematics
 summary:
-  zh: 逆运动学是人形机器人产业链中的method相关知识节点，详见Wiki第8章《人形机器人设计原理》。
-  en: 逆运动学 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 8.
+  zh: '"""基于 Jacobian 伪逆的数值逆运动学'
+  en: 'Inverse Kinematics: """基于 Jacobian 伪逆的数值逆运动学'
 domains:
 - 06_design_engineering
 layers:

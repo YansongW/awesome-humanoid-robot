@@ -13,6 +13,7 @@ target:
   id: ent_robot_system_unitree_g1
   name:
     en: Unitree G1 Humanoid Robot
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 02_components
@@ -25,10 +26,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: Abstract: ''We find these innovations
-    enable a real-world G1 humanoid robot to get up from two main situations that
-    we considered: a) lying face up and b) lying face down, both tested on flat, deformable,
-    slippery surfaces and slopes (e.g., sloppy grass and snowfield).'''
+  notes: 'Proposed by AI extraction. Source citation: Abstract: ''We find these innovations enable a real-world G1 humanoid
+    robot to get up from two main situations that we considered: a) lying face up and b) lying face down, both tested on flat,
+    deformable, slippery surfaces and slopes (e.g., sloppy grass and snowfield).'''
 sources:
 - id: src_001
   type: paper
@@ -37,5 +37,3 @@ sources:
   date: '2025'
   accessed_at: '2026-06-26'
 ---
-
-

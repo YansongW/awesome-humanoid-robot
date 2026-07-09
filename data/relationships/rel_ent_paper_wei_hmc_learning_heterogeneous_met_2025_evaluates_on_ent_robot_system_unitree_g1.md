@@ -13,12 +13,12 @@ target:
   id: ent_robot_system_unitree_g1
   name:
     en: Unitree G1 humanoid robot
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 02_components
 description:
-  en: HMC is validated on a real Unitree G1 humanoid across contact-rich loco-manipulation
-    tasks.
+  en: HMC is validated on a real Unitree G1 humanoid across contact-rich loco-manipulation tasks.
   zh: HMC 在真实的 Unitree G1 人形机器人上验证了接触密集型移动操作任务。
   ko: HMC는 접촉이 풍부한 로코 매니퓰레이션 작업에서 실제 Unitree G1 휴머노이드로 검증되었다.
 verification:
@@ -26,9 +26,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: Key contribution 4: ''Real-world
-    validation on a Unitree G1 humanoid across contact-rich tasks such as wiping,
-    bottle lifting, and drawer opening.'''
+  notes: 'Proposed by AI extraction. Source citation: Key contribution 4: ''Real-world validation on a Unitree G1 humanoid
+    across contact-rich tasks such as wiping, bottle lifting, and drawer opening.'''
 sources:
 - id: src_001
   type: paper
@@ -37,5 +36,3 @@ sources:
   date: '2025'
   accessed_at: '2026-06-26'
 ---
-
-

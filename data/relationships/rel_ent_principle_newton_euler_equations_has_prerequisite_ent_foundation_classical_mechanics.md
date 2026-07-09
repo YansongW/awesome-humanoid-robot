@@ -7,10 +7,12 @@ source:
   id: ent_principle_newton_euler_equations
   name:
     en: Newton-Euler Equations of Motion
+    ko: ''
 target:
   id: ent_foundation_classical_mechanics
   name:
     en: Classical Mechanics
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 00_foundations

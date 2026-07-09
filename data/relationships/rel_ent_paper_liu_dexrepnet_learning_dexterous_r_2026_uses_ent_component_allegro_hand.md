@@ -6,14 +6,14 @@ type: uses
 source:
   id: ent_paper_liu_dexrepnet_learning_dexterous_r_2026
   name:
-    en: 'DexRepNet++: Learning Dexterous Robotic Manipulation with Geometric and Spatial
-      Hand-Object Representations'
+    en: 'DexRepNet++: Learning Dexterous Robotic Manipulation with Geometric and Spatial Hand-Object Representations'
     zh: DexRepNet++：基于几何与空间手-物表征学习灵巧机器人操作
     ko: 'DexRepNet++: 기하학적 및 공간적 손-물체 표현을 활용한 능숙한 로봇 조작 학습'
 target:
   id: ent_component_allegro_hand
   name:
     en: Allegro Hand
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 02_components
@@ -26,16 +26,13 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-27'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: Abstract states grasp policies
-    are deployed to the real world; metadata lists Allegro Hand as a component.'
+  notes: 'Proposed by AI extraction. Source citation: Abstract states grasp policies are deployed to the real world; metadata
+    lists Allegro Hand as a component.'
 sources:
 - id: src_001
   type: paper
-  title: 'DexRepNet++: Learning Dexterous Robotic Manipulation with Geometric and
-    Spatial Hand-Object Representations'
+  title: 'DexRepNet++: Learning Dexterous Robotic Manipulation with Geometric and Spatial Hand-Object Representations'
   url: https://arxiv.org/abs/2602.21811
   date: '2026'
   accessed_at: '2026-06-27'
 ---
-
-

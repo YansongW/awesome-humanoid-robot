@@ -7,8 +7,8 @@ names:
   zh: 三花智控
   en: Sanhua Zhikong
 summary:
-  zh: 三花智控是人形机器人产业链中的tier1_supplier相关知识节点，详见Wiki第7章《供应商地图与供应链治理》。
-  en: 三花智控 is a knowledge node related to tier1_supplier in the humanoid robot value chain. See Wiki Chapter 7.
+  zh: '| 三花智控 | 中国浙江 | 精密铝件、热管理 | 机器人/汽车 | 公开资料 |'
+  en: 'Sanhua Zhikong: | 三花智控 | 中国浙江 | 精密铝件、热管理 | 机器人/汽车 | 公开资料 |'
 domains:
 - 02_components
 - 11_applications_markets

@@ -13,6 +13,7 @@ target:
   id: ent_component_leap_hand
   name:
     en: LEAP Hand
+    ko: ''
 domains:
   source_domain: 02_components
   target_domain: 02_components
@@ -25,9 +26,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: Key contributions state: ''Extensive
-    hardware evaluations showing superior reachability, durability, and strength versus
-    LEAP and Allegro hands.'''
+  notes: 'Proposed by AI extraction. Source citation: Key contributions state: ''Extensive hardware evaluations showing superior
+    reachability, durability, and strength versus LEAP and Allegro hands.'''
 sources:
 - id: src_001
   type: paper
@@ -36,7 +36,3 @@ sources:
   date: '2025'
   accessed_at: '2026-06-22'
 ---
-
-
-
-

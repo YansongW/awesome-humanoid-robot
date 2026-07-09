@@ -7,8 +7,9 @@ names:
   zh: 质心(COM)
   en: COM
 summary:
-  zh: 质心(COM)是人形机器人产业链中的principle相关知识节点，详见Wiki第8章《人形机器人设计原理》。
-  en: 质心(COM) is a knowledge node related to principle in the humanoid robot value chain. See Wiki Chapter 8.
+  zh: 本章在运动学、动力学、结构设计、安全、数字孪生与设计案例等维度进行了深化：引入旋量理论与指数积、对偶四元数、运动学校准、质心动量、浮动基动力学、接触动力学、捕获点、全身控制、FEA 与拓扑优化、晶格结构、螺栓与疲劳、功能安全、碰撞检测、急停回路、MBSE
+    与参数驱动协同；并通过 ASIMO、Atlas、Optimus、Digit、TALOS 及中国代表机型说明典型设计取舍
+  en: 'COM: 本章在运动学、动力学、结构设计、安全、数字孪生与设计案例等维度进行了深化：引入旋量理论与指数积、对偶四元数、运动学校准、质心动量、浮动基动力学、接触动力学、捕获点、全身控制、FEA 与拓扑优化、晶格结构、螺栓与疲劳、功能安全、碰撞检测、急停...'
 domains:
 - 06_design_engineering
 layers:

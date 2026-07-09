@@ -7,10 +7,12 @@ source:
   id: ent_algorithm_active_set_method
   name:
     en: Active-Set Method for Quadratic Programming
+    ko: ''
 target:
   id: ent_foundation_convex_optimization
   name:
     en: Convex Optimization
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 00_foundations

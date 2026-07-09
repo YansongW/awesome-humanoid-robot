@@ -13,6 +13,7 @@ target:
   id: ent_oem_unitree_robotics
   name:
     en: Unitree Robotics
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 02_components
@@ -25,8 +26,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: Metadata components list: ''Unitree
-    G1 humanoid robot''; abstract mentions ''real-world G1 humanoid robot''.'
+  notes: 'Proposed by AI extraction. Source citation: Metadata components list: ''Unitree G1 humanoid robot''; abstract mentions
+    ''real-world G1 humanoid robot''.'
 sources:
 - id: src_001
   type: paper
@@ -35,5 +36,3 @@ sources:
   date: '2025'
   accessed_at: '2026-06-26'
 ---
-
-

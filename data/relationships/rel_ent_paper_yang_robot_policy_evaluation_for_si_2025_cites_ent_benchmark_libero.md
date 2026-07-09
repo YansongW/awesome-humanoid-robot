@@ -13,6 +13,7 @@ target:
   id: ent_benchmark_libero
   name:
     en: LIBERO
+    ko: ''
 domains:
   source_domain: 10_evaluation_benchmarks
   target_domain: 10_evaluation_benchmarks
@@ -25,10 +26,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-27'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: Section I: Current robotic benchmarks
-    are characterized by specialized task suites with narrow focus, such as multi-task
-    reinforcement learning [7, 24], VLM-based robotic reasoning [25], and limited
-    testing tasks [16].'
+  notes: 'Proposed by AI extraction. Source citation: Section I: Current robotic benchmarks are characterized by specialized
+    task suites with narrow focus, such as multi-task reinforcement learning [7, 24], VLM-based robotic reasoning [25], and
+    limited testing tasks [16].'
 sources:
 - id: src_001
   type: paper
@@ -37,5 +37,3 @@ sources:
   date: '2025'
   accessed_at: '2026-06-27'
 ---
-
-

@@ -7,8 +7,8 @@ names:
   zh: 热仿真
   en: Thermal Simulation
 summary:
-  zh: 热仿真是人形机器人产业链中的method相关知识节点，详见Wiki第6章《计算、电源与热管理》。
-  en: 热仿真 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 6.
+  zh: '### 6.7.3 整机功率与热仿真思路'
+  en: 'Thermal Simulation: ### 6.7.3 整机功率与热仿真思路'
 domains:
 - 02_components
 - 08_software_middleware

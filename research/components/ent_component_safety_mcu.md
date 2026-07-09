@@ -7,8 +7,8 @@ names:
   zh: 安全MCU
   en: Safety MCU
 summary:
-  zh: 安全MCU是人形机器人产业链中的component相关知识节点，详见Wiki第6章《计算、电源与热管理》。
-  en: 安全MCU is a knowledge node related to component in the humanoid robot value chain. See Wiki Chapter 6.
+  zh: NVIDIA Jetson Thor、特斯拉 Dojo/FSD 等趋势表明，未来可能出现面向人形机器人感知-规划-控制一体化负载的专用 SoC，集成多路相机 ISP、高性能 NPU、功能安全 MCU 和高速网络接口，以单芯片满足头部/躯干计算需求
+  en: 'Safety MCU: NVIDIA Jetson Thor、特斯拉 Dojo/FSD 等趋势表明，未来可能出现面向人形机器人感知-规划-控制一体化负载的专用 SoC，集成多路相机 ISP、高性能 NPU、功能安全 MCU 和高速网络接口，以单芯片满足头部/躯干计...'
 domains:
 - 02_components
 - 08_software_middleware

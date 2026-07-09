@@ -7,10 +7,12 @@ source:
   id: ent_tech_on_device_vla_inference
   name:
     en: On-Device VLA Inference
+    ko: ''
 target:
   id: ent_paper_openvla_2024
   name:
     en: 'OpenVLA: An Open-Source Vision-Language-Action Model'
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 07_ai_models_algorithms

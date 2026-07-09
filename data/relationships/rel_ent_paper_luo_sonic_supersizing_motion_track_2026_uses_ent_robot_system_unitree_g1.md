@@ -13,12 +13,12 @@ target:
   id: ent_robot_system_unitree_g1
   name:
     en: Unitree G1
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 02_components
 description:
-  en: Deploys the trained policy on the 29-actuated-joint Unitree G1 humanoid and
-    reports sim-to-real results.
+  en: Deploys the trained policy on the 29-actuated-joint Unitree G1 humanoid and reports sim-to-real results.
   zh: 在具有 29 个驱动关节的 Unitree G1 人形机器人上部署训练策略并报告仿真到现实的迁移结果。
   ko: 29개 구동 관절을 가진 Unitree G1 휴머노이드에 학습된 정책을 배포하고 시뮬레이션-실제 전이 결과를 보고한다.
 verification:
@@ -26,9 +26,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: Components listed in metadata
-    include ''Unitree G1 humanoid (29 actuated joints)''; abstract notes real-world
-    deployment and robust sim-to-real transfer.'
+  notes: 'Proposed by AI extraction. Source citation: Components listed in metadata include ''Unitree G1 humanoid (29 actuated
+    joints)''; abstract notes real-world deployment and robust sim-to-real transfer.'
 sources:
 - id: src_001
   type: paper
@@ -37,5 +36,3 @@ sources:
   date: '2026'
   accessed_at: '2026-06-26'
 ---
-
-

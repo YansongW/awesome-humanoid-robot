@@ -108,21 +108,21 @@
         style: {
           'background-color': ele => getDomainColor(getPrimaryDomain(ele)),
           'label': 'data(name)',
-          'font-size': 13,
-          'font-weight': 600,
+          'font-size': 12,
+          'font-weight': 500,
           'color': t.text,
           'text-valign': 'bottom',
           'text-halign': 'center',
-          'text-margin-y': 6,
+          'text-margin-y': 8,
           'text-wrap': 'wrap',
-          'text-max-width': 140,
+          'text-max-width': 120,
           'text-background-color': t.bg,
-          'text-background-opacity': 0.92,
+          'text-background-opacity': 0.95,
           'text-background-shape': 'roundrectangle',
           'text-background-padding': 3,
           'text-border-color': t.border,
           'text-border-width': 1,
-          'text-border-opacity': 0.6,
+          'text-border-opacity': 0.5,
           'border-width': 2,
           'border-color': t.border,
           'transition-property': 'background-color, border-color, width, height',
@@ -132,14 +132,14 @@
       {
         selector: 'node[isCluster]',
         style: {
-          'width': ele => Math.min(110, 42 + Math.sqrt(ele.data('count') || 1) * 8),
-          'height': ele => Math.min(110, 42 + Math.sqrt(ele.data('count') || 1) * 8),
-          'font-size': 15,
+          'width': ele => Math.min(120, 48 + Math.sqrt(ele.data('count') || 1) * 9),
+          'height': ele => Math.min(120, 48 + Math.sqrt(ele.data('count') || 1) * 9),
+          'font-size': 14,
           'font-weight': 700,
           'text-valign': 'center',
           'text-halign': 'center',
           'text-margin-y': 0,
-          'text-max-width': 120,
+          'text-max-width': 110,
           'border-width': 3,
           'border-color': t.clusterBorder,
           'background-opacity': 0.95,
@@ -151,28 +151,28 @@
       {
         selector: 'node[!isCluster]',
         style: {
-          'width': 22,
-          'height': 22,
+          'width': 18,
+          'height': 18,
         },
       },
       {
         selector: 'edge',
         style: {
-          'width': 1.5,
+          'width': 1.2,
           'line-color': t.edge,
           'target-arrow-color': t.edge,
           'target-arrow-shape': 'triangle',
           'curve-style': 'bezier',
-          'arrow-scale': 0.8,
+          'arrow-scale': 0.7,
         },
       },
       {
         selector: 'edge[isClusterEdge]',
         style: {
-          'width': ele => Math.min(10, 1.5 + Math.log(ele.data('weight') || 1) * 1.8),
+          'width': ele => Math.min(10, 1.2 + Math.log(ele.data('weight') || 1) * 1.6),
           'line-color': t.clusterEdge,
           'target-arrow-color': t.clusterEdge,
-          'arrow-scale': 1,
+          'arrow-scale': 0.9,
         },
       },
       {
@@ -188,8 +188,8 @@
         style: {
           'border-width': 4,
           'border-color': t.accent,
-          'width': 28,
-          'height': 28,
+          'width': 26,
+          'height': 26,
         },
       },
       {
@@ -241,6 +241,29 @@
     tooltipEl.style.display = 'none';
   }
 
+  const activeDomains = new Set();
+
+  function getFilteredFullElements() {
+    const domainFilter = activeDomains.size > 0 ? activeDomains : null;
+    const nodes = fullGraphData.nodes.filter(n => {
+      if (!domainFilter) return true;
+      const d = getPrimaryDomainFromData(n.data);
+      return domainFilter.has(d);
+    });
+    const nodeIds = new Set(nodes.map(n => n.data.id));
+    const edges = fullGraphData.edges.filter(e => nodeIds.has(e.data.source) && nodeIds.has(e.data.target));
+    return { nodes, edges };
+  }
+
+  function getPrimaryDomainFromData(data) {
+    const domains = data.domains || [];
+    return domains[0] || 'unknown';
+  }
+
+  function showLoading(container) {
+    container.innerHTML = '<div class="graph-loading"><div class="spinner"></div><span>Loading graph…</span></div>';
+  }
+
   function initGraph(container, mode) {
     currentMode = mode || 'clusters';
     if (cy) {
@@ -252,7 +275,8 @@
     if (currentMode === 'clusters') {
       elements = [...clusterData.nodes, ...clusterData.edges];
     } else if (currentMode === 'full') {
-      elements = [...fullGraphData.nodes, ...fullGraphData.edges];
+      const filtered = getFilteredFullElements();
+      elements = [...filtered.nodes, ...filtered.edges];
     }
 
     if (elements.length === 0) {
@@ -268,6 +292,15 @@
       maxZoom: 4,
       wheelSensitivity: 0.2,
     });
+
+    // Only show labels for nodes with degree >= 2 in full graph to reduce clutter.
+    if (currentMode === 'full') {
+      cy.nodes().forEach(n => {
+        if (n.degree() < 2) {
+          n.style('label', '');
+        }
+      });
+    }
 
     cy.on('tap', 'node[isCluster]', evt => {
       const clusterId = evt.target.id();
@@ -299,7 +332,8 @@
 
     cy.on('tapstart drag', () => hideTooltip());
 
-    runLayout('cose');
+    const layoutName = currentMode === 'full' && elements.length > 500 ? 'cose' : 'cose';
+    runLayout(layoutName);
   }
 
   function showClusterMembers(clusterId) {
@@ -419,9 +453,35 @@
 
       document.getElementById('fit-graph')?.addEventListener('click', () => cy && cy.fit());
       document.getElementById('reset-graph')?.addEventListener('click', () => {
+        activeDomains.clear();
+        document.querySelectorAll('#domain-filters input[type="checkbox"]').forEach(cb => {
+          cb.checked = cb.value === 'all';
+        });
         initGraph(fullGraph, 'clusters');
         updateActiveButton('view-clusters');
       });
+
+      const domainFilters = document.getElementById('domain-filters');
+      if (domainFilters) {
+        domainFilters.addEventListener('change', () => {
+          const allCb = domainFilters.querySelector('input[value="all"]');
+          const checkboxes = Array.from(domainFilters.querySelectorAll('input[type="checkbox"]'));
+          const checked = checkboxes.filter(cb => cb.checked).map(cb => cb.value);
+
+          if (checked.includes('all')) {
+            activeDomains.clear();
+            checkboxes.filter(cb => cb.value !== 'all').forEach(cb => cb.checked = false);
+          } else {
+            activeDomains.clear();
+            checked.forEach(v => activeDomains.add(v));
+            if (allCb) allCb.checked = false;
+          }
+
+          if (currentMode === 'full') {
+            initGraph(fullGraph, 'full');
+          }
+        });
+      }
 
       const graphSearch = document.getElementById('graph-search');
       const graphSearchResults = document.getElementById('graph-search-results');

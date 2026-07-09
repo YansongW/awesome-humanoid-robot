@@ -8,11 +8,13 @@ source:
   name:
     en: Zero Moment Point
     zh: 零力矩点
+    ko: ''
 target:
   id: ent_formalism_euler_lagrange_equations
   name:
     en: Euler-Lagrange Equations
     zh: 欧拉-拉格朗日方程
+    ko: ''
 domains:
   source_domain: 06_design_engineering
   target_domain: 00_foundations

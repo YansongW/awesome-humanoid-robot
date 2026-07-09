@@ -7,15 +7,18 @@ source:
   id: ent_tech_li_battery_humanoid
   name:
     en: Lithium-Ion Battery System for Humanoid Robots
+    ko: ''
 target:
   id: ent_component_battery_management_system
   name:
     en: Battery Management System
+    ko: ''
 domains:
   source_domain: 02_components
   target_domain: 02_components
 description:
-  en: ent_tech_li_battery_humanoid integrates ent_component_battery_management_system for monitoring, protection, and cell balancing.
+  en: ent_tech_li_battery_humanoid integrates ent_component_battery_management_system for monitoring, protection, and cell
+    balancing.
   zh: ent_tech_li_battery_humanoid 集成 ent_component_battery_management_system 以实现监测、保护和电池均衡。
   ko: ent_tech_li_battery_humanoid은 모니터링, 보호 및 셀 균형을 위해 ent_component_battery_management_system을 통합한다.
 verification:

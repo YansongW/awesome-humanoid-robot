@@ -8,11 +8,13 @@ source:
   name:
     en: Field-Oriented Control
     zh: 磁场定向控制
+    ko: ''
 target:
   id: ent_component_rotary_actuator_2024
   name:
     en: Rotary Actuator
     zh: 旋转执行器
+    ko: ''
 domains:
   source_domain: 02_components
   target_domain: 02_components

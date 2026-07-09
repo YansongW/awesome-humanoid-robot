@@ -8,11 +8,13 @@ source:
   name:
     en: Field-Oriented Control
     zh: 磁场定向控制
+    ko: ''
 target:
   id: ent_method_pid_control
   name:
     en: PID Control
     zh: PID控制
+    ko: ''
 domains:
   source_domain: 02_components
   target_domain: 07_ai_models_algorithms

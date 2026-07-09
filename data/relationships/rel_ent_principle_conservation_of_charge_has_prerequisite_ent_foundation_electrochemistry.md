@@ -7,15 +7,18 @@ source:
   id: ent_principle_conservation_of_charge
   name:
     en: Conservation of Charge
+    ko: ''
 target:
   id: ent_foundation_electrochemistry
   name:
     en: Electrochemistry
+    ko: ''
 domains:
   source_domain: 00_foundations
   target_domain: 00_foundations
 description:
-  en: ent_principle_conservation_of_charge has_prerequisite ent_foundation_electrochemistry for understanding ionic and electronic transport balances.
+  en: ent_principle_conservation_of_charge has_prerequisite ent_foundation_electrochemistry for understanding ionic and electronic
+    transport balances.
   zh: ent_principle_conservation_of_charge 以 ent_foundation_electrochemistry 为先修基础，以理解离子和电子传输平衡。
   ko: ent_principle_conservation_of_charge는 이온 및 전자 전송 평형을 이해하기 위해 ent_foundation_electrochemistry를 선행 요건으로 한다.
 verification:

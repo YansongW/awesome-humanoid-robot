@@ -8,11 +8,13 @@ source:
   name:
     en: Model Predictive Control
     zh: 模型预测控制
+    ko: ''
 target:
   id: ent_qp_standard_form
   name:
     en: Quadratic Program Standard Form
     zh: 二次规划标准型
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 00_foundations
@@ -28,7 +30,7 @@ verification:
 sources:
 - id: src_borrelli_bemporad_morari_2017
   type: other
-  title: "F. Borrelli, A. Bemporad, and M. Morari, Predictive Control for Linear and Hybrid Systems, Cambridge, 2017"
+  title: F. Borrelli, A. Bemporad, and M. Morari, Predictive Control for Linear and Hybrid Systems, Cambridge, 2017
   url: https://doi.org/10.1017/9781139061799
   date: '2017-01-01'
   accessed_at: '2026-07-09'

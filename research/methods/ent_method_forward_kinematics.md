@@ -7,8 +7,8 @@ names:
   zh: 正运动学
   en: Forward Kinematics
 summary:
-  zh: 正运动学是人形机器人产业链中的method相关知识节点，详见Wiki第8章《人形机器人设计原理》。
-  en: 正运动学 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 8.
+  zh: Denavit-Hartenberg 参数法以连杆坐标系为媒介，把正运动学表示为一系列相邻坐标系变换的连乘
+  en: 'Forward Kinematics: Denavit-Hartenberg 参数法以连杆坐标系为媒介，把正运动学表示为一系列相邻坐标系变换的连乘'
 domains:
 - 06_design_engineering
 layers:

@@ -7,10 +7,12 @@ source:
   id: ent_formalism_inverse_dynamics_qp
   name:
     en: Inverse-Dynamics QP Formulation
+    ko: ''
 target:
   id: ent_equation_weighted_task_error_objective
   name:
     en: Weighted Task-Error Objective
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 00_foundations

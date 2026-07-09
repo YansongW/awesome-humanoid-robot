@@ -7,10 +7,12 @@ source:
   id: ent_operator_task_jacobian
   name:
     en: Task Jacobian
+    ko: ''
 target:
   id: ent_foundation_linear_algebra
   name:
     en: Linear Algebra
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 00_foundations

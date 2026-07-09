@@ -313,12 +313,14 @@ class Renderer:
         outgoing = self.store.outgoing.get(entry.id, [])
         incoming = self.store.incoming.get(entry.id, [])
         related = self.store.related_entries(entry.id)
+        entry_name_lookup = {e.id: (e.name or e.id) for e in self.store.entries.values()}
         html = template.render(**self._ctx(
             title=f"{entry.name} · {self.ui['site_title']}",
             entry=entry,
             outgoing=outgoing,
             incoming=incoming,
             related=related,
+            entry_name_lookup=entry_name_lookup,
         ))
         entry_dir = self.dist_dir / "entry" / entry.id
         ensure_dir(entry_dir)

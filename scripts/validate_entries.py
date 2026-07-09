@@ -188,7 +188,7 @@ def validate_cross_layer_relationships(
             generic = {
                 "cites", "verified_by", "conflicts_with", "is_version_of",
                 "is_alternative_to", "competes_with", "is_substitute_for",
-                "proposes", "evaluates_on", "uses", "is_based_on",
+                "proposes", "evaluates_on", "uses", "is_based_on", "mentions",
             }
             if rel_type not in allowed and rel_type not in generic:
                 msg = (

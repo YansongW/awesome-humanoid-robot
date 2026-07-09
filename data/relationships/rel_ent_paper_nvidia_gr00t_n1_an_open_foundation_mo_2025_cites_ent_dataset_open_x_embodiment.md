@@ -13,12 +13,12 @@ target:
   id: ent_dataset_open_x_embodiment
   name:
     en: Open X-Embodiment Dataset
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 09_data_datasets
 description:
-  en: GR00T N1 uses the Open X-Embodiment dataset as part of its heterogeneous training
-    data pyramid.
+  en: GR00T N1 uses the Open X-Embodiment dataset as part of its heterogeneous training data pyramid.
   zh: GR00T N1 将 Open X-Embodiment 数据集作为其异构训练数据金字塔的一部分使用。
   ko: GR00T N1은 이종 학습 데이터 피라미드의 일환으로 Open X-Embodiment 데이터셋을 사용한다.
 verification:
@@ -26,8 +26,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: Listed under datasets_used:
-    ''Open X-Embodiment''.'
+  notes: 'Proposed by AI extraction. Source citation: Listed under datasets_used: ''Open X-Embodiment''.'
 sources:
 - id: src_001
   type: paper
@@ -36,5 +35,3 @@ sources:
   date: '2025'
   accessed_at: '2026-06-26'
 ---
-
-

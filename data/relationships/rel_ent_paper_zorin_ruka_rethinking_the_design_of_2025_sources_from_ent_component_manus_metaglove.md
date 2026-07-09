@@ -13,12 +13,12 @@ target:
   id: ent_component_manus_metaglove
   name:
     en: MANUS Haptic Glove
+    ko: ''
 domains:
   source_domain: 02_components
   target_domain: 09_data_datasets
 description:
-  en: RUKA trains joint-to-actuator and fingertip-to-actuator models from MANUS glove
-    motion-capture data.
+  en: RUKA trains joint-to-actuator and fingertip-to-actuator models from MANUS glove motion-capture data.
   zh: RUKA 使用 MANUS 手套动作捕捉数据训练关节到执行器和指尖到执行器模型。
   ko: RUKA는 MANUS 장갑 모션 캡처 데이터에서 관절-액추에이터 및 손가락 끝-액추에이터 모델을 학습합니다.
 verification:
@@ -26,9 +26,9 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: Abstract: ''To address control
-    challenges, we learn joint-to-actuator and fingertip-to-actuator models from motion-capture
-    data collected by the MANUS glove, leveraging the hand''s morphological accuracy.'''
+  notes: 'Proposed by AI extraction. Source citation: Abstract: ''To address control challenges, we learn joint-to-actuator
+    and fingertip-to-actuator models from motion-capture data collected by the MANUS glove, leveraging the hand''s morphological
+    accuracy.'''
 sources:
 - id: src_001
   type: paper
@@ -37,7 +37,3 @@ sources:
   date: '2025'
   accessed_at: '2026-06-22'
 ---
-
-
-
-

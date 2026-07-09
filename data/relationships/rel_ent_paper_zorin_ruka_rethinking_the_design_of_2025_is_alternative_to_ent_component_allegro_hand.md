@@ -13,12 +13,12 @@ target:
   id: ent_component_allegro_hand
   name:
     en: Allegro Hand
+    ko: ''
 domains:
   source_domain: 02_components
   target_domain: 02_components
 description:
-  en: RUKA is evaluated against the Allegro hand on reachability, durability, and
-    strength.
+  en: RUKA is evaluated against the Allegro hand on reachability, durability, and strength.
   zh: RUKA 在可达性、耐久性和力量方面与 Allegro 手进行了评估比较。
   ko: RUKA는 도달성, 내구성 및 힘에 대해 Allegro 손과 평가 비교되었습니다.
 verification:
@@ -26,9 +26,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: Key contributions state: ''Extensive
-    hardware evaluations showing superior reachability, durability, and strength versus
-    LEAP and Allegro hands.'''
+  notes: 'Proposed by AI extraction. Source citation: Key contributions state: ''Extensive hardware evaluations showing superior
+    reachability, durability, and strength versus LEAP and Allegro hands.'''
 sources:
 - id: src_001
   type: paper
@@ -37,7 +36,3 @@ sources:
   date: '2025'
   accessed_at: '2026-06-22'
 ---
-
-
-
-

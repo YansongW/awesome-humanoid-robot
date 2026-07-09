@@ -7,10 +7,12 @@ source:
   id: ent_method_action_token_prediction
   name:
     en: Action Token Prediction
+    ko: ''
 target:
   id: ent_formalism_transformer_action_decoder
   name:
     en: Transformer Action Decoder Formalism
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 07_ai_models_algorithms

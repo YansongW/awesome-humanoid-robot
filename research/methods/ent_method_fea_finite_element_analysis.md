@@ -7,8 +7,8 @@ names:
   zh: 有限元分析(FEA)
   en: FEA
 summary:
-  zh: 有限元分析(FEA)是人形机器人产业链中的method相关知识节点，详见Wiki第8章《人形机器人设计原理》。
-  en: 有限元分析(FEA) is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 8.
+  zh: 有限元分析（Finite Element Analysis, FEA）是预测连杆、关节支架与壳体在载荷下应力、变形与模态的核心数值工具
+  en: 'FEA: 有限元分析（Finite Element Analysis, FEA）是预测连杆、关节支架与壳体在载荷下应力、变形与模态的核心数值工具'
 domains:
 - 06_design_engineering
 layers:

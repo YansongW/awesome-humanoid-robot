@@ -7,10 +7,12 @@ source:
   id: ent_equation_weighted_task_error_objective
   name:
     en: Weighted Task-Error Objective
+    ko: ''
 target:
   id: ent_operator_task_jacobian
   name:
     en: Task Jacobian
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 00_foundations

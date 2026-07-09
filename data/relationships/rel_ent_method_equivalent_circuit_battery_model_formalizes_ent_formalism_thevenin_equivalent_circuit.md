@@ -7,10 +7,12 @@ source:
   id: ent_method_equivalent_circuit_battery_model
   name:
     en: Equivalent-Circuit Battery Model
+    ko: ''
 target:
   id: ent_formalism_thevenin_equivalent_circuit
   name:
     en: Thevenin Equivalent Circuit
+    ko: ''
 domains:
   source_domain: 02_components
   target_domain: 00_foundations
@@ -27,7 +29,7 @@ verification:
 sources:
 - id: src_hu_2012_ecm_soh
   type: paper
-  title: 'A comparative study of equivalent circuit models for Li-ion batteries'
+  title: A comparative study of equivalent circuit models for Li-ion batteries
   url: https://doi.org/10.1016/j.jpowsour.2012.02.064
   date: '2012-07-15'
   accessed_at: '2026-06-26'

@@ -6,14 +6,14 @@ type: integrates
 source:
   id: ent_paper_deniz_identification_of_a_physics_ba_2026
   name:
-    en: Identification of a Physics-Based Electrical Power Consumption Model for the
-      Unitree G1 Humanoid Arm
+    en: Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm
     zh: Unitree G1人形机器人手臂基于物理的电力消耗模型辨识
     ko: Unitree G1 휴머노이드 팔의 물리 기반 전력 소비 모델 식별
 target:
   id: ent_component_battery_management_system
   name:
     en: Battery Management System
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 02_components
@@ -26,17 +26,13 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: Components or materials listed
-    in paper metadata: Battery Management System.'
+  notes: 'Proposed by AI extraction. Source citation: Components or materials listed in paper metadata: Battery Management
+    System.'
 sources:
 - id: src_001
   type: paper
-  title: Identification of a Physics-Based Electrical Power Consumption Model for
-    the Unitree G1 Humanoid Arm
+  title: Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm
   url: https://arxiv.org/abs/2606.15915
   date: '2026'
   accessed_at: '2026-06-22'
 ---
-
-
-

@@ -7,8 +7,8 @@ names:
   zh: 行星滚柱丝杠
   en: Planetary Roller Screw
 summary:
-  zh: 行星滚柱丝杠是人形机器人产业链中的component相关知识节点，详见Wiki第4章《执行器：人形机器人的“肌肉”》。
-  en: 行星滚柱丝杠 is a knowledge node related to component in the humanoid robot value chain. See Wiki Chapter 4.
+  zh: '- 线性关节（prismatic / linear joint）：提供直线位移，常用电机 + 滚珠丝杠 / 行星滚柱丝杠实现，常用于脊柱、膝/踝关节的推拉驱动'
+  en: 'Planetary Roller Screw: - 线性关节（prismatic / linear joint）：提供直线位移，常用电机 + 滚珠丝杠 / 行星滚柱丝杠实现，常用于脊柱、膝/踝关节的推拉驱动'
 domains:
 - 02_components
 layers:

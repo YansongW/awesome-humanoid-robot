@@ -743,16 +743,19 @@ a:hover { text-decoration: underline; }
 .entry-header h1 {
   margin: 0 0 0.4rem;
   font-family: var(--font-serif);
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.25;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 .entry-name-en {
   margin: 0 0 1.1rem;
   color: var(--color-text-muted);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-style: italic;
+  word-break: break-word;
 }
 
 .entry-meta-bar {
@@ -922,14 +925,18 @@ a:hover { text-decoration: underline; }
 
 .info-panel li {
   font-size: 0.95rem;
-  padding: 0.35rem 0;
+  padding: 0.45rem 0;
   border-bottom: 1px solid var(--color-border);
   color: var(--color-text-secondary);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .info-panel li:last-child { border-bottom: none; }
 
-.info-panel a { word-break: break-all; }
+.info-panel a { word-break: break-word; }
 
 .info-panel .empty {
   color: var(--color-text-muted);
@@ -1384,32 +1391,80 @@ a:hover { text-decoration: underline; }
 
 .result-item h3 {
   margin: 0 0 0.35rem;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
+  font-weight: 600;
   color: var(--color-text);
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.result-item h3 small {
+  display: inline-block;
+  margin-left: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+}
+
+.result-item mark {
+  background: var(--color-accent-soft);
+  color: var(--color-accent-hover);
+  padding: 0 0.15rem;
+  border-radius: 3px;
 }
 
 .result-item .result-meta {
   display: flex;
-  gap: 0.6rem;
-  margin-bottom: 0.45rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.6rem;
+  margin-bottom: 0.5rem;
   font-size: 0.8rem;
   color: var(--color-text-muted);
+}
+
+.result-item .result-meta .tag {
+  flex-shrink: 0;
 }
 
 .result-item p {
   margin: 0;
   font-size: 0.95rem;
   color: var(--color-text-secondary);
-  line-height: 1.5;
+  line-height: 1.55;
+  word-break: break-word;
 }
 
-.loading-state, .empty-state {
+.loading-state, .empty-state, .graph-loading {
   text-align: center;
   padding: 2.5rem;
   color: var(--color-text-muted);
   background: var(--color-surface-muted);
   border: 1px dashed var(--color-border-strong);
   border-radius: var(--radius);
+}
+
+.graph-loading {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-border-strong);
+  border-top-color: var(--color-accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .load-more {

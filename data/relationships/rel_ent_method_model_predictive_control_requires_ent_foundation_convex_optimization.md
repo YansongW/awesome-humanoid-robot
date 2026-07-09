@@ -8,11 +8,13 @@ source:
   name:
     en: Model Predictive Control
     zh: 模型预测控制
+    ko: ''
 target:
   id: ent_foundation_convex_optimization
   name:
     en: Convex Optimization
     zh: 凸优化
+    ko: ''
 domains:
   source_domain: 07_ai_models_algorithms
   target_domain: 00_foundations

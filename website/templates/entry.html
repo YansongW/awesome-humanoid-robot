@@ -123,7 +123,7 @@
           {% for rel in related_entities %}
           <li>
             <span class="rel-pill">{{ rel.relationship }}</span>
-            <a href="{{ bp }}/entry/{{ rel.id }}/">{{ rel.id }}</a>
+            <a href="{{ bp }}/entry/{{ rel.id }}/">{{ entry_name_lookup.get(rel.id, rel.id) }}</a>
             {% if rel.description %}
               {% set desc = rel.description.get(lang) or rel.description.get('zh') or rel.description.get('en', '') %}
               {% if desc %}<span class="rel-desc">{{ desc }}</span>{% endif %}

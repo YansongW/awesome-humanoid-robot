@@ -7,8 +7,8 @@ names:
   zh: 转矩密度
   en: Metric Torque Density
 summary:
-  zh: 转矩密度是人形机器人产业链中的concept相关知识节点，详见Wiki第4章《执行器：人形机器人的“肌肉”》。
-  en: 转矩密度 is a knowledge node related to concept in the humanoid robot value chain. See Wiki Chapter 4.
+  zh: '- 内置式永磁电机（IPMSM）：永磁体嵌入转子铁芯内部，利用磁阻转矩提高转矩密度，常用于牵引电机'
+  en: 'Metric Torque Density: - 内置式永磁电机（IPMSM）：永磁体嵌入转子铁芯内部，利用磁阻转矩提高转矩密度，常用于牵引电机'
 domains:
 - 02_components
 layers:

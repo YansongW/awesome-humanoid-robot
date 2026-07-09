@@ -6,14 +6,14 @@ type: uses
 source:
   id: ent_paper_yu_quasi_direct_drive_actuation_f_2020
   name:
-    en: Quasi-Direct Drive Actuation for a Lightweight Hip Exoskeleton with High Backdrivability
-      and High Bandwidth
+    en: Quasi-Direct Drive Actuation for a Lightweight Hip Exoskeleton with High Backdrivability and High Bandwidth
     zh: 用于高反驱性和高带宽轻量化髋关节外骨骼的准直驱驱动
     ko: 높은 역구동성 및 높은 대역폭을 가진 경량 고관절 외골격용 준직구동 구동
 target:
   id: ent_component_bldc_motor
   name:
     en: Brushless DC Motor
+    ko: ''
 domains:
   source_domain: 02_components
   target_domain: 02_components
@@ -26,18 +26,14 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: medium
-  notes: 'Proposed by AI extraction. Source citation: The lightweight exterior rotor
-    reduces rotary inertia and increases the torque-inertia ratio. Moreover, the customized
-    motor uses sintered Neodymium Iron Boron (NdFeB) permanent magnets, which can
-    reach 1.9 Tesla magnetic field intensity, as shown in Fig. 2 (b).'
+  notes: 'Proposed by AI extraction. Source citation: The lightweight exterior rotor reduces rotary inertia and increases
+    the torque-inertia ratio. Moreover, the customized motor uses sintered Neodymium Iron Boron (NdFeB) permanent magnets,
+    which can reach 1.9 Tesla magnetic field intensity, as shown in Fig. 2 (b).'
 sources:
 - id: src_001
   type: paper
-  title: Quasi-Direct Drive Actuation for a Lightweight Hip Exoskeleton with High
-    Backdrivability and High Bandwidth
+  title: Quasi-Direct Drive Actuation for a Lightweight Hip Exoskeleton with High Backdrivability and High Bandwidth
   url: https://arxiv.org/abs/2004.00467
   date: '2020'
   accessed_at: '2026-06-26'
 ---
-
-
