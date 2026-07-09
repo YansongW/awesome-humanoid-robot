@@ -1,10 +1,10 @@
-# 专著章节 ↔ 知识图谱映射
-# 本文件由 docs/MONOGRAPH-KG-SYNC.md 定义的工作流维护。
+# Wiki 章节 ↔ 知识图谱映射
+# 本文件由 docs/WIKI-KG-SYNC.md 定义的工作流维护。
 # 每一章列出对应的 domain、已有实体、待补充缺口与跨层链路。
 
 metadata:
   project: awesome-humanoid-robot
-  monograph_repo: awesome-humanoid-robot-monograph
+  wiki_repo: awesome-humanoid-robot-wiki
   last_sync: "2026-07-09"
   total_chapters: 30
 

@@ -9,6 +9,10 @@
   const resultsTitle = document.getElementById('results-title');
   const resultsCount = document.getElementById('results-count');
   const typeFilters = document.querySelectorAll('.filter-tag');
+  const section = document.querySelector('.search-results-section');
+  const basePath = section ? (section.dataset.basePath || '') : '';
+  const noResultsTemplate = section ? (section.dataset.noResults || 'No results for “{query}”.') : 'No results for “{query}”.';
+  const resultsCountTemplate = section ? (section.dataset.resultsCount || '{count} results') : '{count} results';
 
   let searchData = { entries: [], index: {} };
   let activeType = 'all';
@@ -31,12 +35,12 @@
 
   async function loadIndex() {
     try {
-      const res = await fetch('/data/search-index.json');
+      const res = await fetch(basePath + '/data/search-index.json');
       if (!res.ok) throw new Error('Failed to load search index');
       searchData = await res.json();
       init();
     } catch (err) {
-      resultsList.innerHTML = `<div class="empty-state">加载搜索索引失败：${err.message}</div>`;
+      resultsList.innerHTML = `<div class="empty-state">${escapeHtml(err.message)}</div>`;
     }
   }
 
@@ -76,6 +80,10 @@
     return sorted.map(([idx]) => searchData.entries[idx]);
   }
 
+  function formatCount(count) {
+    return resultsCountTemplate.replace('{count}', count);
+  }
+
   function renderResults(results, query, append = false) {
     if (!append) {
       resultsList.innerHTML = '';
@@ -83,8 +91,8 @@
     }
 
     if (results.length === 0) {
-      resultsList.innerHTML = `<div class="empty-state">未找到与 “${escapeHtml(query)}” 相关的实体。</div>`;
-      resultsCount.textContent = '0 个结果';
+      resultsList.innerHTML = `<div class="empty-state">${escapeHtml(noResultsTemplate.replace('{query}', query))}</div>`;
+      resultsCount.textContent = formatCount(0);
       return;
     }
 
@@ -94,11 +102,11 @@
     for (const e of page) {
       const item = document.createElement('a');
       item.className = 'result-item';
-      item.href = '/' + e.url;
+      item.href = basePath + '/' + e.url;
       item.innerHTML = `
         <div class="result-meta">
-          <span class="tag">${escapeHtml(e.type)}</span>
-          <span>${escapeHtml((e.domains || []).join(', '))}</span>
+          <span class="tag">${escapeHtml(e.type_label || e.type)}</span>
+          <span>${escapeHtml((e.domain_labels || e.domains || []).join(', '))}</span>
         </div>
         <h3>${escapeHtml(e.name)}</h3>
         <p>${escapeHtml((e.summary || '').slice(0, 200))}${(e.summary || '').length > 200 ? '…' : ''}</p>
@@ -106,7 +114,7 @@
       resultsList.appendChild(item);
     }
 
-    resultsCount.textContent = `${results.length} 个结果`;
+    resultsCount.textContent = formatCount(results.length);
   }
 
   function escapeHtml(text) {
@@ -127,10 +135,10 @@
     if (searchInput) searchInput.value = q;
 
     if (q) {
-      resultsTitle.textContent = `“${q}” 的搜索结果`;
+      resultsTitle.textContent = `“${q}”`;
       performSearch();
     } else {
-      resultsTitle.textContent = '全部实体';
+      resultsTitle.textContent = '';
       const all = searchData.entries.filter(e => activeType === 'all' || e.type === activeType);
       renderResults(all, '');
     }
@@ -142,7 +150,7 @@
         const url = new URL(window.location.href);
         url.searchParams.set('q', q);
         window.history.replaceState({}, '', url);
-        resultsTitle.textContent = q ? `“${q}” 的搜索结果` : '全部实体';
+        resultsTitle.textContent = q ? `“${q}”` : '';
         performSearch();
       });
     }

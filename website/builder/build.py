@@ -10,13 +10,17 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 sys.path.insert(0, str(ROOT))
 
 from website.builder.loader import KGStore
-from website.builder.renderer import render_all
+from website.builder.renderer import Renderer
 from website.builder.search_index import build_cluster_data, build_relations_data, build_search_index
+from website.builder.wiki_loader import build_wiki_pages
 
 
-def main() -> int:
-    print("Loading knowledge graph...")
-    store = KGStore()
+LANGUAGES = ["zh", "en", "ko"]
+
+
+def build_language(lang: str, dist_dir: Path, wiki_pages: list | None = None) -> None:
+    print(f"\nBuilding language: {lang}")
+    store = KGStore(lang=lang)
     store.load()
 
     stats = {
@@ -28,14 +32,27 @@ def main() -> int:
     print(f"Loaded {stats['entries']} entries, {stats['relationships']} relationships.")
 
     print("Building search index, relation graph, and clusters...")
-    search_index = build_search_index(store.entries)
+    search_index = build_search_index(store.entries, lang)
     relations_data = build_relations_data(store.entries, store.relationships)
     cluster_data = build_cluster_data(store.entries, store.relationships)
 
     print("Rendering static pages...")
-    render_all(store, search_index, relations_data, cluster_data, stats)
+    renderer = Renderer(store, lang, dist_dir)
+    renderer.render_all(search_index, relations_data, cluster_data, stats, wiki_pages)
 
-    print("Build complete.")
+
+def main() -> int:
+    print("Loading wiki pages...")
+    wiki_pages = build_wiki_pages()
+    print(f"Loaded {len(wiki_pages)} wiki pages.")
+
+    base_dist = Path(__file__).resolve().parent.parent / "dist"
+
+    for lang in LANGUAGES:
+        dist_dir = base_dist if lang == "zh" else base_dist / lang
+        build_language(lang, dist_dir, wiki_pages)
+
+    print("\nBuild complete.")
     return 0
 
 

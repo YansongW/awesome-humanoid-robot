@@ -1,33 +1,42 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="light">
+<html lang="{{ 'zh-CN' if lang == 'zh' else ('ko-KR' if lang == 'ko' else 'en-US') }}" data-theme="light">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}人形机器人知识图谱{% endblock %}</title>
-  <meta name="description" content="基于 Awesome Humanoid Robot 的全尺寸双足人形机器人知识图谱：从材料、零部件、制造到 AI、软件、市场与政策的系统性产业地图。">
+  <title>{% block title %}{{ ui.site_title }}{% endblock %}</title>
+  <meta name="description" content="{{ ui.site_subtitle }}">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
   {% block head %}{% endblock %}
 </head>
-<body>
+<body data-lang="{{ lang }}">
+  {% set bp = '' if lang == 'zh' else '/' + lang %}
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="/">
+      <a class="logo" href="{{ bp }}/">
         <span class="logo-icon">🤖</span>
         <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
       </a>
       <nav class="site-nav" aria-label="主导航">
-        <a href="/">首页</a>
-        <a href="/graph/">关系图谱</a>
-        <a href="/search/">搜索</a>
+        <a href="{{ bp }}/">{{ ui.nav_home }}</a>
+        <a href="{{ bp }}/graph/">{{ ui.nav_graph }}</a>
+        <a href="{{ bp }}/search/">{{ ui.nav_search }}</a>
+        <a href="{{ bp }}/wiki/">{{ ui.nav_wiki }}</a>
       </nav>
       <div class="header-actions">
-        <form class="search-form" action="/search/" method="get" role="search">
-          <input type="search" name="q" placeholder="搜索实体、论文、公司…" aria-label="搜索">
-          <button type="submit" aria-label="搜索">
+        <form class="search-form" action="{{ bp }}/search/" method="get" role="search">
+          <input type="search" name="q" placeholder="{{ ui.search_placeholder }}" aria-label="{{ ui.search_placeholder }}">
+          <button type="submit" aria-label="{{ ui.search_placeholder }}">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
           </button>
         </form>
+        <div class="language-switcher">
+          <select id="language-switcher" aria-label="Language">
+            {% for l in languages %}
+            <option value="{{ l.code }}" {% if l.code == lang %}selected{% endif %}>{{ l.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
         <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">
           <span class="theme-icon-light">☀️</span>
           <span class="theme-icon-dark">🌙</span>
@@ -47,12 +56,13 @@
     <div class="container footer-inner">
       <div class="footer-brand">
         <strong>Rounds Tech KG</strong>
-        <p>从矿山到市场的人形机器人知识图谱</p>
+        <p>{{ ui.site_subtitle }}</p>
       </div>
       <div class="footer-links">
-        <a href="/">首页</a>
-        <a href="/graph/">关系图谱</a>
-        <a href="/search/">搜索</a>
+        <a href="{{ bp }}/">{{ ui.nav_home }}</a>
+        <a href="{{ bp }}/graph/">{{ ui.nav_graph }}</a>
+        <a href="{{ bp }}/search/">{{ ui.nav_search }}</a>
+        <a href="{{ bp }}/wiki/">{{ ui.nav_wiki }}</a>
         <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
       </div>
       <div class="footer-copy">

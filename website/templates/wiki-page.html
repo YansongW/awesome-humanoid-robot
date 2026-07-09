@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}{{ page.title }} · Wiki · {{ ui.site_title }}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+{% endblock %}
+
+{% block content %}
+{% set bp = '' if lang == 'zh' else '/' + lang %}
+<div class="container">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="{{ bp }}/">{{ ui.nav_home }}</a>
+    <span>/</span>
+    <a href="{{ bp }}/wiki/">Wiki</a>
+    <span>/</span>
+    <span class="breadcrumb-current">{{ page.title }}</span>
+  </nav>
+
+  <article class="wiki-page">
+    <div class="wiki-body">
+      {{ page.body_html | safe }}
+    </div>
+  </article>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+<script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+<script>
+  (function () {
+    // Convert fenced mermaid code blocks produced by the Markdown parser into
+    // native mermaid containers so the diagram engine can render them.
+    document.querySelectorAll('.wiki-body pre code.language-mermaid').forEach(function (code) {
+      var pre = code.parentElement;
+      var figure = document.createElement('pre');
+      figure.className = 'mermaid';
+      figure.textContent = code.textContent;
+      pre.parentElement.replaceChild(figure, pre);
+    });
+    // Style terminology / example / note blockquotes as info panels.
+    document.querySelectorAll('.wiki-body blockquote').forEach(function (bq) {
+      var text = (bq.textContent || '').trim();
+      if (/^(术语解释框|生活实例|自然语言逻辑|Note|提示|注意|Note:|Tip:|Info:|Warning:)/i.test(text)) {
+        bq.classList.add('info-box');
+      }
+    });
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  })();
+</script>
+{% endblock %}

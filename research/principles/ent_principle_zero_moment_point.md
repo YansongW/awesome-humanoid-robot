@@ -45,7 +45,7 @@ sources:
   url: https://doi.org/10.1109/TSMCA.2004.832811
   date: '2004-09-01'
   accessed_at: '2026-07-09'
-monograph_chapters:
+wiki_chapters:
 - number: 8
   title: 第 8 章 人形机器人设计原理
 - number: 15

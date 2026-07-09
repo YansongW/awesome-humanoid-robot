@@ -4,16 +4,16 @@ from __future__ import annotations
 
 from typing import Any
 
-from website.builder.loader import Entry, tokenize
+from website.builder.loader import DOMAIN_LABELS, Entry, domain_label, tokenize, type_label
 
 
-def build_search_index(entries: dict[str, Entry]) -> dict[str, Any]:
+def build_search_index(entries: dict[str, Entry], lang: str = "zh") -> dict[str, Any]:
     """Build a compact inverted index for Fuse.js or custom search.
 
     Returns:
         {
             "entries": [
-                {"id": ..., "name": ..., "name_en": ..., "type": ..., "summary": ..., "domains": [...], "layers": [...], "url": ...},
+                {"id": ..., "name": ..., "name_en": ..., "type": ..., "summary": ..., "domains": [...], "domain_labels": [...], "layers": [...], "url": ...},
                 ...
             ],
             "index": {"token": [entry_index, ...], ...}
@@ -28,8 +28,10 @@ def build_search_index(entries: dict[str, Entry]) -> dict[str, Any]:
                 "name": e.name,
                 "name_en": e.name_en,
                 "type": e.type,
+                "type_label": type_label(e.type, lang),
                 "summary": e.summary,
                 "domains": e.domains,
+                "domain_labels": [domain_label(d, lang) for d in e.domains],
                 "layers": e.layers,
                 "url": e.url,
             }

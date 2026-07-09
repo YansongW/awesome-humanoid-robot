@@ -31,6 +31,13 @@
   let fullGraphData = null;
   let clusterData = null;
 
+  function getBasePath() {
+    const path = window.location.pathname;
+    const m = path.match(/^\/(en|ko)(?=\/)/);
+    return m ? '/' + m[1] : '';
+  }
+  const basePath = getBasePath();
+
   function getDomainColor(domain) {
     return COLORS[domain] || COLORS.default;
   }
@@ -49,6 +56,14 @@
       if (!relationsRes.ok || !clustersRes.ok) throw new Error('Failed to load graph data');
       fullGraphData = await relationsRes.json();
       clusterData = await clustersRes.json();
+      // Translate cluster labels if a language map is provided by the page.
+      const labels = window.DOMAIN_LABELS || {};
+      for (const node of clusterData.nodes) {
+        const id = node.data.id;
+        if (labels[id]) {
+          node.data.name = labels[id];
+        }
+      }
     } catch (err) {
       console.error(err);
       fullGraphData = { nodes: [], edges: [] };
@@ -199,7 +214,7 @@
 
     cy.on('tap', 'node[!isCluster]', evt => {
       const id = evt.target.id();
-      window.location.href = '/entry/' + id + '/';
+      window.location.href = basePath + '/entry/' + id + '/';
     });
 
     cy.on('mouseover', 'node', evt => {
@@ -236,7 +251,7 @@
     });
 
     cy.on('tap', 'node', evt => {
-      window.location.href = '/entry/' + evt.target.id() + '/';
+      window.location.href = basePath + '/entry/' + evt.target.id() + '/';
     });
 
     runLayout('cose');
@@ -244,7 +259,7 @@
     // Show breadcrumb/title
     const titleEl = document.getElementById('graph-current-view');
     if (titleEl) {
-      titleEl.textContent = `领域：${cluster.data.name}（${cluster.data.count} 个实体）`;
+      titleEl.textContent = `${cluster.data.name}（${cluster.data.count}）`;
       titleEl.classList.remove('hidden');
     }
   }
@@ -277,7 +292,7 @@
         wheelSensitivity: 0.3,
       });
       cy.on('tap', 'node', evt => {
-        window.location.href = '/entry/' + evt.target.id() + '/';
+        window.location.href = basePath + '/entry/' + evt.target.id() + '/';
       });
       cy.layout({ name: 'cose', padding: 20, nodeRepulsion: 4000, idealEdgeLength: 70, animate: true }).run();
       setTimeout(() => {

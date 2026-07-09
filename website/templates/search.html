@@ -1,36 +1,35 @@
 {% extends "base.html" %}
 
-{% block title %}搜索 · 人形机器人知识图谱{% endblock %}
-
 {% block content %}
+{% set bp = '' if lang == 'zh' else '/' + lang %}
 <div class="container">
   <section class="search-hero">
-    <h1>搜索知识图谱</h1>
-    <form id="search-form" class="big-search" action="/search/" method="get">
-      <input type="search" name="q" id="search-input" placeholder="输入关键词，例如：减速器、特斯拉、VLA…" autocomplete="off">
-      <button type="submit">搜索</button>
+    <h1>{{ ui.search_title }}</h1>
+    <form id="search-form" class="big-search" action="{{ bp }}/search/" method="get">
+      <input type="search" name="q" id="search-input" placeholder="{{ ui.search_input_placeholder }}" autocomplete="off">
+      <button type="submit">{{ ui.nav_search }}</button>
     </form>
     <div class="search-filters" id="search-filters">
-      <span class="filter-label">按类型筛选：</span>
+      <span class="filter-label">{{ ui.filter_by_type }}</span>
       <div class="filter-tags" id="type-filters">
-        <button class="filter-tag active" data-type="all">全部</button>
+        <button class="filter-tag active" data-type="all">{{ ui.all }}</button>
         {% for t in types %}
-        <button class="filter-tag" data-type="{{ t }}">{{ t }}</button>
+        <button class="filter-tag" data-type="{{ t }}">{{ t | type_label(lang) }}</button>
         {% endfor %}
       </div>
     </div>
   </section>
 
-  <section class="search-results-section">
+  <section class="search-results-section" data-base-path="{{ bp }}" data-no-results="{{ ui.no_results_for }}" data-results-count="{{ ui.results_count }}">
     <div class="results-header">
-      <h2 id="results-title">全部实体</h2>
+      <h2 id="results-title">{{ ui.results_title }}</h2>
       <span id="results-count" class="results-count"></span>
     </div>
     <div id="results-list" class="results-list">
-      <div class="loading-state">正在加载搜索索引…</div>
+      <div class="loading-state">{{ ui.loading }}</div>
     </div>
     <div id="load-more" class="load-more hidden">
-      <button>加载更多</button>
+      <button>{{ ui.load_more }}</button>
     </div>
   </section>
 </div>

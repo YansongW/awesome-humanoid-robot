@@ -1,35 +1,40 @@
 {% extends "base.html" %}
 
-{% block title %}{{ entry.name }} · 人形机器人知识图谱{% endblock %}
+{% block title %}{{ entry.name }} · {{ ui.site_title }}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+{% endblock %}
 
 {% block content %}
+{% set bp = '' if lang == 'zh' else '/' + lang %}
 <div class="container">
   <nav class="breadcrumb" aria-label="面包屑">
-    <a href="/">首页</a>
+    <a href="{{ bp }}/">{{ ui.nav_home }}</a>
     <span>/</span>
-    <a href="/search/?q={{ entry.type | urlencode }}">{{ entry.type }}</a>
+    <a href="{{ bp }}/search/?q={{ entry.type | urlencode }}">{{ entry.type | type_label(lang) }}</a>
     <span>/</span>
     <span class="breadcrumb-current">{{ entry.name }}</span>
   </nav>
 
   <article class="entry-page">
     <header class="entry-header">
-      <div class="entry-type-badge">{{ entry.type }}</div>
+      <div class="entry-type-badge">{{ entry.type | type_label(lang) }}</div>
       <h1>{{ entry.name }}</h1>
       {% if entry.name_en %}<p class="entry-name-en">{{ entry.name_en }}</p>{% endif %}
 
       <div class="entry-meta-bar">
         {% if entry.domains %}
         <div class="meta-group">
-          <span class="meta-label">领域</span>
+          <span class="meta-label">{{ ui.domains }}</span>
           <div class="meta-tags">
-            {% for d in entry.domains %}<span class="tag">{{ d }}</span>{% endfor %}
+            {% for d in entry.domains %}<span class="tag">{{ d | domain_label(lang) }}</span>{% endfor %}
           </div>
         </div>
         {% endif %}
         {% if entry.layers %}
         <div class="meta-group">
-          <span class="meta-label">层级</span>
+          <span class="meta-label">{{ ui.layers }}</span>
           <div class="meta-tags">
             {% for l in entry.layers %}<span class="tag tag-layer">{{ l }}</span>{% endfor %}
           </div>
@@ -44,14 +49,14 @@
           {% set verification_notes = '' %}
         {% endif %}
         <div class="meta-group">
-          <span class="meta-label">审校</span>
+          <span class="meta-label">{{ ui.verification }}</span>
           <div class="meta-tags">
             {% if verification_status == 'verified' %}
-            <span class="tag tag-verified" title="{{ verification_notes }}">已审校</span>
+            <span class="tag tag-verified" title="{{ verification_notes }}">{{ ui.verified }}</span>
             {% elif verification_status == 'pending' or verification_status == 'partially_verified' %}
-            <span class="tag tag-pending" title="{{ verification_notes }}">待审校</span>
+            <span class="tag tag-pending" title="{{ verification_notes }}">{{ ui.pending }}</span>
             {% else %}
-            <span class="tag tag-draft" title="{{ verification_notes }}">草稿</span>
+            <span class="tag tag-draft" title="{{ verification_notes }}">{{ ui.draft }}</span>
             {% endif %}
           </div>
         </div>
@@ -60,30 +65,30 @@
 
     {% if entry.summary %}
     <section class="entry-summary">
-      <h2>摘要</h2>
+      <h2>{{ ui.summary }}</h2>
       <p>{{ entry.summary }}</p>
     </section>
     {% endif %}
 
     {% set aliases = entry.frontmatter.get('aliases', {}) or entry.frontmatter.get('names', {}) %}
     {% set sources = entry.frontmatter.get('sources', []) %}
-    {% set monograph_chapters = entry.frontmatter.get('monograph_chapters', []) %}
+    {% set wiki_chapters = entry.frontmatter.get('monograph_chapters', []) %}
     {% set related_entities = entry.frontmatter.get('related_entities', []) %}
-    {% if aliases or sources or monograph_chapters or related_entities %}
+    {% if aliases or sources or wiki_chapters or related_entities %}
     <div class="entry-info-grid">
       {% if aliases %}
       <div class="info-panel">
-        <h3>多语言名称</h3>
+        <h3>{{ ui.aliases }}</h3>
         <ul>
-          {% for lang, name in aliases.items() if name and name != entry.name %}
-          <li><strong>{{ lang | upper }}：</strong>{{ name }}</li>
+          {% for lcode, name in aliases.items() if name and name != entry.name %}
+          <li><strong>{{ lcode | upper }}：</strong>{{ name }}</li>
           {% endfor %}
         </ul>
       </div>
       {% endif %}
       {% if sources %}
       <div class="info-panel">
-        <h3>来源与参考</h3>
+        <h3>{{ ui.sources }}</h3>
         <ul>
           {% for src in sources %}
           <li>
@@ -97,13 +102,13 @@
         </ul>
       </div>
       {% endif %}
-      {% if monograph_chapters %}
+      {% if wiki_chapters %}
       <div class="info-panel">
-        <h3>专著章节</h3>
+        <h3>{{ ui.wiki_chapters }}</h3>
         <ul>
-          {% for ch in monograph_chapters %}
+          {% for ch in wiki_chapters %}
           <li>
-            <a class="monograph-link" href="https://github.com/YansongW/awesome-humanoid-robot-monograph/blob/main/docs/chapters/chapter-{{ '%02d' | format(ch.number | int) }}.md" target="_blank" rel="noopener">
+            <a class="wiki-link" href="{{ bp }}/wiki/chapters/chapter-{{ '%02d' | format(ch.number | int) }}/">
               {{ ch.title or "第 " ~ ch.number ~ " 章" }}
             </a>
           </li>
@@ -113,13 +118,16 @@
       {% endif %}
       {% if related_entities %}
       <div class="info-panel">
-        <h3>知识关联</h3>
+        <h3>{{ ui.related_entities }}</h3>
         <ul>
           {% for rel in related_entities %}
           <li>
             <span class="rel-pill">{{ rel.relationship }}</span>
-            <a href="/entry/{{ rel.id }}/">{{ rel.id }}</a>
-            {% if rel.description and rel.description.zh %}<span class="rel-desc">{{ rel.description.zh }}</span>{% endif %}
+            <a href="{{ bp }}/entry/{{ rel.id }}/">{{ rel.id }}</a>
+            {% if rel.description %}
+              {% set desc = rel.description.get(lang) or rel.description.get('zh') or rel.description.get('en', '') %}
+              {% if desc %}<span class="rel-desc">{{ desc }}</span>{% endif %}
+            {% endif %}
           </li>
           {% endfor %}
         </ul>
@@ -136,17 +144,17 @@
 
     {% if outgoing or incoming %}
     <section class="entry-relations">
-      <h2>关系</h2>
+      <h2>{{ ui.relations }}</h2>
       <div class="relations-layout">
         {% if outgoing %}
         <div class="relations-column">
-          <h3>Outgoing</h3>
+          <h3>{{ ui.outgoing }}</h3>
           <ul class="relation-list">
             {% for rel in outgoing %}
             <li>
               <span class="rel-pill">{{ rel.type }}</span>
               <span class="rel-arrow">→</span>
-              <a href="/entry/{{ rel.target_id }}/">{{ rel.target_name }}</a>
+              <a href="{{ bp }}/entry/{{ rel.target_id }}/">{{ rel.target_name }}</a>
               {% if rel.description %}<span class="rel-desc">{{ rel.description }}</span>{% endif %}
             </li>
             {% endfor %}
@@ -155,11 +163,11 @@
         {% endif %}
         {% if incoming %}
         <div class="relations-column">
-          <h3>Incoming</h3>
+          <h3>{{ ui.incoming }}</h3>
           <ul class="relation-list">
             {% for rel in incoming %}
             <li>
-              <a href="/entry/{{ rel.source_id }}/">{{ rel.source_name }}</a>
+              <a href="{{ bp }}/entry/{{ rel.source_id }}/">{{ rel.source_name }}</a>
               <span class="rel-arrow">→</span>
               <span class="rel-pill">{{ rel.type }}</span>
               {% if rel.description %}<span class="rel-desc">{{ rel.description }}</span>{% endif %}
@@ -173,20 +181,20 @@
     {% endif %}
 
     <section class="entry-graph">
-      <h2>关系子图</h2>
+      <h2>{{ ui.subgraph }}</h2>
       <div id="entry-graph" class="cy-graph" data-center-id="{{ entry.id }}"></div>
-      <p class="graph-hint">拖拽节点可调整布局，滚轮缩放，点击查看实体详情。</p>
+      <p class="graph-hint">{{ ui.graph_hint }}</p>
     </section>
 
     {% if related %}
     <section class="entry-related">
-      <h2>相关实体</h2>
+      <h2>{{ ui.related_entities }}</h2>
       <div class="entry-grid small">
         {% for r in related %}
-        <a class="entry-card" href="/{{ r.url }}">
-          <span class="entry-type">{{ r.type }}</span>
+        <a class="entry-card" href="{{ bp }}/{{ r.url }}">
+          <span class="entry-type">{{ r.type | type_label(lang) }}</span>
           <h3>{{ r.name }}</h3>
-          <p>{{ r.summary[:100] }}{% if r.summary | length > 100 %}…{% endif %}</p>
+          <p>{{ r.summary | plain_summary(100) }}</p>
         </a>
         {% endfor %}
       </div>
@@ -197,6 +205,9 @@
 {% endblock %}
 
 {% block scripts %}
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
 <script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
 <script src="/js/graph.js"></script>
 {% endblock %}

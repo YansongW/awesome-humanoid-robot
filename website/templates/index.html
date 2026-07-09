@@ -1,36 +1,37 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% set bp = '' if lang == 'zh' else '/' + lang %}
 <section class="hero">
   <div class="container">
     <div class="hero-content">
-      <h1>人形机器人：从矿山到市场的知识图谱</h1>
+      <h1>{{ ui.hero_title }}</h1>
       <p class="hero-subtitle">
-        系统梳理人形机器人全产业链——材料、零部件、制造、设计、AI、软件、数据、测试、量产、应用、市场与政策。
-        覆盖 <strong>{{ stats.entries }}</strong> 个实体、<strong>{{ stats.relationships }}</strong> 条关系、<strong>{{ stats.domains }}</strong> 个领域。
+        {{ ui.hero_subtitle }}
+        {{ ui.graph_summary.format(entries=stats.entries, relationships=stats.relationships) }}
       </p>
       <div class="hero-search">
-        <form action="/search/" method="get">
-          <input type="search" name="q" placeholder="搜索公司、论文、零部件、标准…" autocomplete="off" autofocus>
-          <button type="submit">搜索</button>
+        <form action="{{ bp }}/search/" method="get">
+          <input type="search" name="q" placeholder="{{ ui.search_input_placeholder }}" autocomplete="off" autofocus>
+          <button type="submit">{{ ui.nav_search }}</button>
         </form>
       </div>
       <div class="hero-stats">
         <div class="stat-card">
           <span class="stat-number">{{ stats.entries }}</span>
-          <span class="stat-label">实体</span>
+          <span class="stat-label">{{ ui.stat_entries }}</span>
         </div>
         <div class="stat-card">
           <span class="stat-number">{{ stats.relationships }}</span>
-          <span class="stat-label">关系</span>
+          <span class="stat-label">{{ ui.stat_relationships }}</span>
         </div>
         <div class="stat-card">
           <span class="stat-number">{{ stats.types }}</span>
-          <span class="stat-label">实体类型</span>
+          <span class="stat-label">{{ ui.stat_types }}</span>
         </div>
         <div class="stat-card">
           <span class="stat-number">{{ stats.domains }}</span>
-          <span class="stat-label">领域</span>
+          <span class="stat-label">{{ ui.stat_domains }}</span>
         </div>
       </div>
     </div>
@@ -39,21 +40,21 @@
 
 <section class="section">
   <div class="container">
-    <div class="monograph-banner">
+    <div class="wiki-banner">
       <div>
-        <strong>📖 专著项目</strong>
-        <p>本知识图谱是《人形机器人：从矿山到市场的知识图谱》专著的底层数据系统，按“物理层 → 感知层 → 决策层 → 执行层 → 系统层 → 产业层”展开。</p>
+        <strong>📖 {{ ui.wiki_banner_title }}</strong>
+        <p>{{ ui.wiki_banner_text }}</p>
       </div>
-      <a href="https://github.com/YansongW/awesome-humanoid-robot-monograph" target="_blank" rel="noopener" class="btn btn-secondary">阅读专著目录</a>
+      <a href="{{ bp }}/wiki/" class="btn btn-secondary">{{ ui.read_wiki_toc }}</a>
     </div>
     <div class="section-header">
-      <h2>按领域探索</h2>
-      <a href="/search/" class="link-arrow">查看全部 →</a>
+      <h2>{{ ui.explore_by_domain }}</h2>
+      <a href="{{ bp }}/search/" class="link-arrow">{{ ui.view_all }} →</a>
     </div>
     <div class="domain-grid">
       {% for d in domains %}
-      <a class="domain-card" href="/search/?q={{ d | urlencode }}" style="--domain-color: {{ domain_colors[d] }}">
-        <span class="domain-name">{{ d }}</span>
+      <a class="domain-card" href="{{ bp }}/search/?q={{ d | urlencode }}" style="--domain-color: {{ domain_colors[d] }}">
+        <span class="domain-name">{{ domain_label(d, lang) }}</span>
         <span class="domain-arrow">→</span>
       </a>
       {% endfor %}
@@ -64,11 +65,11 @@
 <section class="section section-muted">
   <div class="container">
     <div class="section-header">
-      <h2>按类型浏览</h2>
+      <h2>{{ ui.explore_by_type }}</h2>
     </div>
     <div class="type-cloud">
       {% for t in types %}
-      <a class="type-tag" href="/search/?q={{ t | urlencode }}">{{ t }}</a>
+      <a class="type-tag" href="{{ bp }}/search/?q={{ t | urlencode }}">{{ t | type_label(lang) }}</a>
       {% endfor %}
     </div>
   </div>
@@ -77,15 +78,15 @@
 <section class="section">
   <div class="container">
     <div class="section-header">
-      <h2>精选实体</h2>
+      <h2>{{ ui.featured_entities }}</h2>
     </div>
     <div class="entry-grid">
       {% for entry in featured %}
-      <a class="entry-card" href="/{{ entry.url }}">
-        <span class="entry-type">{{ entry.type }}</span>
+      <a class="entry-card" href="{{ bp }}/{{ entry.url }}">
+        <span class="entry-type">{{ entry.type | type_label(lang) }}</span>
         <h3>{{ entry.name }}</h3>
-        <p>{{ entry.summary[:120] }}{% if entry.summary | length > 120 %}…{% endif %}</p>
-        <span class="entry-meta">{{ entry.domains | join(', ') }}</span>
+        <p>{{ entry.summary | plain_summary(120) }}</p>
+        <span class="entry-meta">{{ entry.domains | map('domain_label', lang) | reject('equalto', '') | join(', ') }}</span>
       </a>
       {% endfor %}
     </div>
@@ -96,10 +97,10 @@
   <div class="container">
     <div class="cta-card">
       <div class="cta-content">
-        <h2>探索完整关系图谱</h2>
-        <p>可视化浏览实体之间的供应链、技术依赖与跨层关系。</p>
+        <h2>{{ ui.graph_title }}</h2>
+        <p>{{ ui.hero_subtitle }}</p>
       </div>
-      <a href="/graph/" class="btn btn-primary">打开关系图谱</a>
+      <a href="{{ bp }}/graph/" class="btn btn-primary">{{ ui.open_graph }}</a>
     </div>
   </div>
 </section>

@@ -46,7 +46,7 @@ sources:
   url: https://doi.org/10.1002/9781118526030
   date: '2013-01-01'
   accessed_at: '2026-07-09'
-monograph_chapters:
+wiki_chapters:
 - number: 4
   title: 第 4 章 执行器：人形机器人的“肌肉”
 related_entities:

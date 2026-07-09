@@ -1,0 +1,67 @@
+/* 自定义样式 */
+
+/* 术语解释框样式 */
+.md-typeset blockquote {
+  border-left: 4px solid var(--md-primary-fg-color);
+  background-color: var(--md-code-bg-color);
+  padding: 0.8rem 1rem;
+  margin: 1rem 0;
+  border-radius: 0 0.3rem 0.3rem 0;
+}
+
+.md-typeset blockquote p:first-child {
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.md-typeset blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* 表格样式优化 */
+.md-typeset table {
+  font-size: 0.85rem;
+}
+
+.md-typeset th {
+  font-weight: 600;
+  background-color: var(--md-primary-fg-color--light);
+}
+
+/* 章节标题样式 */
+.md-typeset h1 {
+  font-weight: 700;
+  border-bottom: 2px solid var(--md-primary-fg-color);
+  padding-bottom: 0.5rem;
+}
+
+.md-typeset h2 {
+  font-weight: 600;
+  margin-top: 2.5rem;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+/* Mermaid 图表居中 */
+.mermaid {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+/* 首页大标题 */
+.home-title {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.home-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--md-default-fg-color--light);
+  margin-bottom: 2rem;
+}

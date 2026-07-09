@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Wiki · {{ ui.site_title }}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+{% endblock %}
+
+{% block content %}
+{% set bp = '' if lang == 'zh' else '/' + lang %}
+<div class="container">
+  <section class="hero hero-compact">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Wiki</h1>
+        <p class="hero-subtitle">{{ ui.wiki_banner_text }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="wiki-page-list">
+        {% for page in wiki_pages %}
+        <a class="wiki-list-item" href="{{ bp }}/{{ page.url }}/">
+          <h3>{{ page.title }}</h3>
+          <span class="wiki-list-arrow">→</span>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+<script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad: true});</script>
+{% endblock %}

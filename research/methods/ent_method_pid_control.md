@@ -45,7 +45,7 @@ sources:
   url: https://doi.org/10.1002/9780470544162
   date: '2010-01-01'
   accessed_at: '2026-07-09'
-monograph_chapters:
+wiki_chapters:
 - number: 14
   title: 第 14 章 机器人控制基础
 related_entities:

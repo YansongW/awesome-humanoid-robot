@@ -1,53 +1,50 @@
 {% extends "base.html" %}
 
-{% block title %}关系图谱 · 人形机器人知识图谱{% endblock %}
-
 {% block content %}
+{% set bp = '' if lang == 'zh' else '/' + lang %}
 <div class="graph-page">
   <aside class="graph-sidebar">
     <div class="sidebar-header">
-      <h1>关系图谱</h1>
-      <p>探索 {{ stats.entries if stats else '' }} 个实体与 {{ stats.relationships if stats else '' }} 条关系</p>
+      <h1>{{ ui.graph_title }}</h1>
+      <p>{{ ui.graph_summary.format(entries=stats.entries if stats else 0, relationships=stats.relationships if stats else 0) }}</p>
     </div>
     <div class="sidebar-section">
-      <h3>搜索实体</h3>
-      <input type="search" id="graph-search" placeholder="定位到实体…" autocomplete="off">
+      <h3>{{ ui.search_entities }}</h3>
+      <input type="search" id="graph-search" placeholder="{{ ui.search_entities }}…" autocomplete="off">
       <div id="graph-search-results" class="graph-search-results"></div>
     </div>
     <div class="sidebar-section">
-      <h3>按领域过滤</h3>
+      <h3>{{ ui.filter_by_domain }}</h3>
       <div class="domain-filter-list" id="domain-filters">
-        <label><input type="checkbox" value="all" checked> 全部</label>
+        <label><input type="checkbox" value="all" checked> {{ ui.all }}</label>
         {% for d in domains %}
-        <label><input type="checkbox" value="{{ d }}"> {{ d }}</label>
+        <label><input type="checkbox" value="{{ d }}"> {{ d | domain_label(lang) }}</label>
         {% endfor %}
       </div>
     </div>
     <div class="sidebar-section">
-      <h3>图例</h3>
+      <h3>{{ ui.legend }}</h3>
       <ul class="graph-legend" id="graph-legend">
-        <li><span class="legend-dot" style="background:#3498db"></span> 公司/组织</li>
-        <li><span class="legend-dot" style="background:#2ecc71"></span> 零部件</li>
-        <li><span class="legend-dot" style="background:#e74c3c"></span> 技术/方法</li>
-        <li><span class="legend-dot" style="background:#9b59b6"></span> 论文/数据集</li>
-        <li><span class="legend-dot" style="background:#f39c12"></span> 其他</li>
+        {% for d in domains %}
+        <li><span class="legend-dot" style="background:{{ domain_color(d) }}"></span> {{ d | domain_label(lang) }}</li>
+        {% endfor %}
       </ul>
     </div>
     <div class="sidebar-actions">
-      <button class="btn btn-secondary" id="reset-graph">重置视图</button>
-      <button class="btn btn-secondary" id="fit-graph">适配窗口</button>
+      <button class="btn btn-secondary" id="reset-graph">{{ ui.reset_view }}</button>
+      <button class="btn btn-secondary" id="fit-graph">{{ ui.fit_window }}</button>
     </div>
   </aside>
   <main class="graph-main">
     <div class="graph-toolbar">
-      <div class="graph-view-title" id="graph-current-view">领域聚类视图</div>
+      <div class="graph-view-title" id="graph-current-view">{{ ui.cluster_view }}</div>
       <div class="graph-view-switcher">
-        <button class="graph-view-btn active" id="view-clusters" type="button" title="按领域聚合，流畅概览">
-          <span>聚类视图</span>
-          <small class="view-hint">推荐</small>
+        <button class="graph-view-btn active" id="view-clusters" type="button" title="{{ ui.cluster_view }}">
+          <span>{{ ui.cluster_view }}</span>
+          <small class="view-hint">{{ ui.recommended }}</small>
         </button>
-        <button class="graph-view-btn" id="view-full" type="button" title="加载全部节点与关系">
-          <span>全图视图</span>
+        <button class="graph-view-btn" id="view-full" type="button" title="{{ ui.full_view }}">
+          <span>{{ ui.full_view }}</span>
         </button>
       </div>
     </div>
@@ -58,6 +55,13 @@
 {% endblock %}
 
 {% block scripts %}
+<script>
+window.DOMAIN_LABELS = {
+  {% for d in domains %}
+  "{{ d }}": "{{ d | domain_label(lang) }}",
+  {% endfor %}
+};
+</script>
 <script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
 <script src="/js/graph.js"></script>
 {% endblock %}

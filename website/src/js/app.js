@@ -26,6 +26,23 @@
     });
   }
 
+  // Language switcher
+  const langSwitcher = document.getElementById('language-switcher');
+  if (langSwitcher) {
+    const currentLang = document.body.getAttribute('data-lang') || 'zh';
+    langSwitcher.value = currentLang;
+    langSwitcher.addEventListener('change', () => {
+      const target = langSwitcher.value;
+      if (target === currentLang) return;
+      localStorage.setItem('rtkg-lang', target);
+      const path = window.location.pathname;
+      // Strip existing language prefix
+      const clean = path.replace(/^\/(en|ko)(?=\/)/, '') || '/';
+      const newPath = target === 'zh' ? clean : '/' + target + clean;
+      window.location.href = newPath;
+    });
+  }
+
   // Mobile menu toggle (placeholder for future expansion)
   const mobileToggle = document.getElementById('mobile-menu-toggle');
   if (mobileToggle) {
