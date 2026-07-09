@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 可制造性设计(DFM)
-  en: DFM
+  en: Design for Manufacturing (DFM)
+  zh: 可制造性设计（DFM）
+  ko: 제조 용이성 설계(DFM)
 summary:
-  zh: 可制造性设计(DFM)是人形机器人产业链中的method相关知识节点，详见Wiki第10章《制造工艺体系》。
-  en: 可制造性设计(DFM) is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 10.
+  en: An engineering practice of designing parts and assemblies so that they are easy, repeatable, and cost-effective to manufacture
+    at scale.
+  zh: 使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。
+  ko: 부품과 조립체를 쉽고 재현 가능하며 비용 효율적으로 대량 생산할 수 있도록 설계하는 공학 방법론.
 domains:
 - 03_manufacturing_processes
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_10
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 可制造性设计(DFM)
+# Design for Manufacturing (DFM) / 可制造性设计（DFM） / 제조 용이성 설계(DFM)
 
-可制造性设计(DFM)是人形机器人产业链中的method相关知识节点。详见Wiki第10章《制造工艺体系》。
+## 摘要
+
+使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。
+
+## Abstract
+
+An engineering practice of designing parts and assemblies so that they are easy, repeatable, and cost-effective to manufacture at scale.
+
+## 요약
+
+부품과 조립체를 쉽고 재현 가능하며 비용 효율적으로 대량 생산할 수 있도록 설계하는 공학 방법론.
+
+
+> 本词条对应 Wiki 第 10 章，详细论述见项目 Wiki。
+

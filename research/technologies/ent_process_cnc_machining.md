@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: technology
 names:
+  en: CNC Precision Machining
   zh: CNC精密机加工
-  en: Cnc Machining
+  ko: CNC 정밀 가공
 summary:
-  zh: CNC精密机加工是人形机器人产业链中的technology相关知识节点，详见Wiki第10章《制造工艺体系》。
-  en: CNC精密机加工 is a knowledge node related to technology in the humanoid robot value chain. See Wiki Chapter 10.
+  en: Computer-numerical-control machining processes that produce high-precision structural parts such as joint housings,
+    brackets, and shafts to tight tolerances.
+  zh: 通过数控加工以严格公差制造关节壳体、支架、轴类等高精度结构件。
+  ko: 관절 하우징·브래킷·축 등의 고정밀 구조 부품을 엄격한 공차 내에서 생산하는 CNC 가공 공정.
 domains:
 - 03_manufacturing_processes
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - technology
 - chapter_10
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# CNC精密机加工
+# CNC Precision Machining / CNC精密机加工 / CNC 정밀 가공
 
-CNC精密机加工是人形机器人产业链中的technology相关知识节点。详见Wiki第10章《制造工艺体系》。
+## 摘要
+
+通过数控加工以严格公差制造关节壳体、支架、轴类等高精度结构件。
+
+## Abstract
+
+Computer-numerical-control machining processes that produce high-precision structural parts such as joint housings, brackets, and shafts to tight tolerances.
+
+## 요약
+
+관절 하우징·브래킷·축 등의 고정밀 구조 부품을 엄격한 공차 내에서 생산하는 CNC 가공 공정.
+
+
+> 本词条对应 Wiki 第 10 章，详细论述见项目 Wiki。
+

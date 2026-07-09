@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: concept
 names:
-  zh: 世界模型
   en: World Model
+  zh: 世界模型
+  ko: 세계 모델
 summary:
-  zh: 世界模型是人形机器人产业链中的concept相关知识节点，详见Wiki第20章《世界模型与长期推理》。
-  en: 世界模型 is a knowledge node related to concept in the humanoid robot value chain. See Wiki Chapter 20.
+  en: A learned or hand-crafted internal model that predicts future states of the environment, enabling planning and reasoning
+    in robotics and AI.
+  zh: 预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。
+  ko: 환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - concept
 - chapter_20
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 世界模型
+# World Model / 世界模型 / 세계 모델
 
-世界模型是人形机器人产业链中的concept相关知识节点。详见Wiki第20章《世界模型与长期推理》。
+## 摘要
+
+预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。
+
+## Abstract
+
+A learned or hand-crafted internal model that predicts future states of the environment, enabling planning and reasoning in robotics and AI.
+
+## 요약
+
+환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.
+
+
+> 本词条对应 Wiki 第 20 章，详细论述见项目 Wiki。
+

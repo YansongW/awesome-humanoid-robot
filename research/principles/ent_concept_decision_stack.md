@@ -4,11 +4,13 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: concept
 names:
-  zh: 决策栈
   en: Decision Stack
+  zh: 决策栈
+  ko: 의사결정 스택
 summary:
-  zh: 决策栈是人形机器人产业链中的concept相关知识节点，详见Wiki第24章《端到端软件栈》。
-  en: 决策栈 is a knowledge node related to concept in the humanoid robot value chain. See Wiki Chapter 24.
+  en: The software subsystem that converts perception and task goals into plans, policies, and behavioral decisions.
+  zh: 将感知结果与任务目标转化为规划、策略与行为决策的软件子系统。
+  ko: 인식 결과와 작업 목표를 계획·정책·행동 결정으로 변환하는 소프트웨어 하위 시스템.
 domains:
 - 08_software_middleware
 - 07_ai_models_algorithms
@@ -19,14 +21,16 @@ functional_roles:
 tags:
 - concept
 - chapter_24
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -34,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 决策栈
+# Decision Stack / 决策栈 / 의사결정 스택
 
-决策栈是人形机器人产业链中的concept相关知识节点。详见Wiki第24章《端到端软件栈》。
+## 摘要
+
+将感知结果与任务目标转化为规划、策略与行为决策的软件子系统。
+
+## Abstract
+
+The software subsystem that converts perception and task goals into plans, policies, and behavioral decisions.
+
+## 요약
+
+인식 결과와 작업 목표를 계획·정책·행동 결정으로 변환하는 소프트웨어 하위 시스템.
+
+
+> 本词条对应 Wiki 第 24 章，详细论述见项目 Wiki。
+

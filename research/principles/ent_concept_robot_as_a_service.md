@@ -4,12 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: concept
 names:
-  zh: Robot-as-a-Service(RaaS)
-  en: RaaS
+  en: Robot-as-a-Service (RaaS)
+  zh: 机器人即服务（RaaS）
+  ko: 로봇 as a Service(RaaS)
 summary:
-  zh: Robot-as-a-Service(RaaS)是人形机器人产业链中的concept相关知识节点，详见Wiki第28章《市场、企业与投资》。
-  en: Robot-as-a-Service(RaaS) is a knowledge node related to concept in the humanoid robot value chain. See Wiki Chapter
-    28.
+  en: A business model in which robots are leased or subscribed to rather than sold, bundling maintenance, software updates,
+    and fleet management.
+  zh: 以租赁或订阅而非买断方式提供机器人，并打包维护、软件更新与车队管理的商业模式。
+  ko: 로봇을 판매가 아닌 임대·구독으로 제공하고 유지보수·소프트웨어 업데이트·플릿 관리를 묶은 비즈니스 모델.
 domains:
 - 11_applications_markets
 layers:
@@ -19,14 +21,16 @@ functional_roles:
 tags:
 - concept
 - chapter_28
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -34,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Robot-as-a-Service(RaaS)
+# Robot-as-a-Service (RaaS) / 机器人即服务（RaaS） / 로봇 as a Service(RaaS)
 
-Robot-as-a-Service(RaaS)是人形机器人产业链中的concept相关知识节点。详见Wiki第28章《市场、企业与投资》。
+## 摘要
+
+以租赁或订阅而非买断方式提供机器人，并打包维护、软件更新与车队管理的商业模式。
+
+## Abstract
+
+A business model in which robots are leased or subscribed to rather than sold, bundling maintenance, software updates, and fleet management.
+
+## 요약
+
+로봇을 판매가 아닌 임대·구독으로 제공하고 유지보수·소프트웨어 업데이트·플릿 관리를 묶은 비즈니스 모델.
+
+
+> 本词条对应 Wiki 第 28 章，详细论述见项目 Wiki。
+

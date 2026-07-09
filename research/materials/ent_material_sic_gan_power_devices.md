@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: material
 names:
+  en: SiC/GaN Power Device Materials
   zh: SiC/GaN功率器件材料
-  en: Sic Gan Power Devices
+  ko: SiC/GaN 전력소자 재료
 summary:
-  zh: SiC/GaN功率器件材料是人形机器人产业链中的material相关知识节点，详见Wiki第3章《关键材料科学》。
-  en: SiC/GaN功率器件材料 is a knowledge node related to material in the humanoid robot value chain. See Wiki Chapter 3.
+  en: Wide-bandgap semiconductor materials—silicon carbide (SiC) and gallium nitride (GaN)—that enable higher-efficiency,
+    higher-frequency power conversion in motor drives and power electronics.
+  zh: 碳化硅（SiC）与氮化镓（GaN）等宽禁带半导体材料，可提升电机驱动与电力电子的转换效率和开关频率。
+  ko: 모터 드라이브와 전력전자에서 더 높은 효율과 주파수 변환을 가능하게 하는 SiC 및 GaN 등 광대역 갭 반도체 재료.
 domains:
 - 01_raw_materials
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - material
 - chapter_3
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# SiC/GaN功率器件材料
+# SiC/GaN Power Device Materials / SiC/GaN功率器件材料 / SiC/GaN 전력소자 재료
 
-SiC/GaN功率器件材料是人形机器人产业链中的material相关知识节点。详见Wiki第3章《关键材料科学》。
+## 摘要
+
+碳化硅（SiC）与氮化镓（GaN）等宽禁带半导体材料，可提升电机驱动与电力电子的转换效率和开关频率。
+
+## Abstract
+
+Wide-bandgap semiconductor materials—silicon carbide (SiC) and gallium nitride (GaN)—that enable higher-efficiency, higher-frequency power conversion in motor drives and power electronics.
+
+## 요약
+
+모터 드라이브와 전력전자에서 더 높은 효율과 주파수 변환을 가능하게 하는 SiC 및 GaN 등 광대역 갭 반도체 재료.
+
+
+> 本词条对应 Wiki 第 3 章，详细论述见项目 Wiki。
+

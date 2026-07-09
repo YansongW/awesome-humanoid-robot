@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: concept
 names:
-  zh: 隐私与生物识别
   en: Privacy and Biometrics
+  zh: 隐私与生物识别
+  ko: 프라이버시 및 생체 인식
 summary:
-  zh: 隐私与生物识别是人形机器人产业链中的concept相关知识节点，详见Wiki第29章《政策、监管与伦理》。
-  en: 隐私与生物识别 is a knowledge node related to concept in the humanoid robot value chain. See Wiki Chapter 29.
+  en: The governance of personal data and biometric information collected by robots, including face recognition, voiceprints,
+    and gait data.
+  zh: 机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。
+  ko: 로봇이 수집하는 얼굴·음성·보행 등 개인정보와 생체 인식 데이터의 거버넌스.
 domains:
 - 12_policy_regulation_ethics
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - concept
 - chapter_29
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 隐私与生物识别
+# Privacy and Biometrics / 隐私与生物识别 / 프라이버시 및 생체 인식
 
-隐私与生物识别是人形机器人产业链中的concept相关知识节点。详见Wiki第29章《政策、监管与伦理》。
+## 摘要
+
+机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。
+
+## Abstract
+
+The governance of personal data and biometric information collected by robots, including face recognition, voiceprints, and gait data.
+
+## 요약
+
+로봇이 수집하는 얼굴·음성·보행 등 개인정보와 생체 인식 데이터의 거버넌스.
+
+
+> 本词条对应 Wiki 第 29 章，详细论述见项目 Wiki。
+

@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 动作分块变压器(ACT)
-  en: ACT
+  en: Action Chunking with Transformers (ACT)
+  zh: 动作分块变压器（ACT）
+  ko: 트랜스포머를 이용한 행동 청킹(ACT)
 summary:
-  zh: 动作分块变压器(ACT)是人形机器人产业链中的method相关知识节点，详见Wiki第18章《模仿学习与策略学习》。
-  en: 动作分块变压器(ACT) is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 18.
+  en: An imitation-learning method that predicts a sequence of future actions as a chunk using a transformer, reducing compounding
+    errors in long-horizon tasks.
+  zh: 使用Transformer预测未来一段动作序列的模仿学习方法，可减少长程任务中的误差累积。
+  ko: 트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -19,14 +22,16 @@ functional_roles:
 tags:
 - method
 - chapter_18
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -34,6 +39,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 动作分块变压器(ACT)
+# Action Chunking with Transformers (ACT) / 动作分块变压器（ACT） / 트랜스포머를 이용한 행동 청킹(ACT)
 
-动作分块变压器(ACT)是人形机器人产业链中的method相关知识节点。详见Wiki第18章《模仿学习与策略学习》。
+## 摘要
+
+使用Transformer预测未来一段动作序列的模仿学习方法，可减少长程任务中的误差累积。
+
+## Abstract
+
+An imitation-learning method that predicts a sequence of future actions as a chunk using a transformer, reducing compounding errors in long-horizon tasks.
+
+## 요약
+
+트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.
+
+
+> 本词条对应 Wiki 第 18 章，详细论述见项目 Wiki。
+

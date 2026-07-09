@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: principle
 names:
-  zh: 捕获点
   en: Capture Point
+  zh: 捕获点
+  ko: 캡처 포인트
 summary:
-  zh: 捕获点是人形机器人产业链中的principle相关知识节点，详见Wiki第15章《运动生成与 Locomotion》。
-  en: 捕获点 is a knowledge node related to principle in the humanoid robot value chain. See Wiki Chapter 15.
+  en: A point on the ground where the robot must step to bring itself to a complete stop, used as a predictive balance criterion
+    for bipedal walking.
+  zh: 机器人必须踏步其上才能完全停稳的地面点，是双足行走预测性平衡判据。
+  ko: 로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - principle
 - chapter_15
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 捕获点
+# Capture Point / 捕获点 / 캡처 포인트
 
-捕获点是人形机器人产业链中的principle相关知识节点。详见Wiki第15章《运动生成与 Locomotion》。
+## 摘要
+
+机器人必须踏步其上才能完全停稳的地面点，是双足行走预测性平衡判据。
+
+## Abstract
+
+A point on the ground where the robot must step to bring itself to a complete stop, used as a predictive balance criterion for bipedal walking.
+
+## 요약
+
+로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.
+
+
+> 本词条对应 Wiki 第 15 章，详细论述见项目 Wiki。
+

@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: application_scenario
 names:
-  zh: 工业制造
   en: Industrial Manufacturing
+  zh: 工业制造
+  ko: 산업 제조
 summary:
-  zh: 工业制造是人形机器人产业链中的application相关知识节点，详见Wiki第27章《应用场景》。
-  en: 工业制造 is a knowledge node related to application in the humanoid robot value chain. See Wiki Chapter 27.
+  en: The application of humanoid robots to tasks such as assembly, machine tending, inspection, and material handling in
+    factories.
+  zh: 将人形机器人应用于工厂中的装配、上下料、检测与物料搬运等任务。
+  ko: 휴로봇을 공장의 조립·기계 관리·검사·자재 취급 등에 적용하는 분야.
 domains:
 - 11_applications_markets
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - application
 - chapter_27
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 工业制造
+# Industrial Manufacturing / 工业制造 / 산업 제조
 
-工业制造是人形机器人产业链中的application相关知识节点。详见Wiki第27章《应用场景》。
+## 摘要
+
+将人形机器人应用于工厂中的装配、上下料、检测与物料搬运等任务。
+
+## Abstract
+
+The application of humanoid robots to tasks such as assembly, machine tending, inspection, and material handling in factories.
+
+## 요약
+
+휴로봇을 공장의 조립·기계 관리·검사·자재 취급 등에 적용하는 분야.
+
+
+> 本词条对应 Wiki 第 27 章，详细论述见项目 Wiki。
+

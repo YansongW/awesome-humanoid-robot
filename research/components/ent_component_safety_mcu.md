@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: component
 names:
+  en: Safety Microcontroller Unit (Safety MCU)
   zh: 安全MCU
-  en: Safety MCU
+  ko: 안전 MCU
 summary:
-  zh: NVIDIA Jetson Thor、特斯拉 Dojo/FSD 等趋势表明，未来可能出现面向人形机器人感知-规划-控制一体化负载的专用 SoC，集成多路相机 ISP、高性能 NPU、功能安全 MCU 和高速网络接口，以单芯片满足头部/躯干计算需求
-  en: 'Safety MCU: NVIDIA Jetson Thor、特斯拉 Dojo/FSD 等趋势表明，未来可能出现面向人形机器人感知-规划-控制一体化负载的专用 SoC，集成多路相机 ISP、高性能 NPU、功能安全 MCU 和高速网络接口，以单芯片满足头部/躯干计...'
+  en: A functionally-safe microcontroller that monitors critical signals, handles watchdogs, and executes safety reactions
+    independently from the main compute unit.
+  zh: 独立于主计算单元的功能安全微控制器，负责关键信号监控、看门狗管理与安全响应执行。
+  ko: 주 컴퓨팅 유닛과 독립적으로 중요 신호를 모니터링하고 워치독 및 안전 반응을 수행하는 기능 안전 마이크로컨트롤러.
 domains:
 - 02_components
 - 08_software_middleware
@@ -19,14 +22,16 @@ functional_roles:
 tags:
 - component
 - chapter_6
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -34,6 +39,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 安全MCU
+# Safety Microcontroller Unit (Safety MCU) / 安全MCU / 안전 MCU
 
-安全MCU是人形机器人产业链中的component相关知识节点。详见Wiki第6章《计算、电源与热管理》。
+## 摘要
+
+独立于主计算单元的功能安全微控制器，负责关键信号监控、看门狗管理与安全响应执行。
+
+## Abstract
+
+A functionally-safe microcontroller that monitors critical signals, handles watchdogs, and executes safety reactions independently from the main compute unit.
+
+## 요약
+
+주 컴퓨팅 유닛과 독립적으로 중요 신호를 모니터링하고 워치독 및 안전 반응을 수행하는 기능 안전 마이크로컨트롤러.
+
+
+> 本词条对应 Wiki 第 6 章，详细论述见项目 Wiki。
+

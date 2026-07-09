@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: software_platform
 names:
+  en: Open Motion Planning Library (OMPL)
   zh: OMPL
-  en: OMPL
+  ko: OMPL
 summary:
-  zh: OMPL是人形机器人产业链中的software_platform相关知识节点，详见Wiki第16章《操作与抓取》。
-  en: OMPL is a knowledge node related to software_platform in the humanoid robot value chain. See Wiki Chapter 16.
+  en: An open-source C++ library containing state-of-the-art sampling-based motion planning algorithms such as RRT*, PRM,
+    and BIT*.
+  zh: 包含RRT*、PRM、BIT*等先进基于采样运动规划算法的开源C++库。
+  ko: RRT*, PRM, BIT* 등 최신 샘플링 기반 운동 계획 알고리즘을 포함하는 오픈소스 C++ 라이브러리.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - software_platform
 - chapter_16
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# OMPL
+# Open Motion Planning Library (OMPL) / OMPL / OMPL
 
-OMPL是人形机器人产业链中的software_platform相关知识节点。详见Wiki第16章《操作与抓取》。
+## 摘要
+
+包含RRT*、PRM、BIT*等先进基于采样运动规划算法的开源C++库。
+
+## Abstract
+
+An open-source C++ library containing state-of-the-art sampling-based motion planning algorithms such as RRT*, PRM, and BIT*.
+
+## 요약
+
+RRT*, PRM, BIT* 등 최신 샘플링 기반 운동 계획 알고리즘을 포함하는 오픈소스 C++ 라이브러리.
+
+
+> 本词条对应 Wiki 第 16 章，详细论述见项目 Wiki。
+

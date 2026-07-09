@@ -4,11 +4,13 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: application_scenario
 names:
-  zh: 家庭服务
   en: Home Service
+  zh: 家庭服务
+  ko: 가정 서비스
 summary:
-  zh: 家庭服务是人形机器人产业链中的application相关知识节点，详见Wiki第27章《应用场景》。
-  en: 家庭服务 is a knowledge node related to application in the humanoid robot value chain. See Wiki Chapter 27.
+  en: The use of humanoid robots for domestic chores, security, entertainment, and eldercare within residential environments.
+  zh: 在家庭环境中利用人形机器人完成家务、安防、娱乐与养老辅助。
+  ko: 주거 환경에서 가사·보안·오락·노인 돌봄을 위해 휴로봇을 사용하는 적용.
 domains:
 - 11_applications_markets
 layers:
@@ -18,14 +20,16 @@ functional_roles:
 tags:
 - application
 - chapter_27
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +37,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 家庭服务
+# Home Service / 家庭服务 / 가정 서비스
 
-家庭服务是人形机器人产业链中的application相关知识节点。详见Wiki第27章《应用场景》。
+## 摘要
+
+在家庭环境中利用人形机器人完成家务、安防、娱乐与养老辅助。
+
+## Abstract
+
+The use of humanoid robots for domestic chores, security, entertainment, and eldercare within residential environments.
+
+## 요약
+
+주거 환경에서 가사·보안·오락·노인 돌봄을 위해 휴로봇을 사용하는 적용.
+
+
+> 本词条对应 Wiki 第 27 章，详细论述见项目 Wiki。
+

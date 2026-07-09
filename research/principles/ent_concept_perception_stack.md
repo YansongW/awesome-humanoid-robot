@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: concept
 names:
-  zh: 感知栈
   en: Perception Stack
+  zh: 感知栈
+  ko: 인식 스택
 summary:
-  zh: 感知栈是人形机器人产业链中的concept相关知识节点，详见Wiki第24章《端到端软件栈》。
-  en: 感知栈 is a knowledge node related to concept in the humanoid robot value chain. See Wiki Chapter 24.
+  en: The software subsystem that processes sensor data to estimate states, detect objects, and build environmental representations
+    for decision-making.
+  zh: 处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。
+  ko: 센서 데이터를 처리하여 상태를 추정·물체를 검출·환경 표현을 구축하고 의사결정에 입력을 제공하는 소프트웨어 하위 시스템.
 domains:
 - 08_software_middleware
 - 07_ai_models_algorithms
@@ -19,14 +22,16 @@ functional_roles:
 tags:
 - concept
 - chapter_24
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -34,6 +39,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 感知栈
+# Perception Stack / 感知栈 / 인식 스택
 
-感知栈是人形机器人产业链中的concept相关知识节点。详见Wiki第24章《端到端软件栈》。
+## 摘要
+
+处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。
+
+## Abstract
+
+The software subsystem that processes sensor data to estimate states, detect objects, and build environmental representations for decision-making.
+
+## 요약
+
+센서 데이터를 처리하여 상태를 추정·물체를 검출·환경 표현을 구축하고 의사결정에 입력을 제공하는 소프트웨어 하위 시스템.
+
+
+> 本词条对应 Wiki 第 24 章，详细论述见项目 Wiki。
+

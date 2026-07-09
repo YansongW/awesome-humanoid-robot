@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
+  en: Sim-to-Real Transfer
   zh: Sim-to-Real迁移
-  en: Sim To Real
+  ko: 시뮬-실제 전이
 summary:
-  zh: Sim-to-Real迁移是人形机器人产业链中的method相关知识节点，详见Wiki第15章《运动生成与 Locomotion》。
-  en: Sim-to-Real迁移 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 15.
+  en: Techniques for transferring policies or controllers trained in simulation to physical robots, typically using domain
+    randomization, system identification, or adaptation.
+  zh: 将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。
+  ko: 시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_15
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Sim-to-Real迁移
+# Sim-to-Real Transfer / Sim-to-Real迁移 / 시뮬-실제 전이
 
-Sim-to-Real迁移是人形机器人产业链中的method相关知识节点。详见Wiki第15章《运动生成与 Locomotion》。
+## 摘要
+
+将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。
+
+## Abstract
+
+Techniques for transferring policies or controllers trained in simulation to physical robots, typically using domain randomization, system identification, or adaptation.
+
+## 요약
+
+시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.
+
+
+> 本词条对应 Wiki 第 15 章，详细论述见项目 Wiki。
+

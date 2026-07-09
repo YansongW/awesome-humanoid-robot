@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: standard
 names:
-  zh: IEC 61508
   en: IEC 61508
+  zh: IEC 61508
+  ko: IEC 61508
 summary:
-  zh: IEC 61508是人形机器人产业链中的standard相关知识节点，详见Wiki第12章《认证、合规与质量标准》。
-  en: IEC 61508 is a knowledge node related to standard in the humanoid robot value chain. See Wiki Chapter 12.
+  en: An international standard for functional safety of electrical/electronic/programmable electronic safety-related systems,
+    foundational for industrial and robot safety.
+  zh: 电气/电子/可编程电子安全相关系统功能安全的国际标准，是工业与机器人安全的基础。
+  ko: 전기·전자·프로그래머블 전자 안전 관련 시스템의 기능 안전에 관한 국제 표준.
 domains:
 - 12_policy_regulation_ethics
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - standard
 - chapter_12
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# IEC 61508
+# IEC 61508 / IEC 61508 / IEC 61508
 
-IEC 61508是人形机器人产业链中的standard相关知识节点。详见Wiki第12章《认证、合规与质量标准》。
+## 摘要
+
+电气/电子/可编程电子安全相关系统功能安全的国际标准，是工业与机器人安全的基础。
+
+## Abstract
+
+An international standard for functional safety of electrical/electronic/programmable electronic safety-related systems, foundational for industrial and robot safety.
+
+## 요약
+
+전기·전자·프로그래머블 전자 안전 관련 시스템의 기능 안전에 관한 국제 표준.
+
+
+> 本词条对应 Wiki 第 12 章，详细论述见项目 Wiki。
+

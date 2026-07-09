@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
+  en: Joint-Camera-IMU Calibration
   zh: 联合标定
-  en: Calibration Joint Camera Imu
+  ko: 관절·칩라·IMU 통합 보정
 summary:
-  zh: 联合标定是人形机器人产业链中的method相关知识节点，详见Wiki第11章《装配、集成与测试》。
-  en: 联合标定 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 11.
+  en: The process of estimating the intrinsic and extrinsic parameters, as well as time offsets, between joints, cameras,
+    and inertial sensors to ensure coherent sensing and control.
+  zh: 估计关节、相机与惯性传感器之间的内外参及时延，以保证感知与控制一致性的过程。
+  ko: 관절·칩라·관성 센서 간 내외부 파라미터와 시간 오프셋을 추정하여 감지와 제어의 일관성을 보장하는 과정.
 domains:
 - 04_assembly_integration_testing
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_11
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 联合标定
+# Joint-Camera-IMU Calibration / 联合标定 / 관절·칩라·IMU 통합 보정
 
-联合标定是人形机器人产业链中的method相关知识节点。详见Wiki第11章《装配、集成与测试》。
+## 摘要
+
+估计关节、相机与惯性传感器之间的内外参及时延，以保证感知与控制一致性的过程。
+
+## Abstract
+
+The process of estimating the intrinsic and extrinsic parameters, as well as time offsets, between joints, cameras, and inertial sensors to ensure coherent sensing and control.
+
+## 요약
+
+관절·칩라·관성 센서 간 내외부 파라미터와 시간 오프셋을 추정하여 감지와 제어의 일관성을 보장하는 과정.
+
+
+> 本词条对应 Wiki 第 11 章，详细论述见项目 Wiki。
+

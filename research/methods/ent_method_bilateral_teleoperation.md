@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 双边遥操作
   en: Bilateral Teleoperation
+  zh: 双边遥操作
+  ko: 양방향 원격 조작
 summary:
-  zh: 双边遥操作是人形机器人产业链中的method相关知识节点，详见Wiki第17章《遥操作与人机协作》。
-  en: 双边遥操作 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 17.
+  en: A teleoperation architecture where command signals flow from master to slave and force/tactile feedback flows back to
+    the master, improving transparency and safety.
+  zh: 命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。
+  ko: 명령 신호는 마스터→슬레이브, 힘·촉각 피드백은 슬레이브→마스터로 흐르는 원격 조작 구조로 투명성과 안전성을 향상.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_17
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 双边遥操作
+# Bilateral Teleoperation / 双边遥操作 / 양방향 원격 조작
 
-双边遥操作是人形机器人产业链中的method相关知识节点。详见Wiki第17章《遥操作与人机协作》。
+## 摘要
+
+命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。
+
+## Abstract
+
+A teleoperation architecture where command signals flow from master to slave and force/tactile feedback flows back to the master, improving transparency and safety.
+
+## 요약
+
+명령 신호는 마스터→슬레이브, 힘·촉각 피드백은 슬레이브→마스터로 흐르는 원격 조작 구조로 투명성과 안전성을 향상.
+
+
+> 本词条对应 Wiki 第 17 章，详细论述见项目 Wiki。
+

@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: benchmark
 names:
-  zh: Isaac Gym Benchmarks
-  en: Isaac Gym
+  en: Isaac Gym Benchmarks
+  zh: Isaac Gym基准
+  ko: Isaac Gym 벤치마크
 summary:
-  zh: Isaac Gym Benchmarks是人形机器人产业链中的benchmark相关知识节点，详见Wiki第25章《机器人评测体系》。
-  en: Isaac Gym Benchmarks is a knowledge node related to benchmark in the humanoid robot value chain. See Wiki Chapter 25.
+  en: A collection of GPU-accelerated reinforcement-learning benchmarks built on NVIDIA Isaac Gym for high-throughput robot
+    policy training and evaluation.
+  zh: 基于NVIDIA Isaac Gym构建的GPU加速强化学习基准集合，用于高吞吐量机器人策略训练与评估。
+  ko: NVIDIA Isaac Gym 기반 GPU 가속 강화학습 벤치마크 모음으로, 고처리량 로봇 정책 훈련·평가에 사용.
 domains:
 - 10_evaluation_benchmarks
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - benchmark
 - chapter_25
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Isaac Gym Benchmarks
+# Isaac Gym Benchmarks / Isaac Gym基准 / Isaac Gym 벤치마크
 
-Isaac Gym Benchmarks是人形机器人产业链中的benchmark相关知识节点。详见Wiki第25章《机器人评测体系》。
+## 摘要
+
+基于NVIDIA Isaac Gym构建的GPU加速强化学习基准集合，用于高吞吐量机器人策略训练与评估。
+
+## Abstract
+
+A collection of GPU-accelerated reinforcement-learning benchmarks built on NVIDIA Isaac Gym for high-throughput robot policy training and evaluation.
+
+## 요약
+
+NVIDIA Isaac Gym 기반 GPU 가속 강화학습 벤치마크 모음으로, 고처리량 로봇 정책 훈련·평가에 사용.
+
+
+> 本词条对应 Wiki 第 25 章，详细论述见项目 Wiki。
+

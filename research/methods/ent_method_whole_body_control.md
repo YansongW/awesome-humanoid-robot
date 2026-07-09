@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 全身控制
-  en: Whole-Body Control
+  en: Whole-Body Control (WBC)
+  zh: 全身控制（WBC）
+  ko: 전신 제어(WBC)
 summary:
-  zh: 全身控制是人形机器人产业链中的method相关知识节点，详见Wiki第14章《机器人控制基础》。
-  en: 全身控制 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 14.
+  en: A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks such as balance,
+    gaze, and manipulation.
+  zh: 协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。
+  ko: 휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_14
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 全身控制
+# Whole-Body Control (WBC) / 全身控制（WBC） / 전신 제어(WBC)
 
-全身控制是人形机器人产业链中的method相关知识节点。详见Wiki第14章《机器人控制基础》。
+## 摘要
+
+协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。
+
+## Abstract
+
+A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks such as balance, gaze, and manipulation.
+
+## 요약
+
+휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.
+
+
+> 本词条对应 Wiki 第 14 章，详细论述见项目 Wiki。
+

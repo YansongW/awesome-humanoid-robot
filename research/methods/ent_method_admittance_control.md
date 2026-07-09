@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 导纳控制
   en: Admittance Control
+  zh: 导纳控制
+  ko: 어드미턴스 제어
 summary:
-  zh: 导纳控制是人形机器人产业链中的method相关知识节点，详见Wiki第14章《机器人控制基础》。
-  en: 导纳控制 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 14.
+  en: A control approach that converts measured external forces into desired position or velocity trajectories, complementary
+    to impedance control.
+  zh: 将测得的外部力转换为期望位置或速度轨迹的控制方法，与阻抗控制互补。
+  ko: 측정된 외력을 원하는 위치·속도 궤적으로 변환하는 제어 방식으로, 임피던스 제어와 상호 보완적.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_14
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 导纳控制
+# Admittance Control / 导纳控制 / 어드미턴스 제어
 
-导纳控制是人形机器人产业链中的method相关知识节点。详见Wiki第14章《机器人控制基础》。
+## 摘要
+
+将测得的外部力转换为期望位置或速度轨迹的控制方法，与阻抗控制互补。
+
+## Abstract
+
+A control approach that converts measured external forces into desired position or velocity trajectories, complementary to impedance control.
+
+## 요약
+
+측정된 외력을 원하는 위치·속도 궤적으로 변환하는 제어 방식으로, 임피던스 제어와 상호 보완적.
+
+
+> 本词条对应 Wiki 第 14 章，详细论述见项目 Wiki。
+

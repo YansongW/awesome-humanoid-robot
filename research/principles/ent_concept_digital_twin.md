@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: concept
 names:
-  zh: 数字孪生
   en: Digital Twin
+  zh: 数字孪生
+  ko: 디지털 트윈
 summary:
-  zh: 数字孪生是人形机器人产业链中的concept相关知识节点，详见Wiki第23章《仿真与物理引擎》。
-  en: 数字孪生 is a knowledge node related to concept in the humanoid robot value chain. See Wiki Chapter 23.
+  en: A virtual replica of a physical asset or process that is continuously synchronized with real-world data for monitoring,
+    simulation, and optimization.
+  zh: 与物理资产或流程实时数据同步的虚拟复制品，用于监控、仿真与优化。
+  ko: 물리 자산이나 프로세스의 실시간 데이터와 지속적으로 동기화되는 가상 복제체로, 모니터링·시뮬레이션·최적화에 활용.
 domains:
 - 08_software_middleware
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - concept
 - chapter_23
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 数字孪生
+# Digital Twin / 数字孪生 / 디지털 트윈
 
-数字孪生是人形机器人产业链中的concept相关知识节点。详见Wiki第23章《仿真与物理引擎》。
+## 摘要
+
+与物理资产或流程实时数据同步的虚拟复制品，用于监控、仿真与优化。
+
+## Abstract
+
+A virtual replica of a physical asset or process that is continuously synchronized with real-world data for monitoring, simulation, and optimization.
+
+## 요약
+
+물리 자산이나 프로세스의 실시간 데이터와 지속적으로 동기화되는 가상 복제체로, 모니터링·시뮬레이션·최적화에 활용.
+
+
+> 本词条对应 Wiki 第 23 章，详细论述见项目 Wiki。
+

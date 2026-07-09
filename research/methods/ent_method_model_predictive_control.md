@@ -4,14 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: Model Predictive Control
-  zh: 模型预测控制
-  ko: 모델 예측 제어
+  en: Model Predictive Control (MPC)
+  zh: 模型预测控制（MPC）
+  ko: 모델 예측 제어(MPC)
 summary:
   en: An optimization-based control method that repeatedly solves a finite-horizon optimal control problem using a predictive
-    model and applies only the first control input.
-  zh: 一种基于优化的控制方法，利用预测模型反复求解有限时域最优控制问题，并仅执行第一个控制量。
-  ko: 예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고, 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.
+    model and applies only the first control action.
+  zh: 基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。
+  ko: 예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -27,12 +27,14 @@ tags:
 - gait
 - whole_body_control
 - realtime
+- wiki_gap
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Definition is standard; specific humanoid implementations need manual review of cited sources.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_borrelli_bemporad_morari_2017
   type: other
@@ -65,6 +67,7 @@ related_entities:
     en: Stability and tractability of MPC rely on convex optimization theory and efficient QP solvers.
     zh: MPC 的稳定性与可解性依赖于凸优化理论与高效 QP 求解器。
 ---
+
 # Model Predictive Control / 模型预测控制 / 모델 예측 제어
 
 ## 抽象

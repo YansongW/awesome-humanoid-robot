@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: software_platform
 names:
-  zh: Gazebo
   en: Gazebo
+  zh: Gazebo
+  ko: Gazebo
 summary:
-  zh: Gazebo是人形机器人产业链中的software_platform相关知识节点，详见Wiki第23章《仿真与物理引擎》。
-  en: Gazebo is a knowledge node related to software_platform in the humanoid robot value chain. See Wiki Chapter 23.
+  en: An open-source 3D robotics simulator that provides physics engines, sensor models, and scene authoring for algorithm
+    development and testing.
+  zh: 提供物理引擎、传感器模型与场景编辑功能的开源三维机器人仿真器，用于算法开发与测试。
+  ko: 물리 엔진·센서 모델·장면 작성을 제공하는 오픈소스 3D 로보틱스 시뮬레이터로, 알고리즘 개발·테스트에 사용.
 domains:
 - 08_software_middleware
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - software_platform
 - chapter_23
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Gazebo
+# Gazebo / Gazebo / Gazebo
 
-Gazebo是人形机器人产业链中的software_platform相关知识节点。详见Wiki第23章《仿真与物理引擎》。
+## 摘要
+
+提供物理引擎、传感器模型与场景编辑功能的开源三维机器人仿真器，用于算法开发与测试。
+
+## Abstract
+
+An open-source 3D robotics simulator that provides physics engines, sensor models, and scene authoring for algorithm development and testing.
+
+## 요약
+
+물리 엔진·센서 모델·장면 작성을 제공하는 오픈소스 3D 로보틱스 시뮬레이터로, 알고리즘 개발·테스트에 사용.
+
+
+> 本词条对应 Wiki 第 23 章，详细论述见项目 Wiki。
+

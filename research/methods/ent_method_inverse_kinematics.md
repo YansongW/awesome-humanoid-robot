@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 逆运动学
   en: Inverse Kinematics
+  zh: 逆运动学
+  ko: 역욕동학
 summary:
-  zh: '"""基于 Jacobian 伪逆的数值逆运动学'
-  en: 'Inverse Kinematics: """基于 Jacobian 伪逆的数值逆运动学'
+  en: The computation of joint angles that realize a desired end-effector pose, often solved numerically via Jacobian pseudoinverse
+    or analytically for simple geometries.
+  zh: 根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。
+  ko: 원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.
 domains:
 - 06_design_engineering
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_8
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 逆运动学
+# Inverse Kinematics / 逆运动学 / 역욕동학
 
-逆运动学是人形机器人产业链中的method相关知识节点。详见Wiki第8章《人形机器人设计原理》。
+## 摘要
+
+根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。
+
+## Abstract
+
+The computation of joint angles that realize a desired end-effector pose, often solved numerically via Jacobian pseudoinverse or analytically for simple geometries.
+
+## 요약
+
+원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.
+
+
+> 本词条对应 Wiki 第 8 章，详细论述见项目 Wiki。
+

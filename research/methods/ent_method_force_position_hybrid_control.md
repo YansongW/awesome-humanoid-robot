@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
+  en: Force/Position Hybrid Control
   zh: 力位混合控制
-  en: Force Position Hybrid Control
+  ko: 힘/위치 하이브리드 제어
 summary:
-  zh: 力位混合控制是人形机器人产业链中的method相关知识节点，详见Wiki第14章《机器人控制基础》。
-  en: 力位混合控制 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 14.
+  en: A control strategy that simultaneously regulates force along constrained directions and position along free directions
+    in contact tasks.
+  zh: 在接触任务中同时约束方向上控制力、自由方向上控制位置的策略。
+  ko: 접촉 작업에서 제약 방향으로는 힘을, 자유 방향으로는 위치를 동시에 제어하는 전략.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_14
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 力位混合控制
+# Force/Position Hybrid Control / 力位混合控制 / 힘/위치 하이브리드 제어
 
-力位混合控制是人形机器人产业链中的method相关知识节点。详见Wiki第14章《机器人控制基础》。
+## 摘要
+
+在接触任务中同时约束方向上控制力、自由方向上控制位置的策略。
+
+## Abstract
+
+A control strategy that simultaneously regulates force along constrained directions and position along free directions in contact tasks.
+
+## 요약
+
+접촉 작업에서 제약 방향으로는 힘을, 자유 방향으로는 위치를 동시에 제어하는 전략.
+
+
+> 本词条对应 Wiki 第 14 章，详细论述见项目 Wiki。
+

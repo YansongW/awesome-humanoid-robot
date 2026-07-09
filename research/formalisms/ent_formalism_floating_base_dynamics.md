@@ -4,13 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: formalism
 names:
-  zh: 浮动基动力学
   en: Floating-Base Dynamics
+  zh: 浮动基动力学
+  ko: 부유 기반 동역학
 summary:
-  zh: 本章在运动学、动力学、结构设计、安全、数字孪生与设计案例等维度进行了深化：引入旋量理论与指数积、对偶四元数、运动学校准、质心动量、浮动基动力学、接触动力学、捕获点、全身控制、FEA 与拓扑优化、晶格结构、螺栓与疲劳、功能安全、碰撞检测、急停回路、MBSE
-    与参数驱动协同；并通过 ASIMO、Atlas、Optimus、Digit、TALOS 及中国代表机型说明典型设计取舍
-  en: 'Floating-Base Dynamics: 本章在运动学、动力学、结构设计、安全、数字孪生与设计案例等维度进行了深化：引入旋量理论与指数积、对偶四元数、运动学校准、质心动量、浮动基动力学、接触动力学、捕获点、全身控制、FEA
-    与拓扑优化、晶格结构、螺栓与疲劳、功能安全、碰撞检测、急停...'
+  en: A rigid-body dynamics formalism for robots with an unactuated or underactuated base, such as bipeds, where the base
+    pose is part of the generalized coordinates.
+  zh: 针对未驱动或欠驱动基座的刚体动力学建模形式，如双足机器人，将基座位姿纳入广义坐标。
+  ko: 이족 로봇처럼 비구동·저구동 기반을 가진 로봇을 위해 기반 자세를 일반화 좌표에 포함시키는 강체 동역학 공식화.
 domains:
 - 06_design_engineering
 layers:
@@ -20,14 +21,16 @@ functional_roles:
 tags:
 - formalism
 - chapter_8
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -35,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 浮动基动力学
+# Floating-Base Dynamics / 浮动基动力学 / 부유 기반 동역학
 
-浮动基动力学是人形机器人产业链中的formalism相关知识节点。详见Wiki第8章《人形机器人设计原理》。
+## 摘要
+
+针对未驱动或欠驱动基座的刚体动力学建模形式，如双足机器人，将基座位姿纳入广义坐标。
+
+## Abstract
+
+A rigid-body dynamics formalism for robots with an unactuated or underactuated base, such as bipeds, where the base pose is part of the generalized coordinates.
+
+## 요약
+
+이족 로봇처럼 비구동·저구동 기반을 가진 로봇을 위해 기반 자세를 일반화 좌표에 포함시키는 강체 동역학 공식화.
+
+
+> 本词条对应 Wiki 第 8 章，详细论述见项目 Wiki。
+

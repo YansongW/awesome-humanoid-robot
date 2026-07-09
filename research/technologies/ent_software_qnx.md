@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: software_platform
 names:
-  zh: QNX
   en: QNX
+  zh: QNX
+  ko: QNX
 summary:
-  zh: QNX是人形机器人产业链中的software_platform相关知识节点，详见Wiki第22章《软件中间件》。
-  en: QNX is a knowledge node related to software_platform in the humanoid robot value chain. See Wiki Chapter 22.
+  en: A commercial microkernel real-time operating system widely used in automotive and safety-critical systems, offering
+    high reliability and deterministic scheduling.
+  zh: 广泛应用于汽车与安全关键系统的商用微内核实时操作系统，具有高可靠性与确定性调度能力。
+  ko: 자동차 및 안전 필수 시스템에 널리 사용되는 상용 마이크로커널 실시간 운영체제로, 높은 신뢰성과 결정적 스케줄링을 제공.
 domains:
 - 08_software_middleware
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - software_platform
 - chapter_22
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# QNX
+# QNX / QNX / QNX
 
-QNX是人形机器人产业链中的software_platform相关知识节点。详见Wiki第22章《软件中间件》。
+## 摘要
+
+广泛应用于汽车与安全关键系统的商用微内核实时操作系统，具有高可靠性与确定性调度能力。
+
+## Abstract
+
+A commercial microkernel real-time operating system widely used in automotive and safety-critical systems, offering high reliability and deterministic scheduling.
+
+## 요약
+
+자동차 및 안전 필수 시스템에 널리 사용되는 상용 마이크로커널 실시간 운영체제로, 높은 신뢰성과 결정적 스케줄링을 제공.
+
+
+> 本词条对应 Wiki 第 22 章，详细论述见项目 Wiki。
+

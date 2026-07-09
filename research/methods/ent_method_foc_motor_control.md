@@ -4,13 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 磁场定向控制(FOC)
-  en: FOC
+  en: Field-Oriented Control (FOC)
+  zh: 磁场定向控制（FOC）
+  ko: 자장 지향 제어(FOC)
 summary:
-  zh: 磁场定向控制 的核心思想是把三相静止坐标系下的电流通过 Clark 变换 变到两相静止 \(\alpha\beta\) 坐标系，再通过 Park 变换 变到随转子旋转的 \(dq\) 坐标系，从而使交流量变成直流量，用 PI 控制器分别控制
-    \(i_d\) 和 \(i_q\)
-  en: 'FOC: 磁场定向控制 的核心思想是把三相静止坐标系下的电流通过 Clark 变换 变到两相静止 \(\alpha\beta\) 坐标系，再通过 Park 变换 变到随转子旋转的 \(dq\) 坐标系，从而使交流量变成直流量，用
-    PI 控制器分别控制...'
+  en: A motor-control method that transforms three-phase currents into a rotating dq reference frame to enable independent
+    control of torque and flux, similar to a DC machine.
+  zh: 将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。
+  ko: 삼상 전류를 회전하는 dq 좌표계로 변환하여 토크와 자속을 독립 제어하는 모터 제어 방식.
 domains:
 - 02_components
 layers:
@@ -20,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_4
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -35,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 磁场定向控制(FOC)
+# Field-Oriented Control (FOC) / 磁场定向控制（FOC） / 자장 지향 제어(FOC)
 
-磁场定向控制(FOC)是人形机器人产业链中的method相关知识节点。详见Wiki第4章《执行器：人形机器人的“肌肉”》。
+## 摘要
+
+将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。
+
+## Abstract
+
+A motor-control method that transforms three-phase currents into a rotating dq reference frame to enable independent control of torque and flux, similar to a DC machine.
+
+## 요약
+
+삼상 전류를 회전하는 dq 좌표계로 변환하여 토크와 자속을 독립 제어하는 모터 제어 방식.
+
+
+> 本词条对应 Wiki 第 4 章，详细论述见项目 Wiki。
+

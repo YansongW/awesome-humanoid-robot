@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: dataset
 names:
+  en: HumanPlus Shadowing Dataset
   zh: HumanPlus Shadowing数据集
-  en: Humanplus Shadowing
+  ko: HumanPlus Shadowing 데이터셋
 summary:
-  zh: HumanPlus Shadowing数据集是人形机器人产业链中的dataset相关知识节点，详见Wiki第21章《数据基础设施》。
-  en: HumanPlus Shadowing数据集 is a knowledge node related to dataset in the humanoid robot value chain. See Wiki Chapter 21.
+  en: A dataset collected by shadowing human motion with a humanoid robot, used to train whole-body imitation and teleoperation
+    policies.
+  zh: 通过人形机器人跟随人体运动采集的数据集，用于训练全身模仿与遥操作策略。
+  ko: 휴로봇으로 인간 동작을 따라 촬영하여 수집한 데이터셋으로, 전신 모방 및 원격 조작 정책 학습에 사용.
 domains:
 - 09_data_datasets
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - dataset
 - chapter_21
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# HumanPlus Shadowing数据集
+# HumanPlus Shadowing Dataset / HumanPlus Shadowing数据集 / HumanPlus Shadowing 데이터셋
 
-HumanPlus Shadowing数据集是人形机器人产业链中的dataset相关知识节点。详见Wiki第21章《数据基础设施》。
+## 摘要
+
+通过人形机器人跟随人体运动采集的数据集，用于训练全身模仿与遥操作策略。
+
+## Abstract
+
+A dataset collected by shadowing human motion with a humanoid robot, used to train whole-body imitation and teleoperation policies.
+
+## 요약
+
+휴로봇으로 인간 동작을 따라 촬영하여 수집한 데이터셋으로, 전신 모방 및 원격 조작 정책 학습에 사용.
+
+
+> 本词条对应 Wiki 第 21 章，详细论述见项目 Wiki。
+

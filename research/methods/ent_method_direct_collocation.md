@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 直接配点法
   en: Direct Collocation
+  zh: 直接配点法
+  ko: 직접 배치법
 summary:
-  zh: 直接配点法是人形机器人产业链中的method相关知识节点，详见Wiki第15章《运动生成与 Locomotion》。
-  en: 直接配点法 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 15.
+  en: A trajectory optimization method that discretizes both states and controls at collocation points and solves the resulting
+    nonlinear program directly.
+  zh: 在配点处同时离散状态与控制量，并直接求解所得非线性规划的轨迹优化方法。
+  ko: 상태와 제어 입력을 배치점에서 이산화하고 결과 비선형 계획법을 직접 푸는 궤적 최적화 방법.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_15
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 直接配点法
+# Direct Collocation / 直接配点法 / 직접 배치법
 
-直接配点法是人形机器人产业链中的method相关知识节点。详见Wiki第15章《运动生成与 Locomotion》。
+## 摘要
+
+在配点处同时离散状态与控制量，并直接求解所得非线性规划的轨迹优化方法。
+
+## Abstract
+
+A trajectory optimization method that discretizes both states and controls at collocation points and solves the resulting nonlinear program directly.
+
+## 요약
+
+상태와 제어 입력을 배치점에서 이산화하고 결과 비선형 계획법을 직접 푸는 궤적 최적화 방법.
+
+
+> 本词条对应 Wiki 第 15 章，详细论述见项目 Wiki。
+

@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 灵巧操作
   en: Dexterous Manipulation
+  zh: 灵巧操作
+  ko: 손재주 있는 조작
 summary:
-  zh: 灵巧操作是人形机器人产业链中的method相关知识节点，详见Wiki第16章《操作与抓取》。
-  en: 灵巧操作 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 16.
+  en: The ability to manipulate objects with multi-fingered hands using fine finger motions, contact regulation, and in-hand
+    reorientation.
+  zh: 利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。
+  ko: 다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_16
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 灵巧操作
+# Dexterous Manipulation / 灵巧操作 / 손재주 있는 조작
 
-灵巧操作是人形机器人产业链中的method相关知识节点。详见Wiki第16章《操作与抓取》。
+## 摘要
+
+利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。
+
+## Abstract
+
+The ability to manipulate objects with multi-fingered hands using fine finger motions, contact regulation, and in-hand reorientation.
+
+## 요약
+
+다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.
+
+
+> 本词条对应 Wiki 第 16 章，详细论述见项目 Wiki。
+

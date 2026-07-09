@@ -27,12 +27,14 @@ tags:
 - joint_control
 - actuator
 - classical_control
+- wiki_gap
 verification:
-  status: verified
+  status: partially_verified
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
   confidence: high
-  notes: Standard control theory; PID is universally used in motor drives and robot joint control.
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_astrom_hagglund_2006
   type: other
@@ -54,6 +56,7 @@ related_entities:
       with the environment.
     zh: PID 控制调节位置或速度；阻抗控制进一步调节与环境的动态交互力。
 ---
+
 # PID Control / PID控制 / PID 제어
 
 ## 抽象

@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: component
 names:
-  zh: 行星滚柱丝杠
   en: Planetary Roller Screw
+  zh: 行星滚柱丝杠
+  ko: 행성 롤러 스크류
 summary:
-  zh: '- 线性关节（prismatic / linear joint）：提供直线位移，常用电机 + 滚珠丝杠 / 行星滚柱丝杠实现，常用于脊柱、膝/踝关节的推拉驱动'
-  en: 'Planetary Roller Screw: - 线性关节（prismatic / linear joint）：提供直线位移，常用电机 + 滚珠丝杠 / 行星滚柱丝杠实现，常用于脊柱、膝/踝关节的推拉驱动'
+  en: A high-load, high-precision linear motion mechanism that converts rotary motion to linear motion via threaded rollers,
+    often used in humanoid linear actuators.
+  zh: 通过螺纹滚柱将旋转运动转换为直线运动的高承载、高精度直线传动机构，常用于人形直线执行器。
+  ko: 스레드 롤러를 통해 회전욕동을 직선욕동으로 변환하는 고하중·고정밀 직선 기구로 휴로봇 선형 액추에이터에 사용됨.
 domains:
 - 02_components
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - component
 - chapter_4
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 行星滚柱丝杠
+# Planetary Roller Screw / 行星滚柱丝杠 / 행성 롤러 스크류
 
-行星滚柱丝杠是人形机器人产业链中的component相关知识节点。详见Wiki第4章《执行器：人形机器人的“肌肉”》。
+## 摘要
+
+通过螺纹滚柱将旋转运动转换为直线运动的高承载、高精度直线传动机构，常用于人形直线执行器。
+
+## Abstract
+
+A high-load, high-precision linear motion mechanism that converts rotary motion to linear motion via threaded rollers, often used in humanoid linear actuators.
+
+## 요약
+
+스레드 롤러를 통해 회전욕동을 직선욕동으로 변환하는 고하중·고정밀 직선 기구로 휴로봇 선형 액추에이터에 사용됨.
+
+
+> 本词条对应 Wiki 第 4 章，详细论述见项目 Wiki。
+

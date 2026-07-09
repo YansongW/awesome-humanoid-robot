@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 硬件在环测试(HIL)
-  en: HIL
+  en: Hardware-in-the-Loop (HIL)
+  zh: 硬件在环测试（HIL）
+  ko: 하드웨어 인 더 루프(HIL)
 summary:
-  zh: 硬件在环测试(HIL)是人形机器人产业链中的method相关知识节点，详见Wiki第11章《装配、集成与测试》。
-  en: 硬件在环测试(HIL) is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 11.
+  en: A validation method where real hardware controllers interact with a real-time simulation of the plant, enabling safe
+    and repeatable testing of control software.
+  zh: 真实硬件控制器与被控对象实时仿真模型交互的验证方法，可安全、可重复地测试控制软件。
+  ko: 실제 하드웨어 컨트롤러가 플랜트의 실시간 시뮬레이션과 상호작용하여 제어 소프트웨어를 안전하고 반복 가능하게 검증하는 방법.
 domains:
 - 04_assembly_integration_testing
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_11
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 硬件在环测试(HIL)
+# Hardware-in-the-Loop (HIL) / 硬件在环测试（HIL） / 하드웨어 인 더 루프(HIL)
 
-硬件在环测试(HIL)是人形机器人产业链中的method相关知识节点。详见Wiki第11章《装配、集成与测试》。
+## 摘要
+
+真实硬件控制器与被控对象实时仿真模型交互的验证方法，可安全、可重复地测试控制软件。
+
+## Abstract
+
+A validation method where real hardware controllers interact with a real-time simulation of the plant, enabling safe and repeatable testing of control software.
+
+## 요약
+
+실제 하드웨어 컨트롤러가 플랜트의 실시간 시뮬레이션과 상호작용하여 제어 소프트웨어를 안전하고 반복 가능하게 검증하는 방법.
+
+
+> 本词条对应 Wiki 第 11 章，详细论述见项目 Wiki。
+

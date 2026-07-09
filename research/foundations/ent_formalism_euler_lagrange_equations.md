@@ -8,10 +8,10 @@ names:
   zh: 欧拉-拉格朗日方程
   ko: 오일러-라그랑주 방정식
 summary:
-  en: A set of second-order differential equations derived from a variational principle on the Lagrangian, giving the equations
-    of motion for mechanical systems in generalized coordinates.
-  zh: 由拉格朗日量的变分原理导出的二阶微分方程组，用于在广义坐标下描述机械系统的运动方程。
-  ko: 라그랑지안의 변분 원리로부터 유도된 2차 미분방정식 집합으로, 일반화 좌표에서 기계 시스템의 운 동 방정식을 기술함.
+  en: Second-order differential equations derived from the stationarity of the action integral, giving the equations of motion
+    for mechanical systems in generalized coordinates.
+  zh: 由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。
+  ko: 작용 적분의 정지 조건에서 도출된 2차 미분방정식으로, 일반화 좌표에서 기계 시스템의 용동 방정식을 제공.
 domains:
 - 00_foundations
 - 06_design_engineering
@@ -28,12 +28,14 @@ tags:
 - lagrangian
 - dynamics
 - equations_of_motion
+- wiki_gap
 verification:
-  status: verified
+  status: partially_verified
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
   confidence: high
-  notes: Standard classical mechanics formalism.
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_goldstein_2002
   type: other
@@ -59,6 +61,7 @@ related_entities:
     en: For rigid-body systems, Euler-Lagrange and Newton-Euler formulations yield the same equations of motion.
     zh: 对刚体系统，欧拉-拉格朗日与牛顿-欧拉两种形式等价。
 ---
+
 # Euler-Lagrange Equations / 欧拉-拉格朗日方程 / 오일러-라그랑주 방정식
 
 ## 抽象

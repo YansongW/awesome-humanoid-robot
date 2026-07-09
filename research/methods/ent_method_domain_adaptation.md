@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 域适应
   en: Domain Adaptation
+  zh: 域适应
+  ko: 도메인 적응
 summary:
-  zh: 域适应是人形机器人产业链中的method相关知识节点，详见Wiki第18章《模仿学习与策略学习》。
-  en: 域适应 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 18.
+  en: A machine-learning technique that adapts a model trained on a source domain to perform well on a different but related
+    target domain.
+  zh: 将源域训练的模型适配到不同但相关的目标域上以获得良好性能的机器学习技术。
+  ko: 소스 도메인에서 학습한 모델을 다르지만 관련된 타겟 도메인에서 잘 작동하도록 적응시키는 기계학습 기법.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -19,14 +22,16 @@ functional_roles:
 tags:
 - method
 - chapter_18
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -34,6 +39,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 域适应
+# Domain Adaptation / 域适应 / 도메인 적응
 
-域适应是人形机器人产业链中的method相关知识节点。详见Wiki第18章《模仿学习与策略学习》。
+## 摘要
+
+将源域训练的模型适配到不同但相关的目标域上以获得良好性能的机器学习技术。
+
+## Abstract
+
+A machine-learning technique that adapts a model trained on a source domain to perform well on a different but related target domain.
+
+## 요약
+
+소스 도메인에서 학습한 모델을 다르지만 관련된 타겟 도메인에서 잘 작동하도록 적응시키는 기계학습 기법.
+
+
+> 本词条对应 Wiki 第 18 章，详细论述见项目 Wiki。
+

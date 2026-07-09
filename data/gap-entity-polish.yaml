@@ -1,0 +1,931 @@
+# 精修映射：Wiki gap 实体 names / summary 多语言改写
+# 本文件由脚本 apply_gap_polish.py 消费，用于替换 research/ 下占位 frontmatter。
+# 规则：
+#   - en 名称首字母大写、保留标准缩写（CNC/FOC/FEA/ZMP/COM/MPC/PID/OMPL/RaaS 等）。
+#   - 中文摘要给出定义性描述，不再出现“是人形机器人产业链中的...知识节点”。
+#   - 英文摘要给出对应学术/工业定义，不再复制中文 Markdown。
+#   - ko 为韩文标准译名，缺失时留空脚本会跳过。
+
+metadata:
+  version: 1
+  generated_at: "2026-07-09"
+  count: 89
+
+entities:
+  # Chapter 1: 人形机器人产业化的核心矛盾
+  ent_concept_demo_to_product_gap:
+    names:
+      en: Demo-to-Product Gap
+      zh: 演示指标与产品指标的鸿沟
+      ko: 데모-제품 간격
+    summary:
+      en: The systematic gap between metrics optimized for staged demonstrations and those required for reliable, certifiable, mass-producible products.
+      zh: 为舞台演示优化的指标与可量产、可认证、高可靠产品所需指标之间的系统性差距。
+      ko: 데모를 위한 지표와 대량생산·인증 가능한 제품이 요구하는 지표 사이의 체계적 간극.
+
+  ent_concept_seven_transitions:
+    names:
+      en: Seven Transitions from 0 to 1
+      zh: 从0到1的七个跃迁
+      ko: 0에서 1로의 7가지 전환
+    summary:
+      en: A framework describing seven critical transitions—technology, system, supply chain, manufacturing, cost, validation, and market—required to move a humanoid robot from prototype to product.
+      zh: 将人形机器人从样机推向产品所需的技术、系统、供应链、制造、成本、验证与市场七大关键跃迁框架。
+      ko: 휴로봇을 시제품에서 제품으로 전환하는 데 필요한 기술·시스템·공급망·제조·비용·검증·시장의 7대 전환 프레임워크.
+
+  # Chapter 3: 关键材料科学
+  ent_material_rare_earth_supply:
+    names:
+      en: Rare-Earth Supply Chain
+      zh: 稀土元素供应链
+      ko: 희토류 공급망
+    summary:
+      en: The upstream supply chain of rare-earth elements—especially neodymium, dysprosium, and terbium—used in high-performance permanent magnets for actuators.
+      zh: 用于高性能执行器永磁体的稀土元素（如钕、镝、铽）的上游供应链。
+      ko: 액추에이터용 고성능 영구자석에 사용되는 네오디뮴·디스프로슘·터븀 등 희토류의 상류 공급망.
+
+  ent_material_sic_gan_power_devices:
+    names:
+      en: SiC/GaN Power Device Materials
+      zh: SiC/GaN功率器件材料
+      ko: SiC/GaN 전력소자 재료
+    summary:
+      en: Wide-bandgap semiconductor materials—silicon carbide (SiC) and gallium nitride (GaN)—that enable higher-efficiency, higher-frequency power conversion in motor drives and power electronics.
+      zh: 碳化硅（SiC）与氮化镓（GaN）等宽禁带半导体材料，可提升电机驱动与电力电子的转换效率和开关频率。
+      ko: 모터 드라이브와 전력전자에서 더 높은 효율과 주파수 변환을 가능하게 하는 SiC 및 GaN 등 광대역 갭 반도체 재료.
+
+  # Chapter 4: 执行器：人形机器人的“肌肉”
+  ent_component_rv_reducer:
+    names:
+      en: RV Reducer
+      zh: RV减速器
+      ko: RV 감속기
+    summary:
+      en: A high-rigidity, high-torque cycloidal reducer widely used in heavy-load robot joints, especially hips and waists, due to its excellent shock resistance and positioning accuracy.
+      zh: 一种高刚性、高扭矩的摆线针轮减速器，抗冲击性与定位精度优异，常用于重载机器人臀、腰等关节。
+      ko: 고강성·고토크 사이클로이드 감속기로, 충격 저항성과 위치 정밀도가 우수하여 중하량 로봇 관절에 널리 사용됨.
+
+  ent_component_planetary_roller_screw:
+    names:
+      en: Planetary Roller Screw
+      zh: 行星滚柱丝杠
+      ko: 행성 롤러 스크류
+    summary:
+      en: A high-load, high-precision linear motion mechanism that converts rotary motion to linear motion via threaded rollers, often used in humanoid linear actuators.
+      zh: 通过螺纹滚柱将旋转运动转换为直线运动的高承载、高精度直线传动机构，常用于人形直线执行器。
+      ko: 스레드 롤러를 통해 회전욕동을 직선욕동으로 변환하는 고하중·고정밀 직선 기구로 휴로봇 선형 액추에이터에 사용됨.
+
+  ent_method_foc_motor_control:
+    names:
+      en: Field-Oriented Control (FOC)
+      zh: 磁场定向控制（FOC）
+      ko: 자장 지향 제어(FOC)
+    summary:
+      en: A motor-control method that transforms three-phase currents into a rotating dq reference frame to enable independent control of torque and flux, similar to a DC machine.
+      zh: 将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。
+      ko: 삼상 전류를 회전하는 dq 좌표계로 변환하여 토크와 자속을 독립 제어하는 모터 제어 방식.
+
+  ent_principle_current_velocity_position_loops:
+    names:
+      en: Current / Velocity / Position Control Loops
+      zh: 电流环/速度环/位置环
+      ko: 전류·속도·위치 제어 루프
+    summary:
+      en: The nested feedback-control hierarchy for servo drives, where an inner current loop regulates torque, a velocity loop regulates speed, and an outer position loop regulates joint angle.
+      zh: 伺服驱动的级联反馈控制层级：内环电流环控制转矩，中间速度环控制转速，外环位置环控制关节角度。
+      ko: "서보 드라이브의 중첩 피드백 제어 계층: 내측 전류 루프는 토크, 속도 루프는 속도, 외측 위치 루프는 관절 각도를 제어."
+
+  ent_metric_torque_density:
+    names:
+      en: Torque Density
+      zh: 转矩密度
+      ko: 토크 밀도
+    summary:
+      en: The ratio of continuous output torque to actuator mass or volume, a key figure of merit for compact, high-performance humanoid joints.
+      zh: 执行器连续输出转矩与其质量或体积之比，是衡量人形机器人关节紧凑性与动力性能的关键指标。
+      ko: 액추에이터 질량·부피 대비 연속 출력 토크 비율로, 휴로봇 관절의 소형·고성능을 평가하는 핵심 지표.
+
+  # Chapter 5: 传感与感知硬件
+  ent_component_rgbd_camera:
+    names:
+      en: RGB-D Camera
+      zh: RGB-D相机
+      ko: RGB-D 칩라
+    summary:
+      en: A vision sensor that combines color imaging with per-pixel depth measurement, enabling 3D scene understanding for manipulation and navigation.
+      zh: 融合彩色成像与逐像素深度测量的视觉传感器，为抓取操作与导航提供三维场景理解。
+      ko: 컬러 영상과 픽셀별 깊이 정보를 결합하여 조작 및 납품을 위한 3D 장면 이해를 제공하는 비전 센서.
+
+  ent_component_lidar_livox_mid360:
+    names:
+      en: Solid-State LiDAR (e.g., Livox Mid-360)
+      zh: 固态激光雷达
+      ko: 고체형 라이다
+    summary:
+      en: A compact, non-mechanically-rotating LiDAR using MEMS or solid-state scanning, providing reliable 3D ranging for robot localization and obstacle avoidance.
+      zh: 采用MEMS或固态扫描方案的紧凑型激光雷达，无需机械旋转即可为机器人定位与避障提供可靠三维测距。
+      ko: MEMS 또는 고체 스캔 방식의 소형 비회전식 라이다로, 로봇 위치 추정 및 장애물 회피를 위한 3D 거리 측정을 제공.
+
+  # Chapter 6: 计算、电源与热管理
+  ent_component_safety_mcu:
+    names:
+      en: Safety Microcontroller Unit (Safety MCU)
+      zh: 安全MCU
+      ko: 안전 MCU
+    summary:
+      en: A functionally-safe microcontroller that monitors critical signals, handles watchdogs, and executes safety reactions independently from the main compute unit.
+      zh: 独立于主计算单元的功能安全微控制器，负责关键信号监控、看门狗管理与安全响应执行。
+      ko: 주 컴퓨팅 유닛과 독립적으로 중요 신호를 모니터링하고 워치독 및 안전 반응을 수행하는 기능 안전 마이크로컨트롤러.
+
+  ent_method_thermal_simulation:
+    names:
+      en: Thermal Simulation
+      zh: 热仿真
+      ko: 열 시뮬레이션
+    summary:
+      en: A computational method that predicts temperature distribution, heat flux, and cooling requirements of electronic and mechanical systems under operating loads.
+      zh: 预测电子与机械系统在运行载荷下的温度分布、热流密度与散热需求的计算方法。
+      ko: 전자·기계 시스템의 작동 하중에서 온도 분포·열 유량·냉각 요구량을 예측하는 계산 방법.
+
+  # Chapter 7: 供应商地图与供应链治理
+  ent_tier1_supplier_sanhuazhikong:
+    names:
+      en: Sanhua Intelligent Controls
+      zh: 三花智控
+      ko: 싼화지콩(三花智控)
+    summary:
+      en: A Chinese Tier-1 supplier of thermal management components and precision aluminum parts, increasingly active in humanoid and automotive robotics supply chains.
+      zh: 中国一级供应商，主营热管理零部件与精密铝件，正积极布局人形机器人及汽车机器人供应链。
+      ko: 열 관리 부품과 정밀 알루미늄 부품을 공급하는 중국 티어1 기업으로, 휴로봇 및 자동차 로봇 공급망에 활발히 진출 중.
+
+  ent_tier1_supplier_tuopujituan:
+    names:
+      en: Tuopu Group
+      zh: 拓普集团
+      ko: 투오푸그룹(拓普集团)
+    summary:
+      en: A Chinese Tier-1 supplier of aluminum/magnesium die-castings and CNC-machined structural parts, serving automotive and humanoid robot OEMs.
+      zh: 中国一级供应商，提供铝/镁合金压铸与CNC加工结构件，服务于汽车与人形机器人整机厂商。
+      ko: 알루미늄·마그네슘 다이캐스트 및 CNC 가공 구조 부품을 공급하는 중국 티어1 기업으로, 자동차 및 휴로봇 OEM에 납품.
+
+  # Chapter 8: 人形机器人设计原理
+  ent_principle_zero_moment_point:
+    names:
+      en: Zero Moment Point (ZMP)
+      zh: 零力矩点（ZMP）
+      ko: 영모멘트 점(ZMP)
+    summary:
+      en: A point on the ground where the horizontal moment of the ground reaction force about it is zero; widely used as a dynamic stability criterion for bipedal walking.
+      zh: 地面反作用力水平分力矩为零的地面点，常用于判断双足机器人动态行走的稳定性。
+      ko: 지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.
+
+  ent_principle_center_of_mass:
+    names:
+      en: Center of Mass (COM)
+      zh: 质心（COM）
+      ko: 질량 중심(COM)
+    summary:
+      en: The weighted average position of all mass in a body; its trajectory and height are central to balance, gait, and momentum-based control of humanoid robots.
+      zh: 物体内所有质量的加权平均位置；其轨迹与高度是人形机器人平衡、步态与动量控制的核心。
+      ko: 강체 내 모든 질량의 가중 평균 위치로, 휴로봇의 균형·보행·울동량 기반 제어의 핵심 변수.
+
+  ent_method_forward_kinematics:
+    names:
+      en: Forward Kinematics
+      zh: 正运动学
+      ko: 정욕동학
+    summary:
+      en: The computation of end-effector position and orientation from given joint angles, using a chain of homogeneous transformations or product-of-exponentials.
+      zh: 根据给定关节角，通过齐次变换链或指数积计算末端执行器位姿的方法。
+      ko: 주어진 관절 각도로부터 동차 변환 사슬 또는 지수곱을 이용해 말단 동작기 위치·방향을 계산하는 방법.
+
+  ent_method_inverse_kinematics:
+    names:
+      en: Inverse Kinematics
+      zh: 逆运动学
+      ko: 역욕동학
+    summary:
+      en: The computation of joint angles that realize a desired end-effector pose, often solved numerically via Jacobian pseudoinverse or analytically for simple geometries.
+      zh: 根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。
+      ko: 원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.
+
+  ent_formalism_floating_base_dynamics:
+    names:
+      en: Floating-Base Dynamics
+      zh: 浮动基动力学
+      ko: 부유 기반 동역학
+    summary:
+      en: A rigid-body dynamics formalism for robots with an unactuated or underactuated base, such as bipeds, where the base pose is part of the generalized coordinates.
+      zh: 针对未驱动或欠驱动基座的刚体动力学建模形式，如双足机器人，将基座位姿纳入广义坐标。
+      ko: 이족 로봇처럼 비구동·저구동 기반을 가진 로봇을 위해 기반 자세를 일반화 좌표에 포함시키는 강체 동역학 공식화.
+
+  ent_method_fea_finite_element_analysis:
+    names:
+      en: Finite Element Analysis (FEA)
+      zh: 有限元分析（FEA）
+      ko: 유한요소해석(FEA)
+    summary:
+      en: A numerical method for predicting stress, deformation, vibration modes, and thermal behavior by discretizing complex geometries into finite elements.
+      zh: 将复杂几何离散为有限单元，预测应力、变形、模态与热行为的数值方法。
+      ko: 복잡한 기하를 유한 요소로 이산화하여 응력·변형·진동 모드·열 거동을 예측하는 수치 해석 방법.
+
+  # Chapter 9: 关键子系统设计
+  ent_subsystem_leg_mechanism:
+    names:
+      en: Leg Mechanism
+      zh: 腿部机构
+      ko: 다리 기구
+    summary:
+      en: The kinematic and structural design of the leg linkage, including hip, knee, and ankle joints, that supports weight, absorbs impact, and enables locomotion.
+      zh: 包含髋、膝、踝关节的腿部连杆运动与结构设计，承担承重、冲击吸收与移动功能。
+      ko: 고관절·무릎·발목 관절을 포함하는 다리 연결 기구의 용동·구조 설계로, 하중 지지·충격 흡수·이동을 담당.
+
+  ent_subsystem_ankle_compliance:
+    names:
+      en: Ankle Compliance Mechanism
+      zh: 脚踝柔顺机构
+      ko: 발목 순응 기구
+    summary:
+      en: A mechanical or control-based compliance design at the ankle that improves shock absorption, terrain adaptation, and energy efficiency during walking.
+      zh: 通过机械弹性或控制柔顺性提高行走时的冲击吸收、地形适应与能量效率的脚踝设计。
+      ko: 보행 시 충격 흡수·지형 적응·에너지 효율을 높이기 위해 발목에 적용되는 기계적 또는 제어 기반 순응 설계.
+
+  # Chapter 10: 制造工艺体系
+  ent_process_cnc_machining:
+    names:
+      en: CNC Precision Machining
+      zh: CNC精密机加工
+      ko: CNC 정밀 가공
+    summary:
+      en: Computer-numerical-control machining processes that produce high-precision structural parts such as joint housings, brackets, and shafts to tight tolerances.
+      zh: 通过数控加工以严格公差制造关节壳体、支架、轴类等高精度结构件。
+      ko: 관절 하우징·브래킷·축 등의 고정밀 구조 부품을 엄격한 공차 내에서 생산하는 CNC 가공 공정.
+
+  ent_method_design_for_manufacturing:
+    names:
+      en: Design for Manufacturing (DFM)
+      zh: 可制造性设计（DFM）
+      ko: 제조 용이성 설계(DFM)
+    summary:
+      en: An engineering practice of designing parts and assemblies so that they are easy, repeatable, and cost-effective to manufacture at scale.
+      zh: 使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。
+      ko: 부품과 조립체를 쉽고 재현 가능하며 비용 효율적으로 대량 생산할 수 있도록 설계하는 공학 방법론.
+
+  ent_method_design_for_assembly:
+    names:
+      en: Design for Assembly (DFA)
+      zh: 可装配性设计（DFA）
+      ko: 조립 용이성 설계(DFA)
+    summary:
+      en: A design methodology that reduces part count, simplifies joining, and shortens assembly time to lower production cost and improve reliability.
+      zh: 减少零件数量、简化连接方式、缩短装配时间，从而降低生产成本并提高可靠性的设计方法。
+      ko: 부품 수를 줄이고 결합을 단순화하며 조립 시간을 단축하여 생산 비용을 낮추고 신뢰성을 높이는 설계 방법론.
+
+  # Chapter 11: 装配、集成与测试
+  ent_method_hardware_in_the_loop:
+    names:
+      en: Hardware-in-the-Loop (HIL)
+      zh: 硬件在环测试（HIL）
+      ko: 하드웨어 인 더 루프(HIL)
+    summary:
+      en: A validation method where real hardware controllers interact with a real-time simulation of the plant, enabling safe and repeatable testing of control software.
+      zh: 真实硬件控制器与被控对象实时仿真模型交互的验证方法，可安全、可重复地测试控制软件。
+      ko: 실제 하드웨어 컨트롤러가 플랜트의 실시간 시뮬레이션과 상호작용하여 제어 소프트웨어를 안전하고 반복 가능하게 검증하는 방법.
+
+  ent_method_calibration_joint_camera_imu:
+    names:
+      en: Joint-Camera-IMU Calibration
+      zh: 联合标定
+      ko: 관절·칩라·IMU 통합 보정
+    summary:
+      en: The process of estimating the intrinsic and extrinsic parameters, as well as time offsets, between joints, cameras, and inertial sensors to ensure coherent sensing and control.
+      zh: 估计关节、相机与惯性传感器之间的内外参及时延，以保证感知与控制一致性的过程。
+      ko: 관절·칩라·관성 센서 간 내외부 파라미터와 시간 오프셋을 추정하여 감지와 제어의 일관성을 보장하는 과정.
+
+  # Chapter 12: 认证、合规与质量标准
+  ent_standard_iec_61508:
+    names:
+      en: IEC 61508
+      zh: IEC 61508
+      ko: IEC 61508
+    summary:
+      en: An international standard for functional safety of electrical/electronic/programmable electronic safety-related systems, foundational for industrial and robot safety.
+      zh: 电气/电子/可编程电子安全相关系统功能安全的国际标准，是工业与机器人安全的基础。
+      ko: 전기·전자·프로그래머블 전자 안전 관련 시스템의 기능 안전에 관한 국제 표준.
+
+  ent_standard_iso_13849:
+    names:
+      en: ISO 13849
+      zh: ISO 13849
+      ko: ISO 13849
+    summary:
+      en: A safety standard for the design of control systems on machinery, specifying performance levels (PL) and safety categories for risk reduction.
+      zh: 机械控制系统安全设计的标准，规定了性能等级（PL）与安全类别以降低风险。
+      ko: 기계의 제어 시스템 설계를 위한 안전 표준으로, 위험 감소를 위한 성능 등급(PL)과 안전 카테고리를 규정.
+
+  ent_standard_ul_fcc_ce:
+    names:
+      en: Regional Market Certifications (UL / FCC / CE)
+      zh: 区域准入认证
+      ko: 지역별 시장 인증(UL/FCC/CE)
+    summary:
+      en: The set of mandatory or voluntary certifications required to sell robots in specific regions, such as UL for North America, CE for Europe, and FCC for electromagnetic compatibility.
+      zh: 在特定区域销售机器人所需的强制性或自愿性认证，如北美UL、欧洲CE及电磁兼容FCC等。
+      ko: 특정 지역에서 로봇을 판매하기 위해 필요한 강제 또는 자발적 인증; 북미 UL, 유럽 CE, 전자기 적합성 FCC 등.
+
+  # Chapter 13: 量产与规模化
+  ent_method_bom_cost_engineering:
+    names:
+      en: BOM Cost Engineering
+      zh: BOM成本工程
+      ko: BOM 원가 공학
+    summary:
+      en: The systematic analysis and optimization of bill-of-materials cost by balancing component selection, supplier negotiation, yield, and design trade-offs.
+      zh: 通过平衡器件选型、供应商议价、良率与设计折中，对物料清单成本进行系统分析与优化。
+      ko: 부품 선정·공급업체 협상·수율·설계 트레이드오프를 균형 있게 고려하여 자재 명세서 비용을 분석·최적화하는 체계적 방법.
+
+  ent_method_value_analysis_value_engineering:
+    names:
+      en: Value Analysis / Value Engineering (VA/VE)
+      zh: 价值分析/价值工程（VA/VE）
+      ko: 가치 분석/가치 공학(VA/VE)
+    summary:
+      en: A structured methodology to improve product value by either reducing cost while preserving function or enhancing function at acceptable cost.
+      zh: 在保持功能的前提下降低成本，或在可接受成本下提升功能，以提升产品价值的结构化方法。
+      ko: 기능을 유지하면서 비용을 줄이거나, 수용 가능한 비용 내에서 기능을 향상시켜 제품 가치를 높이는 구조화된 방법론.
+
+  ent_method_fmea:
+    names:
+      en: Failure Mode and Effects Analysis (FMEA)
+      zh: 失效模式与影响分析（FMEA）
+      ko: 고장 모드 및 영향 분석(FMEA)
+    summary:
+      en: A bottom-up reliability method that identifies potential failure modes, their causes and effects, and prioritizes actions to mitigate risk.
+      zh: 自下而上识别潜在失效模式、原因与影响，并优先采取缓解措施的可靠性分析方法。
+      ko: 잠재적 고장 모드·원인·영향을 식별하고 위험 완화 조치의 우선순위를 정하는 상향식 신뢰성 방법.
+
+  # Chapter 14: 机器人控制基础
+  ent_method_pid_control:
+    names:
+      en: PID Control
+      zh: PID控制
+      ko: PID 제어
+    summary:
+      en: A foundational feedback control method that computes a control signal as a linear combination of proportional, integral, and derivative terms of the tracking error.
+      zh: 一种基础反馈控制方法，将控制量表示为跟踪误差的比例、积分、微分三项线性组合。
+      ko: 추적 오차의 비례·적분·미분 항의 선형 조합으로 제어 신호를 계산하는 기초 피드백 제어 방법.
+
+  ent_method_model_predictive_control:
+    names:
+      en: Model Predictive Control (MPC)
+      zh: 模型预测控制（MPC）
+      ko: 모델 예측 제어(MPC)
+    summary:
+      en: An optimization-based control method that repeatedly solves a finite-horizon optimal control problem using a predictive model and applies only the first control action.
+      zh: 基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。
+      ko: 예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.
+
+  ent_method_impedance_control:
+    names:
+      en: Impedance Control
+      zh: 阻抗控制
+      ko: 임피던스 제어
+    summary:
+      en: A control approach that regulates the dynamic relationship between interaction force and displacement, making the robot behave like a virtual mechanical impedance.
+      zh: 调节交互力与位移之间动态关系的控制方法，使机器人表现出虚拟机械阻抗特性。
+      ko: 상호작용 힘과 변위 간의 동적 관계를 제어하여 로봇이 가상의 기계적 임피던스처럼 동작하도록 하는 제어 방식.
+
+  ent_method_admittance_control:
+    names:
+      en: Admittance Control
+      zh: 导纳控制
+      ko: 어드미턴스 제어
+    summary:
+      en: A control approach that converts measured external forces into desired position or velocity trajectories, complementary to impedance control.
+      zh: 将测得的外部力转换为期望位置或速度轨迹的控制方法，与阻抗控制互补。
+      ko: 측정된 외력을 원하는 위치·속도 궤적으로 변환하는 제어 방식으로, 임피던스 제어와 상호 보완적.
+
+  ent_method_force_position_hybrid_control:
+    names:
+      en: Force/Position Hybrid Control
+      zh: 力位混合控制
+      ko: 힘/위치 하이브리드 제어
+    summary:
+      en: A control strategy that simultaneously regulates force along constrained directions and position along free directions in contact tasks.
+      zh: 在接触任务中同时约束方向上控制力、自由方向上控制位置的策略。
+      ko: 접촉 작업에서 제약 방향으로는 힘을, 자유 방향으로는 위치를 동시에 제어하는 전략.
+
+  ent_method_whole_body_control:
+    names:
+      en: Whole-Body Control (WBC)
+      zh: 全身控制（WBC）
+      ko: 전신 제어(WBC)
+    summary:
+      en: A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks such as balance, gaze, and manipulation.
+      zh: 协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。
+      ko: 휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.
+
+  ent_formalism_euler_lagrange_equations:
+    names:
+      en: Euler-Lagrange Equations
+      zh: 欧拉-拉格朗日方程
+      ko: 오일러-라그랑주 방정식
+    summary:
+      en: Second-order differential equations derived from the stationarity of the action integral, giving the equations of motion for mechanical systems in generalized coordinates.
+      zh: 由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。
+      ko: 작용 적분의 정지 조건에서 도출된 2차 미분방정식으로, 일반화 좌표에서 기계 시스템의 용동 방정식을 제공.
+
+  # Chapter 15: 运动生成与 Locomotion
+  ent_method_gait_planning:
+    names:
+      en: Gait Planning
+      zh: 步态规划
+      ko: 보행 패턴 계획
+    summary:
+      en: The generation of footstep sequences, timing, and phase transitions that produce stable and efficient locomotion for legged robots.
+      zh: 为腿足机器人生成稳定高效行走的足端落点序列、时机与相态转换。
+      ko: 족욕 로봇의 안정적이고 효율적인 이동을 위해 보행 순서·시기·상태 전이를 생성하는 방법.
+
+  ent_principle_capture_point:
+    names:
+      en: Capture Point
+      zh: 捕获点
+      ko: 캡처 포인트
+    summary:
+      en: A point on the ground where the robot must step to bring itself to a complete stop, used as a predictive balance criterion for bipedal walking.
+      zh: 机器人必须踏步其上才能完全停稳的地面点，是双足行走预测性平衡判据。
+      ko: 로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.
+
+  ent_method_direct_collocation:
+    names:
+      en: Direct Collocation
+      zh: 直接配点法
+      ko: 직접 배치법
+    summary:
+      en: A trajectory optimization method that discretizes both states and controls at collocation points and solves the resulting nonlinear program directly.
+      zh: 在配点处同时离散状态与控制量，并直接求解所得非线性规划的轨迹优化方法。
+      ko: 상태와 제어 입력을 배치점에서 이산화하고 결과 비선형 계획법을 직접 푸는 궤적 최적화 방법.
+
+  ent_method_shooting_method:
+    names:
+      en: Shooting Method
+      zh: 打靶法
+      ko: 슈팅 방법
+    summary:
+      en: A numerical method for solving boundary-value problems by integrating from an initial guess and adjusting decision variables to satisfy terminal constraints.
+      zh: 通过从初始猜测积分并调整决策变量以满足终端约束，从而求解边值问题的数值方法。
+      ko: 초기 추정값으로부터 적분하고 최종 제약을 만족하도록 결정 변수를 조정하여 경계값 문제를 푸는 수치 방법.
+
+  ent_algorithm_ppo:
+    names:
+      en: Proximal Policy Optimization (PPO)
+      zh: 近端策略优化（PPO）
+      ko: 근위 정책 최적화(PPO)
+    summary:
+      en: A policy-gradient reinforcement-learning algorithm that constrains update steps to avoid destructive policy changes and improve sample efficiency.
+      zh: 通过限制策略更新步长避免破坏性改变、提高样本效率的策略梯度强化学习算法。
+      ko: 정책 업데이트 폭을 제한하여 파괴적 정책 변화를 방지하고 샘플 효율성을 높이는 정책 경사 강화학습 알고리즘.
+
+  ent_algorithm_sac:
+    names:
+      en: Soft Actor-Critic (SAC)
+      zh: 软演员-评论家（SAC）
+      ko: 소프트 액터-크리틱(SAC)
+    summary:
+      en: An off-policy actor-critic reinforcement-learning algorithm that maximizes expected return while also maximizing policy entropy for exploration.
+      zh: 在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。
+      ko: 기대 보상을 최대화하면서도 정책 엔트로피를 최대화해 탐색을 장려하는 오프폴리시 액터-크리틱 강화학습 알고리즘.
+
+  ent_method_sim_to_real:
+    names:
+      en: Sim-to-Real Transfer
+      zh: Sim-to-Real迁移
+      ko: 시뮬-실제 전이
+    summary:
+      en: Techniques for transferring policies or controllers trained in simulation to physical robots, typically using domain randomization, system identification, or adaptation.
+      zh: 将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。
+      ko: 시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.
+
+  # Chapter 16: 操作与抓取
+  ent_principle_force_closure:
+    names:
+      en: Force Closure
+      zh: 力闭合
+      ko: 힘 폐쇄
+    summary:
+      en: A grasp condition in which arbitrary external wrench on the object can be balanced by contact forces without changing the contact configuration.
+      zh: 在不改变接触配置的前提下，接触力可平衡物体任意外部力螺旋的抓取条件。
+      ko: 접촉 구성을 변경하지 않고 접촉력이 물체의 임의 외력 렌치를 평형시킬 수 있는 그래프 조건.
+
+  ent_principle_form_closure:
+    names:
+      en: Form Closure
+      zh: 形闭合
+      ko: 형태 폐쇄
+    summary:
+      en: A grasp condition in which the object's motion is completely constrained by the geometry and placement of frictionless contacts alone.
+      zh: 仅通过无摩擦接触的几何与布局即可完全约束物体运动的抓取条件。
+      ko: 마찰이 없는 접촉의 기하·배치만으로 물체의 운동을 완전히 구속하는 그래프 조건.
+
+  ent_software_ompl:
+    names:
+      en: Open Motion Planning Library (OMPL)
+      zh: OMPL
+      ko: OMPL
+    summary:
+      en: An open-source C++ library containing state-of-the-art sampling-based motion planning algorithms such as RRT*, PRM, and BIT*.
+      zh: 包含RRT*、PRM、BIT*等先进基于采样运动规划算法的开源C++库。
+      ko: RRT*, PRM, BIT* 등 최신 샘플링 기반 운동 계획 알고리즘을 포함하는 오픈소스 C++ 라이브러리.
+
+  ent_method_dexterous_manipulation:
+    names:
+      en: Dexterous Manipulation
+      zh: 灵巧操作
+      ko: 손재주 있는 조작
+    summary:
+      en: The ability to manipulate objects with multi-fingered hands using fine finger motions, contact regulation, and in-hand reorientation.
+      zh: 利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。
+      ko: 다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.
+
+  # Chapter 17: 遥操作与人机协作
+  ent_method_bilateral_teleoperation:
+    names:
+      en: Bilateral Teleoperation
+      zh: 双边遥操作
+      ko: 양방향 원격 조작
+    summary:
+      en: A teleoperation architecture where command signals flow from master to slave and force/tactile feedback flows back to the master, improving transparency and safety.
+      zh: 命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。
+      ko: 명령 신호는 마스터→슬레이브, 힘·촉각 피드백은 슬레이브→마스터로 흐르는 원격 조작 구조로 투명성과 안전성을 향상.
+
+  ent_concept_human_robot_collaboration_safety:
+    names:
+      en: Human-Robot Collaboration Safety
+      zh: 人机协作安全
+      ko: 인간-로봇 협업 안전
+    summary:
+      en: The set of standards, sensors, control laws, and workplace designs that ensure safe coexistence and cooperation between humans and robots.
+      zh: 确保人与机器人安全共存与协作的标准、传感器、控制律与工作场所设计体系。
+      ko: 인간과 로봇의 안전한 공존·협력을 보장하는 표준·센서·제어법·작업장 설계 집합.
+
+  # Chapter 18: 模仿学习与策略学习
+  ent_method_behavior_cloning:
+    names:
+      en: Behavior Cloning
+      zh: 行为克隆
+      ko: 행동 클로닝
+    summary:
+      en: A supervised imitation-learning method that trains a policy to replicate expert demonstrations, often used as a baseline for robot skill learning.
+      zh: 通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。
+      ko: 전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.
+
+  ent_method_diffusion_policy:
+    names:
+      en: Diffusion Policy
+      zh: 扩散策略
+      ko: 디퓨전 정책
+    summary:
+      en: A visuomotor policy that represents action distributions as denoising diffusion models, enabling multimodal and smooth robot action generation.
+      zh: 将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。
+      ko: 행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.
+
+  ent_method_action_chunking_transformer:
+    names:
+      en: Action Chunking with Transformers (ACT)
+      zh: 动作分块变压器（ACT）
+      ko: 트랜스포머를 이용한 행동 청킹(ACT)
+    summary:
+      en: An imitation-learning method that predicts a sequence of future actions as a chunk using a transformer, reducing compounding errors in long-horizon tasks.
+      zh: 使用Transformer预测未来一段动作序列的模仿学习方法，可减少长程任务中的误差累积。
+      ko: 트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.
+
+  ent_method_domain_randomization:
+    names:
+      en: Domain Randomization
+      zh: 域随机化
+      ko: 도메인 랜덤화
+    summary:
+      en: A sim-to-real technique that randomizes simulation parameters during training to improve policy robustness against real-world model mismatch.
+      zh: 训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。
+      ko: 훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.
+
+  ent_method_domain_adaptation:
+    names:
+      en: Domain Adaptation
+      zh: 域适应
+      ko: 도메인 적응
+    summary:
+      en: A machine-learning technique that adapts a model trained on a source domain to perform well on a different but related target domain.
+      zh: 将源域训练的模型适配到不同但相关的目标域上以获得良好性能的机器学习技术。
+      ko: 소스 도메인에서 학습한 모델을 다르지만 관련된 타겟 도메인에서 잘 작동하도록 적응시키는 기계학습 기법.
+
+  ent_method_system_identification:
+    names:
+      en: System Identification
+      zh: 系统辨识
+      ko: 시스템 동정
+    summary:
+      en: The process of building mathematical models of dynamical systems from measured input-output data, used to align simulation with reality.
+      zh: 根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。
+      ko: 측정된 입출력 데이터로부터 동적 시스템의 수학적 모델을 구축하여 시뮬레이션과 현실을 일치시키는 과정.
+
+  # Chapter 19: 视觉-语言-动作模型（VLA）
+  ent_method_openvla:
+    names:
+      en: OpenVLA
+      zh: OpenVLA
+      ko: OpenVLA
+    summary:
+      en: An open-source vision-language-action model trained on the Open X-Embodiment dataset for generalizable robot manipulation.
+      zh: 基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。
+      ko: Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.
+
+  ent_method_gr00t_n1:
+    names:
+      en: GR00T N1
+      zh: GR00T N1
+      ko: GR00T N1
+    summary:
+      en: NVIDIA's general-purpose humanoid robot foundation model designed to enable natural-language-conditioned manipulation and locomotion skills.
+      zh: NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。
+      ko: NVIDIA의 범용 휴로봇 기반 모델로, 자연어 조건 하에서 조작 및 이동 기술을 가능하게 함.
+
+  ent_method_pi0:
+    names:
+      en: π0 (Pi Zero)
+      zh: π0
+      ko: π0
+    summary:
+      en: A generalist visuomotor policy pretrained on diverse robotic data and fine-tuned for dexterous, language-conditioned manipulation tasks.
+      zh: 在多样化机器人数据上预训练并针对灵巧、语言条件操作任务微调的多面手视觉运动策略。
+      ko: 다양한 로봇 데이터로 사전학습하고 언어 조건의 손재주 있는 조작 과제에 미세 조정한 범용 시각운동 정책.
+
+  ent_dataset_open_x_embodiment:
+    names:
+      en: Open X-Embodiment Dataset
+      zh: Open X-Embodiment数据集
+      ko: Open X-Embodiment 데이터셋
+    summary:
+      en: A large aggregated dataset of robot demonstration trajectories across many robot embodiments, used to train generalist robot policies such as RT-2 and OpenVLA.
+      zh: 聚合多种机器人本体的演示轨迹的大规模数据集，用于训练RT-2、OpenVLA等通才机器人策略。
+      ko: 다양한 로봇 본체의 시연 궤적을 집대성한 대규모 데이터셋으로, RT-2·OpenVLA 등 범용 로봇 정책 학습에 사용됨.
+
+  # Chapter 20: 世界模型与长期推理
+  ent_concept_world_model:
+    names:
+      en: World Model
+      zh: 世界模型
+      ko: 세계 모델
+    summary:
+      en: A learned or hand-crafted internal model that predicts future states of the environment, enabling planning and reasoning in robotics and AI.
+      zh: 预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。
+      ko: 환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.
+
+  ent_method_task_planning:
+    names:
+      en: Task Planning
+      zh: 任务规划
+      ko: 작업 계획
+    summary:
+      en: The process of generating a sequence of high-level actions to achieve a goal, often using symbolic representations such as PDDL.
+      zh: 生成实现目标的高层动作序列的过程，常用PDDL等符号表示。
+      ko: 목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.
+
+  ent_method_neuro_symbolic_reasoning:
+    names:
+      en: Neuro-Symbolic Reasoning
+      zh: 符号-神经混合推理
+      ko: 신경-기호 추론
+    summary:
+      en: An AI approach that combines neural perception and learning with symbolic reasoning to obtain interpretable and generalizable long-horizon decision-making.
+      zh: 将神经感知与学习同符号推理结合，以获得可解释、可泛化的长程决策能力的人工智能方法。
+      ko: 신경 인식·학습과 기호 추론을 결합하여 해석 가능하고 일반화된 장기 의사결정을 얻는 AI 접근법.
+
+  # Chapter 21: 数据基础设施
+  ent_dataset_humanplus_shadowing:
+    names:
+      en: HumanPlus Shadowing Dataset
+      zh: HumanPlus Shadowing数据集
+      ko: HumanPlus Shadowing 데이터셋
+    summary:
+      en: A dataset collected by shadowing human motion with a humanoid robot, used to train whole-body imitation and teleoperation policies.
+      zh: 通过人形机器人跟随人体运动采集的数据集，用于训练全身模仿与遥操作策略。
+      ko: 휴로봇으로 인간 동작을 따라 촬영하여 수집한 데이터셋으로, 전신 모방 및 원격 조작 정책 학습에 사용.
+
+  ent_method_fleet_data_flywheel:
+    names:
+      en: Fleet Data Flywheel
+      zh: 车队数据飞轮
+      ko: 플릿 데이터 플라이휠
+    summary:
+      en: A closed-loop system where data from deployed robot fleets continuously improves models, which in turn improve fleet performance and generate more data.
+      zh: 部署机器人车队产生的数据持续改进模型，模型反过来提升车队性能并产生更多数据的闭环系统。
+      ko: 배포된 로봇 플릿의 데이터가 지속적으로 모델을 개선하고, 이 모델이 다시 플릿 성능을 높여 더 많은 데이터를 생성하는 폐쇄 루프 시스템.
+
+  # Chapter 22: 软件中间件
+  ent_software_rt_preempt_linux:
+    names:
+      en: Linux RT-PREEMPT
+      zh: Linux RT-PREEMPT
+      ko: Linux RT-PREEMPT
+    summary:
+      en: A Linux kernel patchset that makes most of the kernel preemptible to provide deterministic, low-latency real-time behavior for robot control.
+      zh: 使Linux内核大部分可抢占以提供确定性低延迟实时行为的内核补丁集，常用于机器人控制。
+      ko: Linux 커널 대부분을 선점 가능하게 만들어 결정적·저지연 실시간 동작을 제공하는 커널 패치 집합.
+
+  ent_software_qnx:
+    names:
+      en: QNX
+      zh: QNX
+      ko: QNX
+    summary:
+      en: A commercial microkernel real-time operating system widely used in automotive and safety-critical systems, offering high reliability and deterministic scheduling.
+      zh: 广泛应用于汽车与安全关键系统的商用微内核实时操作系统，具有高可靠性与确定性调度能力。
+      ko: 자동차 및 안전 필수 시스템에 널리 사용되는 상용 마이크로커널 실시간 운영체제로, 높은 신뢰성과 결정적 스케줄링을 제공.
+
+  ent_software_pinocchio:
+    names:
+      en: Pinocchio
+      zh: Pinocchio
+      ko: Pinocchio
+    summary:
+      en: An open-source C++ library for efficient rigid-body dynamics, kinematics, and analytical derivatives, widely used in robotics research and model-based control.
+      zh: 用于高效刚体动力学、运动学与解析导数计算的开源C++库，广泛应用于机器人研究与基于模型的控制。
+      ko: 효율적인 강체 동역학·운동학·해석적 미분을 위한 오픈소스 C++ 라이브러리로, 로보틱스 연구 및 모델 기반 제어에 널리 사용됨.
+
+  # Chapter 23: 仿真与物理引擎
+  ent_software_gazebo:
+    names:
+      en: Gazebo
+      zh: Gazebo
+      ko: Gazebo
+    summary:
+      en: An open-source 3D robotics simulator that provides physics engines, sensor models, and scene authoring for algorithm development and testing.
+      zh: 提供物理引擎、传感器模型与场景编辑功能的开源三维机器人仿真器，用于算法开发与测试。
+      ko: 물리 엔진·센서 모델·장면 작성을 제공하는 오픈소스 3D 로보틱스 시뮬레이터로, 알고리즘 개발·테스트에 사용.
+
+  ent_concept_digital_twin:
+    names:
+      en: Digital Twin
+      zh: 数字孪生
+      ko: 디지털 트윈
+    summary:
+      en: A virtual replica of a physical asset or process that is continuously synchronized with real-world data for monitoring, simulation, and optimization.
+      zh: 与物理资产或流程实时数据同步的虚拟复制品，用于监控、仿真与优化。
+      ko: 물리 자산이나 프로세스의 실시간 데이터와 지속적으로 동기화되는 가상 복제체로, 모니터링·시뮬레이션·최적화에 활용.
+
+  # Chapter 24: 端到端软件栈
+  ent_concept_perception_stack:
+    names:
+      en: Perception Stack
+      zh: 感知栈
+      ko: 인식 스택
+    summary:
+      en: The software subsystem that processes sensor data to estimate states, detect objects, and build environmental representations for decision-making.
+      zh: 处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。
+      ko: 센서 데이터를 처리하여 상태를 추정·물체를 검출·환경 표현을 구축하고 의사결정에 입력을 제공하는 소프트웨어 하위 시스템.
+
+  ent_concept_decision_stack:
+    names:
+      en: Decision Stack
+      zh: 决策栈
+      ko: 의사결정 스택
+    summary:
+      en: The software subsystem that converts perception and task goals into plans, policies, and behavioral decisions.
+      zh: 将感知结果与任务目标转化为规划、策略与行为决策的软件子系统。
+      ko: 인식 결과와 작업 목표를 계획·정책·행동 결정으로 변환하는 소프트웨어 하위 시스템.
+
+  ent_concept_actuation_stack:
+    names:
+      en: Actuation Stack
+      zh: 执行栈
+      ko: 구동 스택
+    summary:
+      en: The software and hardware subsystem that executes low-level motor commands, safety limits, and fault responses based on the decision output.
+      zh: 根据决策输出执行底层电机命令、安全限位与故障响应的软硬件子系统。
+      ko: 의사결정 출력에 따라 저수준 모터 명령·안전 한계·고장 반응을 실행하는 소프트웨어 및 하드웨어 하위 시스템.
+
+  # Chapter 25: 机器人评测体系
+  ent_benchmark_maniskill:
+    names:
+      en: ManiSkill
+      zh: ManiSkill
+      ko: ManiSkill
+    summary:
+      en: A unified benchmark for generalizable manipulation skills, providing standardized tasks, simulated environments, and evaluation protocols.
+      zh: 面向可泛化操作技能的统一基准，提供标准化任务、仿真环境与评估协议。
+      ko: 일반화 가능한 조작 기술을 위한 통합 벤치마크로, 표준화된 과제·시뮬레이션 환경·평가 프로토콜을 제공.
+
+  ent_benchmark_isaac_gym:
+    names:
+      en: Isaac Gym Benchmarks
+      zh: Isaac Gym基准
+      ko: Isaac Gym 벤치마크
+    summary:
+      en: A collection of GPU-accelerated reinforcement-learning benchmarks built on NVIDIA Isaac Gym for high-throughput robot policy training and evaluation.
+      zh: 基于NVIDIA Isaac Gym构建的GPU加速强化学习基准集合，用于高吞吐量机器人策略训练与评估。
+      ko: NVIDIA Isaac Gym 기반 GPU 가속 강화학습 벤치마크 모음으로, 고처리량 로봇 정책 훈련·평가에 사용.
+
+  # Chapter 27: 应用场景
+  ent_application_industrial_manufacturing:
+    names:
+      en: Industrial Manufacturing
+      zh: 工业制造
+      ko: 산업 제조
+    summary:
+      en: The application of humanoid robots to tasks such as assembly, machine tending, inspection, and material handling in factories.
+      zh: 将人形机器人应用于工厂中的装配、上下料、检测与物料搬运等任务。
+      ko: 휴로봇을 공장의 조립·기계 관리·검사·자재 취급 등에 적용하는 분야.
+
+  ent_application_logistics_warehouse:
+    names:
+      en: Logistics and Warehouse Automation
+      zh: 物流仓储
+      ko: 물류 및 창고 자동화
+    summary:
+      en: The use of humanoid robots for picking, sorting, packing, and moving goods in logistics centers and warehouses.
+      zh: 在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。
+      ko: 물류 센터와 창고에서 휴로봇을 이용한 피킹·분류·포장·운반 적용.
+
+  ent_application_healthcare:
+    names:
+      en: Healthcare Assistance
+      zh: 医疗健康
+      ko: 의료 지원
+    summary:
+      en: The deployment of humanoid robots in hospitals, eldercare, and rehabilitation settings for assistance, companionship, and therapy support.
+      zh: 在医院、养老与康复场景中部署人形机器人提供辅助、陪伴与治疗支持。
+      ko: 병원·노인 돌봄·재활 환경에서 보조·동반·치료 지원을 위해 휴로봇을 배치하는 적용.
+
+  ent_application_home_service:
+    names:
+      en: Home Service
+      zh: 家庭服务
+      ko: 가정 서비스
+    summary:
+      en: The use of humanoid robots for domestic chores, security, entertainment, and eldercare within residential environments.
+      zh: 在家庭环境中利用人形机器人完成家务、安防、娱乐与养老辅助。
+      ko: 주거 환경에서 가사·보안·오락·노인 돌봄을 위해 휴로봇을 사용하는 적용.
+
+  # Chapter 28: 市场、企业与投资
+  ent_market_humanoid_global_forecast:
+    names:
+      en: Global Humanoid Robot Market Forecast
+      zh: 人形机器人全球市场预测
+      ko: 글로벌 휴로봇 시장 전망
+    summary:
+      en: Projections of market size, growth rates, regional adoption, and segment demand for humanoid robots over a multi-year horizon.
+      zh: 对人形机器人在未来多年市场规模、增长率、区域采用与细分需求的预测。
+      ko: 향후 수년간 휴로봇의 시장 규모·성장률·지역 도입·세분 수요를 전망하는 예측.
+
+  ent_concept_robot_as_a_service:
+    names:
+      en: Robot-as-a-Service (RaaS)
+      zh: 机器人即服务（RaaS）
+      ko: 로봇 as a Service(RaaS)
+    summary:
+      en: A business model in which robots are leased or subscribed to rather than sold, bundling maintenance, software updates, and fleet management.
+      zh: 以租赁或订阅而非买断方式提供机器人，并打包维护、软件更新与车队管理的商业模式。
+      ko: 로봇을 판매가 아닌 임대·구독으로 제공하고 유지보수·소프트웨어 업데이트·플릿 관리를 묶은 비즈니스 모델.
+
+  # Chapter 29: 政策、监管与伦理
+  ent_concept_product_liability:
+    names:
+      en: Product Liability
+      zh: 产品责任
+      ko: 제품 책임
+    summary:
+      en: The legal responsibility of manufacturers and sellers for injuries or damages caused by defective or unsafe products, directly applicable to humanoid robots.
+      zh: 制造商与销售商因缺陷或不安全产品造成人身伤害或财产损失的法律责任，直接适用于人形机器人。
+      ko: 결함이나 불안전한 제품으로 인한 상해·손해에 대해 제조업체와 판매자가 지는 법적 책임.
+
+  ent_concept_privacy_biometrics:
+    names:
+      en: Privacy and Biometrics
+      zh: 隐私与生物识别
+      ko: 프라이버시 및 생체 인식
+    summary:
+      en: The governance of personal data and biometric information collected by robots, including face recognition, voiceprints, and gait data.
+      zh: 机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。
+      ko: 로봇이 수집하는 얼굴·음성·보행 등 개인정보와 생체 인식 데이터의 거버넌스.
+
+  # Chapter 30: 未来展望
+  ent_concept_embodied_general_intelligence:
+    names:
+      en: Embodied General Intelligence
+      zh: 具身通用智能
+      ko: 구체화된 범용 지능
+    summary:
+      en: The long-term goal of building agents that can learn, reason, and act flexibly in diverse physical environments through a body.
+      zh: 通过身体在多样物理环境中灵活学习、推理与行动的通用智能体长远目标。
+      ko: 신체를 통해 다양한 물리 환경에서 유연하게 학습·추론·행동할 수 있는 에이전트 구축의 장기 목표.
+
+  ent_concept_data_flywheel:
+    names:
+      en: Data Flywheel
+      zh: 数据飞轮
+      ko: 데이터 플라이휠
+    summary:
+      en: A self-reinforcing cycle in which deployed robots generate data that improves AI models, which improves robot performance and generates even more data.
+      zh: 部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。
+      ko: 배포된 로봇이 데이터를 생성하고, 데이터가 AI 모델을 개선하며, 모델이 로봇 성능을 높여 더 많은 데이터를 생성하는 자기 강화 순환.

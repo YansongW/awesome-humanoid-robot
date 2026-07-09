@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: tier1_supplier
 names:
-  zh: 拓普集团
   en: Tuopu Group
+  zh: 拓普集团
+  ko: 투오푸그룹(拓普集团)
 summary:
-  zh: '| 拓普集团 | 中国浙江 | 铝合金/镁合金压铸、CNC | 汽车/机器人结构件 | 公开资料 |'
-  en: 'Tuopu Group: | 拓普集团 | 中国浙江 | 铝合金/镁合金压铸、CNC | 汽车/机器人结构件 | 公开资料 |'
+  en: A Chinese Tier-1 supplier of aluminum/magnesium die-castings and CNC-machined structural parts, serving automotive and
+    humanoid robot OEMs.
+  zh: 中国一级供应商，提供铝/镁合金压铸与CNC加工结构件，服务于汽车与人形机器人整机厂商。
+  ko: 알루미늄·마그네슘 다이캐스트 및 CNC 가공 구조 부품을 공급하는 중국 티어1 기업으로, 자동차 및 휴로봇 OEM에 납품.
 domains:
 - 02_components
 - 11_applications_markets
@@ -19,14 +22,16 @@ functional_roles:
 tags:
 - tier1_supplier
 - chapter_7
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -34,6 +39,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 拓普集团
+# Tuopu Group / 拓普集团 / 투오푸그룹(拓普集团)
 
-拓普集团是人形机器人产业链中的tier1_supplier相关知识节点。详见Wiki第7章《供应商地图与供应链治理》。
+## 摘要
+
+中国一级供应商，提供铝/镁合金压铸与CNC加工结构件，服务于汽车与人形机器人整机厂商。
+
+## Abstract
+
+A Chinese Tier-1 supplier of aluminum/magnesium die-castings and CNC-machined structural parts, serving automotive and humanoid robot OEMs.
+
+## 요약
+
+알루미늄·마그네슘 다이캐스트 및 CNC 가공 구조 부품을 공급하는 중국 티어1 기업으로, 자동차 및 휴로봇 OEM에 납품.
+
+
+> 本词条对应 Wiki 第 7 章，详细论述见项目 Wiki。
+

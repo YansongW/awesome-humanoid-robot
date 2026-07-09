@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 热仿真
   en: Thermal Simulation
+  zh: 热仿真
+  ko: 열 시뮬레이션
 summary:
-  zh: '### 6.7.3 整机功率与热仿真思路'
-  en: 'Thermal Simulation: ### 6.7.3 整机功率与热仿真思路'
+  en: A computational method that predicts temperature distribution, heat flux, and cooling requirements of electronic and
+    mechanical systems under operating loads.
+  zh: 预测电子与机械系统在运行载荷下的温度分布、热流密度与散热需求的计算方法。
+  ko: 전자·기계 시스템의 작동 하중에서 온도 분포·열 유량·냉각 요구량을 예측하는 계산 방법.
 domains:
 - 02_components
 - 08_software_middleware
@@ -19,14 +22,16 @@ functional_roles:
 tags:
 - method
 - chapter_6
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -34,6 +39,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 热仿真
+# Thermal Simulation / 热仿真 / 열 시뮬레이션
 
-热仿真是人形机器人产业链中的method相关知识节点。详见Wiki第6章《计算、电源与热管理》。
+## 摘要
+
+预测电子与机械系统在运行载荷下的温度分布、热流密度与散热需求的计算方法。
+
+## Abstract
+
+A computational method that predicts temperature distribution, heat flux, and cooling requirements of electronic and mechanical systems under operating loads.
+
+## 요약
+
+전자·기계 시스템의 작동 하중에서 온도 분포·열 유량·냉각 요구량을 예측하는 계산 방법.
+
+
+> 本词条对应 Wiki 第 6 章，详细论述见项目 Wiki。
+

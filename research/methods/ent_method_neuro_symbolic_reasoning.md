@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
+  en: Neuro-Symbolic Reasoning
   zh: 符号-神经混合推理
-  en: Neuro Symbolic Reasoning
+  ko: 신경-기호 추론
 summary:
-  zh: 符号-神经混合推理是人形机器人产业链中的method相关知识节点，详见Wiki第20章《世界模型与长期推理》。
-  en: 符号-神经混合推理 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 20.
+  en: An AI approach that combines neural perception and learning with symbolic reasoning to obtain interpretable and generalizable
+    long-horizon decision-making.
+  zh: 将神经感知与学习同符号推理结合，以获得可解释、可泛化的长程决策能力的人工智能方法。
+  ko: 신경 인식·학습과 기호 추론을 결합하여 해석 가능하고 일반화된 장기 의사결정을 얻는 AI 접근법.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_20
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 符号-神经混合推理
+# Neuro-Symbolic Reasoning / 符号-神经混合推理 / 신경-기호 추론
 
-符号-神经混合推理是人形机器人产业链中的method相关知识节点。详见Wiki第20章《世界模型与长期推理》。
+## 摘要
+
+将神经感知与学习同符号推理结合，以获得可解释、可泛化的长程决策能力的人工智能方法。
+
+## Abstract
+
+An AI approach that combines neural perception and learning with symbolic reasoning to obtain interpretable and generalizable long-horizon decision-making.
+
+## 요약
+
+신경 인식·학습과 기호 추론을 결합하여 해석 가능하고 일반화된 장기 의사결정을 얻는 AI 접근법.
+
+
+> 本词条对应 Wiki 第 20 章，详细论述见项目 Wiki。
+

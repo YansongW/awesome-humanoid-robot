@@ -4,11 +4,13 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: application_scenario
 names:
+  en: Logistics and Warehouse Automation
   zh: 物流仓储
-  en: Logistics and Warehouse
+  ko: 물류 및 창고 자동화
 summary:
-  zh: 物流仓储是人形机器人产业链中的application相关知识节点，详见Wiki第27章《应用场景》。
-  en: 物流仓储 is a knowledge node related to application in the humanoid robot value chain. See Wiki Chapter 27.
+  en: The use of humanoid robots for picking, sorting, packing, and moving goods in logistics centers and warehouses.
+  zh: 在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。
+  ko: 물류 센터와 창고에서 휴로봇을 이용한 피킹·분류·포장·운반 적용.
 domains:
 - 11_applications_markets
 layers:
@@ -18,14 +20,16 @@ functional_roles:
 tags:
 - application
 - chapter_27
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +37,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 物流仓储
+# Logistics and Warehouse Automation / 物流仓储 / 물류 및 창고 자동화
 
-物流仓储是人形机器人产业链中的application相关知识节点。详见Wiki第27章《应用场景》。
+## 摘要
+
+在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。
+
+## Abstract
+
+The use of humanoid robots for picking, sorting, packing, and moving goods in logistics centers and warehouses.
+
+## 요약
+
+물류 센터와 창고에서 휴로봇을 이용한 피킹·분류·포장·운반 적용.
+
+
+> 本词条对应 Wiki 第 27 章，详细论述见项目 Wiki。
+

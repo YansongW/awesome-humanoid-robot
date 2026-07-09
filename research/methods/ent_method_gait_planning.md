@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 步态规划
   en: Gait Planning
+  zh: 步态规划
+  ko: 보행 패턴 계획
 summary:
-  zh: 步态规划是人形机器人产业链中的method相关知识节点，详见Wiki第15章《运动生成与 Locomotion》。
-  en: 步态规划 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 15.
+  en: The generation of footstep sequences, timing, and phase transitions that produce stable and efficient locomotion for
+    legged robots.
+  zh: 为腿足机器人生成稳定高效行走的足端落点序列、时机与相态转换。
+  ko: 족욕 로봇의 안정적이고 효율적인 이동을 위해 보행 순서·시기·상태 전이를 생성하는 방법.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_15
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 步态规划
+# Gait Planning / 步态规划 / 보행 패턴 계획
 
-步态规划是人形机器人产业链中的method相关知识节点。详见Wiki第15章《运动生成与 Locomotion》。
+## 摘要
+
+为腿足机器人生成稳定高效行走的足端落点序列、时机与相态转换。
+
+## Abstract
+
+The generation of footstep sequences, timing, and phase transitions that produce stable and efficient locomotion for legged robots.
+
+## 요약
+
+족욕 로봇의 안정적이고 효율적인 이동을 위해 보행 순서·시기·상태 전이를 생성하는 방법.
+
+
+> 本词条对应 Wiki 第 15 章，详细论述见项目 Wiki。
+

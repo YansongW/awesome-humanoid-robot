@@ -4,11 +4,13 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: OpenVLA
   en: OpenVLA
+  zh: OpenVLA
+  ko: OpenVLA
 summary:
-  zh: OpenVLA是人形机器人产业链中的method相关知识节点，详见Wiki第19章《视觉-语言-动作模型（VLA）》。
-  en: OpenVLA is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 19.
+  en: An open-source vision-language-action model trained on the Open X-Embodiment dataset for generalizable robot manipulation.
+  zh: 基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。
+  ko: Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -19,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_19
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -34,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# OpenVLA
+# OpenVLA / OpenVLA / OpenVLA
 
-OpenVLA是人形机器人产业链中的method相关知识节点。详见Wiki第19章《视觉-语言-动作模型（VLA）》。
+## 摘要
+
+基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。
+
+## Abstract
+
+An open-source vision-language-action model trained on the Open X-Embodiment dataset for generalizable robot manipulation.
+
+## 요약
+
+Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.
+
+
+> 本词条对应 Wiki 第 19 章，详细论述见项目 Wiki。
+

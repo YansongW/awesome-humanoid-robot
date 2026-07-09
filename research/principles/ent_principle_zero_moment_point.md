@@ -4,14 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: principle
 names:
-  en: Zero Moment Point
-  zh: 零力矩点
-  ko: 영점
+  en: Zero Moment Point (ZMP)
+  zh: 零力矩点（ZMP）
+  ko: 영모멘트 점(ZMP)
 summary:
   en: A point on the ground where the horizontal moment of the ground reaction force about it is zero; widely used as a dynamic
-    balance criterion for bipedal robots.
-  zh: 地面反作用力水平分力矩为零的点；常用于判断双足机器人动态行走稳定性。
-  ko: 지반 반력의 수평 모멘트가 0이 되는 지점; 이족 보행 로봇의 동적 균형 기준으로 널리 사용됨.
+    stability criterion for bipedal walking.
+  zh: 地面反作用力水平分力矩为零的地面点，常用于判断双足机器人动态行走的稳定性。
+  ko: 지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.
 domains:
 - 06_design_engineering
 - 07_ai_models_algorithms
@@ -27,12 +27,14 @@ tags:
 - biped
 - dynamics
 - stability
+- wiki_gap
 verification:
-  status: verified
+  status: partially_verified
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
   confidence: high
-  notes: Standard dynamics principle; definition checked against Vukobratović et al. (2004).
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_vukobratovic_2004_zmp
   type: paper
@@ -55,6 +57,7 @@ related_entities:
       or Newton-Euler dynamics.
     zh: ZMP 条件来源于机器人运动方程的力矩平衡，通常由欧拉-拉格朗日方程或牛顿-欧拉动力学表达。
 ---
+
 # Zero Moment Point / 零力矩点 / 영점
 
 ## 抽象

@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: concept
 names:
+  en: Torque Density
   zh: 转矩密度
-  en: Metric Torque Density
+  ko: 토크 밀도
 summary:
-  zh: '- 内置式永磁电机（IPMSM）：永磁体嵌入转子铁芯内部，利用磁阻转矩提高转矩密度，常用于牵引电机'
-  en: 'Metric Torque Density: - 内置式永磁电机（IPMSM）：永磁体嵌入转子铁芯内部，利用磁阻转矩提高转矩密度，常用于牵引电机'
+  en: The ratio of continuous output torque to actuator mass or volume, a key figure of merit for compact, high-performance
+    humanoid joints.
+  zh: 执行器连续输出转矩与其质量或体积之比，是衡量人形机器人关节紧凑性与动力性能的关键指标。
+  ko: 액추에이터 질량·부피 대비 연속 출력 토크 비율로, 휴로봇 관절의 소형·고성능을 평가하는 핵심 지표.
 domains:
 - 02_components
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - concept
 - chapter_4
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 转矩密度
+# Torque Density / 转矩密度 / 토크 밀도
 
-转矩密度是人形机器人产业链中的concept相关知识节点。详见Wiki第4章《执行器：人形机器人的“肌肉”》。
+## 摘要
+
+执行器连续输出转矩与其质量或体积之比，是衡量人形机器人关节紧凑性与动力性能的关键指标。
+
+## Abstract
+
+The ratio of continuous output torque to actuator mass or volume, a key figure of merit for compact, high-performance humanoid joints.
+
+## 요약
+
+액추에이터 질량·부피 대비 연속 출력 토크 비율로, 휴로봇 관절의 소형·고성능을 평가하는 핵심 지표.
+
+
+> 本词条对应 Wiki 第 4 章，详细论述见项目 Wiki。
+

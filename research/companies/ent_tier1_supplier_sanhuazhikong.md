@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: tier1_supplier
 names:
+  en: Sanhua Intelligent Controls
   zh: 三花智控
-  en: Sanhua Zhikong
+  ko: 싼화지콩(三花智控)
 summary:
-  zh: '| 三花智控 | 中国浙江 | 精密铝件、热管理 | 机器人/汽车 | 公开资料 |'
-  en: 'Sanhua Zhikong: | 三花智控 | 中国浙江 | 精密铝件、热管理 | 机器人/汽车 | 公开资料 |'
+  en: A Chinese Tier-1 supplier of thermal management components and precision aluminum parts, increasingly active in humanoid
+    and automotive robotics supply chains.
+  zh: 中国一级供应商，主营热管理零部件与精密铝件，正积极布局人形机器人及汽车机器人供应链。
+  ko: 열 관리 부품과 정밀 알루미늄 부품을 공급하는 중국 티어1 기업으로, 휴로봇 및 자동차 로봇 공급망에 활발히 진출 중.
 domains:
 - 02_components
 - 11_applications_markets
@@ -19,14 +22,16 @@ functional_roles:
 tags:
 - tier1_supplier
 - chapter_7
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -34,6 +39,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 三花智控
+# Sanhua Intelligent Controls / 三花智控 / 싼화지콩(三花智控)
 
-三花智控是人形机器人产业链中的tier1_supplier相关知识节点。详见Wiki第7章《供应商地图与供应链治理》。
+## 摘要
+
+中国一级供应商，主营热管理零部件与精密铝件，正积极布局人形机器人及汽车机器人供应链。
+
+## Abstract
+
+A Chinese Tier-1 supplier of thermal management components and precision aluminum parts, increasingly active in humanoid and automotive robotics supply chains.
+
+## 요약
+
+열 관리 부품과 정밀 알루미늄 부품을 공급하는 중국 티어1 기업으로, 휴로봇 및 자동차 로봇 공급망에 활발히 진출 중.
+
+
+> 本词条对应 Wiki 第 7 章，详细论述见项目 Wiki。
+

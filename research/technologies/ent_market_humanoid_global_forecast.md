@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: market_segment
 names:
+  en: Global Humanoid Robot Market Forecast
   zh: 人形机器人全球市场预测
-  en: Humanoid Robot Global Market Forecast
+  ko: 글로벌 휴로봇 시장 전망
 summary:
-  zh: 人形机器人全球市场预测是人形机器人产业链中的market相关知识节点，详见Wiki第28章《市场、企业与投资》。
-  en: 人形机器人全球市场预测 is a knowledge node related to market in the humanoid robot value chain. See Wiki Chapter 28.
+  en: Projections of market size, growth rates, regional adoption, and segment demand for humanoid robots over a multi-year
+    horizon.
+  zh: 对人形机器人在未来多年市场规模、增长率、区域采用与细分需求的预测。
+  ko: 향후 수년간 휴로봇의 시장 규모·성장률·지역 도입·세분 수요를 전망하는 예측.
 domains:
 - 11_applications_markets
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - market
 - chapter_28
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 人形机器人全球市场预测
+# Global Humanoid Robot Market Forecast / 人形机器人全球市场预测 / 글로벌 휴로봇 시장 전망
 
-人形机器人全球市场预测是人形机器人产业链中的market相关知识节点。详见Wiki第28章《市场、企业与投资》。
+## 摘要
+
+对人形机器人在未来多年市场规模、增长率、区域采用与细分需求的预测。
+
+## Abstract
+
+Projections of market size, growth rates, regional adoption, and segment demand for humanoid robots over a multi-year horizon.
+
+## 요약
+
+향후 수년간 휴로봇의 시장 규모·성장률·지역 도입·세분 수요를 전망하는 예측.
+
+
+> 本词条对应 Wiki 第 28 章，详细论述见项目 Wiki。
+

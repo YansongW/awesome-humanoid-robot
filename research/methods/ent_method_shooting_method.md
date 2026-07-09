@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: shooting method
   en: Shooting Method
+  zh: 打靶法
+  ko: 슈팅 방법
 summary:
-  zh: shooting method是人形机器人产业链中的method相关知识节点，详见Wiki第15章《运动生成与 Locomotion》。
-  en: shooting method is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 15.
+  en: A numerical method for solving boundary-value problems by integrating from an initial guess and adjusting decision variables
+    to satisfy terminal constraints.
+  zh: 通过从初始猜测积分并调整决策变量以满足终端约束，从而求解边值问题的数值方法。
+  ko: 초기 추정값으로부터 적분하고 최종 제약을 만족하도록 결정 변수를 조정하여 경계값 문제를 푸는 수치 방법.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - method
 - chapter_15
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# shooting method
+# Shooting Method / 打靶法 / 슈팅 방법
 
-shooting method是人形机器人产业链中的method相关知识节点。详见Wiki第15章《运动生成与 Locomotion》。
+## 摘要
+
+通过从初始猜测积分并调整决策变量以满足终端约束，从而求解边值问题的数值方法。
+
+## Abstract
+
+A numerical method for solving boundary-value problems by integrating from an initial guess and adjusting decision variables to satisfy terminal constraints.
+
+## 요약
+
+초기 추정값으로부터 적분하고 최종 제약을 만족하도록 결정 변수를 조정하여 경계값 문제를 푸는 수치 방법.
+
+
+> 本词条对应 Wiki 第 15 章，详细论述见项目 Wiki。
+

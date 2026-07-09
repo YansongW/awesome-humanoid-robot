@@ -4,12 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: principle
 names:
-  zh: 质心(COM)
-  en: COM
+  en: Center of Mass (COM)
+  zh: 质心（COM）
+  ko: 질량 중심(COM)
 summary:
-  zh: 本章在运动学、动力学、结构设计、安全、数字孪生与设计案例等维度进行了深化：引入旋量理论与指数积、对偶四元数、运动学校准、质心动量、浮动基动力学、接触动力学、捕获点、全身控制、FEA 与拓扑优化、晶格结构、螺栓与疲劳、功能安全、碰撞检测、急停回路、MBSE
-    与参数驱动协同；并通过 ASIMO、Atlas、Optimus、Digit、TALOS 及中国代表机型说明典型设计取舍
-  en: 'COM: 本章在运动学、动力学、结构设计、安全、数字孪生与设计案例等维度进行了深化：引入旋量理论与指数积、对偶四元数、运动学校准、质心动量、浮动基动力学、接触动力学、捕获点、全身控制、FEA 与拓扑优化、晶格结构、螺栓与疲劳、功能安全、碰撞检测、急停...'
+  en: The weighted average position of all mass in a body; its trajectory and height are central to balance, gait, and momentum-based
+    control of humanoid robots.
+  zh: 物体内所有质量的加权平均位置；其轨迹与高度是人形机器人平衡、步态与动量控制的核心。
+  ko: 강체 내 모든 질량의 가중 평균 위치로, 휴로봇의 균형·보행·울동량 기반 제어의 핵심 변수.
 domains:
 - 06_design_engineering
 layers:
@@ -19,14 +21,16 @@ functional_roles:
 tags:
 - principle
 - chapter_8
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -34,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 质心(COM)
+# Center of Mass (COM) / 质心（COM） / 질량 중심(COM)
 
-质心(COM)是人形机器人产业链中的principle相关知识节点。详见Wiki第8章《人形机器人设计原理》。
+## 摘要
+
+物体内所有质量的加权平均位置；其轨迹与高度是人形机器人平衡、步态与动量控制的核心。
+
+## Abstract
+
+The weighted average position of all mass in a body; its trajectory and height are central to balance, gait, and momentum-based control of humanoid robots.
+
+## 요약
+
+강체 내 모든 질량의 가중 평균 위치로, 휴로봇의 균형·보행·울동량 기반 제어의 핵심 변수.
+
+
+> 本词条对应 Wiki 第 8 章，详细论述见项目 Wiki。
+

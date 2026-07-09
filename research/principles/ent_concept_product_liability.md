@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: concept
 names:
-  zh: 产品责任
   en: Product Liability
+  zh: 产品责任
+  ko: 제품 책임
 summary:
-  zh: 产品责任是人形机器人产业链中的concept相关知识节点，详见Wiki第29章《政策、监管与伦理》。
-  en: 产品责任 is a knowledge node related to concept in the humanoid robot value chain. See Wiki Chapter 29.
+  en: The legal responsibility of manufacturers and sellers for injuries or damages caused by defective or unsafe products,
+    directly applicable to humanoid robots.
+  zh: 制造商与销售商因缺陷或不安全产品造成人身伤害或财产损失的法律责任，直接适用于人形机器人。
+  ko: 결함이나 불안전한 제품으로 인한 상해·손해에 대해 제조업체와 판매자가 지는 법적 책임.
 domains:
 - 12_policy_regulation_ethics
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - concept
 - chapter_29
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 产品责任
+# Product Liability / 产品责任 / 제품 책임
 
-产品责任是人形机器人产业链中的concept相关知识节点。详见Wiki第29章《政策、监管与伦理》。
+## 摘要
+
+制造商与销售商因缺陷或不安全产品造成人身伤害或财产损失的法律责任，直接适用于人形机器人。
+
+## Abstract
+
+The legal responsibility of manufacturers and sellers for injuries or damages caused by defective or unsafe products, directly applicable to humanoid robots.
+
+## 요약
+
+결함이나 불안전한 제품으로 인한 상해·손해에 대해 제조업체와 판매자가 지는 법적 책임.
+
+
+> 本词条对应 Wiki 第 29 章，详细论述见项目 Wiki。
+

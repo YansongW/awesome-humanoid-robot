@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: software_platform
 names:
-  zh: Pinocchio
   en: Pinocchio
+  zh: Pinocchio
+  ko: Pinocchio
 summary:
-  zh: Pinocchio是人形机器人产业链中的software_platform相关知识节点，详见Wiki第22章《软件中间件》。
-  en: Pinocchio is a knowledge node related to software_platform in the humanoid robot value chain. See Wiki Chapter 22.
+  en: An open-source C++ library for efficient rigid-body dynamics, kinematics, and analytical derivatives, widely used in
+    robotics research and model-based control.
+  zh: 用于高效刚体动力学、运动学与解析导数计算的开源C++库，广泛应用于机器人研究与基于模型的控制。
+  ko: 효율적인 강체 동역학·운동학·해석적 미분을 위한 오픈소스 C++ 라이브러리로, 로보틱스 연구 및 모델 기반 제어에 널리 사용됨.
 domains:
 - 08_software_middleware
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - software_platform
 - chapter_22
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Pinocchio
+# Pinocchio / Pinocchio / Pinocchio
 
-Pinocchio是人形机器人产业链中的software_platform相关知识节点。详见Wiki第22章《软件中间件》。
+## 摘要
+
+用于高效刚体动力学、运动学与解析导数计算的开源C++库，广泛应用于机器人研究与基于模型的控制。
+
+## Abstract
+
+An open-source C++ library for efficient rigid-body dynamics, kinematics, and analytical derivatives, widely used in robotics research and model-based control.
+
+## 요약
+
+효율적인 강체 동역학·운동학·해석적 미분을 위한 오픈소스 C++ 라이브러리로, 로보틱스 연구 및 모델 기반 제어에 널리 사용됨.
+
+
+> 本词条对应 Wiki 第 22 章，详细论述见项目 Wiki。
+

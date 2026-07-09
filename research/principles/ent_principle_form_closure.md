@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: principle
 names:
-  zh: 形闭合
   en: Form Closure
+  zh: 形闭合
+  ko: 형태 폐쇄
 summary:
-  zh: 形闭合是人形机器人产业链中的principle相关知识节点，详见Wiki第16章《操作与抓取》。
-  en: 形闭合 is a knowledge node related to principle in the humanoid robot value chain. See Wiki Chapter 16.
+  en: A grasp condition in which the object's motion is completely constrained by the geometry and placement of frictionless
+    contacts alone.
+  zh: 仅通过无摩擦接触的几何与布局即可完全约束物体运动的抓取条件。
+  ko: 마찰이 없는 접촉의 기하·배치만으로 물체의 운동을 완전히 구속하는 그래프 조건.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -18,14 +21,16 @@ functional_roles:
 tags:
 - principle
 - chapter_16
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -33,6 +38,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 形闭合
+# Form Closure / 形闭合 / 형태 폐쇄
 
-形闭合是人形机器人产业链中的principle相关知识节点。详见Wiki第16章《操作与抓取》。
+## 摘要
+
+仅通过无摩擦接触的几何与布局即可完全约束物体运动的抓取条件。
+
+## Abstract
+
+A grasp condition in which the object's motion is completely constrained by the geometry and placement of frictionless contacts alone.
+
+## 요약
+
+마찰이 없는 접촉의 기하·배치만으로 물체의 운동을 완전히 구속하는 그래프 조건.
+
+
+> 本词条对应 Wiki 第 16 章，详细论述见项目 Wiki。
+

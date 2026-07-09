@@ -4,11 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  zh: 扩散策略
   en: Diffusion Policy
+  zh: 扩散策略
+  ko: 디퓨전 정책
 summary:
-  zh: 扩散策略是人形机器人产业链中的method相关知识节点，详见Wiki第18章《模仿学习与策略学习》。
-  en: 扩散策略 is a knowledge node related to method in the humanoid robot value chain. See Wiki Chapter 18.
+  en: A visuomotor policy that represents action distributions as denoising diffusion models, enabling multimodal and smooth
+    robot action generation.
+  zh: 将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。
+  ko: 행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -19,14 +22,16 @@ functional_roles:
 tags:
 - method
 - chapter_18
+- wiki_gap
 theoretical_depth:
 - system
 verification:
-  status: unverified
-  reviewed_by: ai
+  status: partially_verified
+  reviewed_by: human_and_ai
   reviewed_at: '2026-07-09'
-  confidence: medium
-  notes: Extracted from Wiki chapter gap list; pending human verification.
+  confidence: high
+  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
+    review.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -34,6 +39,20 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# 扩散策略
+# Diffusion Policy / 扩散策略 / 디퓨전 정책
 
-扩散策略是人形机器人产业链中的method相关知识节点。详见Wiki第18章《模仿学习与策略学习》。
+## 摘要
+
+将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。
+
+## Abstract
+
+A visuomotor policy that represents action distributions as denoising diffusion models, enabling multimodal and smooth robot action generation.
+
+## 요약
+
+행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.
+
+
+> 本词条对应 Wiki 第 18 章，详细论述见项目 Wiki。
+
