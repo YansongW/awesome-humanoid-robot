@@ -7,16 +7,29 @@ from typing import Any
 from website.builder.loader import DOMAIN_LABELS, Entry, domain_label, tokenize, type_label
 
 
+def _short_summary(summary: str, max_len: int = 160) -> str:
+    """Return a short, single-line summary suitable for search result cards."""
+    text = (summary or "").replace("\n", " ").replace("\r", " ")
+    while "  " in text:
+        text = text.replace("  ", " ")
+    text = text.strip()
+    if len(text) <= max_len:
+        return text
+    cut = text.rfind(" ", 0, max_len + 1)
+    if cut <= 0:
+        cut = max_len
+    return text[:cut].rstrip() + "…"
+
+
 def build_search_index(entries: dict[str, Entry], lang: str = "zh") -> dict[str, Any]:
-    """Build a compact inverted index for Fuse.js or custom search.
+    """Build a compact client-side search index.
 
     Returns:
         {
             "entries": [
-                {"id": ..., "name": ..., "name_en": ..., "type": ..., "summary": ..., "domains": [...], "domain_labels": [...], "layers": [...], "url": ...},
+                {"id": ..., "name": ..., "name_en": ..., "type": ..., "type_label": ..., "summary": ..., "domains": [...], "domain_labels": [...], "layers": [...], "url": ...},
                 ...
-            ],
-            "index": {"token": [entry_index, ...], ...}
+            ]
         }
     """
     entry_list = sorted(entries.values(), key=lambda e: e.name or e.id)
@@ -29,7 +42,7 @@ def build_search_index(entries: dict[str, Entry], lang: str = "zh") -> dict[str,
                 "name_en": e.name_en,
                 "type": e.type,
                 "type_label": type_label(e.type, lang),
-                "summary": e.summary,
+                "summary": _short_summary(e.summary),
                 "domains": e.domains,
                 "domain_labels": [domain_label(d, lang) for d in e.domains],
                 "layers": e.layers,
@@ -37,23 +50,7 @@ def build_search_index(entries: dict[str, Entry], lang: str = "zh") -> dict[str,
             }
         )
 
-    inverted: dict[str, set[int]] = {}
-    for idx, e in enumerate(entry_list):
-        tokens = set()
-        tokens.update(tokenize(e.id))
-        tokens.update(tokenize(e.name))
-        tokens.update(tokenize(e.name_en))
-        tokens.update(tokenize(e.summary))
-        tokens.update(tokenize(e.type))
-        tokens.update(d.lower() for d in e.domains)
-        tokens.update(t.lower() for t in e.tags)
-        for tok in tokens:
-            inverted.setdefault(tok, set()).add(idx)
-
-    return {
-        "entries": compact,
-        "index": {k: sorted(v) for k, v in inverted.items()},
-    }
+    return {"entries": compact}
 
 
 def build_relations_data(entries: dict[str, Entry], relationships: list) -> dict:
