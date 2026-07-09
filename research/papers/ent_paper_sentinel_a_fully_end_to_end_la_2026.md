@@ -4,12 +4,12 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'SENTINEL: A Fully End-to-End Language-Action Model for Humanoid Whole Body
-    Control'
+  en: 'SENTINEL: A Fully End-to-End Language-Action Model for Humanoid Whole Body Control'
   zh: 端到端语言动作模型也绕不开机器人动力学数据
   ko: ''
 summary:
-  en: ''
+  en: 'SENTINEL: A Fully End-to-End Language-Action Model for Humanoid Whole Body Control is a knowledge node related to paper
+    in the humanoid robot value chain.'
   zh: ''
   ko: ''
 domains:
@@ -32,13 +32,11 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (031). Institution: 北京大学；BeingBeyond.
-    arXiv: 2511.19236.'
+  notes: 'Imported from WeChat curated list (031). Institution: 北京大学；BeingBeyond. arXiv: 2511.19236.'
 sources:
 - id: src_001
   type: paper
-  title: 'SENTINEL: A Fully End-to-End Language-Action Model for Humanoid Whole Body
-    Control (arXiv)'
+  title: 'SENTINEL: A Fully End-to-End Language-Action Model for Humanoid Whole Body Control (arXiv)'
   url: https://arxiv.org/abs/2511.19236
   date: '2026'
   accessed_at: '2026-07-01'
@@ -51,5 +49,3 @@ sources:
 theoretical_depth:
 - system
 ---
-
-

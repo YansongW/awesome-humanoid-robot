@@ -2,7 +2,7 @@
 $id: rel_ent_method_field_oriented_control_relies_on_ent_method_pid_control
 $schema: ../schema/v1/relationship_schema.json
 $version: 1
-type: relies_on
+type: requires
 source:
   id: ent_method_field_oriented_control
   name:
@@ -20,7 +20,7 @@ description:
   en: FOC typically uses PI/PID current controllers in the d-q frame to regulate flux and torque currents.
   zh: FOC 通常在 d-q 坐标系中使用 PI/PID 电流控制器调节磁链电流与转矩电流。
 verification:
-  status: pending
+  status: unverified
   reviewed_by: ai
   reviewed_at: '2026-07-09'
   confidence: medium
@@ -28,7 +28,7 @@ verification:
 sources:
 - id: src_mohan_2003
   type: other
-  title: "N. Mohan, Advanced Electric Drives: Analysis, Control, and Modeling Using MATLAB/Simulink, Wiley, 2013"
+  title: 'N. Mohan, Advanced Electric Drives: Analysis, Control, and Modeling Using MATLAB/Simulink, Wiley, 2013'
   url: https://doi.org/10.1002/9781118704810
   date: '2013-01-01'
   accessed_at: '2026-07-09'

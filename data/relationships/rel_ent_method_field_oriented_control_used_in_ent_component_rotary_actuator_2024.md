@@ -2,7 +2,7 @@
 $id: rel_ent_method_field_oriented_control_used_in_ent_component_rotary_actuator_2024
 $schema: ../schema/v1/relationship_schema.json
 $version: 1
-type: used_in
+type: enables
 source:
   id: ent_method_field_oriented_control
   name:
@@ -20,7 +20,7 @@ description:
   en: FOC is widely used inside rotary actuator servo drives for PMSM/BLDC motors in humanoid joints.
   zh: FOC 广泛用于人形机器人关节旋转执行器中的 PMSM/BLDC 伺服驱动。
 verification:
-  status: pending
+  status: unverified
   reviewed_by: ai
   reviewed_at: '2026-07-09'
   confidence: medium
@@ -28,7 +28,7 @@ verification:
 sources:
 - id: src_mohan_2003
   type: other
-  title: "N. Mohan, Advanced Electric Drives: Analysis, Control, and Modeling Using MATLAB/Simulink, Wiley, 2013"
+  title: 'N. Mohan, Advanced Electric Drives: Analysis, Control, and Modeling Using MATLAB/Simulink, Wiley, 2013'
   url: https://doi.org/10.1002/9781118704810
   date: '2013-01-01'
   accessed_at: '2026-07-09'

@@ -8,7 +8,7 @@ names:
   zh: Unitree teases new H1 humanoid robot
   ko: ''
 summary:
-  en: ''
+  en: Unitree teases new H1 humanoid robot is a knowledge node related to report in the humanoid robot value chain.
   zh: ''
   ko: ''
 domains:
@@ -42,5 +42,3 @@ sources:
   date: '2024-04-19'
   accessed_at: '2026-07-01'
 ---
-
-

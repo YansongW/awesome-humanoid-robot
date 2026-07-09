@@ -15,7 +15,6 @@ target:
     en: ent_process_p5
     zh: ent_process_p5
     ko: ''
-domains: {}
 description:
   en: P6 依赖 P5 完成后才能启动
   zh: P6 依赖 P5 完成后才能启动

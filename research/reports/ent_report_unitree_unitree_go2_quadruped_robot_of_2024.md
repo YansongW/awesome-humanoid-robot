@@ -8,7 +8,7 @@ names:
   zh: Unitree Go2 - Quadruped Robot of Embodied AI
   ko: ''
 summary:
-  en: ''
+  en: Unitree Go2 - Quadruped Robot of Embodied AI is a knowledge node related to report in the humanoid robot value chain.
   zh: ''
   ko: ''
 domains:
@@ -40,5 +40,3 @@ sources:
   date: '2024-04-19'
   accessed_at: '2026-07-01'
 ---
-
-

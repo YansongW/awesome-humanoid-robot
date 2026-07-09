@@ -15,7 +15,6 @@ target:
     en: ent_process_p7
     zh: ent_process_p7
     ko: ''
-domains: {}
 description:
   en: P12 依赖 P7 完成后才能启动
   zh: P12 依赖 P7 完成后才能启动

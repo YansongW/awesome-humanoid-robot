@@ -8,16 +8,17 @@ names:
   zh: 磁场定向控制
   ko: 전계 지향 제어
 summary:
-  en: A motor control technique that transforms three-phase stator currents into a rotating d-q reference frame aligned with the rotor flux, enabling independent torque and flux control.
+  en: A motor control technique that transforms three-phase stator currents into a rotating d-q reference frame aligned with
+    the rotor flux, enabling independent torque and flux control.
   zh: 一种电机控制技术，将三相定子电流变换到与转子磁链对齐的旋转 d-q 坐标系，实现转矩与磁链的解耦控制。
   ko: 3상 정자 전류를 회전자 자속에 맞춘 d-q 좌표계로 변환하여 토크와 자속을 독립적으로 제어하는 모터 제어 기법.
 domains:
 - 02_components
 - 07_ai_models_algorithms
 layers:
-- method
+- upstream
 functional_roles:
-- control
+- knowledge
 theoretical_depth:
 - method
 tags:
@@ -28,7 +29,7 @@ tags:
 - current_control
 - actuator
 verification:
-  status: pending
+  status: unverified
   reviewed_by: ai
   reviewed_at: '2026-07-09'
   confidence: medium
@@ -36,32 +37,29 @@ verification:
 sources:
 - id: src_mohan_2003
   type: other
-  title: "N. Mohan, Advanced Electric Drives: Analysis, Control, and Modeling Using MATLAB/Simulink, Wiley, 2013"
+  title: 'N. Mohan, Advanced Electric Drives: Analysis, Control, and Modeling Using MATLAB/Simulink, Wiley, 2013'
   url: https://doi.org/10.1002/9781118704810
   date: '2013-01-01'
   accessed_at: '2026-07-09'
 - id: src_krause_wasynczuk_sudhoff_2013
   type: other
-  title: "P. C. Krause, O. Wasynczuk, and S. D. Sudhoff, Analysis of Electric Machinery and Drive Systems, 3rd ed., IEEE Press/Wiley, 2013"
+  title: P. C. Krause, O. Wasynczuk, and S. D. Sudhoff, Analysis of Electric Machinery and Drive Systems, 3rd ed., IEEE Press/Wiley,
+    2013
   url: https://doi.org/10.1002/9781118526030
   date: '2013-01-01'
   accessed_at: '2026-07-09'
-wiki_chapters:
-- number: 4
-  title: 第 4 章 执行器：人形机器人的“肌肉”
 related_entities:
 - id: ent_component_rotary_actuator_2024
-  relationship: used_in
+  relationship: applies_to
   description:
     en: FOC is widely used inside rotary actuator servo drives for PMSM/BLDC motors in humanoid joints.
     zh: FOC 广泛用于人形机器人关节旋转执行器中的 PMSM/BLDC 伺服驱动。
 - id: ent_method_pid_control
-  relationship: relies_on
+  relationship: requires
   description:
     en: FOC typically uses PI/PID current controllers in the d-q frame to regulate flux and torque currents.
     zh: FOC 通常在 d-q 坐标系中使用 PI/PID 电流控制器调节磁链电流与转矩电流。
 ---
-
 # Field-Oriented Control / 磁场定向控制 / 전계 지향 제어
 
 ## 抽象

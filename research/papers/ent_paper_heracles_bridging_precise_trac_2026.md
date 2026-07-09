@@ -4,12 +4,12 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid
-    Control'
+  en: 'Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control'
   zh: 偏离参考轨迹时，继续追踪可能是错的
   ko: ''
 summary:
-  en: ''
+  en: 'Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control is a knowledge node related
+    to paper in the humanoid robot value chain.'
   zh: ''
   ko: ''
 domains:
@@ -31,13 +31,11 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (040). Institution: X-Humanoid Heracles
-    项目组 / 北京人形机器人创新中心. arXiv: 2603.27756.'
+  notes: 'Imported from WeChat curated list (040). Institution: X-Humanoid Heracles 项目组 / 北京人形机器人创新中心. arXiv: 2603.27756.'
 sources:
 - id: src_001
   type: paper
-  title: 'Heracles: Bridging Precise Tracking and Generative Synthesis for General
-    Humanoid Control (arXiv)'
+  title: 'Heracles: Bridging Precise Tracking and Generative Synthesis for General Humanoid Control (arXiv)'
   url: https://arxiv.org/abs/2603.27756
   date: '2026'
   accessed_at: '2026-07-01'
@@ -50,5 +48,3 @@ sources:
 theoretical_depth:
 - system
 ---
-
-

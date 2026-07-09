@@ -8,14 +8,15 @@ names:
   zh: 零力矩点
   ko: 영점
 summary:
-  en: A point on the ground where the horizontal moment of the ground reaction force about it is zero; widely used as a dynamic balance criterion for bipedal robots.
+  en: A point on the ground where the horizontal moment of the ground reaction force about it is zero; widely used as a dynamic
+    balance criterion for bipedal robots.
   zh: 地面反作用力水平分力矩为零的点；常用于判断双足机器人动态行走稳定性。
   ko: 지반 반력의 수평 모멘트가 0이 되는 지점; 이족 보행 로봇의 동적 균형 기준으로 널리 사용됨.
 domains:
 - 06_design_engineering
 - 07_ai_models_algorithms
 layers:
-- principle
+- midstream
 functional_roles:
 - knowledge
 theoretical_depth:
@@ -35,29 +36,25 @@ verification:
 sources:
 - id: src_vukobratovic_2004_zmp
   type: paper
-  title: "M. Vukobratović and B. Borovac, Zero-Moment Point — Thirty Five Years of Its Life, IJHR, 2004"
+  title: M. Vukobratović and B. Borovac, Zero-Moment Point — Thirty Five Years of Its Life, IJHR, 2004
   url: https://doi.org/10.1142/S0219843604000083
   date: '2004-03-01'
   accessed_at: '2026-07-09'
 - id: src_sardain_bessonnet_2004_zmp
   type: paper
-  title: "P. Sardain and G. Bessonnet, Forces Acting on a Biped Robot. Center of Pressure—Zero Moment Point, IEEE Trans. SMC-A, 2004"
+  title: P. Sardain and G. Bessonnet, Forces Acting on a Biped Robot. Center of Pressure—Zero Moment Point, IEEE Trans. SMC-A,
+    2004
   url: https://doi.org/10.1109/TSMCA.2004.832811
   date: '2004-09-01'
   accessed_at: '2026-07-09'
-wiki_chapters:
-- number: 8
-  title: 第 8 章 人形机器人设计原理
-- number: 15
-  title: 第 15 章 运动生成与 Locomotion
 related_entities:
 - id: ent_formalism_euler_lagrange_equations
-  relationship: based_on
+  relationship: is_based_on
   description:
-    en: The ZMP condition is derived from the moment balance of the robot's equations of motion, commonly expressed via Euler-Lagrange or Newton-Euler dynamics.
+    en: The ZMP condition is derived from the moment balance of the robot's equations of motion, commonly expressed via Euler-Lagrange
+      or Newton-Euler dynamics.
     zh: ZMP 条件来源于机器人运动方程的力矩平衡，通常由欧拉-拉格朗日方程或牛顿-欧拉动力学表达。
 ---
-
 # Zero Moment Point / 零力矩点 / 영점
 
 ## 抽象

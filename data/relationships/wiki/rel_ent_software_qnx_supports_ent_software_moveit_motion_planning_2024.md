@@ -1,0 +1,37 @@
+---
+$id: rel_ent_software_qnx_supports_ent_software_moveit_motion_planning_2024
+$schema: ../schema/v1/relationship_schema.json
+$version: 1
+type: enables
+source:
+  id: ent_software_qnx
+  name:
+    zh: QNX
+    en: QNX
+    ko: ''
+target:
+  id: ent_software_moveit_motion_planning_2024
+  name:
+    zh: MoveIt 运动规划
+    en: MoveIt 运动规划
+    ko: ''
+description:
+  zh: Wiki 第22章提取的跨层关系。
+  en: 'Cross-layer link extracted from Wiki chapter 22. '
+  ko: ''
+verification:
+  status: unverified
+  reviewed_by: ai
+  reviewed_at: '2026-07-09'
+  confidence: medium
+  notes: Generated from wiki-chapter-mapping cross_layer_links; pending human review.
+sources:
+- id: src_wiki_extraction
+  type: other
+  title: Wiki extraction
+  date: '2026-07-09'
+  accessed_at: '2026-07-09'
+---
+QNX **supports** MoveIt 运动规划。
+
+该关系来自 Wiki 第22章的跨层链路定义。

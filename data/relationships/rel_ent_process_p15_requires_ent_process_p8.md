@@ -15,7 +15,6 @@ target:
     en: ent_process_p8
     zh: ent_process_p8
     ko: ''
-domains: {}
 description:
   en: P15 依赖 P8 完成后才能启动
   zh: P15 依赖 P8 完成后才能启动

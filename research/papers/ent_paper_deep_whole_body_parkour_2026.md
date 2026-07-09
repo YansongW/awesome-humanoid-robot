@@ -8,7 +8,7 @@ names:
   zh: 全身动作必须理解环境几何
   ko: ''
 summary:
-  en: ''
+  en: Deep Whole-body Parkour is a knowledge node related to paper in the humanoid robot value chain.
   zh: ''
   ko: ''
 domains:
@@ -29,8 +29,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (023). Institution: 清华大学交叉信息研究院；上海期智研究院.
-    arXiv: 2601.07701.'
+  notes: 'Imported from WeChat curated list (023). Institution: 清华大学交叉信息研究院；上海期智研究院. arXiv: 2601.07701.'
 sources:
 - id: src_001
   type: paper
@@ -47,5 +46,3 @@ sources:
 theoretical_depth:
 - system
 ---
-
-

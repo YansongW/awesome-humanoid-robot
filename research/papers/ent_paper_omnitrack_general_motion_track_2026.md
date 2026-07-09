@@ -8,7 +8,8 @@ names:
   zh: 不要让控制器追踪错误参考
   ko: ''
 summary:
-  en: ''
+  en: 'OmniTrack: General Motion Tracking via Physics-Consistent Reference is a knowledge node related to paper in the humanoid
+    robot value chain.'
   zh: ''
   ko: ''
 domains:
@@ -30,8 +31,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (012). Institution: 华中科技大学；BIGAI；上海交通大学.
-    arXiv: 2602.23832.'
+  notes: 'Imported from WeChat curated list (012). Institution: 华中科技大学；BIGAI；上海交通大学. arXiv: 2602.23832.'
 sources:
 - id: src_001
   type: paper
@@ -48,5 +48,3 @@ sources:
 theoretical_depth:
 - system
 ---
-
-

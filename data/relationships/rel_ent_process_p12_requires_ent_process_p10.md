@@ -15,7 +15,6 @@ target:
     en: ent_process_p10
     zh: ent_process_p10
     ko: ''
-domains: {}
 description:
   en: P12 依赖 P10 完成后才能启动
   zh: P12 依赖 P10 完成后才能启动

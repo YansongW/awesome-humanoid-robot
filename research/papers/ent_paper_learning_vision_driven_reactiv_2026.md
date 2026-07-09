@@ -8,7 +8,8 @@ names:
   zh: 足球任务里，视觉和动作是同一件事
   ko: ''
 summary:
-  en: ''
+  en: Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots is a knowledge node related to paper in the humanoid
+    robot value chain.
   zh: ''
   ko: ''
 domains:
@@ -31,8 +32,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (026). Institution: 清华大学；字节跳动 Seed；中国农业大学.
-    arXiv: 2511.03996.'
+  notes: 'Imported from WeChat curated list (026). Institution: 清华大学；字节跳动 Seed；中国农业大学. arXiv: 2511.03996.'
 sources:
 - id: src_001
   type: paper
@@ -49,5 +49,3 @@ sources:
 theoretical_depth:
 - system
 ---
-
-

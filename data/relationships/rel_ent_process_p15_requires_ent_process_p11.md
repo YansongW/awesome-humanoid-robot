@@ -15,7 +15,6 @@ target:
     en: ent_process_p11
     zh: ent_process_p11
     ko: ''
-domains: {}
 description:
   en: P15 依赖 P11 完成后才能启动
   zh: P15 依赖 P11 完成后才能启动

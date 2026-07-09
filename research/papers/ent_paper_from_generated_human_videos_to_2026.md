@@ -8,7 +8,8 @@ names:
   zh: 生成视频不能直接给机器人用
   ko: ''
 summary:
-  en: ''
+  en: From Generated Human Videos to Physically Plausible Robot Trajectories is a knowledge node related to paper in the humanoid
+    robot value chain.
   zh: ''
   ko: ''
 domains:
@@ -31,8 +32,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (004). Institution: 伯克利；纽约大学；约翰内斯开普勒大学.
-    arXiv: 2512.05094.'
+  notes: 'Imported from WeChat curated list (004). Institution: 伯克利；纽约大学；约翰内斯开普勒大学. arXiv: 2512.05094.'
 sources:
 - id: src_001
   type: paper
@@ -49,5 +49,3 @@ sources:
 theoretical_depth:
 - system
 ---
-
-

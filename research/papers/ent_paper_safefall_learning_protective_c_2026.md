@@ -8,7 +8,8 @@ names:
   zh: 失败不可避免，但不能灾难化
   ko: ''
 summary:
-  en: ''
+  en: 'SafeFall: Learning Protective Control for Humanoid Robots is a knowledge node related to paper in the humanoid robot
+    value chain.'
   zh: ''
   ko: ''
 domains:
@@ -30,8 +31,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (041). Institution: 山东大学；BIGAI；清华大学. arXiv:
-    2511.18509.'
+  notes: 'Imported from WeChat curated list (041). Institution: 山东大学；BIGAI；清华大学. arXiv: 2511.18509.'
 sources:
 - id: src_001
   type: paper
@@ -48,5 +48,3 @@ sources:
 theoretical_depth:
 - system
 ---
-
-

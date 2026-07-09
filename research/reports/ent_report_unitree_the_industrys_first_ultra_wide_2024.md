@@ -8,7 +8,7 @@ names:
   zh: The Industry's First Ultra-wide-angle 4D LiDAR
   ko: ''
 summary:
-  en: ''
+  en: The Industry's First Ultra-wide-angle 4D LiDAR is a knowledge node related to report in the humanoid robot value chain.
   zh: ''
   ko: ''
 domains:
@@ -40,5 +40,3 @@ sources:
   date: '2024-04-23'
   accessed_at: '2026-07-01'
 ---
-
-

@@ -8,7 +8,8 @@ names:
   zh: 欧拉-拉格朗日方程
   ko: 오일러-라그랑주 방정식
 summary:
-  en: A set of second-order differential equations derived from a variational principle on the Lagrangian, giving the equations of motion for mechanical systems in generalized coordinates.
+  en: A set of second-order differential equations derived from a variational principle on the Lagrangian, giving the equations
+    of motion for mechanical systems in generalized coordinates.
   zh: 由拉格朗日量的变分原理导出的二阶微分方程组，用于在广义坐标下描述机械系统的运动方程。
   ko: 라그랑지안의 변분 원리로부터 유도된 2차 미분방정식 집합으로, 일반화 좌표에서 기계 시스템의 운 동 방정식을 기술함.
 domains:
@@ -16,7 +17,6 @@ domains:
 - 06_design_engineering
 layers:
 - foundations
-- formalism
 functional_roles:
 - knowledge
 theoretical_depth:
@@ -37,21 +37,16 @@ verification:
 sources:
 - id: src_goldstein_2002
   type: other
-  title: "H. Goldstein, C. Poole, and J. Safko, Classical Mechanics, 3rd ed., Addison-Wesley, 2002"
+  title: H. Goldstein, C. Poole, and J. Safko, Classical Mechanics, 3rd ed., Addison-Wesley, 2002
   url: https://doi.org/10.2307/2522307
   date: '2002-01-01'
   accessed_at: '2026-07-09'
 - id: src_spong_hutchinson_vidyasagar_2006
   type: other
-  title: "M. W. Spong, S. Hutchinson, and M. Vidyasagar, Robot Modeling and Control, Wiley, 2006"
+  title: M. W. Spong, S. Hutchinson, and M. Vidyasagar, Robot Modeling and Control, Wiley, 2006
   url: https://doi.org/10.1002/0470173876
   date: '2006-01-01'
   accessed_at: '2026-07-09'
-wiki_chapters:
-- number: 8
-  title: 第 8 章 人形机器人设计原理
-- number: 14
-  title: 第 14 章 机器人控制基础
 related_entities:
 - id: ent_lagrangian
   relationship: derived_from
@@ -59,12 +54,11 @@ related_entities:
     en: The Euler-Lagrange equations follow from stationarity of the action integral of the Lagrangian.
     zh: 欧拉-拉格朗日方程由拉格朗日量的作用量变分取驻值导出。
 - id: ent_newton_euler_equations
-  relationship: equivalent_to
+  relationship: mentions
   description:
     en: For rigid-body systems, Euler-Lagrange and Newton-Euler formulations yield the same equations of motion.
     zh: 对刚体系统，欧拉-拉格朗日与牛顿-欧拉两种形式等价。
 ---
-
 # Euler-Lagrange Equations / 欧拉-拉格朗日方程 / 오일러-라그랑주 방정식
 
 ## 抽象

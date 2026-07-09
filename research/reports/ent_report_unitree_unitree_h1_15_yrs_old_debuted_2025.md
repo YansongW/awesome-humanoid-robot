@@ -8,7 +8,7 @@ names:
   zh: 'Unitree H1: 1.5 Yrs Old "Debuted" at the SFG'
   ko: ''
 summary:
-  en: ''
+  en: 'Unitree H1: 1.5 Yrs Old "Debuted" at the SFG is a knowledge node related to report in the humanoid robot value chain.'
   zh: ''
   ko: ''
 domains:
@@ -41,5 +41,3 @@ sources:
   date: '2025-02-05'
   accessed_at: '2026-07-01'
 ---
-
-

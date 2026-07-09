@@ -2,7 +2,7 @@
 $id: rel_ent_method_model_predictive_control_requires_ent_foundation_convex_optimization
 $schema: ../schema/v1/relationship_schema.json
 $version: 1
-type: requires
+type: has_prerequisite
 source:
   id: ent_method_model_predictive_control
   name:
@@ -28,7 +28,7 @@ verification:
 sources:
 - id: src_borrelli_bemporad_morari_2017
   type: other
-  title: "F. Borrelli, A. Bemporad, and M. Morari, Predictive Control for Linear and Hybrid Systems, Cambridge, 2017"
+  title: F. Borrelli, A. Bemporad, and M. Morari, Predictive Control for Linear and Hybrid Systems, Cambridge, 2017
   url: https://doi.org/10.1017/9781139061799
   date: '2017-01-01'
   accessed_at: '2026-07-09'

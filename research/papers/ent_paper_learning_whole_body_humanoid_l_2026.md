@@ -8,7 +8,8 @@ names:
   zh: 复杂地形里，参考动作要在线生成
   ko: ''
 summary:
-  en: ''
+  en: Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking is a knowledge node related to paper
+    in the humanoid robot value chain.
   zh: ''
   ko: ''
 domains:
@@ -31,13 +32,11 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (027). Institution: 苏黎世联邦理工机器人系统实验室；西蒙弗雷泽大学；ETH
-    AI Center. arXiv: 2604.17335.'
+  notes: 'Imported from WeChat curated list (027). Institution: 苏黎世联邦理工机器人系统实验室；西蒙弗雷泽大学；ETH AI Center. arXiv: 2604.17335.'
 sources:
 - id: src_001
   type: paper
-  title: Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion
-    Tracking (arXiv)
+  title: Learning Whole-Body Humanoid Locomotion via Motion Generation and Motion Tracking (arXiv)
   url: https://arxiv.org/abs/2604.17335
   date: '2026'
   accessed_at: '2026-07-01'
@@ -50,5 +49,3 @@ sources:
 theoretical_depth:
 - system
 ---
-
-
