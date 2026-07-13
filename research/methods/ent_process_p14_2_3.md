@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P14.2.3 CI/CD 与仿真测试链
+  en: ''
   zh: CI/CD 与仿真测试链
   ko: ''
 summary:
-  en: CI 流水线、自动测试通过率、覆盖率指标
+  en: ''
   zh: CI 流水线、自动测试通过率、覆盖率指标
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）
 

@@ -1,0 +1,117 @@
+---
+id: ent_company_best
+schema_version: 1
+type: company
+'title:': Best Precision Machinery
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: 贝斯特精密机械
+  en: Best Precision Machinery
+status: active
+sources:
+- id: src_best_official
+  type: website
+  url: https://www.bestprecision.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 贝斯特精密机械 / Best Precision Machinery
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 贝斯特精密机械 |
+| **英文名** | Best Precision Machinery |
+| **总部** | 中国无锡 |
+| **成立时间** | 1997 |
+| **官网** | [https://www.bestprecision.com](https://www.bestprecision.com) |
+| **供应链环节** | 精密零部件 / 滚珠丝杠 / 直线导轨 / 汽车零件 |
+| **企业属性** | 上市公司（SZ.300580）、国内品牌 |
+| **母公司/所属集团** | 无锡贝斯特精机股份有限公司 |
+| **数据来源** | 官网、年报、产品手册、WAIC 2026 报道 |
+
+## 公司简介
+
+国内精密零部件与滚珠丝杠供应商，为汽车、工业装备与人形机器人提供高精度传动件。
+
+贝斯特精密机械主营汽车涡轮增压器零部件、工装夹具、飞机机身配套件及精密传动部件。公司依托精密机加工能力，布局滚珠丝杠、行星滚柱丝杠与直线导轨，面向人形机器人提供线性传动核心零部件。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 涡轮增压器零部件 | 汽车发动机核心件 | 叶轮、中间壳 | 燃油车、混动 |
+| 滚珠丝杠 | 精密线性传动 | 标准/定制丝杠 | 机床、机器人 |
+| 直线导轨 | 高刚性导向 | 标准滑块/导轨 | 自动化设备 |
+
+## 代表产品
+
+### 滚珠丝杠 / Best Ball Screw
+
+> 滚珠丝杠：请访问 [官方资料](https://www.bestprecision.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 丝杠直径 | Ø6–Ø80 mm | 产品手册 |
+| 导程 | 1–50 mm | 产品手册 |
+| 精度等级 | C3–C10 | 产品手册 |
+| 额定动载荷 | 未公开 | 产品手册 |
+| 最大行程 | 依定制 | 产品手册 |
+| 预紧方式 | 双螺母预紧 / 单螺母变位 | 产品手册 |
+| 材质 | 轴承钢 / 不锈钢 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：高精度磨削加工、低摩擦、高传动效率，可定制行星滚柱丝杠以满足高负载机器人关节。
+
+**应用场景**：人形机器人线性关节、数控机床进给轴、半导体设备、汽车产线。
+
+### 涡轮增压器零部件 / Best Turbocharger Components
+
+> 涡轮增压器零部件：请访问 [官方资料](https://www.bestprecision.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 主要产品 | 叶轮、中间壳、涡轮壳 | 产品手册 |
+| 材料 | 铝合金、高温合金、铸铁 | 产品手册 |
+| 加工精度 | 微米级 | 产品手册 |
+| 年产量 | 未公开 | 年报 |
+| 认证 | IATF 16949 | 官网 |
+| 客户 | Honeywell、BorgWarner、MHI | 年报 |
+| 应用领域 | 汽车发动机 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：汽车精密机加工基础扎实，为滚珠丝杠等精密传动件提供工艺与质量保障。
+
+**应用场景**：汽车涡轮增压、新能源汽车热管理、工业精密传动。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：轴承钢、铝合金、高温合金、切削液、磨具磨料、热处理服务
+- **下游客户/应用场景**：汽车主机厂/Tier 1、机床厂商、人形机器人 OEM、半导体设备
+- **主要竞争对手/对标**：THK、NSK、上银科技、南京工艺、秦川机床
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_best`
+- 产品/零部件实体：`ent_component_best_ball_screw`, `ent_component_best_turbocharger_parts`
+- 关键关系：
+  - `ent_company_best` -- `manufactures` --> `ent_component_best_ball_screw`
+  - `ent_company_best` -- `manufactures` --> `ent_component_best_turbocharger_parts`
+
+## 参考资料
+
+1. [官网](https://www.bestprecision.com)
+2. [WAIC 2026 参展报道](https://www.worldrobotconference.com)
+3. [公开产品手册与研报](https://www.inovance.com)（请按实际产品型号核对）

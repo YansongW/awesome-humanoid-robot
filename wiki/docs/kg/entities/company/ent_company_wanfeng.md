@@ -1,0 +1,117 @@
+---
+id: ent_company_wanfeng
+schema_version: 1
+type: company
+'title:': Wanfeng Auto Wheels Co., Ltd.
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: 万丰奥威
+  en: Wanfeng Auto Wheels Co., Ltd.
+status: active
+sources:
+- id: src_wanfeng_official
+  type: website
+  url: https://www.wanfeng.com.cn
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 万丰奥威 / Wanfeng Auto Wheels Co., Ltd.
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 万丰奥威 |
+| **英文名** | Wanfeng Auto Wheels Co., Ltd. |
+| **总部** | 中国浙江新昌 |
+| **成立时间** | 1998 |
+| **官网** | [https://www.wanfeng.com.cn](https://www.wanfeng.com.cn) |
+| **供应链环节** | 镁合金压铸 / 汽车轮毂 / 轻量化结构件 |
+| **企业属性** | 上市公司（SZ.002085）、国内品牌 / 国际并购 |
+| **母公司/所属集团** | 万丰奥特控股集团有限公司 |
+| **数据来源** | 官网、年报、产品手册、WAIC 2026 报道 |
+
+## 公司简介
+
+全球镁合金压铸与汽车轮毂行业龙头，通过并购加拿大迈瑞丁形成国际化布局。
+
+万丰奥威主营汽车金属轻量化零部件，包括镁合金压铸件、铝合金车轮、高强度钢冲压件及涂覆业务。公司旗下镁瑞丁（Meridian）是全球最大的镁合金压铸企业之一，产品覆盖汽车仪表盘、座椅骨架、前端模块等，正积极拓展人形机器人镁合金结构件市场。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 镁合金压铸件 | 大型一体化压铸 | 仪表盘支架、座椅骨架 | 汽车 |
+| 铝合金车轮 | 乘用车/商用车轮毂 | 低压铸造 / 旋压轮毂 | 汽车 |
+| 高强度钢冲压件 | 车身结构件 | A/B 柱加强板 | 汽车 |
+| 机器人结构件 | 轻量化一体压铸 | 关节壳体、足部支架 | 人形机器人 |
+
+## 代表产品
+
+### 镁合金汽车轮毂 / Magnesium Alloy Wheel
+
+> 镁合金汽车轮毂：请访问 [官方资料](https://www.wanfeng.com.cn) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 直径 | 14–22 inch | 产品手册 |
+| 宽度 | 5.5–10.5 inch | 产品手册 |
+| 材质 | AZ91D / AM60B | 产品手册 |
+| 制造工艺 | 低压铸造 / 锻造 | 产品手册 |
+| 重量 | 比铝合金轮毂轻 30–40% | 产品手册 |
+| 载荷 | 依车型 | 产品手册 |
+| 表面处理 | 涂装 / 钝化 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：轻量化效果显著、减振性能优良、散热性能好，可提升续航与操控。
+
+**应用场景**：高端乘用车、新能源汽车、赛车、特种车辆。
+
+### 镁合金压铸结构件 / Magnesium Die-Cast Structural Part
+
+> 镁合金压铸结构件：请访问 [官方资料](https://www.wanfeng.com.cn) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 材质 | AZ91D / AM60B / AE44 | 产品手册 |
+| 最大投影面积 | 依设备能力 | 产品手册 |
+| 锁模力 | 350–4,000 t | 产品手册 |
+| 壁厚 | 1.0–5 mm | 产品手册 |
+| 尺寸精度 | CT4–CT6 | 产品手册 |
+| 表面处理 | 微弧氧化 / 涂装 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：大型一体化压铸、高刚性、轻量化、可集成复杂结构。
+
+**应用场景**：人形机器人躯干骨架、腿部支撑结构、汽车仪表盘支架、座椅骨架。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：镁合金锭、铝合金锭、模具钢、压铸机、热处理设备
+- **下游客户/应用场景**：特斯拉、奔驰、宝马、福特、比亚迪、蔚来、机器人整机厂
+- **主要竞争对手/对标**：宝武镁业、云海金属、广东鸿图、文灶股份
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_wanfeng`
+- 产品/零部件实体：`ent_component_wanfeng_magnesium_wheel`, `ent_component_wanfeng_magnesium_structure`
+- 关键关系：
+  - `ent_company_wanfeng` -- `manufactures` --> `ent_component_wanfeng_magnesium_wheel`
+  - `ent_company_wanfeng` -- `manufactures` --> `ent_component_wanfeng_magnesium_structure`
+
+## 参考资料
+
+1. [万丰奥威官网](https://www.wanfeng.com.cn)
+2. [万丰奥威投资者关系](https://www.wanfeng.com.cn/investor/)
+3. [WAIC 2026 参展报道](https://www.worldrobotconference.com)

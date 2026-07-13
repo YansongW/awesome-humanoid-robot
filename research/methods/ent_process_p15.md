@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P15 整机集成与验证测试（Integration & V&V）
+  en: ''
   zh: 整机集成与验证测试（Integration & V&V）
   ko: ''
 summary:
-  en: 整机集成与验证测试（Integration & V&V）
+  en: ''
   zh: 整机集成与验证测试（Integration & V&V）
   ko: ''
 domains:
@@ -35,5 +35,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

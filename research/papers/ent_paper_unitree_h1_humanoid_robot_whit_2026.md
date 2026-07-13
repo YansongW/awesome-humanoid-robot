@@ -8,8 +8,7 @@ names:
   zh: Unitree H1 Humanoid Robot Whitepaper & Specifications
   ko: ''
 summary:
-  en: Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for
-    humanoid robotics.
+  en: ''
   zh: Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for
     humanoid robotics.
   ko: ''
@@ -43,5 +42,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for humanoid robotics.

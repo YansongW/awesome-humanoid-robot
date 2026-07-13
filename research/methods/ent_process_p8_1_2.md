@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P8.1.2 FEA 模型准备
+  en: ''
   zh: FEA 模型准备
   ko: ''
 summary:
-  en: 高质量 FEA 模型、网格质量报告、边界条件清单
+  en: ''
   zh: 高质量 FEA 模型、网格质量报告、边界条件清单
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：结构强度仿真与迭代（Structural FEA）
 

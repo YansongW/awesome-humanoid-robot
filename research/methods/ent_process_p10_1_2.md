@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P10.1.2 接触状态估计
+  en: ''
   zh: 接触状态估计
   ko: ''
 summary:
-  en: 接触检测准确率 > 98%、误触发率 < 2%
+  en: ''
   zh: 接触检测准确率 > 98%、误触发率 < 2%
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）
 

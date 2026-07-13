@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P11.1.1 手部 DOF 与功能定义
+  en: ''
   zh: 手部 DOF 与功能定义
   ko: ''
 summary:
-  en: 《手部规格书》：DOF、关节范围、指尖力、抓取类型覆盖
+  en: ''
   zh: 《手部规格书》：DOF、关节范围、指尖力、抓取类型覆盖
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）
 

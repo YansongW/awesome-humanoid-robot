@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P15.1.1 腿部系统集成与调试
+  en: ''
   zh: 腿部系统集成与调试
   ko: ''
 summary:
-  en: 单腿/双腿站立稳定、关节跟随误差 < 目标
+  en: ''
   zh: 单腿/双腿站立稳定、关节跟随误差 < 目标
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）
 

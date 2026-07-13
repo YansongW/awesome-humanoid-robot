@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P2.2.2 人机交互（HMI）设计
+  en: ''
   zh: 人机交互（HMI）设计
   ko: ''
 summary:
-  en: HMI 规范、交互原型、可用性测试报告
+  en: ''
   zh: HMI 规范、交互原型、可用性测试报告
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：工业设计与外观工程（ID / A-Surface）
 

@@ -4,7 +4,7 @@
 
 {% block head %}
 {% if entry.body_html and 'arithmatex' in entry.body_html %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
 {% endif %}
 {% endblock %}
 
@@ -213,11 +213,11 @@
 
 {% block scripts %}
 {% if entry.body_html and 'arithmatex' in entry.body_html %}
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
 <script defer src="/js/math.js"></script>
 {% endif %}
 {% if outgoing or incoming %}
-<script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
+<script src="/lib/cytoscape/cytoscape.min.js"></script>
 <script src="/js/graph.js"></script>
 {% endif %}
 {% endblock %}

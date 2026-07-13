@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P2.1.3 外观手板与比例模型
+  en: ''
   zh: 外观手板与比例模型
   ko: ''
 summary:
-  en: 1:1 外观手板、评审纪要、问题清单
+  en: ''
   zh: 1:1 外观手板、评审纪要、问题清单
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：工业设计与外观工程（ID / A-Surface）
 

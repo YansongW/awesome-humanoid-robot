@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P6.2.3 雅可比与速度/力传递分析
+  en: ''
   zh: 雅可比与速度/力传递分析
   ko: ''
 summary:
-  en: 典型姿态可操作度指标、力传递效率分析
+  en: ''
   zh: 典型姿态可操作度指标、力传递效率分析
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）
 

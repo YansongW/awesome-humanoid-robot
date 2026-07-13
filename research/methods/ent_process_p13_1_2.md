@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P13.1.2 自研/外购 PCB 设计
+  en: ''
   zh: 自研/外购 PCB 设计
   ko: ''
 summary:
-  en: 原理图、PCB、BOM、DFM 报告
+  en: ''
   zh: 原理图、PCB、BOM、DFM 报告
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P16 小批量试产与量产准备（Pilot & Production Ramp）
+  en: ''
   zh: 小批量试产与量产准备（Pilot & Production Ramp）
   ko: ''
 summary:
-  en: 小批量试产与量产准备（Pilot & Production Ramp）
+  en: ''
   zh: 小批量试产与量产准备（Pilot & Production Ramp）
   ko: ''
 domains:
@@ -35,5 +35,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

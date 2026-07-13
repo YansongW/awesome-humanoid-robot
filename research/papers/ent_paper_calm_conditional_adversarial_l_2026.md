@@ -8,8 +8,7 @@ names:
   zh: 条件对抗潜变量模型：可控虚拟角色
   ko: ''
 summary:
-  en: 'CALM: Conditional Adversarial Latent Models for Directable Virtual Characters
-    is a paper on 技能组合 for humanoid robotics. 条件对抗潜变量模型：可控虚拟角色.'
+  en: ''
   zh: 'CALM: Conditional Adversarial Latent Models for Directable Virtual Characters
     is a paper on 技能组合 for humanoid robotics. 条件对抗潜变量模型：可控虚拟角色.'
   ko: ''
@@ -43,5 +42,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 CALM: Conditional Adversarial Latent Models for Directable Virtual Characters is a paper on 技能组合 for humanoid robotics. 条件对抗潜变量模型：可控虚拟角色.

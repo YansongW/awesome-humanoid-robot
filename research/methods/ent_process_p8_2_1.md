@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P8.2.1 静动态应力与变形分析
+  en: ''
   zh: 静动态应力与变形分析
   ko: ''
 summary:
-  en: 《FEA 应力报告》：应力、变形、安全系数
+  en: ''
   zh: 《FEA 应力报告》：应力、变形、安全系数
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：结构强度仿真与迭代（Structural FEA）
 

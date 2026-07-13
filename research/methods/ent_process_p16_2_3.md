@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P16.2.3 来料与过程异常处理
+  en: ''
   zh: 来料与过程异常处理
   ko: ''
 summary:
-  en: 8D 报告、改善验证、不良率下降
+  en: ''
   zh: 8D 报告、改善验证、不良率下降
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）
 

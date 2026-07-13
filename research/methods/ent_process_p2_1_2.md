@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P2.1.2 A 面 3D 建模与可视化
+  en: ''
   zh: A 面 3D 建模与可视化
   ko: ''
 summary:
-  en: 高精度 A 面、渲染图、CMF 方案、关键视角评审通过
+  en: ''
   zh: 高精度 A 面、渲染图、CMF 方案、关键视角评审通过
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：工业设计与外观工程（ID / A-Surface）
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P9.1.1 热源与功耗清单
+  en: ''
   zh: 热源与功耗清单
   ko: ''
 summary:
-  en: 《热源清单》：各部件功耗、发热功率、占比
+  en: ''
   zh: 《热源清单》：各部件功耗、发热功率、占比
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：热管理仿真与迭代（Thermal Management）
 

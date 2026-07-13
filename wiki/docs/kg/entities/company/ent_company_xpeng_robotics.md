@@ -1,0 +1,118 @@
+---
+id: ent_company_xpeng_robotics
+schema_version: 1
+type: company
+domain: 11_applications_markets
+theoretical_depth: system
+names:
+  zh: 小鹏机器人
+  en: XPeng Robotics
+status: active
+sources:
+- id: src_xpeng_robotics_official
+  type: website
+  url: https://www.xiaopeng.com/airobot.html
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 小鹏机器人 / XPeng Robotics
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 小鹏机器人 |
+| **英文名** | XPeng Robotics |
+| **总部** | 中国广东广州 |
+| **成立时间** | 2024 年（机器人业务），母公司小鹏汽车 2014 年 |
+| **官网** | [https://www.xiaopeng.com/airobot.html](https://www.xiaopeng.com/airobot.html) |
+| **供应链环节** | 整机 OEM / 通用人形机器人 |
+| **企业属性** | 小鹏汽车孵化，汽车·机器人·飞行汽车生态 |
+| **母公司/所属集团** | 小鹏汽车 |
+| **数据来源** | 小鹏官网、小鹏科技日、华金证券研报 |
+
+## 公司简介
+
+小鹏机器人依托小鹏汽车在智能驾驶、三电系统和 AI 大模型上的积累，打造面向工厂与商业服务的人形机器人。
+
+2024 年 11 月，小鹏在 AI 科技日发布首款人形机器人 Iron，身高 178 cm，体重 70 kg，搭载自研图灵 AI 芯片。2025 年 11 月，小鹏发布全新一代 Iron，采用仿人脊椎、仿生肌肉和全包覆柔性皮肤，全身 82 个主动自由度，手部 22 个自由度，并首次应用全固态电池，计划 2026 年底规模量产。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 通用人形机器人 | 工厂实训、商业导览、人机交互 | Iron（2024/2025 两代） | 汽车制造、线下门店、展厅导览 |
+| 未来产品 | 更高动态、更拟人化 | 迭代中的 Iron 量产版 | 家庭服务、康养陪护 |
+
+## 代表产品
+
+### Iron（第一代）
+
+![Iron（第一代）](https://xps01.xiaopeng.com/cms/content/pic/2026/02-28/23-34-440349-1822507725.png)
+
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | 178 cm | 公开报道 |
+| 重量 | 70 kg | 公开报道 |
+| 自由度 | 62 个主动自由度 | 公开报道 |
+| 负载/扭矩 | 手部 15 个自由度，支持触觉反馈 | 公开报道 |
+| 速度/转速 | 未公开 | - |
+| 续航 | 未公开 | - |
+| 接口/通信 | 未公开 | - |
+| 价格 | 未公开 | 需询价 |
+
+**技术亮点**：自研图灵 AI 芯片（40 核、3000 T 算力）、720° 鹰眼视觉、天玑 AIOS、端到端大模型+强化学习
+
+**应用场景**：小鹏汽车广州工厂 P7 生产实训、拧螺丝、整理物料、看生产表单；未来面向门店导览与商业服务。
+
+### Iron（第二代，2025 科技日）
+
+> Iron（第二代，2025 科技日）：请访问 [官方资料](https://www.xiaopeng.com/airobot.html) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | 178 cm（官网）/ 不高于 170 cm（发布会口径） | 小鹏官网 / 华金证券研报 |
+| 重量 | 未公开 | - |
+| 自由度 | 82 个主动自由度 | 2025 小鹏科技日 |
+| 负载/扭矩 | 手部 22 个自由度，指尖触控反馈精度 0.01 mm | 公开报道 |
+| 速度/转速 | 行走速度约 1.2 m/s | 公开报道 |
+| 续航 | 约 8 小时（全固态电池） | 公开报道 |
+| 接口/通信 | 开放 SDK | 公开报道 |
+| 价格 | 未公开 | 需询价 |
+
+**技术亮点**：仿人脊椎、仿生肌肉、全包覆柔性皮肤、3 颗图灵 AI 芯片（2250 TOPS）、全固态电池、第二代 VLA 大模型
+
+**应用场景**：商业服务导览、导购、导训；计划 2026 年底规模量产。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：自研图灵 AI 芯片、固态电池、谐波减速器、柔性皮肤与触觉传感器；复用小鹏汽车智驾与三电供应链。
+- **下游客户/应用场景**：小鹏汽车工厂实训、线下门店导览导购、商业展示与服务。
+- **主要竞争对手/对标**：特斯拉 Optimus、优必选 Walker、Figure 02
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_xpeng_robotics`
+- 产品实体：`ent_product_xpeng_iron`
+- 零部件实体：`ent_component_xpeng_turing_chip`
+- 关键关系：
+  - `ent_company_xpeng_robotics` -- `manufactures` --> `ent_product_xpeng_iron`
+  - `ent_company_xpeng_robotics` -- `manufactures` --> `ent_component_xpeng_turing_chip`
+  - `ent_product_xpeng_iron` -- `uses` --> `ent_component_xpeng_turing_chip`
+
+## 参考资料
+
+1. [小鹏 AI 机器人官网](https://www.xiaopeng.com/airobot.html)
+2. [小鹏机器人量产基地新闻](https://www.xiaopeng.com/news/company_news/5537.html)
+3. [华金证券 – 汽车行业周报](https://pdf.dfcfw.com/pdf/H3_AP202511111779514833_1.pdf)

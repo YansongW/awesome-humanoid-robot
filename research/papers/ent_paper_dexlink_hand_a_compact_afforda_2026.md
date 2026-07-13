@@ -9,9 +9,7 @@ names:
   zh: DexLink Hand：紧凑、低成本、16 自由度连杆驱动拟人灵巧手
   ko: ''
 summary:
-  en: 'DexLink Hand: A Compact, Affordable, 16-DOF Linkage-Driven Hand with Human-Like
-    Dexterity is a paper on Hardware Design for humanoid robotics. DexLink Hand：紧凑、低成本、16
-    自由度连杆驱动拟人灵巧手.'
+  en: ''
   zh: 'DexLink Hand: A Compact, Affordable, 16-DOF Linkage-Driven Hand with Human-Like
     Dexterity is a paper on Hardware Design for humanoid robotics. DexLink Hand：紧凑、低成本、16
     自由度连杆驱动拟人灵巧手.'
@@ -48,5 +46,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 DexLink Hand: A Compact, Affordable, 16-DOF Linkage-Driven Hand with Human-Like Dexterity is a paper on Hardware Design for humanoid robotics. DexLink Hand：紧凑、低成本、16 自由度连杆驱动拟人灵巧手.

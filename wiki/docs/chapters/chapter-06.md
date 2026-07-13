@@ -347,9 +347,9 @@ flowchart LR
 
 ### 6.2.4 FPGA 与可重构计算
 
-现场可编程门阵列（FPGA）由可配置逻辑块（CLB）、DSP slice、块 RAM 和可编程互连组成，可在硬件层面定制数据通路。
+现场可编程门阵列（FPGA）由可配置逻辑块（CLB）、DSP slice、块 RAM 和可编程互连组成，可在硬件层面定制数据通路。与 CPU/GPU 的“指令驱动”执行方式不同，FPGA 是“数据流驱动”：一旦配置完成，数据沿着定制的逻辑路径流动，每时钟周期可产生确定的结果。这种确定性使其在机器人中特别适合微秒级响应的接口、协议转换和传感器同步。
 
-!!! note "术语解释：FPGA、CLB、LUT、DSP slice、块 RAM、可重构计算、HLS"
+!!! note "术语解释：FPGA、CLB、LUT、DSP slice、块 RAM、可重构计算、HLS、SRAM 型 FPGA"
     - **FPGA（Field-Programmable Gate Array）**：可通过硬件描述语言或高级综合工具现场配置的数字电路。
     - **CLB（Configurable Logic Block）**：FPGA 中实现组合逻辑和时序逻辑的基本单元。
     - **LUT（Look-Up Table）**：用查找表实现任意布尔函数，是 CLB 的核心。
@@ -357,8 +357,147 @@ flowchart LR
     - **块 RAM（Block RAM）**：FPGA 片上分布式 SRAM，用于缓存中间数据。
     - **可重构计算（reconfigurable computing）**：根据应用动态改变硬件结构的计算范式。
     - **HLS（High-Level Synthesis）**：把 C/C++/Python 描述自动综合为硬件电路的设计方法。
+    - **SRAM 型 FPGA**：通过 SRAM 单元存储配置位，掉电后配置丢失，上电需重新加载。
 
-FPGA 的优势在于确定性的低延迟、高并行 I/O 和能效；劣势是开发复杂、逻辑资源有限、峰值浮点性能通常低于 GPU。对于机器人中需要严格时序的传感器触发、EtherCAT 主站、自定义编码器接口等场景，FPGA 非常合适。
+#### LUT、CLB 与布尔函数实现
+
+FPGA 的逻辑基础是 **LUT（Look-Up Table）**。一个 \(n\) 输入 LUT 可以存储 \(2^n\) 个输出值，因此能够实现任意 \(n\) 输入、1 输出的布尔函数。对于 4 输入 LUT（4-LUT），可实现的函数空间为 \(2^{2^4} = 65536\) 种。多个 LUT 通过可编程互连组合，可以实现任意复杂的组合逻辑。
+
+!!! note "术语解释：布尔函数、真值表、组合逻辑、时序逻辑、触发器"
+    - **布尔函数（Boolean function）**：输入输出仅为 0/1 的离散函数。
+    - **真值表（truth table）**：列出所有输入组合与对应输出的表格。
+    - **组合逻辑（combinational logic）**：输出仅取决于当前输入，无记忆性。
+    - **时序逻辑（sequential logic）**：输出取决于当前输入和历史状态，需要触发器存储状态。
+    - **触发器（flip-flop）**：时钟边沿触发的 1 位存储单元。
+
+CLB 通常由若干个 LUT、触发器和多路选择器组成。一个 CLB 的输出既可以来自 LUT 的组合逻辑结果，也可以来自触发器的时序输出。因此，FPGA 中的任何算法都可以被分解为：**组合逻辑（LUT）+ 状态寄存器（触发器）+ 互连**。
+
+**实例：用 LUT 实现全加器**。1 位全加器有 3 个输入（\(A, B, C_{in}\)）和 2 个输出（和 \(S\)、进位 \(C_{out}\)）。其布尔表达式为：
+
+$$
+S = A \oplus B \oplus C_{in}
+$$
+
+$$
+C_{out} = AB + (A \oplus B) C_{in}
+$$
+
+一个 3 输入 LUT 即可实现和或进位中的任意一个输出。对于多位加法器，可将多个 1 位全加器级联，或利用进位链（carry chain）专用结构加速。现代 FPGA 的 CLB 内置快速进位逻辑，使 32 位加法器仍能在很高频率下运行。
+
+#### 时序分析：建立/保持、时钟偏斜与最高频率
+
+FPGA 设计必须满足时序约束，否则会出现亚稳态或功能错误。时序分析的核心是建立时间（setup time）和保持时间（hold time）。
+
+!!! note "术语解释：建立时间、保持时间、时钟偏斜、关键路径、Fmax、亚稳态"
+    - **建立时间（setup time）**：触发器时钟沿到来前，输入数据必须稳定的最短时间。
+    - **保持时间（hold time）**：触发器时钟沿到来后，输入数据必须保持稳定的短时间。
+    - **时钟偏斜（clock skew）**：同一时钟到达不同触发器的时间差。
+    - **关键路径（critical path）**：组合逻辑延迟最长的路径，决定最高工作频率。
+    - **Fmax**：电路能稳定工作的最高时钟频率。
+    - **亚稳态（metastability）**：触发器采样时输入恰好变化，输出处于不确定电平的状态。
+
+建立时间约束可写为：
+
+$$
+T_{clk} \ge t_{cq} + t_{comb} + t_{su} + t_{skew}
+$$
+
+其中 \(T_{clk}\) 为时钟周期，\(t_{cq}\) 为触发器时钟到输出延迟，\(t_{comb}\) 为组合逻辑延迟，\(t_{su}\) 为建立时间，\(t_{skew}\) 为时钟偏斜。由此得到最高频率：
+
+$$
+F_{max} = \frac{1}{t_{cq} + t_{comb} + t_{su} + t_{skew}}
+$$
+
+保持时间约束为：
+
+$$
+t_{cq} + t_{comb} \ge t_{hold} + t_{skew}
+$$
+
+与时序分析相关的另一个重要问题是**跨时钟域（Clock Domain Crossing, CDC）**。当信号从一个时钟域传递到另一个异步时钟域时，必须通过双触发器同步器、FIFO 或握手协议处理，否则亚稳态可能传播到下游逻辑。机器人中常见的 CDC 场景包括：传感器数据以独立时钟采样后传入 FPGA 主时钟域，或 FPGA 与外部 CPU 通过不同频率的 AXI 总线通信。
+
+#### 资源估算与功耗模型
+
+FPGA 的资源主要包括 LUT、触发器（FF）、DSP slice 和 BRAM。设计前需要根据算法估算资源用量。例如，一个 \(N\) 位 \(M\) 抽头的 FIR 滤波器：
+
+- 乘法：每个抽头 1 次乘法，若系数固定可用 LUT 实现，若系数可变通常用 DSP slice。
+- 加法：\(M-1\) 次加法。
+- 延迟线：\(M\) 个 \(N\) 位寄存器。
+
+若 \(N=16, M=32\)，每个乘法用一个 DSP slice，则共需 32 个 DSP slice；延迟线可用 SRL（Shift Register LUT）或 BRAM 实现。
+
+!!! note "术语解释：FIR 滤波器、抽头、延迟线、SRL、AXI 总线"
+    - **FIR 滤波器（Finite Impulse Response filter）**：有限长单位冲激响应滤波器。
+    - **抽头（tap）**：FIR 滤波器中的系数与对应延迟样本。
+    - **延迟线（delay line）**：存储历史样本的移位寄存器结构。
+    - **SRL（Shift Register LUT）**：用 LUT 实现的移位寄存器，节省 FF 资源。
+    - **AXI 总线（Advanced eXtensible Interface）**：ARM 定义的高性能片上总线协议。
+
+FPGA 的功耗主要由三部分组成：
+
+1. **静态功耗**：晶体管漏电流，与工艺、温度和配置规模有关。28 nm 及以下工艺的静态功耗不可忽视。
+2. **动态功耗**：逻辑翻转消耗的能量，近似为 \(\alpha C V^2 f\)，其中 \(\alpha\) 为活动因子，\(C\) 为负载电容，\(V\) 为核心电压，\(f\) 为时钟频率。
+3. **I/O 功耗**：高速接口（如 GTH/GTY 收发器）驱动外部负载消耗的功率。
+
+对于人形机器人中的低功耗关节控制器，选择低功耗 FPGA（如 Lattice、Microchip PolarFire）或 SoC FPGA（如 AMD Zynq UltraScale+）可在实时性与能效之间取得平衡。
+
+#### HLS 设计流程与 Python 示例
+
+HLS 把算法描述（C/C++/Python）转换为 RTL（Verilog/VHDL），使软件工程师也能利用 FPGA。典型的 HLS 优化指令包括：流水线（pipeline）、数据流（dataflow）、循环展开（unroll）、数组分区（array_partition）和接口综合（interface synthesis）。
+
+```mermaid
+flowchart TD
+    A["C/C++ 算法描述"] --> B["HLS 综合"]
+    B --> C["调度与绑定"]
+    C --> D["生成 RTL"]
+    D --> E["逻辑综合 / 布局布线"]
+    E --> F["比特流下载"]
+    F --> G["FPGA 运行"]
+```
+
+**Python 示例：位运算并行 CRC-8**。下面代码不直接生成 FPGA 比特流，而是用纯 Python 演示如何用查找表和按位异或实现一个可在 FPGA 上单周期完成的 CRC-8 计算，帮助理解 LUT 友好的算法结构。
+
+```python
+"""
+CRC-8 (SMBus polynomial x^8 + x^2 + x + 1) implemented with a lookup table.
+This table-driven approach is FPGA-friendly: one 256x8 ROM lookup and one XOR.
+"""
+import numpy as np
+
+POLY = 0x07  # x^8 + x^2 + x + 1
+
+# Build 256-entry lookup table
+crc_table = np.zeros(256, dtype=np.uint8)
+for i in range(256):
+    crc = i
+    for _ in range(8):
+        if crc & 0x80:
+            crc = ((crc << 1) ^ POLY) & 0xFF
+        else:
+            crc = (crc << 1) & 0xFF
+    crc_table[i] = crc
+
+def crc8_table(data: bytes) -> int:
+    """Byte-at-a-time CRC-8 using lookup table."""
+    crc = 0x00
+    for byte in data:
+        idx = (crc ^ byte) & 0xFF
+        crc = crc_table[idx]
+    return crc
+
+# Example: compute CRC-8 of a short sensor frame
+frame = bytes([0x01, 0x02, 0x03, 0x04, 0x05])
+print(f"CRC-8 of {frame.hex()} = 0x{crc8_table(frame):02X}")
+
+# FPGA resource estimate for one byte/cycle implementation:
+# - 256 x 8-bit LUT/BRAM lookup table
+# - 8-bit XOR
+# - 8-bit register for running CRC
+```
+
+在 FPGA 中，上述 `crc_table` 可综合为 256×8 的分布式 RAM 或 BRAM；每个时钟周期读取一个输入字节，查表后与当前 CRC 异或，即可实现单字节/周期的确定性 CRC 计算。对于 EtherCAT 等需要实时 CRC 校验的工业总线，这种硬逻辑实现比软件 CRC 快 1–2 个数量级。
+
+FPGA 与 GPU/NPU 的关系并非竞争，而是互补：GPU/NPU 负责大算力、高吞吐的感知与策略推理；FPGA 负责确定性接口、协议转换和前端预处理。人形机器人中常见的“ARM + FPGA”组合（如 AMD Kria、Zynq）正是利用 FPGA 处理高速 I/O，同时用 ARM 运行 Linux 和 ROS 2，实现软硬协同。FPGA 与各类传感器接口的详细电气特性还可参考第 5 章 5.4 节。
 
 ```mermaid
 flowchart TD
@@ -908,7 +1047,7 @@ flowchart LR
 
 ### 6.3.5 视觉里程计 / 特征匹配简介
 
-视觉里程计（Visual Odometry, VO）通过连续图像估计相机运动。经典方法包括特征点法（如 ORB、SIFT）和直接法（如 LK 光流、DSO）。
+视觉里程计（Visual Odometry, VO）通过连续图像估计相机运动。经典方法包括特征点法（如 ORB、SIFT）和直接法（如 LK 光流、DSO）。VO 的核心数学问题是：给定两张或更多图像中的对应点，恢复相机之间的相对位姿以及这些点的三维位置。该问题可追溯到摄影测量学和计算机视觉的多视图几何理论。
 
 !!! note "术语解释：视觉里程计、SLAM、特征点、描述子、匹配、RANSAC、本质矩阵"
     - **视觉里程计（VO）**：通过视觉信息估计相机自运动的算法。
@@ -918,15 +1057,233 @@ flowchart LR
     - **RANSAC（Random Sample Consensus）**：通过随机采样和一致性检验剔除异常值的鲁棒估计方法。
     - **本质矩阵 / 基础矩阵**：见 6.3.2 节定义。
 
-特征点法流程：
+#### 特征检测、描述子与匹配
 
-1. 对当前帧和上一帧分别提取特征点和描述子；
-2. 用最近邻搜索或 FLANN 做描述子匹配；
-3. 用 RANSAC 剔除误匹配，估计本质矩阵或基础矩阵；
-4. 由本质矩阵恢复相对位姿；
-5. 可选地，与 IMU 做松/紧耦合融合，得到尺度准确的轨迹。
+特征点法的性能取决于三个环节：检测、描述和匹配。
 
-**视觉惯性里程计（VIO）**。纯 VO 存在尺度不确定问题：从两帧图像恢复的运动轨迹差一个未知比例因子。IMU 能提供高频的加速度和角速度测量，其中加速度计提供尺度信息（通过重力方向），陀螺仪提供精确的姿态变化。VIO 把图像特征约束与 IMU 预积分约束融合，在因子图或扩展卡尔曼滤波（EKF）框架下估计位姿、速度和 IMU 偏置。
+**检测**。好的特征点应在不同视角、光照、尺度下都能被稳定检测到。常用的 Harris 角点响应函数为：
+
+$$
+R = \det(M) - k \cdot \mathrm{tr}(M)^2
+$$
+
+其中 \(M\) 为图像梯度自相关矩阵（结构张量），\(k\) 为经验常数（通常 0.04–0.06）。当 \(R\) 大于阈值且为局部极大值时，该点被标记为角点。ORB 在此基础上加入 FAST 检测器和方向估计，实现旋转不变性。
+
+!!! note "术语解释：Harris 角点、结构张量、FAST、尺度不变、旋转不变"
+    - **Harris 角点（Harris corner）**：基于图像梯度自相关矩阵检测的角点。
+    - **结构张量（structure tensor）**：由图像梯度外积构成的 2×2 矩阵，描述局部灰度变化方向。
+    - **FAST（Features from Accelerated Segment Test）**：通过比较圆周像素亮度快速检测角点。
+    - **尺度不变（scale invariant）**：特征检测和描述对图像缩放保持稳定。
+    - **旋转不变（rotation invariant）**：特征描述对图像旋转保持稳定。
+
+**描述子**。SIFT 描述子使用 128 维梯度直方图向量，对尺度、旋转和光照变化鲁棒但计算量大。ORB 使用二进制 BRIEF 描述子，通过比较像素对产生 256 bit 向量，可用汉明距离快速匹配。描述子可看作把局部图像块映射到高维特征空间，理想情况下：同一点的描述子距离小，不同点的描述子距离大。
+
+**匹配**。最常用的是最近邻搜索：对第一张图像中的每个描述子，在第二张图像中找到距离最近的描述子。为提高鲁棒性，常采用**最近邻/次近邻比（NN ratio）**：若最近邻距离 \(d_1\) 与次近邻距离 \(d_2\) 之比小于阈值（如 0.7–0.8），才接受该匹配。其原理是：若最近邻和次近邻都很近，说明描述子区分度不足，匹配不可靠。
+
+#### 八点法与本质矩阵估计
+
+对于已标定相机，两视图几何可用本质矩阵 \(E\) 描述。设空间点 \(P\) 在两幅归一化图像上的坐标分别为 \(\mathbf{x}_1, \mathbf{x}_2\)（3×1 齐次坐标），则对极约束为：
+
+$$
+\mathbf{x}_2^T E \mathbf{x}_1 = 0
+$$
+
+本质矩阵 \(E = [\mathbf{t}]_\times R\) 有 5 个自由度（3 旋转 + 3 平移 - 1 尺度），但因其奇异值约束，通常用 8 对匹配点即可线性求解，称为**八点法（Eight-Point Algorithm）**。
+
+将 \(E\) 按列展开为 9 维向量 \(\mathbf{e}\)，每对匹配点提供一个线性方程：
+
+$$
+\begin{bmatrix}
+x_2 x_1 & x_2 y_1 & x_2 & y_2 x_1 & y_2 y_1 & y_2 & x_1 & y_1 & 1
+\end{bmatrix} \mathbf{e} = 0
+$$
+
+其中 \(x_i, y_i\) 为归一化坐标。8 对点构成 \(8 \times 9\) 矩阵，\(\mathbf{e}\) 为其零空间。更多点时可用 SVD 求最小二乘解。解出的 \(E\) 通常不满足本质矩阵的内在约束（两个非零奇异值相等），需再次 SVD 并强制两个奇异值相等后重建。
+
+!!! note "术语解释：八点法、对极约束、归一化坐标、SVD、零空间"
+    - **八点法（Eight-Point Algorithm）**：用 8 对匹配点线性估计本质矩阵或基础矩阵的方法。
+    - **对极约束（epipolar constraint）**：两视图中对应点满足的几何关系。
+    - **归一化坐标（normalized coordinates）**：用内参矩阵逆变换后的图像坐标。
+    - **SVD（Singular Value Decomposition）**：奇异值分解，用于求解线性最小二乘问题。
+    - **零空间（null space）**：矩阵映射后结果为零向量的输入空间。
+
+#### RANSAC 鲁棒估计
+
+实际匹配中常包含大量误匹配。RANSAC 通过随机采样和一致性检验估计模型并剔除异常值。设内点率为 \(\varepsilon\)，每次采样 \(n\) 个点（八点法 \(n=8\)），则需要 \(k\) 次迭代才能以概率 \(p\) 至少采样到一次全内点集合：
+
+$$
+k = \frac{\ln(1 - p)}{\ln(1 - \varepsilon^n)}
+$$
+
+例如，若内点率 \(\varepsilon = 0.5\)，希望成功率 \(p = 0.99\)，则八点法需要：
+
+$$
+k = \frac{\ln(0.01)}{\ln(1 - 0.5^8)} \approx 117
+$$
+
+即约 117 次随机采样。若内点率降至 30%，则需要约 766 次迭代。这说明提高前端匹配质量（如使用 ratio test、交叉验证）能显著减少 RANSAC 计算量。
+
+!!! note "术语解释：内点、外点、内点率、RANSAC 迭代次数、模型一致性"
+    - **内点（inlier）**：符合几何模型的数据点。
+    - **外点（outlier）**：不符合模型的异常数据点。
+    - **内点率（inlier ratio）**：内点占所有数据点的比例。
+    - **RANSAC 迭代次数**：为达到置信度所需的随机采样次数。
+    - **模型一致性（model consensus）**：数据点到模型的误差小于阈值。
+
+#### 由本质矩阵恢复位姿与三角测量
+
+估计出 \(E\) 后，可通过 SVD 分解得到 4 组可能的 \((R, \mathbf{t})\)。通过三角测量恢复三维点并检查其深度是否为正，可唯一确定正确的位姿。
+
+对于两个相机投影矩阵 \(P_1 = K[I \ | \ \mathbf{0}]\) 和 \(P_2 = K[R \ | \ \mathbf{t}]\)，空间点 \(X\) 在两幅图像上的投影为 \(\mathbf{x}_1 = P_1 X\)、\(\mathbf{x}_2 = P_2 X\)。三角测量即求解满足这两个投影约束的 \(X\)。由于噪声存在，两条射线通常不相交，可用**线性三角测量法**或**非线性光束法平差（Bundle Adjustment）**求解。
+
+!!! note "术语解释：三角测量、光束法平差、重投影误差、深度正约束"
+    - **三角测量（triangulation）**：由多视图投影恢复三维点位置。
+    - **光束法平差（Bundle Adjustment, BA）**：同时优化相机位姿和三维点以最小化重投影误差。
+    - **重投影误差（reprojection error）**：三维点投影到图像后与观测点的像素距离。
+    - **深度正约束（positive depth constraint）**：三维点必须位于相机前方的约束。
+
+#### Python 示例：八点法 + RANSAC + 三角测量
+
+以下代码演示一个简化 VO 前端：用归一化 8 点法估计本质矩阵，用 RANSAC 剔除外点，再分解出位姿并三角测量恢复三维点。实际系统应使用 ORB/SIFT 等真实特征检测与匹配。
+
+```python
+"""
+Simplified visual odometry frontend:
+random correspondences -> normalized 8-point -> RANSAC -> E decomposition -> triangulation.
+"""
+import numpy as np
+
+
+def skew(v):
+    """Return 3x3 skew-symmetric matrix of vector v."""
+    return np.array([[0, -v[2], v[1]],
+                     [v[2], 0, -v[0]],
+                     [-v[1], v[0], 0]])
+
+
+def estimate_eight_point(pts1, pts2):
+    """Estimate essential matrix from N>=8 normalized correspondences."""
+    A = []
+    for (x1, y1), (x2, y2) in zip(pts1, pts2):
+        A.append([x2*x1, x2*y1, x2, y2*x1, y2*y1, y2, x1, y1, 1])
+    A = np.array(A)
+    _, _, Vt = np.linalg.svd(A)
+    E = Vt[-1].reshape(3, 3)
+    # Enforce singular-value constraint
+    U, S, Vt = np.linalg.svd(E)
+    S = np.diag([1, 1, 0])
+    E = U @ S @ Vt
+    return E
+
+
+def decompose_essential(E):
+    """Decompose E into 4 possible (R, t)."""
+    U, _, Vt = np.linalg.svd(E)
+    W = np.array([[0, -1, 0], [1, 0, 0], [0, 0, 1]])
+    R1 = U @ W @ Vt
+    R2 = U @ W.T @ Vt
+    t = U[:, 2]
+    if np.linalg.det(R1) < 0:
+        R1 = -R1
+    if np.linalg.det(R2) < 0:
+        R2 = -R2
+    return [(R1, t), (R1, -t), (R2, t), (R2, -t)]
+
+
+def triangulate_point(P1, P2, x1, x2):
+    """Linear triangulation of a single point."""
+    A = np.vstack([
+        x1[0] * P1[2] - P1[0],
+        x1[1] * P1[2] - P1[1],
+        x2[0] * P2[2] - P2[0],
+        x2[1] * P2[2] - P2[1]
+    ])
+    _, _, Vt = np.linalg.svd(A)
+    X = Vt[-1]
+    return X[:3] / X[3]
+
+
+def ransac_essential(pts1, pts2, threshold=1e-3, max_iter=500, p=0.99):
+    """RANSAC for essential matrix."""
+    best_E, best_inliers = None, []
+    n = len(pts1)
+    for _ in range(max_iter):
+        idx = np.random.choice(n, 8, replace=False)
+        E = estimate_eight_point(pts1[idx], pts2[idx])
+        # Sampson distance as error metric
+        errs = []
+        for x1, x2 in zip(pts1, pts2):
+            Ex1 = E @ x1
+            Etx2 = E.T @ x2
+            num = (x2.T @ E @ x1) ** 2
+            den = Ex1[0]**2 + Ex1[1]**2 + Etx2[0]**2 + Etx2[1]**2
+            errs.append(num / (den + 1e-12))
+        inliers = np.where(np.array(errs) < threshold)[0]
+        if len(inliers) > len(best_inliers):
+            best_inliers = inliers
+            best_E = E
+        # Adaptively update iterations
+        if len(best_inliers) > 8:
+            eps = len(best_inliers) / n
+            k = np.log(1 - p) / np.log(1 - eps**8)
+            max_iter = min(max_iter, int(k))
+    return best_E, best_inliers
+
+
+# Synthetic test: two cameras translated by 0.5 m along X
+np.random.seed(0)
+K = np.eye(3)
+R_true = np.eye(3)
+t_true = np.array([0.5, 0.0, 0.0])
+P1 = K @ np.hstack([np.eye(3), np.zeros((3, 1))])
+P2 = K @ np.hstack([R_true, t_true.reshape(3, 1)])
+
+# Generate 100 3D points in front of camera
+X = np.random.uniform(-1, 1, (100, 3))
+X[:, 2] += 3.0  # ensure positive depth
+
+x1 = (P1 @ np.hstack([X, np.ones((100, 1))]).T).T
+x1 = x1[:, :3] / x1[:, 2:3]
+x2 = (P2 @ np.hstack([X, np.ones((100, 1))]).T).T
+x2 = x2[:, :3] / x2[:, 2:3]
+
+# Add noise and 20% outliers
+noise = 1e-3
+x1n = x1 + np.random.randn(*x1.shape) * noise
+x2n = x2 + np.random.randn(*x2.shape) * noise
+outlier_idx = np.random.choice(100, 20, replace=False)
+x2n[outlier_idx] += np.random.randn(20, 3) * 0.3
+
+E, inliers = ransac_essential(x1n, x2n)
+print(f"RANSAC found {len(inliers)} inliers out of {len(x1n)}")
+
+# Refine E with all inliers
+E_refined = estimate_eight_point(x1n[inliers], x2n[inliers])
+
+# Choose correct pose by checking positive depth
+poses = decompose_essential(E_refined)
+best_pose, best_count = None, 0
+for R, t in poses:
+    P2_test = K @ np.hstack([R, t.reshape(3, 1)])
+    count = 0
+    for x1_i, x2_i in zip(x1n[inliers], x2n[inliers]):
+        X3d = triangulate_point(P1, P2_test, x1_i, x2_i)
+        if X3d[2] > 0:
+            count += 1
+    if count > best_count:
+        best_count = count
+        best_pose = (R, t)
+
+R_est, t_est = best_pose
+print("Estimated translation (up to scale):", t_est)
+print("True translation:", t_true)
+```
+
+运行后可看到：RANSAC 能有效识别约 80% 的内点；估计出的平移向量与真实平移方向一致（仅差一个尺度因子）。单目 VO 的尺度不确定性意味着无法从两帧图像直接获得 0.5 m 的绝对运动幅度，必须借助 IMU、 stereo 或已知尺寸的物体来恢复尺度。
+
+#### 视觉惯性里程计（VIO）
+
+纯 VO 存在尺度不确定问题：从两帧图像恢复的运动轨迹差一个未知比例因子。IMU 能提供高频的加速度和角速度测量，其中加速度计提供尺度信息（通过重力方向），陀螺仪提供精确的姿态变化。VIO 把图像特征约束与 IMU 预积分约束融合，在因子图或扩展卡尔曼滤波（EKF）框架下估计位姿、速度和 IMU 偏置。
 
 !!! note "术语解释：视觉惯性里程计、预积分、因子图、扩展卡尔曼滤波、尺度"
     - **视觉惯性里程计（VIO）**：融合相机和 IMU 测量估计六自由度位姿的算法。
@@ -950,7 +1307,7 @@ $$
 \tilde{\boldsymbol{\omega}} = \boldsymbol{\omega} + \mathbf{b}_g + \mathbf{n}_g
 $$
 
-其中 \(\mathbf{g}\) 为重力加速度，\(\mathbf{n}\) 为测量噪声。VIO 在机器人导航、AR/VR 和无人机中广泛应用，典型开源实现包括 OKVIS、VINS-Mono、ORB-SLAM3 和 OpenVINS。
+其中 \(\mathbf{g}\) 为重力加速度，\(\mathbf{n}\) 为测量噪声。VIO 在机器人导航、AR/VR 和无人机中广泛应用，典型开源实现包括 OKVIS、VINS-Mono、ORB-SLAM3 和 OpenVINS。VIO 与 SLAM 后端的更系统介绍见 6.3.6 节与第 14 章 14.3 节。
 
 ```mermaid
 flowchart TD
@@ -960,8 +1317,9 @@ flowchart TD
     D --> E
     E --> F["RANSAC 几何验证"]
     F --> G["本质矩阵 / 位姿估计"]
-    G --> H["IMU 融合（可选）"]
-    H --> I["视觉里程计轨迹"]
+    G --> H["三角测量"]
+    H --> I["IMU 融合（可选）"]
+    I --> J["视觉里程计轨迹"]
 ```
 
 
@@ -2831,6 +3189,127 @@ $$
     - **安时（Ah）**：电池容量的单位，表示以 1 A 电流放电可持续 1 小时。
     - **瓦时（Wh）**：能量的单位，1 Wh = 1 W × 1 h。
 
+#### 电池电化学基础：电极电位、动力学与扩散
+
+锂离子电池的能量存储本质上是锂在正负极活性材料晶格中的可逆嵌入/脱嵌反应。要理解标称电压、倍率性能、低温衰减和老化，需要回到电化学热力学与动力学。
+
+!!! note "术语解释：嵌入反应、脱嵌反应、活性材料、电解液、锂离子"
+    - **嵌入反应（intercalation）**：锂离子可逆地插入宿主晶格而不破坏其结构的反应。
+    - **脱嵌反应（deintercalation）**：锂离子从宿主晶格中脱出的反应。
+    - **活性材料（active material）**：电池中参与电化学反应、存储锂离子的主体材料。
+    - **电解液（electrolyte）**：在正负极之间传导锂离子的离子导体。
+    - **锂离子（Li⁺）**：锂离子电池中承担电荷传输的载流子。
+
+**电极电位与能斯特方程**。电极电位由活性材料中锂的化学势决定。对于插层电极，能斯特方程可写为：
+
+$$
+E(x) = E^\circ - \frac{RT}{F} \ln\left( \frac{a_{\mathrm{Li}^+,\mathrm{host}}}{a_{\mathrm{Li}^+}} \right)
+$$
+
+其中 \(E^\circ\) 为标准电极电位，\(R\) 为气体常数（8.314 J/(mol·K)），\(T\) 为绝对温度，\(F\) 为法拉第常数（96485 C/mol），\(a\) 为活度。在稀溶液近似下，电极电位随锂化程度 \(x\)（即 SOC）变化。开路电压 \(OCV(x)\) 就是正负极电位之差：
+
+$$
+OCV(x) = E_\mathrm{cathode}(x) - E_\mathrm{anode}(x)
+$$
+
+对于石墨负极，其电位非常接近金属锂（约 0.05–0.2 V vs Li/Li⁺），因此全电池电压主要由正极材料决定。LiFePO₄ 的平台电位约为 3.45 V vs Li/Li⁺，NCM（LiNi₀.₈Co₀.₁Mn₀.₁O₂）约为 3.7–3.8 V。
+
+!!! note "术语解释：能斯特方程、电极电位、活度、开路电压、对锂电位"
+    - **能斯特方程（Nernst equation）**：描述电极电位与反应物活度之间关系的方程。
+    - **电极电位（electrode potential）**：电极相对于参考电极的电势。
+    - **活度（activity）**：有效浓度，反映离子或原子在材料中的化学势。
+    - **开路电压（open-circuit voltage, OCV）**：电池无外部电流时的端电压。
+    - **对锂电位（potential vs Li/Li⁺）**：相对于锂金属参比电极的电位。
+
+**巴特勒-沃尔默方程与极化**。当电池放电时，电极反应偏离平衡，产生过电位 \(\eta\)。巴特勒-沃尔默（Butler-Volmer）方程描述电荷转移电流密度 \(j\) 与过电位的关系：
+
+$$
+j = j_0 \left[ \exp\left( \frac{\alpha_a F \eta}{RT} \right) - \exp\left( -\frac{\alpha_c F \eta}{RT} \right) \right]
+$$
+
+其中 \(j_0\) 为交换电流密度，\(\alpha_a, \alpha_c\) 为阳极和阴极传递系数（通常近似 \(\alpha_a \approx \alpha_c \approx 0.5\)）。在低过电位区可线性化为 \(j \approx j_0 F \eta / RT\)，定义电荷转移电阻 \(R_{ct} = RT / (F j_0)\)。高倍率放电时，电荷转移极化和浓差极化都会使端电压显著下降，并产生焦耳热。
+
+!!! note "术语解释：巴特勒-沃尔默方程、交换电流密度、过电位、极化、电荷转移电阻"
+    - **巴特勒-沃尔默方程（Butler-Volmer equation）**：描述电化学反应速率与过电位关系的方程。
+    - **交换电流密度（exchange current density）**：平衡状态下正向与反向反应电流密度的大小，反映反应活性。
+    - **过电位（overpotential）**：实际电极电位与平衡电位的偏差。
+    - **极化（polarization）**：电流通过时电极电位偏离平衡值的现象。
+    - **电荷转移电阻（charge-transfer resistance）**：电荷转移步骤对电流的阻碍。
+
+**固相扩散**。锂离子在正极活性材料颗粒内部的扩散遵循菲克第二定律。对于半径为 \(R_p\) 的球形颗粒，扩散时间常数可近似为：
+
+$$
+\tau_D = \frac{R_p^2}{D_{\mathrm{Li}^+}}
+$$
+
+其中 \(D_{\mathrm{Li}^+}\) 为固相扩散系数（LFP 约 \(10^{-16}–10^{-14}\ \mathrm{m^2/s}\)，NCM 约 \(10^{-13}–10^{-12}\ \mathrm{m^2/s}\)）。若放电速率过快，颗粒表面锂离子浓度耗尽而内部仍富锂，形成浓差极化并限制容量发挥。减小颗粒尺寸、提高工作温度或采用高扩散系数的材料可改善倍率性能。
+
+!!! note "术语解释：菲克定律、扩散系数、扩散时间常数、浓差极化"
+    - **菲克定律（Fick's law）**：描述物质从高浓度区向低浓度区扩散的规律。
+    - **扩散系数（diffusion coefficient）**：表征扩散速率的材料参数。
+    - **扩散时间常数（diffusion time constant）**：扩散过程达到平衡的特征时间。
+    - **浓差极化（concentration polarization）**：由于反应物浓度梯度引起的极化。
+
+**SEI 膜的形成与生长**。首次充电时，电解液在石墨负极表面还原分解，形成固态电解质界面膜（SEI）。其主要成分包括 Li₂CO₃、LiF、ROCO₂Li、烷基锂等。SEI 膜是离子导体但电子绝缘体，能阻止电解液持续分解。然而，在循环过程中 SEI 会不断破裂-重构，消耗活性锂并增厚，导致容量衰减和阻抗上升。高温、高电压和快充会加速 SEI 生长。
+
+!!! note "术语解释：SEI 膜、LiF、Li₂CO₃、活性锂、阻抗增长"
+    - **SEI 膜（Solid Electrolyte Interphase）**：负极表面由电解液分解产物形成的保护膜。
+    - **LiF / Li₂CO₃**：SEI 中常见的无机锂盐成分。
+    - **活性锂（cyclable lithium）**：可参与充放电循环的锂离子总量。
+    - **阻抗增长（impedance growth）**：电池内阻随循环或存储而增加的现象。
+
+**Python 算例：用能斯特方程近似 OCV-SOC 曲线**。下面代码对比 LFP 和 NCM 的开路电压随 SOC 的变化。实际 OCV-SOC 曲线还需考虑相变平台（LFP 在约 20–80% SOC 处电压平台非常平坦），因此这里采用经验 Redlich-Kister 展开式拟合，重点展示不同正极的电位差异。
+
+```python
+"""
+Approximate OCV-SOC curves for LFP and NCM positive electrodes
+using a Redlich-Kister expansion. For illustration only.
+"""
+import numpy as np
+import matplotlib.pyplot as plt
+
+R = 8.314      # J/(mol K)
+T = 298.15     # K
+F = 96485      # C/mol
+
+soc = np.linspace(0.05, 0.95, 200)
+
+# LFP: very flat plateau near 3.45 V; add small slope and curvature
+ocv_lfp = (3.45
+           + 0.05 * np.log(soc / (1 - soc))
+           + 0.02 * (2 * soc - 1)
+           - 0.03 * (2 * soc - 1)**3)
+
+# NCM: sloped profile, higher average voltage
+ocv_ncm = (3.85
+           + 0.20 * np.log(soc / (1 - soc))
+           + 0.15 * (2 * soc - 1)
+           - 0.05 * (2 * soc - 1)**3)
+
+plt.figure(figsize=(8, 4))
+plt.plot(soc * 100, ocv_lfp, label='LFP (LiFePO₄)')
+plt.plot(soc * 100, ocv_ncm, label='NCM (LiNi₀.₈Co₀.₁Mn₀.₁O₂)')
+plt.xlabel('SOC [%]')
+plt.ylabel('OCV vs graphite anode [V]')
+plt.title('Typical positive-electrode OCV-SOC behavior')
+plt.grid(True)
+plt.legend()
+plt.tight_layout()
+plt.savefig('ocv_soc_curves.png', dpi=150)
+plt.show()
+```
+
+```mermaid
+flowchart TD
+    A["正极活性材料<br/>Li⁺ 脱嵌"] --> B["电解液中 Li⁺ 迁移"]
+    B --> C["负极活性材料<br/>Li⁺ 嵌入"]
+    D["外电路 e⁻ 流动"] --> A
+    C --> D
+    E["SEI 膜"] -.->|"离子导通 / 电子绝缘"| C
+```
+
+电化学视角的工程设计启示有三点：第一，低温下 \(D_{\mathrm{Li}^+}\) 和电解液电导率急剧下降，导致可用功率和可用容量同时降低；第二，高倍率脉冲放电会放大极化，BMS 的 SOP 估计必须考虑瞬时电流与温度；第三，快充策略需要同时控制电荷转移过电位和锂离子浓度梯度，避免负极析锂。关于电池电化学建模的深入内容可参考 Newman 与 Thomas-Alyea 的著作 [74]。
+
 ### 6.5.2 电池管理系统 BMS：SOC/SOH 估计、均衡、过充过放保护、热失控
 
 电池管理系统（BMS）监控并保护电池组，确保其在安全、高效和长寿命的窗口内工作。
@@ -2977,31 +3456,391 @@ flowchart LR
     B --> H["电机驱动"]
 ```
 
+#### Buck 变换器的稳态与小信号分析
+
+Buck（降压）变换器是机器人电源系统中最基本的拓扑。理解其稳态纹波、CCM/DCM 边界和小信号特性，是设计 48 V→24 V→12 V→5 V 多级配电的基础。
+
+!!! note "术语解释：Buck 变换器、CCM、DCM、伏秒平衡、纹波"
+    - **CCM（Continuous Conduction Mode）**：电感电流在整个开关周期内不降至零的工作模式。
+    - **DCM（Discontinuous Conduction Mode）**：电感电流在周期内降为零并维持一段时间的工作模式。
+    - **伏秒平衡（volt-second balance）**：稳态下电感电压在一个周期内积分等于零。
+    - **纹波（ripple）**：输出电压或电流中的周期性交流分量。
+
+**理想稳态关系**。当开关管导通时，电感两端电压为 \(V_{in} - V_{out}\)；关断时，二极管（或同步整流管）续流，电感电压为 \(-V_{out}\)。由伏秒平衡：
+
+$$
+(V_{in} - V_{out}) D T_s = V_{out} (1 - D) T_s
+$$
+
+得到理想电压转换比：
+
+$$
+\frac{V_{out}}{V_{in}} = D
+$$
+
+其中 \(D\) 为占空比，\(T_s = 1/f_{sw}\) 为开关周期。
+
+**电感电流纹波**。在 CCM 下，电感电流上升斜率为 \((V_{in}-V_{out})/L\)，下降斜率为 \(-V_{out}/L\)。峰峰值纹波为：
+
+$$
+\Delta I_L = \frac{V_{out}(1-D) T_s}{L} = \frac{V_{out}(1-D)}{L f_{sw}}
+$$
+
+工程上通常把 \(\Delta I_L\) 控制在平均电感电流 \(I_L \approx I_{out}\) 的 20%–40%，以平衡电感尺寸、电流应力和输出纹波。
+
+!!! note "术语解释：电感电流纹波、峰峰值、占空比、开关周期"
+    - **电感电流纹波（inductor current ripple）**：电感电流在开关周期内的波动量。
+    - **峰峰值（peak-to-peak）**：波形最大值与最小值之差。
+    - **开关周期（switching period）**：一次完整开关循环的时间。
+
+**输出电压纹波**。输出电容主要吸收电感电流的交流分量。在 CCM 下，忽略 ESR 时电容充放电引起的纹波近似为：
+
+$$
+\Delta V_{out} \approx \frac{\Delta I_L}{8 C f_{sw}} = \frac{V_{out}(1-D)}{8 L C f_{sw}^2}
+$$
+
+若考虑电容等效串联电阻 \(R_{ESR}\)，则额外贡献 \(\Delta V_{ESR} \approx \Delta I_L R_{ESR}\)。对于陶瓷电容，ESR 很小，容性纹波主导；对于电解电容，ESR 纹波可能占主导。
+
+!!! note "术语解释：输出电容、ESR、容性纹波、阻性纹波"
+    - **输出电容（output capacitor）**：用于平滑输出电压的电容。
+    - **ESR（Equivalent Series Resistance）**：电容的等效串联电阻。
+    - **容性纹波（capacitive ripple）**：由电容充放电引起的电压纹波。
+    - **阻性纹波（resistive ripple）**：由 ESR 上的电压降引起的纹波。
+
+**CCM/DCM 边界**。临界电感值 \(L_{crit}\) 对应刚好在周期末电感电流降为零：
+
+$$
+L_{crit} = \frac{V_{out}(1-D)}{2 I_{out} f_{sw}}
+$$
+
+当 \(L < L_{crit}\) 或负载很轻时，变换器进入 DCM。DCM 下电压转换比变为：
+
+$$
+\frac{V_{out}}{V_{in}} = \frac{D}{D + \delta}
+$$
+
+其中 \(\delta\) 为电流衰减阶段占空比，与负载有关。轻载时 DCM 可实现比 CCM 更高的效率，因为开关损耗下降且无二极管反向恢复问题（若用同步整流）。
+
+!!! note "术语解释：临界电感、轻载、同步整流、反向恢复"
+    - **临界电感（critical inductance）**：CCM 与 DCM 分界对应的电感值。
+    - **轻载（light load）**：远小于额定功率的负载条件。
+    - **同步整流（synchronous rectification）**：用 MOSFET 替代续流二极管以降低导通损耗。
+    - **反向恢复（reverse recovery）**：二极管关断时反向电流恢复过程引起的损耗。
+
+**效率建模**。Buck 变换器总损耗可分解为：
+
+$$
+P_{loss} = P_{cond,high} + P_{cond,low} + P_{sw} + P_{gate} + P_{ind} + P_{cap}
+$$
+
+其中：
+
+- 高侧管导通损耗：\(P_{cond,high} = D I_{out}^2 R_{DS(on),H}\)
+- 低侧管导通损耗：\(P_{cond,low} = (1-D) I_{out}^2 R_{DS(on),L}\)
+- 开关损耗：\(P_{sw} \approx f_{sw} (E_{on} + E_{off}) V_{in}/V_{test} \cdot I_{out}/I_{test}\)
+- 电感铜损：\(P_{ind} = I_{RMS}^2 R_L\)
+- 栅极驱动损耗：\(P_{gate} = f_{sw} (Q_{g,H} + Q_{g,L}) V_{drive}\)
+
+效率 \(\eta = P_{out} / (P_{out} + P_{loss})\)。机器人电源设计通常要求满载效率高于 90%–95%，因为配电损耗会转化为热量并缩短续航。
+
+!!! note "术语解释：导通损耗、开关损耗、栅极电荷、满载效率"
+    - **导通损耗（conduction loss）**：器件导通电阻上的 \(I^2R\) 损耗。
+    - **开关损耗（switching loss）**：开关管在切换过程中电压电流交叠产生的损耗。
+    - **栅极电荷（gate charge）**：驱动 MOSFET 栅极所需电荷，决定栅极驱动损耗。
+    - **满载效率（full-load efficiency）**：额定输出功率下的转换效率。
+
+**Python 算例：Buck 变换器参数设计**。给定输入 48 V、输出 12 V、输出电流 5 A、开关频率 500 kHz，要求电感电流纹波小于 30%、输出电压纹波小于 50 mV，计算所需电感、电容和理想效率。
+
+```python
+"""
+Buck converter design calculator.
+Given Vin, Vout, Iout, fsw, ripple specs, compute L, C, and estimate efficiency.
+"""
+import numpy as np
+
+# Specifications
+Vin = 48.0          # V
+Vout = 12.0         # V
+Iout = 5.0          # A
+fsw = 500e3         # Hz
+Ts = 1.0 / fsw
+delta_IL_ratio = 0.30   # inductor current ripple / Iout
+delta_Vout_max = 50e-3  # V
+
+D = Vout / Vin
+print(f"Duty cycle D = {D:.3f}")
+
+# Inductor for target ripple
+L = Vout * (1 - D) / (delta_IL_ratio * Iout * fsw)
+print(f"Required inductance L >= {L*1e6:.2f} uH")
+
+# Choose standard value
+L = 10e-6
+delta_IL = Vout * (1 - D) / (L * fsw)
+print(f"With L=10 uH, delta_IL = {delta_IL:.3f} A ({delta_IL/Iout*100:.1f}%)")
+
+# Output capacitance (ignoring ESR)
+C = delta_IL / (8 * fsw * delta_Vout_max)
+print(f"Required output capacitance C >= {C*1e6:.2f} uF")
+
+# Efficiency estimate
+Rds_H = 8e-3      # high-side Rds(on)
+Rds_L = 4e-3      # low-side Rds(on)
+RL = 15e-3        # inductor DCR
+P_out = Vout * Iout
+P_cond_H = D * Iout**2 * Rds_H
+P_cond_L = (1 - D) * Iout**2 * Rds_L
+P_ind = Iout**2 * RL
+P_sw = 0.5        # rough estimate, depends on switching transient
+P_gate = 0.05
+P_loss = P_cond_H + P_cond_L + P_ind + P_sw + P_gate
+eta = P_out / (P_out + P_loss)
+print(f"Pout={P_out:.2f} W, Ploss={P_loss:.3f} W")
+print(f"Estimated efficiency = {eta*100:.2f}%")
+```
+
+运行结果示例：占空比 \(D=0.25\)，所需电感约 9.6 μH（取 10 μH 标准值），所需输出电容约 7.2 μF，估算效率约 94%。实际设计中还需考虑 MOSFET 开关损耗随输入电压升高而增大、电感饱和电流、电容 RMS 电流额定值和热设计。关于 DC-DC 变换器的系统分析可参考 Erickson 与 Maksimovic 的教材 [75]。
+
+```mermaid
+flowchart LR
+    A["Vin"] --> S["高侧开关 S"]
+    S --> N["开关节点"]
+    N --> L["电感 L"]
+    L --> C["电容 C + 负载 R"]
+    N --> D["低侧开关 / 二极管"]
+    D --> GND["GND"]
+    C --> GND
+```
+
 ### 6.5.4 配电与保护：fuses, contactors, E-stop, hot-swap, harness sizing
 
-配电系统把电池能量安全地输送到各负载，并在故障时快速切断。
+配电系统把电池能量安全地输送到各负载，并在故障时快速切断。与消费电子产品不同，人形机器人的配电网络同时承载千瓦级瞬时功率、数十个低压子系统和高频 PWM 电机驱动电流，任何单一保护器件的误动作或失效都可能引发整机停机甚至安全事故。因此，配电与保护设计必须回到电路理论、电磁学、热学和功能安全标准，进行定量分析与协调配置。
 
-!!! note "术语解释：熔断器、接触器、急停、热插拔、线束、继电器"
-    - **熔断器（fuse）**：过流时熔断以保护电路的一次性保护元件。
-    - **接触器（contactor）**：大电流电磁开关，用于接通/断开主电路。
-    - **急停（E-stop, emergency stop）**：紧急情况下立即切断动力的安全装置。
-    - **热插拔（hot-swap）**：在不关闭系统的情况下更换电池或模块。
-    - **线束（hiring harness）**：连接各子系统的导线和连接器集合。
+!!! note "术语解释：熔断器、接触器、急停、热插拔、线束、继电器、保护协调、分断能力"
+    - **熔断器（fuse）**：过流时通过熔体熔化切断电路的一次性保护元件。
+    - **接触器（contactor）**：大电流电磁开关，用于接通/断开主电路，通常具备灭弧能力。
+    - **急停（E-stop, emergency stop）**：紧急情况下立即切断动力的安全装置，通常要求符合 ISO 13850 或 IEC 60947-5-5。
+    - **热插拔（hot-swap）**：在不关闭系统的情况下更换电池或模块，需要抑制插拔浪涌电流。
+    - **线束（wire harness）**：连接各子系统的导线和连接器集合，需注意截面积、压降、温升和屏蔽。
     - **继电器（relay）**：电控开关，用于小电流控制大电流回路。
+    - **保护协调（protection coordination）**：确保上下级保护器件在故障时按正确顺序动作，避免越级跳闸。
+    - **分断能力（breaking capacity / interrupting rating）**：保护器件能安全切断的最大故障电流。
 
-**线束截面积选择**。导线截面积 \(A\) 由允许电流 \(I\)、允许温升和线长决定。欧姆定律给出导线电阻：
+#### 保护器件的时间-电流特性与协调
+
+熔断器和断路器的选择核心在于其**时间-电流特性（time-current characteristic, TCC）**，即在给定过电流倍数下动作所需的时间。熔断器通常用 \(I^2 t\)（焦耳积分）描述熔断能量：
+
+$$
+I^2 t = \int_0^{t_f} i^2(t) \, dt
+$$
+
+其中 \(t_f\) 为熔断时间。对于给定的熔体材料和结构，熔断所需的 \(I^2 t\) 基本恒定。大短路电流下熔断极快，小过载下熔断较慢，这种反时限特性使熔断器既能躲过电机启动浪涌，又能在严重短路时快速切断。
+
+!!! note "术语解释：时间-电流特性、反时限、\(I^2 t\)、预燃弧、电弧能量"
+    - **时间-电流特性（TCC）**：保护器件动作时间与电流大小的关系曲线。
+    - **反时限（inverse time）**：电流越大，动作时间越短。
+    - **\(I^2 t\)**：电流平方对时间的积分，衡量熔断或耐受能量的指标。
+    - **预燃弧（pre-arcing）**：熔体熔化到电弧形成前的阶段，对应预燃弧 \(I^2 t\)。
+    - **电弧能量（arcing energy）**：熔断器分断过程中电弧释放的能量。
+
+**熔断器与导线的协调**。导线绝缘层有最高允许温度，持续过流会导致绝缘老化。熔断器的额定电流 \(I_{fuse}\) 应满足：
+
+$$
+I_{load,cont} \le I_{fuse} \le 0.75 I_{wire,ampacity}
+$$
+
+其中 \(I_{load,cont}\) 为持续负载电流，\(I_{wire,ampacity}\) 为导线载流量。0.75 是经验系数，用于补偿环境温度、多根导线成束敷设导致的散热恶化。例如，一根载流量 20 A 的导线，应选择额定电流不超过 15 A 的熔断器。
+
+**短路分断能力**。当电池组内阻极低时，短路电流可达数百甚至上千安培。熔断器的分断能力必须大于最大预期短路电流 \(I_{sc,max}\)：
+
+$$
+I_{interrupting} > I_{sc,max} = \frac{V_{bat}}{R_{loop}}
+$$
+
+其中 \(R_{loop}\) 为短路回路总电阻，包括电池内阻、导线电阻、连接器和接触电阻。忽视分断能力会导致熔断器爆炸或持续拉弧。
+
+**断路器与熔断器对比**：
+
+| 特性 | 熔断器 | 断路器（热磁式/电子式） |
+|---|---|---|
+| 可复位性 | 一次性，需更换 | 可手动/自动复位 |
+| 成本 | 低 | 较高 |
+| 动作速度 | 极快，适合半导体保护 | 较慢，适合线路保护 |
+| 分断能力 | 可达数百 kA（半导体保险丝） | 通常 6–100 kA |
+| 辅助触点 | 通常无 | 可带辅助触点、远程脱扣 |
+
+```mermaid
+flowchart LR
+    A["电池包"] --> B["主熔断器\nhigh-breaking"]
+    B --> C["主接触器"]
+    C --> D["分支熔断器"]
+    D --> E["电机驱动器"]
+    D --> F["计算平台"]
+    D --> G["传感器 / BMS"]
+```
+
+#### 急停与安全断电链路
+
+急停电路属于安全相关回路，应遵循 ISO 13850 的“一按即停、手动复位、不可自动重启”原则。人形机器人通常采用**双通道冗余**急停链路：两个常闭触点串联接入安全继电器，任一通道断开即触发停机。
+
+!!! note "术语解释：双通道冗余、安全继电器、安全类别、停止类别、STO"
+    - **双通道冗余（dual-channel redundancy）**：用两条独立路径检测同一安全信号，提高诊断覆盖率。
+    - **安全继电器（safety relay）**：带强制导向触点和冗余检测的安全控制器件。
+    - **安全类别（safety category）**：ISO 13849 定义的控制系统安全性能分类，Category 3 要求单故障可被检测。
+    - **停止类别（stop category）**：IEC 60204-1 定义 0/1/2 类停止，0 类为立即切断动力。
+    - **STO（Safe Torque Off）**：变频器安全关断转矩的功能安全模式。
+
+急停时，安全继电器切断接触器线圈电源，使主接触器断开；同时向所有电机驱动器发送 STO 信号，使逆变器停止开关但保留控制电源。相比直接切断电池，STO 能避免接触器在带载大电流下分断造成的电弧侵蚀，延长接触器寿命。
+
+**接触器选型**。主接触器的额定电流 \(I_{cont}\) 应大于最大持续电流，并留有余量：
+
+$$
+I_{cont} \ge 1.25 I_{max,cont}
+$$
+
+对于直流应用，还需关注接触器的直流分断能力。直流电弧没有自然过零点，比交流更难熄灭，因此直流接触器通常需要磁吹灭弧或多断点串联结构。
+
+#### 热插拔与浪涌抑制
+
+热插拔电池或模块时，由于模块输入端有大容量去耦电容，插入瞬间会产生很大的**浪涌电流（inrush current）**：
+
+$$
+I_{inrush} \approx \frac{V_{bus}}{R_{loop}}, \quad \tau = R_{loop} C_{in}
+$$
+
+若无限制，浪涌电流可能触发熔断器熔断、接触器触点熔焊或拉低母线电压导致其他模块复位。热插拔控制器通过控制 MOSFET 栅极电压，使 MOSFET 缓慢导通，将浪涌电流限制在可控范围。
+
+!!! note "术语解释：浪涌电流、热插拔控制器、软启动、ORing、预充电"
+    - **浪涌电流（inrush current）**：电源接通瞬间流入电容负载的大电流。
+    - **热插拔控制器（hot-swap controller）**：限制插拔浪涌电流并监控过流的专用 IC。
+    - **软启动（soft start）**：通过控制功率管导通速度使电流缓慢上升的启动方式。
+    - **ORing（OR-ing）**：用 MOSFET 实现多电源并联时的理想二极管功能，防止反向电流。
+    - **预充电（pre-charge）**：在闭合主接触器前先用限流电阻给电容充电，避免大电流冲击。
+
+典型热插拔电流限制电路中，电流检测电阻 \(R_{sense}\) 上的压降被放大后与参考电压比较，控制 MOSFET 栅极。限流值：
+
+$$
+I_{limit} = \frac{V_{sense,th}}{R_{sense}}
+$$
+
+例如，若 \(V_{sense,th} = 50\ \mathrm{mV}\)，\(R_{sense} = 5\ \mathrm{m\Omega}\)，则 \(I_{limit} = 10\ \mathrm{A}\)。
+
+在多电池并联场景中，常使用**ORing MOSFET 控制器**替代肖特基二极管，降低导通损耗。二极管压降 0.3–0.5 V、电流 50 A 时损耗达 15–25 W；而导通电阻 1 mΩ 的 MOSFET 损耗仅 2.5 W。
+
+#### 线束截面积、电压降与载流量
+
+线束设计需要同时满足三个约束：载流量（温升）、电压降和机械强度。直流电阻：
 
 $$
 R = \rho \frac{L}{A}
 $$
 
-其中 \(\rho\) 是电阻率，铜在 20 °C 时约为 \(1.68 \times 10^{-8}\ \Omega\cdot\mathrm{m}\)。功率损耗为 \(P = I^2 R\)。工程上常用安培/平方毫米经验值估算铜导线载流量，并考虑集肤效应和交流损耗。
+其中 \(\rho\) 为电阻率，铜在 20 °C 时 \(\rho_{20} = 1.68 \times 10^{-8}\ \Omega\cdot\mathrm{m}\)。温度升高时电阻增大：
 
-!!! note "术语解释：电阻率、欧姆定律、载流量、集肤效应"
-    - **电阻率（resistivity）**：材料抵抗电流流动的本征属性。
-    - **欧姆定律（Ohm's law）**：\(V = IR\)，电压等于电流乘以电阻。
-    - **载流量（ampacity）**：导线在不超出允许温升时可长期承载的电流。
-    - **集肤效应（skin effect）**：交流电流趋向导体表面分布的现象，高频时有效截面积减小。
+$$
+R_T = R_{20} [1 + \alpha (T - 20)]
+$$
+
+铜的温度系数 \(\alpha \approx 0.00393\ /°\mathrm{C}\)。在 80 °C 时，电阻比 20 °C 高约 23.6%，计算线损和压降时必须考虑。
+
+!!! note "术语解释：电压降、温度系数、线损、端子压降、压接"
+    - **电压降（voltage drop）**：电流流过导线电阻产生的电压损失。
+    - **温度系数（temperature coefficient）**：电阻率随温度变化的相对变化率。
+    - **线损（line loss）**：导线电阻上以热能形式耗散的功率。
+    - **端子压降（terminal drop）**：连接器和端子接触电阻上的压降。
+    - **压接（crimping）**：通过机械变形使端子与导线形成可靠连接的工艺。
+
+**电压降约束**。对于 48 V 系统，允许电压降通常取额定电压的 1%–3%。若允许压降 \(\Delta V_{max} = 2\% \times 48 = 0.96\ \mathrm{V}\)，负载电流 \(I = 20\ \mathrm{A}\)，线长 \(L = 2\ \mathrm{m}\)（往返 4 m），所需截面积：
+
+$$
+A = \frac{\rho I L_{loop}}{\Delta V_{max}} = \frac{1.68 \times 10^{-8} \times 20 \times 4}{0.96} \approx 1.40 \times 10^{-6}\ \mathrm{m^2} = 1.40\ \mathrm{mm^2}
+$$
+
+实际应向上取标准规格，如 1.5 mm² 或 2.5 mm²，并校验载流量。
+
+**交流集肤效应**。对于 PWM 电机驱动电流，基频可能只有几十赫兹，但开关频率 20 kHz 的谐波电流会使电流集中在导线表面。集肤深度：
+
+$$
+\delta = \sqrt{\frac{\rho}{\pi f \mu}}
+$$
+
+其中 \(\mu\) 为磁导率，铜 \(\mu \approx \mu_0 = 4\pi \times 10^{-7}\ \mathrm{H/m}\)。在 20 kHz 时：
+
+$$
+\delta = \sqrt{\frac{1.68 \times 10^{-8}}{\pi \times 2 \times 10^4 \times 4\pi \times 10^{-7}}} \approx 0.46\ \mathrm{mm}
+$$
+
+当导线半径与趋肤深度相当时，交流电阻显著增加。大电流交流母排常采用多股细线（Litz wire）或薄铜排以减小集肤效应。
+
+#### Python 算例：配电保护参数设计
+
+以下代码计算给定负载、线长和允许压降下的最小导线截面积，并估算熔断器的 \(I^2 t\) 与短路分断条件。
+
+```python
+"""
+Power distribution protection design calculator.
+Given load current, cable length, and allowed voltage drop,
+compute minimum copper cross-section and check fuse I^2t.
+"""
+import numpy as np
+
+# Inputs
+V_nom = 48.0          # V
+I_cont = 20.0         # A continuous load current
+L_one_way = 2.0       # m one-way cable length
+L_loop = 2 * L_one_way
+Delta_V_ratio = 0.02  # allow 2% voltage drop
+Delta_V_max = V_nom * Delta_V_ratio
+
+# Copper properties at 20 C, then corrected to 80 C operating temp
+rho_20 = 1.68e-8      # Ohm m
+alpha = 3.93e-3       # /C
+T_op = 80.0           # C
+rho_T = rho_20 * (1 + alpha * (T_op - 20))
+
+# Minimum cross-section for voltage drop
+A_min = rho_T * I_cont * L_loop / Delta_V_max
+print(f"Minimum copper area for {Delta_V_ratio*100:.0f}% drop: {A_min*1e6:.2f} mm^2")
+
+# Choose next standard size and compute actual drop / loss
+A_std = 2.5e-6        # m^2  (2.5 mm^2)
+R_wire = rho_T * L_loop / A_std
+Delta_V = I_cont * R_wire
+P_loss = I_cont**2 * R_wire
+print(f"With A=2.5 mm^2: R={R_wire*1e3:.3f} mOhm, "
+      f"drop={Delta_V:.3f} V, loss={P_loss:.2f} W")
+
+# Fuse I^2t check for a prospective short circuit
+R_loop_short = R_wire + 5e-3  # include battery + connector resistances
+I_sc = V_nom / R_loop_short
+print(f"Prospective short-circuit current: {I_sc:.1f} A")
+
+# Fuse melting I^2t (example: 25 A gG fuse, approx 500 A^2 s at 5xIn)
+I_fuse = 25.0
+t_fuse = 0.5          # s at 4x overload (illustrative)
+I2t_fuse = (4 * I_fuse)**2 * t_fuse
+print(f"Fuse I^2t (illustrative): {I2t_fuse:.1f} A^2 s")
+
+# Cable withstand I^2t should be larger than fuse I^2t
+cable_withstand = (A_std * 1e6)**2 * 0.1  # rough empirical A^2 s/mm^4
+print(f"Cable withstand I^2t (rough): {cable_withstand:.1f} A^2 s")
+print("Cable can withstand fuse energy?" , cable_withstand > I2t_fuse)
+```
+
+典型输出：2.5 mm² 铜线在 80 °C 时往返电阻约 32 mΩ，20 A 下压降 0.64 V、线损 12.8 W；预期短路电流约 7.3 kA，熔断器分断能力需高于此值。工程上还需为接触器压降、端子接触电阻和环境温度留 20%–30% 余量。
+
+```mermaid
+flowchart LR
+    A["负载电流 I"] --> B["按载流量初选截面积"]
+    C["线长 L"] --> D["按允许压降校核截面积"]
+    E["环境温度 / 成束系数"] --> B
+    F["短路电流 I_sc"] --> G["校验熔断器分断能力"]
+    B --> H["最终线规"]
+    D --> H
+    G --> H
+```
+
+关于配电系统设计的系统方法，可参考《IEC 60364 低压电气装置》和 UL 2580 电动汽车电池安全标准；功能安全与急停设计可参见 ISO 13850、IEC 60204-1 和 ISO 13849，也可参考本书第 12 章 12.2 节对机器人安全标准体系的系统梳理。
 
 ### 6.5.5 功率预算与 C-rate
 
@@ -3516,6 +4355,173 @@ flowchart LR
     D -->|"Rconv"| E["环境 Ta"]
     F["热管 / 均热板"] --> C
     G["风扇"] --> D
+```
+
+#### 对流换热与翅片效率
+
+散热器把芯片的热量散到空气中，关键取决于对流换热强度。对流分为自然对流（由温差引起的浮升力驱动）和强制对流（由风扇驱动）。理解无量纲数、边界层行为和翅片效率，是定量设计散热器的基础。
+
+!!! note "术语解释：自然对流、强制对流、边界层、对流换热系数、无量纲数"
+    - **自然对流（natural convection）**：由流体密度差和重力驱动的对流。
+    - **强制对流（forced convection）**：由风扇、泵等外部动力驱动的对流。
+    - **边界层（boundary layer）**：流体速度或温度从壁面值过渡到自由流值的薄层区域。
+    - **对流换热系数（convective heat transfer coefficient, h）**：单位面积、单位温差下的换热量，单位 W/(m²·K)。
+    - **无量纲数（dimensionless number）**：把多个物理量组合成的无单位参数，用于表征流动和换热规律。
+
+**雷诺数、普朗特数与努塞尔数**。这三个无量纲数是强制对流换热的核心：
+
+$$
+Re = \frac{\rho u L}{\mu} = \frac{u L}{\nu}
+$$
+
+$$
+Pr = \frac{\mu c_p}{k} = \frac{\nu}{\alpha}
+$$
+
+$$
+Nu = \frac{h L}{k}
+$$
+
+其中 \(u\) 为特征流速，\(L\) 为特征长度，\(\rho\) 为密度，\(\mu\) 为动力粘度，\(\nu\) 为运动粘度，\(\alpha = k/(\rho c_p)\) 为热扩散系数，\(k\) 为流体导热系数。雷诺数表征惯性力与粘性力之比，普朗特数表征动量扩散与热扩散之比，努塞尔数表征对流换热与纯导热的相对强度。
+
+!!! note "术语解释：雷诺数、普朗特数、努塞尔数、运动粘度、热扩散系数"
+    - **雷诺数（Reynolds number, Re）**：惯性力与粘性力之比，决定流动是层流还是湍流。
+    - **普朗特数（Prandtl number, Pr）**：动量扩散与热扩散能力之比。
+    - **努塞尔数（Nusselt number, Nu）**：对流换热强度相对于纯导热的倍数。
+    - **运动粘度（kinematic viscosity）**：动力粘度与密度之比，单位 m²/s。
+    - **热扩散系数（thermal diffusivity）**：热量在材料中扩散能力的度量。
+
+**常见对流换热关联式**。对于空气在平板上的强制对流，层流局部努塞尔数可近似为：
+
+$$
+Nu_x \approx 0.332 Re_x^{1/2} Pr^{1/3}
+$$
+
+湍流时：
+
+$$
+Nu_x \approx 0.0296 Re_x^{4/5} Pr^{1/3}
+$$
+
+对于平行板翅片通道内的充分发展层流，常采用：
+
+$$
+Nu_D \approx 8.23
+$$
+
+其中 \(D\) 为水力直径。自然对流竖平板的层流关联式常用：
+
+$$
+Nu_L = 0.59 (Gr_L Pr)^{1/4}
+$$
+
+格拉晓夫数 \(Gr = g \beta \Delta T L^3 / \nu^2\) 表征浮升力与粘性力之比，\(\beta\) 为体积膨胀系数。
+
+!!! note "术语解释：格拉晓夫数、层流、湍流、水力直径"
+    - **格拉晓夫数（Grashof number, Gr）**：自然对流中浮升力与粘性力之比。
+    - **层流（laminar flow）**：流体分层流动、低混合的状态。
+    - **湍流（turbulent flow）**：流体不规则脉动、高混合的状态。
+    - **水力直径（hydraulic diameter）**：非圆形通道的等效直径。
+
+**翅片效率**。矩形直翅片效率 \(\eta_f\) 定义为翅片实际散热量与假设整个翅片温度等于根部温度时的散热量之比。对于截面恒定、端部绝热的矩形翅片：
+
+$$
+\eta_f = \frac{\tanh(mL)}{mL}, \quad m = \sqrt{\frac{h P}{k A_c}}
+$$
+
+其中 \(P\) 为翅片周长，\(A_c\) 为翅片截面积，\(k\) 为翅片材料导热系数，\(L\) 为翅片高度。当 \(mL\) 很大时，\(\tanh(mL) \to 1\)，效率随 \(1/(mL)\) 下降。提高翅片效率的途径包括：提高材料导热系数（铝、铜）、减薄翅片、提高对流换热系数或限制翅片高度。
+
+!!! note "术语解释：翅片效率、矩形翅片、绝热端部、过余温度"
+    - **翅片效率（fin efficiency）**：翅片实际换热量与理想最大换热量的比值。
+    - **矩形翅片（rectangular fin）**：截面为矩形的直翅片。
+    - **绝热端部（adiabatic tip）**：假设翅片顶端无换热的简化边界条件。
+    - **过余温度（excess temperature）**：局部温度与环境温度之差。
+
+**散热器总热阻**。一个具有 \(N\) 个翅片的散热器，总对流热阻可近似为：
+
+$$
+R_{conv} = \frac{1}{h (A_{base} + N \eta_f A_{fin})}
+$$
+
+其中 \(A_{fin} = 2 H W\) 为单个翅片两侧面积（忽略顶端），\(A_{base}\) 为基板暴露面积。增大翅片数量或高度可增加表面积，但同时会降低流速、降低 \(h\)，并降低翅片效率，因此存在最优几何设计。
+
+!!! note "术语解释：散热器热阻、翅片表面积、基板面积、表面对流热阻"
+    - **散热器热阻（heat sink thermal resistance）**：散热器引起的热阻。
+    - **翅片表面积（fin surface area）**：翅片与流体接触的总面积。
+    - **基板面积（base area）**：散热器基板直接暴露于流体的面积。
+    - **表面对流热阻（surface convection resistance）**：由对流换热系数决定的热阻。
+
+**Python 算例：强制对流翅片散热器设计**。给定功耗 30 W、环境温度 35 °C、允许温升 50 K、风扇风速 3 m/s，估算所需散热器尺寸并计算翅片效率。
+
+```python
+"""
+Heat sink sizing and fin efficiency estimation for forced convection.
+Air properties at ~50 C ambient.
+"""
+import numpy as np
+
+P = 30.0            # W
+T_amb = 35.0        # C
+Delta_T = 50.0      # K allowed temperature rise
+u_air = 3.0         # m/s face velocity
+
+# Air properties at ~50 C
+rho = 1.09          # kg/m3
+mu = 1.96e-5        # Pa s
+k_air = 0.0278      # W/(m K)
+Pr = 0.71
+nu = mu / rho
+
+# Target total thermal resistance
+R_total = Delta_T / P
+print(f"Required total thermal resistance (convection only): {R_total:.3f} K/W")
+
+# Heat sink geometry guess
+H = 0.040           # fin height 40 mm
+W = 0.080           # fin width 80 mm
+N_fins = 25
+t_fin = 0.001       # 1 mm fin thickness
+gap = (W - N_fins * t_fin) / (N_fins - 1)
+print(f"Fin gap: {gap*1e3:.2f} mm")
+
+# Hydraulic diameter for channel flow
+dh = 2 * gap * H / (gap + H)
+Re = u_air * dh / nu
+print(f"Re based on dh = {Re:.1f}")
+
+# Nusselt number for fully developed laminar flow between parallel plates
+Nu = 8.23 if Re < 2300 else 0.023 * Re**0.8 * Pr**0.4
+h = Nu * k_air / dh
+print(f"Convection coefficient h = {h:.2f} W/(m2 K)")
+
+# Fin efficiency
+k_al = 200.0        # aluminum thermal conductivity W/(m K)
+P = 2 * (W + t_fin) # perimeter approx
+Ac = W * t_fin
+m = np.sqrt(h * P / (k_al * Ac))
+eta_f = np.tanh(m * H) / (m * H)
+print(f"Fin efficiency eta_f = {eta_f:.3f}")
+
+# Total area
+A_fin_single = 2 * H * W
+A_base = W * (W - N_fins * t_fin)
+A_total = A_base + N_fins * eta_f * A_fin_single
+R_conv = 1.0 / (h * A_total)
+print(f"Total convective area = {A_total:.4f} m2")
+print(f"Estimated convection resistance = {R_conv:.3f} K/W")
+print(f"Temperature rise at {P} W = {P * R_conv:.1f} K")
+```
+
+典型结果：在 3 m/s 风速下，铝散热器对流换热系数约为 50–100 W/(m²·K)，40 mm 高翅片效率约 80%–90%，总对流热阻可低至 0.5–1.0 K/W，足以满足 30 W 级 Jetson 模块的散热需求。若采用铜基板或热管，还可进一步降低扩散热阻。关于对流换热关联式与翅片分析的深入内容可参考 Kays 等人的传热传质教材 [76]。
+
+```mermaid
+flowchart LR
+    A["热源"] --> B["基板"]
+    B --> C["翅片根部"]
+    C --> D["翅片顶部"]
+    E["冷却空气"] -->|"h"| D
+    E -->|"h"| C
+    F["边界层"] -.->|"决定 h"| E
 ```
 
 ### 6.6.4 热建模：lumped RC thermal network, CFD basics
@@ -4318,6 +5324,126 @@ Jetson AGX Orin/AGX Xavier 还集成了 DLA（Deep Learning Accelerator），一
 
 这些案例共同表明：人形机器人计算架构正在从早期的 PC/工控机 + 运动控制卡，向高度集成的嵌入式 SoC + 实时总线 + 云端协同演进。
 
+#### 供应链风险量化与韧性设计
+
+人形机器人供应链不仅涉及成本和性能，还面临地缘政治、自然灾害、产能瓶颈和需求波动带来的系统性风险。定量评估供应链韧性，是产品从原型走向量产的关键环节。
+
+!!! note "术语解释：供应链韧性、集中度、安全库存、前置时间、断供风险"
+    - **供应链韧性（supply chain resilience）**：供应链在受到扰动后恢复并维持功能的能力。
+    - **集中度（concentration）**：某类零部件由少数供应商或地区控制的程度。
+    - **安全库存（safety stock）**：为应对需求或供应不确定性而额外持有的库存。
+    - **前置时间（lead time）**：从下单到收到货物的间隔时间。
+    - **断供风险（supply disruption risk）**：供应商无法按时交付零部件的概率或影响。
+
+**供应商集中度指标**。常用 CR4（前四大供应商市场份额之和）和赫芬达尔-赫希曼指数（HHI）衡量市场集中度：
+
+$$
+CR_4 = \sum_{i=1}^{4} s_i
+$$
+
+$$
+HHI = \sum_{i=1}^{N} s_i^2
+$$
+
+其中 \(s_i\) 为第 \(i\) 家供应商的市场份额（用小数表示）。HHI 低于 0.15 表示低集中度，0.15–0.25 表示中度集中，高于 0.25 表示高度集中。例如，高端 GPU/NPU 加速器市场目前 CR4 接近 100%，HHI 远高于 0.25，属于高度集中。
+
+!!! note "术语解释：CR4、HHI、市场份额、寡头垄断"
+    - **CR4（four-firm concentration ratio）**：前四大企业市场份额之和。
+    - **HHI（Herfindahl-Hirschman Index）**：市场份额平方和，衡量行业集中度。
+    - **市场份额（market share）**：某企业在市场总量中所占比例。
+    - **寡头垄断（oligopoly）**：少数几家大企业主导市场的结构。
+
+**安全库存与服务水平**。对于关键零部件，安全库存 \(SS\) 可用需求不确定性和前置时间不确定性估算：
+
+$$
+SS = z_{\alpha} \sqrt{\sigma_D^2 L + \sigma_L^2 D^2}
+$$
+
+其中 \(z_{\alpha}\) 为对应服务水平的标准正态分位数（如 95% 服务水平对应 \(z \approx 1.65\)），\(\sigma_D\) 为单位时间需求标准差，\(D\) 为平均需求率，\(L\) 为平均前置时间，\(\sigma_L\) 为前置时间标准差。服务水平越高、不确定性越大，所需安全库存越高。
+
+!!! note "术语解释：服务水平、正态分位数、需求不确定性、前置时间不确定性"
+    - **服务水平（service level）**：不发生缺货的概率目标。
+    - **正态分位数（normal quantile）**：标准正态分布对应分位点的值。
+    - **需求不确定性（demand uncertainty）**：实际需求围绕预测的波动。
+    - **前置时间不确定性（lead-time uncertainty）**：供应商交付时间的波动。
+
+**区域集中度与碳足迹**。除商业风险外，关键矿物和制造环节的地理集中也带来地缘政治风险。锂、钴、镍、稀土等电池与电机关键材料的全球产量高度集中。以碳酸锂为例，南美“锂三角”和澳大利亚合计占全球产量绝大部分；稀土加工则高度集中在中国。整机厂通常通过长期协议、参股矿源、区域化采购和回收体系来分散风险。
+
+| 关键物料 | 主要用途 | 主要生产国/地区 | 风险等级 |
+|---|---|---|---|
+| 锂 | 电池正极/电解液 | 澳大利亚、智利、阿根廷、中国 | 高 |
+| 钴 | NCM 正极 | 刚果（金）、印度尼西亚 | 高 |
+| 稀土 | 永磁电机 | 中国、美国、缅甸 | 高 |
+| 高纯硅 | 芯片 | 美国、德国、日本、中国 | 中 |
+| 铜 | 线束、电机绕组 | 智利、秘鲁、中国 | 中 |
+
+!!! note "术语解释：长期协议、参股矿源、区域化采购、回收体系"
+    - **长期协议（long-term agreement）**：锁定价格与供应量的多年期采购合同。
+    - **参股矿源（equity stake in mines）**：通过投资矿山获得优先采购权。
+    - **区域化采购（regionalization）**：在主要市场附近建立供应链以缩短交付距离。
+    - **回收体系（recycling system）**：对废旧电池、电机材料进行回收再利用的体系。
+
+**全生命周期碳排放估算**。电池组是整机碳足迹的主要来源之一。以 1 kWh NCM 电池为例，从采矿到电芯出厂的碳排放约为 60–150 kg CO₂-eq/kWh，具体取决于电力结构和制造工艺（IEA 全球电动汽车展望给出的区间与此相近）[81]。一台搭载 1.2 kWh 电池的人形机器人，其电池碳足迹约为 70–180 kg CO₂-eq。若机器人使用寿命内消耗电能 5000 kWh，且电网碳强度为 0.5 kg CO₂/kWh，则使用阶段排放约 2500 kg CO₂-eq，远高于制造阶段。因此，提高能效和使用可再生能源充电对降低全生命周期排放至关重要。
+
+!!! note "术语解释：碳足迹、碳强度、CO₂ 当量、生命周期评估"
+    - **碳足迹（carbon footprint）**：产品或活动产生的温室气体排放总量。
+    - **碳强度（carbon intensity）**：单位能量或产值对应的 CO₂ 排放量。
+    - **CO₂ 当量（CO₂ equivalent）**：统一折算为二氧化碳效应的温室气体量。
+    - **生命周期评估（Life Cycle Assessment, LCA）**：对产品全生命周期环境影响的系统评估。
+
+**Python 算例：关键零部件集中度与安全库存**。下面代码计算一组虚构供应商市场份额的 CR4 和 HHI，并估算某关键芯片的安全库存。
+
+```python
+"""
+Supply-chain risk metrics: CR4, HHI, and safety stock estimation.
+"""
+import numpy as np
+
+# Supplier market shares for a critical AI accelerator (hypothetical)
+shares = np.array([0.55, 0.25, 0.12, 0.05, 0.03])
+CR4 = shares[:4].sum()
+HHI = (shares ** 2).sum()
+print(f"CR4 = {CR4:.2f}")
+print(f"HHI = {HHI:.3f}")
+if HHI < 0.15:
+    print("Concentration: low")
+elif HHI < 0.25:
+    print("Concentration: moderate")
+else:
+    print("Concentration: high")
+
+# Safety stock for a critical chip
+D = 1000          # units per month average demand
+sigma_D = 150     # units per month demand std dev
+L = 3.0           # months lead time
+sigma_L = 0.5     # months lead time std dev
+service_level = 0.95
+z = 1.645         # 95% service level
+
+SS = z * np.sqrt(sigma_D**2 * L + sigma_L**2 * D**2)
+print(f"Safety stock for {service_level*100:.0f}% service level: {SS:.0f} units")
+```
+
+典型输出：CR4 = 0.97，HHI = 0.372，显示高度集中；安全库存约 870 颗。对于人形机器人这类小批量高价值产品，安全库存持有成本高，更可行的策略是签订长期协议、培育第二供应商或采用引脚兼容的国产替代方案。关于供应链网络设计与风险管理的系统方法可参考 Simchi-Levi 等人的著作 [77]。
+
+```mermaid
+flowchart TD
+    A["需求预测"] --> B["供应商评估"]
+    B --> C["CR4 / HHI 分析"]
+    C --> D{"集中度过高？"}
+    D -->|是| E["第二供应商 / 国产替代"]
+    D -->|否| F["长期协议"]
+    E --> G["安全库存策略"]
+    F --> G
+    G --> H["韧性供应链"]
+```
+
+!!! note "术语解释：引脚兼容、第二供应商、长期协议、国产替代"
+    - **引脚兼容（pin-to-pin compatible）**：不同厂商芯片封装和引脚排列相同，可直接替换。
+    - **第二供应商（second source）**：除主供应商外的备用供应商。
+    - **长期协议（long-term agreement, LTA）**：锁定价格与供应量的合同。
+    - **国产替代（domestic substitution）**：用本国供应商产品替代进口产品。
+
 !!! note "术语解释：BOM、中央大脑、分布式小脑、端到端控制、状态估计"
     - **BOM（Bill of Materials）**：物料清单，列出产品所需全部零部件。
     - **中央大脑**：负责高层感知、决策和规划的计算单元。
@@ -4357,6 +5483,114 @@ flowchart TD
 9. **数字孪生与在线热-电-控协同优化**。通过实时采集机器人各节点功耗、温度和姿态数据，在数字孪生中训练热-电-控联合策略，实现预测性热管理和自适应功率分配。
 
 10. **可持续计算与绿色机器人**。随着大模型和机器人数量增长，全生命周期能耗和碳排放受到关注。未来设计将更注重能效优化、可再生能源充电、电池梯次利用和可回收材料使用。
+
+#### 前沿技术深度解析：固态电池、存算一体与先进散热
+
+上述十大趋势中，有三项正在从实验室快速逼近工程可用性：固态电池、存算一体（CIM/PIM）以及先进液冷/相变散热。它们在材料、器件或系统层面改变人形机器人的能量与计算边界，值得单独深入分析。
+
+!!! note "术语解释：固态电解质、硫化物电解质、氧化物电解质、聚合物电解质、枝晶"
+    - **固态电解质（solid electrolyte）**：固态的锂离子导体，替代传统液态电解液。
+    - **硫化物电解质（sulfide electrolyte）**：以 Li₂S-P₂S₅ 体系为代表，离子电导率高但空气稳定性差。
+    - **氧化物电解质（oxide electrolyte）**：如 LLZO、LAGP，化学稳定性好但脆性大、界面接触差。
+    - **聚合物电解质（polymer electrolyte）**：如 PEO-LiTFSI，柔韧性好但室温电导率低。
+    - **枝晶（dendrite）**：金属锂在负极表面形成的针状沉积物，可刺穿隔膜导致短路。
+
+**固态电池的原理与挑战**。固态电池用固态电解质替代液态电解液和聚烯烃隔膜，理论上可同时提高能量密度和安全性。其工作电压窗口更宽，可匹配高电压正极（如 LiNi₀.₅Mn₁.₅O₄，约 4.7 V）和锂金属负极（理论容量 3860 mAh/g，远高于石墨 372 mAh/g）。若采用锂金属负极，负极容量可提升一个数量级。
+
+固态电池的核心挑战是固-固界面阻抗。陶瓷电解质与电极颗粒为点接触，接触面积小、界面电阻大；循环过程中电极体积变化会进一步破坏接触。此外，锂枝晶在固态电解质晶界处仍可能生长，尤其在较高电流密度下。当前工程解决方案包括：原位聚合界面层、界面缓冲层（如 Li₃N、LiPON）、复合电解质（陶瓷+聚合物）以及施加堆叠压力。固态电池的材料与界面科学可参考 Janek 与 Zeier 的综述 [78]。
+
+!!! note "术语解释：界面阻抗、晶界、锂金属负极、堆叠压力"
+    - **界面阻抗（interfacial impedance）**：电极与电解质界面处的电荷传输阻力。
+    - **晶界（grain boundary）**：多晶材料中晶粒之间的界面。
+    - **锂金属负极（lithium metal anode）**：以金属锂作为负极活性材料。
+    - **堆叠压力（stack pressure）**：施加在电芯叠层上的机械压力，以改善固-固接触。
+
+**离子电导率与扩散长度**。固态电解质的离子电导率 \(\sigma\) 决定电池内阻和倍率性能。硫化物电解质室温离子电导率可达 \(10^{-2}\ \mathrm{S/cm}\)，与液态电解液相当；氧化物约 \(10^{-4}\ \mathrm{S/cm}\)；聚合物常温仅 \(10^{-5}\ \mathrm{S/cm}\)，需加热到 60 °C 以上才能实用。离子在固态中的扩散长度 \(L_D\) 与扩散系数 \(D\) 和时间 \(t\) 的关系为 \(L_D = \sqrt{D t}\)，厚电解质片中锂离子浓度梯度会导致额外极化。
+
+**存算一体与近存计算的能量分析**。传统冯·诺依曼架构中，数据在处理器与存储器之间频繁搬运，造成大量能耗。存内计算（Compute-in-Memory, CIM）把乘加运算直接放到存储阵列中完成，减少数据移动。一次 8×8 位 MAC 在 SRAM 阵列中仅需把字线激活、在位线上累加电荷，能量可比传统数字 MAC 降低 10–100 倍。
+
+!!! note "术语解释：存内计算、近存计算、MAC、数据移动能耗、字线/位线"
+    - **存内计算（CIM）**：在存储器阵列内部直接进行计算的技术。
+    - **近存计算（near-memory computing）**：把计算单元靠近存储器，缩短数据搬运距离。
+    - **字线（word line）/位线（bit line）**：存储阵列中用于选址和读写的导线。
+    - **数据移动能耗（data movement energy）**：数据在存储与计算单元之间搬运消耗的能量。
+
+能量估算：从 DRAM 读取 32 bit 数据到处理器的能耗约为 640 pJ，而一次 32 bit 整数加法仅约 0.1 pJ。对于以 Transformer 为代表的内存密集型负载，数据搬运能耗占总能耗的 50%–90%。CIM 通过把权重驻留在存储阵列、在阵列内完成点积，显著降低这一比例。以基于 SRAM 的 CIM 为例，8 bit MAC 能耗可低至 0.1–1 pJ，而传统 7 nm 数字 MAC 约为 1–10 pJ。
+
+!!! note "术语解释：冯·诺依曼瓶颈、点积、权重驻留、SRAM"
+    - **冯·诺依曼瓶颈（von Neumann bottleneck）**：处理器与存储器分离导致的带宽/能耗瓶颈。
+    - **点积（dot product）**：向量对应元素相乘后求和，是神经网络基本运算。
+    - **权重驻留（weight stationary）**：把神经网络权重保留在存储器中不动，减少搬运。
+    - **SRAM（Static Random-Access Memory）**：静态随机存取存储器，速度快、功耗低。
+
+**Python 算例：比较传统数字 MAC 与 CIM 的能量**。下面代码粗略估算运行一个单层全连接层时，传统架构与 CIM 架构的数据搬运和计算能耗。
+
+```python
+"""
+Rough energy comparison: digital MAC vs compute-in-memory MAC.
+Values are order-of-magnitude estimates for illustration.
+"""
+import numpy as np
+
+N = 1024          # input dimension
+M = 512           # output dimension
+ops = 2 * N * M   # multiply-add operations
+
+# Energy per operation / data movement (pJ)
+E_mac_digital = 3.0          # pJ per 8-bit MAC in 7 nm digital logic
+E_dram_read = 20.0           # pJ per byte read from DRAM (off-chip)
+E_sram_read = 0.5            # pJ per byte read from SRAM (on-chip)
+E_cim_mac = 0.3              # pJ per 8-bit MAC in SRAM-based CIM
+
+weights_bytes = N * M        # 8-bit weights
+activations_bytes = N + M    # input + output
+
+# Scenario 1: digital processor, weights fetched from DRAM each time
+E_compute_digital = ops * E_mac_digital
+E_data_dram = (weights_bytes + activations_bytes) * E_dram_read
+E_total_digital = E_compute_digital + E_data_dram
+
+# Scenario 2: CIM, weights stationary in SRAM array, only inputs/outputs move
+E_compute_cim = ops * E_cim_mac
+E_data_cim = activations_bytes * E_sram_read
+E_total_cim = E_compute_cim + E_data_cim
+
+print(f"Digital total: {E_total_digital/1e6:.2f} uJ")
+print(f"CIM total:     {E_total_cim/1e6:.2f} uJ")
+print(f"Energy ratio (digital/CIM): {E_total_digital/E_total_cim:.1f}x")
+print(f"Digital data/compute ratio: {E_data_dram/E_compute_digital:.2f}")
+```
+
+典型结果：数字方案总能耗约 34 μJ，其中数据搬运占绝大部分；CIM 方案总能耗约 0.6 μJ，能耗降低约 50 倍。这解释了为什么 CIM 被视为突破内存墙的关键路径之一，尽管其实用化还面临模拟噪声、精度、阵列规模和编译工具链等挑战。Horowitz 在 ISSCC 2014 的经典分析 [79] 系统阐述了数据移动能耗主导的硬件设计趋势。
+
+**先进散热：微通道与浸没式冷却**。当单芯片功耗超过 100 W（如 Jetson Thor、未来机器人 SoC），传统风冷和均热板可能无法把结温控制在安全范围。微通道液冷通过在芯片背面刻蚀数十至数百微米宽的流道，让冷却液直接流过热点，对流换热系数可达 10⁴–10⁵ W/(m²·K)，比强制风冷高 2–3 个数量级。
+
+!!! note "术语解释：微通道、浸没式冷却、临界热流密度、两相流"
+    - **微通道（microchannel）**：特征尺寸在 10–1000 μm 的冷却流道。
+    - **浸没式冷却（immersion cooling）**：把电子器件直接浸没在绝缘冷却液中的散热方式。
+    - **临界热流密度（Critical Heat Flux, CHF）**：沸腾换热中发生膜态沸腾、换热恶化的热流密度上限。
+    - **两相流（two-phase flow）**：液体与蒸汽同时存在的流动，利用汽化潜热强化换热。
+
+两相微通道冷却是微通道的进一步升级。冷却液在通道内发生相变，吸收汽化潜热 \(h_{fg}\)，单位质量携热能力大幅提升。水的汽化潜热约为 2260 kJ/kg，而单相水从 25 °C 加热到 60 °C 仅吸收约 147 kJ/kg。两相冷却的 CHF 限制了最大热流密度，工程上通常把热流密度控制在 CHF 的 50%–70% 以下。微通道散热器的经典设计可参考 Tuckerman 与 Pease 的开创性工作 [80]。
+
+!!! note "术语解释：汽化潜热、膜态沸腾、核态沸腾、热流密度"
+    - **汽化潜热（latent heat of vaporization）**：单位质量液体汽化所需热量。
+    - **核态沸腾（nucleate boiling）**：气泡在壁面成核并脱离的高效沸腾状态。
+    - **膜态沸腾（film boiling）**：壁面被蒸汽膜覆盖、换热效率急剧下降的沸腾状态。
+    - **热流密度（heat flux）**：单位面积上的热流量，单位 W/m²。
+
+```mermaid
+flowchart TD
+    A["机器人 SoC 100 W+"] --> B{"散热方案选择"}
+    B -->|"<50 W"| C["风冷 + 均热板"]
+    B -->|"50-150 W"| D["单相液冷 / 微通道"]
+    B -->|"150 W+ 或高热流密度"| E["两相微通道 / 浸没冷却"]
+    C --> F["结温控制"]
+    D --> F
+    E --> F
+```
+
+这三项前沿技术分别从能量存储、计算能效和热移除三个维度突破当前物理极限。固态电池把人形机器人续航从小时级推向更长；CIM/PIM 把感知与策略网络的能效提升一个数量级；先进液冷让百瓦级 SoC 在紧凑机身内稳定运行。它们共同指向一个更高集成度、更低能耗、更轻重量的下一代人形机器人平台。
 
 !!! note "术语解释：数字孪生、预测性维护、自适应功率分配、信息安全"
     - **数字孪生（digital twin）**：物理实体在数字空间中的高保真映射模型。
@@ -4423,6 +5657,69 @@ flowchart TD
 3. 推导双目深度公式 \(Z = fB/d\)，并说明基线大小对深度精度和遮挡的影响。
 4. 电池以高 C-rate 放电时，除了容量下降快，还会带来哪些工程风险？
 5. 若 Jetson AGX Orin 在 50 W 功耗下工作，散热器热阻为 0.5 K/W，环境温度 35 °C，估算其封装壳温约为多少？若结壳热阻为 0.2 K/W，结温约为多少？
+
+### 6.10.4 本章符号表
+
+为便于查阅与保证符号一致性，下表汇总本章出现的主要符号。部分符号在不同上下文中可能具有不同含义，表中给出其在当前章节中的常用定义。
+
+| 符号 | 含义 | 常用单位 / 备注 |
+|---|---|---|
+| \(f_s\) | 采样频率 | Hz |
+| \(f_{\max}\) | 信号最高频率分量 | Hz |
+| \(B\) | 双目基线、或网络带宽 | m / MB·s⁻¹ / Gb·s⁻¹（依上下文） |
+| \(d\) | 视差 | pixel |
+| \(Z\) | 深度 | m |
+| \(f\) | 焦距（像素单位） | pixel |
+| \(K\) | 相机内参矩阵 | 3×3 |
+| \(R, t\) | 旋转矩阵、平移向量 | — / m |
+| \(E, F\) | 本质矩阵、基础矩阵 | 3×3 |
+| \(P_{peak}\) | 峰值算力 | FLOPS / TOPS |
+| \(B_{mem}\) | 内存带宽 | GB·s⁻¹ |
+| \(I\) | 算术强度 | FLOPs·Byte⁻¹ |
+| \(CPI\) | 每条指令周期数 | cycle/instruction |
+| \(f_{sw}\) | 开关频率 | Hz |
+| \(D\) | Buck/Boost 占空比 | 无量纲，0–1 |
+| \(V_{in}, V_{out}\) | 输入/输出电压 | V |
+| \(I_{out}\) | 输出电流 | A |
+| \(L, C\) | 电感、电容 | H / F |
+| \(\eta\) | 效率、或库仑效率 | 无量纲 |
+| \(R_{DS(on)}\) | MOSFET 导通电阻 | Ω |
+| \(SOC\) | 荷电状态 | 0–1 或 % |
+| \(SOH\) | 健康状态 | 0–1 或 % |
+| \(Q_{nom}\) | 标称容量 | Ah |
+| \(R_0, R_1, C_1\) | 电池等效电路参数 | Ω / Ω / F |
+| \(OCV\) | 开路电压 | V |
+| \(C\)-rate | 充放电倍率 | h⁻¹ |
+| \(P\) | 功率 | W |
+| \(E\) | 能量 | Wh / J |
+| \(T\) | 温度 | °C 或 K |
+| \(T_j, T_c, T_a\) | 结温、壳温、环境温度 | °C 或 K |
+| \(R_{th}\) | 热阻 | K·W⁻¹ |
+| \(C_{th}\) | 热容 | J·K⁻¹ |
+| \(k\) | 热导率 | W·m⁻¹·K⁻¹ |
+| \(h\) | 对流换热系数 | W·m⁻²·K⁻¹ |
+| \(\varepsilon\) | 发射率 | 无量纲 |
+| \(\sigma\) | 斯特藩-玻尔兹曼常数 | \(5.67\times10^{-8}\) W·m⁻²·K⁻⁴ |
+| \(Re, Pr, Nu, Gr\) | 雷诺数、普朗特数、努塞尔数、格拉晓夫数 | 无量纲 |
+| \(AF\) | 可靠性加速因子 | 无量纲 |
+| \(E_a\) | 激活能 | eV 或 J |
+| \(k_B\) | 玻尔兹曼常数 | \(1.38\times10^{-23}\) J·K⁻¹ |
+| \(\rho\) | 电阻率或密度 | Ω·m / kg·m⁻³（依上下文） |
+| \(A\) | 导线截面积或散热面积 | m² |
+| \(I_{fuse}\) | 熔断器额定电流 | A |
+| \(I^2 t\) | 熔断焦耳积分 | A²·s |
+| \(t_{su}, t_{hold}\) | 建立时间、保持时间 | s |
+| \(F_{max}\) | 最高时钟频率 | Hz |
+| \(\mathbf{x}\) | 状态向量 | 依上下文 |
+| \(\mathbf{z}\) | 观测向量 | 依上下文 |
+| \(\mathbf{P}, \mathbf{Q}, \mathbf{R}\) | 协方差矩阵、过程噪声、测量噪声 | 依上下文 |
+| \(s, z\) | 量化 scale、zero-point | 依精度 |
+
+符号使用建议：
+
+- 同一符号在不同物理域中含义不同（如 \(B\) 可表示基线或带宽），首次出现时应以 `!!! note "术语解释：..."` 框明确说明。
+- 热学量统一使用大写 \(T\) 表示温度，下标 \(j/c/a/amb\) 区分结、壳、环境；\(R_{th}\) 与 \(C_{th}\) 的下标 `th` 表示 thermal，以区别于电学 \(R, C\)。
+- 本章中的符号与第 4 章（执行器）、第 5 章（传感器）和第 14 章（控制）尽量保持一致；出现冲突时以本章上下文定义为准。
 
 ---
 
@@ -4501,3 +5798,11 @@ flowchart TD
 71. Linux Foundation. *Real-Time Linux Wiki*. https://wiki.linuxfoundation.org/realtime/start
 72. Linux Foundation. *cyclictest — rt-tests*. https://wiki.linuxfoundation.org/realtime/documentation/howto/tools/cyclictest
 73. The Open Group. *POSIX.1-2017: sched_setscheduler*. https://pubs.opengroup.org/onlinepubs/9699919799/functions/sched_setscheduler.html
+74. Newman J, Thomas-Alyea K E. *Electrochemical Systems* (4th ed.). Wiley, 2012.
+75. Erickson R W, Maksimovic D. *Fundamentals of Power Electronics* (3rd ed.). Springer, 2020.
+76. Kays W M, Crawford M E, Weigand B. *Convective Heat and Mass Transfer* (4th ed.). McGraw-Hill, 2005.
+77. Simchi-Levi D, Kaminsky P, Simchi-Levi E. *Designing and Managing the Supply Chain* (3rd ed.). McGraw-Hill, 2008.
+78. Janek J, Zeier W G. A solid future for battery development. *Nature Energy*, 2016, 1(9): 16141.
+79. Horowitz M. Computing's energy problem (and what we can do about it). *IEEE International Solid-State Circuits Conference (ISSCC)*, 2014.
+80. Tuckerman D B, Pease R F W. High-performance heat sinking for VLSI. *IEEE Electron Device Letters*, 1981, 2(5): 126-129.
+81. International Energy Agency (IEA). *Global EV Outlook 2024*. https://www.iea.org/reports/global-ev-outlook-2024

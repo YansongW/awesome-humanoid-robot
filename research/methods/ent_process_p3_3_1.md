@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P3.3.1 功能安全概念设计
+  en: ''
   zh: 功能安全概念设计
   ko: ''
 summary:
-  en: 安全概念文档、安全目标、功能安全架构
+  en: ''
   zh: 安全概念文档、安全目标、功能安全架构
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）
 

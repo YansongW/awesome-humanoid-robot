@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P4.3.3 关节模组集成与台架测试
+  en: ''
   zh: 关节模组集成与台架测试
   ko: ''
 summary:
-  en: 《关节测试报告》：扭矩-电流、效率图、温升曲线、带宽
+  en: ''
   zh: 《关节测试报告》：扭矩-电流、效率图、温升曲线、带宽
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）
 

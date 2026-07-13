@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P3.2.1 计算架构与节点分布
+  en: ''
   zh: 计算架构与节点分布
   ko: ''
 summary:
-  en: 计算架构图、各节点算力/功耗预算、通信接口
+  en: ''
   zh: 计算架构图、各节点算力/功耗预算、通信接口
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）
 

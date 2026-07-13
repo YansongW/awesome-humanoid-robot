@@ -1,0 +1,116 @@
+---
+id: ent_company_kaidi
+schema_version: 1
+type: company
+'title:': Kaidi Electrical
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: 凯迪股份
+  en: Kaidi Electrical
+status: active
+sources:
+- id: src_kaidi_official
+  type: website
+  url: https://www.kaidi-electric.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 凯迪股份 / Kaidi Electrical
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 凯迪股份 |
+| **英文名** | Kaidi Electrical |
+| **总部** | 中国江苏常州 |
+| **成立时间** | 1992 |
+| **官网** | [https://www.kaidi-electric.com](https://www.kaidi-electric.com) |
+| **供应链环节** | 线性驱动系统 / 电动推杆 / 智能家居驱动 |
+| **企业属性** | 上市公司（SH.605828）、国内品牌 |
+| **母公司/所属集团** | 常州市凯迪电器股份有限公司 |
+| **数据来源** | 官网、年报、产品手册、WAIC 2026 报道 |
+
+## 公司简介
+
+国内线性驱动系统龙头企业，产品从家居、医疗向人形机器人与工业执行器延伸。
+
+凯迪股份主营线性驱动系统、电动推杆、升降立柱、伺服电机及控制器，广泛应用于智能家居、智慧办公、医疗康复与汽车领域。近年来公司积极布局人形机器人线性关节模组，开发高推力密度电动缸与微型丝杠执行器。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 线性驱动器 | 电动推杆/升降立柱 | KDPT/KDS 系列 | 家居、医疗 |
+| 伺服电机 | 永磁直流/无刷电机 | 未公开型号 | 自动化 |
+| 控制器 | 驱动控制模块 | 未公开型号 | 线性系统 |
+| 机器人关节模组 | 高推力电缸 | 未公开型号 | 人形机器人 |
+
+## 代表产品
+
+### 线性驱动器 / Linear Actuator
+
+> 线性驱动器：请访问 [官方资料](https://www.kaidi-electric.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 推拉力 | 最大约 8,000 N | 产品手册 |
+| 行程 | 50–1,000 mm | 产品手册 |
+| 速度 | 最高约 80 mm/s | 产品手册 |
+| 电压 | 24 / 29 / 36 V DC | 产品手册 |
+| 防护等级 | IP42 / IP54 可选 | 产品手册 |
+| 噪音 | ≤ 48 dB | 产品手册 |
+| 材质 | 铝合金 / 钢 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：低噪音、高可靠性、模块化设计，可快速适配不同负载与安装空间。
+
+**应用场景**：智能升降桌、医疗床、沙发、人形机器人线性关节。
+
+### 伺服电机 / Servo Motor
+
+> 伺服电机：请访问 [官方资料](https://www.kaidi-electric.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 额定功率 | 未公开 | 产品手册 |
+| 额定转速 | 未公开 | 产品手册 |
+| 额定扭矩 | 未公开 | 产品手册 |
+| 电机类型 | 永磁直流 / 无刷直流 | 产品手册 |
+| 电压 | 12–48 V DC | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：与线性驱动器深度集成，支持位置、力矩与速度闭环控制。
+
+**应用场景**：智能家居、康复设备、自动化执行机构、机器人关节。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：永磁材料、硅钢片、铝合金、轴承、丝杠、控制器芯片
+- **下游客户/应用场景**：家具厂商、医疗器械、汽车 OEM、人形机器人公司
+- **主要竞争对手/对标**：Linak、力纳克、捷昌驱动、豪江智能、西门子
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_kaidi`
+- 产品/零部件实体：`ent_component_kaidi_linear_drive`, `ent_component_kaidi_servo_motor`
+- 关键关系：
+  - `ent_company_kaidi` -- `manufactures` --> `ent_component_kaidi_linear_drive`
+  - `ent_company_kaidi` -- `manufactures` --> `ent_component_kaidi_servo_motor`
+
+## 参考资料
+
+1. [凯迪股份官网](https://www.kaidi-electric.com)
+2. [上交所公告/年报](http://www.sse.com.cn)
+3. [WAIC 2026 参展报道](https://www.worldrobotconference.com)

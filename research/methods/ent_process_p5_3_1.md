@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P5.3.1 线缆与管路布线设计
+  en: ''
   zh: 线缆与管路布线设计
   ko: ''
 summary:
-  en: 《布线设计规范》：线缆型号、固定点、弯曲半径、走向
+  en: ''
   zh: 《布线设计规范》：线缆型号、固定点、弯曲半径、走向
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）
 

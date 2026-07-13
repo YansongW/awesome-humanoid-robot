@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P3 系统架构与机电总体设计（System / Preliminary Design）
+  en: ''
   zh: 系统架构与机电总体设计（System / Preliminary Design）
   ko: ''
 summary:
-  en: 系统架构与机电总体设计（System / Preliminary Design）
+  en: ''
   zh: 系统架构与机电总体设计（System / Preliminary Design）
   ko: ''
 domains:
@@ -35,5 +35,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

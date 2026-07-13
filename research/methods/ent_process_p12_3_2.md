@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P12.3.2 人机交互与可解释性
+  en: ''
   zh: 人机交互与可解释性
   ko: ''
 summary:
-  en: HMI 设计、交互原型、可用性测试报告
+  en: ''
   zh: HMI 设计、交互原型、可用性测试报告
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）
 

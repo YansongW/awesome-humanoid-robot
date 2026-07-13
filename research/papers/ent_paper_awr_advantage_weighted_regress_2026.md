@@ -8,8 +8,7 @@ names:
   zh: 优势加权回归
   ko: ''
 summary:
-  en: 'AWR: Advantage Weighted Regression is a paper on 基础RL for humanoid robotics.
-    优势加权回归.'
+  en: ''
   zh: 'AWR: Advantage Weighted Regression is a paper on 基础RL for humanoid robotics.
     优势加权回归.'
   ko: ''
@@ -42,5 +41,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 AWR: Advantage Weighted Regression is a paper on 基础RL for humanoid robotics. 优势加权回归.

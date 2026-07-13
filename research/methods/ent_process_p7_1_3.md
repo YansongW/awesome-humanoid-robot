@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P7.1.3 接触与摩擦参数标定
+  en: ''
   zh: 接触与摩擦参数标定
   ko: ''
 summary:
-  en: 《接触参数表》、标定视频/数据、单腿站立稳定
+  en: ''
   zh: 《接触参数表》、标定视频/数据、单腿站立稳定
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）
 

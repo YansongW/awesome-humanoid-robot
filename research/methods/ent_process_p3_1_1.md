@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P3.1.1 DOF 配置与关节布局
+  en: ''
   zh: DOF 配置与关节布局
   ko: ''
 summary:
-  en: DOF 配置表、关节运动范围、关节速度/扭矩需求 v1
+  en: ''
   zh: DOF 配置表、关节运动范围、关节速度/扭矩需求 v1
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）
 

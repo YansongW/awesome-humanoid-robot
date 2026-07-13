@@ -302,20 +302,16 @@ $$
 
 - **SNR10**：信噪比达到 10 dB 时对应的最低照度，用于衡量弱光成像能力。SNR10 越低，暗光表现越好。
 
-| 信号均值 (DN) | 方差 (DN²) |
-|---|---|
-| 0.0 | 10 |
-| 11.1 | 15 |
-| 22.2 | 22 |
-| 33.3 | 32 |
-| 44.4 | 45 |
-| 55.6 | 60 |
-| 66.7 | 80 |
-| 77.8 | 95 |
-| 88.9 | 105 |
-| 100.0 | 100 |
-
-> 表：光子转移曲线示意。横轴为信号均值（0–100 DN，10 等分点），纵轴为方差（DN²）。曲线依次呈现读出噪声区、Shot 噪声区（斜率约 1）和满阱饱和三个特征阶段。
+```mermaid
+xychart-beta
+    title "光子转移曲线示意"
+    x-axis "信号均值 (DN)" 0 --> 100
+    y-axis "方差 (DN²)" 0 --> 120
+    line "方差" [10, 15, 22, 32, 45, 60, 80, 95, 105, 100]
+    annotation "读出噪声区" {"x":10, "y":10}
+    annotation "Shot 噪声区 (斜率≈1)" {"x":50, "y":55}
+    annotation "满阱饱和" {"x":90, "y":102}
+```
 
 #### 图像信号处理（ISP）管线
 
@@ -905,6 +901,162 @@ flowchart TD
     H["阳光/串扰/多径"] -.->|"噪声/虚假回波"| A
 ```
 
+#### dToF LiDAR 链路预算数值算例
+
+前面的雷达方程给出了接收功率与距离、反射率、孔径之间的定性关系。工程选型时需要把方程中的各项代成具体数值，计算不同距离、不同目标反射率下的回波光子数和信噪比，从而判断 LiDAR 是否能满足人形机器人导航与避障的测距要求。
+
+!!! note "术语解释：链路预算、发射光子数、回波光子数、信噪比、探测概率"
+    - **链路预算（link budget）**：把发射、传播、接收各环节的能量/功率损失逐项计算，得到最终接收信号强度的过程。
+    - **发射光子数（emitted photons）**：单个激光脉冲包含的光子数，$N_t = E_p / (h\nu)$。
+    - **回波光子数（return photons）**：被目标反射并进入接收器的光子数。
+    - **信噪比（Signal-to-Noise Ratio, SNR）**：信号功率（或光子数）与各类噪声功率（或光子数）之比。
+    - **探测概率（detection probability）**：在一定虚警概率下，信号被正确检测到的概率。
+
+```mermaid
+flowchart LR
+    A["激光脉冲 Ep"] --> B["发射光学 / 光束发散"]
+    B --> C["目标反射 ρ"]
+    C --> D["大气衰减 Tatm"]
+    D --> E["接收孔径 Ar"]
+    E --> F["探测器 QE / PDE"]
+    F --> G["回波光子 Nr"]
+    G --> H["TDC 时间直方图"]
+    H --> I["距离 R"]
+```
+
+**典型 905 nm dToF LiDAR 参数**
+
+| 参数 | 符号 | 数值 | 说明 |
+|------|------|------|------|
+| 激光波长 | $\lambda$ | 905 nm | 硅探测器敏感波段 |
+| 单脉冲能量 | $E_p$ | 5 nJ | Class 1 人眼安全限制内 |
+| 脉冲宽度 | $\tau_p$ | 5 ns | 决定距离分辨率约 0.75 m |
+| 重复频率 | $f_{PRF}$ | 100 kHz | 最大无模糊距离 1.5 km |
+| 光束发散角 | $\theta_{beam}$ | 0.2° | 1°≈17.45 mrad |
+| 接收孔径直径 | $D_r$ | 10 mm | 接收面积 $A_r = \pi D_r^2/4$ |
+| 探测器量子效率 | $\eta$ | 0.25 | 905 nm 典型值 |
+| 目标反射率 | $\rho$ | 0.10（10%） | 暗色目标 |
+| 入射角 | $\theta$ | 0° | 正入射 |
+| 单程大气透过率 | $T_{atm}$ | 0.98 | 晴朗空气短距离近似 |
+
+**回波光子数计算**
+
+发射光子数为：
+
+$$
+N_t = \frac{E_p}{h c / \lambda} = \frac{5\times 10^{-9}\ \mathrm{J}}{(6.626\times 10^{-34}\ \mathrm{J\cdot s})(3\times 10^8\ \mathrm{m/s}) / 905\times 10^{-9}\ \mathrm{m}} \approx 2.28 \times 10^{10}
+$$
+
+单个脉冲约发射 230 亿个光子。这些光子中只有很小一部分被目标反射并进入接收孔径。回波光子数公式可简化为：
+
+$$
+N_r = N_t \, \eta \, \rho \, \cos\theta \, \frac{A_r}{\pi R^2} \, T_{atm}^2(R)
+$$
+
+该式假设目标为朗伯反射体，反射光在半球空间均匀散射。$\pi R^2$ 项来自半球立体角 $2\pi$ 与几何投影关系；若采用更精确的光束发散模型，可用 $A_r / (\pi R^2 \tan^2(\theta_{beam}/2))$ 乘以光斑覆盖比例。
+
+以 $R = 10\ \mathrm{m}$、$\rho = 0.10$、$A_r = 7.85\times 10^{-5}\ \mathrm{m^2}$ 为例：
+
+$$
+N_r \approx 2.28\times 10^{10} \times 0.25 \times 0.10 \times 1 \times \frac{7.85\times 10^{-5}}{\pi \times 10^2} \times 0.98^2 \approx 137
+$$
+
+即单个脉冲返回约 137 个光子。对于 SPAD 探测器，若光子探测效率 PDE 为 0.20，则实际被探测到的信号光子约 27 个/脉冲。
+
+**信噪比与探测概率**
+
+总噪声包括暗计数 $N_d$、背景光 $N_b$ 和读出噪声。设每脉冲等效暗计数与背景光共 $N_{noise} = 5$ 个，则单脉冲 SNR 为：
+
+$$
+\mathrm{SNR}_{pulse} = \frac{N_{sig}}{\sqrt{N_{sig} + N_{noise}}} = \frac{27}{\sqrt{27 + 5}} \approx 4.8
+$$
+
+通过累积 $M = 100$ 个脉冲，信号相干叠加而噪声按 $\sqrt{M}$ 增长，累积 SNR 提升 $\sqrt{M}$ 倍：
+
+$$
+\mathrm{SNR}_{accum} = \mathrm{SNR}_{pulse} \sqrt{M} \approx 4.8 \times 10 = 48
+$$
+
+高 SNR 意味着距离估计误差小。对于 TCSPC，时间抖动导致距离误差的标准差约为：
+
+$$
+\sigma_R = \frac{c \, \sigma_t}{2 \sqrt{N_{sig,accum}}}
+$$
+
+若 $\sigma_t = 100\ \mathrm{ps}$，累积信号光子 2700 个，则：
+
+$$
+\sigma_R \approx \frac{3\times 10^8 \times 100\times 10^{-12}}{2 \times \sqrt{2700}} \approx 0.29\ \mathrm{cm}
+$$
+
+**不同距离与反射率下的回波光子数**
+
+| 距离 $R$ (m) | $\rho=0.05$ | $\rho=0.10$ | $\rho=0.50$ | $\rho=0.90$ |
+|-------------|-------------|-------------|-------------|-------------|
+| 5 | 548 | 1096 | 5479 | 9862 |
+| 10 | 137 | 274 | 1370 | 2465 |
+| 30 | 15.2 | 30.5 | 152 | 274 |
+| 50 | 5.5 | 11.0 | 55 | 99 |
+
+从表中可见，暗色目标（5% 反射率）在 50 m 处单脉冲回波仅约 5–6 个光子，必须依赖多脉冲累积或更高发射能量；而高反射目标（90%）在 50 m 仍有近百个光子/脉冲。
+
+**Python 示例：dToF LiDAR 链路预算计算**
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 物理常数
+h = 6.626e-34      # J·s
+c = 3.0e8          # m/s
+# LiDAR 参数
+E_p = 5e-9         # J
+lam = 905e-9       # m
+D_r = 10e-3        # m
+A_r = np.pi * (D_r/2)**2
+eta = 0.25         # 探测器 QE
+PDE = 0.20         # SPAD 光子探测效率
+T_atm = 0.98
+N_noise_per_pulse = 5
+sigma_t = 100e-12  # s
+
+# 发射光子数
+N_t = E_p / (h*c/lam)
+print(f"发射光子数/脉冲: {N_t:.2e}")
+
+def returned_photons(R, rho, theta_deg=0):
+    theta = np.deg2rad(theta_deg)
+    return N_t * eta * rho * np.cos(theta) * (A_r / (np.pi * R**2)) * T_atm**2
+
+def detected_photons(R, rho):
+    return returned_photons(R, rho) * PDE
+
+# 距离与反射率扫描
+R = np.linspace(2, 80, 200)
+rhos = [0.05, 0.10, 0.50, 0.90]
+plt.figure(figsize=(10,4))
+for rho in rhos:
+    N_sig = detected_photons(R, rho)
+    snr = N_sig / np.sqrt(N_sig + N_noise_per_pulse)
+    plt.semilogy(R, snr, label=f"ρ={rho}")
+plt.axhline(5, color='k', linestyle='--', label="SNR=5 threshold")
+plt.xlabel("Range R (m)"); plt.ylabel("Single-pulse SNR")
+plt.title("dToF LiDAR Single-Pulse SNR vs Range")
+plt.legend(); plt.grid(True, which='both', ls='--')
+plt.tight_layout(); plt.show()
+
+# 50 m, 10% 反射率，累积 100 脉冲的距离精度
+R0, rho0, M = 50, 0.10, 100
+N_sig_single = detected_photons(R0, rho0)
+snr_single = N_sig_single / np.sqrt(N_sig_single + N_noise_per_pulse)
+snr_accum = snr_single * np.sqrt(M)
+sigma_R = c * sigma_t / (2 * np.sqrt(N_sig_single * M))
+print(f"R={R0} m, ρ={rho0}: 单脉冲 SNR={snr_single:.1f}, 累积 SNR={snr_accum:.1f}")
+print(f"累积 {M} 脉冲后距离标准差: {sigma_R*100:.2f} cm")
+```
+
+该脚本展示了链路预算的核心计算流程：从脉冲能量出发，根据朗伯反射模型估算回波光子数，再考虑探测效率和噪声得到 SNR，最后给出多脉冲累积后的测距精度。工程师可通过修改 $E_p$、$D_r$、$\eta$、PDE 等参数，快速评估不同方案对人形机器人中远距感知的可行性。激光测距技术综述见 Amann 等[44]。
+
 #### SPAD/SiPM 探测阵列：淬火、恢复与时间数字转换
 
 前面的 LiDAR 前端已经提到 APD、SPAD、SiPM 等光电探测器。SPAD 与 SiPM 之所以能够实现单光子灵敏度与皮秒级时间分辨，核心在于把 PN 结偏置在**击穿电压（breakdown voltage）**以上，工作在所谓的**盖革模式（Geiger mode）**。本节从器件物理出发，讨论淬灭/恢复电路、死时间、后脉冲、暗计数、串扰、光子探测效率与时间相关单光子计数（TCSPC）等关键问题。
@@ -946,20 +1098,15 @@ $$
     - **电离系数（ionization coefficient）**：载流子在单位长度内通过碰撞电离产生新载流子的概率。
     - **耗尽层宽度（depletion width）**：PN 结中自由载流子被扫空的区域宽度，决定吸收与倍增的有效体积。
 
-| 反向偏压 V (V) | 电流 I（相对对数刻度） |
-|---|---|
-| 0.0 | 1 |
-| 3.3 | 1 |
-| 6.7 | 1 |
-| 10.0 | 2 |
-| 13.3 | 3 |
-| 16.7 | 5 |
-| 20.0 | 10 |
-| 23.3 | 100 |
-| 26.7 | 500 |
-| 30.0 | 900 |
-
-> 表：SPAD 反向 I-V 特性（示意图）。反向偏压从 0 V 增加到 30 V 时，电流在低电压区保持极低水平，接近击穿电压 V_br 后迅速上升，进入盖革工作区。
+```mermaid
+xychart-beta
+    title "SPAD 反向 I-V 特性（示意图）"
+    x-axis "反向偏压 V (V)" 0 --> 30
+    y-axis "电流 I (相对对数刻度)" 0 --> 1000
+    line "I-V" [1, 1, 1, 2, 3, 5, 10, 100, 500, 900]
+    annotation "击穿电压 V_br" {"x":20, "y":500}
+    annotation "盖革工作区" {"x":25, "y":900}
+```
 
 **被动淬灭与主动淬灭**
 
@@ -1003,25 +1150,16 @@ sequenceDiagram
 - **串扰（crosstalk）**：一个 SPAD 雪崩时产生的光子或电脉冲触发邻近像素。可分为**光学串扰**（雪崩光子被邻近像素吸收）和**电串扰**（衬底电流/电压波动）。在密集阵列中，串扰会导致时间直方图拖尾和虚假点。
 - **光子探测概率 / PDE 随波长与过电压变化**：PDE 在峰值波长处最高，过电压不足时 PDE 下降，过电压过高时噪声增大。
 
-| 时间 bin (ns) | 计数 |
-|---|---|
-| 0.0 | 3 |
-| 7.1 | 3 |
-| 14.3 | 4 |
-| 21.4 | 6 |
-| 28.6 | 10 |
-| 35.7 | 18 |
-| 42.9 | 35 |
-| 50.0 | 55 |
-| 57.1 | 40 |
-| 64.3 | 20 |
-| 71.4 | 10 |
-| 78.6 | 6 |
-| 85.7 | 4 |
-| 92.9 | 3 |
-| 100.0 | 2 |
-
-> 表：TCSPC 光子到达时间直方图（示意图）。横轴为时间 bin（0–100 ns，15 等分点），纵轴为光子计数。直方图在约 60 ns 处出现目标距离峰，随后可见后脉冲拖尾，前期本底对应暗计数。
+```mermaid
+xychart-beta
+    title "TCSPC 光子到达时间直方图（示意图）"
+    x-axis "时间 bin (ns)" 0 --> 100
+    y-axis "计数" 0 --> 60
+    line "计数" [3, 3, 4, 6, 10, 18, 35, 55, 40, 20, 10, 6, 4, 3, 2]
+    annotation "目标峰（距离）" {"x":60, "y":55}
+    annotation "后脉冲拖尾" {"x":80, "y":10}
+    annotation "暗计数本底" {"x":20, "y":4}
+```
 
 !!! note "术语解释：死时间、后脉冲、暗计数率、串扰、保持时间"
     - **死时间（dead time）**：探测器完成一次事件后不能响应下一次事件的最短时间间隔。
@@ -1171,6 +1309,226 @@ $$
     - **声速（speed of sound）**：声波在介质中的传播速度，空气中约 343 m/s（常温）。
     - **波束角（beam angle）**：超声波发射能量的主瓣角度范围。
     - **回波时间（echo time）**：声波发射到接收反射波的时间。
+
+#### FMCW 毫米波雷达信号模型与距离-多普勒处理
+
+毫米波雷达虽然与 LiDAR 同属主动测距，但它发射的是连续调频电磁波而非激光脉冲。FMCW 雷达的发射信号通常是一个频率随时间线性增长的“啁啾（chirp）”：
+
+$$
+s_t(t)=A_t\cos\!\left[2\pi\left(f_0 t+\frac{1}{2}k t^2\right)\right],\qquad 0\le t\le T
+$$
+
+其中 $f_0$ 为起始频率，$B=kT$ 为 chirp 带宽，$T$ 为 chirp 持续时间，$k=B/T$ 为调频斜率。信号遇到目标后延迟 $\tau=2R/c$ 返回，接收信号为：
+
+$$
+s_r(t)=A_r\cos\!\left[2\pi\left(f_0(t-\tau)+\frac{1}{2}k(t-\tau)^2\right)\right]
+$$
+
+将接收信号与发射信号混频（相乘）并低通滤波，得到中频（beat）信号：
+
+$$
+s_{IF}(t)=A_{IF}\cos\!\left[2\pi\left(k\tau t+f_0\tau-\frac{1}{2}k\tau^2\right)\right]
+$$
+
+忽略常数相位项后，中频频率为：
+
+$$
+f_b=k\tau=\frac{2kR}{c}=\frac{2BR}{cT}
+$$
+
+这说明在理想静止目标下，测距转化为测频。由于 $	au$ 通常远小于 $T$，$k\tau t$ 项在单个 chirp 内近似为常频，对 $s_{IF}(t)$ 做 FFT 即可在距离维出现峰值。距离分辨率由带宽决定：
+
+$$
+\Delta R=\frac{c}{2B}
+$$
+
+例如 $B=1\ \mathrm{GHz}$ 时，$\Delta R\approx 0.15\ \mathrm{m}$；$B=4\ \mathrm{GHz}$ 时，$\Delta R\approx 3.75\ \mathrm{cm}$，已接近机器人近距离操作所需的精度。
+
+当目标以径向速度 $v_r$ 运动时，回波还叠加多普勒频移 $f_d=-2v_r/\lambda$（接近雷达时为正）。单 chirp 内 $f_b$ 同时包含距离与速度信息：
+
+$$
+f_b=\frac{2kR}{c}-\frac{2v_r}{\lambda}
+$$
+
+为解耦距离和速度，工程上通常发射一帧多个 chirp（pulse repetition interval $T_{PRI}=T+T_{idle}$），对同一距离 bin 在不同 chirp 间做 FFT（多普勒 FFT），得到二维 **range-Doppler map**。第 $n$ 个 chirp 的采样可写为：
+
+$$
+s_{IF}(m,n)=A_{IF}\exp\!\left[j2\pi\left(\frac{2kR}{c}\frac{m}{f_s}-\frac{2v_r}{\lambda}nT_{PRI}\right)\right]
+$$
+
+对其先做“距离 FFT”（沿快时间 $m$），再做“多普勒 FFT”（沿慢时间 $n$），峰值位置即给出 $(R,v_r)$。速度分辨率为：
+
+$$
+\Delta v=\frac{\lambda}{2NT_{PRI}}
+$$
+
+最大不模糊速度为：
+
+$$
+v_{\max}=\frac{\lambda}{4T_{PRI}}
+$$
+
+$N$ 为每帧 chirp 数。要提高速度分辨率需增加帧长；要提高不模糊速度需缩短 $T_{PRI}$，二者相互制约。
+
+!!! note "术语解释：啁啾、中频信号、距离 FFT、多普勒 FFT、距离分辨率、不模糊速度"
+    - **啁啾（chirp）**：频率随时间线性变化的连续波脉冲。
+    - **中频信号（intermediate frequency, IF）**：FMCW 雷达混频后得到的差频信号。
+    - **距离 FFT（range FFT）**：对单个 chirp 的快时间采样做 FFT，得到距离谱。
+    - **多普勒 FFT（Doppler FFT）**：对多个 chirp 同一距离 bin 的慢时间序列做 FFT，得到速度谱。
+    - **距离分辨率（range resolution）**：雷达可区分两个相邻目标的最小距离差，$\Delta R=c/(2B)$。
+    - **不模糊速度（unambiguous velocity）**：单帧内不发生速度混叠的最大可测速度。
+
+```mermaid
+flowchart LR
+    A["发射 chirp s_t(t)"] --> B["目标反射延迟 τ=2R/c"]
+    B --> C["接收 chirp s_r(t)"]
+    C --> D["混频 + 低通"]
+    D --> E["中频 s_IF(t)"]
+    E --> F["距离 FFT"]
+    F --> G["多普勒 FFT"]
+    G --> H["Range-Doppler map"]
+```
+
+#### MIMO 雷达与角度分辨
+
+人形机器人若只用单个收发通道，毫米波雷达只能测距离和径向速度，无法直接估计方位。要获得角度，必须利用多个天线组成阵列。与麦克风阵列（见 5.7.4 节）类似，均匀线阵的导向矢量为：
+
+$$
+\mathbf{a}(\theta)=\begin{bmatrix}1 & e^{-j\frac{2\pi d}{\lambda}\sin\theta} & \cdots & e^{-j\frac{2\pi d}{\lambda}(M-1)\sin\theta}\end{bmatrix}^T
+$$
+
+其中 $d$ 为阵元间距，$M$ 为阵元数。半功率波束宽度（角度分辨率）近似为：
+
+$$
+\Delta\theta\approx\frac{\lambda}{M d\cos\theta}
+$$
+
+可见要获得 $1°$ 级分辨率，需要孔径 $M d\approx 60\lambda$；在 77 GHz（$\lambda\approx 3.9\ \mathrm{mm}$）下约需 $23\ \mathrm{cm}$ 的阵列，对人形机器人头部或躯干并不现实。
+
+**MIMO（Multiple-Input Multiple-Output）雷达**通过 $N_{TX}$ 个发射天线和 $N_{RX}$ 个接收天线形成 $N_{TX}\times N_{RX}$ 个虚拟通道，等效扩展阵列孔径而不增加物理尺寸。若发射信号正交（如时分、频分或码分），接收端可分离各发射通道贡献，得到虚拟阵列响应：
+
+$$
+\mathbf{a}_{\text{virtual}}(\theta)=\mathbf{a}_{RX}(\theta)\otimes\mathbf{a}_{TX}(\theta)
+$$
+
+其中 $\otimes$ 为 Kronecker 积。虚拟孔径增大 $N_{TX}$ 倍，角度分辨率相应提高。例如 3 发 4 收可得到 12 个虚拟通道，等效孔径扩大 3 倍。
+
+!!! note "术语解释：MIMO 雷达、虚拟阵列、导向矢量、方位角、波束宽度"
+    - **MIMO 雷达（Multiple-Input Multiple-Output radar）**：使用多个发射和接收通道，通过信号正交性构造虚拟阵列的雷达。
+    - **虚拟阵列（virtual array）**：由收发通道组合形成的等效天线阵列。
+    - **方位角（azimuth angle）**：目标相对于雷达正前方的水平角度。
+    - **波束宽度（beamwidth）**：天线主瓣的半功率角宽度，决定角度分辨率。
+
+```mermaid
+flowchart TD
+    subgraph 物理天线
+    TX1["TX1"] --> RX1["RX1"]
+    TX1 --> RX2["RX2"]
+    TX2["TX2"] --> RX1
+    TX2 --> RX2
+    end
+    A["N_TX × N_RX 虚拟通道"] --> B["虚拟阵列导向矢量"]
+    B --> C["MUSIC / Beamforming DOA"]
+    C --> D["目标方位角 θ"]
+```
+
+#### 超声波测距的温度补偿与波束指向性
+
+超声波传感器在人形机器人中常用于足端或躯干的近距离避障。其最大系统误差来源之一是声速随温度变化。空气中声速的经验公式为：
+
+$$
+v_{sound}(T)\approx 331.3+0.606\,T\quad (\mathrm{m/s})
+$$
+
+$T$ 为摄氏温度。若机器人从 $20°\mathrm{C}$ 车间进入 $40°\mathrm{C}$ 户外，声速从 $343.4\ \mathrm{m/s}$ 升至 $355.5\ \mathrm{m/s}$，变化约 $3.5\%$。对 $1\ \mathrm{m}$ 目标，固定使用 $343\ \mathrm{m/s}$ 将产生约 $3.5\ \mathrm{cm}$ 的距离误差。因此高精度超声波测距必须配备温度补偿，或用多普勒/回波标定在线修正。
+
+超声波换能器通常近似为圆形活塞声源，其远场声压方向性由第一类一阶贝塞尔函数描述。第一零点角度满足：
+
+$$
+\sin\theta_1\approx 1.22\frac{\lambda}{D}
+$$
+
+其中 $D$ 为换能器直径。以 $40\ \mathrm{kHz}$ 超声波为例，$\lambda=v/f\approx 8.6\ \mathrm{mm}$，若 $D=16\ \mathrm{mm}$，则 $\theta_1\approx 33°$。这意味着超声能量集中在较宽的锥形区域内，对精确指向不利，但对近距离避障有利。
+
+!!! note "术语解释：温度补偿、圆形活塞声源、贝塞尔函数、波束宽度、换能器直径"
+    - **温度补偿（temperature compensation）**：根据环境温度修正声速或传播时间的措施。
+    - **圆形活塞声源（circular piston source）**：把换能器振动面近似为刚性圆盘声源的模型。
+    - **贝塞尔函数（Bessel function）**：描述圆形孔径辐射方向性的特殊函数。
+    - **换能器直径（transducer diameter）**：超声发射/接收振膜的有效直径，决定波束宽度。
+
+#### Python 示例：FMCW 雷达距离-多普勒图与超声波温漂修正
+
+下面的脚本演示 FMCW 雷达二维处理的完整流程：生成一个静止目标和一个运动目标的回波，加高斯白噪声，经距离 FFT 和多普勒 FFT 得到 range-Doppler map。同时给出超声波在不同温度下的距离修正示例。该示例对应 5.3.1 节的雷达链路预算思想，并与 5.8.3 节的多传感器融合框架衔接。
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# ---------------- FMCW 雷达参数 ----------------
+c = 3e8                      # 光速 m/s
+f0 = 77e9                    # 载频 77 GHz
+B = 1e9                      # 带宽 1 GHz
+T = 50e-6                    # chirp 时长 50 us
+k = B / T                    # 调频斜率
+fs = 20e6                    # ADC 采样率 20 MHz
+N_chirps = 128               # 每帧 chirp 数
+PRI = 60e-6                  # chirp 重复周期
+
+# 目标：目标1 静止 R=10m；目标2 运动 R=20m, v=2m/s
+R1, v1 = 10.0, 0.0
+R2, v2 = 20.0, 2.0
+lam = c / f0
+
+def beat_signal(R, v):
+    tau = 2 * R / c
+    fd = -2 * v / lam
+    # 快时间采样
+    m = np.arange(int(fs * T))
+    t = m / fs
+    # 中频相位：2*pi*(k*tau + fd)*t 近似（忽略常数项）
+    phase = 2 * np.pi * (k * tau * t + fd * t)
+    return np.cos(phase)
+
+sig1 = beat_signal(R1, v1)
+sig2 = beat_signal(R2, v2)
+# 构造帧：每行一个 chirp
+frame = np.zeros((N_chirps, len(sig1)), dtype=complex)
+for n in range(N_chirps):
+    frame[n, :] = (beat_signal(R1, v1) +
+                   beat_signal(R2, v2) * np.exp(1j * 2 * np.pi * (-2 * v2 / lam) * n * PRI))
+noise = 0.1 * (np.random.randn(*frame.shape) + 1j * np.random.randn(*frame.shape))
+frame += noise
+
+# 距离 FFT + 多普勒 FFT（加窗抑制旁瓣）
+range_win = np.hanning(frame.shape[1])
+doppler_win = np.hanning(frame.shape[0])
+rd = np.fft.fftshift(np.fft.fft2(frame * range_win * doppler_win[:, None]), axes=0)
+
+# 坐标换算
+range_bins = np.arange(frame.shape[1]) * c / (2 * B)
+doppler_bins = np.fft.fftshift(np.fft.fftfreq(N_chirps, PRI))
+velocity_bins = -doppler_bins * lam / 2
+
+plt.figure(figsize=(10, 4))
+plt.imshow(20*np.log10(np.abs(rd) + 1e-12), aspect='auto', origin='lower',
+           extent=[range_bins[0], range_bins[-1], velocity_bins[0], velocity_bins[-1]],
+           cmap='jet', vmin=-20, vmax=60)
+plt.colorbar(label='幅度 (dB)')
+plt.xlabel('距离 R (m)'); plt.ylabel('径向速度 v_r (m/s)')
+plt.title('FMCW Range-Doppler Map（仿真）')
+plt.tight_layout(); plt.show()
+
+# ---------------- 超声波温度补偿 ----------------
+def v_sound(T_c):
+    return 331.3 + 0.606 * T_c
+
+for T_c in [10, 20, 30, 40]:
+    dt = 2 * 1.0 / v_sound(T_c)      # 1 m 往返时间
+    R_est = v_sound(20) * dt / 2     # 若仍按 20°C 声速计算
+    print(f"T={T_c}°C: v={v_sound(T_c):.1f} m/s, 1m 回波按 20°C 修正后距离={R_est:.3f} m")
+```
+
+运行 FMCW 仿真可看到 $R=10\ \mathrm{m}$、$v=0$ 和 $R=20\ \mathrm{m}$、$v=2\ \mathrm{m/s}$ 的两个峰值；超声波部分则显示未做温度补偿时的系统误差随温度线性增大。将毫米波雷达的速度测量与 LiDAR 的几何测量在卡尔曼滤波器中融合，可弥补单一传感器的距离-速度耦合和角分辨率不足，详见 5.8.3 节。
 
 ### 5.3.5 商用 LiDAR 产品对比
 
@@ -1568,6 +1926,163 @@ $$
     - **减速比（gear ratio）**：减速器输入转速与输出转速之比。
     - **背隙（backlash）**：传动机构中正反转切换时因间隙产生的空程误差。
     - **串联弹性执行器（Series Elastic Actuator, SEA）**：在电机与输出之间串联弹性体的执行器，可同时测量力矩和提供柔顺性。
+
+#### 电流环力估算的完整动力学模型与扰动观测器
+
+电流环力估算并非简单的“电流 × 转矩常数 × 减速比”。实际传动链存在惯性、摩擦、柔性和外部扰动，因此需要建立电机-减速器-负载的集总参数动力学模型，并通过扰动观测器（Disturbance Observer, DOB）从电流与速度测量中分离出真实的关节输出力矩。
+
+!!! note "术语解释：扰动观测器、集总扰动、摩擦模型、库仑摩擦、粘性摩擦、斯特里贝克效应"
+    - **扰动观测器（Disturbance Observer, DOB）**：利用名义模型逆与低通滤波，从控制输入和输出中估计等效扰动的算法。
+    - **集总扰动（lumped disturbance）**：把模型不确定性、摩擦、负载变化、外部力等合并为一个等效扰动项。
+    - **摩擦模型（friction model）**：描述接触面相对运动或相对静止时摩擦力特性的数学模型。
+    - **库仑摩擦（Coulomb friction）**：与速度方向相反、大小近似恒定的摩擦力分量。
+    - **粘性摩擦（viscous friction）**：与速度成正比、方向相反的摩擦力分量。
+    - **斯特里贝克效应（Stribeck effect）**：低速区摩擦力随速度增加而下降的现象，导致爬行（stick-slip）。
+
+**电机侧动力学**
+
+设电机转子转动惯量为 $J_m$，电机角速度为 $\omega_m$，q 轴电流为 $I_q$，转矩常数为 $k_t$，减速比为 $G$，关节输出角速度为 $\omega_j = \omega_m / G$，关节输出力矩为 $\tau_j$。电机侧运动方程可写为：
+
+$$
+J_m \dot{\omega}_m = k_t I_q - \tau_{fric,m} - \frac{\tau_j}{G}
+$$
+
+其中 $\tau_{fric,m}$ 为电机侧与减速器输入端的摩擦。该式说明：电磁转矩除了克服摩擦，还要通过减速器把力矩传递到负载侧；若仅用电流失算力矩，会把电机自身加速度和摩擦也误当作关节输出力矩。
+
+**含柔性的传动模型**
+
+对于谐波减速器或皮带传动，传动刚度有限，可近似为电机侧惯量 $J_m$ 通过扭簧 $k_{tvs}$ 与负载侧惯量 $J_l$ 连接：
+
+$$
+J_m \ddot{\theta}_m + b_m \dot{\theta}_m + k_{tvs}(\theta_m - G\theta_j) = k_t I_q
+$$
+
+$$
+J_l \ddot{\theta}_j + b_l \dot{\theta}_j + \tau_{ext} = G\, k_{tvs}(\theta_m - G\theta_j)
+$$
+
+其中 $\theta_m, \theta_j$ 分别为电机端与负载端角度，$\tau_{ext}$ 为外部接触力矩。通过编码器测得两端角度，可解耦出弹性力矩 $k_{tvs}(\theta_m - G\theta_j)$，这比纯电流估算更精确。
+
+**摩擦模型**
+
+完整摩擦常采用 Dahl、LuGre 或修正的 Stribeck 模型。一个工程中常用的静态模型为：
+
+$$
+\tau_{fric}(\omega) = \underbrace{\tau_c \, \mathrm{sgn}(\omega)}_{\text{库仑}} + \underbrace{b \, \omega}_{\text{粘性}} + \underbrace{\tau_s \left(1 - e^{-|\omega|/\omega_s}\right) \mathrm{sgn}(\omega)}_{\text{Stribeck}}
+$$
+
+其中 $\tau_c$ 为库仑摩擦力矩，$b$ 为粘性系数，$\tau_s$ 为静摩擦与库仑摩擦之差，$\omega_s$ 为 Stribeck 速度。该模型在 $\omega \to 0$ 附近呈现非线性下降，是低速爬行和力控精度受限的主要来源。
+
+```mermaid
+xychart-beta
+    title "Stribeck 摩擦曲线示意"
+    x-axis "角速度 ω (rad/s)" 0 --> 0.5
+    y-axis "摩擦力矩 τ_fric (N·m)" 0 --> 2.0
+    line "τ_fric" [1.8, 1.5, 1.2, 1.05, 1.0, 1.02, 1.05, 1.08, 1.12]
+    annotation "Stribeck 谷" {"x":0.08, "y":1.0}
+    annotation "粘性区" {"x":0.35, "y":1.12}
+```
+
+**扰动观测器设计**
+
+把电机侧运动方程改写为名义模型加集总扰动 $d$：
+
+$$
+J_n \dot{\omega}_m = k_{t,n} I_q - \tau_{dist}
+$$
+
+其中 $J_n, k_{t,n}$ 为名义参数，$\tau_{dist}$ 包含参数误差、摩擦、关节输出力矩折算到电机侧的分量等。扰动观测器通过名义逆模型和低通滤波估计扰动：
+
+$$
+\hat{\tau}_{dist} = Q(s) \left[ k_{t,n} I_q - J_n s \omega_m \right]
+$$
+
+其中 $Q(s)$ 为低通滤波器，常用一阶形式 $Q(s) = g_{DOB}/(s + g_{DOB})$，$g_{DOB}$ 为观测器带宽。带宽越高，扰动估计响应越快，但对噪声越敏感；带宽越低，估计越平滑但相位滞后越大。
+
+若目标是从扰动中恢复关节输出力矩，可在稳态（$s \to 0$）近似认为：
+
+$$
+\tau_j \approx G \, \hat{\tau}_{dist}
+$$
+
+但实际中还需减去已标定的摩擦模型和惯性补偿项，以消除模型偏差。
+
+**电流环力估算的误差预算**
+
+| 误差来源 | 典型影响 | 抑制方法 |
+|---------|---------|---------|
+| 转矩常数 $k_t$ 温度漂移 | 0.1–0.5 %/°C | 温度补偿、在线辨识 |
+| 减速器摩擦与背隙 | 1–5 % 满量程 | 摩擦模型、DOB |
+| 传动柔性 | 谐振、相位滞后 | 双编码器、弹性力矩观测 |
+| 电流测量噪声/偏移 | 0.1–1 % | 高分辨率 ADC、零偏标定 |
+| 电机惯量耦合 | 高加速时显著 | 加速度补偿、前馈 |
+
+**Python 示例：电机侧扰动观测器仿真**
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 电机参数
+Jm = 0.001      # kg·m²
+kt = 0.18       # N·m/A
+G = 100.0       # 减速比
+# 名义参数
+Jn = 1.05 * Jm
+ktn = 0.98 * kt
+# 摩擦参数
+tau_c, b_fric, tau_s, omega_s = 0.05, 0.002, 0.03, 0.05
+
+def friction(omega):
+    s = np.sign(omega) if abs(omega) > 1e-6 else 0.0
+    return tau_c * s + b_fric * omega + tau_s * (1 - np.exp(-abs(omega)/omega_s)) * s
+
+# 仿真设置
+dt = 1e-4
+t = np.arange(0, 2.0, dt)
+N = len(t)
+omega = np.zeros(N)
+tau_dist_true = np.zeros(N)
+tau_dist_est = np.zeros(N)
+Iq = np.zeros(N)
+
+# 期望轨迹：正弦速度
+omega_ref = 2.0 * np.sin(2 * np.pi * 1.0 * t)
+# 外部力矩（作用于关节侧，折算到电机侧）
+tau_ext_motor = (0.5 * np.sin(2 * np.pi * 0.5 * t) * (t > 0.5)) / G
+
+# DOB 带宽
+g_dob = 2 * np.pi * 50
+x_dob = 0.0  # 滤波器状态
+
+for k in range(N-1):
+    # 简单速度 PI 控制器
+    err = omega_ref[k] - omega[k]
+    Iq[k] = 0.5 * err + 0.01 * np.sum(omega_ref[:k+1] - omega[:k+1]) * dt
+    Iq[k] = np.clip(Iq[k], -10, 10)
+
+    tau_f = friction(omega[k])
+    tau_dist_true[k] = tau_f + tau_ext_motor[k]
+
+    # 电机动力学
+    acc = (kt * Iq[k] - tau_dist_true[k]) / Jm
+    omega[k+1] = omega[k] + acc * dt
+
+    # 扰动观测器（一阶低通）
+    raw = ktn * Iq[k] - Jn * acc
+    x_dob += dt * (g_dob * raw - g_dob * x_dob)
+    tau_dist_est[k+1] = x_dob
+
+plt.figure(figsize=(10,4))
+plt.plot(t, tau_dist_true, label='True disturbance')
+plt.plot(t, tau_dist_est, '--', label='DOB estimate')
+plt.xlabel('Time (s)'); plt.ylabel('Torque (N·m)')
+plt.title('Motor-side Disturbance Observer')
+plt.legend(); plt.grid(True); plt.tight_layout()
+plt.show()
+```
+
+上述代码演示了如何用名义电机模型和低通滤波器从电流与加速度中估计集总扰动。实际部署时，$\omega_m$ 由编码器差分获得，$\dot{\omega}_m$ 可通过跟踪微分器或状态观测器得到，以避免差分噪声放大。扰动观测器在运动控制中的系统论述见 Ohnishi 等[42]。
 
 ### 5.4.5 商用编码器产品对比
 
@@ -2069,20 +2584,16 @@ $$
 4. **分簇计算**：对 \(m = 1, 2, \dots, N/2\) 计算 Allan 偏差。
 5. **参数拟合**：在 ARW 区（\(\tau\) 较小）拟合斜率 \(-1/2\) 直线；在平坦区读取 BI；在长 \(\tau\) 区识别 RRW 或斜坡。
 
-| 平均时间 τ (s) | Allan 偏差 σ_A |
-|---|---|
-| 0.01 | 2.0 |
-| 0.05 | 1.2 |
-| 0.22 | 0.8 |
-| 1.00 | 0.5 |
-| 4.64 | 0.3 |
-| 21.54 | 0.25 |
-| 100.00 | 0.25 |
-| 464.16 | 0.3 |
-| 2154.43 | 0.5 |
-| 10000.00 | 1.2 |
-
-> 表：Allan 偏差曲线示意（log-log）。横轴为平均时间 τ（对数刻度，0.01–10000 s），纵轴为 Allan 偏差 σ_A。曲线左侧呈现斜率 -1/2 的角随机游走区，中间为偏置不稳定性平坦区，右侧为斜率 +1/2 的速率随机游走区。
+```mermaid
+xychart-beta
+    title "Allan 偏差曲线示意（log-log）"
+    x-axis "平均时间 τ (s)" 0.01 --> 10000
+    y-axis "Allan 偏差 σ_A" 0.001 --> 10
+    line "ADEV" [2.0, 1.2, 0.8, 0.5, 0.3, 0.25, 0.25, 0.3, 0.5, 1.2]
+    annotation "ARW 斜率 -1/2" {"x":0.1, "y":1.5}
+    annotation "BI 平坦区" {"x":50, "y":0.25}
+    annotation "RRW 斜率 +1/2" {"x":3000, "y":0.8}
+```
 
 实际人形机器人由于电机振动和温度循环，现场测得的 Allan 曲线往往比实验室静置结果更差，因此还需结合温度补偿和在线零偏估计。
 
@@ -2163,6 +2674,248 @@ flowchart TD
     G --> H["估计姿态 + 零偏"]
     D --> H
 ```
+
+#### 互补滤波器的频域解释与设计
+
+互补滤波的本质是利用不同传感器在不同频段的噪声特性互补。对单轴俯仰角 $\theta$ 而言，陀螺测得的角速度 $\tilde{\omega}$ 经积分得到角度，但零偏 $b_\omega$ 会累积为斜坡误差；加速度计测得的倾斜角 $\theta_{acc}=\arcsin(a_x/g)$ 在低频（准静态）时接近真实值，但在高频会被运动加速度污染。
+
+设真实角度为 $\Theta(s)$，陀螺积分项为 $\tilde{\Omega}(s)/s$，加速度计测角为 $\Theta_{acc}(s)$。互补滤波估计为：
+
+$$
+\hat{\Theta}(s)=G_{LP}(s)\,\Theta_{acc}(s)+\bigl[1-G_{LP}(s)\bigr]\,\frac{\tilde{\Omega}(s)}{s}
+$$
+
+取一阶低通 $G_{LP}(s)=\frac{1}{1+\tau s}$，则：
+
+$$
+\hat{\Theta}(s)=\frac{1}{1+\tau s}\Theta_{acc}(s)+\frac{\tau s}{1+\tau s}\frac{\tilde{\Omega}(s)}{s}
+$$
+
+截止频率 $f_c=1/(2\pi\tau)$ 的物理意义是：低于 $f_c$ 时相信加速度计，高于 $f_c$ 时相信陀螺。对人形机器人躯干姿态估计，$f_c$ 通常取 $0.5\!\sim\!2\ \mathrm{Hz}$：太低会引入运动加速度干扰，太高则无法有效抑制陀螺漂移。
+
+!!! note "术语解释：互补滤波、截止频率、时间常数、交叉频率、高通/低通互补"
+    - **互补滤波（complementary filter）**：把多个传感器的频域优势通过互补传递函数融合的滤波器。
+    - **截止频率（cutoff frequency）**：滤波器幅值下降到 -3 dB 时的频率。
+    - **时间常数（time constant）**：一阶系统 $G(s)=1/(1+\tau s)$ 中的 $\tau$，决定响应速度。
+    - **交叉频率（crossover frequency）**：高低通互补函数的交点频率。
+    - **高通/低通互补（high-pass/low-pass complement）**：两个传递函数之和为 1 的滤波器对。
+
+```mermaid
+flowchart TD
+    A["陀螺 ω"] --> B["积分 1/s"]
+    B --> C["高通 1-G_LP"]
+    D["加速度计 a"] --> E["倾斜角 θ_acc"]
+    E --> F["低通 G_LP"]
+    C --> G["姿态估计 θ̂"]
+    F --> G
+```
+
+#### Mahony 滤波器的离散实现
+
+Mahony 滤波器把上述互补思想推广到三维，用加速度计（和磁力计）估计的重力/地磁方向与当前姿态预测之间的向量误差，通过 PI 控制器在线修正陀螺零偏。
+
+设当前四元数 $q=[q_0,q_1,q_2,q_3]^T$（标量在前），对应旋转矩阵 $\mathbf{R}(q)$。世界坐标系重力方向取 $\mathbf{g}_w=[0,0,1]^T$，则在机体坐标系中的预测重力方向为：
+
+$$
+\mathbf{v}=\mathbf{R}(q)^T\mathbf{g}_w
+=
+\begin{bmatrix}
+2(q_1q_3-q_0q_2)\\
+2(q_2q_3+q_0q_1)\\
+q_0^2-q_1^2-q_2^2+q_3^2
+\end{bmatrix}
+$$
+
+加速度计测量值 $\mathbf{a}_b$ 归一化后近似为重力方向。姿态误差向量取外积：
+
+$$
+\mathbf{e}=\mathbf{a}_b\times\mathbf{v}
+$$
+
+该误差同时垂直于测量重力与预测重力，其大小反映失准角。PI 控制器输出陀螺修正量：
+
+$$
+\boldsymbol{\omega}_{corr}=\boldsymbol{\omega}_{meas}-\mathbf{b}+K_p\,\mathbf{e}
+$$
+
+零偏积分修正为：
+
+$$
+\dot{\mathbf{b}}=-K_i\,\mathbf{e}
+$$
+
+其中 $K_p$ 为比例增益（快速修正姿态误差），$K_i$ 为积分增益（估计并补偿陀螺零偏）。离散实现时，用一阶欧拉积分：
+
+$$
+\mathbf{b}_{k+1}=\mathbf{b}_k-K_i\,\mathbf{e}_k\Delta t
+$$
+
+$$
+q_{k+1}=q_k+\frac{1}{2}\Delta t\,\boldsymbol{\Omega}(\boldsymbol{\omega}_{corr,k})\,q_k,
+\qquad
+\boldsymbol{\Omega}(\omega)=
+\begin{bmatrix}
+0 & -\omega_x & -\omega_y & -\omega_z\\
+\omega_x & 0 & \omega_z & -\omega_y\\
+\omega_y & -\omega_z & 0 & \omega_x\\
+\omega_z & \omega_y & -\omega_x & 0
+\end{bmatrix}
+$$
+
+最后对 $q_{k+1}$ 归一化以保持单位四元数。$K_p$、$K_i$ 与截止频率相关：大致 $K_p\approx 2\zeta\omega_n$，$K_i\approx \omega_n^2$，取 $\omega_n=2\pi f_c$，$\zeta\approx 0.7$。例如 $f_c=1\ \mathrm{Hz}$ 时，$K_p\approx 8.8$，$K_i\approx 39.5$（实际还需根据采样率和量纲调整）。
+
+!!! note "术语解释：Mahony 滤波器、姿态误差向量、PI 修正、离散欧拉积分、单位四元数归一化"
+    - **姿态误差向量（attitude error vector）**：测量方向与预测方向的外积，用于驱动滤波器修正。
+    - **PI 修正（PI correction）**：用比例项快速消除误差、用积分项估计并补偿零偏。
+    - **离散欧拉积分（Euler integration）**：用 $\dot{x}\Delta t$ 近似状态增量的数值积分方法。
+    - **单位四元数归一化（quaternion normalization）**：保持四元数模长为 1，避免数值漂移破坏旋转约束。
+
+#### Python 示例：Mahony 互补滤波姿态估计
+
+下面的脚本对一个在 5 s 内绕 $z$ 轴旋转 $90°$ 的 IMU 生成合成数据：陀螺叠加零偏和角度随机游走噪声，加速度计在准静态时测重力、运动段叠加运动加速度。然后用 Mahony 滤波器估计姿态，并与真实值比较。该实现可直接用于 5.5.4 节标定后的 IMU 数据，并作为 5.8.3 节 VIO/LIO 前端姿态初值。
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 四元数乘法（标量在前）
+def quat_mult(q, p):
+    w0, x0, y0, z0 = q
+    w1, x1, y1, z1 = p
+    return np.array([
+        w0*w1 - x0*x1 - y0*y1 - z0*z1,
+        w0*x1 + x0*w1 + y0*z1 - z0*y1,
+        w0*y1 - x0*z1 + y0*w1 + z0*x1,
+        w0*z1 + x0*y1 - y0*x1 + z0*w1
+    ])
+
+def quat_from_axis_angle(axis, angle):
+    axis = np.asarray(axis, dtype=float)
+    axis /= np.linalg.norm(axis)
+    half = angle / 2
+    return np.array([np.cos(half), *(np.sin(half) * axis)])
+
+def quat_to_rotmat(q):
+    w, x, y, z = q
+    return np.array([
+        [1-2*(y*y+z*z), 2*(x*y-z*w), 2*(x*z+y*w)],
+        [2*(x*y+z*w), 1-2*(x*x+z*z), 2*(y*z-x*w)],
+        [2*(x*z-y*w), 2*(y*z+x*w), 1-2*(x*x+y*y)]
+    ])
+
+def quat_from_rotmat(R):
+    # 标量在前
+    tr = np.trace(R)
+    if tr > 0:
+        s = 2*np.sqrt(tr+1)
+        w = s/4
+        x = (R[2,1]-R[1,2])/s
+        y = (R[0,2]-R[2,0])/s
+        z = (R[1,0]-R[0,1])/s
+    elif R[0,0] > R[1,1] and R[0,0] > R[2,2]:
+        s = 2*np.sqrt(1+R[0,0]-R[1,1]-R[2,2])
+        w = (R[2,1]-R[1,2])/s
+        x = s/4
+        y = (R[0,1]+R[1,0])/s
+        z = (R[0,2]+R[2,0])/s
+    elif R[1,1] > R[2,2]:
+        s = 2*np.sqrt(1-R[0,0]+R[1,1]-R[2,2])
+        w = (R[0,2]-R[2,0])/s
+        x = (R[0,1]+R[1,0])/s
+        y = s/4
+        z = (R[1,2]+R[2,1])/s
+    else:
+        s = 2*np.sqrt(1-R[0,0]-R[1,1]+R[2,2])
+        w = (R[1,0]-R[0,1])/s
+        x = (R[0,2]+R[2,0])/s
+        y = (R[1,2]+R[2,1])/s
+        z = s/4
+    return np.array([w, x, y, z])
+
+# 仿真参数
+dt = 0.005
+t = np.arange(0, 10, dt)
+N = len(t)
+g = 9.81
+
+# 真实轨迹：先静止 2s，然后以恒定角速度绕 z 轴旋转 90°，再静止
+omega_true = np.zeros((N, 3))
+mask = (t >= 2) & (t <= 4.57)  # 约 2.57 s 完成 90°
+omega_true[mask, 2] = np.deg2rad(90) / (4.57 - 2.0)
+
+# 生成真实姿态
+q_true = np.zeros((N, 4))
+q_true[0] = np.array([1.0, 0, 0, 0])
+for k in range(N-1):
+    Omega = np.array([
+        [0, -omega_true[k,0], -omega_true[k,1], -omega_true[k,2]],
+        [omega_true[k,0], 0, omega_true[k,2], -omega_true[k,1]],
+        [omega_true[k,1], -omega_true[k,2], 0, omega_true[k,0]],
+        [omega_true[k,2], omega_true[k,1], -omega_true[k,0], 0]
+    ])
+    q_tmp = q_true[k] + 0.5 * dt * Omega @ q_true[k]
+    q_true[k+1] = q_tmp / np.linalg.norm(q_tmp)
+
+# 传感器测量：陀螺带零偏 + 白噪声；加速度计在静止时测重力，运动段叠加向心加速度
+bias_gyro = np.deg2rad([0.5, -0.3, 0.2])  # rad/s
+noise_gyro = np.deg2rad(0.3)              # rad/s 标准差
+omega_meas = omega_true + bias_gyro + noise_gyro * np.random.randn(N, 3)
+
+accel_meas = np.zeros((N, 3))
+for k in range(N):
+    R = quat_to_rotmat(q_true[k])
+    # 机体加速度：重力在机体坐标系为 R^T * [0,0,g]
+    a_grav = R.T @ np.array([0, 0, g])
+    # 运动加速度：向心 a = ω × (ω × r)，r 取质心偏前 0.1 m
+    r = np.array([0.1, 0, 0])
+    a_motion = np.cross(omega_true[k], np.cross(omega_true[k], r))
+    accel_meas[k] = a_grav + a_motion + 0.3 * np.random.randn(3)
+accel_meas /= np.linalg.norm(accel_meas, axis=1, keepdims=True)  # 归一化
+
+# Mahony 滤波器
+Kp, Ki = 2.0, 0.05
+q_est = np.array([1.0, 0, 0, 0])
+b = np.zeros(3)
+q_history = np.zeros((N, 4))
+
+for k in range(N):
+    # 预测重力方向
+    R = quat_to_rotmat(q_est).T
+    v = R @ np.array([0, 0, 1.0])
+    # 姿态误差
+    e = np.cross(accel_meas[k], v)
+    # PI 修正
+    b += -Ki * e * dt
+    omega_corr = omega_meas[k] - b + Kp * e
+    # 四元数更新
+    Omega = np.array([
+        [0, -omega_corr[0], -omega_corr[1], -omega_corr[2]],
+        [omega_corr[0], 0, omega_corr[2], -omega_corr[1]],
+        [omega_corr[1], -omega_corr[2], 0, omega_corr[0]],
+        [omega_corr[2], omega_corr[1], -omega_corr[0], 0]
+    ])
+    q_dot = 0.5 * Omega @ q_est
+    q_est = q_est + q_dot * dt
+    q_est /= np.linalg.norm(q_est)
+    q_history[k] = q_est
+
+# 计算估计姿态与真实姿态的差角
+diff_angles = []
+for k in range(N):
+    q_err = quat_mult(q_true[k], np.array([q_history[k,0], -q_history[k,1], -q_history[k,2], -q_history[k,3]]))
+    # 标量取绝对值，避免双覆盖
+    angle = 2 * np.arccos(np.clip(abs(q_err[0]), -1, 1))
+    diff_angles.append(np.degrees(angle))
+
+plt.figure(figsize=(10,4))
+plt.plot(t, diff_angles)
+plt.xlabel('时间 (s)'); plt.ylabel('姿态误差 (°)')
+plt.title('Mahony 互补滤波姿态估计误差')
+plt.grid(True); plt.tight_layout(); plt.show()
+print(f"最终姿态误差: {diff_angles[-1]:.2f}°")
+```
+
+该脚本的核心流程——用陀螺做短期预测、用加速度计做长期修正、用 PI 控制器在线估计零偏——与人形机器人躯干 IMU 的实时姿态解算一致。若融合磁力计，只需将地磁方向预测与磁力计测量再做一次外积误差并叠加到 $\mathbf{e}$ 即可；若与视觉/LiDAR 融合，则进入 5.8.3 节的 VIO/LIO 后端优化框架。
 
 ### 5.5.6 商用 IMU 产品对比
 
@@ -2638,6 +3391,304 @@ flowchart TD
     F -->|近| I["紧急制动"]
 ```
 
+#### 红外反射式接近传感器的辐照度链路
+
+红外反射式接近传感器是最低成本、最常见的方案，其输出与目标距离、表面反射率和环境红外背景光密切相关。可以把链路抽象为“LED 辐射强度 → 目标反射 → 接收立体角 → 光电二极管电流 → ADC 码值”。
+
+LED 的辐射强度常用 $I_e$（单位 $\mathrm{mW/sr}$）描述。在距离 $R$、入射角 $\theta$ 处，目标表面的 irradiance（辐照度）为：
+
+$$
+E_{target}=\frac{I_e}{R^2}\cos\theta
+$$
+
+若目标为朗伯反射体、反射率为 $\rho$，则其表观光强为 $\rho E_{target} A_{ill}/\pi$（$A_{ill}$ 为光斑照射面积）。接收光功率 $P_r$ 与光电二极管有效接收面积 $A_{PD}$ 成正比：
+
+$$
+P_r\approx I_e\,\frac{A_{PD}}{R^4}\,\rho\,\cos^2\theta\,T_{opt}
+$$
+
+这一 $1/R^4$ 依赖说明红外反射式传感器对远距离极不敏感，且无法区分“深色物体在近处”与“浅色物体在远处”。因此它只适合设置固定阈值的安全边界，而不适合精确测距。
+
+以一个典型参数为例：LED 辐射强度 $I_e=20\ \mathrm{mW/sr}$，光电二极管面积 $A_{PD}=1\ \mathrm{mm^2}$，目标反射率 $\rho=0.3$，光学透过率 $T_{opt}=0.5$，在 $R=0.3\ \mathrm{m}$、正入射时：
+
+$$
+P_r\approx 20\times 10^{-3}\times \frac{10^{-6}}{0.3^4}\times 0.3\times 0.5\approx 3.7\times 10^{-7}\ \mathrm{W}=0.37\ \mu\mathrm{W}
+$$
+
+若硅光电二极管在 940 nm 处响应度 $R_{PD}=0.5\ \mathrm{A/W}$，则光电流约 $0.19\ \mu\mathrm{A}$。经 $100\ \mathrm{k\Omega}$ 跨阻放大器后输出 $19\ \mathrm{mV}$，对应 10 bit ADC（$V_{FS}=3.3\ \mathrm{V}$）约 6 LSB。由于噪声和反射率变化，实际阈值需要大量实验标定。
+
+!!! note "术语解释：辐射强度、辐照度、朗伯反射体、响应度、跨阻放大器"
+    - **辐射强度（radiant intensity）**：光源在某方向上单位立体角发出的辐射功率，单位 $\mathrm{W/sr}$。
+    - **辐照度（irradiance）**：被照表面单位面积接收的辐射功率，单位 $\mathrm{W/m^2}$。
+    - **朗伯反射体（Lambertian reflector）**：反射光在各个方向均匀散射的理想漫反射表面。
+    - **响应度（responsivity）**：光电探测器输出电流与入射光功率之比，单位 A/W。
+    - **跨阻放大器（transimpedance amplifier, TIA）**：把光电流转换为电压的放大器。
+
+```mermaid
+flowchart LR
+    A["IR LED I_e"] --> B["目标反射 ρ"]
+    B --> C["1/R^4 衰减"]
+    C --> D["PD 接收 P_r"]
+    D --> E["I_ph = R_PD P_r"]
+    E --> F["TIA + ADC"]
+    F --> G["数字输出"]
+```
+
+#### 电容式接近检测原理
+
+电容式接近传感器不依赖光反射，而是利用人体或导体靠近时改变电场分布。常见实现有“自电容”和“互电容”两种：
+
+- **自电容（self-capacitance）**：测量单个电极对地电容。当手指靠近时，电场线被人体拉向地，电极对地电容 $C$ 增大。
+- **互电容（mutual capacitance）**：测量两个电极之间的耦合电容。人体靠近会分流部分电场，使互电容 $C_m$ 减小。
+
+对于平行板近似，电容为：
+
+$$
+C=\frac{\varepsilon_0\varepsilon_r A}{d}
+$$
+
+接近检测中的电场并非均匀平行板场，而是严重依赖边缘场（fringing field），因此定量解析困难，通常用 FEM 仿真或实验标定。工程中常把电容变化转换为频率变化：用传感电极与固定电感/电阻构成 RC 振荡器，或用专用 CDC（Capacitance-to-Digital Converter）芯片直接输出数字码。
+
+以自电容为例，若人体靠近使电容从 $C_0=10\ \mathrm{pF}$ 增加到 $C_0+\Delta C=15\ \mathrm{pF}$，用 RC 振荡器测量时频率从 $f_0=1/(2\pi R C_0)$ 下降到 $f=1/(2\pi R (C_0+\Delta C))$，相对变化：
+
+$$
+\frac{\Delta f}{f_0}=-\frac{\Delta C}{C_0+\Delta C}\approx -33\%
+$$
+
+这种相对变化远大于红外反射的微弱信号，因此电容式接近检测对潮湿、灰尘等光学干扰不敏感，适合手掌、躯干附近的安全边界。
+
+!!! note "术语解释：自电容、互电容、边缘场、CDC、RC 振荡器"
+    - **自电容（self-capacitance）**：单个电极相对于周围地平面或无穷远的电容。
+    - **互电容（mutual capacitance）**：两个电极之间通过电场耦合形成的电容。
+    - **边缘场（fringing field）**：极板边缘向外弯曲的非均匀电场。
+    - **CDC（Capacitance-to-Digital Converter）**：把电容变化直接转换为数字量的专用芯片。
+    - **RC 振荡器（RC oscillator）**：利用电阻和电容充放电产生周期信号的电路。
+
+#### 多层安全边界的时间-距离判据
+
+安全边界不是简单的距离阈值，而是由机器人运动学、感知延迟和控制周期共同决定的“停止距离”。设机器人当前速度为 $v$，系统总反应时间为 $t_{react}$（包括传感器采样、时间同步见 5.8.2 节、控制器周期、通信延迟），最大减速度为 $a_{max}$，则最小安全距离为：
+
+$$
+D_{safe}=v\,t_{react}+\frac{v^2}{2a_{max}}
+$$
+
+例如人形机器人行走速度 $v=0.5\ \mathrm{m/s}$，总反应时间 $t_{react}=150\ \mathrm{ms}$，最大减速度 $a_{max}=2\ \mathrm{m/s^2}$：
+
+$$
+D_{safe}=0.5\times 0.15+\frac{0.5^2}{2\times 2}\approx 0.075+0.063=0.138\ \mathrm{m}
+$$
+
+再留 $50\%$ 设计余量，可将外层减速区设为 $0.4\ \mathrm{m}$，中层停止区 $0.25\ \mathrm{m}$，内层紧急制动区 $0.15\ \mathrm{m}$。接近传感器的更新率必须足够高，使得在最高速度下每步移动距离不超过边界厚度的几分之一；例如 20 Hz 更新率在 $0.5\ \mathrm{m/s}$ 下每帧移动 $2.5\ \mathrm{cm}$，满足上述分层要求。
+
+!!! note "术语解释：停止距离、反应时间、减速度、安全余量、更新率"
+    - **停止距离（stopping distance）**：从发现障碍物到完全停止所需的最小距离。
+    - **反应时间（reaction time）**：从感知到开始执行制动命令的时间。
+    - **减速度（deceleration）**：速度降低的加速度大小。
+    - **安全余量（safety margin）**：设计阈值与理论最小值之间的额外距离。
+    - **更新率（update rate）**：传感器每秒输出的测量次数。
+
+#### Python 示例：红外反射与电容接近的安全区判断
+
+下面脚本综合红外反射式（基于 $1/R^4$ 标定）和电容式（基于频率变化）两类接近检测，输出安全等级。红外部分展示了为什么同一 ADC 读数无法唯一确定距离；电容部分给出相对频率变化的灵敏度。实际部署时应结合 5.6.1 节的触觉和 5.9.3 节的躯干/足部布局进行综合决策。
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# ---------------- 红外反射式：ADC 到距离的标定模型 ----------------
+def ir_adc_model(R, Ie=20e-3, A_pd=1e-6, rho=0.3, Topt=0.5,
+                 R_pd=0.5, R_tia=100e3, Vfs=3.3, Nbit=10):
+    """返回给定距离 R (m) 下的 ADC 码值（理想模型）。"""
+    Pr = Ie * (A_pd / R**4) * rho * Topt
+    I_ph = R_pd * Pr
+    V = I_ph * R_tia
+    adc = (V / Vfs) * (2**Nbit - 1)
+    return np.clip(adc, 0, 2**Nbit - 1)
+
+Rs = np.linspace(0.05, 1.0, 200)
+# 同一距离下，不同反射率造成完全不同的 ADC
+for rho in [0.1, 0.3, 0.6, 0.9]:
+    adcs = ir_adc_model(Rs, rho=rho)
+    plt.semilogy(Rs, adcs, label=f'ρ={rho}')
+plt.axhline(50, color='k', linestyle='--', label='阈值=50 LSB')
+plt.xlabel('距离 R (m)'); plt.ylabel('ADC 码值')
+plt.title('红外反射式：距离-反射率耦合导致距离估计不唯一')
+plt.legend(); plt.grid(True, which='both'); plt.tight_layout(); plt.show()
+
+# 假设已知反射率 ρ=0.3，由 ADC 反推距离
+def ir_estimate_R(adc, rho=0.3):
+    """由 ADC 码值估算距离（标定模型反解）。"""
+    if adc <= 1:
+        return np.inf
+    Pr = adc / ((2**10 - 1) / 3.3) / (100e3 * 0.5)
+    return (Ie * A_pd * rho * 0.5 / Pr) ** 0.25
+
+# ---------------- 电容式：频率变化 ----------------
+C0 = 10e-12       # 10 pF
+R = 100e3         # 100 kΩ
+dC = np.linspace(0, 10e-12, 100)
+f0 = 1 / (2 * np.pi * R * C0)
+f = 1 / (2 * np.pi * R * (C0 + dC))
+df_rel = (f - f0) / f0
+
+plt.figure(figsize=(8,3))
+plt.plot(dC*1e12, df_rel*100)
+plt.xlabel('电容变化 ΔC (pF)'); plt.ylabel('频率相对变化 (%)')
+plt.title('电容式接近：ΔC 引起的频率变化')
+plt.grid(True); plt.tight_layout(); plt.show()
+
+# ---------------- 安全区判断 ----------------
+def safety_zone(R_ir, R_cap, v=0.5, t_react=0.15, a_max=2.0, margin=1.5):
+    D_safe = margin * (v * t_react + v**2 / (2 * a_max))
+    R_min = min(R_ir if R_ir else np.inf, R_cap if R_cap else np.inf)
+    if R_min > 0.4:
+        return 'normal'
+    elif R_min > D_safe:
+        return 'slow_down'
+    elif R_min > 0.15:
+        return 'stop'
+    else:
+        return 'emergency_brake'
+
+print(safety_zone(R_ir=0.25, R_cap=0.12))
+```
+
+该脚本揭示了红外反射式传感器的核心局限：距离与反射率强耦合，因此它更适合做“是否有人进入某区域”的二值判断，而不是精确测距；电容式接近则对导体/人体响应稳定，适合贴身安全边界。将二者与 5.8.2 节的硬件时间同步结合，可避免不同传感器因时间戳错位导致的边界误判。
+
+### 5.6.4 滑觉检测与摩擦锥控制
+
+触觉不仅是“有没有碰到”或“压力多大”，更重要的是判断接触是否稳定、物体是否即将滑动。滑觉检测与摩擦锥分析是机器人实现稳定抓取、柔顺装配和力位混合控制的基础。
+
+!!! note "术语解释：滑觉、摩擦锥、库仑摩擦定律、静摩擦、动摩擦、incipient slip"
+    - **滑觉（slip sensing）**：感知或预测物体与手指之间相对滑动的能力。
+    - **摩擦锥（friction cone）**：接触点处所有不引起滑动的切向力所构成的锥形区域。
+    - **库仑摩擦定律（Coulomb friction law）**：切向力 $|f_t|$ 不超过法向力 $f_n$ 与摩擦系数 $\mu$ 的乘积，$|f_t| \le \mu f_n$。
+    - **静摩擦（static friction）**：接触面相对静止时的摩擦力，上限为 $\mu_s f_n$。
+    - **动摩擦（kinetic friction）**：接触面相对滑动时的摩擦力，通常 $\mu_k < \mu_s$。
+    - **incipient slip（即将滑动）**：接触边缘局部开始出现微观滑动但整个接触面尚未整体滑动的临界状态。
+
+**摩擦锥与力螺旋闭合条件**
+
+在三维接触中，设接触点法向为 $\mathbf{n}$，切向平面内有两个正交基 $\mathbf{t}_1, \mathbf{t}_2$。接触力 $\mathbf{f}$ 可分解为法向分量 $f_n = \mathbf{f} \cdot \mathbf{n}$ 和切向分量 $\mathbf{f}_t = \mathbf{f} - f_n \mathbf{n}$。无滑动条件要求：
+
+$$
+\|\mathbf{f}_t\| \le \mu f_n
+$$
+
+几何上，这意味着 $\mathbf{f}$ 必须位于以 $\mathbf{n}$ 为轴、半顶角 $\alpha = \arctan \mu$ 的圆锥内，称为**摩擦锥**。若考虑力矩，则形成**力螺旋摩擦锥（friction cone in wrench space）**，用于判断抓取是否力闭合（force closure）。
+
+对于单点接触，摩擦锥可参数化为：
+
+$$
+\mathbf{f} = f_n \left( \mathbf{n} + \beta_1 \mathbf{t}_1 + \beta_2 \mathbf{t}_2 \right), \qquad \beta_1^2 + \beta_2^2 \le \mu^2
+$$
+
+其中 $\beta_1, \beta_2$ 为切向力相对于法向力的比例系数。
+
+```mermaid
+flowchart TD
+    A["接触力 f"] --> B["法向分量 f_n"]
+    A --> C["切向分量 f_t"]
+    B --> D{"||f_t|| ≤ μ f_n ?"}
+    C --> D
+    D -->|是| E["接触稳定 / 摩擦锥内"]
+    D -->|否| F["即将滑动 / 摩擦锥外"]
+```
+
+**incipient slip 与切向力估计**
+
+实际接触是一个有限面积，而不是理想点。当切向力增加时，接触区边缘先达到局部静摩擦极限，产生微观滑动；中心区域仍保持粘着。这一现象称为 **incipient slip**。高分辨率触觉阵列（如 GelSight、DIGIT）通过观察弹性体表面剪切形变，可以检测接触区内部的应变分布，从而预测整体滑动前的临界状态。
+
+设传感器测得接触区形变场为 $\mathbf{u}(x,y)$，则表面切向牵引力 $\mathbf{q}(x,y)$ 与形变梯度近似满足：
+
+$$
+\mathbf{q}(x,y) = G_{skin} \, \nabla \mathbf{u}(x,y)
+$$
+
+其中 $G_{skin}$ 为皮肤（弹性体）的剪切模量。通过积分可得总切向力：
+
+$$
+\mathbf{F}_t = \iint_{\mathcal{A}} \mathbf{q}(x,y) \, \mathrm{d}x\mathrm{d}y
+$$
+
+当局部 $|\mathbf{q}|$ 接近 $\mu p$（$p$ 为局部法向压力）时，即进入即将滑动区域。
+
+**滑觉检测的传感信号**
+
+| 信号类型 | 检测原理 | 优点 | 局限 |
+|---------|---------|------|------|
+| 切向力/剪切形变 | 触觉阵列测 x-y 方向形变 | 提前预警、定量 | 需高空间分辨率 |
+| 振动/声波 | 压电或加速度检测微滑移振动 | 灵敏、响应快 | 对材料和环境噪声敏感 |
+| 法向力变化 | 物体下沉或转动引起法向力波动 | 简单 | 滞后，已发生滑动 |
+| 光电标记位移 | GelSight 等观察表面纹理移动 | 直接测滑动位移 | 计算量大 |
+
+**抓握力调节控制律**
+
+为了在不损伤物体的情况下保持稳定抓取，常用“最小稳定力”策略：逐步增加法向力，直到滑觉信号指示安全裕度足够。一个简化的力增量控制律为：
+
+$$
+f_n[k+1] = f_n[k] + K_p \left( \frac{\|\mathbf{F}_t\|}{\mu_{est}} + f_{margin} - f_n[k] \right)
+$$
+
+其中 $K_p$ 为比例增益，$\mu_{est}$ 为在线估计的摩擦系数，$f_{margin}$ 为安全余量。该控制律使法向力跟踪切向需求并保留余量，避免过度挤压。
+
+**Python 示例：摩擦锥判断与滑觉预警**
+
+```python
+import numpy as np
+
+def friction_cone_check(f_normal, f_tangent, mu):
+    """判断接触力是否在摩擦锥内。
+    f_normal: 法向力（>0 表示压向表面）
+    f_tangent: 切向力矢量 ndarray shape (2,) 或 (3,)
+    mu: 摩擦系数
+    返回：状态字符串与安全裕度
+    """
+    if f_normal <= 0:
+        return "contact_lost", -np.inf
+    limit = mu * f_normal
+    ratio = np.linalg.norm(f_tangent) / limit
+    margin = 1.0 - ratio
+    if ratio < 0.7:
+        return "stable", margin
+    elif ratio < 1.0:
+        return "incipient_slip", margin
+    else:
+        return "slipping", margin
+
+# 示例：手指抓取一个 0.2 kg 物体，摩擦系数 0.5
+g = 9.81
+mass = 0.2
+f_tangent = np.array([0.0, mass * g])      # 需抵抗重力
+# 估计所需最小法向力
+mu = 0.5
+f_n_min = np.linalg.norm(f_tangent) / mu
+f_n = 1.3 * f_n_min                         # 留 30% 余量
+
+state, margin = friction_cone_check(f_n, f_tangent, mu)
+print(f"法向力 {f_n:.2f} N, 切向力 {np.linalg.norm(f_tangent):.2f} N")
+print(f"状态: {state}, 安全裕度: {margin:.2f}")
+
+# 模拟切向扰动逐渐增大
+tau_perturb = np.linspace(0, 1.5 * f_n * mu, 200)
+statuses = []
+for t in tau_perturb:
+    s, _ = friction_cone_check(f_n, np.array([0.0, t]), mu)
+    statuses.append(s)
+
+# 找到首次进入 incipient slip 的切向力
+idx = next(i for i, s in enumerate(statuses) if s == "incipient_slip")
+print(f"incipient slip 切向阈值: {tau_perturb[idx]:.2f} N")
+```
+
+该脚本输出当前接触状态，并通过扫描切向扰动找到即将滑动的临界切向力。实际机器人中，$\mu$ 会随物体表面材质变化，需要在线估计或离线标定不同物体的摩擦系数。力闭合与摩擦锥的数学基础详见 Murray 等的机器人操作专著[43]。
+
+!!! note "术语解释：力闭合、抓取力矩、安全裕度、在线摩擦估计"
+    - **力闭合（force closure）**：通过接触力能够抵抗任意外部扰动的抓取条件。
+    - **抓取力矩（grasp wrench）**：所有接触力与力矩在物体坐标系下的总和。
+    - **安全裕度（safety margin）**：当前法向力与滑动临界法向力之间的差距比例。
+    - **在线摩擦估计（online friction estimation）**：在交互过程中根据力/滑动观测更新摩擦系数。
+
 ### 5.6.5 商用触觉传感器产品对比
 
 | 产品 | 厂商/团队 | 原理 | 典型分辨率/量程 | 特点 | 典型应用 |
@@ -2836,6 +3887,176 @@ flowchart LR
 - **MUSIC（Multiple Signal Classification）**：利用信号子空间和噪声子空间的正交性，实现高分辨率谱估计，可同时估计多个声源。
 - **ESPRIT（Estimation of Signal Parameters via Rotational Invariance Techniques）**：利用阵列流型的旋转不变性，计算复杂度低于 MUSIC，适合实时系统。
 
+#### 麦克风阵列波束成形与 MVDR 推导
+
+波束成形是麦克风阵列信号处理的核心。它通过对各通道信号施加复数权重，使阵列对某一方向（期望方向）的信号相干叠加，而对其他方向的噪声和干扰形成相消干涉。理解其数学结构，是设计人形机器人头部阵列的基础。
+
+!!! note "术语解释：阵列流型、导向矢量、阵列因子、波束宽度、主瓣、旁瓣"
+    - **阵列流型（array manifold）**：描述不同方向入射信号在阵列各单元上相位/幅度响应的集合。
+    - **导向矢量（steering vector）**：对应某个 DOA 的阵列响应向量，记为 $\mathbf{a}(\theta)$。
+    - **阵列因子（array factor）**：阵列输出对单位幅度平面波的响应，反映波束形状。
+    - **波束宽度（beamwidth）**：主瓣功率下降到 -3 dB 的角度范围。
+    - **主瓣（mainlobe）**：波束响应最大的方向区域。
+    - **旁瓣（sidelobe）**：主瓣以外的次级响应峰。
+
+**均匀线性阵列（ULA）的阵列因子**
+
+考虑由 $M$ 个麦克风组成的 ULA，间距为 $d$，声速为 $c$，平面波从方向 $\theta$（相对于阵列 broadside 法线）入射，频率为 $f$。第 $m$ 个麦克风接收信号相对于第 0 个麦克风的相位延迟为：
+
+$$
+\phi_m(\theta) = -\frac{2\pi f}{c} m d \sin\theta = -\frac{2\pi}{\lambda} m d \sin\theta
+$$
+
+导向矢量（steering vector）为：
+
+$$
+\mathbf{a}(\theta) = \begin{bmatrix} 1 & e^{-j k d \sin\theta} & \cdots & e^{-j k d (M-1) \sin\theta} \end{bmatrix}^T
+$$
+
+其中 $k = 2\pi / \lambda$ 为波数。若各通道权重为 $\mathbf{w} = [w_0, w_1, \dots, w_{M-1}]^H$，则阵列因子为：
+
+$$
+B(\theta) = \mathbf{w}^H \mathbf{a}(\theta)
+$$
+
+延时求和波束成形取 $\mathbf{w} = \mathbf{a}(\theta_0) / M$，则对来自 $\theta_0$ 的信号各通道同相叠加，输出功率最大：
+
+$$
+B(\theta) = \frac{1}{M} \sum_{m=0}^{M-1} e^{-j k m d (\sin\theta - \sin\theta_0)}
+$$
+
+当 $\theta = \theta_0$ 时，$B(\theta_0) = 1$（0 dB）；当 $\theta \neq \theta_0$ 时，由于相位差产生相消干涉，形成旁瓣。
+
+!!! note "术语解释：broadside、end-fire、波数、相干叠加、相消干涉"
+    - **broadside**：阵列法线方向，对应 $\theta = 0°$。
+    - **end-fire**：阵列轴线方向，对应 $\theta = \pm 90°$。
+    - **波数（wave number）**：$k = 2\pi / \lambda$，表示单位长度上的相位变化。
+    - **相干叠加（coherent summation）**：同相信号相加，幅度线性增长。
+    - **相消干涉（destructive interference）**：反相信号相加，幅度相互抵消。
+
+**波束宽度与栅瓣**
+
+对于大孔径 ULA，主瓣 -3 dB 波束宽度近似为：
+
+$$
+\Delta\theta \approx \frac{0.886 \lambda}{M d \cos\theta_0}
+$$
+
+当 $d > \lambda/2$ 时，会出现栅瓣（grating lobe），即伪主瓣。这是因为空间采样不足导致方向模糊。对于 8 kHz 语音，$\lambda \approx 42.9\ \mathrm{mm}$，因此 ULA 间距应小于约 21 mm。
+
+**MVDR / Capon 波束成形**
+
+延时求和对方向性噪声抑制能力有限。MVDR 在保持期望方向增益为 1 的约束下，最小化阵列总输出功率，从而自适应抑制干扰方向：
+
+$$
+\min_{\mathbf{w}} \mathbf{w}^H \mathbf{R}_{xx} \mathbf{w} \quad \text{s.t.} \quad \mathbf{w}^H \mathbf{a}(\theta_0) = 1
+$$
+
+其中 $\mathbf{R}_{xx}$ 为接收信号 $M \times M$ 协方差矩阵。利用拉格朗日乘子法，可得最优权重：
+
+$$
+\mathbf{w}_{MVDR} = \frac{\mathbf{R}_{xx}^{-1} \mathbf{a}(\theta_0)}{\mathbf{a}(\theta_0)^H \mathbf{R}_{xx}^{-1} \mathbf{a}(\theta_0)}
+$$
+
+MVDR 能在干扰方向形成零陷（null），但对导向矢量失配和麦克风自噪声较敏感。实际中常加对角加载（diagonal loading）$\mathbf{R}_{xx} + \delta \mathbf{I}$ 以改善鲁棒性。
+
+```mermaid
+flowchart TD
+    A["多通道信号 x(t)"] --> B["估计协方差 R_xx"]
+    C["期望方向 θ0"] --> D["导向矢量 a(θ0)"]
+    B --> E["MVDR 权重 w"]
+    D --> E
+    E --> F["y(t)=w^H x(t)"]
+    F --> G["增强目标方向 / 抑制干扰"]
+```
+
+**DOA 估计：MUSIC 算法简介**
+
+设阵列接收信号包含 $K$ 个窄带声源，$K < M$。协方差矩阵可分解为信号子空间与噪声子空间：
+
+$$
+\mathbf{R}_{xx} = \mathbf{U}_s \mathbf{\Lambda}_s \mathbf{U}_s^H + \sigma_n^2 \mathbf{U}_n \mathbf{U}_n^H
+$$
+
+MUSIC 谱通过扫描导向矢量到噪声子空间的投影来估计 DOA：
+
+$$
+P_{MUSIC}(\theta) = \frac{1}{\mathbf{a}(\theta)^H \mathbf{U}_n \mathbf{U}_n^H \mathbf{a}(\theta)}
+$$
+
+$P_{MUSIC}(\theta)$ 在真实声源方向出现尖锐峰值，因此分辨率远高于波束扫描法。
+
+**Python 示例：ULA 波束图与 MVDR**
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 均匀线性阵列参数
+M = 8              # 麦克风数
+d = 0.02           # 间距 20 mm
+c = 343.0          # 声速 m/s
+f = 2000           # 频率 Hz
+lam = c / f
+k = 2 * np.pi / lam
+
+# 导向矢量
+def steering_vector(theta):
+    m = np.arange(M)
+    a = np.exp(-1j * k * d * m * np.sin(np.deg2rad(theta)))
+    return a.reshape(-1, 1)
+
+theta_scan = np.linspace(-90, 90, 361)
+
+# 延时求和波束成形，指向 theta0=0°
+theta0 = 0
+w_das = steering_vector(theta0) / M
+B_das = np.array([np.abs(w_das.conj().T @ steering_vector(th))**2
+                  for th in theta_scan]).flatten()
+B_das_dB = 10 * np.log10(B_das / B_das.max() + 1e-12)
+
+# 构造协方差矩阵：目标在 0°，干扰在 -40°，白噪声
+theta_target = 0
+theta_interf = -40
+SNR = 20         # dB
+INR = 30         # dB
+N_snapshots = 500
+A = np.hstack([steering_vector(theta_target),
+               steering_vector(theta_interf)])
+s = np.sqrt(10**(SNR/10)) * np.exp(1j*2*np.pi*f*np.arange(N_snapshots)/10000)
+i = np.sqrt(10**(INR/10)) * np.exp(1j*2*np.pi*(f+200)*np.arange(N_snapshots)/10000)
+noise = np.sqrt(0.5) * (np.random.randn(M, N_snapshots) +
+                         1j*np.random.randn(M, N_snapshots))
+X = A[:,0:1] @ s.reshape(1,-1) + A[:,1:2] @ i.reshape(1,-1) + noise
+Rxx = (X @ X.conj().T) / N_snapshots
+
+# MVDR 权重
+a0 = steering_vector(theta0)
+w_mvdr = np.linalg.solve(Rxx, a0) / (a0.conj().T @ np.linalg.solve(Rxx, a0))
+B_mvdr = np.array([np.abs(w_mvdr.conj().T @ steering_vector(th))**2
+                   for th in theta_scan]).flatten()
+B_mvdr_dB = 10 * np.log10(B_mvdr / B_mvdr.max() + 1e-12)
+
+plt.figure(figsize=(10,4))
+plt.plot(theta_scan, B_das_dB, label='Delay-and-Sum')
+plt.plot(theta_scan, B_mvdr_dB, label='MVDR')
+plt.axvline(theta_interf, color='r', linestyle='--', label='Interference')
+plt.ylim([-40, 0])
+plt.xlabel("Angle θ (°)"); plt.ylabel("Beam pattern (dB)")
+plt.title("ULA Beamforming: DAS vs MVDR")
+plt.legend(); plt.grid(True); plt.tight_layout()
+plt.show()
+```
+
+该脚本对比了延时求和与 MVDR 的波束图。可以看到，MVDR 在干扰方向（-40°）形成了明显的零陷，而延时求和只是在该方向有自然的旁瓣衰减。实际人形机器人头部阵列常结合两者：低计算量场景用 DAS，复杂噪声环境用 MVDR 或其后滤波版本。波束成形与最优阵列处理的系统理论见 Van Trees[45]。
+
+!!! note "术语解释：协方差矩阵、对角加载、零陷、子空间方法、窄带假设"
+    - **协方差矩阵（covariance matrix）**：接收信号各通道之间的二阶统计量矩阵。
+    - **对角加载（diagonal loading）**：在协方差矩阵对角线上加小量，提高求逆数值稳定性。
+    - **零陷（null）**：波束响应接近零的方向，用于抑制干扰。
+    - **子空间方法（subspace method）**：把信号分解为信号子空间和噪声子空间进行 DOA 估计。
+    - **窄带假设（narrowband assumption）**：信号带宽远小于中心频率，可近似为单频复指数。
+
 ### 5.7.5 噪声抑制、回声消除与语音前端流水线
 
 真实环境中机器人听到的声音往往包含目标语音、背景噪声、自身播放的提示音/音乐回声以及多径混响。完整的语音前端流水线通常包括：
@@ -2936,6 +4157,136 @@ $$
     - **AX=XB**：手眼标定的经典方程形式。
     - **位姿（pose）**：包括位置和姿态的完整空间描述，通常用 \((\mathbf{R}, \mathbf{t})\) 或齐次变换矩阵表示。
 
+#### 相机-LiDAR 联合标定
+
+在人形机器人中，相机提供密集纹理与语义信息，LiDAR 提供精确三维几何。要实现 RGB 点云着色、深度融合、目标 3D 定位等功能，必须精确标定相机与 LiDAR 之间的外参（旋转 $\mathbf{R}_{CL}$ 和平移 $\mathbf{t}_{CL}$）。
+
+!!! note "术语解释：相机-LiDAR 标定、外参、重投影误差、点云配准、标定靶"
+    - **相机-LiDAR 标定（camera-LiDAR calibration）**：估计相机坐标系与 LiDAR 坐标系之间刚体变换的过程。
+    - **外参（extrinsic parameters）**：两个传感器坐标系之间的旋转和平移。
+    - **重投影误差（reprojection error）**：LiDAR 点投影到图像后与对应图像特征之间的距离。
+    - **点云配准（point cloud registration）**：把多组点云对齐到同一坐标系的算法，如 ICP。
+    - **标定靶（calibration target）**：带有已知几何特征（棋盘格、圆孔、镂空图案）的板，用于提取对应特征。
+
+**坐标变换关系**
+
+设空间点在世界/标定靶坐标系下为 $\mathbf{P}_W$，在相机坐标系下为 $\mathbf{P}_C$，在 LiDAR 坐标系下为 $\mathbf{P}_L$。相机内参矩阵为 $\mathbf{K}$，相机-LiDAR 外参为 $(\mathbf{R}_{CL}, \mathbf{t}_{CL})$，则有：
+
+$$
+\mathbf{P}_C = \mathbf{R}_{CL} \mathbf{P}_L + \mathbf{t}_{CL}
+$$
+
+$$
+\mathbf{p} = \mathbf{K} \mathbf{P}_C / Z_C
+$$
+
+其中 $\mathbf{p} = [u, v, 1]^T$ 为图像像素坐标，$Z_C$ 为相机坐标系下的深度。
+
+```mermaid
+flowchart TD
+    A["标定靶多姿态采集"] --> B["相机检测角点 p_ij"]
+    A --> C["LiDAR 提取平面 / 角点 P_L,ij"]
+    B --> D["建立 3D-2D 对应"]
+    C --> D
+    D --> E["PnP 初值 + ICP / 非线性优化"]
+    E --> F["外参 R_CL, t_CL"]
+    F --> G["重投影误差验证"]
+```
+
+**基于标定靶的方法**
+
+最常用的标定靶是棋盘格板或带圆孔的铝板。步骤如下：
+
+1. **相机角点检测**：用 Zhang 法或 OpenCV 检测棋盘格角点，得到每个角点的像素坐标 $\mathbf{p}_{ij}$ 和世界坐标 $\mathbf{P}_{W,j}$。
+2. **LiDAR 平面提取**：从点云中提取标定板平面，拟合平面方程；再提取平面边界或孔洞中心，得到角点在 LiDAR 坐标系下的三维坐标 $\mathbf{P}_{L,ij}$。
+3. **对应点求解**：若同一角点在相机和 LiDAR 中都被检测到，则可用 PnP + ICP 或全局非线性优化求解 $(\mathbf{R}_{CL}, \mathbf{t}_{CL})$。
+
+**最小化重投影误差**
+
+把所有帧的对应点放在一起，最小化重投影误差：
+
+$$
+\min_{\mathbf{R}_{CL}, \mathbf{t}_{CL}} \sum_{i,j} \rho\left( \left\| \mathbf{p}_{ij} - \pi\left(\mathbf{K}, \mathbf{R}_{CL}\mathbf{P}_{L,ij} + \mathbf{t}_{CL}\right) \right\|^2 \right)
+$$
+
+其中 $\pi(\cdot)$ 为投影函数，$\rho(\cdot)$ 为鲁棒核函数（如 Huber），用于抑制错误对应点。
+
+**基于点云边缘/互信息的方法**
+
+当标定靶不便使用时，可利用场景中的自然几何边缘或反射强度信息：
+
+- **边缘对齐**：提取图像边缘和 LiDAR 点云投影后的边缘，最小化边缘距离。
+- **互信息最大化**：把 LiDAR 反射强度或深度渲染成伪图像，与相机图像求互信息，通过优化外参使两者对齐。
+
+这些方法对初始值敏感，通常先用标定靶得到一个粗略外参，再在线 refinement。
+
+**LiDAR 点云投影到图像的 Python 示例**
+
+```python
+import numpy as np
+import cv2
+
+def project_lidar_to_image(pts_lidar, R_cl, t_cl, K, dist_coeffs=None):
+    """把 LiDAR 点云投影到相机图像。
+    pts_lidar: Nx3 numpy array in LiDAR coordinate
+    R_cl, t_cl: camera extrinsic w.r.t LiDAR (3x3, 3x1)
+    K: 3x3 camera intrinsic matrix
+    返回: Nx2 像素坐标和有效掩码
+    """
+    pts_cam = (R_cl @ pts_lidar.T + t_cl).T
+    # 只保留相机前方的点
+    valid = pts_cam[:, 2] > 0.1
+    pts_cam = pts_cam[valid]
+    # 投影
+    uv = (K @ pts_cam.T).T
+    uv = uv[:, :2] / uv[:, 2:3]
+    return uv, valid
+
+# 示例参数
+K = np.array([[600, 0, 320],
+              [0, 600, 240],
+              [0,   0,   1]], dtype=float)
+# 相机位于 LiDAR 右侧 0.1 m、下方 0.05 m，绕 y 轴小角度偏转
+R_cl = cv2.Rodrigues(np.array([0.0, 0.02, 0.0]))[0]
+t_cl = np.array([[0.1], [-0.05], [0.0]])
+
+# 生成模拟 LiDAR 点：前方 5 m 处墙面
+xx, zz = np.meshgrid(np.linspace(-2, 2, 40), np.linspace(-1, 1, 20))
+yy = np.ones_like(xx) * 5.0
+pts_lidar = np.stack([xx.ravel(), yy.ravel(), zz.ravel()], axis=1)
+
+uv, valid = project_lidar_to_image(pts_lidar, R_cl, t_cl, K)
+print(f"有效投影点数: {uv.shape[0]} / {pts_lidar.shape[0]}")
+print(f"部分像素坐标:\n{uv[:5]}")
+
+# 重投影误差：已知对应图像角点 p_img
+p_img = np.array([[350, 230], [400, 230]], dtype=float)
+p_lidar = np.array([[0.5, 5.0, 0.0], [1.0, 5.0, 0.0]])
+uv_proj, _ = project_lidar_to_image(p_lidar, R_cl, t_cl, K)
+repr_err = np.linalg.norm(uv_proj - p_img, axis=1)
+print(f"重投影误差: {repr_err} pixels")
+```
+
+该脚本演示了点云投影、深度裁剪和重投影误差计算。实际标定中，$\mathbf{R}_{CL}, \mathbf{t}_{CL}$ 是未知量，需要把多个姿态下的重投影误差联合起来，用 Levenberg-Marquardt 或 Ceres/GTSAM 进行非线性优化。基于单次拍摄的相机-距离传感器自动标定方法见 Geiger 等[46]。
+
+**标定精度评估**
+
+| 指标 | 含义 | 典型要求 |
+|------|------|---------|
+| 重投影误差 | LiDAR 特征点在图像上的投影偏差 | < 2–3 像素 |
+| 深度一致性 | 投影后 RGB 与 LiDAR 深度对齐 | 边缘无明显错位 |
+| 角度误差 | 旋转估计误差 | < 0.2° |
+| 平移误差 | 平移估计误差 | < 10 mm |
+
+相机-LiDAR 外参一旦标定完成，通常固定安装在刚性支架上。但机器人运行中的振动、热胀冷缩可能导致微小漂移，因此需要在线外参校验或定期重标定。
+
+!!! note "术语解释：PnP、ICP、鲁棒核函数、互信息、Ceres、GTSAM"
+    - **PnP（Perspective-n-Point）**：从 n 个 3D-2D 对应点求解相机位姿的问题。
+    - **ICP（Iterative Closest Point）**：通过迭代寻找最近点并最小化距离来配准点云。
+    - **鲁棒核函数（robust kernel）**：降低异常值对优化目标影响的函数。
+    - **互信息（mutual information）**：衡量两个随机变量之间依赖程度的量，用于多模态对齐。
+    - **Ceres / GTSAM**：常用的非线性最小二乘优化和因子图库。
+
 ### 5.8.2 时间同步：PTP、gPTP、硬件触发
 
 多传感器融合要求不同传感器的数据在时间上对齐。时间同步是实现一致状态估计的前提。
@@ -2964,6 +4315,147 @@ flowchart LR
     F --> D
     F --> E
 ```
+
+#### PTP 时钟模型与偏移估计
+
+分布式传感器节点各自拥有本地时钟，它们与主时钟之间存在频率偏移（skew）和相位偏移（offset）。设主时钟时间为 $t_m$，从时钟时间为 $t_s$，线性模型为：
+
+$$
+t_s(t_m)=(1+\alpha)\,t_m+\beta
+$$
+
+其中 $\alpha$ 为频率偏差（典型 $\pm 50\ \mathrm{ppm}$，即 $50\ \mu\mathrm{s/s}$），$\beta$ 为初始相位偏移。若不做同步，10 分钟后单纯 skew 就可导致 $30\ \mathrm{ms}$ 的时间偏差，足以让 $0.5\ \mathrm{m/s}$ 行走的人形机器人产生 $1.5\ \mathrm{cm}$ 的融合误差。
+
+PTP（IEEE 1588）通过交换四个时间戳估计 offset 和链路延迟。设主时钟在 $t_1$ 发送 Sync 报文，从时钟在 $t_2$ 接收；从时钟在 $t_3$ 发送 Delay_Req，主时钟在 $t_4$ 接收。$t_2$、$t_3$ 为从时钟本地时间，$t_1$、$t_4$ 为主时钟本地时间。在路径延迟对称（上行=下行）假设下：
+
+$$
+\text{offset}\;o=\frac{(t_2-t_1)-(t_4-t_3)}{2}
+$$
+
+$$
+\text{mean path delay}\;d=\frac{(t_2-t_1)+(t_4-t_3)}{2}
+$$
+
+从时钟据此修正本地时间：$t_{s,\text{corr}}=t_s-o$。gPTP（IEEE 802.1AS）进一步要求网络节点（交换机）也参与时钟同步，并规定驻留时间补偿，使得跨交换机同步精度可达亚微秒级，适合机器人内部以太网骨干。
+
+!!! note "术语解释：频率偏移、相位偏移、路径延迟、Sync、Delay_Req、驻留时间"
+    - **频率偏移（clock skew）**：两个时钟频率的相对偏差，单位 ppm。
+    - **相位偏移（clock offset）**：同一时刻两个时钟读数之差。
+    - **路径延迟（path delay）**：报文在网络链路上的往返传播时间。
+    - **Sync / Delay_Req**：PTP 中主→从和从→主的时间戳报文。
+    - **驻留时间（residence time）**：报文在交换机内部缓存的时间，gPTP 要求补偿。
+
+```mermaid
+sequenceDiagram
+    participant M as 主时钟
+    participant S as 从时钟
+    M->>S: Sync (t1)
+    Note right of S: t2 = 接收时刻
+    M-->>S: Follow_Up (t1)
+    S->>M: Delay_Req (t3)
+    Note left of M: t4 = 接收时刻
+    M-->>S: Delay_Resp (t4)
+    Note right of S: offset=[(t2-t1)-(t4-t3)]/2
+```
+
+#### 硬件触发与 timestamp 抖动预算
+
+PTP 解决的是“时钟读数一致”问题，但无法保证各传感器在同一物理时刻开始曝光/采样。硬件触发通过一根共享的触发线（如 GPIO、SYNC、PPS）把主时钟边沿分发到所有传感器，使相机快门、LiDAR scan start、IMU sample 在微秒级对齐。
+
+触发链路中的抖动来源包括：
+
+1. **触发信号传播延迟差异**：不同长度电缆的传播延迟不同，同轴电缆中电磁波速约 $2\times 10^8\ \mathrm{m/s}$，1 m 电缆差异约为 5 ns，可忽略。
+2. **传感器内部启动延迟**：CMOS 传感器的 rolling shutter 从触发到首行曝光有固定延时但各行不同；LiDAR 电机从触发到开始扫描有机械惯性；IMU 内部数字滤波带来群延迟。
+3. **FPGA/SoC 跨时钟域**：触发边沿进入不同时钟域时可能产生 ±1 个时钟周期的抖动。对于 100 MHz 时钟，约为 ±10 ns。
+4. **温度漂移**：晶振频率随温度变化，skew 补偿后仍会残余缓慢漂移。
+
+对于视觉-惯性里程计，时间戳误差 $\Delta t$ 在角速度 $\omega$ 下会引入姿态误差 $\Delta\theta\approx\omega\Delta t$；在速度 $v$ 下引入位置误差 $\Delta p\approx v\Delta t$。若 $\omega=30°/\mathrm{s}\approx 0.52\ \mathrm{rad/s}$，$\Delta t=1\ \mathrm{ms}$，则 $\Delta\theta\approx 0.03°$，看似不大，但乘以 1 m 基线会产生约 $0.5\ \mathrm{mm}$ 的特征位置误差，在紧耦合优化中会累积。因此高端人形机器人通常要求 IMU 与相机时间同步误差 $<100\ \mu\mathrm{s}$。
+
+!!! note "术语解释：硬件触发、timestamp 抖动、滚动快门、群延迟、跨时钟域"
+    - **硬件触发（hardware trigger）**：用物理边沿信号同步多个传感器的采集时刻。
+    - **timestamp 抖动（timestamp jitter）**：实际采样时刻与理想时刻之间的随机或固定偏差。
+    - **滚动快门（rolling shutter）**：逐行曝光的快门方式，触发后各行曝光时刻不同。
+    - **群延迟（group delay）**：滤波器或数字链路导致的信号整体时间延迟。
+    - **跨时钟域（clock domain crossing, CDC）**：信号从一个时钟域传递到另一个时钟域。
+
+```mermaid
+flowchart LR
+    A["主时钟 PTP"] --> B["FPGA 触发发生器"]
+    B --> C["相机 SYNC"]
+    B --> D["LiDAR SYNC"]
+    B --> E["IMU SYNC"]
+    C --> F["曝光时刻 + 内部延迟"]
+    D --> G["扫描起始时刻"]
+    E --> H["采样时刻"]
+    F --> I["带时间戳数据"]
+    G --> I
+    H --> I
+```
+
+#### Python 示例：PTP 偏移估计与 timestamp 抖动影响
+
+下面的脚本模拟一次 PTP 交换：主从时钟存在 100 ppm 的 skew 和 1 ms 的 offset，链路往返延迟对称，并叠加 10 µs 的随机抖动。脚本估计 offset 和 delay，并与真值比较。随后计算时间同步误差对 VIO 位姿估计的影响，呼应 5.8.3 节的多传感器融合精度需求。
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 真实时钟参数
+alpha_true = 100e-6      # 100 ppm
+beta_true = 1e-3         # 1 ms offset
+
+# 主时钟时间
+sync_interval = 0.125    # 125 ms
+N = 100
+
+def slave_time(t_master):
+    return (1 + alpha_true) * t_master + beta_true
+
+# 模拟单次 PTP 交换，往返延迟对称
+def ptp_exchange(t_master, delay=2e-4, jitter=10e-6):
+    t1 = t_master
+    # 从时钟接收：主→从延迟 + 抖动
+    t2 = slave_time(t1 + delay/2 + np.random.normal(0, jitter))
+    t3 = slave_time(t1 + delay/2 + 1e-3)   # 从时钟等待 1 ms 后发 Delay_Req
+    # 主时钟接收：从→主延迟 + 抖动
+    t4 = t1 + delay/2 + 1e-3 + delay/2 + np.random.normal(0, jitter)
+    offset_est = ((t2 - t1) - (t4 - t3)) / 2
+    delay_est = ((t2 - t1) + (t4 - t3)) / 2
+    return offset_est, delay_est
+
+offsets = []
+delays = []
+for i in range(N):
+    o, d = ptp_exchange(i * sync_interval)
+    offsets.append(o)
+    delays.append(d)
+
+print(f"真实 offset = {beta_true*1e3:.3f} ms")
+print(f"估计 offset 均值 = {np.mean(offsets)*1e3:.3f} ms, 标准差 = {np.std(offsets)*1e3:.3f} ms")
+print(f"估计 delay 均值 = {np.mean(delays)*1e3:.3f} ms")
+
+# timestamp 误差对 VIO 的影响
+v = 0.5                  # m/s
+omega = np.deg2rad(30)   # rad/s
+dt_errors = np.array([1e-3, 500e-6, 100e-6, 50e-6, 10e-6])
+position_errors = v * dt_errors
+angle_errors = np.degrees(omega * dt_errors)
+
+plt.figure(figsize=(10,4))
+plt.subplot(1,2,1)
+plt.plot(np.arange(N)*sync_interval*1e3, (np.array(offsets)-beta_true)*1e6)
+plt.xlabel('时间 (ms)'); plt.ylabel('offset 估计误差 (µs)')
+plt.title('PTP offset 估计误差'); plt.grid(True)
+plt.subplot(1,2,2)
+plt.semilogy(dt_errors*1e6, position_errors*1e3, 'o-', label='位置误差')
+plt.semilogy(dt_errors*1e6, angle_errors, 's-', label='角度误差 (°)')
+plt.xlabel('时间同步误差 (µs)'); plt.ylabel('误差')
+plt.title('时间同步误差对 VIO 的影响')
+plt.legend(); plt.grid(True, which='both')
+plt.tight_layout(); plt.show()
+```
+
+仿真表明，即使在 10 µs 的交换抖动下，PTP 仍能将 offset 估计到亚毫秒级；但要达到 VIO 所需的 $<100\ \mu\mathrm{s}$ 同步，通常需要硬件触发 + PTP 的组合：PTP 保证长期时钟一致性，硬件触发保证每帧采集时刻的瞬时对齐。该时间同步框架是 5.8.3 节卡尔曼融合与 5.3.2 节 LiDAR 扫描去畸变共同依赖的基础设施。
 
 ### 5.8.3 多传感器融合框架与卡尔曼滤波思想
 
@@ -3406,6 +4898,44 @@ flowchart LR
 
 ---
 
+### 本章符号表
+
+| 符号 | 含义 | 常用单位 |
+|------|------|----------|
+| $h$ | 普朗克常数 | $\mathrm{J\cdot s}$ |
+| $c$ | 真空中的光速 | $\mathrm{m/s}$ |
+| $\lambda$, $\nu$ | 光的波长、频率 | $\mathrm{m}$, $\mathrm{Hz}$ |
+| $E$ | 单个光子能量 | $\mathrm{J}$ |
+| $I_{ph}$ | 光生电流 | $\mathrm{A}$ |
+| $\eta$, QE | 量子效率 | 无量纲 |
+| $f_x,f_y,c_x,c_y$ | 相机内参焦距与主点 | 像素 |
+| $\mathbf{K}$ | 相机内参矩阵 | — |
+| $\mathbf{R},\mathbf{t}$ | 相机/传感器外参旋转矩阵与平移向量 | —, $\mathrm{m}$ |
+| $B$ | 双目基线或 FMCW 带宽 | $\mathrm{m}$ 或 $\mathrm{Hz}$ |
+| $d$ | 视差、阵元间距或像素间距 | 像素或 $\mathrm{m}$ |
+| $Z,R$ | 深度、雷达/激光测距距离 | $\mathrm{m}$ |
+| $P_t,P_r$ | 发射/接收光功率 | $\mathrm{W}$ |
+| $\rho$ | 目标反射率 | 无量纲 |
+| $v_{sound}$ | 空气中声速 | $\mathrm{m/s}$ |
+| $k$ | FMCW chirp 调频斜率 | $\mathrm{Hz/s}$ |
+| $f_b,f_d$ | 中频（beat）频率、多普勒频移 | $\mathrm{Hz}$ |
+| $\tau$ | 时间延迟或力矩 | $\mathrm{s}$ 或 $\mathrm{N\cdot m}$ |
+| $G_f$ | 应变片灵敏系数 | 无量纲 |
+| $V_{out}$ | 电桥/传感器输出电压 | $\mathrm{V}$ |
+| $k_t$ | 电机转矩常数 | $\mathrm{N\cdot m/A}$ |
+| $C$ | 电容 | $\mathrm{F}$ |
+| $\mathbf{a},\boldsymbol{\omega}$ | 加速度、角速度 | $\mathrm{m/s^2}$, $\mathrm{rad/s}$ |
+| $\mathbf{b}$ | 传感器零偏 | 视传感器而定 |
+| $\sigma_A$ | Allan 偏差 | 视物理量而定 |
+| $q$ | 姿态四元数 | 无量纲 |
+| $K_p,K_i$ | Mahony 滤波器比例/积分增益 | 视量纲而定 |
+| $\mu$ | 摩擦系数 | 无量纲 |
+| $f_n,\mathbf{f}_t$ | 法向力、切向力 | $\mathrm{N}$ |
+| $\alpha,\beta$ | 时钟频率偏移、相位偏移 | ppm, $\mathrm{s}$ |
+| $o,d$ | PTP 估计的时钟偏移与路径延迟 | $\mathrm{s}$ |
+
+---
+
 ## 本章小结
 
 1. **感知是人形机器人闭环智能的基础**。传感器把物理世界转换为数字信号，支撑状态估计、环境理解和交互控制。
@@ -3562,3 +5092,13 @@ flowchart LR
 [40] Ciocarlie, M., Lackner, C., & Allen, P. (2007). Soft finger model with adaptive contact geometry for grasping and manipulation tasks. In *Second Joint EuroHaptics Conference and Symposium on Haptic Interfaces for Virtual Environment and Teleoperator Systems (WHC'07)*, 219–224. https://doi.org/10.1109/WHC.2007.103
 
 [41] Bower, A. F. (2010). *Applied Mechanics of Solids*. CRC Press.
+
+[42] Ohnishi, K., Shibata, M., & Murakami, T. (1996). Motion control for advanced mechatronics. *IEEE/ASME Transactions on Mechatronics*, 1(1), 56–67. https://doi.org/10.1109/3516.491410
+
+[43] Murray, R. M., Li, Z., & Sastry, S. S. (1994). *A Mathematical Introduction to Robotic Manipulation*. CRC Press.
+
+[44] Amann, M.-C., Bosch, T., Lescure, M., Myllylä, R., & Rioux, M. (2001). Laser ranging: a critical review of usual techniques for distance measurement. *Optical Engineering*, 40(1), 10–19. https://doi.org/10.1117/1.1330700
+
+[45] Van Trees, H. L. (2002). *Optimum Array Processing*. Wiley-Interscience.
+
+[46] Geiger, A., Moosmann, F., Car, Ö., & Schuster, B. (2012). Automatic camera and range sensor calibration using a single shot. In *IEEE International Conference on Robotics and Automation (ICRA)*, 3936–3943. https://doi.org/10.1109/ICRA.2012.6224580

@@ -1,0 +1,119 @@
+---
+id: ent_company_limx
+schema_version: 1
+type: company
+domain: 11_applications_markets
+theoretical_depth: system
+names:
+  zh: 逐际动力
+  en: LimX Dynamics
+status: active
+sources:
+- id: src_limx_official
+  type: website
+  url: https://www.limxdynamics.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 逐际动力 / LimX Dynamics
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 逐际动力 |
+| **英文名** | LimX Dynamics |
+| **总部** | 中国深圳 |
+| **成立时间** | 2022 年 |
+| **官网** | [https://www.limxdynamics.com](https://www.limxdynamics.com) |
+| **供应链环节** | 整机 OEM / 全尺寸通用人形机器人、多形态机器人 |
+| **企业属性** | 阿里/京东投资、运动智能与足式机器人 |
+| **母公司/所属集团** | 无 |
+| **数据来源** | 逐际动力官网、DoNews、IT之家、36氪 |
+
+## 公司简介
+
+逐际动力是一家以 AI 驱动的具身智能公司，聚焦全尺寸通用人形机器人与多形态机器人。
+
+公司从四轮足机器人 W1 起步，逐步推出多形态双足机器人 TRON 1、全尺寸人形 CL-1 / CL-2，以及 2025 年发布的 LimX Oli。逐际动力强调“大小脑融合”与全身移动操作泛化能力。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 全尺寸人形 | 通用移动操作 | CL-1 / CL-2 / Oli | 智能制造、物流、家庭 |
+| 多形态机器人 | 科研与快速验证 | TRON 1 / TRON 2 | 科研教育、算法验证 |
+| 轮足机器人 | 高速越障 | W1 | 工业巡检、物流配送 |
+
+## 代表产品
+
+### CL-1
+
+> 逐际动力 CL-1：请访问 [官方资料](https://www.limxdynamics.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | 全尺寸人形 | DoNews |
+| 重量 | 未公开 | - |
+| 自由度 | 未公开 | - |
+| 负载/扭矩 | 可搬运 4.1–8.2 kg 货物 | 逐际动力官方视频 / DoNews |
+| 速度/转速 | 可实现小跑进入仓库 | DoNews |
+| 续航 | 未公开 | - |
+| 接口/通信 | 未公开 | - |
+| 价格 | 未公开 | 需询价 |
+
+**技术亮点**：基于实时感知的全身移动操作、负重深蹲/举起/行走、动态平衡与抗干扰。
+
+**应用场景**：仓库搬运、货架补货、智能制造产线。
+
+### LimX Oli
+
+> 逐际动力 LimX Oli：请访问 [官方资料](https://www.limxdynamics.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | 全尺寸人形 | 逐际动力官网 |
+| 重量 | 未公开 | - |
+| 自由度 | 未公开 | - |
+| 负载/扭矩 | 未公开 | - |
+| 速度/转速 | 未公开 | - |
+| 续航 | 未公开 | - |
+| 接口/通信 | 未公开 | - |
+| 价格 | 15.8 万元起 | 逐际动力官网 |
+
+**技术亮点**：全尺寸通用人形机器人，面向科研与商业场景开放预订。
+
+**应用场景**：科研教育、商业服务、工业协作。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：自研高响应关节模组，外购电机、减速器、电池、计算平台、视觉传感器。
+- **下游客户/应用场景**：智能制造、物流仓储、科研高校、家庭服务前期验证。
+- **主要竞争对手/对标**：宇树 H1、星动纪元 STAR1、智元 A2-W。
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_limx`
+- 产品实体：`ent_product_limx_cl1`、`ent_product_limx_oli`
+- 关键关系：
+  - `ent_company_limx` -- `manufactures` --> `ent_product_limx_cl1`
+  - `ent_company_limx` -- `manufactures` --> `ent_product_limx_oli`
+  - `ent_product_limx_cl1` -- `uses` --> `ent_component_limx_joint_module`
+
+## 参考资料
+
+1. [逐际动力官网](https://www.limxdynamics.com)
+2. [DoNews – 逐际动力 CL-1 全身移动操作](https://www.donews.com/news/detail/4/4507656.html)
+3. [IT之家 – 逐际动力 CL-2 亮相](https://www.ithome.com/0/790/893.htm)
+4. [36氪 – 深圳人形机器人产业链](http://mp.weixin.qq.com/s?__biz=MzU0ODAyNjc5Mg==&mid=2247554433&idx=1&sn=c7320680c83a328047750ab272d3c2f6)
+5. [附录 D.4 重点产品 Wiki](../../../appendices/appendix-d/index-products.md)

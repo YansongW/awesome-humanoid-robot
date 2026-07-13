@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P6 URDF 建模与运动学校核（Kinematics & URDF）
+  en: ''
   zh: URDF 建模与运动学校核（Kinematics & URDF）
   ko: ''
 summary:
-  en: URDF 建模与运动学校核（Kinematics & URDF）
+  en: ''
   zh: URDF 建模与运动学校核（Kinematics & URDF）
   ko: ''
 domains:
@@ -35,5 +35,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

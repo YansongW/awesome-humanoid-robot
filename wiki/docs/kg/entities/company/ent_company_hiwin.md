@@ -1,0 +1,101 @@
+---
+id: ent_company_hiwin
+schema_version: 1
+type: company
+'title:': HIWIN
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: 上银科技
+  en: HIWIN
+status: active
+sources:
+- id: src_hiwin_official
+  type: website
+  url: https://www.hiwin.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 上银科技 / HIWIN
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 上银科技 |
+| **英文名** | HIWIN |
+| **总部** | 中国台湾台中（Taichung） |
+| **成立时间** | 1989 |
+| **官网** | [https://www.hiwin.com](https://www.hiwin.com) |
+| **供应链环节** | 滚珠丝杠 / 直线导轨 / 线性马达 / 线性模组 |
+| **企业属性** | 国际品牌、上市公司 |
+| **母公司/所属集团** | 上银科技股份有限公司（独立） |
+| **数据来源** | 官网、产品手册、WAIC 2026 报道 |
+
+## 公司简介
+
+HIWIN（上银科技）是全球领先的线性运动控制品牌，提供滚珠丝杠、线性滑轨、线性马达、力矩马达、直驱电机、工业机器人与医疗机器人。其产品以高精度、高刚性和高性价比著称，广泛应用于 CNC、半导体、自动化和机器人领域。
+
+公司具备从 C0 级研磨滚珠丝杠到 C7 级转造滚珠丝杠的完整产品线，以及 HG、EG、MG 系列滚珠/滚柱线性滑轨，并可提供 KK 系列线性模组与 LMC 直线电机。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 滚珠丝杠 | 研磨/转造 | FSC / FSI / R16-5T3 | CNC、自动化 |
+| 线性滑轨 | 高刚性/微小型 | HG / EG / MGN | 机床、机器人 |
+| 线性马达/模组 | 直接驱动 | LMC / KK / DD | 半导体、医疗 |
+
+## 代表产品
+
+### FSI 转造级滚珠丝杠（R16-5T3）
+
+> FSI 转造级滚珠丝杠（R16-5T3）：请访问 [官方资料](https://www.hiwin.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 丝杠直径 | 16 mm | 产品手册 |
+| 导程 | 5 mm / 10 mm（可选） | 产品手册 |
+| 精度等级 | C7（转造）；C5/C3 研磨可选 | 产品手册 |
+| 最大长度 | 约 3,000 mm（转造，依规格） | 产品手册 |
+| 轴向间隙 | P0 零背隙（预紧可选） | 产品手册 |
+| 螺母型式 | 双切边法兰单螺母（FSI） | 产品手册 |
+| Dm-N 值 | 最高约 220,000 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：转造工艺成本低、交期短；零背隙预紧选项；与 HIWIN 线性滑轨/马达形成系统方案。
+
+**应用场景**：CNC 机床、人形机器人线性关节、半导体设备、医疗定位平台、自动化模组。
+
+### 其他代表产品
+
+HG 系列线性滑轨：HGR15–HGR65，四列接触高刚性；LMC 系列线性马达提供无接触高速直线运动。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：轴承钢、钢珠、滚柱、热处理、研磨/转造设备、润滑油、电机
+- **下游客户/应用场景**：CNC 机床厂、机器人 OEM、半导体设备商、医疗设备商、汽车
+- **主要竞争对手/对标**：THK、NSK、SKF、Bosch Rexroth、TBI
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_hiwin`
+- 零部件实体：`ent_component_hiwin_ball_screw_fsi`
+- 关键关系：
+  - `ent_company_hiwin` -- `manufactures` --> `ent_component_hiwin_ball_screw_fsi`
+
+## 参考资料
+
+1. [上银科技 官网](https://www.hiwin.com)
+2. [WAIC 2026 参展报道](https://www.worldrobotconference.com)
+3. [HIWIN Ballscrew Catalog](https://www.hiwin.com/wp-content/uploads/ballscrews.pdf)

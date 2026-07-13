@@ -1,0 +1,118 @@
+---
+id: ent_company_black_sesame
+schema_version: 1
+type: company
+domain: 11_applications_markets
+theoretical_depth: system
+names:
+  zh: 黑芝麻智能
+  en: Black Sesame Technologies
+status: active
+sources:
+- id: src_black_sesame_official
+  type: website
+  url: https://www.blacksesame.com.cn
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 黑芝麻智能 / Black Sesame Technologies
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 黑芝麻智能 |
+| **英文名** | Black Sesame Technologies |
+| **总部** | 中国湖北省武汉市 |
+| **成立时间** | 2016 年 |
+| **官网** | [https://www.blacksesame.com.cn](https://www.blacksesame.com.cn) |
+| **供应链环节** | 自动驾驶芯片、边缘 AI 计算、机器人感知计算 |
+| **企业属性** | 上市公司（港股：02533） |
+| **母公司/所属集团** | 无（独立上市主体） |
+| **数据来源** | 黑芝麻智能官网、港股招股书、产品发布会、公开新闻稿 |
+
+## 公司简介
+
+黑芝麻智能是中国领先的智能汽车计算芯片企业，专注于自动驾驶芯片与感知解决方案，并向机器人等具身智能场景拓展。
+
+黑芝麻智能自研华山系列高算力自动驾驶芯片与武当系列跨域计算芯片，提供从感知到决策的完整计算平台。其芯片具备高算力、低延迟、功能安全等特点，可支撑高级别自动驾驶及机器人的多传感器融合、SLAM 与路径规划等任务。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 华山系列 | 高算力自动驾驶芯片 | 华山 A1000 / A2000 | 自动驾驶、机器人大脑 |
+| 武当系列 | 跨域计算芯片 | 武当 C1200 | 舱驾一体、机器人控制 |
+| 感知方案 | 算法与中间件 | BSS Perception | 自动驾驶、机器人感知 |
+
+## 代表产品
+
+### 黑芝麻智能华山 A1000
+
+> 黑芝麻智能华山 A1000：请访问 [官方资料](https://www.blacksesame.com.cn) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 架构 | 自研 NeuralIQ ISP + DynamAI NN 引擎 | 黑芝麻公开资料 |
+| 制程 | 16 nm（公开报道） | 公开报道 |
+| 算力 | INT8 约 58 TOPS；单颗可支持 L2+/L3 自动驾驶 | 黑芝麻公开资料 |
+| CPU | ARM Cortex-A55 多核 | 公开报道 |
+| 功能安全 | ASIL-B / ASIL-D（部分模块目标） | 黑芝麻公开资料 |
+| 接口 | 多路摄像头、激光雷达、毫米波雷达接口 | 黑芝麻公开资料 |
+| 功耗 | 约 15–25 W | 公开报道 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：自研 ISP 与 NN 引擎、多传感器融合、车规级功能安全、可扩展至多芯片方案。
+
+**应用场景**：自动驾驶域控制器、机器人感知与决策、多模态融合定位。
+
+### 黑芝麻智能武当 C1200
+
+> 黑芝麻智能武当 C1200：请访问 [官方资料](https://www.blacksesame.com.cn) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 定位 | 跨域计算芯片（舱驾一体） | 黑芝麻公开资料 |
+| 制程 | 7 nm（公开报道） | 公开报道 |
+| 算力 | 未公开 | - |
+| 功能安全 | 支持 ASIL-D | 黑芝麻公开资料 |
+| 接口 | 支持多路摄像头、显示、车载以太网 | 黑芝麻公开资料 |
+| 应用场景 | 智能汽车、机器人控制中枢 | 黑芝麻公开资料 |
+| 功耗 | 未公开 | - |
+| 价格 | 未公开 | - |
+
+**技术亮点**：单芯片跨域融合、降低整车线束与成本、面向下一代电子电气架构。
+
+**应用场景**：智能座舱与自动驾驶融合、机器人中央计算平台。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：晶圆代工、封测、车规级存储、ISP/NN IP、车载以太网 PHY、PCB。
+- **下游客户/应用场景**：主机厂、Tier1、自动驾驶方案商、机器人整机厂、传感器厂商。
+- **主要竞争对手/对标**：NVIDIA DRIVE、Mobileye EyeQ、地平线 Journey、华为昇腾/MDC、高通 Snapdragon Ride。
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_black_sesame`
+- 产品实体：`ent_product_black_sesame_a1000`
+- 零部件实体：`ent_component_black_sesame_a1000_chip`
+- 关键关系：
+  - `ent_company_black_sesame` -- `manufactures` --> `ent_product_black_sesame_a1000`
+  - `ent_company_black_sesame` -- `manufactures` --> `ent_component_black_sesame_a1000_chip`
+  - `ent_product_black_sesame_a1000` -- `uses` --> `ent_component_black_sesame_a1000_chip`
+
+## 参考资料
+
+1. [黑芝麻智能官网](https://www.blacksesame.com.cn)
+2. [黑芝麻智能华山系列](https://www.blacksesame.com.cn/products/1.html)
+3. 黑芝麻智能港股招股书

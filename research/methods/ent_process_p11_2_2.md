@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P11.2.2 手指阻抗与力控
+  en: ''
   zh: 手指阻抗与力控
   ko: ''
 summary:
-  en: 力控实验数据、易碎物体抓取视频
+  en: ''
   zh: 力控实验数据、易碎物体抓取视频
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）
 

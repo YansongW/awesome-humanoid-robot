@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P0.1.1 市场机会与场景画布
+  en: ''
   zh: 市场机会与场景画布
   ko: ''
 summary:
-  en: 输出《商业画布》与至少 3 个优先级场景及对应 KPI
+  en: ''
   zh: 输出《商业画布》与至少 3 个优先级场景及对应 KPI
   ko: ''
 domains:
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：项目立项与商业基线
 

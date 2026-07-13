@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P12.2.2 数据收集与数据流水线
+  en: ''
   zh: 数据收集与数据流水线
   ko: ''
 summary:
-  en: 数据集规模、数据质量检查、版本管理
+  en: ''
   zh: 数据集规模、数据质量检查、版本管理
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）
 

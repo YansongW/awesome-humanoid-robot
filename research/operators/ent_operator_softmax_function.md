@@ -68,6 +68,15 @@ Properties:
 
 ## Symbol Intuition
 
+| Symbol | Name | Intuition |
+|--------|------|-----------|
+| \(z_i\) | Logit / score | The model's raw preference for candidate \(i\). |
+| \(e^{z_i}\) | Unnormalized probability | Converts the score to a positive value and amplifies differences. |
+| \(\sum_j e^{z_j}\) | Normalization constant | The total preference across all candidates. |
+| \(\sigma(z)_i\) | Softmax probability | The final attention / selection weight for candidate \(i\). |
+
+## 符号直觉
+
 | 符号 | 名称 | 直觉含义 |
 |------|------|----------|
 | \(z_i\) | Logit / 分数 | 模型对第 \(i\) 个候选的“原始偏好” |

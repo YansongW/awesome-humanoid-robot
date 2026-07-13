@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P12 VLA / WAM / AI 算法集成（AI & Perception）
+  en: ''
   zh: VLA / WAM / AI 算法集成（AI & Perception）
   ko: ''
 summary:
-  en: VLA / WAM / AI 算法集成（AI & Perception）
+  en: ''
   zh: VLA / WAM / AI 算法集成（AI & Perception）
   ko: ''
 domains:
@@ -33,5 +33,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

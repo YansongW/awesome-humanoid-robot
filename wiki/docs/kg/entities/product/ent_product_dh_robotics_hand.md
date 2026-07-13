@@ -1,0 +1,102 @@
+---
+id: ent_product_dh_robotics_hand
+schema_version: 1
+type: product
+'title:': AG-160-95 自适应电动夹爪
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: AG-160-95 自适应电动夹爪
+  en: DH-Robotics AG-160-95 Adaptive Gripper
+status: active
+sources:
+- id: src_dh_robotics_hand_official
+  type: website
+  url: https://www.dh-robotics.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# AG-160-95 自适应电动夹爪 / DH-Robotics AG-160-95 Adaptive Gripper
+
+> 返回：[附录 D.4 重点产品 Wiki 目录](../../../appendices/appendix-d/index-products.md)
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 产品信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **制造商** | [大寰机器人 / DH-Robotics](../../../appendices/appendix-d/companies/company_dh_robotics.md) |
+| **产品类别** | 电动夹爪 / 末端执行器 |
+| **发布时间** | 现役主力型号 |
+| **状态** | 量产/商用 |
+| **官网/来源** | [大寰机器人官网](https://www.dh-robotics.com) |
+
+## 产品概述
+
+AG-160-95 是大寰机器人推出的关节型自适应电动夹爪，采用连杆与丝杆螺母传动，具备大行程、力位可控、掉电自锁与智能反馈能力，可与人形机器人、协作机器人及自动化产线快速集成，实现稳定可靠的柔性抓取。
+
+## 产品图片
+
+> AG-160-95 自适应电动夹爪：请访问 [官方资料](https://www.dh-robotics.com) 查看。
+
+## 规格参数表
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | 184.6 × 162.3 × 67 mm | 第三方产品页 |
+| 重量 | 约 1 kg | 第三方产品页 |
+| 自由度 | 1 自由度（二指平动） | 产品手册 |
+| 夹持力 | 单侧 45–160 N | 第三方产品页 |
+| 开合速度 | 开合时间约 0.9 s | 第三方产品页 |
+| 重复定位精度 | ±0.03 mm | 第三方产品页 |
+| 供电电压 | DC 24 V | 产品手册 |
+| 通信接口 | Modbus RTU / I/O | 产品手册 |
+| 价格 | 未公开 | - |
+
+## 供应链位置
+
+- **制造商**：[大寰机器人 / DH-Robotics](../../../appendices/appendix-d/companies/company_dh_robotics.md)
+- **核心零部件/技术来源**：伺服电机、滚珠丝杠/连杆、力/位置传感器、铝合金结构件、驱动 IC。
+- **下游应用/客户**：协作机器人集成商、3C/新能源/半导体自动化厂商、人形机器人整机厂。
+
+## 知识图谱节点与关系
+
+- 零部件实体：`ent_product_dh_robotics_hand`
+- 制造商实体：`ent_company_dh_robotics`
+- 关键关系：
+  - `rel_ent_company_dh_robotics_manufactures_ent_product_dh_robotics_hand`（`ent_company_dh_robotics` --> `manufactures` --> `ent_product_dh_robotics_hand`）
+
+## 应用场景
+
+- **工业自动化**：3C 装配、锂电分选、半导体搬运、食品包装
+- **协作机器人**：与 UR、遨博等协作臂配合完成上下料与检测
+- **人形机器人**：作为低成本末端执行器适配双足/轮式人形平台
+- **科研教育**：抓取算法验证、力控教学、机器人竞赛
+
+## 竞争对比
+
+| 对比项 | 本产品 | 国际品牌 | 国内对标 |
+|--------|--------|----------|----------|
+| 核心优势 | 本土化供应、性价比高、行程大、力控可调 | 高端精度与可靠性 | 同区间性能竞争 |
+| 交付周期 | 较短/按配置 | 较长 | 较短 |
+| 服务响应 | 快速 | 中等 | 快速 |
+| 价格水平 | 中低端至中高端 | 高端 | 中低端 |
+
+## 选购与部署建议
+
+- 选型时应根据负载、行程、速度与精度要求匹配合适型号，必要时联系厂商获取定制方案。
+- 部署前建议进行负载惯量辨识、刚性匹配与振动抑制调试，确保与整机系统兼容。
+
+## 参考资料
+
+1. [大寰机器人官网](https://www.dh-robotics.com)
+2. [WAIC 2026 参展报道](https://www.worldrobotconference.com)
+3. [公开产品手册与研报](https://www.dh-robotics.com)（请按实际产品型号核对）

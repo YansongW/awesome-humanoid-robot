@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P3.1.3 运动学与动力学初步分析
+  en: ''
   zh: 运动学与动力学初步分析
   ko: ''
 summary:
-  en: 关节需求规格 v1、峰值/连续扭矩表、关键动作反力
+  en: ''
   zh: 关节需求规格 v1、峰值/连续扭矩表、关键动作反力
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P7 仿真平台搭建与验证（Simulation）
+  en: ''
   zh: 仿真平台搭建与验证（Simulation）
   ko: ''
 summary:
-  en: 仿真平台搭建与验证（Simulation）
+  en: ''
   zh: 仿真平台搭建与验证（Simulation）
   ko: ''
 domains:
@@ -35,5 +35,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

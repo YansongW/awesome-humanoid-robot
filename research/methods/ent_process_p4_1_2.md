@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P4.1.2 执行器拓扑选择
+  en: ''
   zh: 执行器拓扑选择
   ko: ''
 summary:
-  en: 《执行器拓扑决策矩阵》：每关节选型、理由、备份方案
+  en: ''
   zh: 《执行器拓扑决策矩阵》：每关节选型、理由、备份方案
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）
 

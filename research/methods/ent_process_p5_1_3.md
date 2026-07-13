@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P5.1.3 外观覆盖件与分缝设计
+  en: ''
   zh: 外观覆盖件与分缝设计
   ko: ''
 summary:
-  en: 覆盖件 3D、分缝方案、维护开口布局
+  en: ''
   zh: 覆盖件 3D、分缝方案、维护开口布局
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）
 

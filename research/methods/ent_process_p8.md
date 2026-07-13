@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P8 结构强度仿真与迭代（Structural FEA）
+  en: ''
   zh: 结构强度仿真与迭代（Structural FEA）
   ko: ''
 summary:
-  en: 结构强度仿真与迭代（Structural FEA）
+  en: ''
   zh: 结构强度仿真与迭代（Structural FEA）
   ko: ''
 domains:
@@ -35,5 +35,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P10.3.1 系统辨识与参数校准
+  en: ''
   zh: 系统辨识与参数校准
   ko: ''
 summary:
-  en: 辨识报告、仿真-实物频率响应对比
+  en: ''
   zh: 辨识报告、仿真-实物频率响应对比
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）
 

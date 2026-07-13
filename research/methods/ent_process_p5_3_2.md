@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P5.3.2 装配顺序与工装夹具规划
+  en: ''
   zh: 装配顺序与工装夹具规划
   ko: ''
 summary:
-  en: 装配顺序图、工装清单、SOP 草案
+  en: ''
   zh: 装配顺序图、工装清单、SOP 草案
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）
 

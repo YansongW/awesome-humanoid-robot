@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P13.1.3 通信网络与同步
+  en: ''
   zh: 通信网络与同步
   ko: ''
 summary:
-  en: 通信拓扑图、协议分配、带宽/延迟预算、同步精度
+  en: ''
   zh: 通信拓扑图、协议分配、带宽/延迟预算、同步精度
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）
 

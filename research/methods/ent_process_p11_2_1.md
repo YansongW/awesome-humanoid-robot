@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P11.2.1 抓取姿态生成与力闭合分析
+  en: ''
   zh: 抓取姿态生成与力闭合分析
   ko: ''
 summary:
-  en: 抓取库/策略、典型物体成功率 > 目标
+  en: ''
   zh: 抓取库/策略、典型物体成功率 > 目标
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）
 

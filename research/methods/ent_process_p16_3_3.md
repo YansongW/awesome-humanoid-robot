@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P16.3.3 PPAP / 量产 readiness 评估
+  en: ''
   zh: PPAP / 量产 readiness 评估
   ko: ''
 summary:
-  en: PPAP 批准、量产 readiness 评估通过
+  en: ''
   zh: PPAP 批准、量产 readiness 评估通过
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）
 

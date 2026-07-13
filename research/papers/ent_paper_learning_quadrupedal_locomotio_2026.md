@@ -8,8 +8,7 @@ names:
   zh: Learning Quadrupedal Locomotion over Challenging Terrain
   ko: ''
 summary:
-  en: Learning Quadrupedal Locomotion over Challenging Terrain is a paper on 高影响力精选
-    High Impact Selection for humanoid robotics.
+  en: ''
   zh: Learning Quadrupedal Locomotion over Challenging Terrain is a paper on 高影响力精选
     High Impact Selection for humanoid robotics.
   ko: ''
@@ -42,5 +41,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 Learning Quadrupedal Locomotion over Challenging Terrain is a paper on 高影响力精选 High Impact Selection for humanoid robotics.

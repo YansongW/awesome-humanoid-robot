@@ -1,0 +1,116 @@
+---
+id: ent_company_sumitomo
+schema_version: 1
+type: company
+domain: 11_applications_markets
+theoretical_depth: system
+names:
+  zh: 住友重工
+  en: 住友重工
+status: active
+sources:
+- id: src_sumitomo_official
+  type: website
+  url: https://www.shi.co.jp
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 住友重工 / 住友重工
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 住友重工 |
+| **英文名** | Sumitomo Heavy Industries, Ltd. |
+| **总部** | 日本东京 |
+| **成立时间** | 1888 |
+| **官网** | [https://www.shi.co.jp](https://www.shi.co.jp) |
+| **供应链环节** | 减速机 / 重型机械 / 精密传动 |
+| **企业属性** | 上市公司（TYO.6302）、国际品牌 |
+| **母公司/所属集团** | Sumitomo Heavy Industries, Ltd. |
+| **数据来源** | 官网、年报、产品手册、WAIC 2026 报道 |
+
+## 公司简介
+
+日本综合重工业巨头，Cyclo 摆线减速机全球市占率领先。
+
+住友重工业务涵盖重型机械、环保设备、半导体制造设备、精密减速机与船舶机械。其精密减速机事业部以 Cyclo 摆线减速机为核心产品，具有高刚性、高扭矩、耐冲击的特点，广泛应用于工业机器人、人形机器人、矿山机械、建筑机械与能源装备。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 摆线减速机 | 高扭矩耐冲击减速 | Cyclo 系列 | 工业机器人、重型机械 |
+| 行星减速机 | 精密伺服减速 | Fine Cyclo、IB 系列 | 半导体、机器人关节 |
+| 伺服执行器 | 电机+减速机一体化 | Smart Cyclo 系列 | 自动化、机器人 |
+
+## 代表产品
+
+### Cyclo 系列摆线减速机 / Sumitomo Cyclo Drive
+
+> Cyclo 系列摆线减速机：请访问 [官方资料](https://www.shi.co.jp) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | 40–400 mm 框号（系列范围） | 产品手册 |
+| 减速比 | 6:1 – 658,503:1 | 产品手册 |
+| 额定输出扭矩 | 20–1,200,000 N·m | 产品手册 |
+| 传动效率 | ≥90% | 产品手册 |
+| 冲击承载能力 | 额定扭矩 500% | 产品手册 |
+| 输入转速 | 最高 3,000 rpm | 产品手册 |
+| 润滑方式 | 油脂 / 油浴润滑 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：摆线针轮传动、多齿啮合、高刚性、耐冲击，适合重负载、高可靠性的工业场景。
+
+**应用场景**：工业机器人底座与肩部、人形机器人躯干关节、矿山机械、建筑机械、港口设备。
+
+### Fine Cyclo 精密减速机 / Sumitomo Fine Cyclo Precision Reducer
+
+> Fine Cyclo 精密减速机：请访问 [官方资料](https://www.shi.co.jp) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | 40–220 mm 框号（系列范围） | 产品手册 |
+| 减速比 | 3:1 – 100:1 | 产品手册 |
+| 额定输出扭矩 | 10–8,000 N·m | 产品手册 |
+| 背隙 | ≤ 3 arcmin | 产品手册 |
+| 传动效率 | ≥90% | 产品手册 |
+| 输入转速 | 最高 5,000 rpm | 产品手册 |
+| 防护等级 | IP54 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：摆线与行星组合结构，兼顾高精度与高扭矩，适合伺服电机匹配与机器人关节。
+
+**应用场景**：协作机器人、人形机器人关节、半导体设备、数控机床、自动化产线。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：特种合金钢、轴承、润滑剂、密封件、铸件、电机
+- **下游客户/应用场景**：工业机器人厂商、人形机器人整机厂、工程机械、矿业、能源
+- **主要竞争对手/对标**：Nabtesco、SEW-EURODRIVE、Bonfiglioli、南高齿、宁波东力
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_sumitomo`
+- 产品/零部件实体：`ent_component_sumitomo_cyclo_drive`, `ent_component_sumitomo_fine_cyclo`
+- 关键关系：
+  - `ent_company_sumitomo` -- `manufactures` --> `ent_component_sumitomo_cyclo_drive`
+  - `ent_company_sumitomo` -- `manufactures` --> `ent_component_sumitomo_fine_cyclo`
+
+## 参考资料
+
+1. [官网](https://www.shi.co.jp)
+2. [WAIC 2026 参展报道](https://www.worldrobotconference.com)
+3. [公开产品手册与研报](https://www.shi.co.jp/products/)（请按实际产品型号核对）

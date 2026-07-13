@@ -1,0 +1,117 @@
+---
+id: ent_company_aubo
+schema_version: 1
+type: company
+'title:': AUBO Robotics
+domain: 04_assembly_integration_testing
+theoretical_depth: system
+names:
+  zh: 遨博智能
+  en: AUBO Robotics
+status: active
+sources:
+- id: src_aubo_official
+  type: website
+  url: https://www.aubo-robotics.cn
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 遨博智能 / AUBO Robotics
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 遨博智能 |
+| **英文名** | AUBO Robotics |
+| **总部** | 中国北京 |
+| **成立时间** | 2015 年 |
+| **官网** | [https://www.aubo-robotics.cn](https://www.aubo-robotics.cn) |
+| **供应链环节** | 整机 OEM / 协作机器人 / 人形机器人部件 |
+| **企业属性** | 国产品牌、协作机器人核心厂商 |
+| **母公司/所属集团** | 无 |
+| **数据来源** | 遨博官网、产品手册、WAIC 2026 报道、公开新闻稿 |
+
+## 公司简介
+
+遨博智能是国内最早实现协作机器人规模化应用的厂商之一，产品以高性价比和开放生态著称。
+
+遨博 AUBO-i 系列协作机器人覆盖 3–20 kg 负载，广泛应用于装配、检测、上下料、打磨等领域。公司同时提供机器人视觉、力控、AGV 复合机器人等解决方案，并积极布局人形机器人关节与整机合作。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 协作机器人 | 工业/商业/科研 | AUBO-i3 / i5 / i10 / i16 / i20 | 3C、汽车、医疗、食品 |
+| 复合机器人 | 移动协作 | AUBO-AMR 系列 | 仓储物流、柔性产线 |
+| 人形零部件 | 一体化关节模组 | 未公开 | 人形机器人、协作机器人 |
+
+## 代表产品
+
+### AUBO-i5 协作机器人
+
+> AUBO-i5：请访问 [官方资料](https://www.aubo-robotics.cn) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 产品形态 | 6-DOF 协作机器人 | 遨博官网 |
+| 自重 | 约 24 kg | 产品手册 |
+| 负载 | 5 kg | 产品手册 |
+| 臂展 | 1000 mm | 产品手册 |
+| 自由度 | 6 DOF | 公开规格 |
+| 重复定位精度 | ±0.03 mm | 产品手册 |
+| 最大末端速度 | 2.8 m/s | 产品手册 |
+| 防护等级 | IP54 | 产品手册 |
+| 价格 | 未公开 | 需询价 |
+
+**技术亮点**：模块化关节、开放 API、拖拽示教、碰撞检测、支持 ROS/ROS2，适合中小企业柔性自动化改造。
+
+**应用场景**：3C 装配、汽车零部件检测、打磨抛光、医疗辅具、咖啡零售。
+
+### AUBO-AMR 复合机器人
+
+> AUBO-AMR：请访问 [官方资料](https://www.aubo-robotics.cn) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 产品形态 | 移动底盘 + 协作臂 | 遨博官网 |
+| 负载 | 未公开 | - |
+| 导航方式 | 激光 SLAM | 产品手册 |
+| 协作臂型号 | AUBO-i 系列（视配置） | 产品手册 |
+| 续航 | 未公开 | - |
+| 价格 | 未公开 | 需询价 |
+
+**技术亮点**：移动底盘与协作臂一体化集成，支持产线间物料转运与上下料，降低部署成本。
+
+**应用场景**：半导体晶圆转运、3C 产线物料配送、仓储物流、柔性制造。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：谐波减速器、伺服电机、编码器、控制器、结构件、线缆、电池（复合机器人）。
+- **下游客户/应用场景**：3C 电子、汽车零部件、医疗器械、食品、物流仓储。
+- **主要竞争对手/对标**：优傲 UR、节卡、大族机器人、越疆、珞石。
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_aubo`
+- 产品实体：`ent_product_aubo_i5`、`ent_product_aubo_amr`
+- 关键关系：
+  - `ent_company_aubo` -- `manufactures` --> `ent_product_aubo_i5`
+  - `ent_company_aubo` -- `manufactures` --> `ent_product_aubo_amr`
+  - `ent_product_aubo_amr` -- `uses` --> `ent_product_aubo_i5`
+
+## 参考资料
+
+1. [遨博智能官网](https://www.aubo-robotics.cn)
+2. [WAIC 2026 参展报道](https://www.worldrobotconference.com)
+3. 遨博产品手册与公开新闻稿

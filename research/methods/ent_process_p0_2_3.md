@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P0.2.3 需求管理工具与追溯链
+  en: ''
   zh: 需求管理工具与追溯链
   ko: ''
 summary:
-  en: 需求基线建立、ID/状态/Owner/验收条件完整
+  en: ''
   zh: 需求基线建立、ID/状态/Owner/验收条件完整
   ko: ''
 domains:
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：项目立项与商业基线
 

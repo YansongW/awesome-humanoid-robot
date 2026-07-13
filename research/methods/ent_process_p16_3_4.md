@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P16.3.4 服务手册与培训
+  en: ''
   zh: 服务手册与培训
   ko: ''
 summary:
-  en: 服务手册、备件策略、培训计划
+  en: ''
   zh: 服务手册、备件策略、培训计划
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P13 电子电气与能源系统（Electronics & Power）
+  en: ''
   zh: 电子电气与能源系统（Electronics & Power）
   ko: ''
 summary:
-  en: 电子电气与能源系统（Electronics & Power）
+  en: ''
   zh: 电子电气与能源系统（Electronics & Power）
   ko: ''
 domains:
@@ -35,5 +35,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

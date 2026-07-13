@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P16.2.2 质量控制体系建立
+  en: ''
   zh: 质量控制体系建立
   ko: ''
 summary:
-  en: 质量计划、检验规范、SPC 控制图
+  en: ''
   zh: 质量计划、检验规范、SPC 控制图
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）
 

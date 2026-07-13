@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P0.2.1 项目治理结构搭建
+  en: ''
   zh: 项目治理结构搭建
   ko: ''
 summary:
-  en: 治理文档发布、会议节奏固定、CCB 成立
+  en: ''
   zh: 治理文档发布、会议节奏固定、CCB 成立
   ko: ''
 domains:
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：项目立项与商业基线
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P8.1.1 载荷工况定义
+  en: ''
   zh: 载荷工况定义
   ko: ''
 summary:
-  en: 《载荷工况表》：载荷大小、方向、作用点、发生概率
+  en: ''
   zh: 《载荷工况表》：载荷大小、方向、作用点、发生概率
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：结构强度仿真与迭代（Structural FEA）
 

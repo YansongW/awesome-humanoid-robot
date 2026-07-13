@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P4.4.2 关节安全与故障保护
+  en: ''
   zh: 关节安全与故障保护
   ko: ''
 summary:
-  en: 故障保护策略、FMEA 更新、安全测试
+  en: ''
   zh: 故障保护策略、FMEA 更新、安全测试
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P14.1.3 硬件抽象与驱动层
+  en: ''
   zh: 硬件抽象与驱动层
   ko: ''
 summary:
-  en: HAL 接口规范、驱动覆盖清单、单元测试
+  en: ''
   zh: HAL 接口规范、驱动覆盖清单、单元测试
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）
 

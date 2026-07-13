@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P14.1.2 实时控制框架
+  en: ''
   zh: 实时控制框架
   ko: ''
 summary:
-  en: 实时性能测试报告、最大抖动 < 目标
+  en: ''
   zh: 实时性能测试报告、最大抖动 < 目标
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）
 

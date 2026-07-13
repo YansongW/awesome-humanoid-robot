@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P4.2.2 减速器与传动选型
+  en: ''
   zh: 减速器与传动选型
   ko: ''
 summary:
-  en: 减速器规格、传动链图纸、刚度/背隙预算
+  en: ''
   zh: 减速器规格、传动链图纸、刚度/背隙预算
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）
 

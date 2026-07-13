@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P1.1.1 利益相关方需求采集
+  en: ''
   zh: 利益相关方需求采集
   ko: ''
 summary:
-  en: 利益相关方清单、需求池、优先级排序
+  en: ''
   zh: 利益相关方清单、需求池、优先级排序
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）
 

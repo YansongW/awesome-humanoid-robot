@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P15.3.1 关节与整机耐久测试
+  en: ''
   zh: 关节与整机耐久测试
   ko: ''
 summary:
-  en: 可靠性测试计划与结果、失效分析与改进
+  en: ''
   zh: 可靠性测试计划与结果、失效分析与改进
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）
 

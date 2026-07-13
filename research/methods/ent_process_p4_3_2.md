@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P4.3.2 位置/力矩传感器方案
+  en: ''
   zh: 位置/力矩传感器方案
   ko: ''
 summary:
-  en: 传感器方案、精度预算、安装图纸
+  en: ''
   zh: 传感器方案、精度预算、安装图纸
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）
 

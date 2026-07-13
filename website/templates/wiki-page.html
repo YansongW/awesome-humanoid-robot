@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 
+{% set active_nav = 'wiki' %}
+
 {% block title %}{{ page.title }} · Wiki · {{ ui.site_title }}{% endblock %}
 
 {% block head %}
 {% if page.body_html and ('arithmatex' in page.body_html or 'language-mermaid' in page.body_html) %}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="/lib/katex/katex.min.css">
 {% endif %}
 {% endblock %}
 
@@ -29,11 +31,11 @@
 
 {% block scripts %}
 {% if page.body_html and 'arithmatex' in page.body_html %}
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
 <script defer src="/js/math.js"></script>
 {% endif %}
 {% if page.body_html and ('language-mermaid' in page.body_html or 'mermaid' in page.body_html) %}
-<script src="https://unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+<script src="/lib/mermaid/mermaid.min.js"></script>
 <script src="/js/wiki.js"></script>
 {% endif %}
 {% endblock %}

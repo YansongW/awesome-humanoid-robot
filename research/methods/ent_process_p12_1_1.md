@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P12.1.1 传感器选型与标定
+  en: ''
   zh: 传感器选型与标定
   ko: ''
 summary:
-  en: 感知模块架构、标定结果、精度指标
+  en: ''
   zh: 感知模块架构、标定结果、精度指标
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）
 

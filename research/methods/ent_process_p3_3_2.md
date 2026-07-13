@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P3.3.2 可靠性目标与分配
+  en: ''
   zh: 可靠性目标与分配
   ko: ''
 summary:
-  en: 可靠性目标分配表、关键件 MTBF 目标
+  en: ''
   zh: 可靠性目标分配表、关键件 MTBF 目标
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）
 

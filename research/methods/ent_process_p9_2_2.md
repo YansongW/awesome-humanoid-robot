@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P9.2.2 连续运行温升仿真
+  en: ''
   zh: 连续运行温升仿真
   ko: ''
 summary:
-  en: 《温升仿真报告》：关键节点温度、满足降额要求
+  en: ''
   zh: 《温升仿真报告》：关键节点温度、满足降额要求
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：热管理仿真与迭代（Thermal Management）
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P15.1.2 手臂与手部集成
+  en: ''
   zh: 手臂与手部集成
   ko: ''
 summary:
-  en: 单臂/双臂典型动作通过、抓取成功率达标
+  en: ''
   zh: 单臂/双臂典型动作通过、抓取成功率达标
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P15.3.2 软件稳定性与回归测试
+  en: ''
   zh: 软件稳定性与回归测试
   ko: ''
 summary:
-  en: 长时运行无崩溃、关键故障注入恢复通过
+  en: ''
   zh: 长时运行无崩溃、关键故障注入恢复通过
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）
 

@@ -1,0 +1,102 @@
+---
+id: ent_product_fourier_gr1
+schema_version: 1
+type: product
+domain: 11_applications_markets
+theoretical_depth: system
+names:
+  zh: 傅利叶 GR-1
+  en: Fourier GR-1
+status: active
+sources:
+- id: src_fourier_official
+  type: website
+  url: https://www.fftai.cn/products-gr1
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 傅利叶 GR-1 / Fourier GR-1
+
+> 返回：[附录 D.4 重点产品 Wiki 目录](../../../appendices/appendix-d/index-products.md)
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 产品信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **制造商** | [傅利叶智能 / Fourier Intelligence](../../../appendices/appendix-d/companies/company_fourier.md) |
+| **产品类别** | 通用人形机器人 |
+| **发布时间** | 2023 年 7 月 |
+| **状态** | 量产/商用 |
+| **官网/来源** | [傅利叶 GR-1 产品页](https://www.fftai.cn/products-gr1) |
+
+## 产品概述
+
+傅利叶 GR-1 是傅利叶智能推出的首款通用人形机器人，也是国内较早实现量产交付的双足人形平台。GR-1 身高 165 cm，体重 55 kg，全身 44 个自由度，步行速度可达 5 km/h，最大关节扭矩 230 N·m。傅利叶将康复外骨骼领域积累的力控技术迁移至 GR-1，使其在接触作业中具备柔顺控制能力。
+
+GR-1 采用傅利叶自研 FSA（Fourier Self-Actuator）一体化执行器，集成电机、驱动器、减速器与编码器。凭借医疗康复场景的客户基础，GR-1 已进入多家三甲医院康复科，用于步态训练与康复治疗辅助。
+
+## 产品图片
+
+> Fourier GR-1：请访问 [官方资料](https://www.fftai.cn/products-gr1) 查看。
+
+## 规格参数表
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | 165 cm（高） | 傅利叶官网 |
+| 重量 | 55 kg | 傅利叶官网 |
+| 自由度（整机） | 44 DOF | 傅利叶官网 |
+| 关键性能指标 | 最大关节扭矩 230 N·m；双臂负载 10 kg | 公开规格 |
+| 行走速度 | 5 km/h | 傅利叶官网 |
+| 续航 | 未公开 | - |
+| 计算平台 | 未公开 | - |
+| 价格 | 未公开 | - |
+
+## 供应链位置
+
+- **制造商**：[傅利叶智能 / Fourier Intelligence](../../../appendices/appendix-d/companies/company_fourier.md)
+- **核心零部件/技术来源**：自研 FSA 一体化执行器、力控传感器、减速器与编码器集成；视觉与计算模块外购。
+- **下游应用/客户**：三甲医院康复科、工业精密装配、科研教育。
+
+## 知识图谱节点与关系
+
+- 产品实体：`ent_product_fourier_gr1`
+- 制造商实体：`ent_company_fourier`
+- 关键关系：
+  - `rel_ent_company_fourier_manufactures_ent_product_fourier_gr1`（`ent_company_fourier` → `manufactures` → `ent_product_fourier_gr1`）
+
+## 应用场景
+
+- **医疗康复**：三甲医院康复科步态训练、运动功能评估与康复治疗辅助。
+- **工业精密装配**：力控柔顺操作下的电子元器件装配、拧螺丝与插装任务。
+- **科研教育**：机器人控制算法、人机交互与康复工程研究平台。
+
+## 竞争对比
+
+| 对比项 | 傅利叶 GR-1 | 傅利叶 GR-3 | Unitree H1 |
+|--------|-------------|-------------|------------|
+| 定位 | 通用人形/康复 | 交互陪伴人形 | 高动态研究平台 |
+| 整机 DOF | 44 | 55 | 26–27 |
+| 体重 | 55 kg | 71 kg | 47 kg |
+| 核心优势 | 力控技术、医疗场景落地 | 软包覆、情感交互 | 高动态运动、速度 |
+
+## 选购与部署建议
+
+- 医疗康复机构应重点关注 GR-1 的医疗器械合规状态、康复方案适配与培训支持。
+- 工业客户可结合力控需求评估 GR-1 在装配、打磨等接触作业中的适用性。
+
+## 参考资料
+
+1. [傅利叶 GR-1 产品页](https://www.fftai.cn/products-gr1)
+2. [IT之家 – 2026 中国人形机器人十强](https://www.ithome.com/0/925/903.htm)
+3. [机器之心 – 2024 中国人形机器人开发者大会](https://www.jiqizhixin.com/articles/2024-06-12)
+4. [虎嗅 – 人形机器人行业分析](https://www.huxiu.com/article/1797588.html)

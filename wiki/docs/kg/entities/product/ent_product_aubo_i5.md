@@ -1,0 +1,112 @@
+---
+id: ent_product_aubo_i5
+schema_version: 1
+type: product
+'title:': AUBO-i5 协作机器人
+domain: 04_assembly_integration_testing
+theoretical_depth: system
+names:
+  zh: AUBO-i5 协作机器人
+  en: AUBO-i5 Collaborative Robot
+status: active
+sources:
+- id: src_aubo_i5_official
+  type: website
+  url: https://www.aubo-robotics.cn
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# AUBO-i5 协作机器人 / AUBO-i5 Collaborative Robot
+
+> 返回：[附录 D.4 重点产品 Wiki 目录](../../../appendices/appendix-d/index-products.md)
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 产品信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **制造商** | [遨博智能 / AUBO](../../../appendices/appendix-d/companies/company_aubo.md) |
+| **产品类别** | 协作机器人 |
+| **发布时间** | 2017 年起持续迭代 |
+| **状态** | 量产/商用 |
+| **官网/来源** | [https://www.aubo-robotics.cn](https://www.aubo-robotics.cn) |
+
+## 产品概述
+
+AUBO-i5 是遨博智能推出的 6 自由度协作机器人，负载 5 kg、臂展 1000 mm，面向工业柔性制造与商业服务。
+
+产品以高性价比、开放生态和易用性著称，支持拖拽示教、ROS/ROS2 与丰富的二次开发接口，是国内协作机器人规模化应用的典型代表。
+
+## 产品图片
+
+> AUBO-i5：请访问 [官方资料](https://www.aubo-robotics.cn) 查看。
+
+## 规格参数表
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 产品形态 | 6-DOF 协作机器人 | 遨博官网 |
+| 自重 | 约 24 kg | 产品手册 |
+| 负载 | 5 kg | 产品手册 |
+| 臂展 | 1000 mm | 产品手册 |
+| 自由度 | 6 DOF | 公开规格 |
+| 重复定位精度 | ±0.03 mm | 产品手册 |
+| 最大末端速度 | 2.8 m/s | 产品手册 |
+| 最大关节速度 | 180°/s（参考） | 产品手册 |
+| 防护等级 | IP54 | 产品手册 |
+| 通信接口 | Ethernet / Modbus / ROS | 产品手册 |
+| 价格 | 未公开 | 需询价 |
+
+## 供应链位置
+
+- **制造商**：[遨博智能 / AUBO](../../../appendices/appendix-d/companies/company_aubo.md)
+- **核心零部件/技术来源**：自研关节模组、谐波减速器、伺服电机、控制器、编码器、结构件。
+- **下游应用/客户**：3C 电子、汽车零部件、医疗器械、食品、物流仓储、科研教育。
+
+## 知识图谱节点与关系
+
+- 产品实体：`ent_product_aubo_i5`
+- 制造商实体：`ent_company_aubo`
+- 关键关系：
+  - `rel_ent_company_aubo_manufactures_ent_product_aubo_i5`（`ent_company_aubo` → `manufactures` → `ent_product_aubo_i5`）
+  - `ent_product_aubo_amr` -- `uses` --> `ent_product_aubo_i5`
+
+## 应用场景
+
+- **3C 装配**：螺丝锁付、插件、检测、搬运。
+- **汽车零部件**：打磨、抛光、上下料、检测。
+- **医疗辅具**：康复训练、手术辅助、样本处理。
+- **商业服务**：咖啡制作、无人零售、展厅互动。
+
+## 竞争对比
+
+| 对比项 | AUBO-i5 | 主要竞品 |
+|--------|---------|----------|
+| 定位 | 工业/商业协作机器人 | 节卡 Zu 5、大族 Elfin 5 等 |
+| 核心优势 | 高性价比、开放生态、规模化应用 | 视具体型号而定 |
+| 价格 | 未公开 | 未公开 |
+
+## 选购与部署建议
+
+- 根据负载与臂展需求选择 AUBO-i3 / i5 / i10 / i16 / i20 系列。
+- 确认防护等级是否满足车间环境要求（粉尘、油污、湿度）。
+- 建议通过遨博官方渠道获取最新控制器固件与认证配件清单。
+
+## 相关词条
+
+- [制造商：遨博智能 / AUBO](../../../appendices/appendix-d/companies/company_aubo.md)
+- [附录 D.4 重点产品 Wiki](../../../appendices/appendix-d/index-products.md)
+
+## 参考资料
+
+1. [遨博智能官网](https://www.aubo-robotics.cn)
+2. 遨博 AUBO-i 系列产品手册
+3. [WAIC 2026 参展报道](https://www.worldrobotconference.com)

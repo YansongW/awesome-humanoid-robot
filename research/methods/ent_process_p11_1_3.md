@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P11.1.3 触觉与力觉传感器集成
+  en: ''
   zh: 触觉与力觉传感器集成
   ko: ''
 summary:
-  en: 传感器布置方案、信号处理链、标定方法
+  en: ''
   zh: 传感器布置方案、信号处理链、标定方法
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）
 

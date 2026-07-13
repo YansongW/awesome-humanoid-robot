@@ -8,8 +8,7 @@ names:
   zh: 用下一尺度自回归把文本生成的人体动作做成由粗到细
   ko: ''
 summary:
-  en: 'ScaleMoGen: Autoregressive Next-Scale Prediction for Human Motion Generation
-    is a paper on 人体动作 for humanoid robotics. 用下一尺度自回归把文本生成的人体动作做成由粗到细.'
+  en: ''
   zh: 'ScaleMoGen: Autoregressive Next-Scale Prediction for Human Motion Generation
     is a paper on 人体动作 for humanoid robotics. 用下一尺度自回归把文本生成的人体动作做成由粗到细.'
   ko: ''
@@ -44,5 +43,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 ScaleMoGen: Autoregressive Next-Scale Prediction for Human Motion Generation is a paper on 人体动作 for humanoid robotics. 用下一尺度自回归把文本生成的人体动作做成由粗到细.

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P0.1.4 全生命周期成本模型 v0
+  en: ''
   zh: 全生命周期成本模型 v0
   ko: ''
 summary:
-  en: 整机 BOM 目标、子系统成本上限、盈亏平衡产量
+  en: ''
   zh: 整机 BOM 目标、子系统成本上限、盈亏平衡产量
   ko: ''
 domains:
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：项目立项与商业基线
 

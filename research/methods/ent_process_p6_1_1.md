@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P6.1.1 URDF/SDF 文件生成
+  en: ''
   zh: URDF/SDF 文件生成
   ko: ''
 summary:
-  en: 可在 RViz/Gazebo/Isaac Sim 中正确加载、无解析错误
+  en: ''
   zh: 可在 RViz/Gazebo/Isaac Sim 中正确加载、无解析错误
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）
 

@@ -1,0 +1,102 @@
+---
+id: ent_material_ningbo_yunsheng_ndfeb_magnet
+type: material
+'title:': 宁波韵升 高性能烧结钕铁硼磁钢
+domain: 01_raw_materials
+theoretical_depth: system
+aliases:
+- 宁波韵升 NdFeB
+- Ningbo Yunsheng NdFeB Magnet
+status: active
+created_at: 2026-07-01 00:00:00+00:00
+updated_at: 2026-07-09 00:00:00+00:00
+sources:
+- id: ningbo_yunsheng_product
+  type: website
+  url: http://www.yunsheng.com
+verification:
+  reviewed_by: ai_autonomous
+  reviewed_at: 2026-07-09 00:00:00+00:00
+---
+
+
+
+
+
+# 宁波韵升 高性能烧结钕铁硼磁钢宁波韵升 高性能烧结钕铁硼磁钢
+
+---
+
+## 产品信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **制造商** | [宁波韵升 / Ningbo Yunsheng](../../../appendices/appendix-d/companies/company_ningbo_yunsheng.md) |
+| **产品类别** | 高性能烧结钕铁硼永磁材料 |
+| **发布时间** | 持续量产 |
+| **状态** | 量产/商用 |
+| **官网/来源** | [宁波韵升官网](http://www.yunsheng.com) |
+
+## 产品概述
+
+宁波韵升高性能烧结钕铁硼磁钢采用 Nd₂Fe₁₄B 基烧结磁体技术路线，覆盖 N、M、H、SH、UH 等常用牌号，可定制瓦型、方块、圆环等复杂磁路形状。产品具有高剩磁、高磁能积与高矫顽力特点，广泛应用于新能源汽车驱动电机、工业伺服电机、风力发电机及人形机器人关节执行器。
+
+依托磁材与伺服电机双主业布局，宁波韵升具备从磁钢到电机执行器的协同开发能力，可为机器人客户提供材料与驱动方案的一体化支持。
+
+## 产品图片
+
+> 宁波韵升烧结钕铁硼磁钢：请访问 [官方资料](http://www.yunsheng.com) 查看。
+
+## 规格参数表
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 材料体系 | Nd₂Fe₁₄B 基烧结磁体 | 宁波韵升公开资料 |
+| 代表牌号 | N48 / N52 / 45SH / 48UH | 行业标准 |
+| 剩磁 Br | 14.3–14.8 kGs（N52） | 行业标准 |
+| 矫顽力 Hcj | ≥ 11 kOe（N52）；≥ 25 kOe（48UH） | 行业标准 |
+| 最大磁能积 (BH)max | 50–53 MGOe（N52） | 行业标准 |
+| 最高工作温度 | ≤ 80 °C（N52）；≤ 180 °C（48UH） | 行业标准 |
+| 密度 | 约 7.5 g/cm³ | 公开资料 |
+| 表面处理 | 镍/锌/环氧（视应用） | 公开资料 |
+| 尺寸 | 按客户图纸定制 | 未公开 |
+| 价格 | 未公开 | - |
+
+## 供应链位置
+
+- **制造商**：[宁波韵升 / Ningbo Yunsheng](../../../appendices/appendix-d/companies/company_ningbo_yunsheng.md)
+- **核心材料/技术来源**：镨钕合金、重稀土镝铽、硼铁；晶界扩散与磁路设计技术。
+- **下游应用/客户**：新能源汽车驱动电机、工业伺服电机、风电发电机、人形机器人关节执行器。
+
+## 知识图谱节点与关系
+
+- 材料实体：`ent_material_ningbo_yunsheng_ndfeb_magnet`
+- 制造商实体：`ent_company_ningbo_yunsheng`
+- 关键关系：
+  - `rel_ent_company_ningbo_yunsheng_produces_ent_material_ningbo_yunsheng_ndfeb_magnet`（`ent_company_ningbo_yunsheng` → `produces` → `ent_material_ningbo_yunsheng_ndfeb_magnet`）
+
+## 应用场景
+
+- **新能源汽车**：驱动电机转子磁钢，提升功率密度与效率。
+- **工业自动化**：伺服电机、直驱电机高扭矩磁路。
+- **风力发电**：永磁直驱风力发电机磁钢。
+- **人形机器人**：无框力矩电机与关节执行器磁路，支撑高动态运动。
+
+## 竞争对比
+
+| 对比项 | 宁波韵升 N52 | 中科三环 N52 | 正海磁材 N52 |
+|--------|--------------|--------------|--------------|
+| 剩磁 Br | 14.3–14.8 kGs | 14.3–14.8 kGs | 14.3–14.8 kGs |
+| 矫顽力 Hcj | ≥ 11 kOe | ≥ 11 kOe | ≥ 11 kOe |
+| 核心优势 | 磁材+电机协同 | 中科院技术 | 低重稀土配方 |
+
+## 选购与部署建议
+
+- 高动态关节电机建议选用 SH/UH 及以上牌号，并校验高温退磁曲线。
+- 磁钢表面防护需匹配电机工作环境的湿度与腐蚀风险。
+
+## 参考资料
+
+1. [宁波韵升官网](http://www.yunsheng.com)
+2. [宁波韵升 2024 年度报告](http://www.sse.com.cn/disclosure/listedinfo/announcements/)
+3. N52 永磁体典型参数公开资料

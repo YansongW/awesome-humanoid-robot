@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P14.3.2 软硬件在环测试（HIL/SIL）
+  en: ''
   zh: 软硬件在环测试（HIL/SIL）
   ko: ''
 summary:
-  en: HIL/SIL 测试报告、关键用例 100% 覆盖
+  en: ''
   zh: HIL/SIL 测试报告、关键用例 100% 覆盖
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）
 

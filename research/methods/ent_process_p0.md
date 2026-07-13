@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P0 项目立项与商业基线
+  en: ''
   zh: 项目立项与商业基线
   ko: ''
 summary:
-  en: 项目立项与商业基线
+  en: ''
   zh: 项目立项与商业基线
   ko: ''
 domains:
@@ -34,5 +34,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

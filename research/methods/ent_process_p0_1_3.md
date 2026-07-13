@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P0.1.3 知识产权与合规策略
+  en: ''
   zh: 知识产权与合规策略
   ko: ''
 summary:
-  en: FTO 报告、适用标准清单、IP 布局建议
+  en: ''
   zh: FTO 报告、适用标准清单、IP 布局建议
   ko: ''
 domains:
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：项目立项与商业基线
 

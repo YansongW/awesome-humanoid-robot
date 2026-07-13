@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P4 关节模组与驱动系统设计（Actuator & Drive）
+  en: ''
   zh: 关节模组与驱动系统设计（Actuator & Drive）
   ko: ''
 summary:
-  en: 关节模组与驱动系统设计（Actuator & Drive）
+  en: ''
   zh: 关节模组与驱动系统设计（Actuator & Drive）
   ko: ''
 domains:
@@ -35,5 +35,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

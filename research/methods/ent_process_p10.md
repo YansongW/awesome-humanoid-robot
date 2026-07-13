@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P10 运动控制算法开发与验证（Motion Control）
+  en: ''
   zh: 运动控制算法开发与验证（Motion Control）
   ko: ''
 summary:
-  en: 运动控制算法开发与验证（Motion Control）
+  en: ''
   zh: 运动控制算法开发与验证（Motion Control）
   ko: ''
 domains:
@@ -35,5 +35,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

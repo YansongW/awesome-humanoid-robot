@@ -8,8 +8,7 @@ names:
   zh: 只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到 Unitree G1 真机长时自主行走
   ko: ''
 summary:
-  en: 'EgoNav: Learning Humanoid Navigation from Human Data is a paper on 导航任务 for
-    humanoid robotics. 只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到 Unitree G1 真机长时自主行走.'
+  en: ''
   zh: 'EgoNav: Learning Humanoid Navigation from Human Data is a paper on 导航任务 for
     humanoid robotics. 只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到 Unitree G1 真机长时自主行走.'
   ko: ''
@@ -43,5 +42,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 EgoNav: Learning Humanoid Navigation from Human Data is a paper on 导航任务 for humanoid robotics. 只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到 Unitree G1 真机长时自主行走.

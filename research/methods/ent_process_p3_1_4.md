@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P3.1.4 结构拓扑与传力路径设计
+  en: ''
   zh: 结构拓扑与传力路径设计
   ko: ''
 summary:
-  en: 结构拓扑方案、传力路径图、模块接口定义
+  en: ''
   zh: 结构拓扑方案、传力路径图、模块接口定义
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）
 

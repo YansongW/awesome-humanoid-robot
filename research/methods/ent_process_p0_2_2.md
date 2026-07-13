@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P0.2.2 风险登记册与应对计划
+  en: ''
   zh: 风险登记册与应对计划
   ko: ''
 summary:
-  en: Top-10 风险清单、 Owner、Mitigation Plan、Trigger
+  en: ''
   zh: Top-10 风险清单、 Owner、Mitigation Plan、Trigger
   ko: ''
 domains:
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：项目立项与商业基线
 

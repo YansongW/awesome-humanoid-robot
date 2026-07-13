@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P5.3.3 可维护性与维修性设计
+  en: ''
   zh: 可维护性与维修性设计
   ko: ''
 summary:
-  en: 维护手册草案、MTTR 目标、快拆件清单
+  en: ''
   zh: 维护手册草案、MTTR 目标、快拆件清单
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）
 

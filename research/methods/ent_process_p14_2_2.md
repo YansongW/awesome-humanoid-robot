@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P14.2.2 OTA、诊断与健康管理
+  en: ''
   zh: OTA、诊断与健康管理
   ko: ''
 summary:
-  en: OTA 方案、诊断协议、健康管理界面
+  en: ''
   zh: OTA 方案、诊断协议、健康管理界面
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）
 

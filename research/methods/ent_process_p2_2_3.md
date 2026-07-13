@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P2.2.3 ID-结构接口冻结
+  en: ''
   zh: ID-结构接口冻结
   ko: ''
 summary:
-  en: 《ID-结构接口规范》、安装点图、密封等级定义
+  en: ''
   zh: 《ID-结构接口规范》、安装点图、密封等级定义
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：工业设计与外观工程（ID / A-Surface）
 

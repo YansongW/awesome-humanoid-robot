@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P15.1.3 感知-规划-控制闭环集成
+  en: ''
   zh: 感知-规划-控制闭环集成
   ko: ''
 summary:
-  en: 典型任务端到端成功率 > 目标
+  en: ''
   zh: 典型任务端到端成功率 > 目标
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）
 

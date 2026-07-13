@@ -9,8 +9,7 @@ names:
   zh: GAIT：用「惯性-腿部」分词与注意力做足式机器人本体感知状态估计
   ko: ''
 summary:
-  en: 'GAIT: Legged Robot Proprioceptive State Estimation with Attention over Inertial-Leg
-    Tokens is a paper on State Estimation for humanoid robotics. GAIT：用「惯性-腿部」分词与注意力做足式机器人本体感知状态估计.'
+  en: ''
   zh: 'GAIT: Legged Robot Proprioceptive State Estimation with Attention over Inertial-Leg
     Tokens is a paper on State Estimation for humanoid robotics. GAIT：用「惯性-腿部」分词与注意力做足式机器人本体感知状态估计.'
   ko: ''
@@ -43,5 +42,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-06'
 ---
+
 
 GAIT: Legged Robot Proprioceptive State Estimation with Attention over Inertial-Leg Tokens is a paper on State Estimation for humanoid robotics. GAIT：用「惯性-腿部」分词与注意力做足式机器人本体感知状态估计.

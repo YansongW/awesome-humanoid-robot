@@ -1,0 +1,106 @@
+---
+id: ent_company_catl
+type: company
+'title:': CATL / 宁德时代
+domain: 02_components
+theoretical_depth: system
+aliases:
+- 宁德时代
+- Contemporary Amperex Technology
+status: active
+created_at: 2026-07-01 00:00:00+00:00
+updated_at: 2026-07-09 00:00:00+00:00
+sources:
+- id: catl_official
+  type: website
+  url: https://www.catl.com
+verification:
+  reviewed_by: ai_autonomous
+  reviewed_at: 2026-07-09 00:00:00+00:00
+---
+
+
+
+
+
+# catl
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 宁德时代新能源科技股份有限公司 |
+| **英文名** | Contemporary Amperex Technology Co., Limited (CATL) |
+| **总部** | 中国福建省宁德市 |
+| **成立时间** | 2011 年 |
+| **官网** | [https://www.catl.com](https://www.catl.com) |
+| **供应链环节** | 动力电池、储能电池、电池管理系统（BMS） |
+| **企业属性** | 上市公司（深交所：300750） |
+| **母公司/所属集团** | 无（独立上市） |
+| **数据来源** | 公司官网、2022 年麒麟电池发布会、行业拆解报告 |
+
+## 公司简介
+
+宁德时代是全球最大的动力电池制造商之一，连续八年位居全球动力电池装车量第一。
+
+公司主营业务覆盖动力电池系统、储能系统和电池材料，核心客户包括 Tesla、BMW、蔚来、大众、福特、现代等全球主流车企。在人形机器人领域，高能量密度、高安全性的电池组是整机续航与轻量化的关键瓶颈，CATL 的 CTP/CTC 技术可为机器人底盘集成提供参考。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 动力电池 | 乘用车/商用车高能量密度电池包 | 麒麟电池（CTP 3.0） | 电动汽车、人形机器人平台 |
+| 储能电池 | 大容量长寿命电化学储能 | EnerC / EnerOne | 电网储能、工商业储能 |
+| 电池材料 | 正极、负极及回收材料 | 高镍三元、磷酸铁锂 | 自供及外供 |
+
+## 代表产品
+
+### 麒麟电池（CTP 3.0）
+
+![麒麟电池](https://www.catl.com/en/news/958.html)
+
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | 未公开 | 包级尺寸因车型定制 |
+| 重量 | 未公开 | 包级重量因车型定制 |
+| 电芯类型 | 方形 / 圆柱（NCM / LFP） | CATL 官网 |
+| 体积利用率 | 最高 72 % | CATL 官网 |
+| 能量密度 | NCM 255 Wh/kg；LFP 205 Wh/kg | CATL 官网 |
+| 快充能力 | 支持 4C 快充 | CATL 官网 |
+| 循环寿命 | ≥1000 次（NCM） | 行业公开资料 |
+| 价格 | 未公开 | 未公开 |
+
+**技术亮点**：第三代 CTP 技术取消模组结构，提升体积利用率与能量密度；支持 4C 快充，10 分钟可充至 80 % SOC。
+
+**应用场景**：高端长续航电动车、对人形机器人底盘一体化电池包具有参考价值。
+
+## 与人形机器人的关联
+
+- 电池、功率半导体与先进材料是人形机器人实现长续航、高动态与轻量化的共性基础。
+- 工业机器人与自动化产线为人形机器人整机装配、测试与量产提供可复用的制造能力。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：锂、镍、钴等正极金属；隔膜、电解液、铜箔/铝箔；BMS 芯片。
+- **下游客户/应用场景**：Tesla、BMW、蔚来、大众、福特、现代等车企；储能系统集成商。
+- **主要竞争对手/对标**：BYD、LG Energy Solution、松下、三星 SDI。
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_catl`
+- 产品实体：`ent_component_catl_qilin_battery`
+- 关键关系：
+  - `ent_company_catl` -- `manufactures` --> `ent_component_catl_qilin_battery`
+  - `ent_company_catl` -- `supplies` --> `ent_company_tesla`
+  - `ent_company_catl` -- `supplies` --> `ent_company_bmw`
+
+## 参考资料
+
+1. [CATL 官网](https://www.catl.com)
+2. [CATL 麒麟电池发布会](https://www.catl.com/en/news/958.html)
+3. [CATL Research Technology 页面](https://www.catl.com/en/research/technology/)

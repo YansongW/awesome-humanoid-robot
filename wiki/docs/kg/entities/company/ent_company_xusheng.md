@@ -1,0 +1,118 @@
+---
+id: ent_company_xusheng
+schema_version: 1
+type: company
+'title:': Ningbo Xusheng Group Co., Ltd.
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: 旭升集团
+  en: Ningbo Xusheng Group Co., Ltd.
+status: active
+sources:
+- id: src_xusheng_official
+  type: website
+  url: https://www.xusheng.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 旭升集团 / Ningbo Xusheng Group Co., Ltd.
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 旭升集团 |
+| **英文名** | Ningbo Xusheng Group Co., Ltd. |
+| **总部** | 中国浙江宁波 |
+| **成立时间** | 2003 |
+| **官网** | [https://www.xusheng.com](https://www.xusheng.com) |
+| **供应链环节** | 铝合金压铸 / 镁合金压铸 / 新能源汽车结构件 |
+| **企业属性** | 上市公司（SH.603305）、国内品牌 |
+| **母公司/所属集团** | 宁波旭升集团股份有限公司 |
+| **数据来源** | 官网、年报、产品手册、WAIC 2026 报道 |
+
+## 公司简介
+
+国内新能源汽车精密铝合金零部件龙头，产品覆盖三电系统、底盘与车身结构件。
+
+旭升集团专注于铝合金、镁合金压铸及精密机加工，是特斯拉等头部新能源汽车企业的核心供应商。公司产品包括电池包壳体、电机壳体、控制器壳体、底盘结构件等，近年来向人形机器人关节壳体、躯干结构件等轻量化零部件延伸。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 三电系统壳体 | 新能源动力总成壳体 | 电机壳体 / 电控壳体 / 电池包端板 | 新能源汽车 |
+| 底盘结构件 | 轻量化底盘零部件 | 副车架、控制臂、转向节 | 新能源汽车 |
+| 车身结构件 | 大型压铸件 | 一体式后地板、门槛梁 | 新能源汽车 |
+| 机器人结构件 | 精密压铸结构件 | 关节壳体、谐波减速器壳体 | 人形机器人 |
+
+## 代表产品
+
+### 新能源汽车电机壳体 / EV Motor Housing
+
+> 新能源汽车电机壳体：请访问 [官方资料](https://www.xusheng.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 材质 | 铝合金 A380 / AlSi10MnMg | 产品手册 |
+| 制造工艺 | 高压压铸 + CNC 加工 | 产品手册 |
+| 尺寸范围 | 依型号 | 产品手册 |
+| 重量 | 5–40 kg | 产品手册 |
+| 尺寸精度 | CT4–CT6 | 产品手册 |
+| 气密性 | ≤ 5 sccm（部分型号） | 产品手册 |
+| 表面处理 | 涂装 / 阳极氧化 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：高导热、高气密性、尺寸精度高，可集成水冷通道与安装点。
+
+**应用场景**：新能源汽车驱动电机、混动变速箱、人形机器人关节壳体。
+
+### 铝合金结构件 / Aluminum Alloy Structural Part
+
+> 铝合金结构件：请访问 [官方资料](https://www.xusheng.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 材质 | 铝合金 AlSi10MnMg / A356 | 产品手册 |
+| 制造工艺 | 高压压铸 / 低压铸造 + CNC | 产品手册 |
+| 尺寸范围 | 依模具 | 产品手册 |
+| 壁厚 | 1.5–6 mm | 产品手册 |
+| 尺寸精度 | CT5–CT7 | 产品手册 |
+| 抗拉强度 | 270–320 MPa（T7 热处理） | 产品手册 |
+| 表面处理 | 涂装 / 喷丸 / 钝化 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：一体化压铸减重、加工精度高、批次一致性好，适合复杂结构件。
+
+**应用场景**：人形机器人躯干/腿部骨架、汽车底盘、电池包结构件。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：铝合金锭、镁合金锭、模具钢、压铸机、CNC、热处理炉
+- **下游客户/应用场景**：特斯拉、蔚来、小鹏、理想、宁德时代、机器人整机厂
+- **主要竞争对手/对标**：文灶股份、广东鸿图、拓普集团、三花智控
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_xusheng`
+- 产品/零部件实体：`ent_component_xusheng_ev_motor_housing`, `ent_component_xusheng_aluminum_structure`
+- 关键关系：
+  - `ent_company_xusheng` -- `manufactures` --> `ent_component_xusheng_ev_motor_housing`
+  - `ent_company_xusheng` -- `manufactures` --> `ent_component_xusheng_aluminum_structure`
+
+## 参考资料
+
+1. [旭升集团官网](https://www.xusheng.com)
+2. [旭升集团投资者关系](https://www.xusheng.com/investor/)
+3. [WAIC 2026 参展报道](https://www.worldrobotconference.com)

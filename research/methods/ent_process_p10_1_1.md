@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P10.1.1 IMU 与关节编码器融合
+  en: ''
   zh: IMU 与关节编码器融合
   ko: ''
 summary:
-  en: 状态估计器、实测轨迹误差 < 目标、站立漂移可控
+  en: ''
   zh: 状态估计器、实测轨迹误差 < 目标、站立漂移可控
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）
 

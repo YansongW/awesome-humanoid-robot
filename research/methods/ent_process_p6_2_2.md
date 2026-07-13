@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P6.2.2 工作空间与可达性分析
+  en: ''
   zh: 工作空间与可达性分析
   ko: ''
 summary:
-  en: 《工作空间分析报告》：可达域包络、关键姿态覆盖度 > 95%
+  en: ''
   zh: 《工作空间分析报告》：可达域包络、关键姿态覆盖度 > 95%
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）
 

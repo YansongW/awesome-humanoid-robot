@@ -1,0 +1,105 @@
+---
+id: ent_component_leaderdrive_kah
+type: component
+'title:': 绿的谐波 KAH 系列旋转执行器
+domain: 02_components
+theoretical_depth: system
+aliases:
+- KAH 系列
+- Leaderdrive KAH
+status: active
+created_at: 2026-07-01 00:00:00+00:00
+updated_at: 2026-07-09 00:00:00+00:00
+sources:
+- id: ent_component_leaderdrive_kah_official
+  type: website
+  url: http://www.leaderdrive.com
+verification:
+  reviewed_by: ai_autonomous
+  reviewed_at: 2026-07-09 00:00:00+00:00
+  review_notes: Specifications from official datasheets and verified distributors;
+    missing values marked as 未公开.
+---
+
+
+
+
+
+# leaderdrive_kah
+
+---
+
+## 产品信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **制造商** | [绿的谐波 / Leaderdrive](../../../appendices/appendix-d/companies/company_leaderdrive.md) |
+| **产品类别** | 谐波减速器 / 旋转执行器 |
+| **发布时间** | 近年随 KAH/KAT/KAS 旋转执行器系列推出 |
+| **状态** | 量产/商用 |
+| **官网/来源** | [绿的谐波官网](http://www.leaderdrive.com) |
+
+## 产品概述
+
+绿的谐波 KAH 系列是面向机器人关节、数控机床、半导体设备等高端应用的中空轴旋转执行器，集成高精度谐波减速器、无框力矩电机、中空轴高分辨率绝对值编码器、制动器与智能传感器于一体。KAH 系列通过一体化设计减少关节体积与重量，同时提供高转矩密度与中空走线空间，便于线缆、气管或激光束穿过。
+
+KAH 系列覆盖 KAH-14/17/20/25/32/40 等多种规格，减速比包含 51:1、81:1、101:1、121:1、161:1 等选项，额定输出转矩从数十 N·m 到 800 N·m 量级，定位精度可达 30 角秒以内，防护等级最高可达 IP67。该产品广泛应用于协作机器人、人形机器人、精密转台与医疗设备。
+
+## 产品图片
+
+> Leaderdrive KAH Series：请访问 [官方资料](http://www.leaderdrive.com) 查看。
+
+## 规格参数表
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 系列规格 | KAH-14/17/20/25/32/40 | 官方产品手册 |
+| 减速比 | 51 / 81 / 101 / 121 / 161:1 | 官方产品手册 |
+| 输出转矩 | 最高 800 N·m（KAH-40） | 官方产品手册 |
+| 定位精度 | ≤30 arcsec | 官方产品手册 |
+| 重复定位精度 | ≤10 arcsec | 官方产品手册 |
+| 供电电压 | 220 VAC / 110 VAC / 48 VDC | 官方产品手册 |
+| 防护等级 | 最高 IP67 | 官方产品手册 |
+| 重量 | 因型号而异 | 未公开 |
+| 价格 | 未公开 | - |
+
+## 供应链位置
+
+- **制造商**：[绿的谐波 / Leaderdrive](../../../appendices/appendix-d/companies/company_leaderdrive.md)
+- **核心零部件/技术来源**：自研“P 齿形”谐波减速器、无框力矩电机、编码器、制动器；轴承与钢材外购。
+- **下游应用/客户**：协作机器人、人形机器人关节、数控机床、半导体设备、医疗机械。
+
+## 知识图谱节点与关系
+
+- 零部件实体：`ent_component_leaderdrive_kah`
+- 制造商实体：`ent_company_leaderdrive`
+- 关键关系：
+  - `rel_ent_company_leaderdrive_manufactures_ent_component_leaderdrive_kah`（`ent_company_leaderdrive` → `manufactures` → `ent_component_leaderdrive_kah`）
+
+## 应用场景
+
+- **人形机器人关节**：为髋、膝、肩、肘等关节提供高扭矩密度一体化旋转执行器。
+- **协作机器人**：用于协作臂的精密减速与力控关节模组。
+- **数控机床与转台**：高精度定位与重复定位的回转工作台。
+- **半导体与医疗设备**：洁净环境、高可靠性的精密传动。
+
+## 竞争对比
+
+| 对比项 | 绿的谐波 KAH | Harmonic Drive CSF 系列 | Nabtesco RV 系列 |
+|--------|--------------|-------------------------|------------------|
+| 类型 | 谐波旋转执行器 | 谐波减速器 | RV 减速器 |
+| 精度 | ≤30 arcsec | ≤30 arcsec | ≤1 arcmin |
+| 负载 | 最高 800 N·m | 因型号而异 | 高负载/高刚性 |
+| 核心优势 | 一体化设计、中空走线、本土化供应 | 精度与寿命 | 重载与刚性 |
+
+## 选购与部署建议
+
+- 一体化旋转执行器选型需综合考虑峰值扭矩、中空孔径、编码器分辨率与总线接口。
+- 建议与绿的谐波技术团队确认关节模组的散热、制动与电缆走线细节。
+
+## 参考资料
+
+1. [绿的谐波官网](http://www.leaderdrive.com)
+2. [绿的谐波 KAH 系列旋转执行器产品手册](https://www.worldrobotconference.com/uploads/exuser2024/video/5vzzrp.pdf)
+3. [东方财富 – 绿的谐波研报](https://pdf.dfcfw.com/pdf/H3_AP202311191611678375_1.pdf)
+4. [机器人在线 – 绿的谐波产品页](https://www.imrobotic.com/parts/detail/9678.html)

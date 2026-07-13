@@ -8,8 +8,7 @@ names:
   zh: Extreme Parkour with Legged Robots
   ko: ''
 summary:
-  en: Extreme Parkour with Legged Robots is a paper on 行走 Locomotion for humanoid
-    robotics.
+  en: ''
   zh: Extreme Parkour with Legged Robots is a paper on 行走 Locomotion for humanoid
     robotics.
   ko: ''
@@ -41,5 +40,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 Extreme Parkour with Legged Robots is a paper on 行走 Locomotion for humanoid robotics.

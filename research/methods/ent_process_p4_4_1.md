@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P4.4.1 关节寿命与失效分析
+  en: ''
   zh: 关节寿命与失效分析
   ko: ''
 summary:
-  en: 寿命测试计划、失效模式分析、维护周期建议
+  en: ''
   zh: 寿命测试计划、失效模式分析、维护周期建议
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）
 

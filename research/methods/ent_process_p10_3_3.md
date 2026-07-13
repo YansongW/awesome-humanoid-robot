@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P10.3.3 实物安全解锁与验证
+  en: ''
   zh: 实物安全解锁与验证
   ko: ''
 summary:
-  en: Sim-to-Real 迁移报告、关键动作实物通过
+  en: ''
   zh: Sim-to-Real 迁移报告、关键动作实物通过
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）
 

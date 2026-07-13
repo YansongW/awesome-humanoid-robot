@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P14.3.1 端到端数据流联调
+  en: ''
   zh: 端到端数据流联调
   ko: ''
 summary:
-  en: 端到端延迟 < 目标、故障注入测试通过
+  en: ''
   zh: 端到端延迟 < 目标、故障注入测试通过
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）
 

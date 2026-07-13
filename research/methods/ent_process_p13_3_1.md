@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P13.3.1 硬件急停与安全链
+  en: ''
   zh: 硬件急停与安全链
   ko: ''
 summary:
-  en: 安全系统原理图、FMEA、急停响应时间 < 目标
+  en: ''
   zh: 安全系统原理图、FMEA、急停响应时间 < 目标
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）
 

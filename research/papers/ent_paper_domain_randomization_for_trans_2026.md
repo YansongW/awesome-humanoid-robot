@@ -9,8 +9,7 @@ names:
   zh: 域随机化：从仿真到真实世界的深度神经网络迁移
   ko: ''
 summary:
-  en: Domain Randomization for Transferring Deep Neural Networks from Simulation to
-    the Real World is a paper on Sim-to-Real for humanoid robotics. 域随机化：从仿真到真实世界的深度神经网络迁移.
+  en: ''
   zh: Domain Randomization for Transferring Deep Neural Networks from Simulation to
     the Real World is a paper on Sim-to-Real for humanoid robotics. 域随机化：从仿真到真实世界的深度神经网络迁移.
   ko: ''
@@ -45,5 +44,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World is a paper on Sim-to-Real for humanoid robotics. 域随机化：从仿真到真实世界的深度神经网络迁移.

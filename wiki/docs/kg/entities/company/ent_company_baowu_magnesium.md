@@ -1,0 +1,117 @@
+---
+id: ent_company_baowu_magnesium
+schema_version: 1
+type: company
+'title:': Baowu Magnesium Technology Co., Ltd.
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: 宝武镁业
+  en: Baowu Magnesium Technology Co., Ltd.
+status: active
+sources:
+- id: src_baowu_magnesium_official
+  type: website
+  url: https://www.baowumagnesium.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 宝武镁业 / Baowu Magnesium Technology Co., Ltd.
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 宝武镁业 |
+| **英文名** | Baowu Magnesium Technology Co., Ltd. |
+| **总部** | 中国江苏南京 |
+| **成立时间** | 1993（原云海金属） |
+| **官网** | [https://www.baowumagnesium.com](https://www.baowumagnesium.com) |
+| **供应链环节** | 镁合金 / 铝合金 / 压铸 / 轻量化材料 |
+| **企业属性** | 上市公司（SZ.002182）、央企控股、国内品牌 |
+| **母公司/所属集团** | 中国宝武钢铁集团有限公司 |
+| **数据来源** | 官网、年报、产品手册、WAIC 2026 报道 |
+
+## 公司简介
+
+全球最大的镁合金生产商之一，专注镁/铝合金材料、压铸件与轻量化解决方案。
+
+宝武镁业前身为云海金属，现由中国宝武控股。公司拥有从白云石开采、原镁冶炼到镁合金深加工的完整产业链，产品包括镁合金锭、镁合金压铸件、铝合金融化及压铸件，广泛应用于汽车、3C、航空航天及机器人轻量化结构件。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 镁合金材料 | 原镁与合金锭 | AZ91D / AM60B / AE44 | 汽车、3C、机器人 |
+| 镁合金压铸件 | 高压压铸结构件 | 笔记本外壳、汽车座椅骨架 | 3C、汽车 |
+| 铝合金压铸件 | 汽车与工业压铸件 | 电机壳体、控制器壳体 | 新能源汽车 |
+| 机器人结构件 | 轻量化一体压铸 | 关节壳体、躯干骨架 | 人形机器人 |
+
+## 代表产品
+
+### 镁合金锭 / Magnesium Alloy Ingot
+
+> 镁合金锭：请访问 [官方资料](https://www.baowumagnesium.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 牌号 | AZ91D / AM60B / AE44 / AS41 | 产品手册 |
+| 镁含量 | ≥ 90% | 产品手册 |
+| 密度 | 1.78–1.82 g/cm³ | 产品手册 |
+| 抗拉强度 | 200–280 MPa | 产品手册 |
+| 屈服强度 | 120–160 MPa | 产品手册 |
+| 延伸率 | 3–15% | 产品手册 |
+| 工作温度 | -40 °C – +150 °C | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：密度低、比强度高、阻尼减振性能好，适合机器人轻量化结构件。
+
+**应用场景**：人形机器人关节壳体、躯干骨架、汽车仪表盘支架、3C 外壳。
+
+### 镁合金压铸结构件 / Magnesium Die-Cast Structural Part
+
+> 镁合金压铸结构件：请访问 [官方资料](https://www.baowumagnesium.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 材质 | AZ91D / AM60B | 产品手册 |
+| 制造工艺 | 高压压铸 + CNC 精加工 | 产品手册 |
+| 尺寸范围 | 依模具 | 产品手册 |
+| 壁厚 | 0.8–5 mm | 产品手册 |
+| 尺寸精度 | CT4–CT6 | 产品手册 |
+| 表面处理 | 微弧氧化 / 涂装 / 钝化 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：一体化压铸成型、减重 30–40%（相比铝合金）、电磁屏蔽性能优良。
+
+**应用场景**：人形机器人躯干/腿部骨架、汽车座椅骨架、转向柱支架、无人机结构件。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：白云石、硅铁、原镁、铝合金锭、压铸机、模具钢
+- **下游客户/应用场景**：特斯拉、比亚迪、蔚来、小鹏、联想、戴尔、机器人整机厂
+- **主要竞争对手/对标**：万丰奥威、云海金属（历史主体）、瑞鹄模具、文灶股份
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_baowu_magnesium`
+- 产品/零部件实体：`ent_component_baowu_magnesium_alloy`, `ent_component_baowu_magnesium_die_cast_part`
+- 关键关系：
+  - `ent_company_baowu_magnesium` -- `manufactures` --> `ent_component_baowu_magnesium_alloy`
+  - `ent_company_baowu_magnesium` -- `manufactures` --> `ent_component_baowu_magnesium_die_cast_part`
+
+## 参考资料
+
+1. [宝武镁业官网](https://www.baowumagnesium.com)
+2. [宝武镁业投资者关系](https://www.baowumagnesium.com/investor/)
+3. [WAIC 2026 参展报道](https://www.worldrobotconference.com)

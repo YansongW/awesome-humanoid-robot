@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P15.2.3 环境适应性测试
+  en: ''
   zh: 环境适应性测试
   ko: ''
 summary:
-  en: 环境测试报告、失效模式与改进
+  en: ''
   zh: 环境测试报告、失效模式与改进
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）
 

@@ -8,8 +8,7 @@ names:
   zh: 'iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies'
   ko: ''
 summary:
-  en: 'iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies
-    is a paper on 高影响力精选 High Impact Selection for humanoid robotics.'
+  en: ''
   zh: 'iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies
     is a paper on 高影响力精选 High Impact Selection for humanoid robotics.'
   ko: ''
@@ -42,5 +41,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies is a paper on 高影响力精选 High Impact Selection for humanoid robotics.

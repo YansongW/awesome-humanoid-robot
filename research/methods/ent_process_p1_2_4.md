@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P1.2.4 概念验证（Proof of Concept）
+  en: ''
   zh: 概念验证（Proof of Concept）
   ko: ''
 summary:
-  en: POC 报告、风险降级记录、Go/No-Go 决策
+  en: ''
   zh: POC 报告、风险降级记录、Go/No-Go 决策
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）
 

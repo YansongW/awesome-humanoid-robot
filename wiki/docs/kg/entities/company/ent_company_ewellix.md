@@ -1,0 +1,115 @@
+---
+id: ent_company_ewellix
+schema_version: 1
+type: company
+'title:': Ewellix
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: 伊维莱
+  en: Ewellix
+status: active
+sources:
+- id: src_ewellix_official
+  type: website
+  url: https://www.ewellix.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 伊维莱 / Ewellix
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 伊维莱 |
+| **英文名** | Ewellix |
+| **总部** | 瑞典哥德堡 |
+| **成立时间** | 2021（前身为 SKF 线性驱动技术部门） |
+| **官网** | [https://www.ewellix.com](https://www.ewellix.com) |
+| **供应链环节** | 线性驱动 / 电动缸 / 滚珠丝杠 / 直线导轨 |
+| **企业属性** | 国际品牌（原 SKF 旗下） |
+| **母公司/所属集团** | 原为 SKF Group，2023 年被 Triton 收购 |
+| **数据来源** | 官网、产品手册、公开报道、WAIC 2026 报道 |
+
+## 公司简介
+
+全球线性运动与控制技术的独立供应商，承接 SKF 线性传动业务积淀。
+
+Ewellix 由 SKF 线性驱动技术业务独立而来，专注电动缸、滚珠丝杠、直线导轨、线性模组及升降柱等产品。公司服务医疗、工业自动化、机器人、移动机械与汽车等领域，强调高能效、紧凑设计与智能控制。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 电动缸 | 高推力机电执行器 | CASM / LAMBDA 系列 | 工业、医疗 |
+| 滚珠丝杠 | 精密传动 | Ewellix 滚珠丝杠 | 机床、自动化 |
+| 直线导轨 | 高刚性导向 | LLTH / LLRA 系列 | 自动化 |
+| 线性模组 | 集成直线运动 | ModLine 系列 | 机器人、3C |
+
+## 代表产品
+
+### 电动缸 / Electromechanical Cylinder
+
+> 电动缸：请访问 [官方资料](https://www.ewellix.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 推力范围 | 最高约 100 kN | 产品手册 |
+| 行程 | 最大约 2,500 mm | 产品手册 |
+| 速度 | 最高约 2,000 mm/s | 产品手册 |
+| 重复定位精度 | ±0.01 mm | 产品手册 |
+| 电机配置 | 伺服 / 步进可选 | 产品手册 |
+| 防护等级 | IP54 / IP65 可选 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：模块化设计、集成控制器、低能耗，可替代传统液压/气动缸。
+
+**应用场景**：自动化产线、人形机器人线性关节、医疗设备、包装机械。
+
+### 直线导轨 / Linear Guide
+
+> 直线导轨：请访问 [官方资料](https://www.ewellix.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 导轨宽度 | 15–65 mm | 产品手册 |
+| 精度等级 | 普通 / 高 / 精密级 | 产品手册 |
+| 额定动载荷 | 未公开 | 产品手册 |
+| 滑块型式 | 法兰 / 四方 / 窄型 | 产品手册 |
+| 材质 | 轴承钢 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：继承 SKF 制造工艺，低摩擦、高刚性、运行平稳。
+
+**应用场景**：机床、半导体设备、自动化平台、机器人。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：轴承钢、滚珠、润滑脂、伺服电机、控制器、密封件
+- **下游客户/应用场景**：工业自动化、医疗设备、机器人 OEM、汽车、3C 制造
+- **主要竞争对手/对标**：THK、NSK、HIWIN、博世力士乐、南京工艺
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_ewellix`
+- 产品/零部件实体：`ent_component_ewellix_linear_actuator`, `ent_component_ewellix_linear_guide`
+- 关键关系：
+  - `ent_company_ewellix` -- `manufactures` --> `ent_component_ewellix_linear_actuator`
+  - `ent_company_ewellix` -- `manufactures` --> `ent_component_ewellix_linear_guide`
+
+## 参考资料
+
+1. [Ewellix 官网](https://www.ewellix.com)
+2. [Triton 收购公告](https://www.triton-partners.com)
+3. [WAIC 2026 参展报道](https://www.worldrobotconference.com)

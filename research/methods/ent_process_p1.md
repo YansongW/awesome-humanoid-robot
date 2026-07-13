@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P1 需求定义与系统方案（Concept / Pre-A）
+  en: ''
   zh: 需求定义与系统方案（Concept / Pre-A）
   ko: ''
 summary:
-  en: 需求定义与系统方案（Concept / Pre-A）
+  en: ''
   zh: 需求定义与系统方案（Concept / Pre-A）
   ko: ''
 domains:
@@ -35,5 +35,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

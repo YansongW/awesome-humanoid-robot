@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P6.1.3 碰撞与自干涉模型
+  en: ''
   zh: 碰撞与自干涉模型
   ko: ''
 summary:
-  en: 典型动作无自碰撞误报、关键姿态无环境穿透
+  en: ''
   zh: 典型动作无自碰撞误报、关键姿态无环境穿透
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）
 

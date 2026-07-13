@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P7.1.2 传感器与执行器模型配置
+  en: ''
   zh: 传感器与执行器模型配置
   ko: ''
 summary:
-  en: 传感器配置文件、噪声/延迟参数表、与真实硬件对比
+  en: ''
   zh: 传感器配置文件、噪声/延迟参数表、与真实硬件对比
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）
 

@@ -8,7 +8,7 @@ names:
   zh: Character Controllers using Motion VAEs
   ko: ''
 summary:
-  en: Character Controllers using Motion VAEs is a paper on 物理仿真动画 for humanoid robotics.
+  en: ''
   zh: Character Controllers using Motion VAEs is a paper on 物理仿真动画 for humanoid robotics.
   ko: ''
 domains:
@@ -40,5 +40,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 Character Controllers using Motion VAEs is a paper on 物理仿真动画 for humanoid robotics.

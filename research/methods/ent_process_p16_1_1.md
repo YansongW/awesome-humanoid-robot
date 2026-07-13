@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P16.1.1 DFM/DFA 评审
+  en: ''
   zh: DFM/DFA 评审
   ko: ''
 summary:
-  en: DFM/DFA 报告、工程变更清单、成本影响评估
+  en: ''
   zh: DFM/DFA 报告、工程变更清单、成本影响评估
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）
 

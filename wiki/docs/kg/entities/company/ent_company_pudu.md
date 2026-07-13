@@ -1,0 +1,104 @@
+---
+id: ent_company_pudu
+type: company
+'title:': Pudu Robotics / 普渡科技
+domain: 04_assembly_integration_testing
+theoretical_depth: system
+aliases:
+- 普渡科技
+- Pudu
+status: active
+created_at: 2026-07-01 00:00:00+00:00
+updated_at: 2026-07-09 00:00:00+00:00
+sources:
+- id: pudu_official
+  type: website
+  url: https://www.pudurobotics.com
+verification:
+  reviewed_by: ai_autonomous
+  reviewed_at: 2026-07-09 00:00:00+00:00
+---
+
+
+
+
+
+# pudu
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 普渡科技 |
+| **英文名** | Pudu Robotics |
+| **总部** | 中国深圳 |
+| **成立时间** | 2016 年 |
+| **官网** | [https://www.pudurobotics.com](https://www.pudurobotics.com) |
+| **供应链环节** | 服务机器人、配送机器人、清洁机器人、商用服务 |
+| **企业属性** | 未上市（独角兽） |
+| **母公司/所属集团** | 无（独立） |
+| **数据来源** | 普渡科技官网、公开融资新闻、行业研报 |
+
+## 公司简介
+
+普渡科技是全球知名的服务机器人企业，以 BellaBot、KettyBot 等配送机器人设计著称，产品销往全球百余个国家。
+
+普渡科技专注于餐饮、酒店、写字楼、医院等场景的配送与清洁机器人，其产品以仿生外观、多模态交互和自主导航为特色。DINERBOT、BellaBot 与 KettyBot 系列在全球餐饮与酒店市场具有较高的品牌认知度，为人形机器人在服务场景的交互设计提供参考。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 配送机器人 | 餐饮/酒店/办公配送 | BellaBot / KettyBot / DINERBOT | 餐厅、酒店、写字楼 |
+| 清洁机器人 | 地面清洁 | PUDU CC1 / SH1 | 商场、机场、办公 |
+| 迎宾机器人 | 导览、接待 | PUDU D1 / D2 | 商场、展馆、办公 |
+
+## 代表产品
+
+### 普渡科技 BellaBot 服务配送机器人
+
+> Pudu BellaBot：请访问 [官方资料](https://www.pudurobotics.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 外形尺寸 | 未公开 | 普渡官网 |
+| 额定负载 | 未公开 | 普渡官网 |
+| 最大速度 | 未公开 | 普渡官网 |
+| 导航方式 | SLAM 激光导航 / 视觉辅助 | 普渡官网 |
+| 定位精度 | 未公开 | 普渡官网 |
+| 续航 | 未公开 | 普渡官网 |
+| 通信接口 | Wi-Fi / 4G / 云端调度 | 普渡官网 |
+| 价格 | 未公开 | 需询价 |
+
+**技术亮点**：仿生猫耳情感交互设计，支持多舱配送、自主导航与智能调度，具有较高的品牌辨识度。
+
+**应用场景**：餐厅传菜、酒店送物、医院药品配送、商场导引与展示。
+
+## 与人形机器人的关联
+
+- 普渡科技 在 服务机器人、配送机器人、清洁机器人、商用服务 等领域的能力，可为人形机器人零部件加工、整机装配与测试提供关键装备或基础零部件。
+- 高精度运动控制、力控与自主导航技术是类人运动与操作的核心支撑。
+- 该公司在 餐饮企业 等场景的落地经验，可为人形机器人未来应用提供商业化参考。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：激光雷达、摄像头、伺服电机、电池、控制器、结构件、语音与表情模块。
+- **下游客户/应用场景**：餐饮企业、酒店集团、医院、商场、写字楼。
+- **主要竞争对手/对标**：擎朗智能、云迹科技、Segway Robotics、Bear Robotics。
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_pudu`
+- 产品实体：`ent_product_pudu_service_robot`
+- 关键关系：
+  - `ent_company_pudu` -- `manufactures` --> `ent_product_pudu_service_robot`
+
+## 参考资料
+
+1. [普渡科技 官网](https://www.pudurobotics.com)
+2. [Pudu BellaBot 产品页](https://www.pudurobotics.com/products/bellabot)
+3. [公开资料与行业研报](https://www.pudurobotics.com)

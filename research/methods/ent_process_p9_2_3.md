@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P9.2.3 热测试与迭代
+  en: ''
   zh: 热测试与迭代
   ko: ''
 summary:
-  en: 热测试报告、仿真-实测误差 < 20%、设计迭代记录
+  en: ''
   zh: 热测试报告、仿真-实测误差 < 20%、设计迭代记录
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：热管理仿真与迭代（Thermal Management）
 

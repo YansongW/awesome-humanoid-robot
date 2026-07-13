@@ -8,8 +8,7 @@ names:
   zh: 'ANYmal Parkour: Robust Perceptive Locomotion'
   ko: ''
 summary:
-  en: 'ANYmal Parkour: Robust Perceptive Locomotion is a paper on 行走 Locomotion for
-    humanoid robotics.'
+  en: ''
   zh: 'ANYmal Parkour: Robust Perceptive Locomotion is a paper on 行走 Locomotion for
     humanoid robotics.'
   ko: ''
@@ -41,5 +40,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 ANYmal Parkour: Robust Perceptive Locomotion is a paper on 行走 Locomotion for humanoid robotics.

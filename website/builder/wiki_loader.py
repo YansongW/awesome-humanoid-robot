@@ -19,6 +19,11 @@ def slugify_path(path: Path) -> str:
     return "wiki/" + "/".join(parts)
 
 
+def strip_frontmatter(text: str) -> str:
+    """Remove YAML frontmatter delimited by '---' at the start of the file."""
+    return re.sub(r"^---\s*\n[\s\S]*?\n---\s*\n", "", text, count=1)
+
+
 def extract_title(text: str) -> str:
     """Extract the first H1 from markdown text."""
     m = re.search(r"^#\s+(.+)$", text, re.MULTILINE)
@@ -57,7 +62,15 @@ def build_wiki_pages() -> list[dict[str, Any]]:
 
     pages = []
     for path in sorted(WIKI_DIR.rglob("*.md")):
+        # KG entity/relationship files are YAML metadata, not human-readable wiki pages.
+        if "kg/relationships" in path.as_posix() or "kg/entities" in path.as_posix():
+            continue
         text = path.read_text(encoding="utf-8")
+        text = strip_frontmatter(text)
+        # Skip files that only contain frontmatter (e.g. stub KG entities) so they
+        # do not appear as empty "Untitled" pages in the wiki index.
+        if not text.strip():
+            continue
         title = extract_title(text)
         # TODO: when per-language wiki directories are introduced, filter here.
         # For now all languages share the same wiki source.

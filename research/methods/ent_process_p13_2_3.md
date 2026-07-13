@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P13.2.3 充电与能源管理
+  en: ''
   zh: 充电与能源管理
   ko: ''
 summary:
-  en: 充电方案、充电时间、BMS 通信协议
+  en: ''
   zh: 充电方案、充电时间、BMS 通信协议
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）
 

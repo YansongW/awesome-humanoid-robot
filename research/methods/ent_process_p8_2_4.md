@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P8.2.4 仿真-试验闭环迭代
+  en: ''
   zh: 仿真-试验闭环迭代
   ko: ''
 summary:
-  en: 仿真与试验误差 < 15%、设计迭代记录
+  en: ''
   zh: 仿真与试验误差 < 15%、设计迭代记录
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：结构强度仿真与迭代（Structural FEA）
 

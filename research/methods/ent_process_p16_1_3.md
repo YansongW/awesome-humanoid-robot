@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P16.1.3 装配线规划与 SOP
+  en: ''
   zh: 装配线规划与 SOP
   ko: ''
 summary:
-  en: 装配流程图、工装清单、SOP、节拍测算
+  en: ''
   zh: 装配流程图、工装清单、SOP、节拍测算
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）
 

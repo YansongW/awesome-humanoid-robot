@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P13.2.1 电池包设计与 BMS
+  en: ''
   zh: 电池包设计与 BMS
   ko: ''
 summary:
-  en: 电池包方案、BMS 规格、续航估算、安全测试
+  en: ''
   zh: 电池包方案、BMS 规格、续航估算、安全测试
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）
 

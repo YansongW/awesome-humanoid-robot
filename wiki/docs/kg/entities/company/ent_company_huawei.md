@@ -1,0 +1,118 @@
+---
+id: ent_company_huawei
+schema_version: 1
+type: company
+domain: 11_applications_markets
+theoretical_depth: system
+names:
+  zh: 华为
+  en: 华为
+status: active
+sources:
+- id: src_huawei_official
+  type: website
+  url: https://www.huawei.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 华为 / 华为
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 华为 |
+| **英文名** | Huawei |
+| **总部** | 中国广东省深圳市 |
+| **成立时间** | 1987 年 |
+| **官网** | [https://www.huawei.com](https://www.huawei.com) |
+| **供应链环节** | AI 计算、昇腾芯片、盘古大模型、机器人云/边/端解决方案、通信 |
+| **企业属性** | 非上市民营企业、全球 ICT 与 AI 基础设施龙头 |
+| **母公司/所属集团** | 华为投资控股有限公司 |
+| **数据来源** | 华为官网、昇腾社区、盘古大模型公开资料、公开新闻稿 |
+
+## 公司简介
+
+华为依托昇腾 AI 计算、盘古大模型、鸿蒙与 5G/云端协同，为具身智能与人形机器人提供算力、模型与操作系统底座。
+
+华为是全球领先的 ICT 基础设施与智能终端提供商，业务覆盖运营商网络、企业业务、终端与云计算。在机器人/具身智能领域，华为通过昇腾 AI 处理器、Atlas 计算平台、盘古多模态大模型、鸿蒙操作系统与云边端协同方案，赋能机器人感知、决策、控制与多机协同。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 昇腾 AI 计算 | AI 处理器与计算平台 | 昇腾 910 / Atlas 系列 | 大模型训练/推理、机器人大脑 |
+| 盘古大模型 | 多模态基础模型 | 盘古大模型 5.0 | 具身智能、工业质检、自然语言交互 |
+| 鸿蒙与端侧智能 | 操作系统与分布式软总线 | HarmonyOS / OpenHarmony | 机器人终端、智能家居、工业设备 |
+
+## 代表产品
+
+### 华为昇腾 / Atlas 计算平台
+
+> 华为昇腾 / Atlas 计算平台：请访问 [官方资料](https://www.huawei.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| AI 处理器 | 昇腾 910 / 310 系列 | 华为官网 |
+| 算力 | 昇腾 910B：FP16 约 320 TFLOPS / INT8 约 640 TOPS | 华为公开资料 |
+| 内存 | HBM2e / LPDDR4X（视型号） | 华为公开资料 |
+| 制程 | 7 nm（公开报道） | 公开报道 |
+| Atlas 形态 | Atlas 800 训练服务器 / Atlas 300I 推理卡 / Atlas 200I DK | 华为官网 |
+| 软件栈 | CANN、MindSpore、MindIE | 华为昇腾社区 |
+| 功耗 | 约 310 W（昇腾 910 处理器） | 公开资料 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：国产化 AI 算力底座、盘古大模型原生支持、端边云协同、自主软件栈与生态。
+
+**应用场景**：大模型训练与推理、具身智能大脑、自动驾驶、工业质检、科研计算。
+
+### 华为盘古大模型
+
+> 华为盘古大模型：请访问 [官方资料](https://www.huawei.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 模型系列 | NLP/CV/科学计算/多模态/具身智能 | 华为云 |
+| 参数规模 | 十亿至万亿级（多规格） | 华为公开资料 |
+| 训练框架 | MindSpore / PyTorch 适配 | 华为云 |
+| 部署方式 | 华为云 / 私有化 / 端侧 | 华为云 |
+| 具身能力 | 多模态理解、任务规划、动作生成 | 公开报道 |
+| 工具链 | ModelArts、MindFormers | 华为云 |
+| API | 华为云盘古大模型服务 | 华为云 |
+| 价格 | 按调用量/实例计费 | 华为云 |
+
+**技术亮点**：全栈自主、多模态与科学计算并重、面向行业场景深度优化、支持机器人任务规划与理解。
+
+**应用场景**：具身智能大模型、工业制造、气象预测、药物研发、智能客服。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：芯片制造与封测（受国际制裁影响，持续国产替代）、存储器、光模块、PCB、结构件。
+- **下游客户/应用场景**：运营商、政企客户、汽车厂商、机器人整机厂、开发者与云计算用户。
+- **主要竞争对手/对标**：NVIDIA、Intel、AMD、高通；大模型领域对标 OpenAI、百度文心、阿里云通义。
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_huawei`
+- 产品实体：`ent_product_huawei_ascend`、`ent_product_huawei_pangu`
+- 关键关系：
+  - `ent_company_huawei` -- `manufactures` --> `ent_product_huawei_ascend`
+  - `ent_company_huawei` -- `manufactures` --> `ent_product_huawei_pangu`
+  - `ent_product_huawei_ascend` -- `uses` --> `ent_component_huawei_ascend_chip`
+  - `ent_product_huawei_pangu` -- `runs_on` --> `ent_product_huawei_ascend`
+
+## 参考资料
+
+1. [官网](https://www.huawei.com)
+2. [华为官网](https://www.huawei.com)
+3. [华为昇腾社区](https://www.hiascend.com)

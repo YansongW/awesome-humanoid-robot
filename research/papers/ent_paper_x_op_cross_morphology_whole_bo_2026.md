@@ -8,8 +8,7 @@ names:
   zh: 单台 Apple Vision Pro 驱动、跨形态免重训的分层全身遥操作：MPC 重定向器兼顾操作者意图与动力学可行性
   ko: ''
 summary:
-  en: 'X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting is a paper
-    on 遥操作 for humanoid robotics. 单台 Apple Vision Pro 驱动、跨形态免重训的分层全身遥操作：MPC 重定向器兼顾操作者意图与动力学可行性.'
+  en: ''
   zh: 'X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting is a paper
     on 遥操作 for humanoid robotics. 单台 Apple Vision Pro 驱动、跨形态免重训的分层全身遥操作：MPC 重定向器兼顾操作者意图与动力学可行性.'
   ko: ''
@@ -43,5 +42,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 X-OP: Cross-Morphology Whole-Body Teleoperation via MPC Retargeting is a paper on 遥操作 for humanoid robotics. 单台 Apple Vision Pro 驱动、跨形态免重训的分层全身遥操作：MPC 重定向器兼顾操作者意图与动力学可行性.

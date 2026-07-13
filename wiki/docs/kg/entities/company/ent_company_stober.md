@@ -1,0 +1,101 @@
+---
+id: ent_company_stober
+schema_version: 1
+type: company
+'title:': STOBER
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: STOBER（斯多博）
+  en: STOBER
+status: active
+sources:
+- id: src_stober_official
+  type: website
+  url: https://www.stober.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# STOBER（斯多博） / STOBER
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | STOBER（斯多博） |
+| **英文名** | STOBER |
+| **总部** | 德国普福尔茨海姆（Pforzheim） |
+| **成立时间** | 1934 |
+| **官网** | [https://www.stober.com](https://www.stober.com) |
+| **供应链环节** | 减速器 / 伺服驱动 / 运动控制 |
+| **企业属性** | 家族企业、国际精密传动品牌 |
+| **母公司/所属集团** | 独立家族企业 |
+| **数据来源** | 官网、产品样本、WAIC 2026 报道 |
+
+## 公司简介
+
+STOBER 是德国驱动技术专家，提供高精度行星减速器、直角减速器、斜齿/伞齿减速机以及 STOBER 伺服电机与驱动器。其产品以美国本土组装、快速交付和模块化定制著称。
+
+产品系列覆盖经济型 PE、精密型 P/PH、直角 PK/PHK/PHQK 以及 helical/bevel C/F/K 系列，可为机器人、机床、包装和食品行业提供完整驱动轴。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 行星减速器 | 经济/精密 | PE / P / PH | 机器人、自动化 |
+| 直角减速器 | 高扭矩/紧凑 | PK / PHK / PHQK | 机床、包装 |
+| 伺服电机与驱动 | 完整驱动系统 | EZ 系列 / SI6 / SC6 | 产线、机器人 |
+
+## 代表产品
+
+### PE 系列经济型行星减速器
+
+> PE 系列经济型行星减速器：请访问 [官方资料](https://www.stober.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 减速比 | 3:1 – 100:1 | 产品手册 |
+| 框号尺寸 | PE21 / PE31 / PE41 / PE51 | 产品手册 |
+| 额定输出扭矩 | 最高 160 N·m | 产品手册 |
+| 加速扭矩 | 最高 310 N·m | 产品手册 |
+| 背隙 | <8 arcmin | 产品手册 |
+| 效率 | 1 级 97% / 2 级 95% | 产品手册 |
+| 最大输入转速 | 最高 8,000 rpm | 产品手册 |
+| 防护等级 | IP64 | - |
+
+**技术亮点**：经济型 helical 行星齿轮、集成电机适配、低摩擦轴承、终身润滑、美国本土快速交付。
+
+**应用场景**：中小型机器人关节、自动化装置、包装机械、医疗设备和半导体设备。
+
+### 其他代表产品
+
+PHQK 系列高扭矩直角减速器：减速比 22–591，扭矩最高 13,000 N·m；P/EZ 伺服电机与驱动器构成完整驱动系统。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：钢材、轴承、密封件、润滑脂、电机、铸件、电子元器件
+- **下游客户/应用场景**：机床、机器人 OEM、包装、食品、医疗
+- **主要竞争对手/对标**：Wittenstein、Neugart、Apex Dynamics、SEW-Eurodrive
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_stober`
+- 零部件实体：`ent_component_stober_pe`
+- 关键关系：
+  - `ent_company_stober` -- `manufactures` --> `ent_component_stober_pe`
+
+## 参考资料
+
+1. [STOBER（斯多博） 官网](https://www.stober.com)
+2. [WAIC 2026 参展报道](https://www.worldrobotconference.com)
+3. [STOBER Servo Gear Units Catalog](https://www.stober.com)

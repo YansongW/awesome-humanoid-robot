@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P5.1.2 关节安装接口与壳体设计
+  en: ''
   zh: 关节安装接口与壳体设计
   ko: ''
 summary:
-  en: 关节接口图纸、壳体 3D、密封方案
+  en: ''
   zh: 关节接口图纸、壳体 3D、密封方案
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）
 

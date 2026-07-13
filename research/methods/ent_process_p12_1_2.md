@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P12.1.2 SLAM 与场景理解
+  en: ''
   zh: SLAM 与场景理解
   ko: ''
 summary:
-  en: 定位精度、地图一致性、语义标注准确率
+  en: ''
   zh: 定位精度、地图一致性、语义标注准确率
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）
 

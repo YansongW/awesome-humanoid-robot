@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P12.1.3 人体/物体检测与跟踪
+  en: ''
   zh: 人体/物体检测与跟踪
   ko: ''
 summary:
-  en: 检测准确率、跟踪 ID 稳定性、延迟
+  en: ''
   zh: 检测准确率、跟踪 ID 稳定性、延迟
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）
 

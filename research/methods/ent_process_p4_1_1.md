@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P4.1.1 关节性能需求精化
+  en: ''
   zh: 关节性能需求精化
   ko: ''
 summary:
-  en: 各关节最终扭矩/速度/带宽需求表 v2
+  en: ''
   zh: 各关节最终扭矩/速度/带宽需求表 v2
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）
 

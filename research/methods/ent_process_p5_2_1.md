@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P5.2.1 结构材料选型
+  en: ''
   zh: 结构材料选型
   ko: ''
 summary:
-  en: 《材料选型表》：各部件材料、工艺、原因
+  en: ''
   zh: 《材料选型表》：各部件材料、工艺、原因
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）
 

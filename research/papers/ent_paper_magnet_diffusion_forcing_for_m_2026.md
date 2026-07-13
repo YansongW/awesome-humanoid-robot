@@ -8,8 +8,7 @@ names:
   zh: MAGNet：用扩散强制把多人长时序交互装进一个自回归生成模型
   ko: ''
 summary:
-  en: 'MAGNet: Diffusion Forcing for Multi-Agent Interaction Sequence Modeling is
-    a paper on 人体动作生成 for humanoid robotics. MAGNet：用扩散强制把多人长时序交互装进一个自回归生成模型.'
+  en: ''
   zh: 'MAGNet: Diffusion Forcing for Multi-Agent Interaction Sequence Modeling is
     a paper on 人体动作生成 for humanoid robotics. MAGNet：用扩散强制把多人长时序交互装进一个自回归生成模型.'
   ko: ''
@@ -44,5 +43,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 MAGNet: Diffusion Forcing for Multi-Agent Interaction Sequence Modeling is a paper on 人体动作生成 for humanoid robotics. MAGNet：用扩散强制把多人长时序交互装进一个自回归生成模型.

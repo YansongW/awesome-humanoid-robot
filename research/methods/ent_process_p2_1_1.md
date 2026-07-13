@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P2.1.1 设计语言与品牌 DNA
+  en: ''
   zh: 设计语言与品牌 DNA
   ko: ''
 summary:
-  en: 设计语言指南、3 套造型方向
+  en: ''
   zh: 设计语言指南、3 套造型方向
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：工业设计与外观工程（ID / A-Surface）
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P4.2.3 轴承与输出接口设计
+  en: ''
   zh: 轴承与输出接口设计
   ko: ''
 summary:
-  en: 轴承选型表、接口图纸、寿命校核
+  en: ''
   zh: 轴承选型表、接口图纸、寿命校核
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）
 

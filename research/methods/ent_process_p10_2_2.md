@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P10.2.2 步态规划与地形适应
+  en: ''
   zh: 步态规划与地形适应
   ko: ''
 summary:
-  en: 平地/斜坡/障碍行走数据、速度/能耗满足 PRD
+  en: ''
   zh: 平地/斜坡/障碍行走数据、速度/能耗满足 PRD
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P1.2.1 概念方案发散与收敛
+  en: ''
   zh: 概念方案发散与收敛
   ko: ''
 summary:
-  en: 至少 3 套概念方案、评分矩阵、选定方案理由
+  en: ''
   zh: 至少 3 套概念方案、评分矩阵、选定方案理由
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）
 

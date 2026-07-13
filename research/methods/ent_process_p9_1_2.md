@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P9.1.2 热网络 / CFD 模型
+  en: ''
   zh: 热网络 / CFD 模型
   ko: ''
 summary:
-  en: 热仿真模型、边界条件、网格/节点清单
+  en: ''
   zh: 热仿真模型、边界条件、网格/节点清单
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：热管理仿真与迭代（Thermal Management）
 

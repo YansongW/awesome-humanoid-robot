@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P15.2.2 性能基准测试
+  en: ''
   zh: 性能基准测试
   ko: ''
 summary:
-  en: 《性能测试报告》、KPI 达标率
+  en: ''
   zh: 《性能测试报告》、KPI 达标率
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）
 

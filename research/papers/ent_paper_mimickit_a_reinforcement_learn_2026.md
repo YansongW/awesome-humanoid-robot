@@ -8,8 +8,7 @@ names:
   zh: MimicKit：运动模仿与控制的强化学习框架
   ko: ''
 summary:
-  en: 'MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control
-    is a paper on 工程框架 for humanoid robotics. MimicKit：运动模仿与控制的强化学习框架.'
+  en: ''
   zh: 'MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control
     is a paper on 工程框架 for humanoid robotics. MimicKit：运动模仿与控制的强化学习框架.'
   ko: ''
@@ -44,5 +43,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 MimicKit: A Reinforcement Learning Framework for Motion Imitation and Control is a paper on 工程框架 for humanoid robotics. MimicKit：运动模仿与控制的强化学习框架.

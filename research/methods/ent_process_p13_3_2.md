@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P13.3.2 EMC/EMI 设计与测试
+  en: ''
   zh: EMC/EMI 设计与测试
   ko: ''
 summary:
-  en: EMC 设计规范、预测试报告、整改记录
+  en: ''
   zh: EMC 设计规范、预测试报告、整改记录
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P16.2.1 供应商选择与审核
+  en: ''
   zh: 供应商选择与审核
   ko: ''
 summary:
-  en: 供应商清单、样品测试报告、合格供方名录
+  en: ''
   zh: 供应商清单、样品测试报告、合格供方名录
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）
 

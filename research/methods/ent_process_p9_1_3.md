@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P9.1.3 材料与界面热阻标定
+  en: ''
   zh: 材料与界面热阻标定
   ko: ''
 summary:
-  en: 材料热参数表、接触热阻数据库
+  en: ''
   zh: 材料热参数表、接触热阻数据库
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：热管理仿真与迭代（Thermal Management）
 

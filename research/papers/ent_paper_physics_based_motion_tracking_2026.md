@@ -8,8 +8,7 @@ names:
   zh: Physics-Based Motion Tracking of Contact-Rich Interacting Characters
   ko: ''
 summary:
-  en: Physics-Based Motion Tracking of Contact-Rich Interacting Characters is a paper
-    on 物理动画 for humanoid robotics.
+  en: ''
   zh: Physics-Based Motion Tracking of Contact-Rich Interacting Characters is a paper
     on 物理动画 for humanoid robotics.
   ko: ''
@@ -43,5 +42,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 Physics-Based Motion Tracking of Contact-Rich Interacting Characters is a paper on 物理动画 for humanoid robotics.

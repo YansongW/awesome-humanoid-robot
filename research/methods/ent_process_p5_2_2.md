@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P5.2.2 面向增材制造的设计（DfAM）
+  en: ''
   zh: 面向增材制造的设计（DfAM）
   ko: ''
 summary:
-  en: DfAM 检查清单、3D 打印件图纸、打印参数
+  en: ''
   zh: DfAM 检查清单、3D 打印件图纸、打印参数
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）
 

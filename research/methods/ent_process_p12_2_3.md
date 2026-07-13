@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P12.2.3 技能库与任务规划
+  en: ''
   zh: 技能库与任务规划
   ko: ''
 summary:
-  en: 多步骤任务执行视频、技能库清单、失败恢复率
+  en: ''
   zh: 多步骤任务执行视频、技能库清单、失败恢复率
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）
 

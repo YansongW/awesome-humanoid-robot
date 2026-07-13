@@ -8,8 +8,7 @@ names:
   zh: Contact-Aided Invariant Extended Kalman Filtering for Legged Robot State Estimation
   ko: ''
 summary:
-  en: Contact-Aided Invariant Extended Kalman Filtering for Legged Robot State Estimation
-    is a paper on 状态估计 for humanoid robotics.
+  en: ''
   zh: Contact-Aided Invariant Extended Kalman Filtering for Legged Robot State Estimation
     is a paper on 状态估计 for humanoid robotics.
   ko: ''
@@ -44,5 +43,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 Contact-Aided Invariant Extended Kalman Filtering for Legged Robot State Estimation is a paper on 状态估计 for humanoid robotics.

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P1.1.2 系统需求规格书（SyRS）
+  en: ''
   zh: 系统需求规格书（SyRS）
   ko: ''
 summary:
-  en: SyRS 基线发布、需求可追溯、验收条件量化
+  en: ''
   zh: SyRS 基线发布、需求可追溯、验收条件量化
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）
 

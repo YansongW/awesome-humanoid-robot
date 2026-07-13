@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P1.1.3 法规、标准与安全需求映射
+  en: ''
   zh: 法规、标准与安全需求映射
   ko: ''
 summary:
-  en: 法规需求矩阵、合规路线图、安全目标等级（SIL/PL）
+  en: ''
   zh: 法规需求矩阵、合规路线图、安全目标等级（SIL/PL）
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）
 

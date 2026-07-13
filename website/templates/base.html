@@ -6,7 +6,7 @@
   <title>{% block title %}{{ ui.site_title }}{% endblock %}</title>
   <meta name="description" content="{{ ui.site_subtitle }}">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   {% block head %}{% endblock %}
 </head>
 <body data-lang="{{ lang }}">
@@ -19,10 +19,10 @@
         <span class="logo-text">Rounds Tech<span class="logo-sub">KG</span></span>
       </a>
       <nav class="site-nav" aria-label="{{ ui.nav_aria_label }}">
-        <a href="{{ bp }}/">{{ ui.nav_home }}</a>
-        <a href="{{ bp }}/graph/">{{ ui.nav_graph }}</a>
-        <a href="{{ bp }}/search/">{{ ui.nav_search }}</a>
-        <a href="{{ bp }}/wiki/">{{ ui.nav_wiki }}</a>
+        <a href="{{ bp }}/" {% if active_nav == 'home' %}aria-current="page"{% endif %}>{{ ui.nav_home }}</a>
+        <a href="{{ bp }}/graph/" {% if active_nav == 'graph' %}aria-current="page"{% endif %}>{{ ui.nav_graph }}</a>
+        <a href="{{ bp }}/search/" {% if active_nav == 'search' %}aria-current="page"{% endif %}>{{ ui.nav_search }}</a>
+        <a href="{{ bp }}/wiki/" {% if active_nav == 'wiki' %}aria-current="page"{% endif %}>{{ ui.nav_wiki }}</a>
       </nav>
       <div class="header-actions">
         <form class="search-form" action="{{ bp }}/search/" method="get" role="search">

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P5.2.3 面向量产工艺评估
+  en: ''
   zh: 面向量产工艺评估
   ko: ''
 summary:
-  en: 量产工艺路线图、关键件工艺选择
+  en: ''
   zh: 量产工艺路线图、关键件工艺选择
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）
 

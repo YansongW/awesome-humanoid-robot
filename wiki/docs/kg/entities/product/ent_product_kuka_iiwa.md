@@ -1,0 +1,108 @@
+---
+id: ent_product_kuka_iiwa
+type: product
+'title:': KUKA LBR iiwa 协作机器人
+domain: 04_assembly_integration_testing
+theoretical_depth: system
+aliases:
+- LBR iiwa
+- KUKA
+status: active
+created_at: 2026-07-01 00:00:00+00:00
+updated_at: 2026-07-09 00:00:00+00:00
+sources:
+- id: kuka_iiwa_page
+  type: website
+  url: https://www.kuka.com/en-us/products/robotics-systems/industrial-robots/lbr-iiwa
+verification:
+  reviewed_by: ai_autonomous
+  reviewed_at: 2026-07-09 00:00:00+00:00
+---
+
+
+
+
+
+# kuka_iiwa
+
+> 返回：[附录 D.4 重点产品 Wiki 目录](../../../appendices/appendix-d/index-products.md)
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 产品信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **制造商** | [库卡机器人 / KUKA Robotics](../../../appendices/appendix-d/companies/company_kuka.md) |
+| **产品类别** | 七轴协作机器人 |
+| **发布时间** | 2013 年 |
+| **状态** | 发布/商用 |
+| **官网/来源** | [https://www.kuka.com](https://www.kuka.com) |
+
+## 产品概述
+
+LBR iiwa 是全球首批实现商用的七轴力控协作机器人之一，每个关节均集成力矩传感器，可在接触人体或工件时快速降低作用力，适合无围栏协作场景。其开放式 Java 接口与 iiQKA 操作系统支持快速部署。
+
+## 产品图片
+
+> LBR iiwa：请访问 [官方资料](https://www.kuka.com/en-us/products/robotics-systems/industrial-robots/lbr-iiwa) 查看。
+
+## 规格参数表
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 轴数 | 7 | KUKA 官网 |
+| 最大负载 | 14 kg（iiwa 14）/ 7 kg（iiwa 7） | KUKA 官网 |
+| 最大工作半径 | 820 mm / 1260 mm | KUKA 官网 |
+| 重复定位精度 | ± 0.1 mm | KUKA 官网 |
+| 机械单元重量 | 未公开 | KUKA 官网 |
+| 防护等级 | IP54 | KUKA 官网 |
+| 安装方式 | 地面 / 天花板 / 墙面 | KUKA 官网 |
+| 价格 | 未公开 | 需询价 |
+
+## 供应链位置
+
+- **制造商**：[库卡机器人 / KUKA Robotics](../../../appendices/appendix-d/companies/company_kuka.md)
+- **核心零部件/技术来源**：自研控制器与软件；外购伺服电机、减速器、力矩传感器、结构件、线缆。
+- **下游应用/客户**：汽车 OEM、电子制造商、物流仓储、医疗手术设备、自动化集成商。
+
+## 知识图谱节点与关系
+
+- 产品实体：`ent_product_kuka_iiwa`
+- 制造商实体：`ent_company_kuka`
+- 关键关系：
+  - `rel_ent_company_kuka_manufactures_ent_product_kuka_iiwa`（`ent_company_kuka` → `manufactures` → `ent_product_kuka_iiwa`）
+
+## 应用场景
+
+- **精密装配、螺丝拧紧、抛光打磨、人形机器人零部件柔性装配与测试。**
+- **商业服务**：用于导览、接待、展示与品牌互动。
+- **工业制造**：在柔性产线执行搬运、装配、检测等任务。
+- **科研教育**：作为机器人控制、AI 训练与具身智能研究的硬件平台。
+
+## 扩展与生态
+
+- 制造商提供官方 SDK、仿真工具与售后培训，具体细节需通过官方渠道确认。
+- 可与主流 MES/WMS/PLC 系统对接，但接口协议需以官方文档为准。
+- 建议部署前进行场景化验证与兼容性测试。
+
+## 竞争对比
+
+| 对比项 | 本产品 | 主要竞品 |
+|--------|--------|----------|
+| 定位 | 未公开 | 同类产品视具体场景而定 |
+| 核心优势 | 内置关节力矩传感器，可实现顺应性控制与人机安全协作；开放式 Java 接口与 iiQKA 操作系统支持快速部署。 | 未公开 |
+| 价格 | 未公开 | 未公开 |
+
+## 选购与部署建议
+
+- 建议通过官方渠道确认最新软件版本、SDK 支持与售后培训。
+- 科研与教育用户应优先评估二次开发接口、仿真平台兼容性与社区活跃度。
+- 工业用户需结合具体工序验证负载、精度、防护等级与集成接口。
+
+## 参考资料
+
+1. [LBR iiwa 产品页](https://www.kuka.com/en-us/products/robotics-systems/industrial-robots/lbr-iiwa)
+2. [库卡机器人 官网](https://www.kuka.com)
+3. [公开资料与行业研报](https://www.kuka.com)

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P2 工业设计与外观工程（ID / A-Surface）
+  en: ''
   zh: 工业设计与外观工程（ID / A-Surface）
   ko: ''
 summary:
-  en: 工业设计与外观工程（ID / A-Surface）
+  en: ''
   zh: 工业设计与外观工程（ID / A-Surface）
   ko: ''
 domains:
@@ -33,5 +33,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

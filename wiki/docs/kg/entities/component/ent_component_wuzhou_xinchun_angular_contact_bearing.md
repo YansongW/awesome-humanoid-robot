@@ -1,0 +1,103 @@
+---
+id: ent_component_wuzhou_xinchun_angular_contact_bearing
+schema_version: 1
+type: component
+'title:': 角接触球轴承
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: 角接触球轴承
+  en: Wuzhou Xinchun Angular Contact Ball Bearing
+status: active
+sources:
+- id: src_wuzhou_xinchun_angular_contact_bearing_official
+  type: website
+  url: https://www.wxcbearing.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 角接触球轴承 / Wuzhou Xinchun Angular Contact Ball Bearing
+
+---
+
+## 产品信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **制造商** | [五洲新春 / Wuzhou Xinchun](../../../appendices/appendix-d/companies/company_wuzhou_xinchun.md) |
+| **产品类别** | 轴承 / 角接触球轴承 / 精密轴承 |
+| **发布时间** | 现役主力型号 |
+| **状态** | 量产/商用 |
+| **官网/来源** | [五洲新春官网](https://www.wxcbearing.com) |
+
+## 产品概述
+
+五洲新春角接触球轴承可同时承受径向与轴向联合载荷，通过调整接触角实现高刚性、高转速的旋转支撑。产品采用轴承钢 GCr15 材质，经淬火、磨削与超精加工，精度等级可达 P5/P4，广泛应用于机床主轴、汽车轮毂、电机及机器人关节主轴。
+
+公司依托轴承套圈全产业链优势，可为机器人减速器、伺服电机及关节模组提供定制化轴承解决方案，并正在向谐波减速器专用薄壁轴承与滚珠丝杠螺母拓展。
+
+## 产品图片
+
+> 五洲新春角接触球轴承：请访问 [官方资料](https://www.wxcbearing.com) 查看。
+
+## 规格参数表
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 内径范围 | 10–200 mm | 产品手册 |
+| 外径范围 | 22–300 mm | 产品手册 |
+| 接触角 | 15° / 25° / 40° | 产品手册 |
+| 精度等级 | P6 / P5 / P4 | 产品手册 |
+| 额定动载荷 | 依型号 | 产品手册 |
+| 额定静载荷 | 依型号 | 产品手册 |
+| 极限转速 | 依型号与润滑方式 | 产品手册 |
+| 材质 | 轴承钢 GCr15 | 产品手册 |
+| 润滑 | 油脂 / 油润滑 | 产品手册 |
+| 价格 | 未公开 | - |
+
+## 供应链位置
+
+- **制造商**：[五洲新春 / Wuzhou Xinchun](../../../appendices/appendix-d/companies/company_wuzhou_xinchun.md)
+- **核心零部件/技术来源**：轴承钢、锻造设备、数控车床、磨床、热处理炉、润滑脂。
+- **下游应用/客户**：汽车 OEM、机床厂商、电机厂、机器人减速器厂、人形机器人整机厂。
+
+## 知识图谱节点与关系
+
+- 零部件实体：`ent_component_wuzhou_xinchun_angular_contact_bearing`
+- 制造商实体：`ent_company_wuzhou_xinchun`
+- 关键关系：
+  - `rel_ent_company_wuzhou_xinchun_manufactures_ent_component_wuzhou_xinchun_angular_contact_bearing`（`ent_company_wuzhou_xinchun` --> `manufactures` --> `ent_component_wuzhou_xinchun_angular_contact_bearing`）
+
+## 应用场景
+
+- **人形机器人**：关节主轴、谐波/RV 减速器输出端、伺服电机支撑。
+- **数控机床**：主轴支撑、进给轴定位、刀库旋转机构。
+- **新能源汽车**：轮毂轴承、电机轴承、减速器轴承。
+- **工业自动化**：精密转台、分拣设备、包装机械。
+
+## 竞争对比
+
+| 对比项 | 本产品 | SKF | NSK |
+|--------|--------|-----|-----|
+| 核心优势 | 本土化、性价比、套圈产业链完整 | 高端精度与可靠性 | 高速低噪音技术 |
+| 交付周期 | 较短 | 中等 | 中等 |
+| 服务响应 | 快速 | 中等 | 中等 |
+| 价格水平 | 中低端至中高端 | 高端 | 高端 |
+
+## 选购与部署建议
+
+- 成对安装时应注意配对方式（DB/DF/DT），以保证轴向刚性与载荷分布。
+- 预紧力应根据转速、温升与刚性要求综合选择，过大预紧会加剧发热。
+- 机器人关节应用建议选用 P5 及以上精度，并配合清洁润滑脂使用。
+
+## 参考资料
+
+1. [五洲新春官网](https://www.wxcbearing.com)
+2. [五洲新春轴承产品页](https://www.wxcbearing.com/products/)
+3. [WAIC 2026 参展报道](https://www.worldrobotconference.com)

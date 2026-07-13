@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P11.2.3 与手臂集成与手眼标定
+  en: ''
   zh: 与手臂集成与手眼标定
   ko: ''
 summary:
-  en: 集成测试报告、手眼标定误差 < 目标
+  en: ''
   zh: 集成测试报告、手眼标定误差 < 目标
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）
 

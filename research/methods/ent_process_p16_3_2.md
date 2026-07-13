@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P16.3.2 成本核算与降本
+  en: ''
   zh: 成本核算与降本
   ko: ''
 summary:
-  en: 小批量成本分析报告、降本项目清单
+  en: ''
   zh: 小批量成本分析报告、降本项目清单
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）
 

@@ -1,0 +1,118 @@
+---
+id: ent_company_wuzhou_xinchun
+schema_version: 1
+type: company
+'title:': Wuzhou Xinchun Co., Ltd.
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: 五洲新春
+  en: Wuzhou Xinchun Co., Ltd.
+status: active
+sources:
+- id: src_wuzhou_xinchun_official
+  type: website
+  url: https://www.wxcbearing.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 五洲新春 / Wuzhou Xinchun Co., Ltd.
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 五洲新春 |
+| **英文名** | Wuzhou Xinchun Co., Ltd. |
+| **总部** | 中国浙江新昌 |
+| **成立时间** | 1998 |
+| **官网** | [https://www.wxcbearing.com](https://www.wxcbearing.com) |
+| **供应链环节** | 轴承套圈 / 成品轴承 / 汽车零部件 |
+| **企业属性** | 上市公司（SH.603667）、国内品牌 |
+| **母公司/所属集团** | 浙江五洲新春集团股份有限公司 |
+| **数据来源** | 官网、年报、产品手册、WAIC 2026 报道 |
+
+## 公司简介
+
+国内轴承套圈与精密轴承核心供应商，产品覆盖汽车、风电、工程机械及机器人领域。
+
+五洲新春主营轴承套圈、成品轴承、汽车零部件及精密锻件，是全球知名轴承厂商的套圈供应商。公司具备锻造车削、热处理、磨削全产业链能力，近年来积极布局机器人减速器轴承、丝杠螺母等精密零部件。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 轴承套圈 | 精密套圈锻车件 | 球轴承 / 滚子轴承套圈 | 汽车、风电、工业 |
+| 成品轴承 | 汽车与工业轴承 | 深沟球轴承 / 圆锥滚子轴承 | 汽车、电机 |
+| 汽车零部件 | 传动系统零部件 | 齿轮、轴、轮毂单元 | 汽车 |
+| 机器人零部件 | 减速器/丝杠轴承 | 谐波减速器轴承、丝杠螺母 | 人形机器人 |
+
+## 代表产品
+
+### 角接触球轴承 / Angular Contact Ball Bearing
+
+> 角接触球轴承：请访问 [官方资料](https://www.wxcbearing.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 内径范围 | 10–200 mm | 产品手册 |
+| 外径范围 | 22–300 mm | 产品手册 |
+| 接触角 | 15° / 25° / 40° | 产品手册 |
+| 精度等级 | P6 / P5 / P4 | 产品手册 |
+| 额定动载荷 | 依型号 | 产品手册 |
+| 材质 | 轴承钢 GCr15 | 产品手册 |
+| 润滑 | 油脂 / 油润滑 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：高刚性、高转速、可同时承受径向与轴向载荷，适合机器人关节主轴。
+
+**应用场景**：人形机器人关节、谐波/RV 减速器、数控机床主轴、汽车轮毂单元。
+
+### 谐波减速器轴承 / Harmonic Reducer Bearing
+
+> 谐波减速器轴承：请访问 [官方资料](https://www.wxcbearing.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 内径范围 | 20–150 mm | 产品手册 |
+| 外径范围 | 40–200 mm | 产品手册 |
+| 精度等级 | P5 / P4 | 产品手册 |
+| 额定动载荷 | 依型号 | 产品手册 |
+| 材质 | 轴承钢 GCr15 / 渗碳钢 | 产品手册 |
+| 热处理 | 淬火 + 低温回火 | 产品手册 |
+| 润滑 | 油脂 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：薄壁柔性设计、高扭转刚性、长寿命，适配谐波减速器柔轮/刚轮结构。
+
+**应用场景**：协作机器人关节、人形机器人旋转关节、精密转台、医疗机器人。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：轴承钢、渗碳钢、锻造设备、数控车床、磨床、热处理炉
+- **下游客户/应用场景**：SKF、Schaeffler、NSK、汽车 OEM、风电主机厂、机器人减速器厂
+- **主要竞争对手/对标**：南方精工、长盛轴承、力星股份、国机精工、瓦轴
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_wuzhou_xinchun`
+- 产品/零部件实体：`ent_component_wuzhou_xinchun_angular_contact_bearing`, `ent_component_wuzhou_xinchun_harmonic_reducer_bearing`
+- 关键关系：
+  - `ent_company_wuzhou_xinchun` -- `manufactures` --> `ent_component_wuzhou_xinchun_angular_contact_bearing`
+  - `ent_company_wuzhou_xinchun` -- `manufactures` --> `ent_component_wuzhou_xinchun_harmonic_reducer_bearing`
+
+## 参考资料
+
+1. [五洲新春官网](https://www.wxcbearing.com)
+2. [五洲新春投资者关系](https://www.wxcbearing.com/investor/)
+3. [WAIC 2026 参展报道](https://www.worldrobotconference.com)

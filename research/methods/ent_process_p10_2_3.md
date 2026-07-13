@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P10.2.3 全身控制 WBC
+  en: ''
   zh: 全身控制 WBC
   ko: ''
 summary:
-  en: WBC 控制器、多任务协调演示、求解时间 < 1 ms
+  en: ''
   zh: WBC 控制器、多任务协调演示、求解时间 < 1 ms
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）
 

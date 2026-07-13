@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P1.1.4 人因工程与交互需求
+  en: ''
   zh: 人因工程与交互需求
   ko: ''
 summary:
-  en: 人因需求报告、关键交互姿态包络、HMI 原则
+  en: ''
   zh: 人因需求报告、关键交互姿态包络、HMI 原则
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）
 

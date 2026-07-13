@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P5 本体结构工程与原型（Mechanical Structure）
+  en: ''
   zh: 本体结构工程与原型（Mechanical Structure）
   ko: ''
 summary:
-  en: 本体结构工程与原型（Mechanical Structure）
+  en: ''
   zh: 本体结构工程与原型（Mechanical Structure）
   ko: ''
 domains:
@@ -35,5 +35,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

@@ -1,0 +1,115 @@
+---
+id: ent_company_mech_mind
+schema_version: 1
+type: company
+domain: 11_applications_markets
+theoretical_depth: system
+names:
+  zh: 梅卡曼德
+  en: Mech-Mind Robotics
+status: active
+sources:
+- id: src_mech_mind_official
+  type: website
+  url: https://www.mech-mind.com.cn
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 梅卡曼德 / Mech-Mind Robotics
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 梅卡曼德（梅卡曼德（雄安）机器人科技股份有限公司） |
+| **英文名** | Mech-Mind Robotics |
+| **总部** | 中国北京（上海、雄安、慕尼黑、东京、首尔等设有分支） |
+| **成立时间** | 2016 年 |
+| **官网** | [https://www.mech-mind.com.cn](https://www.mech-mind.com.cn) |
+| **供应链环节** | 传感器 / AI+3D 视觉与具身智能“眼脑手” |
+| **企业属性** | AI+机器人独角兽、具身智能机器人领域头部企业 |
+| **母公司/所属集团** | 无 |
+| **数据来源** | 梅卡曼德官网、WAIC 2026 官方报道、荣格工业资源网 |
+
+## 公司简介
+
+梅卡曼德机器人科技有限公司是国内知名的 AI+3D+智能工业机器人解决方案提供商，专注于 3D 视觉领域软硬件产品的研发、生产及销售。公司构建了覆盖“眼、脑、手”的完整具身智能技术体系，其中“眼+脑”产品已广泛应用于汽车、物流、新能源、工程机械、家电、医疗等数十个行业，深度服务全球超 100 家《财富》500 强客户。
+
+公司产品线包括 Mech-Eye 工业级 3D 相机、Mech-Vision 机器视觉软件、Mech-Viz 机器人编程软件、Mech-GPT 多模态大模型以及具身智能“眼脑手”机器人平台。在 WAIC 2026 上，梅卡曼德（展位号 H1-A530）展示人形机器人协同上下料、自主货架取货、透明物体泛化抓取等六大智能机器人单元。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 工业 3D 相机 | 高精度三维感知硬件 | Mech-Eye LSR L / ULTRA M / NANO | 无序抓取、拆码垛、装配 |
+| 机器视觉软件 | 图形化视觉工程平台 | Mech-Vision | 工业视觉引导、质检 |
+| 机器人编程软件 | 无代码机器人编程 | Mech-Viz | 轨迹规划、碰撞检测 |
+| 具身智能大脑 | 多模态大模型驱动 | Mech-GPT | 人机交互、自主任务规划 |
+| 具身智能平台 | 眼脑手协同系统 | “眼脑手”机器人平台 | 人形机器人、双臂协作 |
+
+## 代表产品
+
+### Mech-Eye LSR L
+
+> Mech-Eye LSR L：请访问 [官方资料](https://www.mech-mind.com.cn) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | 未公开 | - |
+| 重量 | 未公开 | - |
+| 工作距离 | 远距离、大视野 | 官网 |
+| 精度 | 视觉定位精度可达 ±0.2 mm | 什么值得买/AW 2026 报道 |
+| 抗环境光 | >30000 lux 下可稳定成像 | 世界机器人大会产品手册 |
+| 接口/通信 | 支持 TCP / Modbus / EtherNet/IP | 官网 |
+| 价格 | 未公开 | 需询价 |
+
+**技术亮点**：工业级激光 3D 相机，远距离高精度，抗环境光性能优异，支持彩色点云。
+
+**应用场景**：金属件抓取、拆码垛、定位装配、焊接引导、在线测量。
+
+### Mech-GPT
+
+> Mech-GPT：请访问 [官方资料](https://www.mech-mind.com.cn) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 模型类型 | 多模态大模型 | 官网 |
+| 输入模态 | 视觉、语言、机器人状态 | 官网 |
+| 输出 | 动作规划、人机交互响应 | 官网 |
+| 接口/通信 | 与梅卡曼德眼脑手平台集成 | 官网 |
+| 价格 | 未公开 | 需询价 |
+
+**技术亮点**：将大模型能力引入机器人任务理解与自然交互，实现“感知-决策-执行”闭环。
+
+**应用场景**：人形机器人自主取货、分拣海量物体、透明物体泛化抓取、人机对话。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：自研 3D 相机光学模组与算法，外购激光器、相机模组、计算单元、结构件。
+- **下游客户/应用场景**：汽车主机厂、物流仓储、新能源电池、工程机械、家电、医疗制造企业。
+- **主要竞争对手/对标**：跨维智能、奥比中光、图漾科技、康耐视、Basler。
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_mech_mind`
+- 产品实体：`ent_product_mech_mind_mech_eye_lsr_l`、`ent_product_mech_mind_mech_gpt`
+- 关键关系：
+  - `ent_company_mech_mind` -- `manufactures` --> `ent_product_mech_mind_mech_eye_lsr_l`
+  - `ent_company_mech_mind` -- `manufactures` --> `ent_product_mech_mind_mech_gpt`
+
+## 参考资料
+
+1. [梅卡曼德官网](https://www.mech-mind.com.cn)
+2. [梅卡曼德 – WAIC 2026 官方报道](https://mech-mind.com.cn/NewsStd/mech-mind-waic-2026-shows-embodied-ai-breakthrough.html)
+3. [荣格工业资源网 – 梅卡曼德 WAIC 2026](https://www.industrysourcing.cn/article/477721)
+4. [什么值得买 – 梅卡曼德 AW 2026 新品](https://post.smzdm.com/p/ae6mkonk)

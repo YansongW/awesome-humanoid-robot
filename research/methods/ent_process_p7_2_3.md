@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P7.2.3 操作与抓取仿真
+  en: ''
   zh: 操作与抓取仿真
   ko: ''
 summary:
-  en: 典型物体抓取仿真、力控接触稳定
+  en: ''
   zh: 典型物体抓取仿真、力控接触稳定
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）
 

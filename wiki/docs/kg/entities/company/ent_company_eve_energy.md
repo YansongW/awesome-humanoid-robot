@@ -1,0 +1,105 @@
+---
+id: ent_company_eve_energy
+type: company
+'title:': EVE Energy / 亿纬锂能
+domain: 02_components
+theoretical_depth: system
+aliases:
+- 亿纬锂能
+- EVE Energy
+status: active
+created_at: 2026-07-01 00:00:00+00:00
+updated_at: 2026-07-09 00:00:00+00:00
+sources:
+- id: eve_official
+  type: website
+  url: https://www.evebattery.com
+verification:
+  reviewed_by: ai_autonomous
+  reviewed_at: 2026-07-09 00:00:00+00:00
+---
+
+
+
+
+
+# eve_energy
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 惠州亿纬锂能股份有限公司 |
+| **英文名** | EVE Energy Co., Ltd. |
+| **总部** | 中国广东省惠州市 |
+| **成立时间** | 2001 年 |
+| **官网** | [https://www.evebattery.com](https://www.evebattery.com) |
+| **供应链环节** | 锂离子电池、圆柱/方形/软包电池、储能系统 |
+| **企业属性** | 上市公司（深交所：300014） |
+| **母公司/所属集团** | 无（独立上市） |
+| **数据来源** | 公司官网、EVE Energy North America 产品规格页、公开规格书 |
+
+## 公司简介
+
+亿纬锂能是中国领先的锂电平台型企业，产品覆盖消费电池、动力电池和储能电池，涵盖圆柱、方形和软包多种封装形式。
+
+公司客户包括宝马、戴姆勒、小鹏、博世等。其大容量磷酸铁锂方形电芯在储能和商用车领域应用广泛，也可用于对循环寿命要求较高的人形机器人备用电源或底盘电池包。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 动力电池 | 乘用车/商用车电芯及模组 | LF150 / LF280K | 电动汽车、特种车辆 |
+| 储能电池 | 大容量长循环电芯 | LF280K / MB31 | 电网储能、工商业储能 |
+| 圆柱电池 | 电动工具、轻型动力 | 18650 / 21700 | 消费/工业电子 |
+
+## 代表产品
+
+### LF280K 磷酸铁锂电芯
+
+![LF280K](https://www.evebatteryusa.com/copy-of-18650-and-21700-specifications)
+
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | 约 173.7 × 71.7 × 207.2 mm | EVE 公开规格（同系列参考） |
+| 重量 | 约 5.42 kg | 公开规格书 |
+| 化学体系 | 磷酸铁锂（LFP） | EVE 官网 |
+| 标称电压 | 3.2 V | EVE 官网 |
+| 标称容量 | 280 Ah | EVE 官网 |
+| 能量 | 896 Wh | 计算值 |
+| 能量密度 | 约 165 Wh/kg | 公开资料 |
+| 循环寿命 | ≥6000 次（25 °C） | EVE 官网 |
+| 价格 | 未公开 | 未公开 |
+
+**技术亮点**：大容量方形 LFP 电芯，具备长循环寿命和高安全性，适合储能及长寿命移动平台。
+
+**应用场景**：储能集装箱、商用车底盘、人形机器人长续航电池包。
+
+## 与人形机器人的关联
+
+- 电池、功率半导体与先进材料是人形机器人实现长续航、高动态与轻量化的共性基础。
+- 工业机器人与自动化产线为人形机器人整机装配、测试与量产提供可复用的制造能力。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：磷酸铁锂正极、石墨负极、隔膜、电解液、结构件。
+- **下游客户/应用场景**：宝马、戴姆勒、小鹏、博世、储能集成商。
+- **主要竞争对手/对标**：CATL、BYD、国轩高科、欣旺达。
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_eve_energy`
+- 产品实体：`ent_component_eve_lf280k_cell`
+- 关键关系：
+  - `ent_company_eve_energy` -- `manufactures` --> `ent_component_eve_lf280k_cell`
+
+## 参考资料
+
+1. [EVE Energy 官网](https://www.evebattery.com)
+2. [EVE Energy North America 产品规格](https://www.evebatteryusa.com/copy-of-18650-and-21700-specifications)
+3. [EVE INR18650/30P 规格书公开资料](https://static.chipdip.ru/lib2/b/925/DOC073925143.pdf)

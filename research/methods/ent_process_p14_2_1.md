@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P14.2.1 数据记录与回放
+  en: ''
   zh: 数据记录与回放
   ko: ''
 summary:
-  en: 数据记录方案、回放一致性验证
+  en: ''
   zh: 数据记录方案、回放一致性验证
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）
 

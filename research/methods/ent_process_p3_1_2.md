@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P3.1.2 整机质量属性预算
+  en: ''
   zh: 整机质量属性预算
   ko: ''
 summary:
-  en: 《质量预算表》、整机 CoM 范围、主惯量上限
+  en: ''
   zh: 《质量预算表》、整机 CoM 范围、主惯量上限
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）
 

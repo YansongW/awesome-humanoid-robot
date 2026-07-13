@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P7.1.1 仿真平台选型与导入
+  en: ''
   zh: 仿真平台选型与导入
   ko: ''
 summary:
-  en: 《仿真平台选型报告》、URDF/SDF 导入成功、基础站立仿真通过
+  en: ''
   zh: 《仿真平台选型报告》、URDF/SDF 导入成功、基础站立仿真通过
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）
 

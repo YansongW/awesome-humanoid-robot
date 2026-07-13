@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P9 热管理仿真与迭代（Thermal Management）
+  en: ''
   zh: 热管理仿真与迭代（Thermal Management）
   ko: ''
 summary:
-  en: 热管理仿真与迭代（Thermal Management）
+  en: ''
   zh: 热管理仿真与迭代（Thermal Management）
   ko: ''
 domains:
@@ -33,5 +33,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

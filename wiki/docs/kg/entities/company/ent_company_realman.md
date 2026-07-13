@@ -1,0 +1,117 @@
+---
+id: ent_company_realman
+schema_version: 1
+type: company
+'title:': RealMan Robotic
+domain: 04_assembly_integration_testing
+theoretical_depth: system
+names:
+  zh: 睿尔曼智能
+  en: RealMan Robotic
+status: active
+sources:
+- id: src_realman_official
+  type: website
+  url: https://www.realman-robotics.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 睿尔曼智能 / RealMan Robotic
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 睿尔曼智能 |
+| **英文名** | RealMan Robotic |
+| **总部** | 中国北京 |
+| **成立时间** | 2018 年 |
+| **官网** | [https://www.realman-robotics.com](https://www.realman-robotics.com) |
+| **供应链环节** | 整机 OEM / 协作机器人 / 人形机器人部件 / 超轻量仿人机械臂 |
+| **企业属性** | 国产品牌、专注超轻量仿人机械臂 |
+| **母公司/所属集团** | 无 |
+| **数据来源** | 睿尔曼官网、产品手册、WAIC 2026 报道、公开新闻稿 |
+
+## 公司简介
+
+睿尔曼智能是一家专注于超轻量仿人机械臂研发与产业化的科技企业，以高集成度关节模组和轻量化本体设计见长。
+
+公司核心团队来自北京航空航天大学等高校，产品覆盖科研、教育、商业服务与人形机器人上半身解决方案。睿尔曼强调机械臂的类人运动性能与低自重高负载比，代表产品 RLM-63 被广泛应用于具身智能、遥操作与商业服务场景。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 超轻量仿人机械臂 | 桌面级/服务级仿人手臂 | RLM-63 / RLM-85 / RLM-100 | 科研教育、商业服务、人形机器人 |
+| 人形机器人解决方案 | 上半身集成（双臂+躯干） | RLM-H1 | 具身智能、展厅服务 |
+| 关节模组 | 一体化伺服关节 | RJM 系列 | 机械臂、人形机器人 |
+
+## 代表产品
+
+### RLM-63 超轻量仿人机械臂
+
+> RLM-63：请访问 [官方资料](https://www.realman-robotics.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 产品形态 | 6-DOF 超轻量仿人机械臂 | 睿尔曼官网 |
+| 自重 | 约 4.5 kg | 产品手册 |
+| 负载 | 3 kg | 产品手册 |
+| 臂展 | 约 630 mm | 产品手册 |
+| 自由度 | 6 DOF | 公开规格 |
+| 重复定位精度 | ±0.05 mm | 产品手册 |
+| 末端速度 | 未公开 | - |
+| 通信接口 | CAN / RS485 / EtherCAT（视配置） | 产品手册 |
+| 价格 | 未公开 | 需询价 |
+
+**技术亮点**：一体化关节模组、高负载自重比、仿人构型、支持 ROS/ROS2 与二次开发，适配人形机器人上半身集成。
+
+**应用场景**：具身智能数据采集、服务机器人双臂操作、科研教育、展厅讲解、商业无人零售。
+
+### RJM 一体化关节模组
+
+> RJM 关节模组：请访问 [官方资料](https://www.realman-robotics.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 产品形态 | 无框力矩电机 + 谐波减速器 + 双编码器 | 睿尔曼官网 |
+| 扭矩范围 | 未公开 | - |
+| 控制模式 | 位置/速度/力矩 | 产品手册 |
+| 通信接口 | CAN / EtherCAT | 产品手册 |
+| 防护等级 | 未公开 | - |
+| 价格 | 未公开 | 需询价 |
+
+**技术亮点**：高集成度关节设计，可直接用于仿人机械臂与人形机器人关节，缩短整机开发周期。
+
+**应用场景**：机械臂、人形机器人、特种机器人关节。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：谐波减速器、无框力矩电机、编码器、驱动器、铝镁合金结构件、控制芯片。
+- **下游客户/应用场景**：高校与科研院所、具身智能创业公司、服务机器人整机厂、商业集成商。
+- **主要竞争对手/对标**：越疆、遨博、节卡、大族机器人、优傲 UR。
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_realman`
+- 产品实体：`ent_product_realman_rlm63`、`ent_component_realman_rjm`
+- 关键关系：
+  - `ent_company_realman` -- `manufactures` --> `ent_product_realman_rlm63`
+  - `ent_company_realman` -- `manufactures` --> `ent_component_realman_rjm`
+  - `ent_product_realman_rlm63` -- `uses` --> `ent_component_realman_rjm`
+
+## 参考资料
+
+1. [睿尔曼智能官网](https://www.realman-robotics.com)
+2. [WAIC 2026 参展报道](https://www.worldrobotconference.com)
+3. 睿尔曼产品手册与公开新闻稿

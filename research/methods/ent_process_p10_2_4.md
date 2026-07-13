@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P10.2.4 柔顺 / 阻抗控制
+  en: ''
   zh: 柔顺 / 阻抗控制
   ko: ''
 summary:
-  en: 柔顺接触实验数据、碰撞力 < 安全阈值
+  en: ''
   zh: 柔顺接触实验数据、碰撞力 < 安全阈值
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）
 

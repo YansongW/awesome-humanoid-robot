@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P11 灵巧手选型/设计与集成（Dexterous Hand）
+  en: ''
   zh: 灵巧手选型/设计与集成（Dexterous Hand）
   ko: ''
 summary:
-  en: 灵巧手选型/设计与集成（Dexterous Hand）
+  en: ''
   zh: 灵巧手选型/设计与集成（Dexterous Hand）
   ko: ''
 domains:
@@ -35,5 +35,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 

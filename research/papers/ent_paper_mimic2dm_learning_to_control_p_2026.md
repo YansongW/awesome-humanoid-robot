@@ -10,8 +10,7 @@ names:
     and Mimicking 2D Motions'
   ko: ''
 summary:
-  en: 'Mimic2DM: Learning to Control Physically-simulated 3D Characters via Generating
-    and Mimicking 2D Motions is a paper on 物理动画 for humanoid robotics.'
+  en: ''
   zh: 'Mimic2DM: Learning to Control Physically-simulated 3D Characters via Generating
     and Mimicking 2D Motions is a paper on 物理动画 for humanoid robotics.'
   ko: ''
@@ -46,5 +45,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 Mimic2DM: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions is a paper on 物理动画 for humanoid robotics.

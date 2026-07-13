@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P12.3.1 世界模型 / WAM 构建
+  en: ''
   zh: 世界模型 / WAM 构建
   ko: ''
 summary:
-  en: 世界模型预测能力演示、预测误差指标
+  en: ''
   zh: 世界模型预测能力演示、预测误差指标
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P9.2.1 散热方案设计
+  en: ''
   zh: 散热方案设计
   ko: ''
 summary:
-  en: 《散热方案》：各部件散热方式、关键尺寸、风扇/泵选型
+  en: ''
   zh: 《散热方案》：各部件散热方式、关键尺寸、风扇/泵选型
   ko: ''
 domains:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：热管理仿真与迭代（Thermal Management）
 

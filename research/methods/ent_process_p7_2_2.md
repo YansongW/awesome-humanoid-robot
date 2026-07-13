@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P7.2.2 扰动与跌倒仿真
+  en: ''
   zh: 扰动与跌倒仿真
   ko: ''
 summary:
-  en: 扰动恢复能力、跌倒损伤评估、安全边界定义
+  en: ''
   zh: 扰动恢复能力、跌倒损伤评估、安全边界定义
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）
 

@@ -1,0 +1,106 @@
+---
+id: ent_component_weihong_nk300bx
+schema_version: 1
+type: component
+domain: 11_applications_markets
+theoretical_depth: system
+names:
+  zh: 维宏 NK300BX 运动控制器
+  en: Weihong NK300BX Motion Controller
+status: active
+sources:
+- id: src_ent_component_weihong_nk300bx
+  type: website
+  url: ''
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: '2026-07-13'
+---
+
+
+
+
+
+# 维宏 NK300BX 运动控制器 / Weihong NK300BX Motion Controller
+
+---
+
+## 产品信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **制造商** | [维宏股份 / Weihong](../../../appendices/appendix-d/companies/company_weihong.md) |
+| **产品类别** | 运动控制器 / CNC 控制系统 |
+| **发布时间** | 2010 年代持续迭代 |
+| **状态** | 量产/商用 |
+| **官网/来源** | [https://www.weihong.com.cn](https://www.weihong.com.cn) |
+
+## 产品概述
+
+维宏 NK300BX 是一款集成化的多轴运动控制器，面向雕刻机、切割机、小型 CNC 与自动化设备。
+
+产品将运动控制、PLC 逻辑与 HMI 界面集成于一体，支持最多 6 轴控制，提供丰富的工艺包与二次开发接口，广泛应用于木工、广告、金属加工与 3C 行业。其高性价比与易用性使其成为国内雕刻机与小型数控设备的主流控制方案。
+
+## 产品图片
+
+> Weihong NK300BX：请访问 [官方资料](https://www.weihong.com.cn) 查看。
+
+## 规格参数表
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 产品形态 | 多轴一体化运动控制器 | 维宏官网 |
+| 控制轴数 | 最多 6 轴 | 产品手册 |
+| 联动轴数 | 3/4/5 轴（视配置） | 产品手册 |
+| 控制精度 | 0.001 mm（参考） | 产品手册 |
+| 插补方式 | 直线/圆弧/样条 | 产品手册 |
+| 通信接口 | Ethernet / USB | 产品手册 |
+| 编程语言 | G 代码 / 宏程序 | 产品手册 |
+| 操作系统 | 嵌入式 Linux / Windows | 产品手册 |
+| 价格 | 未公开 | 需询价 |
+
+## 供应链位置
+
+- **制造商**：[维宏股份 / Weihong](../../../appendices/appendix-d/companies/company_weihong.md)
+- **核心零部件/技术来源**：自研运动控制软件与 PLC 内核；工业计算机、显示面板、FPGA/DSP、PCB、接插件外购。
+- **下游应用/客户**：雕刻机/切割机制造商、木工机械、广告设备、3C 加工、小型 CNC 设备商。
+
+## 知识图谱节点与关系
+
+- 零部件实体：`ent_component_weihong_nk300bx`
+- 制造商实体：`ent_company_weihong`
+- 关键关系：
+  - `rel_ent_company_weihong_manufactures_ent_component_weihong_nk300bx`（`ent_company_weihong` → `manufactures` → `ent_component_weihong_nk300bx`）
+
+## 应用场景
+
+- **木工雕刻**：门板、家具、装饰雕花加工。
+- **广告切割**：亚克力、密度板、金属字切割。
+- **模具加工**：小型模具、电极、零部件加工。
+- **3C 加工**：手机中框、金属件、治具加工。
+
+## 竞争对比
+
+| 对比项 | 维宏 NK300BX | 柏楚 FSCUT4000 | 固高 GUC 系列 |
+|--------|--------------|----------------|---------------|
+| 定位 | 雕刻/切割/小型 CNC 控制 | 激光切割专用控制 | 通用多轴运动控制 |
+| 控制轴数 | 最多 6 轴 | 4 轴 | 多轴 |
+| 核心优势 | 性价比高、工艺包丰富 | 激光工艺数据库强 | 开放式架构、算法强 |
+| 价格 | 未公开 | 未公开 | 未公开 |
+
+## 选购与部署建议
+
+- 根据设备轴数、联动需求与加工工艺选择对应配置。
+- 雕刻切割设备建议配套维宏提供的工艺包以缩短调试周期。
+- 建议通过维宏官方渠道获取最新软件版本与技术支持。
+
+## 相关词条
+
+- [制造商：维宏股份 / Weihong](../../../appendices/appendix-d/companies/company_weihong.md)
+- [附录 D.4 重点产品 Wiki](../../../appendices/appendix-d/index-products.md)
+
+## 参考资料
+
+1. [维宏官网](https://www.weihong.com.cn)
+2. 维宏 NK300BX 产品手册
+3. [WAIC 2026 参展报道](https://www.worldrobotconference.com)

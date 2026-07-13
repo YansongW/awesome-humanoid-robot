@@ -1,0 +1,117 @@
+---
+id: ent_company_inspire_robots
+schema_version: 1
+type: company
+'title:': Inspire Robots
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: 因时机器人
+  en: Inspire Robots
+status: active
+sources:
+- id: src_inspire_robots_official
+  type: website
+  url: https://www.inspiterobots.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 因时机器人 / Inspire Robots
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 因时机器人 |
+| **英文名** | Inspire Robots |
+| **总部** | 中国北京 |
+| **成立时间** | 2016 |
+| **官网** | [https://www.inspiterobots.com](https://www.inspiterobots.com) |
+| **供应链环节** | 灵巧手 / 微型线性执行器 / 关节模组 |
+| **企业属性** | 国内初创企业、高新技术企业 |
+| **母公司/所属集团** | 北京因时机器人科技有限公司 |
+| **数据来源** | 官网、产品手册、公开报道、WAIC 2026 报道 |
+
+## 公司简介
+
+国内领先的人形机器人灵巧手与微型伺服关节供应商，专注高自由度末端执行器。
+
+因时机器人聚焦于微型伺服电缸、灵巧手及一体化关节模组，产品以高集成度、小体积、大力矩密度为特点。其 RH 系列灵巧手已在多家人形机器人、假肢与科研平台中应用，支持多自由度独立控制与触觉感知扩展。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 灵巧手 | 多自由度末端执行器 | RH56DFX、RH56BFX | 人形机器人、假肢 |
+| 微型伺服电缸 | 一体化直线执行器 | LA 系列 | 机器人关节、精密夹持 |
+| 旋转关节模组 | 一体化旋转执行器 | RJ 系列 | 协作机器人、人形机器人 |
+
+## 代表产品
+
+### RH56DFX 系列灵巧手 / Inspire RH56DFX Dexterous Hand
+
+> RH56DFX 系列灵巧手：请访问 [官方资料](https://www.inspiterobots.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | 约 230×85×35 mm（手掌） | 产品手册 |
+| 重量 | 约 480 g | 产品手册 |
+| 自由度 | 6 主动 + 6 被动 / 11 主动（可选） | 产品手册 |
+| 负载 | 单指 1.5 kg（指尖） | 产品手册 |
+| 运动速度 | 关节 180°/s | 产品手册 |
+| 供电电压 | DC 24 V | 产品手册 |
+| 通信接口 | CAN / RS485 | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：高自由度、一体化微型驱动单元、可扩展触觉与力控，适配人形机器人精细操作。
+
+**应用场景**：人形机器人操作、假肢、服务机器人抓取、工业质检。
+
+### 微型伺服电缸 / Inspire Micro Linear Actuator
+
+> 微型伺服电缸：请访问 [官方资料](https://www.inspiterobots.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 尺寸 | Ø8–Ø16 mm（系列范围） | 产品手册 |
+| 重量 | 10–50 g | 产品手册 |
+| 行程 | 10–100 mm | 产品手册 |
+| 推拉力 | 30–500 N | 产品手册 |
+| 最大速度 | 100 mm/s | 产品手册 |
+| 供电电压 | DC 12–24 V | 产品手册 |
+| 通信接口 | PWM / CAN | 产品手册 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：一体化电机+丝杠+驱动，体积小、力矩大，适合机器人手指和微型关节。
+
+**应用场景**：灵巧手手指驱动、微型机器人、医疗精密器械、自适应夹爪。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：微型电机、滚珠丝杠、轴承、驱动 IC、触觉传感器、结构件
+- **下游客户/应用场景**：人形机器人整机厂、假肢厂商、服务机器人公司、科研机构
+- **主要竞争对手/对标**：Shadow Robot、SCHUNK、达闼、智元机器人、傅利叶智能
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_inspire_robots`
+- 产品/零部件实体：`ent_product_inspire_dexterous_hand`, `ent_component_inspire_micro_linear_actuator`
+- 关键关系：
+  - `ent_company_inspire_robots` -- `manufactures` --> `ent_product_inspire_dexterous_hand`
+  - `ent_company_inspire_robots` -- `manufactures` --> `ent_component_inspire_micro_linear_actuator`
+
+## 参考资料
+
+1. [官网](https://www.inspiterobots.com)
+2. [WAIC 2026 参展报道](https://www.worldrobotconference.com)
+3. [公开产品手册与研报](https://www.inovance.com)（请按实际产品型号核对）

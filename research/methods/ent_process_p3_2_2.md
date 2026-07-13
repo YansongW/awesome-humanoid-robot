@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P3.2.2 通信网络架构
+  en: ''
   zh: 通信网络架构
   ko: ''
 summary:
-  en: 通信拓扑图、协议分配表、带宽/延迟预算
+  en: ''
   zh: 通信拓扑图、协议分配表、带宽/延迟预算
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）
 

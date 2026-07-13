@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P13.1.1 计算平台架构与选型
+  en: ''
   zh: 计算平台架构与选型
   ko: ''
 summary:
-  en: 计算架构图、各节点算力/功耗预算、安全分区
+  en: ''
   zh: 计算架构图、各节点算力/功耗预算、安全分区
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）
 

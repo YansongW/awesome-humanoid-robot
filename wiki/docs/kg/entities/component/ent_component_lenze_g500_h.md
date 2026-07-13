@@ -1,0 +1,99 @@
+---
+id: ent_component_lenze_g500_h
+schema_version: 1
+type: component
+'title:': Lenze g500-H 斜齿减速机
+domain: 02_components
+theoretical_depth: system
+names:
+  zh: Lenze g500-H 斜齿减速机
+  en: Lenze g500-H Helical Gearbox
+status: active
+sources:
+- id: src_lenze_lenze_g500_h_official
+  type: website
+  url: https://www.lenze.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# Lenze g500-H 斜齿减速机 / Lenze g500-H Helical Gearbox
+
+---
+
+## 产品信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **制造商** | [伦茨 / Lenze](../../../appendices/appendix-d/companies/company_lenze.md) |
+| **产品类别** | 斜齿减速机 / 模块化减速机 |
+| **发布时间** | 现役主力型号 |
+| **状态** | 量产/商用 |
+| **官网/来源** | [伦茨 官网](https://www.lenze.com) |
+
+## 产品概述
+
+Lenze g500-H 是同轴斜齿减速机系列，采用 2 级或 3 级螺旋齿轮设计，额定扭矩覆盖 45 至 20,000 N·m，减速比最高约 i=370。该系列与 Lenze m850 伺服电机、i950 变频器和 FAST 应用软件无缝配合，构成完整的运动控制轴。
+
+g500-H 提供底脚、法兰、实心轴和空心轴等多种安装型式，防护等级最高 IP65，终身润滑设计减少了维护需求，适用于机器人、包装、物流和机床领域。
+
+## 产品图片
+
+> Lenze g500-H 斜齿减速机 / Lenze g500-H Helical Gearbox：请访问 [官方资料](https://www.lenze.com) 查看。
+
+## 规格参数表
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 减速比 | 最高约 i=370（2/3 级） | 产品手册 |
+| 额定输出扭矩 | 45 – 20,000 N·m（系列范围） | 产品手册 |
+| 级数 | 2 级 / 3 级（部分 4 级） | 产品手册 |
+| 背隙 | 低背隙设计 | 产品手册 |
+| 防护等级 | 最高 IP65 | 产品手册 |
+| 润滑 | 终身润滑（合成润滑脂） | 产品手册 |
+| 安装方式 | 底脚 / 法兰 / 实心轴 / 空心轴 | 产品手册 |
+| 价格 | 未公开 | - |
+
+## 供应链位置
+
+- **制造商**：[伦茨 / Lenze](../../../appendices/appendix-d/companies/company_lenze.md)
+- **核心零部件/技术来源**：螺旋齿轮、轴承、密封件、合成润滑脂、电机适配法兰、铸铁/铝箱体
+- **下游应用/客户**：包装机械、输送系统、工业机器人、人形机器人关节、机床
+
+## 知识图谱节点与关系
+
+- 零部件实体：`ent_component_lenze_g500_h`
+- 制造商实体：`ent_company_lenze`
+- 关键关系：
+  - `rel_ent_company_lenze_manufactures_ent_component_lenze_g500_h`（`ent_company_lenze` --> `manufactures` --> `ent_component_lenze_g500_h`）
+
+## 应用场景
+
+- **工业机器人**：机器人关节、输送带驱动
+- **人形机器人**：手臂、躯干等中低扭矩关节
+- **数控机床**：机床进给轴、刀库、转台
+- **其他自动化**：包装、印刷、仓储物流
+
+## 竞争对比
+
+| 对比项 | g500-H 斜齿减速机 | SEW-Eurodrive R系列 | STOBER C系列 |
+|--------|------------------------|---------------|---------------|
+| 核心优势 | 与 Lenze 驱动生态协同 | 全球服务、模块化 | 高精度行星/ helical |
+| 背隙/精度 | 低背隙 | 工业级低背隙 | ≤10–14 arcmin |
+| 价格水平 | 中高端 | 中高端 | 中高端 |
+| 交付周期 | 中等 | 中等 | 中等 |
+
+## 选购与部署建议
+
+优先根据 Lenze 电机/变频器选型表匹配尺寸；长期低速或频繁启停应用需校核热功率与轴承寿命。
+
+## 参考资料
+
+1. [伦茨 官网](https://www.lenze.com)
+2. [Lenze g500 Helical Gearbox](https://www.lenze.com)
+3. [WAIC 2026 参展报道](https://www.worldrobotconference.com)

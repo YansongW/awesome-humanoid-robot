@@ -1,0 +1,119 @@
+---
+id: ent_company_ofilm
+schema_version: 1
+type: company
+domain: 11_applications_markets
+theoretical_depth: system
+names:
+  zh: 欧菲光
+  en: OFILM
+status: active
+sources:
+- id: src_ofilm_official
+  type: website
+  url: http://www.ofilm.com
+verification:
+  reviewed_by: human_and_ai
+  reviewed_at: 2026-07-01
+---
+
+
+
+
+
+# 欧菲光 / OFILM
+
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
+
+---
+
+## 公司信息卡
+
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 欧菲光 |
+| **英文名** | OFILM |
+| **总部** | 中国广东深圳 |
+| **成立时间** | 2002 |
+| **官网** | [http://www.ofilm.com](http://www.ofilm.com) |
+| **供应链环节** | 摄像头模组、3D ToF 模组、指纹识别、智能汽车电子、机器视觉 |
+| **企业属性** | 上市公司（深交所：002456）、综合光学光电龙头企业 |
+| **母公司/所属集团** | 独立上市 |
+| **数据来源** | 欧菲光官网、年报、公开技术报道 |
+
+## 公司简介
+
+欧菲光集团（OFILM）是中国领先的精密光电薄膜元器件制造商，主营摄像头模组、3D 深度传感模组、指纹识别模组及智能汽车电子产品。公司在 3D ToF、结构光、高像素光学防抖模组领域具备完整垂直整合能力，并积极拓展扫地机器人、服务机器人等机器视觉场景。
+
+## 产品线
+
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 智能手机摄像头模组 | 高像素/OIS/潜望 | MGL/CMP/GMP 系列 | 手机、平板 |
+| 3D 深度传感模组 | ToF / 结构光 | D-ToF / I-ToF 模组 | 机器人、AR/VR、人脸识别 |
+| 指纹识别模组 | 光学/超声波屏下指纹 | 大面积超声波指纹 | 智能手机、智能门锁 |
+| 智能汽车电子 | 车载摄像头、毫米波雷达 | ADAS 模组、短距雷达 | 智能汽车 |
+
+## 代表产品
+
+### 欧菲光 3D ToF 深度相机模组
+
+> 欧菲光 3D ToF 深度相机模组：请访问 [官方资料](http://www.ofilm.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 类型 | 飞行时间 3D 深度相机模组 | 欧菲光官网 |
+| 深度分辨率 | VGA / QVGA（因型号而异） | 欧菲光官网 |
+| RGB 分辨率 | 可选配 2MP / 5MP | 欧菲光官网 |
+| 光源 | 940 nm VCSEL | 欧菲光官网 |
+| 视场角 | 60°×45° / 70°×54°（典型） | 欧菲光官网 |
+| 测距范围 | 0.3 – 5 m | 欧菲光官网 |
+| 精度 | 约 1% @ 1 m | 欧菲光官网 |
+| 帧率 | 最高 30 fps | 欧菲光官网 |
+| 接口 | MIPI / USB2.0 | 欧菲光官网 |
+| 供电 | 3.3 V / 5 V DC | 欧菲光官网 |
+| 工作温度 | -20℃ – +70℃ | 欧菲光官网 |
+| 重量 | 未公开 | - |
+| 价格 | 未公开 | - |
+
+**技术亮点**：940 nm 红外 VCSEL + ToF 传感器，实时深度感知，支持 RGB-D 融合，适合机器人避障与空间理解。
+
+**应用场景**：扫地机器人避障、服务机器人导航、AR/VR 手势、人脸/生物识别、工业 3D 检测。
+
+### 欧菲光 MGL 高像素摄像头模组
+
+> 欧菲光 MGL 高像素摄像头模组：请访问 [官方资料](http://www.ofilm.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 类型 | 高像素手机摄像头模组 | 公开技术报道 |
+| 像素 | 64MP / 108MP 多型号 | 公开技术报道 |
+| 特色 | 大光圈、光学防抖 | 公开技术报道 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：高解析力、超薄设计，已量产应用于主流旗舰机型。
+
+**应用场景**：智能手机主摄、多摄系统。
+
+## 供应链位置
+
+- **上游关键零部件/材料**：VCSEL、ToF 图像传感器、DOE/光学镜头、ISP、PCB/FPC、结构件
+- **下游客户/应用场景**：智能手机、智能机器人、AR/VR、智能家居、汽车电子
+- **主要竞争对手/对标**：舜宇光学、丘钛科技、LG Innotek、Samsung Electro-Mechanics、ams Osram
+
+## 知识图谱节点与关系
+
+- 公司实体：`ent_company_ofilm`
+- 产品实体：`ent_product_ofilm_tof_3d_module`
+- 零部件实体：`ent_component_ofilm_tof_module_core`
+- 关键关系：
+  - `ent_company_ofilm` -- `manufactures` --> `ent_product_ofilm_tof_3d_module`
+  - `ent_company_ofilm` -- `manufactures` --> `ent_component_ofilm_tof_module_core`
+  - `ent_product_ofilm_tof_3d_module` -- `uses` --> `ent_component_ofilm_tof_module_core`
+
+## 参考资料
+
+1. [欧菲光官网](http://www.ofilm.com)
+2. [欧菲光 3D ToF 深度相机模组产品/资料页](http://www.ofilm.com/en/products_inner1_39.html)
+3. 公司年报、产品 datasheet 与公开新闻稿
+4. [附录 D 产品目录](../../../appendices/appendix-d/index-products.md)

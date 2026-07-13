@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P6.1.2 DH / 修改 DH 参数定义
+  en: ''
   zh: DH / 修改 DH 参数定义
   ko: ''
 summary:
-  en: 《DH 参数表》、正运动学代码与 URDF 对比误差 < 1e-6
+  en: ''
   zh: 《DH 参数表》、正运动学代码与 URDF 对比误差 < 1e-6
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）
 

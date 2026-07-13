@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P4.3.1 电机驱动器设计/选型
+  en: ''
   zh: 电机驱动器设计/选型
   ko: ''
 summary:
-  en: 驱动器规格、电气原理图、热仿真/测试
+  en: ''
   zh: 驱动器规格、电气原理图、热仿真/测试
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）
 

@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P8.2.2 疲劳与寿命预估
+  en: ''
   zh: 疲劳与寿命预估
   ko: ''
 summary:
-  en: 疲劳分析报告、关键件循环寿命 > 目标
+  en: ''
   zh: 疲劳分析报告、关键件循环寿命 > 目标
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：结构强度仿真与迭代（Structural FEA）
 

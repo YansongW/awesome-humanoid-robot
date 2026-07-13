@@ -9,9 +9,7 @@ names:
   zh: 把可通过性感知的导航规划与地形自适应运动控制用复合教师蒸馏成统一策略，再经 RL+行为克隆微调，在楼梯/斜坡/窄梁上既避障又稳步
   ko: ''
 summary:
-  en: 'GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid
-    Robots across Versatile Terrains is a paper on 导航任务 for humanoid robotics. 把可通过性感知的导航规划与地形自适应运动控制用复合教师蒸馏成统一策略，再经
-    RL+行为克隆微调，在楼梯/斜坡/窄梁上既避障又稳步.'
+  en: ''
   zh: 'GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid
     Robots across Versatile Terrains is a paper on 导航任务 for humanoid robotics. 把可通过性感知的导航规划与地形自适应运动控制用复合教师蒸馏成统一策略，再经
     RL+行为克隆微调，在楼梯/斜坡/窄梁上既避障又稳步.'
@@ -45,5 +43,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-06'
 ---
+
 
 GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid Robots across Versatile Terrains is a paper on 导航任务 for humanoid robotics. 把可通过性感知的导航规划与地形自适应运动控制用复合教师蒸馏成统一策略，再经 RL+行为克隆微调，在楼梯/斜坡/窄梁上既避障又稳步.

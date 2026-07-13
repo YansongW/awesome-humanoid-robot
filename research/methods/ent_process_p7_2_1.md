@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P7.2.1 基础站立与行走仿真
+  en: ''
   zh: 基础站立与行走仿真
   ko: ''
 summary:
-  en: 仿真视频、稳定行走 10 m、转向/斜坡通过
+  en: ''
   zh: 仿真视频、稳定行走 10 m、转向/斜坡通过
   ko: ''
 domains:
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）
 

@@ -8,8 +8,7 @@ names:
   zh: Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning
   ko: ''
 summary:
-  en: Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning
-    is a paper on 行走运动 for humanoid robotics.
+  en: ''
   zh: Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning
     is a paper on 行走运动 for humanoid robotics.
   ko: ''
@@ -41,5 +40,6 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 Learning to Walk in Minutes Using Massively Parallel Deep Reinforcement Learning is a paper on 行走运动 for humanoid robotics.

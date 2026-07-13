@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: P14 软件中间件与系统集成（Software & Integration）
+  en: ''
   zh: 软件中间件与系统集成（Software & Integration）
   ko: ''
 summary:
-  en: 软件中间件与系统集成（Software & Integration）
+  en: ''
   zh: 软件中间件与系统集成（Software & Integration）
   ko: ''
 domains:
@@ -33,5 +33,6 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 
