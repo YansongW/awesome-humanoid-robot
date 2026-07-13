@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# ISO 13849 / ISO 13849 / ISO 13849
-
-## 摘要
-
-机械控制系统安全设计的标准，规定了性能等级（PL）与安全类别以降低风险。
-
-## Abstract
-
-A safety standard for the design of control systems on machinery, specifying performance levels (PL) and safety categories for risk reduction.
-
-## 요약
-
-기계의 제어 시스템 설계를 위한 안전 표준으로, 위험 감소를 위한 성능 등급(PL)과 안전 카테고리를 규정.
-
-
-> 本词条对应 Wiki 第 12 章，详细论述见项目 Wiki。
-

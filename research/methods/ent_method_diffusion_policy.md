@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Diffusion Policy / 扩散策略 / 디퓨전 정책
-
-## 摘要
-
-将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。
-
-## Abstract
-
-A visuomotor policy that represents action distributions as denoising diffusion models, enabling multimodal and smooth robot action generation.
-
-## 요약
-
-행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.
-
-
-> 本词条对应 Wiki 第 18 章，详细论述见项目 Wiki。
-

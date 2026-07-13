@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Perception Stack / 感知栈 / 인식 스택
-
-## 摘要
-
-处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。
-
-## Abstract
-
-The software subsystem that processes sensor data to estimate states, detect objects, and build environmental representations for decision-making.
-
-## 요약
-
-센서 데이터를 처리하여 상태를 추정·물체를 검출·환경 표현을 구축하고 의사결정에 입력을 제공하는 소프트웨어 하위 시스템.
-
-
-> 本词条对应 Wiki 第 24 章，详细论述见项目 Wiki。
-

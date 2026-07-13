@@ -31,7 +31,7 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -57,6 +57,11 @@ related_entities:
       or Newton-Euler dynamics.
     zh: ZMP 条件来源于机器人运动方程的力矩平衡，通常由欧拉-拉格朗日方程或牛顿-欧拉动力学表达。
 ---
+
+
+
+
+
 
 # Zero Moment Point / 零力矩点 / 영점
 

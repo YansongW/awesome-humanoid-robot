@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Demo-to-Product Gap / 演示指标与产品指标的鸿沟 / 데모-제품 간격
-
-## 摘要
-
-为舞台演示优化的指标与可量产、可认证、高可靠产品所需指标之间的系统性差距。
-
-## Abstract
-
-The systematic gap between metrics optimized for staged demonstrations and those required for reliable, certifiable, mass-producible products.
-
-## 요약
-
-데모를 위한 지표와 대량생산·인증 가능한 제품이 요구하는 지표 사이의 체계적 간극.
-
-
-> 本词条对应 Wiki 第 1 章，详细论述见项目 Wiki。
-

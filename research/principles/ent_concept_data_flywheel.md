@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Data Flywheel / 数据飞轮 / 데이터 플라이휠
-
-## 摘要
-
-部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。
-
-## Abstract
-
-A self-reinforcing cycle in which deployed robots generate data that improves AI models, which improves robot performance and generates even more data.
-
-## 요약
-
-배포된 로봇이 데이터를 생성하고, 데이터가 AI 모델을 개선하며, 모델이 로봇 성능을 높여 더 많은 데이터를 생성하는 자기 강화 순환.
-
-
-> 本词条对应 Wiki 第 30 章，详细论述见项目 Wiki。
-

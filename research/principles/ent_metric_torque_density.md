@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Torque Density / 转矩密度 / 토크 밀도
-
-## 摘要
-
-执行器连续输出转矩与其质量或体积之比，是衡量人形机器人关节紧凑性与动力性能的关键指标。
-
-## Abstract
-
-The ratio of continuous output torque to actuator mass or volume, a key figure of merit for compact, high-performance humanoid joints.
-
-## 요약
-
-액추에이터 질량·부피 대비 연속 출력 토크 비율로, 휴로봇 관절의 소형·고성능을 평가하는 핵심 지표.
-
-
-> 本词条对应 Wiki 第 4 章，详细论述见项目 Wiki。
-

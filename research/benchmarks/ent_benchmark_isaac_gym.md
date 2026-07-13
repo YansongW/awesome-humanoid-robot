@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Isaac Gym Benchmarks / Isaac Gym基准 / Isaac Gym 벤치마크
-
-## 摘要
-
-基于NVIDIA Isaac Gym构建的GPU加速强化学习基准集合，用于高吞吐量机器人策略训练与评估。
-
-## Abstract
-
-A collection of GPU-accelerated reinforcement-learning benchmarks built on NVIDIA Isaac Gym for high-throughput robot policy training and evaluation.
-
-## 요약
-
-NVIDIA Isaac Gym 기반 GPU 가속 강화학습 벤치마크 모음으로, 고처리량 로봇 정책 훈련·평가에 사용.
-
-
-> 本词条对应 Wiki 第 25 章，详细论述见项目 Wiki。
-

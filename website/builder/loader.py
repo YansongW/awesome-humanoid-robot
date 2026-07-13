@@ -5,7 +5,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any
+from typing import Any, List, Optional, Tuple
 
 import yaml
 
@@ -180,6 +180,98 @@ def pick_lang(value: Any, lang: str = "zh") -> str:
     return str(value or "")
 
 
+def _detect_heading_language(heading: str) -> Optional[str]:
+    """Detect the dominant script of a Markdown heading.
+
+    Returns 'zh', 'en', 'ko', or None if no language-specific characters are found.
+    English headings may contain numbers and punctuation.
+    """
+    text = heading.strip()
+    # Strip leading heading markers and whitespace.
+    text = re.sub(r"^#+\s*", "", text).strip()
+    if not text:
+        return None
+
+    has_zh = bool(re.search(r"[\u4e00-\u9fff]", text))
+    has_ko = bool(re.search(r"[\uac00-\ud7af]", text))
+    has_en = bool(re.search(r"[a-zA-Z]", text))
+
+    if has_zh and not has_ko and not has_en:
+        return "zh"
+    if has_ko and not has_zh and not has_en:
+        return "ko"
+    if has_en and not has_zh and not has_ko:
+        return "en"
+
+    # Mixed or ambiguous headings (e.g., "PID 控制") are treated as Chinese
+    # because the primary content in this project is Chinese.
+    if has_zh:
+        return "zh"
+    if has_ko:
+        return "ko"
+    if has_en:
+        return "en"
+    return None
+
+
+def filter_body_by_language(body: str, lang: str) -> str:
+    """Return only the body sections matching the requested language.
+
+    Sections are split by headings (lines starting with #). For the Chinese site
+    we keep Chinese and unknown-language sections; for English/Korean we keep
+    only sections whose heading is clearly in that language.
+    """
+    lines = body.splitlines()
+    sections: List[Tuple[Optional[str], List[str]]] = []
+    current_heading: Optional[str] = None
+    current_lines: List[str] = []
+
+    for line in lines:
+        if re.match(r"^#{1,6}\s+", line):
+            if current_heading is not None or current_lines:
+                sections.append((current_heading, current_lines))
+            current_heading = line
+            current_lines = []
+        else:
+            current_lines.append(line)
+    if current_heading is not None or current_lines:
+        sections.append((current_heading, current_lines))
+
+    keep_sections: List[Tuple[Optional[str], List[str]]] = []
+    for heading, content in sections:
+        if heading is None:
+            # Content before any heading: keep only for Chinese, or if it is empty.
+            if lang == "zh" or not any(line.strip() for line in content):
+                keep_sections.append((heading, content))
+            continue
+
+        heading_lang = _detect_heading_language(heading)
+        if heading_lang is None:
+            # Unknown script headings are kept only on the Chinese site
+            # because the majority of existing rich content is Chinese.
+            if lang == "zh":
+                keep_sections.append((heading, content))
+        elif heading_lang == lang:
+            keep_sections.append((heading, content))
+        # Otherwise drop the section for this language.
+
+    if not keep_sections:
+        return ""
+
+    # The template already renders entry.name as <h1>, so drop the redundant
+    # first-level heading from the body to avoid duplicating the title across
+    # the top of the page.
+    if keep_sections and keep_sections[0][0] and keep_sections[0][0].startswith("# "):
+        keep_sections = keep_sections[1:]
+
+    out_lines: List[str] = []
+    for heading, content in keep_sections:
+        if heading:
+            out_lines.append(heading)
+        out_lines.extend(content)
+    return "\n".join(out_lines).strip()
+
+
 def tokenize(text: str) -> list[str]:
     """Tokenize text for search; English words and Chinese characters."""
     text = text or ""
@@ -255,6 +347,7 @@ class KGStore:
 
             names = front.get("names", {})
             summaries = front.get("summary", {})
+            filtered_body = filter_body_by_language(body, self.lang)
             entry = Entry(
                 id=str(eid),
                 type=front.get("type", "unknown"),
@@ -264,8 +357,8 @@ class KGStore:
                 domains=front.get("domains", []) or [],
                 layers=front.get("layers", []) or [],
                 tags=front.get("tags", []) or [],
-                body=body,
-                body_html=md.convert(body),
+                body=filtered_body,
+                body_html=md.convert(filtered_body),
                 frontmatter=front,
                 path=path,
             )

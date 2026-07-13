@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Actuation Stack / 执行栈 / 구동 스택
-
-## 摘要
-
-根据决策输出执行底层电机命令、安全限位与故障响应的软硬件子系统。
-
-## Abstract
-
-The software and hardware subsystem that executes low-level motor commands, safety limits, and fault responses based on the decision output.
-
-## 요약
-
-의사결정 출력에 따라 저수준 모터 명령·안전 한계·고장 반응을 실행하는 소프트웨어 및 하드웨어 하위 시스템.
-
-
-> 本词条对应 Wiki 第 24 章，详细论述见项目 Wiki。
-

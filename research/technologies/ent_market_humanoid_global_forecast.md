@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Global Humanoid Robot Market Forecast / 人形机器人全球市场预测 / 글로벌 휴로봇 시장 전망
-
-## 摘要
-
-对人形机器人在未来多年市场规模、增长率、区域采用与细分需求的预测。
-
-## Abstract
-
-Projections of market size, growth rates, regional adoption, and segment demand for humanoid robots over a multi-year horizon.
-
-## 요약
-
-향후 수년간 휴로봇의 시장 규모·성장률·지역 도입·세분 수요를 전망하는 예측.
-
-
-> 本词条对应 Wiki 第 28 章，详细论述见项目 Wiki。
-

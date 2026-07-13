@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Form Closure / 形闭合 / 형태 폐쇄
-
-## 摘要
-
-仅通过无摩擦接触的几何与布局即可完全约束物体运动的抓取条件。
-
-## Abstract
-
-A grasp condition in which the object's motion is completely constrained by the geometry and placement of frictionless contacts alone.
-
-## 요약
-
-마찰이 없는 접촉의 기하·배치만으로 물체의 운동을 완전히 구속하는 그래프 조건.
-
-
-> 本词条对应 Wiki 第 16 章，详细论述见项目 Wiki。
-

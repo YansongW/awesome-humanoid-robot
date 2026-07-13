@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Neuro-Symbolic Reasoning / 符号-神经混合推理 / 신경-기호 추론
-
-## 摘要
-
-将神经感知与学习同符号推理结合，以获得可解释、可泛化的长程决策能力的人工智能方法。
-
-## Abstract
-
-An AI approach that combines neural perception and learning with symbolic reasoning to obtain interpretable and generalizable long-horizon decision-making.
-
-## 요약
-
-신경 인식·학습과 기호 추론을 결합하여 해석 가능하고 일반화된 장기 의사결정을 얻는 AI 접근법.
-
-
-> 本词条对应 Wiki 第 20 章，详细论述见项目 Wiki。
-

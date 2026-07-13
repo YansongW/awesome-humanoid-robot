@@ -16,6 +16,7 @@ import re
 import sys
 from datetime import date
 from pathlib import Path
+from typing import List, Optional
 from typing import Optional
 
 import yaml
@@ -29,6 +30,14 @@ PLACEHOLDER_ZH = re.compile(
 )
 PLACEHOLDER_EN = re.compile(
     r"^(.+?) is a knowledge node related to \w+ in the humanoid robot value chain\. See Wiki Chapter \d+\.$"
+)
+WIKI_REFERENCE_NOTE = re.compile(
+    r"\n?> ?本词条对应 Wiki 第 \d+ 章，详细论述见项目 Wiki。\n?",
+    re.MULTILINE,
+)
+SUMMARY_HEADINGS = re.compile(
+    r"^#{1,6}\s+(摘要|Abstract|요약|概述|Overview|개요)\s*$",
+    re.MULTILINE | re.IGNORECASE,
 )
 
 
@@ -57,33 +66,14 @@ def split_frontmatter(text: str) -> tuple[str, str, str]:
 
 
 def build_clean_body(fm: dict, curated: dict) -> str:
-    names = curated["names"]
-    summary = curated["summary"]
+    """Return an empty body for previously-placeholder gap entities.
 
-    title_parts = [names.get("en", "")]
-    if names.get("zh"):
-        title_parts.append(names["zh"])
-    if names.get("ko"):
-        title_parts.append(names["ko"])
-    title = " / ".join(filter(None, title_parts))
-
-    lines = [f"# {title}", ""]
-
-    if summary.get("zh"):
-        lines.extend(["## 摘要", "", summary["zh"], ""])
-    if summary.get("en"):
-        lines.extend(["## Abstract", "", summary["en"], ""])
-    if summary.get("ko"):
-        lines.extend(["## 요약", "", summary["ko"], ""])
-
-    # Reference to Wiki chapter.
-    chapter = curated.get("chapter")
-    if chapter:
-        lines.extend(
-            ["", f"> 本词条对应 Wiki 第 {chapter} 章，详细论述见项目 Wiki。", ""]
-        )
-
-    return "\n".join(lines) + "\n"
+    The entry template already renders entry.summary in its own section, so the
+    body should only contain additional content beyond the summary. Until we
+    expand each gap entity with richer Wiki-derived content, leave the body blank
+    rather than duplicating the summary or falling back to "see Wiki".
+    """
+    return ""
 
 
 def body_is_placeholder(body: str) -> bool:
@@ -96,6 +86,49 @@ def body_is_placeholder(body: str) -> bool:
         return True
     content = "\n".join(lines[1:])
     return bool(PLACEHOLDER_ZH.search(content) or PLACEHOLDER_EN.search(content))
+
+
+def body_is_summary_only(body: str) -> bool:
+    """Return True if the body only contains a title and summary sections.
+
+    A summary-only body has only headings that match 摘要/Abstract/요약/etc.,
+    plus their content and an optional initial level-1 title.
+    """
+    stripped = body.strip()
+    if not stripped:
+        return True
+    lines = stripped.splitlines()
+
+    # Parse sections by headings.
+    sections: list[tuple[Optional[str], list[str]]] = []
+    current_heading: Optional[str] = None
+    current_lines: list[str] = []
+
+    for line in lines:
+        if re.match(r"^#{1,6}\s+", line):
+            if current_heading is not None or current_lines:
+                sections.append((current_heading, current_lines))
+            current_heading = line.strip()
+            current_lines = []
+        else:
+            current_lines.append(line)
+    if current_heading is not None or current_lines:
+        sections.append((current_heading, current_lines))
+
+    if not sections:
+        return True
+
+    # Allow an initial level-1 title section.
+    if sections[0][0] and sections[0][0].startswith("# "):
+        sections = sections[1:]
+
+    if not sections:
+        return True
+
+    for heading, _ in sections:
+        if heading is None or not SUMMARY_HEADINGS.match(heading):
+            return False
+    return True
 
 
 def update_frontmatter(fm: dict, curated: dict) -> dict:
@@ -140,6 +173,13 @@ def process_entity(eid: str, curated: dict) -> bool:
         # Keep existing body but remove any remaining placeholder paragraph.
         new_body = re.sub(PLACEHOLDER_ZH, "", body)
         new_body = re.sub(PLACEHOLDER_EN, "", new_body)
+        new_body = re.sub(WIKI_REFERENCE_NOTE, "", new_body)
+
+    # If the body is now only a title + summary headings, clear it: the entry
+    # template already renders entry.summary in its own section, so duplicating
+    # it in the body produces two consecutive summary blocks.
+    if body_is_summary_only(new_body):
+        new_body = ""
 
     # Re-serialize frontmatter with nice formatting.
     new_yaml = yaml.safe_dump(

@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Decision Stack / 决策栈 / 의사결정 스택
-
-## 摘要
-
-将感知结果与任务目标转化为规划、策略与行为决策的软件子系统。
-
-## Abstract
-
-The software subsystem that converts perception and task goals into plans, policies, and behavioral decisions.
-
-## 요약
-
-인식 결과와 작업 목표를 계획·정책·행동 결정으로 변환하는 소프트웨어 하위 시스템.
-
-
-> 本词条对应 Wiki 第 24 章，详细论述见项目 Wiki。
-

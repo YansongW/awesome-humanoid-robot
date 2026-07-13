@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# IEC 61508 / IEC 61508 / IEC 61508
-
-## 摘要
-
-电气/电子/可编程电子安全相关系统功能安全的国际标准，是工业与机器人安全的基础。
-
-## Abstract
-
-An international standard for functional safety of electrical/electronic/programmable electronic safety-related systems, foundational for industrial and robot safety.
-
-## 요약
-
-전기·전자·프로그래머블 전자 안전 관련 시스템의 기능 안전에 관한 국제 표준.
-
-
-> 本词条对应 Wiki 第 12 章，详细论述见项目 Wiki。
-

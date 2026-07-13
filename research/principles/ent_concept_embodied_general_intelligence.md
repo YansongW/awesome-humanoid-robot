@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Embodied General Intelligence / 具身通用智能 / 구체화된 범용 지능
-
-## 摘要
-
-通过身体在多样物理环境中灵活学习、推理与行动的通用智能体长远目标。
-
-## Abstract
-
-The long-term goal of building agents that can learn, reason, and act flexibly in diverse physical environments through a body.
-
-## 요약
-
-신체를 통해 다양한 물리 환경에서 유연하게 학습·추론·행동할 수 있는 에이전트 구축의 장기 목표.
-
-
-> 本词条对应 Wiki 第 30 章，详细论述见项目 Wiki。
-

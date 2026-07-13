@@ -26,7 +26,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -37,20 +37,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Logistics and Warehouse Automation / 物流仓储 / 물류 및 창고 자동화
-
-## 摘要
-
-在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。
-
-## Abstract
-
-The use of humanoid robots for picking, sorting, packing, and moving goods in logistics centers and warehouses.
-
-## 요약
-
-물류 센터와 창고에서 휴로봇을 이용한 피킹·분류·포장·운반 적용.
-
-
-> 本词条对应 Wiki 第 27 章，详细论述见项目 Wiki。
-

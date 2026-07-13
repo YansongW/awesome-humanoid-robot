@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Joint-Camera-IMU Calibration / 联合标定 / 관절·칩라·IMU 통합 보정
-
-## 摘要
-
-估计关节、相机与惯性传感器之间的内外参及时延，以保证感知与控制一致性的过程。
-
-## Abstract
-
-The process of estimating the intrinsic and extrinsic parameters, as well as time offsets, between joints, cameras, and inertial sensors to ensure coherent sensing and control.
-
-## 요약
-
-관절·칩라·관성 센서 간 내외부 파라미터와 시간 오프셋을 추정하여 감지와 제어의 일관성을 보장하는 과정.
-
-
-> 本词条对应 Wiki 第 11 章，详细论述见项目 Wiki。
-

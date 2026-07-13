@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Shooting Method / 打靶法 / 슈팅 방법
-
-## 摘要
-
-通过从初始猜测积分并调整决策变量以满足终端约束，从而求解边值问题的数值方法。
-
-## Abstract
-
-A numerical method for solving boundary-value problems by integrating from an initial guess and adjusting decision variables to satisfy terminal constraints.
-
-## 요약
-
-초기 추정값으로부터 적분하고 최종 제약을 만족하도록 결정 변수를 조정하여 경계값 문제를 푸는 수치 방법.
-
-
-> 本词条对应 Wiki 第 15 章，详细论述见项目 Wiki。
-

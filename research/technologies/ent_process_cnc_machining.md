@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# CNC Precision Machining / CNC精密机加工 / CNC 정밀 가공
-
-## 摘要
-
-通过数控加工以严格公差制造关节壳体、支架、轴类等高精度结构件。
-
-## Abstract
-
-Computer-numerical-control machining processes that produce high-precision structural parts such as joint housings, brackets, and shafts to tight tolerances.
-
-## 요약
-
-관절 하우징·브래킷·축 등의 고정밀 구조 부품을 엄격한 공차 내에서 생산하는 CNC 가공 공정.
-
-
-> 本词条对应 Wiki 第 10 章，详细论述见项目 Wiki。
-

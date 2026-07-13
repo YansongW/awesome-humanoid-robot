@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Fleet Data Flywheel / 车队数据飞轮 / 플릿 데이터 플라이휠
-
-## 摘要
-
-部署机器人车队产生的数据持续改进模型，模型反过来提升车队性能并产生更多数据的闭环系统。
-
-## Abstract
-
-A closed-loop system where data from deployed robot fleets continuously improves models, which in turn improve fleet performance and generate more data.
-
-## 요약
-
-배포된 로봇 플릿의 데이터가 지속적으로 모델을 개선하고, 이 모델이 다시 플릿 성능을 높여 더 많은 데이터를 생성하는 폐쇄 루프 시스템.
-
-
-> 本词条对应 Wiki 第 21 章，详细论述见项目 Wiki。
-

@@ -26,7 +26,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -37,20 +37,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Home Service / 家庭服务 / 가정 서비스
-
-## 摘要
-
-在家庭环境中利用人形机器人完成家务、安防、娱乐与养老辅助。
-
-## Abstract
-
-The use of humanoid robots for domestic chores, security, entertainment, and eldercare within residential environments.
-
-## 요약
-
-주거 환경에서 가사·보안·오락·노인 돌봄을 위해 휴로봇을 사용하는 적용.
-
-
-> 本词条对应 Wiki 第 27 章，详细论述见项目 Wiki。
-

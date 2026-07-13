@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# System Identification / 系统辨识 / 시스템 동정
-
-## 摘要
-
-根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。
-
-## Abstract
-
-The process of building mathematical models of dynamical systems from measured input-output data, used to align simulation with reality.
-
-## 요약
-
-측정된 입출력 데이터로부터 동적 시스템의 수학적 모델을 구축하여 시뮬레이션과 현실을 일치시키는 과정.
-
-
-> 本词条对应 Wiki 第 18 章，详细论述见项目 Wiki。
-

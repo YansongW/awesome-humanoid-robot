@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Inverse Kinematics / 逆运动学 / 역욕동학
-
-## 摘要
-
-根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。
-
-## Abstract
-
-The computation of joint angles that realize a desired end-effector pose, often solved numerically via Jacobian pseudoinverse or analytically for simple geometries.
-
-## 요약
-
-원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.
-
-
-> 本词条对应 Wiki 第 8 章，详细论述见项目 Wiki。
-

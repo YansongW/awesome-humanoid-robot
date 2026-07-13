@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Floating-Base Dynamics / 浮动基动力学 / 부유 기반 동역학
-
-## 摘要
-
-针对未驱动或欠驱动基座的刚体动力学建模形式，如双足机器人，将基座位姿纳入广义坐标。
-
-## Abstract
-
-A rigid-body dynamics formalism for robots with an unactuated or underactuated base, such as bipeds, where the base pose is part of the generalized coordinates.
-
-## 요약
-
-이족 로봇처럼 비구동·저구동 기반을 가진 로봇을 위해 기반 자세를 일반화 좌표에 포함시키는 강체 동역학 공식화.
-
-
-> 本词条对应 Wiki 第 8 章，详细论述见项目 Wiki。
-

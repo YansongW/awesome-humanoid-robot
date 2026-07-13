@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# QNX / QNX / QNX
-
-## 摘要
-
-广泛应用于汽车与安全关键系统的商用微内核实时操作系统，具有高可靠性与确定性调度能力。
-
-## Abstract
-
-A commercial microkernel real-time operating system widely used in automotive and safety-critical systems, offering high reliability and deterministic scheduling.
-
-## 요약
-
-자동차 및 안전 필수 시스템에 널리 사용되는 상용 마이크로커널 실시간 운영체제로, 높은 신뢰성과 결정적 스케줄링을 제공.
-
-
-> 本词条对应 Wiki 第 22 章，详细论述见项目 Wiki。
-

@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Admittance Control / 导纳控制 / 어드미턴스 제어
-
-## 摘要
-
-将测得的外部力转换为期望位置或速度轨迹的控制方法，与阻抗控制互补。
-
-## Abstract
-
-A control approach that converts measured external forces into desired position or velocity trajectories, complementary to impedance control.
-
-## 요약
-
-측정된 외력을 원하는 위치·속도 궤적으로 변환하는 제어 방식으로, 임피던스 제어와 상호 보완적.
-
-
-> 本词条对应 Wiki 第 14 章，详细论述见项目 Wiki。
-

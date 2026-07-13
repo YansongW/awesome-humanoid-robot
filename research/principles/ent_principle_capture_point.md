@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Capture Point / 捕获点 / 캡처 포인트
-
-## 摘要
-
-机器人必须踏步其上才能完全停稳的地面点，是双足行走预测性平衡判据。
-
-## Abstract
-
-A point on the ground where the robot must step to bring itself to a complete stop, used as a predictive balance criterion for bipedal walking.
-
-## 요약
-
-로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.
-
-
-> 本词条对应 Wiki 第 15 章，详细论述见项目 Wiki。
-

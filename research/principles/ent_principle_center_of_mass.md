@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Center of Mass (COM) / 质心（COM） / 질량 중심(COM)
-
-## 摘要
-
-物体内所有质量的加权平均位置；其轨迹与高度是人形机器人平衡、步态与动量控制的核心。
-
-## Abstract
-
-The weighted average position of all mass in a body; its trajectory and height are central to balance, gait, and momentum-based control of humanoid robots.
-
-## 요약
-
-강체 내 모든 질량의 가중 평균 위치로, 휴로봇의 균형·보행·울동량 기반 제어의 핵심 변수.
-
-
-> 本词条对应 Wiki 第 8 章，详细论述见项目 Wiki。
-

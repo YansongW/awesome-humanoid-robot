@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Open X-Embodiment Dataset / Open X-Embodiment数据集 / Open X-Embodiment 데이터셋
-
-## 摘要
-
-聚合多种机器人本体的演示轨迹的大规模数据集，用于训练RT-2、OpenVLA等通才机器人策略。
-
-## Abstract
-
-A large aggregated dataset of robot demonstration trajectories across many robot embodiments, used to train generalist robot policies such as RT-2 and OpenVLA.
-
-## 요약
-
-다양한 로봇 본체의 시연 궤적을 집대성한 대규모 데이터셋으로, RT-2·OpenVLA 등 범용 로봇 정책 학습에 사용됨.
-
-
-> 本词条对应 Wiki 第 19 章，详细论述见项目 Wiki。
-

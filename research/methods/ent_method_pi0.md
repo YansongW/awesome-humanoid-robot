@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# π0 (Pi Zero) / π0 / π0
-
-## 摘要
-
-在多样化机器人数据上预训练并针对灵巧、语言条件操作任务微调的多面手视觉运动策略。
-
-## Abstract
-
-A generalist visuomotor policy pretrained on diverse robotic data and fine-tuned for dexterous, language-conditioned manipulation tasks.
-
-## 요약
-
-다양한 로봇 데이터로 사전학습하고 언어 조건의 손재주 있는 조작 과제에 미세 조정한 범용 시각운동 정책.
-
-
-> 本词条对应 Wiki 第 19 章，详细论述见项目 Wiki。
-

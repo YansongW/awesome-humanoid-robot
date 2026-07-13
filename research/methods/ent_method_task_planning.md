@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Task Planning / 任务规划 / 작업 계획
-
-## 摘要
-
-生成实现目标的高层动作序列的过程，常用PDDL等符号表示。
-
-## Abstract
-
-The process of generating a sequence of high-level actions to achieve a goal, often using symbolic representations such as PDDL.
-
-## 요약
-
-목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.
-
-
-> 本词条对应 Wiki 第 20 章，详细论述见项目 Wiki。
-

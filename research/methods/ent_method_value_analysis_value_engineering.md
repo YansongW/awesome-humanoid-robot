@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Value Analysis / Value Engineering (VA/VE) / 价值分析/价值工程（VA/VE） / 가치 분석/가치 공학(VA/VE)
-
-## 摘要
-
-在保持功能的前提下降低成本，或在可接受成本下提升功能，以提升产品价值的结构化方法。
-
-## Abstract
-
-A structured methodology to improve product value by either reducing cost while preserving function or enhancing function at acceptable cost.
-
-## 요약
-
-기능을 유지하면서 비용을 줄이거나, 수용 가능한 비용 내에서 기능을 향상시켜 제품 가치를 높이는 구조화된 방법론.
-
-
-> 本词条对应 Wiki 第 13 章，详细论述见项目 Wiki。
-

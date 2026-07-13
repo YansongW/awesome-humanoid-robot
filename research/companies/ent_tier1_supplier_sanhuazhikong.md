@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Sanhua Intelligent Controls / 三花智控 / 싼화지콩(三花智控)
-
-## 摘要
-
-中国一级供应商，主营热管理零部件与精密铝件，正积极布局人形机器人及汽车机器人供应链。
-
-## Abstract
-
-A Chinese Tier-1 supplier of thermal management components and precision aluminum parts, increasingly active in humanoid and automotive robotics supply chains.
-
-## 요약
-
-열 관리 부품과 정밀 알루미늄 부품을 공급하는 중국 티어1 기업으로, 휴로봇 및 자동차 로봇 공급망에 활발히 진출 중.
-
-
-> 本词条对应 Wiki 第 7 章，详细论述见项目 Wiki。
-

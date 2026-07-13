@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Leg Mechanism / 腿部机构 / 다리 기구
-
-## 摘要
-
-包含髋、膝、踝关节的腿部连杆运动与结构设计，承担承重、冲击吸收与移动功能。
-
-## Abstract
-
-The kinematic and structural design of the leg linkage, including hip, knee, and ankle joints, that supports weight, absorbs impact, and enables locomotion.
-
-## 요약
-
-고관절·무릎·발목 관절을 포함하는 다리 연결 기구의 용동·구조 설계로, 하중 지지·충격 흡수·이동을 담당.
-
-
-> 本词条对应 Wiki 第 9 章，详细论述见项目 Wiki。
-

@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Digital Twin / 数字孪生 / 디지털 트윈
-
-## 摘要
-
-与物理资产或流程实时数据同步的虚拟复制品，用于监控、仿真与优化。
-
-## Abstract
-
-A virtual replica of a physical asset or process that is continuously synchronized with real-world data for monitoring, simulation, and optimization.
-
-## 요약
-
-물리 자산이나 프로세스의 실시간 데이터와 지속적으로 동기화되는 가상 복제체로, 모니터링·시뮬레이션·최적화에 활용.
-
-
-> 本词条对应 Wiki 第 23 章，详细论述见项目 Wiki。
-

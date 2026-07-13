@@ -31,7 +31,7 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -67,6 +67,11 @@ related_entities:
     en: Stability and tractability of MPC rely on convex optimization theory and efficient QP solvers.
     zh: MPC 的稳定性与可解性依赖于凸优化理论与高效 QP 求解器。
 ---
+
+
+
+
+
 
 # Model Predictive Control / 模型预测控制 / 모델 예측 제어
 

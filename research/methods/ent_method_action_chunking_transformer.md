@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Action Chunking with Transformers (ACT) / 动作分块变压器（ACT） / 트랜스포머를 이용한 행동 청킹(ACT)
-
-## 摘要
-
-使用Transformer预测未来一段动作序列的模仿学习方法，可减少长程任务中的误差累积。
-
-## Abstract
-
-An imitation-learning method that predicts a sequence of future actions as a chunk using a transformer, reducing compounding errors in long-horizon tasks.
-
-## 요약
-
-트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.
-
-
-> 本词条对应 Wiki 第 18 章，详细论述见项目 Wiki。
-

@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Soft Actor-Critic (SAC) / 软演员-评论家（SAC） / 소프트 액터-크리틱(SAC)
-
-## 摘要
-
-在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。
-
-## Abstract
-
-An off-policy actor-critic reinforcement-learning algorithm that maximizes expected return while also maximizing policy entropy for exploration.
-
-## 요약
-
-기대 보상을 최대화하면서도 정책 엔트로피를 최대화해 탐색을 장려하는 오프폴리시 액터-크리틱 강화학습 알고리즘.
-
-
-> 本词条对应 Wiki 第 15 章，详细论述见项目 Wiki。
-

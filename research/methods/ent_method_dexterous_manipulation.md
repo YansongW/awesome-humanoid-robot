@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Dexterous Manipulation / 灵巧操作 / 손재주 있는 조작
-
-## 摘要
-
-利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。
-
-## Abstract
-
-The ability to manipulate objects with multi-fingered hands using fine finger motions, contact regulation, and in-hand reorientation.
-
-## 요약
-
-다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.
-
-
-> 本词条对应 Wiki 第 16 章，详细论述见项目 Wiki。
-

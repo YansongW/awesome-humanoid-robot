@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Domain Randomization / 域随机化 / 도메인 랜덤화
-
-## 摘要
-
-训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。
-
-## Abstract
-
-A sim-to-real technique that randomizes simulation parameters during training to improve policy robustness against real-world model mismatch.
-
-## 요약
-
-훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.
-
-
-> 本词条对应 Wiki 第 18 章，详细论述见项目 Wiki。
-

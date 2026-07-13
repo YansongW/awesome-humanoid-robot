@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Product Liability / 产品责任 / 제품 책임
-
-## 摘要
-
-制造商与销售商因缺陷或不安全产品造成人身伤害或财产损失的法律责任，直接适用于人形机器人。
-
-## Abstract
-
-The legal responsibility of manufacturers and sellers for injuries or damages caused by defective or unsafe products, directly applicable to humanoid robots.
-
-## 요약
-
-결함이나 불안전한 제품으로 인한 상해·손해에 대해 제조업체와 판매자가 지는 법적 책임.
-
-
-> 本词条对应 Wiki 第 29 章，详细论述见项目 Wiki。
-

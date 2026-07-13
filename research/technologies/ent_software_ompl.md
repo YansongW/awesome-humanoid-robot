@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Open Motion Planning Library (OMPL) / OMPL / OMPL
-
-## 摘要
-
-包含RRT*、PRM、BIT*等先进基于采样运动规划算法的开源C++库。
-
-## Abstract
-
-An open-source C++ library containing state-of-the-art sampling-based motion planning algorithms such as RRT*, PRM, and BIT*.
-
-## 요약
-
-RRT*, PRM, BIT* 등 최신 샘플링 기반 운동 계획 알고리즘을 포함하는 오픈소스 C++ 라이브러리.
-
-
-> 本词条对应 Wiki 第 16 章，详细论述见项目 Wiki。
-

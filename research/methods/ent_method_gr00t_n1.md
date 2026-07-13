@@ -28,7 +28,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -39,20 +39,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# GR00T N1 / GR00T N1 / GR00T N1
-
-## 摘要
-
-NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。
-
-## Abstract
-
-NVIDIA's general-purpose humanoid robot foundation model designed to enable natural-language-conditioned manipulation and locomotion skills.
-
-## 요약
-
-NVIDIA의 범용 휴로봇 기반 모델로, 자연어 조건 하에서 조작 및 이동 기술을 가능하게 함.
-
-
-> 本词条对应 Wiki 第 19 章，详细论述见项目 Wiki。
-

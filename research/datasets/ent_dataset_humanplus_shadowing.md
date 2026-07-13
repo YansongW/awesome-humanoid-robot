@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# HumanPlus Shadowing Dataset / HumanPlus Shadowing数据集 / HumanPlus Shadowing 데이터셋
-
-## 摘要
-
-通过人形机器人跟随人体运动采集的数据集，用于训练全身模仿与遥操作策略。
-
-## Abstract
-
-A dataset collected by shadowing human motion with a humanoid robot, used to train whole-body imitation and teleoperation policies.
-
-## 요약
-
-휴로봇으로 인간 동작을 따라 촬영하여 수집한 데이터셋으로, 전신 모방 및 원격 조작 정책 학습에 사용.
-
-
-> 本词条对应 Wiki 第 21 章，详细论述见项目 Wiki。
-

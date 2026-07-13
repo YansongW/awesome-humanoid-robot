@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Direct Collocation / 直接配点法 / 직접 배치법
-
-## 摘要
-
-在配点处同时离散状态与控制量，并直接求解所得非线性规划的轨迹优化方法。
-
-## Abstract
-
-A trajectory optimization method that discretizes both states and controls at collocation points and solves the resulting nonlinear program directly.
-
-## 요약
-
-상태와 제어 입력을 배치점에서 이산화하고 결과 비선형 계획법을 직접 푸는 궤적 최적화 방법.
-
-
-> 本词条对应 Wiki 第 15 章，详细论述见项目 Wiki。
-

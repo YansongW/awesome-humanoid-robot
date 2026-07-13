@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Gazebo / Gazebo / Gazebo
-
-## 摘要
-
-提供物理引擎、传感器模型与场景编辑功能的开源三维机器人仿真器，用于算法开发与测试。
-
-## Abstract
-
-An open-source 3D robotics simulator that provides physics engines, sensor models, and scene authoring for algorithm development and testing.
-
-## 요약
-
-물리 엔진·센서 모델·장면 작성을 제공하는 오픈소스 3D 로보틱스 시뮬레이터로, 알고리즘 개발·테스트에 사용.
-
-
-> 本词条对应 Wiki 第 23 章，详细论述见项目 Wiki。
-

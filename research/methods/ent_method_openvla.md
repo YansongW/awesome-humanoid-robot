@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# OpenVLA / OpenVLA / OpenVLA
-
-## 摘要
-
-基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。
-
-## Abstract
-
-An open-source vision-language-action model trained on the Open X-Embodiment dataset for generalizable robot manipulation.
-
-## 요약
-
-Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.
-
-
-> 本词条对应 Wiki 第 19 章，详细论述见项目 Wiki。
-

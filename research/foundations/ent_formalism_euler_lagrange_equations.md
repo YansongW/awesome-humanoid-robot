@@ -32,7 +32,7 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -61,6 +61,11 @@ related_entities:
     en: For rigid-body systems, Euler-Lagrange and Newton-Euler formulations yield the same equations of motion.
     zh: 对刚体系统，欧拉-拉格朗日与牛顿-欧拉两种形式等价。
 ---
+
+
+
+
+
 
 # Euler-Lagrange Equations / 欧拉-拉格朗日方程 / 오일러-라그랑주 방정식
 

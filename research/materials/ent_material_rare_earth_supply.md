@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Rare-Earth Supply Chain / 稀土元素供应链 / 희토류 공급망
-
-## 摘要
-
-用于高性能执行器永磁体的稀土元素（如钕、镝、铽）的上游供应链。
-
-## Abstract
-
-The upstream supply chain of rare-earth elements—especially neodymium, dysprosium, and terbium—used in high-performance permanent magnets for actuators.
-
-## 요약
-
-액추에이터용 고성능 영구자석에 사용되는 네오디뮴·디스프로슘·터븀 등 희토류의 상류 공급망.
-
-
-> 本词条对应 Wiki 第 3 章，详细论述见项目 Wiki。
-

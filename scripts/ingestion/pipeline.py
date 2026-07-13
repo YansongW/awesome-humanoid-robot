@@ -9,11 +9,20 @@ from __future__ import annotations
 
 import argparse
 import json
+import signal
 import sys
 import traceback
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+
+
+class SourceTimeoutError(TimeoutError):
+    """Raised when a single source exceeds its budget."""
+
+
+def _alarm_handler(signum: int, frame: Any) -> None:
+    raise SourceTimeoutError("Source exceeded its time budget")
 
 from .adapters import (
     ActuatorSuppliersAdapter,
@@ -65,11 +74,13 @@ class Pipeline:
         registry: Registry | None = None,
         writer: EntryWriter | None = None,
         dedup: DedupService | None = None,
+        source_timeout: int = 120,
     ) -> None:
         self.registry = registry or Registry()
         self.dedup = dedup or DedupService()
         # Load existing IDs once per pipeline run and share with writer.
         self.writer = writer or EntryWriter(existing_ids=entry_builder.load_existing_ids())
+        self.source_timeout = source_timeout
 
     def run_source(self, source: Source, dry_run: bool = False) -> list[IngestionResult]:
         """Fetch, deduplicate, and optionally write items for a single source."""
@@ -84,8 +95,17 @@ class Pipeline:
             msg = f"Adapter for {source.id} has no fetch method"
             return [IngestionResult(source_id=source.id, status="error", item_title="", message=msg)]
 
+        previous_handler = signal.signal(signal.SIGALRM, _alarm_handler)
+        signal.alarm(self.source_timeout)
         try:
             items = adapter.fetch(source)
+        except SourceTimeoutError as exc:
+            return [IngestionResult(
+                source_id=source.id,
+                status="error",
+                item_title=f"fetch_timeout:{source.id}",
+                message=f"Fetch timed out after {self.source_timeout}s: {exc}",
+            )]
         except Exception as exc:  # noqa: BLE001
             tb = traceback.format_exc()
             return [IngestionResult(
@@ -94,6 +114,9 @@ class Pipeline:
                 item_title=f"fetch_failed:{source.id}",
                 message=f"Fetch failed: {exc}\n{tb}",
             )]
+        finally:
+            signal.alarm(0)
+            signal.signal(signal.SIGALRM, previous_handler)
 
         added = 0
         duplicates = 0
@@ -181,6 +204,7 @@ def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--dry-run", action="store_true", help="Do not write files, only report counts")
     parser.add_argument("--json", action="store_true", help="Emit machine-readable JSON output")
     parser.add_argument("--summary", action="store_true", help="Print per-source summary even in JSON mode")
+    parser.add_argument("--timeout", type=int, default=120, help="Per-source timeout in seconds (default: 120)")
     return parser.parse_args(argv)
 
 
@@ -193,7 +217,7 @@ def _summarize(results: list[IngestionResult]) -> dict[str, int]:
 
 def main(argv: list[str] | None = None) -> int:
     args = _parse_args(argv)
-    pipeline = Pipeline()
+    pipeline = Pipeline(source_timeout=args.timeout)
 
     if args.source:
         by_source: dict[str, list[IngestionResult]] = {}

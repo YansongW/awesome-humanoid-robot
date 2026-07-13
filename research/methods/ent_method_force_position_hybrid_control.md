@@ -27,7 +27,7 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-13'
   confidence: high
   notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
     review.
@@ -38,20 +38,3 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-# Force/Position Hybrid Control / 力位混合控制 / 힘/위치 하이브리드 제어
-
-## 摘要
-
-在接触任务中同时约束方向上控制力、自由方向上控制位置的策略。
-
-## Abstract
-
-A control strategy that simultaneously regulates force along constrained directions and position along free directions in contact tasks.
-
-## 요약
-
-접촉 작업에서 제약 방향으로는 힘을, 자유 방향으로는 위치를 동시에 제어하는 전략.
-
-
-> 本词条对应 Wiki 第 14 章，详细论述见项目 Wiki。
-
