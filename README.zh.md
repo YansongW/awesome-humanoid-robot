@@ -6,14 +6,16 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-public%20v0.1.0-success" alt="Status: public v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-2100-green" alt="2100 entries" />
-  <img src="https://img.shields.io/badge/relationships-968-brightgreen" alt="968 relationships" />
+  <img src="https://img.shields.io/badge/entries-2102-green" alt="2102 entries" />
+  <img src="https://img.shields.io/badge/relationships-924-brightgreen" alt="924 relationships" />
   <img src="https://img.shields.io/badge/languages-zh%2Fen%2Fko-blue" alt="Languages: zh/en/ko" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
 
 🌐 **在线站点**：[kg.rounds-tech.com](https://kg.rounds-tech.com)  
 🌐 [English](README.md) · [简体中文](README.zh.md) · [한국어](README.ko.md)
+
+⭐ 如果这张「地图」对你的研究或开发有帮助，欢迎点个 Star，帮助更多同行发现它。
 
 </div>
 
@@ -34,6 +36,16 @@
 - 🔗 Wiki 章节与 KG 实体双向链接，读者可在叙事阅读与结构化查询之间自由切换。
 
 项目采用 **AI 辅助、人工核验** 的方式。我们用 AI4Sci 流水线加速发现、提取与综合，但在任何内容被提升到生产环境之前，都必须经过人工审阅。
+
+---
+
+## ✨ v0.1.0 更新亮点
+
+- 🌐 **产品站点上线**：[kg.rounds-tech.com](https://kg.rounds-tech.com) —— 中英韩三语界面、全文搜索、交互式 Cytoscape 图谱与关联 Wiki。
+- 📖 **仓库内置 Wiki** —— 源自《人形机器人：从矿山到市场》的 30 章叙事正文 + 7 个附录，正确渲染提示框、Mermaid 图表与 KaTeX 公式。
+- 🗂️ **2,102 个已校验 KG 实体**、**924 条带类型关系**，覆盖从原材料到市场应用的全栈。
+- 🔄 **自动化 CI/CD** —— 每次 `main` 分支推送后，GitHub Actions 自动构建并部署到 GitHub Pages。
+- 🛡️ **加固的部署流程** —— 并发控制与干净的 `gh-pages` 分支重建，避免竞态条件导致的推送失败。
 
 ---
 
@@ -180,8 +192,8 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 
 | 指标 | 数量 |
 |------|------|
-| 生产环境实体 | 2,100 |
-| 关系 | 968 |
+| 生产环境实体 | 2,102 |
+| 关系 | 924 |
 | 本体领域 | 13（12 + `00_foundations`） |
 | 实体类型 | 24 |
 | Wiki 章节 | 30 |

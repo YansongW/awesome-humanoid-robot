@@ -6,14 +6,16 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-public%20v0.1.0-success" alt="Status: public v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-2100-green" alt="2100 entries" />
-  <img src="https://img.shields.io/badge/relationships-968-brightgreen" alt="968 relationships" />
+  <img src="https://img.shields.io/badge/entries-2102-green" alt="2102 entries" />
+  <img src="https://img.shields.io/badge/relationships-924-brightgreen" alt="924 relationships" />
   <img src="https://img.shields.io/badge/languages-zh%2Fen%2Fko-blue" alt="Languages: zh/en/ko" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
 
 🌐 **라이브 사이트**: [kg.rounds-tech.com](https://kg.rounds-tech.com)  
 🌐 [English](README.md) · [简体中文](README.zh.md) · [한국어](README.ko.md)
+
+⭐ 이 프로젝트가 연구나 개발에 도움이 된다면 Star를 눌러주세요. 더 많은 연구자와 개발자가 발견하는 데 도움이 됩니다.
 
 </div>
 
@@ -34,6 +36,16 @@
 - 🔗 Wiki 장과 KG 엔티티 간 양방향 링크: 서술 읽기와 구조화된 데이터 탐색을 자연스럽게 오갈 수 있습니다.
 
 이 프로젝트는 **AI 보조, 인간 검증** 방식으로 운영됩니다. AI4Sci 파이프라인을 활용해 발견, 추출, 종합을 가속화하지만, 어떤 콘텐츠도 생산 환경으로 승격되기 전에 인간의 검토를 거칩니다.
+
+---
+
+## ✨ v0.1.0 하이라이트
+
+- 🌐 **라이브 제품 사이트** — [kg.rounds-tech.com](https://kg.rounds-tech.com): 중/영/한 3개 언어 UI, 전문 검색, 인터랙티브 Cytoscape 그래프, 연계 Wiki.
+- 📖 **리포지토리 내 Wiki** — *Humanoid Robots: From Mine to Market*에서 파생된 30개 서술 장 + 7개 부록, 경고 상자, Mermaid 다이어그램, KaTeX 수식 렌더링.
+- 🗂️ **2,102개 검증된 KG 엔티티** 및 **924개 타입 지정 관계**, 원자재부터 시장 적용까지 전체 스택을 커버.
+- 🔄 **자동화 CI/CD** — `main` 브랜치 푸시마다 GitHub Actions가 사이트를 빌드하여 GitHub Pages에 배포.
+- 🛡️ **강화된 배포** — 동시성 제어와 깨끗한 `gh-pages` 브랜치 재생성으로 경쟁 상태로 인한 푸시 실패 방지.
 
 ---
 
@@ -180,8 +192,8 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 
 | 지표 | 수량 |
 |------|------|
-| 프로덕션 엔티티 | 2,100 |
-| 관계 | 968 |
+| 프로덕션 엔티티 | 2,102 |
+| 관계 | 924 |
 | 온톨로지 영역 | 13 (12 + `00_foundations`) |
 | 엔티티 타입 | 24 |
 | Wiki 장 | 30 |
