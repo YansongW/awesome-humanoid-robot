@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block title %}{{ title }}{% endblock %}
+
 {% block content %}
 {% set bp = '' if lang == 'zh' else '/' + lang %}
 <div class="container">
@@ -20,7 +22,7 @@
     </div>
   </section>
 
-  <section class="search-results-section" data-base-path="{{ bp }}" data-no-results="{{ ui.no_results_for }}" data-results-count="{{ ui.results_count }}">
+  <section class="search-results-section" data-base-path="{{ bp }}" data-no-results="{{ ui.no_results_for }}" data-results-count="{{ ui.results_count }}" data-empty-message="{{ ui.search_empty }}" data-loading="{{ ui.search_loading }}">
     <div class="results-header">
       <h2 id="results-title">{{ ui.results_title }}</h2>
       <span id="results-count" class="results-count"></span>

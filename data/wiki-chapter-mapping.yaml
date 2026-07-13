@@ -48,9 +48,9 @@ chapters:
     domains: ["01_raw_materials"]
     key_types: ["material", "component", "company"]
     existing_entities:
-      - ent_material_neodymium_magnet
+      - ent_mat_neodymium_magnet
       - ent_material_al_mg_alloy_humanoid
-      - ent_technology_li_battery_humanoid
+      - ent_tech_li_battery_humanoid
     gaps:
       - id: ent_material_rare_earth_supply
         name: 稀土元素供应链
@@ -110,7 +110,7 @@ chapters:
     key_types: ["component", "technology"]
     existing_entities:
       - ent_component_imu_2024
-      - ent_component_force_torque_sensor_2024
+      - ent_component_six_axis_force_torque_sensor_2024
       - ent_component_tactile_sensor_array_2024
       - ent_component_joint_encoder_2024
     gaps:
@@ -137,7 +137,7 @@ chapters:
     key_types: ["component", "software_platform", "technology"]
     existing_entities:
       - ent_component_nvidia_jetson_agx_orin_2024
-      - ent_technology_bms_battery_management_system_2024
+      - ent_component_battery_management_system
     gaps:
       - id: ent_component_safety_mcu
         name: 安全MCU
@@ -159,8 +159,8 @@ chapters:
     key_types: ["company", "component_manufacturer", "tier1_supplier", "oem"]
     existing_entities:
       - ent_company_harmonic_drive_systems_2024
-      - ent_company_nabtesco_2024
-      - ent_company_maxon_motor_2024
+      - ent_company_nabtesco_corporation_2024
+      - ent_company_maxon_group_2024
       - ent_company_kollmorgen_corporation_2024
       - ent_company_inovance_technology_2024
     gaps:
@@ -311,7 +311,7 @@ chapters:
     domains: ["12_policy_regulation_ethics"]
     key_types: ["standard", "component", "robot_system"]
     existing_entities:
-      - ent_standard_iso_13482_2014
+      - ent_standard_iso_13482_personal_care_robot_2014
       - ent_standard_iso_ts_15066_2016
     gaps:
       - id: ent_standard_iec_61508
@@ -626,8 +626,8 @@ chapters:
     key_types: ["dataset", "technology", "software_platform"]
     existing_entities:
       - ent_dataset_droid
-      - ent_dataset_rh20t
-      - ent_dataset_amass
+      - ent_dataset_rh20t_manipulation_dataset_2023
+      - ent_dataset_amass_motion_dataset_2019
       - ent_technology_optitrack_motion_capture_2024
     gaps:
       - id: ent_dataset_humanplus_shadowing
@@ -783,13 +783,13 @@ chapters:
     domains: ["11_applications_markets"]
     key_types: ["robot_system", "company", "component"]
     existing_entities:
-      - ent_robot_system_tesla_optimus_gen2_2024
-      - ent_robot_system_unitree_h1_2024
-      - ent_robot_system_figure_02_2024
-      - ent_robot_system_boston_dynamics_atlas_2024
-      - ent_robot_system_agility_digit_2024
-      - ent_robot_system_apptronik_apollo_2024
-      - ent_robot_system_1x_neo_2024
+      - ent_robot_system_tesla_optimus
+      - ent_robot_unitree_h1_humanoid_robot_2024
+      - ent_robot_system_figure_02
+      - ent_robot_boston_dynamics_atlas_2024
+      - ent_robot_agility_robotics_digit_2023
+      - ent_robot_apptronik_apollo_2024
+      - ent_robot_1x_technologies_neo_2024
     gaps: []
     cross_layer_links:
       - source: component
@@ -862,7 +862,7 @@ chapters:
     domains: ["12_policy_regulation_ethics"]
     key_types: ["standard", "concept", "application"]
     existing_entities:
-      - ent_standard_iso_13482_2014
+      - ent_standard_iso_13482_personal_care_robot_2014
       - ent_standard_iso_ts_15066_2016
     gaps:
       - id: ent_concept_product_liability

@@ -51,7 +51,7 @@ def build_search_index(entries: dict[str, Entry], lang: str = "zh") -> dict[str,
     """
     entry_list = sorted(entries.values(), key=lambda e: e.name or e.id)
     compact: list[dict] = []
-    inverted: dict[str, list[int]] = defaultdict(list)
+    inverted: dict[str, set[int]] = defaultdict(set)
 
     for idx, e in enumerate(entry_list):
         record = {
@@ -80,11 +80,64 @@ def build_search_index(entries: dict[str, Entry], lang: str = "zh") -> dict[str,
         ]
         for src in token_sources:
             for t in _field_tokens(src):
-                if idx not in inverted[t]:
-                    inverted[t].append(idx)
+                inverted[t].add(idx)
 
-    # Convert defaultdict to plain dict for JSON serialization.
-    return {"entries": compact, "index": dict(inverted)}
+    # Convert sets to sorted lists for JSON serialization.
+    return {"entries": compact, "index": {k: sorted(v) for k, v in inverted.items()}}
+
+
+def build_subgraph_data(center_id: str, entries: dict[str, Entry], relationships: list, max_nodes: int = 80) -> dict:
+    """Build a localized subgraph (1-hop) for a single entry page."""
+    member_ids = {center_id}
+    edges = []
+    for rel in relationships:
+        if rel.source_id == center_id or rel.target_id == center_id:
+            edges.append(
+                {
+                    "data": {
+                        "id": rel.id,
+                        "source": rel.source_id,
+                        "target": rel.target_id,
+                        "type": rel.type,
+                        "description": rel.description,
+                    }
+                }
+            )
+            member_ids.add(rel.source_id)
+            member_ids.add(rel.target_id)
+
+    # If the 1-hop neighborhood is very large, keep the most connected nodes.
+    if len(member_ids) > max_nodes:
+        degree = {center_id: 0}
+        for rel in relationships:
+            if rel.source_id == center_id:
+                degree[rel.target_id] = degree.get(rel.target_id, 0) + 1
+            if rel.target_id == center_id:
+                degree[rel.source_id] = degree.get(rel.source_id, 0) + 1
+        keep = {center_id} | set(sorted(
+            (nid for nid in member_ids if nid != center_id),
+            key=lambda nid: degree.get(nid, 0),
+            reverse=True,
+        )[:max_nodes - 1])
+        edges = [e for e in edges if e["data"]["source"] in keep and e["data"]["target"] in keep]
+        member_ids = keep
+
+    nodes = []
+    for eid in member_ids:
+        e = entries.get(eid)
+        if not e:
+            continue
+        nodes.append(
+            {
+                "data": {
+                    "id": e.id,
+                    "name": e.name or e.id,
+                    "type": e.type,
+                    "domains": e.domains,
+                }
+            }
+        )
+    return {"nodes": nodes, "edges": edges, "center_id": center_id}
 
 
 def build_relations_data(entries: dict[str, Entry], relationships: list) -> dict:

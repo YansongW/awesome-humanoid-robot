@@ -39,15 +39,28 @@
       // Strip existing language prefix
       const clean = path.replace(/^\/(en|ko)(?=\/)/, '') || '/';
       const newPath = target === 'zh' ? clean : '/' + target + clean;
-      window.location.href = newPath;
+      window.location.href = newPath + window.location.search + window.location.hash;
     });
   }
 
-  // Mobile menu toggle (placeholder for future expansion)
+  // Mobile menu toggle
   const mobileToggle = document.getElementById('mobile-menu-toggle');
   if (mobileToggle) {
-    mobileToggle.addEventListener('click', () => {
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
       document.body.classList.toggle('mobile-menu-open');
     });
   }
+  // Close mobile menu when clicking a nav link or outside the header
+  document.querySelectorAll('.site-nav a').forEach(link => {
+    link.addEventListener('click', () => document.body.classList.remove('mobile-menu-open'));
+  });
+  document.addEventListener('click', (e) => {
+    if (document.body.classList.contains('mobile-menu-open')) {
+      const header = document.querySelector('.site-header');
+      if (header && !header.contains(e.target)) {
+        document.body.classList.remove('mobile-menu-open');
+      }
+    }
+  });
 })();

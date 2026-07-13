@@ -2,12 +2,12 @@
 
 # Awesome Humanoid Robot 🤖
 
-**휨로봇의 0에서 1로의 양산 및 산업화 적용을 위한 큐레이션 다국어 지식 그래프.**
+**휴머노이드 로봇의 0에서 1로의 양산 및 산업화 적용을 위한 큐레이션 다국어 지식 그래프.**
 
 <p>
   <img src="https://img.shields.io/badge/status-public%20v0.1.0-success" alt="Status: public v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-2102-green" alt="2102 entries" />
-  <img src="https://img.shields.io/badge/relationships-924-brightgreen" alt="924 relationships" />
+  <img src="https://img.shields.io/badge/entries-2105-green" alt="2105 entries" />
+  <img src="https://img.shields.io/badge/relationships-1063-brightgreen" alt="1063 relationships" />
   <img src="https://img.shields.io/badge/languages-zh%2Fen%2Fko-blue" alt="Languages: zh/en/ko" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
@@ -25,9 +25,9 @@
 
 **Awesome Humanoid Robot**은 하나의 핵심 질문을 중심으로 구축된 구조화되고 지속적으로 발전하는 오픈소스 지식 베이스입니다:
 
-> **휨로봇의 0에서 1로의 양산 및 산업화 적용을 어떻게 실현할 것인가?**
+> **휴머노이드 로봇의 0에서 1로의 양산 및 산업화 적용을 어떻게 실현할 것인가?**
 
-원자재, 부품, 제조 공정부터 설계 공학, AI, 소프트웨어, 데이터, 조립·테스트, 양산, 적용 시나리오, 시장, 정책 및 규제에 이르는 전체 여정의 모든 단계를 추적합니다. 우리는 단순한 논문 목록이나 제품 목록에 머물지 않고, 휨로봇 산업 전체를 **지식 그래프**로 모델링합니다: 엔티티는 노드이고, 관계는 타입이 지정된 엣지이며, 모든 주장은 출처로 추적 가능합니다.
+원자재, 부품, 제조 공정부터 설계 공학, AI, 소프트웨어, 데이터, 조립·테스트, 양산, 적용 시나리오, 시장, 정책 및 규제에 이르는 전체 여정의 모든 단계를 추적합니다. 우리는 단순한 논문 목록이나 제품 목록에 머물지 않고, 휴머노이드 로봇 산업 전체를 **지식 그래프**로 모델링합니다: 엔티티는 노드이고, 관계는 타입이 지정된 엣지이며, 모든 주장은 출처로 추적 가능합니다.
 
 **v0.1.0**에서 프로젝트는 연구 파이프라인에서 제품화된 지식 서비스로 발전했습니다:
 
@@ -43,7 +43,7 @@
 
 - 🌐 **라이브 제품 사이트** — [kg.rounds-tech.com](https://kg.rounds-tech.com): 중/영/한 3개 언어 UI, 전문 검색, 인터랙티브 Cytoscape 그래프, 연계 Wiki.
 - 📖 **리포지토리 내 Wiki** — *Humanoid Robots: From Mine to Market*에서 파생된 30개 서술 장 + 7개 부록, 경고 상자, Mermaid 다이어그램, KaTeX 수식 렌더링.
-- 🗂️ **2,102개 검증된 KG 엔티티** 및 **924개 타입 지정 관계**, 원자재부터 시장 적용까지 전체 스택을 커버.
+- 🗂️ **2,105개 검증된 KG 엔티티** 및 **1,063개 타입 지정 관계**, 원자재부터 시장 적용까지 전체 스택을 커버.
 - 🔄 **자동화 CI/CD** — `main` 브랜치 푸시마다 GitHub Actions가 사이트를 빌드하여 GitHub Pages에 배포.
 - 🛡️ **강화된 배포** — 동시성 제어와 깨끗한 `gh-pages` 브랜치 재생성으로 경쟁 상태로 인한 푸시 실패 방지.
 
@@ -51,7 +51,7 @@
 
 ## 🎯 왜 이 프로젝트를 하는가?
 
-휨로봇은 중요한 전환점에 있습니다. 전 세계 연구실은 이미 걷고, 조작하고, 상호작용할 수 있는 로봇을 만들 수 있습니다. 하지만 **데모에서 작동하는 로봇**과 **대규모로 생산·배치·유지보수 가능한 실제 제품**은 전혀 다른 문제입니다.
+휴머노이드 로봇은 중요한 전환점에 있습니다. 전 세계 연구실은 이미 걷고, 조작하고, 상호작용할 수 있는 로봇을 만들 수 있습니다. 하지만 **데모에서 작동하는 로봇**과 **대규모로 생산·배치·유지보수 가능한 실제 제품**은 전혀 다른 문제입니다.
 
 이 간극은 단순한 AI 문제가 아니라 **시스템 공학 문제**입니다. 이는 다음을 모두 연결합니다:
 
@@ -192,8 +192,8 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 
 | 지표 | 수량 |
 |------|------|
-| 프로덕션 엔티티 | 2,102 |
-| 관계 | 924 |
+| 프로덕션 엔티티 | 2,105 |
+| 관계 | 1,063 |
 | 온톨로지 영역 | 13 (12 + `00_foundations`) |
 | 엔티티 타입 | 24 |
 | Wiki 장 | 30 |

@@ -93,6 +93,8 @@ TYPE_LABELS = {
         "theorem": "定理",
         "tier1_supplier": "Tier 1 供应商",
         "tool_equipment": "工具设备",
+        "application_scenario": "应用场景",
+        "market_segment": "市场细分",
     },
     "en": {
         "algorithm": "Algorithm",
@@ -119,6 +121,8 @@ TYPE_LABELS = {
         "theorem": "Theorem",
         "tier1_supplier": "Tier 1 Supplier",
         "tool_equipment": "Tool / Equipment",
+        "application_scenario": "Application Scenario",
+        "market_segment": "Market Segment",
     },
     "ko": {
         "algorithm": "알고리즘",
@@ -145,6 +149,33 @@ TYPE_LABELS = {
         "theorem": "정리",
         "tier1_supplier": "Tier 1 공급업체",
         "tool_equipment": "도구/장비",
+        "application_scenario": "응용 시나리오",
+        "market_segment": "시장 세그먼트",
+    },
+}
+
+
+LAYER_LABELS = {
+    "zh": {
+        "foundations": "基础层",
+        "upstream": "上游",
+        "midstream": "中游",
+        "intelligence": "智能层",
+        "validation_markets": "验证与市场层",
+    },
+    "en": {
+        "foundations": "Foundations",
+        "upstream": "Upstream",
+        "midstream": "Midstream",
+        "intelligence": "Intelligence",
+        "validation_markets": "Validation & Markets",
+    },
+    "ko": {
+        "foundations": "기초 계층",
+        "upstream": "상위",
+        "midstream": "중위",
+        "intelligence": "지능 계층",
+        "validation_markets": "검증 및 시장 계층",
     },
 }
 
@@ -159,7 +190,13 @@ def type_label(type_name: str, lang: str = "zh") -> str:
     return TYPE_LABELS.get(lang, TYPE_LABELS["zh"]).get(type_name, type_name)
 
 
-def split_frontmatter(text: str) -> tuple[dict[str, Any], str]:
+def layer_label(layer_name: str, lang: str = "zh") -> str:
+    """Return a human-readable value-chain layer label in the requested language."""
+    key = (layer_name or "").strip().lower().replace(" ", "_").replace("-", "_")
+    return LAYER_LABELS.get(lang, LAYER_LABELS["zh"]).get(key, layer_name)
+
+
+def split_frontmatter(text: str, source: str = "<unknown>") -> tuple[dict[str, Any], str]:
     """Split Markdown frontmatter from body."""
     if not text.startswith("---"):
         return {}, text
@@ -168,7 +205,9 @@ def split_frontmatter(text: str) -> tuple[dict[str, Any], str]:
         return {}, text
     try:
         front = yaml.safe_load(parts[1]) or {}
-    except Exception:
+    except Exception as exc:
+        import sys
+        print(f"[warning] YAML parse error in {source}: {exc}", file=sys.stderr)
         front = {}
     return front, parts[2].strip()
 
@@ -214,19 +253,50 @@ def _detect_heading_language(heading: str) -> Optional[str]:
     return None
 
 
+def _detect_text_language(text: str) -> Optional[str]:
+    """Detect dominant script of arbitrary text, treating code/math as neutral."""
+    # Remove inline code/backticks and common markup before detection.
+    cleaned = re.sub(r"`[^`]*`", "", text)
+    cleaned = re.sub(r"\$[^$]*\$", "", cleaned)
+    cleaned = re.sub(r"\$\$[^$]*\$\$", "", cleaned)
+    return _detect_heading_language(cleaned)
+
+
 def filter_body_by_language(body: str, lang: str) -> str:
     """Return only the body sections matching the requested language.
 
-    Sections are split by headings (lines starting with #). For the Chinese site
-    we keep Chinese and unknown-language sections; for English/Korean we keep
-    only sections whose heading is clearly in that language.
+    Sections are split by headings (lines starting with #), while fenced code
+    blocks are ignored so that ``#`` characters inside code are not treated as
+    headings. For the Chinese site we keep Chinese and unknown-language
+    sections; for English/Korean we keep only sections whose heading is clearly
+    in that language. Lead paragraphs without a heading are kept unless they
+    are clearly written in a different language.
     """
     lines = body.splitlines()
     sections: List[Tuple[Optional[str], List[str]]] = []
     current_heading: Optional[str] = None
     current_lines: List[str] = []
+    in_code_block = False
+    code_fence = ""
 
     for line in lines:
+        stripped = line.strip()
+        # Track fenced code blocks (``` or ~~~) so # inside them is ignored.
+        fence_match = re.match(r"^(```+|~~~+)(\w*)\s*$", stripped)
+        if fence_match:
+            if not in_code_block:
+                in_code_block = True
+                code_fence = fence_match.group(1)
+            elif stripped.startswith(code_fence) and len(stripped) >= len(code_fence):
+                in_code_block = False
+                code_fence = ""
+            current_lines.append(line)
+            continue
+
+        if in_code_block:
+            current_lines.append(line)
+            continue
+
         if re.match(r"^#{1,6}\s+", line):
             if current_heading is not None or current_lines:
                 sections.append((current_heading, current_lines))
@@ -237,23 +307,25 @@ def filter_body_by_language(body: str, lang: str) -> str:
     if current_heading is not None or current_lines:
         sections.append((current_heading, current_lines))
 
-    keep_sections: List[Tuple[Optional[str], List[str]]] = []
-    for heading, content in sections:
+    def _keep(heading: Optional[str], content: List[str]) -> bool:
         if heading is None:
-            # Content before any heading: keep only for Chinese, or if it is empty.
-            if lang == "zh" or not any(line.strip() for line in content):
-                keep_sections.append((heading, content))
-            continue
+            # Lead paragraph: keep if empty or not clearly in a different language.
+            text = "\n".join(content)
+            if not text.strip():
+                return True
+            detected = _detect_text_language(text)
+            if detected is None:
+                return True
+            return detected == lang
 
         heading_lang = _detect_heading_language(heading)
         if heading_lang is None:
             # Unknown script headings are kept only on the Chinese site
             # because the majority of existing rich content is Chinese.
-            if lang == "zh":
-                keep_sections.append((heading, content))
-        elif heading_lang == lang:
-            keep_sections.append((heading, content))
-        # Otherwise drop the section for this language.
+            return lang == "zh"
+        return heading_lang == lang
+
+    keep_sections = [(h, c) for h, c in sections if _keep(h, c)]
 
     if not keep_sections:
         return ""
@@ -273,10 +345,10 @@ def filter_body_by_language(body: str, lang: str) -> str:
 
 
 def tokenize(text: str) -> list[str]:
-    """Tokenize text for search; English words and Chinese characters."""
+    """Tokenize text for search; English words and CJK characters."""
     text = text or ""
     tokens: list[str] = []
-    for part in re.findall(r"[a-zA-Z0-9]+|[\u4e00-\u9fff]", text):
+    for part in re.findall(r"[a-zA-Z0-9]+|[\u4e00-\u9fff\uac00-\ud7af]", text):
         if part[0].isascii():
             tokens.append(part.lower())
         else:
@@ -340,7 +412,7 @@ class KGStore:
 
         for path in RESEARCH_DIR.rglob("*.md"):
             text = path.read_text(encoding="utf-8")
-            front, body = split_frontmatter(text)
+            front, body = split_frontmatter(text, source=str(path))
             eid = front.get("$id")
             if not eid:
                 continue
@@ -368,7 +440,7 @@ class KGStore:
         if RELATIONSHIPS_DIR.exists():
             for path in RELATIONSHIPS_DIR.rglob("*.md"):
                 text = path.read_text(encoding="utf-8")
-                front, _ = split_frontmatter(text)
+                front, _ = split_frontmatter(text, source=str(path))
                 rid = front.get("$id")
                 if not rid:
                     continue

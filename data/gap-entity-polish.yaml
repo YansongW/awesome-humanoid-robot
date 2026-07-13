@@ -63,7 +63,7 @@ entities:
     summary:
       en: A high-rigidity, high-torque cycloidal reducer widely used in heavy-load robot joints, especially hips and waists, due to its excellent shock resistance and positioning accuracy.
       zh: 一种高刚性、高扭矩的摆线针轮减速器，抗冲击性与定位精度优异，常用于重载机器人臀、腰等关节。
-      ko: 고강성·고토크 사이클로이드 감속기로, 충격 저항성과 위치 정밀도가 우수하여 중하량 로봇 관절에 널리 사용됨.
+      ko: 고강성·고토크 사이클로이드 감속기로, 충격 저항성과 위치 정밀도가 우수하여 중하중 로봇 관절에 널리 사용됨.
 
   ent_component_planetary_roller_screw:
     names:
@@ -110,7 +110,7 @@ entities:
     names:
       en: RGB-D Camera
       zh: RGB-D相机
-      ko: RGB-D 칩라
+      ko: RGB-D 카메라
     summary:
       en: A vision sensor that combines color imaging with per-pixel depth measurement, enabling 3D scene understanding for manipulation and navigation.
       zh: 融合彩色成像与逐像素深度测量的视觉传感器，为抓取操作与导航提供三维场景理解。
@@ -296,11 +296,11 @@ entities:
     names:
       en: Joint-Camera-IMU Calibration
       zh: 联合标定
-      ko: 관절·칩라·IMU 통합 보정
+      ko: 관절·카메라·IMU 통합 보정
     summary:
       en: The process of estimating the intrinsic and extrinsic parameters, as well as time offsets, between joints, cameras, and inertial sensors to ensure coherent sensing and control.
       zh: 估计关节、相机与惯性传感器之间的内外参及时延，以保证感知与控制一致性的过程。
-      ko: 관절·칩라·관성 센서 간 내외부 파라미터와 시간 오프셋을 추정하여 감지와 제어의 일관성을 보장하는 과정.
+      ko: 관절·카메라·관성 센서 간 내외부 파라미터와 시간 오프셋을 추정하여 감지와 제어의 일관성을 보장하는 과정.
 
   # Chapter 12: 认证、合规与质量标准
   ent_standard_iec_61508:

@@ -3,13 +3,15 @@
 {% block title %}{{ entry.name }} · {{ ui.site_title }}{% endblock %}
 
 {% block head %}
+{% if entry.body_html and 'arithmatex' in entry.body_html %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+{% endif %}
 {% endblock %}
 
 {% block content %}
 {% set bp = '' if lang == 'zh' else '/' + lang %}
 <div class="container">
-  <nav class="breadcrumb" aria-label="面包屑">
+  <nav class="breadcrumb" aria-label="{{ ui.breadcrumb_aria_label }}">
     <a href="{{ bp }}/">{{ ui.nav_home }}</a>
     <span>/</span>
     <a href="{{ bp }}/search/?q={{ entry.type | urlencode }}">{{ entry.type | type_label(lang) }}</a>
@@ -36,7 +38,7 @@
         <div class="meta-group">
           <span class="meta-label">{{ ui.layers }}</span>
           <div class="meta-tags">
-            {% for l in entry.layers %}<span class="tag tag-layer">{{ l }}</span>{% endfor %}
+            {% for l in entry.layers %}<span class="tag tag-layer">{{ l | layer_label(lang) }}</span>{% endfor %}
           </div>
         </div>
         {% endif %}
@@ -77,14 +79,15 @@
     {% if aliases or sources or wiki_chapters or related_entities %}
     <div class="entry-info-grid">
       {% if aliases %}
+      {% set current_alias = aliases.get(lang) or aliases.get('en') or aliases.get('zh') or aliases.get('ko') %}
+      {% if current_alias and current_alias != entry.name %}
       <div class="info-panel">
         <h3>{{ ui.aliases }}</h3>
         <ul>
-          {% for lcode, name in aliases.items() if name and name != entry.name %}
-          <li><strong>{{ lcode | upper }}：</strong>{{ name }}</li>
-          {% endfor %}
+          <li>{{ current_alias }}</li>
         </ul>
       </div>
+      {% endif %}
       {% endif %}
       {% if sources %}
       <div class="info-panel">
@@ -109,7 +112,7 @@
           {% for ch in wiki_chapters %}
           <li>
             <a class="wiki-link" href="{{ bp }}/wiki/chapters/chapter-{{ '%02d' | format(ch.number | int) }}/">
-              {{ ch.title or "第 " ~ ch.number ~ " 章" }}
+              {{ ch.title or ui.wiki_chapter.format(number=ch.number) }}
             </a>
           </li>
           {% endfor %}
@@ -125,7 +128,11 @@
             <span class="rel-pill">{{ rel.relationship }}</span>
             <a href="{{ bp }}/entry/{{ rel.id }}/">{{ entry_name_lookup.get(rel.id, rel.id) }}</a>
             {% if rel.description %}
-              {% set desc = rel.description.get(lang) or rel.description.get('zh') or rel.description.get('en', '') %}
+              {% if rel.description is mapping %}
+                {% set desc = rel.description.get(lang) or rel.description.get('en') or rel.description.get('zh') or rel.description.get('ko', '') %}
+              {% else %}
+                {% set desc = rel.description %}
+              {% endif %}
               {% if desc %}<span class="rel-desc">{{ desc }}</span>{% endif %}
             {% endif %}
           </li>
@@ -205,9 +212,12 @@
 {% endblock %}
 
 {% block scripts %}
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
-        onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}, {left: '\\[', right: '\\]', display: true}, {left: '\\(', right: '\\)', display: false}]});"></script>
+{% if entry.body_html and 'arithmatex' in entry.body_html %}
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
+<script defer src="/js/math.js"></script>
+{% endif %}
+{% if outgoing or incoming %}
 <script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>
 <script src="/js/graph.js"></script>
+{% endif %}
 {% endblock %}

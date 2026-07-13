@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block title %}{{ title }}{% endblock %}
+
 {% block content %}
 {% set bp = '' if lang == 'zh' else '/' + lang %}
 <section class="hero">
@@ -12,7 +14,7 @@
       </p>
       <div class="hero-search">
         <form action="{{ bp }}/search/" method="get">
-          <input type="search" name="q" placeholder="{{ ui.search_input_placeholder }}" autocomplete="off" autofocus>
+          <input type="search" name="q" placeholder="{{ ui.search_input_placeholder }}" autocomplete="off">
           <button type="submit">{{ ui.nav_search }}</button>
         </form>
       </div>

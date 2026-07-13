@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block title %}{{ title }}{% endblock %}
+
 {% block content %}
 {% set bp = '' if lang == 'zh' else '/' + lang %}
 <div class="graph-page">
@@ -60,6 +62,17 @@ window.DOMAIN_LABELS = {
   {% for d in domains %}
   "{{ d }}": "{{ d | domain_label(lang) }}",
   {% endfor %}
+};
+window.GRAPH_TEXT = {
+  loading: "{{ ui.graph_loading }}",
+  empty: "{{ ui.graph_empty }}",
+  noRelations: "{{ ui.graph_no_relations }}",
+  clusterCount: "{{ ui.graph_cluster_count }}",
+  clusterPruned: "{{ ui.graph_cluster_pruned }}",
+  clusterTotal: "{{ ui.graph_cluster_total }}",
+  confirmFull: "{{ ui.graph_confirm_full }}",
+  entityCount: "{{ ui.graph_entity_count }}",
+  backToClusters: "{{ ui.cluster_view }}",
 };
 </script>
 <script src="https://unpkg.com/cytoscape@3.26.0/dist/cytoscape.min.js"></script>

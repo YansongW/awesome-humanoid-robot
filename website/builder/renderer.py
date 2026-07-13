@@ -5,12 +5,13 @@ from __future__ import annotations
 import json
 import re
 import shutil
+import xml.sax.saxutils as saxutils
 from pathlib import Path
 from typing import Any
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from website.builder.loader import DOMAIN_LABELS, KGStore, Relationship, domain_label, type_label
+from website.builder.loader import DOMAIN_LABELS, KGStore, Relationship, domain_label, layer_label, type_label
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
@@ -78,6 +79,30 @@ UI_STRINGS = {
         "incoming": "Incoming",
         "subgraph": "关系子图",
         "graph_hint": "拖拽节点可调整布局，滚轮缩放，点击查看实体详情。",
+        "nav_aria_label": "主导航",
+        "theme_aria_label": "切换主题",
+        "menu_aria_label": "菜单",
+        "breadcrumb_aria_label": "面包屑",
+        "search_aria_label": "搜索",
+        "theme_toggle_light": "浅色模式",
+        "theme_toggle_dark": "深色模式",
+        "graph_loading": "正在加载图谱…",
+        "graph_empty": "没有可显示的关系数据。",
+        "graph_no_relations": "暂无关系数据",
+        "graph_cluster_count": "{name}\n{count} 个实体",
+        "graph_cluster_pruned": "（显示前 {count} 个核心实体）",
+        "graph_cluster_total": "（{count}）",
+        "graph_confirm_full": "当前有 {total} 个节点，全图将只显示连接度最高的前 {count} 个节点以保持流畅。是否继续？",
+        "graph_entity_count": "{count} 个实体",
+        "search_empty": "输入关键词或选择类型以开始搜索。",
+        "search_loading": "正在加载搜索索引…",
+        "wiki_chapter": "第 {number} 章",
+        "layer_foundations": "基础层",
+        "layer_upstream": "上游",
+        "layer_midstream": "中游",
+        "layer_intelligence": "智能层",
+        "layer_validation_markets": "验证与市场层",
+        "skip_to_content": "跳转到主内容",
     },
     "en": {
         "site_title": "Humanoid Robot Knowledge Graph",
@@ -137,6 +162,30 @@ UI_STRINGS = {
         "incoming": "Incoming",
         "subgraph": "Relation Subgraph",
         "graph_hint": "Drag nodes to adjust layout, scroll to zoom, click for details.",
+        "nav_aria_label": "Main navigation",
+        "theme_aria_label": "Toggle theme",
+        "menu_aria_label": "Menu",
+        "breadcrumb_aria_label": "Breadcrumb",
+        "search_aria_label": "Search",
+        "theme_toggle_light": "Light mode",
+        "theme_toggle_dark": "Dark mode",
+        "graph_loading": "Loading graph…",
+        "graph_empty": "No relation data to display.",
+        "graph_no_relations": "No relation data yet",
+        "graph_cluster_count": "{name}\\n{count} entities",
+        "graph_cluster_pruned": "(showing top {count} core entities)",
+        "graph_cluster_total": "({count})",
+        "graph_confirm_full": "There are {total} nodes; the full graph will show only the top {count} most-connected nodes to stay smooth. Continue?",
+        "graph_entity_count": "{count} entities",
+        "search_empty": "Enter keywords or select a type to start searching.",
+        "search_loading": "Loading search index…",
+        "wiki_chapter": "Chapter {number}",
+        "layer_foundations": "Foundations",
+        "layer_upstream": "Upstream",
+        "layer_midstream": "Midstream",
+        "layer_intelligence": "Intelligence",
+        "layer_validation_markets": "Validation & Markets",
+        "skip_to_content": "Skip to main content",
     },
     "ko": {
         "site_title": "휴로봇 지식 그래프",
@@ -164,7 +213,7 @@ UI_STRINGS = {
         "legend": "범례",
         "reset_view": "보기 초기화",
         "fit_window": "창에 맞춤",
-        "cluster_view": "큟뷰",
+        "cluster_view": "클리스터 뷰",
         "full_view": "전체 그래프",
         "recommended": "추천",
         "search_title": "지식 그래프 검색",
@@ -196,6 +245,30 @@ UI_STRINGS = {
         "incoming": "들어오는",
         "subgraph": "관계 하위 그래프",
         "graph_hint": "노드를 드래그하여 레이아웃을 조정하고, 휠로 확대/축소하며, 클릭하면 상세 정보를 볼 수 있습니다.",
+        "nav_aria_label": "주요 탐색",
+        "theme_aria_label": "테마 전환",
+        "menu_aria_label": "메뉴",
+        "breadcrumb_aria_label": "브레드크럼",
+        "search_aria_label": "검색",
+        "theme_toggle_light": "라이트 모드",
+        "theme_toggle_dark": "다크 모드",
+        "graph_loading": "그래프 로드 중…",
+        "graph_empty": "표시할 관계 데이터가 없습니다.",
+        "graph_no_relations": "관계 데이터가 없습니다",
+        "graph_cluster_count": "{name}\\n{count}개 개체",
+        "graph_cluster_pruned": "(상위 {count}개 핵심 개체 표시)",
+        "graph_cluster_total": "({count})",
+        "graph_confirm_full": "현재 {total}개 노드가 있습니다. 전체 그래프는 최상위 연결 {count}개 노드만 표시하여 부드럽게 유지합니다. 계속하시겠습니까?",
+        "graph_entity_count": "{count}개 개체",
+        "search_empty": "키워드를 입력하거나 유형을 선택하여 검색을 시작하세요.",
+        "search_loading": "검색 색인 로드 중…",
+        "wiki_chapter": "{number}장",
+        "layer_foundations": "기초 계층",
+        "layer_upstream": "상위",
+        "layer_midstream": "중위",
+        "layer_intelligence": "지능 계층",
+        "layer_validation_markets": "검증 및 시장 계층",
+        "skip_to_content": "주요 콘텐츠로 건너뛰기",
     },
 }
 
@@ -225,6 +298,7 @@ def get_jinja_env() -> Environment:
     )
     env.filters["domain_label"] = domain_label
     env.filters["type_label"] = type_label
+    env.filters["layer_label"] = layer_label
     env.filters["plain_summary"] = plain_summary
     return env
 
@@ -265,6 +339,7 @@ class Renderer:
         self.dist_dir = dist_dir
         self.env = get_jinja_env()
         self.ui = UI_STRINGS.get(lang, UI_STRINGS["zh"])
+        self.entry_name_lookup = {e.id: (e.name or e.id) for e in self.store.entries.values()}
 
     def _ctx(self, **kwargs) -> dict[str, Any]:
         """Common template context."""
@@ -313,14 +388,13 @@ class Renderer:
         outgoing = self.store.outgoing.get(entry.id, [])
         incoming = self.store.incoming.get(entry.id, [])
         related = self.store.related_entries(entry.id)
-        entry_name_lookup = {e.id: (e.name or e.id) for e in self.store.entries.values()}
         html = template.render(**self._ctx(
             title=f"{entry.name} · {self.ui['site_title']}",
             entry=entry,
             outgoing=outgoing,
             incoming=incoming,
             related=related,
-            entry_name_lookup=entry_name_lookup,
+            entry_name_lookup=self.entry_name_lookup,
         ))
         entry_dir = self.dist_dir / "entry" / entry.id
         ensure_dir(entry_dir)
@@ -382,17 +456,34 @@ class Renderer:
         path = self.dist_dir / "data" / filename
         path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
-    def write_sitemap(self) -> None:
+    def write_subgraphs(self, subgraphs: dict[str, dict]) -> None:
+        sg_dir = self.dist_dir / "data" / "subgraphs"
+        sg_dir.mkdir(parents=True, exist_ok=True)
+        for eid, data in subgraphs.items():
+            (sg_dir / f"{eid}.json").write_text(
+                json.dumps(data, ensure_ascii=False, separators=(",", ":")),
+                encoding="utf-8",
+            )
+
+    def write_sitemap(self, wiki_pages: list[dict] | None = None) -> None:
         lines = ['<?xml version="1.0" encoding="UTF-8"?>']
         lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
         base = "https://kg.rounds-tech.com"
         prefix = f"/{self.lang}" if self.lang != "zh" else ""
-        lines.append(f"  <url><loc>{base}{prefix}/</loc></url>")
-        lines.append(f"  <url><loc>{base}{prefix}/search/</loc></url>")
-        lines.append(f"  <url><loc>{base}{prefix}/graph/</loc></url>")
-        lines.append(f"  <url><loc>{base}{prefix}/wiki/</loc></url>")
+
+        def _url(loc: str, priority: str = "0.5") -> None:
+            full = saxutils.escape(f"{base}{prefix}{loc}")
+            lines.append(f"  <url><loc>{full}</loc><priority>{priority}</priority></url>")
+
+        _url("/", "1.0")
+        _url("/search/", "0.8")
+        _url("/graph/", "0.8")
+        _url("/wiki/", "0.9")
         for entry in self.store.entries.values():
-            lines.append(f"  <url><loc>{base}{prefix}/{entry.url}</loc></url>")
+            _url(f"/{entry.url}", "0.6")
+        if wiki_pages:
+            for page in wiki_pages:
+                _url(f"/{page['url']}", "0.7")
         lines.append("</urlset>")
         (self.dist_dir / "sitemap.xml").write_text("\n".join(lines), encoding="utf-8")
 
@@ -403,6 +494,7 @@ class Renderer:
         cluster_data: dict,
         stats: dict,
         wiki_pages: list[dict] | None = None,
+        subgraphs: dict[str, dict] | None = None,
     ) -> None:
         self.copy_static_assets()
         self.render_home(stats)
@@ -418,4 +510,6 @@ class Renderer:
         self.write_json_data(search_index, "search-index.json")
         self.write_json_data(relations_data, "relations.json")
         self.write_json_data(cluster_data, "clusters.json")
-        self.write_sitemap()
+        if subgraphs:
+            self.write_subgraphs(subgraphs)
+        self.write_sitemap(wiki_pages)

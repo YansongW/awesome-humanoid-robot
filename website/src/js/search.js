@@ -14,6 +14,8 @@
   const basePath = section ? (section.dataset.basePath || '') : '';
   const noResultsTemplate = section ? (section.dataset.noResults || 'No results for “{query}”.') : 'No results for “{query}”.';
   const resultsCountTemplate = section ? (section.dataset.resultsCount || '{count} results') : '{count} results';
+  const emptyMessage = section ? (section.dataset.emptyMessage || 'Enter keywords or select a type to start searching.') : 'Enter keywords or select a type to start searching.';
+  const loadingMessage = section ? (section.dataset.loading || 'Loading search index…') : 'Loading search index…';
 
   let searchData = { entries: [], index: {} };
   let activeType = 'all';
@@ -32,7 +34,7 @@
   function tokenize(text) {
     if (!text) return [];
     const tokens = [];
-    const parts = text.toLowerCase().match(/[a-z0-9]+|[\u4e00-\u9fff]+/g) || [];
+    const parts = text.toLowerCase().match(/[a-z0-9]+|[\u4e00-\u9fff\uac00-\ud7af]+/g) || [];
     for (const part of parts) {
       if (/^[a-z0-9]+$/.test(part)) {
         tokens.push(part);
@@ -62,7 +64,7 @@
 
   async function loadIndex() {
     if (!resultsList) return;
-    resultsList.innerHTML = '<div class="loading-state">Loading search index…</div>';
+    resultsList.innerHTML = `<div class="loading-state">${escapeHtml(loadingMessage)}</div>`;
     try {
       const res = await fetch(basePath + '/data/search-index.json');
       if (!res.ok) throw new Error('Failed to load search index');
@@ -216,13 +218,11 @@
     if (!text || !q) return escapeHtml(text);
     const tokens = uniqueTokens(q).filter(t => t.length >= 2 || !/^[a-z0-9]$/.test(t));
     if (tokens.length === 0) return escapeHtml(text);
+    // Sort by length desc so longer phrases take precedence, then replace in one pass.
     tokens.sort((a, b) => b.length - a.length);
-    let html = escapeHtml(text);
-    for (const t of tokens) {
-      const re = new RegExp('(' + escapeRegex(t) + ')', 'gi');
-      html = html.replace(re, '<mark>$1</mark>');
-    }
-    return html;
+    const pattern = tokens.map(escapeRegex).join('|');
+    const re = new RegExp('(' + pattern + ')', 'gi');
+    return escapeHtml(text).replace(re, '<mark>$1</mark>');
   }
 
   function escapeRegex(s) {
@@ -306,7 +306,7 @@
       performSearch();
     } else {
       if (resultsTitle) resultsTitle.textContent = '';
-      if (resultsList) resultsList.innerHTML = `<div class="empty-state">输入关键词或选择类型以开始搜索。</div>`;
+      if (resultsList) resultsList.innerHTML = `<div class="empty-state">${escapeHtml(emptyMessage)}</div>`;
       if (resultsCount) resultsCount.textContent = formatCount(0);
       updateLoadMore();
     }

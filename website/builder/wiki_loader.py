@@ -59,6 +59,8 @@ def build_wiki_pages() -> list[dict[str, Any]]:
     for path in sorted(WIKI_DIR.rglob("*.md")):
         text = path.read_text(encoding="utf-8")
         title = extract_title(text)
+        # TODO: when per-language wiki directories are introduced, filter here.
+        # For now all languages share the same wiki source.
         url = slugify_path(path)
         body_html = md.convert(text)
         md.reset()

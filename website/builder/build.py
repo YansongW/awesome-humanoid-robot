@@ -11,7 +11,7 @@ sys.path.insert(0, str(ROOT))
 
 from website.builder.loader import KGStore
 from website.builder.renderer import Renderer
-from website.builder.search_index import build_cluster_data, build_relations_data, build_search_index
+from website.builder.search_index import build_cluster_data, build_relations_data, build_search_index, build_subgraph_data
 from website.builder.wiki_loader import build_wiki_pages
 
 
@@ -36,21 +36,35 @@ def build_language(lang: str, dist_dir: Path, wiki_pages: list | None = None) ->
     relations_data = build_relations_data(store.entries, store.relationships)
     cluster_data = build_cluster_data(store.entries, store.relationships)
 
+    print("Building per-entry subgraphs...")
+    subgraphs = {
+        eid: build_subgraph_data(eid, store.entries, store.relationships)
+        for eid in store.entries
+    }
+
     print("Rendering static pages...")
     renderer = Renderer(store, lang, dist_dir)
-    renderer.render_all(search_index, relations_data, cluster_data, stats, wiki_pages)
+    renderer.render_all(search_index, relations_data, cluster_data, stats, wiki_pages, subgraphs)
 
 
 def main() -> int:
-    print("Loading wiki pages...")
-    wiki_pages = build_wiki_pages()
-    print(f"Loaded {len(wiki_pages)} wiki pages.")
+    try:
+        print("Loading wiki pages...")
+        wiki_pages = build_wiki_pages()
+        print(f"Loaded {len(wiki_pages)} wiki pages.")
+    except Exception as exc:
+        print(f"Failed to load wiki pages: {exc}", file=sys.stderr)
+        return 1
 
     base_dist = Path(__file__).resolve().parent.parent / "dist"
 
     for lang in LANGUAGES:
         dist_dir = base_dist if lang == "zh" else base_dist / lang
-        build_language(lang, dist_dir, wiki_pages)
+        try:
+            build_language(lang, dist_dir, wiki_pages)
+        except Exception as exc:
+            print(f"Failed to build language '{lang}': {exc}", file=sys.stderr)
+            return 1
 
     print("\nBuild complete.")
     return 0

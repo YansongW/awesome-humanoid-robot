@@ -6,8 +6,8 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-public%20v0.1.0-success" alt="Status: public v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-2102-green" alt="2102 entries" />
-  <img src="https://img.shields.io/badge/relationships-924-brightgreen" alt="924 relationships" />
+  <img src="https://img.shields.io/badge/entries-2105-green" alt="2105 entries" />
+  <img src="https://img.shields.io/badge/relationships-1063-brightgreen" alt="1063 relationships" />
   <img src="https://img.shields.io/badge/languages-zh%2Fen%2Fko-blue" alt="Languages: zh/en/ko" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
@@ -43,7 +43,7 @@ The project is **AI-assisted, human-verified**. We use AI4Sci pipelines to accel
 
 - 🌐 **Live product site** at [kg.rounds-tech.com](https://kg.rounds-tech.com) — trilingual UI, full-text search, interactive Cytoscape graph, and linked Wiki.
 - 📖 **In-repo Wiki** — 30 narrative chapters + 7 appendices derived from *Humanoid Robots: From Mine to Market*, rendered with admonitions, Mermaid diagrams, and KaTeX formulas.
-- 🗂️ **2,102 validated KG entries** and **924 typed relationships** covering the full stack from raw materials to market applications.
+- 🗂️ **2,105 validated KG entries** and **1,063 typed relationships** covering the full stack from raw materials to market applications.
 - 🔄 **Automated CI/CD** — GitHub Actions builds and deploys the site to GitHub Pages on every push to `main`.
 - 🛡️ **Hardened deployment** — concurrency control and clean `gh-pages` branch recreation prevent race-condition failures.
 
@@ -195,8 +195,8 @@ For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4
 
 | Metric | Count |
 |--------|-------|
-| Production entries | 2,102 |
-| Relationships | 924 |
+| Production entries | 2,105 |
+| Relationships | 1,063 |
 | Ontology domains | 13 (12 + `00_foundations`) |
 | Entity types | 24 |
 | Wiki chapters | 30 |

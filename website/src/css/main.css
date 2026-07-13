@@ -11,7 +11,7 @@
   --color-border-strong: #d6d1c8;
   --color-text: #1f1d1a;
   --color-text-secondary: #5a5650;
-  --color-text-muted: #8b8580;
+  --color-text-muted: #6b665e;
   --color-primary: #1f1d1a;
   --color-primary-hover: #3d3a35;
   --color-accent: #8b5a2b;
@@ -32,8 +32,8 @@
   --radius-sm: 6px;
   --radius: 10px;
   --radius-lg: 16px;
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-  --font-serif: "Noto Serif SC", "Songti SC", "STSong", "SimSun", Georgia, serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", "Noto Sans KR", "PingFang SC", "Microsoft YaHei", "Malgun Gothic", sans-serif;
+  --font-serif: "Noto Serif SC", "Noto Serif KR", "Songti SC", "STSong", "SimSun", Georgia, serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --header-height: 68px;
   --max-width: 1240px;
@@ -49,7 +49,7 @@
   --color-border-strong: #4f4942;
   --color-text: #f4f1ed;
   --color-text-secondary: #c4bdb5;
-  --color-text-muted: #958e86;
+  --color-text-muted: #b8b0a8;
   --color-primary: #f4f1ed;
   --color-primary-hover: #e8e3dd;
   --color-accent: #d4a574;
@@ -71,7 +71,21 @@
 
 * { box-sizing: border-box; }
 
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: #fff;
+  z-index: 1001;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 0; }
+
 html { scroll-behavior: smooth; }
+
+.main-content { scroll-margin-top: var(--header-height); }
 
 body {
   margin: 0;
@@ -1664,6 +1678,78 @@ a:hover { text-decoration: underline; }
 /* Math */
 .wiki-body .math {
   overflow-x: auto;
+}
+
+/* Wiki tables */
+.wiki-body table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+/* Mobile menu drawer */
+.mobile-menu-open .site-nav {
+  position: fixed;
+  top: calc(var(--header-height) + 64px);
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  padding: 0.5rem 1.5rem 1rem;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+  z-index: 999;
+}
+.mobile-menu-open .site-nav a {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+.mobile-menu-open .site-nav a:last-child { border-bottom: none; }
+.mobile-menu-open .search-form {
+  position: fixed;
+  top: var(--header-height);
+  left: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  padding: 0.75rem 0;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  z-index: 1000;
+}
+.mobile-menu-open .search-form input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+}
+.mobile-menu-open .search-form button {
+  margin-left: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Graph disabled filters */
+.domain-filter-list.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Cluster drilldown title */
+.graph-view-title.cluster-drilldown {
+  cursor: pointer;
+  color: var(--color-accent);
+}
+.graph-view-title.cluster-drilldown:hover {
+  text-decoration: underline;
 }
 
 /* Responsive */

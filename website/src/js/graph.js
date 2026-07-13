@@ -23,6 +23,27 @@
 
   const ACCENT = '#8b5a2b';
   const ACCENT_DARK = '#d4a574';
+  const UI = window.GRAPH_TEXT || {
+    loading: 'Loading graph…',
+    empty: 'No relation data to display.',
+    noRelations: 'No relation data yet',
+    clusterCount: '{name}\n{count} entities',
+    clusterPruned: '(showing top {count} core entities)',
+    clusterTotal: '({count})',
+    confirmFull: 'There are {total} nodes; the full graph will show only the top {count} most-connected nodes. Continue?',
+    entityCount: '{count} entities',
+    backToClusters: 'Cluster view',
+  };
+
+  function t(key, vars) {
+    let s = UI[key] || key;
+    if (vars) {
+      for (const [k, v] of Object.entries(vars)) {
+        s = s.replace(new RegExp('\\{' + k + '\\}', 'g'), v);
+      }
+    }
+    return s;
+  }
 
   function getBasePath() {
     const path = window.location.pathname;
@@ -143,7 +164,7 @@
           'border-width': 3,
           'border-color': t.clusterBorder,
           'background-opacity': 0.95,
-          'label': ele => `${ele.data('name')}\n${ele.data('count')} 个实体`,
+          'label': ele => t('clusterCount', { name: ele.data('name'), count: ele.data('count') }),
           'text-wrap': 'wrap',
           'color': t.text,
           'shape': 'roundrectangle',
@@ -235,6 +256,7 @@
       layout = cy.layout({ name: 'cose', ...opts });
     }
     layout.run();
+    return layout;
   }
 
   function showTooltip(content, renderedPos, container) {
@@ -286,7 +308,7 @@
   }
 
   function showLoading(container) {
-    container.innerHTML = '<div class="graph-loading"><div class="spinner"></div><span>Loading graph…</span></div>';
+    container.innerHTML = `<div class="graph-loading"><div class="spinner"></div><span>${escapeHtml(t('loading'))}</span></div>`;
   }
 
   function initGraph(container, mode) {
@@ -305,7 +327,7 @@
     }
 
     if (elements.length === 0) {
-      container.innerHTML = '<div class="empty-state">没有可显示的关系数据。</div>';
+      container.innerHTML = `<div class="empty-state">${escapeHtml(t('empty'))}</div>`;
       return;
     }
 
@@ -345,7 +367,7 @@
       const type = node.data('type') || '';
       const domains = (node.data('domains') || []).join(', ');
       let html = `<strong>${escapeHtml(name)}</strong>`;
-      if (count) html += `<br><span>${count} 个实体</span>`;
+      if (count) html += `<br><span>${t('entityCount', { count })}</span>`;
       if (type && !count) html += `<br><span>${escapeHtml(type)}${domains ? ' · ' + escapeHtml(domains) : ''}</span>`;
       showTooltip(html, evt.renderedPosition, container);
     });
@@ -359,6 +381,7 @@
 
     const layoutName = 'cose';
     runLayout(layoutName, elements.length);
+    updateDomainFilterState();
   }
 
   const MAX_SUBGRAPH_NODES = 250;
@@ -394,7 +417,7 @@
     if (cy) cy.destroy();
     const container = document.getElementById('full-graph');
     if (nodes.length === 0) {
-      container.innerHTML = '<div class="empty-state">没有可显示的关系数据。</div>';
+      container.innerHTML = `<div class="empty-state">${escapeHtml(t('empty'))}</div>`;
       return;
     }
     showLoading(container);
@@ -427,12 +450,14 @@
     cy.on('tapstart drag', () => hideTooltip());
 
     runLayout('cose', nodes.length);
+    updateDomainFilterState();
 
     const titleEl = document.getElementById('graph-current-view');
     if (titleEl) {
-      const suffix = pruned ? `（显示前 ${nodes.length} 个核心实体）` : `（${cluster.data.count}）`;
+      const suffix = pruned ? t('clusterPruned', { count: nodes.length }) : t('clusterTotal', { count: cluster.data.count });
       titleEl.textContent = `${cluster.data.name}${suffix}`;
       titleEl.classList.remove('hidden');
+      titleEl.classList.add('cluster-drilldown');
     }
   }
 
@@ -445,48 +470,66 @@
   // Entry page subgraph
   const entryGraph = document.getElementById('entry-graph');
   if (entryGraph && typeof cytoscape !== 'undefined') {
-    loadData().then(() => {
-      const centerId = entryGraph.dataset.centerId;
-      const members = new Set([centerId]);
-      const edges = [];
-      for (const edge of fullGraphData.edges) {
-        if (edge.data.source === centerId || edge.data.target === centerId) {
-          edges.push(edge);
-          members.add(edge.data.source);
-          members.add(edge.data.target);
+    const centerId = entryGraph.dataset.centerId;
+    entryGraph.innerHTML = `<div class="graph-loading"><div class="spinner"></div><span>${escapeHtml(t('loading'))}</span></div>`;
+    fetch(`${basePath}/data/subgraphs/${centerId}.json`)
+      .then(r => {
+        if (!r.ok) throw new Error('subgraph not found');
+        return r.json();
+      })
+      .then(sg => {
+        const nodes = sg.nodes || [];
+        const edges = sg.edges || [];
+        if (nodes.length === 0) {
+          entryGraph.innerHTML = `<div class="empty-state">${escapeHtml(t('noRelations'))}</div>`;
+          return;
         }
-      }
-      const nodes = fullGraphData.nodes.filter(n => members.has(n.data.id));
-      if (nodes.length === 0) {
-        entryGraph.innerHTML = '<div class="empty-state">暂无关系数据</div>';
-        return;
-      }
-      cy = cytoscape({
-        container: entryGraph,
-        elements: [...nodes, ...edges],
-        style: makeStylesheet(),
-        minZoom: 0.2,
-        maxZoom: 3,
-        wheelSensitivity: 0.3,
-      });
-      cy.on('tap', 'node', evt => {
-        window.location.href = basePath + '/entry/' + evt.target.id() + '/';
-      });
-      runLayout('cose', nodes.length);
-      setTimeout(() => {
-        const centerNode = cy.getElementById(centerId);
-        if (centerNode.length) {
-          centerNode.style({
-            'width': 38,
-            'height': 38,
-            'border-width': 5,
-            'border-color': themeColors().accent,
-            'background-color': themeColors().accent,
+        cy = cytoscape({
+          container: entryGraph,
+          elements: [...nodes, ...edges],
+          style: makeStylesheet(),
+          minZoom: 0.2,
+          maxZoom: 3,
+          wheelSensitivity: 0.3,
+        });
+        cy.on('tap', 'node', evt => {
+          window.location.href = basePath + '/entry/' + evt.target.id() + '/';
+        });
+        const layout = runLayout('cose', nodes.length);
+        if (layout && layout.one) {
+          layout.one('layoutstop', () => {
+            const centerNode = cy.getElementById(centerId);
+            if (centerNode.length) {
+              centerNode.style({
+                'width': 38,
+                'height': 38,
+                'border-width': 5,
+                'border-color': themeColors().accent,
+                'background-color': themeColors().accent,
+              });
+              cy.fit(centerNode.closedNeighborhood(), 60);
+            }
           });
-          cy.fit(centerNode.closedNeighborhood(), 60);
+        } else {
+          setTimeout(() => {
+            const centerNode = cy.getElementById(centerId);
+            if (centerNode.length) {
+              centerNode.style({
+                'width': 38,
+                'height': 38,
+                'border-width': 5,
+                'border-color': themeColors().accent,
+                'background-color': themeColors().accent,
+              });
+              cy.fit(centerNode.closedNeighborhood(), 60);
+            }
+          }, 650);
         }
-      }, 650);
-    });
+      })
+      .catch(err => {
+        console.error(err);
+        entryGraph.innerHTML = `<div class="empty-state">${escapeHtml(t('empty'))}</div>`;
+      });
   }
 
   // Full graph page
@@ -497,15 +540,32 @@
     loadData().then(() => {
       initGraph(fullGraph, 'clusters');
 
-      document.getElementById('view-clusters')?.addEventListener('click', () => {
+      const titleEl = document.getElementById('graph-current-view');
+
+      function backToClusters() {
+        if (titleEl) {
+          titleEl.classList.remove('cluster-drilldown');
+          titleEl.textContent = UI.backToClusters || 'Cluster view';
+        }
         initGraph(fullGraph, 'clusters');
         updateActiveButton('view-clusters');
-      });
+      }
+
+      document.getElementById('view-clusters')?.addEventListener('click', backToClusters);
+      if (titleEl) {
+        titleEl.addEventListener('click', () => {
+          if (titleEl.classList.contains('cluster-drilldown')) {
+            backToClusters();
+          }
+        });
+      }
       document.getElementById('view-full')?.addEventListener('click', () => {
         const visibleCount = Math.min(fullGraphData.nodes.length, MAX_FULL_GRAPH_NODES);
         if (fullGraphData.nodes.length > MAX_FULL_GRAPH_NODES) {
-          if (!confirm(`当前有 ${fullGraphData.nodes.length} 个节点，全图将只显示连接度最高的前 ${visibleCount} 个节点以保持流畅。是否继续？`)) return;
+          const msg = t('confirmFull', { total: fullGraphData.nodes.length, count: visibleCount });
+          if (!confirm(msg)) return;
         }
+        if (titleEl) titleEl.classList.remove('cluster-drilldown');
         initGraph(fullGraph, 'full');
         updateActiveButton('view-full');
       });
@@ -516,11 +576,18 @@
         document.querySelectorAll('#domain-filters input[type="checkbox"]').forEach(cb => {
           cb.checked = cb.value === 'all';
         });
-        initGraph(fullGraph, 'clusters');
-        updateActiveButton('view-clusters');
+        backToClusters();
       });
 
       const domainFilters = document.getElementById('domain-filters');
+      function updateDomainFilterState() {
+        if (!domainFilters) return;
+        const disabled = currentMode === 'clusters';
+        domainFilters.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+          cb.disabled = disabled;
+        });
+        domainFilters.classList.toggle('disabled', disabled);
+      }
       if (domainFilters) {
         domainFilters.addEventListener('change', () => {
           const allCb = domainFilters.querySelector('input[value="all"]');
@@ -541,6 +608,7 @@
           }
         });
       }
+      updateDomainFilterState();
 
       const graphSearch = document.getElementById('graph-search');
       const graphSearchResults = document.getElementById('graph-search-results');
@@ -551,36 +619,48 @@
           .then(d => { searchData = d; })
           .catch(() => {});
 
+        let graphSearchTimer = null;
         graphSearch.addEventListener('input', () => {
-          const q = graphSearch.value.trim().toLowerCase();
-          if (!q || !graphSearchResults) {
-            graphSearchResults.innerHTML = '';
-            return;
-          }
-          const matches = searchData.entries
-            .filter(e => (e.name || '').toLowerCase().includes(q) || e.id.toLowerCase().includes(q))
-            .slice(0, 10);
-          graphSearchResults.innerHTML = matches.map(e =>
-            `<div class="graph-search-result" data-id="${e.id}">${escapeHtml(e.name)}</div>`
-          ).join('');
-          graphSearchResults.querySelectorAll('.graph-search-result').forEach(el => {
-            el.addEventListener('click', () => {
-              const id = el.dataset.id;
-              if (currentMode === 'clusters') {
-                const cluster = clusterData.nodes.find(n => (n.data.members || []).includes(id));
-                if (cluster) showClusterMembers(cluster.data.id);
-              }
-              if (cy) {
-                const node = cy.getElementById(id);
-                if (node.length) {
-                  cy.fit(node, 60);
-                  node.select();
+          clearTimeout(graphSearchTimer);
+          graphSearchTimer = setTimeout(() => {
+            const q = graphSearch.value.trim().toLowerCase();
+            if (!q || !graphSearchResults) {
+              if (graphSearchResults) graphSearchResults.innerHTML = '';
+              return;
+            }
+            const matches = searchData.entries
+              .filter(e => (e.name || '').toLowerCase().includes(q) || e.id.toLowerCase().includes(q) || (e.summary || '').toLowerCase().includes(q))
+              .slice(0, 10);
+            graphSearchResults.innerHTML = matches.map(e =>
+              `<div class="graph-search-result" data-id="${e.id}">${escapeHtml(e.name)}</div>`
+            ).join('');
+            graphSearchResults.querySelectorAll('.graph-search-result').forEach(el => {
+              el.addEventListener('click', () => {
+                const id = el.dataset.id;
+                let found = false;
+                if (currentMode === 'clusters') {
+                  const cluster = clusterData.nodes.find(n => (n.data.members || []).includes(id));
+                  if (cluster) {
+                    showClusterMembers(cluster.data.id);
+                    found = true;
+                  }
                 }
-              }
-              graphSearchResults.innerHTML = '';
-              graphSearch.value = '';
+                if (cy) {
+                  const node = cy.getElementById(id);
+                  if (node.length) {
+                    cy.fit(node, 60);
+                    node.select();
+                    found = true;
+                  }
+                }
+                if (!found) {
+                  window.location.href = basePath + '/entry/' + id + '/';
+                }
+                graphSearchResults.innerHTML = '';
+                graphSearch.value = '';
+              });
             });
-          });
+          }, 180);
         });
 
         document.addEventListener('click', (e) => {
