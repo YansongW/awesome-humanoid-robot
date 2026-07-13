@@ -33,8 +33,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
-    review.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
+    to en/ko.
 sources:
 - id: src_borrelli_bemporad_morari_2017
   type: other
@@ -67,41 +67,3 @@ related_entities:
     en: Stability and tractability of MPC rely on convex optimization theory and efficient QP solvers.
     zh: MPC 的稳定性与可解性依赖于凸优化理论与高效 QP 求解器。
 ---
-
-
-
-
-
-
-# Model Predictive Control / 模型预测控制 / 모델 예측 제어
-
-## 抽象
-
-> **生活实例**：下棋时不仅看当前一步，而是预想未来几步并选最好的一步走。MPC 就是机器人在每个控制周期里“预想”未来运动并优化。
->
-> **自然语言逻辑**：利用系统模型预测未来一段时间内的状态轨迹，以目标函数（如跟踪误差、能耗）最小化为目标，求解未来一段控制序列；只实施第一个控制量，下一时刻重新求解。
-
-## 形式化骨架
-
-在每个采样时刻 $t$，求解：
-
-$$\min_{\mathbf{u}_{0:N-1}} \quad \sum_{k=0}^{N-1} \ell(\mathbf{x}_k, \mathbf{u}_k) + V_f(\mathbf{x}_N)$$
-
-$$\text{s.t.} \quad \mathbf{x}_{k+1} = f(\mathbf{x}_k, \mathbf{u}_k), \quad \mathbf{x}_0 = \hat{\mathbf{x}}(t),$$
-
-$$\mathbf{x}_k \in \mathcal{X}, \quad \mathbf{u}_k \in \mathcal{U},$$
-
-其中 $N$ 为预测时域，$\ell$ 为阶段代价，$V_f$ 为终端代价。实施 $\mathbf{u}_0^*$ 后滚动时域。
-
-## 与人形机器人的关系
-
-- 步态优化：选择接触序列与质心/动量轨迹。
-- 实时求解：依赖高效 QP 求解器（如 OSQP、qpOASES）。
-- 鲁棒性：常结合扰动观测器或 tube-MPC 处理模型误差。
-
-## 与其他知识点的关系
-
-- `based_on` → [ent_formalism_euler_lagrange_equations]
-- `solves` → [ent_qp_standard_form]
-- `requires` → [ent_foundation_convex_optimization]
-- `implemented_on` → 人形机器人整机 / 步态控制

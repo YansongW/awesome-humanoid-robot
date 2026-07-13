@@ -33,8 +33,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
-    review.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
+    to en/ko.
 sources:
 - id: src_vukobratovic_2004_zmp
   type: paper
@@ -57,29 +57,30 @@ related_entities:
       or Newton-Euler dynamics.
     zh: ZMP 条件来源于机器人运动方程的力矩平衡，通常由欧拉-拉格朗日方程或牛顿-欧拉动力学表达。
 ---
+### 8.4.4 零力矩点（ZMP）与动态平衡
 
+**零力矩点（Zero Moment Point, ZMP）**是地面上的一个点，在该点处地面反作用力产生的水平力矩分量为零[43][44]。ZMP 是人形机器人动态平衡的核心判据：若 ZMP 位于支撑多边形（support polygon）内，则机器人理论上不会绕地面边缘倾倒。
 
+!!! note "术语解释：零力矩点（ZMP）、支撑多边形、地面反作用力、动态平衡"
+    - **零力矩点（ZMP）**：地面反作用力等效作用点，水平力矩分量为零。
+    - **支撑多边形（support polygon）**：脚底与地面接触点构成的凸包。
+    - **地面反作用力（GRF）**：地面作用于脚的力。
+    - **动态平衡（dynamic balance）**：在运动过程中保持不倾倒的能力。
 
+在简化模型中，假设质心高度 $z_c$ 恒定，ZMP 坐标为：
 
+$$
+x_{\text{ZMP}} = x_{\text{CoM}} - \frac{z_c}{g} \ddot{x}_{\text{CoM}}
+$$
 
+$$
+y_{\text{ZMP}} = y_{\text{CoM}} - \frac{z_c}{g} \ddot{y}_{\text{CoM}}
+$$
 
-# Zero Moment Point / 零力矩点 / 영점
+其中 $g$ 为重力加速度，$\ddot{x}_{\text{CoM}}$、$\ddot{y}_{\text{CoM}}$ 为质心水平加速度。
 
-## 抽象
-
-> **生活实例**：人走路时若身体前倾，脚尖会自然踩下去“撑住”身体；ZMP 就是这个“支撑点”在地面上的投影，保证身体不会绕它翻倒。
->
-> **自然语言逻辑**：把机器人全身看成一个整体，地面给脚底一个反作用力。如果地面反作用力的合力矩在水平方向上为零，机器人就不会因为水平力矩而倾倒；这个特殊点就叫零力矩点。
-
-## 形式化说明
-
-对于行走机器人，设地面反作用力 $\mathbf{F} = (F_x, F_y, F_z)$ 作用于点 $P$，若关于 $P$ 的力矩水平分量为零：
-
-$$\tau_x = 0, \quad \tau_y = 0,$$
-
-则 $P$ 为 ZMP。当 ZMP 位于支撑多边形（support polygon）内时，机器人具备动态行走的可行性（非翻倒的充分条件之一）。
-
-## 与其他知识点的关系
-
-- `based_on` → [ent_formalism_euler_lagrange_equations]
-- `applies_to` → 双足步行 / locomotion
+!!! note "术语解释：质心高度、水平加速度、重力加速度、凸包"
+    - **质心高度（CoM height）**：质心到地面的垂直距离。
+    - **水平加速度（horizontal acceleration）**：质心在水平面内的加速度分量。
+    - **重力加速度（gravitational acceleration）**：$g \approx 9.81\ \text{m/s}^2$。
+    - **凸包（convex hull）**：包含一组点的最小凸集。

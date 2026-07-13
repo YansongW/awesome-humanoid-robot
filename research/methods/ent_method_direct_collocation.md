@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
-    review.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
+    to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other

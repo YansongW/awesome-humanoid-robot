@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
-    review.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
+    to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,9 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+### 8.3.9 Python 算例 4：Jacobian 伪逆数值逆运动学
+
+以下代码展示 3 连杆平面机械臂的数值 IK：给定目标位置，通过 Jacobian 伪逆迭代调整关节角，使末端接近目标。
+
+```python
+import numpy as np

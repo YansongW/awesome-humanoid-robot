@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
-    review.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
+    to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,34 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+### 4.5.5 电流环、速度环、位置环的级联控制
+
+实际关节驱动通常采用三级级联控制：最内层 **电流环**（力矩环），中间 **速度环**，最外层 **位置环**。每一层带宽约为下一层的 5-10 倍，以保证稳定性。
+
+!!! note "术语解释：电流环、速度环、位置环、PI 控制器、前馈、抗饱和、带宽级联"
+    - **电流环（current loop）**：以电机相电流为被控量的最快内环，直接决定输出力矩。
+    - **速度环（velocity loop）**：以电机转速为被控量，输出电流指令。
+    - **位置环（position loop）**：以关节角度为被控量，输出速度指令。
+    - **PI 控制器（proportional-integral controller）**：由比例项和积分项组成的经典控制器，用于消除稳态误差。
+    - **前馈（feedforward）**：根据期望轨迹提前计算并加入控制量，提高跟踪性能。
+    - **抗饱和（anti-windup）**：防止积分器在饱和时过度累积，避免退出饱和后的大超调。
+    - **带宽级联（bandwidth cascade）**：内环带宽远高于外环，确保外环指令能被内环快速跟踪。
+
+```mermaid
+flowchart TD
+    P["位置指令 theta*"] --> PC["位置环 PI"]
+    PC --> V["速度指令 omega*"]
+    V --> VC["速度环 PI"]
+    VC --> I["电流指令 I*"]
+    I --> IC["电流环 PI"]
+    IC --> INV["三相逆变器"]
+    INV --> M["PMSM"]
+    M --> ENC["编码器 theta"]
+    ENC --> DIFF["omega = dtheta/dt"]
+    DIFF --> VC
+    ENC --> PC
+    M --> CS["电流传感器"]
+    CS --> IC
+```
+
+电流环带宽通常可达 1-5 kHz；速度环 50-500 Hz；位置环 5-100 Hz，具体取决于负载惯量、刚度和采样率。

@@ -33,8 +33,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
-    review.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
+    to en/ko.
 sources:
 - id: src_astrom_hagglund_2006
   type: other
@@ -56,36 +56,3 @@ related_entities:
       with the environment.
     zh: PID 控制调节位置或速度；阻抗控制进一步调节与环境的动态交互力。
 ---
-
-
-
-
-
-
-# PID Control / PID控制 / PID 제어
-
-## 抽象
-
-> **生活实例**：开车时若方向偏左，人会小幅回正（比例）、若长期偏离则持续修正（积分）、若偏离速度过快则提前反向打盘（微分）。PID 就是这三种修正的数学化。
->
-> **自然语言逻辑**：给定目标值与实际值的误差 $e(t)$，控制器输出 $u(t)$ 由误差本身、误差的积分（累积误差）、误差的微分（变化趋势）加权相加得到。
-
-## 形式化定义
-
-$$u(t) = K_p e(t) + K_i \int_0^t e(\tau)\,d\tau + K_d \frac{de(t)}{dt},$$
-
-其中 $K_p, K_i, K_d$ 分别为比例、积分、微分增益。离散实现时常用位置式或增量式 PID。
-
-## 关键参数直觉
-
-| 参数 | 作用 | 过大的后果 |
-|------|------|-----------|
-| $K_p$ | 按当前误差快速响应 | 振荡、超调 |
-| $K_i$ | 消除稳态误差 | 积分饱和、响应迟缓 |
-| $K_d$ | 抑制快速变化、预测趋势 | 对噪声敏感 |
-
-## 与其他知识点的关系
-
-- `requires` → 反馈控制理论 / 误差信号
-- `complements` → [ent_method_impedance_control]
-- `implemented_on` → 伺服驱动器 / 机器人关节

@@ -30,8 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
-    review.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
+    to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,3 +39,16 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+## 1.5 从 0 到 1 的七个跃迁
+
+将人形机器人从概念变为可规模化的产品，需要经历七个递进的跃迁阶段。下图展示了这一过程的宏观流程：
+
+```mermaid
+flowchart LR
+    A[实验室样机] --> B[工程样机]
+    B --> C[小批量验证]
+    C --> D[量产准备]
+    D --> E[场景部署]
+    E --> F[运营维护]
+    F --> G[规模化复制]
+```

@@ -29,12 +29,26 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
-    review.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
+    to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
   title: Wiki extraction
   date: '2026-07-09'
   accessed_at: '2026-07-09'
+---
+### 3.1.12 稀土永磁供应链与价格机制
+
+稀土永磁供应链包括采矿、选矿、分离冶炼、合金制备、磁体制造、表面处理和应用终端。中国在该产业链中占据主导地位：
+
+| 环节 | 中国全球份额 | 关键企业/地区 |
+|-----|------------|--------------|
+| 稀土矿开采 | 60-70% | 北方稀土、中国稀土集团 |
+| 分离冶炼 | ~90% | 中国五矿、盛和资源 |
+| NdFeB 磁材 | 85-93% | 中科三环、金力永磁、宁波韵升 |
+| 重稀土加工 | ~99% | 中国南方离子型稀土矿 |
+
+2025 年 4 月中国对 Dy、Tb 等中重稀土实施出口许可管制，导致国际市场高矫顽力磁体价格波动。Adamas Intelligence 预测，若需求趋势延续而供应增长不及预期，到 2035 年全球 NdFeB 年缺口可能达到 20.6 万吨。人形机器人作为新增需求来源，虽然当前单机用量不大，但会进一步收紧本已紧张的供应链。
+
 ---

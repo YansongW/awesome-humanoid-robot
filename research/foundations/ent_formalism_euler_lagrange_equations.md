@@ -34,8 +34,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
-    review.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
+    to en/ko.
 sources:
 - id: src_goldstein_2002
   type: other
@@ -61,30 +61,3 @@ related_entities:
     en: For rigid-body systems, Euler-Lagrange and Newton-Euler formulations yield the same equations of motion.
     zh: 对刚体系统，欧拉-拉格朗日与牛顿-欧拉两种形式等价。
 ---
-
-
-
-
-
-
-# Euler-Lagrange Equations / 欧拉-拉格朗日方程 / 오일러-라그랑주 방정식
-
-## 抽象
-
-> **生活实例**：在所有可能的运动轨迹中，真实发生的那一条让某种“总成本”取极值。欧拉-拉格朗日方程就是这个极值条件的数学表达。
->
-> **自然语言逻辑**：先写出系统的动能 $T$ 和势能 $V$，构造拉格朗日量 $\mathcal{L}=T-V$；然后要求作用量 $S=\int \mathcal{L}\,dt$ 取驻值，即可得到系统的运动方程。
-
-## 形式化定义
-
-设广义坐标为 $q(t) \in \mathbb{R}^n$，拉格朗日量 $\mathcal{L}(q, \dot{q}, t)$，则欧拉-拉格朗日方程为：
-
-$$\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i} - \frac{\partial \mathcal{L}}{\partial q_i} = \tau_i, \quad i = 1, \dots, n,$$
-
-其中 $\tau_i$ 为广义非保守力。对于完整、理想约束的机械系统，通常取 $\mathcal{L} = T - V$。
-
-## 与其他知识点的关系
-
-- `derived_from` → [ent_lagrangian]
-- `equivalent_to` → [ent_newton_euler_equations]
-- `enables` → 机器人动力学建模 / ZMP / 全身控制

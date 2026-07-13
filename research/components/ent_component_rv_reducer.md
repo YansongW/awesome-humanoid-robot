@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Curated names and summary from data/gap-entity-polish.yaml; placeholder body rewritten. Pending domain-expert final
-    review.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
+    to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+### 4.3.3 行星减速器与摆线减速器
+
+**行星减速器**由太阳轮、行星轮、齿圈和行星架组成。太阳轮输入，行星架输出，齿圈固定时传动比为
+
+$$
+G = 1 + \frac{z_r}{z_s}
+$$
+
+其中 \(z_r\) 为齿圈齿数，\(z_s\) 为太阳轮齿数。行星减速器效率高（可达 97%）、承载能力强，常用于机器人关节的中低减速比段。

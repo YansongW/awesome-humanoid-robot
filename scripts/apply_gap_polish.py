@@ -195,7 +195,32 @@ def process_entity(eid: str, curated: dict) -> bool:
     return True
 
 
+def reset_all_gap_bodies() -> None:
+    """Clear the Markdown body of every gap entity while preserving frontmatter."""
+    polish = load_polish()
+    for eid in polish["entities"]:
+        path = find_entity_path(eid)
+        if path is None:
+            continue
+        text = path.read_text(encoding="utf-8")
+        prefix, yaml_text, _body = split_frontmatter(text)
+        fm = yaml.safe_load(yaml_text)
+        new_yaml = yaml.safe_dump(
+            fm,
+            allow_unicode=True,
+            sort_keys=False,
+            width=120,
+            default_flow_style=False,
+        )
+        path.write_text(f"{prefix}\n{new_yaml}{prefix}\n", encoding="utf-8")
+
+
 def main() -> int:
+    if len(sys.argv) > 1 and sys.argv[1] == "--reset-bodies":
+        reset_all_gap_bodies()
+        print("Cleared bodies for all gap entities.")
+        return 0
+
     polish = load_polish()
     mapping = load_mapping()
 
