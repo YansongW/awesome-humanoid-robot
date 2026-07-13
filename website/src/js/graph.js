@@ -108,21 +108,21 @@
         style: {
           'background-color': ele => getDomainColor(getPrimaryDomain(ele)),
           'label': 'data(name)',
-          'font-size': 12,
-          'font-weight': 500,
+          'font-size': 13,
+          'font-weight': 600,
           'color': t.text,
           'text-valign': 'bottom',
           'text-halign': 'center',
-          'text-margin-y': 8,
+          'text-margin-y': 10,
           'text-wrap': 'wrap',
-          'text-max-width': 120,
+          'text-max-width': 140,
           'text-background-color': t.bg,
-          'text-background-opacity': 0.95,
+          'text-background-opacity': 0.98,
           'text-background-shape': 'roundrectangle',
-          'text-background-padding': 3,
+          'text-background-padding': 4,
           'text-border-color': t.border,
           'text-border-width': 1,
-          'text-border-opacity': 0.5,
+          'text-border-opacity': 0.6,
           'border-width': 2,
           'border-color': t.border,
           'transition-property': 'background-color, border-color, width, height',
@@ -132,47 +132,51 @@
       {
         selector: 'node[isCluster]',
         style: {
-          'width': ele => Math.min(120, 48 + Math.sqrt(ele.data('count') || 1) * 9),
-          'height': ele => Math.min(120, 48 + Math.sqrt(ele.data('count') || 1) * 9),
-          'font-size': 14,
+          'width': ele => Math.min(140, 56 + Math.sqrt(ele.data('count') || 1) * 10),
+          'height': ele => Math.min(140, 56 + Math.sqrt(ele.data('count') || 1) * 10),
+          'font-size': 15,
           'font-weight': 700,
           'text-valign': 'center',
           'text-halign': 'center',
           'text-margin-y': 0,
-          'text-max-width': 110,
+          'text-max-width': 120,
           'border-width': 3,
           'border-color': t.clusterBorder,
           'background-opacity': 0.95,
           'label': ele => `${ele.data('name')}\n${ele.data('count')} 个实体`,
           'text-wrap': 'wrap',
           'color': t.text,
+          'shape': 'roundrectangle',
         },
       },
       {
         selector: 'node[!isCluster]',
         style: {
-          'width': 18,
-          'height': 18,
+          'width': 22,
+          'height': 22,
         },
       },
       {
         selector: 'edge',
         style: {
-          'width': 1.2,
+          'width': 1.5,
           'line-color': t.edge,
           'target-arrow-color': t.edge,
           'target-arrow-shape': 'triangle',
-          'curve-style': 'bezier',
-          'arrow-scale': 0.7,
+          'curve-style': 'unbundled-bezier',
+          'control-point-step-size': 30,
+          'arrow-scale': 0.8,
+          'opacity': 0.85,
         },
       },
       {
         selector: 'edge[isClusterEdge]',
         style: {
-          'width': ele => Math.min(10, 1.2 + Math.log(ele.data('weight') || 1) * 1.6),
+          'width': ele => Math.min(12, 2 + Math.log(ele.data('weight') || 1) * 2),
           'line-color': t.clusterEdge,
           'target-arrow-color': t.clusterEdge,
-          'arrow-scale': 0.9,
+          'arrow-scale': 1,
+          'opacity': 0.9,
         },
       },
       {
@@ -181,6 +185,7 @@
           'border-width': 5,
           'border-color': t.accent,
           'border-opacity': 1,
+          'background-color': t.accent,
         },
       },
       {
@@ -188,8 +193,9 @@
         style: {
           'border-width': 4,
           'border-color': t.accent,
-          'width': 26,
-          'height': 26,
+          'width': 30,
+          'height': 30,
+          'background-color': t.accent,
         },
       },
       {
@@ -201,22 +207,25 @@
     ];
   }
 
-  function runLayout(name) {
+  function runLayout(name, nodeCount) {
     if (!cy) return;
-    const opts = { animate: true, animationDuration: 500, padding: 36, fit: true };
+    const isLarge = nodeCount > 150;
+    const opts = { animate: !isLarge, animationDuration: isLarge ? 0 : 500, padding: 36, fit: true };
     let layout;
     if (name === 'cose') {
       layout = cy.layout({
         name: 'cose',
         ...opts,
-        nodeRepulsion: 8000,
-        idealEdgeLength: 120,
-        componentSpacing: 100,
-        nodeOverlap: 20,
-        refresh: 20,
+        nodeRepulsion: isLarge ? 12000 : 8000,
+        idealEdgeLength: isLarge ? 160 : 120,
+        componentSpacing: isLarge ? 160 : 100,
+        nodeOverlap: isLarge ? 40 : 20,
+        refresh: isLarge ? 10 : 20,
         fit: true,
         padding: 36,
         randomize: false,
+        numIter: isLarge ? 1500 : 3000,
+        coolingFactor: isLarge ? 0.9 : 0.95,
       });
     } else if (name === 'circle') {
       layout = cy.layout({ name: 'circle', ...opts });
@@ -243,13 +252,29 @@
 
   const activeDomains = new Set();
 
+  const MAX_FULL_GRAPH_NODES = 400;
+
   function getFilteredFullElements() {
     const domainFilter = activeDomains.size > 0 ? activeDomains : null;
-    const nodes = fullGraphData.nodes.filter(n => {
+    let nodes = fullGraphData.nodes.filter(n => {
       if (!domainFilter) return true;
       const d = getPrimaryDomainFromData(n.data);
       return domainFilter.has(d);
     });
+
+    // Prune very large full graphs to keep rendering interactive.
+    if (nodes.length > MAX_FULL_GRAPH_NODES) {
+      const degree = new Map();
+      for (const n of nodes) degree.set(n.data.id, 0);
+      for (const e of fullGraphData.edges) {
+        if (degree.has(e.data.source)) degree.set(e.data.source, (degree.get(e.data.source) || 0) + 1);
+        if (degree.has(e.data.target)) degree.set(e.data.target, (degree.get(e.data.target) || 0) + 1);
+      }
+      nodes = nodes
+        .sort((a, b) => (degree.get(b.data.id) || 0) - (degree.get(a.data.id) || 0))
+        .slice(0, MAX_FULL_GRAPH_NODES);
+    }
+
     const nodeIds = new Set(nodes.map(n => n.data.id));
     const edges = fullGraphData.edges.filter(e => nodeIds.has(e.data.source) && nodeIds.has(e.data.target));
     return { nodes, edges };
@@ -332,22 +357,48 @@
 
     cy.on('tapstart drag', () => hideTooltip());
 
-    const layoutName = currentMode === 'full' && elements.length > 500 ? 'cose' : 'cose';
-    runLayout(layoutName);
+    const layoutName = 'cose';
+    runLayout(layoutName, elements.length);
   }
+
+  const MAX_SUBGRAPH_NODES = 250;
 
   function showClusterMembers(clusterId) {
     const cluster = clusterData.nodes.find(n => n.data.id === clusterId);
     if (!cluster) return;
     const members = new Set(cluster.data.members || []);
 
-    const nodes = fullGraphData.nodes.filter(n => members.has(n.data.id));
-    const edges = fullGraphData.edges.filter(
+    let nodes = fullGraphData.nodes.filter(n => members.has(n.data.id));
+    let edges = fullGraphData.edges.filter(
       e => members.has(e.data.source) && members.has(e.data.target)
     );
 
+    // For very large clusters, keep only the most connected nodes to preserve
+    // interactivity and readability.
+    let pruned = false;
+    if (nodes.length > MAX_SUBGRAPH_NODES) {
+      pruned = true;
+      const degree = new Map();
+      for (const n of nodes) degree.set(n.data.id, 0);
+      for (const e of edges) {
+        degree.set(e.data.source, (degree.get(e.data.source) || 0) + 1);
+        degree.set(e.data.target, (degree.get(e.data.target) || 0) + 1);
+      }
+      nodes = nodes
+        .sort((a, b) => (degree.get(b.data.id) || 0) - (degree.get(a.data.id) || 0))
+        .slice(0, MAX_SUBGRAPH_NODES);
+      const keep = new Set(nodes.map(n => n.data.id));
+      edges = edges.filter(e => keep.has(e.data.source) && keep.has(e.data.target));
+    }
+
     if (cy) cy.destroy();
     const container = document.getElementById('full-graph');
+    if (nodes.length === 0) {
+      container.innerHTML = '<div class="empty-state">没有可显示的关系数据。</div>';
+      return;
+    }
+    showLoading(container);
+
     cy = cytoscape({
       container: container,
       elements: [...nodes, ...edges],
@@ -375,11 +426,12 @@
 
     cy.on('tapstart drag', () => hideTooltip());
 
-    runLayout('cose');
+    runLayout('cose', nodes.length);
 
     const titleEl = document.getElementById('graph-current-view');
     if (titleEl) {
-      titleEl.textContent = `${cluster.data.name}（${cluster.data.count}）`;
+      const suffix = pruned ? `（显示前 ${nodes.length} 个核心实体）` : `（${cluster.data.count}）`;
+      titleEl.textContent = `${cluster.data.name}${suffix}`;
       titleEl.classList.remove('hidden');
     }
   }
@@ -420,11 +472,17 @@
       cy.on('tap', 'node', evt => {
         window.location.href = basePath + '/entry/' + evt.target.id() + '/';
       });
-      cy.layout({ name: 'cose', padding: 24, nodeRepulsion: 6000, idealEdgeLength: 90, animate: true }).run();
+      runLayout('cose', nodes.length);
       setTimeout(() => {
         const centerNode = cy.getElementById(centerId);
         if (centerNode.length) {
-          centerNode.style({ 'width': 34, 'height': 34, 'border-width': 4, 'border-color': themeColors().accent });
+          centerNode.style({
+            'width': 38,
+            'height': 38,
+            'border-width': 5,
+            'border-color': themeColors().accent,
+            'background-color': themeColors().accent,
+          });
           cy.fit(centerNode.closedNeighborhood(), 60);
         }
       }, 650);
@@ -444,8 +502,9 @@
         updateActiveButton('view-clusters');
       });
       document.getElementById('view-full')?.addEventListener('click', () => {
-        if (fullGraphData.nodes.length > 1500) {
-          if (!confirm(`当前有 ${fullGraphData.nodes.length} 个节点，全图加载可能会卡顿。是否继续？`)) return;
+        const visibleCount = Math.min(fullGraphData.nodes.length, MAX_FULL_GRAPH_NODES);
+        if (fullGraphData.nodes.length > MAX_FULL_GRAPH_NODES) {
+          if (!confirm(`当前有 ${fullGraphData.nodes.length} 个节点，全图将只显示连接度最高的前 ${visibleCount} 个节点以保持流畅。是否继续？`)) return;
         }
         initGraph(fullGraph, 'full');
         updateActiveButton('view-full');

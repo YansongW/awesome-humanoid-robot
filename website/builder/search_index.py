@@ -2,12 +2,13 @@
 
 from __future__ import annotations
 
+from collections import defaultdict
 from typing import Any
 
 from website.builder.loader import DOMAIN_LABELS, Entry, domain_label, tokenize, type_label
 
 
-def _short_summary(summary: str, max_len: int = 160) -> str:
+def _short_summary(summary: str, max_len: int = 90) -> str:
     """Return a short, single-line summary suitable for search result cards."""
     text = (summary or "").replace("\n", " ").replace("\r", " ")
     while "  " in text:
@@ -21,36 +22,69 @@ def _short_summary(summary: str, max_len: int = 160) -> str:
     return text[:cut].rstrip() + "…"
 
 
+def _field_tokens(text: str) -> list[str]:
+    """Return unique, non-empty tokens for a text field."""
+    tokens = tokenize(text or "")
+    seen = set()
+    out = []
+    for t in tokens:
+        if t and t not in seen:
+            seen.add(t)
+            out.append(t)
+    return out
+
+
 def build_search_index(entries: dict[str, Entry], lang: str = "zh") -> dict[str, Any]:
-    """Build a compact client-side search index.
+    """Build a compact client-side search index with an inverted token index.
 
     Returns:
         {
             "entries": [
-                {"id": ..., "name": ..., "name_en": ..., "type": ..., "type_label": ..., "summary": ..., "domains": [...], "domain_labels": [...], "layers": [...], "url": ...},
+                {"i": 0, "id": ..., "name": ..., "name_en": ..., "type": ..., "type_label": ..., "summary": ..., "domains": [...], "domain_labels": [...], "layers": [...], "url": ...},
                 ...
-            ]
+            ],
+            "index": {
+                "pid": [0, 5, ...],   // token -> list of entry indices
+                ...
+            }
         }
     """
     entry_list = sorted(entries.values(), key=lambda e: e.name or e.id)
-    compact = []
-    for e in entry_list:
-        compact.append(
-            {
-                "id": e.id,
-                "name": e.name,
-                "name_en": e.name_en,
-                "type": e.type,
-                "type_label": type_label(e.type, lang),
-                "summary": _short_summary(e.summary),
-                "domains": e.domains,
-                "domain_labels": [domain_label(d, lang) for d in e.domains],
-                "layers": e.layers,
-                "url": e.url,
-            }
-        )
+    compact: list[dict] = []
+    inverted: dict[str, list[int]] = defaultdict(list)
 
-    return {"entries": compact}
+    for idx, e in enumerate(entry_list):
+        record = {
+            "i": idx,
+            "id": e.id,
+            "name": e.name,
+            "name_en": e.name_en,
+            "type": e.type,
+            "type_label": type_label(e.type, lang),
+            "summary": _short_summary(e.summary),
+            "domains": e.domains,
+            "domain_labels": [domain_label(d, lang) for d in e.domains],
+            "url": e.url,
+        }
+        compact.append(record)
+
+        # Index tokens from high-signal fields only.  Summaries are kept in the
+        # record for display and substring fallback scoring, but indexing every
+        # summary token makes the inverted index too large.
+        token_sources = [
+            e.name,
+            e.name_en,
+            e.id,
+            e.type,
+            " ".join(e.domains),
+        ]
+        for src in token_sources:
+            for t in _field_tokens(src):
+                if idx not in inverted[t]:
+                    inverted[t].append(idx)
+
+    # Convert defaultdict to plain dict for JSON serialization.
+    return {"entries": compact, "index": dict(inverted)}
 
 
 def build_relations_data(entries: dict[str, Entry], relationships: list) -> dict:

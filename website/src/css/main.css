@@ -572,6 +572,9 @@ a:hover { text-decoration: underline; }
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-text);
+  line-height: 1.35;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .entry-card p {
@@ -584,6 +587,8 @@ a:hover { text-decoration: underline; }
   -webkit-box-orient: vertical;
   overflow: hidden;
   word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .entry-card .entry-meta {
@@ -591,6 +596,7 @@ a:hover { text-decoration: underline; }
   color: var(--color-text-muted);
   line-height: 1.4;
   word-break: keep-all;
+  overflow-wrap: anywhere;
 }
 
 /* CTA */
@@ -1396,6 +1402,7 @@ a:hover { text-decoration: underline; }
   color: var(--color-text);
   line-height: 1.35;
   word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .result-item h3 small {
@@ -1404,6 +1411,8 @@ a:hover { text-decoration: underline; }
   font-size: 0.8rem;
   font-weight: 400;
   color: var(--color-text-muted);
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .result-item mark {
@@ -1432,6 +1441,8 @@ a:hover { text-decoration: underline; }
   color: var(--color-text-secondary);
   line-height: 1.55;
   word-break: break-word;
+  overflow-wrap: anywhere;
+  white-space: normal;
 }
 
 .loading-state, .empty-state, .graph-loading {
