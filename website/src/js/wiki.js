@@ -1,4 +1,4 @@
-/* Wiki page enhancements: Mermaid diagrams and info-box blockquotes. */
+/* Wiki page enhancements: Mermaid diagrams, KaTeX math, and info-box blockquotes. */
 
 (function () {
   'use strict';
@@ -7,12 +7,12 @@
     // Convert fenced mermaid code blocks into native mermaid containers.
     document.querySelectorAll('.wiki-body pre code.language-mermaid, .wiki-body pre code.mermaid').forEach(function (code) {
       var pre = code.parentElement;
+      if (!pre || !pre.parentElement) return;
       var figure = document.createElement('pre');
       figure.className = 'mermaid';
+      // Preserve exact diagram source; Mermaid parses this text directly.
       figure.textContent = code.textContent;
-      if (pre && pre.parentElement) {
-        pre.parentElement.replaceChild(figure, pre);
-      }
+      pre.parentElement.replaceChild(figure, pre);
     });
 
     // Style terminology / example / note blockquotes as info panels.
@@ -23,8 +23,20 @@
       }
     });
 
+    // Trigger Mermaid rendering manually so we can be sure the containers exist.
     if (typeof mermaid !== 'undefined') {
-      mermaid.initialize({ startOnLoad: true, theme: 'default' });
+      try {
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: 'default',
+          securityLevel: 'loose',
+        });
+        mermaid.run({ querySelector: '.mermaid' }).catch(function (err) {
+          console.error('Mermaid render failed:', err);
+        });
+      } catch (err) {
+        console.error('Mermaid initialization failed:', err);
+      }
     }
   }
 
