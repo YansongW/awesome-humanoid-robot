@@ -159,7 +159,7 @@ def audit_entry(entry: dict[str, Any]) -> dict[str, Any]:
         issues.append(f"body_too_short_zh ({zh_chars}/{min_chars})")
     if not has_section(body, "概述", "Overview", "개요"):
         issues.append("missing_overview_section")
-    if not has_section(body, "核心原理", "核心方法", "方法", "原理", "结构", "Methods", "Method"):
+    if not has_section(body, "核心内容", "核心原理", "核心方法", "方法", "原理", "结构", "Methods", "Method"):
         issues.append("missing_core_section")
     if not has_section(body, "参考", "References", "참고"):
         issues.append("missing_reference_section")
@@ -272,7 +272,7 @@ def main(argv: list[str] | None = None) -> int:
     issue_counts = Counter()
     for e in entries:
         for issue in e["issues"]:
-            issue_counts[issue.split("(")[0]] += 1
+            issue_counts[issue.split("(")[0].strip()] += 1
 
     critical_entries = [e for e in entries if e["severity"] == "critical"]
     warning_entries = [e for e in entries if e["severity"] == "warning"]

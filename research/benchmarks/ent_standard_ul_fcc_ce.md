@@ -29,7 +29,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-07.md#7.9.7 Python 算例：关节壳体 should-cost 计算器 by scripts/backfill_nonpaper_entries.py.
+  notes: Body backfilled from chapter-01.md#1.13.2 主要国际与区域标准概览 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -41,54 +41,23 @@ sources:
 区域准入认证是人形机器人领域的重要standard。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
-下面的代码以铝合金关节壳体为例，逐项计算 should-cost，并展示改变良率与批量对单位成本的影响。
+| 标准/认证 | 制定机构 | 适用范围 | 核心关注点 |
+|----------|---------|---------|-----------|
+| ISO 13482:2014 | ISO | 个人护理机器人 | 机械安全、速度/力限制、接触安全 |
+| ISO/TS 15066:2016 | ISO | 协作机器人 | 最大允许压力/力、安全功能 |
+| ISO 13849-1:2023 | ISO | 机械安全控制系统 | 控制系统安全相关部件可靠性 |
+| IEC 61508:2010 | IEC | 功能安全通用标准 | SIL 等级、安全生命周期 |
+| IEC 62368-1:2018 | IEC | 信息技术设备安全 | 电气安全、火灾、能量危险 |
+| UL 1740 | UL | 工业机器人安全 | 机器人系统安全评估 |
+| FCC Part 15 | FCC | 美国无线电设备 | 电磁兼容与射频干扰 |
+| CE 标志 | 欧盟 | 欧盟市场准入 | 符合相关指令（机械指令、低电压指令等） |
+| CR 认证 | 中国机器人联盟/认监委 | 中国机器人市场准入 | 安全、EMC、性能、可靠性 |
+| CCC | 中国质检总局 | 强制性产品认证 | 电气安全等 |
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-
-class ShouldCostModel:
-    def __init__(self, annual_volume):
-        self.N = annual_volume
-        # 材料
-        self.blank_weight = 0.35      # kg
-        self.al_price = 28.0          # 元/kg
-        self.blank_yield = 0.97       # 毛坯良率
-        # 压铸
-        self.cycle_time = 90 / 3600   # h/件
-        self.die_cast_rate = 180.0    # 元/h
-        self.die_investment = 350_000 # 元
-        self.die_life = 200_000       # 件
-        # CNC
-        self.cnc_time = 25 / 60       # h/件
-        self.cnc_rate = 120.0         # 元/h
-        self.tool_cost = 4.5          # 元/件（已按寿命摊销）
-        # 表面处理
-        self.surface_area = 0.045     # m²
-        self.surface_price = 220.0    # 元/m²
-        # 间接费用与利润
-        self.overhead_rate = 0.25     # 占直接成本的 25%
-        self.profit_rate = 0.12       # 占成本加费用的 12%
-
-    def cost(self):
-        C_mat = self.blank_weight * self.al_price / self.blank_yield
-        C_die_cast = self.cycle_time * self.die_cast_rate + self.die_investment / min(self.N, self.die_life)
-        C_cnc = self.cnc_time * self.cnc_rate + self.tool_cost
-        C_surface = self.surface_area * self.surface_price
-        direct = C_mat + C_die_cast + C_cnc + C_surface
-        overhead = direct * self.overhead_rate
-        profit = (direct + overhead) * self.profit_rate
-        return {
-            "材料": C_mat,
-            "压铸": C_die_cast,
-            "CNC": C_cnc,
-            "表面处理": C_surface,
-            "制造费用": overhead,
-            "利润": profit,
-            "should_cost": direct + overhead + profit,
-        }
+!!! note "术语解释：CE 标志与 CCC 认证"
+    CE 标志是产品进入欧盟市场的合格声明标志，表示产品符合欧盟相关指令的基本要求。CCC（China Compulsory Certification）是中国强制性产品认证，涉及人身安全、动植物生命健康和环境保护的产品必须获得 CCC 认证方可销售。
 
 ## 参考
 - Wiki extraction
-- 项目 Wiki：chapter-07.md#7.9.7 Python 算例：关节壳体 should-cost 计算器
+- 项目 Wiki：chapter-01.md#1.13.2 主要国际与区域标准概览
 

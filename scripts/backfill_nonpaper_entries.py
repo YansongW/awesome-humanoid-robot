@@ -145,26 +145,35 @@ def index_appendix(dir_name: str) -> dict[str, tuple[Path, str]]:
         text = p.read_text(encoding="utf-8")
         for n in extract_names_from_appendix(text):
             idx[n.lower()] = (p, text)
+        # also index by filename stem (e.g. company_bonfiglioli -> bonfiglioli)
+        stem = p.stem
+        if "_" in stem:
+            base = stem.split("_", 1)[1]
+            if base:
+                idx[base.lower()] = (p, text)
     return idx
 
 
 def get_keywords(p: Path, fm: dict[str, Any]) -> list[str]:
     kws: list[str] = []
     names = fm.get("names", {}) or {}
-    summary = fm.get("summary", {}) or {}
     if isinstance(names, dict):
         for lang in ("zh", "en", "ko"):
             v = names.get(lang, "")
             if v and v not in kws:
                 kws.append(v)
-    if isinstance(summary, dict):
-        for lang in ("zh", "en", "ko"):
-            v = summary.get(lang, "")
-            if v and v not in kws:
-                kws.append(v)
     for kw in EXTRA_KEYWORDS.get(p.stem, []):
         if kw not in kws:
             kws.append(kw)
+    # Add base slug from entity id (e.g. ent_company_bonfiglioli_2024 -> bonfiglioli)
+    stem = p.stem
+    for prefix in ("ent_", "company_", "component_manufacturer_", "component_", "technology_", "software_platform_", "oem_", "tier1_supplier_"):
+        if stem.startswith(prefix):
+            base = stem[len(prefix):]
+            base = re.sub(r"_\d{4}$", "", base)
+            if base and base not in kws:
+                kws.append(base.replace("_", " "))
+            break
     # split parenthesized variants
     expanded: list[str] = []
     for k in kws:
@@ -184,17 +193,46 @@ def get_keywords(p: Path, fm: dict[str, Any]) -> list[str]:
     return out
 
 
-def score_text(keywords: list[str], title: str, content: str) -> tuple[int, bool]:
-    t = title.lower()
-    c = content.lower()
+def _contains_word(text: str, kw: str) -> bool:
+    """Case-insensitive whole-word/phrase match. Chinese uses substring match."""
+    kl = kw.lower()
+    tl = text.lower()
+    if re.search(r"[\u4e00-\u9fff]", kl):
+        return kl in tl
+    if len(kl) < 2:
+        return False
+    pattern = r"(?:^|\W)" + re.escape(kl) + r"(?:\W|$)"
+    return bool(re.search(pattern, tl))
+
+
+def _count_word(text: str, kw: str) -> int:
+    kl = kw.lower()
+    tl = text.lower()
+    if re.search(r"[\u4e00-\u9fff]", kl):
+        return tl.count(kl)
+    if len(kl) < 2:
+        return 0
+    pattern = r"(?:^|\W)" + re.escape(kl) + r"(?:\W|$)"
+    return len(re.findall(pattern, tl))
+
+
+def score_text(keywords: list[str], title: str, content: str, require_heading: bool = True) -> tuple[int, bool]:
     score = 0
     heading_match = False
+    content_hits = 0
     for kw in keywords:
         kl = kw.lower()
-        if kl in t:
+        if _contains_word(title, kw):
             score += 600 + len(kw) * 3
             heading_match = True
-        score += c.count(kl) * 8
+        hits = _count_word(content, kw)
+        content_hits += hits
+        score += hits * 8
+    if require_heading and not heading_match:
+        return 0, False
+    # Boost if multiple distinct keywords appear in content even without heading match
+    if not heading_match and content_hits >= 3:
+        score += 100
     return score, heading_match
 
 
@@ -208,16 +246,33 @@ def find_best_source(
 ) -> tuple[str, Path, str, int] | None:
     best: tuple[int, str, Path, str, int] | None = None
 
-    # Chapter sections
+    # Chapter sections - heading match first
     for ch, level, heading, content in chapter_sections:
         if level <= 1:
             continue
-        score, hmatch = score_text(keywords, heading, content)
+        score, hmatch = score_text(keywords, heading, content, require_heading=True)
         if not hmatch:
             continue
         score += level * 5 + len(content) // 50
         if best is None or score > best[0]:
             best = (score, f"{ch}#{heading}", Path("wiki/docs/chapters") / ch, content, level)
+
+    # Fallback: content-heavy sections without heading match (only for high-level topics,
+    # not for methods/principles/technologies where off-topic sections would be harmful).
+    if best is None and etype not in {
+        "method", "principle", "formalism", "foundation", "algorithm",
+        "technology", "component", "software_platform", "tool_equipment",
+        "material", "equation", "theorem",
+    }:
+        for ch, level, heading, content in chapter_sections:
+            if level <= 1:
+                continue
+            score, _ = score_text(keywords, heading, content, require_heading=False)
+            if score < 120:
+                continue
+            score += level * 2 + len(content) // 100
+            if best is None or score > best[0]:
+                best = (score, f"{ch}#{heading}", Path("wiki/docs/chapters") / ch, content, level)
 
     # KG entities / appendix for component/company/technology/material/software
     if etype in {
@@ -233,19 +288,44 @@ def find_best_source(
         "technology",
         "robot_system",
     }:
-        for kw in keywords:
-            kl = kw.lower()
-            for idx, label in (
-                (appendix_companies, "appendix-d/companies"),
-                (appendix_products, "appendix-d/products"),
-                (kg_entities, "kg/entities"),
-            ):
-                if kl in idx:
-                    p, text = idx[kl]
-                    score = 800 if label.startswith("appendix") else 700
-                    score += len(text) // 50
-                    if best is None or score > best[0]:
-                        best = (score, f"{label}/{p.name}", p, text, 1)
+        for idx, label in (
+            (appendix_companies, "appendix-d/companies"),
+            (appendix_products, "appendix-d/products"),
+            (kg_entities, "kg/entities"),
+        ):
+            matched_key = None
+            matched_score = 0
+            for key in idx:
+                for kw in keywords:
+                    kl = kw.lower()
+                    # Chinese/exact short match
+                    is_chinese = bool(re.search(r"[\u4e00-\u9fff]", kl))
+                    if is_chinese:
+                        if kl in key or key in kl:
+                            sc = 800 if label.startswith("appendix") else 700
+                            sc += min(len(kl), len(key)) * 3
+                            if sc > matched_score:
+                                matched_score = sc
+                                matched_key = key
+                    else:
+                        # English whole-word match only, skip very short tokens
+                        if len(kl) < 4:
+                            continue
+                        pattern = r"(?:^|\W)" + re.escape(kl) + r"(?:\W|$)"
+                        if re.search(pattern, key, re.IGNORECASE):
+                            sc = 800 if label.startswith("appendix") else 700
+                            sc += min(len(kl), len(key)) * 3
+                            if sc > matched_score:
+                                matched_score = sc
+                                matched_key = key
+            if matched_key:
+                p, text = idx[matched_key]
+                cleaned = clean_source_body(text)
+                if len(re.findall(r"[\u4e00-\u9fff]", cleaned)) < 50:
+                    continue
+                score = matched_score + len(cleaned) // 50
+                if best is None or score > best[0]:
+                    best = (score, f"{label}/{p.name}", p, cleaned, 1)
 
     if best is None:
         return None
