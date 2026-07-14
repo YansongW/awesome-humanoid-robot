@@ -33,7 +33,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body populated from chapter-08.md section "8.5.6 有限元分析在连杆设计中的应用" by scripts/backfill_method_bodies_from_wiki.py.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: src_001
   type: website
@@ -44,7 +44,7 @@ sources:
 ---
 ## 概述
 8.5.6 有限元分析在连杆设计中的应用相关内容如下。
-
+## 核心内容
 #### 8.5.6 有限元分析在连杆设计中的应用
 **有限元分析（Finite Element Analysis, FEA）**是预测连杆、关节支架与壳体在载荷下应力、变形与模态的核心数值工具。通过把连续体离散为有限数量的单元，FEA 把偏微分方程转化为线性代数方程组求解，从而在设计阶段发现潜在的结构弱点[27][28]。
 

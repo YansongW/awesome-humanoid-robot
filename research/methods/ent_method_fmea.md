@@ -29,7 +29,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from chapter-08.md section "8.6.6 可靠性工程与失效模式分析" by scripts/backfill_method_bodies_from_wiki.py.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,7 +39,7 @@ sources:
 ---
 ## 概述
 8.6.6 可靠性工程与失效模式分析相关内容如下。
-
+## 核心内容
 #### 8.6.6 可靠性工程与失效模式分析
 人形机器人在长周期运行中面临机械磨损、电子老化、软件缺陷与环境应力等多重失效风险。**可靠性工程（reliability engineering）**通过定量方法预测、分配并改进系统可靠性，是降低全生命周期成本与保障安全运行的关键[90][91][95]。
 

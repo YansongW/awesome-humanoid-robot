@@ -8,8 +8,8 @@ names:
   zh: 惯性测量单元
   ko: 관성 측정 장치
 summary:
-  en: Sensor package combining accelerometers and gyroscopes to estimate orientation,
-    angular velocity, and linear acceleration of a robot.
+  en: Sensor package combining accelerometers and gyroscopes to estimate orientation, angular velocity, and linear acceleration
+    of a robot.
   zh: 融合加速度计与陀螺仪的传感器组件，用于估计机器人的姿态、角速度与线加速度。
   ko: 가속도계와 자이로스코프를 결합하여 로봇의 자세, 각속도, 선가속도를 추정하는 센서 패키지.
 domains:
@@ -30,9 +30,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Stub entity created during wiki-chapter-mapping repair; body under construction.
+  notes: Body backfilled from chapter-05.md#5.5 惯性测量单元（IMU） by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_001
   type: website
@@ -41,12 +41,13 @@ sources:
   date: '2024'
   accessed_at: '2026-07-13'
 ---
-
 ## 概述
-融合加速度计与陀螺仪的传感器组件，用于估计机器人的姿态、角速度与线加速度。
+惯性测量单元是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
-## Overview
-Sensor package combining accelerometers and gyroscopes to estimate orientation, angular velocity, and linear acceleration of a robot.
+## 核心内容
 
-## 개요
-Sensor package combining accelerometers and gyroscopes to estimate orientation, angular velocity, and linear acceleration of a robot.
+
+## 参考
+- [Inertial Measurement Unit](https://en.wikipedia.org/wiki/Inertial_measurement_unit)
+- 项目 Wiki：chapter-05.md#5.5 惯性测量单元（IMU）
+

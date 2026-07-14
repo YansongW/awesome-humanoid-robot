@@ -29,7 +29,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from chapter-04.md section "阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性" by scripts/backfill_method_bodies_from_wiki.py.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,7 +39,7 @@ sources:
 ---
 ## 概述
 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性相关内容如下。
-
+## 核心内容
 #### 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性
 把机器人末端抽象为一个质量-弹簧-阻尼单元，其动力学方程可由牛顿第二定律直接写出：
 

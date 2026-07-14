@@ -27,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,8 +37,10 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+## 概述
 #### 8.4.7 浮动基动力学
 
+## 核心内容
 人形机器人不同于固定基座的工业机械臂，其基座（躯干）可在空间中自由移动。因此需要用**浮动基（floating base）**坐标描述系统位形：
 
 $$
@@ -143,3 +144,7 @@ $$
     - **无滑移约束（no-slip constraint）**：要求接触点切向速度为零的约束。
     - **加速度级约束（acceleration-level constraint）**：对加速度而非速度的约束。
     - **模型预测控制（MPC）**：基于动态模型在未来时域内滚动优化控制输入的方法。
+
+## 参考
+- Wiki extraction
+

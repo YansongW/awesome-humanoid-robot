@@ -8,7 +8,8 @@ names:
   zh: 起作用集法
   ko: 활성 집합법
 summary:
-  en: An iterative optimization algorithm that tracks the set of constraints that are active at the solution and solves a sequence of equality-constrained subproblems.
+  en: An iterative optimization algorithm that tracks the set of constraints that are active at the solution and solves a
+    sequence of equality-constrained subproblems.
   zh: 一种迭代优化算法，追踪在最优解处起作用（取等号）的约束集合，并通过求解一系列等式约束子问题逼近最优解。
   ko: 최적해에서 활성(등호를 만족하는) 제약 집합을 추적하고 일련의 등식 제약 부분 문제를 풀어 최적해를 접근하는 반복 최적화 알고리즘.
 domains:
@@ -28,9 +29,9 @@ tags:
 verification:
   status: verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-06-25'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Standard foundational knowledge; reviewed against standard references.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: src_nocedal_wright_2006
   type: other
@@ -42,19 +43,22 @@ related_entities:
 - id: ent_constraint_qualification
   relationship: requires
   description:
-    en: Reliable convergence of active-set QP iterations usually assumes a constraint qualification such as LICQ on the working set.
+    en: Reliable convergence of active-set QP iterations usually assumes a constraint qualification such as LICQ on the working
+      set.
     zh: 起作用集 QP 迭代的可靠收敛通常假设工作集上满足 LICQ 等约束规范。
     ko: 활성 집합 QP 반복의 신뢰할 수 있는 수렴은 일반적으로 작업 집합에서 LICQ와 같은 제약 자격을 가정합니다.
 - id: ent_interior_point_method
   relationship: is_alternative_to
   description:
-    en: Interior-point methods solve the same constrained problems by staying strictly inside the feasible region rather than tracking active sets.
+    en: Interior-point methods solve the same constrained problems by staying strictly inside the feasible region rather than
+      tracking active sets.
     zh: 内点法通过始终严格位于可行域内部来求解同一类约束问题，而非追踪起作用集。
     ko: 내점법은 활성 집합을 추적하는 대신 실행 가능 영역 내에서 엄격하게 머무륾며 동일한 제약 문제를 풉니다.
 ---
-
+## 概述
 # Active-set method / 起作用集法 / 활성 집합법
 
+## 核心内容
 ## 抽象
 
 > **生活实例**：想象拼拼图时先猜哪些块接触边框（起作用约束），只拼这些边框块，再检查内部是否有块凸出。不断交换边框块，直到整幅图完整。
@@ -92,3 +96,4 @@ Update $x_{k+1} = x_k + \alpha_k p_k$ with a step length chosen so no inequality
 ## 参考文献
 
 1. J. Nocedal and S. J. Wright, Numerical Optimization, 2nd ed., Springer, 2006
+

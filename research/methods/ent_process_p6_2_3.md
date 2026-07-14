@@ -24,9 +24,9 @@ tags: []
 verification:
   status: verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Derived from docs/humanoid_full_development_workflow_v3.md
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -35,11 +35,10 @@ sources:
 theoretical_depth:
 - method
 ---
-
-
-
+## 概述
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）
 
+## 核心内容
 **方法 / 工具**：几何雅可比、可操作度椭球、力椭球
 
 **设计思考逻辑**：评估机器人在不同姿态下的速度/力操作能力，为控制设计提供依据
@@ -79,3 +78,7 @@ theoretical_depth:
     - 按模板编写文档并引用原始数据
     - 完成内部评审与版本控制
     - 发布并通知下游依赖方
+
+## 参考
+- 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+

@@ -1,57 +1,48 @@
 ---
-$id: "ent_gradient_descent"
-$schema: "../../data/schema/v1/entry_schema.json"
+$id: ent_gradient_descent
+$schema: ../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "algorithm"
-
+type: algorithm
 names:
-  en: "Gradient Descent"
-  zh: "梯度下降法"
-  ko: "경사 하강법"
-
+  en: Gradient Descent
+  zh: 梯度下降法
+  ko: 경사 하강법
 summary:
-  en: "An iterative first-order optimization algorithm that updates parameters in the direction of the negative gradient of the objective."
-  zh: "一种迭代一阶优化算法，沿目标函数负梯度方向更新参数。"
-  ko: "목적 함수의 음의 기울기 방향으로 매개변수를 반복적으로 업데이트하는 1차 최적화 알고리즘."
-
+  en: An iterative first-order optimization algorithm that updates parameters in the direction of the negative gradient of
+    the objective.
+  zh: 一种迭代一阶优化算法，沿目标函数负梯度方向更新参数。
+  ko: 목적 함수의 음의 기울기 방향으로 매개변수를 반복적으로 업데이트하는 1차 최적화 알고리즘.
 domains:
-  - "00_foundations"
-
+- 00_foundations
 layers:
-  - "foundations"
-
+- foundations
 functional_roles:
-  - "knowledge"
-
+- knowledge
 theoretical_depth:
-  - "method"
-
+- method
 tags:
-  - "optimization"
-  - "gradient_descent"
-  - "machine_learning"
-  - "backpropagation"
-
+- optimization
+- gradient_descent
+- machine_learning
+- backpropagation
 verification:
-  status: "verified"
-  reviewed_by: "human_and_ai"
-  reviewed_at: "2026-06-25"
-  confidence: "high"
-  notes: "Fundamental algorithm in optimization and machine learning."
-
+  status: verified
+  reviewed_by: human_and_ai
+  reviewed_at: '2026-07-14'
+  confidence: high
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
-  - id: "src_boyd_vandenberghe_2004"
-    type: "other"
-    title: "S. Boyd and L. Vandenberghe, Convex Optimization, Cambridge University Press, 2004"
-    url: "https://web.stanford.edu/~boyd/cvxbook/"
-    date: "2004-01-01"
-    accessed_at: "2026-06-25"
-
+- id: src_boyd_vandenberghe_2004
+  type: other
+  title: S. Boyd and L. Vandenberghe, Convex Optimization, Cambridge University Press, 2004
+  url: https://web.stanford.edu/~boyd/cvxbook/
+  date: '2004-01-01'
+  accessed_at: '2026-06-25'
 ---
-
+## 概述
 # 梯度下降法
 
+## 核心内容
 ## 抽象
 
 > **生活实例**：想象你在山上蒙着眼睛找最低点。你伸出手感受脚下哪个方向最陡，然后朝相反方向（下坡）迈一小步；走完之后再次感受，再迈一步。只要你每次步长合适，最终就会走到山谷底部。梯度下降就是这个过程的数学化：损失函数相当于山的高度，梯度相当于“最陡方向”，负梯度方向就是“下坡方向”。
@@ -97,3 +88,7 @@ $$
 - `builds_on` → Adam optimizer（带动量的改进版）
 - `minimizes` → Behavior cloning objective, cross-entropy loss, MSE loss
 - `has_prerequisite` → Multivariable calculus
+
+## 参考
+- [S. Boyd and L. Vandenberghe, Convex Optimization, Cambridge University Press, 2004](https://web.stanford.edu/~boyd/cvxbook/)
+

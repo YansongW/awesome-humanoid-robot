@@ -27,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body backfilled from chapter-08.md#8.3.11 Python 算例 4：Jacobian 伪逆数值逆运动学 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,9 +37,16 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-### 8.3.9 Python 算例 4：Jacobian 伪逆数值逆运动学
+## 概述
+逆运动学是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
 
+## 核心内容
 以下代码展示 3 连杆平面机械臂的数值 IK：给定目标位置，通过 Jacobian 伪逆迭代调整关节角，使末端接近目标。
 
 ```python
 import numpy as np
+
+## 参考
+- Wiki extraction
+- 项目 Wiki：chapter-08.md#8.3.11 Python 算例 4：Jacobian 伪逆数值逆运动学
+

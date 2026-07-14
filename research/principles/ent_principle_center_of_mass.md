@@ -27,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,8 +37,10 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+## 概述
 #### 8.4.6 质心动量与中心角动量
 
+## 核心内容
 人形机器人是多连杆系统，其整体运动状态不仅由各连杆速度决定，还可以通过**质心动量（centroidal momentum）**统一描述。质心动量把机器人所有连杆的线动量与角动量汇总到**质心（Center of Mass, CoM）**处，是分析行走、奔跑、跳跃等动态运动的强有力工具[41]。
 
 !!! note "术语解释：质心动量、中心角动量、线动量、角动量、质心"
@@ -97,3 +98,7 @@ $$
     - **姿态调整（attitude adjustment）**：通过改变肢体构型改变身体朝向，而不改变总角动量。
 
 控制上身角动量是人形机器人动态平衡的重要手段。例如，当外界扰动使身体绕某轴产生角动量时，可通过手臂或躯干的反向摆动产生补偿力矩，使总角动量保持在期望范围。这种策略在**角动量平衡控制（angular momentum-based balance control）**中被广泛应用[41][53]。
+
+## 参考
+- Wiki extraction
+

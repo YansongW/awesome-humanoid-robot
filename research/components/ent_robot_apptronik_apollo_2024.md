@@ -8,8 +8,7 @@ names:
   zh: Apptronik Apollo
   ko: Apptronik Apollo
 summary:
-  en: Modular humanoid robot designed for logistics and manufacturing, with hot-swappable
-    batteries.
+  en: Modular humanoid robot designed for logistics and manufacturing, with hot-swappable batteries.
   zh: 面向物流和制造的模块化人形机器人，支持热插拔电池。
   ko: 물류 및 제조용 모듈형 휨로봇, 핫스왑 가능한 배터리.
 domains:
@@ -32,9 +31,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website.
+  notes: Body backfilled from kg/entities/ent_product_apptronik_apollo.md by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_001
   type: website
@@ -43,12 +42,13 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-面向物流和制造的模块化人形机器人，支持热插拔电池。
+Apptronik Apollo是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
 
-## Overview
-Modular humanoid robot designed for logistics and manufacturing, with hot-swappable batteries.
+## 核心内容
 
-## 개요
-Modular humanoid robot designed for logistics and manufacturing, with hot-swappable batteries.
+
+## 参考
+- [Apptronik Apollo](https://www.apptronik.com/)
+- 项目 Wiki：kg/entities/ent_product_apptronik_apollo.md
+

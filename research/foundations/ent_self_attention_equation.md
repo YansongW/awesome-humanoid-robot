@@ -1,70 +1,60 @@
 ---
-$id: "ent_self_attention_equation"
-$schema: "../../data/schema/v1/entry_schema.json"
+$id: ent_self_attention_equation
+$schema: ../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "equation"
-
+type: equation
 names:
-  en: "Scaled Dot-Product Self-Attention"
-  zh: "缩放点积自注意力"
-  ko: "스케일드 닷프로덕트 셀프 어텐션"
-
+  en: Scaled Dot-Product Self-Attention
+  zh: 缩放点积自注意力
+  ko: 스케일드 닷프로덕트 셀프 어텐션
 summary:
-  en: "The core equation of the Transformer that computes a weighted sum of values based on query-key compatibility."
-  zh: "Transformer 的核心方程，根据 Query 与 Key 的相似度对 Value 做加权求和。"
-  ko: "Transformer의 핵심 방정식으로, Query와 Key의 유사도에 따라 Value를 가중합합니다."
-
+  en: The core equation of the Transformer that computes a weighted sum of values based on query-key compatibility.
+  zh: Transformer 的核心方程，根据 Query 与 Key 的相似度对 Value 做加权求和。
+  ko: Transformer의 핵심 방정식으로, Query와 Key의 유사도에 따라 Value를 가중합합니다.
 domains:
-  - "00_foundations"
-
+- 00_foundations
 layers:
-  - "foundations"
-
+- foundations
 functional_roles:
-  - "knowledge"
-
+- knowledge
 theoretical_depth:
-  - "formalism"
-
+- formalism
 tags:
-  - "transformer"
-  - "attention"
-  - "deep_learning"
-  - "vla"
-
+- transformer
+- attention
+- deep_learning
+- vla
 verification:
-  status: "verified"
-  reviewed_by: "human_and_ai"
-  reviewed_at: "2026-06-25"
-  confidence: "high"
-  notes: "Standard equation from Vaswani et al. 2017."
-
+  status: verified
+  reviewed_by: human_and_ai
+  reviewed_at: '2026-07-14'
+  confidence: high
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
-  - id: "src_vaswani_2017"
-    type: "paper"
-    title: "Vaswani et al., Attention Is All You Need, NeurIPS 2017"
-    url: "https://arxiv.org/abs/1706.03762"
-    date: "2017-06-12"
-    accessed_at: "2026-06-25"
+- id: src_vaswani_2017
+  type: paper
+  title: Vaswani et al., Attention Is All You Need, NeurIPS 2017
+  url: https://arxiv.org/abs/1706.03762
+  date: '2017-06-12'
+  accessed_at: '2026-06-25'
 related_entities:
-  - id: ent_operator_softmax_function
-    relationship: uses
-    description:
-      en: Self-attention uses the softmax operator to normalize attention weights.
-      zh: 自注意力使用 softmax 算子对注意力权重进行归一化。
-      ko: 셀프 어텐션은 어텐션 가중치를 정규화하기 위해 소프트맥스 연산자를 사용한다.
-  - id: ent_principle_maximum_likelihood_estimation
-    relationship: derived_from
-    description:
-      en: The attention mechanism is trained by objectives derived from maximum likelihood estimation.
-      zh: 注意力机制通过源自最大似然估计的目标函数进行训练。
-      ko: 어텐션 메커니즘은 최대우도추정에서 유래한 목적 함수로 학습된다.
-
+- id: ent_operator_softmax_function
+  relationship: uses
+  description:
+    en: Self-attention uses the softmax operator to normalize attention weights.
+    zh: 自注意力使用 softmax 算子对注意力权重进行归一化。
+    ko: 셀프 어텐션은 어텐션 가중치를 정규화하기 위해 소프트맥스 연산자를 사용한다.
+- id: ent_principle_maximum_likelihood_estimation
+  relationship: derived_from
+  description:
+    en: The attention mechanism is trained by objectives derived from maximum likelihood estimation.
+    zh: 注意力机制通过源自最大似然估计的目标函数进行训练。
+    ko: 어텐션 메커니즘은 최대우도추정에서 유래한 목적 함수로 학습된다.
 ---
-
+## 概述
 # 缩放点积自注意力方程
 
+## 核心内容
 ## 抽象
 
 > **生活实例**：你在读一句话时，每个字都会“回头看”整句话，并根据相关性决定把注意力放在哪些字上。例如“我把苹果吃了”中，“吃”更关注“苹果”而不是“我”。Self-attention 就是让模型自动学习这种“谁该看谁”的权重机制。缩放因子 $1/\sqrt{d_k}$ 相当于防止大家太兴奋：如果 Query 和 Key 的维度很高，点积会容易变得极大，导致 softmax 变成“非黑即白”，模型就学不到微妙的注意力分布。
@@ -116,3 +106,7 @@ $$
 - `has_prerequisite` → Probability / measure theory（概率/测度论）
 - `instantiates` → Transformer architecture
 - `builds_on` → VLA foundation models（GR00T N1, OpenVLA, π0 等）
+
+## 参考
+- [Vaswani et al., Attention Is All You Need, NeurIPS 2017](https://arxiv.org/abs/1706.03762)
+

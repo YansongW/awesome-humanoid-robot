@@ -28,10 +28,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,8 +38,10 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+## 概述
 ## 6.9 前沿趋势
 
+## 核心内容
 人形机器人计算、电源与热管理领域正在经历快速演进，主要趋势包括：
 
 1. **专用 NPU 与异构计算**。面向 Transformer、扩散模型和机器人策略的专用加速器（如 NVIDIA Blackwell、Qualcomm Hexagon NPU、Apple Neural Engine）持续提高能效。未来机器人主控将采用 CPU + GPU + NPU + ISP + DSP 的异构 SoC。
@@ -70,3 +71,7 @@ sources:
     - **信息安全（cybersecurity）**：保护系统免受网络攻击和数据泄露的措施。
 
 ---
+
+## 参考
+- Wiki extraction
+

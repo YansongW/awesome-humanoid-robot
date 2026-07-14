@@ -29,7 +29,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from chapter-08.md section "运动范围与人类步态需求" by scripts/backfill_method_bodies_from_wiki.py.
+  notes: Body backfilled from chapter-08.md#运动范围与人类步态需求 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,9 +38,9 @@ sources:
   accessed_at: '2026-07-09'
 ---
 ## 概述
-运动范围与人类步态需求相关内容如下。
+步态规划是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
 
-#### 运动范围与人类步态需求
+## 核心内容
 人类正常步态的关节运动范围（Range of Motion, ROM）为足部与腿部设计提供了重要参考：
 
 | 关节 | 典型人类 ROM（步行） | 人形机器人设计目标 |
@@ -73,5 +73,6 @@ flowchart TD
 ```
 
 ## 参考
-- 详见 chapter-08.md。
+- Wiki extraction
+- 项目 Wiki：chapter-08.md#运动范围与人类步态需求
 

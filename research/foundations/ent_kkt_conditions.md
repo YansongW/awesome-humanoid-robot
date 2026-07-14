@@ -1,57 +1,48 @@
 ---
-$id: "ent_kkt_conditions"
-$schema: "../../data/schema/v1/entry_schema.json"
+$id: ent_kkt_conditions
+$schema: ../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "theorem"
-
+type: theorem
 names:
-  en: "Karush-Kuhn-Tucker (KKT) Conditions"
-  zh: "Karush-Kuhn-Tucker（KKT）条件"
-  ko: "Karush-Kuhn-Tucker (KKT) 조건"
-
+  en: Karush-Kuhn-Tucker (KKT) Conditions
+  zh: Karush-Kuhn-Tucker（KKT）条件
+  ko: Karush-Kuhn-Tucker (KKT) 조건
 summary:
-  en: "Necessary (and sufficient under convexity/constraint qualification) optimality conditions for constrained nonlinear programs."
-  zh: "带约束非线性规划的最优性必要条件（在凸性与约束规范下也是充分条件）。"
-  ko: "제약이 있는 비선형 계획법의 최적성 필요조건(볼록성 및 제약 자격이 있으면 충분조건이기도 함)."
-
+  en: Necessary (and sufficient under convexity/constraint qualification) optimality conditions for constrained nonlinear
+    programs.
+  zh: 带约束非线性规划的最优性必要条件（在凸性与约束规范下也是充分条件）。
+  ko: 제약이 있는 비선형 계획법의 최적성 필요조건(볼록성 및 제약 자격이 있으면 충분조건이기도 함).
 domains:
-  - "00_foundations"
-
+- 00_foundations
 layers:
-  - "foundations"
-
+- foundations
 functional_roles:
-  - "knowledge"
-
+- knowledge
 theoretical_depth:
-  - "principle"
-
+- principle
 tags:
-  - "optimization"
-  - "constrained_optimization"
-  - "lagrange_multipliers"
-  - "kkt"
-
+- optimization
+- constrained_optimization
+- lagrange_multipliers
+- kkt
 verification:
-  status: "verified"
-  reviewed_by: "human_and_ai"
-  reviewed_at: "2026-06-25"
-  confidence: "high"
-  notes: "Standard result in constrained optimization; documented in standard textbooks."
-
+  status: verified
+  reviewed_by: human_and_ai
+  reviewed_at: '2026-07-14'
+  confidence: high
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
-  - id: "src_nocedal_wright_2006"
-    type: "other"
-    title: "J. Nocedal and S. J. Wright, Numerical Optimization, 2nd ed., Springer, 2006"
-    url: "https://doi.org/10.1007/978-0-387-40065-5"
-    date: "2006-01-01"
-    accessed_at: "2026-06-25"
-
+- id: src_nocedal_wright_2006
+  type: other
+  title: J. Nocedal and S. J. Wright, Numerical Optimization, 2nd ed., Springer, 2006
+  url: https://doi.org/10.1007/978-0-387-40065-5
+  date: '2006-01-01'
+  accessed_at: '2026-06-25'
 ---
-
+## 概述
 # Karush-Kuhn-Tucker（KKT）条件
 
+## 核心内容
 ## 抽象
 
 > **生活实例**：想象你在一个商场里想找到离出口最近的位置，但被告知“不能走进任何商店内部”（不等式约束），同时“必须站在过道的中线上”（等式约束）。KKT 条件就是一套判断标准：如果你站的位置真的最优，那么要么你不在边界上（约束根本不影响你），要么边界像一堵墙把你“顶”在最优位置，墙对你的反作用力（Lagrange 乘子）刚好平衡了目标函数的“拉力”。
@@ -97,3 +88,7 @@ $$
 - `has_prerequisite` → Multivariable calculus（多元微积分）
 - `has_prerequisite` → Convex analysis（凸分析）
 - `uses_theorem` → 在 WBC、MPC、经济模型等带约束优化问题中广泛使用
+
+## 参考
+- [J. Nocedal and S. J. Wright, Numerical Optimization, 2nd ed., Springer, 2006](https://doi.org/10.1007/978-0-387-40065-5)
+

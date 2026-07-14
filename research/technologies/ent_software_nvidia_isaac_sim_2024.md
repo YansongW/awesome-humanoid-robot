@@ -8,8 +8,7 @@ names:
   zh: NVIDIA Isaac Sim
   ko: NVIDIA Isaac Sim
 summary:
-  en: GPU-accelerated photorealistic robotics simulator underpinning GR00T synthetic-data
-    pipelines.
+  en: GPU-accelerated photorealistic robotics simulator underpinning GR00T synthetic-data pipelines.
   zh: GPU加速的逼真机器人仿真器，支撑GR00T合成数据管道。
   ko: GR00T 합성 데이터 파이프라인을 지원하는 GPU 가속 사실감 로봇 시뮬레이터.
 domains:
@@ -31,9 +30,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-02'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website.
+  notes: Body backfilled from kg/entities/ent_software_platform_nvidia_isaac_sim.md by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_001
   type: website
@@ -42,12 +41,13 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
-
 ## 概述
-GPU加速的逼真机器人仿真器，支撑GR00T合成数据管道。
+NVIDIA Isaac Sim是人形机器人领域的重要software_platform。以下内容整理自项目 Wiki，供深入查阅。
 
-## Overview
-GPU-accelerated photorealistic robotics simulator underpinning GR00T synthetic-data pipelines.
+## 核心内容
 
-## 개요
-GPU-accelerated photorealistic robotics simulator underpinning GR00T synthetic-data pipelines.
+
+## 参考
+- [NVIDIA Isaac Sim](https://developer.nvidia.com/isaac-sim)
+- 项目 Wiki：kg/entities/ent_software_platform_nvidia_isaac_sim.md
+

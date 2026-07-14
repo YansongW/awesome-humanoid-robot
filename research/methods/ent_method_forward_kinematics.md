@@ -27,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body backfilled from chapter-09.md#9.2.2 运动学建模：简化腿的正运动学 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,25 +37,41 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-### 8.3.3 正运动学：从关节空间到操作空间
+## 概述
+正运动学是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
 
-**正运动学（forward kinematics）**解决：给定关节角 $\mathbf{q}$，计算末端执行器在基坐标系中的位姿。通过连乘各连杆变换矩阵得到：
+## 核心内容
+为便于分析下肢工作空间，常将单腿简化为 3-DOF 髋（roll/pitch/yaw）+ 1-DOF 膝 + 2-DOF 踝（pitch/roll）的串链。通过改进型 DH 参数或旋量法建立正运动学，可计算机足相对髋的位置。
+
+!!! note "术语解释：正运动学、DH 参数、改进型 DH、旋量、齐次变换"
+    - **正运动学（forward kinematics）**：由关节角计算末端位姿的映射。
+    - **DH 参数（Denavit-Hartenberg parameters）**：用四个参数（a, α, d, θ）描述相邻连杆坐标系关系。
+    - **改进型 DH（modified DH, MDH）**：将连杆长度 α 与扭角 α 定义在前一关节处，避免相邻平行轴奇异。
+    - **旋量（screw）**：描述刚体绕轴旋转并沿轴平移的几何量。
+    - **齐次变换（homogeneous transformation）**：4×4 矩阵，同时描述旋转与平移。
+
+对于平面简化腿（髋 pitch θ₁、膝 θ₂、踝 pitch θ₃），足端位置可写为：
 
 $$
-{}^0\mathbf{T}_n(\mathbf{q}) = {}^0\mathbf{T}_1(q_1) \cdot {}^1\mathbf{T}_2(q_2) \cdots {}^{n-1}\mathbf{T}_n(q_n)
+\begin{aligned}
+x &= l_1 \sin\theta_1 + l_2 \sin(\theta_1+\theta_2) + l_3 \sin(\theta_1+\theta_2+\theta_3) \\
+z &= -l_1 \cos\theta_1 - l_2 \cos(\theta_1+\theta_2) - l_3 \cos(\theta_1+\theta_2+\theta_3)
+\end{aligned}
 $$
 
-末端位姿由 ${}^0\mathbf{T}_n$ 的旋转部分 $\mathbf{R}$ 和平移部分 $\mathbf{p}$ 给出。
-
-!!! note "术语解释：正运动学、关节空间、操作空间、末端执行器"
-    - **正运动学（forward kinematics）**：由关节变量计算末端位姿的映射。
-    - **关节空间（joint space）**：以关节变量为坐标的空间。
-    - **操作空间（task/operational space）**：以末端位姿为坐标的空间。
-    - **末端执行器（end-effector）**：机器人与环境交互的末端装置。
+其中 \(l_1, l_2, l_3\) 分别为大腿、小腿与足长，z 轴向上为正。
 
 ```mermaid
-flowchart LR
-    A["关节角 q1..qn"] -->|"DH 变换连乘"| B["0Tn"]
-    B --> C["末端位置 p"]
-    B --> D["末端姿态 R"]
+flowchart TD
+    A["髋关节 θ₁"] --> B["大腿 l₁"]
+    B --> C["膝关节 θ₂"]
+    C --> D["小腿 l₂"]
+    D --> E["踝关节 θ₃"]
+    E --> F["足 l₃"]
+    F --> G["足端位置 (x, z)"]
 ```
+
+## 参考
+- Wiki extraction
+- 项目 Wiki：chapter-09.md#9.2.2 运动学建模：简化腿的正运动学
+

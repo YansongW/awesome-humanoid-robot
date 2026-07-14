@@ -27,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body backfilled from chapter-03.md#3.1.12 稀土永磁供应链与价格机制 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,8 +37,10 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-### 3.1.12 稀土永磁供应链与价格机制
+## 概述
+稀土元素供应链是人形机器人领域的重要material。以下内容整理自项目 Wiki，供深入查阅。
 
+## 核心内容
 稀土永磁供应链包括采矿、选矿、分离冶炼、合金制备、磁体制造、表面处理和应用终端。中国在该产业链中占据主导地位：
 
 | 环节 | 中国全球份额 | 关键企业/地区 |
@@ -52,3 +53,8 @@ sources:
 2025 年 4 月中国对 Dy、Tb 等中重稀土实施出口许可管制，导致国际市场高矫顽力磁体价格波动。Adamas Intelligence 预测，若需求趋势延续而供应增长不及预期，到 2035 年全球 NdFeB 年缺口可能达到 20.6 万吨。人形机器人作为新增需求来源，虽然当前单机用量不大，但会进一步收紧本已紧张的供应链。
 
 ---
+
+## 参考
+- Wiki extraction
+- 项目 Wiki：chapter-03.md#3.1.12 稀土永磁供应链与价格机制
+

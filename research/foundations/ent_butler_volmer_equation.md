@@ -1,57 +1,47 @@
 ---
-$id: "ent_butler_volmer_equation"
-$schema: "../../data/schema/v1/entry_schema.json"
+$id: ent_butler_volmer_equation
+$schema: ../../data/schema/v1/entry_schema.json
 $version: 1
-
-type: "equation"
-
+type: equation
 names:
-  en: "Butler-Volmer Equation"
-  zh: "Butler-Volmer 方程"
-  ko: "Butler-Volmer 방정식"
-
+  en: Butler-Volmer Equation
+  zh: Butler-Volmer 方程
+  ko: Butler-Volmer 방정식
 summary:
-  en: "Relates the electrochemical reaction current density at an electrode to the activation overpotential and kinetic parameters."
-  zh: "描述电极表面电流密度与活化过电位及动力学参数之间关系的方程。"
-  ko: "전극 표면의 전류 밀도와 활성화 과전위 및 동역학 매개변수 간의 관계를 기술하는 방정식."
-
+  en: Relates the electrochemical reaction current density at an electrode to the activation overpotential and kinetic parameters.
+  zh: 描述电极表面电流密度与活化过电位及动力学参数之间关系的方程。
+  ko: 전극 표면의 전류 밀도와 활성화 과전위 및 동역학 매개변수 간의 관계를 기술하는 방정식.
 domains:
-  - "00_foundations"
-
+- 00_foundations
 layers:
-  - "foundations"
-
+- foundations
 functional_roles:
-  - "knowledge"
-
+- knowledge
 theoretical_depth:
-  - "formalism"
-
+- formalism
 tags:
-  - "electrochemistry"
-  - "battery"
-  - "kinetics"
-  - "butler_volmer"
-
+- electrochemistry
+- battery
+- kinetics
+- butler_volmer
 verification:
-  status: "verified"
-  reviewed_by: "human_and_ai"
-  reviewed_at: "2026-06-25"
-  confidence: "high"
-  notes: "Classical electrochemical kinetics equation; standard in battery and fuel-cell modeling."
-
+  status: verified
+  reviewed_by: human_and_ai
+  reviewed_at: '2026-07-14'
+  confidence: high
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
-  - id: "src_bard_faulkner_2001"
-    type: "other"
-    title: "A. J. Bard and L. R. Faulkner, Electrochemical Methods: Fundamentals and Applications, 2nd ed., Wiley, 2001"
-    url: "https://www.wiley.com/en-us/Electrochemical+Methods%3A+Fundamentals+and+Applications%2C+2nd+Edition-p-9780471043720"
-    date: "2001-01-01"
-    accessed_at: "2026-06-25"
-
+- id: src_bard_faulkner_2001
+  type: other
+  title: 'A. J. Bard and L. R. Faulkner, Electrochemical Methods: Fundamentals and Applications, 2nd ed., Wiley, 2001'
+  url: https://www.wiley.com/en-us/Electrochemical+Methods%3A+Fundamentals+and+Applications%2C+2nd+Edition-p-9780471043720
+  date: '2001-01-01'
+  accessed_at: '2026-06-25'
 ---
-
+## 概述
 # Butler-Volmer 方程
 
+## 核心内容
 ## 抽象
 
 > **生活实例**：电池充电就像很多人同时挤过一扇旋转门。如果门很窄（活化过电位很大），大家就会挤成一团，人流增长变慢；如果门相对较宽（过电位很小），人流和门的“宽松程度”近似成正比。Butler-Volmer 方程就是精确描述“门宽”（过电位）与“人流”（电流密度）之间非线性关系的公式。
@@ -103,3 +93,7 @@ $$
 - `has_prerequisite` → Thermodynamics / Nernst equation（热力学 / Nernst 方程）
 - `approximates` → Tafel equation（高过电位下的 Tafel 近似）
 - `uses` → Faraday constant, gas constant, charge transfer coefficients
+
+## 参考
+- [A. J. Bard and L. R. Faulkner, Electrochemical Methods: Fundamentals and Applications, 2nd ed., Wiley, 2001](https://www.wiley.com/en-us/Electrochemical+Methods%3A+Fundamentals+and+Applications%2C+2nd+Edition-p-9780471043720)
+

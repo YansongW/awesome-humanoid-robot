@@ -8,8 +8,8 @@ names:
   zh: 三花智控
   ko: 산화 인텔리전트 컨트롤스
 summary:
-  en: Chinese Tier-1 supplier of thermal management and electromechanical actuators,
-    reportedly a key actuator assembly partner for Tesla Optimus.
+  en: Chinese Tier-1 supplier of thermal management and electromechanical actuators, reportedly a key actuator assembly partner
+    for Tesla Optimus.
   zh: 中国一级供应商，主营热管理和机电执行器，据报道是特斯拉 Optimus 执行器总成的核心合作伙伴。
   ko: 중국의 Tier-1 열관리 및 전기기계 액추에이터 공급업체로, 테슬라 옵티머스의 액추에이터 어셈블리 핵심 파트너로 알려짐.
 domains:
@@ -31,11 +31,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-25'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from industry reports and supply-chain analysis; the exact dollar
-    value of the Tesla order and Sanhua's exclusive supplier status are based on unconfirmed
-    media reports that Sanhua has publicly denied.
+  notes: Body backfilled from appendix-d/companies/company_sanhua.md by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_001_sanhua_36kr
   type: report
@@ -53,49 +51,122 @@ related_entities:
 - id: ent_robot_system_tesla_optimus
   relationship: supplies
   description:
-    en: Sanhua is reported to supply linear and rotary actuator assemblies for Tesla
-      Optimus.
+    en: Sanhua is reported to supply linear and rotary actuator assemblies for Tesla Optimus.
     zh: 据报道，三花智控为特斯拉 Optimus 供应线性与旋转执行器总成。
     ko: 산화는 테슬라 옵티머스용 선형 및 회전 액추에이터 어셈블리를 공급하는 것으로 볏도됨.
 - id: ent_component_harmonic_drive_reducer
   relationship: integrates
   description:
-    en: Sanhua's actuator assemblies are understood to integrate precision reducers
-      such as harmonic drives sourced from specialized reducer suppliers.
+    en: Sanhua's actuator assemblies are understood to integrate precision reducers such as harmonic drives sourced from specialized
+      reducer suppliers.
     zh: 三花的执行器总成据信集成了来自专业减速器供应商的谐波减速器等精密减速装置。
     ko: 산화의 액추에이터 어셈블리는 전문 감속기 공급업체로부터 조달한 하모닉 드라이브 등의 정밀 감속기를 통합하는 것으로 파악됨.
 theoretical_depth:
 - system
 ---
+## 概述
+三花智控是人形机器人领域的重要tier1_supplier。以下内容整理自项目 Wiki，供深入查阅。
 
-# Sanhua Intelligent Controls
+## 核心内容
+## 三花智控 / Sanhua Intelligent Controls
 
-## 抽象
+> 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。
+> 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。
 
-> **生活实例**：它就像一家原本给汽车做空调阀和散热管的零部件厂，突然被要求为新一代“机器人工人”批量生产关节总成——靠的是精密加工和大规模供货能力。
+---
 
-> **自然语言逻辑**：三花智控是中国热管理和机电执行器的一级供应商，据报道是特斯拉 Optimus 执行器总成的核心合作伙伴；它把人形机器人关节当成新的规模化产品，利用在汽车供应链中积累的精密制造和量产经验，进入人形机器人上游供应链。
+### 公司信息卡
 
-## Overview
+| 项目 | 内容 |
+|------|------|
+| **中文名** | 三花智控 |
+| **英文名** | Sanhua Intelligent Controls |
+| **总部** | 中国浙江省绍兴市 |
+| **成立时间** | 1994 年 |
+| **官网** | [https://www.sanhuaglobal.com](https://www.sanhuaglobal.com) |
+| **供应链环节** | 热管理、微通道换热器、电子膨胀阀、机器人机电执行器 |
+| **企业属性** | 上市公司（SZ: 002050）、全球制冷与热管理控制部件龙头 |
+| **母公司/所属集团** | 三花控股集团有限公司 |
+| **数据来源** | 三花智控官网、年报、投资者关系公告、公开研报 |
 
-Sanhua Intelligent Controls Co., Ltd. (SZSE: 002050) is a Chinese Tier-1 supplier best known for thermal-management components for automotive and HVAC industries. In the humanoid-robot supply chain, it is frequently cited as a leading supplier of **linear and rotary actuator assemblies** for Tesla Optimus, leveraging a roughly decade-long relationship as a Tesla vehicle supplier.
+### 公司简介
 
-## Reported Role in Optimus Supply Chain
+三花智控是全球制冷空调控制元器件与新能源汽车热管理龙头，凭借精密阀件、泵与执行器技术向机器人热管理与机电执行器延伸。
 
-- **Actuator assemblies**: Chinese supply-chain analyses name Sanhua as the exclusive or primary Tier-1 supplier of linear/rotary actuator assemblies for Optimus, with a reported Ningbo base capacity of **500,000 actuator sets per year**.
-- **$685 million order**: An October 2025 36kr report claimed Tesla placed a ~$685 million (5 billion RMB) order with Sanhua for linear actuators, with deliveries beginning Q1 2026. **Sanhua publicly denied the specific figure**, but its robot-related revenue grew **320% year-on-year in H1 2025**, suggesting significant real orders even if the exact value is unconfirmed.
-- **Thermal management**: Beyond actuators, Sanhua supplies thermal-management systems that help regulate actuator temperatures.
+公司核心产品包括电子膨胀阀、四通阀、电磁阀、微通道换热器、电子水泵、油冷器及新能源汽车热管理集成组件。三花在流体控制、精密电磁驱动与热管理方面积累深厚，正积极布局人形机器人旋转/线性执行器、伺服电机及热管理组件，与多家头部机器人企业建立合作。
 
-## Corporate Context
+### 产品线
 
-Sanhua's robotics pivot mirrors the broader migration of Chinese automotive suppliers into humanoid-robot components. Its strengths—precision machining, high-volume production, and existing Tesla quality-system certification—are cited as reasons it was able to win humanoid actuator business. The company is also reported to be expanding production in Thailand, near Tesla's Gigafactory Texas supply chain.
+| 产品线 | 定位 | 代表产品 | 应用领域 |
+|--------|------|----------|----------|
+| 制冷空调控制元器件 | 阀件与换热器 | 电子膨胀阀、四通阀、微通道换热器 | 家用/商用空调、冷链 |
+| 新能源汽车热管理 | 整车热管理集成 | 电子水泵、Chiller、集成模块 | 新能源汽车 |
+| 机器人执行器与热管理 | 人形机器人机电执行器、关节热管理 | 旋转/线性执行器、热管理阀件 | 人形机器人、工业机器人 |
 
-## Relevance to Humanoid Robotics
+### 代表产品
 
-Sanhua is one of the most frequently referenced examples of a traditional automotive/HVAC supplier crossing over into humanoid-robot actuators. Its reported orders and revenue growth are used by analysts as a proxy for Tesla Optimus production ramp and for the broader commercial viability of Chinese component suppliers in the humanoid robot value chain.
+#### 三花热管理部件 / 电子膨胀阀
 
-## Uncertainties
+> 三花热管理部件 / 电子膨胀阀：请访问 [官方资料](https://www.sanhuaglobal.com) 查看。
 
-- The exact value and exclusivity of the Tesla order are disputed; Sanhua denied the $685 million figure.
-- The precise mix of components Sanhua manufactures in-house versus sources from sub-suppliers is not publicly detailed.
-- Geographic concentration risk: Sanhua's facilities are primarily in China, with Thailand expansion reported but not independently verified.
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 产品形态 | 电子膨胀阀、电磁阀、电子水泵、Chiller、换热器 | 三花官网 |
+| 控制精度 | 高精度流量/压力调节 | 三花公开资料 |
+| 工作压力 | 视型号 0–4.5 MPa 不等 | 产品手册 |
+| 介质 | R134a、R1234yf、冷却液等 | 三花资料 |
+| 尺寸 | 阀体直径约 20–60 mm（视型号） | 公开规格 |
+| 重量 | 数十克至数百克 | 公开规格 |
+| 寿命 | >10 万次（典型型号） | 三花公开资料 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：全球市占率领先的电子膨胀阀、精密流体控制能力、可扩展至机器人热管理与执行器冷却。
+
+**应用场景**：新能源汽车热管理、储能温控、数据中心液冷、机器人关节热管理。
+
+#### 三花机器人机电执行器
+
+> 三花机器人机电执行器：请访问 [官方资料](https://www.sanhuaglobal.com) 查看。
+
+| 规格项 | 数值 | 备注/来源 |
+|--------|------|-----------|
+| 产品形态 | 旋转执行器、线性执行器（丝杠/推杆） | 投资者关系公告 |
+| 驱动方式 | 伺服电机 + 减速器/丝杠 | 行业分析 |
+| 扭矩/推力 | 视方案 10–200 N·m / 数百至数千 N | 未公开 |
+| 控制方式 | 无刷电机 + 编码器 + 驱动器 | 未公开 |
+| 冷却方式 | 可选液冷/风冷 | 未公开 |
+| 尺寸 | 因客户方案定制 | 未公开 |
+| 重量 | 因规格而异 | 未公开 |
+| 价格 | 未公开 | - |
+
+**技术亮点**：依托电磁驱动、流体控制与精密制造能力，开发高集成度机器人执行器；与多家头部人形机器人企业合作。
+
+**应用场景**：人形机器人关节、工业机器人、协作机器人。
+
+### 供应链位置
+
+- **上游关键零部件/材料**：铜材、铝材、稀土永磁体、电子元器件、精密加工设备、密封材料。
+- **下游客户/应用场景**：特斯拉、比亚迪、美的、格力等车企与家电企业；人形机器人整机厂。
+- **主要竞争对手/对标**：盾安环境、银轮股份；机器人执行器领域对标拓普集团、绿的谐波。
+
+### 知识图谱节点与关系
+
+- 公司实体：`ent_company_sanhua`
+- 产品实体：`ent_product_sanhua_thermal`、`ent_product_sanhua_actuator`
+- 关键关系：
+  - `ent_company_sanhua` -- `manufactures` --> `ent_product_sanhua_thermal`
+  - `ent_company_sanhua` -- `manufactures` --> `ent_product_sanhua_actuator`
+  - `ent_product_sanhua_thermal` -- `uses` --> `ent_component_electronic_expansion_valve`
+  - `ent_product_sanhua_actuator` -- `uses` --> `ent_component_servo_motor`
+
+### 参考资料
+
+1. [官网](https://www.sanhuaglobal.com)
+2. [三花智控官网](https://www.sanhuaglobal.com)
+3. 三花智控 2024 年度报告与投资者交流纪要
+
+## 参考
+- [Elon Musk Places $685M Order with Sanhua](https://eu.36kr.com/en/p/3510288514980998)
+- [Tesla Optimus Supply Chain: Who Makes the Parts?](https://optimusk.blog/blog/tesla-optimus-suppliers/)
+- 项目 Wiki：appendix-d/companies/company_sanhua.md
+

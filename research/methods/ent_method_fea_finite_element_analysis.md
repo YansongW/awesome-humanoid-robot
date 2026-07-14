@@ -27,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,8 +37,10 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+## 概述
 #### 8.5.6 有限元分析在连杆设计中的应用
 
+## 核心内容
 **有限元分析（Finite Element Analysis, FEA）**是预测连杆、关节支架与壳体在载荷下应力、变形与模态的核心数值工具。通过把连续体离散为有限数量的单元，FEA 把偏微分方程转化为线性代数方程组求解，从而在设计阶段发现潜在的结构弱点[27][28]。
 
 !!! note "术语解释：有限元分析（FEA）、离散化、单元、节点、自由度"
@@ -106,3 +107,7 @@ $$
     - **数值解（numerical solution）**：离散模型计算得到的近似解。
     - **精确解（exact solution）**：连续问题的理论解。
     - **收敛准则（convergence criterion）**：判断数值解是否足够稳定的判据。
+
+## 参考
+- Wiki extraction
+

@@ -27,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,8 +37,10 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+## 概述
 ### 5.3.1 飞行时间测距与 LiDAR 点云
 
+## 核心内容
 **激光雷达（Light Detection and Ranging, LiDAR）** 通过发射激光脉冲并测量其往返时间来获得目标距离。与相机不同，LiDAR 直接测量三维空间中的距离，输出的是离散的三维点集合，称为 **点云（point cloud）**。
 
 !!! note "术语解释：激光雷达、LiDAR、点云、激光脉冲、回波、测距"
@@ -82,3 +83,7 @@ flowchart LR
     F --> G["距离 R"]
     G --> H["点云 (x,y,z)"]
 ```
+
+## 参考
+- Wiki extraction
+

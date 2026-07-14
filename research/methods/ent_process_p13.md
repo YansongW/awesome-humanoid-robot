@@ -26,7 +26,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from docs/humanoid_full_development_workflow_v3.md by scripts/backfill_process_bodies.py.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -37,7 +37,7 @@ theoretical_depth:
 ---
 ## 概述
 电子电气与能源系统（Electronics & Power）是人形机器人产品开发全流程中的第 13 个阶段，在 WBS V3 中展开为若干三级子任务。
-
+## 核心内容
 该阶段覆盖输入梳理、方案设计、实施/原型、验证闭环与文档交付等完整工程动作，是确保下游依赖方获得合格输入的关键节点。
 
 ## 关键子任务与技术内容

@@ -29,7 +29,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from chapter-08.md section "混合力/位置控制" by scripts/backfill_method_bodies_from_wiki.py.
+  notes: Body backfilled from chapter-08.md#混合力/位置控制 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,9 +38,9 @@ sources:
   accessed_at: '2026-07-09'
 ---
 ## 概述
-混合力/位置控制相关内容如下。
+力位混合控制是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
 
-#### 混合力/位置控制
+## 核心内容
 在许多任务中，某些方向需要控制位置，而另一些方向需要控制力。例如，沿桌面推动物体时，水平方向控制位置，垂直方向控制接触力。**混合力/位置控制（hybrid force/position control）**通过选择矩阵 \(\boldsymbol{\Sigma}\) 把任务空间分解为位置控制子空间与力控制子空间：
 
 $$
@@ -83,5 +83,6 @@ flowchart TD
 ```
 
 ## 参考
-- 详见 chapter-08.md。
+- Wiki extraction
+- 项目 Wiki：chapter-08.md#混合力/位置控制
 

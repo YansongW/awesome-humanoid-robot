@@ -31,10 +31,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body backfilled from chapter-08.md#8.4.4 零力矩点（ZMP）与动态平衡 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_vukobratovic_2004_zmp
   type: paper
@@ -57,8 +56,10 @@ related_entities:
       or Newton-Euler dynamics.
     zh: ZMP 条件来源于机器人运动方程的力矩平衡，通常由欧拉-拉格朗日方程或牛顿-欧拉动力学表达。
 ---
-### 8.4.4 零力矩点（ZMP）与动态平衡
+## 概述
+零力矩点（ZMP）是人形机器人领域的重要principle。以下内容整理自项目 Wiki，供深入查阅。
 
+## 核心内容
 **零力矩点（Zero Moment Point, ZMP）**是地面上的一个点，在该点处地面反作用力产生的水平力矩分量为零[43][44]。ZMP 是人形机器人动态平衡的核心判据：若 ZMP 位于支撑多边形（support polygon）内，则机器人理论上不会绕地面边缘倾倒。
 
 !!! note "术语解释：零力矩点（ZMP）、支撑多边形、地面反作用力、动态平衡"
@@ -84,3 +85,9 @@ $$
     - **水平加速度（horizontal acceleration）**：质心在水平面内的加速度分量。
     - **重力加速度（gravitational acceleration）**：$g \approx 9.81\ \text{m/s}^2$。
     - **凸包（convex hull）**：包含一组点的最小凸集。
+
+## 参考
+- [M. Vukobratović and B. Borovac, Zero-Moment Point — Thirty Five Years of Its Life, IJHR, 2004](https://doi.org/10.1142/S0219843604000083)
+- [P. Sardain and G. Bessonnet, Forces Acting on a Biped Robot. Center of Pressure—Zero Moment Point, IEEE Trans. SMC-A, 2004](https://doi.org/10.1109/TSMCA.2004.832811)
+- 项目 Wiki：chapter-08.md#8.4.4 零力矩点（ZMP）与动态平衡
+

@@ -29,7 +29,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from chapter-08.md section "8.6.1 DFM、DFA 与 DFS" by scripts/backfill_method_bodies_from_wiki.py.
+  notes: Body backfilled from chapter-08.md#8.6.1 DFM、DFA 与 DFS by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,9 +38,9 @@ sources:
   accessed_at: '2026-07-09'
 ---
 ## 概述
-8.6.1 DFM、DFA 与 DFS相关内容如下。
+可制造性设计（DFM）是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
 
-### 8.6.1 DFM、DFA 与 DFS
+## 核心内容
 面向制造的设计（Design for Manufacturing, DFM）、面向装配的设计（Design for Assembly, DFA）与面向维护/服务的设计（Design for Serviceability, DFS）是降低全生命周期成本的关键方法。
 
 !!! note "术语解释：DFM、DFA、DFS、面向成本的设计、生命周期成本"
@@ -80,5 +80,6 @@ flowchart TD
 ```
 
 ## 参考
-- 详见 chapter-08.md。
+- Wiki extraction
+- 项目 Wiki：chapter-08.md#8.6.1 DFM、DFA 与 DFS
 

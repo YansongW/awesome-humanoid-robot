@@ -33,7 +33,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body populated from chapter-08.md section "8.4.4 零力矩点（ZMP）与动态平衡" by scripts/backfill_method_bodies_from_wiki.py.
+  notes: Body backfilled from chapter-08.md#8.4.4 零力矩点（ZMP）与动态平衡 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_001
   type: website
@@ -43,9 +43,9 @@ sources:
   accessed_at: '2026-07-02'
 ---
 ## 概述
-8.4.4 零力矩点（ZMP）与动态平衡相关内容如下。
+零力矩点是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
 
-### 8.4.4 零力矩点（ZMP）与动态平衡
+## 核心内容
 **零力矩点（Zero Moment Point, ZMP）**是地面上的一个点，在该点处地面反作用力产生的水平力矩分量为零[43][44]。ZMP 是人形机器人动态平衡的核心判据：若 ZMP 位于支撑多边形（support polygon）内，则机器人理论上不会绕地面边缘倾倒。
 
 !!! note "术语解释：零力矩点（ZMP）、支撑多边形、地面反作用力、动态平衡"
@@ -73,5 +73,6 @@ $$
     - **凸包（convex hull）**：包含一组点的最小凸集。
 
 ## 参考
-- 详见 chapter-08.md。
+- [Zero Moment Point](https://en.wikipedia.org/wiki/Zero_moment_point)
+- 项目 Wiki：chapter-08.md#8.4.4 零力矩点（ZMP）与动态平衡
 

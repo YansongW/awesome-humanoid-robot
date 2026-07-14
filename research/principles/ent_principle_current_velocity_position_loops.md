@@ -27,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body backfilled from chapter-04.md#4.5.5 电流环、速度环、位置环的级联控制 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,8 +37,10 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-### 4.5.5 电流环、速度环、位置环的级联控制
+## 概述
+电流环/速度环/位置环是人形机器人领域的重要principle。以下内容整理自项目 Wiki，供深入查阅。
 
+## 核心内容
 实际关节驱动通常采用三级级联控制：最内层 **电流环**（力矩环），中间 **速度环**，最外层 **位置环**。每一层带宽约为下一层的 5-10 倍，以保证稳定性。
 
 !!! note "术语解释：电流环、速度环、位置环、PI 控制器、前馈、抗饱和、带宽级联"
@@ -69,3 +70,8 @@ flowchart TD
 ```
 
 电流环带宽通常可达 1-5 kHz；速度环 50-500 Hz；位置环 5-100 Hz，具体取决于负载惯量、刚度和采样率。
+
+## 参考
+- Wiki extraction
+- 项目 Wiki：chapter-04.md#4.5.5 电流环、速度环、位置环的级联控制
+

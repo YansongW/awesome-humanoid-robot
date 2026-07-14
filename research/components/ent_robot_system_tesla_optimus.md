@@ -8,8 +8,7 @@ names:
   zh: Tesla Optimus
   ko: 테슬라 옵티머스
 summary:
-  en: Tesla's general-purpose humanoid robot program, with stated goals of factory
-    deployment and high-volume manufacturing.
+  en: Tesla's general-purpose humanoid robot program, with stated goals of factory deployment and high-volume manufacturing.
   zh: 特斯拉的通用人形机器人项目，目标是工厂部署和规模化制造。
   ko: 테슬라의 범용 휴인oid 로봇 프로그램으로, 공장 배치와 대량 생산을 목표로 합니다.
 domains:
@@ -32,10 +31,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-06-24'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Public demonstrations and company statements; detailed specifications and
-    production plans are not independently verified.
+  notes: Body backfilled from chapter-08.md#8.9.3 Tesla Optimus：面向制造的成本导向设计 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_001
   type: website
@@ -52,26 +50,39 @@ sources:
 theoretical_depth:
 - system
 ---
+## 概述
+Tesla Optimus是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
 
-# Tesla Optimus
+## 核心内容
+Tesla Optimus 的设计目标是在汽车制造等场景中替代或辅助人类劳动，因此强调成本、产量与可维护性[17][18]。
 
-## 抽象
+!!! note "术语解释：Optimus、成本导向设计、规模化、制造场景"
+    - **Optimus**：Tesla 开发的人形机器人。
+    - **成本导向设计（cost-driven design）**：以降低成本为核心目标的设计决策。
+    - **规模化（scalability）**：设计支持从小批量到大批量的扩展。
+    - **制造场景（manufacturing scenario）**：工厂、仓储等重复性劳动环境。
 
-> **生活实例**：它就像汽车工厂里一位不知疲倦的流水线工人——被设计成能搬箱子、搬零件，并且最终要像汽车一样大规模生产出来。
+Optimus 公开设计特点（公开资料）：
+- 身高约 173 cm，质量约 63 kg。
+- 采用 Tesla 自研执行器与控制器。
+- 强调零件数量少、制造工艺简单、易于自动化装配。
+- 视觉感知基于 Tesla 自动驾驶技术迁移。
+- 目标低成本大规模生产。
 
-> **自然语言逻辑**：Tesla Optimus 是特斯拉推出的通用人形机器人项目，目标是在制造和物流场景中承担重复或危险任务；它的重要性在于特斯拉明确强调低成本和大批量制造，试图将汽车行业的规模化经验迁移到人形机器人生产上。
+```mermaid
+flowchart TD
+    A["Tesla Optimus"] --> B["自研执行器"]
+    A --> C["少零件/易装配"]
+    A --> D["视觉感知复用"]
+    A --> E["汽车供应链协同"]
+    B --> F["降本"]
+    C --> F
+    D --> G["快速迭代"]
+    E --> H["规模化"]
+```
 
-## Overview
+## 参考
+- [Tesla Optimus Official Page](https://www.tesla.com/optimus)
+- [Interact Analysis — Humanoid Robots and Lithium-Ion Batteries](https://interactanalysis.com/insight/humanoid-robots-and-lithium-ion-batteries/)
+- 项目 Wiki：chapter-08.md#8.9.3 Tesla Optimus：面向制造的成本导向设计
 
-Tesla Optimus is a humanoid robot program announced by Tesla with the aim of performing repetitive or dangerous tasks in manufacturing and logistics. The company has showcased several prototype generations, emphasizing affordability, mass production, and integration with Tesla's manufacturing and AI capabilities.
-
-## Reported Specifications
-
-- **Battery**: Reported 2.3 kWh pack on Optimus Gen-2, supporting roughly two hours of dynamic runtime.
-- **Actuation**: Electric actuators designed in-house, with iterative improvements in torque density and weight.
-- **Sensing**: Onboard cameras and sensors for navigation and manipulation.
-- **Compute**: Leverages Tesla's automotive AI compute and software stack.
-
-## Relevance to Humanoid Robotics
-
-Optimus is notable for Tesla's explicit focus on scaling production and reducing unit cost. If successful at volume, it could influence supply-chain expectations and manufacturing workflows across the humanoid robotics industry. Many claims remain forward-looking and require independent verification.

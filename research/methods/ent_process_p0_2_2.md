@@ -23,9 +23,9 @@ tags: []
 verification:
   status: verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Derived from docs/humanoid_full_development_workflow_v3.md
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -34,11 +34,10 @@ sources:
 theoretical_depth:
 - method
 ---
-
-
-
+## 概述
 **所属阶段/工作包**：项目立项与商业基线
 
+## 核心内容
 **方法 / 工具**：FMEA 前置、风险矩阵、技术/供应链/法规/资金风险清单
 
 **设计思考逻辑**：将不确定性前置管理；高风险项必须在早期验证或规避
@@ -78,3 +77,7 @@ theoretical_depth:
     - 按模板编写文档并引用原始数据
     - 完成内部评审与版本控制
     - 发布并通知下游依赖方
+
+## 参考
+- 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+

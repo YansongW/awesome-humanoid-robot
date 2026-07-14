@@ -31,9 +31,9 @@ tags:
 verification:
   status: unverified
   reviewed_by: ai
-  reviewed_at: '2026-07-09'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Standard motor-control concept; specific drive implementations and notation need manual verification.
+  notes: Body backfilled from chapter-04.md#4.5.2 磁场定向控制（FOC）的数学结构 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_mohan_2003
   type: other
@@ -60,27 +60,23 @@ related_entities:
     en: FOC typically uses PI/PID current controllers in the d-q frame to regulate flux and torque currents.
     zh: FOC 通常在 d-q 坐标系中使用 PI/PID 电流控制器调节磁链电流与转矩电流。
 ---
-# Field-Oriented Control / 磁场定向控制 / 전계 지향 제어
+## 概述
+磁场定向控制是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
 
-## 抽象
+## 核心内容
+FOC 使 PMSM 的转矩控制解耦为对 \(i_d\) 和 \(i_q\) 的独立控制。在旋转 \(dq\) 坐标系中，定子电压方程为
 
-> **生活实例**：骑旋转木马时，如果你始终面向木马中心旋转，复杂的三维晃动就被简化成“前后”和“左右”两个独立运动。FOC 就是把电机内部复杂的三相电流，变换到随转子一起转的坐标系里，让控制变得简单。
->
-> **自然语言逻辑**：交流电机（PMSM/BLDC）的三相电流随时间正弦变化，直接控制困难。Clarke 变换把三相电流变到两相静止坐标系，Park 变换再变到与转子磁链同步旋转的 d-q 坐标系；在 d-q 系中电流分量分别对应磁链和转矩，可独立用 PI 控制。
+$$
+\begin{aligned}
+v_d &= R_s i_d + L_d \frac{di_d}{dt} - \omega_e L_q i_q \\
+v_q &= R_s i_q + L_q \frac{di_q}{dt} + \omega_e L_d i_d + \omega_e \lambda_f
+\end{aligned}
+$$
 
-## 关键变换
+其中 \(R_s\) 为定子电阻，\(L_d\)、\(L_q\) 为 \(d\)、\(q\) 轴电感，\(\omega_e\) 为电角速度，\(\lambda_f\) 为永磁磁链。
 
-- **Clarke 变换**：$abc \rightarrow \alpha\beta$（三相到两相静止）
-- **Park 变换**：$\alpha\beta \rightarrow dq$（静止到旋转坐标系）
+## 参考
+- [N. Mohan, Advanced Electric Drives: Analysis, Control, and Modeling Using MATLAB/Simulink, Wiley, 2013](https://doi.org/10.1002/9781118704810)
+- [P. C. Krause, O. Wasynczuk, and S. D. Sudhoff, Analysis of Electric Machinery and Drive Systems, 3rd ed., IEEE Press/Wiley, 2013](https://doi.org/10.1002/9781118526030)
+- 项目 Wiki：chapter-04.md#4.5.2 磁场定向控制（FOC）的数学结构
 
-在 d-q 坐标系下：
-
-- $i_d$：直轴电流，主要影响磁链；
-- $i_q$：交轴电流，主要产生电磁转矩；
-- 典型策略令 $i_d = 0$，则转矩与 $i_q$ 成正比。
-
-## 与其他知识点的关系
-
-- `relies_on` → [ent_method_pid_control]
-- `used_in` → [ent_component_rotary_actuator_2024]
-- `requires` → Clarke/Park 变换 / 电机模型

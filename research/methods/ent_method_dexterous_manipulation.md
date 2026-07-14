@@ -29,7 +29,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from chapter-09.md section "9.4.2 灵巧手与夹爪：自由度、驱动与成本权衡" by scripts/backfill_method_bodies_from_wiki.py.
+  notes: Body backfilled from chapter-09.md#9.4.2 灵巧手与夹爪：自由度、驱动与成本权衡 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,9 +38,9 @@ sources:
   accessed_at: '2026-07-09'
 ---
 ## 概述
-9.4.2 灵巧手与夹爪：自由度、驱动与成本权衡相关内容如下。
+灵巧操作是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
 
-### 9.4.2 灵巧手与夹爪：自由度、驱动与成本权衡
+## 核心内容
 机器人手部主要分为**多指灵巧手（dexterous hand）**与**二指/三指夹爪（gripper）**。灵巧手自由度高、适应性强，但控制复杂、成本高；夹爪结构简单、成本低，但只能完成有限抓取类型。
 
 !!! note "术语解释：灵巧手、夹爪、欠驱动、全驱动、自适应抓取"
@@ -69,5 +69,6 @@ flowchart TD
 ```
 
 ## 参考
-- 详见 chapter-09.md。
+- Wiki extraction
+- 项目 Wiki：chapter-09.md#9.4.2 灵巧手与夹爪：自由度、驱动与成本权衡
 

@@ -27,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,8 +37,10 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+## 概述
 ### 4.6.4 案例：Optimus、Atlas、Digit、Figure
 
+## 核心内容
 - **Tesla Optimus**：据 Tesla AI Day 2022 与后续公开信息，Optimus 躯干采用 28 个执行器（14 个旋转 + 14 个线性），旋转关节使用无框力矩电机 + 谐波减速器，线性关节使用无框力矩电机 + 行星滚柱丝杠；灵巧手从 Gen 2 的 11 DoF 升级到 Gen 3 的 22 DoF，采用腱驱动与微型执行器[14]。
 - **Boston Dynamics Atlas**：早期 Atlas 采用液压执行器以获得极大爆发力；2024 年发布的全电动 Atlas 改用电动执行器，强调力量、敏捷与平衡恢复能力[15]。
 - **Agility Robotics Digit**：Digit 腿部采用串联弹性执行器（SEA），强调行走能效与人机安全；上肢自由度较少，面向物流搬运场景[16]。
@@ -53,3 +54,7 @@ sources:
     - **人形机器人平台（humanoid robot platform）**：面向研究与商业应用的完整机器人系统，如 Atlas、Digit、Optimus、Figure 等。
 
 ---
+
+## 参考
+- Wiki extraction
+

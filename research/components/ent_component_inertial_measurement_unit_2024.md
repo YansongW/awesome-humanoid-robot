@@ -8,8 +8,7 @@ names:
   zh: 惯性测量单元
   ko: Inertial Measurement Unit
 summary:
-  en: Torso/hip-mounted sensor fusing accelerometer and gyroscope for balance and
-    state estimation.
+  en: Torso/hip-mounted sensor fusing accelerometer and gyroscope for balance and state estimation.
   zh: 安装于躯干/臀部的传感器，融合加速度计和陀螺仪用于平衡和状态估计。
   ko: 몸통/엉덩이에 장착된 가속도계 및 자이로스코프를 융합한 균형 및 상태 추정 센서.
 domains:
@@ -32,9 +31,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-02'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website.
+  notes: Body backfilled from chapter-05.md#5.5 惯性测量单元（IMU） by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_001
   type: website
@@ -43,12 +42,13 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
-
 ## 概述
-安装于躯干/臀部的传感器，融合加速度计和陀螺仪用于平衡和状态估计。
+惯性测量单元是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
-## Overview
-Torso/hip-mounted sensor fusing accelerometer and gyroscope for balance and state estimation.
+## 核心内容
 
-## 개요
-Torso/hip-mounted sensor fusing accelerometer and gyroscope for balance and state estimation.
+
+## 参考
+- [Inertial Measurement Unit](https://en.wikipedia.org/wiki/Inertial_measurement_unit)
+- 项目 Wiki：chapter-05.md#5.5 惯性测量单元（IMU）
+

@@ -24,9 +24,9 @@ tags: []
 verification:
   status: verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Derived from docs/humanoid_full_development_workflow_v3.md
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -35,11 +35,10 @@ sources:
 theoretical_depth:
 - method
 ---
-
-
-
+## 概述
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）
 
+## 核心内容
 **方法 / 工具**：解析/数值逆解、随机姿态采样、奇异性分析
 
 **设计思考逻辑**：验证 URDF 中关节极限、连杆长度与 CAD 一致；IK 解算成功率高
@@ -79,3 +78,7 @@ theoretical_depth:
     - 按模板编写文档并引用原始数据
     - 完成内部评审与版本控制
     - 发布并通知下游依赖方
+
+## 参考
+- 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+

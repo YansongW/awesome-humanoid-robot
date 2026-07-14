@@ -28,10 +28,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-07-13'
+  reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body backfilled from chapter-04.md#两节点热网络模型 by scripts/backfill_nonpaper_entries.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,34 +38,40 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
-### 6.7.3 整机功率与热仿真思路
+## 概述
+热仿真是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
 
-整机热仿真通常按以下步骤进行：
+## 核心内容
+单节点模型只能给出绕组到环境的平均温升，无法解释短时峰值期间“绕组先热、外壳后热”的暂态行为。更精细的模型把电机分成两个热节点：**绕组节点** \(T_w\) 与**机壳节点** \(T_c\)，两者之间用热阻 \(R_{th1}\) 和热容 \(C_w\) 描述，机壳到环境再用 \(R_{th2}\) 与 \(C_c\) 描述，如图 4.2(c) 所示。
 
-1. **建立功耗模型**：列出各组件的稳态功耗、峰值功耗和占空比。
-2. **构建几何模型**：用 CAD 模型或简化几何表示机器人外壳、散热器、风道。
-3. **设置材料属性**：导热系数、比热容、密度、发射率。
-4. **划分网格**：对关键区域加密，对远处区域粗化。
-5. **设定边界条件**：环境温度、对流系数、风扇曲线、接触热阻。
-6. **求解稳态/瞬态温度场**：评估关键芯片结温和外壳温度。
-7. **迭代优化**：调整散热器、风道、TIM、功耗分配，直到满足热目标。
+\[
+\begin{aligned}
+C_w \frac{dT_w}{dt} &= P_{\text{loss}} - \frac{T_w - T_c}{R_{th1}} \\
+C_c \frac{dT_c}{dt} &= \frac{T_w - T_c}{R_{th1}} - \frac{T_c - T_{\text{amb}}}{R_{th2}}
+\end{aligned}
+\]
 
-!!! note "术语解释：占空比、CAD、边界条件、网格收敛、风扇曲线"
-    - **占空比（duty cycle）**：某组件处于高功耗状态的时间比例。
-    - **CAD（Computer-Aided Design）**：计算机辅助设计。
-    - **边界条件（boundary condition）**：求解域边界上的物理约束，如温度、热流、对流。
-    - **网格收敛（mesh convergence）**：加密网格后结果不再显著变化，说明数值解可信。
-    - **风扇曲线（fan curve）**：风扇流量与压降的关系曲线。
+两节点模型能更准确地预测短时过载：由于绕组热容 \(C_w\) 的存在，一个持续数秒的电流尖峰只会使 \(T_w\) 瞬时上升，而机壳温度 \(T_c\) 几乎不变；因此峰值转矩可以远高于连续转矩。只有当过载持续时间与绕组热时间常数相当时，才需要担心绝缘过热。
 
 ```mermaid
-flowchart TD
-    A["功耗模型"] --> B["几何 / CAD"]
-    B --> C["材料属性"]
-    C --> D["网格划分"]
-    D --> E["边界条件"]
-    E --> F["CFD / 热网络求解"]
-    F --> G["温度场 / 结温评估"]
-    G -->|"不满足"| H["优化散热 / 功耗"]
-    H --> A
-    G -->|"满足"| I["热设计通过"]
+flowchart LR
+    P["Ploss"] --> Tw["Tw 绕组"]
+    Tw --> R1["Rth1"]
+    R1 --> Tc["Tc 机壳"]
+    Tc --> R2["Rth2"]
+    R2 --> Tamb["Tamb 环境"]
+    Tw -.Cw.-> GND1["地"]
+    Tc -.Cc.-> GND2["地"]
 ```
+
+!!! note "术语解释：两节点热网络、热阻、热容、暂态热阻抗、热时间常数"
+    - **两节点热网络（two-node thermal network）**：把电机简化为绕组与机壳两个热节点的集总参数热模型。
+    - **热阻（thermal resistance, \(R_{th}\)）**：热量传递路径对温升的阻力，单位 K/W。
+    - **热容（thermal capacitance, \(C_{th}\)）**：物体储存热能的能力，决定温度变化的快慢，单位 J/K。
+    - **暂态热阻抗（transient thermal impedance）**：随时间变化的有效热阻，\(Z_{th}(t)=\Delta T(t)/P\)，用于评估短时过载。
+    - **热时间常数（thermal time constant, \(\tau_{th}=R_{th}C_{th}\)）**：温度达到 63% 稳态温升所需的时间。
+
+## 参考
+- Wiki extraction
+- 项目 Wiki：chapter-04.md#两节点热网络模型
+
