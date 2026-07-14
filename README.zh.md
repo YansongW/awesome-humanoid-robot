@@ -6,7 +6,7 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-public%20v0.1.0-success" alt="Status: public v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-2105-green" alt="2105 entries" />
+  <img src="https://img.shields.io/badge/entries-2143-green" alt="2143 entries" />
   <img src="https://img.shields.io/badge/relationships-1063-brightgreen" alt="1063 relationships" />
   <img src="https://img.shields.io/badge/languages-zh%2Fen%2Fko-blue" alt="Languages: zh/en/ko" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
@@ -43,7 +43,7 @@
 
 - 🌐 **产品站点上线**：[kg.rounds-tech.com](https://kg.rounds-tech.com) —— 中英韩三语界面、全文搜索、交互式 Cytoscape 图谱与关联 Wiki。
 - 📖 **仓库内置 Wiki** —— 源自《人形机器人：从矿山到市场》的 30 章叙事正文 + 7 个附录，正确渲染提示框、Mermaid 图表与 KaTeX 公式。
-- 🗂️ **2,105 个已校验 KG 实体**、**1,063 条带类型关系**，覆盖从原材料到市场应用的全栈。
+- 🗂️ **2,143 个已校验 KG 实体**、**1,063 条带类型关系**，覆盖从原材料到市场应用的全栈。
 - 🔄 **自动化 CI/CD** —— 每次 `main` 分支推送后，GitHub Actions 自动构建并部署到 GitHub Pages。
 - 🛡️ **加固的部署流程** —— 并发控制与干净的 `gh-pages` 分支重建，避免竞态条件导致的推送失败。
 
@@ -192,7 +192,7 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 
 | 指标 | 数量 |
 |------|------|
-| 生产环境实体 | 2,105 |
+| 生产环境实体 | 2,143 |
 | 关系 | 1,063 |
 | 本体领域 | 13（12 + `00_foundations`） |
 | 实体类型 | 24 |
