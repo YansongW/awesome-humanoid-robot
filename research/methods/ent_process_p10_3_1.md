@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 系统辨识与参数校准
-  ko: ''
+  ko: 系统辨识与参数校准
 summary:
   en: ''
   zh: 辨识报告、仿真-实物频率响应对比
-  ko: ''
+  ko: 辨识报告、仿真-实物频率响应对比
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）

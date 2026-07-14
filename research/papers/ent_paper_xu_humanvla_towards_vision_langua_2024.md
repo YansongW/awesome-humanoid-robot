@@ -7,7 +7,8 @@ names:
   en: 'HumanVLA: Towards Vision-Language Directed Object Rearrangement by Physical
     Humanoid'
   zh: HumanVLA
-  ko: ''
+  ko: 'HumanVLA: Towards Vision-Language Directed Object Rearrangement by Physical
+    Humanoid'
 summary:
   en: 'HumanVLA: Towards Vision-Language Directed Object Rearrangement by Physical
     Humanoid (HumanVLA), is a 2024 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Humanoid (HumanVLA), is a 2024 large vision-language-action model for robotic
     manipulation, introduced by Shanghai Jiao Tong University, Tencent Robotics X,
     and published at NIPS 2024.'
-  ko: ''
+  ko: 'HumanVLA: Towards Vision-Language Directed Object Rearrangement by Physical
+    Humanoid (HumanVLA), is a 2024 large vision-language-action model for robotic
+    manipulation, introduced by Shanghai Jiao Tong University, Tencent Robotics X,
+    and published at NIPS 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HumanVLA: Towards Vision-Language Directed Object Rearrangement by Physical Humanoid (HumanVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Tencent Robotics X, and published at NIPS 2024.
+
+## Overview
+HumanVLA: Towards Vision-Language Directed Object Rearrangement by Physical Humanoid (HumanVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Tencent Robotics X, and published at NIPS 2024.
+
+## 개요
 HumanVLA: Towards Vision-Language Directed Object Rearrangement by Physical Humanoid (HumanVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Tencent Robotics X, and published at NIPS 2024.

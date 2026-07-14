@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'OTTER: A Vision-Language-Action Model with Text-Aware Visual Feature Extraction'
   zh: OTTER
-  ko: ''
+  ko: 'OTTER: A Vision-Language-Action Model with Text-Aware Visual Feature Extraction'
 summary:
   en: 'OTTER: A Vision-Language-Action Model with Text-Aware Visual Feature Extraction
     (OTTER), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'OTTER: A Vision-Language-Action Model with Text-Aware Visual Feature Extraction
     (OTTER), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by University of California, Berkeley, Meta AI, and published at ICML25.'
-  ko: ''
+  ko: 'OTTER: A Vision-Language-Action Model with Text-Aware Visual Feature Extraction
+    (OTTER), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by University of California, Berkeley, Meta AI, and published at ICML25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+OTTER: A Vision-Language-Action Model with Text-Aware Visual Feature Extraction (OTTER), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of California, Berkeley, Meta AI, and published at ICML25.
+
+## Overview
+OTTER: A Vision-Language-Action Model with Text-Aware Visual Feature Extraction (OTTER), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of California, Berkeley, Meta AI, and published at ICML25.
+
+## 개요
 OTTER: A Vision-Language-Action Model with Text-Aware Visual Feature Extraction (OTTER), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of California, Berkeley, Meta AI, and published at ICML25.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'UrbanVLA: A Vision-Language-Action Model for Urban Micromobility'
   zh: UrbanVLA
-  ko: ''
+  ko: 'UrbanVLA: A Vision-Language-Action Model for Urban Micromobility'
 summary:
   en: 'UrbanVLA: A Vision-Language-Action Model for Urban Micromobility (UrbanVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'UrbanVLA: A Vision-Language-Action Model for Urban Micromobility (UrbanVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Peking University, Galbot, USTC, BAAI.'
-  ko: ''
+  ko: 'UrbanVLA: A Vision-Language-Action Model for Urban Micromobility (UrbanVLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Peking University, Galbot, USTC, BAAI.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+UrbanVLA: A Vision-Language-Action Model for Urban Micromobility (UrbanVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Galbot, USTC, BAAI.
+
+## Overview
+UrbanVLA: A Vision-Language-Action Model for Urban Micromobility (UrbanVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Galbot, USTC, BAAI.
+
+## 개요
 UrbanVLA: A Vision-Language-Action Model for Urban Micromobility (UrbanVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Galbot, USTC, BAAI.

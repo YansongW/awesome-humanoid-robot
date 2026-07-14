@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Contact Representation for Leg Odometry
   zh: Learning Contact Representation for Leg Odometry
-  ko: ''
+  ko: Learning Contact Representation for Leg Odometry
 summary:
   en: Learning Contact Representation for Leg Odometry is a paper on State Estimation
     for humanoid robotics.
   zh: Learning Contact Representation for Leg Odometry is a paper on State Estimation
     for humanoid robotics.
-  ko: ''
+  ko: Learning Contact Representation for Leg Odometry is a paper on State Estimation
+    for humanoid robotics.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Contact Representation for Leg Odometry is a paper on State Estimation for humanoid robotics.
+
+## Overview
+Learning Contact Representation for Leg Odometry is a paper on State Estimation for humanoid robotics.
+
+## 개요
 Learning Contact Representation for Leg Odometry is a paper on State Estimation for humanoid robotics.

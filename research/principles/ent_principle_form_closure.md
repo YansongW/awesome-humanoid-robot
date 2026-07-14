@@ -8,8 +8,8 @@ names:
   zh: 形闭合
   ko: 형태 폐쇄
 summary:
-  en: A grasp condition in which the object's motion is completely constrained by the geometry and placement of frictionless
-    contacts alone.
+  en: A grasp condition in which the object's motion is completely constrained by
+    the geometry and placement of frictionless contacts alone.
   zh: 仅通过无摩擦接触的几何与布局即可完全约束物体运动的抓取条件。
   ko: 마찰이 없는 접촉의 기하·배치만으로 물체의 운동을 완전히 구속하는 그래프 조건.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+仅通过无摩擦接触的几何与布局即可完全约束物体运动的抓取条件。
+
+## Overview
+A grasp condition in which the object's motion is completely constrained by the geometry and placement of frictionless contacts alone.
+
+## 개요
+A grasp condition in which the object's motion is completely constrained by the geometry and placement of frictionless contacts alone.

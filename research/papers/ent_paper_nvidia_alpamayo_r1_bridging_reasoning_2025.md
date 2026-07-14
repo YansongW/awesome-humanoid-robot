@@ -7,7 +7,8 @@ names:
   en: 'Alpamayo-R1: Bridging Reasoning and Action Prediction for Generalizable Autonomous
     Driving in the Long Tail'
   zh: Alpamayo-R1
-  ko: ''
+  ko: 'Alpamayo-R1: Bridging Reasoning and Action Prediction for Generalizable Autonomous
+    Driving in the Long Tail'
 summary:
   en: 'Alpamayo-R1: Bridging Reasoning and Action Prediction for Generalizable Autonomous
     Driving in the Long Tail (Alpamayo-R1), is a 2025 large vision-language-action
@@ -15,7 +16,9 @@ summary:
   zh: 'Alpamayo-R1: Bridging Reasoning and Action Prediction for Generalizable Autonomous
     Driving in the Long Tail (Alpamayo-R1), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by National University of Singapore.'
-  ko: ''
+  ko: 'Alpamayo-R1: Bridging Reasoning and Action Prediction for Generalizable Autonomous
+    Driving in the Long Tail (Alpamayo-R1), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by National University of Singapore.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Alpamayo-R1: Bridging Reasoning and Action Prediction for Generalizable Autonomous Driving in the Long Tail (Alpamayo-R1), is a 2025 large vision-language-action model for robotic manipulation, introduced by National University of Singapore.
+
+## Overview
+Alpamayo-R1: Bridging Reasoning and Action Prediction for Generalizable Autonomous Driving in the Long Tail (Alpamayo-R1), is a 2025 large vision-language-action model for robotic manipulation, introduced by National University of Singapore.
+
+## 개요
 Alpamayo-R1: Bridging Reasoning and Action Prediction for Generalizable Autonomous Driving in the Long Tail (Alpamayo-R1), is a 2025 large vision-language-action model for robotic manipulation, introduced by National University of Singapore.

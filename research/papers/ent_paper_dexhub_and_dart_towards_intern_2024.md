@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'DexHub and DART: Towards Internet-Scale Robot Data Collection'
   zh: 'DexHub and DART: Towards Internet-Scale Robot Data Collection'
-  ko: ''
+  ko: 'DexHub and DART: Towards Internet-Scale Robot Data Collection'
 summary:
   en: 'DexHub and DART: Towards Internet-Scale Robot Data Collection is a 2024 work
     on manipulation for humanoid robots.'
   zh: 'DexHub and DART: Towards Internet-Scale Robot Data Collection is a 2024 work
     on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'DexHub and DART: Towards Internet-Scale Robot Data Collection is a 2024 work
+    on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DexHub and DART: Towards Internet-Scale Robot Data Collection is a 2024 work on manipulation for humanoid robots.
+
+## Overview
+DexHub and DART: Towards Internet-Scale Robot Data Collection is a 2024 work on manipulation for humanoid robots.
+
+## 개요
 DexHub and DART: Towards Internet-Scale Robot Data Collection is a 2024 work on manipulation for humanoid robots.

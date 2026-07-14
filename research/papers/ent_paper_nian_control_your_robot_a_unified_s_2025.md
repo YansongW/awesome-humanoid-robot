@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Control Your Robot: A Unified System for Robot Control and Policy Deployment'
   zh: Control Your Robot
-  ko: ''
+  ko: 'Control Your Robot: A Unified System for Robot Control and Policy Deployment'
 summary:
   en: 'Control Your Robot: A Unified System for Robot Control and Policy Deployment
     (Control Your Robot), is a 2025 large vision-language-action model for robotic
@@ -16,7 +16,10 @@ summary:
     (Control Your Robot), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by ScaleLab, Shanghai Jiao Tong University, University
     of Shanghai for Science and Technology, Lumina Group.'
-  ko: ''
+  ko: 'Control Your Robot: A Unified System for Robot Control and Policy Deployment
+    (Control Your Robot), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by ScaleLab, Shanghai Jiao Tong University, University
+    of Shanghai for Science and Technology, Lumina Group.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Control Your Robot: A Unified System for Robot Control and Policy Deployment (Control Your Robot), is a 2025 large vision-language-action model for robotic manipulation, introduced by ScaleLab, Shanghai Jiao Tong University, University of Shanghai for Science and Technology, Lumina Group.
+
+## Overview
+Control Your Robot: A Unified System for Robot Control and Policy Deployment (Control Your Robot), is a 2025 large vision-language-action model for robotic manipulation, introduced by ScaleLab, Shanghai Jiao Tong University, University of Shanghai for Science and Technology, Lumina Group.
+
+## 개요
 Control Your Robot: A Unified System for Robot Control and Policy Deployment (Control Your Robot), is a 2025 large vision-language-action model for robotic manipulation, introduced by ScaleLab, Shanghai Jiao Tong University, University of Shanghai for Science and Technology, Lumina Group.

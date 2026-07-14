@@ -7,7 +7,8 @@ names:
   en: 'ExpReS-VLA: Specializing Vision-Language-Action Models Through Experience Replay
     and Retrieval'
   zh: ExpReS-VLA
-  ko: ''
+  ko: 'ExpReS-VLA: Specializing Vision-Language-Action Models Through Experience Replay
+    and Retrieval'
 summary:
   en: 'ExpReS-VLA: Specializing Vision-Language-Action Models Through Experience Replay
     and Retrieval (ExpReS-VLA), is a 2025 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: 'ExpReS-VLA: Specializing Vision-Language-Action Models Through Experience Replay
     and Retrieval (ExpReS-VLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Carnegie Mellon University.'
-  ko: ''
+  ko: 'ExpReS-VLA: Specializing Vision-Language-Action Models Through Experience Replay
+    and Retrieval (ExpReS-VLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Carnegie Mellon University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ExpReS-VLA: Specializing Vision-Language-Action Models Through Experience Replay and Retrieval (ExpReS-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University.
+
+## Overview
+ExpReS-VLA: Specializing Vision-Language-Action Models Through Experience Replay and Retrieval (ExpReS-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University.
+
+## 개요
 ExpReS-VLA: Specializing Vision-Language-Action Models Through Experience Replay and Retrieval (ExpReS-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University.

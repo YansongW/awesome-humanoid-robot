@@ -8,7 +8,8 @@ names:
     Robots
   zh: Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid
     Robots
-  ko: ''
+  ko: Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid
+    Robots
 summary:
   en: Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid
     Robots is a 2025 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid
     Robots is a 2025 work on loco-manipulation and whole-body-control for humanoid
     robots.
-  ko: ''
+  ko: Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid
+    Robots is a 2025 work on loco-manipulation and whole-body-control for humanoid
+    robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Learning Motion Skills with Adaptive Assistive Curriculum Force in Humanoid Robots is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

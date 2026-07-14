@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+测量六个自由度力和力矩的传感器，对力控操作至关重要。
+
+## Overview
 Sensor measuring forces and torques in all six degrees of freedom, critical for force-controlled manipulation.
+
+## 개요
+6자유도의 힘과 토크를 측정하는 센서, 힘 제어 조작에 필수적.

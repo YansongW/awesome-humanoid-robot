@@ -6,13 +6,14 @@ type: paper
 names:
   en: PRIMAL Physically Reactive and Interactive Motor Model for Avatar Learning
   zh: PRIMAL Physically Reactive and Interactive Motor Model for Avatar Learning
-  ko: ''
+  ko: PRIMAL Physically Reactive and Interactive Motor Model for Avatar Learning
 summary:
   en: PRIMAL Physically Reactive and Interactive Motor Model for Avatar Learning is
     a 2025 work on human motion analysis and synthesis for humanoid robots.
   zh: PRIMAL Physically Reactive and Interactive Motor Model for Avatar Learning is
     a 2025 work on human motion analysis and synthesis for humanoid robots.
-  ko: ''
+  ko: PRIMAL Physically Reactive and Interactive Motor Model for Avatar Learning is
+    a 2025 work on human motion analysis and synthesis for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PRIMAL Physically Reactive and Interactive Motor Model for Avatar Learning is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+PRIMAL Physically Reactive and Interactive Motor Model for Avatar Learning is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 PRIMAL Physically Reactive and Interactive Motor Model for Avatar Learning is a 2025 work on human motion analysis and synthesis for humanoid robots.

@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+提供机器人关节用无框力矩电机和伺服驱动等运动系统的美国供应商。
+
+## Overview
+US supplier of motion systems including frameless torque motors and servo drives for robot joints.
+
+## 개요
 US supplier of motion systems including frameless torque motors and servo drives for robot joints.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models'
   zh: VoxPoser
-  ko: ''
+  ko: 'VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models'
 summary:
   en: 'VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models
     (VoxPoser), is a 2023 generalized vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (VoxPoser), is a 2023 generalized vision-language-action model for robotic manipulation,
     introduced by Stanford University, University of Illinois Urbana-Champaign, and
     published at CoRL 2023.'
-  ko: ''
+  ko: 'VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models
+    (VoxPoser), is a 2023 generalized vision-language-action model for robotic manipulation,
+    introduced by Stanford University, University of Illinois Urbana-Champaign, and
+    published at CoRL 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models (VoxPoser), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Stanford University, University of Illinois Urbana-Champaign, and published at CoRL 2023.
+
+## Overview
+VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models (VoxPoser), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Stanford University, University of Illinois Urbana-Champaign, and published at CoRL 2023.
+
+## 개요
 VoxPoser: Composable 3D Value Maps for Robotic Manipulation with Language Models (VoxPoser), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Stanford University, University of Illinois Urbana-Champaign, and published at CoRL 2023.

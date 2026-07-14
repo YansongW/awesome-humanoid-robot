@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 传感器与执行器模型配置
-  ko: ''
+  ko: 传感器与执行器模型配置
 summary:
   en: ''
   zh: 传感器配置文件、噪声/延迟参数表、与真实硬件对比
-  ko: ''
+  ko: 传感器配置文件、噪声/延迟参数表、与真实硬件对比
 domains:
 - 08_software_middleware
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）

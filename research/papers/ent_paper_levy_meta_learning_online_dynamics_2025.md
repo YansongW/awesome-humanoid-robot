@@ -6,7 +6,7 @@ type: paper
 names:
   en: Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving
   zh: Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving
-  ko: ''
+  ko: Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving
 summary:
   en: Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving
     (Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving),
@@ -18,7 +18,11 @@ summary:
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Jet Propulsion Laboratory, California Institute of Technology, University of
     Texas at Austin, Georgia Institute of Technology, and published at RSS25.
-  ko: ''
+  ko: Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving
+    (Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Jet Propulsion Laboratory, California Institute of Technology, University of
+    Texas at Austin, Georgia Institute of Technology, and published at RSS25.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving (Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving), is a 2025 large vision-language-action model for robotic manipulation, introduced by Jet Propulsion Laboratory, California Institute of Technology, University of Texas at Austin, Georgia Institute of Technology, and published at RSS25.
+
+## Overview
+Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving (Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving), is a 2025 large vision-language-action model for robotic manipulation, introduced by Jet Propulsion Laboratory, California Institute of Technology, University of Texas at Austin, Georgia Institute of Technology, and published at RSS25.
+
+## 개요
 Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving (Meta-Learning Online Dynamics Model Adaptation in Off-Road Autonomous Driving), is a 2025 large vision-language-action model for robotic manipulation, introduced by Jet Propulsion Laboratory, California Institute of Technology, University of Texas at Austin, Georgia Institute of Technology, and published at RSS25.

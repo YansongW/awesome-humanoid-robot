@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RoboPoint: A Vision-Language Model for Spatial Affordance Prediction for Robotics'
   zh: RoboPoint
-  ko: ''
+  ko: 'RoboPoint: A Vision-Language Model for Spatial Affordance Prediction for Robotics'
 summary:
   en: 'RoboPoint: A Vision-Language Model for Spatial Affordance Prediction for Robotics
     (RoboPoint), is a 2024 generalized vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (RoboPoint), is a 2024 generalized vision-language-action model for robotic manipulation,
     introduced by University of Washington, NVIDIA, Allen Institute for Artificial
     Intelligence, Universidad Católica San Pablo, and published at CoRL 2024.'
-  ko: ''
+  ko: 'RoboPoint: A Vision-Language Model for Spatial Affordance Prediction for Robotics
+    (RoboPoint), is a 2024 generalized vision-language-action model for robotic manipulation,
+    introduced by University of Washington, NVIDIA, Allen Institute for Artificial
+    Intelligence, Universidad Católica San Pablo, and published at CoRL 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboPoint: A Vision-Language Model for Spatial Affordance Prediction for Robotics (RoboPoint), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by University of Washington, NVIDIA, Allen Institute for Artificial Intelligence, Universidad Católica San Pablo, and published at CoRL 2024.
+
+## Overview
+RoboPoint: A Vision-Language Model for Spatial Affordance Prediction for Robotics (RoboPoint), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by University of Washington, NVIDIA, Allen Institute for Artificial Intelligence, Universidad Católica San Pablo, and published at CoRL 2024.
+
+## 개요
 RoboPoint: A Vision-Language Model for Spatial Affordance Prediction for Robotics (RoboPoint), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by University of Washington, NVIDIA, Allen Institute for Artificial Intelligence, Universidad Católica San Pablo, and published at CoRL 2024.

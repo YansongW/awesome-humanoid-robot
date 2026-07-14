@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+约11万条接触丰富的操作序列，包含视觉、力觉、音频和人类演示对。
+
+## Overview
+~110k contact-rich manipulation sequences with visual, force, audio, and human-demo pairs.
+
+## 개요
 ~110k contact-rich manipulation sequences with visual, force, audio, and human-demo pairs.

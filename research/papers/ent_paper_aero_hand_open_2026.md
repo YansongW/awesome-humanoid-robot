@@ -6,11 +6,11 @@ type: paper
 names:
   en: Aero Hand Open
   zh: Aero Hand Open
-  ko: ''
+  ko: Aero Hand Open
 summary:
   en: Aero Hand Open is a 2026 work on hardware design for humanoid robots.
   zh: Aero Hand Open is a 2026 work on hardware design for humanoid robots.
-  ko: ''
+  ko: Aero Hand Open is a 2026 work on hardware design for humanoid robots.
 domains:
 - 06_design_engineering
 - 02_components
@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Aero Hand Open is a 2026 work on hardware design for humanoid robots.
+
+## Overview
+Aero Hand Open is a 2026 work on hardware design for humanoid robots.
+
+## 개요
 Aero Hand Open is a 2026 work on hardware design for humanoid robots.

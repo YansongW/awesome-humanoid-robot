@@ -6,13 +6,14 @@ type: paper
 names:
   en: The invariant extended Kalman filter as a stable observer
   zh: The invariant extended Kalman filter as a stable observer
-  ko: ''
+  ko: The invariant extended Kalman filter as a stable observer
 summary:
   en: The invariant extended Kalman filter as a stable observer is a 2014 work on
     state estimation for humanoid robots.
   zh: The invariant extended Kalman filter as a stable observer is a 2014 work on
     state estimation for humanoid robots.
-  ko: ''
+  ko: The invariant extended Kalman filter as a stable observer is a 2014 work on
+    state estimation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+The invariant extended Kalman filter as a stable observer is a 2014 work on state estimation for humanoid robots.
+
+## Overview
+The invariant extended Kalman filter as a stable observer is a 2014 work on state estimation for humanoid robots.
+
+## 개요
 The invariant extended Kalman filter as a stable observer is a 2014 work on state estimation for humanoid robots.

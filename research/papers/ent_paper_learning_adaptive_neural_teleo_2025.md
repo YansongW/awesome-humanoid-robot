@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Adaptive Neural Teleoperation for Humanoid Robots
   zh: Learning Adaptive Neural Teleoperation for Humanoid Robots
-  ko: ''
+  ko: Learning Adaptive Neural Teleoperation for Humanoid Robots
 summary:
   en: Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on
     teleoperation for humanoid robots.
   zh: Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on
     teleoperation for humanoid robots.
-  ko: ''
+  ko: Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on
+    teleoperation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+
+## Overview
+Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+
+## 개요
 Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on teleoperation for humanoid robots.

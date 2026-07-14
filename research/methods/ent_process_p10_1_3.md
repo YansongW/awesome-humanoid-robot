@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 外力/扰动估计
-  ko: ''
+  ko: 外力/扰动估计
 summary:
   en: ''
   zh: 外力估计响应 < 100 ms、稳态误差 < 目标
-  ko: ''
+  ko: 外力估计响应 < 100 ms、稳态误差 < 目标
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）

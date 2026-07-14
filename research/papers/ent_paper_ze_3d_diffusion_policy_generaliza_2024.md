@@ -7,7 +7,8 @@ names:
   en: '3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D
     Representations'
   zh: DP3
-  ko: ''
+  ko: '3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D
+    Representations'
 summary:
   en: '3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D
     Representations (DP3), is a 2024 generalized vision-language-action model for
@@ -19,7 +20,11 @@ summary:
     robotic manipulation, introduced by Shanghai Qi Zhi Institute, Shanghai Jiao Tong
     University, Tsinghua University, IIIS, Shanghai AI Lab, and published at Robotics
     - Science and Systems 2024.'
-  ko: ''
+  ko: '3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D
+    Representations (DP3), is a 2024 generalized vision-language-action model for
+    robotic manipulation, introduced by Shanghai Qi Zhi Institute, Shanghai Jiao Tong
+    University, Tsinghua University, IIIS, Shanghai AI Lab, and published at Robotics
+    - Science and Systems 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations (DP3), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Shanghai Qi Zhi Institute, Shanghai Jiao Tong University, Tsinghua University, IIIS, Shanghai AI Lab, and published at Robotics - Science and Systems 2024.
+
+## Overview
+3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations (DP3), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Shanghai Qi Zhi Institute, Shanghai Jiao Tong University, Tsinghua University, IIIS, Shanghai AI Lab, and published at Robotics - Science and Systems 2024.
+
+## 개요
 3D Diffusion Policy: Generalizable Visuomotor Policy Learning via Simple 3D Representations (DP3), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Shanghai Qi Zhi Institute, Shanghai Jiao Tong University, Tsinghua University, IIIS, Shanghai AI Lab, and published at Robotics - Science and Systems 2024.

@@ -7,7 +7,8 @@ names:
   en: 'CrayonRobo: Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic
     Manipulation'
   zh: Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic Manipulation
-  ko: ''
+  ko: 'CrayonRobo: Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic
+    Manipulation'
 summary:
   en: 'CrayonRobo: Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic
     Manipulation (Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic
@@ -17,7 +18,10 @@ summary:
     Manipulation (Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic
     Manipulation), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Peking University, PKU-Agibot Lab, and published at CVPR25.'
-  ko: ''
+  ko: 'CrayonRobo: Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic
+    Manipulation (Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic
+    Manipulation), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Peking University, PKU-Agibot Lab, and published at CVPR25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -59,4 +63,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CrayonRobo: Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic Manipulation (Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic Manipulation), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, PKU-Agibot Lab, and published at CVPR25.
+
+## Overview
+CrayonRobo: Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic Manipulation (Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic Manipulation), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, PKU-Agibot Lab, and published at CVPR25.
+
+## 개요
 CrayonRobo: Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic Manipulation (Object-Centric Prompt-Driven Vision-Language-Action Model for Robotic Manipulation), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, PKU-Agibot Lab, and published at CVPR25.

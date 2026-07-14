@@ -6,11 +6,11 @@ type: report
 names:
   en: AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
   zh: AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
-  ko: ''
+  ko: AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
 summary:
   en: AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
   zh: AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
-  ko: ''
+  ko: AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
 domains:
 - 11_applications_markets
 layers:
@@ -40,4 +40,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
+
+## Overview
+AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
+
+## 개요
 AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris

@@ -7,7 +7,8 @@ names:
   en: 'Bridging Language, Vision and Action: Multimodal VAEs in Robotic Manipulation
     Tasks'
   zh: Bridging Language Vision and Action
-  ko: ''
+  ko: 'Bridging Language, Vision and Action: Multimodal VAEs in Robotic Manipulation
+    Tasks'
 summary:
   en: 'Bridging Language, Vision and Action: Multimodal VAEs in Robotic Manipulation
     Tasks (Bridging Language Vision and Action), is a 2024 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Tasks (Bridging Language Vision and Action), is a 2024 large vision-language-action
     model for robotic manipulation, introduced by Czech Technical University in Prague,
     and published at IROS24.'
-  ko: ''
+  ko: 'Bridging Language, Vision and Action: Multimodal VAEs in Robotic Manipulation
+    Tasks (Bridging Language Vision and Action), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by Czech Technical University in Prague,
+    and published at IROS24.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Bridging Language, Vision and Action: Multimodal VAEs in Robotic Manipulation Tasks (Bridging Language Vision and Action), is a 2024 large vision-language-action model for robotic manipulation, introduced by Czech Technical University in Prague, and published at IROS24.
+
+## Overview
+Bridging Language, Vision and Action: Multimodal VAEs in Robotic Manipulation Tasks (Bridging Language Vision and Action), is a 2024 large vision-language-action model for robotic manipulation, introduced by Czech Technical University in Prague, and published at IROS24.
+
+## 개요
 Bridging Language, Vision and Action: Multimodal VAEs in Robotic Manipulation Tasks (Bridging Language Vision and Action), is a 2024 large vision-language-action model for robotic manipulation, introduced by Czech Technical University in Prague, and published at IROS24.

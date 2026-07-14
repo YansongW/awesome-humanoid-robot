@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents'
   zh: 'EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents'
-  ko: ''
+  ko: 'EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents'
 summary:
   en: 'EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents is
     a 2026 work on human motion analysis and synthesis for humanoid robots.'
   zh: 'EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents is
     a 2026 work on human motion analysis and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents is
+    a 2026 work on human motion analysis and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents is a 2026 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents is a 2026 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 EmbodMocap: In-the-Wild 4D Human-Scene Reconstruction for Embodied Agents is a 2026 work on human motion analysis and synthesis for humanoid robots.

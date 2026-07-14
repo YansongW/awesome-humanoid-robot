@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success'
   zh: OpenVLA-OFT
-  ko: ''
+  ko: 'Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success'
 summary:
   en: 'Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Stanford University, and published at RSS 2025.'
-  ko: ''
+  ko: 'Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Stanford University, and published at RSS 2025.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford University, and published at RSS 2025.
+
+## Overview
+Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford University, and published at RSS 2025.
+
+## 개요
 Fine-Tuning Vision-Language-Action Models: Optimizing Speed and Success (OpenVLA-OFT), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford University, and published at RSS 2025.

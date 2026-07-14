@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 散热方案设计
-  ko: ''
+  ko: 散热方案设计
 summary:
   en: ''
   zh: 《散热方案》：各部件散热方式、关键尺寸、风扇/泵选型
-  ko: ''
+  ko: 《散热方案》：各部件散热方式、关键尺寸、风扇/泵选型
 domains:
 - 06_design_engineering
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：热管理仿真与迭代（Thermal Management）

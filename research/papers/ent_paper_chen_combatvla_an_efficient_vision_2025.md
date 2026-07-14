@@ -7,7 +7,8 @@ names:
   en: 'CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D
     Action Role-Playing Games'
   zh: CombatVLA
-  ko: ''
+  ko: 'CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D
+    Action Role-Playing Games'
 summary:
   en: 'CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D
     Action Role-Playing Games (CombatVLA), is a 2025 large vision-language-action
@@ -15,7 +16,9 @@ summary:
   zh: 'CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D
     Action Role-Playing Games (CombatVLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Alibaba Group.'
-  ko: ''
+  ko: 'CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D
+    Action Role-Playing Games (CombatVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Alibaba Group.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing Games (CombatVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Alibaba Group.
+
+## Overview
+CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing Games (CombatVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Alibaba Group.
+
+## 개요
 CombatVLA: An Efficient Vision-Language-Action Model for Combat Tasks in 3D Action Role-Playing Games (CombatVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Alibaba Group.

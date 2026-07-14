@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation'
   zh: 'DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation'
-  ko: ''
+  ko: 'DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation'
 summary:
   en: 'DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation
     is a 2024 work on manipulation for humanoid robots, with open-source code available.'
   zh: 'DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation
     is a 2024 work on manipulation for humanoid robots, with open-source code available.'
-  ko: ''
+  ko: 'DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation
+    is a 2024 work on manipulation for humanoid robots, with open-source code available.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation is a 2024 work on manipulation for humanoid robots, with open-source code available.
+
+## Overview
+DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation is a 2024 work on manipulation for humanoid robots, with open-source code available.
+
+## 개요
 DexCap: Scalable and Portable Mocap Data Collection System for Dexterous Manipulation is a 2024 work on manipulation for humanoid robots, with open-source code available.

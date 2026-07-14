@@ -6,7 +6,7 @@ type: paper
 names:
   en: General-purpose foundation models for increased autonomy in robot-assisted surgery
   zh: RT-RAS
-  ko: ''
+  ko: General-purpose foundation models for increased autonomy in robot-assisted surgery
 summary:
   en: General-purpose foundation models for increased autonomy in robot-assisted surgery
     (RT-RAS), is a 2024 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (RT-RAS), is a 2024 large vision-language-action model for robotic manipulation,
     introduced by Johns Hopkins University, University of Utah, and published at Nat.
     Mac. Intell. 2024.
-  ko: ''
+  ko: General-purpose foundation models for increased autonomy in robot-assisted surgery
+    (RT-RAS), is a 2024 large vision-language-action model for robotic manipulation,
+    introduced by Johns Hopkins University, University of Utah, and published at Nat.
+    Mac. Intell. 2024.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+General-purpose foundation models for increased autonomy in robot-assisted surgery (RT-RAS), is a 2024 large vision-language-action model for robotic manipulation, introduced by Johns Hopkins University, University of Utah, and published at Nat. Mac. Intell. 2024.
+
+## Overview
+General-purpose foundation models for increased autonomy in robot-assisted surgery (RT-RAS), is a 2024 large vision-language-action model for robotic manipulation, introduced by Johns Hopkins University, University of Utah, and published at Nat. Mac. Intell. 2024.
+
+## 개요
 General-purpose foundation models for increased autonomy in robot-assisted surgery (RT-RAS), is a 2024 large vision-language-action model for robotic manipulation, introduced by Johns Hopkins University, University of Utah, and published at Nat. Mac. Intell. 2024.

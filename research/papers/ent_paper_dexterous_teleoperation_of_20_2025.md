@@ -6,13 +6,14 @@ type: paper
 names:
   en: Dexterous Teleoperation of 20-DoF ByteDexter Hand via Human Motion Retargeting
   zh: Dexterous Teleoperation of 20-DoF ByteDexter Hand via Human Motion Retargeting
-  ko: ''
+  ko: Dexterous Teleoperation of 20-DoF ByteDexter Hand via Human Motion Retargeting
 summary:
   en: Dexterous Teleoperation of 20-DoF ByteDexter Hand via Human Motion Retargeting
     is a 2025 work on hardware design for humanoid robots.
   zh: Dexterous Teleoperation of 20-DoF ByteDexter Hand via Human Motion Retargeting
     is a 2025 work on hardware design for humanoid robots.
-  ko: ''
+  ko: Dexterous Teleoperation of 20-DoF ByteDexter Hand via Human Motion Retargeting
+    is a 2025 work on hardware design for humanoid robots.
 domains:
 - 06_design_engineering
 - 02_components
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Dexterous Teleoperation of 20-DoF ByteDexter Hand via Human Motion Retargeting is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+Dexterous Teleoperation of 20-DoF ByteDexter Hand via Human Motion Retargeting is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 Dexterous Teleoperation of 20-DoF ByteDexter Hand via Human Motion Retargeting is a 2025 work on hardware design for humanoid robots.

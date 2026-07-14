@@ -7,7 +7,8 @@ names:
   en: 'EfficientVLA: Training-Free Acceleration and Compression for Vision-Language-Action
     Models'
   zh: EfficientVLA
-  ko: ''
+  ko: 'EfficientVLA: Training-Free Acceleration and Compression for Vision-Language-Action
+    Models'
 summary:
   en: 'EfficientVLA: Training-Free Acceleration and Compression for Vision-Language-Action
     Models (EfficientVLA), is a 2025 large vision-language-action model for robotic
@@ -21,7 +22,12 @@ summary:
     University, Harbin Institute of Technology, Xi’an Jiaotong University, University
     of Electronic Science and Technology of China, Anyverse Intelligence, and published
     at NIPS25.'
-  ko: ''
+  ko: 'EfficientVLA: Training-Free Acceleration and Compression for Vision-Language-Action
+    Models (EfficientVLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by School of Artificial Intelligence, Shanghai Jiao Tong
+    University, Harbin Institute of Technology, Xi’an Jiaotong University, University
+    of Electronic Science and Technology of China, Anyverse Intelligence, and published
+    at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -63,4 +69,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EfficientVLA: Training-Free Acceleration and Compression for Vision-Language-Action Models (EfficientVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Artificial Intelligence, Shanghai Jiao Tong University, Harbin Institute of Technology, Xi’an Jiaotong University, University of Electronic Science and Technology of China, Anyverse Intelligence, and published at NIPS25.
+
+## Overview
+EfficientVLA: Training-Free Acceleration and Compression for Vision-Language-Action Models (EfficientVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Artificial Intelligence, Shanghai Jiao Tong University, Harbin Institute of Technology, Xi’an Jiaotong University, University of Electronic Science and Technology of China, Anyverse Intelligence, and published at NIPS25.
+
+## 개요
 EfficientVLA: Training-Free Acceleration and Compression for Vision-Language-Action Models (EfficientVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Artificial Intelligence, Shanghai Jiao Tong University, Harbin Institute of Technology, Xi’an Jiaotong University, University of Electronic Science and Technology of China, Anyverse Intelligence, and published at NIPS25.

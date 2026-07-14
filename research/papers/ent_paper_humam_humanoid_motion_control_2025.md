@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba'
   zh: 'HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba'
-  ko: ''
+  ko: 'HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba'
 summary:
   en: 'HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba is a 2025
     work on locomotion for humanoid robots.'
   zh: 'HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba is a 2025
     work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba is a 2025
+    work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 HuMam: Humanoid Motion Control via End-to-End Deep RL with Mamba is a 2025 work on locomotion for humanoid robots.

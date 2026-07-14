@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+将电池电能分配给计算、执行器和传感器的DC-DC变换器、母线、保险丝和接触器。
+
+## Overview
 DC-DC converters, busbars, fuses, and contactors that route battery power to compute, actuators, and sensors.
+
+## 개요
+배터리 전력을 컴퓨팅, 액추에이터 및 센서로 라우팅하는 DC-DC 컨버터, 버스바, 퓨즈 및 콘택터.

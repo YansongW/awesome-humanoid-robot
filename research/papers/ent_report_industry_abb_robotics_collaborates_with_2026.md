@@ -6,11 +6,11 @@ type: report
 names:
   en: ABB Robotics collaborates with Roche to bring physical AI to laboratories
   zh: ABB Robotics collaborates with Roche to bring physical AI to laboratories
-  ko: ''
+  ko: ABB Robotics collaborates with Roche to bring physical AI to laboratories
 summary:
   en: ABB Robotics collaborates with Roche to bring physical AI to laboratories
   zh: ABB Robotics collaborates with Roche to bring physical AI to laboratories
-  ko: ''
+  ko: ABB Robotics collaborates with Roche to bring physical AI to laboratories
 domains:
 - 11_applications_markets
 layers:
@@ -40,4 +40,11 @@ sources:
   accessed_at: '2026-07-14'
 ---
 
+## 概述
+ABB Robotics collaborates with Roche to bring physical AI to laboratories
+
+## Overview
+ABB Robotics collaborates with Roche to bring physical AI to laboratories
+
+## 개요
 ABB Robotics collaborates with Roche to bring physical AI to laboratories

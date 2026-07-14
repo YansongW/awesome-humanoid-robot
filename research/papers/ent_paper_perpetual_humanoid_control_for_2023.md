@@ -6,13 +6,14 @@ type: paper
 names:
   en: Perpetual Humanoid Control for Real-time Simulated Avatars
   zh: Perpetual Humanoid Control for Real-time Simulated Avatars
-  ko: ''
+  ko: Perpetual Humanoid Control for Real-time Simulated Avatars
 summary:
   en: Perpetual Humanoid Control for Real-time Simulated Avatars is a 2023 work on
     physics-based character animation for humanoid robots, with open-source code available.
   zh: Perpetual Humanoid Control for Real-time Simulated Avatars is a 2023 work on
     physics-based character animation for humanoid robots, with open-source code available.
-  ko: ''
+  ko: Perpetual Humanoid Control for Real-time Simulated Avatars is a 2023 work on
+    physics-based character animation for humanoid robots, with open-source code available.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Perpetual Humanoid Control for Real-time Simulated Avatars is a 2023 work on physics-based character animation for humanoid robots, with open-source code available.
+
+## Overview
+Perpetual Humanoid Control for Real-time Simulated Avatars is a 2023 work on physics-based character animation for humanoid robots, with open-source code available.
+
+## 개요
 Perpetual Humanoid Control for Real-time Simulated Avatars is a 2023 work on physics-based character animation for humanoid robots, with open-source code available.

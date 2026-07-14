@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RoboChemist: Long-Horizon and Safety-Compliant Robotic Chemical Experimentation'
   zh: RoboChemist
-  ko: ''
+  ko: 'RoboChemist: Long-Horizon and Safety-Compliant Robotic Chemical Experimentation'
 summary:
   en: 'RoboChemist: Long-Horizon and Safety-Compliant Robotic Chemical Experimentation
     (RoboChemist), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'RoboChemist: Long-Horizon and Safety-Compliant Robotic Chemical Experimentation
     (RoboChemist), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Tsinghua University, and published at CoRL25.'
-  ko: ''
+  ko: 'RoboChemist: Long-Horizon and Safety-Compliant Robotic Chemical Experimentation
+    (RoboChemist), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Tsinghua University, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboChemist: Long-Horizon and Safety-Compliant Robotic Chemical Experimentation (RoboChemist), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, and published at CoRL25.
+
+## Overview
+RoboChemist: Long-Horizon and Safety-Compliant Robotic Chemical Experimentation (RoboChemist), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, and published at CoRL25.
+
+## 개요
 RoboChemist: Long-Horizon and Safety-Compliant Robotic Chemical Experimentation (RoboChemist), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, and published at CoRL25.

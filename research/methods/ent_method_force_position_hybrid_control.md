@@ -8,8 +8,8 @@ names:
   zh: 力位混合控制
   ko: 힘/위치 하이브리드 제어
 summary:
-  en: A control strategy that simultaneously regulates force along constrained directions and position along free directions
-    in contact tasks.
+  en: A control strategy that simultaneously regulates force along constrained directions
+    and position along free directions in contact tasks.
   zh: 在接触任务中同时约束方向上控制力、自由方向上控制位置的策略。
   ko: 접촉 작업에서 제약 방향으로는 힘을, 자유 방향으로는 위치를 동시에 제어하는 전략.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+在接触任务中同时约束方向上控制力、自由方向上控制位置的策略。
+
+## Overview
+A control strategy that simultaneously regulates force along constrained directions and position along free directions in contact tasks.
+
+## 개요
+A control strategy that simultaneously regulates force along constrained directions and position along free directions in contact tasks.

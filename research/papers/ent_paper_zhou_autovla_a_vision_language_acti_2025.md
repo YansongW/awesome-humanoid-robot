@@ -7,7 +7,8 @@ names:
   en: 'AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with
     Adaptive Reasoning and Reinforcement Fine-Tuning'
   zh: AutoVLA
-  ko: ''
+  ko: 'AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with
+    Adaptive Reasoning and Reinforcement Fine-Tuning'
 summary:
   en: 'AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with
     Adaptive Reasoning and Reinforcement Fine-Tuning (AutoVLA), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Adaptive Reasoning and Reinforcement Fine-Tuning (AutoVLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by University of California, Los Angeles,
     and published at NIPS25.'
-  ko: ''
+  ko: 'AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with
+    Adaptive Reasoning and Reinforcement Fine-Tuning (AutoVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by University of California, Los Angeles,
+    and published at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning (AutoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of California, Los Angeles, and published at NIPS25.
+
+## Overview
+AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning (AutoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of California, Los Angeles, and published at NIPS25.
+
+## 개요
 AutoVLA: A Vision-Language-Action Model for End-to-End Autonomous Driving with Adaptive Reasoning and Reinforcement Fine-Tuning (AutoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of California, Los Angeles, and published at NIPS25.

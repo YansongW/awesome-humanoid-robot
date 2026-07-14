@@ -8,8 +8,8 @@ names:
   zh: 人形机器人全球市场预测
   ko: 글로벌 휴로봇 시장 전망
 summary:
-  en: Projections of market size, growth rates, regional adoption, and segment demand for humanoid robots over a multi-year
-    horizon.
+  en: Projections of market size, growth rates, regional adoption, and segment demand
+    for humanoid robots over a multi-year horizon.
   zh: 对人形机器人在未来多年市场规模、增长率、区域采用与细分需求的预测。
   ko: 향후 수년간 휴로봇의 시장 규모·성장률·지역 도입·세분 수요를 전망하는 예측.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+对人形机器人在未来多年市场规模、增长率、区域采用与细分需求的预测。
+
+## Overview
+Projections of market size, growth rates, regional adoption, and segment demand for humanoid robots over a multi-year horizon.
+
+## 개요
+Projections of market size, growth rates, regional adoption, and segment demand for humanoid robots over a multi-year horizon.

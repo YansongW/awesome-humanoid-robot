@@ -7,7 +7,8 @@ names:
   en: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures
     for Human-Robot Collaboration
   zh: InteractGen
-  ko: ''
+  ko: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures
+    for Human-Robot Collaboration
 summary:
   en: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures
     for Human-Robot Collaboration (InteractGen), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     for Human-Robot Collaboration (InteractGen), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Tsinghua University, Beijing University
     of Posts and Telecommunications.
-  ko: ''
+  ko: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures
+    for Human-Robot Collaboration (InteractGen), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Tsinghua University, Beijing University
+    of Posts and Telecommunications.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot Collaboration (InteractGen), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Beijing University of Posts and Telecommunications.
+
+## Overview
+Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot Collaboration (InteractGen), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Beijing University of Posts and Telecommunications.
+
+## 개요
 Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot Collaboration (InteractGen), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Beijing University of Posts and Telecommunications.

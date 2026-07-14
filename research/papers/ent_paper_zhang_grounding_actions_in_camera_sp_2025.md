@@ -7,7 +7,8 @@ names:
   en: 'Grounding Actions in Camera Space: Observation-Centric Vision-Language-Action
     Policy'
   zh: OC-VLA
-  ko: ''
+  ko: 'Grounding Actions in Camera Space: Observation-Centric Vision-Language-Action
+    Policy'
 summary:
   en: 'Grounding Actions in Camera Space: Observation-Centric Vision-Language-Action
     Policy (OC-VLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Policy (OC-VLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Zhejiang University, Shanghai AI Lab, SenseTime Research, Nanjing
     University, Tsinghua University.'
-  ko: ''
+  ko: 'Grounding Actions in Camera Space: Observation-Centric Vision-Language-Action
+    Policy (OC-VLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Zhejiang University, Shanghai AI Lab, SenseTime Research, Nanjing
+    University, Tsinghua University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Grounding Actions in Camera Space: Observation-Centric Vision-Language-Action Policy (OC-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, Shanghai AI Lab, SenseTime Research, Nanjing University, Tsinghua University.
+
+## Overview
+Grounding Actions in Camera Space: Observation-Centric Vision-Language-Action Policy (OC-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, Shanghai AI Lab, SenseTime Research, Nanjing University, Tsinghua University.
+
+## 개요
 Grounding Actions in Camera Space: Observation-Centric Vision-Language-Action Policy (OC-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, Shanghai AI Lab, SenseTime Research, Nanjing University, Tsinghua University.

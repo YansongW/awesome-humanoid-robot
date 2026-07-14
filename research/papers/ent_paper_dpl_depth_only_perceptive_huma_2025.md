@@ -8,7 +8,8 @@ names:
     and Cross-Attention Terrain Reconstruction'
   zh: 'DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis
     and Cross-Attention Terrain Reconstruction'
-  ko: ''
+  ko: 'DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis
+    and Cross-Attention Terrain Reconstruction'
 summary:
   en: 'DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis
     and Cross-Attention Terrain Reconstruction is a 2025 work on locomotion for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis
     and Cross-Attention Terrain Reconstruction is a 2025 work on locomotion for humanoid
     robots.'
-  ko: ''
+  ko: 'DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis
+    and Cross-Attention Terrain Reconstruction is a 2025 work on locomotion for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -47,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis and Cross-Attention Terrain Reconstruction is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis and Cross-Attention Terrain Reconstruction is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 DPL: Depth-only Perceptive Humanoid Locomotion via Realistic Depth Synthesis and Cross-Attention Terrain Reconstruction is a 2025 work on locomotion for humanoid robots.

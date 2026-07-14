@@ -45,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+高性能执行器和伺服等精密运动控制部件供应商。
+
+## Overview
+Supplier of precision motion control components including high-performance actuators and servos.
+
+## 개요
 Supplier of precision motion control components including high-performance actuators and servos.

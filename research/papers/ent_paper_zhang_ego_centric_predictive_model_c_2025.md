@@ -6,7 +6,7 @@ type: paper
 names:
   en: Ego-centric Predictive Model Conditioned on Hand Trajectories
   zh: Ego-PM
-  ko: ''
+  ko: Ego-centric Predictive Model Conditioned on Hand Trajectories
 summary:
   en: Ego-centric Predictive Model Conditioned on Hand Trajectories (Ego-PM), is a
     2025 large vision-language-action model for robotic manipulation, introduced by
@@ -14,7 +14,9 @@ summary:
   zh: Ego-centric Predictive Model Conditioned on Hand Trajectories (Ego-PM), is a
     2025 large vision-language-action model for robotic manipulation, introduced by
     Show Lab, National University of Singapore.
-  ko: ''
+  ko: Ego-centric Predictive Model Conditioned on Hand Trajectories (Ego-PM), is a
+    2025 large vision-language-action model for robotic manipulation, introduced by
+    Show Lab, National University of Singapore.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Ego-centric Predictive Model Conditioned on Hand Trajectories (Ego-PM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Show Lab, National University of Singapore.
+
+## Overview
+Ego-centric Predictive Model Conditioned on Hand Trajectories (Ego-PM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Show Lab, National University of Singapore.
+
+## 개요
 Ego-centric Predictive Model Conditioned on Hand Trajectories (Ego-PM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Show Lab, National University of Singapore.

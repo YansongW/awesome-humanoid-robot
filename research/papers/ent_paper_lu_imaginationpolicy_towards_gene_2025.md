@@ -7,7 +7,8 @@ names:
   en: 'ImaginationPolicy: Towards Generalizable, Precise and Reliable End-to-End Policy
     for Robotic Manipulation'
   zh: ImaginationPolicy
-  ko: ''
+  ko: 'ImaginationPolicy: Towards Generalizable, Precise and Reliable End-to-End Policy
+    for Robotic Manipulation'
 summary:
   en: 'ImaginationPolicy: Towards Generalizable, Precise and Reliable End-to-End Policy
     for Robotic Manipulation (ImaginationPolicy), is a 2025 large vision-language-action
@@ -15,7 +16,9 @@ summary:
   zh: 'ImaginationPolicy: Towards Generalizable, Precise and Reliable End-to-End Policy
     for Robotic Manipulation (ImaginationPolicy), is a 2025 large vision-language-action
     model for robotic manipulation.'
-  ko: ''
+  ko: 'ImaginationPolicy: Towards Generalizable, Precise and Reliable End-to-End Policy
+    for Robotic Manipulation (ImaginationPolicy), is a 2025 large vision-language-action
+    model for robotic manipulation.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ImaginationPolicy: Towards Generalizable, Precise and Reliable End-to-End Policy for Robotic Manipulation (ImaginationPolicy), is a 2025 large vision-language-action model for robotic manipulation.
+
+## Overview
+ImaginationPolicy: Towards Generalizable, Precise and Reliable End-to-End Policy for Robotic Manipulation (ImaginationPolicy), is a 2025 large vision-language-action model for robotic manipulation.
+
+## 개요
 ImaginationPolicy: Towards Generalizable, Precise and Reliable End-to-End Policy for Robotic Manipulation (ImaginationPolicy), is a 2025 large vision-language-action model for robotic manipulation.

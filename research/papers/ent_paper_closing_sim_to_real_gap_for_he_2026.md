@@ -4,14 +4,17 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation
+  en: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable
+    Simulation
   zh: 带负载的人形机器人不是同一个系统
-  ko: ''
+  ko: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable
+    Simulation
 summary:
-  en: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation is a knowledge node
-    related to paper in the humanoid robot value chain.
+  en: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable
+    Simulation is a knowledge node related to paper in the humanoid robot value chain.
   zh: ''
-  ko: ''
+  ko: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable
+    Simulation is a knowledge node related to paper in the humanoid robot value chain.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -31,11 +34,13 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (039). Institution: 浙江大学；中国电信 TeleAI；上海交通大学；Lumos Robotics. arXiv: 2603.15084.'
+  notes: 'Imported from WeChat curated list (039). Institution: 浙江大学；中国电信 TeleAI；上海交通大学；Lumos
+    Robotics. arXiv: 2603.15084.'
 sources:
 - id: src_001
   type: paper
-  title: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation (arXiv)
+  title: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via
+    Differentiable Simulation (arXiv)
   url: https://arxiv.org/abs/2603.15084
   date: '2026'
   accessed_at: '2026-07-01'
@@ -48,3 +53,12 @@ sources:
 theoretical_depth:
 - system
 ---
+
+## 概述
+Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation is a knowledge node related to paper in the humanoid robot value chain.
+
+## Overview
+Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation is a knowledge node related to paper in the humanoid robot value chain.
+
+## 개요
+Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation is a knowledge node related to paper in the humanoid robot value chain.

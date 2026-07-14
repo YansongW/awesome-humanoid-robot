@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model'
   zh: IRL-VLA
-  ko: ''
+  ko: 'IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model'
 summary:
   en: 'IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model (IRL-VLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -18,7 +18,11 @@ summary:
     by Bosch Corporate Research, School of Communication and Information Engineering,
     Shanghai University, School of Mechanical Engineering, Shanghai Jiao Tong University,
     Bosch Mobility Solutions, Robert Bosch GmbH, AIR, Tsinghua University.'
-  ko: ''
+  ko: 'IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model (IRL-VLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Bosch Corporate Research, School of Communication and Information Engineering,
+    Shanghai University, School of Mechanical Engineering, Shanghai Jiao Tong University,
+    Bosch Mobility Solutions, Robert Bosch GmbH, AIR, Tsinghua University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +64,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model (IRL-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Bosch Corporate Research, School of Communication and Information Engineering, Shanghai University, School of Mechanical Engineering, Shanghai Jiao Tong University, Bosch Mobility Solutions, Robert Bosch GmbH, AIR, Tsinghua University.
+
+## Overview
+IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model (IRL-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Bosch Corporate Research, School of Communication and Information Engineering, Shanghai University, School of Mechanical Engineering, Shanghai Jiao Tong University, Bosch Mobility Solutions, Robert Bosch GmbH, AIR, Tsinghua University.
+
+## 개요
 IRL-VLA: Training an Vision-Language-Action Policy via Reward World Model (IRL-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Bosch Corporate Research, School of Communication and Information Engineering, Shanghai University, School of Mechanical Engineering, Shanghai Jiao Tong University, Bosch Mobility Solutions, Robert Bosch GmbH, AIR, Tsinghua University.

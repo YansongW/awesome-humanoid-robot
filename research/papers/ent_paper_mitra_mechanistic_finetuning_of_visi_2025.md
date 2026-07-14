@@ -6,7 +6,7 @@ type: paper
 names:
   en: Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations
   zh: Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations
-  ko: ''
+  ko: Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations
 summary:
   en: Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations
     (Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations),
@@ -18,7 +18,11 @@ summary:
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Carnegie Mellon University, University of Southern California, University of
     California, Berkeley, MIT-IBM Watson AI Lab.
-  ko: ''
+  ko: Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations
+    (Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Carnegie Mellon University, University of Southern California, University of
+    California, Berkeley, MIT-IBM Watson AI Lab.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations (Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, University of Southern California, University of California, Berkeley, MIT-IBM Watson AI Lab.
+
+## Overview
+Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations (Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, University of Southern California, University of California, Berkeley, MIT-IBM Watson AI Lab.
+
+## 개요
 Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations (Mechanistic Finetuning of Vision-Language-Action Models via Few-Shot Demonstrations), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, University of Southern California, University of California, Berkeley, MIT-IBM Watson AI Lab.

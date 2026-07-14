@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'PhysDiff: Physics-Guided Human Motion Diffusion Model'
   zh: 'PhysDiff: Physics-Guided Human Motion Diffusion Model'
-  ko: ''
+  ko: 'PhysDiff: Physics-Guided Human Motion Diffusion Model'
 summary:
   en: 'PhysDiff: Physics-Guided Human Motion Diffusion Model is a 2022 work on human
     motion analysis and synthesis for humanoid robots.'
   zh: 'PhysDiff: Physics-Guided Human Motion Diffusion Model is a 2022 work on human
     motion analysis and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'PhysDiff: Physics-Guided Human Motion Diffusion Model is a 2022 work on human
+    motion analysis and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PhysDiff: Physics-Guided Human Motion Diffusion Model is a 2022 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+PhysDiff: Physics-Guided Human Motion Diffusion Model is a 2022 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 PhysDiff: Physics-Guided Human Motion Diffusion Model is a 2022 work on human motion analysis and synthesis for humanoid robots.

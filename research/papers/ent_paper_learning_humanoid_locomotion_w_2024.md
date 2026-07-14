@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Humanoid Locomotion with Perceptive Internal Model
   zh: Learning Humanoid Locomotion with Perceptive Internal Model
-  ko: ''
+  ko: Learning Humanoid Locomotion with Perceptive Internal Model
 summary:
   en: Learning Humanoid Locomotion with Perceptive Internal Model is a 2024 work on
     locomotion for humanoid robots.
   zh: Learning Humanoid Locomotion with Perceptive Internal Model is a 2024 work on
     locomotion for humanoid robots.
-  ko: ''
+  ko: Learning Humanoid Locomotion with Perceptive Internal Model is a 2024 work on
+    locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Humanoid Locomotion with Perceptive Internal Model is a 2024 work on locomotion for humanoid robots.
+
+## Overview
+Learning Humanoid Locomotion with Perceptive Internal Model is a 2024 work on locomotion for humanoid robots.
+
+## 개요
 Learning Humanoid Locomotion with Perceptive Internal Model is a 2024 work on locomotion for humanoid robots.

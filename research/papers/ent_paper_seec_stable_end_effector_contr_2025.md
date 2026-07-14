@@ -8,7 +8,8 @@ names:
     Humanoid Loco-Manipulation'
   zh: 'SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for
     Humanoid Loco-Manipulation'
-  ko: ''
+  ko: 'SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for
+    Humanoid Loco-Manipulation'
 summary:
   en: 'SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for
     Humanoid Loco-Manipulation is a 2025 work on loco-manipulation and whole-body-control
@@ -16,7 +17,9 @@ summary:
   zh: 'SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for
     Humanoid Loco-Manipulation is a 2025 work on loco-manipulation and whole-body-control
     for humanoid robots.'
-  ko: ''
+  ko: 'SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for
+    Humanoid Loco-Manipulation is a 2025 work on loco-manipulation and whole-body-control
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for Humanoid Loco-Manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for Humanoid Loco-Manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 SEEC: Stable End-Effector Control with Model-Enhanced Residual Learning for Humanoid Loco-Manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

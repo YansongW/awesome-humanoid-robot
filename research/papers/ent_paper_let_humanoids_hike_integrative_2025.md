@@ -6,13 +6,14 @@ type: paper
 names:
   en: Let Humanoids Hike! Integrative Skill Development on Complex Trails
   zh: Let Humanoids Hike! Integrative Skill Development on Complex Trails
-  ko: ''
+  ko: Let Humanoids Hike! Integrative Skill Development on Complex Trails
 summary:
   en: Let Humanoids Hike! Integrative Skill Development on Complex Trails is a 2025
     work on locomotion for humanoid robots.
   zh: Let Humanoids Hike! Integrative Skill Development on Complex Trails is a 2025
     work on locomotion for humanoid robots.
-  ko: ''
+  ko: Let Humanoids Hike! Integrative Skill Development on Complex Trails is a 2025
+    work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Let Humanoids Hike! Integrative Skill Development on Complex Trails is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Let Humanoids Hike! Integrative Skill Development on Complex Trails is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Let Humanoids Hike! Integrative Skill Development on Complex Trails is a 2025 work on locomotion for humanoid robots.

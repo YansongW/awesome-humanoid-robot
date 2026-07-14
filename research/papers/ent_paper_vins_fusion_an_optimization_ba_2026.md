@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'VINS-Fusion: An optimization-based multi-sensor state estimator'
   zh: 'VINS-Fusion: An optimization-based multi-sensor state estimator'
-  ko: ''
+  ko: 'VINS-Fusion: An optimization-based multi-sensor state estimator'
 summary:
   en: 'VINS-Fusion: An optimization-based multi-sensor state estimator is a 2026 work
     on state estimation for humanoid robots.'
   zh: 'VINS-Fusion: An optimization-based multi-sensor state estimator is a 2026 work
     on state estimation for humanoid robots.'
-  ko: ''
+  ko: 'VINS-Fusion: An optimization-based multi-sensor state estimator is a 2026 work
+    on state estimation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VINS-Fusion: An optimization-based multi-sensor state estimator is a 2026 work on state estimation for humanoid robots.
+
+## Overview
+VINS-Fusion: An optimization-based multi-sensor state estimator is a 2026 work on state estimation for humanoid robots.
+
+## 개요
 VINS-Fusion: An optimization-based multi-sensor state estimator is a 2026 work on state estimation for humanoid robots.

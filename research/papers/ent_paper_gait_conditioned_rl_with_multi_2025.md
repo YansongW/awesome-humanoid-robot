@@ -6,13 +6,14 @@ type: paper
 names:
   en: Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion
   zh: Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion
-  ko: ''
+  ko: Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion
 summary:
   en: Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion is a
     2025 work on locomotion for humanoid robots.
   zh: Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion is a
     2025 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion is a
+    2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Gait-Conditioned RL with Multi-Phase Curriculum for Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.

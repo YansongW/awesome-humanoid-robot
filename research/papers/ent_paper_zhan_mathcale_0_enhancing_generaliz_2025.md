@@ -7,7 +7,8 @@ names:
   en: '$\mathcal{E}_0$: Enhancing Generalization and Fine-Grained Control in VLA Models
     via Continuized Discrete Diffusion'
   zh: Epsilon0
-  ko: ''
+  ko: '$\mathcal{E}_0$: Enhancing Generalization and Fine-Grained Control in VLA Models
+    via Continuized Discrete Diffusion'
 summary:
   en: '$\mathcal{E}_0$: Enhancing Generalization and Fine-Grained Control in VLA Models
     via Continuized Discrete Diffusion (Epsilon0), is a 2025 large vision-language-action
@@ -19,7 +20,11 @@ summary:
     model for robotic manipulation, introduced by Sun Yat-sen University, Guangdong
     Key Laboratory of Big Data Analysis and Processing, X-Era AI Lab, Guangdong University
     of Technology.'
-  ko: ''
+  ko: '$\mathcal{E}_0$: Enhancing Generalization and Fine-Grained Control in VLA Models
+    via Continuized Discrete Diffusion (Epsilon0), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Sun Yat-sen University, Guangdong
+    Key Laboratory of Big Data Analysis and Processing, X-Era AI Lab, Guangdong University
+    of Technology.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+$\mathcal{E}_0$: Enhancing Generalization and Fine-Grained Control in VLA Models via Continuized Discrete Diffusion (Epsilon0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Guangdong Key Laboratory of Big Data Analysis and Processing, X-Era AI Lab, Guangdong University of Technology.
+
+## Overview
+$\mathcal{E}_0$: Enhancing Generalization and Fine-Grained Control in VLA Models via Continuized Discrete Diffusion (Epsilon0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Guangdong Key Laboratory of Big Data Analysis and Processing, X-Era AI Lab, Guangdong University of Technology.
+
+## 개요
 $\mathcal{E}_0$: Enhancing Generalization and Fine-Grained Control in VLA Models via Continuized Discrete Diffusion (Epsilon0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Guangdong Key Laboratory of Big Data Analysis and Processing, X-Era AI Lab, Guangdong University of Technology.

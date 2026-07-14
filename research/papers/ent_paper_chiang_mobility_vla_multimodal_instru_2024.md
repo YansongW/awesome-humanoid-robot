@@ -7,7 +7,8 @@ names:
   en: 'Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and
     Topological Graphs'
   zh: Mobility VLA
-  ko: ''
+  ko: 'Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and
+    Topological Graphs'
 summary:
   en: 'Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and
     Topological Graphs (Mobility VLA), is a 2024 large vision-language-action model
@@ -15,7 +16,9 @@ summary:
   zh: 'Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and
     Topological Graphs (Mobility VLA), is a 2024 large vision-language-action model
     for robotic manipulation, introduced by Google DeepMind, and published at CoRL24.'
-  ko: ''
+  ko: 'Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and
+    Topological Graphs (Mobility VLA), is a 2024 large vision-language-action model
+    for robotic manipulation, introduced by Google DeepMind, and published at CoRL24.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs (Mobility VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at CoRL24.
+
+## Overview
+Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs (Mobility VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at CoRL24.
+
+## 개요
 Mobility VLA: Multimodal Instruction Navigation with Long-Context VLMs and Topological Graphs (Mobility VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at CoRL24.

@@ -8,13 +8,15 @@ names:
     Actuated Neck'
   zh: 'Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like
     Actuated Neck'
-  ko: ''
+  ko: 'Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like
+    Actuated Neck'
 summary:
   en: 'Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like
     Actuated Neck is a 2024 work on manipulation for humanoid robots.'
   zh: 'Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like
     Actuated Neck is a 2024 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like
+    Actuated Neck is a 2024 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like Actuated Neck is a 2024 work on manipulation for humanoid robots.
+
+## Overview
+Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like Actuated Neck is a 2024 work on manipulation for humanoid robots.
+
+## 개요
 Learning to Look Around: Enhancing Teleoperation and Learning with a Human-like Actuated Neck is a 2024 work on manipulation for humanoid robots.

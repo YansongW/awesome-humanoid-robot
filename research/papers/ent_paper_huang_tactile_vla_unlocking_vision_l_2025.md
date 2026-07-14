@@ -7,7 +7,8 @@ names:
   en: 'Tactile-VLA: Unlocking Vision-Language-Action Model''s Physical Knowledge for
     Tactile Generalization'
   zh: Tactile-VLA
-  ko: ''
+  ko: 'Tactile-VLA: Unlocking Vision-Language-Action Model''s Physical Knowledge for
+    Tactile Generalization'
 summary:
   en: 'Tactile-VLA: Unlocking Vision-Language-Action Model''s Physical Knowledge for
     Tactile Generalization (Tactile-VLA), is a 2025 large vision-language-action model
@@ -17,7 +18,10 @@ summary:
     Tactile Generalization (Tactile-VLA), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by Tsinghua University, UESTC, Shanghai Jiao
     Tong University.'
-  ko: ''
+  ko: 'Tactile-VLA: Unlocking Vision-Language-Action Model''s Physical Knowledge for
+    Tactile Generalization (Tactile-VLA), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by Tsinghua University, UESTC, Shanghai Jiao
+    Tong University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Tactile-VLA: Unlocking Vision-Language-Action Model's Physical Knowledge for Tactile Generalization (Tactile-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, UESTC, Shanghai Jiao Tong University.
+
+## Overview
+Tactile-VLA: Unlocking Vision-Language-Action Model's Physical Knowledge for Tactile Generalization (Tactile-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, UESTC, Shanghai Jiao Tong University.
+
+## 개요
 Tactile-VLA: Unlocking Vision-Language-Action Model's Physical Knowledge for Tactile Generalization (Tactile-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, UESTC, Shanghai Jiao Tong University.

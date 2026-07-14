@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control'
   zh: 'AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control'
-  ko: ''
+  ko: 'AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control'
 summary:
   en: 'AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control
     is a 2021 work on physics-based character animation for humanoid robots, with
@@ -14,7 +14,9 @@ summary:
   zh: 'AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control
     is a 2021 work on physics-based character animation for humanoid robots, with
     open-source code available.'
-  ko: ''
+  ko: 'AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control
+    is a 2021 work on physics-based character animation for humanoid robots, with
+    open-source code available.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control is a 2021 work on physics-based character animation for humanoid robots, with open-source code available.
+
+## Overview
+AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control is a 2021 work on physics-based character animation for humanoid robots, with open-source code available.
+
+## 개요
 AMP: Adversarial Motion Priors for Stylized Physics-Based Character Control is a 2021 work on physics-based character animation for humanoid robots, with open-source code available.

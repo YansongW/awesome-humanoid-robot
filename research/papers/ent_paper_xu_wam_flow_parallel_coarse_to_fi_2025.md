@@ -7,7 +7,8 @@ names:
   en: 'WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching
     for Autonomous Driving'
   zh: WAM-Flow
-  ko: ''
+  ko: 'WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching
+    for Autonomous Driving'
 summary:
   en: 'WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching
     for Autonomous Driving (WAM-Flow), is a 2025 large vision-language-action model
@@ -17,7 +18,10 @@ summary:
     for Autonomous Driving (WAM-Flow), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by Fudan University, Yinwang Intelligent
     Technology Co., Ltd..'
-  ko: ''
+  ko: 'WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching
+    for Autonomous Driving (WAM-Flow), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by Fudan University, Yinwang Intelligent
+    Technology Co., Ltd..'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving (WAM-Flow), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, Yinwang Intelligent Technology Co., Ltd..
+
+## Overview
+WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving (WAM-Flow), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, Yinwang Intelligent Technology Co., Ltd..
+
+## 개요
 WAM-Flow: Parallel Coarse-to-Fine Motion Planning via Discrete Flow Matching for Autonomous Driving (WAM-Flow), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, Yinwang Intelligent Technology Co., Ltd..

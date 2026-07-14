@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 法规、标准与安全需求映射
-  ko: ''
+  ko: 法规、标准与安全需求映射
 summary:
   en: ''
   zh: 法规需求矩阵、合规路线图、安全目标等级（SIL/PL）
-  ko: ''
+  ko: 法规需求矩阵、合规路线图、安全目标等级（SIL/PL）
 domains:
 - 06_design_engineering
 - 12_policy_regulation_ethics
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）

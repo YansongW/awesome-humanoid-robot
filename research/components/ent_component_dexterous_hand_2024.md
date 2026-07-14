@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-13'
 ---
 
-灵巧手是人形机器人实现通用操作能力的关键末端执行器，通常具备多自由度的手指与拇指对掌机构。本词条正文正在施工中。
+## 概述
+具有独立关节控制的多指机器人末端执行器，用于类人抓取与手中操作。
+
+## Overview
+Multi-fingered robotic end-effector with independent joint control, designed for human-like grasping and in-hand manipulation.
+
+## 개요
+Multi-fingered robotic end-effector with independent joint control, designed for human-like grasping and in-hand manipulation.

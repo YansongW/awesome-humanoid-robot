@@ -8,7 +8,8 @@ names:
     Force Compliance in Humanoid Locomotion
   zh: Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and
     Force Compliance in Humanoid Locomotion
-  ko: ''
+  ko: Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and
+    Force Compliance in Humanoid Locomotion
 summary:
   en: Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and
     Force Compliance in Humanoid Locomotion is a 2025 work on locomotion for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and
     Force Compliance in Humanoid Locomotion is a 2025 work on locomotion for humanoid
     robots.
-  ko: ''
+  ko: Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and
+    Force Compliance in Humanoid Locomotion is a 2025 work on locomotion for humanoid
+    robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -47,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Preference-Conditioned Multi-Objective RL for Integrated Command Tracking and Force Compliance in Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.

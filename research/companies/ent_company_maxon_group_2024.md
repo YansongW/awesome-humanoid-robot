@@ -45,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+面向机器人的高精度无刷直流电机、齿轮头和控制器制造商。
+
+## Overview
+Swiss manufacturer of high-precision brushless DC motors, gearheads and controllers for robotics.
+
+## 개요
 Swiss manufacturer of high-precision brushless DC motors, gearheads and controllers for robotics.

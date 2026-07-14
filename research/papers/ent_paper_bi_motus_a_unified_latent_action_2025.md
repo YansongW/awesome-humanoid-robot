@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Motus: A Unified Latent Action World Model'
   zh: Motus
-  ko: ''
+  ko: 'Motus: A Unified Latent Action World Model'
 summary:
   en: 'Motus: A Unified Latent Action World Model (Motus), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Bosch, Tsinghua University, Peking
@@ -14,7 +14,9 @@ summary:
   zh: 'Motus: A Unified Latent Action World Model (Motus), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Bosch, Tsinghua University, Peking
     University, Horizon Robotics.'
-  ko: ''
+  ko: 'Motus: A Unified Latent Action World Model (Motus), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Bosch, Tsinghua University, Peking
+    University, Horizon Robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Motus: A Unified Latent Action World Model (Motus), is a 2025 large vision-language-action model for robotic manipulation, introduced by Bosch, Tsinghua University, Peking University, Horizon Robotics.
+
+## Overview
+Motus: A Unified Latent Action World Model (Motus), is a 2025 large vision-language-action model for robotic manipulation, introduced by Bosch, Tsinghua University, Peking University, Horizon Robotics.
+
+## 개요
 Motus: A Unified Latent Action World Model (Motus), is a 2025 large vision-language-action model for robotic manipulation, introduced by Bosch, Tsinghua University, Peking University, Horizon Robotics.

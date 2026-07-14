@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 驱动与传动方案
-  ko: ''
+  ko: 驱动与传动方案
 summary:
   en: ''
   zh: 驱动方案决策报告、传动链图纸
-  ko: ''
+  ko: 驱动方案决策报告、传动链图纸
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）

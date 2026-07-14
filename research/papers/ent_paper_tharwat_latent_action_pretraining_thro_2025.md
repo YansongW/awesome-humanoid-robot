@@ -6,7 +6,7 @@ type: paper
 names:
   en: Latent Action Pretraining Through World Modeling
   zh: LAWM
-  ko: ''
+  ko: Latent Action Pretraining Through World Modeling
 summary:
   en: Latent Action Pretraining Through World Modeling (LAWM), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Mohamed bin Zayed University of
@@ -14,7 +14,9 @@ summary:
   zh: Latent Action Pretraining Through World Modeling (LAWM), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Mohamed bin Zayed University of
     Artificial Intelligence, Alexandria University.
-  ko: ''
+  ko: Latent Action Pretraining Through World Modeling (LAWM), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Mohamed bin Zayed University of
+    Artificial Intelligence, Alexandria University.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Latent Action Pretraining Through World Modeling (LAWM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mohamed bin Zayed University of Artificial Intelligence, Alexandria University.
+
+## Overview
+Latent Action Pretraining Through World Modeling (LAWM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mohamed bin Zayed University of Artificial Intelligence, Alexandria University.
+
+## 개요
 Latent Action Pretraining Through World Modeling (LAWM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mohamed bin Zayed University of Artificial Intelligence, Alexandria University.

@@ -8,13 +8,15 @@ names:
     Planning'
   zh: 'ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion
     Planning'
-  ko: ''
+  ko: 'ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion
+    Planning'
 summary:
   en: 'ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion
     Planning is a 2024 work on navigation for humanoid robots.'
   zh: 'ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion
     Planning is a 2024 work on navigation for humanoid robots.'
-  ko: ''
+  ko: 'ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion
+    Planning is a 2024 work on navigation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning is a 2024 work on navigation for humanoid robots.
+
+## Overview
+ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning is a 2024 work on navigation for humanoid robots.
+
+## 개요
 ARMOR: Egocentric Perception for Humanoid Robot Collision Avoidance and Motion Planning is a 2024 work on navigation for humanoid robots.

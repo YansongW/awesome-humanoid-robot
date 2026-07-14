@@ -8,8 +8,8 @@ names:
   zh: GR00T N1
   ko: GR00T N1
 summary:
-  en: NVIDIA's general-purpose humanoid robot foundation model designed to enable natural-language-conditioned manipulation
-    and locomotion skills.
+  en: NVIDIA's general-purpose humanoid robot foundation model designed to enable
+    natural-language-conditioned manipulation and locomotion skills.
   zh: NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。
   ko: NVIDIA의 범용 휴로봇 기반 모델로, 자연어 조건 하에서 조작 및 이동 기술을 가능하게 함.
 domains:
@@ -30,8 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,3 +39,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。
+
+## Overview
+NVIDIA's general-purpose humanoid robot foundation model designed to enable natural-language-conditioned manipulation and locomotion skills.
+
+## 개요
+NVIDIA's general-purpose humanoid robot foundation model designed to enable natural-language-conditioned manipulation and locomotion skills.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 通信网络与同步
-  ko: ''
+  ko: 通信网络与同步
 summary:
   en: ''
   zh: 通信拓扑图、协议分配、带宽/延迟预算、同步精度
-  ko: ''
+  ko: 通信拓扑图、协议分配、带宽/延迟预算、同步精度
 domains:
 - 02_components
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）

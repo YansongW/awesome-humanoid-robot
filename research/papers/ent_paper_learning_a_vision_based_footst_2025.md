@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control
   zh: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control
-  ko: ''
+  ko: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control
 summary:
   en: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is
     a 2025 work on locomotion for humanoid robots.
   zh: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is
     a 2025 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is
+    a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is a 2025 work on locomotion for humanoid robots.

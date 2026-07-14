@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'GeRM: A Generalist Robotic Model with Mixture-of-experts for Quadruped Robot'
   zh: GeRM
-  ko: ''
+  ko: 'GeRM: A Generalist Robotic Model with Mixture-of-experts for Quadruped Robot'
 summary:
   en: 'GeRM: A Generalist Robotic Model with Mixture-of-experts for Quadruped Robot
     (GeRM), is a 2024 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'GeRM: A Generalist Robotic Model with Mixture-of-experts for Quadruped Robot
     (GeRM), is a 2024 large vision-language-action model for robotic manipulation,
     introduced by MiLAB, Westlake University, and published at IROS 2024.'
-  ko: ''
+  ko: 'GeRM: A Generalist Robotic Model with Mixture-of-experts for Quadruped Robot
+    (GeRM), is a 2024 large vision-language-action model for robotic manipulation,
+    introduced by MiLAB, Westlake University, and published at IROS 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GeRM: A Generalist Robotic Model with Mixture-of-experts for Quadruped Robot (GeRM), is a 2024 large vision-language-action model for robotic manipulation, introduced by MiLAB, Westlake University, and published at IROS 2024.
+
+## Overview
+GeRM: A Generalist Robotic Model with Mixture-of-experts for Quadruped Robot (GeRM), is a 2024 large vision-language-action model for robotic manipulation, introduced by MiLAB, Westlake University, and published at IROS 2024.
+
+## 개요
 GeRM: A Generalist Robotic Model with Mixture-of-experts for Quadruped Robot (GeRM), is a 2024 large vision-language-action model for robotic manipulation, introduced by MiLAB, Westlake University, and published at IROS 2024.

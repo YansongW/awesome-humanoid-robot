@@ -8,13 +8,15 @@ names:
     No Legs, All Lift to the Bottom Line.
   zh: Robot.com Launches R-noid, a Humanoid Built For the Work That Burns People Out.
     No Legs, All Lift to the Bottom Line.
-  ko: ''
+  ko: Robot.com Launches R-noid, a Humanoid Built For the Work That Burns People Out.
+    No Legs, All Lift to the Bottom Line.
 summary:
   en: Robot.com Launches R-noid, a Humanoid Built For the Work That Burns People Out.
     No Legs, All Lift to the Bottom Line.
   zh: Robot.com Launches R-noid, a Humanoid Built For the Work That Burns People Out.
     No Legs, All Lift to the Bottom Line.
-  ko: ''
+  ko: Robot.com Launches R-noid, a Humanoid Built For the Work That Burns People Out.
+    No Legs, All Lift to the Bottom Line.
 domains:
 - 11_applications_markets
 layers:
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Robot.com Launches R-noid, a Humanoid Built For the Work That Burns People Out. No Legs, All Lift to the Bottom Line.
+
+## Overview
+Robot.com Launches R-noid, a Humanoid Built For the Work That Burns People Out. No Legs, All Lift to the Bottom Line.
+
+## 개요
 Robot.com Launches R-noid, a Humanoid Built For the Work That Burns People Out. No Legs, All Lift to the Bottom Line.

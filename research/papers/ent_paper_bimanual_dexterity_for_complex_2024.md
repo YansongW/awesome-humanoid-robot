@@ -6,13 +6,14 @@ type: paper
 names:
   en: Bimanual Dexterity for Complex Tasks
   zh: Bimanual Dexterity for Complex Tasks
-  ko: ''
+  ko: Bimanual Dexterity for Complex Tasks
 summary:
   en: Bimanual Dexterity for Complex Tasks is a 2024 work on manipulation for humanoid
     robots.
   zh: Bimanual Dexterity for Complex Tasks is a 2024 work on manipulation for humanoid
     robots.
-  ko: ''
+  ko: Bimanual Dexterity for Complex Tasks is a 2024 work on manipulation for humanoid
+    robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Bimanual Dexterity for Complex Tasks is a 2024 work on manipulation for humanoid robots.
+
+## Overview
+Bimanual Dexterity for Complex Tasks is a 2024 work on manipulation for humanoid robots.
+
+## 개요
 Bimanual Dexterity for Complex Tasks is a 2024 work on manipulation for humanoid robots.

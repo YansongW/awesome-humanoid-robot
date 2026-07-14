@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters'
   zh: 'VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters'
-  ko: ''
+  ko: 'VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters'
 summary:
   en: 'VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters
     is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters
     is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters
+    is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 VMP: Versatile Motion Priors for Robustly Tracking Motion on Physical Characters is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.

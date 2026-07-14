@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+高性能人形机器人，最新一代采用全电驱动执行器完成动态运动任务。
+
+## Overview
 High-performance humanoid robot; latest generation uses all-electric actuation for dynamic athletic tasks.
+
+## 개요
+고성능 휨로봇, 최신 세대는 동적 운 동 작업을 위한 전기식 액추에이션 사용.

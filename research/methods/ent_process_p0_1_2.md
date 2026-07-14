@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 项目章程与资源配置
-  ko: ''
+  ko: 项目章程与资源配置
 summary:
   en: ''
   zh: 章程签字、核心团队 R&R 明确、项目计划基线发布
-  ko: ''
+  ko: 章程签字、核心团队 R&R 明确、项目计划基线发布
 domains:
 - 11_applications_markets
 - 12_policy_regulation_ethics
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：项目立项与商业基线

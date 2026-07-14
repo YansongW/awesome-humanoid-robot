@@ -6,7 +6,7 @@ type: paper
 names:
   en: Improving Vision-Language-Action Model with Online Reinforcement Learning
   zh: Improving Vision-Language-Action Model with Online Reinforcement Learning
-  ko: ''
+  ko: Improving Vision-Language-Action Model with Online Reinforcement Learning
 summary:
   en: Improving Vision-Language-Action Model with Online Reinforcement Learning (Improving
     Vision-Language-Action Model with Online Reinforcement Learning), is a 2025 large
@@ -18,7 +18,11 @@ summary:
     vision-language-action model for robotic manipulation, introduced by Tsinghua
     University, University of California, Berkeley, Shanghai Qi Zhi Institute, and
     published at ICRA25.
-  ko: ''
+  ko: Improving Vision-Language-Action Model with Online Reinforcement Learning (Improving
+    Vision-Language-Action Model with Online Reinforcement Learning), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by Tsinghua
+    University, University of California, Berkeley, Shanghai Qi Zhi Institute, and
+    published at ICRA25.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +57,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Improving Vision-Language-Action Model with Online Reinforcement Learning (Improving Vision-Language-Action Model with Online Reinforcement Learning), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, University of California, Berkeley, Shanghai Qi Zhi Institute, and published at ICRA25.
+
+## Overview
+Improving Vision-Language-Action Model with Online Reinforcement Learning (Improving Vision-Language-Action Model with Online Reinforcement Learning), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, University of California, Berkeley, Shanghai Qi Zhi Institute, and published at ICRA25.
+
+## 개요
 Improving Vision-Language-Action Model with Online Reinforcement Learning (Improving Vision-Language-Action Model with Online Reinforcement Learning), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, University of California, Berkeley, Shanghai Qi Zhi Institute, and published at ICRA25.

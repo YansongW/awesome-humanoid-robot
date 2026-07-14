@@ -6,7 +6,7 @@ type: paper
 names:
   en: Anticipatory Reinforcement Learning for Trajectory Tracking
   zh: Anticipatory Reinforcement Learning for Trajectory Tracking
-  ko: ''
+  ko: Anticipatory Reinforcement Learning for Trajectory Tracking
 summary:
   en: "arXiv:2607.03132v1 Announce Type: cross \nAbstract: Deep reinforcement learning\
     \ (DRL) in industrial control often suffers from lag and overshoot due to purely\
@@ -36,7 +36,20 @@ summary:
     \ model (1.11{\\deg}). Overall, evaluating various combinations of prediction\
     \ horizons and target velocities demonstrated that highly granular predictive\
     \ data is not necessarily required for physical transfer."
-  ko: ''
+  ko: "arXiv:2607.03132v1 Announce Type: cross \nAbstract: Deep reinforcement learning\
+    \ (DRL) in industrial control often suffers from lag and overshoot due to purely\
+    \ reactive control based on the current tracking error. To achieve anticipatory\
+    \ control without high computational overhead, we introduce a predictive formulation\
+    \ that augments the DRL state space with target velocities and future reference\
+    \ horizons. Evaluating eight configurations using proximal policy optimization\
+    \ (PPO) on a 1-degree-of-freedom (1-DoF) helicopter testbed, simulation results\
+    \ showed a 9-fold error reduction, lowering the mean absolute deviation from 2.73{\\\
+    deg} to 0.31{\\deg}. However, zero-shot transfer to physical hardware revealed\
+    \ a sim-to-real gap. Interestingly, a simpler configuration using a single, further\
+    \ look-ahead horizon matched the real-world top performance of the most complex\
+    \ model (1.11{\\deg}). Overall, evaluating various combinations of prediction\
+    \ horizons and target velocities demonstrated that highly granular predictive\
+    \ data is not necessarily required for physical transfer."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -66,5 +79,14 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+arXiv:2607.03132v1 Announce Type: cross 
+Abstract: Deep reinforcement learning (DRL) in industrial control often suffers from lag and overshoot due to purely reactive control based on the current tracking error. To achieve anticipatory control without high computational overhead, we introduce a predictive formulation that augments the DRL state space with target velocities and future reference horizons. Evaluating eight configurations using proximal policy optimization (PPO) on a 1-degree-of-freedom (1-DoF) helicopter testbed, simulation results showed a 9-fold error reduction, lowering the mean absolute deviation from 2.73{\deg} to 0.31{\deg}. However, zero-shot transfer to physical hardware revealed a sim-to-real gap. Interestingly, a simpler configuration using a single, further look-ahead horizon matched the real-world top performance of the most complex model (1.11{\deg}). Overall, evaluating various combinations of prediction horizons and target velocities demonstrated that highly granular predictive data is not necessarily required for physical transfer.
+
+## Overview
+arXiv:2607.03132v1 Announce Type: cross 
+Abstract: Deep reinforcement learning (DRL) in industrial control often suffers from lag and overshoot due to purely reactive control based on the current tracking error. To achieve anticipatory control without high computational overhead, we introduce a predictive formulation that augments the DRL state space with target velocities and future reference horizons. Evaluating eight configurations using proximal policy optimization (PPO) on a 1-degree-of-freedom (1-DoF) helicopter testbed, simulation results showed a 9-fold error reduction, lowering the mean absolute deviation from 2.73{\deg} to 0.31{\deg}. However, zero-shot transfer to physical hardware revealed a sim-to-real gap. Interestingly, a simpler configuration using a single, further look-ahead horizon matched the real-world top performance of the most complex model (1.11{\deg}). Overall, evaluating various combinations of prediction horizons and target velocities demonstrated that highly granular predictive data is not necessarily required for physical transfer.
+
+## 개요
 arXiv:2607.03132v1 Announce Type: cross 
 Abstract: Deep reinforcement learning (DRL) in industrial control often suffers from lag and overshoot due to purely reactive control based on the current tracking error. To achieve anticipatory control without high computational overhead, we introduce a predictive formulation that augments the DRL state space with target velocities and future reference horizons. Evaluating eight configurations using proximal policy optimization (PPO) on a 1-degree-of-freedom (1-DoF) helicopter testbed, simulation results showed a 9-fold error reduction, lowering the mean absolute deviation from 2.73{\deg} to 0.31{\deg}. However, zero-shot transfer to physical hardware revealed a sim-to-real gap. Interestingly, a simpler configuration using a single, further look-ahead horizon matched the real-world top performance of the most complex model (1.11{\deg}). Overall, evaluating various combinations of prediction horizons and target velocities demonstrated that highly granular predictive data is not necessarily required for physical transfer.

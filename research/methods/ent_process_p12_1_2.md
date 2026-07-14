@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: SLAM 与场景理解
-  ko: ''
+  ko: SLAM 与场景理解
 summary:
   en: ''
   zh: 定位精度、地图一致性、语义标注准确率
-  ko: ''
+  ko: 定位精度、地图一致性、语义标注准确率
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）

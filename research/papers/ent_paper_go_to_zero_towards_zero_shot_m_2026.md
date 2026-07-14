@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data'
   zh: 'Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data'
-  ko: ''
+  ko: 'Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data'
 summary:
   en: 'Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data is
     a paper on Human Motion for humanoid robotics.'
   zh: 'Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data is
     a paper on Human Motion for humanoid robotics.'
-  ko: ''
+  ko: 'Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data is
+    a paper on Human Motion for humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data is a paper on Human Motion for humanoid robotics.
+
+## Overview
+Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data is a paper on Human Motion for humanoid robotics.
+
+## 개요
 Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data is a paper on Human Motion for humanoid robotics.

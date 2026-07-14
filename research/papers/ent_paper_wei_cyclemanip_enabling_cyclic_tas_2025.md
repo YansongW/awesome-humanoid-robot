@@ -7,7 +7,8 @@ names:
   en: 'CycleManip: Enabling Cyclic Task Manipulation via Effective Historical Perception
     and Understanding'
   zh: CycleManip
-  ko: ''
+  ko: 'CycleManip: Enabling Cyclic Task Manipulation via Effective Historical Perception
+    and Understanding'
 summary:
   en: 'CycleManip: Enabling Cyclic Task Manipulation via Effective Historical Perception
     and Understanding (CycleManip), is a 2025 large vision-language-action model for
@@ -17,7 +18,10 @@ summary:
     and Understanding (CycleManip), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by Sun Yat-sen University, The Chinese University
     of Hong Kong, Shenzhen.'
-  ko: ''
+  ko: 'CycleManip: Enabling Cyclic Task Manipulation via Effective Historical Perception
+    and Understanding (CycleManip), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by Sun Yat-sen University, The Chinese University
+    of Hong Kong, Shenzhen.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CycleManip: Enabling Cyclic Task Manipulation via Effective Historical Perception and Understanding (CycleManip), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, The Chinese University of Hong Kong, Shenzhen.
+
+## Overview
+CycleManip: Enabling Cyclic Task Manipulation via Effective Historical Perception and Understanding (CycleManip), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, The Chinese University of Hong Kong, Shenzhen.
+
+## 개요
 CycleManip: Enabling Cyclic Task Manipulation via Effective Historical Perception and Understanding (CycleManip), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, The Chinese University of Hong Kong, Shenzhen.

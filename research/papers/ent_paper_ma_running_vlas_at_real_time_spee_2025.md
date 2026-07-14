@@ -6,7 +6,7 @@ type: paper
 names:
   en: Running VLAs at Real-time Speed
   zh: Running VLAs at Real-time Speed
-  ko: ''
+  ko: Running VLAs at Real-time Speed
 summary:
   en: Running VLAs at Real-time Speed (Running VLAs at Real-time Speed), is a 2025
     large vision-language-action model for robotic manipulation, introduced by Dexmal,
@@ -14,7 +14,9 @@ summary:
   zh: Running VLAs at Real-time Speed (Running VLAs at Real-time Speed), is a 2025
     large vision-language-action model for robotic manipulation, introduced by Dexmal,
     StepFun.
-  ko: ''
+  ko: Running VLAs at Real-time Speed (Running VLAs at Real-time Speed), is a 2025
+    large vision-language-action model for robotic manipulation, introduced by Dexmal,
+    StepFun.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Running VLAs at Real-time Speed (Running VLAs at Real-time Speed), is a 2025 large vision-language-action model for robotic manipulation, introduced by Dexmal, StepFun.
+
+## Overview
+Running VLAs at Real-time Speed (Running VLAs at Real-time Speed), is a 2025 large vision-language-action model for robotic manipulation, introduced by Dexmal, StepFun.
+
+## 개요
 Running VLAs at Real-time Speed (Running VLAs at Real-time Speed), is a 2025 large vision-language-action model for robotic manipulation, introduced by Dexmal, StepFun.

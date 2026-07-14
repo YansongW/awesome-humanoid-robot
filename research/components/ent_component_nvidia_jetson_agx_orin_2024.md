@@ -45,4 +45,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+广泛用于人形机器人VLA推理和感知的 onboard GPU/ARM SoC。
+
+## Overview
+Onboard GPU/ARM SoC widely used for VLA inference and perception in humanoid robots.
+
+## 개요
 Onboard GPU/ARM SoC widely used for VLA inference and perception in humanoid robots.

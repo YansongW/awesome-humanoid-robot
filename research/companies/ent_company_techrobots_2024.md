@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+机器人关节执行器和模块化机器人部件供应商。
+
+## Overview
+Chinese supplier of robot joint actuators and modular robotic components.
+
+## 개요
 Chinese supplier of robot joint actuators and modular robotic components.

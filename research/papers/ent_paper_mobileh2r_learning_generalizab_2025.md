@@ -8,7 +8,8 @@ names:
     from Scalable and Diverse Synthetic Data'
   zh: 'MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively
     from Scalable and Diverse Synthetic Data'
-  ko: ''
+  ko: 'MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively
+    from Scalable and Diverse Synthetic Data'
 summary:
   en: 'MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively
     from Scalable and Diverse Synthetic Data is a 2025 work on manipulation for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively
     from Scalable and Diverse Synthetic Data is a 2025 work on manipulation for humanoid
     robots.'
-  ko: ''
+  ko: 'MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively
+    from Scalable and Diverse Synthetic Data is a 2025 work on manipulation for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively from Scalable and Diverse Synthetic Data is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively from Scalable and Diverse Synthetic Data is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 MobileH2R: Learning Generalizable Human to Mobile Robot Handover Exclusively from Scalable and Diverse Synthetic Data is a 2025 work on manipulation for humanoid robots.

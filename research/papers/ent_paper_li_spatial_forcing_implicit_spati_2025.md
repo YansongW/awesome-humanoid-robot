@@ -7,7 +7,8 @@ names:
   en: 'Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action
     Model'
   zh: Spatial Forcing
-  ko: ''
+  ko: 'Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action
+    Model'
 summary:
   en: 'Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action
     Model (Spatial Forcing), is a 2025 large vision-language-action model for robotic
@@ -19,7 +20,11 @@ summary:
     manipulation, introduced by The Hong Kong University of Science and Technology
     (Guangzhou), Tsinghua University, Westlake University, Zhejiang University, South
     China University of Technology.'
-  ko: ''
+  ko: 'Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action
+    Model (Spatial Forcing), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by The Hong Kong University of Science and Technology
+    (Guangzhou), Tsinghua University, Westlake University, Zhejiang University, South
+    China University of Technology.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +66,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model (Spatial Forcing), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Hong Kong University of Science and Technology (Guangzhou), Tsinghua University, Westlake University, Zhejiang University, South China University of Technology.
+
+## Overview
+Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model (Spatial Forcing), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Hong Kong University of Science and Technology (Guangzhou), Tsinghua University, Westlake University, Zhejiang University, South China University of Technology.
+
+## 개요
 Spatial Forcing: Implicit Spatial Representation Alignment for Vision-language-action Model (Spatial Forcing), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Hong Kong University of Science and Technology (Guangzhou), Tsinghua University, Westlake University, Zhejiang University, South China University of Technology.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'SkillMimic: Learning Basketball Interaction Skills from Demonstrations'
   zh: 'SkillMimic: Learning Basketball Interaction Skills from Demonstrations'
-  ko: ''
+  ko: 'SkillMimic: Learning Basketball Interaction Skills from Demonstrations'
 summary:
   en: 'SkillMimic: Learning Basketball Interaction Skills from Demonstrations is a
     2024 work on physics-based character animation for humanoid robots.'
   zh: 'SkillMimic: Learning Basketball Interaction Skills from Demonstrations is a
     2024 work on physics-based character animation for humanoid robots.'
-  ko: ''
+  ko: 'SkillMimic: Learning Basketball Interaction Skills from Demonstrations is a
+    2024 work on physics-based character animation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SkillMimic: Learning Basketball Interaction Skills from Demonstrations is a 2024 work on physics-based character animation for humanoid robots.
+
+## Overview
+SkillMimic: Learning Basketball Interaction Skills from Demonstrations is a 2024 work on physics-based character animation for humanoid robots.
+
+## 개요
 SkillMimic: Learning Basketball Interaction Skills from Demonstrations is a 2024 work on physics-based character animation for humanoid robots.

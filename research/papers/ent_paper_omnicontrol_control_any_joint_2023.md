@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'OmniControl: Control Any Joint at Any Time for Human Motion Generation'
   zh: 'OmniControl: Control Any Joint at Any Time for Human Motion Generation'
-  ko: ''
+  ko: 'OmniControl: Control Any Joint at Any Time for Human Motion Generation'
 summary:
   en: 'OmniControl: Control Any Joint at Any Time for Human Motion Generation is a
     2023 work on human motion analysis and synthesis for humanoid robots.'
   zh: 'OmniControl: Control Any Joint at Any Time for Human Motion Generation is a
     2023 work on human motion analysis and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'OmniControl: Control Any Joint at Any Time for Human Motion Generation is a
+    2023 work on human motion analysis and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+OmniControl: Control Any Joint at Any Time for Human Motion Generation is a 2023 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+OmniControl: Control Any Joint at Any Time for Human Motion Generation is a 2023 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 OmniControl: Control Any Joint at Any Time for Human Motion Generation is a 2023 work on human motion analysis and synthesis for humanoid robots.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 认证准备与预审核
-  ko: ''
+  ko: 认证准备与预审核
 summary:
   en: ''
   zh: 预测试报告、技术文件清单、认证计划
-  ko: ''
+  ko: 预测试报告、技术文件清单、认证计划
 domains:
 - 04_assembly_integration_testing
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）

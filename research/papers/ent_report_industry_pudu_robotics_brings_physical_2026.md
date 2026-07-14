@@ -8,13 +8,15 @@ names:
     City
   zh: Pudu Robotics Brings Physical AI into Everyday Life at Davos Tech Summit's Robot
     City
-  ko: ''
+  ko: Pudu Robotics Brings Physical AI into Everyday Life at Davos Tech Summit's Robot
+    City
 summary:
   en: Deployed across retail, hospitality and public spaces, Pudu Robotics demonstrates
     how commercial service robots are already creating value in real-world environments.
   zh: Deployed across retail, hospitality and public spaces, Pudu Robotics demonstrates
     how commercial service robots are already creating value in real-world environments.
-  ko: ''
+  ko: Deployed across retail, hospitality and public spaces, Pudu Robotics demonstrates
+    how commercial service robots are already creating value in real-world environments.
 domains:
 - 11_applications_markets
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-06'
 ---
 
+## 概述
+Deployed across retail, hospitality and public spaces, Pudu Robotics demonstrates how commercial service robots are already creating value in real-world environments.
+
+## Overview
+Deployed across retail, hospitality and public spaces, Pudu Robotics demonstrates how commercial service robots are already creating value in real-world environments.
+
+## 개요
 Deployed across retail, hospitality and public spaces, Pudu Robotics demonstrates how commercial service robots are already creating value in real-world environments.

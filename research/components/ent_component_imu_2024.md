@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-13'
 ---
 
-惯性测量单元（IMU）是人形机器人状态估计与平衡控制的核心传感器，常与关节编码器、视觉里程计融合使用。本词条正文正在施工中。
+## 概述
+融合加速度计与陀螺仪的传感器组件，用于估计机器人的姿态、角速度与线加速度。
+
+## Overview
+Sensor package combining accelerometers and gyroscopes to estimate orientation, angular velocity, and linear acceleration of a robot.
+
+## 개요
+Sensor package combining accelerometers and gyroscopes to estimate orientation, angular velocity, and linear acceleration of a robot.

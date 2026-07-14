@@ -6,13 +6,14 @@ type: paper
 names:
   en: Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots
   zh: Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots
-  ko: ''
+  ko: Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots
 summary:
   en: Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
   zh: Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots
+    is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Hierarchical Intention-Aware Expressive Motion Generation for Humanoid Robots is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

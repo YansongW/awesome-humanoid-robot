@@ -8,8 +8,8 @@ names:
   zh: BOM成本工程
   ko: BOM 원가 공학
 summary:
-  en: The systematic analysis and optimization of bill-of-materials cost by balancing component selection, supplier negotiation,
-    yield, and design trade-offs.
+  en: The systematic analysis and optimization of bill-of-materials cost by balancing
+    component selection, supplier negotiation, yield, and design trade-offs.
   zh: 通过平衡器件选型、供应商议价、良率与设计折中，对物料清单成本进行系统分析与优化。
   ko: 부품 선정·공급업체 협상·수율·설계 트레이드오프를 균형 있게 고려하여 자재 명세서 비용을 분석·최적화하는 체계적 방법.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+通过平衡器件选型、供应商议价、良率与设计折中，对物料清单成本进行系统分析与优化。
+
+## Overview
+The systematic analysis and optimization of bill-of-materials cost by balancing component selection, supplier negotiation, yield, and design trade-offs.
+
+## 개요
+The systematic analysis and optimization of bill-of-materials cost by balancing component selection, supplier negotiation, yield, and design trade-offs.

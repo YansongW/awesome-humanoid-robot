@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 热网络 / CFD 模型
-  ko: ''
+  ko: 热网络 / CFD 模型
 summary:
   en: ''
   zh: 热仿真模型、边界条件、网格/节点清单
-  ko: ''
+  ko: 热仿真模型、边界条件、网格/节点清单
 domains:
 - 06_design_engineering
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：热管理仿真与迭代（Thermal Management）

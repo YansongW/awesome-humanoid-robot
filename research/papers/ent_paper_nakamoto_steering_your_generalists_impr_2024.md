@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance'
   zh: V-GPS
-  ko: ''
+  ko: 'Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance'
 summary:
   en: 'Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance
     (V-GPS), is a 2024 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance
     (V-GPS), is a 2024 large vision-language-action model for robotic manipulation,
     introduced by UC Berkeley, Carnegie Mellon University, and published at CoRL 2024.'
-  ko: ''
+  ko: 'Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance
+    (V-GPS), is a 2024 large vision-language-action model for robotic manipulation,
+    introduced by UC Berkeley, Carnegie Mellon University, and published at CoRL 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance (V-GPS), is a 2024 large vision-language-action model for robotic manipulation, introduced by UC Berkeley, Carnegie Mellon University, and published at CoRL 2024.
+
+## Overview
+Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance (V-GPS), is a 2024 large vision-language-action model for robotic manipulation, introduced by UC Berkeley, Carnegie Mellon University, and published at CoRL 2024.
+
+## 개요
 Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance (V-GPS), is a 2024 large vision-language-action model for robotic manipulation, introduced by UC Berkeley, Carnegie Mellon University, and published at CoRL 2024.

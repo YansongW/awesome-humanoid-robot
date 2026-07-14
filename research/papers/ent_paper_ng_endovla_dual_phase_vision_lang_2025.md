@@ -7,7 +7,8 @@ names:
   en: 'EndoVLA: Dual-Phase Vision-Language-Action Model for Autonomous Tracking in
     Endoscopy'
   zh: EndoVLA
-  ko: ''
+  ko: 'EndoVLA: Dual-Phase Vision-Language-Action Model for Autonomous Tracking in
+    Endoscopy'
 summary:
   en: 'EndoVLA: Dual-Phase Vision-Language-Action Model for Autonomous Tracking in
     Endoscopy (EndoVLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Endoscopy (EndoVLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by The Chinese University of Hong Kong, Technical University
     of Munich, and published at CoRL25.'
-  ko: ''
+  ko: 'EndoVLA: Dual-Phase Vision-Language-Action Model for Autonomous Tracking in
+    Endoscopy (EndoVLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by The Chinese University of Hong Kong, Technical University
+    of Munich, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EndoVLA: Dual-Phase Vision-Language-Action Model for Autonomous Tracking in Endoscopy (EndoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Chinese University of Hong Kong, Technical University of Munich, and published at CoRL25.
+
+## Overview
+EndoVLA: Dual-Phase Vision-Language-Action Model for Autonomous Tracking in Endoscopy (EndoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Chinese University of Hong Kong, Technical University of Munich, and published at CoRL25.
+
+## 개요
 EndoVLA: Dual-Phase Vision-Language-Action Model for Autonomous Tracking in Endoscopy (EndoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Chinese University of Hong Kong, Technical University of Munich, and published at CoRL25.

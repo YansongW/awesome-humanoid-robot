@@ -6,11 +6,11 @@ type: report
 names:
   en: Jane Heffner is New President of International Federation of Robotics
   zh: Jane Heffner is New President of International Federation of Robotics
-  ko: ''
+  ko: Jane Heffner is New President of International Federation of Robotics
 summary:
   en: Jane Heffner is New President of International Federation of Robotics
   zh: Jane Heffner is New President of International Federation of Robotics
-  ko: ''
+  ko: Jane Heffner is New President of International Federation of Robotics
 domains:
 - 11_applications_markets
 layers:
@@ -40,4 +40,11 @@ sources:
   accessed_at: '2026-07-03'
 ---
 
+## 概述
+Jane Heffner is New President of International Federation of Robotics
+
+## Overview
+Jane Heffner is New President of International Federation of Robotics
+
+## 개요
 Jane Heffner is New President of International Federation of Robotics

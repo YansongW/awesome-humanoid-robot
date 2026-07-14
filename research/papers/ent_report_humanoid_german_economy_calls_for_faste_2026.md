@@ -6,11 +6,11 @@ type: report
 names:
   en: German Economy Calls for Faster Humanoid Robotics Adoption
   zh: German Economy Calls for Faster Humanoid Robotics Adoption
-  ko: ''
+  ko: German Economy Calls for Faster Humanoid Robotics Adoption
 summary:
   en: 82 % consider humanoid robots drivers of future innovation
   zh: 82 % consider humanoid robots drivers of future innovation
-  ko: ''
+  ko: 82 % consider humanoid robots drivers of future innovation
 domains:
 - 11_applications_markets
 layers:
@@ -41,4 +41,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+82 % consider humanoid robots drivers of future innovation
+
+## Overview
+82 % consider humanoid robots drivers of future innovation
+
+## 개요
 82 % consider humanoid robots drivers of future innovation

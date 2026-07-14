@@ -8,8 +8,8 @@ names:
   zh: Linux RT-PREEMPT
   ko: Linux RT-PREEMPT
 summary:
-  en: A Linux kernel patchset that makes most of the kernel preemptible to provide deterministic, low-latency real-time behavior
-    for robot control.
+  en: A Linux kernel patchset that makes most of the kernel preemptible to provide
+    deterministic, low-latency real-time behavior for robot control.
   zh: 使Linux内核大部分可抢占以提供确定性低延迟实时行为的内核补丁集，常用于机器人控制。
   ko: Linux 커널 대부분을 선점 가능하게 만들어 결정적·저지연 실시간 동작을 제공하는 커널 패치 집합.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+使Linux内核大部分可抢占以提供确定性低延迟实时行为的内核补丁集，常用于机器人控制。
+
+## Overview
+A Linux kernel patchset that makes most of the kernel preemptible to provide deterministic, low-latency real-time behavior for robot control.
+
+## 개요
+A Linux kernel patchset that makes most of the kernel preemptible to provide deterministic, low-latency real-time behavior for robot control.

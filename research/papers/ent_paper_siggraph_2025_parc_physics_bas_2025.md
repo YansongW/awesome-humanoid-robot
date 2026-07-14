@@ -8,7 +8,8 @@ names:
     for Character Controllers'
   zh: 'SIGGRAPH 2025, PARC: Physics-based Augmentation with Reinforcement Learning
     for Character Controllers'
-  ko: ''
+  ko: 'SIGGRAPH 2025, PARC: Physics-based Augmentation with Reinforcement Learning
+    for Character Controllers'
 summary:
   en: 'SIGGRAPH 2025, PARC: Physics-based Augmentation with Reinforcement Learning
     for Character Controllers is a 2025 work on physics-based character animation
@@ -16,7 +17,9 @@ summary:
   zh: 'SIGGRAPH 2025, PARC: Physics-based Augmentation with Reinforcement Learning
     for Character Controllers is a 2025 work on physics-based character animation
     for humanoid robots, with open-source code available.'
-  ko: ''
+  ko: 'SIGGRAPH 2025, PARC: Physics-based Augmentation with Reinforcement Learning
+    for Character Controllers is a 2025 work on physics-based character animation
+    for humanoid robots, with open-source code available.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SIGGRAPH 2025, PARC: Physics-based Augmentation with Reinforcement Learning for Character Controllers is a 2025 work on physics-based character animation for humanoid robots, with open-source code available.
+
+## Overview
+SIGGRAPH 2025, PARC: Physics-based Augmentation with Reinforcement Learning for Character Controllers is a 2025 work on physics-based character animation for humanoid robots, with open-source code available.
+
+## 개요
 SIGGRAPH 2025, PARC: Physics-based Augmentation with Reinforcement Learning for Character Controllers is a 2025 work on physics-based character animation for humanoid robots, with open-source code available.

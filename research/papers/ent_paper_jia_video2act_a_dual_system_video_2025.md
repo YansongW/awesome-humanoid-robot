@@ -7,7 +7,8 @@ names:
   en: 'Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional
     Modeling'
   zh: Video2Act
-  ko: ''
+  ko: 'Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional
+    Modeling'
 summary:
   en: 'Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional
     Modeling (Video2Act), is a 2025 large vision-language-action model for robotic
@@ -19,7 +20,11 @@ summary:
     manipulation, introduced by State Key Laboratory of Multimedia Information Processing,
     School of Computer Science, Peking University, AI2Robotics, Sun Yat-sen University,
     Wuhan University, Hong Kong University of Science and Technology.'
-  ko: ''
+  ko: 'Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional
+    Modeling (Video2Act), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by State Key Laboratory of Multimedia Information Processing,
+    School of Computer Science, Peking University, AI2Robotics, Sun Yat-sen University,
+    Wuhan University, Hong Kong University of Science and Technology.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +66,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling (Video2Act), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, AI2Robotics, Sun Yat-sen University, Wuhan University, Hong Kong University of Science and Technology.
+
+## Overview
+Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling (Video2Act), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, AI2Robotics, Sun Yat-sen University, Wuhan University, Hong Kong University of Science and Technology.
+
+## 개요
 Video2Act: A Dual-System Video Diffusion Policy with Robotic Spatio-Motional Modeling (Video2Act), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, AI2Robotics, Sun Yat-sen University, Wuhan University, Hong Kong University of Science and Technology.

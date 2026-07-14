@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RynnVLA-002: A Unified Vision-Language-Action and World Model'
   zh: RynnVLA-002
-  ko: ''
+  ko: 'RynnVLA-002: A Unified Vision-Language-Action and World Model'
 summary:
   en: 'RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by DAMO Academy, Hupan Lab, Zhejiang University.'
-  ko: ''
+  ko: 'RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by DAMO Academy, Hupan Lab, Zhejiang University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002), is a 2025 large vision-language-action model for robotic manipulation, introduced by DAMO Academy, Hupan Lab, Zhejiang University.
+
+## Overview
+RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002), is a 2025 large vision-language-action model for robotic manipulation, introduced by DAMO Academy, Hupan Lab, Zhejiang University.
+
+## 개요
 RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002), is a 2025 large vision-language-action model for robotic manipulation, introduced by DAMO Academy, Hupan Lab, Zhejiang University.

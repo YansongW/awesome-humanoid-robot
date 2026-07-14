@@ -6,13 +6,14 @@ type: paper
 names:
   en: Natural Humanoid Robot Locomotion with Generative Motion Prior
   zh: Natural Humanoid Robot Locomotion with Generative Motion Prior
-  ko: ''
+  ko: Natural Humanoid Robot Locomotion with Generative Motion Prior
 summary:
   en: Natural Humanoid Robot Locomotion with Generative Motion Prior is a 2025 work
     on locomotion for humanoid robots.
   zh: Natural Humanoid Robot Locomotion with Generative Motion Prior is a 2025 work
     on locomotion for humanoid robots.
-  ko: ''
+  ko: Natural Humanoid Robot Locomotion with Generative Motion Prior is a 2025 work
+    on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Natural Humanoid Robot Locomotion with Generative Motion Prior is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Natural Humanoid Robot Locomotion with Generative Motion Prior is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Natural Humanoid Robot Locomotion with Generative Motion Prior is a 2025 work on locomotion for humanoid robots.

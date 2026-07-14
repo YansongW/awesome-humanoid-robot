@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'HumDex: Humanoid Dexterous Manipulation Made Easy'
   zh: 'HumDex: Humanoid Dexterous Manipulation Made Easy'
-  ko: ''
+  ko: 'HumDex: Humanoid Dexterous Manipulation Made Easy'
 summary:
   en: 'HumDex: Humanoid Dexterous Manipulation Made Easy is a 2026 work on manipulation
     for humanoid robots.'
   zh: 'HumDex: Humanoid Dexterous Manipulation Made Easy is a 2026 work on manipulation
     for humanoid robots.'
-  ko: ''
+  ko: 'HumDex: Humanoid Dexterous Manipulation Made Easy is a 2026 work on manipulation
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HumDex: Humanoid Dexterous Manipulation Made Easy is a 2026 work on manipulation for humanoid robots.
+
+## Overview
+HumDex: Humanoid Dexterous Manipulation Made Easy is a 2026 work on manipulation for humanoid robots.
+
+## 개요
 HumDex: Humanoid Dexterous Manipulation Made Easy is a 2026 work on manipulation for humanoid robots.

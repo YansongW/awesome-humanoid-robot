@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-13'
 ---
 
-关节编码器用于精确测量机器人关节的角度或角速度，是人形机器人运动控制闭环反馈的关键部件。本词条正文正在施工中。
+## 概述
+安装于机器人关节的位置或速度传感器，为电机控制提供高分辨率反馈。
+
+## Overview
+Position or velocity sensor mounted on a robot joint to provide high-resolution feedback for motor control.
+
+## 개요
+Position or velocity sensor mounted on a robot joint to provide high-resolution feedback for motor control.

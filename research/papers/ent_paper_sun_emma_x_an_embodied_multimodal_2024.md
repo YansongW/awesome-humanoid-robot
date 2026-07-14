@@ -7,7 +7,8 @@ names:
   en: 'Emma-X: An Embodied Multimodal Action Model with Grounded Chain of Thought
     and Look-ahead Spatial Reasoning'
   zh: Emma-X
-  ko: ''
+  ko: 'Emma-X: An Embodied Multimodal Action Model with Grounded Chain of Thought
+    and Look-ahead Spatial Reasoning'
 summary:
   en: 'Emma-X: An Embodied Multimodal Action Model with Grounded Chain of Thought
     and Look-ahead Spatial Reasoning (Emma-X), is a 2024 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     and Look-ahead Spatial Reasoning (Emma-X), is a 2024 large vision-language-action
     model for robotic manipulation, introduced by SUTD, Google DeepMind, and published
     at ACL 2024.'
-  ko: ''
+  ko: 'Emma-X: An Embodied Multimodal Action Model with Grounded Chain of Thought
+    and Look-ahead Spatial Reasoning (Emma-X), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by SUTD, Google DeepMind, and published
+    at ACL 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Emma-X: An Embodied Multimodal Action Model with Grounded Chain of Thought and Look-ahead Spatial Reasoning (Emma-X), is a 2024 large vision-language-action model for robotic manipulation, introduced by SUTD, Google DeepMind, and published at ACL 2024.
+
+## Overview
+Emma-X: An Embodied Multimodal Action Model with Grounded Chain of Thought and Look-ahead Spatial Reasoning (Emma-X), is a 2024 large vision-language-action model for robotic manipulation, introduced by SUTD, Google DeepMind, and published at ACL 2024.
+
+## 개요
 Emma-X: An Embodied Multimodal Action Model with Grounded Chain of Thought and Look-ahead Spatial Reasoning (Emma-X), is a 2024 large vision-language-action model for robotic manipulation, introduced by SUTD, Google DeepMind, and published at ACL 2024.

@@ -8,13 +8,15 @@ names:
     and Beyond'
   zh: 'arXiv 2024.12, Genesis: A Generative and Universal Physics Engine for Robotics
     and Beyond'
-  ko: ''
+  ko: 'arXiv 2024.12, Genesis: A Generative and Universal Physics Engine for Robotics
+    and Beyond'
 summary:
   en: 'arXiv 2024.12, Genesis: A Generative and Universal Physics Engine for Robotics
     and Beyond is a 2024 work on simulation benchmark for humanoid robots.'
   zh: 'arXiv 2024.12, Genesis: A Generative and Universal Physics Engine for Robotics
     and Beyond is a 2024 work on simulation benchmark for humanoid robots.'
-  ko: ''
+  ko: 'arXiv 2024.12, Genesis: A Generative and Universal Physics Engine for Robotics
+    and Beyond is a 2024 work on simulation benchmark for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+arXiv 2024.12, Genesis: A Generative and Universal Physics Engine for Robotics and Beyond is a 2024 work on simulation benchmark for humanoid robots.
+
+## Overview
+arXiv 2024.12, Genesis: A Generative and Universal Physics Engine for Robotics and Beyond is a 2024 work on simulation benchmark for humanoid robots.
+
+## 개요
 arXiv 2024.12, Genesis: A Generative and Universal Physics Engine for Robotics and Beyond is a 2024 work on simulation benchmark for humanoid robots.

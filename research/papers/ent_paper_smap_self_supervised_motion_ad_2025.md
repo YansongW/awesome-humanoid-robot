@@ -8,7 +8,8 @@ names:
     Control'
   zh: 'SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body
     Control'
-  ko: ''
+  ko: 'SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body
+    Control'
 summary:
   en: 'SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body
     Control is a 2025 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body
     Control is a 2025 work on loco-manipulation and whole-body-control for humanoid
     robots.'
-  ko: ''
+  ko: 'SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body
+    Control is a 2025 work on loco-manipulation and whole-body-control for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 SMAP: Self-supervised Motion Adaptation for Physically Plausible Humanoid Whole-body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models
   zh: Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models
-  ko: ''
+  ko: Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models
 summary:
   en: Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models is a
     2025 work on physics-based character animation for humanoid robots.
   zh: Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models is a
     2025 work on physics-based character animation for humanoid robots.
-  ko: ''
+  ko: Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models is a
+    2025 work on physics-based character animation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 Zero-Shot Whole-Body Humanoid Control via Behavioral Foundation Models is a 2025 work on physics-based character animation for humanoid robots.

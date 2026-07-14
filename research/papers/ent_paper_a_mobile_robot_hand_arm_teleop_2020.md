@@ -6,13 +6,14 @@ type: paper
 names:
   en: A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU
   zh: A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU
-  ko: ''
+  ko: A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU
 summary:
   en: A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU is a 2020 work
     on teleoperation for humanoid robots, with open-source code available.
   zh: A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU is a 2020 work
     on teleoperation for humanoid robots, with open-source code available.
-  ko: ''
+  ko: A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU is a 2020 work
+    on teleoperation for humanoid robots, with open-source code available.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU is a 2020 work on teleoperation for humanoid robots, with open-source code available.
+
+## Overview
+A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU is a 2020 work on teleoperation for humanoid robots, with open-source code available.
+
+## 개요
 A Mobile Robot Hand-Arm Teleoperation System by Vision and IMU is a 2020 work on teleoperation for humanoid robots, with open-source code available.

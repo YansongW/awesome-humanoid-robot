@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Mind to Hand: Purposeful Robotic Control via Embodied Reasoning'
   zh: Mind to Hand
-  ko: ''
+  ko: 'Mind to Hand: Purposeful Robotic Control via Embodied Reasoning'
 summary:
   en: 'Mind to Hand: Purposeful Robotic Control via Embodied Reasoning (Mind to Hand),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'Mind to Hand: Purposeful Robotic Control via Embodied Reasoning (Mind to Hand),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Astribot.'
-  ko: ''
+  ko: 'Mind to Hand: Purposeful Robotic Control via Embodied Reasoning (Mind to Hand),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Astribot.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Mind to Hand: Purposeful Robotic Control via Embodied Reasoning (Mind to Hand), is a 2025 large vision-language-action model for robotic manipulation, introduced by Astribot.
+
+## Overview
+Mind to Hand: Purposeful Robotic Control via Embodied Reasoning (Mind to Hand), is a 2025 large vision-language-action model for robotic manipulation, introduced by Astribot.
+
+## 개요
 Mind to Hand: Purposeful Robotic Control via Embodied Reasoning (Mind to Hand), is a 2025 large vision-language-action model for robotic manipulation, introduced by Astribot.

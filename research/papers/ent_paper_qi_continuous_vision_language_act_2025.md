@@ -7,7 +7,8 @@ names:
   en: Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment
     for Behavioral Cloning
   zh: CCoL
-  ko: ''
+  ko: Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment
+    for Behavioral Cloning
 summary:
   en: Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment
     for Behavioral Cloning (CCoL), is a 2025 large vision-language-action model for
@@ -17,7 +18,10 @@ summary:
     for Behavioral Cloning (CCoL), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by Nankai University, The Hong Kong Polytechnic
     University, The Education University of Hong Kong, City University of Hong Kong.
-  ko: ''
+  ko: Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment
+    for Behavioral Cloning (CCoL), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by Nankai University, The Hong Kong Polytechnic
+    University, The Education University of Hong Kong, City University of Hong Kong.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning (CCoL), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nankai University, The Hong Kong Polytechnic University, The Education University of Hong Kong, City University of Hong Kong.
+
+## Overview
+Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning (CCoL), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nankai University, The Hong Kong Polytechnic University, The Education University of Hong Kong, City University of Hong Kong.
+
+## 개요
 Continuous Vision-Language-Action Co-Learning with Semantic-Physical Alignment for Behavioral Cloning (CCoL), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nankai University, The Hong Kong Polytechnic University, The Education University of Hong Kong, City University of Hong Kong.

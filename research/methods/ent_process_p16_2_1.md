@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 供应商选择与审核
-  ko: ''
+  ko: 供应商选择与审核
 summary:
   en: ''
   zh: 供应商清单、样品测试报告、合格供方名录
-  ko: ''
+  ko: 供应商清单、样品测试报告、合格供方名录
 domains:
 - 05_mass_production
 - 11_applications_markets
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）

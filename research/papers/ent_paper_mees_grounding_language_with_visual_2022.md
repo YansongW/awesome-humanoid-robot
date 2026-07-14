@@ -6,7 +6,7 @@ type: paper
 names:
   en: Grounding Language with Visual Affordances over Unstructured Data
   zh: HULC++
-  ko: ''
+  ko: Grounding Language with Visual Affordances over Unstructured Data
 summary:
   en: Grounding Language with Visual Affordances over Unstructured Data (HULC++),
     is a 2022 generalized vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2022 generalized vision-language-action model for robotic manipulation, introduced
     by University of Freiburg, University of Technology Nuremberg, and published at
     ICRA 2023.
-  ko: ''
+  ko: Grounding Language with Visual Affordances over Unstructured Data (HULC++),
+    is a 2022 generalized vision-language-action model for robotic manipulation, introduced
+    by University of Freiburg, University of Technology Nuremberg, and published at
+    ICRA 2023.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Grounding Language with Visual Affordances over Unstructured Data (HULC++), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by University of Freiburg, University of Technology Nuremberg, and published at ICRA 2023.
+
+## Overview
+Grounding Language with Visual Affordances over Unstructured Data (HULC++), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by University of Freiburg, University of Technology Nuremberg, and published at ICRA 2023.
+
+## 개요
 Grounding Language with Visual Affordances over Unstructured Data (HULC++), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by University of Freiburg, University of Technology Nuremberg, and published at ICRA 2023.

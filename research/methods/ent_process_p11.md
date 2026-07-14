@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 灵巧手选型/设计与集成（Dexterous Hand）
-  ko: ''
+  ko: 灵巧手选型/设计与集成（Dexterous Hand）
 summary:
   en: ''
   zh: 灵巧手选型/设计与集成（Dexterous Hand）
-  ko: ''
+  ko: 灵巧手选型/设计与集成（Dexterous Hand）
 domains:
 - 02_components
 - 06_design_engineering
@@ -36,5 +36,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+灵巧手选型/设计与集成（Dexterous Hand）
 
+## Overview
+灵巧手选型/设计与集成（Dexterous Hand）
 
+## 개요
+灵巧手选型/设计与集成（Dexterous Hand）

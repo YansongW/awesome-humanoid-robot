@@ -6,13 +6,14 @@ type: paper
 names:
   en: Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion
   zh: Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion
-  ko: ''
+  ko: Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion
 summary:
   en: Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion is
     a 2025 work on locomotion for humanoid robots.
   zh: Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion is
     a 2025 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion is
+    a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Reduced-Order Model-Guided RL for Demonstration-Free Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.

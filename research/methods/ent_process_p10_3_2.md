@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 域随机化与鲁棒训练
-  ko: ''
+  ko: 域随机化与鲁棒训练
 summary:
   en: ''
   zh: 随机化参数范围、跨域迁移成功率
-  ko: ''
+  ko: 随机化参数范围、跨域迁移成功率
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）

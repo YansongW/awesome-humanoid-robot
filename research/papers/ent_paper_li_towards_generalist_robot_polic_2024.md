@@ -7,7 +7,8 @@ names:
   en: 'Towards Generalist Robot Policies: What Matters in Building Vision-Language-Action
     Models'
   zh: RoboVLMs
-  ko: ''
+  ko: 'Towards Generalist Robot Policies: What Matters in Building Vision-Language-Action
+    Models'
 summary:
   en: 'Towards Generalist Robot Policies: What Matters in Building Vision-Language-Action
     Models (RoboVLMs), is a 2024 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Models (RoboVLMs), is a 2024 large vision-language-action model for robotic manipulation,
     introduced by Tsinghua University, ByteDance Research, CASIA MAIS-NLPR, Shanghai
     Jiao Tong University, National University of Singapore.'
-  ko: ''
+  ko: 'Towards Generalist Robot Policies: What Matters in Building Vision-Language-Action
+    Models (RoboVLMs), is a 2024 large vision-language-action model for robotic manipulation,
+    introduced by Tsinghua University, ByteDance Research, CASIA MAIS-NLPR, Shanghai
+    Jiao Tong University, National University of Singapore.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Towards Generalist Robot Policies: What Matters in Building Vision-Language-Action Models (RoboVLMs), is a 2024 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, ByteDance Research, CASIA MAIS-NLPR, Shanghai Jiao Tong University, National University of Singapore.
+
+## Overview
+Towards Generalist Robot Policies: What Matters in Building Vision-Language-Action Models (RoboVLMs), is a 2024 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, ByteDance Research, CASIA MAIS-NLPR, Shanghai Jiao Tong University, National University of Singapore.
+
+## 개요
 Towards Generalist Robot Policies: What Matters in Building Vision-Language-Action Models (RoboVLMs), is a 2024 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, ByteDance Research, CASIA MAIS-NLPR, Shanghai Jiao Tong University, National University of Singapore.

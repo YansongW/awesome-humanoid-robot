@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 感知-规划-控制闭环集成
-  ko: ''
+  ko: 感知-规划-控制闭环集成
 summary:
   en: ''
   zh: 典型任务端到端成功率 > 目标
-  ko: ''
+  ko: 典型任务端到端成功率 > 目标
 domains:
 - 04_assembly_integration_testing
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）

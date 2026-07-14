@@ -8,13 +8,15 @@ names:
     Indoor Growing Technology and Expanding to New Markets
   zh: Hippo Harvest Closes $30 Million Series C Led by Cox Farms, Scaling Robotic
     Indoor Growing Technology and Expanding to New Markets
-  ko: ''
+  ko: Hippo Harvest Closes $30 Million Series C Led by Cox Farms, Scaling Robotic
+    Indoor Growing Technology and Expanding to New Markets
 summary:
   en: Funding accelerates the company's next phase of growth as Hippo Harvest brings
     indoor-grown organic greens to retail buyers at scale.
   zh: Funding accelerates the company's next phase of growth as Hippo Harvest brings
     indoor-grown organic greens to retail buyers at scale.
-  ko: ''
+  ko: Funding accelerates the company's next phase of growth as Hippo Harvest brings
+    indoor-grown organic greens to retail buyers at scale.
 domains:
 - 11_applications_markets
 layers:
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-14'
 ---
 
+## 概述
+Funding accelerates the company's next phase of growth as Hippo Harvest brings indoor-grown organic greens to retail buyers at scale.
+
+## Overview
+Funding accelerates the company's next phase of growth as Hippo Harvest brings indoor-grown organic greens to retail buyers at scale.
+
+## 개요
 Funding accelerates the company's next phase of growth as Hippo Harvest brings indoor-grown organic greens to retail buyers at scale.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery'
   zh: 'HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery'
-  ko: ''
+  ko: 'HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery'
 summary:
   en: 'HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery
+    is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 HiFAR: Multi-Stage Curriculum Learning for High-Dynamics Humanoid Fall Recovery is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

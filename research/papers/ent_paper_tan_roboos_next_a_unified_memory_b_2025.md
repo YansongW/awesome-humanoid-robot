@@ -7,7 +7,8 @@ names:
   en: 'RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust
     Multi-Robot Collaboration'
   zh: RoboOS-NeXT
-  ko: ''
+  ko: 'RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust
+    Multi-Robot Collaboration'
 summary:
   en: 'RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust
     Multi-Robot Collaboration (RoboOS-NeXT), is a 2025 large vision-language-action
@@ -21,7 +22,12 @@ summary:
     Information Processing, School of Computer Science, Peking University, Beijing
     Academy of Artificial Intelligence, Institute of Automation, Chinese Academy of
     Sciences, Beihang University.'
-  ko: ''
+  ko: 'RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust
+    Multi-Robot Collaboration (RoboOS-NeXT), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by State Key Laboratory of Multimedia
+    Information Processing, School of Computer Science, Peking University, Beijing
+    Academy of Artificial Intelligence, Institute of Automation, Chinese Academy of
+    Sciences, Beihang University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -63,4 +69,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust Multi-Robot Collaboration (RoboOS-NeXT), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, Beijing Academy of Artificial Intelligence, Institute of Automation, Chinese Academy of Sciences, Beihang University.
+
+## Overview
+RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust Multi-Robot Collaboration (RoboOS-NeXT), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, Beijing Academy of Artificial Intelligence, Institute of Automation, Chinese Academy of Sciences, Beihang University.
+
+## 개요
 RoboOS-NeXT: A Unified Memory-based Framework for Lifelong, Scalable, and Robust Multi-Robot Collaboration (RoboOS-NeXT), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, Beijing Academy of Artificial Intelligence, Institute of Automation, Chinese Academy of Sciences, Beihang University.

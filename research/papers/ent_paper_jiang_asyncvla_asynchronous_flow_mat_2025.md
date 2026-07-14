@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models'
   zh: AsyncVLA
-  ko: ''
+  ko: 'AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models'
 summary:
   en: 'AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models (AsyncVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models (AsyncVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Shanghai AI Laboratory, Tsinghua University, Zhejiang University, Lumos Robotics.'
-  ko: ''
+  ko: 'AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models (AsyncVLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Shanghai AI Laboratory, Tsinghua University, Zhejiang University, Lumos Robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models (AsyncVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, Tsinghua University, Zhejiang University, Lumos Robotics.
+
+## Overview
+AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models (AsyncVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, Tsinghua University, Zhejiang University, Lumos Robotics.
+
+## 개요
 AsyncVLA: Asynchronous Flow Matching for Vision-Language-Action Models (AsyncVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, Tsinghua University, Zhejiang University, Lumos Robotics.

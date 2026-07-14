@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 端到端数据流联调
-  ko: ''
+  ko: 端到端数据流联调
 summary:
   en: ''
   zh: 端到端延迟 < 目标、故障注入测试通过
-  ko: ''
+  ko: 端到端延迟 < 目标、故障注入测试通过
 domains:
 - 08_software_middleware
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）

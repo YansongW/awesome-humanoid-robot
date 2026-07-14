@@ -8,13 +8,15 @@ names:
     Perception'
   zh: 'VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient
     Perception'
-  ko: ''
+  ko: 'VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient
+    Perception'
 summary:
   en: 'VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient
     Perception is a 2025 work on locomotion for humanoid robots.'
   zh: 'VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient
     Perception is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient
+    Perception is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -52,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient Perception is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient Perception is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 VB-Com: Learning Vision-Blind Composite Humanoid Locomotion Against Deficient Perception is a 2025 work on locomotion for humanoid robots.

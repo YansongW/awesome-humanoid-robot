@@ -6,13 +6,14 @@ type: paper
 names:
   en: Four Simple Proprioceptive Estimators for Legged Robots
   zh: Four Simple Proprioceptive Estimators for Legged Robots
-  ko: ''
+  ko: Four Simple Proprioceptive Estimators for Legged Robots
 summary:
   en: Four Simple Proprioceptive Estimators for Legged Robots is a paper on State
     Estimation for humanoid robotics.
   zh: Four Simple Proprioceptive Estimators for Legged Robots is a paper on State
     Estimation for humanoid robotics.
-  ko: ''
+  ko: Four Simple Proprioceptive Estimators for Legged Robots is a paper on State
+    Estimation for humanoid robotics.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Four Simple Proprioceptive Estimators for Legged Robots is a paper on State Estimation for humanoid robotics.
+
+## Overview
+Four Simple Proprioceptive Estimators for Legged Robots is a paper on State Estimation for humanoid robotics.
+
+## 개요
 Four Simple Proprioceptive Estimators for Legged Robots is a paper on State Estimation for humanoid robotics.

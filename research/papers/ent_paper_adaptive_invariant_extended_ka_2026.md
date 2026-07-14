@@ -6,13 +6,14 @@ type: paper
 names:
   en: Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation
   zh: Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation
-  ko: ''
+  ko: Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation
 summary:
   en: Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation
     is a paper on State Estimation for humanoid robotics.
   zh: Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation
     is a paper on State Estimation for humanoid robotics.
-  ko: ''
+  ko: Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation
+    is a paper on State Estimation for humanoid robotics.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation is a paper on State Estimation for humanoid robotics.
+
+## Overview
+Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation is a paper on State Estimation for humanoid robotics.
+
+## 개요
 Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation is a paper on State Estimation for humanoid robotics.

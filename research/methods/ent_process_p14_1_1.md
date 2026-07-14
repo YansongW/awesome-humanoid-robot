@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 中间件选型与适配
-  ko: ''
+  ko: 中间件选型与适配
 summary:
   en: ''
   zh: 中间件架构图、节点清单、QoS 策略
-  ko: ''
+  ko: 中间件架构图、节点清单、QoS 策略
 domains:
 - 08_software_middleware
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）

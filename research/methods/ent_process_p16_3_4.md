@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 服务手册与培训
-  ko: ''
+  ko: 服务手册与培训
 summary:
   en: ''
   zh: 服务手册、备件策略、培训计划
-  ko: ''
+  ko: 服务手册、备件策略、培训计划
 domains:
 - 05_mass_production
 - 11_applications_markets
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）

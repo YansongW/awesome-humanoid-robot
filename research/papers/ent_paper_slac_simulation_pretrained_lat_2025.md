@@ -8,7 +8,8 @@ names:
     Learning'
   zh: 'SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement
     Learning'
-  ko: ''
+  ko: 'SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement
+    Learning'
 summary:
   en: 'SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement
     Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement
     Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid
     robots.'
-  ko: ''
+  ko: 'SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement
+    Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 SLAC: Simulation-Pretrained Latent Action Space for Whole-Body Real-World Reinforcement Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

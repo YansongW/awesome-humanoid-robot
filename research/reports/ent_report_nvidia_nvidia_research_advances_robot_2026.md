@@ -6,7 +6,7 @@ type: report
 names:
   en: NVIDIA Research Advances Robotics From Simulation to the Real World
   zh: NVIDIA Research Advances Robotics From Simulation to the Real World
-  ko: ''
+  ko: NVIDIA Research Advances Robotics From Simulation to the Real World
 summary:
   en: 'Robotics is entering a new phase: moving from controlled demos and scripted
     automation toward generalizable, reliable embodied autonomy in the real world.
@@ -18,7 +18,11 @@ summary:
     At the International Conference on Robotics and Automation (ICRA), eight of NVIDIA
     Research’s 28 accepted papers show how simulation-to-real transfer is becoming
     a foundation for that shift, helping robots perceive, reason, plan and [&#8230;]'
-  ko: ''
+  ko: 'Robotics is entering a new phase: moving from controlled demos and scripted
+    automation toward generalizable, reliable embodied autonomy in the real world.
+    At the International Conference on Robotics and Automation (ICRA), eight of NVIDIA
+    Research’s 28 accepted papers show how simulation-to-real transfer is becoming
+    a foundation for that shift, helping robots perceive, reason, plan and [&#8230;]'
 domains:
 - 11_applications_markets
 - 07_ai_models_algorithms
@@ -49,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Robotics is entering a new phase: moving from controlled demos and scripted automation toward generalizable, reliable embodied autonomy in the real world. At the International Conference on Robotics and Automation (ICRA), eight of NVIDIA Research’s 28 accepted papers show how simulation-to-real transfer is becoming a foundation for that shift, helping robots perceive, reason, plan and [&#8230;]
+
+## Overview
+Robotics is entering a new phase: moving from controlled demos and scripted automation toward generalizable, reliable embodied autonomy in the real world. At the International Conference on Robotics and Automation (ICRA), eight of NVIDIA Research’s 28 accepted papers show how simulation-to-real transfer is becoming a foundation for that shift, helping robots perceive, reason, plan and [&#8230;]
+
+## 개요
 Robotics is entering a new phase: moving from controlled demos and scripted automation toward generalizable, reliable embodied autonomy in the real world. At the International Conference on Robotics and Automation (ICRA), eight of NVIDIA Research’s 28 accepted papers show how simulation-to-real transfer is becoming a foundation for that shift, helping robots perceive, reason, plan and [&#8230;]

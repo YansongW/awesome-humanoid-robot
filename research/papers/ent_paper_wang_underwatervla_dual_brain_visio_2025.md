@@ -7,7 +7,8 @@ names:
   en: 'UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous
     Underwater Navigation'
   zh: UnderwaterVLA
-  ko: ''
+  ko: 'UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous
+    Underwater Navigation'
 summary:
   en: 'UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous
     Underwater Navigation (UnderwaterVLA), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Underwater Navigation (UnderwaterVLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Westlake University, Zhejiang University,
     Australian National University.'
-  ko: ''
+  ko: 'UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous
+    Underwater Navigation (UnderwaterVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Westlake University, Zhejiang University,
+    Australian National University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous Underwater Navigation (UnderwaterVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Zhejiang University, Australian National University.
+
+## Overview
+UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous Underwater Navigation (UnderwaterVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Zhejiang University, Australian National University.
+
+## 개요
 UnderwaterVLA: Dual-brain Vision-Language-Action architecture for Autonomous Underwater Navigation (UnderwaterVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Zhejiang University, Australian National University.

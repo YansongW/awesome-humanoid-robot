@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data'
   zh: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data'
-  ko: ''
+  ko: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data'
 summary:
   en: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data
     is a 2025 work on manipulation for humanoid robots.'
   zh: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data
     is a 2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data
+    is a 2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data is a 2025 work on manipulation for humanoid robots.

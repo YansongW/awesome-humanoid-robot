@@ -8,13 +8,15 @@ names:
     and Manipulation'
   zh: 'X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion
     and Manipulation'
-  ko: ''
+  ko: 'X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion
+    and Manipulation'
 summary:
   en: 'X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion
     and Manipulation is a paper on Hardware Design for humanoid robotics.'
   zh: 'X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion
     and Manipulation is a paper on Hardware Design for humanoid robotics.'
-  ko: ''
+  ko: 'X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion
+    and Manipulation is a paper on Hardware Design for humanoid robotics.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -48,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation is a paper on Hardware Design for humanoid robotics.
+
+## Overview
+X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation is a paper on Hardware Design for humanoid robotics.
+
+## 개요
 X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation is a paper on Hardware Design for humanoid robotics.

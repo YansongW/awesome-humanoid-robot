@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 操作与抓取仿真
-  ko: ''
+  ko: 操作与抓取仿真
 summary:
   en: ''
   zh: 典型物体抓取仿真、力控接触稳定
-  ko: ''
+  ko: 典型物体抓取仿真、力控接触稳定
 domains:
 - 08_software_middleware
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）

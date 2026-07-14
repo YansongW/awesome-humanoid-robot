@@ -6,7 +6,7 @@ type: paper
 names:
   en: Generalist Robot Manipulation beyond Action Labeled Data
   zh: MotoVLA
-  ko: ''
+  ko: Generalist Robot Manipulation beyond Action Labeled Data
 summary:
   en: Generalist Robot Manipulation beyond Action Labeled Data (MotoVLA), is a 2025
     large vision-language-action model for robotic manipulation, introduced by INSAIT,
@@ -14,7 +14,9 @@ summary:
   zh: Generalist Robot Manipulation beyond Action Labeled Data (MotoVLA), is a 2025
     large vision-language-action model for robotic manipulation, introduced by INSAIT,
     Sofia University “St. Kliment Ohridski”, ETH Zurich, and published at CoRL25.
-  ko: ''
+  ko: Generalist Robot Manipulation beyond Action Labeled Data (MotoVLA), is a 2025
+    large vision-language-action model for robotic manipulation, introduced by INSAIT,
+    Sofia University “St. Kliment Ohridski”, ETH Zurich, and published at CoRL25.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Generalist Robot Manipulation beyond Action Labeled Data (MotoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by INSAIT, Sofia University “St. Kliment Ohridski”, ETH Zurich, and published at CoRL25.
+
+## Overview
+Generalist Robot Manipulation beyond Action Labeled Data (MotoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by INSAIT, Sofia University “St. Kliment Ohridski”, ETH Zurich, and published at CoRL25.
+
+## 개요
 Generalist Robot Manipulation beyond Action Labeled Data (MotoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by INSAIT, Sofia University “St. Kliment Ohridski”, ETH Zurich, and published at CoRL25.

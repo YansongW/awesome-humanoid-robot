@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Dexbotic: Open-Source Vision-Language-Action Toolbox'
   zh: Dexbotic
-  ko: ''
+  ko: 'Dexbotic: Open-Source Vision-Language-Action Toolbox'
 summary:
   en: 'Dexbotic: Open-Source Vision-Language-Action Toolbox (Dexbotic), is a 2025
     large vision-language-action model for robotic manipulation, introduced by Dexmal,
@@ -14,7 +14,9 @@ summary:
   zh: 'Dexbotic: Open-Source Vision-Language-Action Toolbox (Dexbotic), is a 2025
     large vision-language-action model for robotic manipulation, introduced by Dexmal,
     StepFun.'
-  ko: ''
+  ko: 'Dexbotic: Open-Source Vision-Language-Action Toolbox (Dexbotic), is a 2025
+    large vision-language-action model for robotic manipulation, introduced by Dexmal,
+    StepFun.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Dexbotic: Open-Source Vision-Language-Action Toolbox (Dexbotic), is a 2025 large vision-language-action model for robotic manipulation, introduced by Dexmal, StepFun.
+
+## Overview
+Dexbotic: Open-Source Vision-Language-Action Toolbox (Dexbotic), is a 2025 large vision-language-action model for robotic manipulation, introduced by Dexmal, StepFun.
+
+## 개요
 Dexbotic: Open-Source Vision-Language-Action Toolbox (Dexbotic), is a 2025 large vision-language-action model for robotic manipulation, introduced by Dexmal, StepFun.

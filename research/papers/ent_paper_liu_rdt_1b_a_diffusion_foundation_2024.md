@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation'
   zh: RDT-1B
-  ko: ''
+  ko: 'RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation'
 summary:
   en: 'RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation (RDT-1B), is
     a 2024 generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation (RDT-1B), is
     a 2024 generalized vision-language-action model for robotic manipulation, introduced
     by Tsinghua University, and published at ICLR 2024.'
-  ko: ''
+  ko: 'RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation (RDT-1B), is
+    a 2024 generalized vision-language-action model for robotic manipulation, introduced
+    by Tsinghua University, and published at ICLR 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation (RDT-1B), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Tsinghua University, and published at ICLR 2024.
+
+## Overview
+RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation (RDT-1B), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Tsinghua University, and published at ICLR 2024.
+
+## 개요
 RDT-1B: a Diffusion Foundation Model for Bimanual Manipulation (RDT-1B), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Tsinghua University, and published at ICLR 2024.

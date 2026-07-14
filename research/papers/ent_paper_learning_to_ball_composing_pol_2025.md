@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Learning to Ball: Composing Policies for Long-Horizon Basketball Moves'
   zh: 'Learning to Ball: Composing Policies for Long-Horizon Basketball Moves'
-  ko: ''
+  ko: 'Learning to Ball: Composing Policies for Long-Horizon Basketball Moves'
 summary:
   en: 'Learning to Ball: Composing Policies for Long-Horizon Basketball Moves is a
     2025 work on physics-based character animation for humanoid robots.'
   zh: 'Learning to Ball: Composing Policies for Long-Horizon Basketball Moves is a
     2025 work on physics-based character animation for humanoid robots.'
-  ko: ''
+  ko: 'Learning to Ball: Composing Policies for Long-Horizon Basketball Moves is a
+    2025 work on physics-based character animation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning to Ball: Composing Policies for Long-Horizon Basketball Moves is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+Learning to Ball: Composing Policies for Long-Horizon Basketball Moves is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 Learning to Ball: Composing Policies for Long-Horizon Basketball Moves is a 2025 work on physics-based character animation for humanoid robots.

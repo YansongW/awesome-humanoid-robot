@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Human-Like Badminton Skills for Humanoid Robots
   zh: Learning Human-Like Badminton Skills for Humanoid Robots
-  ko: ''
+  ko: Learning Human-Like Badminton Skills for Humanoid Robots
 summary:
   en: Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation
     and whole-body-control for humanoid robots.
   zh: Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation
     and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation
+    and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Learning Human-Like Badminton Skills for Humanoid Robots is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

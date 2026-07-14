@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'RMA: Rapid Motor Adaptation for Legged Robots'
   zh: 'RMA: Rapid Motor Adaptation for Legged Robots'
-  ko: ''
+  ko: 'RMA: Rapid Motor Adaptation for Legged Robots'
 summary:
   en: ''
   zh: 'RMA: Rapid Motor Adaptation for Legged Robots is a paper on 仿真到真实 for humanoid
     robotics.'
-  ko: ''
+  ko: 'RMA: Rapid Motor Adaptation for Legged Robots is a paper on 仿真到真实 for humanoid
+    robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -42,5 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RMA: Rapid Motor Adaptation for Legged Robots is a paper on 仿真到真实 for humanoid robotics.
 
+## Overview
+RMA: Rapid Motor Adaptation for Legged Robots is a paper on 仿真到真实 for humanoid robotics.
+
+## 개요
 RMA: Rapid Motor Adaptation for Legged Robots is a paper on 仿真到真实 for humanoid robotics.

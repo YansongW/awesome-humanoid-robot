@@ -8,13 +8,15 @@ names:
     Injection
   zh: Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation
     Injection
-  ko: ''
+  ko: Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation
+    Injection
 summary:
   en: Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation
     Injection is a 2025 work on sim-to-real for humanoid robots.
   zh: Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation
     Injection is a 2025 work on sim-to-real for humanoid robots.
-  ko: ''
+  ko: Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation
+    Injection is a 2025 work on sim-to-real for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection is a 2025 work on sim-to-real for humanoid robots.
+
+## Overview
+Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection is a 2025 work on sim-to-real for humanoid robots.
+
+## 개요
 Sim-to-Real of Humanoid Locomotion Policies via Joint Torque Space Perturbation Injection is a 2025 work on sim-to-real for humanoid robots.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 电源分配与 DC-DC
-  ko: ''
+  ko: 电源分配与 DC-DC
 summary:
   en: ''
   zh: 电源分配图、DC-DC 选型、效率/热测试
-  ko: ''
+  ko: 电源分配图、DC-DC 选型、效率/热测试
 domains:
 - 02_components
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）

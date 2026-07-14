@@ -4,14 +4,19 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning'
+  en: 'OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation
+    and Learning'
   zh: 把遥操作升级成通用身体接口
-  ko: ''
+  ko: 'OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation
+    and Learning'
 summary:
-  en: 'OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning is a knowledge node related
-    to paper in the humanoid robot value chain.'
+  en: 'OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation
+    and Learning is a knowledge node related to paper in the humanoid robot value
+    chain.'
   zh: ''
-  ko: ''
+  ko: 'OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation
+    and Learning is a knowledge node related to paper in the humanoid robot value
+    chain.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -32,11 +37,13 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (008). Institution: CMU；上海交通大学. arXiv: 2406.08858.'
+  notes: 'Imported from WeChat curated list (008). Institution: CMU；上海交通大学. arXiv:
+    2406.08858.'
 sources:
 - id: src_001
   type: paper
-  title: 'OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning (arXiv)'
+  title: 'OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation
+    and Learning (arXiv)'
   url: https://arxiv.org/abs/2406.08858
   date: '2026'
   accessed_at: '2026-07-01'
@@ -49,3 +56,12 @@ sources:
 theoretical_depth:
 - system
 ---
+
+## 概述
+OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning is a knowledge node related to paper in the humanoid robot value chain.
+
+## Overview
+OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning is a knowledge node related to paper in the humanoid robot value chain.
+
+## 개요
+OmniH2O: Universal and Dexterous Human-to-Humanoid Whole-Body Teleoperation and Learning is a knowledge node related to paper in the humanoid robot value chain.

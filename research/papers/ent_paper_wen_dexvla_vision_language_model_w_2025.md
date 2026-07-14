@@ -7,7 +7,8 @@ names:
   en: 'DexVLA: Vision-Language Model with Plug-In Diffusion Expert for General Robot
     Control'
   zh: DexVLA
-  ko: ''
+  ko: 'DexVLA: Vision-Language Model with Plug-In Diffusion Expert for General Robot
+    Control'
 summary:
   en: 'DexVLA: Vision-Language Model with Plug-In Diffusion Expert for General Robot
     Control (DexVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -15,7 +16,9 @@ summary:
   zh: 'DexVLA: Vision-Language Model with Plug-In Diffusion Expert for General Robot
     Control (DexVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Midea Group, East China Normal University.'
-  ko: ''
+  ko: 'DexVLA: Vision-Language Model with Plug-In Diffusion Expert for General Robot
+    Control (DexVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Midea Group, East China Normal University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DexVLA: Vision-Language Model with Plug-In Diffusion Expert for General Robot Control (DexVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Midea Group, East China Normal University.
+
+## Overview
+DexVLA: Vision-Language Model with Plug-In Diffusion Expert for General Robot Control (DexVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Midea Group, East China Normal University.
+
+## 개요
 DexVLA: Vision-Language Model with Plug-In Diffusion Expert for General Robot Control (DexVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Midea Group, East China Normal University.

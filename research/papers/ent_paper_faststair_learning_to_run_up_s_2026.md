@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'FastStair: Learning to Run Up Stairs with Humanoid Robots'
   zh: 'FastStair: Learning to Run Up Stairs with Humanoid Robots'
-  ko: ''
+  ko: 'FastStair: Learning to Run Up Stairs with Humanoid Robots'
 summary:
   en: 'FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on
     locomotion for humanoid robots.'
   zh: 'FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on
     locomotion for humanoid robots.'
-  ko: ''
+  ko: 'FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on
+    locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid robots.
+
+## Overview
+FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid robots.
+
+## 개요
 FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid robots.

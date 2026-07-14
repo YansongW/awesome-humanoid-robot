@@ -6,7 +6,7 @@ type: paper
 names:
   en: Visual Spatial Tuning
   zh: VST
-  ko: ''
+  ko: Visual Spatial Tuning
 summary:
   en: Visual Spatial Tuning (VST), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by The University of Hong Kong, ByteDance Seed,
@@ -14,7 +14,9 @@ summary:
   zh: Visual Spatial Tuning (VST), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by The University of Hong Kong, ByteDance Seed,
     Tsinghua University, and published at WACV 2025.
-  ko: ''
+  ko: Visual Spatial Tuning (VST), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by The University of Hong Kong, ByteDance Seed,
+    Tsinghua University, and published at WACV 2025.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Visual Spatial Tuning (VST), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Hong Kong, ByteDance Seed, Tsinghua University, and published at WACV 2025.
+
+## Overview
+Visual Spatial Tuning (VST), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Hong Kong, ByteDance Seed, Tsinghua University, and published at WACV 2025.
+
+## 개요
 Visual Spatial Tuning (VST), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Hong Kong, ByteDance Seed, Tsinghua University, and published at WACV 2025.

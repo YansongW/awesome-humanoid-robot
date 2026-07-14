@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+用于仿真和控制的描述机器人连杆、关节、惯性和几何的XML格式。
+
+## Overview
 XML-based format describing robot links, joints, inertial properties, and geometry for simulation and control.
+
+## 개요
+시뮬레이션 및 제어를 위한 로봇 링크, 관절, 관성 및 기하를 설명하는 XML 기반 형식.

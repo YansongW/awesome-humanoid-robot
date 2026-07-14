@@ -8,13 +8,15 @@ names:
     Corp XI
   zh: Agility Robotics to Go Public Through $2.5 Billion Merger with Churchill Capital
     Corp XI
-  ko: ''
+  ko: Agility Robotics to Go Public Through $2.5 Billion Merger with Churchill Capital
+    Corp XI
 summary:
   en: Transaction expected to create the only U.S. publicly listed pure-play humanoid
     company with proven, active commercial deployments
   zh: Transaction expected to create the only U.S. publicly listed pure-play humanoid
     company with proven, active commercial deployments
-  ko: ''
+  ko: Transaction expected to create the only U.S. publicly listed pure-play humanoid
+    company with proven, active commercial deployments
 domains:
 - 11_applications_markets
 layers:
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Transaction expected to create the only U.S. publicly listed pure-play humanoid company with proven, active commercial deployments
+
+## Overview
+Transaction expected to create the only U.S. publicly listed pure-play humanoid company with proven, active commercial deployments
+
+## 개요
 Transaction expected to create the only U.S. publicly listed pure-play humanoid company with proven, active commercial deployments

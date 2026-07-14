@@ -6,13 +6,14 @@ type: paper
 names:
   en: Guided Motion Diffusion for Controllable Human Motion Synthesis
   zh: Guided Motion Diffusion for Controllable Human Motion Synthesis
-  ko: ''
+  ko: Guided Motion Diffusion for Controllable Human Motion Synthesis
 summary:
   en: Guided Motion Diffusion for Controllable Human Motion Synthesis is a 2023 work
     on human motion analysis and synthesis for humanoid robots.
   zh: Guided Motion Diffusion for Controllable Human Motion Synthesis is a 2023 work
     on human motion analysis and synthesis for humanoid robots.
-  ko: ''
+  ko: Guided Motion Diffusion for Controllable Human Motion Synthesis is a 2023 work
+    on human motion analysis and synthesis for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Guided Motion Diffusion for Controllable Human Motion Synthesis is a 2023 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+Guided Motion Diffusion for Controllable Human Motion Synthesis is a 2023 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 Guided Motion Diffusion for Controllable Human Motion Synthesis is a 2023 work on human motion analysis and synthesis for humanoid robots.

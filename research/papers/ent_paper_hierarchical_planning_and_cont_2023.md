@@ -6,13 +6,14 @@ type: paper
 names:
   en: Hierarchical Planning and Control for Box Loco-Manipulation
   zh: Hierarchical Planning and Control for Box Loco-Manipulation
-  ko: ''
+  ko: Hierarchical Planning and Control for Box Loco-Manipulation
 summary:
   en: Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on
     physics-based character animation for humanoid robots.
   zh: Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on
     physics-based character animation for humanoid robots.
-  ko: ''
+  ko: Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on
+    physics-based character animation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based character animation for humanoid robots.
+
+## Overview
+Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based character animation for humanoid robots.
+
+## 개요
 Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based character animation for humanoid robots.

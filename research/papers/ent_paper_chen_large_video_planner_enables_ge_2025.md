@@ -6,7 +6,7 @@ type: paper
 names:
   en: Large Video Planner Enables Generalizable Robot Control
   zh: LVP
-  ko: ''
+  ko: Large Video Planner Enables Generalizable Robot Control
 summary:
   en: Large Video Planner Enables Generalizable Robot Control (LVP), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by MIT, UC Berkeley,
@@ -14,7 +14,9 @@ summary:
   zh: Large Video Planner Enables Generalizable Robot Control (LVP), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by MIT, UC Berkeley,
     Harvard.
-  ko: ''
+  ko: Large Video Planner Enables Generalizable Robot Control (LVP), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by MIT, UC Berkeley,
+    Harvard.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Large Video Planner Enables Generalizable Robot Control (LVP), is a 2025 large vision-language-action model for robotic manipulation, introduced by MIT, UC Berkeley, Harvard.
+
+## Overview
+Large Video Planner Enables Generalizable Robot Control (LVP), is a 2025 large vision-language-action model for robotic manipulation, introduced by MIT, UC Berkeley, Harvard.
+
+## 개요
 Large Video Planner Enables Generalizable Robot Control (LVP), is a 2025 large vision-language-action model for robotic manipulation, introduced by MIT, UC Berkeley, Harvard.

@@ -7,7 +7,8 @@ names:
   en: 'AgentWorld: An Interactive Simulation Platform for Scene Construction and Mobile
     Robotic Manipulation'
   zh: AgentWorld
-  ko: ''
+  ko: 'AgentWorld: An Interactive Simulation Platform for Scene Construction and Mobile
+    Robotic Manipulation'
 summary:
   en: 'AgentWorld: An Interactive Simulation Platform for Scene Construction and Mobile
     Robotic Manipulation (AgentWorld), is a 2025 large vision-language-action model
@@ -17,7 +18,10 @@ summary:
     Robotic Manipulation (AgentWorld), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by Tencent Robotics X, Shanghai Jiao Tong
     University, and published at CoRL25.'
-  ko: ''
+  ko: 'AgentWorld: An Interactive Simulation Platform for Scene Construction and Mobile
+    Robotic Manipulation (AgentWorld), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by Tencent Robotics X, Shanghai Jiao Tong
+    University, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AgentWorld: An Interactive Simulation Platform for Scene Construction and Mobile Robotic Manipulation (AgentWorld), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tencent Robotics X, Shanghai Jiao Tong University, and published at CoRL25.
+
+## Overview
+AgentWorld: An Interactive Simulation Platform for Scene Construction and Mobile Robotic Manipulation (AgentWorld), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tencent Robotics X, Shanghai Jiao Tong University, and published at CoRL25.
+
+## 개요
 AgentWorld: An Interactive Simulation Platform for Scene Construction and Mobile Robotic Manipulation (AgentWorld), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tencent Robotics X, Shanghai Jiao Tong University, and published at CoRL25.

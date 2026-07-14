@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 线缆与管路布线设计
-  ko: ''
+  ko: 线缆与管路布线设计
 summary:
   en: ''
   zh: 《布线设计规范》：线缆型号、固定点、弯曲半径、走向
-  ko: ''
+  ko: 《布线设计规范》：线缆型号、固定点、弯曲半径、走向
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）

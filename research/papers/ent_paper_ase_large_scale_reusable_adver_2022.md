@@ -8,7 +8,8 @@ names:
     Characters'
   zh: 'ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated
     Characters'
-  ko: ''
+  ko: 'ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated
+    Characters'
 summary:
   en: 'ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated
     Characters is a 2022 work on physics-based character animation for humanoid robots,
@@ -16,7 +17,9 @@ summary:
   zh: 'ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated
     Characters is a 2022 work on physics-based character animation for humanoid robots,
     with open-source code available.'
-  ko: ''
+  ko: 'ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated
+    Characters is a 2022 work on physics-based character animation for humanoid robots,
+    with open-source code available.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters is a 2022 work on physics-based character animation for humanoid robots, with open-source code available.
+
+## Overview
+ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters is a 2022 work on physics-based character animation for humanoid robots, with open-source code available.
+
+## 개요
 ASE: Large-Scale Reusable Adversarial Skill Embeddings for Physically Simulated Characters is a 2022 work on physics-based character animation for humanoid robots, with open-source code available.

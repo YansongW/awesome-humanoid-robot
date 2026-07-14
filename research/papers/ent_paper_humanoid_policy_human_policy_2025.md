@@ -6,11 +6,11 @@ type: paper
 names:
   en: Humanoid Policy ~ Human Policy
   zh: Humanoid Policy ~ Human Policy
-  ko: ''
+  ko: Humanoid Policy ~ Human Policy
 summary:
   en: Humanoid Policy ~ Human Policy is a 2025 work on manipulation for humanoid robots.
   zh: Humanoid Policy ~ Human Policy is a 2025 work on manipulation for humanoid robots.
-  ko: ''
+  ko: Humanoid Policy ~ Human Policy is a 2025 work on manipulation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Humanoid Policy ~ Human Policy is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+Humanoid Policy ~ Human Policy is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 Humanoid Policy ~ Human Policy is a 2025 work on manipulation for humanoid robots.

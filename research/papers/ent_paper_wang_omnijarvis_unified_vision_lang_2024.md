@@ -7,7 +7,8 @@ names:
   en: 'OmniJARVIS: Unified Vision-Language-Action Tokenization Enables Open-World
     Instruction Following Agents'
   zh: OmniJARVIS
-  ko: ''
+  ko: 'OmniJARVIS: Unified Vision-Language-Action Tokenization Enables Open-World
+    Instruction Following Agents'
 summary:
   en: 'OmniJARVIS: Unified Vision-Language-Action Tokenization Enables Open-World
     Instruction Following Agents (OmniJARVIS), is a 2024 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Instruction Following Agents (OmniJARVIS), is a 2024 large vision-language-action
     model for robotic manipulation, introduced by Peking University, The Chinese University
     of Hong Kong, Shenzhen, and published at NIPS24.'
-  ko: ''
+  ko: 'OmniJARVIS: Unified Vision-Language-Action Tokenization Enables Open-World
+    Instruction Following Agents (OmniJARVIS), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by Peking University, The Chinese University
+    of Hong Kong, Shenzhen, and published at NIPS24.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+OmniJARVIS: Unified Vision-Language-Action Tokenization Enables Open-World Instruction Following Agents (OmniJARVIS), is a 2024 large vision-language-action model for robotic manipulation, introduced by Peking University, The Chinese University of Hong Kong, Shenzhen, and published at NIPS24.
+
+## Overview
+OmniJARVIS: Unified Vision-Language-Action Tokenization Enables Open-World Instruction Following Agents (OmniJARVIS), is a 2024 large vision-language-action model for robotic manipulation, introduced by Peking University, The Chinese University of Hong Kong, Shenzhen, and published at NIPS24.
+
+## 개요
 OmniJARVIS: Unified Vision-Language-Action Tokenization Enables Open-World Instruction Following Agents (OmniJARVIS), is a 2024 large vision-language-action model for robotic manipulation, introduced by Peking University, The Chinese University of Hong Kong, Shenzhen, and published at NIPS24.

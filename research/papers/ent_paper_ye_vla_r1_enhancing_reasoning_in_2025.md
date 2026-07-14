@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'VLA-R1: Enhancing Reasoning in Vision-Language-Action Models'
   zh: VLA-R1
-  ko: ''
+  ko: 'VLA-R1: Enhancing Reasoning in Vision-Language-Action Models'
 summary:
   en: 'VLA-R1: Enhancing Reasoning in Vision-Language-Action Models (VLA-R1), is a
     2025 large vision-language-action model for robotic manipulation, introduced by
@@ -14,7 +14,9 @@ summary:
   zh: 'VLA-R1: Enhancing Reasoning in Vision-Language-Action Models (VLA-R1), is a
     2025 large vision-language-action model for robotic manipulation, introduced by
     GigaAI, CASIA, Tsinghua University.'
-  ko: ''
+  ko: 'VLA-R1: Enhancing Reasoning in Vision-Language-Action Models (VLA-R1), is a
+    2025 large vision-language-action model for robotic manipulation, introduced by
+    GigaAI, CASIA, Tsinghua University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLA-R1: Enhancing Reasoning in Vision-Language-Action Models (VLA-R1), is a 2025 large vision-language-action model for robotic manipulation, introduced by GigaAI, CASIA, Tsinghua University.
+
+## Overview
+VLA-R1: Enhancing Reasoning in Vision-Language-Action Models (VLA-R1), is a 2025 large vision-language-action model for robotic manipulation, introduced by GigaAI, CASIA, Tsinghua University.
+
+## 개요
 VLA-R1: Enhancing Reasoning in Vision-Language-Action Models (VLA-R1), is a 2025 large vision-language-action model for robotic manipulation, introduced by GigaAI, CASIA, Tsinghua University.

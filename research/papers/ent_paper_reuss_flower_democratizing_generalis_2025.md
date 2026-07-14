@@ -7,7 +7,8 @@ names:
   en: 'FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action
     Flow Policies'
   zh: FLOWER
-  ko: ''
+  ko: 'FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action
+    Flow Policies'
 summary:
   en: 'FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action
     Flow Policies (FLOWER), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Flow Policies (FLOWER), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Karlsruhe Institute of Technology, Microsoft Research,
     and published at CoRL25.'
-  ko: ''
+  ko: 'FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action
+    Flow Policies (FLOWER), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Karlsruhe Institute of Technology, Microsoft Research,
+    and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies (FLOWER), is a 2025 large vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology, Microsoft Research, and published at CoRL25.
+
+## Overview
+FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies (FLOWER), is a 2025 large vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology, Microsoft Research, and published at CoRL25.
+
+## 개요
 FLOWER: Democratizing Generalist Robot Policies with Efficient Vision-Language-Action Flow Policies (FLOWER), is a 2025 large vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology, Microsoft Research, and published at CoRL25.

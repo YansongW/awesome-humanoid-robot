@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'FreezeVLA: Action-Freezing Attacks against Vision-Language-Action Models'
   zh: FreezeVLA
-  ko: ''
+  ko: 'FreezeVLA: Action-Freezing Attacks against Vision-Language-Action Models'
 summary:
   en: 'FreezeVLA: Action-Freezing Attacks against Vision-Language-Action Models (FreezeVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'FreezeVLA: Action-Freezing Attacks against Vision-Language-Action Models (FreezeVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Fudan University, Shanghai AI Lab, Sea AI Lab.'
-  ko: ''
+  ko: 'FreezeVLA: Action-Freezing Attacks against Vision-Language-Action Models (FreezeVLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Fudan University, Shanghai AI Lab, Sea AI Lab.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FreezeVLA: Action-Freezing Attacks against Vision-Language-Action Models (FreezeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, Shanghai AI Lab, Sea AI Lab.
+
+## Overview
+FreezeVLA: Action-Freezing Attacks against Vision-Language-Action Models (FreezeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, Shanghai AI Lab, Sea AI Lab.
+
+## 개요
 FreezeVLA: Action-Freezing Attacks against Vision-Language-Action Models (FreezeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, Shanghai AI Lab, Sea AI Lab.

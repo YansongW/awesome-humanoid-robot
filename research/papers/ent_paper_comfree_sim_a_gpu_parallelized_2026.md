@@ -8,7 +8,8 @@ names:
     Contact-Rich Robotics Simulation and Control'
   zh: 'ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable
     Contact-Rich Robotics Simulation and Control'
-  ko: ''
+  ko: 'ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable
+    Contact-Rich Robotics Simulation and Control'
 summary:
   en: 'ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable
     Contact-Rich Robotics Simulation and Control is a 2026 work on simulation benchmark
@@ -16,7 +17,9 @@ summary:
   zh: 'ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable
     Contact-Rich Robotics Simulation and Control is a 2026 work on simulation benchmark
     for humanoid robots.'
-  ko: ''
+  ko: 'ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable
+    Contact-Rich Robotics Simulation and Control is a 2026 work on simulation benchmark
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable Contact-Rich Robotics Simulation and Control is a 2026 work on simulation benchmark for humanoid robots.
+
+## Overview
+ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable Contact-Rich Robotics Simulation and Control is a 2026 work on simulation benchmark for humanoid robots.
+
+## 개요
 ComFree-Sim: A GPU-Parallelized Analytical Contact Physics Engine for Scalable Contact-Rich Robotics Simulation and Control is a 2026 work on simulation benchmark for humanoid robots.

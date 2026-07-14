@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'GR00T N1: An Open Foundation Model for Generalist Humanoid Robots'
   zh: GR00T N1｜通用人形机器人的开放基础模型
-  ko: ''
+  ko: 'GR00T N1: An Open Foundation Model for Generalist Humanoid Robots'
 summary:
   en: ''
   zh: GR00T N1 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA
     多模态动作模型预测可执行动作命令。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
-  ko: ''
+  ko: GR00T N1 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA
+    多模态动作模型预测可执行动作命令。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,5 +45,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+GR00T N1 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测可执行动作命令。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 
+## 개요
 GR00T N1 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测可执行动作命令。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。

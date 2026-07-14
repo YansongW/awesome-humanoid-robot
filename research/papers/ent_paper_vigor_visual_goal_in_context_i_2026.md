@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety'
   zh: 'VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety'
-  ko: ''
+  ko: 'VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety'
 summary:
   en: 'VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety is
     a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety is
     a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety is
+    a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 VIGOR: Visual Goal-In-Context Inference for Unified Humanoid Fall Safety is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

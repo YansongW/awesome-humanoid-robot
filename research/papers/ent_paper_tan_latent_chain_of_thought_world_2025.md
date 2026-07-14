@@ -6,7 +6,7 @@ type: paper
 names:
   en: Latent Chain-of-Thought World Modeling for End-to-End Driving
   zh: LCDrive
-  ko: ''
+  ko: Latent Chain-of-Thought World Modeling for End-to-End Driving
 summary:
   en: Latent Chain-of-Thought World Modeling for End-to-End Driving (LCDrive), is
     a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: Latent Chain-of-Thought World Modeling for End-to-End Driving (LCDrive), is
     a 2025 large vision-language-action model for robotic manipulation, introduced
     by University of Tübingen.
-  ko: ''
+  ko: Latent Chain-of-Thought World Modeling for End-to-End Driving (LCDrive), is
+    a 2025 large vision-language-action model for robotic manipulation, introduced
+    by University of Tübingen.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Latent Chain-of-Thought World Modeling for End-to-End Driving (LCDrive), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Tübingen.
+
+## Overview
+Latent Chain-of-Thought World Modeling for End-to-End Driving (LCDrive), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Tübingen.
+
+## 개요
 Latent Chain-of-Thought World Modeling for End-to-End Driving (LCDrive), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Tübingen.

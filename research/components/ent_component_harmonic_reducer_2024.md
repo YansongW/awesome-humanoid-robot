@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+体积小、传动比大、回程间隙极小的精密减速器，广泛用于机器人旋转关节。
+
+## Overview
 Compact precision gearbox with high reduction ratio and near-zero backlash, widely used in robot rotary joints.
+
+## 개요
+고감속비와 근접 제로 백래시를 가진 컴팩트한 정밀 기어박스, 로봇 회전 관절에 널리 사용.

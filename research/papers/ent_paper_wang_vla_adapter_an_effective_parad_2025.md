@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model'
   zh: VLA-Adapter
-  ko: ''
+  ko: 'VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model'
 summary:
   en: 'VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model
     (VLA-Adapter), is a 2025 large vision-language-action model for robotic manipulation,
@@ -18,7 +18,11 @@ summary:
     introduced by Beijing University of Posts and Telecommunications, Westlake University,
     Zhejiang University, OpenHelix Team, State Key Laboratory of Networking and Switching
     Technology, The Hong Kong University of Science and Technology (Guangzhou).'
-  ko: ''
+  ko: 'VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model
+    (VLA-Adapter), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Beijing University of Posts and Telecommunications, Westlake University,
+    Zhejiang University, OpenHelix Team, State Key Laboratory of Networking and Switching
+    Technology, The Hong Kong University of Science and Technology (Guangzhou).'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +64,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model (VLA-Adapter), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing University of Posts and Telecommunications, Westlake University, Zhejiang University, OpenHelix Team, State Key Laboratory of Networking and Switching Technology, The Hong Kong University of Science and Technology (Guangzhou).
+
+## Overview
+VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model (VLA-Adapter), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing University of Posts and Telecommunications, Westlake University, Zhejiang University, OpenHelix Team, State Key Laboratory of Networking and Switching Technology, The Hong Kong University of Science and Technology (Guangzhou).
+
+## 개요
 VLA-Adapter: An Effective Paradigm for Tiny-Scale Vision-Language-Action Model (VLA-Adapter), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing University of Posts and Telecommunications, Westlake University, Zhejiang University, OpenHelix Team, State Key Laboratory of Networking and Switching Technology, The Hong Kong University of Science and Technology (Guangzhou).

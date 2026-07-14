@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'π0.6*: a VLA That Learns From Experience'
   zh: π0.6*
-  ko: ''
+  ko: 'π0.6*: a VLA That Learns From Experience'
 summary:
   en: 'π0.6*: a VLA That Learns From Experience (π0.6*), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Physical Intelligence.'
   zh: 'π0.6*: a VLA That Learns From Experience (π0.6*), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Physical Intelligence.'
-  ko: ''
+  ko: 'π0.6*: a VLA That Learns From Experience (π0.6*), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Physical Intelligence.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+π0.6*: a VLA That Learns From Experience (π0.6*), is a 2025 large vision-language-action model for robotic manipulation, introduced by Physical Intelligence.
+
+## Overview
+π0.6*: a VLA That Learns From Experience (π0.6*), is a 2025 large vision-language-action model for robotic manipulation, introduced by Physical Intelligence.
+
+## 개요
 π0.6*: a VLA That Learns From Experience (π0.6*), is a 2025 large vision-language-action model for robotic manipulation, introduced by Physical Intelligence.

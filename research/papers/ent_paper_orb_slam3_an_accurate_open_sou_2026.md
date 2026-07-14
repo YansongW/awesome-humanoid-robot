@@ -8,13 +8,15 @@ names:
     Multi-Map SLAM'
   zh: 'ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and
     Multi-Map SLAM'
-  ko: ''
+  ko: 'ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and
+    Multi-Map SLAM'
 summary:
   en: 'ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and
     Multi-Map SLAM is a 2026 work on state estimation for humanoid robots.'
   zh: 'ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and
     Multi-Map SLAM is a 2026 work on state estimation for humanoid robots.'
-  ko: ''
+  ko: 'ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and
+    Multi-Map SLAM is a 2026 work on state estimation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM is a 2026 work on state estimation for humanoid robots.
+
+## Overview
+ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM is a 2026 work on state estimation for humanoid robots.
+
+## 개요
 ORB-SLAM3: An Accurate Open-Source Library for Visual, Visual-Inertial and Multi-Map SLAM is a 2026 work on state estimation for humanoid robots.

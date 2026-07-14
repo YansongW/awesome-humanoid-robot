@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Mobi-π: Mobilizing Your Robot Learning Policy'
   zh: 'Mobi-π: Mobilizing Your Robot Learning Policy'
-  ko: ''
+  ko: 'Mobi-π: Mobilizing Your Robot Learning Policy'
 summary:
   en: 'Mobi-π: Mobilizing Your Robot Learning Policy is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
   zh: 'Mobi-π: Mobilizing Your Robot Learning Policy is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'Mobi-π: Mobilizing Your Robot Learning Policy is a 2025 work on loco-manipulation
+    and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Mobi-π: Mobilizing Your Robot Learning Policy is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Mobi-π: Mobilizing Your Robot Learning Policy is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Mobi-π: Mobilizing Your Robot Learning Policy is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

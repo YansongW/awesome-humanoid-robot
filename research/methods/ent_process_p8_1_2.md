@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: FEA 模型准备
-  ko: ''
+  ko: FEA 模型准备
 summary:
   en: ''
   zh: 高质量 FEA 模型、网格质量报告、边界条件清单
-  ko: ''
+  ko: 高质量 FEA 模型、网格质量报告、边界条件清单
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：结构强度仿真与迭代（Structural FEA）

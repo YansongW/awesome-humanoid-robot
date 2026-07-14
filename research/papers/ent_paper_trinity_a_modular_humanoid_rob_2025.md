@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Trinity: A Modular Humanoid Robot AI System'
   zh: 'Trinity: A Modular Humanoid Robot AI System'
-  ko: ''
+  ko: 'Trinity: A Modular Humanoid Robot AI System'
 summary:
   en: 'Trinity: A Modular Humanoid Robot AI System is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
   zh: 'Trinity: A Modular Humanoid Robot AI System is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'Trinity: A Modular Humanoid Robot AI System is a 2025 work on loco-manipulation
+    and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Trinity: A Modular Humanoid Robot AI System is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Trinity: A Modular Humanoid Robot AI System is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Trinity: A Modular Humanoid Robot AI System is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

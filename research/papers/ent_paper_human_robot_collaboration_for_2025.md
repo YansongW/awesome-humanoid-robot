@@ -6,13 +6,14 @@ type: paper
 names:
   en: Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots
   zh: Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots
-  ko: ''
+  ko: Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots
 summary:
   en: Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots is
     a 2025 work on teleoperation for humanoid robots.
   zh: Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots is
     a 2025 work on teleoperation for humanoid robots.
-  ko: ''
+  ko: Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots is
+    a 2025 work on teleoperation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+
+## Overview
+Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+
+## 개요
 Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots is a 2025 work on teleoperation for humanoid robots.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'PosA-VLA: Enhancing Action Generation via Pose-Conditioned Anchor Attention'
   zh: PosA-VLA
-  ko: ''
+  ko: 'PosA-VLA: Enhancing Action Generation via Pose-Conditioned Anchor Attention'
 summary:
   en: 'PosA-VLA: Enhancing Action Generation via Pose-Conditioned Anchor Attention
     (PosA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'PosA-VLA: Enhancing Action Generation via Pose-Conditioned Anchor Attention
     (PosA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by University of Sydney.'
-  ko: ''
+  ko: 'PosA-VLA: Enhancing Action Generation via Pose-Conditioned Anchor Attention
+    (PosA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by University of Sydney.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PosA-VLA: Enhancing Action Generation via Pose-Conditioned Anchor Attention (PosA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Sydney.
+
+## Overview
+PosA-VLA: Enhancing Action Generation via Pose-Conditioned Anchor Attention (PosA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Sydney.
+
+## 개요
 PosA-VLA: Enhancing Action Generation via Pose-Conditioned Anchor Attention (PosA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Sydney.

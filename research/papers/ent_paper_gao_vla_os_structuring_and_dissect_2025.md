@@ -7,7 +7,8 @@ names:
   en: 'VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in
     Vision-Language-Action Models'
   zh: VLA-OS
-  ko: ''
+  ko: 'VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in
+    Vision-Language-Action Models'
 summary:
   en: 'VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in
     Vision-Language-Action Models (VLA-OS), is a 2025 large vision-language-action
@@ -19,7 +20,11 @@ summary:
     model for robotic manipulation, introduced by National University of Singapore,
     University of Science and Technology of China, Tsinghua University, Nanyang Technological
     University, and published at NIPS25.'
-  ko: ''
+  ko: 'VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in
+    Vision-Language-Action Models (VLA-OS), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by National University of Singapore,
+    University of Science and Technology of China, Tsinghua University, Nanyang Technological
+    University, and published at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in Vision-Language-Action Models (VLA-OS), is a 2025 large vision-language-action model for robotic manipulation, introduced by National University of Singapore, University of Science and Technology of China, Tsinghua University, Nanyang Technological University, and published at NIPS25.
+
+## Overview
+VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in Vision-Language-Action Models (VLA-OS), is a 2025 large vision-language-action model for robotic manipulation, introduced by National University of Singapore, University of Science and Technology of China, Tsinghua University, Nanyang Technological University, and published at NIPS25.
+
+## 개요
 VLA-OS: Structuring and Dissecting Planning Representations and Paradigms in Vision-Language-Action Models (VLA-OS), is a 2025 large vision-language-action model for robotic manipulation, introduced by National University of Singapore, University of Science and Technology of China, Tsinghua University, Nanyang Technological University, and published at NIPS25.

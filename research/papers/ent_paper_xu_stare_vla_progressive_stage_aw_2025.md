@@ -7,7 +7,8 @@ names:
   en: 'STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action
     Models'
   zh: STARE-VLA
-  ko: ''
+  ko: 'STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action
+    Models'
 summary:
   en: 'STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action
     Models (STARE-VLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Models (STARE-VLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Technical University of Munich, Imperial College London, Munich
     Research Center, Huawei Technologies.'
-  ko: ''
+  ko: 'STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action
+    Models (STARE-VLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Technical University of Munich, Imperial College London, Munich
+    Research Center, Huawei Technologies.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models (STARE-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Technical University of Munich, Imperial College London, Munich Research Center, Huawei Technologies.
+
+## Overview
+STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models (STARE-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Technical University of Munich, Imperial College London, Munich Research Center, Huawei Technologies.
+
+## 개요
 STARE-VLA: Progressive Stage-Aware Reinforcement for Fine-Tuning Vision-Language-Action Models (STARE-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Technical University of Munich, Imperial College London, Munich Research Center, Huawei Technologies.

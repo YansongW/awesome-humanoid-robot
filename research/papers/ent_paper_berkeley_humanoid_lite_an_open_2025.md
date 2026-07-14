@@ -8,13 +8,15 @@ names:
     Humanoid Robot'
   zh: 'Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed
     Humanoid Robot'
-  ko: ''
+  ko: 'Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed
+    Humanoid Robot'
 summary:
   en: 'Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed
     Humanoid Robot is a 2025 work on hardware design for humanoid robots.'
   zh: 'Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed
     Humanoid Robot is a 2025 work on hardware design for humanoid robots.'
-  ko: ''
+  ko: 'Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed
+    Humanoid Robot is a 2025 work on hardware design for humanoid robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed Humanoid Robot is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed Humanoid Robot is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 Berkeley Humanoid Lite: An Open-source, Accessible, and Customizable 3D-printed Humanoid Robot is a 2025 work on hardware design for humanoid robots.

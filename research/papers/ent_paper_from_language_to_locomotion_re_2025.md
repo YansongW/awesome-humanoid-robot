@@ -7,11 +7,12 @@ names:
   en: 'From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent
     Guidance'
   zh: 从语言到运动｜通过动作潜变量指导实现免重定向人形控制
-  ko: ''
+  ko: 'From Language to Locomotion: Retargeting-free Humanoid Control via Motion Latent
+    Guidance'
 summary:
   en: ''
   zh: 这篇工作先从语言指令、相机图像/多视角观测、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、MM-DiT/Transformer 动作头、IK/动作重定向生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
-  ko: ''
+  ko: 这篇工作先从语言指令、相机图像/多视角观测、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、MM-DiT/Transformer 动作头、IK/动作重定向生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -44,5 +45,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+这篇工作先从语言指令、相机图像/多视角观测、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、MM-DiT/Transformer 动作头、IK/动作重定向生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
+## 개요
 这篇工作先从语言指令、相机图像/多视角观测、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、MM-DiT/Transformer 动作头、IK/动作重定向生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。

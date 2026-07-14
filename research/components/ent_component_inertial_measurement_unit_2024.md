@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+安装于躯干/臀部的传感器，融合加速度计和陀螺仪用于平衡和状态估计。
+
+## Overview
+Torso/hip-mounted sensor fusing accelerometer and gyroscope for balance and state estimation.
+
+## 개요
 Torso/hip-mounted sensor fusing accelerometer and gyroscope for balance and state estimation.

@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+操作员或故障触发时立即切断电源或命令安全状态的硬接线安全电路。
+
+## Overview
 Hardwired safety circuit that immediately removes power or commands safe state when triggered by operator or fault.
+
+## 개요
+운영자 또는 결함에 의해 트리거될 때 즉시 전원을 제거하거나 안전 상태를 명령하는 하드와이어 안전 회로.

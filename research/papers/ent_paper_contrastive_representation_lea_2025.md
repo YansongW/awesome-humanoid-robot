@@ -8,13 +8,15 @@ names:
     Humanoid Locomotion
   zh: Contrastive Representation Learning for Robust Sim-to-Real Transfer of Adaptive
     Humanoid Locomotion
-  ko: ''
+  ko: Contrastive Representation Learning for Robust Sim-to-Real Transfer of Adaptive
+    Humanoid Locomotion
 summary:
   en: Contrastive Representation Learning for Robust Sim-to-Real Transfer of Adaptive
     Humanoid Locomotion is a 2025 work on sim-to-real for humanoid robots.
   zh: Contrastive Representation Learning for Robust Sim-to-Real Transfer of Adaptive
     Humanoid Locomotion is a 2025 work on sim-to-real for humanoid robots.
-  ko: ''
+  ko: Contrastive Representation Learning for Robust Sim-to-Real Transfer of Adaptive
+    Humanoid Locomotion is a 2025 work on sim-to-real for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Contrastive Representation Learning for Robust Sim-to-Real Transfer of Adaptive Humanoid Locomotion is a 2025 work on sim-to-real for humanoid robots.
+
+## Overview
+Contrastive Representation Learning for Robust Sim-to-Real Transfer of Adaptive Humanoid Locomotion is a 2025 work on sim-to-real for humanoid robots.
+
+## 개요
 Contrastive Representation Learning for Robust Sim-to-Real Transfer of Adaptive Humanoid Locomotion is a 2025 work on sim-to-real for humanoid robots.

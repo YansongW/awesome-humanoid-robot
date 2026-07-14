@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+全身移动双臂遥操作平台，用于采集家庭和仓库操作数据。
+
+## Overview
 Whole-body mobile bimanual teleoperation platform for collecting home and warehouse manipulation data.
+
+## 개요
+가정 및 창고 조작 데이터 수집을 위한 전신 이동 양손 텔레오퍼레이션 플랫폼.

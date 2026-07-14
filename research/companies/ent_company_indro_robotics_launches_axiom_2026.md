@@ -8,13 +8,15 @@ names:
     Physical AI Research'
   zh: 'InDro Robotics Launches Axiom: A Budget-Friendly Humanoid-Style Platform for
     Physical AI Research'
-  ko: ''
+  ko: 'InDro Robotics Launches Axiom: A Budget-Friendly Humanoid-Style Platform for
+    Physical AI Research'
 summary:
   en: New modular robot lowers barrier to humanoid development; first customer units
     already shipping
   zh: New modular robot lowers barrier to humanoid development; first customer units
     already shipping
-  ko: ''
+  ko: New modular robot lowers barrier to humanoid development; first customer units
+    already shipping
 domains:
 - 11_applications_markets
 layers:
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-14'
 ---
 
+## 概述
+New modular robot lowers barrier to humanoid development; first customer units already shipping
+
+## Overview
+New modular robot lowers barrier to humanoid development; first customer units already shipping
+
+## 개요
 New modular robot lowers barrier to humanoid development; first customer units already shipping

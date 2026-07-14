@@ -7,7 +7,8 @@ names:
   en: 'MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for
     Robotic Manipulation'
   zh: MemoryVLA
-  ko: ''
+  ko: 'MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for
+    Robotic Manipulation'
 summary:
   en: 'MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for
     Robotic Manipulation (MemoryVLA), is a 2025 large vision-language-action model
@@ -17,7 +18,10 @@ summary:
     Robotic Manipulation (MemoryVLA), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by Tsinghua University, Dexmal, MEGVII Technology,
     Tianjin University, Harbin Institute of Technology, StepFun.'
-  ko: ''
+  ko: 'MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for
+    Robotic Manipulation (MemoryVLA), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by Tsinghua University, Dexmal, MEGVII Technology,
+    Tianjin University, Harbin Institute of Technology, StepFun.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation (MemoryVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Dexmal, MEGVII Technology, Tianjin University, Harbin Institute of Technology, StepFun.
+
+## Overview
+MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation (MemoryVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Dexmal, MEGVII Technology, Tianjin University, Harbin Institute of Technology, StepFun.
+
+## 개요
 MemoryVLA: Perceptual-Cognitive Memory in Vision-Language-Action Models for Robotic Manipulation (MemoryVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Dexmal, MEGVII Technology, Tianjin University, Harbin Institute of Technology, StepFun.

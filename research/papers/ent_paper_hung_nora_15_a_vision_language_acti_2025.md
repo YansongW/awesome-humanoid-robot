@@ -7,7 +7,8 @@ names:
   en: 'Nora-1.5: A vision-language-action model trained using world model-and action-based
     preference rewards'
   zh: NORA-1.5
-  ko: ''
+  ko: 'Nora-1.5: A vision-language-action model trained using world model-and action-based
+    preference rewards'
 summary:
   en: 'Nora-1.5: A vision-language-action model trained using world model-and action-based
     preference rewards (NORA-1.5), is a 2025 large vision-language-action model for
@@ -19,7 +20,11 @@ summary:
     robotic manipulation, introduced by Nanyang Technological University, Singapore
     University of Technology and Design, University of Antwerp, Queen Mary University
     of London.'
-  ko: ''
+  ko: 'Nora-1.5: A vision-language-action model trained using world model-and action-based
+    preference rewards (NORA-1.5), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by Nanyang Technological University, Singapore
+    University of Technology and Design, University of Antwerp, Queen Mary University
+    of London.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Nora-1.5: A vision-language-action model trained using world model-and action-based preference rewards (NORA-1.5), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nanyang Technological University, Singapore University of Technology and Design, University of Antwerp, Queen Mary University of London.
+
+## Overview
+Nora-1.5: A vision-language-action model trained using world model-and action-based preference rewards (NORA-1.5), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nanyang Technological University, Singapore University of Technology and Design, University of Antwerp, Queen Mary University of London.
+
+## 개요
 Nora-1.5: A vision-language-action model trained using world model-and action-based preference rewards (NORA-1.5), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nanyang Technological University, Singapore University of Technology and Design, University of Antwerp, Queen Mary University of London.

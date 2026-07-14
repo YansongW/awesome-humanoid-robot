@@ -7,7 +7,8 @@ names:
   en: 'Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising
     Diffusion Process'
   zh: UD-VLA
-  ko: ''
+  ko: 'Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising
+    Diffusion Process'
 summary:
   en: 'Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising
     Diffusion Process (UD-VLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Diffusion Process (UD-VLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by HKUST(GZ), Westlake University, Zhejiang University,
     Monash University.'
-  ko: ''
+  ko: 'Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising
+    Diffusion Process (UD-VLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by HKUST(GZ), Westlake University, Zhejiang University,
+    Monash University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process (UD-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by HKUST(GZ), Westlake University, Zhejiang University, Monash University.
+
+## Overview
+Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process (UD-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by HKUST(GZ), Westlake University, Zhejiang University, Monash University.
+
+## 개요
 Unified Diffusion VLA: Vision-Language-Action Model via Joint Discrete Denoising Diffusion Process (UD-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by HKUST(GZ), Westlake University, Zhejiang University, Monash University.

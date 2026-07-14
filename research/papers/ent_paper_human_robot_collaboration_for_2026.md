@@ -8,13 +8,15 @@ names:
     Torso-Arm Coordination
   zh: Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots with
     Torso-Arm Coordination
-  ko: ''
+  ko: Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots with
+    Torso-Arm Coordination
 summary:
   en: Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots with
     Torso-Arm Coordination is a paper on Teleoperation for humanoid robotics.
   zh: Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots with
     Torso-Arm Coordination is a paper on Teleoperation for humanoid robotics.
-  ko: ''
+  ko: Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots with
+    Torso-Arm Coordination is a paper on Teleoperation for humanoid robotics.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots with Torso-Arm Coordination is a paper on Teleoperation for humanoid robotics.
+
+## Overview
+Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots with Torso-Arm Coordination is a paper on Teleoperation for humanoid robotics.
+
+## 개요
 Human-Robot Collaboration for the Remote Control of Mobile Humanoid Robots with Torso-Arm Coordination is a paper on Teleoperation for humanoid robotics.

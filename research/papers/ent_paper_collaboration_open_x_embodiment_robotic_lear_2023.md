@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Open X-Embodiment: Robotic Learning Datasets and RT-X Models'
   zh: RT-X
-  ko: ''
+  ko: 'Open X-Embodiment: Robotic Learning Datasets and RT-X Models'
 summary:
   en: 'Open X-Embodiment: Robotic Learning Datasets and RT-X Models (RT-X), is a 2023
     large vision-language-action model for robotic manipulation, introduced by Open
@@ -14,7 +14,9 @@ summary:
   zh: 'Open X-Embodiment: Robotic Learning Datasets and RT-X Models (RT-X), is a 2023
     large vision-language-action model for robotic manipulation, introduced by Open
     X-Embodiment Collaboration, and published at ICRA 2023.'
-  ko: ''
+  ko: 'Open X-Embodiment: Robotic Learning Datasets and RT-X Models (RT-X), is a 2023
+    large vision-language-action model for robotic manipulation, introduced by Open
+    X-Embodiment Collaboration, and published at ICRA 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Open X-Embodiment: Robotic Learning Datasets and RT-X Models (RT-X), is a 2023 large vision-language-action model for robotic manipulation, introduced by Open X-Embodiment Collaboration, and published at ICRA 2023.
+
+## Overview
+Open X-Embodiment: Robotic Learning Datasets and RT-X Models (RT-X), is a 2023 large vision-language-action model for robotic manipulation, introduced by Open X-Embodiment Collaboration, and published at ICRA 2023.
+
+## 개요
 Open X-Embodiment: Robotic Learning Datasets and RT-X Models (RT-X), is a 2023 large vision-language-action model for robotic manipulation, introduced by Open X-Embodiment Collaboration, and published at ICRA 2023.

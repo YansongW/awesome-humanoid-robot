@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'ProtoMotions3: An Open-source Framework for Humanoid Simulation and Control'
   zh: ProtoMotions3：面向人形仿真与控制的开源框架
-  ko: ''
+  ko: 'ProtoMotions3: An Open-source Framework for Humanoid Simulation and Control'
 summary:
   en: ''
   zh: 'ProtoMotions3: An Open-source Framework for Humanoid Simulation and Control
     is a paper on 仿真平台与工具 for humanoid robotics. ProtoMotions3：面向人形仿真与控制的开源框架.'
-  ko: ''
+  ko: 'ProtoMotions3: An Open-source Framework for Humanoid Simulation and Control
+    is a paper on 仿真平台与工具 for humanoid robotics. ProtoMotions3：面向人形仿真与控制的开源框架.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,5 +43,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ProtoMotions3: An Open-source Framework for Humanoid Simulation and Control is a paper on 仿真平台与工具 for humanoid robotics. ProtoMotions3：面向人形仿真与控制的开源框架.
 
+## 개요
 ProtoMotions3: An Open-source Framework for Humanoid Simulation and Control is a paper on 仿真平台与工具 for humanoid robotics. ProtoMotions3：面向人形仿真与控制的开源框架.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 系统架构与机电总体设计（System / Preliminary Design）
-  ko: ''
+  ko: 系统架构与机电总体设计（System / Preliminary Design）
 summary:
   en: ''
   zh: 系统架构与机电总体设计（System / Preliminary Design）
-  ko: ''
+  ko: 系统架构与机电总体设计（System / Preliminary Design）
 domains:
 - 06_design_engineering
 - 02_components
@@ -36,5 +36,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+系统架构与机电总体设计（System / Preliminary Design）
 
+## Overview
+系统架构与机电总体设计（System / Preliminary Design）
 
+## 개요
+系统架构与机电总体设计（System / Preliminary Design）

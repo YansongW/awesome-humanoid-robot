@@ -8,13 +8,15 @@ names:
     and Online Distillation'
   zh: 'HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning
     and Online Distillation'
-  ko: ''
+  ko: 'HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning
+    and Online Distillation'
 summary:
   en: 'HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning
     and Online Distillation is a 2026 work on locomotion for humanoid robots.'
   zh: 'HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning
     and Online Distillation is a 2026 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning
+    and Online Distillation is a 2026 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation is a 2026 work on locomotion for humanoid robots.
+
+## Overview
+HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation is a 2026 work on locomotion for humanoid robots.
+
+## 개요
 HoRD: Robust Humanoid Control via History-Conditioned Reinforcement Learning and Online Distillation is a 2026 work on locomotion for humanoid robots.

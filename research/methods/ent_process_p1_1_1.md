@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 利益相关方需求采集
-  ko: ''
+  ko: 利益相关方需求采集
 summary:
   en: ''
   zh: 利益相关方清单、需求池、优先级排序
-  ko: ''
+  ko: 利益相关方清单、需求池、优先级排序
 domains:
 - 06_design_engineering
 - 12_policy_regulation_ethics
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）

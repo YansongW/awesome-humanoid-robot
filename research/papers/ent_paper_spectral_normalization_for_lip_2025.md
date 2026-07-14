@@ -8,13 +8,15 @@ names:
     Locomotion
   zh: Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid
     Locomotion
-  ko: ''
+  ko: Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid
+    Locomotion
 summary:
   en: Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid
     Locomotion is a 2025 work on locomotion for humanoid robots.
   zh: Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid
     Locomotion is a 2025 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid
+    Locomotion is a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Spectral Normalization for Lipschitz-Constrained Policies on Learning Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.

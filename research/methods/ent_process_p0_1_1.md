@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 市场机会与场景画布
-  ko: ''
+  ko: 市场机会与场景画布
 summary:
   en: ''
   zh: 输出《商业画布》与至少 3 个优先级场景及对应 KPI
-  ko: ''
+  ko: 输出《商业画布》与至少 3 个优先级场景及对应 KPI
 domains:
 - 11_applications_markets
 - 12_policy_regulation_ethics
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：项目立项与商业基线

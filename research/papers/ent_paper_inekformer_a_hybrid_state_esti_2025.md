@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'InEKFormer: A Hybrid State Estimator for Humanoid Robots'
   zh: 'InEKFormer: A Hybrid State Estimator for Humanoid Robots'
-  ko: ''
+  ko: 'InEKFormer: A Hybrid State Estimator for Humanoid Robots'
 summary:
   en: 'InEKFormer: A Hybrid State Estimator for Humanoid Robots is a 2025 work on
     state estimation for humanoid robots.'
   zh: 'InEKFormer: A Hybrid State Estimator for Humanoid Robots is a 2025 work on
     state estimation for humanoid robots.'
-  ko: ''
+  ko: 'InEKFormer: A Hybrid State Estimator for Humanoid Robots is a 2025 work on
+    state estimation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+InEKFormer: A Hybrid State Estimator for Humanoid Robots is a 2025 work on state estimation for humanoid robots.
+
+## Overview
+InEKFormer: A Hybrid State Estimator for Humanoid Robots is a 2025 work on state estimation for humanoid robots.
+
+## 개요
 InEKFormer: A Hybrid State Estimator for Humanoid Robots is a 2025 work on state estimation for humanoid robots.

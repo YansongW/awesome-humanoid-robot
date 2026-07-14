@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization'
   zh: 用偏好优化把文本生成的动作磨成物理可执行的人形动作
-  ko: ''
+  ko: 'PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization'
 summary:
   en: ''
   zh: 'PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization
     is a paper on 物理动画 for humanoid robotics. 用偏好优化把文本生成的动作磨成物理可执行的人形动作.'
-  ko: ''
+  ko: 'PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization
+    is a paper on 物理动画 for humanoid robotics. 用偏好优化把文本生成的动作磨成物理可执行的人形动作.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,5 +44,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization is a paper on 物理动画 for humanoid robotics. 用偏好优化把文本生成的动作磨成物理可执行的人形动作.
 
+## 개요
 PhysMoDPO: Physically-Plausible Humanoid Motion with Preference Optimization is a paper on 物理动画 for humanoid robotics. 用偏好优化把文本生成的动作磨成物理可执行的人形动作.

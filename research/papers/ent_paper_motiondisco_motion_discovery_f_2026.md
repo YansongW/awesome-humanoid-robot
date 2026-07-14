@@ -6,11 +6,11 @@ type: paper
 names:
   en: 'MotionDisco: Motion Discovery for Extreme Humanoid Loco-Manipulation'
   zh: MotionDisco｜用于极端人形移动操作的运动发现
-  ko: ''
+  ko: 'MotionDisco: Motion Discovery for Extreme Humanoid Loco-Manipulation'
 summary:
   en: ''
   zh: MotionDisco 主要解决数据闭环：用遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、IK/动作重定向、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
-  ko: ''
+  ko: MotionDisco 主要解决数据闭环：用遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、IK/动作重定向、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,5 +43,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+MotionDisco 主要解决数据闭环：用遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、IK/动作重定向、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
+## 개요
 MotionDisco 主要解决数据闭环：用遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、IK/动作重定向、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。

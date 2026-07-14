@@ -7,7 +7,8 @@ names:
   en: 'VLA-R: Vision-Language Action Retrieval toward Open-World End-to-End Autonomous
     Driving'
   zh: VLA-R
-  ko: ''
+  ko: 'VLA-R: Vision-Language Action Retrieval toward Open-World End-to-End Autonomous
+    Driving'
 summary:
   en: 'VLA-R: Vision-Language Action Retrieval toward Open-World End-to-End Autonomous
     Driving (VLA-R), is a 2025 large vision-language-action model for robotic manipulation,
@@ -15,7 +16,9 @@ summary:
   zh: 'VLA-R: Vision-Language Action Retrieval toward Open-World End-to-End Autonomous
     Driving (VLA-R), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by KAIST.'
-  ko: ''
+  ko: 'VLA-R: Vision-Language Action Retrieval toward Open-World End-to-End Autonomous
+    Driving (VLA-R), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by KAIST.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLA-R: Vision-Language Action Retrieval toward Open-World End-to-End Autonomous Driving (VLA-R), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST.
+
+## Overview
+VLA-R: Vision-Language Action Retrieval toward Open-World End-to-End Autonomous Driving (VLA-R), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST.
+
+## 개요
 VLA-R: Vision-Language Action Retrieval toward Open-World End-to-End Autonomous Driving (VLA-R), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST.

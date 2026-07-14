@@ -7,7 +7,8 @@ names:
   en: 'VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial
     Navigation in Complex Environments'
   zh: VLA-AN
-  ko: ''
+  ko: 'VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial
+    Navigation in Complex Environments'
 summary:
   en: 'VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial
     Navigation in Complex Environments (VLA-AN), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Navigation in Complex Environments (VLA-AN), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Zhejiang University, Differential
     Robotics.'
-  ko: ''
+  ko: 'VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial
+    Navigation in Complex Environments (VLA-AN), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Zhejiang University, Differential
+    Robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial Navigation in Complex Environments (VLA-AN), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, Differential Robotics.
+
+## Overview
+VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial Navigation in Complex Environments (VLA-AN), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, Differential Robotics.
+
+## 개요
 VLA-AN: An Efficient and Onboard Vision-Language-Action Framework for Aerial Navigation in Complex Environments (VLA-AN), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, Differential Robotics.

@@ -7,7 +7,8 @@ names:
   en: 'SOLAMI: Social Vision-Language-Action Modeling for Immersive Interaction with
     3D Autonomous Characters'
   zh: SOLAMI
-  ko: ''
+  ko: 'SOLAMI: Social Vision-Language-Action Modeling for Immersive Interaction with
+    3D Autonomous Characters'
 summary:
   en: 'SOLAMI: Social Vision-Language-Action Modeling for Immersive Interaction with
     3D Autonomous Characters (SOLAMI), is a 2024 large vision-language-action model
@@ -17,7 +18,10 @@ summary:
     3D Autonomous Characters (SOLAMI), is a 2024 large vision-language-action model
     for robotic manipulation, introduced by SenseTime Research, S-Lab, Nanyang Technological
     University, and published at CVPR25.'
-  ko: ''
+  ko: 'SOLAMI: Social Vision-Language-Action Modeling for Immersive Interaction with
+    3D Autonomous Characters (SOLAMI), is a 2024 large vision-language-action model
+    for robotic manipulation, introduced by SenseTime Research, S-Lab, Nanyang Technological
+    University, and published at CVPR25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SOLAMI: Social Vision-Language-Action Modeling for Immersive Interaction with 3D Autonomous Characters (SOLAMI), is a 2024 large vision-language-action model for robotic manipulation, introduced by SenseTime Research, S-Lab, Nanyang Technological University, and published at CVPR25.
+
+## Overview
+SOLAMI: Social Vision-Language-Action Modeling for Immersive Interaction with 3D Autonomous Characters (SOLAMI), is a 2024 large vision-language-action model for robotic manipulation, introduced by SenseTime Research, S-Lab, Nanyang Technological University, and published at CVPR25.
+
+## 개요
 SOLAMI: Social Vision-Language-Action Modeling for Immersive Interaction with 3D Autonomous Characters (SOLAMI), is a 2024 large vision-language-action model for robotic manipulation, introduced by SenseTime Research, S-Lab, Nanyang Technological University, and published at CVPR25.

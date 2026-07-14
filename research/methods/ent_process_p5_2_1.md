@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 结构材料选型
-  ko: ''
+  ko: 结构材料选型
 summary:
   en: ''
   zh: 《材料选型表》：各部件材料、工艺、原因
-  ko: ''
+  ko: 《材料选型表》：各部件材料、工艺、原因
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）

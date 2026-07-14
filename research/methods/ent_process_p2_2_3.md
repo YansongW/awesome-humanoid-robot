@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: ID-结构接口冻结
-  ko: ''
+  ko: ID-结构接口冻结
 summary:
   en: ''
   zh: 《ID-结构接口规范》、安装点图、密封等级定义
-  ko: ''
+  ko: 《ID-结构接口规范》、安装点图、密封等级定义
 domains:
 - 06_design_engineering
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：工业设计与外观工程（ID / A-Surface）

@@ -6,7 +6,7 @@ type: paper
 names:
   en: Training Strategies for Efficient Embodied Reasoning
   zh: ECoT-Lite
-  ko: ''
+  ko: Training Strategies for Efficient Embodied Reasoning
 summary:
   en: Training Strategies for Efficient Embodied Reasoning (ECoT-Lite), is a 2025
     large vision-language-action model for robotic manipulation, introduced by Stanford,
@@ -14,7 +14,9 @@ summary:
   zh: Training Strategies for Efficient Embodied Reasoning (ECoT-Lite), is a 2025
     large vision-language-action model for robotic manipulation, introduced by Stanford,
     and published at CoRL25.
-  ko: ''
+  ko: Training Strategies for Efficient Embodied Reasoning (ECoT-Lite), is a 2025
+    large vision-language-action model for robotic manipulation, introduced by Stanford,
+    and published at CoRL25.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Training Strategies for Efficient Embodied Reasoning (ECoT-Lite), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford, and published at CoRL25.
+
+## Overview
+Training Strategies for Efficient Embodied Reasoning (ECoT-Lite), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford, and published at CoRL25.
+
+## 개요
 Training Strategies for Efficient Embodied Reasoning (ECoT-Lite), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford, and published at CoRL25.

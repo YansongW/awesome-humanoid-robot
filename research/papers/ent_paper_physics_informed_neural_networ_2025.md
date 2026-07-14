@@ -8,13 +8,15 @@ names:
     Joint Torque Estimation
   zh: Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless
     Joint Torque Estimation
-  ko: ''
+  ko: Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless
+    Joint Torque Estimation
 summary:
   en: Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless
     Joint Torque Estimation is a 2025 work on state estimation for humanoid robots.
   zh: Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless
     Joint Torque Estimation is a 2025 work on state estimation for humanoid robots.
-  ko: ''
+  ko: Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless
+    Joint Torque Estimation is a 2025 work on state estimation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless Joint Torque Estimation is a 2025 work on state estimation for humanoid robots.
+
+## Overview
+Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless Joint Torque Estimation is a 2025 work on state estimation for humanoid robots.
+
+## 개요
 Physics-Informed Neural Networks with Unscented Kalman Filter for Sensorless Joint Torque Estimation is a 2025 work on state estimation for humanoid robots.

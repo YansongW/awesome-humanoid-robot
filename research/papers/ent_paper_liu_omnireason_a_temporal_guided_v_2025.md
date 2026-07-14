@@ -7,7 +7,8 @@ names:
   en: 'OmniReason: A Temporal-Guided Vision-Language-Action Framework for Autonomous
     Driving'
   zh: OmniReason
-  ko: ''
+  ko: 'OmniReason: A Temporal-Guided Vision-Language-Action Framework for Autonomous
+    Driving'
 summary:
   en: 'OmniReason: A Temporal-Guided Vision-Language-Action Framework for Autonomous
     Driving (OmniReason), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Driving (OmniReason), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by The Hong Kong University of Science and Technology
     (Guangzhou), The Hong Kong University of Science and Technology.'
-  ko: ''
+  ko: 'OmniReason: A Temporal-Guided Vision-Language-Action Framework for Autonomous
+    Driving (OmniReason), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by The Hong Kong University of Science and Technology
+    (Guangzhou), The Hong Kong University of Science and Technology.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+OmniReason: A Temporal-Guided Vision-Language-Action Framework for Autonomous Driving (OmniReason), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Hong Kong University of Science and Technology (Guangzhou), The Hong Kong University of Science and Technology.
+
+## Overview
+OmniReason: A Temporal-Guided Vision-Language-Action Framework for Autonomous Driving (OmniReason), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Hong Kong University of Science and Technology (Guangzhou), The Hong Kong University of Science and Technology.
+
+## 개요
 OmniReason: A Temporal-Guided Vision-Language-Action Framework for Autonomous Driving (OmniReason), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Hong Kong University of Science and Technology (Guangzhou), The Hong Kong University of Science and Technology.

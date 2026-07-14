@@ -6,11 +6,11 @@ type: paper
 names:
   en: 'UniAct: Unified Motion Generation and Action Streaming for Humanoid Robots'
   zh: UniAct｜人形机器人的统一运动生成和动作流
-  ko: ''
+  ko: 'UniAct: Unified Motion Generation and Action Streaming for Humanoid Robots'
 summary:
   en: ''
   zh: UniAct 把语言指令转成可跟踪的身体目标，并通过策略网络和控制模块训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把策略网络和控制模块放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
-  ko: ''
+  ko: UniAct 把语言指令转成可跟踪的身体目标，并通过策略网络和控制模块训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把策略网络和控制模块放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 domains:
 - 06_design_engineering
 - 07_ai_models_algorithms
@@ -48,5 +48,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+UniAct 把语言指令转成可跟踪的身体目标，并通过策略网络和控制模块训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把策略网络和控制模块放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 
+## 개요
 UniAct 把语言指令转成可跟踪的身体目标，并通过策略网络和控制模块训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把策略网络和控制模块放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。

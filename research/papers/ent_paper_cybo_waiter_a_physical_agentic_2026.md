@@ -6,11 +6,11 @@ type: paper
 names:
   en: 'Cybo-Waiter: A Physical Agentic Framework for Humanoid Whole-Body Locomotion-Manipulation'
   zh: Cybo-Waiter｜人形全身运动操作的物理智能体框架
-  ko: ''
+  ko: 'Cybo-Waiter: A Physical Agentic Framework for Humanoid Whole-Body Locomotion-Manipulation'
 summary:
   en: ''
   zh: Cybo-Waiter 先从语言指令、相机图像/多视角观测恢复场景、目标或运动表征，再用扩散策略/流匹配、VLM 语义规划/路由、闭环纠错/人类干预生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
-  ko: ''
+  ko: Cybo-Waiter 先从语言指令、相机图像/多视角观测恢复场景、目标或运动表征，再用扩散策略/流匹配、VLM 语义规划/路由、闭环纠错/人类干预生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -47,5 +47,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+Cybo-Waiter 先从语言指令、相机图像/多视角观测恢复场景、目标或运动表征，再用扩散策略/流匹配、VLM 语义规划/路由、闭环纠错/人类干预生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
+## 개요
 Cybo-Waiter 先从语言指令、相机图像/多视角观测恢复场景、目标或运动表征，再用扩散策略/流匹配、VLM 语义规划/路由、闭环纠错/人类干预生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。

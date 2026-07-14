@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'DreamGen: Unlocking Generalization in Robot Learning through Video World Models'
   zh: 'DreamGen: Unlocking Generalization in Robot Learning through Video World Models'
-  ko: ''
+  ko: 'DreamGen: Unlocking Generalization in Robot Learning through Video World Models'
 summary:
   en: 'DreamGen: Unlocking Generalization in Robot Learning through Video World Models
     is a paper on Manipulation for humanoid robotics.'
   zh: 'DreamGen: Unlocking Generalization in Robot Learning through Video World Models
     is a paper on Manipulation for humanoid robotics.'
-  ko: ''
+  ko: 'DreamGen: Unlocking Generalization in Robot Learning through Video World Models
+    is a paper on Manipulation for humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DreamGen: Unlocking Generalization in Robot Learning through Video World Models is a paper on Manipulation for humanoid robotics.
+
+## Overview
+DreamGen: Unlocking Generalization in Robot Learning through Video World Models is a paper on Manipulation for humanoid robotics.
+
+## 개요
 DreamGen: Unlocking Generalization in Robot Learning through Video World Models is a paper on Manipulation for humanoid robotics.

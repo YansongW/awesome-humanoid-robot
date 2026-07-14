@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Real2Render2Real: Scaling Robot Data Without Dynamics Simulation or Robot Hardware'
   zh: R2R2R
-  ko: ''
+  ko: 'Real2Render2Real: Scaling Robot Data Without Dynamics Simulation or Robot Hardware'
 summary:
   en: 'Real2Render2Real: Scaling Robot Data Without Dynamics Simulation or Robot Hardware
     (R2R2R), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (R2R2R), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Toyota Research Institute, Georgia Institute of Technology, and
     published at CoRL25.'
-  ko: ''
+  ko: 'Real2Render2Real: Scaling Robot Data Without Dynamics Simulation or Robot Hardware
+    (R2R2R), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Toyota Research Institute, Georgia Institute of Technology, and
+    published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Real2Render2Real: Scaling Robot Data Without Dynamics Simulation or Robot Hardware (R2R2R), is a 2025 large vision-language-action model for robotic manipulation, introduced by Toyota Research Institute, Georgia Institute of Technology, and published at CoRL25.
+
+## Overview
+Real2Render2Real: Scaling Robot Data Without Dynamics Simulation or Robot Hardware (R2R2R), is a 2025 large vision-language-action model for robotic manipulation, introduced by Toyota Research Institute, Georgia Institute of Technology, and published at CoRL25.
+
+## 개요
 Real2Render2Real: Scaling Robot Data Without Dynamics Simulation or Robot Hardware (R2R2R), is a 2025 large vision-language-action model for robotic manipulation, introduced by Toyota Research Institute, Georgia Institute of Technology, and published at CoRL25.

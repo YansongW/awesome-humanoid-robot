@@ -7,11 +7,12 @@ names:
   en: 'Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D
     Constrained Terrains'
   zh: Gallant｜跨3D约束地形的基于体素网格的人形运动和本地导航
-  ko: ''
+  ko: 'Gallant: Voxel Grid-based Humanoid Locomotion and Local-navigation across 3D
+    Constrained Terrains'
 summary:
   en: ''
   zh: Gallant 先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用策略网络和控制模块生成地形/场景表征、导航/到达目标。关键点是把策略网络和控制模块放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
-  ko: ''
+  ko: Gallant 先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用策略网络和控制模块生成地形/场景表征、导航/到达目标。关键点是把策略网络和控制模块放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 domains:
 - 02_components
 - 06_design_engineering
@@ -47,5 +48,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+Gallant 先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用策略网络和控制模块生成地形/场景表征、导航/到达目标。关键点是把策略网络和控制模块放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 
+## 개요
 Gallant 先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用策略网络和控制模块生成地形/场景表征、导航/到达目标。关键点是把策略网络和控制模块放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。

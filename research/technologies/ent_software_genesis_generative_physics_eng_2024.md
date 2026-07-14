@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+面向机器人等领域的新兴生成式通用物理引擎。
+
+## Overview
+Emerging generative universal physics engine for robotics and beyond.
+
+## 개요
 Emerging generative universal physics engine for robotics and beyond.

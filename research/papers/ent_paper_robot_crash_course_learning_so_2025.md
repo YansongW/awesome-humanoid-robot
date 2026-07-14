@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Robot Crash Course: Learning Soft and Stylized Falling'
   zh: 'Robot Crash Course: Learning Soft and Stylized Falling'
-  ko: ''
+  ko: 'Robot Crash Course: Learning Soft and Stylized Falling'
 summary:
   en: 'Robot Crash Course: Learning Soft and Stylized Falling is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
   zh: 'Robot Crash Course: Learning Soft and Stylized Falling is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'Robot Crash Course: Learning Soft and Stylized Falling is a 2025 work on loco-manipulation
+    and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Robot Crash Course: Learning Soft and Stylized Falling is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Robot Crash Course: Learning Soft and Stylized Falling is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Robot Crash Course: Learning Soft and Stylized Falling is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

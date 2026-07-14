@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Visuotactile Skills with Two Multifingered Hands
   zh: Learning Visuotactile Skills with Two Multifingered Hands
-  ko: ''
+  ko: Learning Visuotactile Skills with Two Multifingered Hands
 summary:
   en: Learning Visuotactile Skills with Two Multifingered Hands is a 2024 work on
     manipulation for humanoid robots, with open-source code available.
   zh: Learning Visuotactile Skills with Two Multifingered Hands is a 2024 work on
     manipulation for humanoid robots, with open-source code available.
-  ko: ''
+  ko: Learning Visuotactile Skills with Two Multifingered Hands is a 2024 work on
+    manipulation for humanoid robots, with open-source code available.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Visuotactile Skills with Two Multifingered Hands is a 2024 work on manipulation for humanoid robots, with open-source code available.
+
+## Overview
+Learning Visuotactile Skills with Two Multifingered Hands is a 2024 work on manipulation for humanoid robots, with open-source code available.
+
+## 개요
 Learning Visuotactile Skills with Two Multifingered Hands is a 2024 work on manipulation for humanoid robots, with open-source code available.

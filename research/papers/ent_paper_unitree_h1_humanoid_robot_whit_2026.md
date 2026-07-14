@@ -6,12 +6,13 @@ type: paper
 names:
   en: Unitree H1 Humanoid Robot Whitepaper & Specifications
   zh: Unitree H1 Humanoid Robot Whitepaper & Specifications
-  ko: ''
+  ko: Unitree H1 Humanoid Robot Whitepaper & Specifications
 summary:
   en: ''
   zh: Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for
     humanoid robotics.
-  ko: ''
+  ko: Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for
+    humanoid robotics.
 domains:
 - 06_design_engineering
 - 02_components
@@ -43,5 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for humanoid robotics.
 
+## Overview
+Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for humanoid robotics.
+
+## 개요
 Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for humanoid robotics.

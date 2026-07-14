@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 仿真平台选型与导入
-  ko: ''
+  ko: 仿真平台选型与导入
 summary:
   en: ''
   zh: 《仿真平台选型报告》、URDF/SDF 导入成功、基础站立仿真通过
-  ko: ''
+  ko: 《仿真平台选型报告》、URDF/SDF 导入成功、基础站立仿真通过
 domains:
 - 08_software_middleware
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention'
   zh: AVA-VLA
-  ko: ''
+  ko: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention'
 summary:
   en: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention
     (AVA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -18,7 +18,11 @@ summary:
     introduced by LiAuto Inc., School of Information Science and Technology, Beijing
     University of Technology, School of Data Science, The Chinese University of Hong
     Kong, Shenzhen.'
-  ko: ''
+  ko: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention
+    (AVA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by LiAuto Inc., School of Information Science and Technology, Beijing
+    University of Technology, School of Data Science, The Chinese University of Hong
+    Kong, Shenzhen.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +64,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention (AVA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by LiAuto Inc., School of Information Science and Technology, Beijing University of Technology, School of Data Science, The Chinese University of Hong Kong, Shenzhen.
+
+## Overview
+AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention (AVA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by LiAuto Inc., School of Information Science and Technology, Beijing University of Technology, School of Data Science, The Chinese University of Hong Kong, Shenzhen.
+
+## 개요
 AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention (AVA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by LiAuto Inc., School of Information Science and Technology, Beijing University of Technology, School of Data Science, The Chinese University of Hong Kong, Shenzhen.

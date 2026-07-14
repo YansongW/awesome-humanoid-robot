@@ -6,7 +6,7 @@ type: paper
 names:
   en: Leveraging OS-Level Primitives for Robotic Action Management
   zh: AMS
-  ko: ''
+  ko: Leveraging OS-Level Primitives for Robotic Action Management
 summary:
   en: Leveraging OS-Level Primitives for Robotic Action Management (AMS), is a 2025
     large vision-language-action model for robotic manipulation, introduced by Shanghai
@@ -14,7 +14,9 @@ summary:
   zh: Leveraging OS-Level Primitives for Robotic Action Management (AMS), is a 2025
     large vision-language-action model for robotic manipulation, introduced by Shanghai
     Jiao Tong University, Southern University of Science and Technology.
-  ko: ''
+  ko: Leveraging OS-Level Primitives for Robotic Action Management (AMS), is a 2025
+    large vision-language-action model for robotic manipulation, introduced by Shanghai
+    Jiao Tong University, Southern University of Science and Technology.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Leveraging OS-Level Primitives for Robotic Action Management (AMS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Southern University of Science and Technology.
+
+## Overview
+Leveraging OS-Level Primitives for Robotic Action Management (AMS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Southern University of Science and Technology.
+
+## 개요
 Leveraging OS-Level Primitives for Robotic Action Management (AMS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Southern University of Science and Technology.

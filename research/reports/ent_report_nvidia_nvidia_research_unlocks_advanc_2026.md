@@ -8,7 +8,8 @@ names:
     Training at Scale
   zh: NVIDIA Research Unlocks Advanced Grasping, Smarter Autonomous Driving and Agent
     Training at Scale
-  ko: ''
+  ko: NVIDIA Research Unlocks Advanced Grasping, Smarter Autonomous Driving and Agent
+    Training at Scale
 summary:
   en: What makes a robot gripper useful isn’t that it can pick up one object — it’s
     that it can pick up the next one, and the one after that, with a tool it’s never
@@ -18,7 +19,10 @@ summary:
     that it can pick up the next one, and the one after that, with a tool it’s never
     held before. What makes an autonomous vehicle system safe isn’t just that it can
     reason through a situation — it’s that [&#8230;]
-  ko: ''
+  ko: What makes a robot gripper useful isn’t that it can pick up one object — it’s
+    that it can pick up the next one, and the one after that, with a tool it’s never
+    held before. What makes an autonomous vehicle system safe isn’t just that it can
+    reason through a situation — it’s that [&#8230;]
 domains:
 - 11_applications_markets
 - 07_ai_models_algorithms
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+What makes a robot gripper useful isn’t that it can pick up one object — it’s that it can pick up the next one, and the one after that, with a tool it’s never held before. What makes an autonomous vehicle system safe isn’t just that it can reason through a situation — it’s that [&#8230;]
+
+## Overview
+What makes a robot gripper useful isn’t that it can pick up one object — it’s that it can pick up the next one, and the one after that, with a tool it’s never held before. What makes an autonomous vehicle system safe isn’t just that it can reason through a situation — it’s that [&#8230;]
+
+## 개요
 What makes a robot gripper useful isn’t that it can pick up one object — it’s that it can pick up the next one, and the one after that, with a tool it’s never held before. What makes an autonomous vehicle system safe isn’t just that it can reason through a situation — it’s that [&#8230;]

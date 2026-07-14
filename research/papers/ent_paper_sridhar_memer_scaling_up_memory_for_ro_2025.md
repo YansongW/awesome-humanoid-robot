@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'MemER: Scaling Up Memory for Robot Control via Experience Retrieval'
   zh: MemER
-  ko: ''
+  ko: 'MemER: Scaling Up Memory for Robot Control via Experience Retrieval'
 summary:
   en: 'MemER: Scaling Up Memory for Robot Control via Experience Retrieval (MemER),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'MemER: Scaling Up Memory for Robot Control via Experience Retrieval (MemER),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Stanford University.'
-  ko: ''
+  ko: 'MemER: Scaling Up Memory for Robot Control via Experience Retrieval (MemER),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Stanford University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MemER: Scaling Up Memory for Robot Control via Experience Retrieval (MemER), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford University.
+
+## Overview
+MemER: Scaling Up Memory for Robot Control via Experience Retrieval (MemER), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford University.
+
+## 개요
 MemER: Scaling Up Memory for Robot Control via Experience Retrieval (MemER), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford University.

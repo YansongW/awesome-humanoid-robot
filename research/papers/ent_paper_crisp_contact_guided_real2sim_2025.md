@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives'
   zh: 'CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives'
-  ko: ''
+  ko: 'CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives'
 summary:
   en: 'CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives
     is a 2025 work on physics-based character animation for humanoid robots.'
   zh: 'CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives
     is a 2025 work on physics-based character animation for humanoid robots.'
-  ko: ''
+  ko: 'CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives
+    is a 2025 work on physics-based character animation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 CRISP: Contact-Guided Real2Sim from Monocular Video with Planar Scene Primitives is a 2025 work on physics-based character animation for humanoid robots.

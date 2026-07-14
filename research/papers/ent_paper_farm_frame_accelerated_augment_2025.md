@@ -8,7 +8,8 @@ names:
     High-Dynamic Humanoid Control'
   zh: 'FARM: Frame-Accelerated Augmentation and Residual Mixture-of-Experts for Physics-Based
     High-Dynamic Humanoid Control'
-  ko: ''
+  ko: 'FARM: Frame-Accelerated Augmentation and Residual Mixture-of-Experts for Physics-Based
+    High-Dynamic Humanoid Control'
 summary:
   en: 'FARM: Frame-Accelerated Augmentation and Residual Mixture-of-Experts for Physics-Based
     High-Dynamic Humanoid Control is a 2025 work on physics-based character animation
@@ -16,7 +17,9 @@ summary:
   zh: 'FARM: Frame-Accelerated Augmentation and Residual Mixture-of-Experts for Physics-Based
     High-Dynamic Humanoid Control is a 2025 work on physics-based character animation
     for humanoid robots.'
-  ko: ''
+  ko: 'FARM: Frame-Accelerated Augmentation and Residual Mixture-of-Experts for Physics-Based
+    High-Dynamic Humanoid Control is a 2025 work on physics-based character animation
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FARM: Frame-Accelerated Augmentation and Residual Mixture-of-Experts for Physics-Based High-Dynamic Humanoid Control is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+FARM: Frame-Accelerated Augmentation and Residual Mixture-of-Experts for Physics-Based High-Dynamic Humanoid Control is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 FARM: Frame-Accelerated Augmentation and Residual Mixture-of-Experts for Physics-Based High-Dynamic Humanoid Control is a 2025 work on physics-based character animation for humanoid robots.

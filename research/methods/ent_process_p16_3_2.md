@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 成本核算与降本
-  ko: ''
+  ko: 成本核算与降本
 summary:
   en: ''
   zh: 小批量成本分析报告、降本项目清单
-  ko: ''
+  ko: 小批量成本分析报告、降本项目清单
 domains:
 - 05_mass_production
 - 11_applications_markets
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RVT: Robotic View Transformer for 3D Object Manipulation'
   zh: RVT
-  ko: ''
+  ko: 'RVT: Robotic View Transformer for 3D Object Manipulation'
 summary:
   en: 'RVT: Robotic View Transformer for 3D Object Manipulation (RVT), is a 2023 generalized
     vision-language-action model for robotic manipulation, introduced by NVIDIA, and
@@ -14,7 +14,9 @@ summary:
   zh: 'RVT: Robotic View Transformer for 3D Object Manipulation (RVT), is a 2023 generalized
     vision-language-action model for robotic manipulation, introduced by NVIDIA, and
     published at CoRL 2023.'
-  ko: ''
+  ko: 'RVT: Robotic View Transformer for 3D Object Manipulation (RVT), is a 2023 generalized
+    vision-language-action model for robotic manipulation, introduced by NVIDIA, and
+    published at CoRL 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RVT: Robotic View Transformer for 3D Object Manipulation (RVT), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by NVIDIA, and published at CoRL 2023.
+
+## Overview
+RVT: Robotic View Transformer for 3D Object Manipulation (RVT), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by NVIDIA, and published at CoRL 2023.
+
+## 개요
 RVT: Robotic View Transformer for 3D Object Manipulation (RVT), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by NVIDIA, and published at CoRL 2023.

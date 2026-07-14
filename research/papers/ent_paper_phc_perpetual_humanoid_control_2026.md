@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'PHC: Perpetual Humanoid Control for Real-time Simulated Avatars'
   zh: 持续人形控制：实时仿真虚拟角色
-  ko: ''
+  ko: 'PHC: Perpetual Humanoid Control for Real-time Simulated Avatars'
 summary:
   en: ''
   zh: 'PHC: Perpetual Humanoid Control for Real-time Simulated Avatars is a paper
     on 精确模仿 for humanoid robotics. 持续人形控制：实时仿真虚拟角色.'
-  ko: ''
+  ko: 'PHC: Perpetual Humanoid Control for Real-time Simulated Avatars is a paper
+    on 精确模仿 for humanoid robotics. 持续人形控制：实时仿真虚拟角色.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,5 +43,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PHC: Perpetual Humanoid Control for Real-time Simulated Avatars is a paper on 精确模仿 for humanoid robotics. 持续人形控制：实时仿真虚拟角色.
 
+## 개요
 PHC: Perpetual Humanoid Control for Real-time Simulated Avatars is a paper on 精确模仿 for humanoid robotics. 持续人形控制：实时仿真虚拟角色.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'TabVLA: Targeted Backdoor Attacks on Vision-Language-Action Models'
   zh: TabVLA
-  ko: ''
+  ko: 'TabVLA: Targeted Backdoor Attacks on Vision-Language-Action Models'
 summary:
   en: 'TabVLA: Targeted Backdoor Attacks on Vision-Language-Action Models (TabVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'TabVLA: Targeted Backdoor Attacks on Vision-Language-Action Models (TabVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Fudan University, City University of Hong Kong.'
-  ko: ''
+  ko: 'TabVLA: Targeted Backdoor Attacks on Vision-Language-Action Models (TabVLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Fudan University, City University of Hong Kong.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+TabVLA: Targeted Backdoor Attacks on Vision-Language-Action Models (TabVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, City University of Hong Kong.
+
+## Overview
+TabVLA: Targeted Backdoor Attacks on Vision-Language-Action Models (TabVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, City University of Hong Kong.
+
+## 개요
 TabVLA: Targeted Backdoor Attacks on Vision-Language-Action Models (TabVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, City University of Hong Kong.

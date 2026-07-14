@@ -8,7 +8,8 @@ names:
     with Tactile Modality'
   zh: 'TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning
     with Tactile Modality'
-  ko: ''
+  ko: 'TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning
+    with Tactile Modality'
 summary:
   en: 'TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning
     with Tactile Modality is a 2025 work on loco-manipulation and whole-body-control
@@ -16,7 +17,9 @@ summary:
   zh: 'TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning
     with Tactile Modality is a 2025 work on loco-manipulation and whole-body-control
     for humanoid robots.'
-  ko: ''
+  ko: 'TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning
+    with Tactile Modality is a 2025 work on loco-manipulation and whole-body-control
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning with Tactile Modality is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning with Tactile Modality is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 TACT: Humanoid Whole-body Contact Manipulation through Deep Imitation Learning with Tactile Modality is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

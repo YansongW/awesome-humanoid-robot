@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation'
   zh: ForceVLA
-  ko: ''
+  ko: 'ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation'
 summary:
   en: 'ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation
     (ForceVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -18,7 +18,11 @@ summary:
     introduced by Shanghai AI Lab, National University of Singapore, Shanghai University,
     Xi’an Jiaotong University, Noematrix Intelligence, Fudan University, Shanghai
     Jiao Tong University, Shanghai Innovation Institute, and published at NIPS25.'
-  ko: ''
+  ko: 'ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation
+    (ForceVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Shanghai AI Lab, National University of Singapore, Shanghai University,
+    Xi’an Jiaotong University, Noematrix Intelligence, Fudan University, Shanghai
+    Jiao Tong University, Shanghai Innovation Institute, and published at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +64,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation (ForceVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Lab, National University of Singapore, Shanghai University, Xi’an Jiaotong University, Noematrix Intelligence, Fudan University, Shanghai Jiao Tong University, Shanghai Innovation Institute, and published at NIPS25.
+
+## Overview
+ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation (ForceVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Lab, National University of Singapore, Shanghai University, Xi’an Jiaotong University, Noematrix Intelligence, Fudan University, Shanghai Jiao Tong University, Shanghai Innovation Institute, and published at NIPS25.
+
+## 개요
 ForceVLA: Enhancing VLA Models with a Force-aware MoE for Contact-rich Manipulation (ForceVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Lab, National University of Singapore, Shanghai University, Xi’an Jiaotong University, Noematrix Intelligence, Fudan University, Shanghai Jiao Tong University, Shanghai Innovation Institute, and published at NIPS25.

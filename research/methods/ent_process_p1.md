@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 需求定义与系统方案（Concept / Pre-A）
-  ko: ''
+  ko: 需求定义与系统方案（Concept / Pre-A）
 summary:
   en: ''
   zh: 需求定义与系统方案（Concept / Pre-A）
-  ko: ''
+  ko: 需求定义与系统方案（Concept / Pre-A）
 domains:
 - 06_design_engineering
 - 12_policy_regulation_ethics
@@ -36,5 +36,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+需求定义与系统方案（Concept / Pre-A）
 
+## Overview
+需求定义与系统方案（Concept / Pre-A）
 
+## 개요
+需求定义与系统方案（Concept / Pre-A）

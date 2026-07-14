@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation'
   zh: 'Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation'
-  ko: ''
+  ko: 'Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation'
 summary:
   en: 'Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation
     is a 2025 work on manipulation for humanoid robots.'
   zh: 'Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation
     is a 2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation
+    is a 2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 Sim-and-Real Co-Training: A Simple Recipe for Vision-Based Robotic Manipulation is a 2025 work on manipulation for humanoid robots.

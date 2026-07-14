@@ -7,7 +7,8 @@ names:
   en: 'ManualVLA: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic
     Manipulation'
   zh: ManualVLA
-  ko: ''
+  ko: 'ManualVLA: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic
+    Manipulation'
 summary:
   en: 'ManualVLA: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic
     Manipulation (ManualVLA), is a 2025 large vision-language-action model for robotic
@@ -19,7 +20,11 @@ summary:
     manipulation, introduced by State Key Laboratory of Multimedia Information Processing,
     School of Computer Science, Peking University, The Chinese University of Hong
     Kong, Simplexity Robotics.'
-  ko: ''
+  ko: 'ManualVLA: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic
+    Manipulation (ManualVLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by State Key Laboratory of Multimedia Information Processing,
+    School of Computer Science, Peking University, The Chinese University of Hong
+    Kong, Simplexity Robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +66,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ManualVLA: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation (ManualVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, The Chinese University of Hong Kong, Simplexity Robotics.
+
+## Overview
+ManualVLA: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation (ManualVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, The Chinese University of Hong Kong, Simplexity Robotics.
+
+## 개요
 ManualVLA: A Unified VLA Model for Chain-of-Thought Manual Generation and Robotic Manipulation (ManualVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, The Chinese University of Hong Kong, Simplexity Robotics.

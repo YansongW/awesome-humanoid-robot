@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration'
   zh: Humanoid-VLA｜通过视觉集成实现通用人形控制
-  ko: ''
+  ko: 'Humanoid-VLA: Towards Universal Humanoid Control with Visual Integration'
 summary:
   en: ''
   zh: Humanoid-VLA 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、全身控制器/WBC/MPC预测全身轨迹/动作序列。关键点是保留
     VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
-  ko: ''
+  ko: Humanoid-VLA 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、全身控制器/WBC/MPC预测全身轨迹/动作序列。关键点是保留
+    VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 domains:
 - 07_ai_models_algorithms
 - 11_applications_markets
@@ -45,5 +46,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+Humanoid-VLA 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、全身控制器/WBC/MPC预测全身轨迹/动作序列。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 
+## 개요
 Humanoid-VLA 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、全身控制器/WBC/MPC预测全身轨迹/动作序列。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。

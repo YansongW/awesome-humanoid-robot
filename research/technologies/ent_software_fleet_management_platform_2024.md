@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+跨多台已部署人形机器人进行任务编排、充电、健康监控和分析的云平台。
+
+## Overview
 Cloud platform for task orchestration, charging, health monitoring, and analytics across multiple deployed humanoids.
+
+## 개요
+여러 대의 배포된 휨로봇에 걸쳐 작업 오케스트레이션, 충전, 건강 모니터링 및 분석을 위한 클라우드 플랫폼.

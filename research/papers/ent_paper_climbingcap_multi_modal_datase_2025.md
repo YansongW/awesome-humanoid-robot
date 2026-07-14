@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate'
   zh: 'ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate'
-  ko: ''
+  ko: 'ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate'
 summary:
   en: 'ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate
     is a 2025 work on human motion analysis and synthesis for humanoid robots.'
   zh: 'ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate
     is a 2025 work on human motion analysis and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate
+    is a 2025 work on human motion analysis and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 ClimbingCap: Multi-Modal Dataset and Method for Rock Climbing in World Coordinate is a 2025 work on human motion analysis and synthesis for humanoid robots.

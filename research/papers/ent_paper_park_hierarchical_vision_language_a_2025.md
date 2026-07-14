@@ -6,7 +6,7 @@ type: paper
 names:
   en: Hierarchical Vision Language Action Model Using Success and Failure Demonstrations
   zh: VINE
-  ko: ''
+  ko: Hierarchical Vision Language Action Model Using Success and Failure Demonstrations
 summary:
   en: Hierarchical Vision Language Action Model Using Success and Failure Demonstrations
     (VINE), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: Hierarchical Vision Language Action Model Using Success and Failure Demonstrations
     (VINE), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Korea University, KAIST, Seoul National University, NAVER AI Lab.
-  ko: ''
+  ko: Hierarchical Vision Language Action Model Using Success and Failure Demonstrations
+    (VINE), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Korea University, KAIST, Seoul National University, NAVER AI Lab.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Hierarchical Vision Language Action Model Using Success and Failure Demonstrations (VINE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Korea University, KAIST, Seoul National University, NAVER AI Lab.
+
+## Overview
+Hierarchical Vision Language Action Model Using Success and Failure Demonstrations (VINE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Korea University, KAIST, Seoul National University, NAVER AI Lab.
+
+## 개요
 Hierarchical Vision Language Action Model Using Success and Failure Demonstrations (VINE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Korea University, KAIST, Seoul National University, NAVER AI Lab.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis'
   zh: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis'
-  ko: ''
+  ko: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis'
 summary:
   en: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023
     work on human motion analysis and synthesis for humanoid robots.'
   zh: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023
     work on human motion analysis and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023
+    work on human motion analysis and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023 work on human motion analysis and synthesis for humanoid robots.

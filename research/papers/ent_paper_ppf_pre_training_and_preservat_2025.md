@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion'
   zh: 'PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion'
-  ko: ''
+  ko: 'PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion'
 summary:
   en: 'PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion is a
     2025 work on locomotion for humanoid robots.'
   zh: 'PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion is a
     2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion is a
+    2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 PPF: Pre-training and Preservative Fine-tuning of Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.

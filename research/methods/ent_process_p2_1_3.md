@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 外观手板与比例模型
-  ko: ''
+  ko: 外观手板与比例模型
 summary:
   en: ''
   zh: 1:1 外观手板、评审纪要、问题清单
-  ko: ''
+  ko: 1:1 外观手板、评审纪要、问题清单
 domains:
 - 06_design_engineering
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：工业设计与外观工程（ID / A-Surface）

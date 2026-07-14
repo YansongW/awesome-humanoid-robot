@@ -8,13 +8,15 @@ names:
     control'
   zh: 'CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character
     control'
-  ko: ''
+  ko: 'CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character
+    control'
 summary:
   en: 'CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character
     control is a 2024 work on physics-based character animation for humanoid robots.'
   zh: 'CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character
     control is a 2024 work on physics-based character animation for humanoid robots.'
-  ko: ''
+  ko: 'CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character
+    control is a 2024 work on physics-based character animation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character control is a 2024 work on physics-based character animation for humanoid robots.
+
+## Overview
+CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character control is a 2024 work on physics-based character animation for humanoid robots.
+
+## 개요
 CLoSD: Closing the Loop between Simulation and Diffusion for multi-task character control is a 2024 work on physics-based character animation for humanoid robots.

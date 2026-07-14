@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation'
   zh: RoboCat
-  ko: ''
+  ko: 'RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation'
 summary:
   en: 'RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation (RoboCat),
     is a 2023 generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation (RoboCat),
     is a 2023 generalized vision-language-action model for robotic manipulation, introduced
     by Google DeepMind, and published at Trans. Mach. Learn. Res. 2024.'
-  ko: ''
+  ko: 'RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation (RoboCat),
+    is a 2023 generalized vision-language-action model for robotic manipulation, introduced
+    by Google DeepMind, and published at Trans. Mach. Learn. Res. 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation (RoboCat), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at Trans. Mach. Learn. Res. 2024.
+
+## Overview
+RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation (RoboCat), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at Trans. Mach. Learn. Res. 2024.
+
+## 개요
 RoboCat: A Self-Improving Generalist Agent for Robotic Manipulation (RoboCat), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at Trans. Mach. Learn. Res. 2024.

@@ -8,8 +8,8 @@ names:
   zh: 扩散策略
   ko: 디퓨전 정책
 summary:
-  en: A visuomotor policy that represents action distributions as denoising diffusion models, enabling multimodal and smooth
-    robot action generation.
+  en: A visuomotor policy that represents action distributions as denoising diffusion
+    models, enabling multimodal and smooth robot action generation.
   zh: 将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。
   ko: 행동 분포를 노이즈 제거 디퓨전 모델로 표현하여 다중 모드·부드러운 로봇 행동 생성을 가능하게 하는 시각운동 정책.
 domains:
@@ -30,8 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,3 +39,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+将动作分布建模为去噪扩散模型的视觉运动策略，可生成多峰且平滑的机器人动作。
+
+## Overview
+A visuomotor policy that represents action distributions as denoising diffusion models, enabling multimodal and smooth robot action generation.
+
+## 개요
+A visuomotor policy that represents action distributions as denoising diffusion models, enabling multimodal and smooth robot action generation.

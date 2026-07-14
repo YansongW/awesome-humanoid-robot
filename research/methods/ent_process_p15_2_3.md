@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 环境适应性测试
-  ko: ''
+  ko: 环境适应性测试
 summary:
   en: ''
   zh: 环境测试报告、失效模式与改进
-  ko: ''
+  ko: 环境测试报告、失效模式与改进
 domains:
 - 04_assembly_integration_testing
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）

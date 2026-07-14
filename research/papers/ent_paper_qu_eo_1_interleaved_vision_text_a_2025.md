@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'EO-1: Interleaved Vision-Text-Action Pretraining for General Robot Control'
   zh: EO-1
-  ko: ''
+  ko: 'EO-1: Interleaved Vision-Text-Action Pretraining for General Robot Control'
 summary:
   en: 'EO-1: Interleaved Vision-Text-Action Pretraining for General Robot Control
     (EO-1), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'EO-1: Interleaved Vision-Text-Action Pretraining for General Robot Control
     (EO-1), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Harbin Institute of Technology (Shenzhen).'
-  ko: ''
+  ko: 'EO-1: Interleaved Vision-Text-Action Pretraining for General Robot Control
+    (EO-1), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Harbin Institute of Technology (Shenzhen).'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EO-1: Interleaved Vision-Text-Action Pretraining for General Robot Control (EO-1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Harbin Institute of Technology (Shenzhen).
+
+## Overview
+EO-1: Interleaved Vision-Text-Action Pretraining for General Robot Control (EO-1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Harbin Institute of Technology (Shenzhen).
+
+## 개요
 EO-1: Interleaved Vision-Text-Action Pretraining for General Robot Control (EO-1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Harbin Institute of Technology (Shenzhen).

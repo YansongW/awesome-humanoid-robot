@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy'
   zh: ConRFT
-  ko: ''
+  ko: 'ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy'
 summary:
   en: 'ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy
     (ConRFT), is a 2025 large vision-language-action model for robotic manipulation,
@@ -18,7 +18,11 @@ summary:
     introduced by SKL-MAIS, Institute of Automation, Chinese Academy of Sciences,
     School of Artificial Intelligence, University of Chinese Academy of Sciences,
     and published at RSS25.'
-  ko: ''
+  ko: 'ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy
+    (ConRFT), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by SKL-MAIS, Institute of Automation, Chinese Academy of Sciences,
+    School of Artificial Intelligence, University of Chinese Academy of Sciences,
+    and published at RSS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -59,4 +63,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy (ConRFT), is a 2025 large vision-language-action model for robotic manipulation, introduced by SKL-MAIS, Institute of Automation, Chinese Academy of Sciences, School of Artificial Intelligence, University of Chinese Academy of Sciences, and published at RSS25.
+
+## Overview
+ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy (ConRFT), is a 2025 large vision-language-action model for robotic manipulation, introduced by SKL-MAIS, Institute of Automation, Chinese Academy of Sciences, School of Artificial Intelligence, University of Chinese Academy of Sciences, and published at RSS25.
+
+## 개요
 ConRFT: A Reinforced Fine-tuning Method for VLA Models via Consistency Policy (ConRFT), is a 2025 large vision-language-action model for robotic manipulation, introduced by SKL-MAIS, Institute of Automation, Chinese Academy of Sciences, School of Artificial Intelligence, University of Chinese Academy of Sciences, and published at RSS25.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot'
   zh: 'SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot'
-  ko: ''
+  ko: 'SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot'
 summary:
   en: 'SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot
     is a 2025 work on manipulation for humanoid robots.'
   zh: 'SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot
     is a 2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot
+    is a 2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 SafeHumanoid: VLM-RAG-driven Control of Upper Body Impedance for Humanoid Robot is a 2025 work on manipulation for humanoid robots.

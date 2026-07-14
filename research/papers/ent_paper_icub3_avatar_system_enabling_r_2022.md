@@ -8,7 +8,8 @@ names:
     Robots'
   zh: 'iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid
     Robots'
-  ko: ''
+  ko: 'iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid
+    Robots'
 summary:
   en: 'iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid
     Robots is a 2022 work on teleoperation for humanoid robots, with open-source code
@@ -16,7 +17,9 @@ summary:
   zh: 'iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid
     Robots is a 2022 work on teleoperation for humanoid robots, with open-source code
     available.'
-  ko: ''
+  ko: 'iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid
+    Robots is a 2022 work on teleoperation for humanoid robots, with open-source code
+    available.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid Robots is a 2022 work on teleoperation for humanoid robots, with open-source code available.
+
+## Overview
+iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid Robots is a 2022 work on teleoperation for humanoid robots, with open-source code available.
+
+## 개요
 iCub3 Avatar System: Enabling Remote Fully-Immersive Embodiment of Humanoid Robots is a 2022 work on teleoperation for humanoid robots, with open-source code available.

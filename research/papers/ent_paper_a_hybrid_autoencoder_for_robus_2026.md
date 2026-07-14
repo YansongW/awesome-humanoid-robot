@@ -8,13 +8,15 @@ names:
     Data for Humanoid Robot Locomotion
   zh: A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth
     Data for Humanoid Robot Locomotion
-  ko: ''
+  ko: A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth
+    Data for Humanoid Robot Locomotion
 summary:
   en: A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth
     Data for Humanoid Robot Locomotion is a 2026 work on locomotion for humanoid robots.
   zh: A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth
     Data for Humanoid Robot Locomotion is a 2026 work on locomotion for humanoid robots.
-  ko: ''
+  ko: A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth
+    Data for Humanoid Robot Locomotion is a 2026 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid Robot Locomotion is a 2026 work on locomotion for humanoid robots.
+
+## Overview
+A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid Robot Locomotion is a 2026 work on locomotion for humanoid robots.
+
+## 개요
 A Hybrid Autoencoder for Robust Heightmap Generation from Fused Lidar and Depth Data for Humanoid Robot Locomotion is a 2026 work on locomotion for humanoid robots.

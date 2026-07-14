@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Helix: A vision-language-action model for generalist humanoid control'
   zh: Helix
-  ko: ''
+  ko: 'Helix: A vision-language-action model for generalist humanoid control'
 summary:
   en: 'Helix: A vision-language-action model for generalist humanoid control (Helix),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'Helix: A vision-language-action model for generalist humanoid control (Helix),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by FIGURE.'
-  ko: ''
+  ko: 'Helix: A vision-language-action model for generalist humanoid control (Helix),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by FIGURE.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Helix: A vision-language-action model for generalist humanoid control (Helix), is a 2025 large vision-language-action model for robotic manipulation, introduced by FIGURE.
+
+## Overview
+Helix: A vision-language-action model for generalist humanoid control (Helix), is a 2025 large vision-language-action model for robotic manipulation, introduced by FIGURE.
+
+## 개요
 Helix: A vision-language-action model for generalist humanoid control (Helix), is a 2025 large vision-language-action model for robotic manipulation, introduced by FIGURE.

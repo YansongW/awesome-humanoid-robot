@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control'
   zh: 'RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control'
-  ko: ''
+  ko: 'RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control'
 summary:
   en: 'RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control
     is a 2025 work on physics-based character animation for humanoid robots.'
   zh: 'RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control
     is a 2025 work on physics-based character animation for humanoid robots.'
-  ko: ''
+  ko: 'RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control
+    is a 2025 work on physics-based character animation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 RL from Physical Feedback: Aligning Large Motion Models with Humanoid Control is a 2025 work on physics-based character animation for humanoid robots.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 概念验证（Proof of Concept）
-  ko: ''
+  ko: 概念验证（Proof of Concept）
 summary:
   en: ''
   zh: POC 报告、风险降级记录、Go/No-Go 决策
-  ko: ''
+  ko: POC 报告、风险降级记录、Go/No-Go 决策
 domains:
 - 06_design_engineering
 - 12_policy_regulation_ethics
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）

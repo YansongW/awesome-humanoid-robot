@@ -6,12 +6,13 @@ type: paper
 names:
   en: Understanding Domain Randomization for Sim-to-real Transfer
   zh: Understanding Domain Randomization for Sim-to-real Transfer
-  ko: ''
+  ko: Understanding Domain Randomization for Sim-to-real Transfer
 summary:
   en: ''
   zh: Understanding Domain Randomization for Sim-to-real Transfer is a paper on 仿真到现实
     for humanoid robotics.
-  ko: ''
+  ko: Understanding Domain Randomization for Sim-to-real Transfer is a paper on 仿真到现实
+    for humanoid robotics.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,5 +44,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Understanding Domain Randomization for Sim-to-real Transfer is a paper on 仿真到现实 for humanoid robotics.
 
+## 개요
 Understanding Domain Randomization for Sim-to-real Transfer is a paper on 仿真到现实 for humanoid robotics.

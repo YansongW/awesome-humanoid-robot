@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 执行器拓扑选择
-  ko: ''
+  ko: 执行器拓扑选择
 summary:
   en: ''
   zh: 《执行器拓扑决策矩阵》：每关节选型、理由、备份方案
-  ko: ''
+  ko: 《执行器拓扑决策矩阵》：每关节选型、理由、备份方案
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）

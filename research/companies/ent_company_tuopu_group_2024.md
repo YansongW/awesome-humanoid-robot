@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+一体化线性执行器总成供应商， reportedly 特斯拉Optimus核心供应商。
+
+## Overview
+Chinese supplier of integrated linear actuator assemblies, reportedly a key Tesla Optimus supplier.
+
+## 개요
 Chinese supplier of integrated linear actuator assemblies, reportedly a key Tesla Optimus supplier.

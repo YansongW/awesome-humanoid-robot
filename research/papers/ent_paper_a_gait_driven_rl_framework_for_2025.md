@@ -6,13 +6,14 @@ type: paper
 names:
   en: A Gait Driven RL Framework for Humanoid Robots
   zh: A Gait Driven RL Framework for Humanoid Robots
-  ko: ''
+  ko: A Gait Driven RL Framework for Humanoid Robots
 summary:
   en: A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion
     for humanoid robots.
   zh: A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion
     for humanoid robots.
-  ko: ''
+  ko: A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion
+    for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion for humanoid robots.

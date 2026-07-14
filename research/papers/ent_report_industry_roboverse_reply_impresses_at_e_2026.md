@@ -8,7 +8,8 @@ names:
     Critical Missions
   zh: Roboverse Reply Impresses at ELROB 2026 With Intelligent Robotic Systems for
     Critical Missions
-  ko: ''
+  ko: Roboverse Reply Impresses at ELROB 2026 With Intelligent Robotic Systems for
+    Critical Missions
 summary:
   en: Teaming up with ELP, a specialist for technical equipment for defusing service,
     the company demonstrated outstanding performance alongside a field of international
@@ -18,7 +19,10 @@ summary:
     the company demonstrated outstanding performance alongside a field of international
     participants from June 15 to 19, proving that its autonomous solutions operate
     reliably under real-world conditions.
-  ko: ''
+  ko: Teaming up with ELP, a specialist for technical equipment for defusing service,
+    the company demonstrated outstanding performance alongside a field of international
+    participants from June 15 to 19, proving that its autonomous solutions operate
+    reliably under real-world conditions.
 domains:
 - 11_applications_markets
 layers:
@@ -49,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Teaming up with ELP, a specialist for technical equipment for defusing service, the company demonstrated outstanding performance alongside a field of international participants from June 15 to 19, proving that its autonomous solutions operate reliably under real-world conditions.
+
+## Overview
+Teaming up with ELP, a specialist for technical equipment for defusing service, the company demonstrated outstanding performance alongside a field of international participants from June 15 to 19, proving that its autonomous solutions operate reliably under real-world conditions.
+
+## 개요
 Teaming up with ELP, a specialist for technical equipment for defusing service, the company demonstrated outstanding performance alongside a field of international participants from June 15 to 19, proving that its autonomous solutions operate reliably under real-world conditions.

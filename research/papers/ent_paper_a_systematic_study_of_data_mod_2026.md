@@ -8,13 +8,15 @@ names:
     Models for Robot Manipulation
   zh: A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior
     Models for Robot Manipulation
-  ko: ''
+  ko: A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior
+    Models for Robot Manipulation
 summary:
   en: A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior
     Models for Robot Manipulation is a 2026 work on manipulation for humanoid robots.
   zh: A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior
     Models for Robot Manipulation is a 2026 work on manipulation for humanoid robots.
-  ko: ''
+  ko: A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior
+    Models for Robot Manipulation is a 2026 work on manipulation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation is a 2026 work on manipulation for humanoid robots.
+
+## Overview
+A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation is a 2026 work on manipulation for humanoid robots.
+
+## 개요
 A Systematic Study of Data Modalities and Strategies for Co-training Large Behavior Models for Robot Manipulation is a 2026 work on manipulation for humanoid robots.

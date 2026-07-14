@@ -6,7 +6,7 @@ type: paper
 names:
   en: Correcting Robot Plans with Natural Language Feedback
   zh: Language costs
-  ko: ''
+  ko: Correcting Robot Plans with Natural Language Feedback
 summary:
   en: Correcting Robot Plans with Natural Language Feedback (Language costs), is a
     2022 generalized vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     2022 generalized vision-language-action model for robotic manipulation, introduced
     by NVIDIA, MIT, University of Utah, University of Washington, and published at
     Robotics - Science and Systems 2022.
-  ko: ''
+  ko: Correcting Robot Plans with Natural Language Feedback (Language costs), is a
+    2022 generalized vision-language-action model for robotic manipulation, introduced
+    by NVIDIA, MIT, University of Utah, University of Washington, and published at
+    Robotics - Science and Systems 2022.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Correcting Robot Plans with Natural Language Feedback (Language costs), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by NVIDIA, MIT, University of Utah, University of Washington, and published at Robotics - Science and Systems 2022.
+
+## Overview
+Correcting Robot Plans with Natural Language Feedback (Language costs), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by NVIDIA, MIT, University of Utah, University of Washington, and published at Robotics - Science and Systems 2022.
+
+## 개요
 Correcting Robot Plans with Natural Language Feedback (Language costs), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by NVIDIA, MIT, University of Utah, University of Washington, and published at Robotics - Science and Systems 2022.

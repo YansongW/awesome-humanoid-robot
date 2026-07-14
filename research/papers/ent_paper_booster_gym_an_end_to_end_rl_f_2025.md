@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion'
   zh: 'Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion'
-  ko: ''
+  ko: 'Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion'
 summary:
   en: 'Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion is a
     2025 work on locomotion for humanoid robots.'
   zh: 'Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion is a
     2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion is a
+    2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Booster Gym: An End-to-End RL Framework for Humanoid Robot Locomotion is a 2025 work on locomotion for humanoid robots.

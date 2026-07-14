@@ -6,13 +6,14 @@ type: paper
 names:
   en: Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots
   zh: Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots
-  ko: ''
+  ko: Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots
 summary:
   en: Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots
     is a 2025 work on manipulation for humanoid robots.
   zh: Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots
     is a 2025 work on manipulation for humanoid robots.
-  ko: ''
+  ko: Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots
+    is a 2025 work on manipulation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 Towards Proprioception-Aware Embodied Planning for Dual-Arm Humanoid Robots is a 2025 work on manipulation for humanoid robots.

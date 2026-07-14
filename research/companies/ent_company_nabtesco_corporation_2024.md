@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+高负载机器人关节用RV减速器和摆线减速器制造商。
+
+## Overview
+Japanese manufacturer of RV and cycloidal reducers used in high-load robot joints.
+
+## 개요
 Japanese manufacturer of RV and cycloidal reducers used in high-load robot joints.

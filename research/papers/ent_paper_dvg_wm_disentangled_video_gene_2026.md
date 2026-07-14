@@ -8,7 +8,8 @@ names:
     for Robotic Manipulation'
   zh: 'DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model
     for Robotic Manipulation'
-  ko: ''
+  ko: 'DVG-WM: Disentangled Video Generation Enables Efficient Embodied World Model
+    for Robotic Manipulation'
 summary:
   en: "arXiv:2606.32028v1 Announce Type: new \nAbstract: Video-based embodied world\
     \ models provide an appealing substrate for robotic manipulation by predicting\
@@ -46,7 +47,24 @@ summary:
     \ details. Experiments on LIBERO and real-world platforms demonstrate improved\
     \ video quality with up to 3.97 times acceleration, validating that disentangled\
     \ video generation can be an efficient embodied world model for robotic manipulation."
-  ko: ''
+  ko: "arXiv:2606.32028v1 Announce Type: new \nAbstract: Video-based embodied world\
+    \ models provide an appealing substrate for robotic manipulation by predicting\
+    \ future states, yet current approaches remain limited by a fundamental entanglement:\
+    \ accurately modeling dynamics typically requires low-level temporal reasoning,\
+    \ while producing high-resolution frames demands expansive visual synthesis according\
+    \ to high-level semantics. This entanglement results in slow inference speed for\
+    \ iterative planning or too coarse predictions to retain contact-rich details.\
+    \ To solve this dilemma, we present Disentangled Video Generation World Model\
+    \ (DVG-WM), an efficient framework that explicitly decomposes world modeling into\
+    \ dynamics learning and visual synthesis. Conditioned on an initial observation\
+    \ and a language instruction, our model first generates a plausible sequence of\
+    \ intermediate visual states to preview the physical interaction and refines them\
+    \ to obtain high-fidelity videos. Furthermore, an efficient cascading mechanism\
+    \ is proposed, where DVG-WM uses flow matching to directly map the dynamics to\
+    \ video latents, and introduces a latent degradation mechanism to regenerate contact-rich\
+    \ details. Experiments on LIBERO and real-world platforms demonstrate improved\
+    \ video quality with up to 3.97 times acceleration, validating that disentangled\
+    \ video generation can be an efficient embodied world model for robotic manipulation."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -77,5 +95,14 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+arXiv:2606.32028v1 Announce Type: new 
+Abstract: Video-based embodied world models provide an appealing substrate for robotic manipulation by predicting future states, yet current approaches remain limited by a fundamental entanglement: accurately modeling dynamics typically requires low-level temporal reasoning, while producing high-resolution frames demands expansive visual synthesis according to high-level semantics. This entanglement results in slow inference speed for iterative planning or too coarse predictions to retain contact-rich details. To solve this dilemma, we present Disentangled Video Generation World Model (DVG-WM), an efficient framework that explicitly decomposes world modeling into dynamics learning and visual synthesis. Conditioned on an initial observation and a language instruction, our model first generates a plausible sequence of intermediate visual states to preview the physical interaction and refines them to obtain high-fidelity videos. Furthermore, an efficient cascading mechanism is proposed, where DVG-WM uses flow matching to directly map the dynamics to video latents, and introduces a latent degradation mechanism to regenerate contact-rich details. Experiments on LIBERO and real-world platforms demonstrate improved video quality with up to 3.97 times acceleration, validating that disentangled video generation can be an efficient embodied world model for robotic manipulation.
+
+## Overview
+arXiv:2606.32028v1 Announce Type: new 
+Abstract: Video-based embodied world models provide an appealing substrate for robotic manipulation by predicting future states, yet current approaches remain limited by a fundamental entanglement: accurately modeling dynamics typically requires low-level temporal reasoning, while producing high-resolution frames demands expansive visual synthesis according to high-level semantics. This entanglement results in slow inference speed for iterative planning or too coarse predictions to retain contact-rich details. To solve this dilemma, we present Disentangled Video Generation World Model (DVG-WM), an efficient framework that explicitly decomposes world modeling into dynamics learning and visual synthesis. Conditioned on an initial observation and a language instruction, our model first generates a plausible sequence of intermediate visual states to preview the physical interaction and refines them to obtain high-fidelity videos. Furthermore, an efficient cascading mechanism is proposed, where DVG-WM uses flow matching to directly map the dynamics to video latents, and introduces a latent degradation mechanism to regenerate contact-rich details. Experiments on LIBERO and real-world platforms demonstrate improved video quality with up to 3.97 times acceleration, validating that disentangled video generation can be an efficient embodied world model for robotic manipulation.
+
+## 개요
 arXiv:2606.32028v1 Announce Type: new 
 Abstract: Video-based embodied world models provide an appealing substrate for robotic manipulation by predicting future states, yet current approaches remain limited by a fundamental entanglement: accurately modeling dynamics typically requires low-level temporal reasoning, while producing high-resolution frames demands expansive visual synthesis according to high-level semantics. This entanglement results in slow inference speed for iterative planning or too coarse predictions to retain contact-rich details. To solve this dilemma, we present Disentangled Video Generation World Model (DVG-WM), an efficient framework that explicitly decomposes world modeling into dynamics learning and visual synthesis. Conditioned on an initial observation and a language instruction, our model first generates a plausible sequence of intermediate visual states to preview the physical interaction and refines them to obtain high-fidelity videos. Furthermore, an efficient cascading mechanism is proposed, where DVG-WM uses flow matching to directly map the dynamics to video latents, and introduces a latent degradation mechanism to regenerate contact-rich details. Experiments on LIBERO and real-world platforms demonstrate improved video quality with up to 3.97 times acceleration, validating that disentangled video generation can be an efficient embodied world model for robotic manipulation.

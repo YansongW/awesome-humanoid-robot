@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories'
   zh: 'DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories'
-  ko: ''
+  ko: 'DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories'
 summary:
   en: 'DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories
     is a 2025 work on manipulation for humanoid robots.'
   zh: 'DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories
     is a 2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories
+    is a 2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 DreamGen: Unlocking Generalization in Robot Learning through Neural Trajectories is a 2025 work on manipulation for humanoid robots.

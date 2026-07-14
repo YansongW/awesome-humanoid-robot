@@ -7,7 +7,8 @@ names:
   en: 'XR-1: Towards Versatile Vision-Language-Action Models via Learning Unified
     Vision-Motion Representations'
   zh: XR-1
-  ko: ''
+  ko: 'XR-1: Towards Versatile Vision-Language-Action Models via Learning Unified
+    Vision-Motion Representations'
 summary:
   en: 'XR-1: Towards Versatile Vision-Language-Action Models via Learning Unified
     Vision-Motion Representations (XR-1), is a 2025 large vision-language-action model
@@ -21,7 +22,12 @@ summary:
     Robotics, Beihang University, State Key Laboratory of Virtual Reality Technology
     and Systems, State Key Laboratory of Multimedia Information Processing, Peking
     University.'
-  ko: ''
+  ko: 'XR-1: Towards Versatile Vision-Language-Action Models via Learning Unified
+    Vision-Motion Representations (XR-1), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by Beijing Innovation Center of Humanoid
+    Robotics, Beihang University, State Key Laboratory of Virtual Reality Technology
+    and Systems, State Key Laboratory of Multimedia Information Processing, Peking
+    University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -63,4 +69,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+XR-1: Towards Versatile Vision-Language-Action Models via Learning Unified Vision-Motion Representations (XR-1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Innovation Center of Humanoid Robotics, Beihang University, State Key Laboratory of Virtual Reality Technology and Systems, State Key Laboratory of Multimedia Information Processing, Peking University.
+
+## Overview
+XR-1: Towards Versatile Vision-Language-Action Models via Learning Unified Vision-Motion Representations (XR-1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Innovation Center of Humanoid Robotics, Beihang University, State Key Laboratory of Virtual Reality Technology and Systems, State Key Laboratory of Multimedia Information Processing, Peking University.
+
+## 개요
 XR-1: Towards Versatile Vision-Language-Action Models via Learning Unified Vision-Motion Representations (XR-1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Innovation Center of Humanoid Robotics, Beihang University, State Key Laboratory of Virtual Reality Technology and Systems, State Key Laboratory of Multimedia Information Processing, Peking University.

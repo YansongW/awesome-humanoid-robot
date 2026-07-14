@@ -7,7 +7,8 @@ names:
   en: 'Spec-VLA: Speculative Decoding for Vision-Language-Action Models with Relaxed
     Acceptance'
   zh: Spec-VLA
-  ko: ''
+  ko: 'Spec-VLA: Speculative Decoding for Vision-Language-Action Models with Relaxed
+    Acceptance'
 summary:
   en: 'Spec-VLA: Speculative Decoding for Vision-Language-Action Models with Relaxed
     Acceptance (Spec-VLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Acceptance (Spec-VLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by NLP2CT Lab, University of Macau, Infinigence AI, Tsinghua
     University, Zhongguancun Academy, NICS-EFC Lab.'
-  ko: ''
+  ko: 'Spec-VLA: Speculative Decoding for Vision-Language-Action Models with Relaxed
+    Acceptance (Spec-VLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by NLP2CT Lab, University of Macau, Infinigence AI, Tsinghua
+    University, Zhongguancun Academy, NICS-EFC Lab.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Spec-VLA: Speculative Decoding for Vision-Language-Action Models with Relaxed Acceptance (Spec-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by NLP2CT Lab, University of Macau, Infinigence AI, Tsinghua University, Zhongguancun Academy, NICS-EFC Lab.
+
+## Overview
+Spec-VLA: Speculative Decoding for Vision-Language-Action Models with Relaxed Acceptance (Spec-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by NLP2CT Lab, University of Macau, Infinigence AI, Tsinghua University, Zhongguancun Academy, NICS-EFC Lab.
+
+## 개요
 Spec-VLA: Speculative Decoding for Vision-Language-Action Models with Relaxed Acceptance (Spec-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by NLP2CT Lab, University of Macau, Infinigence AI, Tsinghua University, Zhongguancun Academy, NICS-EFC Lab.

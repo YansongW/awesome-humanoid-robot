@@ -7,7 +7,8 @@ names:
   en: 'ClutterDexGrasp: A Sim-to-Real System for General Dexterous Grasping in Cluttered
     Scenes'
   zh: ClutterDexGrasp
-  ko: ''
+  ko: 'ClutterDexGrasp: A Sim-to-Real System for General Dexterous Grasping in Cluttered
+    Scenes'
 summary:
   en: 'ClutterDexGrasp: A Sim-to-Real System for General Dexterous Grasping in Cluttered
     Scenes (ClutterDexGrasp), is a 2025 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: 'ClutterDexGrasp: A Sim-to-Real System for General Dexterous Grasping in Cluttered
     Scenes (ClutterDexGrasp), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Duke University, and published at CoRL25.'
-  ko: ''
+  ko: 'ClutterDexGrasp: A Sim-to-Real System for General Dexterous Grasping in Cluttered
+    Scenes (ClutterDexGrasp), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Duke University, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ClutterDexGrasp: A Sim-to-Real System for General Dexterous Grasping in Cluttered Scenes (ClutterDexGrasp), is a 2025 large vision-language-action model for robotic manipulation, introduced by Duke University, and published at CoRL25.
+
+## Overview
+ClutterDexGrasp: A Sim-to-Real System for General Dexterous Grasping in Cluttered Scenes (ClutterDexGrasp), is a 2025 large vision-language-action model for robotic manipulation, introduced by Duke University, and published at CoRL25.
+
+## 개요
 ClutterDexGrasp: A Sim-to-Real System for General Dexterous Grasping in Cluttered Scenes (ClutterDexGrasp), is a 2025 large vision-language-action model for robotic manipulation, introduced by Duke University, and published at CoRL25.

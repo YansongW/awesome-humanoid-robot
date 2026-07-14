@@ -6,11 +6,11 @@ type: paper
 names:
   en: Humanoid Parkour Learning
   zh: Humanoid Parkour Learning
-  ko: ''
+  ko: Humanoid Parkour Learning
 summary:
   en: Humanoid Parkour Learning is a 2024 work on locomotion for humanoid robots.
   zh: Humanoid Parkour Learning is a 2024 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Humanoid Parkour Learning is a 2024 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -46,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Humanoid Parkour Learning is a 2024 work on locomotion for humanoid robots.
+
+## Overview
+Humanoid Parkour Learning is a 2024 work on locomotion for humanoid robots.
+
+## 개요
 Humanoid Parkour Learning is a 2024 work on locomotion for humanoid robots.

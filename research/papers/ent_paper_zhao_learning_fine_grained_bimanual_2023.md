@@ -6,7 +6,7 @@ type: paper
 names:
   en: Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware
   zh: ACT
-  ko: ''
+  ko: Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware
 summary:
   en: Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is
     a 2023 generalized vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     a 2023 generalized vision-language-action model for robotic manipulation, introduced
     by Stanford University, UC Berkeley, Meta, and published at Robotics - Science
     and Systems 2023.
-  ko: ''
+  ko: Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is
+    a 2023 generalized vision-language-action model for robotic manipulation, introduced
+    by Stanford University, UC Berkeley, Meta, and published at Robotics - Science
+    and Systems 2023.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Stanford University, UC Berkeley, Meta, and published at Robotics - Science and Systems 2023.
+
+## Overview
+Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Stanford University, UC Berkeley, Meta, and published at Robotics - Science and Systems 2023.
+
+## 개요
 Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware (ACT), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Stanford University, UC Berkeley, Meta, and published at Robotics - Science and Systems 2023.

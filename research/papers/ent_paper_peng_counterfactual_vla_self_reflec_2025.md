@@ -7,7 +7,8 @@ names:
   en: 'Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive
     Reasoning'
   zh: Counterfactual VLA
-  ko: ''
+  ko: 'Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive
+    Reasoning'
 summary:
   en: 'Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive
     Reasoning (Counterfactual VLA), is a 2025 large vision-language-action model for
@@ -15,7 +16,9 @@ summary:
   zh: 'Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive
     Reasoning (Counterfactual VLA), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by NVIDIA, UCLA, Stanford University.'
-  ko: ''
+  ko: 'Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive
+    Reasoning (Counterfactual VLA), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by NVIDIA, UCLA, Stanford University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning (Counterfactual VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, UCLA, Stanford University.
+
+## Overview
+Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning (Counterfactual VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, UCLA, Stanford University.
+
+## 개요
 Counterfactual VLA: Self-Reflective Vision-Language-Action Model with Adaptive Reasoning (Counterfactual VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, UCLA, Stanford University.

@@ -6,7 +6,7 @@ type: report
 names:
   en: Doosan Robotics Unveils AI Palletizing Solution PalletizHD+ at Automate 2026
   zh: Doosan Robotics Unveils AI Palletizing Solution PalletizHD+ at Automate 2026
-  ko: ''
+  ko: Doosan Robotics Unveils AI Palletizing Solution PalletizHD+ at Automate 2026
 summary:
   en: '- New solution integrates AI, robotics, and PalletizOS to help manufacturers
     increase throughput and simplify palletizing operations - Advanced sanding and
@@ -14,7 +14,9 @@ summary:
   zh: '- New solution integrates AI, robotics, and PalletizOS to help manufacturers
     increase throughput and simplify palletizing operations - Advanced sanding and
     welding solutions featuring Physics-Informed AI and 3D vision also on display'
-  ko: ''
+  ko: '- New solution integrates AI, robotics, and PalletizOS to help manufacturers
+    increase throughput and simplify palletizing operations - Advanced sanding and
+    welding solutions featuring Physics-Informed AI and 3D vision also on display'
 domains:
 - 11_applications_markets
 layers:
@@ -44,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+- New solution integrates AI, robotics, and PalletizOS to help manufacturers increase throughput and simplify palletizing operations - Advanced sanding and welding solutions featuring Physics-Informed AI and 3D vision also on display
+
+## Overview
+- New solution integrates AI, robotics, and PalletizOS to help manufacturers increase throughput and simplify palletizing operations - Advanced sanding and welding solutions featuring Physics-Informed AI and 3D vision also on display
+
+## 개요
 - New solution integrates AI, robotics, and PalletizOS to help manufacturers increase throughput and simplify palletizing operations - Advanced sanding and welding solutions featuring Physics-Informed AI and 3D vision also on display

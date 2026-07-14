@@ -8,7 +8,8 @@ names:
     Learning
   zh: Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement
     Learning
-  ko: ''
+  ko: Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement
+    Learning
 summary:
   en: Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement
     Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement
     Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid
     robots.
-  ko: ''
+  ko: Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement
+    Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid
+    robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Discovering Self-Protective Falling Policy for Humanoid Robot via Deep Reinforcement Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

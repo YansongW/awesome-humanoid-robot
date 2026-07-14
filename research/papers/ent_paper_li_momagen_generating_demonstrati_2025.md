@@ -7,7 +7,8 @@ names:
   en: 'MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step
     Bimanual Mobile Manipulation'
   zh: MoMaGen
-  ko: ''
+  ko: 'MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step
+    Bimanual Mobile Manipulation'
 summary:
   en: 'MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step
     Bimanual Mobile Manipulation (MoMaGen), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Bimanual Mobile Manipulation (MoMaGen), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Stanford University, The University
     of Texas at Austin.'
-  ko: ''
+  ko: 'MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step
+    Bimanual Mobile Manipulation (MoMaGen), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Stanford University, The University
+    of Texas at Austin.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation (MoMaGen), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford University, The University of Texas at Austin.
+
+## Overview
+MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation (MoMaGen), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford University, The University of Texas at Austin.
+
+## 개요
 MoMaGen: Generating Demonstrations under Soft and Hard Constraints for Multi-Step Bimanual Mobile Manipulation (MoMaGen), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford University, The University of Texas at Austin.

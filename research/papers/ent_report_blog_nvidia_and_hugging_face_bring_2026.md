@@ -8,7 +8,8 @@ names:
     Robotics Community
   zh: NVIDIA and Hugging Face Bring New Models and Frameworks to LeRobot for the Open
     Robotics Community
-  ko: ''
+  ko: NVIDIA and Hugging Face Bring New Models and Frameworks to LeRobot for the Open
+    Robotics Community
 summary:
   en: Open source AI has shown how quickly developers can innovate when models, data
     and tools are shared. Robotics has the same opportunity, but advancements in physical
@@ -20,7 +21,11 @@ summary:
     AI development can still be gated by costly and fragmented resources, from large
     datasets and robot foundation models to simulation, compute and validation tools.
     NVIDIA and Hugging Face are [&#8230;]
-  ko: ''
+  ko: Open source AI has shown how quickly developers can innovate when models, data
+    and tools are shared. Robotics has the same opportunity, but advancements in physical
+    AI development can still be gated by costly and fragmented resources, from large
+    datasets and robot foundation models to simulation, compute and validation tools.
+    NVIDIA and Hugging Face are [&#8230;]
 domains:
 - 11_applications_markets
 layers:
@@ -50,4 +55,11 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+Open source AI has shown how quickly developers can innovate when models, data and tools are shared. Robotics has the same opportunity, but advancements in physical AI development can still be gated by costly and fragmented resources, from large datasets and robot foundation models to simulation, compute and validation tools. NVIDIA and Hugging Face are [&#8230;]
+
+## Overview
+Open source AI has shown how quickly developers can innovate when models, data and tools are shared. Robotics has the same opportunity, but advancements in physical AI development can still be gated by costly and fragmented resources, from large datasets and robot foundation models to simulation, compute and validation tools. NVIDIA and Hugging Face are [&#8230;]
+
+## 개요
 Open source AI has shown how quickly developers can innovate when models, data and tools are shared. Robotics has the same opportunity, but advancements in physical AI development can still be gated by costly and fragmented resources, from large datasets and robot foundation models to simulation, compute and validation tools. NVIDIA and Hugging Face are [&#8230;]

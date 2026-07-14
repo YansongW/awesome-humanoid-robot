@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 技能库与任务规划
-  ko: ''
+  ko: 技能库与任务规划
 summary:
   en: ''
   zh: 多步骤任务执行视频、技能库清单、失败恢复率
-  ko: ''
+  ko: 多步骤任务执行视频、技能库清单、失败恢复率
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）

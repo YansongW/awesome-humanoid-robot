@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+连接人形机器人关节电机驱动与中央控制器的现场总线。
+
+## Overview
+Field bus connecting joint motor drives to the central controller in humanoid robots.
+
+## 개요
 Field bus connecting joint motor drives to the central controller in humanoid robots.

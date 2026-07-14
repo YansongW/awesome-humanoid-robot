@@ -6,7 +6,7 @@ type: paper
 names:
   en: Structured 4D Latent Predictive Model for Robot Planning
   zh: Structured 4D Latent Predictive Model for Robot Planning
-  ko: ''
+  ko: Structured 4D Latent Predictive Model for Robot Planning
 summary:
   en: "arXiv:2607.01166v1 Announce Type: new \nAbstract: Video predictive models are\
     \ emerging as a powerful paradigm in robotics, offering a promising path toward\
@@ -44,7 +44,24 @@ summary:
     \ performance on complex manipulation tasks, exhibits robust generalization to\
     \ novel visual conditions, and proves effective on real-world robotic platforms.\
     \ Our website is available at https://structured-4d-model.github.io/."
-  ko: ''
+  ko: "arXiv:2607.01166v1 Announce Type: new \nAbstract: Video predictive models are\
+    \ emerging as a powerful paradigm in robotics, offering a promising path toward\
+    \ task generalization, long-horizon planning, and flexible decision-making. However,\
+    \ prevailing approaches often operate on 2D video sequences, inherently lacking\
+    \ the 3D geometric understanding necessary for precise spatial reasoning and physical\
+    \ consistency. We introduce a Structured 4D Latent Predictive Model, which predicts\
+    \ the evolution of a scene's 3D structure in a structured latent space conditioned\
+    \ on observations and textual instructions. Our representation encodes the scene\
+    \ holistically and can be decoded into diverse 3D formats, enabling a more complete\
+    \ and 3D consistent scene understanding. This structured 4D latent predictive\
+    \ model serves as a planner, generating future scenes that are translated into\
+    \ executable actions by a goal-conditioned inverse dynamics module. Experiments\
+    \ demonstrate that our model generates futures with strong visual quality, substantially\
+    \ better 3D consistency and multi-view coherence compared to state-of-the-art\
+    \ video-based planners. Consequently, our full planning pipeline achieves superior\
+    \ performance on complex manipulation tasks, exhibits robust generalization to\
+    \ novel visual conditions, and proves effective on real-world robotic platforms.\
+    \ Our website is available at https://structured-4d-model.github.io/."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -74,5 +91,14 @@ sources:
   accessed_at: '2026-07-03'
 ---
 
+## 概述
+arXiv:2607.01166v1 Announce Type: new 
+Abstract: Video predictive models are emerging as a powerful paradigm in robotics, offering a promising path toward task generalization, long-horizon planning, and flexible decision-making. However, prevailing approaches often operate on 2D video sequences, inherently lacking the 3D geometric understanding necessary for precise spatial reasoning and physical consistency. We introduce a Structured 4D Latent Predictive Model, which predicts the evolution of a scene's 3D structure in a structured latent space conditioned on observations and textual instructions. Our representation encodes the scene holistically and can be decoded into diverse 3D formats, enabling a more complete and 3D consistent scene understanding. This structured 4D latent predictive model serves as a planner, generating future scenes that are translated into executable actions by a goal-conditioned inverse dynamics module. Experiments demonstrate that our model generates futures with strong visual quality, substantially better 3D consistency and multi-view coherence compared to state-of-the-art video-based planners. Consequently, our full planning pipeline achieves superior performance on complex manipulation tasks, exhibits robust generalization to novel visual conditions, and proves effective on real-world robotic platforms. Our website is available at https://structured-4d-model.github.io/.
+
+## Overview
+arXiv:2607.01166v1 Announce Type: new 
+Abstract: Video predictive models are emerging as a powerful paradigm in robotics, offering a promising path toward task generalization, long-horizon planning, and flexible decision-making. However, prevailing approaches often operate on 2D video sequences, inherently lacking the 3D geometric understanding necessary for precise spatial reasoning and physical consistency. We introduce a Structured 4D Latent Predictive Model, which predicts the evolution of a scene's 3D structure in a structured latent space conditioned on observations and textual instructions. Our representation encodes the scene holistically and can be decoded into diverse 3D formats, enabling a more complete and 3D consistent scene understanding. This structured 4D latent predictive model serves as a planner, generating future scenes that are translated into executable actions by a goal-conditioned inverse dynamics module. Experiments demonstrate that our model generates futures with strong visual quality, substantially better 3D consistency and multi-view coherence compared to state-of-the-art video-based planners. Consequently, our full planning pipeline achieves superior performance on complex manipulation tasks, exhibits robust generalization to novel visual conditions, and proves effective on real-world robotic platforms. Our website is available at https://structured-4d-model.github.io/.
+
+## 개요
 arXiv:2607.01166v1 Announce Type: new 
 Abstract: Video predictive models are emerging as a powerful paradigm in robotics, offering a promising path toward task generalization, long-horizon planning, and flexible decision-making. However, prevailing approaches often operate on 2D video sequences, inherently lacking the 3D geometric understanding necessary for precise spatial reasoning and physical consistency. We introduce a Structured 4D Latent Predictive Model, which predicts the evolution of a scene's 3D structure in a structured latent space conditioned on observations and textual instructions. Our representation encodes the scene holistically and can be decoded into diverse 3D formats, enabling a more complete and 3D consistent scene understanding. This structured 4D latent predictive model serves as a planner, generating future scenes that are translated into executable actions by a goal-conditioned inverse dynamics module. Experiments demonstrate that our model generates futures with strong visual quality, substantially better 3D consistency and multi-view coherence compared to state-of-the-art video-based planners. Consequently, our full planning pipeline achieves superior performance on complex manipulation tasks, exhibits robust generalization to novel visual conditions, and proves effective on real-world robotic platforms. Our website is available at https://structured-4d-model.github.io/.

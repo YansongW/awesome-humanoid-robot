@@ -7,7 +7,8 @@ names:
   en: 'ChatVLA-2: Vision-Language-Action Model with Open-World Embodied Reasoning
     from Pretrained Knowledge'
   zh: ChatVLA-2
-  ko: ''
+  ko: 'ChatVLA-2: Vision-Language-Action Model with Open-World Embodied Reasoning
+    from Pretrained Knowledge'
 summary:
   en: 'ChatVLA-2: Vision-Language-Action Model with Open-World Embodied Reasoning
     from Pretrained Knowledge (ChatVLA-2), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     from Pretrained Knowledge (ChatVLA-2), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by East China Normal University, Midea
     Group, Shanghai University, and published at NIPS25.'
-  ko: ''
+  ko: 'ChatVLA-2: Vision-Language-Action Model with Open-World Embodied Reasoning
+    from Pretrained Knowledge (ChatVLA-2), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by East China Normal University, Midea
+    Group, Shanghai University, and published at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ChatVLA-2: Vision-Language-Action Model with Open-World Embodied Reasoning from Pretrained Knowledge (ChatVLA-2), is a 2025 large vision-language-action model for robotic manipulation, introduced by East China Normal University, Midea Group, Shanghai University, and published at NIPS25.
+
+## Overview
+ChatVLA-2: Vision-Language-Action Model with Open-World Embodied Reasoning from Pretrained Knowledge (ChatVLA-2), is a 2025 large vision-language-action model for robotic manipulation, introduced by East China Normal University, Midea Group, Shanghai University, and published at NIPS25.
+
+## 개요
 ChatVLA-2: Vision-Language-Action Model with Open-World Embodied Reasoning from Pretrained Knowledge (ChatVLA-2), is a 2025 large vision-language-action model for robotic manipulation, introduced by East China Normal University, Midea Group, Shanghai University, and published at NIPS25.

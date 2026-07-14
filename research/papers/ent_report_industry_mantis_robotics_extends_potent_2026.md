@@ -8,13 +8,15 @@ names:
     Robot for Industrial and Retail Automation
   zh: Mantis Robotics Extends Potential of Physical AI with New Dual-Arm Fenceless
     Robot for Industrial and Retail Automation
-  ko: ''
+  ko: Mantis Robotics Extends Potential of Physical AI with New Dual-Arm Fenceless
+    Robot for Industrial and Retail Automation
 summary:
   en: Mantis Robotics Extends Potential of Physical AI with New Dual-Arm Fenceless
     Robot for Industrial and Retail Automation
   zh: Mantis Robotics Extends Potential of Physical AI with New Dual-Arm Fenceless
     Robot for Industrial and Retail Automation
-  ko: ''
+  ko: Mantis Robotics Extends Potential of Physical AI with New Dual-Arm Fenceless
+    Robot for Industrial and Retail Automation
 domains:
 - 11_applications_markets
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Mantis Robotics Extends Potential of Physical AI with New Dual-Arm Fenceless Robot for Industrial and Retail Automation
+
+## Overview
+Mantis Robotics Extends Potential of Physical AI with New Dual-Arm Fenceless Robot for Industrial and Retail Automation
+
+## 개요
 Mantis Robotics Extends Potential of Physical AI with New Dual-Arm Fenceless Robot for Industrial and Retail Automation

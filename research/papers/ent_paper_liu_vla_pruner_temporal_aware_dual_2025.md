@@ -7,7 +7,8 @@ names:
   en: 'VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action
     Inference'
   zh: VLA-Pruner
-  ko: ''
+  ko: 'VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action
+    Inference'
 summary:
   en: 'VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action
     Inference (VLA-Pruner), is a 2025 large vision-language-action model for robotic
@@ -19,7 +20,11 @@ summary:
     manipulation, introduced by School of AI, Shanghai Jiao Tong University, University
     of Science and Technology of China, Harbin Institute of Technology (Shenzhen),
     BAAI.'
-  ko: ''
+  ko: 'VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action
+    Inference (VLA-Pruner), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by School of AI, Shanghai Jiao Tong University, University
+    of Science and Technology of China, Harbin Institute of Technology (Shenzhen),
+    BAAI.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action Inference (VLA-Pruner), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of AI, Shanghai Jiao Tong University, University of Science and Technology of China, Harbin Institute of Technology (Shenzhen), BAAI.
+
+## Overview
+VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action Inference (VLA-Pruner), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of AI, Shanghai Jiao Tong University, University of Science and Technology of China, Harbin Institute of Technology (Shenzhen), BAAI.
+
+## 개요
 VLA-Pruner: Temporal-Aware Dual-Level Visual Token Pruning for Efficient Vision-Language-Action Inference (VLA-Pruner), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of AI, Shanghai Jiao Tong University, University of Science and Technology of China, Harbin Institute of Technology (Shenzhen), BAAI.

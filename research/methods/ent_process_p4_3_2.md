@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 位置/力矩传感器方案
-  ko: ''
+  ko: 位置/力矩传感器方案
 summary:
   en: ''
   zh: 传感器方案、精度预算、安装图纸
-  ko: ''
+  ko: 传感器方案、精度预算、安装图纸
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）

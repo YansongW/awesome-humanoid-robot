@@ -6,7 +6,7 @@ type: paper
 names:
   en: Look Zoom Understand
   zh: EyeVLA
-  ko: ''
+  ko: Look Zoom Understand
 summary:
   en: Look Zoom Understand (EyeVLA), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by Shanghai Jiao Tong University, Institute
@@ -14,7 +14,9 @@ summary:
   zh: Look Zoom Understand (EyeVLA), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by Shanghai Jiao Tong University, Institute
     of Automation, Chinese Academy of Sciences, Dalian University of Technology.
-  ko: ''
+  ko: Look Zoom Understand (EyeVLA), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by Shanghai Jiao Tong University, Institute
+    of Automation, Chinese Academy of Sciences, Dalian University of Technology.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Look Zoom Understand (EyeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Institute of Automation, Chinese Academy of Sciences, Dalian University of Technology.
+
+## Overview
+Look Zoom Understand (EyeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Institute of Automation, Chinese Academy of Sciences, Dalian University of Technology.
+
+## 개요
 Look Zoom Understand (EyeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Institute of Automation, Chinese Academy of Sciences, Dalian University of Technology.

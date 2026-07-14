@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'ZEST: Zero-shot Embodied Skill Transfer for Athletic Robot Control'
   zh: 'ZEST: Zero-shot Embodied Skill Transfer for Athletic Robot Control'
-  ko: ''
+  ko: 'ZEST: Zero-shot Embodied Skill Transfer for Athletic Robot Control'
 summary:
   en: 'ZEST: Zero-shot Embodied Skill Transfer for Athletic Robot Control is a 2026
     work on sim-to-real for humanoid robots.'
   zh: 'ZEST: Zero-shot Embodied Skill Transfer for Athletic Robot Control is a 2026
     work on sim-to-real for humanoid robots.'
-  ko: ''
+  ko: 'ZEST: Zero-shot Embodied Skill Transfer for Athletic Robot Control is a 2026
+    work on sim-to-real for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ZEST: Zero-shot Embodied Skill Transfer for Athletic Robot Control is a 2026 work on sim-to-real for humanoid robots.
+
+## Overview
+ZEST: Zero-shot Embodied Skill Transfer for Athletic Robot Control is a 2026 work on sim-to-real for humanoid robots.
+
+## 개요
 ZEST: Zero-shot Embodied Skill Transfer for Athletic Robot Control is a 2026 work on sim-to-real for humanoid robots.

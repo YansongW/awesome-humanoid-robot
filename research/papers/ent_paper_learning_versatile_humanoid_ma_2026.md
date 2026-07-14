@@ -6,12 +6,13 @@ type: paper
 names:
   en: Learning Versatile Humanoid Manipulation with Touch Dreaming
   zh: 通过触摸梦学习多样化人形操作
-  ko: ''
+  ko: Learning Versatile Humanoid Manipulation with Touch Dreaming
 summary:
   en: ''
   zh: 这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、扩散策略/流匹配、MM-DiT/Transformer
     动作头转成可训练、可复用的末端执行器/腕手目标、动作 chunk/token。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
-  ko: ''
+  ko: 这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、扩散策略/流匹配、MM-DiT/Transformer
+    动作头转成可训练、可复用的末端执行器/腕手目标、动作 chunk/token。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -46,5 +47,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、扩散策略/流匹配、MM-DiT/Transformer 动作头转成可训练、可复用的末端执行器/腕手目标、动作 chunk/token。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
+## 개요
 这篇工作主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、扩散策略/流匹配、MM-DiT/Transformer 动作头转成可训练、可复用的末端执行器/腕手目标、动作 chunk/token。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。

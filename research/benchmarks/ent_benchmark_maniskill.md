@@ -8,8 +8,8 @@ names:
   zh: ManiSkill
   ko: ManiSkill
 summary:
-  en: A unified benchmark for generalizable manipulation skills, providing standardized tasks, simulated environments, and
-    evaluation protocols.
+  en: A unified benchmark for generalizable manipulation skills, providing standardized
+    tasks, simulated environments, and evaluation protocols.
   zh: 面向可泛化操作技能的统一基准，提供标准化任务、仿真环境与评估协议。
   ko: 일반화 가능한 조작 기술을 위한 통합 벤치마크로, 표준화된 과제·시뮬레이션 환경·평가 프로토콜을 제공.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+面向可泛化操作技能的统一基准，提供标准化任务、仿真环境与评估协议。
+
+## Overview
+A unified benchmark for generalizable manipulation skills, providing standardized tasks, simulated environments, and evaluation protocols.
+
+## 개요
+A unified benchmark for generalizable manipulation skills, providing standardized tasks, simulated environments, and evaluation protocols.

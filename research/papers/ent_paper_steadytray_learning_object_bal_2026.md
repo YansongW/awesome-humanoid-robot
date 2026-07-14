@@ -8,7 +8,8 @@ names:
     Residual Reinforcement Learning'
   zh: 'SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via
     Residual Reinforcement Learning'
-  ko: ''
+  ko: 'SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via
+    Residual Reinforcement Learning'
 summary:
   en: 'SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via
     Residual Reinforcement Learning is a 2026 work on loco-manipulation and whole-body-control
@@ -16,7 +17,9 @@ summary:
   zh: 'SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via
     Residual Reinforcement Learning is a 2026 work on loco-manipulation and whole-body-control
     for humanoid robots.'
-  ko: ''
+  ko: 'SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via
+    Residual Reinforcement Learning is a 2026 work on loco-manipulation and whole-body-control
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual Reinforcement Learning is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual Reinforcement Learning is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual Reinforcement Learning is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control'
   zh: 'HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control'
-  ko: ''
+  ko: 'HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control'
 summary:
   en: 'HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control is
     a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control is
     a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control is
+    a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 HUSKY: Humanoid Skateboarding System via Physics-Aware Whole-Body Control is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

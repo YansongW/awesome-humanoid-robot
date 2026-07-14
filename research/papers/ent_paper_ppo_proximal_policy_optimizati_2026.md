@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'PPO: Proximal Policy Optimization'
   zh: 近端策略优化
-  ko: ''
+  ko: 'PPO: Proximal Policy Optimization'
 summary:
   en: ''
   zh: 'PPO: Proximal Policy Optimization is a paper on 基础RL for humanoid robotics.
     近端策略优化.'
-  ko: ''
+  ko: 'PPO: Proximal Policy Optimization is a paper on 基础RL for humanoid robotics.
+    近端策略优化.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,5 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PPO: Proximal Policy Optimization is a paper on 基础RL for humanoid robotics. 近端策略优化.
 
+## Overview
+PPO: Proximal Policy Optimization is a paper on 基础RL for humanoid robotics. 近端策略优化.
+
+## 개요
 PPO: Proximal Policy Optimization is a paper on 基础RL for humanoid robotics. 近端策略优化.

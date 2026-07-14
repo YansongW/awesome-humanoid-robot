@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 软件稳定性与回归测试
-  ko: ''
+  ko: 软件稳定性与回归测试
 summary:
   en: ''
   zh: 长时运行无崩溃、关键故障注入恢复通过
-  ko: ''
+  ko: 长时运行无崩溃、关键故障注入恢复通过
 domains:
 - 04_assembly_integration_testing
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）

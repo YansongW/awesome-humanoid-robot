@@ -41,4 +41,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+Google DeepMind 基于Transformer的规模化真实世界机器人控制模型。
+
+## Overview
+Google DeepMind transformer-based model for real-world robot control at scale.
+
+## 개요
 Google DeepMind transformer-based model for real-world robot control at scale.

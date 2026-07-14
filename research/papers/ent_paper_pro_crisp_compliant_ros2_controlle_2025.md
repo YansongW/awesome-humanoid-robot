@@ -7,7 +7,8 @@ names:
   en: CRISP -- Compliant ROS2 Controllers for Learning-Based Manipulation Policies
     and Teleoperation
   zh: CRISP
-  ko: ''
+  ko: CRISP -- Compliant ROS2 Controllers for Learning-Based Manipulation Policies
+    and Teleoperation
 summary:
   en: CRISP -- Compliant ROS2 Controllers for Learning-Based Manipulation Policies
     and Teleoperation (CRISP), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     and Teleoperation (CRISP), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Technical University of Munich (TUM), TUM School of
     Computation, Information and Technology.
-  ko: ''
+  ko: CRISP -- Compliant ROS2 Controllers for Learning-Based Manipulation Policies
+    and Teleoperation (CRISP), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Technical University of Munich (TUM), TUM School of
+    Computation, Information and Technology.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CRISP -- Compliant ROS2 Controllers for Learning-Based Manipulation Policies and Teleoperation (CRISP), is a 2025 large vision-language-action model for robotic manipulation, introduced by Technical University of Munich (TUM), TUM School of Computation, Information and Technology.
+
+## Overview
+CRISP -- Compliant ROS2 Controllers for Learning-Based Manipulation Policies and Teleoperation (CRISP), is a 2025 large vision-language-action model for robotic manipulation, introduced by Technical University of Munich (TUM), TUM School of Computation, Information and Technology.
+
+## 개요
 CRISP -- Compliant ROS2 Controllers for Learning-Based Manipulation Policies and Teleoperation (CRISP), is a 2025 large vision-language-action model for robotic manipulation, introduced by Technical University of Munich (TUM), TUM School of Computation, Information and Technology.

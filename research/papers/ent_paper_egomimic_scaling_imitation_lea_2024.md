@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'EgoMimic: Scaling Imitation Learning via Egocentric Video'
   zh: 'EgoMimic: Scaling Imitation Learning via Egocentric Video'
-  ko: ''
+  ko: 'EgoMimic: Scaling Imitation Learning via Egocentric Video'
 summary:
   en: 'EgoMimic: Scaling Imitation Learning via Egocentric Video is a 2024 work on
     manipulation for humanoid robots, with open-source code available.'
   zh: 'EgoMimic: Scaling Imitation Learning via Egocentric Video is a 2024 work on
     manipulation for humanoid robots, with open-source code available.'
-  ko: ''
+  ko: 'EgoMimic: Scaling Imitation Learning via Egocentric Video is a 2024 work on
+    manipulation for humanoid robots, with open-source code available.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EgoMimic: Scaling Imitation Learning via Egocentric Video is a 2024 work on manipulation for humanoid robots, with open-source code available.
+
+## Overview
+EgoMimic: Scaling Imitation Learning via Egocentric Video is a 2024 work on manipulation for humanoid robots, with open-source code available.
+
+## 개요
 EgoMimic: Scaling Imitation Learning via Egocentric Video is a 2024 work on manipulation for humanoid robots, with open-source code available.

@@ -7,7 +7,8 @@ names:
   en: 'CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail
     Scenarios via Collect-and-Refine'
   zh: CoReVLA
-  ko: ''
+  ko: 'CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail
+    Scenarios via Collect-and-Refine'
 summary:
   en: 'CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail
     Scenarios via Collect-and-Refine (CoReVLA), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Scenarios via Collect-and-Refine (CoReVLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by College of Transportation, Tongji
     University.'
-  ko: ''
+  ko: 'CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail
+    Scenarios via Collect-and-Refine (CoReVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by College of Transportation, Tongji
+    University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail Scenarios via Collect-and-Refine (CoReVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by College of Transportation, Tongji University.
+
+## Overview
+CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail Scenarios via Collect-and-Refine (CoReVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by College of Transportation, Tongji University.
+
+## 개요
 CoReVLA: A Dual-Stage End-to-End Autonomous Driving Framework for Long-Tail Scenarios via Collect-and-Refine (CoReVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by College of Transportation, Tongji University.

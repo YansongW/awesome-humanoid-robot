@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+面向物流工作流的双足仓库机器人，具有人形躯干和手臂。
+
+## Overview
+Bipedal warehouse robot with humanoid torso and arms, designed for logistics workflows.
+
+## 개요
 Bipedal warehouse robot with humanoid torso and arms, designed for logistics workflows.

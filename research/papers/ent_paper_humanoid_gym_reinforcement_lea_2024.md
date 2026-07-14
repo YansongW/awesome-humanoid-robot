@@ -8,7 +8,8 @@ names:
     Transfer'
   zh: 'Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real
     Transfer'
-  ko: ''
+  ko: 'Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real
+    Transfer'
 summary:
   en: 'Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real
     Transfer is a 2024 work on simulation benchmark for humanoid robots, with open-source
@@ -16,7 +17,9 @@ summary:
   zh: 'Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real
     Transfer is a 2024 work on simulation benchmark for humanoid robots, with open-source
     code available.'
-  ko: ''
+  ko: 'Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real
+    Transfer is a 2024 work on simulation benchmark for humanoid robots, with open-source
+    code available.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.
+
+## Overview
+Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.
+
+## 개요
 Humanoid-Gym: Reinforcement Learning for Humanoid Robot with Zero-Shot Sim2Real Transfer is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.

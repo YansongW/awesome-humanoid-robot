@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 全生命周期成本模型 v0
-  ko: ''
+  ko: 全生命周期成本模型 v0
 summary:
   en: ''
   zh: 整机 BOM 目标、子系统成本上限、盈亏平衡产量
-  ko: ''
+  ko: 整机 BOM 目标、子系统成本上限、盈亏平衡产量
 domains:
 - 11_applications_markets
 - 12_policy_regulation_ethics
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：项目立项与商业基线

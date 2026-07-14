@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 接触与摩擦参数标定
-  ko: ''
+  ko: 接触与摩擦参数标定
 summary:
   en: ''
   zh: 《接触参数表》、标定视频/数据、单腿站立稳定
-  ko: ''
+  ko: 《接触参数表》、标定视频/数据、单腿站立稳定
 domains:
 - 08_software_middleware
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）

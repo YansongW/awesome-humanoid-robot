@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos'
   zh: Being-H0
-  ko: ''
+  ko: 'Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos'
 summary:
   en: 'Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos
     (Being-H0), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos
     (Being-H0), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Peking University, Renmin University of China, BeingBeyond.'
-  ko: ''
+  ko: 'Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos
+    (Being-H0), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Peking University, Renmin University of China, BeingBeyond.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos (Being-H0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Renmin University of China, BeingBeyond.
+
+## Overview
+Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos (Being-H0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Renmin University of China, BeingBeyond.
+
+## 개요
 Being-H0: Vision-Language-Action Pretraining from Large-Scale Human Videos (Being-H0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Renmin University of China, BeingBeyond.

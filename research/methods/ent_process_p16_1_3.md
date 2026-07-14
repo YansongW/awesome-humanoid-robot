@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 装配线规划与 SOP
-  ko: ''
+  ko: 装配线规划与 SOP
 summary:
   en: ''
   zh: 装配流程图、工装清单、SOP、节拍测算
-  ko: ''
+  ko: 装配流程图、工装清单、SOP、节拍测算
 domains:
 - 05_mass_production
 - 11_applications_markets
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）

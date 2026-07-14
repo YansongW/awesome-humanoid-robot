@@ -7,7 +7,8 @@ names:
   en: 'MLA: A Multisensory Language-Action Model for Multimodal Understanding and
     Forecasting in Robotic Manipulation'
   zh: MLA
-  ko: ''
+  ko: 'MLA: A Multisensory Language-Action Model for Multimodal Understanding and
+    Forecasting in Robotic Manipulation'
 summary:
   en: 'MLA: A Multisensory Language-Action Model for Multimodal Understanding and
     Forecasting in Robotic Manipulation (MLA), is a 2025 large vision-language-action
@@ -19,7 +20,11 @@ summary:
     model for robotic manipulation, introduced by State Key Laboratory of Multimedia
     Information Processing, School of Computer Science, Peking University, Beijing
     Innovation Center of Humanoid Robotics, Chinese University of Hong Kong.'
-  ko: ''
+  ko: 'MLA: A Multisensory Language-Action Model for Multimodal Understanding and
+    Forecasting in Robotic Manipulation (MLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by State Key Laboratory of Multimedia
+    Information Processing, School of Computer Science, Peking University, Beijing
+    Innovation Center of Humanoid Robotics, Chinese University of Hong Kong.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +66,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MLA: A Multisensory Language-Action Model for Multimodal Understanding and Forecasting in Robotic Manipulation (MLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, Beijing Innovation Center of Humanoid Robotics, Chinese University of Hong Kong.
+
+## Overview
+MLA: A Multisensory Language-Action Model for Multimodal Understanding and Forecasting in Robotic Manipulation (MLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, Beijing Innovation Center of Humanoid Robotics, Chinese University of Hong Kong.
+
+## 개요
 MLA: A Multisensory Language-Action Model for Multimodal Understanding and Forecasting in Robotic Manipulation (MLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, Beijing Innovation Center of Humanoid Robotics, Chinese University of Hong Kong.

@@ -8,13 +8,15 @@ names:
     Manipulation'
   zh: 'HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid
     Manipulation'
-  ko: ''
+  ko: 'HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid
+    Manipulation'
 summary:
   en: 'HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid
     Manipulation is a 2026 work on manipulation for humanoid robots.'
   zh: 'HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid
     Manipulation is a 2026 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid
+    Manipulation is a 2026 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation is a 2026 work on manipulation for humanoid robots.
+
+## Overview
+HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation is a 2026 work on manipulation for humanoid robots.
+
+## 개요
 HumanoidVLM: Vision-Language-Guided Impedance Control for Contact-Rich Humanoid Manipulation is a 2026 work on manipulation for humanoid robots.

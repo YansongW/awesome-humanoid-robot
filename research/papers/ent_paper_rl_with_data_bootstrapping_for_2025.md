@@ -6,13 +6,14 @@ type: paper
 names:
   en: RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation
   zh: RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation
-  ko: ''
+  ko: RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation
 summary:
   en: RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation
     is a 2025 work on navigation for humanoid robots.
   zh: RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation
     is a 2025 work on navigation for humanoid robots.
-  ko: ''
+  ko: RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation
+    is a 2025 work on navigation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a 2025 work on navigation for humanoid robots.
+
+## Overview
+RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a 2025 work on navigation for humanoid robots.
+
+## 개요
 RL with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a 2025 work on navigation for humanoid robots.

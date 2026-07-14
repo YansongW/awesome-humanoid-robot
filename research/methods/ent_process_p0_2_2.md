@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 风险登记册与应对计划
-  ko: ''
+  ko: 风险登记册与应对计划
 summary:
   en: ''
   zh: Top-10 风险清单、 Owner、Mitigation Plan、Trigger
-  ko: ''
+  ko: Top-10 风险清单、 Owner、Mitigation Plan、Trigger
 domains:
 - 11_applications_markets
 - 12_policy_regulation_ethics
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：项目立项与商业基线

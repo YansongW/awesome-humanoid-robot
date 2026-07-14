@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'ZeroWBC: Learning Natural Visuomotor Humanoid Control from Egocentric Video'
   zh: ZeroWBC：直接从人类第一人称视频中学出零遥操作的人形视触运动控制
-  ko: ''
+  ko: 'ZeroWBC: Learning Natural Visuomotor Humanoid Control from Egocentric Video'
 summary:
   en: ''
   zh: 'ZeroWBC: Learning Natural Visuomotor Humanoid Control from Egocentric Video
     is a paper on Loco-Manipulation for humanoid robotics. ZeroWBC：直接从人类第一人称视频中学出零遥操作的人形视触运动控制.'
-  ko: ''
+  ko: 'ZeroWBC: Learning Natural Visuomotor Humanoid Control from Egocentric Video
+    is a paper on Loco-Manipulation for humanoid robotics. ZeroWBC：直接从人类第一人称视频中学出零遥操作的人形视触运动控制.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,5 +45,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ZeroWBC: Learning Natural Visuomotor Humanoid Control from Egocentric Video is a paper on Loco-Manipulation for humanoid robotics. ZeroWBC：直接从人类第一人称视频中学出零遥操作的人形视触运动控制.
 
+## 개요
 ZeroWBC: Learning Natural Visuomotor Humanoid Control from Egocentric Video is a paper on Loco-Manipulation for humanoid robotics. ZeroWBC：直接从人类第一人称视频中学出零遥操作的人形视触运动控制.

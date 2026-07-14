@@ -7,7 +7,8 @@ names:
   en: 'When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action
     Models'
   zh: VLA-Fool
-  ko: ''
+  ko: 'When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action
+    Models'
 summary:
   en: 'When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action
     Models (VLA-Fool), is a 2025 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Models (VLA-Fool), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Westlake University, Pennsylvania State University, Sony Research,
     Xidian University.'
-  ko: ''
+  ko: 'When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action
+    Models (VLA-Fool), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Westlake University, Pennsylvania State University, Sony Research,
+    Xidian University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action Models (VLA-Fool), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Pennsylvania State University, Sony Research, Xidian University.
+
+## Overview
+When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action Models (VLA-Fool), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Pennsylvania State University, Sony Research, Xidian University.
+
+## 개요
 When Alignment Fails: Multimodal Adversarial Attacks on Vision-Language-Action Models (VLA-Fool), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Pennsylvania State University, Sony Research, Xidian University.

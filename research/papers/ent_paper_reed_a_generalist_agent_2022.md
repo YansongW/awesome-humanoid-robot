@@ -6,13 +6,14 @@ type: paper
 names:
   en: A Generalist Agent
   zh: Gato
-  ko: ''
+  ko: A Generalist Agent
 summary:
   en: A Generalist Agent (Gato), is a 2022 generalized vision-language-action model
     for robotic manipulation, introduced by DeepMind, and published at ICLR 2022.
   zh: A Generalist Agent (Gato), is a 2022 generalized vision-language-action model
     for robotic manipulation, introduced by DeepMind, and published at ICLR 2022.
-  ko: ''
+  ko: A Generalist Agent (Gato), is a 2022 generalized vision-language-action model
+    for robotic manipulation, introduced by DeepMind, and published at ICLR 2022.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Generalist Agent (Gato), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by DeepMind, and published at ICLR 2022.
+
+## Overview
+A Generalist Agent (Gato), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by DeepMind, and published at ICLR 2022.
+
+## 개요
 A Generalist Agent (Gato), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by DeepMind, and published at ICLR 2022.

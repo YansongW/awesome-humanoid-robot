@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'GRUtopia: Dream General Robots in a City at Scale'
   zh: 'GRUtopia: Dream General Robots in a City at Scale'
-  ko: ''
+  ko: 'GRUtopia: Dream General Robots in a City at Scale'
 summary:
   en: 'GRUtopia: Dream General Robots in a City at Scale is a 2024 work on simulation
     benchmark for humanoid robots.'
   zh: 'GRUtopia: Dream General Robots in a City at Scale is a 2024 work on simulation
     benchmark for humanoid robots.'
-  ko: ''
+  ko: 'GRUtopia: Dream General Robots in a City at Scale is a 2024 work on simulation
+    benchmark for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GRUtopia: Dream General Robots in a City at Scale is a 2024 work on simulation benchmark for humanoid robots.
+
+## Overview
+GRUtopia: Dream General Robots in a City at Scale is a 2024 work on simulation benchmark for humanoid robots.
+
+## 개요
 GRUtopia: Dream General Robots in a City at Scale is a 2024 work on simulation benchmark for humanoid robots.

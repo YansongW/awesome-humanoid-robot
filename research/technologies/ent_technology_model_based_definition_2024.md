@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+将几何、运动学、质量特性、GD&T和标注嵌入单一数字主模型的CAD中心方法。
+
+## Overview
 CAD-centric approach that embeds geometry, kinematics, mass properties, GD&T, and annotations in a single digital master model.
+
+## 개요
+기하학, 운 동학, 질량 특성, GD&T 및 주석을 단일 디지털 마스터 모델에 포함하는 CAD 중심 접근법.

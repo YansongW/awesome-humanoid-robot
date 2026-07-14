@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 可维护性与维修性设计
-  ko: ''
+  ko: 可维护性与维修性设计
 summary:
   en: ''
   zh: 维护手册草案、MTTR 目标、快拆件清单
-  ko: ''
+  ko: 维护手册草案、MTTR 目标、快拆件清单
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）

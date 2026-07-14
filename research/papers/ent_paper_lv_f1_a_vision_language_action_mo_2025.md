@@ -7,7 +7,8 @@ names:
   en: 'F1: A Vision-Language-Action Model Bridging Understanding and Generation to
     Actions'
   zh: F1
-  ko: ''
+  ko: 'F1: A Vision-Language-Action Model Bridging Understanding and Generation to
+    Actions'
 summary:
   en: 'F1: A Vision-Language-Action Model Bridging Understanding and Generation to
     Actions (F1), is a 2025 large vision-language-action model for robotic manipulation,
@@ -15,7 +16,9 @@ summary:
   zh: 'F1: A Vision-Language-Action Model Bridging Understanding and Generation to
     Actions (F1), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen).'
-  ko: ''
+  ko: 'F1: A Vision-Language-Action Model Bridging Understanding and Generation to
+    Actions (F1), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen).'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+F1: A Vision-Language-Action Model Bridging Understanding and Generation to Actions (F1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen).
+
+## Overview
+F1: A Vision-Language-Action Model Bridging Understanding and Generation to Actions (F1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen).
+
+## 개요
 F1: A Vision-Language-Action Model Bridging Understanding and Generation to Actions (F1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, Harbin Institute of Technology (Shenzhen).

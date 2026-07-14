@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 抓取姿态生成与力闭合分析
-  ko: ''
+  ko: 抓取姿态生成与力闭合分析
 summary:
   en: ''
   zh: 抓取库/策略、典型物体成功率 > 目标
-  ko: ''
+  ko: 抓取库/策略、典型物体成功率 > 目标
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）

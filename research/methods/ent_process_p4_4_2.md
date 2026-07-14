@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 关节安全与故障保护
-  ko: ''
+  ko: 关节安全与故障保护
 summary:
   en: ''
   zh: 故障保护策略、FMEA 更新、安全测试
-  ko: ''
+  ko: 故障保护策略、FMEA 更新、安全测试
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）

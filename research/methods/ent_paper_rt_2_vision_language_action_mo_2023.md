@@ -40,4 +40,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+将网络规模的视觉-语言知识迁移到机器人控制的VLA模型。
+
+## Overview
+VLA model that transfers web-scale vision-language knowledge to robotic control.
+
+## 개요
 VLA model that transfers web-scale vision-language knowledge to robotic control.

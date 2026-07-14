@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+国产人形机器人，采用谐波一体关节和带行星减速器的关节电机。
+
+## Overview
+Chinese humanoid robot using harmonic integrated joints and planetary-reducer joint motors.
+
+## 개요
 Chinese humanoid robot using harmonic integrated joints and planetary-reducer joint motors.

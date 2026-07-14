@@ -8,13 +8,15 @@ names:
     for Sim-to-Real Humanoid Robots'
   zh: 'RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis
     for Sim-to-Real Humanoid Robots'
-  ko: ''
+  ko: 'RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis
+    for Sim-to-Real Humanoid Robots'
 summary:
   en: 'RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis
     for Sim-to-Real Humanoid Robots is a 2026 work on sim-to-real for humanoid robots.'
   zh: 'RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis
     for Sim-to-Real Humanoid Robots is a 2026 work on sim-to-real for humanoid robots.'
-  ko: ''
+  ko: 'RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis
+    for Sim-to-Real Humanoid Robots is a 2026 work on sim-to-real for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis for Sim-to-Real Humanoid Robots is a 2026 work on sim-to-real for humanoid robots.
+
+## Overview
+RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis for Sim-to-Real Humanoid Robots is a 2026 work on sim-to-real for humanoid robots.
+
+## 개요
 RAPT: Model-Predictive Out-of-Distribution Detection and Failure Diagnosis for Sim-to-Real Humanoid Robots is a 2026 work on sim-to-real for humanoid robots.

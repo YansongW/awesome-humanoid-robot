@@ -7,7 +7,8 @@ names:
   en: 'VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language
     Model'
   zh: SeeDo
-  ko: ''
+  ko: 'VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language
+    Model'
 summary:
   en: 'VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language
     Model (SeeDo), is a 2025 large vision-language-action model for robotic manipulation,
@@ -15,7 +16,9 @@ summary:
   zh: 'VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language
     Model (SeeDo), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by New York University, and published at IROS25.'
-  ko: ''
+  ko: 'VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language
+    Model (SeeDo), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by New York University, and published at IROS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language Model (SeeDo), is a 2025 large vision-language-action model for robotic manipulation, introduced by New York University, and published at IROS25.
+
+## Overview
+VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language Model (SeeDo), is a 2025 large vision-language-action model for robotic manipulation, introduced by New York University, and published at IROS25.
+
+## 개요
 VLM See, Robot Do: Human Demo Video to Robot Action Plan via Vision Language Model (SeeDo), is a 2025 large vision-language-action model for robotic manipulation, introduced by New York University, and published at IROS25.

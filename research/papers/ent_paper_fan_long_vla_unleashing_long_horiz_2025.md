@@ -7,7 +7,8 @@ names:
   en: 'Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model
     for Robot Manipulation'
   zh: Long-VLA
-  ko: ''
+  ko: 'Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model
+    for Robot Manipulation'
 summary:
   en: 'Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model
     for Robot Manipulation (Long-VLA), is a 2025 large vision-language-action model
@@ -17,7 +18,10 @@ summary:
     for Robot Manipulation (Long-VLA), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by Zhejiang University, and published at
     CoRL25.'
-  ko: ''
+  ko: 'Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model
+    for Robot Manipulation (Long-VLA), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by Zhejiang University, and published at
+    CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation (Long-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, and published at CoRL25.
+
+## Overview
+Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation (Long-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, and published at CoRL25.
+
+## 개요
 Long-VLA: Unleashing Long-Horizon Capability of Vision Language Action Model for Robot Manipulation (Long-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, and published at CoRL25.

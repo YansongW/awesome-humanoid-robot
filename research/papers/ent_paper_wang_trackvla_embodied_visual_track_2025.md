@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'TrackVLA: Embodied Visual Tracking in the Wild'
   zh: TrackVLA
-  ko: ''
+  ko: 'TrackVLA: Embodied Visual Tracking in the Wild'
 summary:
   en: 'TrackVLA: Embodied Visual Tracking in the Wild (TrackVLA), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by Peking University,
@@ -16,7 +16,10 @@ summary:
     vision-language-action model for robotic manipulation, introduced by Peking University,
     Galbot, Beihang University, Beijing Normal University, Beijing Academy of Artificial
     Intelligence, and published at CoRL25.'
-  ko: ''
+  ko: 'TrackVLA: Embodied Visual Tracking in the Wild (TrackVLA), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by Peking University,
+    Galbot, Beihang University, Beijing Normal University, Beijing Academy of Artificial
+    Intelligence, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+TrackVLA: Embodied Visual Tracking in the Wild (TrackVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Galbot, Beihang University, Beijing Normal University, Beijing Academy of Artificial Intelligence, and published at CoRL25.
+
+## Overview
+TrackVLA: Embodied Visual Tracking in the Wild (TrackVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Galbot, Beihang University, Beijing Normal University, Beijing Academy of Artificial Intelligence, and published at CoRL25.
+
+## 개요
 TrackVLA: Embodied Visual Tracking in the Wild (TrackVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Galbot, Beihang University, Beijing Normal University, Beijing Academy of Artificial Intelligence, and published at CoRL25.

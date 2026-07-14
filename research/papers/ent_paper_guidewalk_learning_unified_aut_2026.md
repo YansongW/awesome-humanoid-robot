@@ -7,13 +7,16 @@ names:
   en: 'GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid
     Robots across Versatile Terrains'
   zh: 把可通过性感知的导航规划与地形自适应运动控制用复合教师蒸馏成统一策略，再经 RL+行为克隆微调，在楼梯/斜坡/窄梁上既避障又稳步
-  ko: ''
+  ko: 'GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid
+    Robots across Versatile Terrains'
 summary:
   en: ''
   zh: 'GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid
     Robots across Versatile Terrains is a paper on 导航任务 for humanoid robotics. 把可通过性感知的导航规划与地形自适应运动控制用复合教师蒸馏成统一策略，再经
     RL+行为克隆微调，在楼梯/斜坡/窄梁上既避障又稳步.'
-  ko: ''
+  ko: 'GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid
+    Robots across Versatile Terrains is a paper on 导航任务 for humanoid robotics. 把可通过性感知的导航规划与地形自适应运动控制用复合教师蒸馏成统一策略，再经
+    RL+行为克隆微调，在楼梯/斜坡/窄梁上既避障又稳步.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,5 +47,8 @@ sources:
   accessed_at: '2026-07-06'
 ---
 
+## 概述
+GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid Robots across Versatile Terrains is a paper on 导航任务 for humanoid robotics. 把可通过性感知的导航规划与地形自适应运动控制用复合教师蒸馏成统一策略，再经 RL+行为克隆微调，在楼梯/斜坡/窄梁上既避障又稳步.
 
+## 개요
 GuideWalk: Learning Unified Autonomous Navigation and Locomotion for Humanoid Robots across Versatile Terrains is a paper on 导航任务 for humanoid robotics. 把可通过性感知的导航规划与地形自适应运动控制用复合教师蒸馏成统一策略，再经 RL+行为克隆微调，在楼梯/斜坡/窄梁上既避障又稳步.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: Efficient and Scalable Monocular Human-Object Interaction Motion Reconstruction
   zh: Efficient and Scalable Monocular Human-Object Interaction Motion Reconstruction
-  ko: ''
+  ko: Efficient and Scalable Monocular Human-Object Interaction Motion Reconstruction
 summary:
   en: Efficient and Scalable Monocular Human-Object Interaction Motion Reconstruction
     is a 2025 work on human motion analysis and synthesis for humanoid robots.
   zh: Efficient and Scalable Monocular Human-Object Interaction Motion Reconstruction
     is a 2025 work on human motion analysis and synthesis for humanoid robots.
-  ko: ''
+  ko: Efficient and Scalable Monocular Human-Object Interaction Motion Reconstruction
+    is a 2025 work on human motion analysis and synthesis for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Efficient and Scalable Monocular Human-Object Interaction Motion Reconstruction is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+Efficient and Scalable Monocular Human-Object Interaction Motion Reconstruction is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 Efficient and Scalable Monocular Human-Object Interaction Motion Reconstruction is a 2025 work on human motion analysis and synthesis for humanoid robots.

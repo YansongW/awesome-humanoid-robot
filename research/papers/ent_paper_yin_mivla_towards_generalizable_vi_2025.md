@@ -7,7 +7,8 @@ names:
   en: 'MiVLA: Towards Generalizable Vision-Language-Action Model with Human-Robot
     Mutual Imitation Pre-training'
   zh: MiVLA
-  ko: ''
+  ko: 'MiVLA: Towards Generalizable Vision-Language-Action Model with Human-Robot
+    Mutual Imitation Pre-training'
 summary:
   en: 'MiVLA: Towards Generalizable Vision-Language-Action Model with Human-Robot
     Mutual Imitation Pre-training (MiVLA), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Mutual Imitation Pre-training (MiVLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Tongji University, University of
     Electronic Science and Technology of China.'
-  ko: ''
+  ko: 'MiVLA: Towards Generalizable Vision-Language-Action Model with Human-Robot
+    Mutual Imitation Pre-training (MiVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Tongji University, University of
+    Electronic Science and Technology of China.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MiVLA: Towards Generalizable Vision-Language-Action Model with Human-Robot Mutual Imitation Pre-training (MiVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tongji University, University of Electronic Science and Technology of China.
+
+## Overview
+MiVLA: Towards Generalizable Vision-Language-Action Model with Human-Robot Mutual Imitation Pre-training (MiVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tongji University, University of Electronic Science and Technology of China.
+
+## 개요
 MiVLA: Towards Generalizable Vision-Language-Action Model with Human-Robot Mutual Imitation Pre-training (MiVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tongji University, University of Electronic Science and Technology of China.

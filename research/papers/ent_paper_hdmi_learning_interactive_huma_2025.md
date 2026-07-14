@@ -6,11 +6,11 @@ type: paper
 names:
   en: 'HDMI: Learning Interactive Humanoid Whole-Body Control from Human Videos'
   zh: HDMI｜从人类视频中学习交互式人形全身控制
-  ko: ''
+  ko: 'HDMI: Learning Interactive Humanoid Whole-Body Control from Human Videos'
 summary:
   en: ''
   zh: HDMI 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用IK/动作重定向、分层技能/专家策略生成全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
-  ko: ''
+  ko: HDMI 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用IK/动作重定向、分层技能/专家策略生成全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -43,5 +43,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+HDMI 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用IK/动作重定向、分层技能/专家策略生成全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
+## 개요
 HDMI 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用IK/动作重定向、分层技能/专家策略生成全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。

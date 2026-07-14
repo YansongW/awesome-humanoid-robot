@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Berkeley Humanoid: A Research Platform for Learning-based Control'
   zh: 'Berkeley Humanoid: A Research Platform for Learning-based Control'
-  ko: ''
+  ko: 'Berkeley Humanoid: A Research Platform for Learning-based Control'
 summary:
   en: 'Berkeley Humanoid: A Research Platform for Learning-based Control is a 2024
     work on hardware design for humanoid robots, with open-source code available.'
   zh: 'Berkeley Humanoid: A Research Platform for Learning-based Control is a 2024
     work on hardware design for humanoid robots, with open-source code available.'
-  ko: ''
+  ko: 'Berkeley Humanoid: A Research Platform for Learning-based Control is a 2024
+    work on hardware design for humanoid robots, with open-source code available.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Berkeley Humanoid: A Research Platform for Learning-based Control is a 2024 work on hardware design for humanoid robots, with open-source code available.
+
+## Overview
+Berkeley Humanoid: A Research Platform for Learning-based Control is a 2024 work on hardware design for humanoid robots, with open-source code available.
+
+## 개요
 Berkeley Humanoid: A Research Platform for Learning-based Control is a 2024 work on hardware design for humanoid robots, with open-source code available.

@@ -8,7 +8,8 @@ names:
     for Wheeled Humanoid Locomanipulation
   zh: Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation
     for Wheeled Humanoid Locomanipulation
-  ko: ''
+  ko: Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation
+    for Wheeled Humanoid Locomanipulation
 summary:
   en: Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation
     for Wheeled Humanoid Locomanipulation is a 2025 work on teleoperation for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation
     for Wheeled Humanoid Locomanipulation is a 2025 work on teleoperation for humanoid
     robots.
-  ko: ''
+  ko: Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation
+    for Wheeled Humanoid Locomanipulation is a 2025 work on teleoperation for humanoid
+    robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid Locomanipulation is a 2025 work on teleoperation for humanoid robots.
+
+## Overview
+Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid Locomanipulation is a 2025 work on teleoperation for humanoid robots.
+
+## 개요
 Whole-Body Bilateral Teleoperation with Multi-Stage Object Parameter Estimation for Wheeled Humanoid Locomanipulation is a 2025 work on teleoperation for humanoid robots.

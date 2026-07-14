@@ -8,13 +8,15 @@ names:
     Terrains'
   zh: 'CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured
     Terrains'
-  ko: ''
+  ko: 'CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured
+    Terrains'
 summary:
   en: 'CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured
     Terrains is a 2026 work on locomotion for humanoid robots.'
   zh: 'CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured
     Terrains is a 2026 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured
+    Terrains is a 2026 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains is a 2026 work on locomotion for humanoid robots.
+
+## Overview
+CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains is a 2026 work on locomotion for humanoid robots.
+
+## 개요
 CMR: Contractive Mapping Embeddings for Robust Humanoid Locomotion on Unstructured Terrains is a 2026 work on locomotion for humanoid robots.

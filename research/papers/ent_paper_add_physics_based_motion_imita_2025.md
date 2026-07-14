@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators'
   zh: 'ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators'
-  ko: ''
+  ko: 'ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators'
 summary:
   en: 'ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators
     is a 2025 work on physics-based character animation for humanoid robots.'
   zh: 'ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators
     is a 2025 work on physics-based character animation for humanoid robots.'
-  ko: ''
+  ko: 'ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators
+    is a 2025 work on physics-based character animation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 ADD: Physics-Based Motion Imitation with Adversarial Differential Discriminators is a 2025 work on physics-based character animation for humanoid robots.

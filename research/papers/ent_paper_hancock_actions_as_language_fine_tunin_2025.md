@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting'
   zh: VLM2VLA
-  ko: ''
+  ko: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting'
 summary:
   en: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting
     (VLM2VLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting
     (VLM2VLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Princeton University.'
-  ko: ''
+  ko: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting
+    (VLM2VLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Princeton University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting (VLM2VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Princeton University.
+
+## Overview
+Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting (VLM2VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Princeton University.
+
+## 개요
 Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting (VLM2VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Princeton University.

@@ -7,7 +7,8 @@ names:
   en: 'CoC-VLA: Delving into Adversarial Domain Transfer for Explainable Autonomous
     Driving via Chain-of-Causality Visual-Language-Action Model'
   zh: CoC-VLA
-  ko: ''
+  ko: 'CoC-VLA: Delving into Adversarial Domain Transfer for Explainable Autonomous
+    Driving via Chain-of-Causality Visual-Language-Action Model'
 summary:
   en: 'CoC-VLA: Delving into Adversarial Domain Transfer for Explainable Autonomous
     Driving via Chain-of-Causality Visual-Language-Action Model (CoC-VLA), is a 2025
@@ -19,7 +20,11 @@ summary:
     large vision-language-action model for robotic manipulation, introduced by Lanzhou
     University, National University of Singapore, University of Science and Technology
     of China, and published at NIPS25.'
-  ko: ''
+  ko: 'CoC-VLA: Delving into Adversarial Domain Transfer for Explainable Autonomous
+    Driving via Chain-of-Causality Visual-Language-Action Model (CoC-VLA), is a 2025
+    large vision-language-action model for robotic manipulation, introduced by Lanzhou
+    University, National University of Singapore, University of Science and Technology
+    of China, and published at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CoC-VLA: Delving into Adversarial Domain Transfer for Explainable Autonomous Driving via Chain-of-Causality Visual-Language-Action Model (CoC-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Lanzhou University, National University of Singapore, University of Science and Technology of China, and published at NIPS25.
+
+## Overview
+CoC-VLA: Delving into Adversarial Domain Transfer for Explainable Autonomous Driving via Chain-of-Causality Visual-Language-Action Model (CoC-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Lanzhou University, National University of Singapore, University of Science and Technology of China, and published at NIPS25.
+
+## 개요
 CoC-VLA: Delving into Adversarial Domain Transfer for Explainable Autonomous Driving via Chain-of-Causality Visual-Language-Action Model (CoC-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Lanzhou University, National University of Singapore, University of Science and Technology of China, and published at NIPS25.

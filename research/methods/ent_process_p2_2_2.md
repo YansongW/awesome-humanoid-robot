@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 人机交互（HMI）设计
-  ko: ''
+  ko: 人机交互（HMI）设计
 summary:
   en: ''
   zh: HMI 规范、交互原型、可用性测试报告
-  ko: ''
+  ko: HMI 规范、交互原型、可用性测试报告
 domains:
 - 06_design_engineering
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：工业设计与外观工程（ID / A-Surface）

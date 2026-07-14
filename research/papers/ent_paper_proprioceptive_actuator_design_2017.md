@@ -8,7 +8,8 @@ names:
     physical interaction for dynamic legged robots'
   zh: 'Proprioceptive actuator design in the MIT Cheetah: Impact mitigation and high‑bandwidth
     physical interaction for dynamic legged robots'
-  ko: ''
+  ko: 'Proprioceptive actuator design in the MIT Cheetah: Impact mitigation and high‑bandwidth
+    physical interaction for dynamic legged robots'
 summary:
   en: 'Proprioceptive actuator design in the MIT Cheetah: Impact mitigation and high‑bandwidth
     physical interaction for dynamic legged robots is a 2017 work on hardware design
@@ -16,7 +17,9 @@ summary:
   zh: 'Proprioceptive actuator design in the MIT Cheetah: Impact mitigation and high‑bandwidth
     physical interaction for dynamic legged robots is a 2017 work on hardware design
     for humanoid robots.'
-  ko: ''
+  ko: 'Proprioceptive actuator design in the MIT Cheetah: Impact mitigation and high‑bandwidth
+    physical interaction for dynamic legged robots is a 2017 work on hardware design
+    for humanoid robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Proprioceptive actuator design in the MIT Cheetah: Impact mitigation and high‑bandwidth physical interaction for dynamic legged robots is a 2017 work on hardware design for humanoid robots.
+
+## Overview
+Proprioceptive actuator design in the MIT Cheetah: Impact mitigation and high‑bandwidth physical interaction for dynamic legged robots is a 2017 work on hardware design for humanoid robots.
+
+## 개요
 Proprioceptive actuator design in the MIT Cheetah: Impact mitigation and high‑bandwidth physical interaction for dynamic legged robots is a 2017 work on hardware design for humanoid robots.

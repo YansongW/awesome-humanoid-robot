@@ -7,7 +7,8 @@ names:
   en: 'VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards
     in World Simulators'
   zh: VLA-RFT
-  ko: ''
+  ko: 'VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards
+    in World Simulators'
 summary:
   en: 'VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards
     in World Simulators (VLA-RFT), is a 2025 large vision-language-action model for
@@ -19,7 +20,11 @@ summary:
     robotic manipulation, introduced by Westlake University, Zhejiang University,
     OpenHelix Team, Fudan University, Zhengzhou University, BUPT, Hebei University
     of Technology.'
-  ko: ''
+  ko: 'VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards
+    in World Simulators (VLA-RFT), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by Westlake University, Zhejiang University,
+    OpenHelix Team, Fudan University, Zhengzhou University, BUPT, Hebei University
+    of Technology.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators (VLA-RFT), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Zhejiang University, OpenHelix Team, Fudan University, Zhengzhou University, BUPT, Hebei University of Technology.
+
+## Overview
+VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators (VLA-RFT), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Zhejiang University, OpenHelix Team, Fudan University, Zhengzhou University, BUPT, Hebei University of Technology.
+
+## 개요
 VLA-RFT: Vision-Language-Action Reinforcement Fine-tuning with Verified Rewards in World Simulators (VLA-RFT), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Zhejiang University, OpenHelix Team, Fudan University, Zhengzhou University, BUPT, Hebei University of Technology.

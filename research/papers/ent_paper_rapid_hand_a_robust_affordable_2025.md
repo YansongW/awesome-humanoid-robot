@@ -8,7 +8,8 @@ names:
     Platform for Generalist Robot Autonomy'
   zh: 'RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation
     Platform for Generalist Robot Autonomy'
-  ko: ''
+  ko: 'RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation
+    Platform for Generalist Robot Autonomy'
 summary:
   en: 'RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation
     Platform for Generalist Robot Autonomy is a 2025 work on hardware design for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation
     Platform for Generalist Robot Autonomy is a 2025 work on hardware design for humanoid
     robots.'
-  ko: ''
+  ko: 'RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation
+    Platform for Generalist Robot Autonomy is a 2025 work on hardware design for humanoid
+    robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation Platform for Generalist Robot Autonomy is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation Platform for Generalist Robot Autonomy is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 RAPID Hand: A Robust, Affordable, Perception-Integrated, Dexterous Manipulation Platform for Generalist Robot Autonomy is a 2025 work on hardware design for humanoid robots.

@@ -8,7 +8,8 @@ names:
     Actuation for Agile Locomotion'
   zh: 'DecARt Leg: Design and Evaluation of a Novel Humanoid Robot Leg with Decoupled
     Actuation for Agile Locomotion'
-  ko: ''
+  ko: 'DecARt Leg: Design and Evaluation of a Novel Humanoid Robot Leg with Decoupled
+    Actuation for Agile Locomotion'
 summary:
   en: 'DecARt Leg: Design and Evaluation of a Novel Humanoid Robot Leg with Decoupled
     Actuation for Agile Locomotion is a 2025 work on hardware design for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'DecARt Leg: Design and Evaluation of a Novel Humanoid Robot Leg with Decoupled
     Actuation for Agile Locomotion is a 2025 work on hardware design for humanoid
     robots.'
-  ko: ''
+  ko: 'DecARt Leg: Design and Evaluation of a Novel Humanoid Robot Leg with Decoupled
+    Actuation for Agile Locomotion is a 2025 work on hardware design for humanoid
+    robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DecARt Leg: Design and Evaluation of a Novel Humanoid Robot Leg with Decoupled Actuation for Agile Locomotion is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+DecARt Leg: Design and Evaluation of a Novel Humanoid Robot Leg with Decoupled Actuation for Agile Locomotion is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 DecARt Leg: Design and Evaluation of a Novel Humanoid Robot Leg with Decoupled Actuation for Agile Locomotion is a 2025 work on hardware design for humanoid robots.

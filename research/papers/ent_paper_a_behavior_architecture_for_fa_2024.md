@@ -6,13 +6,14 @@ type: paper
 names:
   en: A Behavior Architecture for Fast Humanoid Robot Door Traversals
   zh: A Behavior Architecture for Fast Humanoid Robot Door Traversals
-  ko: ''
+  ko: A Behavior Architecture for Fast Humanoid Robot Door Traversals
 summary:
   en: A Behavior Architecture for Fast Humanoid Robot Door Traversals is a 2024 work
     on loco-manipulation and whole-body-control for humanoid robots.
   zh: A Behavior Architecture for Fast Humanoid Robot Door Traversals is a 2024 work
     on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: A Behavior Architecture for Fast Humanoid Robot Door Traversals is a 2024 work
+    on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Behavior Architecture for Fast Humanoid Robot Door Traversals is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+A Behavior Architecture for Fast Humanoid Robot Door Traversals is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 A Behavior Architecture for Fast Humanoid Robot Door Traversals is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.

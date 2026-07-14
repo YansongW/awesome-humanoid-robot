@@ -7,7 +7,8 @@ names:
   en: 'RoboMatrix: A Skill-centric Hierarchical Framework for Scalable Robot Task
     Planning and Execution in Open-World'
   zh: RoboMatrix
-  ko: ''
+  ko: 'RoboMatrix: A Skill-centric Hierarchical Framework for Scalable Robot Task
+    Planning and Execution in Open-World'
 summary:
   en: 'RoboMatrix: A Skill-centric Hierarchical Framework for Scalable Robot Task
     Planning and Execution in Open-World (RoboMatrix), is a 2024 large vision-language-action
@@ -19,7 +20,11 @@ summary:
     model for robotic manipulation, introduced by Waseda University, Beijing Institute
     of Technology, The Chinese University of Hong Kong, MEGVII Technology, Chinese
     Academy of Sciences.'
-  ko: ''
+  ko: 'RoboMatrix: A Skill-centric Hierarchical Framework for Scalable Robot Task
+    Planning and Execution in Open-World (RoboMatrix), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by Waseda University, Beijing Institute
+    of Technology, The Chinese University of Hong Kong, MEGVII Technology, Chinese
+    Academy of Sciences.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboMatrix: A Skill-centric Hierarchical Framework for Scalable Robot Task Planning and Execution in Open-World (RoboMatrix), is a 2024 large vision-language-action model for robotic manipulation, introduced by Waseda University, Beijing Institute of Technology, The Chinese University of Hong Kong, MEGVII Technology, Chinese Academy of Sciences.
+
+## Overview
+RoboMatrix: A Skill-centric Hierarchical Framework for Scalable Robot Task Planning and Execution in Open-World (RoboMatrix), is a 2024 large vision-language-action model for robotic manipulation, introduced by Waseda University, Beijing Institute of Technology, The Chinese University of Hong Kong, MEGVII Technology, Chinese Academy of Sciences.
+
+## 개요
 RoboMatrix: A Skill-centric Hierarchical Framework for Scalable Robot Task Planning and Execution in Open-World (RoboMatrix), is a 2024 large vision-language-action model for robotic manipulation, introduced by Waseda University, Beijing Institute of Technology, The Chinese University of Hong Kong, MEGVII Technology, Chinese Academy of Sciences.

@@ -8,7 +8,8 @@ names:
     Observations Everywhere'
   zh: 'EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent
     Observations Everywhere'
-  ko: ''
+  ko: 'EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent
+    Observations Everywhere'
 summary:
   en: 'EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent
     Observations Everywhere is a 2024 work on human motion analysis and synthesis
@@ -16,7 +17,9 @@ summary:
   zh: 'EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent
     Observations Everywhere is a 2024 work on human motion analysis and synthesis
     for humanoid robots, with open-source code available.'
-  ko: ''
+  ko: 'EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent
+    Observations Everywhere is a 2024 work on human motion analysis and synthesis
+    for humanoid robots, with open-source code available.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere is a 2024 work on human motion analysis and synthesis for humanoid robots, with open-source code available.
+
+## Overview
+EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere is a 2024 work on human motion analysis and synthesis for humanoid robots, with open-source code available.
+
+## 개요
 EgoPoser: Robust Real-Time Egocentric Pose Estimation from Sparse and Intermittent Observations Everywhere is a 2024 work on human motion analysis and synthesis for humanoid robots, with open-source code available.

@@ -7,7 +7,8 @@ names:
   en: 'TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist
     Robotic Policies'
   zh: TraceVLA
-  ko: ''
+  ko: 'TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist
+    Robotic Policies'
 summary:
   en: 'TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist
     Robotic Policies (TraceVLA), is a 2024 large vision-language-action model for
@@ -17,7 +18,10 @@ summary:
     Robotic Policies (TraceVLA), is a 2024 large vision-language-action model for
     robotic manipulation, introduced by University of Maryland, College Park, Microsoft
     Research, Capital One, and published at ICLR 2024.'
-  ko: ''
+  ko: 'TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist
+    Robotic Policies (TraceVLA), is a 2024 large vision-language-action model for
+    robotic manipulation, introduced by University of Maryland, College Park, Microsoft
+    Research, Capital One, and published at ICLR 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies (TraceVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by University of Maryland, College Park, Microsoft Research, Capital One, and published at ICLR 2024.
+
+## Overview
+TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies (TraceVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by University of Maryland, College Park, Microsoft Research, Capital One, and published at ICLR 2024.
+
+## 개요
 TraceVLA: Visual Trace Prompting Enhances Spatial-Temporal Awareness for Generalist Robotic Policies (TraceVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by University of Maryland, College Park, Microsoft Research, Capital One, and published at ICLR 2024.

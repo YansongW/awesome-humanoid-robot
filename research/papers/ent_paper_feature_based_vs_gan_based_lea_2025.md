@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why'
   zh: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why'
-  ko: ''
+  ko: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why'
 summary:
   en: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a
     2025 work on physics-based character animation for humanoid robots.'
   zh: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a
     2025 work on physics-based character animation for humanoid robots.'
-  ko: ''
+  ko: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a
+    2025 work on physics-based character animation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a 2025 work on physics-based character animation for humanoid robots.

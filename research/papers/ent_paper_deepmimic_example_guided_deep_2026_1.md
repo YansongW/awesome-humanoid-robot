@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills'
   zh: 深度模仿：基于示例引导的物理角色技能深度强化学习
-  ko: ''
+  ko: 'DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills'
 summary:
   en: ''
   zh: 'DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills is a paper
     on 精确模仿 for humanoid robotics. 深度模仿：基于示例引导的物理角色技能深度强化学习.'
-  ko: ''
+  ko: 'DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills is a paper
+    on 精确模仿 for humanoid robotics. 深度模仿：基于示例引导的物理角色技能深度强化学习.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,5 +44,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills is a paper on 精确模仿 for humanoid robotics. 深度模仿：基于示例引导的物理角色技能深度强化学习.
 
+## 개요
 DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills is a paper on 精确模仿 for humanoid robotics. 深度模仿：基于示例引导的物理角色技能深度强化学习.

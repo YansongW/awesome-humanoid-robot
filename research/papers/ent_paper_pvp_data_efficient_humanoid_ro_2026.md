@@ -4,14 +4,19 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged Contrastive Representations'
+  en: 'PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged
+    Contrastive Representations'
   zh: 训练时的 privileged state 如何变成部署时的本体能力
-  ko: ''
+  ko: 'PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged
+    Contrastive Representations'
 summary:
-  en: 'PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged Contrastive Representations is a knowledge
-    node related to paper in the humanoid robot value chain.'
+  en: 'PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged
+    Contrastive Representations is a knowledge node related to paper in the humanoid
+    robot value chain.'
   zh: ''
-  ko: ''
+  ko: 'PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged
+    Contrastive Representations is a knowledge node related to paper in the humanoid
+    robot value chain.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -31,11 +36,13 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (020). Institution: 香港理工大学；逐际动力；宁波东方理工大学；中科大；ZJU-UIUC；ZGCA. arXiv: 2512.13093.'
+  notes: 'Imported from WeChat curated list (020). Institution: 香港理工大学；逐际动力；宁波东方理工大学；中科大；ZJU-UIUC；ZGCA.
+    arXiv: 2512.13093.'
 sources:
 - id: src_001
   type: paper
-  title: 'PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged Contrastive Representations (arXiv)'
+  title: 'PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged
+    Contrastive Representations (arXiv)'
   url: https://arxiv.org/abs/2512.13093
   date: '2026'
   accessed_at: '2026-07-01'
@@ -48,3 +55,12 @@ sources:
 theoretical_depth:
 - system
 ---
+
+## 概述
+PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged Contrastive Representations is a knowledge node related to paper in the humanoid robot value chain.
+
+## Overview
+PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged Contrastive Representations is a knowledge node related to paper in the humanoid robot value chain.
+
+## 개요
+PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged Contrastive Representations is a knowledge node related to paper in the humanoid robot value chain.

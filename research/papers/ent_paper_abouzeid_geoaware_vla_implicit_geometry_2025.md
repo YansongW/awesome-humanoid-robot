@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model'
   zh: GeoAware-VLA
-  ko: ''
+  ko: 'GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model'
 summary:
   en: 'GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model (GeoAware-VLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model (GeoAware-VLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Mohamed bin Zayed University of Artificial Intelligence.'
-  ko: ''
+  ko: 'GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model (GeoAware-VLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Mohamed bin Zayed University of Artificial Intelligence.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model (GeoAware-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mohamed bin Zayed University of Artificial Intelligence.
+
+## Overview
+GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model (GeoAware-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mohamed bin Zayed University of Artificial Intelligence.
+
+## 개요
 GeoAware-VLA: Implicit Geometry Aware Vision-Language-Action Model (GeoAware-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mohamed bin Zayed University of Artificial Intelligence.

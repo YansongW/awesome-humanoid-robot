@@ -8,8 +8,9 @@ names:
   zh: 联合标定
   ko: 관절·칩라·IMU 통합 보정
 summary:
-  en: The process of estimating the intrinsic and extrinsic parameters, as well as time offsets, between joints, cameras,
-    and inertial sensors to ensure coherent sensing and control.
+  en: The process of estimating the intrinsic and extrinsic parameters, as well as
+    time offsets, between joints, cameras, and inertial sensors to ensure coherent
+    sensing and control.
   zh: 估计关节、相机与惯性传感器之间的内外参及时延，以保证感知与控制一致性的过程。
   ko: 관절·칩라·관성 센서 간 내외부 파라미터와 시간 오프셋을 추정하여 감지와 제어의 일관성을 보장하는 과정.
 domains:
@@ -29,8 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +39,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+估计关节、相机与惯性传感器之间的内外参及时延，以保证感知与控制一致性的过程。
+
+## Overview
+The process of estimating the intrinsic and extrinsic parameters, as well as time offsets, between joints, cameras, and inertial sensors to ensure coherent sensing and control.
+
+## 개요
+The process of estimating the intrinsic and extrinsic parameters, as well as time offsets, between joints, cameras, and inertial sensors to ensure coherent sensing and control.

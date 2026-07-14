@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey'
   zh: 'Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey'
-  ko: ''
+  ko: 'Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey'
 summary:
   en: 'Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey is a 2024
     work on locomotion for humanoid robots.'
   zh: 'Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey is a 2024
     work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey is a 2024
+    work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey is a 2024 work on locomotion for humanoid robots.
+
+## Overview
+Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey is a 2024 work on locomotion for humanoid robots.
+
+## 개요
 Deep Reinforcement Learning for Bipedal Locomotion: A Brief Survey is a 2024 work on locomotion for humanoid robots.

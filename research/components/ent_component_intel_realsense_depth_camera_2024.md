@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+广泛用于人形机器人头部、腕部和躯干感知的RGB-D立体相机。
+
+## Overview
+RGB-D stereo camera widely used for head, wrist, and torso perception in humanoids.
+
+## 개요
 RGB-D stereo camera widely used for head, wrist, and torso perception in humanoids.

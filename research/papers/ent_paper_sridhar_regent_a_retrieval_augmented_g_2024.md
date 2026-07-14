@@ -7,7 +7,8 @@ names:
   en: 'REGENT: A Retrieval-Augmented Generalist Agent That Can Act In-Context in New
     Environments'
   zh: REGENT
-  ko: ''
+  ko: 'REGENT: A Retrieval-Augmented Generalist Agent That Can Act In-Context in New
+    Environments'
 summary:
   en: 'REGENT: A Retrieval-Augmented Generalist Agent That Can Act In-Context in New
     Environments (REGENT), is a 2024 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: 'REGENT: A Retrieval-Augmented Generalist Agent That Can Act In-Context in New
     Environments (REGENT), is a 2024 large vision-language-action model for robotic
     manipulation, introduced by University of Pennsylvania, and published at ICLR25.'
-  ko: ''
+  ko: 'REGENT: A Retrieval-Augmented Generalist Agent That Can Act In-Context in New
+    Environments (REGENT), is a 2024 large vision-language-action model for robotic
+    manipulation, introduced by University of Pennsylvania, and published at ICLR25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+REGENT: A Retrieval-Augmented Generalist Agent That Can Act In-Context in New Environments (REGENT), is a 2024 large vision-language-action model for robotic manipulation, introduced by University of Pennsylvania, and published at ICLR25.
+
+## Overview
+REGENT: A Retrieval-Augmented Generalist Agent That Can Act In-Context in New Environments (REGENT), is a 2024 large vision-language-action model for robotic manipulation, introduced by University of Pennsylvania, and published at ICLR25.
+
+## 개요
 REGENT: A Retrieval-Augmented Generalist Agent That Can Act In-Context in New Environments (REGENT), is a 2024 large vision-language-action model for robotic manipulation, introduced by University of Pennsylvania, and published at ICLR25.

@@ -8,13 +8,15 @@ names:
     via Human Mimicking'
   zh: 'Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning
     via Human Mimicking'
-  ko: ''
+  ko: 'Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning
+    via Human Mimicking'
 summary:
   en: 'Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning
     via Human Mimicking is a 2024 work on simulation benchmark for humanoid robots.'
   zh: 'Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning
     via Human Mimicking is a 2024 work on simulation benchmark for humanoid robots.'
-  ko: ''
+  ko: 'Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning
+    via Human Mimicking is a 2024 work on simulation benchmark for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +57,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning via Human Mimicking is a 2024 work on simulation benchmark for humanoid robots.
+
+## Overview
+Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning via Human Mimicking is a 2024 work on simulation benchmark for humanoid robots.
+
+## 개요
 Mimicking-Bench: A Benchmark for Generalizable Humanoid-Scene Interaction Learning via Human Mimicking is a 2024 work on simulation benchmark for humanoid robots.

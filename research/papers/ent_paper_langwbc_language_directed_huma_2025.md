@@ -6,11 +6,11 @@ type: paper
 names:
   en: 'LangWBC: Language-directed Humanoid Whole-Body Control via End-to-end Learning'
   zh: LangWBC｜通过端到端学习进行语言指导的人形全身控制
-  ko: ''
+  ko: 'LangWBC: Language-directed Humanoid Whole-Body Control via End-to-end Learning'
 summary:
   en: ''
   zh: LangWBC 先从语言指令、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL 策略训练、扩散策略/流匹配生成全身轨迹/动作序列、低层控制器目标。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
-  ko: ''
+  ko: LangWBC 先从语言指令、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL 策略训练、扩散策略/流匹配生成全身轨迹/动作序列、低层控制器目标。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,5 +43,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+LangWBC 先从语言指令、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL 策略训练、扩散策略/流匹配生成全身轨迹/动作序列、低层控制器目标。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
 
+## 개요
 LangWBC 先从语言指令、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL 策略训练、扩散策略/流匹配生成全身轨迹/动作序列、低层控制器目标。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。

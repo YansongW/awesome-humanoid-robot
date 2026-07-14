@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'Isaac Lab: Unified GPU Simulation Platform for Robot Learning'
   zh: 'Isaac Lab: Unified GPU Simulation Platform for Robot Learning'
-  ko: ''
+  ko: 'Isaac Lab: Unified GPU Simulation Platform for Robot Learning'
 summary:
   en: ''
   zh: 'Isaac Lab: Unified GPU Simulation Platform for Robot Learning is a paper on
     高影响力精选 High Impact Selection for humanoid robotics.'
-  ko: ''
+  ko: 'Isaac Lab: Unified GPU Simulation Platform for Robot Learning is a paper on
+    高影响力精选 High Impact Selection for humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,5 +43,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Isaac Lab: Unified GPU Simulation Platform for Robot Learning is a paper on 高影响力精选 High Impact Selection for humanoid robotics.
 
+## 개요
 Isaac Lab: Unified GPU Simulation Platform for Robot Learning is a paper on 高影响力精选 High Impact Selection for humanoid robotics.

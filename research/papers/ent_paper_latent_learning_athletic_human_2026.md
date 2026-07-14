@@ -8,13 +8,15 @@ names:
     Data'
   zh: 'LATENT: Learning Athletic Humanoid Tennis Skills from Imperfect Human Motion
     Data'
-  ko: ''
+  ko: 'LATENT: Learning Athletic Humanoid Tennis Skills from Imperfect Human Motion
+    Data'
 summary:
   en: 'LATENT: Learning Athletic Humanoid Tennis Skills from Imperfect Human Motion
     Data is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'LATENT: Learning Athletic Humanoid Tennis Skills from Imperfect Human Motion
     Data is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'LATENT: Learning Athletic Humanoid Tennis Skills from Imperfect Human Motion
+    Data is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+LATENT: Learning Athletic Humanoid Tennis Skills from Imperfect Human Motion Data is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+LATENT: Learning Athletic Humanoid Tennis Skills from Imperfect Human Motion Data is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 LATENT: Learning Athletic Humanoid Tennis Skills from Imperfect Human Motion Data is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

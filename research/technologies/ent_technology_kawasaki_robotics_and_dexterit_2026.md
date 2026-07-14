@@ -8,13 +8,15 @@ names:
     Warehouse Logistics
   zh: Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for
     Warehouse Logistics
-  ko: ''
+  ko: Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for
+    Warehouse Logistics
 summary:
   en: RL030N 8 DoF robot arm platform brings together Kawasaki Robotics' industrial
     robot engineering, Dexterity's Mech hardware, and Foresight World Model
   zh: RL030N 8 DoF robot arm platform brings together Kawasaki Robotics' industrial
     robot engineering, Dexterity's Mech hardware, and Foresight World Model
-  ko: ''
+  ko: RL030N 8 DoF robot arm platform brings together Kawasaki Robotics' industrial
+    robot engineering, Dexterity's Mech hardware, and Foresight World Model
 domains:
 - 11_applications_markets
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RL030N 8 DoF robot arm platform brings together Kawasaki Robotics' industrial robot engineering, Dexterity's Mech hardware, and Foresight World Model
+
+## Overview
+RL030N 8 DoF robot arm platform brings together Kawasaki Robotics' industrial robot engineering, Dexterity's Mech hardware, and Foresight World Model
+
+## 개요
 RL030N 8 DoF robot arm platform brings together Kawasaki Robotics' industrial robot engineering, Dexterity's Mech hardware, and Foresight World Model

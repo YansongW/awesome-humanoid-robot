@@ -7,7 +7,8 @@ names:
   en: 'FPC-VLA: A Vision-Language-Action Framework with a Supervisor for Failure Prediction
     and Correction'
   zh: FPC-VLA
-  ko: ''
+  ko: 'FPC-VLA: A Vision-Language-Action Framework with a Supervisor for Failure Prediction
+    and Correction'
 summary:
   en: 'FPC-VLA: A Vision-Language-Action Framework with a Supervisor for Failure Prediction
     and Correction (FPC-VLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     and Correction (FPC-VLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Nankai University, Xiaomi EV, Northeastern University
     Shenyang, University of Macau.'
-  ko: ''
+  ko: 'FPC-VLA: A Vision-Language-Action Framework with a Supervisor for Failure Prediction
+    and Correction (FPC-VLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Nankai University, Xiaomi EV, Northeastern University
+    Shenyang, University of Macau.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FPC-VLA: A Vision-Language-Action Framework with a Supervisor for Failure Prediction and Correction (FPC-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nankai University, Xiaomi EV, Northeastern University Shenyang, University of Macau.
+
+## Overview
+FPC-VLA: A Vision-Language-Action Framework with a Supervisor for Failure Prediction and Correction (FPC-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nankai University, Xiaomi EV, Northeastern University Shenyang, University of Macau.
+
+## 개요
 FPC-VLA: A Vision-Language-Action Framework with a Supervisor for Failure Prediction and Correction (FPC-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nankai University, Xiaomi EV, Northeastern University Shenyang, University of Macau.

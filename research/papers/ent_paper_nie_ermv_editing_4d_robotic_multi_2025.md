@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents'
   zh: ERMV
-  ko: ''
+  ko: 'ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents'
 summary:
   en: 'ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents (ERMV),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Shanghai Jiao Tong University, Key Laboratory of System Control and Information
     Processing, Cambridge University.'
-  ko: ''
+  ko: 'ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents (ERMV),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Shanghai Jiao Tong University, Key Laboratory of System Control and Information
+    Processing, Cambridge University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents (ERMV), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Key Laboratory of System Control and Information Processing, Cambridge University.
+
+## Overview
+ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents (ERMV), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Key Laboratory of System Control and Information Processing, Cambridge University.
+
+## 개요
 ERMV: Editing 4D Robotic Multi-view images to enhance embodied agents (ERMV), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Key Laboratory of System Control and Information Processing, Cambridge University.

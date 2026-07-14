@@ -8,13 +8,15 @@ names:
     Footholds'
   zh: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained
     Footholds'
-  ko: ''
+  ko: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained
+    Footholds'
 summary:
   en: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained
     Footholds is a 2026 work on locomotion for humanoid robots.'
   zh: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained
     Footholds is a 2026 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained
+    Footholds is a 2026 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds is a 2026 work on locomotion for humanoid robots.
+
+## Overview
+Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds is a 2026 work on locomotion for humanoid robots.
+
+## 개요
 Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds is a 2026 work on locomotion for humanoid robots.

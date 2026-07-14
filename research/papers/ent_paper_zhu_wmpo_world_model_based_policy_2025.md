@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'WMPO: World Model-based Policy Optimization for Vision-Language-Action Models'
   zh: WMPO
-  ko: ''
+  ko: 'WMPO: World Model-based Policy Optimization for Vision-Language-Action Models'
 summary:
   en: 'WMPO: World Model-based Policy Optimization for Vision-Language-Action Models
     (WMPO), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'WMPO: World Model-based Policy Optimization for Vision-Language-Action Models
     (WMPO), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Hong Kong University of Science and Technology, ByteDance Seed.'
-  ko: ''
+  ko: 'WMPO: World Model-based Policy Optimization for Vision-Language-Action Models
+    (WMPO), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Hong Kong University of Science and Technology, ByteDance Seed.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+WMPO: World Model-based Policy Optimization for Vision-Language-Action Models (WMPO), is a 2025 large vision-language-action model for robotic manipulation, introduced by Hong Kong University of Science and Technology, ByteDance Seed.
+
+## Overview
+WMPO: World Model-based Policy Optimization for Vision-Language-Action Models (WMPO), is a 2025 large vision-language-action model for robotic manipulation, introduced by Hong Kong University of Science and Technology, ByteDance Seed.
+
+## 개요
 WMPO: World Model-based Policy Optimization for Vision-Language-Action Models (WMPO), is a 2025 large vision-language-action model for robotic manipulation, introduced by Hong Kong University of Science and Technology, ByteDance Seed.

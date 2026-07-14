@@ -8,13 +8,15 @@ names:
     robots'
   zh: 'Towards bridging the gap: Systematic sim-to-real transfer for diverse legged
     robots'
-  ko: ''
+  ko: 'Towards bridging the gap: Systematic sim-to-real transfer for diverse legged
+    robots'
 summary:
   en: 'Towards bridging the gap: Systematic sim-to-real transfer for diverse legged
     robots is a 2025 work on sim-to-real for humanoid robots.'
   zh: 'Towards bridging the gap: Systematic sim-to-real transfer for diverse legged
     robots is a 2025 work on sim-to-real for humanoid robots.'
-  ko: ''
+  ko: 'Towards bridging the gap: Systematic sim-to-real transfer for diverse legged
+    robots is a 2025 work on sim-to-real for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots is a 2025 work on sim-to-real for humanoid robots.
+
+## Overview
+Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots is a 2025 work on sim-to-real for humanoid robots.
+
+## 개요
 Towards bridging the gap: Systematic sim-to-real transfer for diverse legged robots is a 2025 work on sim-to-real for humanoid robots.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Scaling Up and Distilling Down: Language-Guided Robot Skill Acquisition'
   zh: SUDD
-  ko: ''
+  ko: 'Scaling Up and Distilling Down: Language-Guided Robot Skill Acquisition'
 summary:
   en: 'Scaling Up and Distilling Down: Language-Guided Robot Skill Acquisition (SUDD),
     is a 2023 generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'Scaling Up and Distilling Down: Language-Guided Robot Skill Acquisition (SUDD),
     is a 2023 generalized vision-language-action model for robotic manipulation, introduced
     by Columbia University, Google DeepMind, and published at CoRL 2023.'
-  ko: ''
+  ko: 'Scaling Up and Distilling Down: Language-Guided Robot Skill Acquisition (SUDD),
+    is a 2023 generalized vision-language-action model for robotic manipulation, introduced
+    by Columbia University, Google DeepMind, and published at CoRL 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Scaling Up and Distilling Down: Language-Guided Robot Skill Acquisition (SUDD), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Columbia University, Google DeepMind, and published at CoRL 2023.
+
+## Overview
+Scaling Up and Distilling Down: Language-Guided Robot Skill Acquisition (SUDD), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Columbia University, Google DeepMind, and published at CoRL 2023.
+
+## 개요
 Scaling Up and Distilling Down: Language-Guided Robot Skill Acquisition (SUDD), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Columbia University, Google DeepMind, and published at CoRL 2023.

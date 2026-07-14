@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 碰撞与自干涉模型
-  ko: ''
+  ko: 碰撞与自干涉模型
 summary:
   en: ''
   zh: 典型动作无自碰撞误报、关键姿态无环境穿透
-  ko: ''
+  ko: 典型动作无自碰撞误报、关键姿态无环境穿透
 domains:
 - 06_design_engineering
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'NitroGen: An Open Foundation Model for Generalist Gaming Agents'
   zh: NitroGen
-  ko: ''
+  ko: 'NitroGen: An Open Foundation Model for Generalist Gaming Agents'
 summary:
   en: 'NitroGen: An Open Foundation Model for Generalist Gaming Agents (NitroGen),
     is a 2026 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'NitroGen: An Open Foundation Model for Generalist Gaming Agents (NitroGen),
     is a 2026 large vision-language-action model for robotic manipulation, introduced
     by NVIDIA, Stanford, Caltech, UChicago, UT Austin.'
-  ko: ''
+  ko: 'NitroGen: An Open Foundation Model for Generalist Gaming Agents (NitroGen),
+    is a 2026 large vision-language-action model for robotic manipulation, introduced
+    by NVIDIA, Stanford, Caltech, UChicago, UT Austin.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+NitroGen: An Open Foundation Model for Generalist Gaming Agents (NitroGen), is a 2026 large vision-language-action model for robotic manipulation, introduced by NVIDIA, Stanford, Caltech, UChicago, UT Austin.
+
+## Overview
+NitroGen: An Open Foundation Model for Generalist Gaming Agents (NitroGen), is a 2026 large vision-language-action model for robotic manipulation, introduced by NVIDIA, Stanford, Caltech, UChicago, UT Austin.
+
+## 개요
 NitroGen: An Open Foundation Model for Generalist Gaming Agents (NitroGen), is a 2026 large vision-language-action model for robotic manipulation, introduced by NVIDIA, Stanford, Caltech, UChicago, UT Austin.

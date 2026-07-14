@@ -7,7 +7,8 @@ names:
   en: 'DeeR-VLA: Dynamic Inference of Multimodal Large Language Models for Efficient
     Robot Execution'
   zh: DeeR-VLA
-  ko: ''
+  ko: 'DeeR-VLA: Dynamic Inference of Multimodal Large Language Models for Efficient
+    Robot Execution'
 summary:
   en: 'DeeR-VLA: Dynamic Inference of Multimodal Large Language Models for Efficient
     Robot Execution (DeeR-VLA), is a 2024 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Robot Execution (DeeR-VLA), is a 2024 large vision-language-action model for robotic
     manipulation, introduced by Tsinghua University, BNRist, ByteDance, and published
     at NIPS 2024.'
-  ko: ''
+  ko: 'DeeR-VLA: Dynamic Inference of Multimodal Large Language Models for Efficient
+    Robot Execution (DeeR-VLA), is a 2024 large vision-language-action model for robotic
+    manipulation, introduced by Tsinghua University, BNRist, ByteDance, and published
+    at NIPS 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DeeR-VLA: Dynamic Inference of Multimodal Large Language Models for Efficient Robot Execution (DeeR-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, BNRist, ByteDance, and published at NIPS 2024.
+
+## Overview
+DeeR-VLA: Dynamic Inference of Multimodal Large Language Models for Efficient Robot Execution (DeeR-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, BNRist, ByteDance, and published at NIPS 2024.
+
+## 개요
 DeeR-VLA: Dynamic Inference of Multimodal Large Language Models for Efficient Robot Execution (DeeR-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, BNRist, ByteDance, and published at NIPS 2024.

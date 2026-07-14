@@ -7,7 +7,8 @@ names:
   en: 'RoboNeuron: A Modular Framework Linking Foundation Models and ROS for Embodied
     AI'
   zh: RoboNeuron
-  ko: ''
+  ko: 'RoboNeuron: A Modular Framework Linking Foundation Models and ROS for Embodied
+    AI'
 summary:
   en: 'RoboNeuron: A Modular Framework Linking Foundation Models and ROS for Embodied
     AI (RoboNeuron), is a 2025 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     AI (RoboNeuron), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Institute of Automation, Chinese Academy of Sciences, University
     of Chinese Academy of Sciences, AiRiA, MICRO.'
-  ko: ''
+  ko: 'RoboNeuron: A Modular Framework Linking Foundation Models and ROS for Embodied
+    AI (RoboNeuron), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Institute of Automation, Chinese Academy of Sciences, University
+    of Chinese Academy of Sciences, AiRiA, MICRO.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboNeuron: A Modular Framework Linking Foundation Models and ROS for Embodied AI (RoboNeuron), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Automation, Chinese Academy of Sciences, University of Chinese Academy of Sciences, AiRiA, MICRO.
+
+## Overview
+RoboNeuron: A Modular Framework Linking Foundation Models and ROS for Embodied AI (RoboNeuron), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Automation, Chinese Academy of Sciences, University of Chinese Academy of Sciences, AiRiA, MICRO.
+
+## 개요
 RoboNeuron: A Modular Framework Linking Foundation Models and ROS for Embodied AI (RoboNeuron), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Automation, Chinese Academy of Sciences, University of Chinese Academy of Sciences, AiRiA, MICRO.

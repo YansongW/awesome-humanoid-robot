@@ -7,7 +7,8 @@ names:
   en: 'Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic
     Manipulation'
   zh: AFI
-  ko: ''
+  ko: 'Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic
+    Manipulation'
 summary:
   en: 'Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic
     Manipulation (AFI), is a 2025 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Manipulation (AFI), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by The University of Sydney, John Hopcropt Center for Computer Science,
     Shanghai Jiao Tong University.'
-  ko: ''
+  ko: 'Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic
+    Manipulation (AFI), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by The University of Sydney, John Hopcropt Center for Computer Science,
+    Shanghai Jiao Tong University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic Manipulation (AFI), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Sydney, John Hopcropt Center for Computer Science, Shanghai Jiao Tong University.
+
+## Overview
+Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic Manipulation (AFI), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Sydney, John Hopcropt Center for Computer Science, Shanghai Jiao Tong University.
+
+## 개요
 Affordance Field Intervention: Enabling VLAs to Escape Memory Traps in Robotic Manipulation (AFI), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Sydney, John Hopcropt Center for Computer Science, Shanghai Jiao Tong University.

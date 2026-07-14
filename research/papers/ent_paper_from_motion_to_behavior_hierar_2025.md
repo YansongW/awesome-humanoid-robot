@@ -8,7 +8,8 @@ names:
     Control'
   zh: 'From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior
     Control'
-  ko: ''
+  ko: 'From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior
+    Control'
 summary:
   en: 'From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior
     Control is a 2025 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior
     Control is a 2025 work on loco-manipulation and whole-body-control for humanoid
     robots.'
-  ko: ''
+  ko: 'From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior
+    Control is a 2025 work on loco-manipulation and whole-body-control for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 From Motion to Behavior: Hierarchical Modeling of Humanoid Generative Behavior Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

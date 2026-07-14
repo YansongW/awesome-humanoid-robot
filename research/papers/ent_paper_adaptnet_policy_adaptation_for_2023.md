@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'AdaptNet: Policy Adaptation for Physics-Based Character Control'
   zh: 'AdaptNet: Policy Adaptation for Physics-Based Character Control'
-  ko: ''
+  ko: 'AdaptNet: Policy Adaptation for Physics-Based Character Control'
 summary:
   en: 'AdaptNet: Policy Adaptation for Physics-Based Character Control is a 2023 work
     on physics-based character animation for humanoid robots.'
   zh: 'AdaptNet: Policy Adaptation for Physics-Based Character Control is a 2023 work
     on physics-based character animation for humanoid robots.'
-  ko: ''
+  ko: 'AdaptNet: Policy Adaptation for Physics-Based Character Control is a 2023 work
+    on physics-based character animation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AdaptNet: Policy Adaptation for Physics-Based Character Control is a 2023 work on physics-based character animation for humanoid robots.
+
+## Overview
+AdaptNet: Policy Adaptation for Physics-Based Character Control is a 2023 work on physics-based character animation for humanoid robots.
+
+## 개요
 AdaptNet: Policy Adaptation for Physics-Based Character Control is a 2023 work on physics-based character animation for humanoid robots.

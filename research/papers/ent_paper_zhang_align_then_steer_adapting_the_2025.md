@@ -7,7 +7,8 @@ names:
   en: 'Align-Then-stEer: Adapting the Vision-Language Action Models through Unified
     Latent Guidance'
   zh: ATE
-  ko: ''
+  ko: 'Align-Then-stEer: Adapting the Vision-Language Action Models through Unified
+    Latent Guidance'
 summary:
   en: 'Align-Then-stEer: Adapting the Vision-Language Action Models through Unified
     Latent Guidance (ATE), is a 2025 large vision-language-action model for robotic
@@ -19,7 +20,11 @@ summary:
     manipulation, introduced by Institute of Artificial Intelligence, China Telecom,
     Tsinghua University, The Chinese University of Hong Kong, Shenzhen, Northwestern
     Polytechnical University.'
-  ko: ''
+  ko: 'Align-Then-stEer: Adapting the Vision-Language Action Models through Unified
+    Latent Guidance (ATE), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Institute of Artificial Intelligence, China Telecom,
+    Tsinghua University, The Chinese University of Hong Kong, Shenzhen, Northwestern
+    Polytechnical University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance (ATE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Artificial Intelligence, China Telecom, Tsinghua University, The Chinese University of Hong Kong, Shenzhen, Northwestern Polytechnical University.
+
+## Overview
+Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance (ATE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Artificial Intelligence, China Telecom, Tsinghua University, The Chinese University of Hong Kong, Shenzhen, Northwestern Polytechnical University.
+
+## 개요
 Align-Then-stEer: Adapting the Vision-Language Action Models through Unified Latent Guidance (ATE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Artificial Intelligence, China Telecom, Tsinghua University, The Chinese University of Hong Kong, Shenzhen, Northwestern Polytechnical University.

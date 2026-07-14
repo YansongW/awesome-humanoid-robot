@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'MoManipVLA: Transferring Vision-language-action Models for General Mobile Manipulation'
   zh: MoManipVLA
-  ko: ''
+  ko: 'MoManipVLA: Transferring Vision-language-action Models for General Mobile Manipulation'
 summary:
   en: 'MoManipVLA: Transferring Vision-language-action Models for General Mobile Manipulation
     (MoManipVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (MoManipVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Beijing University of Posts and Telecommunications, Nanyang Technological
     University, Tsinghua University, and published at CVPR25.'
-  ko: ''
+  ko: 'MoManipVLA: Transferring Vision-language-action Models for General Mobile Manipulation
+    (MoManipVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Beijing University of Posts and Telecommunications, Nanyang Technological
+    University, Tsinghua University, and published at CVPR25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MoManipVLA: Transferring Vision-language-action Models for General Mobile Manipulation (MoManipVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing University of Posts and Telecommunications, Nanyang Technological University, Tsinghua University, and published at CVPR25.
+
+## Overview
+MoManipVLA: Transferring Vision-language-action Models for General Mobile Manipulation (MoManipVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing University of Posts and Telecommunications, Nanyang Technological University, Tsinghua University, and published at CVPR25.
+
+## 개요
 MoManipVLA: Transferring Vision-language-action Models for General Mobile Manipulation (MoManipVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing University of Posts and Telecommunications, Nanyang Technological University, Tsinghua University, and published at CVPR25.

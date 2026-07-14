@@ -7,11 +7,12 @@ names:
   en: 'MOSAIC: Bridging the Sim-to-Real Gap in Generalist Humanoid Motion Tracking
     and Teleoperation with Rapid Residual Adaptation'
   zh: MOSAIC｜通过快速残差适应，弥合通用人形运动跟踪和远程操作中的模拟与现实世界的差距
-  ko: ''
+  ko: 'MOSAIC: Bridging the Sim-to-Real Gap in Generalist Humanoid Motion Tracking
+    and Teleoperation with Rapid Residual Adaptation'
 summary:
   en: ''
   zh: MOSAIC 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过扩散策略/流匹配转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
-  ko: ''
+  ko: MOSAIC 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过扩散策略/流匹配转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
 - 06_design_engineering
 - 07_ai_models_algorithms
@@ -49,5 +50,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+MOSAIC 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过扩散策略/流匹配转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
+## 개요
 MOSAIC 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过扩散策略/流匹配转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。

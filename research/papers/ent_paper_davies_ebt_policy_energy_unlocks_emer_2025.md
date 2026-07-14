@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'EBT-Policy: Energy Unlocks Emergent Physical Reasoning Capabilities'
   zh: EBT-Policy
-  ko: ''
+  ko: 'EBT-Policy: Energy Unlocks Emergent Physical Reasoning Capabilities'
 summary:
   en: 'EBT-Policy: Energy Unlocks Emergent Physical Reasoning Capabilities (EBT-Policy),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'EBT-Policy: Energy Unlocks Emergent Physical Reasoning Capabilities (EBT-Policy),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by ZhiCheng AI, UIUC, Tsinghua University, Peking University.'
-  ko: ''
+  ko: 'EBT-Policy: Energy Unlocks Emergent Physical Reasoning Capabilities (EBT-Policy),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by ZhiCheng AI, UIUC, Tsinghua University, Peking University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EBT-Policy: Energy Unlocks Emergent Physical Reasoning Capabilities (EBT-Policy), is a 2025 large vision-language-action model for robotic manipulation, introduced by ZhiCheng AI, UIUC, Tsinghua University, Peking University.
+
+## Overview
+EBT-Policy: Energy Unlocks Emergent Physical Reasoning Capabilities (EBT-Policy), is a 2025 large vision-language-action model for robotic manipulation, introduced by ZhiCheng AI, UIUC, Tsinghua University, Peking University.
+
+## 개요
 EBT-Policy: Energy Unlocks Emergent Physical Reasoning Capabilities (EBT-Policy), is a 2025 large vision-language-action model for robotic manipulation, introduced by ZhiCheng AI, UIUC, Tsinghua University, Peking University.

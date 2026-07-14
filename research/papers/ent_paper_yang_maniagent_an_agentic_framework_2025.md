@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'ManiAgent: An Agentic Framework for General Robotic Manipulation'
   zh: ManiAgent
-  ko: ''
+  ko: 'ManiAgent: An Agentic Framework for General Robotic Manipulation'
 summary:
   en: 'ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Beijing University of Technology, Nanjing University, University of Science
     and Technology of China.'
-  ko: ''
+  ko: 'ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Beijing University of Technology, Nanjing University, University of Science
+    and Technology of China.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing University of Technology, Nanjing University, University of Science and Technology of China.
+
+## Overview
+ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing University of Technology, Nanjing University, University of Science and Technology of China.
+
+## 개요
 ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing University of Technology, Nanjing University, University of Science and Technology of China.

@@ -8,13 +8,15 @@ names:
     Dexterous Medical Interventions'
   zh: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for
     Dexterous Medical Interventions'
-  ko: ''
+  ko: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for
+    Dexterous Medical Interventions'
 summary:
   en: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for
     Dexterous Medical Interventions is a paper on Manipulation for humanoid robotics.'
   zh: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for
     Dexterous Medical Interventions is a paper on Manipulation for humanoid robotics.'
-  ko: ''
+  ko: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for
+    Dexterous Medical Interventions is a paper on Manipulation for humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions is a paper on Manipulation for humanoid robotics.
+
+## Overview
+Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions is a paper on Manipulation for humanoid robotics.
+
+## 개요
 Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions is a paper on Manipulation for humanoid robotics.

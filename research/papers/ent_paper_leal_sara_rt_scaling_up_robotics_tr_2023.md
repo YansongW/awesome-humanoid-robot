@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'SARA-RT: Scaling up Robotics Transformers with Self-Adaptive Robust Attention'
   zh: SARA-RT
-  ko: ''
+  ko: 'SARA-RT: Scaling up Robotics Transformers with Self-Adaptive Robust Attention'
 summary:
   en: 'SARA-RT: Scaling up Robotics Transformers with Self-Adaptive Robust Attention
     (SARA-RT), is a 2023 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'SARA-RT: Scaling up Robotics Transformers with Self-Adaptive Robust Attention
     (SARA-RT), is a 2023 large vision-language-action model for robotic manipulation,
     introduced by Google, and published at ICRA 2023.'
-  ko: ''
+  ko: 'SARA-RT: Scaling up Robotics Transformers with Self-Adaptive Robust Attention
+    (SARA-RT), is a 2023 large vision-language-action model for robotic manipulation,
+    introduced by Google, and published at ICRA 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SARA-RT: Scaling up Robotics Transformers with Self-Adaptive Robust Attention (SARA-RT), is a 2023 large vision-language-action model for robotic manipulation, introduced by Google, and published at ICRA 2023.
+
+## Overview
+SARA-RT: Scaling up Robotics Transformers with Self-Adaptive Robust Attention (SARA-RT), is a 2023 large vision-language-action model for robotic manipulation, introduced by Google, and published at ICRA 2023.
+
+## 개요
 SARA-RT: Scaling up Robotics Transformers with Self-Adaptive Robust Attention (SARA-RT), is a 2023 large vision-language-action model for robotic manipulation, introduced by Google, and published at ICRA 2023.

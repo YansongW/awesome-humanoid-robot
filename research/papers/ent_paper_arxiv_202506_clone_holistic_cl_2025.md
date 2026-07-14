@@ -8,7 +8,8 @@ names:
     Humanoid Control'
   zh: 'arXiv 2025.06, CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon
     Humanoid Control'
-  ko: ''
+  ko: 'arXiv 2025.06, CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon
+    Humanoid Control'
 summary:
   en: 'arXiv 2025.06, CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon
     Humanoid Control is a 2025 work on loco-manipulation and whole-body-control for
@@ -16,7 +17,9 @@ summary:
   zh: 'arXiv 2025.06, CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon
     Humanoid Control is a 2025 work on loco-manipulation and whole-body-control for
     humanoid robots.'
-  ko: ''
+  ko: 'arXiv 2025.06, CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon
+    Humanoid Control is a 2025 work on loco-manipulation and whole-body-control for
+    humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+arXiv 2025.06, CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon Humanoid Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+arXiv 2025.06, CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon Humanoid Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 arXiv 2025.06, CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon Humanoid Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

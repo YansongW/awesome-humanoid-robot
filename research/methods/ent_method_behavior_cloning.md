@@ -8,8 +8,8 @@ names:
   zh: 行为克隆
   ko: 행동 클로닝
 summary:
-  en: A supervised imitation-learning method that trains a policy to replicate expert demonstrations, often used as a baseline
-    for robot skill learning.
+  en: A supervised imitation-learning method that trains a policy to replicate expert
+    demonstrations, often used as a baseline for robot skill learning.
   zh: 通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。
   ko: 전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.
 domains:
@@ -30,8 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,3 +39,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。
+
+## Overview
+A supervised imitation-learning method that trains a policy to replicate expert demonstrations, often used as a baseline for robot skill learning.
+
+## 개요
+A supervised imitation-learning method that trains a policy to replicate expert demonstrations, often used as a baseline for robot skill learning.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL'
   zh: 'Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL'
-  ko: ''
+  ko: 'Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL'
 summary:
   en: 'Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL
     is a 2025 work on locomotion for humanoid robots.'
   zh: 'Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL
     is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL
+    is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Chasing Stability: Humanoid Running via Control Lyapunov Function Guided RL is a 2025 work on locomotion for humanoid robots.

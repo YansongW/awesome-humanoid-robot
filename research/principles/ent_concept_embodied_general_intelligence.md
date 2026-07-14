@@ -8,8 +8,8 @@ names:
   zh: 具身通用智能
   ko: 구체화된 범용 지능
 summary:
-  en: The long-term goal of building agents that can learn, reason, and act flexibly in diverse physical environments through
-    a body.
+  en: The long-term goal of building agents that can learn, reason, and act flexibly
+    in diverse physical environments through a body.
   zh: 通过身体在多样物理环境中灵活学习、推理与行动的通用智能体长远目标。
   ko: 신체를 통해 다양한 물리 환경에서 유연하게 학습·추론·행동할 수 있는 에이전트 구축의 장기 목표.
 domains:
@@ -30,8 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,3 +39,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+通过身体在多样物理环境中灵活学习、推理与行动的通用智能体长远目标。
+
+## Overview
+The long-term goal of building agents that can learn, reason, and act flexibly in diverse physical environments through a body.
+
+## 개요
+The long-term goal of building agents that can learn, reason, and act flexibly in diverse physical environments through a body.

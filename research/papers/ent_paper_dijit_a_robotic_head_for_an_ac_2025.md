@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'DIJIT: A Robotic Head for an Active Observer'
   zh: 'DIJIT: A Robotic Head for an Active Observer'
-  ko: ''
+  ko: 'DIJIT: A Robotic Head for an Active Observer'
 summary:
   en: 'DIJIT: A Robotic Head for an Active Observer is a 2025 work on hardware design
     for humanoid robots.'
   zh: 'DIJIT: A Robotic Head for an Active Observer is a 2025 work on hardware design
     for humanoid robots.'
-  ko: ''
+  ko: 'DIJIT: A Robotic Head for an Active Observer is a 2025 work on hardware design
+    for humanoid robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DIJIT: A Robotic Head for an Active Observer is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+DIJIT: A Robotic Head for an Active Observer is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 DIJIT: A Robotic Head for an Active Observer is a 2025 work on hardware design for humanoid robots.

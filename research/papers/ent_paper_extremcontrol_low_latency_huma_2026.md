@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control'
   zh: 'ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control'
-  ko: ''
+  ko: 'ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control'
 summary:
   en: 'ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control
     is a 2026 work on teleoperation for humanoid robots.'
   zh: 'ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control
     is a 2026 work on teleoperation for humanoid robots.'
-  ko: ''
+  ko: 'ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control
+    is a 2026 work on teleoperation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control is a 2026 work on teleoperation for humanoid robots.
+
+## Overview
+ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control is a 2026 work on teleoperation for humanoid robots.
+
+## 개요
 ExtremControl: Low-Latency Humanoid Teleoperation with Direct Extremity Control is a 2026 work on teleoperation for humanoid robots.

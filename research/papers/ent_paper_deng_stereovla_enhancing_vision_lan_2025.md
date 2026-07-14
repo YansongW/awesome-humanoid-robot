@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'StereoVLA: Enhancing Vision-Language-Action Models with Stereo Vision'
   zh: StereoVLA
-  ko: ''
+  ko: 'StereoVLA: Enhancing Vision-Language-Action Models with Stereo Vision'
 summary:
   en: 'StereoVLA: Enhancing Vision-Language-Action Models with Stereo Vision (StereoVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -18,7 +18,11 @@ summary:
     by Galbot, Peking University, The University of Hong Kong, Institute of Automation,
     Chinese Academy of Sciences, Beijing Academy of Artificial Intelligence, Xiamen
     University Malaysia.'
-  ko: ''
+  ko: 'StereoVLA: Enhancing Vision-Language-Action Models with Stereo Vision (StereoVLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Galbot, Peking University, The University of Hong Kong, Institute of Automation,
+    Chinese Academy of Sciences, Beijing Academy of Artificial Intelligence, Xiamen
+    University Malaysia.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -59,4 +63,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+StereoVLA: Enhancing Vision-Language-Action Models with Stereo Vision (StereoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Galbot, Peking University, The University of Hong Kong, Institute of Automation, Chinese Academy of Sciences, Beijing Academy of Artificial Intelligence, Xiamen University Malaysia.
+
+## Overview
+StereoVLA: Enhancing Vision-Language-Action Models with Stereo Vision (StereoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Galbot, Peking University, The University of Hong Kong, Institute of Automation, Chinese Academy of Sciences, Beijing Academy of Artificial Intelligence, Xiamen University Malaysia.
+
+## 개요
 StereoVLA: Enhancing Vision-Language-Action Models with Stereo Vision (StereoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Galbot, Peking University, The University of Hong Kong, Institute of Automation, Chinese Academy of Sciences, Beijing Academy of Artificial Intelligence, Xiamen University Malaysia.

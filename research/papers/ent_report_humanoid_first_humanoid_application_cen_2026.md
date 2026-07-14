@@ -8,7 +8,8 @@ names:
     robots from demo to practical application'
   zh: 'First Humanoid Application Centre in the Netherlands opened at MICS: humanoid
     robots from demo to practical application'
-  ko: ''
+  ko: 'First Humanoid Application Centre in the Netherlands opened at MICS: humanoid
+    robots from demo to practical application'
 summary:
   en: New innovation centre in the Netherlands brings together robotics, AI, and the
     manufacturing industry to accelerate the introduction of humanoid robots into
@@ -16,7 +17,9 @@ summary:
   zh: New innovation centre in the Netherlands brings together robotics, AI, and the
     manufacturing industry to accelerate the introduction of humanoid robots into
     the workplace.
-  ko: ''
+  ko: New innovation centre in the Netherlands brings together robotics, AI, and the
+    manufacturing industry to accelerate the introduction of humanoid robots into
+    the workplace.
 domains:
 - 11_applications_markets
 layers:
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-03'
 ---
 
+## 概述
+New innovation centre in the Netherlands brings together robotics, AI, and the manufacturing industry to accelerate the introduction of humanoid robots into the workplace.
+
+## Overview
+New innovation centre in the Netherlands brings together robotics, AI, and the manufacturing industry to accelerate the introduction of humanoid robots into the workplace.
+
+## 개요
 New innovation centre in the Netherlands brings together robotics, AI, and the manufacturing industry to accelerate the introduction of humanoid robots into the workplace.

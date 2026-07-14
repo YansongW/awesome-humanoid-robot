@@ -8,13 +8,15 @@ names:
     for Confined Spaces'
   zh: 'ByteWrist: A Parallel Robotic Wrist Enabling Flexible and Anthropomorphic Motion
     for Confined Spaces'
-  ko: ''
+  ko: 'ByteWrist: A Parallel Robotic Wrist Enabling Flexible and Anthropomorphic Motion
+    for Confined Spaces'
 summary:
   en: 'ByteWrist: A Parallel Robotic Wrist Enabling Flexible and Anthropomorphic Motion
     for Confined Spaces is a 2026 work on hardware design for humanoid robots.'
   zh: 'ByteWrist: A Parallel Robotic Wrist Enabling Flexible and Anthropomorphic Motion
     for Confined Spaces is a 2026 work on hardware design for humanoid robots.'
-  ko: ''
+  ko: 'ByteWrist: A Parallel Robotic Wrist Enabling Flexible and Anthropomorphic Motion
+    for Confined Spaces is a 2026 work on hardware design for humanoid robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ByteWrist: A Parallel Robotic Wrist Enabling Flexible and Anthropomorphic Motion for Confined Spaces is a 2026 work on hardware design for humanoid robots.
+
+## Overview
+ByteWrist: A Parallel Robotic Wrist Enabling Flexible and Anthropomorphic Motion for Confined Spaces is a 2026 work on hardware design for humanoid robots.
+
+## 개요
 ByteWrist: A Parallel Robotic Wrist Enabling Flexible and Anthropomorphic Motion for Confined Spaces is a 2026 work on hardware design for humanoid robots.

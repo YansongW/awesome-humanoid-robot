@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+MIT面向基于优化控制与分析的系统建模工具箱。
+
+## Overview
+MIT systems-modeling toolbox for optimization-based control and analysis.
+
+## 개요
 MIT systems-modeling toolbox for optimization-based control and analysis.

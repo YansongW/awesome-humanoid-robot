@@ -7,7 +7,8 @@ names:
   en: 'TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object
     Poses'
   zh: TacRefineNet
-  ko: ''
+  ko: 'TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object
+    Poses'
 summary:
   en: 'TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object
     Poses (TacRefineNet), is a 2025 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: 'TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object
     Poses (TacRefineNet), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Xiaomi Robotics.'
-  ko: ''
+  ko: 'TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object
+    Poses (TacRefineNet), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Xiaomi Robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses (TacRefineNet), is a 2025 large vision-language-action model for robotic manipulation, introduced by Xiaomi Robotics.
+
+## Overview
+TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses (TacRefineNet), is a 2025 large vision-language-action model for robotic manipulation, introduced by Xiaomi Robotics.
+
+## 개요
 TacRefineNet: Tactile-Only Grasp Refinement Between Arbitrary In-Hand Object Poses (TacRefineNet), is a 2025 large vision-language-action model for robotic manipulation, introduced by Xiaomi Robotics.

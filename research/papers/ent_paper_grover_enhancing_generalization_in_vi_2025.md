@@ -8,7 +8,8 @@ names:
     Representations
   zh: Enhancing Generalization in Vision-Language-Action Models by Preserving Pretrained
     Representations
-  ko: ''
+  ko: Enhancing Generalization in Vision-Language-Action Models by Preserving Pretrained
+    Representations
 summary:
   en: Enhancing Generalization in Vision-Language-Action Models by Preserving Pretrained
     Representations (Enhancing Generalization in Vision-Language-Action Models by
@@ -18,7 +19,10 @@ summary:
     Representations (Enhancing Generalization in Vision-Language-Action Models by
     Preserving Pretrained Representations), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by UC San Diego, Hillbot.
-  ko: ''
+  ko: Enhancing Generalization in Vision-Language-Action Models by Preserving Pretrained
+    Representations (Enhancing Generalization in Vision-Language-Action Models by
+    Preserving Pretrained Representations), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by UC San Diego, Hillbot.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +64,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Enhancing Generalization in Vision-Language-Action Models by Preserving Pretrained Representations (Enhancing Generalization in Vision-Language-Action Models by Preserving Pretrained Representations), is a 2025 large vision-language-action model for robotic manipulation, introduced by UC San Diego, Hillbot.
+
+## Overview
+Enhancing Generalization in Vision-Language-Action Models by Preserving Pretrained Representations (Enhancing Generalization in Vision-Language-Action Models by Preserving Pretrained Representations), is a 2025 large vision-language-action model for robotic manipulation, introduced by UC San Diego, Hillbot.
+
+## 개요
 Enhancing Generalization in Vision-Language-Action Models by Preserving Pretrained Representations (Enhancing Generalization in Vision-Language-Action Models by Preserving Pretrained Representations), is a 2025 large vision-language-action model for robotic manipulation, introduced by UC San Diego, Hillbot.

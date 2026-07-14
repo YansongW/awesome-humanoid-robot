@@ -6,7 +6,7 @@ type: paper
 names:
   en: Improving Robotic Manipulation Robustness via NICE Scene Surgery
   zh: NICE
-  ko: ''
+  ko: Improving Robotic Manipulation Robustness via NICE Scene Surgery
 summary:
   en: Improving Robotic Manipulation Robustness via NICE Scene Surgery (NICE), is
     a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: Improving Robotic Manipulation Robustness via NICE Scene Surgery (NICE), is
     a 2025 large vision-language-action model for robotic manipulation, introduced
     by Huawei Canada.
-  ko: ''
+  ko: Improving Robotic Manipulation Robustness via NICE Scene Surgery (NICE), is
+    a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Huawei Canada.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Improving Robotic Manipulation Robustness via NICE Scene Surgery (NICE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Huawei Canada.
+
+## Overview
+Improving Robotic Manipulation Robustness via NICE Scene Surgery (NICE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Huawei Canada.
+
+## 개요
 Improving Robotic Manipulation Robustness via NICE Scene Surgery (NICE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Huawei Canada.

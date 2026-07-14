@@ -6,13 +6,14 @@ type: paper
 names:
   en: Sim-to-Real Learning for Humanoid Box Loco-Manipulation
   zh: Sim-to-Real Learning for Humanoid Box Loco-Manipulation
-  ko: ''
+  ko: Sim-to-Real Learning for Humanoid Box Loco-Manipulation
 summary:
   en: Sim-to-Real Learning for Humanoid Box Loco-Manipulation is a 2023 work on loco-manipulation
     and whole-body-control for humanoid robots.
   zh: Sim-to-Real Learning for Humanoid Box Loco-Manipulation is a 2023 work on loco-manipulation
     and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Sim-to-Real Learning for Humanoid Box Loco-Manipulation is a 2023 work on loco-manipulation
+    and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Sim-to-Real Learning for Humanoid Box Loco-Manipulation is a 2023 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Sim-to-Real Learning for Humanoid Box Loco-Manipulation is a 2023 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Sim-to-Real Learning for Humanoid Box Loco-Manipulation is a 2023 work on loco-manipulation and whole-body-control for humanoid robots.

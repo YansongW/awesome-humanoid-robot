@@ -7,7 +7,8 @@ names:
   en: 'ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic
     Manipulation'
   zh: ReKep
-  ko: ''
+  ko: 'ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic
+    Manipulation'
 summary:
   en: 'ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic
     Manipulation (ReKep), is a 2024 generalized vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Manipulation (ReKep), is a 2024 generalized vision-language-action model for robotic
     manipulation, introduced by Stanford University, Columbia University, and published
     at CoRL 2024.'
-  ko: ''
+  ko: 'ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic
+    Manipulation (ReKep), is a 2024 generalized vision-language-action model for robotic
+    manipulation, introduced by Stanford University, Columbia University, and published
+    at CoRL 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation (ReKep), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Stanford University, Columbia University, and published at CoRL 2024.
+
+## Overview
+ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation (ReKep), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Stanford University, Columbia University, and published at CoRL 2024.
+
+## 개요
 ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation (ReKep), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Stanford University, Columbia University, and published at CoRL 2024.

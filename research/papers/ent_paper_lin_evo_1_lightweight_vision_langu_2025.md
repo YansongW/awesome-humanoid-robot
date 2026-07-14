@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment'
   zh: Evo-1
-  ko: ''
+  ko: 'Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment'
 summary:
   en: 'Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment
     (Evo-1), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment
     (Evo-1), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Imperial College London.'
-  ko: ''
+  ko: 'Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment
+    (Evo-1), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Imperial College London.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment (Evo-1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Imperial College London.
+
+## Overview
+Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment (Evo-1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Imperial College London.
+
+## 개요
 Evo-1: Lightweight Vision-Language-Action Model with Preserved Semantic Alignment (Evo-1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Imperial College London.

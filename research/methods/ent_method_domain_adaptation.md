@@ -8,8 +8,8 @@ names:
   zh: 域适应
   ko: 도메인 적응
 summary:
-  en: A machine-learning technique that adapts a model trained on a source domain to perform well on a different but related
-    target domain.
+  en: A machine-learning technique that adapts a model trained on a source domain
+    to perform well on a different but related target domain.
   zh: 将源域训练的模型适配到不同但相关的目标域上以获得良好性能的机器学习技术。
   ko: 소스 도메인에서 학습한 모델을 다르지만 관련된 타겟 도메인에서 잘 작동하도록 적응시키는 기계학습 기법.
 domains:
@@ -30,8 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,3 +39,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+将源域训练的模型适配到不同但相关的目标域上以获得良好性能的机器学习技术。
+
+## Overview
+A machine-learning technique that adapts a model trained on a source domain to perform well on a different but related target domain.
+
+## 개요
+A machine-learning technique that adapts a model trained on a source domain to perform well on a different but related target domain.

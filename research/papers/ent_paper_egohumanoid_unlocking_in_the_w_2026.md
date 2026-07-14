@@ -7,12 +7,14 @@ names:
   en: 'EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric
     Demonstration'
   zh: EgoHumanoid｜通过机器人无关的第一视角示范解锁野外移动操作
-  ko: ''
+  ko: 'EgoHumanoid: Unlocking In-the-Wild Loco-Manipulation with Robot-Free Egocentric
+    Demonstration'
 summary:
   en: ''
   zh: EgoHumanoid 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA
     多模态动作模型预测地形/场景表征。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
-  ko: ''
+  ko: EgoHumanoid 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA
+    多模态动作模型预测地形/场景表征。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -49,5 +51,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+EgoHumanoid 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA 多模态动作模型预测地形/场景表征。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 
+## 개요
 EgoHumanoid 的实现路径是先把相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据编码成多模态表征，再用ACT/行为克隆模仿学习、VLA 多模态动作模型预测地形/场景表征。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。

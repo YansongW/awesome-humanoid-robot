@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'π0.5: a Vision-Language-Action Model with Open-World Generalization'
   zh: π0.5
-  ko: ''
+  ko: 'π0.5: a Vision-Language-Action Model with Open-World Generalization'
 summary:
   en: 'π0.5: a Vision-Language-Action Model with Open-World Generalization (π0.5),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'π0.5: a Vision-Language-Action Model with Open-World Generalization (π0.5),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Physical Intelligence, and published at CoRL25.'
-  ko: ''
+  ko: 'π0.5: a Vision-Language-Action Model with Open-World Generalization (π0.5),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Physical Intelligence, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+π0.5: a Vision-Language-Action Model with Open-World Generalization (π0.5), is a 2025 large vision-language-action model for robotic manipulation, introduced by Physical Intelligence, and published at CoRL25.
+
+## Overview
+π0.5: a Vision-Language-Action Model with Open-World Generalization (π0.5), is a 2025 large vision-language-action model for robotic manipulation, introduced by Physical Intelligence, and published at CoRL25.
+
+## 개요
 π0.5: a Vision-Language-Action Model with Open-World Generalization (π0.5), is a 2025 large vision-language-action model for robotic manipulation, introduced by Physical Intelligence, and published at CoRL25.

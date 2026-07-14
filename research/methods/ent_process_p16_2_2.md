@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 质量控制体系建立
-  ko: ''
+  ko: 质量控制体系建立
 summary:
   en: ''
   zh: 质量计划、检验规范、SPC 控制图
-  ko: ''
+  ko: 质量计划、检验规范、SPC 控制图
 domains:
 - 05_mass_production
 - 11_applications_markets
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）

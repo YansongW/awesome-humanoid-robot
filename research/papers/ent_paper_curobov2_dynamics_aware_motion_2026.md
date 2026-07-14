@@ -8,13 +8,15 @@ names:
     for High-DoF Robots'
   zh: 'cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields
     for High-DoF Robots'
-  ko: ''
+  ko: 'cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields
+    for High-DoF Robots'
 summary:
   en: 'cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields
     for High-DoF Robots is a 2026 work on manipulation for humanoid robots.'
   zh: 'cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields
     for High-DoF Robots is a 2026 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields
+    for High-DoF Robots is a 2026 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots is a 2026 work on manipulation for humanoid robots.
+
+## Overview
+cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots is a 2026 work on manipulation for humanoid robots.
+
+## 개요
 cuRoboV2: Dynamics-Aware Motion Generation with Depth-Fused Distance Fields for High-DoF Robots is a 2026 work on manipulation for humanoid robots.

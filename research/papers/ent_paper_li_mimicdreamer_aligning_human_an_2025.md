@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'MimicDreamer: Aligning Human and Robot Demonstrations for Scalable VLA Training'
   zh: MimicDreamer
-  ko: ''
+  ko: 'MimicDreamer: Aligning Human and Robot Demonstrations for Scalable VLA Training'
 summary:
   en: 'MimicDreamer: Aligning Human and Robot Demonstrations for Scalable VLA Training
     (MimicDreamer), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'MimicDreamer: Aligning Human and Robot Demonstrations for Scalable VLA Training
     (MimicDreamer), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by GigaAI, CASIA, NJUST, Tsinghua University.'
-  ko: ''
+  ko: 'MimicDreamer: Aligning Human and Robot Demonstrations for Scalable VLA Training
+    (MimicDreamer), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by GigaAI, CASIA, NJUST, Tsinghua University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MimicDreamer: Aligning Human and Robot Demonstrations for Scalable VLA Training (MimicDreamer), is a 2025 large vision-language-action model for robotic manipulation, introduced by GigaAI, CASIA, NJUST, Tsinghua University.
+
+## Overview
+MimicDreamer: Aligning Human and Robot Demonstrations for Scalable VLA Training (MimicDreamer), is a 2025 large vision-language-action model for robotic manipulation, introduced by GigaAI, CASIA, NJUST, Tsinghua University.
+
+## 개요
 MimicDreamer: Aligning Human and Robot Demonstrations for Scalable VLA Training (MimicDreamer), is a 2025 large vision-language-action model for robotic manipulation, introduced by GigaAI, CASIA, NJUST, Tsinghua University.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 世界模型 / WAM 构建
-  ko: ''
+  ko: 世界模型 / WAM 构建
 summary:
   en: ''
   zh: 世界模型预测能力演示、预测误差指标
-  ko: ''
+  ko: 世界模型预测能力演示、预测误差指标
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）

@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+手持夹爪接口，无需机器人即可采集野外操作演示。
+
+## Overview
 Handheld gripper interface for collecting in-the-wild manipulation demonstrations without a robot present.
+
+## 개요
+로봇 없이 실외 조작 시연을 수집할 수 있는 휴 대용 그리퍼 인터페이스.

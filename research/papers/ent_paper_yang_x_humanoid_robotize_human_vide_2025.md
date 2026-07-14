@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'X-Humanoid: Robotize Human Videos to Generate Humanoid Videos at Scale'
   zh: X-Humanoid
-  ko: ''
+  ko: 'X-Humanoid: Robotize Human Videos to Generate Humanoid Videos at Scale'
 summary:
   en: 'X-Humanoid: Robotize Human Videos to Generate Humanoid Videos at Scale (X-Humanoid),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'X-Humanoid: Robotize Human Videos to Generate Humanoid Videos at Scale (X-Humanoid),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by NUS.'
-  ko: ''
+  ko: 'X-Humanoid: Robotize Human Videos to Generate Humanoid Videos at Scale (X-Humanoid),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by NUS.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+X-Humanoid: Robotize Human Videos to Generate Humanoid Videos at Scale (X-Humanoid), is a 2025 large vision-language-action model for robotic manipulation, introduced by NUS.
+
+## Overview
+X-Humanoid: Robotize Human Videos to Generate Humanoid Videos at Scale (X-Humanoid), is a 2025 large vision-language-action model for robotic manipulation, introduced by NUS.
+
+## 개요
 X-Humanoid: Robotize Human Videos to Generate Humanoid Videos at Scale (X-Humanoid), is a 2025 large vision-language-action model for robotic manipulation, introduced by NUS.

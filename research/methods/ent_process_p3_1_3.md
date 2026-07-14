@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 运动学与动力学初步分析
-  ko: ''
+  ko: 运动学与动力学初步分析
 summary:
   en: ''
   zh: 关节需求规格 v1、峰值/连续扭矩表、关键动作反力
-  ko: ''
+  ko: 关节需求规格 v1、峰值/连续扭矩表、关键动作反力
 domains:
 - 06_design_engineering
 - 02_components
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）

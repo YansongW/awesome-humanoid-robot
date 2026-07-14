@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+用于工业和移动机器人的齿轮箱和驱动系统意大利制造商。
+
+## Overview
+Italian manufacturer of gearboxes and drive systems used in industrial and mobile robotics.
+
+## 개요
 Italian manufacturer of gearboxes and drive systems used in industrial and mobile robotics.

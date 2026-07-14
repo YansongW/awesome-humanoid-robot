@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: PPAP / 量产 readiness 评估
-  ko: ''
+  ko: PPAP / 量产 readiness 评估
 summary:
   en: ''
   zh: PPAP 批准、量产 readiness 评估通过
-  ko: ''
+  ko: PPAP 批准、量产 readiness 评估通过
 domains:
 - 05_mass_production
 - 11_applications_markets
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）

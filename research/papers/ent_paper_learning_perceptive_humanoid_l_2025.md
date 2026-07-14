@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Perceptive Humanoid Locomotion over Challenging Terrain
   zh: Learning Perceptive Humanoid Locomotion over Challenging Terrain
-  ko: ''
+  ko: Learning Perceptive Humanoid Locomotion over Challenging Terrain
 summary:
   en: Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work
     on locomotion for humanoid robots.
   zh: Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work
     on locomotion for humanoid robots.
-  ko: ''
+  ko: Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work
+    on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work on locomotion for humanoid robots.

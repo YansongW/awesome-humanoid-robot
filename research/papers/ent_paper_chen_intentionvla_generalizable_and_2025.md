@@ -7,7 +7,8 @@ names:
   en: 'IntentionVLA: Generalizable and Efficient Embodied Intention Reasoning for
     Human-Robot Interaction'
   zh: IntentionVLA
-  ko: ''
+  ko: 'IntentionVLA: Generalizable and Efficient Embodied Intention Reasoning for
+    Human-Robot Interaction'
 summary:
   en: 'IntentionVLA: Generalizable and Efficient Embodied Intention Reasoning for
     Human-Robot Interaction (IntentionVLA), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Human-Robot Interaction (IntentionVLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Harbin Institute of Technology (Shenzhen),
     Nanjing University, University of Science and Technology of China, Dexmal.'
-  ko: ''
+  ko: 'IntentionVLA: Generalizable and Efficient Embodied Intention Reasoning for
+    Human-Robot Interaction (IntentionVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Harbin Institute of Technology (Shenzhen),
+    Nanjing University, University of Science and Technology of China, Dexmal.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+IntentionVLA: Generalizable and Efficient Embodied Intention Reasoning for Human-Robot Interaction (IntentionVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Harbin Institute of Technology (Shenzhen), Nanjing University, University of Science and Technology of China, Dexmal.
+
+## Overview
+IntentionVLA: Generalizable and Efficient Embodied Intention Reasoning for Human-Robot Interaction (IntentionVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Harbin Institute of Technology (Shenzhen), Nanjing University, University of Science and Technology of China, Dexmal.
+
+## 개요
 IntentionVLA: Generalizable and Efficient Embodied Intention Reasoning for Human-Robot Interaction (IntentionVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Harbin Institute of Technology (Shenzhen), Nanjing University, University of Science and Technology of China, Dexmal.

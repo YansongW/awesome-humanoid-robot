@@ -8,7 +8,8 @@ names:
     Unified Motion Vocabulary'
   zh: 'Commanding Humanoid by Free-form Language: A Large Language Action Model with
     Unified Motion Vocabulary'
-  ko: ''
+  ko: 'Commanding Humanoid by Free-form Language: A Large Language Action Model with
+    Unified Motion Vocabulary'
 summary:
   en: 'Commanding Humanoid by Free-form Language: A Large Language Action Model with
     Unified Motion Vocabulary is a 2025 work on loco-manipulation and whole-body-control
@@ -16,7 +17,9 @@ summary:
   zh: 'Commanding Humanoid by Free-form Language: A Large Language Action Model with
     Unified Motion Vocabulary is a 2025 work on loco-manipulation and whole-body-control
     for humanoid robots.'
-  ko: ''
+  ko: 'Commanding Humanoid by Free-form Language: A Large Language Action Model with
+    Unified Motion Vocabulary is a 2025 work on loco-manipulation and whole-body-control
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Commanding Humanoid by Free-form Language: A Large Language Action Model with Unified Motion Vocabulary is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

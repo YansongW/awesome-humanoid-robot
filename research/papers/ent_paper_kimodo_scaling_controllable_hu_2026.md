@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Kimodo: Scaling Controllable Human Motion Generation'
   zh: 'Kimodo: Scaling Controllable Human Motion Generation'
-  ko: ''
+  ko: 'Kimodo: Scaling Controllable Human Motion Generation'
 summary:
   en: 'Kimodo: Scaling Controllable Human Motion Generation is a 2026 work on human
     motion analysis and synthesis for humanoid robots.'
   zh: 'Kimodo: Scaling Controllable Human Motion Generation is a 2026 work on human
     motion analysis and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'Kimodo: Scaling Controllable Human Motion Generation is a 2026 work on human
+    motion analysis and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Kimodo: Scaling Controllable Human Motion Generation is a 2026 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+Kimodo: Scaling Controllable Human Motion Generation is a 2026 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 Kimodo: Scaling Controllable Human Motion Generation is a 2026 work on human motion analysis and synthesis for humanoid robots.

@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+国产谐波减速器龙头，在国内机器人供应链中市占率不断提升。
+
+## Overview
+Chinese harmonic drive manufacturer with growing market share in domestic robot supply chains.
+
+## 개요
 Chinese harmonic drive manufacturer with growing market share in domestic robot supply chains.

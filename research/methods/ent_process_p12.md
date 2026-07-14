@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: VLA / WAM / AI 算法集成（AI & Perception）
-  ko: ''
+  ko: VLA / WAM / AI 算法集成（AI & Perception）
 summary:
   en: ''
   zh: VLA / WAM / AI 算法集成（AI & Perception）
-  ko: ''
+  ko: VLA / WAM / AI 算法集成（AI & Perception）
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -34,5 +34,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+VLA / WAM / AI 算法集成（AI & Perception）
 
+## Overview
+VLA / WAM / AI 算法集成（AI & Perception）
 
+## 개요
+VLA / WAM / AI 算法集成（AI & Perception）

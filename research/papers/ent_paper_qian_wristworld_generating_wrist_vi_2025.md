@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'WristWorld: Generating Wrist-Views via 4D World Models for Robotic Manipulation'
   zh: WristWorld
-  ko: ''
+  ko: 'WristWorld: Generating Wrist-Views via 4D World Models for Robotic Manipulation'
 summary:
   en: 'WristWorld: Generating Wrist-Views via 4D World Models for Robotic Manipulation
     (WristWorld), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (WristWorld), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Peking University, Hong Kong University of Science and Technology,
     National University of Singapore, Beijing Innovation Center of Humanoid Robotics.'
-  ko: ''
+  ko: 'WristWorld: Generating Wrist-Views via 4D World Models for Robotic Manipulation
+    (WristWorld), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Peking University, Hong Kong University of Science and Technology,
+    National University of Singapore, Beijing Innovation Center of Humanoid Robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+WristWorld: Generating Wrist-Views via 4D World Models for Robotic Manipulation (WristWorld), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Hong Kong University of Science and Technology, National University of Singapore, Beijing Innovation Center of Humanoid Robotics.
+
+## Overview
+WristWorld: Generating Wrist-Views via 4D World Models for Robotic Manipulation (WristWorld), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Hong Kong University of Science and Technology, National University of Singapore, Beijing Innovation Center of Humanoid Robotics.
+
+## 개요
 WristWorld: Generating Wrist-Views via 4D World Models for Robotic Manipulation (WristWorld), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Hong Kong University of Science and Technology, National University of Singapore, Beijing Innovation Center of Humanoid Robotics.

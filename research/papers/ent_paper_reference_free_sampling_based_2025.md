@@ -6,13 +6,14 @@ type: paper
 names:
   en: Reference-Free Sampling-Based Model Predictive Control
   zh: Reference-Free Sampling-Based Model Predictive Control
-  ko: ''
+  ko: Reference-Free Sampling-Based Model Predictive Control
 summary:
   en: Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion
     for humanoid robots.
   zh: Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion
     for humanoid robots.
-  ko: ''
+  ko: Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion
+    for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion for humanoid robots.

@@ -8,13 +8,15 @@ names:
     Tracking'
   zh: 'RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion
     Tracking'
-  ko: ''
+  ko: 'RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion
+    Tracking'
 summary:
   en: 'RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion
     Tracking is a 2025 work on physics-based character animation for humanoid robots.'
   zh: 'RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion
     Tracking is a 2025 work on physics-based character animation for humanoid robots.'
-  ko: ''
+  ko: 'RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion
+    Tracking is a 2025 work on physics-based character animation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion Tracking is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion Tracking is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 RobotDancing: Residual-Action RL Enables Robust Long-Horizon Humanoid Motion Tracking is a 2025 work on physics-based character animation for humanoid robots.

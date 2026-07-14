@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'CHILD: a Whole-Body Humanoid Teleoperation System'
   zh: 'CHILD: a Whole-Body Humanoid Teleoperation System'
-  ko: ''
+  ko: 'CHILD: a Whole-Body Humanoid Teleoperation System'
 summary:
   en: 'CHILD: a Whole-Body Humanoid Teleoperation System is a 2025 work on teleoperation
     for humanoid robots.'
   zh: 'CHILD: a Whole-Body Humanoid Teleoperation System is a 2025 work on teleoperation
     for humanoid robots.'
-  ko: ''
+  ko: 'CHILD: a Whole-Body Humanoid Teleoperation System is a 2025 work on teleoperation
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CHILD: a Whole-Body Humanoid Teleoperation System is a 2025 work on teleoperation for humanoid robots.
+
+## Overview
+CHILD: a Whole-Body Humanoid Teleoperation System is a 2025 work on teleoperation for humanoid robots.
+
+## 개요
 CHILD: a Whole-Body Humanoid Teleoperation System is a 2025 work on teleoperation for humanoid robots.

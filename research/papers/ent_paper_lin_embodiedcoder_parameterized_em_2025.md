@@ -7,7 +7,8 @@ names:
   en: 'EmbodiedCoder: Parameterized Embodied Mobile Manipulation via Modern Coding
     Model'
   zh: EmbodiedCoder
-  ko: ''
+  ko: 'EmbodiedCoder: Parameterized Embodied Mobile Manipulation via Modern Coding
+    Model'
 summary:
   en: 'EmbodiedCoder: Parameterized Embodied Mobile Manipulation via Modern Coding
     Model (EmbodiedCoder), is a 2025 large vision-language-action model for robotic
@@ -21,7 +22,12 @@ summary:
     Institute of Automation, Chinese Academy of Sciences (CASIA), New Laboratory of
     Pattern Recognition (NLPR), State Key Laboratory of Multimodal Artificial Intelligence
     Systems (MAIS), Beihang University, Chinese University of Hong Kong.'
-  ko: ''
+  ko: 'EmbodiedCoder: Parameterized Embodied Mobile Manipulation via Modern Coding
+    Model (EmbodiedCoder), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by University of Chinese Academy of Sciences (UCAS),
+    Institute of Automation, Chinese Academy of Sciences (CASIA), New Laboratory of
+    Pattern Recognition (NLPR), State Key Laboratory of Multimodal Artificial Intelligence
+    Systems (MAIS), Beihang University, Chinese University of Hong Kong.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -64,4 +70,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EmbodiedCoder: Parameterized Embodied Mobile Manipulation via Modern Coding Model (EmbodiedCoder), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Chinese Academy of Sciences (UCAS), Institute of Automation, Chinese Academy of Sciences (CASIA), New Laboratory of Pattern Recognition (NLPR), State Key Laboratory of Multimodal Artificial Intelligence Systems (MAIS), Beihang University, Chinese University of Hong Kong.
+
+## Overview
+EmbodiedCoder: Parameterized Embodied Mobile Manipulation via Modern Coding Model (EmbodiedCoder), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Chinese Academy of Sciences (UCAS), Institute of Automation, Chinese Academy of Sciences (CASIA), New Laboratory of Pattern Recognition (NLPR), State Key Laboratory of Multimodal Artificial Intelligence Systems (MAIS), Beihang University, Chinese University of Hong Kong.
+
+## 개요
 EmbodiedCoder: Parameterized Embodied Mobile Manipulation via Modern Coding Model (EmbodiedCoder), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Chinese Academy of Sciences (UCAS), Institute of Automation, Chinese Academy of Sciences (CASIA), New Laboratory of Pattern Recognition (NLPR), State Key Laboratory of Multimodal Artificial Intelligence Systems (MAIS), Beihang University, Chinese University of Hong Kong.

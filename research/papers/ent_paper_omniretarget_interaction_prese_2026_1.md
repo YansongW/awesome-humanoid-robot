@@ -7,11 +7,12 @@ names:
   en: 'OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body
     Loco-Manipulation and Scene Interaction'
   zh: OmniRetarget｜人形全身移动操作和场景交互的交互保存数据生成
-  ko: ''
+  ko: 'OmniRetarget: Interaction-Preserving Data Generation for Humanoid Whole-Body
+    Loco-Manipulation and Scene Interaction'
 summary:
   en: ''
   zh: OmniRetarget 先从本体状态与关节序列、人类视频/动捕轨迹、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、IK/动作重定向生成全身轨迹/动作序列、地形/场景表征。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
-  ko: ''
+  ko: OmniRetarget 先从本体状态与关节序列、人类视频/动捕轨迹、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、IK/动作重定向生成全身轨迹/动作序列、地形/场景表征。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -46,5 +47,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+OmniRetarget 先从本体状态与关节序列、人类视频/动捕轨迹、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、IK/动作重定向生成全身轨迹/动作序列、地形/场景表征。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
+## 개요
 OmniRetarget 先从本体状态与关节序列、人类视频/动捕轨迹、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、IK/动作重定向生成全身轨迹/动作序列、地形/场景表征。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。

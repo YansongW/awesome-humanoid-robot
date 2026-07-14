@@ -7,7 +7,8 @@ names:
   en: 'CLIP-RT: Learning Language-Conditioned Robotic Policies from Natural Language
     Supervision'
   zh: CLIP-RT
-  ko: ''
+  ko: 'CLIP-RT: Learning Language-Conditioned Robotic Policies from Natural Language
+    Supervision'
 summary:
   en: 'CLIP-RT: Learning Language-Conditioned Robotic Policies from Natural Language
     Supervision (CLIP-RT), is a 2024 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: 'CLIP-RT: Learning Language-Conditioned Robotic Policies from Natural Language
     Supervision (CLIP-RT), is a 2024 large vision-language-action model for robotic
     manipulation, introduced by Seoul National University, and published at RSS25.'
-  ko: ''
+  ko: 'CLIP-RT: Learning Language-Conditioned Robotic Policies from Natural Language
+    Supervision (CLIP-RT), is a 2024 large vision-language-action model for robotic
+    manipulation, introduced by Seoul National University, and published at RSS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CLIP-RT: Learning Language-Conditioned Robotic Policies from Natural Language Supervision (CLIP-RT), is a 2024 large vision-language-action model for robotic manipulation, introduced by Seoul National University, and published at RSS25.
+
+## Overview
+CLIP-RT: Learning Language-Conditioned Robotic Policies from Natural Language Supervision (CLIP-RT), is a 2024 large vision-language-action model for robotic manipulation, introduced by Seoul National University, and published at RSS25.
+
+## 개요
 CLIP-RT: Learning Language-Conditioned Robotic Policies from Natural Language Supervision (CLIP-RT), is a 2024 large vision-language-action model for robotic manipulation, introduced by Seoul National University, and published at RSS25.

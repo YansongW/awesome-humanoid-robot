@@ -7,7 +7,8 @@ names:
   en: 'RoVer: Robot Reward Model as Test-Time Verifier for Vision-Language-Action
     Model'
   zh: RoVer
-  ko: ''
+  ko: 'RoVer: Robot Reward Model as Test-Time Verifier for Vision-Language-Action
+    Model'
 summary:
   en: 'RoVer: Robot Reward Model as Test-Time Verifier for Vision-Language-Action
     Model (RoVer), is a 2025 large vision-language-action model for robotic manipulation,
@@ -21,7 +22,12 @@ summary:
     Peng Cheng Laboratory, School of Computer Science and Engineering, Sun Yat-sen
     University, College of Computing and Data Science, Nanyang Technological University,
     Shanghai AI Laboratory, University of Chinese Academy of Sciences, X-Era AI Lab.'
-  ko: ''
+  ko: 'RoVer: Robot Reward Model as Test-Time Verifier for Vision-Language-Action
+    Model (RoVer), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences,
+    Peng Cheng Laboratory, School of Computer Science and Engineering, Sun Yat-sen
+    University, College of Computing and Data Science, Nanyang Technological University,
+    Shanghai AI Laboratory, University of Chinese Academy of Sciences, X-Era AI Lab.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -64,4 +70,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoVer: Robot Reward Model as Test-Time Verifier for Vision-Language-Action Model (RoVer), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences, Peng Cheng Laboratory, School of Computer Science and Engineering, Sun Yat-sen University, College of Computing and Data Science, Nanyang Technological University, Shanghai AI Laboratory, University of Chinese Academy of Sciences, X-Era AI Lab.
+
+## Overview
+RoVer: Robot Reward Model as Test-Time Verifier for Vision-Language-Action Model (RoVer), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences, Peng Cheng Laboratory, School of Computer Science and Engineering, Sun Yat-sen University, College of Computing and Data Science, Nanyang Technological University, Shanghai AI Laboratory, University of Chinese Academy of Sciences, X-Era AI Lab.
+
+## 개요
 RoVer: Robot Reward Model as Test-Time Verifier for Vision-Language-Action Model (RoVer), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shenzhen Institute of Advanced Technology, Chinese Academy of Sciences, Peng Cheng Laboratory, School of Computer Science and Engineering, Sun Yat-sen University, College of Computing and Data Science, Nanyang Technological University, Shanghai AI Laboratory, University of Chinese Academy of Sciences, X-Era AI Lab.

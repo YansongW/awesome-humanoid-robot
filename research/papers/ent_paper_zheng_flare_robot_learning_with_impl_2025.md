@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'FLARE: Robot Learning with Implicit World Modeling'
   zh: FLARE
-  ko: ''
+  ko: 'FLARE: Robot Learning with Implicit World Modeling'
 summary:
   en: 'FLARE: Robot Learning with Implicit World Modeling (FLARE), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by California
@@ -14,7 +14,9 @@ summary:
   zh: 'FLARE: Robot Learning with Implicit World Modeling (FLARE), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by California
     Institute of Technology, and published at CoRL25.'
-  ko: ''
+  ko: 'FLARE: Robot Learning with Implicit World Modeling (FLARE), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by California
+    Institute of Technology, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FLARE: Robot Learning with Implicit World Modeling (FLARE), is a 2025 large vision-language-action model for robotic manipulation, introduced by California Institute of Technology, and published at CoRL25.
+
+## Overview
+FLARE: Robot Learning with Implicit World Modeling (FLARE), is a 2025 large vision-language-action model for robotic manipulation, introduced by California Institute of Technology, and published at CoRL25.
+
+## 개요
 FLARE: Robot Learning with Implicit World Modeling (FLARE), is a 2025 large vision-language-action model for robotic manipulation, introduced by California Institute of Technology, and published at CoRL25.

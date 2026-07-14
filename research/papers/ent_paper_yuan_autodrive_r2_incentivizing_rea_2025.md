@@ -7,7 +7,8 @@ names:
   en: 'AutoDrive-R2: Incentivizing Reasoning and Self-Reflection Capacity for VLA
     Model in Autonomous Driving'
   zh: AutoDrive-R2
-  ko: ''
+  ko: 'AutoDrive-R2: Incentivizing Reasoning and Self-Reflection Capacity for VLA
+    Model in Autonomous Driving'
 summary:
   en: 'AutoDrive-R2: Incentivizing Reasoning and Self-Reflection Capacity for VLA
     Model in Autonomous Driving (AutoDrive-R2), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Model in Autonomous Driving (AutoDrive-R2), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by AMAP, Alibaba Group, University
     of Queensland, Lanzhou University, Case Western Reserve University.'
-  ko: ''
+  ko: 'AutoDrive-R2: Incentivizing Reasoning and Self-Reflection Capacity for VLA
+    Model in Autonomous Driving (AutoDrive-R2), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by AMAP, Alibaba Group, University
+    of Queensland, Lanzhou University, Case Western Reserve University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AutoDrive-R2: Incentivizing Reasoning and Self-Reflection Capacity for VLA Model in Autonomous Driving (AutoDrive-R2), is a 2025 large vision-language-action model for robotic manipulation, introduced by AMAP, Alibaba Group, University of Queensland, Lanzhou University, Case Western Reserve University.
+
+## Overview
+AutoDrive-R2: Incentivizing Reasoning and Self-Reflection Capacity for VLA Model in Autonomous Driving (AutoDrive-R2), is a 2025 large vision-language-action model for robotic manipulation, introduced by AMAP, Alibaba Group, University of Queensland, Lanzhou University, Case Western Reserve University.
+
+## 개요
 AutoDrive-R2: Incentivizing Reasoning and Self-Reflection Capacity for VLA Model in Autonomous Driving (AutoDrive-R2), is a 2025 large vision-language-action model for robotic manipulation, introduced by AMAP, Alibaba Group, University of Queensland, Lanzhou University, Case Western Reserve University.

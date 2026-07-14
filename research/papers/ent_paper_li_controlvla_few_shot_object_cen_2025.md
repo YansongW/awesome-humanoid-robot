@@ -7,7 +7,8 @@ names:
   en: 'ControlVLA: Few-shot Object-centric Adaptation for Pre-trained Vision-Language-Action
     Models'
   zh: ControlVLA
-  ko: ''
+  ko: 'ControlVLA: Few-shot Object-centric Adaptation for Pre-trained Vision-Language-Action
+    Models'
 summary:
   en: 'ControlVLA: Few-shot Object-centric Adaptation for Pre-trained Vision-Language-Action
     Models (ControlVLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Models (ControlVLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Tsinghua University, State Key Lab of General Artiﬁcial
     Intelligence, BIGAI, Peking University, Astribot, and published at CoRL25.'
-  ko: ''
+  ko: 'ControlVLA: Few-shot Object-centric Adaptation for Pre-trained Vision-Language-Action
+    Models (ControlVLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Tsinghua University, State Key Lab of General Artiﬁcial
+    Intelligence, BIGAI, Peking University, Astribot, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ControlVLA: Few-shot Object-centric Adaptation for Pre-trained Vision-Language-Action Models (ControlVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, State Key Lab of General Artiﬁcial Intelligence, BIGAI, Peking University, Astribot, and published at CoRL25.
+
+## Overview
+ControlVLA: Few-shot Object-centric Adaptation for Pre-trained Vision-Language-Action Models (ControlVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, State Key Lab of General Artiﬁcial Intelligence, BIGAI, Peking University, Astribot, and published at CoRL25.
+
+## 개요
 ControlVLA: Few-shot Object-centric Adaptation for Pre-trained Vision-Language-Action Models (ControlVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, State Key Lab of General Artiﬁcial Intelligence, BIGAI, Peking University, Astribot, and published at CoRL25.

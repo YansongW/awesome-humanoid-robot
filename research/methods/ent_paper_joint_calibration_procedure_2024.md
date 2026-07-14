@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+装配后确定每个执行器绝对零位、编码器偏置和方向标志的流程。
+
+## Overview
 Post-assembly procedure to determine absolute zero positions, encoder offsets, and direction signs for each actuator.
+
+## 개요
+조립 후 각 액추에이터의 절대 원점, 인코더 오프셋 및 방향 부호를 결정하는 절차.

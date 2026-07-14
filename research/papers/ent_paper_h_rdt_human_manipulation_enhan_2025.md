@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation'
   zh: 'H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation'
-  ko: ''
+  ko: 'H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation'
 summary:
   en: 'H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation is a 2025
     work on manipulation for humanoid robots.'
   zh: 'H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation is a 2025
     work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation is a 2025
+    work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 H-RDT: Human Manipulation Enhanced Bimanual Robotic Manipulation is a 2025 work on manipulation for humanoid robots.

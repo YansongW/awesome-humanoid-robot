@@ -8,7 +8,8 @@ names:
     Using Passive Dynamics'
   zh: 'The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion
     Using Passive Dynamics'
-  ko: ''
+  ko: 'The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion
+    Using Passive Dynamics'
 summary:
   en: 'The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion
     Using Passive Dynamics is a 2024 work on hardware design for humanoid robots,
@@ -16,7 +17,9 @@ summary:
   zh: 'The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion
     Using Passive Dynamics is a 2024 work on hardware design for humanoid robots,
     with open-source code available.'
-  ko: ''
+  ko: 'The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion
+    Using Passive Dynamics is a 2024 work on hardware design for humanoid robots,
+    with open-source code available.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics is a 2024 work on hardware design for humanoid robots, with open-source code available.
+
+## Overview
+The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics is a 2024 work on hardware design for humanoid robots, with open-source code available.
+
+## 개요
 The Duke Humanoid: Design and Control For Energy Efficient Bipedal Locomotion Using Passive Dynamics is a 2024 work on hardware design for humanoid robots, with open-source code available.

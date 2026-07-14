@@ -6,13 +6,14 @@ type: paper
 names:
   en: Real-World Humanoid Locomotion with Reinforcement Learning
   zh: Real-World Humanoid Locomotion with Reinforcement Learning
-  ko: ''
+  ko: Real-World Humanoid Locomotion with Reinforcement Learning
 summary:
   en: Real-World Humanoid Locomotion with Reinforcement Learning is a 2023 work on
     locomotion for humanoid robots.
   zh: Real-World Humanoid Locomotion with Reinforcement Learning is a 2023 work on
     locomotion for humanoid robots.
-  ko: ''
+  ko: Real-World Humanoid Locomotion with Reinforcement Learning is a 2023 work on
+    locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -48,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Real-World Humanoid Locomotion with Reinforcement Learning is a 2023 work on locomotion for humanoid robots.
+
+## Overview
+Real-World Humanoid Locomotion with Reinforcement Learning is a 2023 work on locomotion for humanoid robots.
+
+## 개요
 Real-World Humanoid Locomotion with Reinforcement Learning is a 2023 work on locomotion for humanoid robots.

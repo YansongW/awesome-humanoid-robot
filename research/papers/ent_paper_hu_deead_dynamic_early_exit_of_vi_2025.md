@@ -7,7 +7,8 @@ names:
   en: 'DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous
     Driving'
   zh: DeeAD
-  ko: ''
+  ko: 'DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous
+    Driving'
 summary:
   en: 'DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous
     Driving (DeeAD), is a 2025 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Driving (DeeAD), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by City University of Hongkong, Mohamed bin Zayed University of Artificial
     Intelligence.'
-  ko: ''
+  ko: 'DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous
+    Driving (DeeAD), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by City University of Hongkong, Mohamed bin Zayed University of Artificial
+    Intelligence.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous Driving (DeeAD), is a 2025 large vision-language-action model for robotic manipulation, introduced by City University of Hongkong, Mohamed bin Zayed University of Artificial Intelligence.
+
+## Overview
+DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous Driving (DeeAD), is a 2025 large vision-language-action model for robotic manipulation, introduced by City University of Hongkong, Mohamed bin Zayed University of Artificial Intelligence.
+
+## 개요
 DeeAD: Dynamic Early Exit of Vision-Language Action for Efficient Autonomous Driving (DeeAD), is a 2025 large vision-language-action model for robotic manipulation, introduced by City University of Hongkong, Mohamed bin Zayed University of Artificial Intelligence.

@@ -41,4 +41,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+3000多小时第一视角视频，用于第一人称技能和交互理解。
+
+## Overview
+3,000+ hours of egocentric video for first-person skill and interaction understanding.
+
+## 개요
 3,000+ hours of egocentric video for first-person skill and interaction understanding.

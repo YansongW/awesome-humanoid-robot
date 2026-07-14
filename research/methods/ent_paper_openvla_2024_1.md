@@ -41,4 +41,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+在Open X-Embodiment的97万条片段上训练的70亿参数开源VLA。
+
+## Overview
+7B-parameter open VLA trained on 970k episodes from Open X-Embodiment.
+
+## 개요
 7B-parameter open VLA trained on 970k episodes from Open X-Embodiment.

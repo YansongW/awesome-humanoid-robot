@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 硬件急停与安全链
-  ko: ''
+  ko: 硬件急停与安全链
 summary:
   en: ''
   zh: 安全系统原理图、FMEA、急停响应时间 < 目标
-  ko: ''
+  ko: 安全系统原理图、FMEA、急停响应时间 < 目标
 domains:
 - 02_components
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）

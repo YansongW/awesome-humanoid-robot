@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning'
   zh: 'Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning'
-  ko: ''
+  ko: 'Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning'
 summary:
   en: 'Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning
     is a 2024 work on manipulation for humanoid robots, with open-source code available.'
   zh: 'Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning
     is a 2024 work on manipulation for humanoid robots, with open-source code available.'
-  ko: ''
+  ko: 'Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning
+    is a 2024 work on manipulation for humanoid robots, with open-source code available.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning is a 2024 work on manipulation for humanoid robots, with open-source code available.
+
+## Overview
+Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning is a 2024 work on manipulation for humanoid robots, with open-source code available.
+
+## 개요
 Bunny-VisionPro: Real-Time Bimanual Dexterous Teleoperation for Imitation Learning is a 2024 work on manipulation for humanoid robots, with open-source code available.

@@ -6,13 +6,14 @@ type: report
 names:
   en: 'From Simulation to Production: How to Build Robots With AI'
   zh: 'From Simulation to Production: How to Build Robots With AI'
-  ko: ''
+  ko: 'From Simulation to Production: How to Build Robots With AI'
 summary:
   en: The latest open models and frameworks from NVIDIA bring together simulation,
     robot learning and embedded compute to accelerate cloud-to-robot workflows.
   zh: The latest open models and frameworks from NVIDIA bring together simulation,
     robot learning and embedded compute to accelerate cloud-to-robot workflows.
-  ko: ''
+  ko: The latest open models and frameworks from NVIDIA bring together simulation,
+    robot learning and embedded compute to accelerate cloud-to-robot workflows.
 domains:
 - 11_applications_markets
 - 07_ai_models_algorithms
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+The latest open models and frameworks from NVIDIA bring together simulation, robot learning and embedded compute to accelerate cloud-to-robot workflows.
+
+## Overview
+The latest open models and frameworks from NVIDIA bring together simulation, robot learning and embedded compute to accelerate cloud-to-robot workflows.
+
+## 개요
 The latest open models and frameworks from NVIDIA bring together simulation, robot learning and embedded compute to accelerate cloud-to-robot workflows.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning from Massive Human Videos for Universal Humanoid Pose Control
   zh: Learning from Massive Human Videos for Universal Humanoid Pose Control
-  ko: ''
+  ko: Learning from Massive Human Videos for Universal Humanoid Pose Control
 summary:
   en: Learning from Massive Human Videos for Universal Humanoid Pose Control is a
     2024 work on loco-manipulation and whole-body-control for humanoid robots.
   zh: Learning from Massive Human Videos for Universal Humanoid Pose Control is a
     2024 work on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Learning from Massive Human Videos for Universal Humanoid Pose Control is a
+    2024 work on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning from Massive Human Videos for Universal Humanoid Pose Control is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Learning from Massive Human Videos for Universal Humanoid Pose Control is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Learning from Massive Human Videos for Universal Humanoid Pose Control is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.

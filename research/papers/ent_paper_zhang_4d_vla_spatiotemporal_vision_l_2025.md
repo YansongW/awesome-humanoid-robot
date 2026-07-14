@@ -7,7 +7,8 @@ names:
   en: '4D-VLA: Spatiotemporal Vision-Language-Action Pretraining with Cross-Scene
     Calibration'
   zh: 4D-VLA
-  ko: ''
+  ko: '4D-VLA: Spatiotemporal Vision-Language-Action Pretraining with Cross-Scene
+    Calibration'
 summary:
   en: '4D-VLA: Spatiotemporal Vision-Language-Action Pretraining with Cross-Scene
     Calibration (4D-VLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Calibration (4D-VLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Fudan University, HUAWEI Noah''s Ark Lab, and published
     at NIPS25.'
-  ko: ''
+  ko: '4D-VLA: Spatiotemporal Vision-Language-Action Pretraining with Cross-Scene
+    Calibration (4D-VLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Fudan University, HUAWEI Noah''s Ark Lab, and published
+    at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+4D-VLA: Spatiotemporal Vision-Language-Action Pretraining with Cross-Scene Calibration (4D-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, HUAWEI Noah's Ark Lab, and published at NIPS25.
+
+## Overview
+4D-VLA: Spatiotemporal Vision-Language-Action Pretraining with Cross-Scene Calibration (4D-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, HUAWEI Noah's Ark Lab, and published at NIPS25.
+
+## 개요
 4D-VLA: Spatiotemporal Vision-Language-Action Pretraining with Cross-Scene Calibration (4D-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, HUAWEI Noah's Ark Lab, and published at NIPS25.

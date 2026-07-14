@@ -8,7 +8,8 @@ names:
     Uninterrupted Dexterous Task Learning'
   zh: 'ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for
     Uninterrupted Dexterous Task Learning'
-  ko: ''
+  ko: 'ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for
+    Uninterrupted Dexterous Task Learning'
 summary:
   en: 'ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for
     Uninterrupted Dexterous Task Learning is a 2025 work on hardware design for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for
     Uninterrupted Dexterous Task Learning is a 2025 work on hardware design for humanoid
     robots.'
-  ko: ''
+  ko: 'ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for
+    Uninterrupted Dexterous Task Learning is a 2025 work on hardware design for humanoid
+    robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted Dexterous Task Learning is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted Dexterous Task Learning is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 ORCA: Open-Source, Reliable, Cost-Effective, Anthropomorphic Robotic Hand for Uninterrupted Dexterous Task Learning is a 2025 work on hardware design for humanoid robots.

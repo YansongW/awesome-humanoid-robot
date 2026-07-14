@@ -8,7 +8,8 @@ names:
     Adversarial Learning from Demonstration
   zh: Human-Humanoid Robots Cross-Embodiment Behavior-Skill Transfer Using Decomposed
     Adversarial Learning from Demonstration
-  ko: ''
+  ko: Human-Humanoid Robots Cross-Embodiment Behavior-Skill Transfer Using Decomposed
+    Adversarial Learning from Demonstration
 summary:
   en: Human-Humanoid Robots Cross-Embodiment Behavior-Skill Transfer Using Decomposed
     Adversarial Learning from Demonstration is a 2024 work on loco-manipulation and
@@ -16,7 +17,9 @@ summary:
   zh: Human-Humanoid Robots Cross-Embodiment Behavior-Skill Transfer Using Decomposed
     Adversarial Learning from Demonstration is a 2024 work on loco-manipulation and
     whole-body-control for humanoid robots.
-  ko: ''
+  ko: Human-Humanoid Robots Cross-Embodiment Behavior-Skill Transfer Using Decomposed
+    Adversarial Learning from Demonstration is a 2024 work on loco-manipulation and
+    whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Human-Humanoid Robots Cross-Embodiment Behavior-Skill Transfer Using Decomposed Adversarial Learning from Demonstration is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Human-Humanoid Robots Cross-Embodiment Behavior-Skill Transfer Using Decomposed Adversarial Learning from Demonstration is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Human-Humanoid Robots Cross-Embodiment Behavior-Skill Transfer Using Decomposed Adversarial Learning from Demonstration is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: Embodiment Transfer Learning for Vision-Language-Action Models
   zh: ET-VLA
-  ko: ''
+  ko: Embodiment Transfer Learning for Vision-Language-Action Models
 summary:
   en: Embodiment Transfer Learning for Vision-Language-Action Models (ET-VLA), is
     a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: Embodiment Transfer Learning for Vision-Language-Action Models (ET-VLA), is
     a 2025 large vision-language-action model for robotic manipulation, introduced
     by Shanghai University.
-  ko: ''
+  ko: Embodiment Transfer Learning for Vision-Language-Action Models (ET-VLA), is
+    a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Shanghai University.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Embodiment Transfer Learning for Vision-Language-Action Models (ET-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai University.
+
+## Overview
+Embodiment Transfer Learning for Vision-Language-Action Models (ET-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai University.
+
+## 개요
 Embodiment Transfer Learning for Vision-Language-Action Models (ET-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai University.

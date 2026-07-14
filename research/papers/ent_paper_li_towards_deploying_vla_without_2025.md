@@ -7,7 +7,8 @@ names:
   en: 'Towards Deploying VLA without Fine-Tuning: Plug-and-Play Inference-Time VLA
     Policy Steering via Embodied Evolutionary Diffusion'
   zh: VLA-Pilot
-  ko: ''
+  ko: 'Towards Deploying VLA without Fine-Tuning: Plug-and-Play Inference-Time VLA
+    Policy Steering via Embodied Evolutionary Diffusion'
 summary:
   en: 'Towards Deploying VLA without Fine-Tuning: Plug-and-Play Inference-Time VLA
     Policy Steering via Embodied Evolutionary Diffusion (VLA-Pilot), is a 2025 large
@@ -19,7 +20,11 @@ summary:
     vision-language-action model for robotic manipulation, introduced by The Chinese
     University of Hong Kong, T-Stone Robotics Institute, Hong Kong Center for Logistics
     Robotics, Department of Advanced Robotics, Istituto Italiano di Tecnologia.'
-  ko: ''
+  ko: 'Towards Deploying VLA without Fine-Tuning: Plug-and-Play Inference-Time VLA
+    Policy Steering via Embodied Evolutionary Diffusion (VLA-Pilot), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by The Chinese
+    University of Hong Kong, T-Stone Robotics Institute, Hong Kong Center for Logistics
+    Robotics, Department of Advanced Robotics, Istituto Italiano di Tecnologia.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +66,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Towards Deploying VLA without Fine-Tuning: Plug-and-Play Inference-Time VLA Policy Steering via Embodied Evolutionary Diffusion (VLA-Pilot), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Chinese University of Hong Kong, T-Stone Robotics Institute, Hong Kong Center for Logistics Robotics, Department of Advanced Robotics, Istituto Italiano di Tecnologia.
+
+## Overview
+Towards Deploying VLA without Fine-Tuning: Plug-and-Play Inference-Time VLA Policy Steering via Embodied Evolutionary Diffusion (VLA-Pilot), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Chinese University of Hong Kong, T-Stone Robotics Institute, Hong Kong Center for Logistics Robotics, Department of Advanced Robotics, Istituto Italiano di Tecnologia.
+
+## 개요
 Towards Deploying VLA without Fine-Tuning: Plug-and-Play Inference-Time VLA Policy Steering via Embodied Evolutionary Diffusion (VLA-Pilot), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Chinese University of Hong Kong, T-Stone Robotics Institute, Hong Kong Center for Logistics Robotics, Department of Advanced Robotics, Istituto Italiano di Tecnologia.

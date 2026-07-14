@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Teleoperation of Humanoid Robots: A Survey'
   zh: 'Teleoperation of Humanoid Robots: A Survey'
-  ko: ''
+  ko: 'Teleoperation of Humanoid Robots: A Survey'
 summary:
   en: 'Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation
     for humanoid robots.'
   zh: 'Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation
     for humanoid robots.'
-  ko: ''
+  ko: 'Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation for humanoid robots.
+
+## Overview
+Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation for humanoid robots.
+
+## 개요
 Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation for humanoid robots.

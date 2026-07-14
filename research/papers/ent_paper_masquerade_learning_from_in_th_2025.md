@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Masquerade: Learning from In-the-wild Human Videos using Data-Editing'
   zh: 'Masquerade: Learning from In-the-wild Human Videos using Data-Editing'
-  ko: ''
+  ko: 'Masquerade: Learning from In-the-wild Human Videos using Data-Editing'
 summary:
   en: 'Masquerade: Learning from In-the-wild Human Videos using Data-Editing is a
     2025 work on manipulation for humanoid robots.'
   zh: 'Masquerade: Learning from In-the-wild Human Videos using Data-Editing is a
     2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'Masquerade: Learning from In-the-wild Human Videos using Data-Editing is a
+    2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Masquerade: Learning from In-the-wild Human Videos using Data-Editing is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+Masquerade: Learning from In-the-wild Human Videos using Data-Editing is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 Masquerade: Learning from In-the-wild Human Videos using Data-Editing is a 2025 work on manipulation for humanoid robots.

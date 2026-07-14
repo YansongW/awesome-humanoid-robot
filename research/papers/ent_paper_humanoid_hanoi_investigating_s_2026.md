@@ -8,7 +8,8 @@ names:
     Rearrangement'
   zh: 'Humanoid Hanoi: Investigating Shared Whole-Body Control for Skill-Based Box
     Rearrangement'
-  ko: ''
+  ko: 'Humanoid Hanoi: Investigating Shared Whole-Body Control for Skill-Based Box
+    Rearrangement'
 summary:
   en: 'Humanoid Hanoi: Investigating Shared Whole-Body Control for Skill-Based Box
     Rearrangement is a 2026 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'Humanoid Hanoi: Investigating Shared Whole-Body Control for Skill-Based Box
     Rearrangement is a 2026 work on loco-manipulation and whole-body-control for humanoid
     robots.'
-  ko: ''
+  ko: 'Humanoid Hanoi: Investigating Shared Whole-Body Control for Skill-Based Box
+    Rearrangement is a 2026 work on loco-manipulation and whole-body-control for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Humanoid Hanoi: Investigating Shared Whole-Body Control for Skill-Based Box Rearrangement is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Humanoid Hanoi: Investigating Shared Whole-Body Control for Skill-Based Box Rearrangement is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Humanoid Hanoi: Investigating Shared Whole-Body Control for Skill-Based Box Rearrangement is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

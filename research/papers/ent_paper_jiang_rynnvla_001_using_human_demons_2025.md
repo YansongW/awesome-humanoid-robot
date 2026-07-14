@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation'
   zh: RynnVLA-001
-  ko: ''
+  ko: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation'
 summary:
   en: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Peking University.'
-  ko: ''
+  ko: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Peking University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University.
+
+## Overview
+RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University.
+
+## 개요
 RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University.

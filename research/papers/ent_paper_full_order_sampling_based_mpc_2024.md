@@ -8,7 +8,8 @@ names:
     Annealing
   zh: Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style
     Annealing
-  ko: ''
+  ko: Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style
+    Annealing
 summary:
   en: Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style
     Annealing is a 2024 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style
     Annealing is a 2024 work on loco-manipulation and whole-body-control for humanoid
     robots.
-  ko: ''
+  ko: Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style
+    Annealing is a 2024 work on loco-manipulation and whole-body-control for humanoid
+    robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Full-Order Sampling-Based MPC for Torque-Level Locomotion Control via Diffusion-Style Annealing is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.

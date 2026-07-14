@@ -6,13 +6,14 @@ type: paper
 names:
   en: Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation
   zh: Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation
-  ko: ''
+  ko: Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation
 summary:
   en: Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation is
     a 2025 work on manipulation for humanoid robots.
   zh: Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation is
     a 2025 work on manipulation for humanoid robots.
-  ko: ''
+  ko: Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation is
+    a 2025 work on manipulation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 Hierarchical Vision-Language Planning for Multi-Step Humanoid Manipulation is a 2025 work on manipulation for humanoid robots.

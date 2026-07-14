@@ -7,7 +7,8 @@ names:
   en: 'MAP-VLA: Memory-Augmented Prompting for Vision-Language-Action Model in Robotic
     Manipulation'
   zh: MAP-VLA
-  ko: ''
+  ko: 'MAP-VLA: Memory-Augmented Prompting for Vision-Language-Action Model in Robotic
+    Manipulation'
 summary:
   en: 'MAP-VLA: Memory-Augmented Prompting for Vision-Language-Action Model in Robotic
     Manipulation (MAP-VLA), is a 2025 large vision-language-action model for robotic
@@ -19,7 +20,11 @@ summary:
     manipulation, introduced by Nanyang Technological University, VinUniversity, Beijing
     University of Posts and Telecommunications, Tsinghua University, South China University
     of Technolog.'
-  ko: ''
+  ko: 'MAP-VLA: Memory-Augmented Prompting for Vision-Language-Action Model in Robotic
+    Manipulation (MAP-VLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Nanyang Technological University, VinUniversity, Beijing
+    University of Posts and Telecommunications, Tsinghua University, South China University
+    of Technolog.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MAP-VLA: Memory-Augmented Prompting for Vision-Language-Action Model in Robotic Manipulation (MAP-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nanyang Technological University, VinUniversity, Beijing University of Posts and Telecommunications, Tsinghua University, South China University of Technolog.
+
+## Overview
+MAP-VLA: Memory-Augmented Prompting for Vision-Language-Action Model in Robotic Manipulation (MAP-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nanyang Technological University, VinUniversity, Beijing University of Posts and Telecommunications, Tsinghua University, South China University of Technolog.
+
+## 개요
 MAP-VLA: Memory-Augmented Prompting for Vision-Language-Action Model in Robotic Manipulation (MAP-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nanyang Technological University, VinUniversity, Beijing University of Posts and Telecommunications, Tsinghua University, South China University of Technolog.

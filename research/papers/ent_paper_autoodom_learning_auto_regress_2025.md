@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion'
   zh: 'AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion'
-  ko: ''
+  ko: 'AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion'
 summary:
   en: 'AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion
     is a 2025 work on state estimation for humanoid robots.'
   zh: 'AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion
     is a 2025 work on state estimation for humanoid robots.'
-  ko: ''
+  ko: 'AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion
+    is a 2025 work on state estimation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion is a 2025 work on state estimation for humanoid robots.
+
+## Overview
+AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion is a 2025 work on state estimation for humanoid robots.
+
+## 개요
 AutoOdom: Learning Auto-regressive Proprioceptive Odometry for Legged Locomotion is a 2025 work on state estimation for humanoid robots.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models'
   zh: π_RL
-  ko: ''
+  ko: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models'
 summary:
   en: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Tsinghua University, Peking University, Institute of Automation, Chinese Academy
     of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.'
-  ko: ''
+  ko: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Tsinghua University, Peking University, Institute of Automation, Chinese Academy
+    of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Peking University, Institute of Automation, Chinese Academy of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.
+
+## Overview
+πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Peking University, Institute of Automation, Chinese Academy of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.
+
+## 개요
 πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Peking University, Institute of Automation, Chinese Academy of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.

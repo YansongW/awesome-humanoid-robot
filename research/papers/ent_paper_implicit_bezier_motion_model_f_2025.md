@@ -6,13 +6,14 @@ type: paper
 names:
   en: Implicit Bézier Motion Model for Precise Spatial and Temporal Control
   zh: Implicit Bézier Motion Model for Precise Spatial and Temporal Control
-  ko: ''
+  ko: Implicit Bézier Motion Model for Precise Spatial and Temporal Control
 summary:
   en: Implicit Bézier Motion Model for Precise Spatial and Temporal Control is a 2025
     work on human motion analysis and synthesis for humanoid robots.
   zh: Implicit Bézier Motion Model for Precise Spatial and Temporal Control is a 2025
     work on human motion analysis and synthesis for humanoid robots.
-  ko: ''
+  ko: Implicit Bézier Motion Model for Precise Spatial and Temporal Control is a 2025
+    work on human motion analysis and synthesis for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Implicit Bézier Motion Model for Precise Spatial and Temporal Control is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+Implicit Bézier Motion Model for Precise Spatial and Temporal Control is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 Implicit Bézier Motion Model for Precise Spatial and Temporal Control is a 2025 work on human motion analysis and synthesis for humanoid robots.

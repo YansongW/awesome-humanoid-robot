@@ -6,7 +6,7 @@ type: paper
 names:
   en: Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation
   zh: ADP
-  ko: ''
+  ko: Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation
 summary:
   en: Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation
     (ADP), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation
     (ADP), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by School of Computer Science, The University of Sydney.
-  ko: ''
+  ko: Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation
+    (ADP), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by School of Computer Science, The University of Sydney.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation (ADP), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computer Science, The University of Sydney.
+
+## Overview
+Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation (ADP), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computer Science, The University of Sydney.
+
+## 개요
 Action-aware Dynamic Pruning for Efficient Vision-Language-Action Manipulation (ADP), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computer Science, The University of Sydney.

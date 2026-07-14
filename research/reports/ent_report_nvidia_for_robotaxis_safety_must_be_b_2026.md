@@ -6,7 +6,7 @@ type: report
 names:
   en: For Robotaxis, Safety Must Be Built In, Not Bolted On
   zh: For Robotaxis, Safety Must Be Built In, Not Bolted On
-  ko: ''
+  ko: For Robotaxis, Safety Must Be Built In, Not Bolted On
 summary:
   en: A car pulls up to the curb. The app says, “Your ride is here.” No one’s in the
     driver’s seat. For people who live in one of the dozens of cities now hosting
@@ -18,7 +18,11 @@ summary:
     robotaxi services, this is already a reality. The robotaxi industry has moved
     from prototype milestones to commercial operations, with an expanding ecosystem
     [&#8230;]
-  ko: ''
+  ko: A car pulls up to the curb. The app says, “Your ride is here.” No one’s in the
+    driver’s seat. For people who live in one of the dozens of cities now hosting
+    robotaxi services, this is already a reality. The robotaxi industry has moved
+    from prototype milestones to commercial operations, with an expanding ecosystem
+    [&#8230;]
 domains:
 - 11_applications_markets
 - 07_ai_models_algorithms
@@ -49,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A car pulls up to the curb. The app says, “Your ride is here.” No one’s in the driver’s seat. For people who live in one of the dozens of cities now hosting robotaxi services, this is already a reality. The robotaxi industry has moved from prototype milestones to commercial operations, with an expanding ecosystem [&#8230;]
+
+## Overview
+A car pulls up to the curb. The app says, “Your ride is here.” No one’s in the driver’s seat. For people who live in one of the dozens of cities now hosting robotaxi services, this is already a reality. The robotaxi industry has moved from prototype milestones to commercial operations, with an expanding ecosystem [&#8230;]
+
+## 개요
 A car pulls up to the curb. The app says, “Your ride is here.” No one’s in the driver’s seat. For people who live in one of the dozens of cities now hosting robotaxi services, this is already a reality. The robotaxi industry has moved from prototype milestones to commercial operations, with an expanding ecosystem [&#8230;]

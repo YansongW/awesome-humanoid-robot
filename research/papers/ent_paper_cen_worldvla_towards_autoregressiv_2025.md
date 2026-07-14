@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'WorldVLA: Towards Autoregressive Action World Model'
   zh: WorldVLA
-  ko: ''
+  ko: 'WorldVLA: Towards Autoregressive Action World Model'
 summary:
   en: 'WorldVLA: Towards Autoregressive Action World Model (WorldVLA), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by DAMO Academy,
@@ -14,7 +14,9 @@ summary:
   zh: 'WorldVLA: Towards Autoregressive Action World Model (WorldVLA), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by DAMO Academy,
     Alibaba Group, Hupan Lab, Zhejiang University.'
-  ko: ''
+  ko: 'WorldVLA: Towards Autoregressive Action World Model (WorldVLA), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by DAMO Academy,
+    Alibaba Group, Hupan Lab, Zhejiang University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+WorldVLA: Towards Autoregressive Action World Model (WorldVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by DAMO Academy, Alibaba Group, Hupan Lab, Zhejiang University.
+
+## Overview
+WorldVLA: Towards Autoregressive Action World Model (WorldVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by DAMO Academy, Alibaba Group, Hupan Lab, Zhejiang University.
+
+## 개요
 WorldVLA: Towards Autoregressive Action World Model (WorldVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by DAMO Academy, Alibaba Group, Hupan Lab, Zhejiang University.

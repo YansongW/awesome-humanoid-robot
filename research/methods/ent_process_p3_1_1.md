@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: DOF 配置与关节布局
-  ko: ''
+  ko: DOF 配置与关节布局
 summary:
   en: ''
   zh: DOF 配置表、关节运动范围、关节速度/扭矩需求 v1
-  ko: ''
+  ko: DOF 配置表、关节运动范围、关节速度/扭矩需求 v1
 domains:
 - 06_design_engineering
 - 02_components
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）

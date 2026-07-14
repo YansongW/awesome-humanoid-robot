@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+产生旋转运动的执行器，通常由无框力矩电机、谐波减速器、编码器和力矩传感器组成。
+
+## Overview
 Actuator producing rotational motion, typically composed of frameless torque motor, harmonic reducer, encoder and torque sensor.
+
+## 개요
+회전 운 동을 생성하는 액추에이터, 일반적으로 프레임리스 토크 모터, 하모닉 감속기, 인코더 및 토크 센서로 구성.

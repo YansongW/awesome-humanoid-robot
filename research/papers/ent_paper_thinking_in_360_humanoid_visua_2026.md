@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Thinking in 360°: Humanoid Visual Search in the Wild'
   zh: 'Thinking in 360°: Humanoid Visual Search in the Wild'
-  ko: ''
+  ko: 'Thinking in 360°: Humanoid Visual Search in the Wild'
 summary:
   en: 'Thinking in 360°: Humanoid Visual Search in the Wild is a paper on Navigation
     for humanoid robotics.'
   zh: 'Thinking in 360°: Humanoid Visual Search in the Wild is a paper on Navigation
     for humanoid robotics.'
-  ko: ''
+  ko: 'Thinking in 360°: Humanoid Visual Search in the Wild is a paper on Navigation
+    for humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Thinking in 360°: Humanoid Visual Search in the Wild is a paper on Navigation for humanoid robotics.
+
+## Overview
+Thinking in 360°: Humanoid Visual Search in the Wild is a paper on Navigation for humanoid robotics.
+
+## 개요
 Thinking in 360°: Humanoid Visual Search in the Wild is a paper on Navigation for humanoid robotics.

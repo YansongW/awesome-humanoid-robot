@@ -6,13 +6,14 @@ type: paper
 names:
   en: Heavy lifting tasks via haptic teleoperation of a wheeled humanoid
   zh: Heavy lifting tasks via haptic teleoperation of a wheeled humanoid
-  ko: ''
+  ko: Heavy lifting tasks via haptic teleoperation of a wheeled humanoid
 summary:
   en: Heavy lifting tasks via haptic teleoperation of a wheeled humanoid is a 2025
     work on teleoperation for humanoid robots.
   zh: Heavy lifting tasks via haptic teleoperation of a wheeled humanoid is a 2025
     work on teleoperation for humanoid robots.
-  ko: ''
+  ko: Heavy lifting tasks via haptic teleoperation of a wheeled humanoid is a 2025
+    work on teleoperation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Heavy lifting tasks via haptic teleoperation of a wheeled humanoid is a 2025 work on teleoperation for humanoid robots.
+
+## Overview
+Heavy lifting tasks via haptic teleoperation of a wheeled humanoid is a 2025 work on teleoperation for humanoid robots.
+
+## 개요
 Heavy lifting tasks via haptic teleoperation of a wheeled humanoid is a 2025 work on teleoperation for humanoid robots.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Ψ₀: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation'
   zh: 'Ψ₀: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation'
-  ko: ''
+  ko: 'Ψ₀: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation'
 summary:
   en: 'Ψ₀: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation is
     a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'Ψ₀: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation is
     a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'Ψ₀: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation is
+    a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Ψ₀: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Ψ₀: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Ψ₀: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

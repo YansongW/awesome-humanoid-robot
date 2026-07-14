@@ -6,7 +6,7 @@ type: paper
 names:
   en: Vision-Language Foundation Models as Effective Robot Imitators
   zh: RoboFlamingo
-  ko: ''
+  ko: Vision-Language Foundation Models as Effective Robot Imitators
 summary:
   en: Vision-Language Foundation Models as Effective Robot Imitators (RoboFlamingo),
     is a 2023 generalized vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2023 generalized vision-language-action model for robotic manipulation, introduced
     by ByteDance Research, Tsinghua University, Shanghai Jiao Tong University, National
     University of Singapore, and published at ICLR 2024.
-  ko: ''
+  ko: Vision-Language Foundation Models as Effective Robot Imitators (RoboFlamingo),
+    is a 2023 generalized vision-language-action model for robotic manipulation, introduced
+    by ByteDance Research, Tsinghua University, Shanghai Jiao Tong University, National
+    University of Singapore, and published at ICLR 2024.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Vision-Language Foundation Models as Effective Robot Imitators (RoboFlamingo), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by ByteDance Research, Tsinghua University, Shanghai Jiao Tong University, National University of Singapore, and published at ICLR 2024.
+
+## Overview
+Vision-Language Foundation Models as Effective Robot Imitators (RoboFlamingo), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by ByteDance Research, Tsinghua University, Shanghai Jiao Tong University, National University of Singapore, and published at ICLR 2024.
+
+## 개요
 Vision-Language Foundation Models as Effective Robot Imitators (RoboFlamingo), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by ByteDance Research, Tsinghua University, Shanghai Jiao Tong University, National University of Singapore, and published at ICLR 2024.

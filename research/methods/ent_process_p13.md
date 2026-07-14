@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 电子电气与能源系统（Electronics & Power）
-  ko: ''
+  ko: 电子电气与能源系统（Electronics & Power）
 summary:
   en: ''
   zh: 电子电气与能源系统（Electronics & Power）
-  ko: ''
+  ko: 电子电气与能源系统（Electronics & Power）
 domains:
 - 02_components
 - 08_software_middleware
@@ -36,5 +36,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+电子电气与能源系统（Electronics & Power）
 
+## Overview
+电子电气与能源系统（Electronics & Power）
 
+## 개요
+电子电气与能源系统（Electronics & Power）

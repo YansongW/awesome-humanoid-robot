@@ -7,7 +7,8 @@ names:
   en: 'Robotic Assistant: Completing Collaborative Tasks with Dexterous Vision-Language-Action
     Models'
   zh: Robotic Assistant
-  ko: ''
+  ko: 'Robotic Assistant: Completing Collaborative Tasks with Dexterous Vision-Language-Action
+    Models'
 summary:
   en: 'Robotic Assistant: Completing Collaborative Tasks with Dexterous Vision-Language-Action
     Models (Robotic Assistant), is a 2025 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: 'Robotic Assistant: Completing Collaborative Tasks with Dexterous Vision-Language-Action
     Models (Robotic Assistant), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by ETH Zurich, MIT, Stanford University.'
-  ko: ''
+  ko: 'Robotic Assistant: Completing Collaborative Tasks with Dexterous Vision-Language-Action
+    Models (Robotic Assistant), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by ETH Zurich, MIT, Stanford University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Robotic Assistant: Completing Collaborative Tasks with Dexterous Vision-Language-Action Models (Robotic Assistant), is a 2025 large vision-language-action model for robotic manipulation, introduced by ETH Zurich, MIT, Stanford University.
+
+## Overview
+Robotic Assistant: Completing Collaborative Tasks with Dexterous Vision-Language-Action Models (Robotic Assistant), is a 2025 large vision-language-action model for robotic manipulation, introduced by ETH Zurich, MIT, Stanford University.
+
+## 개요
 Robotic Assistant: Completing Collaborative Tasks with Dexterous Vision-Language-Action Models (Robotic Assistant), is a 2025 large vision-language-action model for robotic manipulation, introduced by ETH Zurich, MIT, Stanford University.

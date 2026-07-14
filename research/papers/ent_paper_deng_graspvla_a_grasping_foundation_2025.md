@@ -7,7 +7,8 @@ names:
   en: 'GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic
     Action Data'
   zh: GraspVLA
-  ko: ''
+  ko: 'GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic
+    Action Data'
 summary:
   en: 'GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic
     Action Data (GraspVLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Action Data (GraspVLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Galbot, Peking University, The University of Hong
     Kong, Beijing Academy of Artificial Intelligence, and published at CoRL25.'
-  ko: ''
+  ko: 'GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic
+    Action Data (GraspVLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Galbot, Peking University, The University of Hong
+    Kong, Beijing Academy of Artificial Intelligence, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic Action Data (GraspVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Galbot, Peking University, The University of Hong Kong, Beijing Academy of Artificial Intelligence, and published at CoRL25.
+
+## Overview
+GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic Action Data (GraspVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Galbot, Peking University, The University of Hong Kong, Beijing Academy of Artificial Intelligence, and published at CoRL25.
+
+## 개요
 GraspVLA: a Grasping Foundation Model Pre-trained on Billion-scale Synthetic Action Data (GraspVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Galbot, Peking University, The University of Hong Kong, Beijing Academy of Artificial Intelligence, and published at CoRL25.

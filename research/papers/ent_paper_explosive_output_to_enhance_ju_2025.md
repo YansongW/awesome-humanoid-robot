@@ -8,7 +8,8 @@ names:
     Paradigm for Humanoid Robots Knee Joint'
   zh: 'Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design
     Paradigm for Humanoid Robots Knee Joint'
-  ko: ''
+  ko: 'Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design
+    Paradigm for Humanoid Robots Knee Joint'
 summary:
   en: 'Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design
     Paradigm for Humanoid Robots Knee Joint is a 2025 work on hardware design for
@@ -16,7 +17,9 @@ summary:
   zh: 'Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design
     Paradigm for Humanoid Robots Knee Joint is a 2025 work on hardware design for
     humanoid robots.'
-  ko: ''
+  ko: 'Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design
+    Paradigm for Humanoid Robots Knee Joint is a 2025 work on hardware design for
+    humanoid robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design Paradigm for Humanoid Robots Knee Joint is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design Paradigm for Humanoid Robots Knee Joint is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 Explosive Output to Enhance Jumping Ability: A Variable Reduction Ratio Design Paradigm for Humanoid Robots Knee Joint is a 2025 work on hardware design for humanoid robots.

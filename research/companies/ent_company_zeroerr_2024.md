@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+高精度机器人关节模组和伺服系统制造商。
+
+## Overview
+Chinese manufacturer of high-precision robot joint modules and servo systems.
+
+## 개요
 Chinese manufacturer of high-precision robot joint modules and servo systems.

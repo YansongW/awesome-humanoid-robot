@@ -6,7 +6,7 @@ type: paper
 names:
   en: Learning Universal Policies via Text-Guided Video Generation
   zh: UniPi
-  ko: ''
+  ko: Learning Universal Policies via Text-Guided Video Generation
 summary:
   en: Learning Universal Policies via Text-Guided Video Generation (UniPi), is a 2023
     generalized vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     generalized vision-language-action model for robotic manipulation, introduced
     by MIT, Google DeepMind, UC Berkeley, Georgia Tech, University of Alberta, and
     published at NIPS 2023.
-  ko: ''
+  ko: Learning Universal Policies via Text-Guided Video Generation (UniPi), is a 2023
+    generalized vision-language-action model for robotic manipulation, introduced
+    by MIT, Google DeepMind, UC Berkeley, Georgia Tech, University of Alberta, and
+    published at NIPS 2023.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Universal Policies via Text-Guided Video Generation (UniPi), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by MIT, Google DeepMind, UC Berkeley, Georgia Tech, University of Alberta, and published at NIPS 2023.
+
+## Overview
+Learning Universal Policies via Text-Guided Video Generation (UniPi), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by MIT, Google DeepMind, UC Berkeley, Georgia Tech, University of Alberta, and published at NIPS 2023.
+
+## 개요
 Learning Universal Policies via Text-Guided Video Generation (UniPi), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by MIT, Google DeepMind, UC Berkeley, Georgia Tech, University of Alberta, and published at NIPS 2023.

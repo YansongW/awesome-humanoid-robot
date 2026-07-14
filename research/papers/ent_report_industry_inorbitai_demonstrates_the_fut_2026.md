@@ -8,7 +8,8 @@ names:
     AI at Automate 2026
   zh: InOrbit.AI Demonstrates the Future of Multi-Vendor Robot Orchestration and Physical
     AI at Automate 2026
-  ko: ''
+  ko: InOrbit.AI Demonstrates the Future of Multi-Vendor Robot Orchestration and Physical
+    AI at Automate 2026
 summary:
   en: Experience the future of the sentient enterprise as InOrbit.AI orchestrates
     a groundbreaking multi-vendor robotics demonstration at Automate 2026. Discover
@@ -18,7 +19,10 @@ summary:
     a groundbreaking multi-vendor robotics demonstration at Automate 2026. Discover
     how seamless interoperability and Physical AI are transforming islands of automation
     into a unified, resilient operational ecosystem.
-  ko: ''
+  ko: Experience the future of the sentient enterprise as InOrbit.AI orchestrates
+    a groundbreaking multi-vendor robotics demonstration at Automate 2026. Discover
+    how seamless interoperability and Physical AI are transforming islands of automation
+    into a unified, resilient operational ecosystem.
 domains:
 - 11_applications_markets
 layers:
@@ -49,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Experience the future of the sentient enterprise as InOrbit.AI orchestrates a groundbreaking multi-vendor robotics demonstration at Automate 2026. Discover how seamless interoperability and Physical AI are transforming islands of automation into a unified, resilient operational ecosystem.
+
+## Overview
+Experience the future of the sentient enterprise as InOrbit.AI orchestrates a groundbreaking multi-vendor robotics demonstration at Automate 2026. Discover how seamless interoperability and Physical AI are transforming islands of automation into a unified, resilient operational ecosystem.
+
+## 개요
 Experience the future of the sentient enterprise as InOrbit.AI orchestrates a groundbreaking multi-vendor robotics demonstration at Automate 2026. Discover how seamless interoperability and Physical AI are transforming islands of automation into a unified, resilient operational ecosystem.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 知识产权与合规策略
-  ko: ''
+  ko: 知识产权与合规策略
 summary:
   en: ''
   zh: FTO 报告、适用标准清单、IP 布局建议
-  ko: ''
+  ko: FTO 报告、适用标准清单、IP 布局建议
 domains:
 - 11_applications_markets
 - 12_policy_regulation_ethics
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：项目立项与商业基线

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 工作空间与可达性分析
-  ko: ''
+  ko: 工作空间与可达性分析
 summary:
   en: ''
   zh: 《工作空间分析报告》：可达域包络、关键姿态覆盖度 > 95%
-  ko: ''
+  ko: 《工作空间分析报告》：可达域包络、关键姿态覆盖度 > 95%
 domains:
 - 06_design_engineering
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）

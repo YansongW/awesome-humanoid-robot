@@ -6,7 +6,7 @@ type: paper
 names:
   en: Embodied CoT Distillation From LLM To Off-the-shelf Agents
   zh: Embodied CoT Distillation From LLM To Off-the-shelf Agents
-  ko: ''
+  ko: Embodied CoT Distillation From LLM To Off-the-shelf Agents
 summary:
   en: Embodied CoT Distillation From LLM To Off-the-shelf Agents (Embodied CoT Distillation
     From LLM To Off-the-shelf Agents), is a 2024 large vision-language-action model
@@ -18,7 +18,11 @@ summary:
     for robotic manipulation, introduced by Sungkyunkwan University, Department of
     Computer Science and Engineering, Sungkyunkwan University, and published at ICML
     2024.
-  ko: ''
+  ko: Embodied CoT Distillation From LLM To Off-the-shelf Agents (Embodied CoT Distillation
+    From LLM To Off-the-shelf Agents), is a 2024 large vision-language-action model
+    for robotic manipulation, introduced by Sungkyunkwan University, Department of
+    Computer Science and Engineering, Sungkyunkwan University, and published at ICML
+    2024.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -52,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Embodied CoT Distillation From LLM To Off-the-shelf Agents (Embodied CoT Distillation From LLM To Off-the-shelf Agents), is a 2024 large vision-language-action model for robotic manipulation, introduced by Sungkyunkwan University, Department of Computer Science and Engineering, Sungkyunkwan University, and published at ICML 2024.
+
+## Overview
+Embodied CoT Distillation From LLM To Off-the-shelf Agents (Embodied CoT Distillation From LLM To Off-the-shelf Agents), is a 2024 large vision-language-action model for robotic manipulation, introduced by Sungkyunkwan University, Department of Computer Science and Engineering, Sungkyunkwan University, and published at ICML 2024.
+
+## 개요
 Embodied CoT Distillation From LLM To Off-the-shelf Agents (Embodied CoT Distillation From LLM To Off-the-shelf Agents), is a 2024 large vision-language-action model for robotic manipulation, introduced by Sungkyunkwan University, Department of Computer Science and Engineering, Sungkyunkwan University, and published at ICML 2024.

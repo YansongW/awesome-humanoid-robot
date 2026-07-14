@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo'
   zh: 'Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo'
-  ko: ''
+  ko: 'Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo'
 summary:
   en: 'Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo is a 2022 work
     on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo is a 2022 work
     on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo is a 2022 work
+    on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo is a 2022 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo is a 2022 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Predictive Sampling: Real-time Behaviour Synthesis with MuJoCo is a 2022 work on loco-manipulation and whole-body-control for humanoid robots.

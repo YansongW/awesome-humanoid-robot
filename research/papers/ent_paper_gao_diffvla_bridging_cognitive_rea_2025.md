@@ -7,7 +7,8 @@ names:
   en: 'DiffVLA++: Bridging Cognitive Reasoning and End-to-End Driving through Metric-Guided
     Alignment'
   zh: DiffVLA
-  ko: ''
+  ko: 'DiffVLA++: Bridging Cognitive Reasoning and End-to-End Driving through Metric-Guided
+    Alignment'
 summary:
   en: 'DiffVLA++: Bridging Cognitive Reasoning and End-to-End Driving through Metric-Guided
     Alignment (DiffVLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Alignment (DiffVLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by RIX, Bosch, AIR, Tsinghua University, Shanghai Jiao
     Tong University.'
-  ko: ''
+  ko: 'DiffVLA++: Bridging Cognitive Reasoning and End-to-End Driving through Metric-Guided
+    Alignment (DiffVLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by RIX, Bosch, AIR, Tsinghua University, Shanghai Jiao
+    Tong University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DiffVLA++: Bridging Cognitive Reasoning and End-to-End Driving through Metric-Guided Alignment (DiffVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by RIX, Bosch, AIR, Tsinghua University, Shanghai Jiao Tong University.
+
+## Overview
+DiffVLA++: Bridging Cognitive Reasoning and End-to-End Driving through Metric-Guided Alignment (DiffVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by RIX, Bosch, AIR, Tsinghua University, Shanghai Jiao Tong University.
+
+## 개요
 DiffVLA++: Bridging Cognitive Reasoning and End-to-End Driving through Metric-Guided Alignment (DiffVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by RIX, Bosch, AIR, Tsinghua University, Shanghai Jiao Tong University.

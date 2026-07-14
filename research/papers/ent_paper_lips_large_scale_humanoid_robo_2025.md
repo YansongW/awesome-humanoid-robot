@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures'
   zh: 'LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures'
-  ko: ''
+  ko: 'LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures'
 summary:
   en: 'LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures is a 2025
     work on locomotion for humanoid robots.'
   zh: 'LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures is a 2025
     work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures is a 2025
+    work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 LiPS: Large-Scale Humanoid Robot RL with Parallel-Series Structures is a 2025 work on locomotion for humanoid robots.

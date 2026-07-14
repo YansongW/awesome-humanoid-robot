@@ -6,7 +6,7 @@ type: paper
 names:
   en: Diffusion Transformer Policy
   zh: Diffusion Transformer Policy
-  ko: ''
+  ko: Diffusion Transformer Policy
 summary:
   en: Diffusion Transformer Policy (Diffusion Transformer Policy), is a 2024 large
     vision-language-action model for robotic manipulation, introduced by Shanghai
@@ -20,7 +20,12 @@ summary:
     The Chinese University of Hong Kong, Peking University, SenseTime Research, Tsinghua
     University, Center for Artificial Intelligence and Robotics, HKISI, CAS, and published
     at ICRA 2024.
-  ko: ''
+  ko: Diffusion Transformer Policy (Diffusion Transformer Policy), is a 2024 large
+    vision-language-action model for robotic manipulation, introduced by Shanghai
+    AI Lab, College of Computer Science and Technology, Zhejiang University, MMLab,
+    The Chinese University of Hong Kong, Peking University, SenseTime Research, Tsinghua
+    University, Center for Artificial Intelligence and Robotics, HKISI, CAS, and published
+    at ICRA 2024.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Diffusion Transformer Policy (Diffusion Transformer Policy), is a 2024 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Lab, College of Computer Science and Technology, Zhejiang University, MMLab, The Chinese University of Hong Kong, Peking University, SenseTime Research, Tsinghua University, Center for Artificial Intelligence and Robotics, HKISI, CAS, and published at ICRA 2024.
+
+## Overview
+Diffusion Transformer Policy (Diffusion Transformer Policy), is a 2024 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Lab, College of Computer Science and Technology, Zhejiang University, MMLab, The Chinese University of Hong Kong, Peking University, SenseTime Research, Tsinghua University, Center for Artificial Intelligence and Robotics, HKISI, CAS, and published at ICRA 2024.
+
+## 개요
 Diffusion Transformer Policy (Diffusion Transformer Policy), is a 2024 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Lab, College of Computer Science and Technology, Zhejiang University, MMLab, The Chinese University of Hong Kong, Peking University, SenseTime Research, Tsinghua University, Center for Artificial Intelligence and Robotics, HKISI, CAS, and published at ICRA 2024.

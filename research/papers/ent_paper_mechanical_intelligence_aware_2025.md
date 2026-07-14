@@ -6,13 +6,14 @@ type: paper
 names:
   en: Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation
   zh: Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation
-  ko: ''
+  ko: Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation
 summary:
   en: Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation
     is a 2025 work on locomotion for humanoid robots.
   zh: Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation
     is a 2025 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation
+    is a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Mechanical Intelligence-Aware Curriculum RL for Humanoids with Parallel Actuation is a 2025 work on locomotion for humanoid robots.

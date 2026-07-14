@@ -8,13 +8,15 @@ names:
     Control'
   zh: 'CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon Humanoid
     Control'
-  ko: ''
+  ko: 'CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon Humanoid
+    Control'
 summary:
   en: 'CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon Humanoid
     Control is a paper on Loco-Manipulation for humanoid robotics.'
   zh: 'CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon Humanoid
     Control is a paper on Loco-Manipulation for humanoid robotics.'
-  ko: ''
+  ko: 'CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon Humanoid
+    Control is a paper on Loco-Manipulation for humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon Humanoid Control is a paper on Loco-Manipulation for humanoid robotics.
+
+## Overview
+CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon Humanoid Control is a paper on Loco-Manipulation for humanoid robotics.
+
+## 개요
 CLONE: Holistic Closed-Loop Whole-Body Teleoperation for Long-Horizon Humanoid Control is a paper on Loco-Manipulation for humanoid robotics.

@@ -8,7 +8,8 @@ names:
     Prompting
   zh: Bring My Cup Personalizing Vision-Language-Action Models with Visual Attentive
     Prompting
-  ko: ''
+  ko: Bring My Cup Personalizing Vision-Language-Action Models with Visual Attentive
+    Prompting
 summary:
   en: Bring My Cup Personalizing Vision-Language-Action Models with Visual Attentive
     Prompting (Bring My Cup Personalizing Vision-Language-Action Models with Visual
@@ -18,7 +19,10 @@ summary:
     Prompting (Bring My Cup Personalizing Vision-Language-Action Models with Visual
     Attentive Prompting), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by POSTECH, GSAI, IME, dblab.
-  ko: ''
+  ko: Bring My Cup Personalizing Vision-Language-Action Models with Visual Attentive
+    Prompting (Bring My Cup Personalizing Vision-Language-Action Models with Visual
+    Attentive Prompting), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by POSTECH, GSAI, IME, dblab.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +64,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Bring My Cup Personalizing Vision-Language-Action Models with Visual Attentive Prompting (Bring My Cup Personalizing Vision-Language-Action Models with Visual Attentive Prompting), is a 2025 large vision-language-action model for robotic manipulation, introduced by POSTECH, GSAI, IME, dblab.
+
+## Overview
+Bring My Cup Personalizing Vision-Language-Action Models with Visual Attentive Prompting (Bring My Cup Personalizing Vision-Language-Action Models with Visual Attentive Prompting), is a 2025 large vision-language-action model for robotic manipulation, introduced by POSTECH, GSAI, IME, dblab.
+
+## 개요
 Bring My Cup Personalizing Vision-Language-Action Models with Visual Attentive Prompting (Bring My Cup Personalizing Vision-Language-Action Models with Visual Attentive Prompting), is a 2025 large vision-language-action model for robotic manipulation, introduced by POSTECH, GSAI, IME, dblab.

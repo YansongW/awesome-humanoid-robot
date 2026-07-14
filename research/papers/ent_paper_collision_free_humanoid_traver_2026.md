@@ -6,13 +6,14 @@ type: paper
 names:
   en: Collision-Free Humanoid Traversal in Cluttered Indoor Scenes
   zh: Collision-Free Humanoid Traversal in Cluttered Indoor Scenes
-  ko: ''
+  ko: Collision-Free Humanoid Traversal in Cluttered Indoor Scenes
 summary:
   en: Collision-Free Humanoid Traversal in Cluttered Indoor Scenes is a 2026 work
     on loco-manipulation and whole-body-control for humanoid robots.
   zh: Collision-Free Humanoid Traversal in Cluttered Indoor Scenes is a 2026 work
     on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Collision-Free Humanoid Traversal in Cluttered Indoor Scenes is a 2026 work
+    on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Collision-Free Humanoid Traversal in Cluttered Indoor Scenes is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Collision-Free Humanoid Traversal in Cluttered Indoor Scenes is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Collision-Free Humanoid Traversal in Cluttered Indoor Scenes is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 人因工程与交互需求
-  ko: ''
+  ko: 人因工程与交互需求
 summary:
   en: ''
   zh: 人因需求报告、关键交互姿态包络、HMI 原则
-  ko: ''
+  ko: 人因需求报告、关键交互姿态包络、HMI 原则
 domains:
 - 06_design_engineering
 - 12_policy_regulation_ethics
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）

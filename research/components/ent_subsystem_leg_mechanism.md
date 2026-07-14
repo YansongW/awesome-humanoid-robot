@@ -8,8 +8,8 @@ names:
   zh: 腿部机构
   ko: 다리 기구
 summary:
-  en: The kinematic and structural design of the leg linkage, including hip, knee, and ankle joints, that supports weight,
-    absorbs impact, and enables locomotion.
+  en: The kinematic and structural design of the leg linkage, including hip, knee,
+    and ankle joints, that supports weight, absorbs impact, and enables locomotion.
   zh: 包含髋、膝、踝关节的腿部连杆运动与结构设计，承担承重、冲击吸收与移动功能。
   ko: 고관절·무릎·발목 관절을 포함하는 다리 연결 기구의 용동·구조 설계로, 하중 지지·충격 흡수·이동을 담당.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+包含髋、膝、踝关节的腿部连杆运动与结构设计，承担承重、冲击吸收与移动功能。
+
+## Overview
+The kinematic and structural design of the leg linkage, including hip, knee, and ankle joints, that supports weight, absorbs impact, and enables locomotion.
+
+## 개요
+The kinematic and structural design of the leg linkage, including hip, knee, and ankle joints, that supports weight, absorbs impact, and enables locomotion.

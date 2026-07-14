@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'MetaVLA: Unified Meta Co-training For Efficient Embodied Adaption'
   zh: MetaVLA
-  ko: ''
+  ko: 'MetaVLA: Unified Meta Co-training For Efficient Embodied Adaption'
 summary:
   en: 'MetaVLA: Unified Meta Co-training For Efficient Embodied Adaption (MetaVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'MetaVLA: Unified Meta Co-training For Efficient Embodied Adaption (MetaVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Carnegie Mellon University, Meta Reality Labs, USA.'
-  ko: ''
+  ko: 'MetaVLA: Unified Meta Co-training For Efficient Embodied Adaption (MetaVLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Carnegie Mellon University, Meta Reality Labs, USA.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MetaVLA: Unified Meta Co-training For Efficient Embodied Adaption (MetaVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, Meta Reality Labs, USA.
+
+## Overview
+MetaVLA: Unified Meta Co-training For Efficient Embodied Adaption (MetaVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, Meta Reality Labs, USA.
+
+## 개요
 MetaVLA: Unified Meta Co-training For Efficient Embodied Adaption (MetaVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, Meta Reality Labs, USA.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: Mixture of Horizons in Action Chunking
   zh: MoH
-  ko: ''
+  ko: Mixture of Horizons in Action Chunking
 summary:
   en: Mixture of Horizons in Action Chunking (MoH), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by RUC, UNC, CUHK.
   zh: Mixture of Horizons in Action Chunking (MoH), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by RUC, UNC, CUHK.
-  ko: ''
+  ko: Mixture of Horizons in Action Chunking (MoH), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by RUC, UNC, CUHK.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Mixture of Horizons in Action Chunking (MoH), is a 2025 large vision-language-action model for robotic manipulation, introduced by RUC, UNC, CUHK.
+
+## Overview
+Mixture of Horizons in Action Chunking (MoH), is a 2025 large vision-language-action model for robotic manipulation, introduced by RUC, UNC, CUHK.
+
+## 개요
 Mixture of Horizons in Action Chunking (MoH), is a 2025 large vision-language-action model for robotic manipulation, introduced by RUC, UNC, CUHK.

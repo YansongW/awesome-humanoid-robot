@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control'
   zh: RT-2
-  ko: ''
+  ko: 'RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control'
 summary:
   en: 'RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control
     (RT-2), is a 2023 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control
     (RT-2), is a 2023 large vision-language-action model for robotic manipulation,
     introduced by Google DeepMind, and published at CoRL 2023.'
-  ko: ''
+  ko: 'RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control
+    (RT-2), is a 2023 large vision-language-action model for robotic manipulation,
+    introduced by Google DeepMind, and published at CoRL 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (RT-2), is a 2023 large vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at CoRL 2023.
+
+## Overview
+RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (RT-2), is a 2023 large vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at CoRL 2023.
+
+## 개요
 RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control (RT-2), is a 2023 large vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at CoRL 2023.

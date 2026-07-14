@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+在整机装配前验证关节性能、通信总线、控制回路和安全系统的物理测试台。
+
+## Overview
 Physical rig used to validate joint performance, communication buses, control loops, and safety systems before full robot assembly.
+
+## 개요
+완전한 로봇 조립 전 관절 성능, 통신 버스, 제어 루프 및 안전 시스템을 검증하는 물리적 테스트 벤치.

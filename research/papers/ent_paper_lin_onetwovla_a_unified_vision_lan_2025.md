@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning'
   zh: OneTwoVLA
-  ko: ''
+  ko: 'OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning'
 summary:
   en: 'OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning (OneTwoVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Tsinghua University, Shanghai Qi Zhi Institute, Shanghai Artificial Intelligence
     Laboratory, Fudan University, Spirit AI.'
-  ko: ''
+  ko: 'OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning (OneTwoVLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Tsinghua University, Shanghai Qi Zhi Institute, Shanghai Artificial Intelligence
+    Laboratory, Fudan University, Spirit AI.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning (OneTwoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Shanghai Qi Zhi Institute, Shanghai Artificial Intelligence Laboratory, Fudan University, Spirit AI.
+
+## Overview
+OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning (OneTwoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Shanghai Qi Zhi Institute, Shanghai Artificial Intelligence Laboratory, Fudan University, Spirit AI.
+
+## 개요
 OneTwoVLA: A Unified Vision-Language-Action Model with Adaptive Reasoning (OneTwoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Shanghai Qi Zhi Institute, Shanghai Artificial Intelligence Laboratory, Fudan University, Spirit AI.

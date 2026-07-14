@@ -6,13 +6,14 @@ type: paper
 names:
   en: End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy
   zh: End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy
-  ko: ''
+  ko: End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy
 summary:
   en: End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy is a 2025 work
     on locomotion for humanoid robots.
   zh: End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy is a 2025 work
     on locomotion for humanoid robots.
-  ko: ''
+  ko: End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy is a 2025 work
+    on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 End-to-End Humanoid Robot Safe and Comfortable Locomotion Policy is a 2025 work on locomotion for humanoid robots.

@@ -7,7 +7,8 @@ names:
   en: 'JARVIS-VLA: Post-Training Large-Scale Vision Language Models to Play Visual
     Games with Keyboards and Mouse'
   zh: JARVIS-VLA
-  ko: ''
+  ko: 'JARVIS-VLA: Post-Training Large-Scale Vision Language Models to Play Visual
+    Games with Keyboards and Mouse'
 summary:
   en: 'JARVIS-VLA: Post-Training Large-Scale Vision Language Models to Play Visual
     Games with Keyboards and Mouse (JARVIS-VLA), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Games with Keyboards and Mouse (JARVIS-VLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Peking University, and published
     at ACL 2025.'
-  ko: ''
+  ko: 'JARVIS-VLA: Post-Training Large-Scale Vision Language Models to Play Visual
+    Games with Keyboards and Mouse (JARVIS-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Peking University, and published
+    at ACL 2025.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+JARVIS-VLA: Post-Training Large-Scale Vision Language Models to Play Visual Games with Keyboards and Mouse (JARVIS-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, and published at ACL 2025.
+
+## Overview
+JARVIS-VLA: Post-Training Large-Scale Vision Language Models to Play Visual Games with Keyboards and Mouse (JARVIS-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, and published at ACL 2025.
+
+## 개요
 JARVIS-VLA: Post-Training Large-Scale Vision Language Models to Play Visual Games with Keyboards and Mouse (JARVIS-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, and published at ACL 2025.

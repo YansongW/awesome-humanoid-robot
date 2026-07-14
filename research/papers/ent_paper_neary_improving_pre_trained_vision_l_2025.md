@@ -6,7 +6,7 @@ type: paper
 names:
   en: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search
   zh: VLAPS
-  ko: ''
+  ko: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search
 summary:
   en: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search
     (VLAPS), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (VLAPS), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University
     of British Columbia.
-  ko: ''
+  ko: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search
+    (VLAPS), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University
+    of British Columbia.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search (VLAPS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University of British Columbia.
+
+## Overview
+Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search (VLAPS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University of British Columbia.
+
+## 개요
 Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search (VLAPS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University of British Columbia.

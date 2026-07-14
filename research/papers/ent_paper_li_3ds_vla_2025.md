@@ -6,7 +6,7 @@ type: paper
 names:
   en: 3DS-VLA
   zh: 3DS-VLA
-  ko: ''
+  ko: 3DS-VLA
 summary:
   en: 3DS-VLA (3DS-VLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by CFCS, School of Computer Science, Peking University,
@@ -16,7 +16,10 @@ summary:
     manipulation, introduced by CFCS, School of Computer Science, Peking University,
     PKU-Agibot Lab, State Key Laboratory of Multimedia Information Processing, School
     of Computer Science, Peking University, CUHK, and published at CoRL25.
-  ko: ''
+  ko: 3DS-VLA (3DS-VLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by CFCS, School of Computer Science, Peking University,
+    PKU-Agibot Lab, State Key Laboratory of Multimedia Information Processing, School
+    of Computer Science, Peking University, CUHK, and published at CoRL25.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+3DS-VLA (3DS-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by CFCS, School of Computer Science, Peking University, PKU-Agibot Lab, State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, CUHK, and published at CoRL25.
+
+## Overview
+3DS-VLA (3DS-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by CFCS, School of Computer Science, Peking University, PKU-Agibot Lab, State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, CUHK, and published at CoRL25.
+
+## 개요
 3DS-VLA (3DS-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by CFCS, School of Computer Science, Peking University, PKU-Agibot Lab, State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, CUHK, and published at CoRL25.

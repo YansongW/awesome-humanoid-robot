@@ -8,7 +8,8 @@ names:
     sensor for human-robot collaboration'
   zh: 'Robot safety is now 3D: Sonair unveils world''s first safety-certified 3D ultrasonic
     sensor for human-robot collaboration'
-  ko: ''
+  ko: 'Robot safety is now 3D: Sonair unveils world''s first safety-certified 3D ultrasonic
+    sensor for human-robot collaboration'
 summary:
   en: The ADAR One sensor is now suitable for SIL2 and PL d applications and is certified
     to fulfil all requirements of the European machine directive as a sensor for the
@@ -16,7 +17,9 @@ summary:
   zh: The ADAR One sensor is now suitable for SIL2 and PL d applications and is certified
     to fulfil all requirements of the European machine directive as a sensor for the
     safe detection of humans and objects.
-  ko: ''
+  ko: The ADAR One sensor is now suitable for SIL2 and PL d applications and is certified
+    to fulfil all requirements of the European machine directive as a sensor for the
+    safe detection of humans and objects.
 domains:
 - 11_applications_markets
 layers:
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+The ADAR One sensor is now suitable for SIL2 and PL d applications and is certified to fulfil all requirements of the European machine directive as a sensor for the safe detection of humans and objects.
+
+## Overview
+The ADAR One sensor is now suitable for SIL2 and PL d applications and is certified to fulfil all requirements of the European machine directive as a sensor for the safe detection of humans and objects.
+
+## 개요
 The ADAR One sensor is now suitable for SIL2 and PL d applications and is certified to fulfil all requirements of the European machine directive as a sensor for the safe detection of humans and objects.

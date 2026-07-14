@@ -7,7 +7,8 @@ names:
   en: 'Beyond Success: Refining Elegant Robot Manipulation from Mixed-Quality Data
     via Just-in-Time Intervention'
   zh: Beyond Success
-  ko: ''
+  ko: 'Beyond Success: Refining Elegant Robot Manipulation from Mixed-Quality Data
+    via Just-in-Time Intervention'
 summary:
   en: 'Beyond Success: Refining Elegant Robot Manipulation from Mixed-Quality Data
     via Just-in-Time Intervention (Beyond Success), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     via Just-in-Time Intervention (Beyond Success), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Jilin University, Microsoft Research
     Asia.'
-  ko: ''
+  ko: 'Beyond Success: Refining Elegant Robot Manipulation from Mixed-Quality Data
+    via Just-in-Time Intervention (Beyond Success), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Jilin University, Microsoft Research
+    Asia.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Beyond Success: Refining Elegant Robot Manipulation from Mixed-Quality Data via Just-in-Time Intervention (Beyond Success), is a 2025 large vision-language-action model for robotic manipulation, introduced by Jilin University, Microsoft Research Asia.
+
+## Overview
+Beyond Success: Refining Elegant Robot Manipulation from Mixed-Quality Data via Just-in-Time Intervention (Beyond Success), is a 2025 large vision-language-action model for robotic manipulation, introduced by Jilin University, Microsoft Research Asia.
+
+## 개요
 Beyond Success: Refining Elegant Robot Manipulation from Mixed-Quality Data via Just-in-Time Intervention (Beyond Success), is a 2025 large vision-language-action model for robotic manipulation, introduced by Jilin University, Microsoft Research Asia.

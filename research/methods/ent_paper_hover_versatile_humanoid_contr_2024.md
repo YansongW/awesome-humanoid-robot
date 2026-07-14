@@ -41,4 +41,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+支持多种人形机器人行为模式的通用人形机器人神经全身控制器。
+
+## Overview
+Versatile neural whole-body controller for multiple humanoid behavior modes.
+
+## 개요
 Versatile neural whole-body controller for multiple humanoid behavior modes.

@@ -7,7 +7,8 @@ names:
   en: 'See Once, Then Act: Vision-Language-Action Model with Task Learning from One-Shot
     Video Demonstrations'
   zh: ViVLA
-  ko: ''
+  ko: 'See Once, Then Act: Vision-Language-Action Model with Task Learning from One-Shot
+    Video Demonstrations'
 summary:
   en: 'See Once, Then Act: Vision-Language-Action Model with Task Learning from One-Shot
     Video Demonstrations (ViVLA), is a 2025 large vision-language-action model for
@@ -15,7 +16,9 @@ summary:
   zh: 'See Once, Then Act: Vision-Language-Action Model with Task Learning from One-Shot
     Video Demonstrations (ViVLA), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by Beijing Institute of Technology, LimX Dynamics.'
-  ko: ''
+  ko: 'See Once, Then Act: Vision-Language-Action Model with Task Learning from One-Shot
+    Video Demonstrations (ViVLA), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by Beijing Institute of Technology, LimX Dynamics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+See Once, Then Act: Vision-Language-Action Model with Task Learning from One-Shot Video Demonstrations (ViVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Institute of Technology, LimX Dynamics.
+
+## Overview
+See Once, Then Act: Vision-Language-Action Model with Task Learning from One-Shot Video Demonstrations (ViVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Institute of Technology, LimX Dynamics.
+
+## 개요
 See Once, Then Act: Vision-Language-Action Model with Task Learning from One-Shot Video Demonstrations (ViVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Institute of Technology, LimX Dynamics.

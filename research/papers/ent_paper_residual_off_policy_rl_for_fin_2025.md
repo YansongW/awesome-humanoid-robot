@@ -6,13 +6,14 @@ type: paper
 names:
   en: Residual Off-Policy RL for Finetuning Behavior Cloning Policies
   zh: Residual Off-Policy RL for Finetuning Behavior Cloning Policies
-  ko: ''
+  ko: Residual Off-Policy RL for Finetuning Behavior Cloning Policies
 summary:
   en: Residual Off-Policy RL for Finetuning Behavior Cloning Policies is a 2025 work
     on manipulation for humanoid robots.
   zh: Residual Off-Policy RL for Finetuning Behavior Cloning Policies is a 2025 work
     on manipulation for humanoid robots.
-  ko: ''
+  ko: Residual Off-Policy RL for Finetuning Behavior Cloning Policies is a 2025 work
+    on manipulation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Residual Off-Policy RL for Finetuning Behavior Cloning Policies is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+Residual Off-Policy RL for Finetuning Behavior Cloning Policies is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 Residual Off-Policy RL for Finetuning Behavior Cloning Policies is a 2025 work on manipulation for humanoid robots.

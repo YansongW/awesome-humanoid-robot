@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: IMU 与关节编码器融合
-  ko: ''
+  ko: IMU 与关节编码器融合
 summary:
   en: ''
   zh: 状态估计器、实测轨迹误差 < 目标、站立漂移可控
-  ko: ''
+  ko: 状态估计器、实测轨迹误差 < 目标、站立漂移可控
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）

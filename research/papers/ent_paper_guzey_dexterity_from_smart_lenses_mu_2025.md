@@ -7,7 +7,8 @@ names:
   en: 'Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-the-Wild
     Human Demonstrations'
   zh: AINA
-  ko: ''
+  ko: 'Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-the-Wild
+    Human Demonstrations'
 summary:
   en: 'Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-the-Wild
     Human Demonstrations (AINA), is a 2025 large vision-language-action model for
@@ -15,7 +16,9 @@ summary:
   zh: 'Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-the-Wild
     Human Demonstrations (AINA), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by New York University, Meta.'
-  ko: ''
+  ko: 'Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-the-Wild
+    Human Demonstrations (AINA), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by New York University, Meta.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-the-Wild Human Demonstrations (AINA), is a 2025 large vision-language-action model for robotic manipulation, introduced by New York University, Meta.
+
+## Overview
+Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-the-Wild Human Demonstrations (AINA), is a 2025 large vision-language-action model for robotic manipulation, introduced by New York University, Meta.
+
+## 개요
 Dexterity from Smart Lenses: Multi-Fingered Robot Manipulation with In-the-Wild Human Demonstrations (AINA), is a 2025 large vision-language-action model for robotic manipulation, introduced by New York University, Meta.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: Robotic Control via Embodied Chain-of-Thought Reasoning
   zh: ECoT
-  ko: ''
+  ko: Robotic Control via Embodied Chain-of-Thought Reasoning
 summary:
   en: Robotic Control via Embodied Chain-of-Thought Reasoning (ECoT), is a 2024 large
     vision-language-action model for robotic manipulation, introduced by UC Berkeley,
@@ -14,7 +14,9 @@ summary:
   zh: Robotic Control via Embodied Chain-of-Thought Reasoning (ECoT), is a 2024 large
     vision-language-action model for robotic manipulation, introduced by UC Berkeley,
     University of Warsaw, Stanford University, and published at CoRL24.
-  ko: ''
+  ko: Robotic Control via Embodied Chain-of-Thought Reasoning (ECoT), is a 2024 large
+    vision-language-action model for robotic manipulation, introduced by UC Berkeley,
+    University of Warsaw, Stanford University, and published at CoRL24.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Robotic Control via Embodied Chain-of-Thought Reasoning (ECoT), is a 2024 large vision-language-action model for robotic manipulation, introduced by UC Berkeley, University of Warsaw, Stanford University, and published at CoRL24.
+
+## Overview
+Robotic Control via Embodied Chain-of-Thought Reasoning (ECoT), is a 2024 large vision-language-action model for robotic manipulation, introduced by UC Berkeley, University of Warsaw, Stanford University, and published at CoRL24.
+
+## 개요
 Robotic Control via Embodied Chain-of-Thought Reasoning (ECoT), is a 2024 large vision-language-action model for robotic manipulation, introduced by UC Berkeley, University of Warsaw, Stanford University, and published at CoRL24.

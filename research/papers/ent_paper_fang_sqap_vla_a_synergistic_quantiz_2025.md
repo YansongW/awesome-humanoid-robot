@@ -7,7 +7,8 @@ names:
   en: 'SQAP-VLA: A Synergistic Quantization-Aware Pruning Framework for High-Performance
     Vision-Language-Action Models'
   zh: SQAP-VLA
-  ko: ''
+  ko: 'SQAP-VLA: A Synergistic Quantization-Aware Pruning Framework for High-Performance
+    Vision-Language-Action Models'
 summary:
   en: 'SQAP-VLA: A Synergistic Quantization-Aware Pruning Framework for High-Performance
     Vision-Language-Action Models (SQAP-VLA), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Vision-Language-Action Models (SQAP-VLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by School of Electronic Science and
     Engineering, Nanjing University, University of Arizona.'
-  ko: ''
+  ko: 'SQAP-VLA: A Synergistic Quantization-Aware Pruning Framework for High-Performance
+    Vision-Language-Action Models (SQAP-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by School of Electronic Science and
+    Engineering, Nanjing University, University of Arizona.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SQAP-VLA: A Synergistic Quantization-Aware Pruning Framework for High-Performance Vision-Language-Action Models (SQAP-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Electronic Science and Engineering, Nanjing University, University of Arizona.
+
+## Overview
+SQAP-VLA: A Synergistic Quantization-Aware Pruning Framework for High-Performance Vision-Language-Action Models (SQAP-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Electronic Science and Engineering, Nanjing University, University of Arizona.
+
+## 개요
 SQAP-VLA: A Synergistic Quantization-Aware Pruning Framework for High-Performance Vision-Language-Action Models (SQAP-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Electronic Science and Engineering, Nanjing University, University of Arizona.

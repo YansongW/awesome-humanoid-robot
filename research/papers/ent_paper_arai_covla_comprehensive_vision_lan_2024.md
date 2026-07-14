@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'CoVLA: Comprehensive Vision-Language-Action Dataset for Autonomous Driving'
   zh: CoVLA
-  ko: ''
+  ko: 'CoVLA: Comprehensive Vision-Language-Action Dataset for Autonomous Driving'
 summary:
   en: 'CoVLA: Comprehensive Vision-Language-Action Dataset for Autonomous Driving
     (CoVLA), is a 2024 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'CoVLA: Comprehensive Vision-Language-Action Dataset for Autonomous Driving
     (CoVLA), is a 2024 large vision-language-action model for robotic manipulation,
     introduced by Turing Inc., and published at WACV 2024.'
-  ko: ''
+  ko: 'CoVLA: Comprehensive Vision-Language-Action Dataset for Autonomous Driving
+    (CoVLA), is a 2024 large vision-language-action model for robotic manipulation,
+    introduced by Turing Inc., and published at WACV 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CoVLA: Comprehensive Vision-Language-Action Dataset for Autonomous Driving (CoVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Turing Inc., and published at WACV 2024.
+
+## Overview
+CoVLA: Comprehensive Vision-Language-Action Dataset for Autonomous Driving (CoVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Turing Inc., and published at WACV 2024.
+
+## 개요
 CoVLA: Comprehensive Vision-Language-Action Dataset for Autonomous Driving (CoVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Turing Inc., and published at WACV 2024.

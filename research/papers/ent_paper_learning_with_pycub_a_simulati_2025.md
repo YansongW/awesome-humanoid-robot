@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics'
   zh: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics'
-  ko: ''
+  ko: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics'
 summary:
   en: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics
     is a 2025 work on simulation benchmark for humanoid robots.'
   zh: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics
     is a 2025 work on simulation benchmark for humanoid robots.'
-  ko: ''
+  ko: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics
+    is a 2025 work on simulation benchmark for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics is a 2025 work on simulation benchmark for humanoid robots.
+
+## Overview
+Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics is a 2025 work on simulation benchmark for humanoid robots.
+
+## 개요
 Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics is a 2025 work on simulation benchmark for humanoid robots.

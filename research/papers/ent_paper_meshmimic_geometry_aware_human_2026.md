@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'MeshMimic: Geometry-Aware Humanoid Motion Learning through 3D Scene Reconstruction'
   zh: 'MeshMimic: Geometry-Aware Humanoid Motion Learning through 3D Scene Reconstruction'
-  ko: ''
+  ko: 'MeshMimic: Geometry-Aware Humanoid Motion Learning through 3D Scene Reconstruction'
 summary:
   en: 'MeshMimic: Geometry-Aware Humanoid Motion Learning through 3D Scene Reconstruction
     is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'MeshMimic: Geometry-Aware Humanoid Motion Learning through 3D Scene Reconstruction
     is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'MeshMimic: Geometry-Aware Humanoid Motion Learning through 3D Scene Reconstruction
+    is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MeshMimic: Geometry-Aware Humanoid Motion Learning through 3D Scene Reconstruction is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+MeshMimic: Geometry-Aware Humanoid Motion Learning through 3D Scene Reconstruction is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 MeshMimic: Geometry-Aware Humanoid Motion Learning through 3D Scene Reconstruction is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

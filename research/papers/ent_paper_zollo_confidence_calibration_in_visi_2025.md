@@ -6,7 +6,7 @@ type: paper
 names:
   en: Confidence Calibration in Vision-Language-Action Models
   zh: Confidence Calibration in Vision-Language-Action Models
-  ko: ''
+  ko: Confidence Calibration in Vision-Language-Action Models
 summary:
   en: Confidence Calibration in Vision-Language-Action Models (Confidence Calibration
     in Vision-Language-Action Models), is a 2025 large vision-language-action model
@@ -14,7 +14,9 @@ summary:
   zh: Confidence Calibration in Vision-Language-Action Models (Confidence Calibration
     in Vision-Language-Action Models), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by Columbia University.
-  ko: ''
+  ko: Confidence Calibration in Vision-Language-Action Models (Confidence Calibration
+    in Vision-Language-Action Models), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by Columbia University.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Confidence Calibration in Vision-Language-Action Models (Confidence Calibration in Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Columbia University.
+
+## Overview
+Confidence Calibration in Vision-Language-Action Models (Confidence Calibration in Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Columbia University.
+
+## 개요
 Confidence Calibration in Vision-Language-Action Models (Confidence Calibration in Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Columbia University.

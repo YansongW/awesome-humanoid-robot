@@ -6,13 +6,14 @@ type: paper
 names:
   en: Unified Humanoid Fall-Safety Policy from a Few Demonstrations
   zh: Unified Humanoid Fall-Safety Policy from a Few Demonstrations
-  ko: ''
+  ko: Unified Humanoid Fall-Safety Policy from a Few Demonstrations
 summary:
   en: Unified Humanoid Fall-Safety Policy from a Few Demonstrations is a 2025 work
     on loco-manipulation and whole-body-control for humanoid robots.
   zh: Unified Humanoid Fall-Safety Policy from a Few Demonstrations is a 2025 work
     on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Unified Humanoid Fall-Safety Policy from a Few Demonstrations is a 2025 work
+    on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Unified Humanoid Fall-Safety Policy from a Few Demonstrations is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Unified Humanoid Fall-Safety Policy from a Few Demonstrations is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Unified Humanoid Fall-Safety Policy from a Few Demonstrations is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

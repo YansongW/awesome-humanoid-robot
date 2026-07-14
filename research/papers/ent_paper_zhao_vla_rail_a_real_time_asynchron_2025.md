@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots'
   zh: VLA-RAIL
-  ko: ''
+  ko: 'VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots'
 summary:
   en: 'VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots
     (VLA-RAIL), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots
     (VLA-RAIL), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by China Mobile (Hangzhou) Information Technology Co., Ltd.,.'
-  ko: ''
+  ko: 'VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots
+    (VLA-RAIL), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by China Mobile (Hangzhou) Information Technology Co., Ltd.,.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots (VLA-RAIL), is a 2025 large vision-language-action model for robotic manipulation, introduced by China Mobile (Hangzhou) Information Technology Co., Ltd.,.
+
+## Overview
+VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots (VLA-RAIL), is a 2025 large vision-language-action model for robotic manipulation, introduced by China Mobile (Hangzhou) Information Technology Co., Ltd.,.
+
+## 개요
 VLA-RAIL: A Real-Time Asynchronous Inference Linker for VLA Models and Robots (VLA-RAIL), is a 2025 large vision-language-action model for robotic manipulation, introduced by China Mobile (Hangzhou) Information Technology Co., Ltd.,.

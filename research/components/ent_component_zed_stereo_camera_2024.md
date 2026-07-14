@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+具有 onboard 深度估计和空间AI的立体视觉相机，用于机器人导航。
+
+## Overview
+Stereo vision camera with onboard depth estimation and spatial AI used in robot navigation.
+
+## 개요
 Stereo vision camera with onboard depth estimation and spatial AI used in robot navigation.

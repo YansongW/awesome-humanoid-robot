@@ -8,13 +8,15 @@ names:
     Manipulation'
   zh: 'DexterCap: An Affordable and Automated System for Capturing Dexterous Hand-Object
     Manipulation'
-  ko: ''
+  ko: 'DexterCap: An Affordable and Automated System for Capturing Dexterous Hand-Object
+    Manipulation'
 summary:
   en: 'DexterCap: An Affordable and Automated System for Capturing Dexterous Hand-Object
     Manipulation is a 2026 work on manipulation for humanoid robots.'
   zh: 'DexterCap: An Affordable and Automated System for Capturing Dexterous Hand-Object
     Manipulation is a 2026 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'DexterCap: An Affordable and Automated System for Capturing Dexterous Hand-Object
+    Manipulation is a 2026 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DexterCap: An Affordable and Automated System for Capturing Dexterous Hand-Object Manipulation is a 2026 work on manipulation for humanoid robots.
+
+## Overview
+DexterCap: An Affordable and Automated System for Capturing Dexterous Hand-Object Manipulation is a 2026 work on manipulation for humanoid robots.
+
+## 개요
 DexterCap: An Affordable and Automated System for Capturing Dexterous Hand-Object Manipulation is a 2026 work on manipulation for humanoid robots.

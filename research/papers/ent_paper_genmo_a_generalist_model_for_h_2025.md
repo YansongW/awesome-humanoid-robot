@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'GENMO: A GENeralist Model for Human MOtion'
   zh: 'GENMO: A GENeralist Model for Human MOtion'
-  ko: ''
+  ko: 'GENMO: A GENeralist Model for Human MOtion'
 summary:
   en: 'GENMO: A GENeralist Model for Human MOtion is a 2025 work on human motion analysis
     and synthesis for humanoid robots.'
   zh: 'GENMO: A GENeralist Model for Human MOtion is a 2025 work on human motion analysis
     and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'GENMO: A GENeralist Model for Human MOtion is a 2025 work on human motion analysis
+    and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GENMO: A GENeralist Model for Human MOtion is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+GENMO: A GENeralist Model for Human MOtion is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 GENMO: A GENeralist Model for Human MOtion is a 2025 work on human motion analysis and synthesis for humanoid robots.

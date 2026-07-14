@@ -8,8 +8,8 @@ names:
   zh: 三花智控
   ko: 싼화지콩(三花智控)
 summary:
-  en: A Chinese Tier-1 supplier of thermal management components and precision aluminum parts, increasingly active in humanoid
-    and automotive robotics supply chains.
+  en: A Chinese Tier-1 supplier of thermal management components and precision aluminum
+    parts, increasingly active in humanoid and automotive robotics supply chains.
   zh: 中国一级供应商，主营热管理零部件与精密铝件，正积极布局人形机器人及汽车机器人供应链。
   ko: 열 관리 부품과 정밀 알루미늄 부품을 공급하는 중국 티어1 기업으로, 휴로봇 및 자동차 로봇 공급망에 활발히 진출 중.
 domains:
@@ -30,8 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,3 +39,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+中国一级供应商，主营热管理零部件与精密铝件，正积极布局人形机器人及汽车机器人供应链。
+
+## Overview
+A Chinese Tier-1 supplier of thermal management components and precision aluminum parts, increasingly active in humanoid and automotive robotics supply chains.
+
+## 개요
+A Chinese Tier-1 supplier of thermal management components and precision aluminum parts, increasingly active in humanoid and automotive robotics supply chains.

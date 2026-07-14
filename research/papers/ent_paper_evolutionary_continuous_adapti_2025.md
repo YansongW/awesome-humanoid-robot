@@ -6,13 +6,14 @@ type: paper
 names:
   en: Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance
   zh: Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance
-  ko: ''
+  ko: Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance
 summary:
   en: Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance
     is a 2025 work on hardware design for humanoid robots.
   zh: Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance
     is a 2025 work on hardware design for humanoid robots.
-  ko: ''
+  ko: Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance
+    is a 2025 work on hardware design for humanoid robots.
 domains:
 - 06_design_engineering
 - 02_components
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 Evolutionary Continuous Adaptive RL-Powered Co-Design for Humanoid Chin-Up Performance is a 2025 work on hardware design for humanoid robots.

@@ -8,7 +8,8 @@ names:
     Estimation'
   zh: 'MANIKIN: Biomechanically Accurate Neural Inverse Kinematics for Human Motion
     Estimation'
-  ko: ''
+  ko: 'MANIKIN: Biomechanically Accurate Neural Inverse Kinematics for Human Motion
+    Estimation'
 summary:
   en: 'MANIKIN: Biomechanically Accurate Neural Inverse Kinematics for Human Motion
     Estimation is a 2024 work on human motion analysis and synthesis for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'MANIKIN: Biomechanically Accurate Neural Inverse Kinematics for Human Motion
     Estimation is a 2024 work on human motion analysis and synthesis for humanoid
     robots.'
-  ko: ''
+  ko: 'MANIKIN: Biomechanically Accurate Neural Inverse Kinematics for Human Motion
+    Estimation is a 2024 work on human motion analysis and synthesis for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MANIKIN: Biomechanically Accurate Neural Inverse Kinematics for Human Motion Estimation is a 2024 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+MANIKIN: Biomechanically Accurate Neural Inverse Kinematics for Human Motion Estimation is a 2024 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 MANIKIN: Biomechanically Accurate Neural Inverse Kinematics for Human Motion Estimation is a 2024 work on human motion analysis and synthesis for humanoid robots.

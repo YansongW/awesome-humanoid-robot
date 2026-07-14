@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots
   zh: Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots
-  ko: ''
+  ko: Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots
 summary:
   en: Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots is a
     2024 work on loco-manipulation and whole-body-control for humanoid robots.
   zh: Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots is a
     2024 work on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots is a
+    2024 work on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Learning Multi-Modal Whole-Body Control for Real-World Humanoid Robots is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.

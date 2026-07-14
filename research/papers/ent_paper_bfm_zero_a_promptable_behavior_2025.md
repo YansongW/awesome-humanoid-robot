@@ -7,11 +7,12 @@ names:
   en: 'BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using
     Unsupervised Reinforcement Learning'
   zh: BFM-Zero｜使用无监督强化学习的人形控制的即时行为基础模型
-  ko: ''
+  ko: 'BFM-Zero: A Promptable Behavioral Foundation Model for Humanoid Control Using
+    Unsupervised Reinforcement Learning'
 summary:
   en: ''
   zh: BFM-Zero 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、分层技能/专家策略、闭环纠错/人类干预训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
-  ko: ''
+  ko: BFM-Zero 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、分层技能/专家策略、闭环纠错/人类干预训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
 - 06_design_engineering
 - 07_ai_models_algorithms
@@ -48,5 +49,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+BFM-Zero 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、分层技能/专家策略、闭环纠错/人类干预训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
+## 개요
 BFM-Zero 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、分层技能/专家策略、闭环纠错/人类干预训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。

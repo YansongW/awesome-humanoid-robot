@@ -6,7 +6,7 @@ type: paper
 names:
   en: Open-World Object Manipulation using Pre-trained Vision-Language Models
   zh: MOO
-  ko: ''
+  ko: Open-World Object Manipulation using Pre-trained Vision-Language Models
 summary:
   en: Open-World Object Manipulation using Pre-trained Vision-Language Models (MOO),
     is a 2023 generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: Open-World Object Manipulation using Pre-trained Vision-Language Models (MOO),
     is a 2023 generalized vision-language-action model for robotic manipulation, introduced
     by Robotics at Google, and published at CoRL 2023.
-  ko: ''
+  ko: Open-World Object Manipulation using Pre-trained Vision-Language Models (MOO),
+    is a 2023 generalized vision-language-action model for robotic manipulation, introduced
+    by Robotics at Google, and published at CoRL 2023.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Open-World Object Manipulation using Pre-trained Vision-Language Models (MOO), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google, and published at CoRL 2023.
+
+## Overview
+Open-World Object Manipulation using Pre-trained Vision-Language Models (MOO), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google, and published at CoRL 2023.
+
+## 개요
 Open-World Object Manipulation using Pre-trained Vision-Language Models (MOO), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google, and published at CoRL 2023.

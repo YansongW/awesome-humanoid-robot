@@ -10,7 +10,9 @@ names:
   zh: 'Revolutionizing Construction: Introducing the World''s First Fleet-Capable
     Downward Drilling Robot, Now Commercially Available to Accelerate Data Center
     Construction'
-  ko: ''
+  ko: 'Revolutionizing Construction: Introducing the World''s First Fleet-Capable
+    Downward Drilling Robot, Now Commercially Available to Accelerate Data Center
+    Construction'
 summary:
   en: -Downward drilling robot delivers up to 10x faster drilling speeds than traditional
     methods and has reduced construction timelines by 190 weeks across 26 major projects
@@ -22,7 +24,11 @@ summary:
     -Robot debuts in the market to overwhelming acclaim from construction professionals
     and leading media outlets, including Fast Company, which praised the robot's disruptive
     potential to "drastically speed up data center construction"
-  ko: ''
+  ko: -Downward drilling robot delivers up to 10x faster drilling speeds than traditional
+    methods and has reduced construction timelines by 190 weeks across 26 major projects
+    -Robot debuts in the market to overwhelming acclaim from construction professionals
+    and leading media outlets, including Fast Company, which praised the robot's disruptive
+    potential to "drastically speed up data center construction"
 domains:
 - 11_applications_markets
 layers:
@@ -54,4 +60,11 @@ sources:
   accessed_at: '2026-07-14'
 ---
 
+## 概述
+-Downward drilling robot delivers up to 10x faster drilling speeds than traditional methods and has reduced construction timelines by 190 weeks across 26 major projects -Robot debuts in the market to overwhelming acclaim from construction professionals and leading media outlets, including Fast Company, which praised the robot's disruptive potential to "drastically speed up data center construction"
+
+## Overview
+-Downward drilling robot delivers up to 10x faster drilling speeds than traditional methods and has reduced construction timelines by 190 weeks across 26 major projects -Robot debuts in the market to overwhelming acclaim from construction professionals and leading media outlets, including Fast Company, which praised the robot's disruptive potential to "drastically speed up data center construction"
+
+## 개요
 -Downward drilling robot delivers up to 10x faster drilling speeds than traditional methods and has reduced construction timelines by 190 weeks across 26 major projects -Robot debuts in the market to overwhelming acclaim from construction professionals and leading media outlets, including Fast Company, which praised the robot's disruptive potential to "drastically speed up data center construction"

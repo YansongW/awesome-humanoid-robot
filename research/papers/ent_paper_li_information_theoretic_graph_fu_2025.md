@@ -7,7 +7,8 @@ names:
   en: Information-Theoretic Graph Fusion with Vision-Language-Action Model for Policy
     Reasoning and Dual Robotic Control
   zh: GF-VLA
-  ko: ''
+  ko: Information-Theoretic Graph Fusion with Vision-Language-Action Model for Policy
+    Reasoning and Dual Robotic Control
 summary:
   en: Information-Theoretic Graph Fusion with Vision-Language-Action Model for Policy
     Reasoning and Dual Robotic Control (GF-VLA), is a 2025 large vision-language-action
@@ -15,7 +16,9 @@ summary:
   zh: Information-Theoretic Graph Fusion with Vision-Language-Action Model for Policy
     Reasoning and Dual Robotic Control (GF-VLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by University of Alabama at Birmingham.
-  ko: ''
+  ko: Information-Theoretic Graph Fusion with Vision-Language-Action Model for Policy
+    Reasoning and Dual Robotic Control (GF-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by University of Alabama at Birmingham.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Information-Theoretic Graph Fusion with Vision-Language-Action Model for Policy Reasoning and Dual Robotic Control (GF-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Alabama at Birmingham.
+
+## Overview
+Information-Theoretic Graph Fusion with Vision-Language-Action Model for Policy Reasoning and Dual Robotic Control (GF-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Alabama at Birmingham.
+
+## 개요
 Information-Theoretic Graph Fusion with Vision-Language-Action Model for Policy Reasoning and Dual Robotic Control (GF-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Alabama at Birmingham.

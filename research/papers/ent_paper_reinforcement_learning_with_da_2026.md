@@ -8,13 +8,15 @@ names:
     Humanoid Robot Navigation
   zh: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in
     Humanoid Robot Navigation
-  ko: ''
+  ko: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in
+    Humanoid Robot Navigation
 summary:
   en: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in
     Humanoid Robot Navigation is a paper on Navigation for humanoid robotics.
   zh: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in
     Humanoid Robot Navigation is a paper on Navigation for humanoid robotics.
-  ko: ''
+  ko: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in
+    Humanoid Robot Navigation is a paper on Navigation for humanoid robotics.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a paper on Navigation for humanoid robotics.
+
+## Overview
+Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a paper on Navigation for humanoid robotics.
+
+## 개요
 Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a paper on Navigation for humanoid robotics.

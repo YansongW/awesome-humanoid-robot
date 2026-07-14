@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching'
   zh: 跑酷的难点不是单技能，而是长程组合
-  ko: ''
+  ko: 'Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching'
 summary:
-  en: 'Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching is a knowledge node related to paper
-    in the humanoid robot value chain.'
+  en: 'Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching
+    is a knowledge node related to paper in the humanoid robot value chain.'
   zh: ''
-  ko: ''
+  ko: 'Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching
+    is a knowledge node related to paper in the humanoid robot value chain.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -30,11 +31,13 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (022). Institution: Amazon FAR；伯克利；CMU；斯坦福大学. arXiv: 2602.15827.'
+  notes: 'Imported from WeChat curated list (022). Institution: Amazon FAR；伯克利；CMU；斯坦福大学.
+    arXiv: 2602.15827.'
 sources:
 - id: src_001
   type: paper
-  title: 'Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching (arXiv)'
+  title: 'Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching
+    (arXiv)'
   url: https://arxiv.org/abs/2602.15827
   date: '2026'
   accessed_at: '2026-07-01'
@@ -47,3 +50,12 @@ sources:
 theoretical_depth:
 - system
 ---
+
+## 概述
+Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching is a knowledge node related to paper in the humanoid robot value chain.
+
+## Overview
+Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching is a knowledge node related to paper in the humanoid robot value chain.
+
+## 개요
+Perceptive Humanoid Parkour: Chaining Dynamic Human Skills via Motion Matching is a knowledge node related to paper in the humanoid robot value chain.

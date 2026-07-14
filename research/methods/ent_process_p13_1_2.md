@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 自研/外购 PCB 设计
-  ko: ''
+  ko: 自研/外购 PCB 设计
 summary:
   en: ''
   zh: 原理图、PCB、BOM、DFM 报告
-  ko: ''
+  ko: 原理图、PCB、BOM、DFM 报告
 domains:
 - 02_components
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）

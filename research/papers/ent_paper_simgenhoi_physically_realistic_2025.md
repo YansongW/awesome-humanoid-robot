@@ -8,7 +8,8 @@ names:
     Generative Modeling and RL'
   zh: 'SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via
     Generative Modeling and RL'
-  ko: ''
+  ko: 'SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via
+    Generative Modeling and RL'
 summary:
   en: 'SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via
     Generative Modeling and RL is a 2025 work on physics-based character animation
@@ -16,7 +17,9 @@ summary:
   zh: 'SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via
     Generative Modeling and RL is a 2025 work on physics-based character animation
     for humanoid robots.'
-  ko: ''
+  ko: 'SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via
+    Generative Modeling and RL is a 2025 work on physics-based character animation
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 SimGenHOI: Physically Realistic Whole-Body Humanoid-Object Interaction via Generative Modeling and RL is a 2025 work on physics-based character animation for humanoid robots.

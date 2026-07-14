@@ -8,7 +8,8 @@ names:
     winner
   zh: Danish robotics startup enters the industrial truck market already crowned a
     winner
-  ko: ''
+  ko: Danish robotics startup enters the industrial truck market already crowned a
+    winner
 summary:
   en: The Mobile Robot Company has won the IFOY Industrial Truck of the Year Award
     2026 for a self-driving pallet jack designed to keep warehouse operators in control
@@ -16,7 +17,9 @@ summary:
   zh: The Mobile Robot Company has won the IFOY Industrial Truck of the Year Award
     2026 for a self-driving pallet jack designed to keep warehouse operators in control
     while automating repetitive transport work.
-  ko: ''
+  ko: The Mobile Robot Company has won the IFOY Industrial Truck of the Year Award
+    2026 for a self-driving pallet jack designed to keep warehouse operators in control
+    while automating repetitive transport work.
 domains:
 - 11_applications_markets
 layers:
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+The Mobile Robot Company has won the IFOY Industrial Truck of the Year Award 2026 for a self-driving pallet jack designed to keep warehouse operators in control while automating repetitive transport work.
+
+## Overview
+The Mobile Robot Company has won the IFOY Industrial Truck of the Year Award 2026 for a self-driving pallet jack designed to keep warehouse operators in control while automating repetitive transport work.
+
+## 개요
 The Mobile Robot Company has won the IFOY Industrial Truck of the Year Award 2026 for a self-driving pallet jack designed to keep warehouse operators in control while automating repetitive transport work.

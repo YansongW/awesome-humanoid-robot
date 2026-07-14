@@ -8,8 +8,8 @@ names:
   zh: 可装配性设计（DFA）
   ko: 조립 용이성 설계(DFA)
 summary:
-  en: A design methodology that reduces part count, simplifies joining, and shortens assembly time to lower production cost
-    and improve reliability.
+  en: A design methodology that reduces part count, simplifies joining, and shortens
+    assembly time to lower production cost and improve reliability.
   zh: 减少零件数量、简化连接方式、缩短装配时间，从而降低生产成本并提高可靠性的设计方法。
   ko: 부품 수를 줄이고 결합을 단순화하며 조립 시간을 단축하여 생산 비용을 낮추고 신뢰성을 높이는 설계 방법론.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+减少零件数量、简化连接方式、缩短装配时间，从而降低生产成本并提高可靠性的设计方法。
+
+## Overview
+A design methodology that reduces part count, simplifies joining, and shortens assembly time to lower production cost and improve reliability.
+
+## 개요
+A design methodology that reduces part count, simplifies joining, and shortens assembly time to lower production cost and improve reliability.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: Dichotomous Diffusion Policy Optimization
   zh: DIPOLE
-  ko: ''
+  ko: Dichotomous Diffusion Policy Optimization
 summary:
   en: Dichotomous Diffusion Policy Optimization (DIPOLE), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Institute for AI Industry Research
@@ -14,7 +14,9 @@ summary:
   zh: Dichotomous Diffusion Policy Optimization (DIPOLE), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Institute for AI Industry Research
     (AIR), Tsinghua University, Institute for AI Industry Research.
-  ko: ''
+  ko: Dichotomous Diffusion Policy Optimization (DIPOLE), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Institute for AI Industry Research
+    (AIR), Tsinghua University, Institute for AI Industry Research.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Dichotomous Diffusion Policy Optimization (DIPOLE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research (AIR), Tsinghua University, Institute for AI Industry Research.
+
+## Overview
+Dichotomous Diffusion Policy Optimization (DIPOLE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research (AIR), Tsinghua University, Institute for AI Industry Research.
+
+## 개요
 Dichotomous Diffusion Policy Optimization (DIPOLE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research (AIR), Tsinghua University, Institute for AI Industry Research.

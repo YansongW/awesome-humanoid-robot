@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion'
   zh: 'HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion'
-  ko: ''
+  ko: 'HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion'
 summary:
   en: 'HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion
     is a 2025 work on locomotion for humanoid robots.'
   zh: 'HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion
     is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion
+    is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 HWC-Loco: A Hierarchical Whole-Body Control Approach to Robust Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.

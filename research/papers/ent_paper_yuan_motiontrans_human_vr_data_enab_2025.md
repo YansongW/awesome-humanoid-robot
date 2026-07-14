@@ -7,7 +7,8 @@ names:
   en: 'MotionTrans: Human VR Data Enable Motion-Level Learning for Robotic Manipulation
     Policies'
   zh: MotionTrans
-  ko: ''
+  ko: 'MotionTrans: Human VR Data Enable Motion-Level Learning for Robotic Manipulation
+    Policies'
 summary:
   en: 'MotionTrans: Human VR Data Enable Motion-Level Learning for Robotic Manipulation
     Policies (MotionTrans), is a 2025 large vision-language-action model for robotic
@@ -21,7 +22,12 @@ summary:
     School of Computer Science, Peking University, Institute for Interdisciplinary
     Information Sciences, Tsinghua University, Shanghai Qi Zhi Institute, Shanghai
     Jiao Tong University, Wuhan University.'
-  ko: ''
+  ko: 'MotionTrans: Human VR Data Enable Motion-Level Learning for Robotic Manipulation
+    Policies (MotionTrans), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by State Key Laboratory of Multimedia Information Processing,
+    School of Computer Science, Peking University, Institute for Interdisciplinary
+    Information Sciences, Tsinghua University, Shanghai Qi Zhi Institute, Shanghai
+    Jiao Tong University, Wuhan University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -64,4 +70,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MotionTrans: Human VR Data Enable Motion-Level Learning for Robotic Manipulation Policies (MotionTrans), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, Institute for Interdisciplinary Information Sciences, Tsinghua University, Shanghai Qi Zhi Institute, Shanghai Jiao Tong University, Wuhan University.
+
+## Overview
+MotionTrans: Human VR Data Enable Motion-Level Learning for Robotic Manipulation Policies (MotionTrans), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, Institute for Interdisciplinary Information Sciences, Tsinghua University, Shanghai Qi Zhi Institute, Shanghai Jiao Tong University, Wuhan University.
+
+## 개요
 MotionTrans: Human VR Data Enable Motion-Level Learning for Robotic Manipulation Policies (MotionTrans), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, Institute for Interdisciplinary Information Sciences, Tsinghua University, Shanghai Qi Zhi Institute, Shanghai Jiao Tong University, Wuhan University.

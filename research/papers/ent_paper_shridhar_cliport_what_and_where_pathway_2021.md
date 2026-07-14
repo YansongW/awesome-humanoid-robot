@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'CLIPort: What and Where Pathways for Robotic Manipulation'
   zh: CLIPort
-  ko: ''
+  ko: 'CLIPort: What and Where Pathways for Robotic Manipulation'
 summary:
   en: 'CLIPort: What and Where Pathways for Robotic Manipulation (CLIPort), is a 2021
     generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'CLIPort: What and Where Pathways for Robotic Manipulation (CLIPort), is a 2021
     generalized vision-language-action model for robotic manipulation, introduced
     by University of Washington, NVIDIA, and published at CoRL 2021.'
-  ko: ''
+  ko: 'CLIPort: What and Where Pathways for Robotic Manipulation (CLIPort), is a 2021
+    generalized vision-language-action model for robotic manipulation, introduced
+    by University of Washington, NVIDIA, and published at CoRL 2021.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CLIPort: What and Where Pathways for Robotic Manipulation (CLIPort), is a 2021 generalized vision-language-action model for robotic manipulation, introduced by University of Washington, NVIDIA, and published at CoRL 2021.
+
+## Overview
+CLIPort: What and Where Pathways for Robotic Manipulation (CLIPort), is a 2021 generalized vision-language-action model for robotic manipulation, introduced by University of Washington, NVIDIA, and published at CoRL 2021.
+
+## 개요
 CLIPort: What and Where Pathways for Robotic Manipulation (CLIPort), is a 2021 generalized vision-language-action model for robotic manipulation, introduced by University of Washington, NVIDIA, and published at CoRL 2021.

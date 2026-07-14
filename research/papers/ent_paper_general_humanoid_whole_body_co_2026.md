@@ -6,13 +6,14 @@ type: paper
 names:
   en: General Humanoid Whole-Body Control via Pretraining and Fast Adaptation
   zh: General Humanoid Whole-Body Control via Pretraining and Fast Adaptation
-  ko: ''
+  ko: General Humanoid Whole-Body Control via Pretraining and Fast Adaptation
 summary:
   en: General Humanoid Whole-Body Control via Pretraining and Fast Adaptation is a
     2026 work on loco-manipulation and whole-body-control for humanoid robots.
   zh: General Humanoid Whole-Body Control via Pretraining and Fast Adaptation is a
     2026 work on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: General Humanoid Whole-Body Control via Pretraining and Fast Adaptation is a
+    2026 work on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+General Humanoid Whole-Body Control via Pretraining and Fast Adaptation is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+General Humanoid Whole-Body Control via Pretraining and Fast Adaptation is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 General Humanoid Whole-Body Control via Pretraining and Fast Adaptation is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

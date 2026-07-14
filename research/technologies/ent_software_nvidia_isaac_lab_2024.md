@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+基于Isaac Sim的模块化学习框架，用于大规模机器人策略训练。
+
+## Overview
+Modular learning framework built on Isaac Sim for large-scale robot policy training.
+
+## 개요
 Modular learning framework built on Isaac Sim for large-scale robot policy training.

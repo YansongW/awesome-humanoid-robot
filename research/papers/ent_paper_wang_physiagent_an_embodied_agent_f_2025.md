@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'PhysiAgent: An Embodied Agent Framework in Physical World'
   zh: PhysiAgent
-  ko: ''
+  ko: 'PhysiAgent: An Embodied Agent Framework in Physical World'
 summary:
   en: 'PhysiAgent: An Embodied Agent Framework in Physical World (PhysiAgent), is
     a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     a 2025 large vision-language-action model for robotic manipulation, introduced
     by Institute for AI Industry Research (AIR), Tsinghua University, Peking University,
     University of California, Berkeley.'
-  ko: ''
+  ko: 'PhysiAgent: An Embodied Agent Framework in Physical World (PhysiAgent), is
+    a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Institute for AI Industry Research (AIR), Tsinghua University, Peking University,
+    University of California, Berkeley.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PhysiAgent: An Embodied Agent Framework in Physical World (PhysiAgent), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research (AIR), Tsinghua University, Peking University, University of California, Berkeley.
+
+## Overview
+PhysiAgent: An Embodied Agent Framework in Physical World (PhysiAgent), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research (AIR), Tsinghua University, Peking University, University of California, Berkeley.
+
+## 개요
 PhysiAgent: An Embodied Agent Framework in Physical World (PhysiAgent), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research (AIR), Tsinghua University, Peking University, University of California, Berkeley.

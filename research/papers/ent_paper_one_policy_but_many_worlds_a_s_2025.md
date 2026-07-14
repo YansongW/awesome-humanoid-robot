@@ -8,13 +8,15 @@ names:
     Locomotion'
   zh: 'One Policy but Many Worlds: A Scalable Unified Policy for Versatile Humanoid
     Locomotion'
-  ko: ''
+  ko: 'One Policy but Many Worlds: A Scalable Unified Policy for Versatile Humanoid
+    Locomotion'
 summary:
   en: 'One Policy but Many Worlds: A Scalable Unified Policy for Versatile Humanoid
     Locomotion is a 2025 work on locomotion for humanoid robots.'
   zh: 'One Policy but Many Worlds: A Scalable Unified Policy for Versatile Humanoid
     Locomotion is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'One Policy but Many Worlds: A Scalable Unified Policy for Versatile Humanoid
+    Locomotion is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+One Policy but Many Worlds: A Scalable Unified Policy for Versatile Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+One Policy but Many Worlds: A Scalable Unified Policy for Versatile Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 One Policy but Many Worlds: A Scalable Unified Policy for Versatile Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.

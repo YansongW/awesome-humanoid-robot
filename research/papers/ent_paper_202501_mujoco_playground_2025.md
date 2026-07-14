@@ -6,13 +6,14 @@ type: paper
 names:
   en: 2025.01, MuJoCo Playground
   zh: 2025.01, MuJoCo Playground
-  ko: ''
+  ko: 2025.01, MuJoCo Playground
 summary:
   en: 2025.01, MuJoCo Playground is a 2025 work on simulation benchmark for humanoid
     robots.
   zh: 2025.01, MuJoCo Playground is a 2025 work on simulation benchmark for humanoid
     robots.
-  ko: ''
+  ko: 2025.01, MuJoCo Playground is a 2025 work on simulation benchmark for humanoid
+    robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+2025.01, MuJoCo Playground is a 2025 work on simulation benchmark for humanoid robots.
+
+## Overview
+2025.01, MuJoCo Playground is a 2025 work on simulation benchmark for humanoid robots.
+
+## 개요
 2025.01, MuJoCo Playground is a 2025 work on simulation benchmark for humanoid robots.

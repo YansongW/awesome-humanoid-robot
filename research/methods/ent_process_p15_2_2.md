@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 性能基准测试
-  ko: ''
+  ko: 性能基准测试
 summary:
   en: ''
   zh: 《性能测试报告》、KPI 达标率
-  ko: ''
+  ko: 《性能测试报告》、KPI 达标率
 domains:
 - 04_assembly_integration_testing
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）

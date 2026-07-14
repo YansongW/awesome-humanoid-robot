@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'GTSAM: Factor graphs for Sensor Fusion in Robotics'
   zh: 'GTSAM: Factor graphs for Sensor Fusion in Robotics'
-  ko: ''
+  ko: 'GTSAM: Factor graphs for Sensor Fusion in Robotics'
 summary:
   en: 'GTSAM: Factor graphs for Sensor Fusion in Robotics is a 2026 work on state
     estimation for humanoid robots.'
   zh: 'GTSAM: Factor graphs for Sensor Fusion in Robotics is a 2026 work on state
     estimation for humanoid robots.'
-  ko: ''
+  ko: 'GTSAM: Factor graphs for Sensor Fusion in Robotics is a 2026 work on state
+    estimation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GTSAM: Factor graphs for Sensor Fusion in Robotics is a 2026 work on state estimation for humanoid robots.
+
+## Overview
+GTSAM: Factor graphs for Sensor Fusion in Robotics is a 2026 work on state estimation for humanoid robots.
+
+## 개요
 GTSAM: Factor graphs for Sensor Fusion in Robotics is a 2026 work on state estimation for humanoid robots.

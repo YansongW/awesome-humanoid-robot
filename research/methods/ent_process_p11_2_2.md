@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 手指阻抗与力控
-  ko: ''
+  ko: 手指阻抗与力控
 summary:
   en: ''
   zh: 力控实验数据、易碎物体抓取视频
-  ko: ''
+  ko: 力控实验数据、易碎物体抓取视频
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）

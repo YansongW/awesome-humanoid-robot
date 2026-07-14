@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'PIVOT: Iterative Visual Prompting Elicits Actionable Knowledge for VLMs'
   zh: PIVOT
-  ko: ''
+  ko: 'PIVOT: Iterative Visual Prompting Elicits Actionable Knowledge for VLMs'
 summary:
   en: 'PIVOT: Iterative Visual Prompting Elicits Actionable Knowledge for VLMs (PIVOT),
     is a 2024 generalized vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2024 generalized vision-language-action model for robotic manipulation, introduced
     by Google DeepMind, Stanford University, The University of Texas at Austin, and
     published at ICML 2024.'
-  ko: ''
+  ko: 'PIVOT: Iterative Visual Prompting Elicits Actionable Knowledge for VLMs (PIVOT),
+    is a 2024 generalized vision-language-action model for robotic manipulation, introduced
+    by Google DeepMind, Stanford University, The University of Texas at Austin, and
+    published at ICML 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PIVOT: Iterative Visual Prompting Elicits Actionable Knowledge for VLMs (PIVOT), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, Stanford University, The University of Texas at Austin, and published at ICML 2024.
+
+## Overview
+PIVOT: Iterative Visual Prompting Elicits Actionable Knowledge for VLMs (PIVOT), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, Stanford University, The University of Texas at Austin, and published at ICML 2024.
+
+## 개요
 PIVOT: Iterative Visual Prompting Elicits Actionable Knowledge for VLMs (PIVOT), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, Stanford University, The University of Texas at Austin, and published at ICML 2024.

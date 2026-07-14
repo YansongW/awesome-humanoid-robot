@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks'
   zh: LoHoVLA
-  ko: ''
+  ko: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks'
 summary:
   en: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks
     (LoHoVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks
     (LoHoVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.'
-  ko: ''
+  ko: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks
+    (LoHoVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks (LoHoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.
+
+## Overview
+LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks (LoHoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.
+
+## 개요
 LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks (LoHoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.

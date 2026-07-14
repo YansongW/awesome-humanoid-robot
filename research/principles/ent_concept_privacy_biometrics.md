@@ -8,8 +8,8 @@ names:
   zh: 隐私与生物识别
   ko: 프라이버시 및 생체 인식
 summary:
-  en: The governance of personal data and biometric information collected by robots, including face recognition, voiceprints,
-    and gait data.
+  en: The governance of personal data and biometric information collected by robots,
+    including face recognition, voiceprints, and gait data.
   zh: 机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。
   ko: 로봇이 수집하는 얼굴·음성·보행 등 개인정보와 생체 인식 데이터의 거버넌스.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。
+
+## Overview
+The governance of personal data and biometric information collected by robots, including face recognition, voiceprints, and gait data.
+
+## 개요
+The governance of personal data and biometric information collected by robots, including face recognition, voiceprints, and gait data.

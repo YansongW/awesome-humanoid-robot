@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'A Dual Process VLA: Efficient Robotic Manipulation Leveraging VLM'
   zh: DP-VLA
-  ko: ''
+  ko: 'A Dual Process VLA: Efficient Robotic Manipulation Leveraging VLM'
 summary:
   en: 'A Dual Process VLA: Efficient Robotic Manipulation Leveraging VLM (DP-VLA),
     is a 2024 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'A Dual Process VLA: Efficient Robotic Manipulation Leveraging VLM (DP-VLA),
     is a 2024 large vision-language-action model for robotic manipulation, introduced
     by ETRI.'
-  ko: ''
+  ko: 'A Dual Process VLA: Efficient Robotic Manipulation Leveraging VLM (DP-VLA),
+    is a 2024 large vision-language-action model for robotic manipulation, introduced
+    by ETRI.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Dual Process VLA: Efficient Robotic Manipulation Leveraging VLM (DP-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by ETRI.
+
+## Overview
+A Dual Process VLA: Efficient Robotic Manipulation Leveraging VLM (DP-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by ETRI.
+
+## 개요
 A Dual Process VLA: Efficient Robotic Manipulation Leveraging VLM (DP-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by ETRI.

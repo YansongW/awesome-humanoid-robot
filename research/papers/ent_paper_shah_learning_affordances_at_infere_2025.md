@@ -6,7 +6,7 @@ type: paper
 names:
   en: Learning Affordances at Inference-Time for Vision-Language-Action Models
   zh: LITEN
-  ko: ''
+  ko: Learning Affordances at Inference-Time for Vision-Language-Action Models
 summary:
   en: Learning Affordances at Inference-Time for Vision-Language-Action Models (LITEN),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: Learning Affordances at Inference-Time for Vision-Language-Action Models (LITEN),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by UC Berkeley, Physical Intelligence.
-  ko: ''
+  ko: Learning Affordances at Inference-Time for Vision-Language-Action Models (LITEN),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by UC Berkeley, Physical Intelligence.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Affordances at Inference-Time for Vision-Language-Action Models (LITEN), is a 2025 large vision-language-action model for robotic manipulation, introduced by UC Berkeley, Physical Intelligence.
+
+## Overview
+Learning Affordances at Inference-Time for Vision-Language-Action Models (LITEN), is a 2025 large vision-language-action model for robotic manipulation, introduced by UC Berkeley, Physical Intelligence.
+
+## 개요
 Learning Affordances at Inference-Time for Vision-Language-Action Models (LITEN), is a 2025 large vision-language-action model for robotic manipulation, introduced by UC Berkeley, Physical Intelligence.

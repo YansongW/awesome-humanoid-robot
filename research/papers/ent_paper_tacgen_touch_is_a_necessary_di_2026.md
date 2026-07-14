@@ -8,7 +8,8 @@ names:
     Addressing Tactile Data Scarcity with Scalable Vision-to-Touch Alignment and Generation'
   zh: 'TacGen: Touch Is a Necessary Dimension of Physical-World Representation --
     Addressing Tactile Data Scarcity with Scalable Vision-to-Touch Alignment and Generation'
-  ko: ''
+  ko: 'TacGen: Touch Is a Necessary Dimension of Physical-World Representation --
+    Addressing Tactile Data Scarcity with Scalable Vision-to-Touch Alignment and Generation'
 summary:
   en: "arXiv:2606.29173v2 Announce Type: replace \nAbstract: Touch resolves the physical-property\
     \ ambiguity left by vision: exploratory contact recovers shape, texture, compliance,\
@@ -46,7 +47,24 @@ summary:
     \ checks, permutation/random-feature controls, hash-verified manifests, and measured-force\
     \ validation checks, the evidence supports the claim that touch supplies a necessary\
     \ physical evidence channel for representations of contact-dependent properties."
-  ko: ''
+  ko: "arXiv:2606.29173v2 Announce Type: replace \nAbstract: Touch resolves the physical-property\
+    \ ambiguity left by vision: exploratory contact recovers shape, texture, compliance,\
+    \ and material, and visuo-haptic object representations converge in ventral visual\
+    \ cortex. We ask whether representation learning can reproduce this grounding.\
+    \ TacGen mitigates the tactile-data scarcity bottleneck by combining pre-specified\
+    \ V+T contrastive alignment with a latent-space residual-MLP V->T generator that\
+    \ synthesizes tactile latents from RGB for tactile-data scaling. With matched\
+    \ DINOv2 backbones, splits, and probes, V+T improves matched V-only on mass (Delta\
+    \ R^2=+0.570), density (Delta acc=+0.067), hardness (+0.117), and uncertainty-banded\
+    \ force labels (Delta R^2=+0.281); all CIs exclude zero. The same representation\
+    \ lifts matched-capacity TACTO manipulation 0.246->0.979 while V-only capacity\
+    \ scaling accounts for only 4.5% of the gap, preserving 95.5%. The generator reaches\
+    \ cross-seed +0.589, with real tactile +0.585 inside the seed interval; the architecture\
+    \ comparison shows a 13pp downstream gap between reconstruction quality and representation\
+    \ utility. Across five-seed SSVTP/TVL reproductions, YCB-Sight transfer, three-backbone\
+    \ checks, permutation/random-feature controls, hash-verified manifests, and measured-force\
+    \ validation checks, the evidence supports the claim that touch supplies a necessary\
+    \ physical evidence channel for representations of contact-dependent properties."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -78,5 +96,14 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+arXiv:2606.29173v2 Announce Type: replace 
+Abstract: Touch resolves the physical-property ambiguity left by vision: exploratory contact recovers shape, texture, compliance, and material, and visuo-haptic object representations converge in ventral visual cortex. We ask whether representation learning can reproduce this grounding. TacGen mitigates the tactile-data scarcity bottleneck by combining pre-specified V+T contrastive alignment with a latent-space residual-MLP V->T generator that synthesizes tactile latents from RGB for tactile-data scaling. With matched DINOv2 backbones, splits, and probes, V+T improves matched V-only on mass (Delta R^2=+0.570), density (Delta acc=+0.067), hardness (+0.117), and uncertainty-banded force labels (Delta R^2=+0.281); all CIs exclude zero. The same representation lifts matched-capacity TACTO manipulation 0.246->0.979 while V-only capacity scaling accounts for only 4.5% of the gap, preserving 95.5%. The generator reaches cross-seed +0.589, with real tactile +0.585 inside the seed interval; the architecture comparison shows a 13pp downstream gap between reconstruction quality and representation utility. Across five-seed SSVTP/TVL reproductions, YCB-Sight transfer, three-backbone checks, permutation/random-feature controls, hash-verified manifests, and measured-force validation checks, the evidence supports the claim that touch supplies a necessary physical evidence channel for representations of contact-dependent properties.
+
+## Overview
+arXiv:2606.29173v2 Announce Type: replace 
+Abstract: Touch resolves the physical-property ambiguity left by vision: exploratory contact recovers shape, texture, compliance, and material, and visuo-haptic object representations converge in ventral visual cortex. We ask whether representation learning can reproduce this grounding. TacGen mitigates the tactile-data scarcity bottleneck by combining pre-specified V+T contrastive alignment with a latent-space residual-MLP V->T generator that synthesizes tactile latents from RGB for tactile-data scaling. With matched DINOv2 backbones, splits, and probes, V+T improves matched V-only on mass (Delta R^2=+0.570), density (Delta acc=+0.067), hardness (+0.117), and uncertainty-banded force labels (Delta R^2=+0.281); all CIs exclude zero. The same representation lifts matched-capacity TACTO manipulation 0.246->0.979 while V-only capacity scaling accounts for only 4.5% of the gap, preserving 95.5%. The generator reaches cross-seed +0.589, with real tactile +0.585 inside the seed interval; the architecture comparison shows a 13pp downstream gap between reconstruction quality and representation utility. Across five-seed SSVTP/TVL reproductions, YCB-Sight transfer, three-backbone checks, permutation/random-feature controls, hash-verified manifests, and measured-force validation checks, the evidence supports the claim that touch supplies a necessary physical evidence channel for representations of contact-dependent properties.
+
+## 개요
 arXiv:2606.29173v2 Announce Type: replace 
 Abstract: Touch resolves the physical-property ambiguity left by vision: exploratory contact recovers shape, texture, compliance, and material, and visuo-haptic object representations converge in ventral visual cortex. We ask whether representation learning can reproduce this grounding. TacGen mitigates the tactile-data scarcity bottleneck by combining pre-specified V+T contrastive alignment with a latent-space residual-MLP V->T generator that synthesizes tactile latents from RGB for tactile-data scaling. With matched DINOv2 backbones, splits, and probes, V+T improves matched V-only on mass (Delta R^2=+0.570), density (Delta acc=+0.067), hardness (+0.117), and uncertainty-banded force labels (Delta R^2=+0.281); all CIs exclude zero. The same representation lifts matched-capacity TACTO manipulation 0.246->0.979 while V-only capacity scaling accounts for only 4.5% of the gap, preserving 95.5%. The generator reaches cross-seed +0.589, with real tactile +0.585 inside the seed interval; the architecture comparison shows a 13pp downstream gap between reconstruction quality and representation utility. Across five-seed SSVTP/TVL reproductions, YCB-Sight transfer, three-backbone checks, permutation/random-feature controls, hash-verified manifests, and measured-force validation checks, the evidence supports the claim that touch supplies a necessary physical evidence channel for representations of contact-dependent properties.

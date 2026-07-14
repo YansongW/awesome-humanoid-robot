@@ -8,13 +8,15 @@ names:
     for Fall Recovery'
   zh: 'Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology
     for Fall Recovery'
-  ko: ''
+  ko: 'Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology
+    for Fall Recovery'
 summary:
   en: 'Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology
     for Fall Recovery is a 2025 work on hardware design for humanoid robots.'
   zh: 'Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology
     for Fall Recovery is a 2025 work on hardware design for humanoid robots.'
-  ko: ''
+  ko: 'Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology
+    for Fall Recovery is a 2025 work on hardware design for humanoid robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 Toward Humanoid Brain-Body Co-design: Joint Optimization of Control and Morphology for Fall Recovery is a 2025 work on hardware design for humanoid robots.

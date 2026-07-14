@@ -8,7 +8,8 @@ names:
     SpotInvest acquire a stake in the Company'
   zh: 'Oversonic Robotics: STMicroelectronics, Fondazione ENEA Tech Biomedical and
     SpotInvest acquire a stake in the Company'
-  ko: ''
+  ko: 'Oversonic Robotics: STMicroelectronics, Fondazione ENEA Tech Biomedical and
+    SpotInvest acquire a stake in the Company'
 summary:
   en: The new shareholders will support the industrial development of the cognitive
     humanoid robot RoBee, the expansion of applications in the manufacturing and healthcare
@@ -16,7 +17,9 @@ summary:
   zh: The new shareholders will support the industrial development of the cognitive
     humanoid robot RoBee, the expansion of applications in the manufacturing and healthcare
     sectors, as well as the strengthening of the presence in the United States.
-  ko: ''
+  ko: The new shareholders will support the industrial development of the cognitive
+    humanoid robot RoBee, the expansion of applications in the manufacturing and healthcare
+    sectors, as well as the strengthening of the presence in the United States.
 domains:
 - 11_applications_markets
 layers:
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+The new shareholders will support the industrial development of the cognitive humanoid robot RoBee, the expansion of applications in the manufacturing and healthcare sectors, as well as the strengthening of the presence in the United States.
+
+## Overview
+The new shareholders will support the industrial development of the cognitive humanoid robot RoBee, the expansion of applications in the manufacturing and healthcare sectors, as well as the strengthening of the presence in the United States.
+
+## 개요
 The new shareholders will support the industrial development of the cognitive humanoid robot RoBee, the expansion of applications in the manufacturing and healthcare sectors, as well as the strengthening of the presence in the United States.

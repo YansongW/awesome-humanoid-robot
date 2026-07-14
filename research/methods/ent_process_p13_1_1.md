@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 计算平台架构与选型
-  ko: ''
+  ko: 计算平台架构与选型
 summary:
   en: ''
   zh: 计算架构图、各节点算力/功耗预算、安全分区
-  ko: ''
+  ko: 计算架构图、各节点算力/功耗预算、安全分区
 domains:
 - 02_components
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）

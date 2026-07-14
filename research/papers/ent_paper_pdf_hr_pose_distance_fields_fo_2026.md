@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'PDF-HR: Pose Distance Fields for Humanoid Robots'
   zh: 'PDF-HR: Pose Distance Fields for Humanoid Robots'
-  ko: ''
+  ko: 'PDF-HR: Pose Distance Fields for Humanoid Robots'
 summary:
   en: 'PDF-HR: Pose Distance Fields for Humanoid Robots is a 2026 work on loco-manipulation
     and whole-body-control for humanoid robots.'
   zh: 'PDF-HR: Pose Distance Fields for Humanoid Robots is a 2026 work on loco-manipulation
     and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'PDF-HR: Pose Distance Fields for Humanoid Robots is a 2026 work on loco-manipulation
+    and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PDF-HR: Pose Distance Fields for Humanoid Robots is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+PDF-HR: Pose Distance Fields for Humanoid Robots is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 PDF-HR: Pose Distance Fields for Humanoid Robots is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 触觉与力觉传感器集成
-  ko: ''
+  ko: 触觉与力觉传感器集成
 summary:
   en: ''
   zh: 传感器布置方案、信号处理链、标定方法
-  ko: ''
+  ko: 传感器布置方案、信号处理链、标定方法
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）

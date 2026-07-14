@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video'
   zh: 'EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video'
-  ko: ''
+  ko: 'EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video'
 summary:
   en: 'EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video is
     a 2025 work on manipulation for humanoid robots.'
   zh: 'EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video is
     a 2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video is
+    a 2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 EgoDex: Learning Dexterous Manipulation from Large-Scale Egocentric Video is a 2025 work on manipulation for humanoid robots.

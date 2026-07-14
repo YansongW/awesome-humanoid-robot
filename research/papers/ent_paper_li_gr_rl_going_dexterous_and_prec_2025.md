@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation'
   zh: GR-RL
-  ko: ''
+  ko: 'GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation'
 summary:
   en: 'GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation (GR-RL),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation (GR-RL),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by ByteDance Seed.'
-  ko: ''
+  ko: 'GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation (GR-RL),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by ByteDance Seed.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation (GR-RL), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed.
+
+## Overview
+GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation (GR-RL), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed.
+
+## 개요
 GR-RL: Going Dexterous and Precise for Long-Horizon Robotic Manipulation (GR-RL), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed.

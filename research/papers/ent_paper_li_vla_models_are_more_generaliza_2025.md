@@ -7,7 +7,8 @@ names:
   en: 'VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial
     Modeling'
   zh: FTM, FLA
-  ko: ''
+  ko: 'VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial
+    Modeling'
 summary:
   en: 'VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial
     Modeling (FTM, FLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Modeling (FTM, FLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Sun Yat-sen University, Guangdong Key Laboratory of
     Big Data Analysis and Processing, X-Era AI Lab.'
-  ko: ''
+  ko: 'VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial
+    Modeling (FTM, FLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Sun Yat-sen University, Guangdong Key Laboratory of
+    Big Data Analysis and Processing, X-Era AI Lab.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial Modeling (FTM, FLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Guangdong Key Laboratory of Big Data Analysis and Processing, X-Era AI Lab.
+
+## Overview
+VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial Modeling (FTM, FLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Guangdong Key Laboratory of Big Data Analysis and Processing, X-Era AI Lab.
+
+## 개요
 VLA Models Are More Generalizable Than You Think: Revisiting Physical and Spatial Modeling (FTM, FLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Guangdong Key Laboratory of Big Data Analysis and Processing, X-Era AI Lab.

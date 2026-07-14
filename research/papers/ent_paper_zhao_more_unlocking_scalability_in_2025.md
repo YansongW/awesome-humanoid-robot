@@ -7,7 +7,8 @@ names:
   en: 'MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action
     Models'
   zh: MoRE
-  ko: ''
+  ko: 'MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action
+    Models'
 summary:
   en: 'MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action
     Models (MoRE), is a 2025 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Models (MoRE), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Sun Yat-sen University, Guangdong Key Laboratory of Big Data Analysis
     and Processing, X-Era AI Lab, and published at ICRA25.'
-  ko: ''
+  ko: 'MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action
+    Models (MoRE), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Sun Yat-sen University, Guangdong Key Laboratory of Big Data Analysis
+    and Processing, X-Era AI Lab, and published at ICRA25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models (MoRE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Guangdong Key Laboratory of Big Data Analysis and Processing, X-Era AI Lab, and published at ICRA25.
+
+## Overview
+MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models (MoRE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Guangdong Key Laboratory of Big Data Analysis and Processing, X-Era AI Lab, and published at ICRA25.
+
+## 개요
 MoRE: Unlocking Scalability in Reinforcement Learning for Quadruped Vision-Language-Action Models (MoRE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Guangdong Key Laboratory of Big Data Analysis and Processing, X-Era AI Lab, and published at ICRA25.

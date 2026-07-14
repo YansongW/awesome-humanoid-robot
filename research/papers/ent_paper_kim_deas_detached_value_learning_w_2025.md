@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'DEAS: DEtached value learning with Action Sequence for Scalable Offline RL'
   zh: DEAS
-  ko: ''
+  ko: 'DEAS: DEtached value learning with Action Sequence for Scalable Offline RL'
 summary:
   en: 'DEAS: DEtached value learning with Action Sequence for Scalable Offline RL
     (DEAS), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'DEAS: DEtached value learning with Action Sequence for Scalable Offline RL
     (DEAS), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by KAIST, UC Berkeley, University of Texas at Austin, NVIDIA.'
-  ko: ''
+  ko: 'DEAS: DEtached value learning with Action Sequence for Scalable Offline RL
+    (DEAS), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by KAIST, UC Berkeley, University of Texas at Austin, NVIDIA.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DEAS: DEtached value learning with Action Sequence for Scalable Offline RL (DEAS), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST, UC Berkeley, University of Texas at Austin, NVIDIA.
+
+## Overview
+DEAS: DEtached value learning with Action Sequence for Scalable Offline RL (DEAS), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST, UC Berkeley, University of Texas at Austin, NVIDIA.
+
+## 개요
 DEAS: DEtached value learning with Action Sequence for Scalable Offline RL (DEAS), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST, UC Berkeley, University of Texas at Austin, NVIDIA.

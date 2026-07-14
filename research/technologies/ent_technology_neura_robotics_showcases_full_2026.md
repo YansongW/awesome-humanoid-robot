@@ -6,13 +6,14 @@ type: technology
 names:
   en: NEURA Robotics Showcases Full-Stack Robotics Platform at Automate 2026
   zh: NEURA Robotics Showcases Full-Stack Robotics Platform at Automate 2026
-  ko: ''
+  ko: NEURA Robotics Showcases Full-Stack Robotics Platform at Automate 2026
 summary:
   en: NEURA showcases its full cognitive robot portfolio, Neuraverse platform and
     NEURA Gyms environments
   zh: NEURA showcases its full cognitive robot portfolio, Neuraverse platform and
     NEURA Gyms environments
-  ko: ''
+  ko: NEURA showcases its full cognitive robot portfolio, Neuraverse platform and
+    NEURA Gyms environments
 domains:
 - 11_applications_markets
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+NEURA showcases its full cognitive robot portfolio, Neuraverse platform and NEURA Gyms environments
+
+## Overview
+NEURA showcases its full cognitive robot portfolio, Neuraverse platform and NEURA Gyms environments
+
+## 개요
 NEURA showcases its full cognitive robot portfolio, Neuraverse platform and NEURA Gyms environments

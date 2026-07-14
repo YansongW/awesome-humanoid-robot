@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'WHOLE: World-Grounded Hand-Object Lifted from Egocentric Videos'
   zh: 'WHOLE: World-Grounded Hand-Object Lifted from Egocentric Videos'
-  ko: ''
+  ko: 'WHOLE: World-Grounded Hand-Object Lifted from Egocentric Videos'
 summary:
   en: 'WHOLE: World-Grounded Hand-Object Lifted from Egocentric Videos is a 2026 work
     on human motion analysis and synthesis for humanoid robots.'
   zh: 'WHOLE: World-Grounded Hand-Object Lifted from Egocentric Videos is a 2026 work
     on human motion analysis and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'WHOLE: World-Grounded Hand-Object Lifted from Egocentric Videos is a 2026 work
+    on human motion analysis and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+WHOLE: World-Grounded Hand-Object Lifted from Egocentric Videos is a 2026 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+WHOLE: World-Grounded Hand-Object Lifted from Egocentric Videos is a 2026 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 WHOLE: World-Grounded Hand-Object Lifted from Egocentric Videos is a 2026 work on human motion analysis and synthesis for humanoid robots.

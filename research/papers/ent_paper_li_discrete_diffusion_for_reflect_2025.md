@@ -7,7 +7,8 @@ names:
   en: Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous
     Driving
   zh: ReflectDrive
-  ko: ''
+  ko: Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous
+    Driving
 summary:
   en: Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous
     Driving (ReflectDrive), is a 2025 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous
     Driving (ReflectDrive), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Institute for AI Industry Research.
-  ko: ''
+  ko: Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous
+    Driving (ReflectDrive), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Institute for AI Industry Research.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous Driving (ReflectDrive), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research.
+
+## Overview
+Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous Driving (ReflectDrive), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research.
+
+## 개요
 Discrete Diffusion for Reflective Vision-Language-Action Models in Autonomous Driving (ReflectDrive), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research.

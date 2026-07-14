@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'Robot Motion Diffusion Model: Motion Generation for Robotic Characters'
   zh: Robot Motion Diffusion Model｜机器人角色的运动生成
-  ko: ''
+  ko: 'Robot Motion Diffusion Model: Motion Generation for Robotic Characters'
 summary:
   en: ''
   zh: Robot Motion Diffusion Model 先从本体状态与关节序列、仿真交互数据、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL
     策略训练、ACT/行为克隆模仿学习、扩散策略/流匹配生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
-  ko: ''
+  ko: Robot Motion Diffusion Model 先从本体状态与关节序列、仿真交互数据、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL
+    策略训练、ACT/行为克隆模仿学习、扩散策略/流匹配生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,5 +44,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+Robot Motion Diffusion Model 先从本体状态与关节序列、仿真交互数据、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、扩散策略/流匹配生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
+## 개요
 Robot Motion Diffusion Model 先从本体状态与关节序列、仿真交互数据、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、扩散策略/流匹配生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。

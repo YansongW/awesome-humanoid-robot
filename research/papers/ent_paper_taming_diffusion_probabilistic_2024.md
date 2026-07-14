@@ -6,13 +6,14 @@ type: paper
 names:
   en: Taming Diffusion Probabilistic Models for Character Control
   zh: Taming Diffusion Probabilistic Models for Character Control
-  ko: ''
+  ko: Taming Diffusion Probabilistic Models for Character Control
 summary:
   en: Taming Diffusion Probabilistic Models for Character Control is a 2024 work on
     human motion analysis and synthesis for humanoid robots.
   zh: Taming Diffusion Probabilistic Models for Character Control is a 2024 work on
     human motion analysis and synthesis for humanoid robots.
-  ko: ''
+  ko: Taming Diffusion Probabilistic Models for Character Control is a 2024 work on
+    human motion analysis and synthesis for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Taming Diffusion Probabilistic Models for Character Control is a 2024 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+Taming Diffusion Probabilistic Models for Character Control is a 2024 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 Taming Diffusion Probabilistic Models for Character Control is a 2024 work on human motion analysis and synthesis for humanoid robots.

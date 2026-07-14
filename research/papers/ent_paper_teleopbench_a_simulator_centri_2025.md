@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation'
   zh: 'TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation'
-  ko: ''
+  ko: 'TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation'
 summary:
   en: 'TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation
     is a 2025 work on teleoperation for humanoid robots.'
   zh: 'TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation
     is a 2025 work on teleoperation for humanoid robots.'
-  ko: ''
+  ko: 'TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation
+    is a 2025 work on teleoperation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation is a 2025 work on teleoperation for humanoid robots.
+
+## Overview
+TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation is a 2025 work on teleoperation for humanoid robots.
+
+## 개요
 TeleOpBench: A Simulator-Centric Benchmark for Dual-Arm Dexterous Teleoperation is a 2025 work on teleoperation for humanoid robots.

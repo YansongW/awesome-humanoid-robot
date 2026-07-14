@@ -8,7 +8,8 @@ names:
     for Humanoid Control
   zh: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning
     for Humanoid Control
-  ko: ''
+  ko: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning
+    for Humanoid Control
 summary:
   en: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning
     for Humanoid Control is a 2026 work on sim-to-real for humanoid robots, with open-source
@@ -16,7 +17,9 @@ summary:
   zh: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning
     for Humanoid Control is a 2026 work on sim-to-real for humanoid robots, with open-source
     code available.
-  ko: ''
+  ko: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning
+    for Humanoid Control is a 2026 work on sim-to-real for humanoid robots, with open-source
+    code available.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control is a 2026 work on sim-to-real for humanoid robots, with open-source code available.
+
+## Overview
+Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control is a 2026 work on sim-to-real for humanoid robots, with open-source code available.
+
+## 개요
 Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control is a 2026 work on sim-to-real for humanoid robots, with open-source code available.

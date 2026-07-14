@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Agile and Dynamic Motor Skills for Legged Robots
   zh: Learning Agile and Dynamic Motor Skills for Legged Robots
-  ko: ''
+  ko: Learning Agile and Dynamic Motor Skills for Legged Robots
 summary:
   en: Learning Agile and Dynamic Motor Skills for Legged Robots is a 2019 work on
     sim-to-real for humanoid robots.
   zh: Learning Agile and Dynamic Motor Skills for Legged Robots is a 2019 work on
     sim-to-real for humanoid robots.
-  ko: ''
+  ko: Learning Agile and Dynamic Motor Skills for Legged Robots is a 2019 work on
+    sim-to-real for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Agile and Dynamic Motor Skills for Legged Robots is a 2019 work on sim-to-real for humanoid robots.
+
+## Overview
+Learning Agile and Dynamic Motor Skills for Legged Robots is a 2019 work on sim-to-real for humanoid robots.
+
+## 개요
 Learning Agile and Dynamic Motor Skills for Legged Robots is a 2019 work on sim-to-real for humanoid robots.

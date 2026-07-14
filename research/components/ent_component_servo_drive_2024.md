@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+将低功率指令信号转换为机器人关节电机控制所需大电流的电子放大器。
+
+## Overview
 Electronic amplifier that converts low-power command signals into high-current motor control for robot joints.
+
+## 개요
+로봇 관절용 모터 제어를 위한 고전류로 저전력 명령 신호를 변환하는 전자 증폭기.

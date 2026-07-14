@@ -7,7 +7,8 @@ names:
   en: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist
     Robot Policy'
   zh: InternVLA-M1
-  ko: ''
+  ko: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist
+    Robot Policy'
 summary:
   en: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist
     Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for
@@ -15,7 +16,9 @@ summary:
   zh: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist
     Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.'
-  ko: ''
+  ko: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist
+    Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.
+
+## Overview
+InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.
+
+## 개요
 InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.

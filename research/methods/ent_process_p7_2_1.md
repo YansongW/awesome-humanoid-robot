@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 基础站立与行走仿真
-  ko: ''
+  ko: 基础站立与行走仿真
 summary:
   en: ''
   zh: 仿真视频、稳定行走 10 m、转向/斜坡通过
-  ko: ''
+  ko: 仿真视频、稳定行走 10 m、转向/斜坡通过
 domains:
 - 08_software_middleware
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）

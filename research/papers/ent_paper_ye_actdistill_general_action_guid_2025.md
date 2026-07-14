@@ -7,7 +7,8 @@ names:
   en: 'ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action
     Models'
   zh: ActDistill
-  ko: ''
+  ko: 'ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action
+    Models'
 summary:
   en: 'ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action
     Models (ActDistill), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Models (ActDistill), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Tongji University, University of Technology Sydney,
     Advanced Institute of Big Data.'
-  ko: ''
+  ko: 'ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action
+    Models (ActDistill), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Tongji University, University of Technology Sydney,
+    Advanced Institute of Big Data.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action Models (ActDistill), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tongji University, University of Technology Sydney, Advanced Institute of Big Data.
+
+## Overview
+ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action Models (ActDistill), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tongji University, University of Technology Sydney, Advanced Institute of Big Data.
+
+## 개요
 ActDistill: General Action-Guided Self-Derived Distillation for Efficient Vision-Language-Action Models (ActDistill), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tongji University, University of Technology Sydney, Advanced Institute of Big Data.

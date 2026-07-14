@@ -8,8 +8,8 @@ names:
   zh: 触觉传感器阵列
   ko: 촉각 센서 어레이
 summary:
-  en: Distributed tactile sensing surface that measures contact pressure, shear,
-    or texture to support dexterous manipulation.
+  en: Distributed tactile sensing surface that measures contact pressure, shear, or
+    texture to support dexterous manipulation.
   zh: 分布式触觉感知表面，测量接触压力、剪切力或纹理以支持灵巧操作。
   ko: 민첩한 조작을 지원하기 위해 접촉 압력, 전단력 또는 질감을 측정하는 분산형 촉각 감지 표면.
 domains:
@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-13'
 ---
 
-触觉传感器阵列覆盖于机器人手指或手掌表面，提供接触力分布与滑动检测信息，是实现精细抓取的关键传感器。本词条正文正在施工中。
+## 概述
+分布式触觉感知表面，测量接触压力、剪切力或纹理以支持灵巧操作。
+
+## Overview
+Distributed tactile sensing surface that measures contact pressure, shear, or texture to support dexterous manipulation.
+
+## 개요
+Distributed tactile sensing surface that measures contact pressure, shear, or texture to support dexterous manipulation.

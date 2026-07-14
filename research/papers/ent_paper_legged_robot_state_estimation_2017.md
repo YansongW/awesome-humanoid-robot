@@ -8,13 +8,15 @@ names:
     Contact Factors
   zh: Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated
     Contact Factors
-  ko: ''
+  ko: Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated
+    Contact Factors
 summary:
   en: Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated
     Contact Factors is a 2017 work on state estimation for humanoid robots.
   zh: Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated
     Contact Factors is a 2017 work on state estimation for humanoid robots.
-  ko: ''
+  ko: Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated
+    Contact Factors is a 2017 work on state estimation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors is a 2017 work on state estimation for humanoid robots.
+
+## Overview
+Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors is a 2017 work on state estimation for humanoid robots.
+
+## 개요
 Legged Robot State-Estimation Through Combined Forward Kinematic and Preintegrated Contact Factors is a 2017 work on state estimation for humanoid robots.

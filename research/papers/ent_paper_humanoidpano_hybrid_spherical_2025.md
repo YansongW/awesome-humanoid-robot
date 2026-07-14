@@ -8,13 +8,15 @@ names:
     Robots'
   zh: 'HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid
     Robots'
-  ko: ''
+  ko: 'HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid
+    Robots'
 summary:
   en: 'HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid
     Robots is a 2025 work on navigation for humanoid robots.'
   zh: 'HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid
     Robots is a 2025 work on navigation for humanoid robots.'
-  ko: ''
+  ko: 'HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid
+    Robots is a 2025 work on navigation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid Robots is a 2025 work on navigation for humanoid robots.
+
+## Overview
+HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid Robots is a 2025 work on navigation for humanoid robots.
+
+## 개요
 HumanoidPano: Hybrid Spherical Panoramic-LiDAR Cross-Modal Perception for Humanoid Robots is a 2025 work on navigation for humanoid robots.

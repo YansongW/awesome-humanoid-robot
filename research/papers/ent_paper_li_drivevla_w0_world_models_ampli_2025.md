@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving'
   zh: DriveVLA-W0
-  ko: ''
+  ko: 'DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving'
 summary:
   en: 'DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving (DriveVLA-W0),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Yinwang Intelligent Technology Co. Ltd., NLPR, Institute of Automation, Chinese
     Academy of Sciences (CASIA).'
-  ko: ''
+  ko: 'DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving (DriveVLA-W0),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Yinwang Intelligent Technology Co. Ltd., NLPR, Institute of Automation, Chinese
+    Academy of Sciences (CASIA).'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving (DriveVLA-W0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Yinwang Intelligent Technology Co. Ltd., NLPR, Institute of Automation, Chinese Academy of Sciences (CASIA).
+
+## Overview
+DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving (DriveVLA-W0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Yinwang Intelligent Technology Co. Ltd., NLPR, Institute of Automation, Chinese Academy of Sciences (CASIA).
+
+## 개요
 DriveVLA-W0: World Models Amplify Data Scaling Law in Autonomous Driving (DriveVLA-W0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Yinwang Intelligent Technology Co. Ltd., NLPR, Institute of Automation, Chinese Academy of Sciences (CASIA).

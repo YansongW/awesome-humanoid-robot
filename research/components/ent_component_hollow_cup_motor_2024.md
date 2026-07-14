@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+体积小、重量轻的无铁芯直流电机，用于机器人灵巧手和小型关节。
+
+## Overview
+Small, lightweight coreless DC motor used in dexterous robot hands and small joints.
+
+## 개요
 Small, lightweight coreless DC motor used in dexterous robot hands and small joints.

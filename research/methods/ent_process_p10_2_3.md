@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 全身控制 WBC
-  ko: ''
+  ko: 全身控制 WBC
 summary:
   en: ''
   zh: WBC 控制器、多任务协调演示、求解时间 < 1 ms
-  ko: ''
+  ko: WBC 控制器、多任务协调演示、求解时间 < 1 ms
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: A 面 3D 建模与可视化
-  ko: ''
+  ko: A 面 3D 建模与可视化
 summary:
   en: ''
   zh: 高精度 A 面、渲染图、CMF 方案、关键视角评审通过
-  ko: ''
+  ko: 高精度 A 面、渲染图、CMF 方案、关键视角评审通过
 domains:
 - 06_design_engineering
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：工业设计与外观工程（ID / A-Surface）

@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+采用仿生气动肌肉执行器的人形机器人，强调安全人机交互。
+
+## Overview
+Humanoid robot using soft, biomimetic pneumatic muscle actuation for safe human interaction.
+
+## 개요
 Humanoid robot using soft, biomimetic pneumatic muscle actuation for safe human interaction.

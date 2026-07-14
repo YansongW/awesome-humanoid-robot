@@ -6,13 +6,14 @@ type: paper
 names:
   en: A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs
   zh: A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs
-  ko: ''
+  ko: A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs
 summary:
   en: A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs is
     a 2025 work on locomotion for humanoid robots.
   zh: A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs is
     a 2025 work on locomotion for humanoid robots.
-  ko: ''
+  ko: A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs is
+    a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 A Hierarchical Framework for Humanoid Locomotion with Supernumerary Limbs is a 2025 work on locomotion for humanoid robots.

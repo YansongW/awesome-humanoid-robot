@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'DreamVLA: A Vision-Language-Action Model Dreamed with Comprehensive World Knowledge'
   zh: DreamVLA
-  ko: ''
+  ko: 'DreamVLA: A Vision-Language-Action Model Dreamed with Comprehensive World Knowledge'
 summary:
   en: 'DreamVLA: A Vision-Language-Action Model Dreamed with Comprehensive World Knowledge
     (DreamVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -18,7 +18,11 @@ summary:
     introduced by Shanghai Jiao Tong University, Eastern Institute of Technology,
     Tsinghua University, Galbot, Peking University, University of Illinois at Urbana-Champaign,
     University of Science and Technology of China.'
-  ko: ''
+  ko: 'DreamVLA: A Vision-Language-Action Model Dreamed with Comprehensive World Knowledge
+    (DreamVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Shanghai Jiao Tong University, Eastern Institute of Technology,
+    Tsinghua University, Galbot, Peking University, University of Illinois at Urbana-Champaign,
+    University of Science and Technology of China.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +64,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DreamVLA: A Vision-Language-Action Model Dreamed with Comprehensive World Knowledge (DreamVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Eastern Institute of Technology, Tsinghua University, Galbot, Peking University, University of Illinois at Urbana-Champaign, University of Science and Technology of China.
+
+## Overview
+DreamVLA: A Vision-Language-Action Model Dreamed with Comprehensive World Knowledge (DreamVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Eastern Institute of Technology, Tsinghua University, Galbot, Peking University, University of Illinois at Urbana-Champaign, University of Science and Technology of China.
+
+## 개요
 DreamVLA: A Vision-Language-Action Model Dreamed with Comprehensive World Knowledge (DreamVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Eastern Institute of Technology, Tsinghua University, Galbot, Peking University, University of Illinois at Urbana-Champaign, University of Science and Technology of China.

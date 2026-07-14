@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'PHUMA: Physically-Grounded Humanoid Locomotion Dataset'
   zh: 'PHUMA: Physically-Grounded Humanoid Locomotion Dataset'
-  ko: ''
+  ko: 'PHUMA: Physically-Grounded Humanoid Locomotion Dataset'
 summary:
   en: 'PHUMA: Physically-Grounded Humanoid Locomotion Dataset is a 2025 work on locomotion
     for humanoid robots.'
   zh: 'PHUMA: Physically-Grounded Humanoid Locomotion Dataset is a 2025 work on locomotion
     for humanoid robots.'
-  ko: ''
+  ko: 'PHUMA: Physically-Grounded Humanoid Locomotion Dataset is a 2025 work on locomotion
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PHUMA: Physically-Grounded Humanoid Locomotion Dataset is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+PHUMA: Physically-Grounded Humanoid Locomotion Dataset is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 PHUMA: Physically-Grounded Humanoid Locomotion Dataset is a 2025 work on locomotion for humanoid robots.

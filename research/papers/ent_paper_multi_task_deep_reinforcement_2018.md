@@ -6,13 +6,14 @@ type: paper
 names:
   en: Multi-task Deep Reinforcement Learning with PopArt
   zh: Multi-task Deep Reinforcement Learning with PopArt
-  ko: ''
+  ko: Multi-task Deep Reinforcement Learning with PopArt
 summary:
   en: Multi-task Deep Reinforcement Learning with PopArt is a 2018 work on physics-based
     character animation for humanoid robots.
   zh: Multi-task Deep Reinforcement Learning with PopArt is a 2018 work on physics-based
     character animation for humanoid robots.
-  ko: ''
+  ko: Multi-task Deep Reinforcement Learning with PopArt is a 2018 work on physics-based
+    character animation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Multi-task Deep Reinforcement Learning with PopArt is a 2018 work on physics-based character animation for humanoid robots.
+
+## Overview
+Multi-task Deep Reinforcement Learning with PopArt is a 2018 work on physics-based character animation for humanoid robots.
+
+## 개요
 Multi-task Deep Reinforcement Learning with PopArt is a 2018 work on physics-based character animation for humanoid robots.

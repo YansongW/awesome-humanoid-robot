@@ -8,7 +8,8 @@ names:
     Capture Real-World Demonstrations for Physical AI at Scale
   zh: Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers
     Capture Real-World Demonstrations for Physical AI at Scale
-  ko: ''
+  ko: Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers
+    Capture Real-World Demonstrations for Physical AI at Scale
 summary:
   en: Leveraging its deep expertise in and broad product portfolio of robotics and
     AI vision, Orbbec is one of the few industry providers that combines advanced
@@ -18,7 +19,10 @@ summary:
     AI vision, Orbbec is one of the few industry providers that combines advanced
     multi-sensor calibration and synchronization technologies, a full-stack vision
     product portfolio, and global-scale manufacturing and delivery capabilities.
-  ko: ''
+  ko: Leveraging its deep expertise in and broad product portfolio of robotics and
+    AI vision, Orbbec is one of the few industry providers that combines advanced
+    multi-sensor calibration and synchronization technologies, a full-stack vision
+    product portfolio, and global-scale manufacturing and delivery capabilities.
 domains:
 - 11_applications_markets
 layers:
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+Leveraging its deep expertise in and broad product portfolio of robotics and AI vision, Orbbec is one of the few industry providers that combines advanced multi-sensor calibration and synchronization technologies, a full-stack vision product portfolio, and global-scale manufacturing and delivery capabilities.
+
+## Overview
+Leveraging its deep expertise in and broad product portfolio of robotics and AI vision, Orbbec is one of the few industry providers that combines advanced multi-sensor calibration and synchronization technologies, a full-stack vision product portfolio, and global-scale manufacturing and delivery capabilities.
+
+## 개요
 Leveraging its deep expertise in and broad product portfolio of robotics and AI vision, Orbbec is one of the few industry providers that combines advanced multi-sensor calibration and synchronization technologies, a full-stack vision product portfolio, and global-scale manufacturing and delivery capabilities.

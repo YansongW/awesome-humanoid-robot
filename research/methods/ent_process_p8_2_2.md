@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 疲劳与寿命预估
-  ko: ''
+  ko: 疲劳与寿命预估
 summary:
   en: ''
   zh: 疲劳分析报告、关键件循环寿命 > 目标
-  ko: ''
+  ko: 疲劳分析报告、关键件循环寿命 > 目标
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：结构强度仿真与迭代（Structural FEA）

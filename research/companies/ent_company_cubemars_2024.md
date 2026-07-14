@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+紧凑型一体化机器人关节电机和执行器供应商。
+
+## Overview
+Chinese supplier of compact integrated robot joint motors and actuators.
+
+## 개요
 Chinese supplier of compact integrated robot joint motors and actuators.

@@ -8,13 +8,15 @@ names:
     Tasks'
   zh: 'ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement
     Tasks'
-  ko: ''
+  ko: 'ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement
+    Tasks'
 summary:
   en: 'ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement
     Tasks is a 2024 work on simulation benchmark for humanoid robots.'
   zh: 'ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement
     Tasks is a 2024 work on simulation benchmark for humanoid robots.'
-  ko: ''
+  ko: 'ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement
+    Tasks is a 2024 work on simulation benchmark for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +57,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement Tasks is a 2024 work on simulation benchmark for humanoid robots.
+
+## Overview
+ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement Tasks is a 2024 work on simulation benchmark for humanoid robots.
+
+## 개요
 ManiSkill-HAB: A Benchmark for Low-Level Manipulation in Home Rearrangement Tasks is a 2024 work on simulation benchmark for humanoid robots.

@@ -8,13 +8,15 @@ names:
     Guidance'
   zh: 'NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information
     Guidance'
-  ko: ''
+  ko: 'NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information
+    Guidance'
 summary:
   en: 'NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information
     Guidance is a 2025 work on navigation for humanoid robots.'
   zh: 'NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information
     Guidance is a 2025 work on navigation for humanoid robots.'
-  ko: ''
+  ko: 'NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information
+    Guidance is a 2025 work on navigation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance is a 2025 work on navigation for humanoid robots.
+
+## Overview
+NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance is a 2025 work on navigation for humanoid robots.
+
+## 개요
 NavDP: Learning Sim-to-Real Navigation Diffusion Policy with Privileged Information Guidance is a 2025 work on navigation for humanoid robots.

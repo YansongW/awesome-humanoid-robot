@@ -8,7 +8,8 @@ names:
     Humanoid'
   zh: 'FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale
     Humanoid'
-  ko: ''
+  ko: 'FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale
+    Humanoid'
 summary:
   en: 'FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale
     Humanoid is a 2026 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale
     Humanoid is a 2026 work on loco-manipulation and whole-body-control for humanoid
     robots.'
-  ko: ''
+  ko: 'FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale
+    Humanoid is a 2026 work on loco-manipulation and whole-body-control for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 FAME: Force-Adaptive RL for Expanding the Manipulation Envelope of a Full-Scale Humanoid is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

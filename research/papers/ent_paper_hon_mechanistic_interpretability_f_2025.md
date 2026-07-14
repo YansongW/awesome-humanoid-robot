@@ -6,7 +6,7 @@ type: paper
 names:
   en: Mechanistic interpretability for steering vision-language-action models
   zh: Mechanistic Interpretability for Steering Vision-Language-Action Models
-  ko: ''
+  ko: Mechanistic interpretability for steering vision-language-action models
 summary:
   en: Mechanistic interpretability for steering vision-language-action models (Mechanistic
     Interpretability for Steering Vision-Language-Action Models), is a 2025 large
@@ -16,7 +16,10 @@ summary:
     Interpretability for Steering Vision-Language-Action Models), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by University
     of California, Berkeley, and published at CoRL25.
-  ko: ''
+  ko: Mechanistic interpretability for steering vision-language-action models (Mechanistic
+    Interpretability for Steering Vision-Language-Action Models), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by University
+    of California, Berkeley, and published at CoRL25.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Mechanistic interpretability for steering vision-language-action models (Mechanistic Interpretability for Steering Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of California, Berkeley, and published at CoRL25.
+
+## Overview
+Mechanistic interpretability for steering vision-language-action models (Mechanistic Interpretability for Steering Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of California, Berkeley, and published at CoRL25.
+
+## 개요
 Mechanistic interpretability for steering vision-language-action models (Mechanistic Interpretability for Steering Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of California, Berkeley, and published at CoRL25.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 数据收集与数据流水线
-  ko: ''
+  ko: 数据收集与数据流水线
 summary:
   en: ''
   zh: 数据集规模、数据质量检查、版本管理
-  ko: ''
+  ko: 数据集规模、数据质量检查、版本管理
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）

@@ -6,13 +6,14 @@ type: paper
 names:
   en: Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL
   zh: Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL
-  ko: ''
+  ko: Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL
 summary:
   en: Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL is a 2025
     work on locomotion for humanoid robots.
   zh: Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL is a 2025
     work on locomotion for humanoid robots.
-  ko: ''
+  ko: Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL is a 2025
+    work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Robust Humanoid Walking on Compliant and Uneven Terrain with Deep RL is a 2025 work on locomotion for humanoid robots.

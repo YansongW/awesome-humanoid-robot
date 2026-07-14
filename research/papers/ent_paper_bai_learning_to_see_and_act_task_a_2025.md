@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation'
   zh: TVVE
-  ko: ''
+  ko: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation'
 summary:
   en: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation
     (TVVE), is a 2025 large vision-language-action model for robotic manipulation,
@@ -18,7 +18,11 @@ summary:
     introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological
     University, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences,
     X-Era AI Lab.'
-  ko: ''
+  ko: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation
+    (TVVE), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological
+    University, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences,
+    X-Era AI Lab.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +57,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation (TVVE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological University, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, X-Era AI Lab.
+
+## Overview
+Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation (TVVE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological University, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, X-Era AI Lab.
+
+## 개요
 Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation (TVVE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological University, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, X-Era AI Lab.

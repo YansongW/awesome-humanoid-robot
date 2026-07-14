@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer'
   zh: 'OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer'
-  ko: ''
+  ko: 'OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer'
 summary:
   en: 'OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer is a 2025
     work on hardware design for humanoid robots.'
   zh: 'OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer is a 2025
     work on hardware design for humanoid robots.'
-  ko: ''
+  ko: 'OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer is a 2025
+    work on hardware design for humanoid robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 OSMO: Open-Source Tactile Glove for Human-to-Robot Skill Transfer is a 2025 work on hardware design for humanoid robots.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 中心骨架与四肢连杆设计
-  ko: ''
+  ko: 中心骨架与四肢连杆设计
 summary:
   en: ''
   zh: 3D 结构模型、关键截面设计、BOM 初稿
-  ko: ''
+  ko: 3D 结构模型、关键截面设计、BOM 初稿
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）

@@ -8,11 +8,12 @@ names:
     for Multifacility Logistics Automation'
   zh: 'Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered
     for Multifacility Logistics Automation'
-  ko: ''
+  ko: 'Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered
+    for Multifacility Logistics Automation'
 summary:
   en: Revolutionary robot delivers end-to-end automation across supply chains
   zh: Revolutionary robot delivers end-to-end automation across supply chains
-  ko: ''
+  ko: Revolutionary robot delivers end-to-end automation across supply chains
 domains:
 - 11_applications_markets
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-14'
 ---
 
+## 概述
+Revolutionary robot delivers end-to-end automation across supply chains
+
+## Overview
+Revolutionary robot delivers end-to-end automation across supply chains
+
+## 개요
 Revolutionary robot delivers end-to-end automation across supply chains

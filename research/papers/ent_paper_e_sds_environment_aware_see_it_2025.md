@@ -8,7 +8,8 @@ names:
     Reinforcement Learning for Humanoid Locomotion'
   zh: 'E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware
     Reinforcement Learning for Humanoid Locomotion'
-  ko: ''
+  ko: 'E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware
+    Reinforcement Learning for Humanoid Locomotion'
 summary:
   en: 'E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware
     Reinforcement Learning for Humanoid Locomotion is a 2025 work on locomotion for
@@ -16,7 +17,9 @@ summary:
   zh: 'E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware
     Reinforcement Learning for Humanoid Locomotion is a 2025 work on locomotion for
     humanoid robots.'
-  ko: ''
+  ko: 'E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware
+    Reinforcement Learning for Humanoid Locomotion is a 2025 work on locomotion for
+    humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -47,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning for Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning for Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 E-SDS: Environment-aware See it, Do it, Sorted - Automated Environment-Aware Reinforcement Learning for Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.

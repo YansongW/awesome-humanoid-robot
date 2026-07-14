@@ -6,7 +6,7 @@ type: paper
 names:
   en: On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations
   zh: RobustVLA
-  ko: ''
+  ko: On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations
 summary:
   en: On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations
     (RobustVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (RobustVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by The Chinese University of Hong Kong, Tsinghua University, PKU-Psibot
     Lab, Beihang University, Peking University.
-  ko: ''
+  ko: On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations
+    (RobustVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by The Chinese University of Hong Kong, Tsinghua University, PKU-Psibot
+    Lab, Beihang University, Peking University.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations (RobustVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Chinese University of Hong Kong, Tsinghua University, PKU-Psibot Lab, Beihang University, Peking University.
+
+## Overview
+On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations (RobustVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Chinese University of Hong Kong, Tsinghua University, PKU-Psibot Lab, Beihang University, Peking University.
+
+## 개요
 On Robustness of Vision-Language-Action Model against Multi-Modal Perturbations (RobustVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Chinese University of Hong Kong, Tsinghua University, PKU-Psibot Lab, Beihang University, Peking University.

@@ -7,7 +7,8 @@ names:
   en: Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized
     Pre-training
   zh: ERIQ
-  ko: ''
+  ko: Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized
+    Pre-training
 summary:
   en: Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized
     Pre-training (ERIQ), is a 2025 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized
     Pre-training (ERIQ), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by AgiBot Research, AgiBot, Shanghai Innovation Institute.
-  ko: ''
+  ko: Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized
+    Pre-training (ERIQ), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by AgiBot Research, AgiBot, Shanghai Innovation Institute.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized Pre-training (ERIQ), is a 2025 large vision-language-action model for robotic manipulation, introduced by AgiBot Research, AgiBot, Shanghai Innovation Institute.
+
+## Overview
+Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized Pre-training (ERIQ), is a 2025 large vision-language-action model for robotic manipulation, introduced by AgiBot Research, AgiBot, Shanghai Innovation Institute.
+
+## 개요
 Unified Embodied VLM Reasoning with Robotic Action via Autoregressive Discretized Pre-training (ERIQ), is a 2025 large vision-language-action model for robotic manipulation, introduced by AgiBot Research, AgiBot, Shanghai Innovation Institute.

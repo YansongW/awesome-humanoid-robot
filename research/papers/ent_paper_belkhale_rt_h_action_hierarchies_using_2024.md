@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RT-H: Action Hierarchies Using Language'
   zh: RT-H
-  ko: ''
+  ko: 'RT-H: Action Hierarchies Using Language'
 summary:
   en: 'RT-H: Action Hierarchies Using Language (RT-H), is a 2024 large vision-language-action
     model for robotic manipulation, introduced by Google DeepMind, and published at
@@ -14,7 +14,9 @@ summary:
   zh: 'RT-H: Action Hierarchies Using Language (RT-H), is a 2024 large vision-language-action
     model for robotic manipulation, introduced by Google DeepMind, and published at
     Robotics - Science and Systems 2024.'
-  ko: ''
+  ko: 'RT-H: Action Hierarchies Using Language (RT-H), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by Google DeepMind, and published at
+    Robotics - Science and Systems 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RT-H: Action Hierarchies Using Language (RT-H), is a 2024 large vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at Robotics - Science and Systems 2024.
+
+## Overview
+RT-H: Action Hierarchies Using Language (RT-H), is a 2024 large vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at Robotics - Science and Systems 2024.
+
+## 개요
 RT-H: Action Hierarchies Using Language (RT-H), is a 2024 large vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at Robotics - Science and Systems 2024.

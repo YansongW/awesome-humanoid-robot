@@ -8,13 +8,15 @@ names:
     Terrains'
   zh: 'MoRE: Mixture of Residual Experts for Humanoid Lifelike Gaits Learning on Complex
     Terrains'
-  ko: ''
+  ko: 'MoRE: Mixture of Residual Experts for Humanoid Lifelike Gaits Learning on Complex
+    Terrains'
 summary:
   en: 'MoRE: Mixture of Residual Experts for Humanoid Lifelike Gaits Learning on Complex
     Terrains is a 2025 work on locomotion for humanoid robots.'
   zh: 'MoRE: Mixture of Residual Experts for Humanoid Lifelike Gaits Learning on Complex
     Terrains is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'MoRE: Mixture of Residual Experts for Humanoid Lifelike Gaits Learning on Complex
+    Terrains is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -52,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MoRE: Mixture of Residual Experts for Humanoid Lifelike Gaits Learning on Complex Terrains is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+MoRE: Mixture of Residual Experts for Humanoid Lifelike Gaits Learning on Complex Terrains is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 MoRE: Mixture of Residual Experts for Humanoid Lifelike Gaits Learning on Complex Terrains is a 2025 work on locomotion for humanoid robots.

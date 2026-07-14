@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Aerodynamics for the Control of Flying Humanoid Robots
   zh: Learning Aerodynamics for the Control of Flying Humanoid Robots
-  ko: ''
+  ko: Learning Aerodynamics for the Control of Flying Humanoid Robots
 summary:
   en: Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work
     on locomotion for humanoid robots.
   zh: Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work
     on locomotion for humanoid robots.
-  ko: ''
+  ko: Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work
+    on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for humanoid robots.

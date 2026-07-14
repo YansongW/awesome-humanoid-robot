@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 软硬件在环测试（HIL/SIL）
-  ko: ''
+  ko: 软硬件在环测试（HIL/SIL）
 summary:
   en: ''
   zh: HIL/SIL 测试报告、关键用例 100% 覆盖
-  ko: ''
+  ko: HIL/SIL 测试报告、关键用例 100% 覆盖
 domains:
 - 08_software_middleware
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）

@@ -4,14 +4,19 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills'
+  en: 'ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid
+    Whole-Body Skills'
   zh: sim-to-real 对齐不是调参数那么简单
-  ko: ''
+  ko: 'ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid
+    Whole-Body Skills'
 summary:
-  en: 'ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills is a knowledge node
-    related to paper in the humanoid robot value chain.'
+  en: 'ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid
+    Whole-Body Skills is a knowledge node related to paper in the humanoid robot value
+    chain.'
   zh: ''
-  ko: ''
+  ko: 'ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid
+    Whole-Body Skills is a knowledge node related to paper in the humanoid robot value
+    chain.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -31,11 +36,13 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (025). Institution: CMU；NVIDIA. arXiv: 2502.01143.'
+  notes: 'Imported from WeChat curated list (025). Institution: CMU；NVIDIA. arXiv:
+    2502.01143.'
 sources:
 - id: src_001
   type: paper
-  title: 'ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills (arXiv)'
+  title: 'ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid
+    Whole-Body Skills (arXiv)'
   url: https://arxiv.org/abs/2502.01143
   date: '2026'
   accessed_at: '2026-07-01'
@@ -48,3 +55,12 @@ sources:
 theoretical_depth:
 - system
 ---
+
+## 概述
+ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills is a knowledge node related to paper in the humanoid robot value chain.
+
+## Overview
+ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills is a knowledge node related to paper in the humanoid robot value chain.
+
+## 개요
+ASAP: Aligning Simulation and Real-World Physics for Learning Agile Humanoid Whole-Body Skills is a knowledge node related to paper in the humanoid robot value chain.

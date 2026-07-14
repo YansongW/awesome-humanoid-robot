@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots'
   zh: Lite VLA
-  ko: ''
+  ko: 'Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots'
 summary:
   en: 'Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots
     (Lite VLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots
     (Lite VLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Clark Atlanta University, Siemens Corporation.'
-  ko: ''
+  ko: 'Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots
+    (Lite VLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Clark Atlanta University, Siemens Corporation.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots (Lite VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Clark Atlanta University, Siemens Corporation.
+
+## Overview
+Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots (Lite VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Clark Atlanta University, Siemens Corporation.
+
+## 개요
 Lite VLA: Efficient Vision-Language-Action Control on CPU-Bound Edge Robots (Lite VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Clark Atlanta University, Siemens Corporation.

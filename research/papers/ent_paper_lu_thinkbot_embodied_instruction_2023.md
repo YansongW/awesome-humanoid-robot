@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'ThinkBot: Embodied Instruction Following with Thought Chain Reasoning'
   zh: ThinkBot
-  ko: ''
+  ko: 'ThinkBot: Embodied Instruction Following with Thought Chain Reasoning'
 summary:
   en: 'ThinkBot: Embodied Instruction Following with Thought Chain Reasoning (ThinkBot),
     is a 2023 large vision-language-action model for robotic manipulation, introduced
@@ -18,7 +18,11 @@ summary:
     by Tsinghua Shenzhen International Graduate School, Tsinghua University, Carnegie
     Mellon University, Department of Automation, Tsinghua University, and published
     at ICLR 2023.'
-  ko: ''
+  ko: 'ThinkBot: Embodied Instruction Following with Thought Chain Reasoning (ThinkBot),
+    is a 2023 large vision-language-action model for robotic manipulation, introduced
+    by Tsinghua Shenzhen International Graduate School, Tsinghua University, Carnegie
+    Mellon University, Department of Automation, Tsinghua University, and published
+    at ICLR 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -52,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ThinkBot: Embodied Instruction Following with Thought Chain Reasoning (ThinkBot), is a 2023 large vision-language-action model for robotic manipulation, introduced by Tsinghua Shenzhen International Graduate School, Tsinghua University, Carnegie Mellon University, Department of Automation, Tsinghua University, and published at ICLR 2023.
+
+## Overview
+ThinkBot: Embodied Instruction Following with Thought Chain Reasoning (ThinkBot), is a 2023 large vision-language-action model for robotic manipulation, introduced by Tsinghua Shenzhen International Graduate School, Tsinghua University, Carnegie Mellon University, Department of Automation, Tsinghua University, and published at ICLR 2023.
+
+## 개요
 ThinkBot: Embodied Instruction Following with Thought Chain Reasoning (ThinkBot), is a 2023 large vision-language-action model for robotic manipulation, introduced by Tsinghua Shenzhen International Graduate School, Tsinghua University, Carnegie Mellon University, Department of Automation, Tsinghua University, and published at ICLR 2023.

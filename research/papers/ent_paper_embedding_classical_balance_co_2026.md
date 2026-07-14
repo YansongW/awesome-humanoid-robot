@@ -8,7 +8,8 @@ names:
     Humanoid Recovery
   zh: Embedding Classical Balance Control Principles in Reinforcement Learning for
     Humanoid Recovery
-  ko: ''
+  ko: Embedding Classical Balance Control Principles in Reinforcement Learning for
+    Humanoid Recovery
 summary:
   en: Embedding Classical Balance Control Principles in Reinforcement Learning for
     Humanoid Recovery is a 2026 work on loco-manipulation and whole-body-control for
@@ -16,7 +17,9 @@ summary:
   zh: Embedding Classical Balance Control Principles in Reinforcement Learning for
     Humanoid Recovery is a 2026 work on loco-manipulation and whole-body-control for
     humanoid robots.
-  ko: ''
+  ko: Embedding Classical Balance Control Principles in Reinforcement Learning for
+    Humanoid Recovery is a 2026 work on loco-manipulation and whole-body-control for
+    humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Embedding Classical Balance Control Principles in Reinforcement Learning for Humanoid Recovery is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

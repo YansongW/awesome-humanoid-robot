@@ -7,7 +7,8 @@ names:
   en: 'Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language,
     Audio, and Action'
   zh: Unified-IO 2
-  ko: ''
+  ko: 'Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language,
+    Audio, and Action'
 summary:
   en: 'Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language,
     Audio, and Action (Unified-IO 2), is a 2023 large vision-language-action model
@@ -17,7 +18,10 @@ summary:
     Audio, and Action (Unified-IO 2), is a 2023 large vision-language-action model
     for robotic manipulation, introduced by Allen Institute for AI, University of
     Illinois Urbana-Champaign, University of Washington, and published at CVPR 2023.'
-  ko: ''
+  ko: 'Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language,
+    Audio, and Action (Unified-IO 2), is a 2023 large vision-language-action model
+    for robotic manipulation, introduced by Allen Institute for AI, University of
+    Illinois Urbana-Champaign, University of Washington, and published at CVPR 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language, Audio, and Action (Unified-IO 2), is a 2023 large vision-language-action model for robotic manipulation, introduced by Allen Institute for AI, University of Illinois Urbana-Champaign, University of Washington, and published at CVPR 2023.
+
+## Overview
+Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language, Audio, and Action (Unified-IO 2), is a 2023 large vision-language-action model for robotic manipulation, introduced by Allen Institute for AI, University of Illinois Urbana-Champaign, University of Washington, and published at CVPR 2023.
+
+## 개요
 Unified-IO 2: Scaling Autoregressive Multimodal Models with Vision, Language, Audio, and Action (Unified-IO 2), is a 2023 large vision-language-action model for robotic manipulation, introduced by Allen Institute for AI, University of Illinois Urbana-Champaign, University of Washington, and published at CVPR 2023.

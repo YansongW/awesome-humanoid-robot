@@ -6,13 +6,14 @@ type: paper
 names:
   en: Generating Diverse and Natural 3D Human Motions From Text
   zh: Generating Diverse and Natural 3D Human Motions From Text
-  ko: ''
+  ko: Generating Diverse and Natural 3D Human Motions From Text
 summary:
   en: Generating Diverse and Natural 3D Human Motions From Text is a 2022 work on
     human motion analysis and synthesis for humanoid robots.
   zh: Generating Diverse and Natural 3D Human Motions From Text is a 2022 work on
     human motion analysis and synthesis for humanoid robots.
-  ko: ''
+  ko: Generating Diverse and Natural 3D Human Motions From Text is a 2022 work on
+    human motion analysis and synthesis for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Generating Diverse and Natural 3D Human Motions From Text is a 2022 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+Generating Diverse and Natural 3D Human Motions From Text is a 2022 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 Generating Diverse and Natural 3D Human Motions From Text is a 2022 work on human motion analysis and synthesis for humanoid robots.

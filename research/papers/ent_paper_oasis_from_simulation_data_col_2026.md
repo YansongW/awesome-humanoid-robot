@@ -6,11 +6,11 @@ type: paper
 names:
   en: 'OASIS: From Simulation Data Collection to Real-World Humanoid Loco-Manipulation'
   zh: OASIS｜从模拟数据收集到现实世界的人形移动操作
-  ko: ''
+  ko: 'OASIS: From Simulation Data Collection to Real-World Humanoid Loco-Manipulation'
 summary:
   en: ''
   zh: OASIS 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、分层技能/专家策略转成可训练、可复用的可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
-  ko: ''
+  ko: OASIS 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、分层技能/专家策略转成可训练、可复用的可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -46,5 +46,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+OASIS 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、分层技能/专家策略转成可训练、可复用的可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
+## 개요
 OASIS 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、分层技能/专家策略转成可训练、可复用的可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。

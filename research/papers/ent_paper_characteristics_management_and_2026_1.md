@@ -8,13 +8,16 @@ names:
     Humanoids: Empirical Study on Kengoro and Musashi'
   zh: 'Characteristics, Management, and Utilization of Muscles in Musculoskeletal
     Humanoids: Empirical Study on Kengoro and Musashi'
-  ko: ''
+  ko: 'Characteristics, Management, and Utilization of Muscles in Musculoskeletal
+    Humanoids: Empirical Study on Kengoro and Musashi'
 summary:
   en: ''
   zh: 'Characteristics, Management, and Utilization of Muscles in Musculoskeletal
     Humanoids: Empirical Study on Kengoro and Musashi is a paper on 硬件设计 for humanoid
     robotics.'
-  ko: ''
+  ko: 'Characteristics, Management, and Utilization of Muscles in Musculoskeletal
+    Humanoids: Empirical Study on Kengoro and Musashi is a paper on 硬件设计 for humanoid
+    robotics.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -48,5 +51,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids: Empirical Study on Kengoro and Musashi is a paper on 硬件设计 for humanoid robotics.
 
+## 개요
 Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids: Empirical Study on Kengoro and Musashi is a paper on 硬件设计 for humanoid robotics.

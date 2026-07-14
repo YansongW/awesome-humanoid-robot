@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots'
   zh: 'Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots'
-  ko: ''
+  ko: 'Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots'
 summary:
   en: 'Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots is
     a 2026 work on simulation benchmark for humanoid robots.'
   zh: 'Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots is
     a 2026 work on simulation benchmark for humanoid robots.'
-  ko: ''
+  ko: 'Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots is
+    a 2026 work on simulation benchmark for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots is a 2026 work on simulation benchmark for humanoid robots.
+
+## Overview
+Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots is a 2026 work on simulation benchmark for humanoid robots.
+
+## 개요
 Towards Motion Turing Test: Evaluating Human-Likeness in Humanoid Robots is a 2026 work on simulation benchmark for humanoid robots.

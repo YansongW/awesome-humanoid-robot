@@ -7,7 +7,8 @@ names:
   en: 'Modality-Driven Design for Multi-Step Dexterous Manipulation: Insights from
     Neuroscience'
   zh: Modality-Driven Design for Multi-Step Dexterous Manipulation
-  ko: ''
+  ko: 'Modality-Driven Design for Multi-Step Dexterous Manipulation: Insights from
+    Neuroscience'
 summary:
   en: 'Modality-Driven Design for Multi-Step Dexterous Manipulation: Insights from
     Neuroscience (Modality-Driven Design for Multi-Step Dexterous Manipulation), is
@@ -15,7 +16,9 @@ summary:
   zh: 'Modality-Driven Design for Multi-Step Dexterous Manipulation: Insights from
     Neuroscience (Modality-Driven Design for Multi-Step Dexterous Manipulation), is
     a 2024 large vision-language-action model for robotic manipulation.'
-  ko: ''
+  ko: 'Modality-Driven Design for Multi-Step Dexterous Manipulation: Insights from
+    Neuroscience (Modality-Driven Design for Multi-Step Dexterous Manipulation), is
+    a 2024 large vision-language-action model for robotic manipulation.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Modality-Driven Design for Multi-Step Dexterous Manipulation: Insights from Neuroscience (Modality-Driven Design for Multi-Step Dexterous Manipulation), is a 2024 large vision-language-action model for robotic manipulation.
+
+## Overview
+Modality-Driven Design for Multi-Step Dexterous Manipulation: Insights from Neuroscience (Modality-Driven Design for Multi-Step Dexterous Manipulation), is a 2024 large vision-language-action model for robotic manipulation.
+
+## 개요
 Modality-Driven Design for Multi-Step Dexterous Manipulation: Insights from Neuroscience (Modality-Driven Design for Multi-Step Dexterous Manipulation), is a 2024 large vision-language-action model for robotic manipulation.

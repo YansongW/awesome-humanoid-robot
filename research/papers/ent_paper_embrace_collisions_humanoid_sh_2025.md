@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions'
   zh: 'Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions'
-  ko: ''
+  ko: 'Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions'
 summary:
   en: 'Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions
+    is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -52,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Embrace Collisions: Humanoid Shadowing for Deployable Contact-Agnostics Motions is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

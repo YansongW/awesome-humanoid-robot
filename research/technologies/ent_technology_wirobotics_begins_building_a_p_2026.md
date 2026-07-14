@@ -8,7 +8,8 @@ names:
     Release Features the ALLEX Simulation Model'
   zh: 'WIRobotics Begins Building a Physical AI Development Ecosystem: The First Technology
     Release Features the ALLEX Simulation Model'
-  ko: ''
+  ko: 'WIRobotics Begins Building a Physical AI Development Ecosystem: The First Technology
+    Release Features the ALLEX Simulation Model'
 summary:
   en: -Additional core ALLEX technologies to be released sequentially -Expanding the
     Physical AI development ecosystem through high-fidelity Sim-to-Real validation
@@ -18,7 +19,10 @@ summary:
     Physical AI development ecosystem through high-fidelity Sim-to-Real validation
     -Building an open Physical AI development ecosystem for researchers and robotics
     developers
-  ko: ''
+  ko: -Additional core ALLEX technologies to be released sequentially -Expanding the
+    Physical AI development ecosystem through high-fidelity Sim-to-Real validation
+    -Building an open Physical AI development ecosystem for researchers and robotics
+    developers
 domains:
 - 11_applications_markets
 layers:
@@ -49,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+-Additional core ALLEX technologies to be released sequentially -Expanding the Physical AI development ecosystem through high-fidelity Sim-to-Real validation -Building an open Physical AI development ecosystem for researchers and robotics developers
+
+## Overview
+-Additional core ALLEX technologies to be released sequentially -Expanding the Physical AI development ecosystem through high-fidelity Sim-to-Real validation -Building an open Physical AI development ecosystem for researchers and robotics developers
+
+## 개요
 -Additional core ALLEX technologies to be released sequentially -Expanding the Physical AI development ecosystem through high-fidelity Sim-to-Real validation -Building an open Physical AI development ecosystem for researchers and robotics developers

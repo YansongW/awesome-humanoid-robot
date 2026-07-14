@@ -6,13 +6,14 @@ type: paper
 names:
   en: Control Operators for Interactive Character Animation
   zh: Control Operators for Interactive Character Animation
-  ko: ''
+  ko: Control Operators for Interactive Character Animation
 summary:
   en: Control Operators for Interactive Character Animation is a 2025 work on human
     motion analysis and synthesis for humanoid robots.
   zh: Control Operators for Interactive Character Animation is a 2025 work on human
     motion analysis and synthesis for humanoid robots.
-  ko: ''
+  ko: Control Operators for Interactive Character Animation is a 2025 work on human
+    motion analysis and synthesis for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Control Operators for Interactive Character Animation is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+Control Operators for Interactive Character Animation is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 Control Operators for Interactive Character Animation is a 2025 work on human motion analysis and synthesis for humanoid robots.

@@ -7,7 +7,8 @@ names:
   en: 'SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained
     Learning'
   zh: SafeVLA
-  ko: ''
+  ko: 'SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained
+    Learning'
 summary:
   en: 'SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained
     Learning (SafeVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Learning (SafeVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Key Laboratory of General Artificial Intelligence, Peking University,
     and published at NIPS25.'
-  ko: ''
+  ko: 'SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained
+    Learning (SafeVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Key Laboratory of General Artificial Intelligence, Peking University,
+    and published at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -52,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning (SafeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Key Laboratory of General Artificial Intelligence, Peking University, and published at NIPS25.
+
+## Overview
+SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning (SafeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Key Laboratory of General Artificial Intelligence, Peking University, and published at NIPS25.
+
+## 개요
 SafeVLA: Towards Safety Alignment of Vision-Language-Action Model via Constrained Learning (SafeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Key Laboratory of General Artificial Intelligence, Peking University, and published at NIPS25.

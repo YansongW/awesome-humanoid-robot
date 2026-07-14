@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+基于DDS的发布/订阅和实时支持的事实标准机器人中间件。
+
+## Overview
+De facto robot middleware with DDS-based pub/sub and real-time support.
+
+## 개요
 De facto robot middleware with DDS-based pub/sub and real-time support.

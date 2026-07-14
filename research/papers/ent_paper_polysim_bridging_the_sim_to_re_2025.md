@@ -8,13 +8,15 @@ names:
     Dynamics Randomization'
   zh: 'PolySim: Bridging the Sim-to-Real Gap for Humanoid Control via Multi-Simulator
     Dynamics Randomization'
-  ko: ''
+  ko: 'PolySim: Bridging the Sim-to-Real Gap for Humanoid Control via Multi-Simulator
+    Dynamics Randomization'
 summary:
   en: 'PolySim: Bridging the Sim-to-Real Gap for Humanoid Control via Multi-Simulator
     Dynamics Randomization is a 2025 work on sim-to-real for humanoid robots.'
   zh: 'PolySim: Bridging the Sim-to-Real Gap for Humanoid Control via Multi-Simulator
     Dynamics Randomization is a 2025 work on sim-to-real for humanoid robots.'
-  ko: ''
+  ko: 'PolySim: Bridging the Sim-to-Real Gap for Humanoid Control via Multi-Simulator
+    Dynamics Randomization is a 2025 work on sim-to-real for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PolySim: Bridging the Sim-to-Real Gap for Humanoid Control via Multi-Simulator Dynamics Randomization is a 2025 work on sim-to-real for humanoid robots.
+
+## Overview
+PolySim: Bridging the Sim-to-Real Gap for Humanoid Control via Multi-Simulator Dynamics Randomization is a 2025 work on sim-to-real for humanoid robots.
+
+## 개요
 PolySim: Bridging the Sim-to-Real Gap for Humanoid Control via Multi-Simulator Dynamics Randomization is a 2025 work on sim-to-real for humanoid robots.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning'
   zh: 'AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning'
-  ko: ''
+  ko: 'AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning'
 summary:
   en: 'AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning
     is a 2025 work on physics-based character animation for humanoid robots.'
   zh: 'AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning
     is a 2025 work on physics-based character animation for humanoid robots.'
-  ko: ''
+  ko: 'AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning
+    is a 2025 work on physics-based character animation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 AMOR: Adaptive Character Control through Multi-Objective Reinforcement Learning is a 2025 work on physics-based character animation for humanoid robots.

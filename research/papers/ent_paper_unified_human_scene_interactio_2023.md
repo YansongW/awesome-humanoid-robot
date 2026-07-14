@@ -6,13 +6,14 @@ type: paper
 names:
   en: Unified Human-Scene Interaction via Prompted Chain-of-Contacts
   zh: Unified Human-Scene Interaction via Prompted Chain-of-Contacts
-  ko: ''
+  ko: Unified Human-Scene Interaction via Prompted Chain-of-Contacts
 summary:
   en: Unified Human-Scene Interaction via Prompted Chain-of-Contacts is a 2023 work
     on physics-based character animation for humanoid robots.
   zh: Unified Human-Scene Interaction via Prompted Chain-of-Contacts is a 2023 work
     on physics-based character animation for humanoid robots.
-  ko: ''
+  ko: Unified Human-Scene Interaction via Prompted Chain-of-Contacts is a 2023 work
+    on physics-based character animation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -49,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Unified Human-Scene Interaction via Prompted Chain-of-Contacts is a 2023 work on physics-based character animation for humanoid robots.
+
+## Overview
+Unified Human-Scene Interaction via Prompted Chain-of-Contacts is a 2023 work on physics-based character animation for humanoid robots.
+
+## 개요
 Unified Human-Scene Interaction via Prompted Chain-of-Contacts is a 2023 work on physics-based character animation for humanoid robots.

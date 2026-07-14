@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation'
   zh: RoboTAP
-  ko: ''
+  ko: 'RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation'
 summary:
   en: 'RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP),
     is a 2023 generalized vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2023 generalized vision-language-action model for robotic manipulation, introduced
     by Google DeepMind, Department of Computer Science at University College London,
     and published at ICRA 2023.'
-  ko: ''
+  ko: 'RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP),
+    is a 2023 generalized vision-language-action model for robotic manipulation, introduced
+    by Google DeepMind, Department of Computer Science at University College London,
+    and published at ICRA 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, Department of Computer Science at University College London, and published at ICRA 2023.
+
+## Overview
+RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, Department of Computer Science at University College London, and published at ICRA 2023.
+
+## 개요
 RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, Department of Computer Science at University College London, and published at ICRA 2023.

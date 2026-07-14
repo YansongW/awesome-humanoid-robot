@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。
+
+## Overview
 Visuomotor policy represented as a conditional denoising diffusion process, enabling multimodal action distributions.
+
+## 개요
+조건적 노이즈 제거 확산 프로세스로 표현된 시각욱동 정책, 다중 모드 동작 분포 가능.

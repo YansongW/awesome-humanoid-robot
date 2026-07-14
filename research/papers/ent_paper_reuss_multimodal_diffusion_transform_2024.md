@@ -7,7 +7,8 @@ names:
   en: 'Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal
     Goals'
   zh: MDT
-  ko: ''
+  ko: 'Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal
+    Goals'
 summary:
   en: 'Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal
     Goals (MDT), is a 2024 generalized vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Goals (MDT), is a 2024 generalized vision-language-action model for robotic manipulation,
     introduced by Karlsruhe Institute of Technology, and published at Robotics - Science
     and Systems 2024.'
-  ko: ''
+  ko: 'Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal
+    Goals (MDT), is a 2024 generalized vision-language-action model for robotic manipulation,
+    introduced by Karlsruhe Institute of Technology, and published at Robotics - Science
+    and Systems 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal Goals (MDT), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology, and published at Robotics - Science and Systems 2024.
+
+## Overview
+Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal Goals (MDT), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology, and published at Robotics - Science and Systems 2024.
+
+## 개요
 Multimodal Diffusion Transformer: Learning Versatile Behavior from Multimodal Goals (MDT), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology, and published at Robotics - Science and Systems 2024.

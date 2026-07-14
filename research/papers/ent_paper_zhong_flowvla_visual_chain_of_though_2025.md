@@ -7,7 +7,8 @@ names:
   en: 'FlowVLA: Visual Chain of Thought-based Motion Reasoning for Vision-Language-Action
     Models'
   zh: FlowVLA
-  ko: ''
+  ko: 'FlowVLA: Visual Chain of Thought-based Motion Reasoning for Vision-Language-Action
+    Models'
 summary:
   en: 'FlowVLA: Visual Chain of Thought-based Motion Reasoning for Vision-Language-Action
     Models (FlowVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -15,7 +16,9 @@ summary:
   zh: 'FlowVLA: Visual Chain of Thought-based Motion Reasoning for Vision-Language-Action
     Models (FlowVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by HKUST(GZ), Shanghai Jiao Tong University.'
-  ko: ''
+  ko: 'FlowVLA: Visual Chain of Thought-based Motion Reasoning for Vision-Language-Action
+    Models (FlowVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by HKUST(GZ), Shanghai Jiao Tong University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FlowVLA: Visual Chain of Thought-based Motion Reasoning for Vision-Language-Action Models (FlowVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by HKUST(GZ), Shanghai Jiao Tong University.
+
+## Overview
+FlowVLA: Visual Chain of Thought-based Motion Reasoning for Vision-Language-Action Models (FlowVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by HKUST(GZ), Shanghai Jiao Tong University.
+
+## 개요
 FlowVLA: Visual Chain of Thought-based Motion Reasoning for Vision-Language-Action Models (FlowVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by HKUST(GZ), Shanghai Jiao Tong University.

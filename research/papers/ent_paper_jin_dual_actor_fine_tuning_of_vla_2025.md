@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Dual-Actor Fine-Tuning of VLA Models: A Talk-and-Tweak Human-in-the-Loop Approach'
   zh: Dual-Actor Fine-Tuning of VLA Models
-  ko: ''
+  ko: 'Dual-Actor Fine-Tuning of VLA Models: A Talk-and-Tweak Human-in-the-Loop Approach'
 summary:
   en: 'Dual-Actor Fine-Tuning of VLA Models: A Talk-and-Tweak Human-in-the-Loop Approach
     (Dual-Actor Fine-Tuning of VLA Models), is a 2025 large vision-language-action
@@ -16,7 +16,10 @@ summary:
     (Dual-Actor Fine-Tuning of VLA Models), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by City University of Hong Kong, Beijing
     Xiaomi Robot Technology Co., Ltd..'
-  ko: ''
+  ko: 'Dual-Actor Fine-Tuning of VLA Models: A Talk-and-Tweak Human-in-the-Loop Approach
+    (Dual-Actor Fine-Tuning of VLA Models), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by City University of Hong Kong, Beijing
+    Xiaomi Robot Technology Co., Ltd..'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Dual-Actor Fine-Tuning of VLA Models: A Talk-and-Tweak Human-in-the-Loop Approach (Dual-Actor Fine-Tuning of VLA Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by City University of Hong Kong, Beijing Xiaomi Robot Technology Co., Ltd..
+
+## Overview
+Dual-Actor Fine-Tuning of VLA Models: A Talk-and-Tweak Human-in-the-Loop Approach (Dual-Actor Fine-Tuning of VLA Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by City University of Hong Kong, Beijing Xiaomi Robot Technology Co., Ltd..
+
+## 개요
 Dual-Actor Fine-Tuning of VLA Models: A Talk-and-Tweak Human-in-the-Loop Approach (Dual-Actor Fine-Tuning of VLA Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by City University of Hong Kong, Beijing Xiaomi Robot Technology Co., Ltd..

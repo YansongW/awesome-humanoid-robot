@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion'
   zh: 'RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion'
-  ko: ''
+  ko: 'RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion'
 summary:
   en: 'RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion
     is a 2025 work on locomotion for humanoid robots.'
   zh: 'RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion
     is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion
+    is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 RoboMirror: Understand Before You Imitate for Video to Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.

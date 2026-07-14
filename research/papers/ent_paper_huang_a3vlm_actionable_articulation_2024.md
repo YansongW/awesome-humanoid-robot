@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'A3VLM: Actionable Articulation-Aware Vision Language Model'
   zh: A3VLM
-  ko: ''
+  ko: 'A3VLM: Actionable Articulation-Aware Vision Language Model'
 summary:
   en: 'A3VLM: Actionable Articulation-Aware Vision Language Model (A3VLM), is a 2024
     large vision-language-action model for robotic manipulation, introduced by SJTU,
@@ -16,7 +16,10 @@ summary:
     large vision-language-action model for robotic manipulation, introduced by SJTU,
     Shanghai AI Lab, Rutgers University, Yuandao AI, PKU, CUHK MMLab, and published
     at CoRL24.'
-  ko: ''
+  ko: 'A3VLM: Actionable Articulation-Aware Vision Language Model (A3VLM), is a 2024
+    large vision-language-action model for robotic manipulation, introduced by SJTU,
+    Shanghai AI Lab, Rutgers University, Yuandao AI, PKU, CUHK MMLab, and published
+    at CoRL24.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A3VLM: Actionable Articulation-Aware Vision Language Model (A3VLM), is a 2024 large vision-language-action model for robotic manipulation, introduced by SJTU, Shanghai AI Lab, Rutgers University, Yuandao AI, PKU, CUHK MMLab, and published at CoRL24.
+
+## Overview
+A3VLM: Actionable Articulation-Aware Vision Language Model (A3VLM), is a 2024 large vision-language-action model for robotic manipulation, introduced by SJTU, Shanghai AI Lab, Rutgers University, Yuandao AI, PKU, CUHK MMLab, and published at CoRL24.
+
+## 개요
 A3VLM: Actionable Articulation-Aware Vision Language Model (A3VLM), is a 2024 large vision-language-action model for robotic manipulation, introduced by SJTU, Shanghai AI Lab, Rutgers University, Yuandao AI, PKU, CUHK MMLab, and published at CoRL24.

@@ -8,13 +8,15 @@ names:
     Across Growing Brand Portfolio
   zh: Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X
     Across Growing Brand Portfolio
-  ko: ''
+  ko: Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X
+    Across Growing Brand Portfolio
 summary:
   en: Customized Locus Origin deployment supports refrigerated operations, expanded
     SKU variety, and continued automation growth across HelloFresh brands
   zh: Customized Locus Origin deployment supports refrigerated operations, expanded
     SKU variety, and continued automation growth across HelloFresh brands
-  ko: ''
+  ko: Customized Locus Origin deployment supports refrigerated operations, expanded
+    SKU variety, and continued automation growth across HelloFresh brands
 domains:
 - 11_applications_markets
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Customized Locus Origin deployment supports refrigerated operations, expanded SKU variety, and continued automation growth across HelloFresh brands
+
+## Overview
+Customized Locus Origin deployment supports refrigerated operations, expanded SKU variety, and continued automation growth across HelloFresh brands
+
+## 개요
 Customized Locus Origin deployment supports refrigerated operations, expanded SKU variety, and continued automation growth across HelloFresh brands

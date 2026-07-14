@@ -6,13 +6,14 @@ type: paper
 names:
   en: Robust and Versatile Bipedal Jumping Control through Reinforcement Learning
   zh: Robust and Versatile Bipedal Jumping Control through Reinforcement Learning
-  ko: ''
+  ko: Robust and Versatile Bipedal Jumping Control through Reinforcement Learning
 summary:
   en: Robust and Versatile Bipedal Jumping Control through Reinforcement Learning
     is a 2023 work on locomotion for humanoid robots.
   zh: Robust and Versatile Bipedal Jumping Control through Reinforcement Learning
     is a 2023 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Robust and Versatile Bipedal Jumping Control through Reinforcement Learning
+    is a 2023 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Robust and Versatile Bipedal Jumping Control through Reinforcement Learning is a 2023 work on locomotion for humanoid robots.
+
+## Overview
+Robust and Versatile Bipedal Jumping Control through Reinforcement Learning is a 2023 work on locomotion for humanoid robots.
+
+## 개요
 Robust and Versatile Bipedal Jumping Control through Reinforcement Learning is a 2023 work on locomotion for humanoid robots.

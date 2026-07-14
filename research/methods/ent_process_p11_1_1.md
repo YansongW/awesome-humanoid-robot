@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 手部 DOF 与功能定义
-  ko: ''
+  ko: 手部 DOF 与功能定义
 summary:
   en: ''
   zh: 《手部规格书》：DOF、关节范围、指尖力、抓取类型覆盖
-  ko: ''
+  ko: 《手部规格书》：DOF、关节范围、指尖力、抓取类型覆盖
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）

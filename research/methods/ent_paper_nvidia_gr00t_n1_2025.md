@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+面向通用人形机器人的开放基础模型，结合VLA与扩散Transformer动作头。
+
+## Overview
 Open foundation model for generalist humanoid robots with VLA plus diffusion-transformer action head.
+
+## 개요
+VLA + 확산 트랜스포머 액션 헤드를 갖춘 범용 휨로봇용 오픈 파울데이션 모델.

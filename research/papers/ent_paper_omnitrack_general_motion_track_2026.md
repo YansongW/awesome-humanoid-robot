@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'OmniTrack: General Motion Tracking via Physics-Consistent Reference'
   zh: 不要让控制器追踪错误参考
-  ko: ''
+  ko: 'OmniTrack: General Motion Tracking via Physics-Consistent Reference'
 summary:
-  en: 'OmniTrack: General Motion Tracking via Physics-Consistent Reference is a knowledge node related to paper in the humanoid
-    robot value chain.'
+  en: 'OmniTrack: General Motion Tracking via Physics-Consistent Reference is a knowledge
+    node related to paper in the humanoid robot value chain.'
   zh: ''
-  ko: ''
+  ko: 'OmniTrack: General Motion Tracking via Physics-Consistent Reference is a knowledge
+    node related to paper in the humanoid robot value chain.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -31,7 +32,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (012). Institution: 华中科技大学；BIGAI；上海交通大学. arXiv: 2602.23832.'
+  notes: 'Imported from WeChat curated list (012). Institution: 华中科技大学；BIGAI；上海交通大学.
+    arXiv: 2602.23832.'
 sources:
 - id: src_001
   type: paper
@@ -48,3 +50,12 @@ sources:
 theoretical_depth:
 - system
 ---
+
+## 概述
+OmniTrack: General Motion Tracking via Physics-Consistent Reference is a knowledge node related to paper in the humanoid robot value chain.
+
+## Overview
+OmniTrack: General Motion Tracking via Physics-Consistent Reference is a knowledge node related to paper in the humanoid robot value chain.
+
+## 개요
+OmniTrack: General Motion Tracking via Physics-Consistent Reference is a knowledge node related to paper in the humanoid robot value chain.

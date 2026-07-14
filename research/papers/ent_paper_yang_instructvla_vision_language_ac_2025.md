@@ -7,7 +7,8 @@ names:
   en: 'InstructVLA: Vision-Language-Action Instruction Tuning from Understanding to
     Manipulation'
   zh: InstructVLA
-  ko: ''
+  ko: 'InstructVLA: Vision-Language-Action Instruction Tuning from Understanding to
+    Manipulation'
 summary:
   en: 'InstructVLA: Vision-Language-Action Instruction Tuning from Understanding to
     Manipulation (InstructVLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Manipulation (InstructVLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by University of Science and Technology of China, Zhejiang
     University, Shanghai Artificial Intelligence Laboratory.'
-  ko: ''
+  ko: 'InstructVLA: Vision-Language-Action Instruction Tuning from Understanding to
+    Manipulation (InstructVLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by University of Science and Technology of China, Zhejiang
+    University, Shanghai Artificial Intelligence Laboratory.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+InstructVLA: Vision-Language-Action Instruction Tuning from Understanding to Manipulation (InstructVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Science and Technology of China, Zhejiang University, Shanghai Artificial Intelligence Laboratory.
+
+## Overview
+InstructVLA: Vision-Language-Action Instruction Tuning from Understanding to Manipulation (InstructVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Science and Technology of China, Zhejiang University, Shanghai Artificial Intelligence Laboratory.
+
+## 개요
 InstructVLA: Vision-Language-Action Instruction Tuning from Understanding to Manipulation (InstructVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Science and Technology of China, Zhejiang University, Shanghai Artificial Intelligence Laboratory.

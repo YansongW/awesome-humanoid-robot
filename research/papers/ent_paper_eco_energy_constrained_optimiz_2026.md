@@ -8,7 +8,8 @@ names:
     Walking'
   zh: 'ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid
     Walking'
-  ko: ''
+  ko: 'ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid
+    Walking'
 summary:
   en: 'ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid
     Walking is a 2026 work on locomotion for humanoid robots, with open-source code
@@ -16,7 +17,9 @@ summary:
   zh: 'ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid
     Walking is a 2026 work on locomotion for humanoid robots, with open-source code
     available.'
-  ko: ''
+  ko: 'ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid
+    Walking is a 2026 work on locomotion for humanoid robots, with open-source code
+    available.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -54,4 +57,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid Walking is a 2026 work on locomotion for humanoid robots, with open-source code available.
+
+## Overview
+ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid Walking is a 2026 work on locomotion for humanoid robots, with open-source code available.
+
+## 개요
 ECO: Energy-Constrained Optimization with Reinforcement Learning for Humanoid Walking is a 2026 work on locomotion for humanoid robots, with open-source code available.

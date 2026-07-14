@@ -7,7 +7,8 @@ names:
   en: 'BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled
     Optimization'
   zh: BadVLA
-  ko: ''
+  ko: 'BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled
+    Optimization'
 summary:
   en: 'BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled
     Optimization (BadVLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Optimization (BadVLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Huazhong University of Science and Technology, Lehigh
     University, and published at NIPS25.'
-  ko: ''
+  ko: 'BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled
+    Optimization (BadVLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Huazhong University of Science and Technology, Lehigh
+    University, and published at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization (BadVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Huazhong University of Science and Technology, Lehigh University, and published at NIPS25.
+
+## Overview
+BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization (BadVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Huazhong University of Science and Technology, Lehigh University, and published at NIPS25.
+
+## 개요
 BadVLA: Towards Backdoor Attacks on Vision-Language-Action Models via Objective-Decoupled Optimization (BadVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Huazhong University of Science and Technology, Lehigh University, and published at NIPS25.

@@ -6,11 +6,11 @@ type: paper
 names:
   en: Unified Video Action Model
   zh: Unified Video Action Model
-  ko: ''
+  ko: Unified Video Action Model
 summary:
   en: Unified Video Action Model is a 2025 work on manipulation for humanoid robots.
   zh: Unified Video Action Model is a 2025 work on manipulation for humanoid robots.
-  ko: ''
+  ko: Unified Video Action Model is a 2025 work on manipulation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Unified Video Action Model is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+Unified Video Action Model is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 Unified Video Action Model is a 2025 work on manipulation for humanoid robots.

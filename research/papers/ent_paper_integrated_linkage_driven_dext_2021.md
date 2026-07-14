@@ -6,13 +6,14 @@ type: paper
 names:
   en: Integrated linkage-driven dexterous anthropomorphic robotic hand
   zh: Integrated linkage-driven dexterous anthropomorphic robotic hand
-  ko: ''
+  ko: Integrated linkage-driven dexterous anthropomorphic robotic hand
 summary:
   en: Integrated linkage-driven dexterous anthropomorphic robotic hand is a 2021 work
     on hardware design for humanoid robots.
   zh: Integrated linkage-driven dexterous anthropomorphic robotic hand is a 2021 work
     on hardware design for humanoid robots.
-  ko: ''
+  ko: Integrated linkage-driven dexterous anthropomorphic robotic hand is a 2021 work
+    on hardware design for humanoid robots.
 domains:
 - 06_design_engineering
 - 02_components
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Integrated linkage-driven dexterous anthropomorphic robotic hand is a 2021 work on hardware design for humanoid robots.
+
+## Overview
+Integrated linkage-driven dexterous anthropomorphic robotic hand is a 2021 work on hardware design for humanoid robots.
+
+## 개요
 Integrated linkage-driven dexterous anthropomorphic robotic hand is a 2021 work on hardware design for humanoid robots.

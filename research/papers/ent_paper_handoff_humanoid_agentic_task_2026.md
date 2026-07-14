@@ -7,11 +7,12 @@ names:
   en: 'HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary
     Teachers'
   zh: HANDOFF｜通过精炼补充教师进行人形智能体任务空间全身控制
-  ko: ''
+  ko: 'HANDOFF: Humanoid Agentic Task-Space Whole-Body Control via Distilled Complementary
+    Teachers'
 summary:
   en: ''
   zh: HANDOFF 把本体状态与关节序列转成可跟踪的身体目标，并通过教师-学生知识迁移、扩散策略/流匹配、VLM 语义规划/路由训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
-  ko: ''
+  ko: HANDOFF 把本体状态与关节序列转成可跟踪的身体目标，并通过教师-学生知识迁移、扩散策略/流匹配、VLM 语义规划/路由训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
 domains:
 - 06_design_engineering
 - 07_ai_models_algorithms
@@ -46,5 +47,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+HANDOFF 把本体状态与关节序列转成可跟踪的身体目标，并通过教师-学生知识迁移、扩散策略/流匹配、VLM 语义规划/路由训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
 
+## 개요
 HANDOFF 把本体状态与关节序列转成可跟踪的身体目标，并通过教师-学生知识迁移、扩散策略/流匹配、VLM 语义规划/路由训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。

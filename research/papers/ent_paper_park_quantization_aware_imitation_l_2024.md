@@ -6,7 +6,7 @@ type: paper
 names:
   en: Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control
   zh: QAIL+QBC
-  ko: ''
+  ko: Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control
 summary:
   en: Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control
     (QAIL+QBC), is a 2024 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control
     (QAIL+QBC), is a 2024 large vision-language-action model for robotic manipulation,
     introduced by Hanyang University, Hyundai Motor Company.
-  ko: ''
+  ko: Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control
+    (QAIL+QBC), is a 2024 large vision-language-action model for robotic manipulation,
+    introduced by Hanyang University, Hyundai Motor Company.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control (QAIL+QBC), is a 2024 large vision-language-action model for robotic manipulation, introduced by Hanyang University, Hyundai Motor Company.
+
+## Overview
+Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control (QAIL+QBC), is a 2024 large vision-language-action model for robotic manipulation, introduced by Hanyang University, Hyundai Motor Company.
+
+## 개요
 Quantization-Aware Imitation-Learning for Resource-Efficient Robotic Control (QAIL+QBC), is a 2024 large vision-language-action model for robotic manipulation, introduced by Hanyang University, Hyundai Motor Company.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'GRAPE: Generalizing Robot Policy via Preference Alignment'
   zh: GRAPE
-  ko: ''
+  ko: 'GRAPE: Generalizing Robot Policy via Preference Alignment'
 summary:
   en: 'GRAPE: Generalizing Robot Policy via Preference Alignment (GRAPE), is a 2024
     large vision-language-action model for robotic manipulation, introduced by University
@@ -14,7 +14,9 @@ summary:
   zh: 'GRAPE: Generalizing Robot Policy via Preference Alignment (GRAPE), is a 2024
     large vision-language-action model for robotic manipulation, introduced by University
     of Chicago.'
-  ko: ''
+  ko: 'GRAPE: Generalizing Robot Policy via Preference Alignment (GRAPE), is a 2024
+    large vision-language-action model for robotic manipulation, introduced by University
+    of Chicago.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GRAPE: Generalizing Robot Policy via Preference Alignment (GRAPE), is a 2024 large vision-language-action model for robotic manipulation, introduced by University of Chicago.
+
+## Overview
+GRAPE: Generalizing Robot Policy via Preference Alignment (GRAPE), is a 2024 large vision-language-action model for robotic manipulation, introduced by University of Chicago.
+
+## 개요
 GRAPE: Generalizing Robot Policy via Preference Alignment (GRAPE), is a 2024 large vision-language-action model for robotic manipulation, introduced by University of Chicago.

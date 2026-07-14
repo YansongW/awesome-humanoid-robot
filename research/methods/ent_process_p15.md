@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 整机集成与验证测试（Integration & V&V）
-  ko: ''
+  ko: 整机集成与验证测试（Integration & V&V）
 summary:
   en: ''
   zh: 整机集成与验证测试（Integration & V&V）
-  ko: ''
+  ko: 整机集成与验证测试（Integration & V&V）
 domains:
 - 04_assembly_integration_testing
 - 10_evaluation_benchmarks
@@ -36,5 +36,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+整机集成与验证测试（Integration & V&V）
 
+## Overview
+整机集成与验证测试（Integration & V&V）
 
+## 개요
+整机集成与验证测试（Integration & V&V）

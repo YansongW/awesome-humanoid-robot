@@ -7,7 +7,8 @@ names:
   en: 'Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric
     Perspective'
   zh: Embodied-SlotSSM
-  ko: ''
+  ko: 'Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric
+    Perspective'
 summary:
   en: 'Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric
     Perspective (Embodied-SlotSSM), is a 2025 large vision-language-action model for
@@ -15,7 +16,9 @@ summary:
   zh: 'Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric
     Perspective (Embodied-SlotSSM), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by CMU, University of Arkansas.'
-  ko: ''
+  ko: 'Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric
+    Perspective (Embodied-SlotSSM), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by CMU, University of Arkansas.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective (Embodied-SlotSSM), is a 2025 large vision-language-action model for robotic manipulation, introduced by CMU, University of Arkansas.
+
+## Overview
+Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective (Embodied-SlotSSM), is a 2025 large vision-language-action model for robotic manipulation, introduced by CMU, University of Arkansas.
+
+## 개요
 Rethinking Progression of Memory State in Robotic Manipulation: An Object-Centric Perspective (Embodied-SlotSSM), is a 2025 large vision-language-action model for robotic manipulation, introduced by CMU, University of Arkansas.

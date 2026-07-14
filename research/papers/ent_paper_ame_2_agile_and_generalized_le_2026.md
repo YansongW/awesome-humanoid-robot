@@ -8,13 +8,15 @@ names:
     Encoding'
   zh: 'AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map
     Encoding'
-  ko: ''
+  ko: 'AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map
+    Encoding'
 summary:
   en: 'AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map
     Encoding is a 2026 work on locomotion for humanoid robots.'
   zh: 'AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map
     Encoding is a 2026 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map
+    Encoding is a 2026 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding is a 2026 work on locomotion for humanoid robots.
+
+## Overview
+AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding is a 2026 work on locomotion for humanoid robots.
+
+## 개요
 AME-2: Agile and Generalized Legged Locomotion via Attention-Based Neural Map Encoding is a 2026 work on locomotion for humanoid robots.

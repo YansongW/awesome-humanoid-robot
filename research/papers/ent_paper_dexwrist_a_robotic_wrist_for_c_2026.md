@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation'
   zh: 'DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation'
-  ko: ''
+  ko: 'DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation'
 summary:
   en: 'DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation is a 2026
     work on hardware design for humanoid robots.'
   zh: 'DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation is a 2026
     work on hardware design for humanoid robots.'
-  ko: ''
+  ko: 'DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation is a 2026
+    work on hardware design for humanoid robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation is a 2026 work on hardware design for humanoid robots.
+
+## Overview
+DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation is a 2026 work on hardware design for humanoid robots.
+
+## 개요
 DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation is a 2026 work on hardware design for humanoid robots.

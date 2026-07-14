@@ -8,7 +8,8 @@ names:
     Pi
   zh: DEEPX and Sixfab Launch 'DEEPX AI HAT' to Drive Edge Physical AI on Raspberry
     Pi
-  ko: ''
+  ko: DEEPX and Sixfab Launch 'DEEPX AI HAT' to Drive Edge Physical AI on Raspberry
+    Pi
 summary:
   en: -Partnership delivers high-performance, low-power AI acceleration directly to
     the global Raspberry Pi ecosystem -Eliminates cloud dependency for real-time inference
@@ -18,7 +19,10 @@ summary:
     the global Raspberry Pi ecosystem -Eliminates cloud dependency for real-time inference
     in robotics and smart automation -Rolls out production-ready Starter Kit and SDKs
     to lower entry barriers for global developers
-  ko: ''
+  ko: -Partnership delivers high-performance, low-power AI acceleration directly to
+    the global Raspberry Pi ecosystem -Eliminates cloud dependency for real-time inference
+    in robotics and smart automation -Rolls out production-ready Starter Kit and SDKs
+    to lower entry barriers for global developers
 domains:
 - 11_applications_markets
 layers:
@@ -49,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+-Partnership delivers high-performance, low-power AI acceleration directly to the global Raspberry Pi ecosystem -Eliminates cloud dependency for real-time inference in robotics and smart automation -Rolls out production-ready Starter Kit and SDKs to lower entry barriers for global developers
+
+## Overview
+-Partnership delivers high-performance, low-power AI acceleration directly to the global Raspberry Pi ecosystem -Eliminates cloud dependency for real-time inference in robotics and smart automation -Rolls out production-ready Starter Kit and SDKs to lower entry barriers for global developers
+
+## 개요
 -Partnership delivers high-performance, low-power AI acceleration directly to the global Raspberry Pi ecosystem -Eliminates cloud dependency for real-time inference in robotics and smart automation -Rolls out production-ready Starter Kit and SDKs to lower entry barriers for global developers

@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+量产前对零部件制造商进行质量、产能、可追溯性和合规性审核与批准的过程。
+
+## Overview
 Process of auditing and approving component manufacturers for quality, capacity, traceability, and compliance before mass production.
+
+## 개요
+양산 전 부품 제조업체의 품질, 생산 능력, 추적 가능성 및 규정 준수를 감사 및 승인하는 프로세스.

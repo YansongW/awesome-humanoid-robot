@@ -6,13 +6,14 @@ type: paper
 names:
   en: Dont Run with Scissors
   zh: GLUESTICK
-  ko: ''
+  ko: Dont Run with Scissors
 summary:
   en: Dont Run with Scissors (GLUESTICK), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by FieldAI, Harvard University.
   zh: Dont Run with Scissors (GLUESTICK), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by FieldAI, Harvard University.
-  ko: ''
+  ko: Dont Run with Scissors (GLUESTICK), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by FieldAI, Harvard University.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Dont Run with Scissors (GLUESTICK), is a 2025 large vision-language-action model for robotic manipulation, introduced by FieldAI, Harvard University.
+
+## Overview
+Dont Run with Scissors (GLUESTICK), is a 2025 large vision-language-action model for robotic manipulation, introduced by FieldAI, Harvard University.
+
+## 개요
 Dont Run with Scissors (GLUESTICK), is a 2025 large vision-language-action model for robotic manipulation, introduced by FieldAI, Harvard University.

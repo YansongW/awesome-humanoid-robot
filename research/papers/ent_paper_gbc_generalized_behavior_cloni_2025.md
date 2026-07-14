@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'GBC: Generalized Behavior-Cloning Framework for Whole-Body Humanoid Imitation'
   zh: 'GBC: Generalized Behavior-Cloning Framework for Whole-Body Humanoid Imitation'
-  ko: ''
+  ko: 'GBC: Generalized Behavior-Cloning Framework for Whole-Body Humanoid Imitation'
 summary:
   en: 'GBC: Generalized Behavior-Cloning Framework for Whole-Body Humanoid Imitation
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'GBC: Generalized Behavior-Cloning Framework for Whole-Body Humanoid Imitation
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'GBC: Generalized Behavior-Cloning Framework for Whole-Body Humanoid Imitation
+    is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GBC: Generalized Behavior-Cloning Framework for Whole-Body Humanoid Imitation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+GBC: Generalized Behavior-Cloning Framework for Whole-Body Humanoid Imitation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 GBC: Generalized Behavior-Cloning Framework for Whole-Body Humanoid Imitation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'ADD: Adversarial Disentanglement and Distillation'
   zh: 对抗解耦与蒸馏
-  ko: ''
+  ko: 'ADD: Adversarial Disentanglement and Distillation'
 summary:
   en: ''
   zh: 'ADD: Adversarial Disentanglement and Distillation is a paper on 风格学习 for humanoid
     robotics. 对抗解耦与蒸馏.'
-  ko: ''
+  ko: 'ADD: Adversarial Disentanglement and Distillation is a paper on 风格学习 for humanoid
+    robotics. 对抗解耦与蒸馏.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,5 +44,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ADD: Adversarial Disentanglement and Distillation is a paper on 风格学习 for humanoid robotics. 对抗解耦与蒸馏.
 
+## 개요
 ADD: Adversarial Disentanglement and Distillation is a paper on 风格学习 for humanoid robotics. 对抗解耦与蒸馏.

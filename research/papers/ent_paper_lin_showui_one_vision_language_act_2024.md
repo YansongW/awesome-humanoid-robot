@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'ShowUI: One Vision-Language-Action Model for GUI Visual Agent'
   zh: ShowUI
-  ko: ''
+  ko: 'ShowUI: One Vision-Language-Action Model for GUI Visual Agent'
 summary:
   en: 'ShowUI: One Vision-Language-Action Model for GUI Visual Agent (ShowUI), is
     a 2024 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'ShowUI: One Vision-Language-Action Model for GUI Visual Agent (ShowUI), is
     a 2024 large vision-language-action model for robotic manipulation, introduced
     by Microsoft, and published at CVPR25.'
-  ko: ''
+  ko: 'ShowUI: One Vision-Language-Action Model for GUI Visual Agent (ShowUI), is
+    a 2024 large vision-language-action model for robotic manipulation, introduced
+    by Microsoft, and published at CVPR25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ShowUI: One Vision-Language-Action Model for GUI Visual Agent (ShowUI), is a 2024 large vision-language-action model for robotic manipulation, introduced by Microsoft, and published at CVPR25.
+
+## Overview
+ShowUI: One Vision-Language-Action Model for GUI Visual Agent (ShowUI), is a 2024 large vision-language-action model for robotic manipulation, introduced by Microsoft, and published at CVPR25.
+
+## 개요
 ShowUI: One Vision-Language-Action Model for GUI Visual Agent (ShowUI), is a 2024 large vision-language-action model for robotic manipulation, introduced by Microsoft, and published at CVPR25.

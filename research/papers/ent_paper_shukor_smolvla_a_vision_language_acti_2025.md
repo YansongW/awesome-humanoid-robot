@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics'
   zh: SmolVLA
-  ko: ''
+  ko: 'SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics'
 summary:
   en: 'SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics
     (SmolVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (SmolVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Hugging Face, Sorbonne University, valeo.ai, École Normale Supérieure
     Paris-Saclay.'
-  ko: ''
+  ko: 'SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics
+    (SmolVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Hugging Face, Sorbonne University, valeo.ai, École Normale Supérieure
+    Paris-Saclay.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics (SmolVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Hugging Face, Sorbonne University, valeo.ai, École Normale Supérieure Paris-Saclay.
+
+## Overview
+SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics (SmolVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Hugging Face, Sorbonne University, valeo.ai, École Normale Supérieure Paris-Saclay.
+
+## 개요
 SmolVLA: A Vision-Language-Action Model for Affordable and Efficient Robotics (SmolVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Hugging Face, Sorbonne University, valeo.ai, École Normale Supérieure Paris-Saclay.

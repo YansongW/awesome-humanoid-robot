@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion'
   zh: 'Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion'
-  ko: ''
+  ko: 'Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion'
 summary:
   en: 'Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion
     is a 2025 work on locomotion for humanoid robots.'
   zh: 'Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion
     is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion
+    is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Dribble Master: Learning Agile Humanoid Dribbling Through Legged Locomotion is a 2025 work on locomotion for humanoid robots.

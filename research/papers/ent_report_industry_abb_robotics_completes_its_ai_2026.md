@@ -8,13 +8,15 @@ names:
     forklift
   zh: ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous
     forklift
-  ko: ''
+  ko: ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous
+    forklift
 summary:
   en: ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous
     forklift
   zh: ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous
     forklift
-  ko: ''
+  ko: ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous
+    forklift
 domains:
 - 11_applications_markets
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous forklift
+
+## Overview
+ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous forklift
+
+## 개요
 ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous forklift

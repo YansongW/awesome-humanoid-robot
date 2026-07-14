@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'PULSE: Physically Plausible Universal Latent Skill Extraction'
   zh: 物理可行的通用潜在技能提取
-  ko: ''
+  ko: 'PULSE: Physically Plausible Universal Latent Skill Extraction'
 summary:
   en: ''
   zh: 'PULSE: Physically Plausible Universal Latent Skill Extraction is a paper on
     技能组合 for humanoid robotics. 物理可行的通用潜在技能提取.'
-  ko: ''
+  ko: 'PULSE: Physically Plausible Universal Latent Skill Extraction is a paper on
+    技能组合 for humanoid robotics. 物理可行的通用潜在技能提取.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,5 +43,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PULSE: Physically Plausible Universal Latent Skill Extraction is a paper on 技能组合 for humanoid robotics. 物理可行的通用潜在技能提取.
 
+## 개요
 PULSE: Physically Plausible Universal Latent Skill Extraction is a paper on 技能组合 for humanoid robotics. 物理可行的通用潜在技能提取.

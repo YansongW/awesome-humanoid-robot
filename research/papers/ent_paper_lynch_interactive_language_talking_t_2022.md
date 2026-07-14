@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Interactive Language: Talking to Robots in Real Time'
   zh: Interactive Language
-  ko: ''
+  ko: 'Interactive Language: Talking to Robots in Real Time'
 summary:
   en: 'Interactive Language: Talking to Robots in Real Time (Interactive Language),
     is a 2022 generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'Interactive Language: Talking to Robots in Real Time (Interactive Language),
     is a 2022 generalized vision-language-action model for robotic manipulation, introduced
     by Robotics at Google.'
-  ko: ''
+  ko: 'Interactive Language: Talking to Robots in Real Time (Interactive Language),
+    is a 2022 generalized vision-language-action model for robotic manipulation, introduced
+    by Robotics at Google.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Interactive Language: Talking to Robots in Real Time (Interactive Language), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google.
+
+## Overview
+Interactive Language: Talking to Robots in Real Time (Interactive Language), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google.
+
+## 개요
 Interactive Language: Talking to Robots in Real Time (Interactive Language), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google.

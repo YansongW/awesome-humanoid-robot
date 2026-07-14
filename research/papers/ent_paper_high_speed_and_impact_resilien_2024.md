@@ -6,13 +6,14 @@ type: paper
 names:
   en: High-Speed and Impact Resilient Teleoperation of Humanoid Robots
   zh: High-Speed and Impact Resilient Teleoperation of Humanoid Robots
-  ko: ''
+  ko: High-Speed and Impact Resilient Teleoperation of Humanoid Robots
 summary:
   en: High-Speed and Impact Resilient Teleoperation of Humanoid Robots is a 2024 work
     on teleoperation for humanoid robots.
   zh: High-Speed and Impact Resilient Teleoperation of Humanoid Robots is a 2024 work
     on teleoperation for humanoid robots.
-  ko: ''
+  ko: High-Speed and Impact Resilient Teleoperation of Humanoid Robots is a 2024 work
+    on teleoperation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+High-Speed and Impact Resilient Teleoperation of Humanoid Robots is a 2024 work on teleoperation for humanoid robots.
+
+## Overview
+High-Speed and Impact Resilient Teleoperation of Humanoid Robots is a 2024 work on teleoperation for humanoid robots.
+
+## 개요
 High-Speed and Impact Resilient Teleoperation of Humanoid Robots is a 2024 work on teleoperation for humanoid robots.

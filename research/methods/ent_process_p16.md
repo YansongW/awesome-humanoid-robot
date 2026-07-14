@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 小批量试产与量产准备（Pilot & Production Ramp）
-  ko: ''
+  ko: 小批量试产与量产准备（Pilot & Production Ramp）
 summary:
   en: ''
   zh: 小批量试产与量产准备（Pilot & Production Ramp）
-  ko: ''
+  ko: 小批量试产与量产准备（Pilot & Production Ramp）
 domains:
 - 05_mass_production
 - 11_applications_markets
@@ -36,5 +36,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+小批量试产与量产准备（Pilot & Production Ramp）
 
+## Overview
+小批量试产与量产准备（Pilot & Production Ramp）
 
+## 개요
+小批量试产与量产准备（Pilot & Production Ramp）

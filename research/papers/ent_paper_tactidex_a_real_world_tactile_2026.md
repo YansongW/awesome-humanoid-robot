@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'TactiDex: A Real-World Tactile-Guided Benchmark for Human-Like Dexterous Manipulation'
   zh: 'TactiDex: A Real-World Tactile-Guided Benchmark for Human-Like Dexterous Manipulation'
-  ko: ''
+  ko: 'TactiDex: A Real-World Tactile-Guided Benchmark for Human-Like Dexterous Manipulation'
 summary:
   en: "arXiv:2607.09190v1 Announce Type: new \nAbstract: Tactile feedback is fundamental\
     \ to Hand-Object Interaction (HOI), governing contact formation, force regulation,\
@@ -46,7 +46,25 @@ summary:
     \ bimanual tasks, we demonstrate that TactiSkill achieves superior performance\
     \ in manipulation success and physical realism. This work lays a crucial foundation\
     \ for advancing tactile-aware dexterous manipulation. Our project page at https://tactidex.github.io/."
-  ko: ''
+  ko: "arXiv:2607.09190v1 Announce Type: new \nAbstract: Tactile feedback is fundamental\
+    \ to Hand-Object Interaction (HOI), governing contact formation, force regulation,\
+    \ and stable manipulation, making it essential for achieving true human-like dexterous\
+    \ manipulation. Yet, current human-to-robot dexterous transfer pipelines primarily\
+    \ rely on kinematic trajectories, resulting in motion imitation without physically\
+    \ grounded interaction. To address this, we introduce TactiDex, a real-world tactile-guided\
+    \ benchmark specifically designed to move dexterous manipulation beyond kinematic\
+    \ mimicry toward contact-level human-likeness. TactiDex provides a comprehensive\
+    \ dataset that elegantly aligns whole-hand tactile signals with multi-granularity\
+    \ kinematic and object states, coupled with standardized evaluation metrics. Building\
+    \ upon this data paradigm, we propose a tactile-driven transfer framework that\
+    \ effectively translates human demonstrations into physically plausible robotic\
+    \ execution. We introduce TactiSkill, a framework built upon a novel tri-component\
+    \ tactile reward that innovatively uses tactile signals as structured supervision.\
+    \ This reward unifies guidance, human-like alignment, and contact constraints\
+    \ into a single objective. Through comprehensive experiments on both single and\
+    \ bimanual tasks, we demonstrate that TactiSkill achieves superior performance\
+    \ in manipulation success and physical realism. This work lays a crucial foundation\
+    \ for advancing tactile-aware dexterous manipulation. Our project page at https://tactidex.github.io/."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -77,5 +95,14 @@ sources:
   accessed_at: '2026-07-14'
 ---
 
+## 概述
+arXiv:2607.09190v1 Announce Type: new 
+Abstract: Tactile feedback is fundamental to Hand-Object Interaction (HOI), governing contact formation, force regulation, and stable manipulation, making it essential for achieving true human-like dexterous manipulation. Yet, current human-to-robot dexterous transfer pipelines primarily rely on kinematic trajectories, resulting in motion imitation without physically grounded interaction. To address this, we introduce TactiDex, a real-world tactile-guided benchmark specifically designed to move dexterous manipulation beyond kinematic mimicry toward contact-level human-likeness. TactiDex provides a comprehensive dataset that elegantly aligns whole-hand tactile signals with multi-granularity kinematic and object states, coupled with standardized evaluation metrics. Building upon this data paradigm, we propose a tactile-driven transfer framework that effectively translates human demonstrations into physically plausible robotic execution. We introduce TactiSkill, a framework built upon a novel tri-component tactile reward that innovatively uses tactile signals as structured supervision. This reward unifies guidance, human-like alignment, and contact constraints into a single objective. Through comprehensive experiments on both single and bimanual tasks, we demonstrate that TactiSkill achieves superior performance in manipulation success and physical realism. This work lays a crucial foundation for advancing tactile-aware dexterous manipulation. Our project page at https://tactidex.github.io/.
+
+## Overview
+arXiv:2607.09190v1 Announce Type: new 
+Abstract: Tactile feedback is fundamental to Hand-Object Interaction (HOI), governing contact formation, force regulation, and stable manipulation, making it essential for achieving true human-like dexterous manipulation. Yet, current human-to-robot dexterous transfer pipelines primarily rely on kinematic trajectories, resulting in motion imitation without physically grounded interaction. To address this, we introduce TactiDex, a real-world tactile-guided benchmark specifically designed to move dexterous manipulation beyond kinematic mimicry toward contact-level human-likeness. TactiDex provides a comprehensive dataset that elegantly aligns whole-hand tactile signals with multi-granularity kinematic and object states, coupled with standardized evaluation metrics. Building upon this data paradigm, we propose a tactile-driven transfer framework that effectively translates human demonstrations into physically plausible robotic execution. We introduce TactiSkill, a framework built upon a novel tri-component tactile reward that innovatively uses tactile signals as structured supervision. This reward unifies guidance, human-like alignment, and contact constraints into a single objective. Through comprehensive experiments on both single and bimanual tasks, we demonstrate that TactiSkill achieves superior performance in manipulation success and physical realism. This work lays a crucial foundation for advancing tactile-aware dexterous manipulation. Our project page at https://tactidex.github.io/.
+
+## 개요
 arXiv:2607.09190v1 Announce Type: new 
 Abstract: Tactile feedback is fundamental to Hand-Object Interaction (HOI), governing contact formation, force regulation, and stable manipulation, making it essential for achieving true human-like dexterous manipulation. Yet, current human-to-robot dexterous transfer pipelines primarily rely on kinematic trajectories, resulting in motion imitation without physically grounded interaction. To address this, we introduce TactiDex, a real-world tactile-guided benchmark specifically designed to move dexterous manipulation beyond kinematic mimicry toward contact-level human-likeness. TactiDex provides a comprehensive dataset that elegantly aligns whole-hand tactile signals with multi-granularity kinematic and object states, coupled with standardized evaluation metrics. Building upon this data paradigm, we propose a tactile-driven transfer framework that effectively translates human demonstrations into physically plausible robotic execution. We introduce TactiSkill, a framework built upon a novel tri-component tactile reward that innovatively uses tactile signals as structured supervision. This reward unifies guidance, human-like alignment, and contact constraints into a single objective. Through comprehensive experiments on both single and bimanual tasks, we demonstrate that TactiSkill achieves superior performance in manipulation success and physical realism. This work lays a crucial foundation for advancing tactile-aware dexterous manipulation. Our project page at https://tactidex.github.io/.

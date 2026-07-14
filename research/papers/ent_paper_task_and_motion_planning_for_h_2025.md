@@ -6,13 +6,14 @@ type: paper
 names:
   en: Task and Motion Planning for Humanoid Loco-manipulation
   zh: Task and Motion Planning for Humanoid Loco-manipulation
-  ko: ''
+  ko: Task and Motion Planning for Humanoid Loco-manipulation
 summary:
   en: Task and Motion Planning for Humanoid Loco-manipulation is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.
   zh: Task and Motion Planning for Humanoid Loco-manipulation is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Task and Motion Planning for Humanoid Loco-manipulation is a 2025 work on loco-manipulation
+    and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Task and Motion Planning for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Task and Motion Planning for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Task and Motion Planning for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

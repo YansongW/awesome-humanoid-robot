@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+全球领先的机器人关节谐波减速器/应变波齿轮制造商。
+
+## Overview
+Leading Japanese manufacturer of harmonic/strain-wave gearboxes for robot joints.
+
+## 개요
 Leading Japanese manufacturer of harmonic/strain-wave gearboxes for robot joints.

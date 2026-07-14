@@ -6,7 +6,7 @@ type: paper
 names:
   en: A Self-Correcting Vision-Language-Action Model for Fast and Slow System Manipulation
   zh: SC-VLA
-  ko: ''
+  ko: A Self-Correcting Vision-Language-Action Model for Fast and Slow System Manipulation
 summary:
   en: A Self-Correcting Vision-Language-Action Model for Fast and Slow System Manipulation
     (SC-VLA), is a 2024 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: A Self-Correcting Vision-Language-Action Model for Fast and Slow System Manipulation
     (SC-VLA), is a 2024 large vision-language-action model for robotic manipulation,
     introduced by Peking University.
-  ko: ''
+  ko: A Self-Correcting Vision-Language-Action Model for Fast and Slow System Manipulation
+    (SC-VLA), is a 2024 large vision-language-action model for robotic manipulation,
+    introduced by Peking University.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Self-Correcting Vision-Language-Action Model for Fast and Slow System Manipulation (SC-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Peking University.
+
+## Overview
+A Self-Correcting Vision-Language-Action Model for Fast and Slow System Manipulation (SC-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Peking University.
+
+## 개요
 A Self-Correcting Vision-Language-Action Model for Fast and Slow System Manipulation (SC-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Peking University.

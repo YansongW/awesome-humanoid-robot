@@ -7,7 +7,8 @@ names:
   en: 'VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token
     Caching'
   zh: VLA-Cache
-  ko: ''
+  ko: 'VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token
+    Caching'
 summary:
   en: 'VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token
     Caching (VLA-Cache), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Caching (VLA-Cache), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by University of Sydney, Shanghai Jiao Tong University,
     and published at NIPS25.'
-  ko: ''
+  ko: 'VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token
+    Caching (VLA-Cache), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by University of Sydney, Shanghai Jiao Tong University,
+    and published at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching (VLA-Cache), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Sydney, Shanghai Jiao Tong University, and published at NIPS25.
+
+## Overview
+VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching (VLA-Cache), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Sydney, Shanghai Jiao Tong University, and published at NIPS25.
+
+## 개요
 VLA-Cache: Efficient Vision-Language-Action Manipulation via Adaptive Token Caching (VLA-Cache), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Sydney, Shanghai Jiao Tong University, and published at NIPS25.

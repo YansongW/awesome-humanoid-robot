@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 面向增材制造的设计（DfAM）
-  ko: ''
+  ko: 面向增材制造的设计（DfAM）
 summary:
   en: ''
   zh: DfAM 检查清单、3D 打印件图纸、打印参数
-  ko: ''
+  ko: DfAM 检查清单、3D 打印件图纸、打印参数
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）

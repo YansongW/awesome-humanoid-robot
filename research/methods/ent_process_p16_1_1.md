@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: DFM/DFA 评审
-  ko: ''
+  ko: DFM/DFA 评审
 summary:
   en: ''
   zh: DFM/DFA 报告、工程变更清单、成本影响评估
-  ko: ''
+  ko: DFM/DFA 报告、工程变更清单、成本影响评估
 domains:
 - 05_mass_production
 - 11_applications_markets
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）

@@ -6,13 +6,14 @@ type: paper
 names:
   en: Object-Centric Dexterous Manipulation from Human Motion Data
   zh: Object-Centric Dexterous Manipulation from Human Motion Data
-  ko: ''
+  ko: Object-Centric Dexterous Manipulation from Human Motion Data
 summary:
   en: Object-Centric Dexterous Manipulation from Human Motion Data is a 2024 work
     on manipulation for humanoid robots.
   zh: Object-Centric Dexterous Manipulation from Human Motion Data is a 2024 work
     on manipulation for humanoid robots.
-  ko: ''
+  ko: Object-Centric Dexterous Manipulation from Human Motion Data is a 2024 work
+    on manipulation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Object-Centric Dexterous Manipulation from Human Motion Data is a 2024 work on manipulation for humanoid robots.
+
+## Overview
+Object-Centric Dexterous Manipulation from Human Motion Data is a 2024 work on manipulation for humanoid robots.
+
+## 개요
 Object-Centric Dexterous Manipulation from Human Motion Data is a 2024 work on manipulation for humanoid robots.

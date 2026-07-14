@@ -8,13 +8,15 @@ names:
     dexterity
   zh: Visual-tactile pretraining and online multitask learning for humanlike manipulation
     dexterity
-  ko: ''
+  ko: Visual-tactile pretraining and online multitask learning for humanlike manipulation
+    dexterity
 summary:
   en: Visual-tactile pretraining and online multitask learning for humanlike manipulation
     dexterity is a 2026 work on manipulation for humanoid robots.
   zh: Visual-tactile pretraining and online multitask learning for humanlike manipulation
     dexterity is a 2026 work on manipulation for humanoid robots.
-  ko: ''
+  ko: Visual-tactile pretraining and online multitask learning for humanlike manipulation
+    dexterity is a 2026 work on manipulation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Visual-tactile pretraining and online multitask learning for humanlike manipulation dexterity is a 2026 work on manipulation for humanoid robots.
+
+## Overview
+Visual-tactile pretraining and online multitask learning for humanlike manipulation dexterity is a 2026 work on manipulation for humanoid robots.
+
+## 개요
 Visual-tactile pretraining and online multitask learning for humanlike manipulation dexterity is a 2026 work on manipulation for humanoid robots.

@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+向已部署的人形机器人机群无线部署控制策略、固件和系统软件。
+
+## Overview
 Over-the-air deployment of control policies, firmware, and system software to deployed humanoid fleets.
+
+## 개요
+배포된 휨로봇 플릿에 제어 정책, 펌웨어 및 시스템 소프트웨어를 무선으로 배포.

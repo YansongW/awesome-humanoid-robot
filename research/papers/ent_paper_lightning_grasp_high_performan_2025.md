@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Lightning Grasp: High Performance Procedural Grasp Synthesis with Contact Fields'
   zh: 'Lightning Grasp: High Performance Procedural Grasp Synthesis with Contact Fields'
-  ko: ''
+  ko: 'Lightning Grasp: High Performance Procedural Grasp Synthesis with Contact Fields'
 summary:
   en: 'Lightning Grasp: High Performance Procedural Grasp Synthesis with Contact Fields
     is a 2025 work on manipulation for humanoid robots.'
   zh: 'Lightning Grasp: High Performance Procedural Grasp Synthesis with Contact Fields
     is a 2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'Lightning Grasp: High Performance Procedural Grasp Synthesis with Contact Fields
+    is a 2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Lightning Grasp: High Performance Procedural Grasp Synthesis with Contact Fields is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+Lightning Grasp: High Performance Procedural Grasp Synthesis with Contact Fields is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 Lightning Grasp: High Performance Procedural Grasp Synthesis with Contact Fields is a 2025 work on manipulation for humanoid robots.

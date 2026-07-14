@@ -6,7 +6,7 @@ type: paper
 names:
   en: What Can RL Bring to VLA Generalization? An Empirical Study
   zh: What Can RL Bring to VLA Generalization? An Empirical Study
-  ko: ''
+  ko: What Can RL Bring to VLA Generalization? An Empirical Study
 summary:
   en: What Can RL Bring to VLA Generalization? An Empirical Study (What Can RL Bring
     to VLA Generalization? An Empirical Study), is a 2025 large vision-language-action
@@ -20,7 +20,12 @@ summary:
     School, Tsinghua University, Institute for Interdisciplinary Information Sciences,
     Tsinghua University, Department of Electronic Engineering, Tsinghua University,
     and published at NIPS25.
-  ko: ''
+  ko: What Can RL Bring to VLA Generalization? An Empirical Study (What Can RL Bring
+    to VLA Generalization? An Empirical Study), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Shenzhen International Graduate
+    School, Tsinghua University, Institute for Interdisciplinary Information Sciences,
+    Tsinghua University, Department of Electronic Engineering, Tsinghua University,
+    and published at NIPS25.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -62,4 +67,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+What Can RL Bring to VLA Generalization? An Empirical Study (What Can RL Bring to VLA Generalization? An Empirical Study), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shenzhen International Graduate School, Tsinghua University, Institute for Interdisciplinary Information Sciences, Tsinghua University, Department of Electronic Engineering, Tsinghua University, and published at NIPS25.
+
+## Overview
+What Can RL Bring to VLA Generalization? An Empirical Study (What Can RL Bring to VLA Generalization? An Empirical Study), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shenzhen International Graduate School, Tsinghua University, Institute for Interdisciplinary Information Sciences, Tsinghua University, Department of Electronic Engineering, Tsinghua University, and published at NIPS25.
+
+## 개요
 What Can RL Bring to VLA Generalization? An Empirical Study (What Can RL Bring to VLA Generalization? An Empirical Study), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shenzhen International Graduate School, Tsinghua University, Institute for Interdisciplinary Information Sciences, Tsinghua University, Department of Electronic Engineering, Tsinghua University, and published at NIPS25.

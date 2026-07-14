@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'ANNIE: Be Careful of Your Robots'
   zh: ANNIE
-  ko: ''
+  ko: 'ANNIE: Be Careful of Your Robots'
 summary:
   en: 'ANNIE: Be Careful of Your Robots (ANNIE), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Institute of Automation, Chinese
@@ -16,7 +16,10 @@ summary:
     model for robotic manipulation, introduced by Institute of Automation, Chinese
     Academy of Sciences, Georgia Institute of Technology, University of Texas at Dallas,
     Institute of Computing Technology, Chinese Academy of Sciences.'
-  ko: ''
+  ko: 'ANNIE: Be Careful of Your Robots (ANNIE), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Institute of Automation, Chinese
+    Academy of Sciences, Georgia Institute of Technology, University of Texas at Dallas,
+    Institute of Computing Technology, Chinese Academy of Sciences.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ANNIE: Be Careful of Your Robots (ANNIE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Automation, Chinese Academy of Sciences, Georgia Institute of Technology, University of Texas at Dallas, Institute of Computing Technology, Chinese Academy of Sciences.
+
+## Overview
+ANNIE: Be Careful of Your Robots (ANNIE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Automation, Chinese Academy of Sciences, Georgia Institute of Technology, University of Texas at Dallas, Institute of Computing Technology, Chinese Academy of Sciences.
+
+## 개요
 ANNIE: Be Careful of Your Robots (ANNIE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Automation, Chinese Academy of Sciences, Georgia Institute of Technology, University of Texas at Dallas, Institute of Computing Technology, Chinese Academy of Sciences.

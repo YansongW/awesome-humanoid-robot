@@ -4,14 +4,17 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning
+  en: Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced
+    Fine-Tuning
   zh: 多行为蒸馏不是简单拼策略
-  ko: ''
+  ko: Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced
+    Fine-Tuning
 summary:
-  en: Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning is a knowledge node related
-    to paper in the humanoid robot value chain.
+  en: Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced
+    Fine-Tuning is a knowledge node related to paper in the humanoid robot value chain.
   zh: ''
-  ko: ''
+  ko: Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced
+    Fine-Tuning is a knowledge node related to paper in the humanoid robot value chain.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -30,12 +33,13 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (021). Institution: 哈尔滨工程大学；中国电信 TeleAI；中科大；上海科技大学；哈尔滨工业大学；西北工业大学深圳研究院. arXiv:
-    2511.06371.'
+  notes: 'Imported from WeChat curated list (021). Institution: 哈尔滨工程大学；中国电信 TeleAI；中科大；上海科技大学；哈尔滨工业大学；西北工业大学深圳研究院.
+    arXiv: 2511.06371.'
 sources:
 - id: src_001
   type: paper
-  title: Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning (arXiv)
+  title: Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced
+    Fine-Tuning (arXiv)
   url: https://arxiv.org/abs/2511.06371
   date: '2026'
   accessed_at: '2026-07-01'
@@ -48,3 +52,12 @@ sources:
 theoretical_depth:
 - system
 ---
+
+## 概述
+Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning is a knowledge node related to paper in the humanoid robot value chain.
+
+## Overview
+Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning is a knowledge node related to paper in the humanoid robot value chain.
+
+## 개요
+Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning is a knowledge node related to paper in the humanoid robot value chain.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning'
   zh: BC-Z
-  ko: ''
+  ko: 'BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning'
 summary:
   en: 'BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning (BC-Z),
     is a 2021 generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning (BC-Z),
     is a 2021 generalized vision-language-action model for robotic manipulation, introduced
     by UC Berkeley, Stanford University, and published at CoRL 2021.'
-  ko: ''
+  ko: 'BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning (BC-Z),
+    is a 2021 generalized vision-language-action model for robotic manipulation, introduced
+    by UC Berkeley, Stanford University, and published at CoRL 2021.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning (BC-Z), is a 2021 generalized vision-language-action model for robotic manipulation, introduced by UC Berkeley, Stanford University, and published at CoRL 2021.
+
+## Overview
+BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning (BC-Z), is a 2021 generalized vision-language-action model for robotic manipulation, introduced by UC Berkeley, Stanford University, and published at CoRL 2021.
+
+## 개요
 BC-Z: Zero-Shot Task Generalization with Robotic Imitation Learning (BC-Z), is a 2021 generalized vision-language-action model for robotic manipulation, introduced by UC Berkeley, Stanford University, and published at CoRL 2021.

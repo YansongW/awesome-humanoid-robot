@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 材料与界面热阻标定
-  ko: ''
+  ko: 材料与界面热阻标定
 summary:
   en: ''
   zh: 材料热参数表、接触热阻数据库
-  ko: ''
+  ko: 材料热参数表、接触热阻数据库
 domains:
 - 06_design_engineering
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：热管理仿真与迭代（Thermal Management）

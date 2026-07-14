@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'ACG: Action Coherence Guidance for Flow-based VLA models'
   zh: ACG
-  ko: ''
+  ko: 'ACG: Action Coherence Guidance for Flow-based VLA models'
 summary:
   en: 'ACG: Action Coherence Guidance for Flow-based VLA models (ACG), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by KAIST AI.'
   zh: 'ACG: Action Coherence Guidance for Flow-based VLA models (ACG), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by KAIST AI.'
-  ko: ''
+  ko: 'ACG: Action Coherence Guidance for Flow-based VLA models (ACG), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by KAIST AI.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ACG: Action Coherence Guidance for Flow-based VLA models (ACG), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST AI.
+
+## Overview
+ACG: Action Coherence Guidance for Flow-based VLA models (ACG), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST AI.
+
+## 개요
 ACG: Action Coherence Guidance for Flow-based VLA models (ACG), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST AI.

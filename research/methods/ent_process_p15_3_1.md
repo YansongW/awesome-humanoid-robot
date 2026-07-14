@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 关节与整机耐久测试
-  ko: ''
+  ko: 关节与整机耐久测试
 summary:
   en: ''
   zh: 可靠性测试计划与结果、失效分析与改进
-  ko: ''
+  ko: 可靠性测试计划与结果、失效分析与改进
 domains:
 - 04_assembly_integration_testing
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）

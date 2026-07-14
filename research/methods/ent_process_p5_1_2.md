@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 关节安装接口与壳体设计
-  ko: ''
+  ko: 关节安装接口与壳体设计
 summary:
   en: ''
   zh: 关节接口图纸、壳体 3D、密封方案
-  ko: ''
+  ko: 关节接口图纸、壳体 3D、密封方案
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）

@@ -6,7 +6,7 @@ type: paper
 names:
   en: Towards Synergistic, Generalized, and Efficient Dual-System for Robotic Manipulation
   zh: RoboDual
-  ko: ''
+  ko: Towards Synergistic, Generalized, and Efficient Dual-System for Robotic Manipulation
 summary:
   en: Towards Synergistic, Generalized, and Efficient Dual-System for Robotic Manipulation
     (RoboDual), is a 2024 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (RoboDual), is a 2024 large vision-language-action model for robotic manipulation,
     introduced by Shanghai Jiao Tong Univeristy, The University of Hong Kong, AgiBot,
     Shanghai AI Lab.
-  ko: ''
+  ko: Towards Synergistic, Generalized, and Efficient Dual-System for Robotic Manipulation
+    (RoboDual), is a 2024 large vision-language-action model for robotic manipulation,
+    introduced by Shanghai Jiao Tong Univeristy, The University of Hong Kong, AgiBot,
+    Shanghai AI Lab.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Towards Synergistic, Generalized, and Efficient Dual-System for Robotic Manipulation (RoboDual), is a 2024 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong Univeristy, The University of Hong Kong, AgiBot, Shanghai AI Lab.
+
+## Overview
+Towards Synergistic, Generalized, and Efficient Dual-System for Robotic Manipulation (RoboDual), is a 2024 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong Univeristy, The University of Hong Kong, AgiBot, Shanghai AI Lab.
+
+## 개요
 Towards Synergistic, Generalized, and Efficient Dual-System for Robotic Manipulation (RoboDual), is a 2024 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong Univeristy, The University of Hong Kong, AgiBot, Shanghai AI Lab.

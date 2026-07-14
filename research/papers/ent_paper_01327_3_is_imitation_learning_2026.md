@@ -6,13 +6,14 @@ type: paper
 names:
   en: 01327-3), Is imitation learning the route to humanoid robots?
   zh: 01327-3), Is imitation learning the route to humanoid robots?
-  ko: ''
+  ko: 01327-3), Is imitation learning the route to humanoid robots?
 summary:
   en: 01327-3), Is imitation learning the route to humanoid robots? is a 2026 work
     on manipulation for humanoid robots.
   zh: 01327-3), Is imitation learning the route to humanoid robots? is a 2026 work
     on manipulation for humanoid robots.
-  ko: ''
+  ko: 01327-3), Is imitation learning the route to humanoid robots? is a 2026 work
+    on manipulation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+01327-3), Is imitation learning the route to humanoid robots? is a 2026 work on manipulation for humanoid robots.
+
+## Overview
+01327-3), Is imitation learning the route to humanoid robots? is a 2026 work on manipulation for humanoid robots.
+
+## 개요
 01327-3), Is imitation learning the route to humanoid robots? is a 2026 work on manipulation for humanoid robots.

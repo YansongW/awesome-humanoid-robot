@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation'
   zh: 'CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation'
-  ko: ''
+  ko: 'CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation'
 summary:
   en: 'CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation
     is a 2026 work on teleoperation for humanoid robots.'
   zh: 'CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation
     is a 2026 work on teleoperation for humanoid robots.'
-  ko: ''
+  ko: 'CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation
+    is a 2026 work on teleoperation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation is a 2026 work on teleoperation for humanoid robots.
+
+## Overview
+CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation is a 2026 work on teleoperation for humanoid robots.
+
+## 개요
 CLOT: Closed-Loop Global Motion Tracking for Whole-Body Humanoid Teleoperation is a 2026 work on teleoperation for humanoid robots.

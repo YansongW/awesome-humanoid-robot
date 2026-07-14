@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Sigma: The Key for Vision-Language-Action Models toward Telepathic Alignment'
   zh: Sigma
-  ko: ''
+  ko: 'Sigma: The Key for Vision-Language-Action Models toward Telepathic Alignment'
 summary:
   en: 'Sigma: The Key for Vision-Language-Action Models toward Telepathic Alignment
     (Sigma), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'Sigma: The Key for Vision-Language-Action Models toward Telepathic Alignment
     (Sigma), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by UCSI University.'
-  ko: ''
+  ko: 'Sigma: The Key for Vision-Language-Action Models toward Telepathic Alignment
+    (Sigma), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by UCSI University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Sigma: The Key for Vision-Language-Action Models toward Telepathic Alignment (Sigma), is a 2025 large vision-language-action model for robotic manipulation, introduced by UCSI University.
+
+## Overview
+Sigma: The Key for Vision-Language-Action Models toward Telepathic Alignment (Sigma), is a 2025 large vision-language-action model for robotic manipulation, introduced by UCSI University.
+
+## 개요
 Sigma: The Key for Vision-Language-Action Models toward Telepathic Alignment (Sigma), is a 2025 large vision-language-action model for robotic manipulation, introduced by UCSI University.

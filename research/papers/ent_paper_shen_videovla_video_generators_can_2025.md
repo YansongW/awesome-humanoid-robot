@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'VideoVLA: Video Generators Can Be Generalizable Robot Manipulators'
   zh: VideoVLA
-  ko: ''
+  ko: 'VideoVLA: Video Generators Can Be Generalizable Robot Manipulators'
 summary:
   en: 'VideoVLA: Video Generators Can Be Generalizable Robot Manipulators (VideoVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by IAIR, Xi’an Jiaotong University, Microsoft Research Asia, Fudan University,
     and published at NIPS25.'
-  ko: ''
+  ko: 'VideoVLA: Video Generators Can Be Generalizable Robot Manipulators (VideoVLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by IAIR, Xi’an Jiaotong University, Microsoft Research Asia, Fudan University,
+    and published at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VideoVLA: Video Generators Can Be Generalizable Robot Manipulators (VideoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by IAIR, Xi’an Jiaotong University, Microsoft Research Asia, Fudan University, and published at NIPS25.
+
+## Overview
+VideoVLA: Video Generators Can Be Generalizable Robot Manipulators (VideoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by IAIR, Xi’an Jiaotong University, Microsoft Research Asia, Fudan University, and published at NIPS25.
+
+## 개요
 VideoVLA: Video Generators Can Be Generalizable Robot Manipulators (VideoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by IAIR, Xi’an Jiaotong University, Microsoft Research Asia, Fudan University, and published at NIPS25.

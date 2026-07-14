@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies
   zh: Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies
-  ko: ''
+  ko: Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies
 summary:
   en: Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies is
     a 2024 work on locomotion for humanoid robots, with open-source code available.
   zh: Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies is
     a 2024 work on locomotion for humanoid robots, with open-source code available.
-  ko: ''
+  ko: Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies is
+    a 2024 work on locomotion for humanoid robots, with open-source code available.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies is a 2024 work on locomotion for humanoid robots, with open-source code available.
+
+## Overview
+Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies is a 2024 work on locomotion for humanoid robots, with open-source code available.
+
+## 개요
 Learning Smooth Humanoid Locomotion through Lipschitz-Constrained Policies is a 2024 work on locomotion for humanoid robots, with open-source code available.

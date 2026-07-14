@@ -7,7 +7,8 @@ names:
   en: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large
     Language Model'
   zh: Instruct2Act
-  ko: ''
+  ko: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large
+    Language Model'
 summary:
   en: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large
     Language Model (Instruct2Act), is a 2023 generalized vision-language-action model
@@ -19,7 +20,11 @@ summary:
     for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai
     AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University
     of Hong Kong.'
-  ko: ''
+  ko: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large
+    Language Model (Instruct2Act), is a 2023 generalized vision-language-action model
+    for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai
+    AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University
+    of Hong Kong.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model (Instruct2Act), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University of Hong Kong.
+
+## Overview
+Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model (Instruct2Act), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University of Hong Kong.
+
+## 개요
 Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model (Instruct2Act), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University of Hong Kong.

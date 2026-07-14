@@ -7,7 +7,8 @@ names:
   en: 'UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous
     Driving'
   zh: UniUGP
-  ko: ''
+  ko: 'UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous
+    Driving'
 summary:
   en: 'UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous
     Driving (UniUGP), is a 2025 large vision-language-action model for robotic manipulation,
@@ -15,7 +16,9 @@ summary:
   zh: 'UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous
     Driving (UniUGP), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by ByteDance Seed, HKUST-GZ.'
-  ko: ''
+  ko: 'UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous
+    Driving (UniUGP), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by ByteDance Seed, HKUST-GZ.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous Driving (UniUGP), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed, HKUST-GZ.
+
+## Overview
+UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous Driving (UniUGP), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed, HKUST-GZ.
+
+## 개요
 UniUGP: Unifying Understanding, Generation, and Planing For End-to-end Autonomous Driving (UniUGP), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed, HKUST-GZ.

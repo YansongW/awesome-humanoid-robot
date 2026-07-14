@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 接触状态估计
-  ko: ''
+  ko: 接触状态估计
 summary:
   en: ''
   zh: 接触检测准确率 > 98%、误触发率 < 2%
-  ko: ''
+  ko: 接触检测准确率 > 98%、误触发率 < 2%
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）

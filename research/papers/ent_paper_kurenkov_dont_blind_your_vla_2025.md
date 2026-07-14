@@ -6,13 +6,14 @@ type: paper
 names:
   en: Don't Blind Your VLA
   zh: Don't Blind Your VLA
-  ko: ''
+  ko: Don't Blind Your VLA
 summary:
   en: Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Cognitive AI Lab, IAI MIPT.
   zh: Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Cognitive AI Lab, IAI MIPT.
-  ko: ''
+  ko: Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Cognitive AI Lab, IAI MIPT.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Cognitive AI Lab, IAI MIPT.
+
+## Overview
+Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Cognitive AI Lab, IAI MIPT.
+
+## 개요
 Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Cognitive AI Lab, IAI MIPT.

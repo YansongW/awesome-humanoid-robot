@@ -7,7 +7,8 @@ names:
   en: 'RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action
     Models'
   zh: RICL
-  ko: ''
+  ko: 'RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action
+    Models'
 summary:
   en: 'RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action
     Models (RICL), is a 2025 large vision-language-action model for robotic manipulation,
@@ -15,7 +16,9 @@ summary:
   zh: 'RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action
     Models (RICL), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by University of Pennsylvania, and published at CoRL25.'
-  ko: ''
+  ko: 'RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action
+    Models (RICL), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by University of Pennsylvania, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models (RICL), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Pennsylvania, and published at CoRL25.
+
+## Overview
+RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models (RICL), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Pennsylvania, and published at CoRL25.
+
+## 개요
 RICL: Adding In-Context Adaptability to Pre-Trained Vision-Language-Action Models (RICL), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Pennsylvania, and published at CoRL25.

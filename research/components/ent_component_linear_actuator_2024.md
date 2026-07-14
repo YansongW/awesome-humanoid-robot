@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+产生直线运动的执行器，通常由无框力矩电机、行星滚柱丝杠、编码器和力传感器组成。
+
+## Overview
 Actuator producing linear motion, typically composed of frameless torque motor, planetary roller screw, encoder and force sensor.
+
+## 개요
+선형 운 동을 생성하는 액추에이터, 일반적으로 프레임리스 토크 모터, 행성 롤러 스크류, 인코더 및 힘 센서로 구성.

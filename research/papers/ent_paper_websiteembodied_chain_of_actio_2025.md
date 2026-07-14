@@ -8,7 +8,8 @@ names:
     for Humanoid Loco-manipulation'
   zh: '[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model
     for Humanoid Loco-manipulation'
-  ko: ''
+  ko: '[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model
+    for Humanoid Loco-manipulation'
 summary:
   en: '[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model
     for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control
@@ -16,7 +17,9 @@ summary:
   zh: '[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model
     for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control
     for humanoid robots.'
-  ko: ''
+  ko: '[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model
+    for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+[website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 [website],Embodied Chain of Action Reasoning with Multi-Modal Foundation Model for Humanoid Loco-manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 电池包设计与 BMS
-  ko: ''
+  ko: 电池包设计与 BMS
 summary:
   en: ''
   zh: 电池包方案、BMS 规格、续航估算、安全测试
-  ko: ''
+  ko: 电池包方案、BMS 规格、续航估算、安全测试
 domains:
 - 02_components
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）

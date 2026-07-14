@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos'
   zh: 世界模型开始变成机器人策略的试验场
-  ko: ''
+  ko: 'DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos'
 summary:
-  en: 'DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos is a knowledge node related to paper in the
-    humanoid robot value chain.'
+  en: 'DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos is
+    a knowledge node related to paper in the humanoid robot value chain.'
   zh: ''
-  ko: ''
+  ko: 'DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos is
+    a knowledge node related to paper in the humanoid robot value chain.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -31,11 +32,13 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (035). Institution: NVIDIA；香港科技大学；伯克利；华盛顿大学；斯坦福大学；KAIST；德州大学奥斯汀分校等. arXiv: 2602.06949.'
+  notes: 'Imported from WeChat curated list (035). Institution: NVIDIA；香港科技大学；伯克利；华盛顿大学；斯坦福大学；KAIST；德州大学奥斯汀分校等.
+    arXiv: 2602.06949.'
 sources:
 - id: src_001
   type: paper
-  title: 'DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos (arXiv)'
+  title: 'DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos
+    (arXiv)'
   url: https://arxiv.org/abs/2602.06949
   date: '2026'
   accessed_at: '2026-07-01'
@@ -48,3 +51,12 @@ sources:
 theoretical_depth:
 - system
 ---
+
+## 概述
+DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos is a knowledge node related to paper in the humanoid robot value chain.
+
+## Overview
+DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos is a knowledge node related to paper in the humanoid robot value chain.
+
+## 개요
+DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos is a knowledge node related to paper in the humanoid robot value chain.

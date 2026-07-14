@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'PixelVLA: Advancing Pixel-level Understanding in Vision-Language-Action Model'
   zh: PixelVLA
-  ko: ''
+  ko: 'PixelVLA: Advancing Pixel-level Understanding in Vision-Language-Action Model'
 summary:
   en: 'PixelVLA: Advancing Pixel-level Understanding in Vision-Language-Action Model
     (PixelVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -18,7 +18,11 @@ summary:
     introduced by School of Automation Science and Engineering, South China University
     of Technology, Shenyang Institute of Automation, Chinese Academy of Sciences,
     Mohamed bin Zayed University of Artificial Intelligence, Australian National University.'
-  ko: ''
+  ko: 'PixelVLA: Advancing Pixel-level Understanding in Vision-Language-Action Model
+    (PixelVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by School of Automation Science and Engineering, South China University
+    of Technology, Shenyang Institute of Automation, Chinese Academy of Sciences,
+    Mohamed bin Zayed University of Artificial Intelligence, Australian National University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +64,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PixelVLA: Advancing Pixel-level Understanding in Vision-Language-Action Model (PixelVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Automation Science and Engineering, South China University of Technology, Shenyang Institute of Automation, Chinese Academy of Sciences, Mohamed bin Zayed University of Artificial Intelligence, Australian National University.
+
+## Overview
+PixelVLA: Advancing Pixel-level Understanding in Vision-Language-Action Model (PixelVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Automation Science and Engineering, South China University of Technology, Shenyang Institute of Automation, Chinese Academy of Sciences, Mohamed bin Zayed University of Artificial Intelligence, Australian National University.
+
+## 개요
 PixelVLA: Advancing Pixel-level Understanding in Vision-Language-Action Model (PixelVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Automation Science and Engineering, South China University of Technology, Shenyang Institute of Automation, Chinese Academy of Sciences, Mohamed bin Zayed University of Artificial Intelligence, Australian National University.

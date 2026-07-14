@@ -8,7 +8,8 @@ names:
   zh: 决策栈
   ko: 의사결정 스택
 summary:
-  en: The software subsystem that converts perception and task goals into plans, policies, and behavioral decisions.
+  en: The software subsystem that converts perception and task goals into plans, policies,
+    and behavioral decisions.
   zh: 将感知结果与任务目标转化为规划、策略与行为决策的软件子系统。
   ko: 인식 결과와 작업 목표를 계획·정책·행동 결정으로 변환하는 소프트웨어 하위 시스템.
 domains:
@@ -29,8 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +39,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+将感知结果与任务目标转化为规划、策略与行为决策的软件子系统。
+
+## Overview
+The software subsystem that converts perception and task goals into plans, policies, and behavioral decisions.
+
+## 개요
+The software subsystem that converts perception and task goals into plans, policies, and behavioral decisions.

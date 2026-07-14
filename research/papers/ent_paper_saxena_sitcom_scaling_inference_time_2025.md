@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'SITCOM: Scaling Inference-Time COMpute for VLAs'
   zh: SITCOM
-  ko: ''
+  ko: 'SITCOM: Scaling Inference-Time COMpute for VLAs'
 summary:
   en: 'SITCOM: Scaling Inference-Time COMpute for VLAs (SITCOM), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Carnegie Mellon University.'
   zh: 'SITCOM: Scaling Inference-Time COMpute for VLAs (SITCOM), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Carnegie Mellon University.'
-  ko: ''
+  ko: 'SITCOM: Scaling Inference-Time COMpute for VLAs (SITCOM), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Carnegie Mellon University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SITCOM: Scaling Inference-Time COMpute for VLAs (SITCOM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University.
+
+## Overview
+SITCOM: Scaling Inference-Time COMpute for VLAs (SITCOM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University.
+
+## 개요
 SITCOM: Scaling Inference-Time COMpute for VLAs (SITCOM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University.

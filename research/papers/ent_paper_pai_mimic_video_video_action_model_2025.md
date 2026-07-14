@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs'
   zh: VAM
-  ko: ''
+  ko: 'mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs'
 summary:
   en: 'mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs
     (VAM), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (VAM), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by mimic robotics, Microsoft Zurich, ETH Zurich, ETH AI Center, UC
     Berkeley.'
-  ko: ''
+  ko: 'mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs
+    (VAM), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by mimic robotics, Microsoft Zurich, ETH Zurich, ETH AI Center, UC
+    Berkeley.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs (VAM), is a 2025 large vision-language-action model for robotic manipulation, introduced by mimic robotics, Microsoft Zurich, ETH Zurich, ETH AI Center, UC Berkeley.
+
+## Overview
+mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs (VAM), is a 2025 large vision-language-action model for robotic manipulation, introduced by mimic robotics, Microsoft Zurich, ETH Zurich, ETH AI Center, UC Berkeley.
+
+## 개요
 mimic-video: Video-Action Models for Generalizable Robot Control Beyond VLAs (VAM), is a 2025 large vision-language-action model for robotic manipulation, introduced by mimic robotics, Microsoft Zurich, ETH Zurich, ETH AI Center, UC Berkeley.

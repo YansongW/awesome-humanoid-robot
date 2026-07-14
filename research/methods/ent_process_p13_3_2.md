@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: EMC/EMI 设计与测试
-  ko: ''
+  ko: EMC/EMI 设计与测试
 summary:
   en: ''
   zh: EMC 设计规范、预测试报告、整改记录
-  ko: ''
+  ko: EMC 设计规范、预测试报告、整改记录
 domains:
 - 02_components
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）

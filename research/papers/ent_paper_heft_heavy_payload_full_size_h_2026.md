@@ -7,7 +7,8 @@ names:
   en: 'HEFT: Heavy-Payload Full-size Humanoid Teleoperation with Privileged Motion
     Guidance and Windowed Payload Curriculum'
   zh: HEFT：面向重载全尺寸人形的全身遥操作
-  ko: ''
+  ko: 'HEFT: Heavy-Payload Full-size Humanoid Teleoperation with Privileged Motion
+    Guidance and Windowed Payload Curriculum'
 summary:
   en: 'HEFT: Heavy-Payload Full-size Humanoid Teleoperation with Privileged Motion
     Guidance and Windowed Payload Curriculum is a paper on Teleoperation for humanoid
@@ -15,7 +16,9 @@ summary:
   zh: 'HEFT: Heavy-Payload Full-size Humanoid Teleoperation with Privileged Motion
     Guidance and Windowed Payload Curriculum is a paper on Teleoperation for humanoid
     robotics. HEFT：面向重载全尺寸人形的全身遥操作.'
-  ko: ''
+  ko: 'HEFT: Heavy-Payload Full-size Humanoid Teleoperation with Privileged Motion
+    Guidance and Windowed Payload Curriculum is a paper on Teleoperation for humanoid
+    robotics. HEFT：面向重载全尺寸人形的全身遥操作.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +49,11 @@ sources:
   accessed_at: '2026-07-14'
 ---
 
+## 概述
+HEFT: Heavy-Payload Full-size Humanoid Teleoperation with Privileged Motion Guidance and Windowed Payload Curriculum is a paper on Teleoperation for humanoid robotics. HEFT：面向重载全尺寸人形的全身遥操作.
+
+## Overview
+HEFT: Heavy-Payload Full-size Humanoid Teleoperation with Privileged Motion Guidance and Windowed Payload Curriculum is a paper on Teleoperation for humanoid robotics. HEFT：面向重载全尺寸人形的全身遥操作.
+
+## 개요
 HEFT: Heavy-Payload Full-size Humanoid Teleoperation with Privileged Motion Guidance and Windowed Payload Curriculum is a paper on Teleoperation for humanoid robotics. HEFT：面向重载全尺寸人形的全身遥操作.

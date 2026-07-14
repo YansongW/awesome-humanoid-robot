@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation'
   zh: 'HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation'
-  ko: ''
+  ko: 'HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation'
 summary:
   en: 'HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation
     is a 2024 work on simulation benchmark for humanoid robots, with open-source code
@@ -14,7 +14,9 @@ summary:
   zh: 'HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation
     is a 2024 work on simulation benchmark for humanoid robots, with open-source code
     available.'
-  ko: ''
+  ko: 'HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation
+    is a 2024 work on simulation benchmark for humanoid robots, with open-source code
+    available.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +57,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.
+
+## Overview
+HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.
+
+## 개요
 HumanoidBench: Simulated Humanoid Benchmark for Whole-Body Locomotion and Manipulation is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.

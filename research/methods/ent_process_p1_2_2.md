@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 整机架构与功能分配
-  ko: ''
+  ko: 整机架构与功能分配
 summary:
   en: ''
   zh: 系统架构图、功能分配表、ICD 草案
-  ko: ''
+  ko: 系统架构图、功能分配表、ICD 草案
 domains:
 - 06_design_engineering
 - 12_policy_regulation_ethics
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）

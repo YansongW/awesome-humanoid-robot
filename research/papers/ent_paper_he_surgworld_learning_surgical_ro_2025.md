@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'SurgWorld: Learning Surgical Robot Policies from Videos via World Modeling'
   zh: SurgWorld
-  ko: ''
+  ko: 'SurgWorld: Learning Surgical Robot Policies from Videos via World Modeling'
 summary:
   en: 'SurgWorld: Learning Surgical Robot Policies from Videos via World Modeling
     (SurgWorld), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (SurgWorld), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by NVIDIA, The Chinese University of Hong Kong, Sung Kyun Kwan University,
     Wenzhou Medical University, National University of Singapore, Ruijin Hospital.'
-  ko: ''
+  ko: 'SurgWorld: Learning Surgical Robot Policies from Videos via World Modeling
+    (SurgWorld), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by NVIDIA, The Chinese University of Hong Kong, Sung Kyun Kwan University,
+    Wenzhou Medical University, National University of Singapore, Ruijin Hospital.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SurgWorld: Learning Surgical Robot Policies from Videos via World Modeling (SurgWorld), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, The Chinese University of Hong Kong, Sung Kyun Kwan University, Wenzhou Medical University, National University of Singapore, Ruijin Hospital.
+
+## Overview
+SurgWorld: Learning Surgical Robot Policies from Videos via World Modeling (SurgWorld), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, The Chinese University of Hong Kong, Sung Kyun Kwan University, Wenzhou Medical University, National University of Singapore, Ruijin Hospital.
+
+## 개요
 SurgWorld: Learning Surgical Robot Policies from Videos via World Modeling (SurgWorld), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, The Chinese University of Hong Kong, Sung Kyun Kwan University, Wenzhou Medical University, National University of Singapore, Ruijin Hospital.

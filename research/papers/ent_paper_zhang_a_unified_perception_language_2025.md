@@ -6,7 +6,7 @@ type: paper
 names:
   en: A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving
   zh: PLA
-  ko: ''
+  ko: A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving
 summary:
   en: A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving
     (PLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (PLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Technical University of Munich, Chair of Robotics, Artificial Intelligence
     and Embedded Systems.
-  ko: ''
+  ko: A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving
+    (PLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Technical University of Munich, Chair of Robotics, Artificial Intelligence
+    and Embedded Systems.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving (PLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Technical University of Munich, Chair of Robotics, Artificial Intelligence and Embedded Systems.
+
+## Overview
+A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving (PLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Technical University of Munich, Chair of Robotics, Artificial Intelligence and Embedded Systems.
+
+## 개요
 A Unified Perception-Language-Action Framework for Adaptive Autonomous Driving (PLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Technical University of Munich, Chair of Robotics, Artificial Intelligence and Embedded Systems.

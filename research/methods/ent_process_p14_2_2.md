@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: OTA、诊断与健康管理
-  ko: ''
+  ko: OTA、诊断与健康管理
 summary:
   en: ''
   zh: OTA 方案、诊断协议、健康管理界面
-  ko: ''
+  ko: OTA 方案、诊断协议、健康管理界面
 domains:
 - 08_software_middleware
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）

@@ -6,7 +6,7 @@ type: paper
 names:
   en: iFlyBot-VLA Technical Report
   zh: iFlyBot-VLA
-  ko: ''
+  ko: iFlyBot-VLA Technical Report
 summary:
   en: iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by iFlyTek Reasearch and Development
@@ -14,7 +14,9 @@ summary:
   zh: iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by iFlyTek Reasearch and Development
     Group, LindenBot.
-  ko: ''
+  ko: iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by iFlyTek Reasearch and Development
+    Group, LindenBot.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by iFlyTek Reasearch and Development Group, LindenBot.
+
+## Overview
+iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by iFlyTek Reasearch and Development Group, LindenBot.
+
+## 개요
 iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by iFlyTek Reasearch and Development Group, LindenBot.

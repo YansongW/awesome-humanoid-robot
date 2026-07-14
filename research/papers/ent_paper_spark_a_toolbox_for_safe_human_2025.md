@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation'
   zh: 'SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation'
-  ko: ''
+  ko: 'SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation'
 summary:
   en: 'SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation is a 2025 work
     on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation is a 2025 work
     on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation is a 2025 work
+    on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 SPARK: A Toolbox for Safe Humanoid Autonomy and Teleoperation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

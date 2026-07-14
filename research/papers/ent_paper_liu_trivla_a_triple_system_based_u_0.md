@@ -7,7 +7,8 @@ names:
   en: 'TriVLA: A Triple-System-Based Unified Vision-Language-Action Model for General
     Robot Control'
   zh: TriVLA
-  ko: ''
+  ko: 'TriVLA: A Triple-System-Based Unified Vision-Language-Action Model for General
+    Robot Control'
 summary:
   en: 'TriVLA: A Triple-System-Based Unified Vision-Language-Action Model for General
     Robot Control (TriVLA), is a 0 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: 'TriVLA: A Triple-System-Based Unified Vision-Language-Action Model for General
     Robot Control (TriVLA), is a 0 large vision-language-action model for robotic
     manipulation, introduced by Fudan University, Shanghai Innovation Institute.'
-  ko: ''
+  ko: 'TriVLA: A Triple-System-Based Unified Vision-Language-Action Model for General
+    Robot Control (TriVLA), is a 0 large vision-language-action model for robotic
+    manipulation, introduced by Fudan University, Shanghai Innovation Institute.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+TriVLA: A Triple-System-Based Unified Vision-Language-Action Model for General Robot Control (TriVLA), is a 0 large vision-language-action model for robotic manipulation, introduced by Fudan University, Shanghai Innovation Institute.
+
+## Overview
+TriVLA: A Triple-System-Based Unified Vision-Language-Action Model for General Robot Control (TriVLA), is a 0 large vision-language-action model for robotic manipulation, introduced by Fudan University, Shanghai Innovation Institute.
+
+## 개요
 TriVLA: A Triple-System-Based Unified Vision-Language-Action Model for General Robot Control (TriVLA), is a 0 large vision-language-action model for robotic manipulation, introduced by Fudan University, Shanghai Innovation Institute.

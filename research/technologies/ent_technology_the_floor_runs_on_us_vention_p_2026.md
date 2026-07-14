@@ -8,13 +8,15 @@ names:
     at Automate 2026'
   zh: '"The Floor Runs on Us": Vention Powers the Future of Software-Defined Automation
     at Automate 2026'
-  ko: ''
+  ko: '"The Floor Runs on Us": Vention Powers the Future of Software-Defined Automation
+    at Automate 2026'
 summary:
   en: '"The Floor Runs on Us": Vention Powers the Future of Software-Defined Automation
     at Automate 2026'
   zh: '"The Floor Runs on Us": Vention Powers the Future of Software-Defined Automation
     at Automate 2026'
-  ko: ''
+  ko: '"The Floor Runs on Us": Vention Powers the Future of Software-Defined Automation
+    at Automate 2026'
 domains:
 - 11_applications_markets
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+"The Floor Runs on Us": Vention Powers the Future of Software-Defined Automation at Automate 2026
+
+## Overview
+"The Floor Runs on Us": Vention Powers the Future of Software-Defined Automation at Automate 2026
+
+## 개요
 "The Floor Runs on Us": Vention Powers the Future of Software-Defined Automation at Automate 2026

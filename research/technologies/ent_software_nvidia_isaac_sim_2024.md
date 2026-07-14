@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+GPU加速的逼真机器人仿真器，支撑GR00T合成数据管道。
+
+## Overview
+GPU-accelerated photorealistic robotics simulator underpinning GR00T synthetic-data pipelines.
+
+## 개요
 GPU-accelerated photorealistic robotics simulator underpinning GR00T synthetic-data pipelines.

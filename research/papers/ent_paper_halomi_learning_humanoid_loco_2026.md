@@ -7,11 +7,12 @@ names:
   en: 'HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human
     Demonstrations'
   zh: HALOMI｜通过人类示范的主动感知学习人形移动操作
-  ko: ''
+  ko: 'HALOMI: Learning Humanoid Loco-Manipulation with Active Perception from Human
+    Demonstrations'
 summary:
   en: ''
   zh: HALOMI 先从相机图像/多视角观测恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配生成关节位置/力矩命令、全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
-  ko: ''
+  ko: HALOMI 先从相机图像/多视角观测恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配生成关节位置/力矩命令、全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -47,5 +48,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+HALOMI 先从相机图像/多视角观测恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配生成关节位置/力矩命令、全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
+## 개요
 HALOMI 先从相机图像/多视角观测恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配生成关节位置/力矩命令、全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。

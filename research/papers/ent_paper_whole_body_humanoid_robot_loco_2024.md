@@ -6,13 +6,14 @@ type: paper
 names:
   en: Whole-body Humanoid Robot Locomotion with Human Reference
   zh: Whole-body Humanoid Robot Locomotion with Human Reference
-  ko: ''
+  ko: Whole-body Humanoid Robot Locomotion with Human Reference
 summary:
   en: Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on
     locomotion for humanoid robots.
   zh: Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on
     locomotion for humanoid robots.
-  ko: ''
+  ko: Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on
+    locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -48,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid robots.
+
+## Overview
+Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid robots.
+
+## 개요
 Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid robots.

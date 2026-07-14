@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'iRonCub 3: The Jet-Powered Flying Humanoid Robot'
   zh: 'iRonCub 3: The Jet-Powered Flying Humanoid Robot'
-  ko: ''
+  ko: 'iRonCub 3: The Jet-Powered Flying Humanoid Robot'
 summary:
   en: 'iRonCub 3: The Jet-Powered Flying Humanoid Robot is a 2025 work on hardware
     design for humanoid robots.'
   zh: 'iRonCub 3: The Jet-Powered Flying Humanoid Robot is a 2025 work on hardware
     design for humanoid robots.'
-  ko: ''
+  ko: 'iRonCub 3: The Jet-Powered Flying Humanoid Robot is a 2025 work on hardware
+    design for humanoid robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+iRonCub 3: The Jet-Powered Flying Humanoid Robot is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+iRonCub 3: The Jet-Powered Flying Humanoid Robot is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 iRonCub 3: The Jet-Powered Flying Humanoid Robot is a 2025 work on hardware design for humanoid robots.

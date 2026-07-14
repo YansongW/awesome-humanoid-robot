@@ -7,7 +7,8 @@ names:
   en: 'OccLLaMA: An Occupancy-Language-Action Generative World Model for Autonomous
     Driving'
   zh: OccLLaMA
-  ko: ''
+  ko: 'OccLLaMA: An Occupancy-Language-Action Generative World Model for Autonomous
+    Driving'
 summary:
   en: 'OccLLaMA: An Occupancy-Language-Action Generative World Model for Autonomous
     Driving (OccLLaMA), is a 2024 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Driving (OccLLaMA), is a 2024 large vision-language-action model for robotic manipulation,
     introduced by Academy for Engineering & Technology, Fudan University, Institute
     for AI Industry Research, Tsinghua University.'
-  ko: ''
+  ko: 'OccLLaMA: An Occupancy-Language-Action Generative World Model for Autonomous
+    Driving (OccLLaMA), is a 2024 large vision-language-action model for robotic manipulation,
+    introduced by Academy for Engineering & Technology, Fudan University, Institute
+    for AI Industry Research, Tsinghua University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+OccLLaMA: An Occupancy-Language-Action Generative World Model for Autonomous Driving (OccLLaMA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Academy for Engineering & Technology, Fudan University, Institute for AI Industry Research, Tsinghua University.
+
+## Overview
+OccLLaMA: An Occupancy-Language-Action Generative World Model for Autonomous Driving (OccLLaMA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Academy for Engineering & Technology, Fudan University, Institute for AI Industry Research, Tsinghua University.
+
+## 개요
 OccLLaMA: An Occupancy-Language-Action Generative World Model for Autonomous Driving (OccLLaMA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Academy for Engineering & Technology, Fudan University, Institute for AI Industry Research, Tsinghua University.

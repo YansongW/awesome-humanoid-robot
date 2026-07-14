@@ -6,11 +6,11 @@ type: paper
 names:
   en: 'Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction'
   zh: Pro-HOI｜感知根引导的人形物体交互
-  ko: ''
+  ko: 'Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction'
 summary:
   en: ''
   zh: Pro-HOI 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、IK/动作重定向、全身控制器/WBC/MPC生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
-  ko: ''
+  ko: Pro-HOI 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、IK/动作重定向、全身控制器/WBC/MPC生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -46,5 +46,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+Pro-HOI 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、IK/动作重定向、全身控制器/WBC/MPC生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
+## 개요
 Pro-HOI 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、IK/动作重定向、全身控制器/WBC/MPC生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。

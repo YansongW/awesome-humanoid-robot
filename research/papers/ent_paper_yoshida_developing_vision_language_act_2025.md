@@ -6,7 +6,7 @@ type: paper
 names:
   en: Developing Vision-Language-Action Model from Egocentric Videos
   zh: Developing Vision-Language-Action Model from Egocentric Videos
-  ko: ''
+  ko: Developing Vision-Language-Action Model from Egocentric Videos
 summary:
   en: Developing Vision-Language-Action Model from Egocentric Videos (Developing Vision-Language-Action
     Model from Egocentric Videos), is a 2025 large vision-language-action model for
@@ -16,7 +16,10 @@ summary:
     Model from Egocentric Videos), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by Institute of Science Tokyo, NII LLMC, Sony
     Interactive Entertainment.
-  ko: ''
+  ko: Developing Vision-Language-Action Model from Egocentric Videos (Developing Vision-Language-Action
+    Model from Egocentric Videos), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by Institute of Science Tokyo, NII LLMC, Sony
+    Interactive Entertainment.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Developing Vision-Language-Action Model from Egocentric Videos (Developing Vision-Language-Action Model from Egocentric Videos), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Science Tokyo, NII LLMC, Sony Interactive Entertainment.
+
+## Overview
+Developing Vision-Language-Action Model from Egocentric Videos (Developing Vision-Language-Action Model from Egocentric Videos), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Science Tokyo, NII LLMC, Sony Interactive Entertainment.
+
+## 개요
 Developing Vision-Language-Action Model from Egocentric Videos (Developing Vision-Language-Action Model from Egocentric Videos), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Science Tokyo, NII LLMC, Sony Interactive Entertainment.

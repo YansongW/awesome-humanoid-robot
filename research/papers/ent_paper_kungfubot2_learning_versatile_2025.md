@@ -6,11 +6,11 @@ type: paper
 names:
   en: 'KungfuBot2: Learning Versatile Motion Skills for Humanoid Whole-Body Control'
   zh: KungfuBot2｜学习人形全身控制的多样化运动技能
-  ko: ''
+  ko: 'KungfuBot2: Learning Versatile Motion Skills for Humanoid Whole-Body Control'
 summary:
   en: ''
   zh: KungfuBot2 把本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据转成可跟踪的身体目标，并通过教师-学生知识迁移、ACT/行为克隆模仿学习、IK/动作重定向训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
-  ko: ''
+  ko: KungfuBot2 把本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据转成可跟踪的身体目标，并通过教师-学生知识迁移、ACT/行为克隆模仿学习、IK/动作重定向训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
 domains:
 - 06_design_engineering
 - 07_ai_models_algorithms
@@ -45,5 +45,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+KungfuBot2 把本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据转成可跟踪的身体目标，并通过教师-学生知识迁移、ACT/行为克隆模仿学习、IK/动作重定向训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
 
+## 개요
 KungfuBot2 把本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据转成可跟踪的身体目标，并通过教师-学生知识迁移、ACT/行为克隆模仿学习、IK/动作重定向训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。

@@ -7,11 +7,12 @@ names:
   en: Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory
     Input
   zh: 学习人形机器人视觉驱动的反应式足球技能
-  ko: ''
+  ko: Learning Agile Striker Skills for Humanoid Soccer Robots from Noisy Sensory
+    Input
 summary:
   en: ''
   zh: 这篇工作先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL 策略训练、全身控制器/WBC/MPC生成可执行动作命令。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
-  ko: ''
+  ko: 这篇工作先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL 策略训练、全身控制器/WBC/MPC生成可执行动作命令。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
 domains:
 - 07_ai_models_algorithms
 - 11_applications_markets
@@ -45,5 +46,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+这篇工作先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL 策略训练、全身控制器/WBC/MPC生成可执行动作命令。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
 
+## 개요
 这篇工作先从相机图像/多视角观测、本体状态与关节序列、仿真交互数据恢复场景、目标或运动表征，再用教师-学生知识迁移、PPO/RL 策略训练、全身控制器/WBC/MPC生成可执行动作命令。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 需求管理工具与追溯链
-  ko: ''
+  ko: 需求管理工具与追溯链
 summary:
   en: ''
   zh: 需求基线建立、ID/状态/Owner/验收条件完整
-  ko: ''
+  ko: 需求基线建立、ID/状态/Owner/验收条件完整
 domains:
 - 11_applications_markets
 - 12_policy_regulation_ethics
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：项目立项与商业基线

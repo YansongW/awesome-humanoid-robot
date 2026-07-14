@@ -8,13 +8,15 @@ names:
     Locomotion
   zh: Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal
     Locomotion
-  ko: ''
+  ko: Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal
+    Locomotion
 summary:
   en: Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal
     Locomotion is a 2026 work on locomotion for humanoid robots.
   zh: Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal
     Locomotion is a 2026 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal
+    Locomotion is a 2026 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal Locomotion is a 2026 work on locomotion for humanoid robots.
+
+## Overview
+Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal Locomotion is a 2026 work on locomotion for humanoid robots.
+
+## 개요
 Toward Reliable Sim-to-Real Predictability for MoE-based Robust Quadrupedal Locomotion is a 2026 work on locomotion for humanoid robots.

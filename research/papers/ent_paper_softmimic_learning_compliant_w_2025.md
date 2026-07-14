@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'SoftMimic: Learning Compliant Whole-body Control from Examples'
   zh: 'SoftMimic: Learning Compliant Whole-body Control from Examples'
-  ko: ''
+  ko: 'SoftMimic: Learning Compliant Whole-body Control from Examples'
 summary:
   en: 'SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work
     on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work
     on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work
+    on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

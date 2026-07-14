@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 减速器与传动选型
-  ko: ''
+  ko: 减速器与传动选型
 summary:
   en: ''
   zh: 减速器规格、传动链图纸、刚度/背隙预算
-  ko: ''
+  ko: 减速器规格、传动链图纸、刚度/背隙预算
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）

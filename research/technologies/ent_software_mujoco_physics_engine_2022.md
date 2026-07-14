@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+具有丰富接触动力学的高保真物理引擎，广泛用于人形控制研究。
+
+## Overview
+High-fidelity physics engine with rich contact dynamics, widely used for humanoid control research.
+
+## 개요
 High-fidelity physics engine with rich contact dynamics, widely used for humanoid control research.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 系统需求规格书（SyRS）
-  ko: ''
+  ko: 系统需求规格书（SyRS）
 summary:
   en: ''
   zh: SyRS 基线发布、需求可追溯、验收条件量化
-  ko: ''
+  ko: SyRS 基线发布、需求可追溯、验收条件量化
 domains:
 - 06_design_engineering
 - 12_policy_regulation_ethics
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）

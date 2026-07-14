@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'GEVRM: Goal-Expressive Video Generation Model For Robust Visual Manipulation'
   zh: GEVRM
-  ko: ''
+  ko: 'GEVRM: Goal-Expressive Video Generation Model For Robust Visual Manipulation'
 summary:
   en: 'GEVRM: Goal-Expressive Video Generation Model For Robust Visual Manipulation
     (GEVRM), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'GEVRM: Goal-Expressive Video Generation Model For Robust Visual Manipulation
     (GEVRM), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Zhejiang University, Westlake University, and published at ICLR25.'
-  ko: ''
+  ko: 'GEVRM: Goal-Expressive Video Generation Model For Robust Visual Manipulation
+    (GEVRM), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Zhejiang University, Westlake University, and published at ICLR25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GEVRM: Goal-Expressive Video Generation Model For Robust Visual Manipulation (GEVRM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, Westlake University, and published at ICLR25.
+
+## Overview
+GEVRM: Goal-Expressive Video Generation Model For Robust Visual Manipulation (GEVRM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, Westlake University, and published at ICLR25.
+
+## 개요
 GEVRM: Goal-Expressive Video Generation Model For Robust Visual Manipulation (GEVRM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, Westlake University, and published at ICLR25.

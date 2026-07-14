@@ -7,7 +7,8 @@ names:
   en: 'DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of
     Reasoning and Action'
   zh: DualVLA
-  ko: ''
+  ko: 'DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of
+    Reasoning and Action'
 summary:
   en: 'DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of
     Reasoning and Action (DualVLA), is a 2025 large vision-language-action model for
@@ -21,7 +22,12 @@ summary:
     Perception and Cognition, University of Science and Technology of China, State
     Key Laboratory of Multimedia Information Processing, School of Computer Science,
     Peking University, CUHK.'
-  ko: ''
+  ko: 'DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of
+    Reasoning and Action (DualVLA), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by MoE Key Laboratory of Brain-inspired Intelligent
+    Perception and Cognition, University of Science and Technology of China, State
+    Key Laboratory of Multimedia Information Processing, School of Computer Science,
+    Peking University, CUHK.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -63,4 +69,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action (DualVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by MoE Key Laboratory of Brain-inspired Intelligent Perception and Cognition, University of Science and Technology of China, State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, CUHK.
+
+## Overview
+DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action (DualVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by MoE Key Laboratory of Brain-inspired Intelligent Perception and Cognition, University of Science and Technology of China, State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, CUHK.
+
+## 개요
 DualVLA: Building a Generalizable Embodied Agent via Partial Decoupling of Reasoning and Action (DualVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by MoE Key Laboratory of Brain-inspired Intelligent Perception and Cognition, University of Science and Technology of China, State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, CUHK.

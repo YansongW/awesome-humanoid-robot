@@ -8,7 +8,8 @@ names:
     AI-Driven Hardware and Software Platform
   zh: Vention and FANUC America Join Forces to Bring Industrial Robots to Vention's
     AI-Driven Hardware and Software Platform
-  ko: ''
+  ko: Vention and FANUC America Join Forces to Bring Industrial Robots to Vention's
+    AI-Driven Hardware and Software Platform
 summary:
   en: Live demonstrations at Automate 2026 feature FANUC CRX10iA and LR Mate 200iD
     robots powered by Vention's MachineMotion AI and MachineLogic software for machine
@@ -16,7 +17,9 @@ summary:
   zh: Live demonstrations at Automate 2026 feature FANUC CRX10iA and LR Mate 200iD
     robots powered by Vention's MachineMotion AI and MachineLogic software for machine
     tending and adaptive robotic motion applications.
-  ko: ''
+  ko: Live demonstrations at Automate 2026 feature FANUC CRX10iA and LR Mate 200iD
+    robots powered by Vention's MachineMotion AI and MachineLogic software for machine
+    tending and adaptive robotic motion applications.
 domains:
 - 11_applications_markets
 layers:
@@ -47,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Live demonstrations at Automate 2026 feature FANUC CRX10iA and LR Mate 200iD robots powered by Vention's MachineMotion AI and MachineLogic software for machine tending and adaptive robotic motion applications.
+
+## Overview
+Live demonstrations at Automate 2026 feature FANUC CRX10iA and LR Mate 200iD robots powered by Vention's MachineMotion AI and MachineLogic software for machine tending and adaptive robotic motion applications.
+
+## 개요
 Live demonstrations at Automate 2026 feature FANUC CRX10iA and LR Mate 200iD robots powered by Vention's MachineMotion AI and MachineLogic software for machine tending and adaptive robotic motion applications.

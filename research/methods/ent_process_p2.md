@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 工业设计与外观工程（ID / A-Surface）
-  ko: ''
+  ko: 工业设计与外观工程（ID / A-Surface）
 summary:
   en: ''
   zh: 工业设计与外观工程（ID / A-Surface）
-  ko: ''
+  ko: 工业设计与外观工程（ID / A-Surface）
 domains:
 - 06_design_engineering
 layers:
@@ -34,5 +34,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+工业设计与外观工程（ID / A-Surface）
 
+## Overview
+工业设计与外观工程（ID / A-Surface）
 
+## 개요
+工业设计与外观工程（ID / A-Surface）

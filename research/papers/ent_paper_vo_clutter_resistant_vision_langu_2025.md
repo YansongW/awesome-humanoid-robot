@@ -7,7 +7,8 @@ names:
   en: Clutter-Resistant Vision-Language-Action Models through Object-Centric and Geometry
     Grounding
   zh: OBEYED-VLA
-  ko: ''
+  ko: Clutter-Resistant Vision-Language-Action Models through Object-Centric and Geometry
+    Grounding
 summary:
   en: Clutter-Resistant Vision-Language-Action Models through Object-Centric and Geometry
     Grounding (OBEYED-VLA), is a 2025 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: Clutter-Resistant Vision-Language-Action Models through Object-Centric and Geometry
     Grounding (OBEYED-VLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by University of Arkansas.
-  ko: ''
+  ko: Clutter-Resistant Vision-Language-Action Models through Object-Centric and Geometry
+    Grounding (OBEYED-VLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by University of Arkansas.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Clutter-Resistant Vision-Language-Action Models through Object-Centric and Geometry Grounding (OBEYED-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Arkansas.
+
+## Overview
+Clutter-Resistant Vision-Language-Action Models through Object-Centric and Geometry Grounding (OBEYED-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Arkansas.
+
+## 개요
 Clutter-Resistant Vision-Language-Action Models through Object-Centric and Geometry Grounding (OBEYED-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Arkansas.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'PICO: Reconstructing 3D People In Contact with Objects'
   zh: 'PICO: Reconstructing 3D People In Contact with Objects'
-  ko: ''
+  ko: 'PICO: Reconstructing 3D People In Contact with Objects'
 summary:
   en: 'PICO: Reconstructing 3D People In Contact with Objects is a 2025 work on human
     motion analysis and synthesis for humanoid robots.'
   zh: 'PICO: Reconstructing 3D People In Contact with Objects is a 2025 work on human
     motion analysis and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'PICO: Reconstructing 3D People In Contact with Objects is a 2025 work on human
+    motion analysis and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PICO: Reconstructing 3D People In Contact with Objects is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+PICO: Reconstructing 3D People In Contact with Objects is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 PICO: Reconstructing 3D People In Contact with Objects is a 2025 work on human motion analysis and synthesis for humanoid robots.

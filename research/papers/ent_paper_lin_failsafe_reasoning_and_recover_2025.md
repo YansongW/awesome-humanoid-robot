@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'FailSafe: Reasoning and Recovery from Failures in Vision-Language-Action Models'
   zh: FailSafe
-  ko: ''
+  ko: 'FailSafe: Reasoning and Recovery from Failures in Vision-Language-Action Models'
 summary:
   en: 'FailSafe: Reasoning and Recovery from Failures in Vision-Language-Action Models
     (FailSafe), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'FailSafe: Reasoning and Recovery from Failures in Vision-Language-Action Models
     (FailSafe), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by University of Washington.'
-  ko: ''
+  ko: 'FailSafe: Reasoning and Recovery from Failures in Vision-Language-Action Models
+    (FailSafe), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by University of Washington.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FailSafe: Reasoning and Recovery from Failures in Vision-Language-Action Models (FailSafe), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Washington.
+
+## Overview
+FailSafe: Reasoning and Recovery from Failures in Vision-Language-Action Models (FailSafe), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Washington.
+
+## 개요
 FailSafe: Reasoning and Recovery from Failures in Vision-Language-Action Models (FailSafe), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Washington.

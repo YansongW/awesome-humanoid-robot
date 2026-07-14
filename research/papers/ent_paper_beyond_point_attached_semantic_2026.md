@@ -8,7 +8,8 @@ names:
     Manipulation'
   zh: 'Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable
     Manipulation'
-  ko: ''
+  ko: 'Beyond Point-Attached Semantics: Object-Centric Semantic Fields for Generalizable
+    Manipulation'
 summary:
   en: "arXiv:2607.03163v1 Announce Type: new \nAbstract: Generalizable robot manipulation\
     \ requires stable 3D understanding of functional object parts, such as handles,\
@@ -40,7 +41,21 @@ summary:
     \ that our representation provides more stable functional-part cues and improves\
     \ policy performance over raw point-cloud, 2D feature lifting, and 3D point-wise\
     \ feature baselines. Project Page: \\href{https://zainzh.github.io/beyond-point-attached-semantics}{https://zainzh.github.io/beyond-point-attached-semantics}."
-  ko: ''
+  ko: "arXiv:2607.03163v1 Announce Type: new \nAbstract: Generalizable robot manipulation\
+    \ requires stable 3D understanding of functional object parts, such as handles,\
+    \ tool heads, openings, and graspable regions. Raw point clouds provide geometry\
+    \ but lack explicit part semantics, and their sampled points vary with viewpoint,\
+    \ sensor configuration, and object instance. Existing 2D feature lifting and discrete\
+    \ 3D point-wise features enrich point clouds with semantics, but the resulting\
+    \ features remain attached to observation-dependent samples. We propose an object-centric\
+    \ continuous semantic field that conditions on an object point cloud and reads\
+    \ part-aware semantic embeddings at explicit 3D query locations. The field is\
+    \ trained from part-annotated object models and then frozen to generate semantic\
+    \ point clouds as object-level conditioning for manipulation policies. Experiments\
+    \ on RoboTwin simulation tasks and real-world bimanual object manipulation show\
+    \ that our representation provides more stable functional-part cues and improves\
+    \ policy performance over raw point-cloud, 2D feature lifting, and 3D point-wise\
+    \ feature baselines. Project Page: \\href{https://zainzh.github.io/beyond-point-attached-semantics}{https://zainzh.github.io/beyond-point-attached-semantics}."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -71,5 +86,14 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+arXiv:2607.03163v1 Announce Type: new 
+Abstract: Generalizable robot manipulation requires stable 3D understanding of functional object parts, such as handles, tool heads, openings, and graspable regions. Raw point clouds provide geometry but lack explicit part semantics, and their sampled points vary with viewpoint, sensor configuration, and object instance. Existing 2D feature lifting and discrete 3D point-wise features enrich point clouds with semantics, but the resulting features remain attached to observation-dependent samples. We propose an object-centric continuous semantic field that conditions on an object point cloud and reads part-aware semantic embeddings at explicit 3D query locations. The field is trained from part-annotated object models and then frozen to generate semantic point clouds as object-level conditioning for manipulation policies. Experiments on RoboTwin simulation tasks and real-world bimanual object manipulation show that our representation provides more stable functional-part cues and improves policy performance over raw point-cloud, 2D feature lifting, and 3D point-wise feature baselines. Project Page: \href{https://zainzh.github.io/beyond-point-attached-semantics}{https://zainzh.github.io/beyond-point-attached-semantics}.
+
+## Overview
+arXiv:2607.03163v1 Announce Type: new 
+Abstract: Generalizable robot manipulation requires stable 3D understanding of functional object parts, such as handles, tool heads, openings, and graspable regions. Raw point clouds provide geometry but lack explicit part semantics, and their sampled points vary with viewpoint, sensor configuration, and object instance. Existing 2D feature lifting and discrete 3D point-wise features enrich point clouds with semantics, but the resulting features remain attached to observation-dependent samples. We propose an object-centric continuous semantic field that conditions on an object point cloud and reads part-aware semantic embeddings at explicit 3D query locations. The field is trained from part-annotated object models and then frozen to generate semantic point clouds as object-level conditioning for manipulation policies. Experiments on RoboTwin simulation tasks and real-world bimanual object manipulation show that our representation provides more stable functional-part cues and improves policy performance over raw point-cloud, 2D feature lifting, and 3D point-wise feature baselines. Project Page: \href{https://zainzh.github.io/beyond-point-attached-semantics}{https://zainzh.github.io/beyond-point-attached-semantics}.
+
+## 개요
 arXiv:2607.03163v1 Announce Type: new 
 Abstract: Generalizable robot manipulation requires stable 3D understanding of functional object parts, such as handles, tool heads, openings, and graspable regions. Raw point clouds provide geometry but lack explicit part semantics, and their sampled points vary with viewpoint, sensor configuration, and object instance. Existing 2D feature lifting and discrete 3D point-wise features enrich point clouds with semantics, but the resulting features remain attached to observation-dependent samples. We propose an object-centric continuous semantic field that conditions on an object point cloud and reads part-aware semantic embeddings at explicit 3D query locations. The field is trained from part-annotated object models and then frozen to generate semantic point clouds as object-level conditioning for manipulation policies. Experiments on RoboTwin simulation tasks and real-world bimanual object manipulation show that our representation provides more stable functional-part cues and improves policy performance over raw point-cloud, 2D feature lifting, and 3D point-wise feature baselines. Project Page: \href{https://zainzh.github.io/beyond-point-attached-semantics}{https://zainzh.github.io/beyond-point-attached-semantics}.

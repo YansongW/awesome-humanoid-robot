@@ -41,4 +41,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+面向通用机器人控制和开放世界泛化的VLA流模型。
+
+## Overview
+VLA flow model for general robot control and open-world generalization.
+
+## 개요
 VLA flow model for general robot control and open-world generalization.

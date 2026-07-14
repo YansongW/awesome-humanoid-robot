@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting'
   zh: 'ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting'
-  ko: ''
+  ko: 'ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting'
 summary:
   en: 'ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting is a 2026
     work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting is a 2026
     work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting is a 2026
+    work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 ReActor: Reinforcement Learning for Physics-Aware Motion Retargeting is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

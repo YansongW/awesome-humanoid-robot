@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing'
   zh: 'RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing'
-  ko: ''
+  ko: 'RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing'
 summary:
   en: 'RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing is
     a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing is
     a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing is
+    a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 RoboStriker: Hierarchical Decision-Making for Autonomous Humanoid Boxing is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

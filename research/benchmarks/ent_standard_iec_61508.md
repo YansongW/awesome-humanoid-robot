@@ -8,8 +8,8 @@ names:
   zh: IEC 61508
   ko: IEC 61508
 summary:
-  en: An international standard for functional safety of electrical/electronic/programmable electronic safety-related systems,
-    foundational for industrial and robot safety.
+  en: An international standard for functional safety of electrical/electronic/programmable
+    electronic safety-related systems, foundational for industrial and robot safety.
   zh: 电气/电子/可编程电子安全相关系统功能安全的国际标准，是工业与机器人安全的基础。
   ko: 전기·전자·프로그래머블 전자 안전 관련 시스템의 기능 안전에 관한 국제 표준.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+电气/电子/可编程电子安全相关系统功能安全的国际标准，是工业与机器人安全的基础。
+
+## Overview
+An international standard for functional safety of electrical/electronic/programmable electronic safety-related systems, foundational for industrial and robot safety.
+
+## 개요
+An international standard for functional safety of electrical/electronic/programmable electronic safety-related systems, foundational for industrial and robot safety.

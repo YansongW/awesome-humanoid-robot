@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+广泛用于模仿学习的带语言指令的桌面操作数据集。
+
+## Overview
+Widely used tabletop manipulation dataset with language instructions for imitation learning.
+
+## 개요
 Widely used tabletop manipulation dataset with language instructions for imitation learning.

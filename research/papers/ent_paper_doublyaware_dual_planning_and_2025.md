@@ -8,13 +8,15 @@ names:
     in Humanoid Locomotion'
   zh: 'DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning
     in Humanoid Locomotion'
-  ko: ''
+  ko: 'DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning
+    in Humanoid Locomotion'
 summary:
   en: 'DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning
     in Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.'
   zh: 'DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning
     in Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning
+    in Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 DoublyAware: Dual Planning and Policy Awareness for Temporal Difference Learning in Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.

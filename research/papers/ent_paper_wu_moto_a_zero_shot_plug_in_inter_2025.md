@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'MoTo: A Zero-shot Plug-in Interaction-aware Navigation for General Mobile Manipulation'
   zh: MoTo
-  ko: ''
+  ko: 'MoTo: A Zero-shot Plug-in Interaction-aware Navigation for General Mobile Manipulation'
 summary:
   en: 'MoTo: A Zero-shot Plug-in Interaction-aware Navigation for General Mobile Manipulation
     (MoTo), is a 2025 large vision-language-action model for robotic manipulation,
@@ -22,7 +22,13 @@ summary:
     and Electronic Engineering, Nanyang Technological University, School of IEA, Beijing
     University of Posts and Telecommunications, Department of Automation, Tsinghua
     University, and published at CoRL25.'
-  ko: ''
+  ko: 'MoTo: A Zero-shot Plug-in Interaction-aware Navigation for General Mobile Manipulation
+    (MoTo), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Beijing Key Laboratory of Embodied Intelligence Systems, Beijing
+    National Research Center for Information Science and Technology, School of Electrical
+    and Electronic Engineering, Nanyang Technological University, School of IEA, Beijing
+    University of Posts and Telecommunications, Department of Automation, Tsinghua
+    University, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -66,4 +72,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MoTo: A Zero-shot Plug-in Interaction-aware Navigation for General Mobile Manipulation (MoTo), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Key Laboratory of Embodied Intelligence Systems, Beijing National Research Center for Information Science and Technology, School of Electrical and Electronic Engineering, Nanyang Technological University, School of IEA, Beijing University of Posts and Telecommunications, Department of Automation, Tsinghua University, and published at CoRL25.
+
+## Overview
+MoTo: A Zero-shot Plug-in Interaction-aware Navigation for General Mobile Manipulation (MoTo), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Key Laboratory of Embodied Intelligence Systems, Beijing National Research Center for Information Science and Technology, School of Electrical and Electronic Engineering, Nanyang Technological University, School of IEA, Beijing University of Posts and Telecommunications, Department of Automation, Tsinghua University, and published at CoRL25.
+
+## 개요
 MoTo: A Zero-shot Plug-in Interaction-aware Navigation for General Mobile Manipulation (MoTo), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Key Laboratory of Embodied Intelligence Systems, Beijing National Research Center for Information Science and Technology, School of Electrical and Electronic Engineering, Nanyang Technological University, School of IEA, Beijing University of Posts and Telecommunications, Department of Automation, Tsinghua University, and published at CoRL25.

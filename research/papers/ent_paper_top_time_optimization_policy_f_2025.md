@@ -8,13 +8,15 @@ names:
     with Humanoid Robots'
   zh: 'TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation
     with Humanoid Robots'
-  ko: ''
+  ko: 'TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation
+    with Humanoid Robots'
 summary:
   en: 'TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation
     with Humanoid Robots is a 2025 work on manipulation for humanoid robots.'
   zh: 'TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation
     with Humanoid Robots is a 2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation
+    with Humanoid Robots is a 2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation with Humanoid Robots is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation with Humanoid Robots is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 TOP: Time Optimization Policy for Stable and Accurate Standing Manipulation with Humanoid Robots is a 2025 work on manipulation for humanoid robots.

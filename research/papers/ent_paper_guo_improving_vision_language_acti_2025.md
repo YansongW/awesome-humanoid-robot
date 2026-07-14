@@ -6,7 +6,7 @@ type: paper
 names:
   en: Improving Vision-Language-Action Model with Online Reinforcement Learning
   zh: iRe-VLA
-  ko: ''
+  ko: Improving Vision-Language-Action Model with Online Reinforcement Learning
 summary:
   en: Improving Vision-Language-Action Model with Online Reinforcement Learning (iRe-VLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Tsinghua University, University of California, Berkeley, Shanghai Qi Zhi Institute,
     and published at ICRA 2025.
-  ko: ''
+  ko: Improving Vision-Language-Action Model with Online Reinforcement Learning (iRe-VLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Tsinghua University, University of California, Berkeley, Shanghai Qi Zhi Institute,
+    and published at ICRA 2025.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Improving Vision-Language-Action Model with Online Reinforcement Learning (iRe-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, University of California, Berkeley, Shanghai Qi Zhi Institute, and published at ICRA 2025.
+
+## Overview
+Improving Vision-Language-Action Model with Online Reinforcement Learning (iRe-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, University of California, Berkeley, Shanghai Qi Zhi Institute, and published at ICRA 2025.
+
+## 개요
 Improving Vision-Language-Action Model with Online Reinforcement Learning (iRe-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, University of California, Berkeley, Shanghai Qi Zhi Institute, and published at ICRA 2025.

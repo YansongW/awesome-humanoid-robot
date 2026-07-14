@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft'
   zh: OpenHA
-  ko: ''
+  ko: 'OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft'
 summary:
   en: 'OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft (OpenHA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft (OpenHA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Peking University.'
-  ko: ''
+  ko: 'OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft (OpenHA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Peking University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft (OpenHA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University.
+
+## Overview
+OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft (OpenHA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University.
+
+## 개요
 OpenHA: A Series of Open-Source Hierarchical Agentic Models in Minecraft (OpenHA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University.

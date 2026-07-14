@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+构建一台人形机器人所需的所有零件、子装配件和原材料的结构化清单。
+
+## Overview
 Structured list of all parts, subassemblies, and raw materials required to build one humanoid robot unit.
+
+## 개요
+한 대의 휨로봇을 제작하는 데 필요한 모든 부품, 하위 조립품 및 원자재의 구조화된 목록.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Symmetric and Low-energy Locomotion
   zh: Learning Symmetric and Low-energy Locomotion
-  ko: ''
+  ko: Learning Symmetric and Low-energy Locomotion
 summary:
   en: Learning Symmetric and Low-energy Locomotion is a 2018 work on physics-based
     character animation for humanoid robots.
   zh: Learning Symmetric and Low-energy Locomotion is a 2018 work on physics-based
     character animation for humanoid robots.
-  ko: ''
+  ko: Learning Symmetric and Low-energy Locomotion is a 2018 work on physics-based
+    character animation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Symmetric and Low-energy Locomotion is a 2018 work on physics-based character animation for humanoid robots.
+
+## Overview
+Learning Symmetric and Low-energy Locomotion is a 2018 work on physics-based character animation for humanoid robots.
+
+## 개요
 Learning Symmetric and Low-energy Locomotion is a 2018 work on physics-based character animation for humanoid robots.

@@ -8,7 +8,8 @@ names:
     Solutions at Automate 2026
   zh: Techman Robot Empowers Manufacturers Moving to the US with Zero-Downtime AI
     Solutions at Automate 2026
-  ko: ''
+  ko: Techman Robot Empowers Manufacturers Moving to the US with Zero-Downtime AI
+    Solutions at Automate 2026
 summary:
   en: Techman Robot showcased its highly scalable AI automation solutions at Automate
     2026. Designed to support global manufacturers expanding their US operations,
@@ -18,7 +19,10 @@ summary:
     2026. Designed to support global manufacturers expanding their US operations,
     these technologies focus on rapid deployment, standardized quality control, and
     eliminating the "Hidden Cost Trap" of traditional automation.
-  ko: ''
+  ko: Techman Robot showcased its highly scalable AI automation solutions at Automate
+    2026. Designed to support global manufacturers expanding their US operations,
+    these technologies focus on rapid deployment, standardized quality control, and
+    eliminating the "Hidden Cost Trap" of traditional automation.
 domains:
 - 11_applications_markets
 layers:
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Techman Robot showcased its highly scalable AI automation solutions at Automate 2026. Designed to support global manufacturers expanding their US operations, these technologies focus on rapid deployment, standardized quality control, and eliminating the "Hidden Cost Trap" of traditional automation.
+
+## Overview
+Techman Robot showcased its highly scalable AI automation solutions at Automate 2026. Designed to support global manufacturers expanding their US operations, these technologies focus on rapid deployment, standardized quality control, and eliminating the "Hidden Cost Trap" of traditional automation.
+
+## 개요
 Techman Robot showcased its highly scalable AI automation solutions at Automate 2026. Designed to support global manufacturers expanding their US operations, these technologies focus on rapid deployment, standardized quality control, and eliminating the "Hidden Cost Trap" of traditional automation.

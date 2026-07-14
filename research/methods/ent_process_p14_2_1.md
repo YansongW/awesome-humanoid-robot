@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 数据记录与回放
-  ko: ''
+  ko: 数据记录与回放
 summary:
   en: ''
   zh: 数据记录方案、回放一致性验证
-  ko: ''
+  ko: 数据记录方案、回放一致性验证
 domains:
 - 08_software_middleware
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）

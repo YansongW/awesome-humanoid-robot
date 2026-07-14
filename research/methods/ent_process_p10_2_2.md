@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 步态规划与地形适应
-  ko: ''
+  ko: 步态规划与地形适应
 summary:
   en: ''
   zh: 平地/斜坡/障碍行走数据、速度/能耗满足 PRD
-  ko: ''
+  ko: 平地/斜坡/障碍行走数据、速度/能耗满足 PRD
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）

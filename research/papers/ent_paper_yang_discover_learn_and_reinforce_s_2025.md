@@ -7,7 +7,8 @@ names:
   en: 'Discover, Learn, and Reinforce: Scaling Vision-Language-Action Pretraining
     with Diverse RL-Generated Trajectories'
   zh: DLR
-  ko: ''
+  ko: 'Discover, Learn, and Reinforce: Scaling Vision-Language-Action Pretraining
+    with Diverse RL-Generated Trajectories'
 summary:
   en: 'Discover, Learn, and Reinforce: Scaling Vision-Language-Action Pretraining
     with Diverse RL-Generated Trajectories (DLR), is a 2025 large vision-language-action
@@ -19,7 +20,11 @@ summary:
     model for robotic manipulation, introduced by The Hong Kong University of Science
     and Technology, Tsinghua University, Wuhan University, Central South University,
     Microsoft Research.'
-  ko: ''
+  ko: 'Discover, Learn, and Reinforce: Scaling Vision-Language-Action Pretraining
+    with Diverse RL-Generated Trajectories (DLR), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by The Hong Kong University of Science
+    and Technology, Tsinghua University, Wuhan University, Central South University,
+    Microsoft Research.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Discover, Learn, and Reinforce: Scaling Vision-Language-Action Pretraining with Diverse RL-Generated Trajectories (DLR), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Hong Kong University of Science and Technology, Tsinghua University, Wuhan University, Central South University, Microsoft Research.
+
+## Overview
+Discover, Learn, and Reinforce: Scaling Vision-Language-Action Pretraining with Diverse RL-Generated Trajectories (DLR), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Hong Kong University of Science and Technology, Tsinghua University, Wuhan University, Central South University, Microsoft Research.
+
+## 개요
 Discover, Learn, and Reinforce: Scaling Vision-Language-Action Pretraining with Diverse RL-Generated Trajectories (DLR), is a 2025 large vision-language-action model for robotic manipulation, introduced by The Hong Kong University of Science and Technology, Tsinghua University, Wuhan University, Central South University, Microsoft Research.

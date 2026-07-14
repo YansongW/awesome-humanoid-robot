@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Avi: Action from Volumetric Inference'
   zh: Avi
-  ko: ''
+  ko: 'Avi: Action from Volumetric Inference'
 summary:
   en: 'Avi: Action from Volumetric Inference (Avi), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by University of California, Los Angeles,
@@ -14,7 +14,9 @@ summary:
   zh: 'Avi: Action from Volumetric Inference (Avi), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by University of California, Los Angeles,
     University of pennsylvania.'
-  ko: ''
+  ko: 'Avi: Action from Volumetric Inference (Avi), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by University of California, Los Angeles,
+    University of pennsylvania.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Avi: Action from Volumetric Inference (Avi), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of California, Los Angeles, University of pennsylvania.
+
+## Overview
+Avi: Action from Volumetric Inference (Avi), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of California, Los Angeles, University of pennsylvania.
+
+## 개요
 Avi: Action from Volumetric Inference (Avi), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of California, Los Angeles, University of pennsylvania.

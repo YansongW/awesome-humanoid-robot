@@ -8,7 +8,8 @@ names:
     Humanoid Robots via Visual-Language Models'
   zh: 'EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for
     Humanoid Robots via Visual-Language Models'
-  ko: ''
+  ko: 'EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for
+    Humanoid Robots via Visual-Language Models'
 summary:
   en: 'EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for
     Humanoid Robots via Visual-Language Models is a 2026 work on navigation for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for
     Humanoid Robots via Visual-Language Models is a 2026 work on navigation for humanoid
     robots.'
-  ko: ''
+  ko: 'EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for
+    Humanoid Robots via Visual-Language Models is a 2026 work on navigation for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models is a 2026 work on navigation for humanoid robots.
+
+## Overview
+EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models is a 2026 work on navigation for humanoid robots.
+
+## 개요
 EgoActor: Grounding Task Planning into Spatial-aware Egocentric Actions for Humanoid Robots via Visual-Language Models is a 2026 work on navigation for humanoid robots.

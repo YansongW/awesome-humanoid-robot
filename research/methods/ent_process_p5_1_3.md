@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 外观覆盖件与分缝设计
-  ko: ''
+  ko: 外观覆盖件与分缝设计
 summary:
   en: ''
   zh: 覆盖件 3D、分缝方案、维护开口布局
-  ko: ''
+  ko: 覆盖件 3D、分缝方案、维护开口布局
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）

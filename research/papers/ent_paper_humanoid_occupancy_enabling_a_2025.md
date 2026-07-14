@@ -8,13 +8,15 @@ names:
     System on Humanoid Robots'
   zh: 'Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception
     System on Humanoid Robots'
-  ko: ''
+  ko: 'Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception
+    System on Humanoid Robots'
 summary:
   en: 'Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception
     System on Humanoid Robots is a 2025 work on navigation for humanoid robots.'
   zh: 'Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception
     System on Humanoid Robots is a 2025 work on navigation for humanoid robots.'
-  ko: ''
+  ko: 'Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception
+    System on Humanoid Robots is a 2025 work on navigation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception System on Humanoid Robots is a 2025 work on navigation for humanoid robots.
+
+## Overview
+Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception System on Humanoid Robots is a 2025 work on navigation for humanoid robots.
+
+## 개요
 Humanoid Occupancy: Enabling A Generalized Multimodal Occupancy Perception System on Humanoid Robots is a 2025 work on navigation for humanoid robots.

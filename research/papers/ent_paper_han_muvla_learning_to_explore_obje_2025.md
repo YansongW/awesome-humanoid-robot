@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'MUVLA: Learning to Explore Object Navigation via Map Understanding'
   zh: MUVLA
-  ko: ''
+  ko: 'MUVLA: Learning to Explore Object Navigation via Map Understanding'
 summary:
   en: 'MUVLA: Learning to Explore Object Navigation via Map Understanding (MUVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'MUVLA: Learning to Explore Object Navigation via Map Understanding (MUVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Tianjin University, Dexmal, Beijing Institute of Technology.'
-  ko: ''
+  ko: 'MUVLA: Learning to Explore Object Navigation via Map Understanding (MUVLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Tianjin University, Dexmal, Beijing Institute of Technology.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MUVLA: Learning to Explore Object Navigation via Map Understanding (MUVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tianjin University, Dexmal, Beijing Institute of Technology.
+
+## Overview
+MUVLA: Learning to Explore Object Navigation via Map Understanding (MUVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tianjin University, Dexmal, Beijing Institute of Technology.
+
+## 개요
 MUVLA: Learning to Explore Object Navigation via Map Understanding (MUVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tianjin University, Dexmal, Beijing Institute of Technology.

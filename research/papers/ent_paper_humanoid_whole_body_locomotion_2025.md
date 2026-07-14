@@ -8,13 +8,15 @@ names:
     Learning
   zh: Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement
     Learning
-  ko: ''
+  ko: Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement
+    Learning
 summary:
   en: Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement
     Learning is a 2025 work on locomotion for humanoid robots.
   zh: Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement
     Learning is a 2025 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement
+    Learning is a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement Learning is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement Learning is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Humanoid Whole-Body Locomotion on Narrow Terrain via Dynamic Balance and Reinforcement Learning is a 2025 work on locomotion for humanoid robots.

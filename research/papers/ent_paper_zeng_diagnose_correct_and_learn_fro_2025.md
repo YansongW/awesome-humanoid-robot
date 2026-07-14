@@ -6,7 +6,7 @@ type: paper
 names:
   en: Diagnose Correct and Learn from Manipulation Failures via Visual Symbols
   zh: Diagnose Correct and Learn from Manipulation Failures via Visual Symbols
-  ko: ''
+  ko: Diagnose Correct and Learn from Manipulation Failures via Visual Symbols
 summary:
   en: Diagnose Correct and Learn from Manipulation Failures via Visual Symbols (Diagnose
     Correct and Learn from Manipulation Failures via Visual Symbols), is a 2025 large
@@ -18,7 +18,11 @@ summary:
     vision-language-action model for robotic manipulation, introduced by Beihang University,
     Shanghai Innovation Institute, Southern University of Science and Technology,
     Shanghai Jiao Tong University.
-  ko: ''
+  ko: Diagnose Correct and Learn from Manipulation Failures via Visual Symbols (Diagnose
+    Correct and Learn from Manipulation Failures via Visual Symbols), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by Beihang University,
+    Shanghai Innovation Institute, Southern University of Science and Technology,
+    Shanghai Jiao Tong University.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Diagnose Correct and Learn from Manipulation Failures via Visual Symbols (Diagnose Correct and Learn from Manipulation Failures via Visual Symbols), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beihang University, Shanghai Innovation Institute, Southern University of Science and Technology, Shanghai Jiao Tong University.
+
+## Overview
+Diagnose Correct and Learn from Manipulation Failures via Visual Symbols (Diagnose Correct and Learn from Manipulation Failures via Visual Symbols), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beihang University, Shanghai Innovation Institute, Southern University of Science and Technology, Shanghai Jiao Tong University.
+
+## 개요
 Diagnose Correct and Learn from Manipulation Failures via Visual Symbols (Diagnose Correct and Learn from Manipulation Failures via Visual Symbols), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beihang University, Shanghai Innovation Institute, Southern University of Science and Technology, Shanghai Jiao Tong University.

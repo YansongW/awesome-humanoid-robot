@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+集成到机器人关节中的紧凑型电机，通常与减速器和编码器配对形成执行器模组。
+
+## Overview
 Compact motor integrated into a robot joint, often paired with a reducer and encoder to form an actuator module.
+
+## 개요
+로봇 관절에 통합된 컴팩트한 모터, 일반적으로 감속기 및 인코더와 짝을 이루어 액추에이터 모듈을 형성.

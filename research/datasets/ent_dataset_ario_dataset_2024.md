@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+统一数据标准，约300万条片段，融合真实、仿真和转换的机器人数据来源。
+
+## Overview
 Unified data standard and ~3M-episode dataset combining real, simulated, and converted robot sources.
+
+## 개요
+실제, 시뮬레이션 및 변환된 로봇 소스를 결합한 통합 데이터 표준 및 약 300만 에피소드 데이터셋.

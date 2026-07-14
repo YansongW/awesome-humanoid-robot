@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'PyRoki: A Modular Toolkit for Robot Kinematic Optimization'
   zh: 'PyRoki: A Modular Toolkit for Robot Kinematic Optimization'
-  ko: ''
+  ko: 'PyRoki: A Modular Toolkit for Robot Kinematic Optimization'
 summary:
   en: 'PyRoki: A Modular Toolkit for Robot Kinematic Optimization is a 2025 work on
     loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'PyRoki: A Modular Toolkit for Robot Kinematic Optimization is a 2025 work on
     loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'PyRoki: A Modular Toolkit for Robot Kinematic Optimization is a 2025 work on
+    loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PyRoki: A Modular Toolkit for Robot Kinematic Optimization is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+PyRoki: A Modular Toolkit for Robot Kinematic Optimization is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 PyRoki: A Modular Toolkit for Robot Kinematic Optimization is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

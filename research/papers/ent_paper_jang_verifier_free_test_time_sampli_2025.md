@@ -6,7 +6,7 @@ type: paper
 names:
   en: Verifier-free Test-Time Sampling for Vision Language Action Models
   zh: MG-Select
-  ko: ''
+  ko: Verifier-free Test-Time Sampling for Vision Language Action Models
 summary:
   en: Verifier-free Test-Time Sampling for Vision Language Action Models (MG-Select),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: Verifier-free Test-Time Sampling for Vision Language Action Models (MG-Select),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by KAIST, Seoul National University, RLWRLD.
-  ko: ''
+  ko: Verifier-free Test-Time Sampling for Vision Language Action Models (MG-Select),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by KAIST, Seoul National University, RLWRLD.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Verifier-free Test-Time Sampling for Vision Language Action Models (MG-Select), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST, Seoul National University, RLWRLD.
+
+## Overview
+Verifier-free Test-Time Sampling for Vision Language Action Models (MG-Select), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST, Seoul National University, RLWRLD.
+
+## 개요
 Verifier-free Test-Time Sampling for Vision Language Action Models (MG-Select), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST, Seoul National University, RLWRLD.

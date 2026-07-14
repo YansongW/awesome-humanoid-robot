@@ -8,11 +8,12 @@ names:
     and Mobile Vision Applications
   zh: VeriSilicon Introduces CPP2000 Camera Post-Processing IP for Embodied Robotics
     and Mobile Vision Applications
-  ko: ''
+  ko: VeriSilicon Introduces CPP2000 Camera Post-Processing IP for Embodied Robotics
+    and Mobile Vision Applications
 summary:
   en: Enhancing image quality and visual perception for moving-camera systems
   zh: Enhancing image quality and visual perception for moving-camera systems
-  ko: ''
+  ko: Enhancing image quality and visual perception for moving-camera systems
 domains:
 - 11_applications_markets
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-06'
 ---
 
+## 概述
+Enhancing image quality and visual perception for moving-camera systems
+
+## Overview
+Enhancing image quality and visual perception for moving-camera systems
+
+## 개요
 Enhancing image quality and visual perception for moving-camera systems

@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy'
   zh: 'LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy'
-  ko: ''
+  ko: 'LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy'
 summary:
   en: 'LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy
     is a 2025 work on teleoperation for humanoid robots.'
   zh: 'LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy
     is a 2025 work on teleoperation for humanoid robots.'
-  ko: ''
+  ko: 'LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy
+    is a 2025 work on teleoperation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy is a 2025 work on teleoperation for humanoid robots.
+
+## Overview
+LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy is a 2025 work on teleoperation for humanoid robots.
+
+## 개요
 LapSurgie: Humanoid Robots Performing Surgery via Teleoperated Handheld Laparoscopy is a 2025 work on teleoperation for humanoid robots.

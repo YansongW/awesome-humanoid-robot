@@ -7,7 +7,8 @@ names:
   en: 'RoboUniView: Visual-Language Model with Unified View Representation for Robotic
     Manipulation'
   zh: RoboUniView
-  ko: ''
+  ko: 'RoboUniView: Visual-Language Model with Unified View Representation for Robotic
+    Manipulation'
 summary:
   en: 'RoboUniView: Visual-Language Model with Unified View Representation for Robotic
     Manipulation (RoboUniView), is a 2024 generalized vision-language-action model
@@ -15,7 +16,9 @@ summary:
   zh: 'RoboUniView: Visual-Language Model with Unified View Representation for Robotic
     Manipulation (RoboUniView), is a 2024 generalized vision-language-action model
     for robotic manipulation, introduced by Meituan.'
-  ko: ''
+  ko: 'RoboUniView: Visual-Language Model with Unified View Representation for Robotic
+    Manipulation (RoboUniView), is a 2024 generalized vision-language-action model
+    for robotic manipulation, introduced by Meituan.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboUniView: Visual-Language Model with Unified View Representation for Robotic Manipulation (RoboUniView), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Meituan.
+
+## Overview
+RoboUniView: Visual-Language Model with Unified View Representation for Robotic Manipulation (RoboUniView), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Meituan.
+
+## 개요
 RoboUniView: Visual-Language Model with Unified View Representation for Robotic Manipulation (RoboUniView), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Meituan.

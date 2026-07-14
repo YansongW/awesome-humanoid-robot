@@ -8,7 +8,8 @@ names:
     Human Motion Reconstruction'
   zh: 'PhysHMR: Learning Humanoid Control Policies from Vision for Physically Plausible
     Human Motion Reconstruction'
-  ko: ''
+  ko: 'PhysHMR: Learning Humanoid Control Policies from Vision for Physically Plausible
+    Human Motion Reconstruction'
 summary:
   en: 'PhysHMR: Learning Humanoid Control Policies from Vision for Physically Plausible
     Human Motion Reconstruction is a 2025 work on physics-based character animation
@@ -16,7 +17,9 @@ summary:
   zh: 'PhysHMR: Learning Humanoid Control Policies from Vision for Physically Plausible
     Human Motion Reconstruction is a 2025 work on physics-based character animation
     for humanoid robots.'
-  ko: ''
+  ko: 'PhysHMR: Learning Humanoid Control Policies from Vision for Physically Plausible
+    Human Motion Reconstruction is a 2025 work on physics-based character animation
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PhysHMR: Learning Humanoid Control Policies from Vision for Physically Plausible Human Motion Reconstruction is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+PhysHMR: Learning Humanoid Control Policies from Vision for Physically Plausible Human Motion Reconstruction is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 PhysHMR: Learning Humanoid Control Policies from Vision for Physically Plausible Human Motion Reconstruction is a 2025 work on physics-based character animation for humanoid robots.

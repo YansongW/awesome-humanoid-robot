@@ -6,13 +6,14 @@ type: paper
 names:
   en: Towards Adaptable Humanoid Control via Adaptive Motion Tracking
   zh: Towards Adaptable Humanoid Control via Adaptive Motion Tracking
-  ko: ''
+  ko: Towards Adaptable Humanoid Control via Adaptive Motion Tracking
 summary:
   en: Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work
     on loco-manipulation and whole-body-control for humanoid robots.
   zh: Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work
     on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work
+    on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

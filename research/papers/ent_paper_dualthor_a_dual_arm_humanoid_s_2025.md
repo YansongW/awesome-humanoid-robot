@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning'
   zh: 'DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning'
-  ko: ''
+  ko: 'DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning'
 summary:
   en: 'DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning
     is a 2025 work on simulation benchmark for humanoid robots.'
   zh: 'DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning
     is a 2025 work on simulation benchmark for humanoid robots.'
-  ko: ''
+  ko: 'DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning
+    is a 2025 work on simulation benchmark for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning is a 2025 work on simulation benchmark for humanoid robots.
+
+## Overview
+DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning is a 2025 work on simulation benchmark for humanoid robots.
+
+## 개요
 DualTHOR: A Dual-Arm Humanoid Simulation Platform for Contingency-Aware Planning is a 2025 work on simulation benchmark for humanoid robots.

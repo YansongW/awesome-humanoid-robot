@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation'
   zh: 'Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation'
-  ko: ''
+  ko: 'Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation'
 summary:
   en: 'Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation
     is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation
     is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation
+    is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -52,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Flow Multi-Support: Flow Matching Imitation Learning for Multi-Support Manipulation is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.

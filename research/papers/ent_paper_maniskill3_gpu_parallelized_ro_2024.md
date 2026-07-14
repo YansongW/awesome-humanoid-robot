@@ -8,7 +8,8 @@ names:
     Embodied AI'
   zh: 'ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable
     Embodied AI'
-  ko: ''
+  ko: 'ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable
+    Embodied AI'
 summary:
   en: 'ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable
     Embodied AI is a 2024 work on simulation benchmark for humanoid robots, with open-source
@@ -16,7 +17,9 @@ summary:
   zh: 'ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable
     Embodied AI is a 2024 work on simulation benchmark for humanoid robots, with open-source
     code available.'
-  ko: ''
+  ko: 'ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable
+    Embodied AI is a 2024 work on simulation benchmark for humanoid robots, with open-source
+    code available.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.
+
+## Overview
+ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.
+
+## 개요
 ManiSkill3: GPU Parallelized Robotics Simulation and Rendering for Generalizable Embodied AI is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.

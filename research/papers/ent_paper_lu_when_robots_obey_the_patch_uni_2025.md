@@ -7,7 +7,8 @@ names:
   en: 'When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action
     Models'
   zh: UPA-RFAS
-  ko: ''
+  ko: 'When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action
+    Models'
 summary:
   en: 'When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action
     Models (UPA-RFAS), is a 2025 large vision-language-action model for robotic manipulation,
@@ -15,7 +16,9 @@ summary:
   zh: 'When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action
     Models (UPA-RFAS), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Nanyang Technological University, DSO National Laboratories.'
-  ko: ''
+  ko: 'When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action
+    Models (UPA-RFAS), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Nanyang Technological University, DSO National Laboratories.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models (UPA-RFAS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nanyang Technological University, DSO National Laboratories.
+
+## Overview
+When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models (UPA-RFAS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nanyang Technological University, DSO National Laboratories.
+
+## 개요
 When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models (UPA-RFAS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nanyang Technological University, DSO National Laboratories.

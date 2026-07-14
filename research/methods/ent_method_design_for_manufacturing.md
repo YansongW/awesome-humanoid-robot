@@ -8,8 +8,8 @@ names:
   zh: 可制造性设计（DFM）
   ko: 제조 용이성 설계(DFM)
 summary:
-  en: An engineering practice of designing parts and assemblies so that they are easy, repeatable, and cost-effective to manufacture
-    at scale.
+  en: An engineering practice of designing parts and assemblies so that they are easy,
+    repeatable, and cost-effective to manufacture at scale.
   zh: 使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。
   ko: 부품과 조립체를 쉽고 재현 가능하며 비용 효율적으로 대량 생산할 수 있도록 설계하는 공학 방법론.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。
+
+## Overview
+An engineering practice of designing parts and assemblies so that they are easy, repeatable, and cost-effective to manufacture at scale.
+
+## 개요
+An engineering practice of designing parts and assemblies so that they are easy, repeatable, and cost-effective to manufacture at scale.

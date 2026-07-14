@@ -7,7 +7,8 @@ names:
   en: 'SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware
     Vision-Language-Action Model'
   zh: SeqVLA
-  ko: ''
+  ko: 'SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware
+    Vision-Language-Action Model'
 summary:
   en: 'SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware
     Vision-Language-Action Model (SeqVLA), is a 2025 large vision-language-action
@@ -15,7 +16,9 @@ summary:
   zh: 'SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware
     Vision-Language-Action Model (SeqVLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Drexel University, Virginia Tech.'
-  ko: ''
+  ko: 'SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware
+    Vision-Language-Action Model (SeqVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Drexel University, Virginia Tech.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware Vision-Language-Action Model (SeqVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Drexel University, Virginia Tech.
+
+## Overview
+SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware Vision-Language-Action Model (SeqVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Drexel University, Virginia Tech.
+
+## 개요
 SeqVLA: Sequential Task Execution for Long-Horizon Manipulation with Completion-Aware Vision-Language-Action Model (SeqVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Drexel University, Virginia Tech.

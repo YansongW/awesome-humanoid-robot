@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RT-1: Robotics Transformer for Real-World Control at Scale'
   zh: RT-1
-  ko: ''
+  ko: 'RT-1: Robotics Transformer for Real-World Control at Scale'
 summary:
   en: 'RT-1: Robotics Transformer for Real-World Control at Scale (RT-1), is a 2022
     generalized vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     generalized vision-language-action model for robotic manipulation, introduced
     by Robotics at Google, Everyday Robots, Google Research, Brain Team, and published
     at Robotics - Science and Systems 2022.'
-  ko: ''
+  ko: 'RT-1: Robotics Transformer for Real-World Control at Scale (RT-1), is a 2022
+    generalized vision-language-action model for robotic manipulation, introduced
+    by Robotics at Google, Everyday Robots, Google Research, Brain Team, and published
+    at Robotics - Science and Systems 2022.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RT-1: Robotics Transformer for Real-World Control at Scale (RT-1), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google, Everyday Robots, Google Research, Brain Team, and published at Robotics - Science and Systems 2022.
+
+## Overview
+RT-1: Robotics Transformer for Real-World Control at Scale (RT-1), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google, Everyday Robots, Google Research, Brain Team, and published at Robotics - Science and Systems 2022.
+
+## 개요
 RT-1: Robotics Transformer for Real-World Control at Scale (RT-1), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google, Everyday Robots, Google Research, Brain Team, and published at Robotics - Science and Systems 2022.

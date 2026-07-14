@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions'
   zh: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions'
-  ko: ''
+  ko: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions'
 summary:
   en: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human
     motion analysis and synthesis for humanoid robots.'
   zh: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human
     motion analysis and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human
+    motion analysis and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human motion analysis and synthesis for humanoid robots.

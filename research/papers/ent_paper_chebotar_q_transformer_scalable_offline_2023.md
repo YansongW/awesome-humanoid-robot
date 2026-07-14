@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions'
   zh: Q-Transformer
-  ko: ''
+  ko: 'Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions'
 summary:
   en: 'Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions
     (Q-Transformer), is a 2023 generalized vision-language-action model for robotic
@@ -14,7 +14,9 @@ summary:
   zh: 'Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions
     (Q-Transformer), is a 2023 generalized vision-language-action model for robotic
     manipulation, introduced by Google DeepMind, and published at CoRL 2023.'
-  ko: ''
+  ko: 'Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions
+    (Q-Transformer), is a 2023 generalized vision-language-action model for robotic
+    manipulation, introduced by Google DeepMind, and published at CoRL 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions (Q-Transformer), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at CoRL 2023.
+
+## Overview
+Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions (Q-Transformer), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at CoRL 2023.
+
+## 개요
 Q-Transformer: Scalable Offline Reinforcement Learning via Autoregressive Q-Functions (Q-Transformer), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, and published at CoRL 2023.

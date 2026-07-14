@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'STORM: Search-Guided Generative World Models for Robotic Manipulation'
   zh: STORM
-  ko: ''
+  ko: 'STORM: Search-Guided Generative World Models for Robotic Manipulation'
 summary:
   en: 'STORM: Search-Guided Generative World Models for Robotic Manipulation (STORM),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'STORM: Search-Guided Generative World Models for Robotic Manipulation (STORM),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Sun Yat-sen University.'
-  ko: ''
+  ko: 'STORM: Search-Guided Generative World Models for Robotic Manipulation (STORM),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Sun Yat-sen University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+STORM: Search-Guided Generative World Models for Robotic Manipulation (STORM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University.
+
+## Overview
+STORM: Search-Guided Generative World Models for Robotic Manipulation (STORM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University.
+
+## 개요
 STORM: Search-Guided Generative World Models for Robotic Manipulation (STORM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University.

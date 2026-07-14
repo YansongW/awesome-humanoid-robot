@@ -8,7 +8,8 @@ names:
     Prediction Augmentation'
   zh: 'Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with
     Prediction Augmentation'
-  ko: ''
+  ko: 'Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with
+    Prediction Augmentation'
 summary:
   en: 'Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with
     Prediction Augmentation is a 2025 work on loco-manipulation and whole-body-control
@@ -16,7 +17,9 @@ summary:
   zh: 'Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with
     Prediction Augmentation is a 2025 work on loco-manipulation and whole-body-control
     for humanoid robots.'
-  ko: ''
+  ko: 'Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with
+    Prediction Augmentation is a 2025 work on loco-manipulation and whole-body-control
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with Prediction Augmentation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with Prediction Augmentation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Towards Versatile Humanoid Table Tennis: Unified Reinforcement Learning with Prediction Augmentation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

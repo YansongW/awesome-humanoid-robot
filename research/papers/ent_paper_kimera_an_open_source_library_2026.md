@@ -8,13 +8,15 @@ names:
     Mapping'
   zh: 'Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and
     Mapping'
-  ko: ''
+  ko: 'Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and
+    Mapping'
 summary:
   en: 'Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and
     Mapping is a 2026 work on state estimation for humanoid robots.'
   zh: 'Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and
     Mapping is a 2026 work on state estimation for humanoid robots.'
-  ko: ''
+  ko: 'Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and
+    Mapping is a 2026 work on state estimation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping is a 2026 work on state estimation for humanoid robots.
+
+## Overview
+Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping is a 2026 work on state estimation for humanoid robots.
+
+## 개요
 Kimera: an Open-Source Library for Real-Time Metric-Semantic Localization and Mapping is a 2026 work on state estimation for humanoid robots.

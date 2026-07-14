@@ -7,7 +7,8 @@ names:
   en: 'RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action
     Models'
   zh: RoboMonkey
-  ko: ''
+  ko: 'RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action
+    Models'
 summary:
   en: 'RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action
     Models (RoboMonkey), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Models (RoboMonkey), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Stanford University, UC Berkeley, NVIDIA Research,
     and published at CoRL25.'
-  ko: ''
+  ko: 'RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action
+    Models (RoboMonkey), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Stanford University, UC Berkeley, NVIDIA Research,
+    and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action Models (RoboMonkey), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford University, UC Berkeley, NVIDIA Research, and published at CoRL25.
+
+## Overview
+RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action Models (RoboMonkey), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford University, UC Berkeley, NVIDIA Research, and published at CoRL25.
+
+## 개요
 RoboMonkey: Scaling Test-Time Sampling and Verification for Vision-Language-Action Models (RoboMonkey), is a 2025 large vision-language-action model for robotic manipulation, introduced by Stanford University, UC Berkeley, NVIDIA Research, and published at CoRL25.

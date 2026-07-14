@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'dVLA: Diffusion Vision-Language-Action Model with Multimodal Chain-of-Thought'
   zh: dVLA
-  ko: ''
+  ko: 'dVLA: Diffusion Vision-Language-Action Model with Multimodal Chain-of-Thought'
 summary:
   en: 'dVLA: Diffusion Vision-Language-Action Model with Multimodal Chain-of-Thought
     (dVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'dVLA: Diffusion Vision-Language-Action Model with Multimodal Chain-of-Thought
     (dVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Peking University, Shanghai Jiaotong University.'
-  ko: ''
+  ko: 'dVLA: Diffusion Vision-Language-Action Model with Multimodal Chain-of-Thought
+    (dVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Peking University, Shanghai Jiaotong University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+dVLA: Diffusion Vision-Language-Action Model with Multimodal Chain-of-Thought (dVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Shanghai Jiaotong University.
+
+## Overview
+dVLA: Diffusion Vision-Language-Action Model with Multimodal Chain-of-Thought (dVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Shanghai Jiaotong University.
+
+## 개요
 dVLA: Diffusion Vision-Language-Action Model with Multimodal Chain-of-Thought (dVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Shanghai Jiaotong University.

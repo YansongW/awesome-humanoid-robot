@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 载荷工况定义
-  ko: ''
+  ko: 载荷工况定义
 summary:
   en: ''
   zh: 《载荷工况表》：载荷大小、方向、作用点、发生概率
-  ko: ''
+  ko: 《载荷工况表》：载荷大小、方向、作用点、发生概率
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：结构强度仿真与迭代（Structural FEA）

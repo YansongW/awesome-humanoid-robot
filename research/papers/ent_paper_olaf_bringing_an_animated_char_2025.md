@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Olaf: Bringing an Animated Character to Life in the Physical World'
   zh: 'Olaf: Bringing an Animated Character to Life in the Physical World'
-  ko: ''
+  ko: 'Olaf: Bringing an Animated Character to Life in the Physical World'
 summary:
   en: 'Olaf: Bringing an Animated Character to Life in the Physical World is a 2025
     work on hardware design for humanoid robots.'
   zh: 'Olaf: Bringing an Animated Character to Life in the Physical World is a 2025
     work on hardware design for humanoid robots.'
-  ko: ''
+  ko: 'Olaf: Bringing an Animated Character to Life in the Physical World is a 2025
+    work on hardware design for humanoid robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Olaf: Bringing an Animated Character to Life in the Physical World is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+Olaf: Bringing an Animated Character to Life in the Physical World is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 Olaf: Bringing an Animated Character to Life in the Physical World is a 2025 work on hardware design for humanoid robots.

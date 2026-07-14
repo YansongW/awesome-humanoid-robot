@@ -6,11 +6,13 @@ type: report
 names:
   en: Unitree Go2 - Quadruped Robot of Embodied AI
   zh: Unitree Go2 - Quadruped Robot of Embodied AI
-  ko: ''
+  ko: Unitree Go2 - Quadruped Robot of Embodied AI
 summary:
-  en: Unitree Go2 - Quadruped Robot of Embodied AI is a knowledge node related to report in the humanoid robot value chain.
+  en: Unitree Go2 - Quadruped Robot of Embodied AI is a knowledge node related to
+    report in the humanoid robot value chain.
   zh: ''
-  ko: ''
+  ko: Unitree Go2 - Quadruped Robot of Embodied AI is a knowledge node related to
+    report in the humanoid robot value chain.
 domains:
 - 11_applications_markets
 - 06_design_engineering
@@ -40,3 +42,12 @@ sources:
   date: '2024-04-19'
   accessed_at: '2026-07-01'
 ---
+
+## 概述
+Unitree Go2 - Quadruped Robot of Embodied AI is a knowledge node related to report in the humanoid robot value chain.
+
+## Overview
+Unitree Go2 - Quadruped Robot of Embodied AI is a knowledge node related to report in the humanoid robot value chain.
+
+## 개요
+Unitree Go2 - Quadruped Robot of Embodied AI is a knowledge node related to report in the humanoid robot value chain.

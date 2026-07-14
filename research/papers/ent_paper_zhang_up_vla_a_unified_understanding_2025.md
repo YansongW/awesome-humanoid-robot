@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'UP-VLA: A Unified Understanding and Prediction Model for Embodied Agent'
   zh: UP-VLA
-  ko: ''
+  ko: 'UP-VLA: A Unified Understanding and Prediction Model for Embodied Agent'
 summary:
   en: 'UP-VLA: A Unified Understanding and Prediction Model for Embodied Agent (UP-VLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'UP-VLA: A Unified Understanding and Prediction Model for Embodied Agent (UP-VLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Tsinghua University, Shanghai Qi Zhi Institute, and published at ICML 2025.'
-  ko: ''
+  ko: 'UP-VLA: A Unified Understanding and Prediction Model for Embodied Agent (UP-VLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Tsinghua University, Shanghai Qi Zhi Institute, and published at ICML 2025.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+UP-VLA: A Unified Understanding and Prediction Model for Embodied Agent (UP-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Shanghai Qi Zhi Institute, and published at ICML 2025.
+
+## Overview
+UP-VLA: A Unified Understanding and Prediction Model for Embodied Agent (UP-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Shanghai Qi Zhi Institute, and published at ICML 2025.
+
+## 개요
 UP-VLA: A Unified Understanding and Prediction Model for Embodied Agent (UP-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Shanghai Qi Zhi Institute, and published at ICML 2025.

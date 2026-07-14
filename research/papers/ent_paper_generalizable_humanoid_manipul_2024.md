@@ -6,13 +6,14 @@ type: paper
 names:
   en: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies
   zh: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies
-  ko: ''
+  ko: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies
 summary:
   en: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies is a
     2024 work on manipulation for humanoid robots, with open-source code available.
   zh: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies is a
     2024 work on manipulation for humanoid robots, with open-source code available.
-  ko: ''
+  ko: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies is a
+    2024 work on manipulation for humanoid robots, with open-source code available.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies is a 2024 work on manipulation for humanoid robots, with open-source code available.
+
+## Overview
+Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies is a 2024 work on manipulation for humanoid robots, with open-source code available.
+
+## 개요
 Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies is a 2024 work on manipulation for humanoid robots, with open-source code available.

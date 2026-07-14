@@ -7,7 +7,8 @@ names:
   en: 'BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with
     Vision-Language Models'
   zh: BridgeVLA
-  ko: ''
+  ko: 'BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with
+    Vision-Language Models'
 summary:
   en: 'BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with
     Vision-Language Models (BridgeVLA), is a 2025 large vision-language-action model
@@ -19,7 +20,11 @@ summary:
     for robotic manipulation, introduced by ByteDance Seed, School of Artificial Intelligence,
     University of Chinese Academy of Sciences, Institute of Automation, Chinese Academy
     of Sciences, FiveAges, Nanjing University, and published at NIPS25.'
-  ko: ''
+  ko: 'BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with
+    Vision-Language Models (BridgeVLA), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by ByteDance Seed, School of Artificial Intelligence,
+    University of Chinese Academy of Sciences, Institute of Automation, Chinese Academy
+    of Sciences, FiveAges, Nanjing University, and published at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +66,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with Vision-Language Models (BridgeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed, School of Artificial Intelligence, University of Chinese Academy of Sciences, Institute of Automation, Chinese Academy of Sciences, FiveAges, Nanjing University, and published at NIPS25.
+
+## Overview
+BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with Vision-Language Models (BridgeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed, School of Artificial Intelligence, University of Chinese Academy of Sciences, Institute of Automation, Chinese Academy of Sciences, FiveAges, Nanjing University, and published at NIPS25.
+
+## 개요
 BridgeVLA: Input-Output Alignment for Efficient 3D Manipulation Learning with Vision-Language Models (BridgeVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed, School of Artificial Intelligence, University of Chinese Academy of Sciences, Institute of Automation, Chinese Academy of Sciences, FiveAges, Nanjing University, and published at NIPS25.

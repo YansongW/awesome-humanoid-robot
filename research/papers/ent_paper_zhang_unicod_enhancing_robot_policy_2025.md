@@ -7,7 +7,8 @@ names:
   en: 'UniCoD: Enhancing Robot Policy via Unified Continuous and Discrete Representation
     Learning'
   zh: UniCoD
-  ko: ''
+  ko: 'UniCoD: Enhancing Robot Policy via Unified Continuous and Discrete Representation
+    Learning'
 summary:
   en: 'UniCoD: Enhancing Robot Policy via Unified Continuous and Discrete Representation
     Learning (UniCoD), is a 2025 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Learning (UniCoD), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Institute for Interdisciplinary Information Sciences, Tsinghua University,
     Shanghai Qizhi Institute, Peking University, Shanghai AI Lab.'
-  ko: ''
+  ko: 'UniCoD: Enhancing Robot Policy via Unified Continuous and Discrete Representation
+    Learning (UniCoD), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Institute for Interdisciplinary Information Sciences, Tsinghua University,
+    Shanghai Qizhi Institute, Peking University, Shanghai AI Lab.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+UniCoD: Enhancing Robot Policy via Unified Continuous and Discrete Representation Learning (UniCoD), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for Interdisciplinary Information Sciences, Tsinghua University, Shanghai Qizhi Institute, Peking University, Shanghai AI Lab.
+
+## Overview
+UniCoD: Enhancing Robot Policy via Unified Continuous and Discrete Representation Learning (UniCoD), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for Interdisciplinary Information Sciences, Tsinghua University, Shanghai Qizhi Institute, Peking University, Shanghai AI Lab.
+
+## 개요
 UniCoD: Enhancing Robot Policy via Unified Continuous and Discrete Representation Learning (UniCoD), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for Interdisciplinary Information Sciences, Tsinghua University, Shanghai Qizhi Institute, Peking University, Shanghai AI Lab.

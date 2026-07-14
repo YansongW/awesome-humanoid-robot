@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+大规模干净的动作捕捉数据集，包含人体形状和姿态，广泛用于人形机器人仿真预训练。
+
+## Overview
 Large-scale clean motion-capture dataset of human body shapes and poses, widely used for humanoid sim pre-training.
+
+## 개요
+인체 형태와 자세를 포함한 대규모 클린 모션 캡처 데이터셋, 휨로봇 시뮬레이션 사전 학습에 널리 사용.

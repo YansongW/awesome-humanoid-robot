@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds'
   zh: 'BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds'
-  ko: ''
+  ko: 'BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds'
 summary:
   en: 'BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds is a 2025
     work on locomotion for humanoid robots.'
   zh: 'BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds is a 2025
     work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds is a 2025
+    work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -49,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 BeamDojo: Learning Agile Humanoid Locomotion on Sparse Footholds is a 2025 work on locomotion for humanoid robots.

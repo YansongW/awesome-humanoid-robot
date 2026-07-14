@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control'
   zh: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control'
-  ko: ''
+  ko: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control'
 summary:
   en: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control
     is a 2025 work on locomotion for humanoid robots.'
   zh: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control
     is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control
+    is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control is a 2025 work on locomotion for humanoid robots.

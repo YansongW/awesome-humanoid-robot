@@ -8,13 +8,15 @@ names:
     Systems
   zh: An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry
     Systems
-  ko: ''
+  ko: An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry
+    Systems
 summary:
   en: An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry
     Systems is a 2022 work on state estimation for humanoid robots.
   zh: An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry
     Systems is a 2022 work on state estimation for humanoid robots.
-  ko: ''
+  ko: An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry
+    Systems is a 2022 work on state estimation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems is a 2022 work on state estimation for humanoid robots.
+
+## Overview
+An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems is a 2022 work on state estimation for humanoid robots.
+
+## 개요
 An Empirical Evaluation of Four Off-the-Shelf Proprietary Visual-Inertial Odometry Systems is a 2022 work on state estimation for humanoid robots.

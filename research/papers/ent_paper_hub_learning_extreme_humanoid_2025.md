@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'HuB: Learning Extreme Humanoid Balance'
   zh: 'HuB: Learning Extreme Humanoid Balance'
-  ko: ''
+  ko: 'HuB: Learning Extreme Humanoid Balance'
 summary:
   en: 'HuB: Learning Extreme Humanoid Balance is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
   zh: 'HuB: Learning Extreme Humanoid Balance is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'HuB: Learning Extreme Humanoid Balance is a 2025 work on loco-manipulation
+    and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HuB: Learning Extreme Humanoid Balance is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+HuB: Learning Extreme Humanoid Balance is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 HuB: Learning Extreme Humanoid Balance is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

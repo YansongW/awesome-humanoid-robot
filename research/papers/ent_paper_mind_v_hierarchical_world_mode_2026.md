@@ -8,7 +8,8 @@ names:
     RL-based Physical Alignment'
   zh: 'MIND-V: Hierarchical World Model for Long-Horizon Robotic Manipulation with
     RL-based Physical Alignment'
-  ko: ''
+  ko: 'MIND-V: Hierarchical World Model for Long-Horizon Robotic Manipulation with
+    RL-based Physical Alignment'
 summary:
   en: "arXiv:2512.06628v4 Announce Type: replace \nAbstract: Scalable embodied intelligence\
     \ is constrained by the scarcity of diverse, long-horizon robotic manipulation\
@@ -48,7 +49,25 @@ summary:
     \ in the latent feature space. Experiments confirm MIND-V's SOTA performance in\
     \ long-horizon simulation and its significant value for policy learning, introducing\
     \ a scalable and fully autonomous framework for embodied data synthesis."
-  ko: ''
+  ko: "arXiv:2512.06628v4 Announce Type: replace \nAbstract: Scalable embodied intelligence\
+    \ is constrained by the scarcity of diverse, long-horizon robotic manipulation\
+    \ data. Existing video world models in this domain are limited to synthesizing\
+    \ short clips of simple actions and often rely on manually defined trajectories.\
+    \ To this end, we introduce MIND-V, a cognitive hierarchical world model designed\
+    \ to synthesize physically plausible and logically coherent videos of long-horizon\
+    \ robotic manipulation. Inspired by cognitive science, MIND-V bridges high-level\
+    \ reasoning with pixel-level synthesis through three core components: a Semantic\
+    \ Reasoning Hub (SRH) that leverages a pre-trained vision-language model for task\
+    \ planning; a Behavioral Semantic Bridge (BSB) that translates abstract instructions\
+    \ into domain-invariant representations; and a Motor Video Generator (MVG) for\
+    \ conditional video rendering. MIND-V employs Staged Visual Future Rollouts, a\
+    \ test-time optimization strategy to enhance long-horizon robustness. To enforce\
+    \ adherence to physical laws, we introduce a GRPO reinforcement learning post-training\
+    \ phase guided by a novel Physical Foresight Coherence (PFC) reward. PFC leverages\
+    \ the V-JEPA2 world model as a physics referee to penalize implausible dynamics\
+    \ in the latent feature space. Experiments confirm MIND-V's SOTA performance in\
+    \ long-horizon simulation and its significant value for policy learning, introducing\
+    \ a scalable and fully autonomous framework for embodied data synthesis."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -79,5 +98,14 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+arXiv:2512.06628v4 Announce Type: replace 
+Abstract: Scalable embodied intelligence is constrained by the scarcity of diverse, long-horizon robotic manipulation data. Existing video world models in this domain are limited to synthesizing short clips of simple actions and often rely on manually defined trajectories. To this end, we introduce MIND-V, a cognitive hierarchical world model designed to synthesize physically plausible and logically coherent videos of long-horizon robotic manipulation. Inspired by cognitive science, MIND-V bridges high-level reasoning with pixel-level synthesis through three core components: a Semantic Reasoning Hub (SRH) that leverages a pre-trained vision-language model for task planning; a Behavioral Semantic Bridge (BSB) that translates abstract instructions into domain-invariant representations; and a Motor Video Generator (MVG) for conditional video rendering. MIND-V employs Staged Visual Future Rollouts, a test-time optimization strategy to enhance long-horizon robustness. To enforce adherence to physical laws, we introduce a GRPO reinforcement learning post-training phase guided by a novel Physical Foresight Coherence (PFC) reward. PFC leverages the V-JEPA2 world model as a physics referee to penalize implausible dynamics in the latent feature space. Experiments confirm MIND-V's SOTA performance in long-horizon simulation and its significant value for policy learning, introducing a scalable and fully autonomous framework for embodied data synthesis.
+
+## Overview
+arXiv:2512.06628v4 Announce Type: replace 
+Abstract: Scalable embodied intelligence is constrained by the scarcity of diverse, long-horizon robotic manipulation data. Existing video world models in this domain are limited to synthesizing short clips of simple actions and often rely on manually defined trajectories. To this end, we introduce MIND-V, a cognitive hierarchical world model designed to synthesize physically plausible and logically coherent videos of long-horizon robotic manipulation. Inspired by cognitive science, MIND-V bridges high-level reasoning with pixel-level synthesis through three core components: a Semantic Reasoning Hub (SRH) that leverages a pre-trained vision-language model for task planning; a Behavioral Semantic Bridge (BSB) that translates abstract instructions into domain-invariant representations; and a Motor Video Generator (MVG) for conditional video rendering. MIND-V employs Staged Visual Future Rollouts, a test-time optimization strategy to enhance long-horizon robustness. To enforce adherence to physical laws, we introduce a GRPO reinforcement learning post-training phase guided by a novel Physical Foresight Coherence (PFC) reward. PFC leverages the V-JEPA2 world model as a physics referee to penalize implausible dynamics in the latent feature space. Experiments confirm MIND-V's SOTA performance in long-horizon simulation and its significant value for policy learning, introducing a scalable and fully autonomous framework for embodied data synthesis.
+
+## 개요
 arXiv:2512.06628v4 Announce Type: replace 
 Abstract: Scalable embodied intelligence is constrained by the scarcity of diverse, long-horizon robotic manipulation data. Existing video world models in this domain are limited to synthesizing short clips of simple actions and often rely on manually defined trajectories. To this end, we introduce MIND-V, a cognitive hierarchical world model designed to synthesize physically plausible and logically coherent videos of long-horizon robotic manipulation. Inspired by cognitive science, MIND-V bridges high-level reasoning with pixel-level synthesis through three core components: a Semantic Reasoning Hub (SRH) that leverages a pre-trained vision-language model for task planning; a Behavioral Semantic Bridge (BSB) that translates abstract instructions into domain-invariant representations; and a Motor Video Generator (MVG) for conditional video rendering. MIND-V employs Staged Visual Future Rollouts, a test-time optimization strategy to enhance long-horizon robustness. To enforce adherence to physical laws, we introduce a GRPO reinforcement learning post-training phase guided by a novel Physical Foresight Coherence (PFC) reward. PFC leverages the V-JEPA2 world model as a physics referee to penalize implausible dynamics in the latent feature space. Experiments confirm MIND-V's SOTA performance in long-horizon simulation and its significant value for policy learning, introducing a scalable and fully autonomous framework for embodied data synthesis.

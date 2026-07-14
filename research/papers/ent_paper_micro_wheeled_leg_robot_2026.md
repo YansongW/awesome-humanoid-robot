@@ -6,11 +6,11 @@ type: paper
 names:
   en: Micro-Wheeled_leg-Robot
   zh: Micro-Wheeled_leg-Robot
-  ko: ''
+  ko: Micro-Wheeled_leg-Robot
 summary:
   en: Micro-Wheeled_leg-Robot is a 2026 work on hardware design for humanoid robots.
   zh: Micro-Wheeled_leg-Robot is a 2026 work on hardware design for humanoid robots.
-  ko: ''
+  ko: Micro-Wheeled_leg-Robot is a 2026 work on hardware design for humanoid robots.
 domains:
 - 06_design_engineering
 - 02_components
@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Micro-Wheeled_leg-Robot is a 2026 work on hardware design for humanoid robots.
+
+## Overview
+Micro-Wheeled_leg-Robot is a 2026 work on hardware design for humanoid robots.
+
+## 개요
 Micro-Wheeled_leg-Robot is a 2026 work on hardware design for humanoid robots.

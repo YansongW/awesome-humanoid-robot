@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration'
   zh: 'NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration'
-  ko: ''
+  ko: 'NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration'
 summary:
   en: 'NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration is a 2023
     work on navigation for humanoid robots.'
   zh: 'NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration is a 2023
     work on navigation for humanoid robots.'
-  ko: ''
+  ko: 'NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration is a 2023
+    work on navigation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration is a 2023 work on navigation for humanoid robots.
+
+## Overview
+NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration is a 2023 work on navigation for humanoid robots.
+
+## 개요
 NoMaD: Goal Masked Diffusion Policies for Navigation and Exploration is a 2023 work on navigation for humanoid robots.

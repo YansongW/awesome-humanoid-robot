@@ -8,7 +8,8 @@ names:
   zh: 物流仓储
   ko: 물류 및 창고 자동화
 summary:
-  en: The use of humanoid robots for picking, sorting, packing, and moving goods in logistics centers and warehouses.
+  en: The use of humanoid robots for picking, sorting, packing, and moving goods in
+    logistics centers and warehouses.
   zh: 在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。
   ko: 물류 센터와 창고에서 휴로봇을 이용한 피킹·분류·포장·운반 적용.
 domains:
@@ -28,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -37,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。
+
+## Overview
+The use of humanoid robots for picking, sorting, packing, and moving goods in logistics centers and warehouses.
+
+## 개요
+The use of humanoid robots for picking, sorting, packing, and moving goods in logistics centers and warehouses.

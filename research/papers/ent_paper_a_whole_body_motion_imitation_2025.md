@@ -8,7 +8,8 @@ names:
     Robot
   zh: A Whole-Body Motion Imitation Framework from Human Data for Full-Size Humanoid
     Robot
-  ko: ''
+  ko: A Whole-Body Motion Imitation Framework from Human Data for Full-Size Humanoid
+    Robot
 summary:
   en: A Whole-Body Motion Imitation Framework from Human Data for Full-Size Humanoid
     Robot is a 2025 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: A Whole-Body Motion Imitation Framework from Human Data for Full-Size Humanoid
     Robot is a 2025 work on loco-manipulation and whole-body-control for humanoid
     robots.
-  ko: ''
+  ko: A Whole-Body Motion Imitation Framework from Human Data for Full-Size Humanoid
+    Robot is a 2025 work on loco-manipulation and whole-body-control for humanoid
+    robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Whole-Body Motion Imitation Framework from Human Data for Full-Size Humanoid Robot is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+A Whole-Body Motion Imitation Framework from Human Data for Full-Size Humanoid Robot is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 A Whole-Body Motion Imitation Framework from Human Data for Full-Size Humanoid Robot is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

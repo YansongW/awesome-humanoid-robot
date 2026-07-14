@@ -6,13 +6,14 @@ type: paper
 names:
   en: Benchmarking Humanoid Imitation Learning with Motion Difficulty
   zh: Benchmarking Humanoid Imitation Learning with Motion Difficulty
-  ko: ''
+  ko: Benchmarking Humanoid Imitation Learning with Motion Difficulty
 summary:
   en: Benchmarking Humanoid Imitation Learning with Motion Difficulty is a 2025 work
     on simulation benchmark for humanoid robots.
   zh: Benchmarking Humanoid Imitation Learning with Motion Difficulty is a 2025 work
     on simulation benchmark for humanoid robots.
-  ko: ''
+  ko: Benchmarking Humanoid Imitation Learning with Motion Difficulty is a 2025 work
+    on simulation benchmark for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Benchmarking Humanoid Imitation Learning with Motion Difficulty is a 2025 work on simulation benchmark for humanoid robots.
+
+## Overview
+Benchmarking Humanoid Imitation Learning with Motion Difficulty is a 2025 work on simulation benchmark for humanoid robots.
+
+## 개요
 Benchmarking Humanoid Imitation Learning with Motion Difficulty is a 2025 work on simulation benchmark for humanoid robots.

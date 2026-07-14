@@ -8,13 +8,15 @@ names:
     Manipulation on Humanoids
   zh: arXiv 2025.02, Sim-to-Real Reinforcement Learning for Vision-Based Dexterous
     Manipulation on Humanoids
-  ko: ''
+  ko: arXiv 2025.02, Sim-to-Real Reinforcement Learning for Vision-Based Dexterous
+    Manipulation on Humanoids
 summary:
   en: arXiv 2025.02, Sim-to-Real Reinforcement Learning for Vision-Based Dexterous
     Manipulation on Humanoids is a 2025 work on manipulation for humanoid robots.
   zh: arXiv 2025.02, Sim-to-Real Reinforcement Learning for Vision-Based Dexterous
     Manipulation on Humanoids is a 2025 work on manipulation for humanoid robots.
-  ko: ''
+  ko: arXiv 2025.02, Sim-to-Real Reinforcement Learning for Vision-Based Dexterous
+    Manipulation on Humanoids is a 2025 work on manipulation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+arXiv 2025.02, Sim-to-Real Reinforcement Learning for Vision-Based Dexterous Manipulation on Humanoids is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+arXiv 2025.02, Sim-to-Real Reinforcement Learning for Vision-Based Dexterous Manipulation on Humanoids is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 arXiv 2025.02, Sim-to-Real Reinforcement Learning for Vision-Based Dexterous Manipulation on Humanoids is a 2025 work on manipulation for humanoid robots.

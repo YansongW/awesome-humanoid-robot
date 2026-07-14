@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 电源架构初步设计
-  ko: ''
+  ko: 电源架构初步设计
 summary:
   en: ''
   zh: 电源架构图、母线电压选择理由、功率预算 v1
-  ko: ''
+  ko: 电源架构图、母线电压选择理由、功率预算 v1
 domains:
 - 06_design_engineering
 - 02_components
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）

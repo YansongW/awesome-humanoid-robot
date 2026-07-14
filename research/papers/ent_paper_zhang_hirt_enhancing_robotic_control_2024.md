@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'HiRT: Enhancing Robotic Control with Hierarchical Robot Transformers'
   zh: HiRT
-  ko: ''
+  ko: 'HiRT: Enhancing Robotic Control with Hierarchical Robot Transformers'
 summary:
   en: 'HiRT: Enhancing Robotic Control with Hierarchical Robot Transformers (HiRT),
     is a 2024 large vision-language-action model for robotic manipulation, introduced
@@ -18,7 +18,11 @@ summary:
     by Institute for Interdisciplinary Information Sciences, Tsinghua University,
     University of California, Berkeley, Shanghai Qizhi Institute, and published at
     CoRL 2024.'
-  ko: ''
+  ko: 'HiRT: Enhancing Robotic Control with Hierarchical Robot Transformers (HiRT),
+    is a 2024 large vision-language-action model for robotic manipulation, introduced
+    by Institute for Interdisciplinary Information Sciences, Tsinghua University,
+    University of California, Berkeley, Shanghai Qizhi Institute, and published at
+    CoRL 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -52,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HiRT: Enhancing Robotic Control with Hierarchical Robot Transformers (HiRT), is a 2024 large vision-language-action model for robotic manipulation, introduced by Institute for Interdisciplinary Information Sciences, Tsinghua University, University of California, Berkeley, Shanghai Qizhi Institute, and published at CoRL 2024.
+
+## Overview
+HiRT: Enhancing Robotic Control with Hierarchical Robot Transformers (HiRT), is a 2024 large vision-language-action model for robotic manipulation, introduced by Institute for Interdisciplinary Information Sciences, Tsinghua University, University of California, Berkeley, Shanghai Qizhi Institute, and published at CoRL 2024.
+
+## 개요
 HiRT: Enhancing Robotic Control with Hierarchical Robot Transformers (HiRT), is a 2024 large vision-language-action model for robotic manipulation, introduced by Institute for Interdisciplinary Information Sciences, Tsinghua University, University of California, Berkeley, Shanghai Qizhi Institute, and published at CoRL 2024.

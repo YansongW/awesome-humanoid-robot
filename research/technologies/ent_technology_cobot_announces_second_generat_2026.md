@@ -8,7 +8,8 @@ names:
     AI to Real Operations
   zh: Cobot Announces Second-Generation Proxie, Bringing Production-Tested Physical
     AI to Real Operations
-  ko: ''
+  ko: Cobot Announces Second-Generation Proxie, Bringing Production-Tested Physical
+    AI to Real Operations
 summary:
   en: One production-tested platform combines mobility, bimanual manipulation, and
     self-directed task execution, deploying in days with no IT integration and no
@@ -16,7 +17,9 @@ summary:
   zh: One production-tested platform combines mobility, bimanual manipulation, and
     self-directed task execution, deploying in days with no IT integration and no
     human dispatcher
-  ko: ''
+  ko: One production-tested platform combines mobility, bimanual manipulation, and
+    self-directed task execution, deploying in days with no IT integration and no
+    human dispatcher
 domains:
 - 11_applications_markets
 layers:
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+One production-tested platform combines mobility, bimanual manipulation, and self-directed task execution, deploying in days with no IT integration and no human dispatcher
+
+## Overview
+One production-tested platform combines mobility, bimanual manipulation, and self-directed task execution, deploying in days with no IT integration and no human dispatcher
+
+## 개요
 One production-tested platform combines mobility, bimanual manipulation, and self-directed task execution, deploying in days with no IT integration and no human dispatcher

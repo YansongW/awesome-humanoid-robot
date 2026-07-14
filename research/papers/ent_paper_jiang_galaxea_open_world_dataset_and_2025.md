@@ -6,13 +6,14 @@ type: paper
 names:
   en: Galaxea Open-World Dataset and G0 Dual-System VLA Model
   zh: G0
-  ko: ''
+  ko: Galaxea Open-World Dataset and G0 Dual-System VLA Model
 summary:
   en: Galaxea Open-World Dataset and G0 Dual-System VLA Model (G0), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by Galaxea.
   zh: Galaxea Open-World Dataset and G0 Dual-System VLA Model (G0), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by Galaxea.
-  ko: ''
+  ko: Galaxea Open-World Dataset and G0 Dual-System VLA Model (G0), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by Galaxea.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Galaxea Open-World Dataset and G0 Dual-System VLA Model (G0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Galaxea.
+
+## Overview
+Galaxea Open-World Dataset and G0 Dual-System VLA Model (G0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Galaxea.
+
+## 개요
 Galaxea Open-World Dataset and G0 Dual-System VLA Model (G0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Galaxea.

@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-13'
 ---
 
-ISO/TS 15066 是协作机器人安全领域的重要技术规范，为工业场景中人与机器人协同作业提供了力/压力限值等量化安全准则。本词条正文正在施工中。
+## 概述
+定义协作机器人系统安全要求的技术规范，包括人机接触时的力与压力限值。
+
+## Overview
+Technical specification defining safety requirements for collaborative robot systems, including force and pressure limits for human-robot contact.
+
+## 개요
+Technical specification defining safety requirements for collaborative robot systems, including force and pressure limits for human-robot contact.

@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+双足行走和平衡控制的基础稳定性判据。
+
+## Overview
+Foundational stability criterion for bipedal walking and balance control.
+
+## 개요
 Foundational stability criterion for bipedal walking and balance control.

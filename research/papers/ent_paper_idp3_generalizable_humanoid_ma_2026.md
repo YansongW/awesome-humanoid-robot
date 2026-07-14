@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies'
   zh: 'iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies'
-  ko: ''
+  ko: 'iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies'
 summary:
   en: ''
   zh: 'iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies
     is a paper on 高影响力精选 High Impact Selection for humanoid robotics.'
-  ko: ''
+  ko: 'iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies
+    is a paper on 高影响力精选 High Impact Selection for humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,5 +43,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies is a paper on 高影响力精选 High Impact Selection for humanoid robotics.
 
+## 개요
 iDP3: Generalizable Humanoid Manipulation with Improved 3D Diffusion Policies is a paper on 高影响力精选 High Impact Selection for humanoid robotics.

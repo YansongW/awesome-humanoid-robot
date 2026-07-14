@@ -45,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+采用低减速比齿轮和高扭矩电机，实现高带宽和力透明度的执行器设计。
+
+## Overview
 Actuator design using low-ratio gears with high-torque motors to achieve high bandwidth and force transparency.
+
+## 개요
+저감속비 기어와 고토크 모터를 사용하여 높은 대역폭과 힘 투명성을 달성하는 액추에이터 설계.

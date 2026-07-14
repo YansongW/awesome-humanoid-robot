@@ -8,7 +8,8 @@ names:
     Household Activities'
   zh: 'BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday
     Household Activities'
-  ko: ''
+  ko: 'BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday
+    Household Activities'
 summary:
   en: 'BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday
     Household Activities is a 2025 work on loco-manipulation and whole-body-control
@@ -16,7 +17,9 @@ summary:
   zh: 'BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday
     Household Activities is a 2025 work on loco-manipulation and whole-body-control
     for humanoid robots.'
-  ko: ''
+  ko: 'BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday
+    Household Activities is a 2025 work on loco-manipulation and whole-body-control
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 BEHAVIOR Robot Suite: Streamlining Real-World Whole-Body Manipulation for Everyday Household Activities is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

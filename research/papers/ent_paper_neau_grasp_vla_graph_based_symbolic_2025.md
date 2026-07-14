@@ -7,7 +7,8 @@ names:
   en: 'GraSP-VLA: Graph-based Symbolic Action Representation for Long-Horizon Planning
     with VLA Policies'
   zh: GraSP-VLA
-  ko: ''
+  ko: 'GraSP-VLA: Graph-based Symbolic Action Representation for Long-Horizon Planning
+    with VLA Policies'
 summary:
   en: 'GraSP-VLA: Graph-based Symbolic Action Representation for Long-Horizon Planning
     with VLA Policies (GraSP-VLA), is a 2025 large vision-language-action model for
@@ -17,7 +18,10 @@ summary:
     with VLA Policies (GraSP-VLA), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by Umeå University, PrioriAnalytica, Bretagne
     INP - ENIB, IMT Atlantique, CNRS IRL 2010 CROSSING.'
-  ko: ''
+  ko: 'GraSP-VLA: Graph-based Symbolic Action Representation for Long-Horizon Planning
+    with VLA Policies (GraSP-VLA), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by Umeå University, PrioriAnalytica, Bretagne
+    INP - ENIB, IMT Atlantique, CNRS IRL 2010 CROSSING.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GraSP-VLA: Graph-based Symbolic Action Representation for Long-Horizon Planning with VLA Policies (GraSP-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Umeå University, PrioriAnalytica, Bretagne INP - ENIB, IMT Atlantique, CNRS IRL 2010 CROSSING.
+
+## Overview
+GraSP-VLA: Graph-based Symbolic Action Representation for Long-Horizon Planning with VLA Policies (GraSP-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Umeå University, PrioriAnalytica, Bretagne INP - ENIB, IMT Atlantique, CNRS IRL 2010 CROSSING.
+
+## 개요
 GraSP-VLA: Graph-based Symbolic Action Representation for Long-Horizon Planning with VLA Policies (GraSP-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Umeå University, PrioriAnalytica, Bretagne INP - ENIB, IMT Atlantique, CNRS IRL 2010 CROSSING.

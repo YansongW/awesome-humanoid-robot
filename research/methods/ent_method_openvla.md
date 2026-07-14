@@ -8,7 +8,8 @@ names:
   zh: OpenVLA
   ko: OpenVLA
 summary:
-  en: An open-source vision-language-action model trained on the Open X-Embodiment dataset for generalizable robot manipulation.
+  en: An open-source vision-language-action model trained on the Open X-Embodiment
+    dataset for generalizable robot manipulation.
   zh: 基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。
   ko: Open X-Embodiment 데이터셋으로 학습된 일반화 가능한 로봇 조작을 위한 오픈소스 비전-언어-행동 모델.
 domains:
@@ -29,8 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +39,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+基于Open X-Embodiment数据集训练的开源视觉-语言-动作模型，用于可泛化的机器人操作。
+
+## Overview
+An open-source vision-language-action model trained on the Open X-Embodiment dataset for generalizable robot manipulation.
+
+## 개요
+An open-source vision-language-action model trained on the Open X-Embodiment dataset for generalizable robot manipulation.

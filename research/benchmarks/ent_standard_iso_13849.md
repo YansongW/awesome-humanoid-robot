@@ -8,8 +8,8 @@ names:
   zh: ISO 13849
   ko: ISO 13849
 summary:
-  en: A safety standard for the design of control systems on machinery, specifying performance levels (PL) and safety categories
-    for risk reduction.
+  en: A safety standard for the design of control systems on machinery, specifying
+    performance levels (PL) and safety categories for risk reduction.
   zh: 机械控制系统安全设计的标准，规定了性能等级（PL）与安全类别以降低风险。
   ko: 기계의 제어 시스템 설계를 위한 안전 표준으로, 위험 감소를 위한 성능 등급(PL)과 안전 카테고리를 규정.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+机械控制系统安全设计的标准，规定了性能等级（PL）与安全类别以降低风险。
+
+## Overview
+A safety standard for the design of control systems on machinery, specifying performance levels (PL) and safety categories for risk reduction.
+
+## 개요
+A safety standard for the design of control systems on machinery, specifying performance levels (PL) and safety categories for risk reduction.

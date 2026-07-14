@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Wavelet Policy: Imitation Learning in the Scale Domain with World Prior Memory'
   zh: 'Wavelet Policy: Imitation Learning in the Scale Domain with World Prior Memory'
-  ko: ''
+  ko: 'Wavelet Policy: Imitation Learning in the Scale Domain with World Prior Memory'
 summary:
   en: "arXiv:2504.04991v5 Announce Type: replace \nAbstract: Conventional visuomotor\
     \ imitation learning usually predicts future robot actions directly in the time\
@@ -48,7 +48,26 @@ summary:
     \ outperforms strong baselines. These results demonstrate that combining scale-domain\
     \ action modeling with world-prior memory provides an effective and efficient\
     \ solution for embodied manipulation."
-  ko: ''
+  ko: "arXiv:2504.04991v5 Announce Type: replace \nAbstract: Conventional visuomotor\
+    \ imitation learning usually predicts future robot actions directly in the time\
+    \ domain. Such formulations often have limited physical scene awareness and weak\
+    \ memory. In this work, we propose Wavelet Policy, a lightweight imitation learning\
+    \ framework that combines World Prior Memory (WPM) with wavelet-based multi-scale\
+    \ action modeling. Our key idea is to encode persistent physical scene structure\
+    \ from static background images into compact memory tokens, which are fused into\
+    \ world-prior tokens and injected into the encoder during forward propagation.\
+    \ Based on this memory-conditioned representation, we further perform wavelet-domain\
+    \ decomposition over horizon-aligned latent action tokens and adopt a Single-Encoder\
+    \ Multiple-Decoder (SE2MD) architecture to model latent components at different\
+    \ temporal scales. The resulting latent subbands are reconstructed through inverse\
+    \ wavelet transform and finally projected into executable action chunks. To facilitate\
+    \ efficient world prior learning, we introduce a world-prior adaptation loss,\
+    \ encouraging the background encoder to retain persistent scene knowledge while\
+    \ remaining lightweight and stable. Extensive experiments on four simulated and\
+    \ six real-world robotic manipulation tasks show that Wavelet Policy consistently\
+    \ outperforms strong baselines. These results demonstrate that combining scale-domain\
+    \ action modeling with world-prior memory provides an effective and efficient\
+    \ solution for embodied manipulation."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -79,5 +98,14 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+arXiv:2504.04991v5 Announce Type: replace 
+Abstract: Conventional visuomotor imitation learning usually predicts future robot actions directly in the time domain. Such formulations often have limited physical scene awareness and weak memory. In this work, we propose Wavelet Policy, a lightweight imitation learning framework that combines World Prior Memory (WPM) with wavelet-based multi-scale action modeling. Our key idea is to encode persistent physical scene structure from static background images into compact memory tokens, which are fused into world-prior tokens and injected into the encoder during forward propagation. Based on this memory-conditioned representation, we further perform wavelet-domain decomposition over horizon-aligned latent action tokens and adopt a Single-Encoder Multiple-Decoder (SE2MD) architecture to model latent components at different temporal scales. The resulting latent subbands are reconstructed through inverse wavelet transform and finally projected into executable action chunks. To facilitate efficient world prior learning, we introduce a world-prior adaptation loss, encouraging the background encoder to retain persistent scene knowledge while remaining lightweight and stable. Extensive experiments on four simulated and six real-world robotic manipulation tasks show that Wavelet Policy consistently outperforms strong baselines. These results demonstrate that combining scale-domain action modeling with world-prior memory provides an effective and efficient solution for embodied manipulation.
+
+## Overview
+arXiv:2504.04991v5 Announce Type: replace 
+Abstract: Conventional visuomotor imitation learning usually predicts future robot actions directly in the time domain. Such formulations often have limited physical scene awareness and weak memory. In this work, we propose Wavelet Policy, a lightweight imitation learning framework that combines World Prior Memory (WPM) with wavelet-based multi-scale action modeling. Our key idea is to encode persistent physical scene structure from static background images into compact memory tokens, which are fused into world-prior tokens and injected into the encoder during forward propagation. Based on this memory-conditioned representation, we further perform wavelet-domain decomposition over horizon-aligned latent action tokens and adopt a Single-Encoder Multiple-Decoder (SE2MD) architecture to model latent components at different temporal scales. The resulting latent subbands are reconstructed through inverse wavelet transform and finally projected into executable action chunks. To facilitate efficient world prior learning, we introduce a world-prior adaptation loss, encouraging the background encoder to retain persistent scene knowledge while remaining lightweight and stable. Extensive experiments on four simulated and six real-world robotic manipulation tasks show that Wavelet Policy consistently outperforms strong baselines. These results demonstrate that combining scale-domain action modeling with world-prior memory provides an effective and efficient solution for embodied manipulation.
+
+## 개요
 arXiv:2504.04991v5 Announce Type: replace 
 Abstract: Conventional visuomotor imitation learning usually predicts future robot actions directly in the time domain. Such formulations often have limited physical scene awareness and weak memory. In this work, we propose Wavelet Policy, a lightweight imitation learning framework that combines World Prior Memory (WPM) with wavelet-based multi-scale action modeling. Our key idea is to encode persistent physical scene structure from static background images into compact memory tokens, which are fused into world-prior tokens and injected into the encoder during forward propagation. Based on this memory-conditioned representation, we further perform wavelet-domain decomposition over horizon-aligned latent action tokens and adopt a Single-Encoder Multiple-Decoder (SE2MD) architecture to model latent components at different temporal scales. The resulting latent subbands are reconstructed through inverse wavelet transform and finally projected into executable action chunks. To facilitate efficient world prior learning, we introduce a world-prior adaptation loss, encouraging the background encoder to retain persistent scene knowledge while remaining lightweight and stable. Extensive experiments on four simulated and six real-world robotic manipulation tasks show that Wavelet Policy consistently outperforms strong baselines. These results demonstrate that combining scale-domain action modeling with world-prior memory provides an effective and efficient solution for embodied manipulation.

@@ -8,7 +8,8 @@ names:
     Framework'
   zh: 'Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action
     Framework'
-  ko: ''
+  ko: 'Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action
+    Framework'
 summary:
   en: 'Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action
     Framework is a 2026 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action
     Framework is a 2026 work on loco-manipulation and whole-body-control for humanoid
     robots.'
-  ko: ''
+  ko: 'Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action
+    Framework is a 2026 work on loco-manipulation and whole-body-control for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action Framework is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action Framework is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action Framework is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

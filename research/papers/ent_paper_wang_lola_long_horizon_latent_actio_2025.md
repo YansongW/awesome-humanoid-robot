@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'LoLA: Long Horizon Latent Action Learning for General Robot Manipulation'
   zh: LoLA
-  ko: ''
+  ko: 'LoLA: Long Horizon Latent Action Learning for General Robot Manipulation'
 summary:
   en: 'LoLA: Long Horizon Latent Action Learning for General Robot Manipulation (LoLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Institute of Microelectronics, Chinese Academy of Sciences, University of Chinese
     Academy of Sciences, Microsoft Research.'
-  ko: ''
+  ko: 'LoLA: Long Horizon Latent Action Learning for General Robot Manipulation (LoLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Institute of Microelectronics, Chinese Academy of Sciences, University of Chinese
+    Academy of Sciences, Microsoft Research.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+LoLA: Long Horizon Latent Action Learning for General Robot Manipulation (LoLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Microelectronics, Chinese Academy of Sciences, University of Chinese Academy of Sciences, Microsoft Research.
+
+## Overview
+LoLA: Long Horizon Latent Action Learning for General Robot Manipulation (LoLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Microelectronics, Chinese Academy of Sciences, University of Chinese Academy of Sciences, Microsoft Research.
+
+## 개요
 LoLA: Long Horizon Latent Action Learning for General Robot Manipulation (LoLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Microelectronics, Chinese Academy of Sciences, University of Chinese Academy of Sciences, Microsoft Research.

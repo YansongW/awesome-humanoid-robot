@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control'
   zh: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control'
-  ko: ''
+  ko: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control'
 summary:
   en: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control
+    is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 轻量化与拓扑优化
-  ko: ''
+  ko: 轻量化与拓扑优化
 summary:
   en: ''
   zh: 优化后 CAD、减重比例 > 目标、强度仍满足
-  ko: ''
+  ko: 优化后 CAD、减重比例 > 目标、强度仍满足
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：结构强度仿真与迭代（Structural FEA）

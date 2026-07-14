@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 人机交互与可解释性
-  ko: ''
+  ko: 人机交互与可解释性
 summary:
   en: ''
   zh: HMI 设计、交互原型、可用性测试报告
-  ko: ''
+  ko: HMI 设计、交互原型、可用性测试报告
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）

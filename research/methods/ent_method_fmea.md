@@ -8,8 +8,8 @@ names:
   zh: 失效模式与影响分析（FMEA）
   ko: 고장 모드 및 영향 분석(FMEA)
 summary:
-  en: A bottom-up reliability method that identifies potential failure modes, their causes and effects, and prioritizes actions
-    to mitigate risk.
+  en: A bottom-up reliability method that identifies potential failure modes, their
+    causes and effects, and prioritizes actions to mitigate risk.
   zh: 自下而上识别潜在失效模式、原因与影响，并优先采取缓解措施的可靠性分析方法。
   ko: 잠재적 고장 모드·원인·영향을 식별하고 위험 완화 조치의 우선순위를 정하는 상향식 신뢰성 방법.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+自下而上识别潜在失效模式、原因与影响，并优先采取缓解措施的可靠性分析方法。
+
+## Overview
+A bottom-up reliability method that identifies potential failure modes, their causes and effects, and prioritizes actions to mitigate risk.
+
+## 개요
+A bottom-up reliability method that identifies potential failure modes, their causes and effects, and prioritizes actions to mitigate risk.

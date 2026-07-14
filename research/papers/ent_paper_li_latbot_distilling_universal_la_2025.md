@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'LatBot: Distilling Universal Latent Actions for Vision-Language-Action Models'
   zh: LatBot
-  ko: ''
+  ko: 'LatBot: Distilling Universal Latent Actions for Vision-Language-Action Models'
 summary:
   en: 'LatBot: Distilling Universal Latent Actions for Vision-Language-Action Models
     (LatBot), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (LatBot), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Institute of Microelectronics, Chinese Academy of Sciences, University
     of Chinese Academy of Sciences, Microsoft Research.'
-  ko: ''
+  ko: 'LatBot: Distilling Universal Latent Actions for Vision-Language-Action Models
+    (LatBot), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Institute of Microelectronics, Chinese Academy of Sciences, University
+    of Chinese Academy of Sciences, Microsoft Research.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+LatBot: Distilling Universal Latent Actions for Vision-Language-Action Models (LatBot), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Microelectronics, Chinese Academy of Sciences, University of Chinese Academy of Sciences, Microsoft Research.
+
+## Overview
+LatBot: Distilling Universal Latent Actions for Vision-Language-Action Models (LatBot), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Microelectronics, Chinese Academy of Sciences, University of Chinese Academy of Sciences, Microsoft Research.
+
+## 개요
 LatBot: Distilling Universal Latent Actions for Vision-Language-Action Models (LatBot), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Microelectronics, Chinese Academy of Sciences, University of Chinese Academy of Sciences, Microsoft Research.

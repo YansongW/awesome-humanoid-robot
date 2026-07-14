@@ -6,7 +6,7 @@ type: report
 names:
   en: Agentic AI for Robot Teams
   zh: Agentic AI for Robot Teams
-  ko: ''
+  ko: Agentic AI for Robot Teams
 summary:
   en: This presentation highlights recent efforts at the Johns Hopkins Applied Physics
     Laboratory to advance agentic AI for collaborative robotic teams. It begins by
@@ -30,7 +30,17 @@ summary:
     demonstrations of the approach running in hardware with a heterogeneous team of
     robots Presents lessons learned and future work in this area Download this free
     whitepaper now!
-  ko: ''
+  ko: This presentation highlights recent efforts at the Johns Hopkins Applied Physics
+    Laboratory to advance agentic AI for collaborative robotic teams. It begins by
+    framing the core challenges of enabling autonomy, coordination, and adaptability
+    across heterogeneous systems, then introduces a scalable architecture designed
+    to support agentic behaviors in multi-robot environments. The talk concludes with
+    key challenges encountered and practical lessons learned from ongoing research
+    and development. Key learnings Provides an introduction to LLM-based AI Agents
+    Describes an approach to applying LLM-based AI Agents to robotic teams Provides
+    demonstrations of the approach running in hardware with a heterogeneous team of
+    robots Presents lessons learned and future work in this area Download this free
+    whitepaper now!
 domains:
 - 11_applications_markets
 - 07_ai_models_algorithms
@@ -62,4 +72,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+This presentation highlights recent efforts at the Johns Hopkins Applied Physics Laboratory to advance agentic AI for collaborative robotic teams. It begins by framing the core challenges of enabling autonomy, coordination, and adaptability across heterogeneous systems, then introduces a scalable architecture designed to support agentic behaviors in multi-robot environments. The talk concludes with key challenges encountered and practical lessons learned from ongoing research and development. Key learnings Provides an introduction to LLM-based AI Agents Describes an approach to applying LLM-based AI Agents to robotic teams Provides demonstrations of the approach running in hardware with a heterogeneous team of robots Presents lessons learned and future work in this area Download this free whitepaper now!
+
+## Overview
+This presentation highlights recent efforts at the Johns Hopkins Applied Physics Laboratory to advance agentic AI for collaborative robotic teams. It begins by framing the core challenges of enabling autonomy, coordination, and adaptability across heterogeneous systems, then introduces a scalable architecture designed to support agentic behaviors in multi-robot environments. The talk concludes with key challenges encountered and practical lessons learned from ongoing research and development. Key learnings Provides an introduction to LLM-based AI Agents Describes an approach to applying LLM-based AI Agents to robotic teams Provides demonstrations of the approach running in hardware with a heterogeneous team of robots Presents lessons learned and future work in this area Download this free whitepaper now!
+
+## 개요
 This presentation highlights recent efforts at the Johns Hopkins Applied Physics Laboratory to advance agentic AI for collaborative robotic teams. It begins by framing the core challenges of enabling autonomy, coordination, and adaptability across heterogeneous systems, then introduces a scalable architecture designed to support agentic behaviors in multi-robot environments. The talk concludes with key challenges encountered and practical lessons learned from ongoing research and development. Key learnings Provides an introduction to LLM-based AI Agents Describes an approach to applying LLM-based AI Agents to robotic teams Provides demonstrations of the approach running in hardware with a heterogeneous team of robots Presents lessons learned and future work in this area Download this free whitepaper now!

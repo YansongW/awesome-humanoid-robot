@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 模具与工装设计
-  ko: ''
+  ko: 模具与工装设计
 summary:
   en: ''
   zh: 模具/工装图纸、FAI 计划、验收标准
-  ko: ''
+  ko: 模具/工装图纸、FAI 计划、验收标准
 domains:
 - 05_mass_production
 - 11_applications_markets
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）

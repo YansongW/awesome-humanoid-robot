@@ -8,7 +8,8 @@ names:
     Valuation in Push for Physical AI Foundation Models
   zh: X Square Robot Secures Four Consecutive Financing Rounds, Surpasses US$2.8 Billion
     Valuation in Push for Physical AI Foundation Models
-  ko: ''
+  ko: X Square Robot Secures Four Consecutive Financing Rounds, Surpasses US$2.8 Billion
+    Valuation in Push for Physical AI Foundation Models
 summary:
   en: New funding supports development of embodied AI foundation models, commercial
     deployments and integrated robotics infrastructure, only embodied AI company backed
@@ -16,7 +17,9 @@ summary:
   zh: New funding supports development of embodied AI foundation models, commercial
     deployments and integrated robotics infrastructure, only embodied AI company backed
     by all four major Chinese internet technology leaders
-  ko: ''
+  ko: New funding supports development of embodied AI foundation models, commercial
+    deployments and integrated robotics infrastructure, only embodied AI company backed
+    by all four major Chinese internet technology leaders
 domains:
 - 11_applications_markets
 layers:
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+New funding supports development of embodied AI foundation models, commercial deployments and integrated robotics infrastructure, only embodied AI company backed by all four major Chinese internet technology leaders
+
+## Overview
+New funding supports development of embodied AI foundation models, commercial deployments and integrated robotics infrastructure, only embodied AI company backed by all four major Chinese internet technology leaders
+
+## 개요
 New funding supports development of embodied AI foundation models, commercial deployments and integrated robotics infrastructure, only embodied AI company backed by all four major Chinese internet technology leaders

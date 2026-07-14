@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'AutoPrune: Each Complexity Deserves a Pruning Policy'
   zh: AutoPrune
-  ko: ''
+  ko: 'AutoPrune: Each Complexity Deserves a Pruning Policy'
 summary:
   en: 'AutoPrune: Each Complexity Deserves a Pruning Policy (AutoPrune), is a 2025
     large vision-language-action model for robotic manipulation, introduced by State
@@ -22,7 +22,13 @@ summary:
     Shanghai Jiao Tong University, Anyverse Intelligence, Beijing Key Laboratory of
     Super Intelligent Security of Multi-Modal Information, School of Information Science
     and Technology, ShanghaiTech University, KargoBot.'
-  ko: ''
+  ko: 'AutoPrune: Each Complexity Deserves a Pruning Policy (AutoPrune), is a 2025
+    large vision-language-action model for robotic manipulation, introduced by State
+    Key Laboratory of Multimodal Artificial Intelligence Systems (MAIS), CASIA, School
+    of Artificial Intelligence, University of Chinese Academy of Sciences, AutoLab,
+    Shanghai Jiao Tong University, Anyverse Intelligence, Beijing Key Laboratory of
+    Super Intelligent Security of Multi-Modal Information, School of Information Science
+    and Technology, ShanghaiTech University, KargoBot.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -65,4 +71,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AutoPrune: Each Complexity Deserves a Pruning Policy (AutoPrune), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimodal Artificial Intelligence Systems (MAIS), CASIA, School of Artificial Intelligence, University of Chinese Academy of Sciences, AutoLab, Shanghai Jiao Tong University, Anyverse Intelligence, Beijing Key Laboratory of Super Intelligent Security of Multi-Modal Information, School of Information Science and Technology, ShanghaiTech University, KargoBot.
+
+## Overview
+AutoPrune: Each Complexity Deserves a Pruning Policy (AutoPrune), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimodal Artificial Intelligence Systems (MAIS), CASIA, School of Artificial Intelligence, University of Chinese Academy of Sciences, AutoLab, Shanghai Jiao Tong University, Anyverse Intelligence, Beijing Key Laboratory of Super Intelligent Security of Multi-Modal Information, School of Information Science and Technology, ShanghaiTech University, KargoBot.
+
+## 개요
 AutoPrune: Each Complexity Deserves a Pruning Policy (AutoPrune), is a 2025 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimodal Artificial Intelligence Systems (MAIS), CASIA, School of Artificial Intelligence, University of Chinese Academy of Sciences, AutoLab, Shanghai Jiao Tong University, Anyverse Intelligence, Beijing Key Laboratory of Super Intelligent Security of Multi-Modal Information, School of Information Science and Technology, ShanghaiTech University, KargoBot.

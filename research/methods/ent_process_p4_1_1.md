@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 关节性能需求精化
-  ko: ''
+  ko: 关节性能需求精化
 summary:
   en: ''
   zh: 各关节最终扭矩/速度/带宽需求表 v2
-  ko: ''
+  ko: 各关节最终扭矩/速度/带宽需求表 v2
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）

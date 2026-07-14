@@ -7,7 +7,8 @@ names:
   en: 'HiMoE-VLA: Hierarchical Mixture-of-Experts for Generalist Vision-Language-Action
     Policies'
   zh: HiMoE-VLA
-  ko: ''
+  ko: 'HiMoE-VLA: Hierarchical Mixture-of-Experts for Generalist Vision-Language-Action
+    Policies'
 summary:
   en: 'HiMoE-VLA: Hierarchical Mixture-of-Experts for Generalist Vision-Language-Action
     Policies (HiMoE-VLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Policies (HiMoE-VLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Fudan University, Microsoft Research Asia, Xi’an Jiaotong
     University, Tsinghua University.'
-  ko: ''
+  ko: 'HiMoE-VLA: Hierarchical Mixture-of-Experts for Generalist Vision-Language-Action
+    Policies (HiMoE-VLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Fudan University, Microsoft Research Asia, Xi’an Jiaotong
+    University, Tsinghua University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HiMoE-VLA: Hierarchical Mixture-of-Experts for Generalist Vision-Language-Action Policies (HiMoE-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, Microsoft Research Asia, Xi’an Jiaotong University, Tsinghua University.
+
+## Overview
+HiMoE-VLA: Hierarchical Mixture-of-Experts for Generalist Vision-Language-Action Policies (HiMoE-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, Microsoft Research Asia, Xi’an Jiaotong University, Tsinghua University.
+
+## 개요
 HiMoE-VLA: Hierarchical Mixture-of-Experts for Generalist Vision-Language-Action Policies (HiMoE-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, Microsoft Research Asia, Xi’an Jiaotong University, Tsinghua University.

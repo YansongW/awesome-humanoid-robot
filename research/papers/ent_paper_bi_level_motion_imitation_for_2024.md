@@ -6,13 +6,14 @@ type: paper
 names:
   en: Bi-Level Motion Imitation for Humanoid Robots
   zh: Bi-Level Motion Imitation for Humanoid Robots
-  ko: ''
+  ko: Bi-Level Motion Imitation for Humanoid Robots
 summary:
   en: Bi-Level Motion Imitation for Humanoid Robots is a 2024 work on locomotion for
     humanoid robots.
   zh: Bi-Level Motion Imitation for Humanoid Robots is a 2024 work on locomotion for
     humanoid robots.
-  ko: ''
+  ko: Bi-Level Motion Imitation for Humanoid Robots is a 2024 work on locomotion for
+    humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -41,4 +42,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Bi-Level Motion Imitation for Humanoid Robots is a 2024 work on locomotion for humanoid robots.
+
+## Overview
+Bi-Level Motion Imitation for Humanoid Robots is a 2024 work on locomotion for humanoid robots.
+
+## 개요
 Bi-Level Motion Imitation for Humanoid Robots is a 2024 work on locomotion for humanoid robots.

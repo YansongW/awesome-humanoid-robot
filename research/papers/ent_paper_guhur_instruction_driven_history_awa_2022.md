@@ -6,7 +6,7 @@ type: paper
 names:
   en: Instruction-driven history-aware policies for robotic manipulations
   zh: Hiveformer
-  ko: ''
+  ko: Instruction-driven history-aware policies for robotic manipulations
 summary:
   en: Instruction-driven history-aware policies for robotic manipulations (Hiveformer),
     is a 2022 generalized vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2022 generalized vision-language-action model for robotic manipulation, introduced
     by Inria, École normale supérieure, CNRS, PSL Research University, IIIT Hyderabad,
     and published at CoRL 2022.
-  ko: ''
+  ko: Instruction-driven history-aware policies for robotic manipulations (Hiveformer),
+    is a 2022 generalized vision-language-action model for robotic manipulation, introduced
+    by Inria, École normale supérieure, CNRS, PSL Research University, IIIT Hyderabad,
+    and published at CoRL 2022.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Instruction-driven history-aware policies for robotic manipulations (Hiveformer), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by Inria, École normale supérieure, CNRS, PSL Research University, IIIT Hyderabad, and published at CoRL 2022.
+
+## Overview
+Instruction-driven history-aware policies for robotic manipulations (Hiveformer), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by Inria, École normale supérieure, CNRS, PSL Research University, IIIT Hyderabad, and published at CoRL 2022.
+
+## 개요
 Instruction-driven history-aware policies for robotic manipulations (Hiveformer), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by Inria, École normale supérieure, CNRS, PSL Research University, IIIT Hyderabad, and published at CoRL 2022.

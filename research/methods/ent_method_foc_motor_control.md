@@ -8,8 +8,9 @@ names:
   zh: 磁场定向控制（FOC）
   ko: 자장 지향 제어(FOC)
 summary:
-  en: A motor-control method that transforms three-phase currents into a rotating dq reference frame to enable independent
-    control of torque and flux, similar to a DC machine.
+  en: A motor-control method that transforms three-phase currents into a rotating
+    dq reference frame to enable independent control of torque and flux, similar to
+    a DC machine.
   zh: 将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。
   ko: 삼상 전류를 회전하는 dq 좌표계로 변환하여 토크와 자속을 독립 제어하는 모터 제어 방식.
 domains:
@@ -29,8 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +39,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。
+
+## Overview
+A motor-control method that transforms three-phase currents into a rotating dq reference frame to enable independent control of torque and flux, similar to a DC machine.
+
+## 개요
+A motor-control method that transforms three-phase currents into a rotating dq reference frame to enable independent control of torque and flux, similar to a DC machine.

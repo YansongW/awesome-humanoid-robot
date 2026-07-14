@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 可靠性目标与分配
-  ko: ''
+  ko: 可靠性目标与分配
 summary:
   en: ''
   zh: 可靠性目标分配表、关键件 MTBF 目标
-  ko: ''
+  ko: 可靠性目标分配表、关键件 MTBF 目标
 domains:
 - 06_design_engineering
 - 02_components
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）

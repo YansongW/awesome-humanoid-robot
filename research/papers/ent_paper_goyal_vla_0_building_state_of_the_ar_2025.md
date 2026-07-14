@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'VLA-0: Building State-of-the-Art VLAs with Zero Modification'
   zh: VLA-0
-  ko: ''
+  ko: 'VLA-0: Building State-of-the-Art VLAs with Zero Modification'
 summary:
   en: 'VLA-0: Building State-of-the-Art VLAs with Zero Modification (VLA-0), is a
     2025 large vision-language-action model for robotic manipulation, introduced by
@@ -14,7 +14,9 @@ summary:
   zh: 'VLA-0: Building State-of-the-Art VLAs with Zero Modification (VLA-0), is a
     2025 large vision-language-action model for robotic manipulation, introduced by
     Nvidia.'
-  ko: ''
+  ko: 'VLA-0: Building State-of-the-Art VLAs with Zero Modification (VLA-0), is a
+    2025 large vision-language-action model for robotic manipulation, introduced by
+    Nvidia.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLA-0: Building State-of-the-Art VLAs with Zero Modification (VLA-0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nvidia.
+
+## Overview
+VLA-0: Building State-of-the-Art VLAs with Zero Modification (VLA-0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nvidia.
+
+## 개요
 VLA-0: Building State-of-the-Art VLAs with Zero Modification (VLA-0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Nvidia.

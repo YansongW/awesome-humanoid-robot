@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Leave No Observation Behind: Real-time Correction for VLA Action Chunks'
   zh: A2C2
-  ko: ''
+  ko: 'Leave No Observation Behind: Real-time Correction for VLA Action Chunks'
 summary:
   en: 'Leave No Observation Behind: Real-time Correction for VLA Action Chunks (A2C2),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'Leave No Observation Behind: Real-time Correction for VLA Action Chunks (A2C2),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by The University of Tokyo.'
-  ko: ''
+  ko: 'Leave No Observation Behind: Real-time Correction for VLA Action Chunks (A2C2),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by The University of Tokyo.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Leave No Observation Behind: Real-time Correction for VLA Action Chunks (A2C2), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Tokyo.
+
+## Overview
+Leave No Observation Behind: Real-time Correction for VLA Action Chunks (A2C2), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Tokyo.
+
+## 개요
 Leave No Observation Behind: Real-time Correction for VLA Action Chunks (A2C2), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Tokyo.

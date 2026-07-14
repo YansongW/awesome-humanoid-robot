@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'EveryDayVLA: A Vision-Language-Action Model for Affordable Robotic Manipulation'
   zh: EveryDayVLA
-  ko: ''
+  ko: 'EveryDayVLA: A Vision-Language-Action Model for Affordable Robotic Manipulation'
 summary:
   en: 'EveryDayVLA: A Vision-Language-Action Model for Affordable Robotic Manipulation
     (EveryDayVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (EveryDayVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by University of Pittsburgh, University of Pittsburgh Center for Research
     Computing.'
-  ko: ''
+  ko: 'EveryDayVLA: A Vision-Language-Action Model for Affordable Robotic Manipulation
+    (EveryDayVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by University of Pittsburgh, University of Pittsburgh Center for Research
+    Computing.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EveryDayVLA: A Vision-Language-Action Model for Affordable Robotic Manipulation (EveryDayVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Pittsburgh, University of Pittsburgh Center for Research Computing.
+
+## Overview
+EveryDayVLA: A Vision-Language-Action Model for Affordable Robotic Manipulation (EveryDayVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Pittsburgh, University of Pittsburgh Center for Research Computing.
+
+## 개요
 EveryDayVLA: A Vision-Language-Action Model for Affordable Robotic Manipulation (EveryDayVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Pittsburgh, University of Pittsburgh Center for Research Computing.

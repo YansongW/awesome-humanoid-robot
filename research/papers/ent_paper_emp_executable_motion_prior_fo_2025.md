@@ -8,7 +8,8 @@ names:
     Imitation'
   zh: 'EMP: Executable Motion Prior for Humanoid Robot Standing Upper-body Motion
     Imitation'
-  ko: ''
+  ko: 'EMP: Executable Motion Prior for Humanoid Robot Standing Upper-body Motion
+    Imitation'
 summary:
   en: 'EMP: Executable Motion Prior for Humanoid Robot Standing Upper-body Motion
     Imitation is a 2025 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'EMP: Executable Motion Prior for Humanoid Robot Standing Upper-body Motion
     Imitation is a 2025 work on loco-manipulation and whole-body-control for humanoid
     robots.'
-  ko: ''
+  ko: 'EMP: Executable Motion Prior for Humanoid Robot Standing Upper-body Motion
+    Imitation is a 2025 work on loco-manipulation and whole-body-control for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EMP: Executable Motion Prior for Humanoid Robot Standing Upper-body Motion Imitation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+EMP: Executable Motion Prior for Humanoid Robot Standing Upper-body Motion Imitation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 EMP: Executable Motion Prior for Humanoid Robot Standing Upper-body Motion Imitation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

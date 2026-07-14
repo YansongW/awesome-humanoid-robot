@@ -7,7 +7,8 @@ names:
   en: 'End-to-End Dexterous Arm-Hand VLA Policies via Shared Autonomy: VR Teleoperation
     Augmented by Autonomous Hand VLA Policy for Efficient Data Collection'
   zh: DexGrasp-VLA
-  ko: ''
+  ko: 'End-to-End Dexterous Arm-Hand VLA Policies via Shared Autonomy: VR Teleoperation
+    Augmented by Autonomous Hand VLA Policy for Efficient Data Collection'
 summary:
   en: 'End-to-End Dexterous Arm-Hand VLA Policies via Shared Autonomy: VR Teleoperation
     Augmented by Autonomous Hand VLA Policy for Efficient Data Collection (DexGrasp-VLA),
@@ -17,7 +18,10 @@ summary:
     Augmented by Autonomous Hand VLA Policy for Efficient Data Collection (DexGrasp-VLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by ByteDance Seed.'
-  ko: ''
+  ko: 'End-to-End Dexterous Arm-Hand VLA Policies via Shared Autonomy: VR Teleoperation
+    Augmented by Autonomous Hand VLA Policy for Efficient Data Collection (DexGrasp-VLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by ByteDance Seed.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+End-to-End Dexterous Arm-Hand VLA Policies via Shared Autonomy: VR Teleoperation Augmented by Autonomous Hand VLA Policy for Efficient Data Collection (DexGrasp-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed.
+
+## Overview
+End-to-End Dexterous Arm-Hand VLA Policies via Shared Autonomy: VR Teleoperation Augmented by Autonomous Hand VLA Policy for Efficient Data Collection (DexGrasp-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed.
+
+## 개요
 End-to-End Dexterous Arm-Hand VLA Policies via Shared Autonomy: VR Teleoperation Augmented by Autonomous Hand VLA Policy for Efficient Data Collection (DexGrasp-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed.

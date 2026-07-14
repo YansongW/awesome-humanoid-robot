@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'JAEGER: Dual-Level Humanoid Whole-Body Controller'
   zh: 'JAEGER: Dual-Level Humanoid Whole-Body Controller'
-  ko: ''
+  ko: 'JAEGER: Dual-Level Humanoid Whole-Body Controller'
 summary:
   en: 'JAEGER: Dual-Level Humanoid Whole-Body Controller is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
   zh: 'JAEGER: Dual-Level Humanoid Whole-Body Controller is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'JAEGER: Dual-Level Humanoid Whole-Body Controller is a 2025 work on loco-manipulation
+    and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+JAEGER: Dual-Level Humanoid Whole-Body Controller is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+JAEGER: Dual-Level Humanoid Whole-Body Controller is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 JAEGER: Dual-Level Humanoid Whole-Body Controller is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

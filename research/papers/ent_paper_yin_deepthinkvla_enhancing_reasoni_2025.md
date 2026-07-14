@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'DeepThinkVLA: Enhancing Reasoning Capability of Vision-Language-Action Models'
   zh: DeepThinkVLA
-  ko: ''
+  ko: 'DeepThinkVLA: Enhancing Reasoning Capability of Vision-Language-Action Models'
 summary:
   en: 'DeepThinkVLA: Enhancing Reasoning Capability of Vision-Language-Action Models
     (DeepThinkVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'DeepThinkVLA: Enhancing Reasoning Capability of Vision-Language-Action Models
     (DeepThinkVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Wechat AI, Tencent Inc..'
-  ko: ''
+  ko: 'DeepThinkVLA: Enhancing Reasoning Capability of Vision-Language-Action Models
+    (DeepThinkVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Wechat AI, Tencent Inc..'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DeepThinkVLA: Enhancing Reasoning Capability of Vision-Language-Action Models (DeepThinkVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Wechat AI, Tencent Inc..
+
+## Overview
+DeepThinkVLA: Enhancing Reasoning Capability of Vision-Language-Action Models (DeepThinkVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Wechat AI, Tencent Inc..
+
+## 개요
 DeepThinkVLA: Enhancing Reasoning Capability of Vision-Language-Action Models (DeepThinkVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Wechat AI, Tencent Inc..

@@ -7,7 +7,8 @@ names:
   en: What Matters in Language Conditioned Robotic Imitation Learning over Unstructured
     Data
   zh: HULC
-  ko: ''
+  ko: What Matters in Language Conditioned Robotic Imitation Learning over Unstructured
+    Data
 summary:
   en: What Matters in Language Conditioned Robotic Imitation Learning over Unstructured
     Data (HULC), is a 2022 generalized vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Data (HULC), is a 2022 generalized vision-language-action model for robotic manipulation,
     introduced by University of Freiburg, University of Technology Nuremberg, and
     published at IEEE Robotics Autom. Lett. 2022.
-  ko: ''
+  ko: What Matters in Language Conditioned Robotic Imitation Learning over Unstructured
+    Data (HULC), is a 2022 generalized vision-language-action model for robotic manipulation,
+    introduced by University of Freiburg, University of Technology Nuremberg, and
+    published at IEEE Robotics Autom. Lett. 2022.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+What Matters in Language Conditioned Robotic Imitation Learning over Unstructured Data (HULC), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by University of Freiburg, University of Technology Nuremberg, and published at IEEE Robotics Autom. Lett. 2022.
+
+## Overview
+What Matters in Language Conditioned Robotic Imitation Learning over Unstructured Data (HULC), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by University of Freiburg, University of Technology Nuremberg, and published at IEEE Robotics Autom. Lett. 2022.
+
+## 개요
 What Matters in Language Conditioned Robotic Imitation Learning over Unstructured Data (HULC), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by University of Freiburg, University of Technology Nuremberg, and published at IEEE Robotics Autom. Lett. 2022.

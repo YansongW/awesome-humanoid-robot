@@ -7,7 +7,8 @@ names:
   en: 'HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for
     Vision-Language-Action Models'
   zh: HiF-VLA
-  ko: ''
+  ko: 'HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for
+    Vision-Language-Action Models'
 summary:
   en: 'HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for
     Vision-Language-Action Models (HiF-VLA), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Vision-Language-Action Models (HiF-VLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Westlake University, Zhejiang University,
     HKUST(GZ), Nanjing University, Westlake Robotics, and published at CoRR.'
-  ko: ''
+  ko: 'HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for
+    Vision-Language-Action Models (HiF-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Westlake University, Zhejiang University,
+    HKUST(GZ), Nanjing University, Westlake Robotics, and published at CoRR.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models (HiF-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Zhejiang University, HKUST(GZ), Nanjing University, Westlake Robotics, and published at CoRR.
+
+## Overview
+HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models (HiF-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Zhejiang University, HKUST(GZ), Nanjing University, Westlake Robotics, and published at CoRR.
+
+## 개요
 HiF-VLA: Hindsight, Insight and Foresight through Motion Representation for Vision-Language-Action Models (HiF-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Westlake University, Zhejiang University, HKUST(GZ), Nanjing University, Westlake Robotics, and published at CoRR.

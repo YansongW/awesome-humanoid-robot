@@ -6,13 +6,14 @@ type: paper
 names:
   en: General Motion Tracking for Humanoid Whole-Body Control
   zh: General Motion Tracking for Humanoid Whole-Body Control
-  ko: ''
+  ko: General Motion Tracking for Humanoid Whole-Body Control
 summary:
   en: General Motion Tracking for Humanoid Whole-Body Control is a paper on Loco-Manipulation
     for humanoid robotics.
   zh: General Motion Tracking for Humanoid Whole-Body Control is a paper on Loco-Manipulation
     for humanoid robotics.
-  ko: ''
+  ko: General Motion Tracking for Humanoid Whole-Body Control is a paper on Loco-Manipulation
+    for humanoid robotics.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+General Motion Tracking for Humanoid Whole-Body Control is a paper on Loco-Manipulation for humanoid robotics.
+
+## Overview
+General Motion Tracking for Humanoid Whole-Body Control is a paper on Loco-Manipulation for humanoid robotics.
+
+## 개요
 General Motion Tracking for Humanoid Whole-Body Control is a paper on Loco-Manipulation for humanoid robotics.

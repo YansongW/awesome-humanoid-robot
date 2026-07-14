@@ -6,13 +6,14 @@ type: paper
 names:
   en: Hierarchical visuomotor control of humanoids
   zh: Hierarchical visuomotor control of humanoids
-  ko: ''
+  ko: Hierarchical visuomotor control of humanoids
 summary:
   en: Hierarchical visuomotor control of humanoids is a 2018 work on physics-based
     character animation for humanoid robots.
   zh: Hierarchical visuomotor control of humanoids is a 2018 work on physics-based
     character animation for humanoid robots.
-  ko: ''
+  ko: Hierarchical visuomotor control of humanoids is a 2018 work on physics-based
+    character animation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Hierarchical visuomotor control of humanoids is a 2018 work on physics-based character animation for humanoid robots.
+
+## Overview
+Hierarchical visuomotor control of humanoids is a 2018 work on physics-based character animation for humanoid robots.
+
+## 개요
 Hierarchical visuomotor control of humanoids is a 2018 work on physics-based character animation for humanoid robots.

@@ -8,13 +8,15 @@ names:
     Robot Teleoperation'
   zh: 'SEW-Mimic: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid
     Robot Teleoperation'
-  ko: ''
+  ko: 'SEW-Mimic: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid
+    Robot Teleoperation'
 summary:
   en: 'SEW-Mimic: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid
     Robot Teleoperation is a paper on Teleoperation for humanoid robotics.'
   zh: 'SEW-Mimic: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid
     Robot Teleoperation is a paper on Teleoperation for humanoid robotics.'
-  ko: ''
+  ko: 'SEW-Mimic: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid
+    Robot Teleoperation is a paper on Teleoperation for humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SEW-Mimic: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation is a paper on Teleoperation for humanoid robotics.
+
+## Overview
+SEW-Mimic: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation is a paper on Teleoperation for humanoid robotics.
+
+## 개요
 SEW-Mimic: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation is a paper on Teleoperation for humanoid robotics.

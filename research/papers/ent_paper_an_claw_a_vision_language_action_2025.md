@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'CLAW: A Vision-Language-Action Framework for Weight-Aware Robotic Grasping'
   zh: CLAW
-  ko: ''
+  ko: 'CLAW: A Vision-Language-Action Framework for Weight-Aware Robotic Grasping'
 summary:
   en: 'CLAW: A Vision-Language-Action Framework for Weight-Aware Robotic Grasping
     (CLAW), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'CLAW: A Vision-Language-Action Framework for Weight-Aware Robotic Grasping
     (CLAW), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Virginia Tech, Drexel University.'
-  ko: ''
+  ko: 'CLAW: A Vision-Language-Action Framework for Weight-Aware Robotic Grasping
+    (CLAW), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Virginia Tech, Drexel University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CLAW: A Vision-Language-Action Framework for Weight-Aware Robotic Grasping (CLAW), is a 2025 large vision-language-action model for robotic manipulation, introduced by Virginia Tech, Drexel University.
+
+## Overview
+CLAW: A Vision-Language-Action Framework for Weight-Aware Robotic Grasping (CLAW), is a 2025 large vision-language-action model for robotic manipulation, introduced by Virginia Tech, Drexel University.
+
+## 개요
 CLAW: A Vision-Language-Action Framework for Weight-Aware Robotic Grasping (CLAW), is a 2025 large vision-language-action model for robotic manipulation, introduced by Virginia Tech, Drexel University.

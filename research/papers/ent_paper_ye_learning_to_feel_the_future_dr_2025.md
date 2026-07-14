@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Learning to Feel the Future: DreamTacVLA for Contact-Rich Manipulation'
   zh: DreamTacVLA
-  ko: ''
+  ko: 'Learning to Feel the Future: DreamTacVLA for Contact-Rich Manipulation'
 summary:
   en: 'Learning to Feel the Future: DreamTacVLA for Contact-Rich Manipulation (DreamTacVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'Learning to Feel the Future: DreamTacVLA for Contact-Rich Manipulation (DreamTacVLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Northwestern University.'
-  ko: ''
+  ko: 'Learning to Feel the Future: DreamTacVLA for Contact-Rich Manipulation (DreamTacVLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Northwestern University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning to Feel the Future: DreamTacVLA for Contact-Rich Manipulation (DreamTacVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Northwestern University.
+
+## Overview
+Learning to Feel the Future: DreamTacVLA for Contact-Rich Manipulation (DreamTacVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Northwestern University.
+
+## 개요
 Learning to Feel the Future: DreamTacVLA for Contact-Rich Manipulation (DreamTacVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Northwestern University.

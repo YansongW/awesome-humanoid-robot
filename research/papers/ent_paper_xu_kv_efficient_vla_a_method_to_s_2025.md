@@ -7,7 +7,8 @@ names:
   en: 'KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated
     Chunked KV Cache'
   zh: KV-Efficient VLA
-  ko: ''
+  ko: 'KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated
+    Chunked KV Cache'
 summary:
   en: 'KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated
     Chunked KV Cache (KV-Efficient VLA), is a 2025 large vision-language-action model
@@ -15,7 +16,9 @@ summary:
   zh: 'KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated
     Chunked KV Cache (KV-Efficient VLA), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by University of Toronto, Tsinghua University.'
-  ko: ''
+  ko: 'KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated
+    Chunked KV Cache (KV-Efficient VLA), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by University of Toronto, Tsinghua University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated Chunked KV Cache (KV-Efficient VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Toronto, Tsinghua University.
+
+## Overview
+KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated Chunked KV Cache (KV-Efficient VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Toronto, Tsinghua University.
+
+## 개요
 KV-Efficient VLA: A Method to Speed up Vision Language Models with RNN-Gated Chunked KV Cache (KV-Efficient VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Toronto, Tsinghua University.

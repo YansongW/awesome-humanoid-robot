@@ -8,7 +8,8 @@ names:
     Skills'
   zh: 'KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic
     Skills'
-  ko: ''
+  ko: 'KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic
+    Skills'
 summary:
   en: 'KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic
     Skills is a 2025 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic
     Skills is a 2025 work on loco-manipulation and whole-body-control for humanoid
     robots.'
-  ko: ''
+  ko: 'KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic
+    Skills is a 2025 work on loco-manipulation and whole-body-control for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 KungfuBot: Physics-Based Humanoid Whole-Body Control for Learning Highly-Dynamic Skills is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

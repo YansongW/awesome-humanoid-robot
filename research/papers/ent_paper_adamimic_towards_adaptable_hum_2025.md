@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'AdaMimic: Towards Adaptable Humanoid Control via Adaptive Motion Tracking'
   zh: 'AdaMimic: Towards Adaptable Humanoid Control via Adaptive Motion Tracking'
-  ko: ''
+  ko: 'AdaMimic: Towards Adaptable Humanoid Control via Adaptive Motion Tracking'
 summary:
   en: 'AdaMimic: Towards Adaptable Humanoid Control via Adaptive Motion Tracking is
     a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'AdaMimic: Towards Adaptable Humanoid Control via Adaptive Motion Tracking is
     a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'AdaMimic: Towards Adaptable Humanoid Control via Adaptive Motion Tracking is
+    a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AdaMimic: Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+AdaMimic: Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 AdaMimic: Towards Adaptable Humanoid Control via Adaptive Motion Tracking is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

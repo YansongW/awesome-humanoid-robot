@@ -6,7 +6,7 @@ type: report
 names:
   en: Humanoid Announces its KinetIQ Ascend Reinforcement Learning Approach
   zh: Humanoid Announces its KinetIQ Ascend Reinforcement Learning Approach
-  ko: ''
+  ko: Humanoid Announces its KinetIQ Ascend Reinforcement Learning Approach
 summary:
   en: The new system was tested on several tasks, including picking parts from bins,
     handing objects to humans, and lifting and moving containers using both arms.
@@ -14,7 +14,9 @@ summary:
   zh: The new system was tested on several tasks, including picking parts from bins,
     handing objects to humans, and lifting and moving containers using both arms.
     It has proven effective across a range of manipulation scenarios.
-  ko: ''
+  ko: The new system was tested on several tasks, including picking parts from bins,
+    handing objects to humans, and lifting and moving containers using both arms.
+    It has proven effective across a range of manipulation scenarios.
 domains:
 - 11_applications_markets
 layers:
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+The new system was tested on several tasks, including picking parts from bins, handing objects to humans, and lifting and moving containers using both arms. It has proven effective across a range of manipulation scenarios.
+
+## Overview
+The new system was tested on several tasks, including picking parts from bins, handing objects to humans, and lifting and moving containers using both arms. It has proven effective across a range of manipulation scenarios.
+
+## 개요
 The new system was tested on several tasks, including picking parts from bins, handing objects to humans, and lifting and moving containers using both arms. It has proven effective across a range of manipulation scenarios.

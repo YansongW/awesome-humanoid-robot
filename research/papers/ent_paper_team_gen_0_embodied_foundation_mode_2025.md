@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Gen-0: Embodied foundation models that scale with physical interaction'
   zh: GEN-0
-  ko: ''
+  ko: 'Gen-0: Embodied foundation models that scale with physical interaction'
 summary:
   en: 'Gen-0: Embodied foundation models that scale with physical interaction (GEN-0),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'Gen-0: Embodied foundation models that scale with physical interaction (GEN-0),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Generalist AI.'
-  ko: ''
+  ko: 'Gen-0: Embodied foundation models that scale with physical interaction (GEN-0),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Generalist AI.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Gen-0: Embodied foundation models that scale with physical interaction (GEN-0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Generalist AI.
+
+## Overview
+Gen-0: Embodied foundation models that scale with physical interaction (GEN-0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Generalist AI.
+
+## 개요
 Gen-0: Embodied foundation models that scale with physical interaction (GEN-0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Generalist AI.

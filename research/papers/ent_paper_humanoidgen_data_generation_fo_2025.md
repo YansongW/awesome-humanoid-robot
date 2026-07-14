@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'HumanoidGen: Data Generation for Bimanual Dexterous Manipulation via LLM Reasoning'
   zh: 'HumanoidGen: Data Generation for Bimanual Dexterous Manipulation via LLM Reasoning'
-  ko: ''
+  ko: 'HumanoidGen: Data Generation for Bimanual Dexterous Manipulation via LLM Reasoning'
 summary:
   en: 'HumanoidGen: Data Generation for Bimanual Dexterous Manipulation via LLM Reasoning
     is a 2025 work on simulation benchmark for humanoid robots.'
   zh: 'HumanoidGen: Data Generation for Bimanual Dexterous Manipulation via LLM Reasoning
     is a 2025 work on simulation benchmark for humanoid robots.'
-  ko: ''
+  ko: 'HumanoidGen: Data Generation for Bimanual Dexterous Manipulation via LLM Reasoning
+    is a 2025 work on simulation benchmark for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HumanoidGen: Data Generation for Bimanual Dexterous Manipulation via LLM Reasoning is a 2025 work on simulation benchmark for humanoid robots.
+
+## Overview
+HumanoidGen: Data Generation for Bimanual Dexterous Manipulation via LLM Reasoning is a 2025 work on simulation benchmark for humanoid robots.
+
+## 개요
 HumanoidGen: Data Generation for Bimanual Dexterous Manipulation via LLM Reasoning is a 2025 work on simulation benchmark for humanoid robots.

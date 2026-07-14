@@ -7,7 +7,8 @@ names:
   en: 'CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven
     Routing & Sparsification'
   zh: CogVLA
-  ko: ''
+  ko: 'CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven
+    Routing & Sparsification'
 summary:
   en: 'CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven
     Routing & Sparsification (CogVLA), is a 2025 large vision-language-action model
@@ -19,7 +20,11 @@ summary:
     for robotic manipulation, introduced by School of Computer Science and Technology,
     Harbin Institute of Technology, Harbin Institute of Technology, and published
     at NIPS25.'
-  ko: ''
+  ko: 'CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven
+    Routing & Sparsification (CogVLA), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by School of Computer Science and Technology,
+    Harbin Institute of Technology, Harbin Institute of Technology, and published
+    at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification (CogVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computer Science and Technology, Harbin Institute of Technology, Harbin Institute of Technology, and published at NIPS25.
+
+## Overview
+CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification (CogVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computer Science and Technology, Harbin Institute of Technology, Harbin Institute of Technology, and published at NIPS25.
+
+## 개요
 CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification (CogVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computer Science and Technology, Harbin Institute of Technology, Harbin Institute of Technology, and published at NIPS25.

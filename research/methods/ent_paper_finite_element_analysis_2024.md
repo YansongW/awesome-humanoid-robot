@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+在样机前对机器人连杆、支架和齿轮箱进行结构、热和模态分析的数值方法。
+
+## Overview
 Numerical method for structural, thermal, and modal analysis of robot links, brackets, and gearboxes before prototyping.
+
+## 개요
+프로토타입 전 로봇 링크, 브래킷 및 기어박스의 구조, 열 및 모달 분석을 위한 수치 방법.

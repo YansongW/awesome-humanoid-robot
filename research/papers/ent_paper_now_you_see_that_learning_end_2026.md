@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels'
   zh: 'Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels'
-  ko: ''
+  ko: 'Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels'
 summary:
   en: 'Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels is
     a 2026 work on locomotion for humanoid robots.'
   zh: 'Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels is
     a 2026 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels is
+    a 2026 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels is a 2026 work on locomotion for humanoid robots.
+
+## Overview
+Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels is a 2026 work on locomotion for humanoid robots.
+
+## 개요
 Now You See That: Learning End-to-End Humanoid Locomotion from Raw Pixels is a 2026 work on locomotion for humanoid robots.

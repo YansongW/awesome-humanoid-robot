@@ -8,13 +8,15 @@ names:
     Control
   zh: Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion
     Control
-  ko: ''
+  ko: Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion
+    Control
 summary:
   en: Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion
     Control is a 2024 work on locomotion for humanoid robots.
   zh: Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion
     Control is a 2024 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion
+    Control is a 2024 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control is a 2024 work on locomotion for humanoid robots.
+
+## Overview
+Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control is a 2024 work on locomotion for humanoid robots.
+
+## 개요
 Reinforcement Learning for Versatile, Dynamic, and Robust Bipedal Locomotion Control is a 2024 work on locomotion for humanoid robots.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model
   zh: Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model
-  ko: ''
+  ko: Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model
 summary:
   en: Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model
     (Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model),
@@ -16,7 +16,10 @@ summary:
     (Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by KAIST, RLWRLD.
-  ko: ''
+  ko: Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model
+    (Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by KAIST, RLWRLD.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model (Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST, RLWRLD.
+
+## Overview
+Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model (Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST, RLWRLD.
+
+## 개요
 Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model (Dual-Stream Diffusion for World-Model Augmented Vision-Language-Action Model), is a 2025 large vision-language-action model for robotic manipulation, introduced by KAIST, RLWRLD.

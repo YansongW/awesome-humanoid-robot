@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'LookOut: Real-World Humanoid Egocentric Navigation'
   zh: 'LookOut: Real-World Humanoid Egocentric Navigation'
-  ko: ''
+  ko: 'LookOut: Real-World Humanoid Egocentric Navigation'
 summary:
   en: 'LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation
     for humanoid robots.'
   zh: 'LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation
     for humanoid robots.'
-  ko: ''
+  ko: 'LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation for humanoid robots.
+
+## Overview
+LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation for humanoid robots.
+
+## 개요
 LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation for humanoid robots.

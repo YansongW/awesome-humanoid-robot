@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'GLaD: Geometric Latent Distillation for Vision-Language-Action Models'
   zh: GLaD
-  ko: ''
+  ko: 'GLaD: Geometric Latent Distillation for Vision-Language-Action Models'
 summary:
   en: 'GLaD: Geometric Latent Distillation for Vision-Language-Action Models (GLaD),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'GLaD: Geometric Latent Distillation for Vision-Language-Action Models (GLaD),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by MBZUAI, University of Illinois Chicago.'
-  ko: ''
+  ko: 'GLaD: Geometric Latent Distillation for Vision-Language-Action Models (GLaD),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by MBZUAI, University of Illinois Chicago.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GLaD: Geometric Latent Distillation for Vision-Language-Action Models (GLaD), is a 2025 large vision-language-action model for robotic manipulation, introduced by MBZUAI, University of Illinois Chicago.
+
+## Overview
+GLaD: Geometric Latent Distillation for Vision-Language-Action Models (GLaD), is a 2025 large vision-language-action model for robotic manipulation, introduced by MBZUAI, University of Illinois Chicago.
+
+## 개요
 GLaD: Geometric Latent Distillation for Vision-Language-Action Models (GLaD), is a 2025 large vision-language-action model for robotic manipulation, introduced by MBZUAI, University of Illinois Chicago.

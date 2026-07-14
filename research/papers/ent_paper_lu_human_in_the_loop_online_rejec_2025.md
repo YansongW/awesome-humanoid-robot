@@ -6,7 +6,7 @@ type: paper
 names:
   en: Human-in-the-loop Online Rejection Sampling for Robotic Manipulation
   zh: Hi-ORS
-  ko: ''
+  ko: Human-in-the-loop Online Rejection Sampling for Robotic Manipulation
 summary:
   en: Human-in-the-loop Online Rejection Sampling for Robotic Manipulation (Hi-ORS),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: Human-in-the-loop Online Rejection Sampling for Robotic Manipulation (Hi-ORS),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Tsinghua Shenzhen International Graduate School, Tencent Robotics X.
-  ko: ''
+  ko: Human-in-the-loop Online Rejection Sampling for Robotic Manipulation (Hi-ORS),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Tsinghua Shenzhen International Graduate School, Tencent Robotics X.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Human-in-the-loop Online Rejection Sampling for Robotic Manipulation (Hi-ORS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua Shenzhen International Graduate School, Tencent Robotics X.
+
+## Overview
+Human-in-the-loop Online Rejection Sampling for Robotic Manipulation (Hi-ORS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua Shenzhen International Graduate School, Tencent Robotics X.
+
+## 개요
 Human-in-the-loop Online Rejection Sampling for Robotic Manipulation (Hi-ORS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua Shenzhen International Graduate School, Tencent Robotics X.

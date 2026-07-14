@@ -7,7 +7,8 @@ names:
   en: 'DepthVLA: Enhancing Vision-Language-Action Models with Depth-Aware Spatial
     Reasoning'
   zh: DepthVLA
-  ko: ''
+  ko: 'DepthVLA: Enhancing Vision-Language-Action Models with Depth-Aware Spatial
+    Reasoning'
 summary:
   en: 'DepthVLA: Enhancing Vision-Language-Action Models with Depth-Aware Spatial
     Reasoning (DepthVLA), is a 2025 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: 'DepthVLA: Enhancing Vision-Language-Action Models with Depth-Aware Spatial
     Reasoning (DepthVLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Tsinghua University, Galaxea AI.'
-  ko: ''
+  ko: 'DepthVLA: Enhancing Vision-Language-Action Models with Depth-Aware Spatial
+    Reasoning (DepthVLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Tsinghua University, Galaxea AI.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DepthVLA: Enhancing Vision-Language-Action Models with Depth-Aware Spatial Reasoning (DepthVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Galaxea AI.
+
+## Overview
+DepthVLA: Enhancing Vision-Language-Action Models with Depth-Aware Spatial Reasoning (DepthVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Galaxea AI.
+
+## 개요
 DepthVLA: Enhancing Vision-Language-Action Models with Depth-Aware Spatial Reasoning (DepthVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Galaxea AI.

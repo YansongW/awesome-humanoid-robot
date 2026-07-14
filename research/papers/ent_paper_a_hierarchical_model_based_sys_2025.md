@@ -6,13 +6,14 @@ type: paper
 names:
   en: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer
   zh: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer
-  ko: ''
+  ko: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer
 summary:
   en: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a
     2025 work on locomotion for humanoid robots.
   zh: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a
     2025 work on locomotion for humanoid robots.
-  ko: ''
+  ko: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a
+    2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a 2025 work on locomotion for humanoid robots.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: Mechanistic interpretability for steering vision-language-action models
   zh: Mechanistic interpretability for steering vision-language-action models
-  ko: ''
+  ko: Mechanistic interpretability for steering vision-language-action models
 summary:
   en: Mechanistic interpretability for steering vision-language-action models (Mechanistic
     interpretability for steering vision-language-action models), is a 2025 large
@@ -16,7 +16,10 @@ summary:
     interpretability for steering vision-language-action models), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by Department
     of Electrical Engineering and Computer Sciences, University of California, Berkeley.
-  ko: ''
+  ko: Mechanistic interpretability for steering vision-language-action models (Mechanistic
+    interpretability for steering vision-language-action models), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by Department
+    of Electrical Engineering and Computer Sciences, University of California, Berkeley.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Mechanistic interpretability for steering vision-language-action models (Mechanistic interpretability for steering vision-language-action models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Department of Electrical Engineering and Computer Sciences, University of California, Berkeley.
+
+## Overview
+Mechanistic interpretability for steering vision-language-action models (Mechanistic interpretability for steering vision-language-action models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Department of Electrical Engineering and Computer Sciences, University of California, Berkeley.
+
+## 개요
 Mechanistic interpretability for steering vision-language-action models (Mechanistic interpretability for steering vision-language-action models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Department of Electrical Engineering and Computer Sciences, University of California, Berkeley.

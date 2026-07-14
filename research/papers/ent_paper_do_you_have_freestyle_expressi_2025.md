@@ -6,13 +6,14 @@ type: paper
 names:
   en: Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control
   zh: Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control
-  ko: ''
+  ko: Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control
 summary:
   en: Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control is a
     2025 work on locomotion for humanoid robots.
   zh: Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control is a
     2025 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control is a
+    2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Do You Have Freestyle? Expressive Humanoid Locomotion via Audio Control is a 2025 work on locomotion for humanoid robots.

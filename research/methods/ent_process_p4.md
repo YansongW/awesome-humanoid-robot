@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 关节模组与驱动系统设计（Actuator & Drive）
-  ko: ''
+  ko: 关节模组与驱动系统设计（Actuator & Drive）
 summary:
   en: ''
   zh: 关节模组与驱动系统设计（Actuator & Drive）
-  ko: ''
+  ko: 关节模组与驱动系统设计（Actuator & Drive）
 domains:
 - 02_components
 - 06_design_engineering
@@ -36,5 +36,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+关节模组与驱动系统设计（Actuator & Drive）
 
+## Overview
+关节模组与驱动系统设计（Actuator & Drive）
 
+## 개요
+关节模组与驱动系统设计（Actuator & Drive）

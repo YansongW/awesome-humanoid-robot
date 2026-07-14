@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight'
   zh: Mantis
-  ko: ''
+  ko: 'Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight'
 summary:
   en: 'Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight
     (Mantis), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (Mantis), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Shanghai Jiao Tong University, SII, Nanjing University of Posts
     and Telecommunications, Fudan University, Bosch.'
-  ko: ''
+  ko: 'Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight
+    (Mantis), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Shanghai Jiao Tong University, SII, Nanjing University of Posts
+    and Telecommunications, Fudan University, Bosch.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight (Mantis), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, SII, Nanjing University of Posts and Telecommunications, Fudan University, Bosch.
+
+## Overview
+Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight (Mantis), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, SII, Nanjing University of Posts and Telecommunications, Fudan University, Bosch.
+
+## 개요
 Mantis: A Versatile Vision-Language-Action Model with Disentangled Visual Foresight (Mantis), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, SII, Nanjing University of Posts and Telecommunications, Fudan University, Bosch.

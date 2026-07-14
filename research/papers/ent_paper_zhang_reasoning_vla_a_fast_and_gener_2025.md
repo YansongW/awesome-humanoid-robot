@@ -7,7 +7,8 @@ names:
   en: 'Reasoning-VLA: A Fast and General Vision-Language-Action Reasoning Model for
     Autonomous Driving'
   zh: Reasoning-VLA
-  ko: ''
+  ko: 'Reasoning-VLA: A Fast and General Vision-Language-Action Reasoning Model for
+    Autonomous Driving'
 summary:
   en: 'Reasoning-VLA: A Fast and General Vision-Language-Action Reasoning Model for
     Autonomous Driving (Reasoning-VLA), is a 2025 large vision-language-action model
@@ -19,7 +20,11 @@ summary:
     for robotic manipulation, introduced by Lanzhou University, National University
     of Singapore, University of Science and Technology of China, Tsinghua University,
     University of New South Wales.'
-  ko: ''
+  ko: 'Reasoning-VLA: A Fast and General Vision-Language-Action Reasoning Model for
+    Autonomous Driving (Reasoning-VLA), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by Lanzhou University, National University
+    of Singapore, University of Science and Technology of China, Tsinghua University,
+    University of New South Wales.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +66,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Reasoning-VLA: A Fast and General Vision-Language-Action Reasoning Model for Autonomous Driving (Reasoning-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Lanzhou University, National University of Singapore, University of Science and Technology of China, Tsinghua University, University of New South Wales.
+
+## Overview
+Reasoning-VLA: A Fast and General Vision-Language-Action Reasoning Model for Autonomous Driving (Reasoning-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Lanzhou University, National University of Singapore, University of Science and Technology of China, Tsinghua University, University of New South Wales.
+
+## 개요
 Reasoning-VLA: A Fast and General Vision-Language-Action Reasoning Model for Autonomous Driving (Reasoning-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Lanzhou University, National University of Singapore, University of Science and Technology of China, Tsinghua University, University of New South Wales.

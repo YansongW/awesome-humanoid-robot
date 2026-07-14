@@ -7,7 +7,8 @@ names:
   en: 'FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based
     Token Pruning'
   zh: FastDriveVLA
-  ko: ''
+  ko: 'FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based
+    Token Pruning'
 summary:
   en: 'FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based
     Token Pruning (FastDriveVLA), is a 2025 large vision-language-action model for
@@ -15,7 +16,9 @@ summary:
   zh: 'FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based
     Token Pruning (FastDriveVLA), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by Peking University, XPeng Motors.'
-  ko: ''
+  ko: 'FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based
+    Token Pruning (FastDriveVLA), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by Peking University, XPeng Motors.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning (FastDriveVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, XPeng Motors.
+
+## Overview
+FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning (FastDriveVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, XPeng Motors.
+
+## 개요
 FastDriveVLA: Efficient End-to-End Driving via Plug-and-Play Reconstruction-based Token Pruning (FastDriveVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, XPeng Motors.

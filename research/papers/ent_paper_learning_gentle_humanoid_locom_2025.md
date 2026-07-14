@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control
   zh: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control
-  ko: ''
+  ko: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control
 summary:
   en: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control is
     a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
   zh: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control is
     a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control is
+    a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Learning Gentle Humanoid Locomotion and End-Effector Stabilization Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

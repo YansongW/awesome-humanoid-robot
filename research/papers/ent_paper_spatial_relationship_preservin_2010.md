@@ -6,13 +6,14 @@ type: paper
 names:
   en: Spatial relationship preserving character motion adaptation
   zh: Spatial relationship preserving character motion adaptation
-  ko: ''
+  ko: Spatial relationship preserving character motion adaptation
 summary:
   en: Spatial relationship preserving character motion adaptation is a 2010 work on
     physics-based character animation for humanoid robots.
   zh: Spatial relationship preserving character motion adaptation is a 2010 work on
     physics-based character animation for humanoid robots.
-  ko: ''
+  ko: Spatial relationship preserving character motion adaptation is a 2010 work on
+    physics-based character animation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Spatial relationship preserving character motion adaptation is a 2010 work on physics-based character animation for humanoid robots.
+
+## Overview
+Spatial relationship preserving character motion adaptation is a 2010 work on physics-based character animation for humanoid robots.
+
+## 개요
 Spatial relationship preserving character motion adaptation is a 2010 work on physics-based character animation for humanoid robots.

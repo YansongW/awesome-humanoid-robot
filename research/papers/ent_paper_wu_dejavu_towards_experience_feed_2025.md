@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Dejavu: Towards Experience Feedback Learning for Embodied Intelligence'
   zh: Dejavu
-  ko: ''
+  ko: 'Dejavu: Towards Experience Feedback Learning for Embodied Intelligence'
 summary:
   en: 'Dejavu: Towards Experience Feedback Learning for Embodied Intelligence (Dejavu),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'Dejavu: Towards Experience Feedback Learning for Embodied Intelligence (Dejavu),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Shanghai Jiao Tong University.'
-  ko: ''
+  ko: 'Dejavu: Towards Experience Feedback Learning for Embodied Intelligence (Dejavu),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Shanghai Jiao Tong University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Dejavu: Towards Experience Feedback Learning for Embodied Intelligence (Dejavu), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University.
+
+## Overview
+Dejavu: Towards Experience Feedback Learning for Embodied Intelligence (Dejavu), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University.
+
+## 개요
 Dejavu: Towards Experience Feedback Learning for Embodied Intelligence (Dejavu), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University.

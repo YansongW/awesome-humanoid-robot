@@ -6,13 +6,14 @@ type: paper
 names:
   en: arXiv 2025.06, General Motion Tracking for Humanoid Whole-Body Control
   zh: arXiv 2025.06, General Motion Tracking for Humanoid Whole-Body Control
-  ko: ''
+  ko: arXiv 2025.06, General Motion Tracking for Humanoid Whole-Body Control
 summary:
   en: arXiv 2025.06, General Motion Tracking for Humanoid Whole-Body Control is a
     2025 work on loco-manipulation and whole-body-control for humanoid robots.
   zh: arXiv 2025.06, General Motion Tracking for Humanoid Whole-Body Control is a
     2025 work on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: arXiv 2025.06, General Motion Tracking for Humanoid Whole-Body Control is a
+    2025 work on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+arXiv 2025.06, General Motion Tracking for Humanoid Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+arXiv 2025.06, General Motion Tracking for Humanoid Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 arXiv 2025.06, General Motion Tracking for Humanoid Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

@@ -8,7 +8,8 @@ names:
     Interactions'
   zh: 'InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object
     Interactions'
-  ko: ''
+  ko: 'InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object
+    Interactions'
 summary:
   en: 'InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object
     Interactions is a 2025 work on physics-based character animation for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object
     Interactions is a 2025 work on physics-based character animation for humanoid
     robots, with open-source code available.'
-  ko: ''
+  ko: 'InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object
+    Interactions is a 2025 work on physics-based character animation for humanoid
+    robots, with open-source code available.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object Interactions is a 2025 work on physics-based character animation for humanoid robots, with open-source code available.
+
+## Overview
+InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object Interactions is a 2025 work on physics-based character animation for humanoid robots, with open-source code available.
+
+## 개요
 InterMimic: Towards Universal Whole-Body Control for Physics-Based Human-Object Interactions is a 2025 work on physics-based character animation for humanoid robots, with open-source code available.

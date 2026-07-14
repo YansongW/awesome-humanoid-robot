@@ -8,13 +8,15 @@ names:
     in Dynamic Environments'
   zh: 'Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion
     in Dynamic Environments'
-  ko: ''
+  ko: 'Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion
+    in Dynamic Environments'
 summary:
   en: 'Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion
     in Dynamic Environments is a 2025 work on locomotion for humanoid robots.'
   zh: 'Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion
     in Dynamic Environments is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion
+    in Dynamic Environments is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Omni-Perception: Omnidirectional Collision Avoidance for Legged Locomotion in Dynamic Environments is a 2025 work on locomotion for humanoid robots.

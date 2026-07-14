@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'DreamZero: World Action Models are Zero-shot Policies'
   zh: 'DreamZero: World Action Models are Zero-shot Policies'
-  ko: ''
+  ko: 'DreamZero: World Action Models are Zero-shot Policies'
 summary:
   en: 'DreamZero: World Action Models are Zero-shot Policies is a 2026 work on manipulation
     for humanoid robots.'
   zh: 'DreamZero: World Action Models are Zero-shot Policies is a 2026 work on manipulation
     for humanoid robots.'
-  ko: ''
+  ko: 'DreamZero: World Action Models are Zero-shot Policies is a 2026 work on manipulation
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DreamZero: World Action Models are Zero-shot Policies is a 2026 work on manipulation for humanoid robots.
+
+## Overview
+DreamZero: World Action Models are Zero-shot Policies is a 2026 work on manipulation for humanoid robots.
+
+## 개요
 DreamZero: World Action Models are Zero-shot Policies is a 2026 work on manipulation for humanoid robots.

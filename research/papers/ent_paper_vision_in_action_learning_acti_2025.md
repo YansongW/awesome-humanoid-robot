@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Vision in Action: Learning Active Perception from Human Demonstrations'
   zh: 'Vision in Action: Learning Active Perception from Human Demonstrations'
-  ko: ''
+  ko: 'Vision in Action: Learning Active Perception from Human Demonstrations'
 summary:
   en: 'Vision in Action: Learning Active Perception from Human Demonstrations is a
     2025 work on manipulation for humanoid robots.'
   zh: 'Vision in Action: Learning Active Perception from Human Demonstrations is a
     2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'Vision in Action: Learning Active Perception from Human Demonstrations is a
+    2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Vision in Action: Learning Active Perception from Human Demonstrations is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+Vision in Action: Learning Active Perception from Human Demonstrations is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 Vision in Action: Learning Active Perception from Human Demonstrations is a 2025 work on manipulation for humanoid robots.

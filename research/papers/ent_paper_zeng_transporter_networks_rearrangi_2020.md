@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Transporter Networks: Rearranging the Visual World for Robotic Manipulation'
   zh: Transporter Networks
-  ko: ''
+  ko: 'Transporter Networks: Rearranging the Visual World for Robotic Manipulation'
 summary:
   en: 'Transporter Networks: Rearranging the Visual World for Robotic Manipulation
     (Transporter Networks), is a 2020 generalized vision-language-action model for
@@ -16,7 +16,10 @@ summary:
     (Transporter Networks), is a 2020 generalized vision-language-action model for
     robotic manipulation, introduced by Robotics at Google, and published at CoRL
     2020.'
-  ko: ''
+  ko: 'Transporter Networks: Rearranging the Visual World for Robotic Manipulation
+    (Transporter Networks), is a 2020 generalized vision-language-action model for
+    robotic manipulation, introduced by Robotics at Google, and published at CoRL
+    2020.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Transporter Networks: Rearranging the Visual World for Robotic Manipulation (Transporter Networks), is a 2020 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google, and published at CoRL 2020.
+
+## Overview
+Transporter Networks: Rearranging the Visual World for Robotic Manipulation (Transporter Networks), is a 2020 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google, and published at CoRL 2020.
+
+## 개요
 Transporter Networks: Rearranging the Visual World for Robotic Manipulation (Transporter Networks), is a 2020 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google, and published at CoRL 2020.

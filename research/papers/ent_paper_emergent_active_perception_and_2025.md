@@ -8,7 +8,8 @@ names:
     Reinforcement Learning
   zh: Emergent Active Perception and Dexterity of Simulated Humanoids from Visual
     Reinforcement Learning
-  ko: ''
+  ko: Emergent Active Perception and Dexterity of Simulated Humanoids from Visual
+    Reinforcement Learning
 summary:
   en: Emergent Active Perception and Dexterity of Simulated Humanoids from Visual
     Reinforcement Learning is a 2025 work on physics-based character animation for
@@ -16,7 +17,9 @@ summary:
   zh: Emergent Active Perception and Dexterity of Simulated Humanoids from Visual
     Reinforcement Learning is a 2025 work on physics-based character animation for
     humanoid robots.
-  ko: ''
+  ko: Emergent Active Perception and Dexterity of Simulated Humanoids from Visual
+    Reinforcement Learning is a 2025 work on physics-based character animation for
+    humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 Emergent Active Perception and Dexterity of Simulated Humanoids from Visual Reinforcement Learning is a 2025 work on physics-based character animation for humanoid robots.

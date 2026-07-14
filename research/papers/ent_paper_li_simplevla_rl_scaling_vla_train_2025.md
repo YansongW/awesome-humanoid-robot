@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning'
   zh: SimpleVLA-RL
-  ko: ''
+  ko: 'SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning'
 summary:
   en: 'SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning (SimpleVLA-RL),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning (SimpleVLA-RL),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Peking University, Tsinghua University.'
-  ko: ''
+  ko: 'SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning (SimpleVLA-RL),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Peking University, Tsinghua University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning (SimpleVLA-RL), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Tsinghua University.
+
+## Overview
+SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning (SimpleVLA-RL), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Tsinghua University.
+
+## 개요
 SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning (SimpleVLA-RL), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Tsinghua University.

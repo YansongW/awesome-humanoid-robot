@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+紧凑的360度激光雷达，通常安装于人形机器人头部或躯干。
+
+## Overview
+Compact 360-degree LiDAR commonly mounted on the head or torso of humanoid robots.
+
+## 개요
 Compact 360-degree LiDAR commonly mounted on the head or torso of humanoid robots.

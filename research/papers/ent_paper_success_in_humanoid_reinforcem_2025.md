@@ -6,13 +6,14 @@ type: paper
 names:
   en: Success in Humanoid Reinforcement Learning under Partial Observation
   zh: Success in Humanoid Reinforcement Learning under Partial Observation
-  ko: ''
+  ko: Success in Humanoid Reinforcement Learning under Partial Observation
 summary:
   en: Success in Humanoid Reinforcement Learning under Partial Observation is a 2025
     work on locomotion for humanoid robots.
   zh: Success in Humanoid Reinforcement Learning under Partial Observation is a 2025
     work on locomotion for humanoid robots.
-  ko: ''
+  ko: Success in Humanoid Reinforcement Learning under Partial Observation is a 2025
+    work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Success in Humanoid Reinforcement Learning under Partial Observation is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Success in Humanoid Reinforcement Learning under Partial Observation is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Success in Humanoid Reinforcement Learning under Partial Observation is a 2025 work on locomotion for humanoid robots.

@@ -8,7 +8,8 @@ names:
     Video'
   zh: 'ZeroWBC: Learning Natural Visuomotor Humanoid Control Directly from Human Egocentric
     Video'
-  ko: ''
+  ko: 'ZeroWBC: Learning Natural Visuomotor Humanoid Control Directly from Human Egocentric
+    Video'
 summary:
   en: 'ZeroWBC: Learning Natural Visuomotor Humanoid Control Directly from Human Egocentric
     Video is a 2026 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'ZeroWBC: Learning Natural Visuomotor Humanoid Control Directly from Human Egocentric
     Video is a 2026 work on loco-manipulation and whole-body-control for humanoid
     robots.'
-  ko: ''
+  ko: 'ZeroWBC: Learning Natural Visuomotor Humanoid Control Directly from Human Egocentric
+    Video is a 2026 work on loco-manipulation and whole-body-control for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ZeroWBC: Learning Natural Visuomotor Humanoid Control Directly from Human Egocentric Video is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+ZeroWBC: Learning Natural Visuomotor Humanoid Control Directly from Human Egocentric Video is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 ZeroWBC: Learning Natural Visuomotor Humanoid Control Directly from Human Egocentric Video is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

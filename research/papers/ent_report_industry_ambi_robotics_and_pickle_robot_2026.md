@@ -8,7 +8,8 @@ names:
     Automate Inbound Logistics
   zh: Ambi Robotics and Pickle Robot Deliver Integrated Physical AI Solution to Fully
     Automate Inbound Logistics
-  ko: ''
+  ko: Ambi Robotics and Pickle Robot Deliver Integrated Physical AI Solution to Fully
+    Automate Inbound Logistics
 summary:
   en: First-of-its-kind commercial integration sets a new benchmark for Physical AI,
     proving how specialized robotic systems can seamlessly work together for fully
@@ -16,7 +17,9 @@ summary:
   zh: First-of-its-kind commercial integration sets a new benchmark for Physical AI,
     proving how specialized robotic systems can seamlessly work together for fully
     automated truck unloading and palletizing
-  ko: ''
+  ko: First-of-its-kind commercial integration sets a new benchmark for Physical AI,
+    proving how specialized robotic systems can seamlessly work together for fully
+    automated truck unloading and palletizing
 domains:
 - 11_applications_markets
 layers:
@@ -47,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+First-of-its-kind commercial integration sets a new benchmark for Physical AI, proving how specialized robotic systems can seamlessly work together for fully automated truck unloading and palletizing
+
+## Overview
+First-of-its-kind commercial integration sets a new benchmark for Physical AI, proving how specialized robotic systems can seamlessly work together for fully automated truck unloading and palletizing
+
+## 개요
 First-of-its-kind commercial integration sets a new benchmark for Physical AI, proving how specialized robotic systems can seamlessly work together for fully automated truck unloading and palletizing

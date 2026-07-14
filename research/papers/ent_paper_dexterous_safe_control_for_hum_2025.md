@@ -8,13 +8,15 @@ names:
     Safe Set Algorithm
   zh: Dexterous Safe Control for Humanoids in Cluttered Environments via Projected
     Safe Set Algorithm
-  ko: ''
+  ko: Dexterous Safe Control for Humanoids in Cluttered Environments via Projected
+    Safe Set Algorithm
 summary:
   en: Dexterous Safe Control for Humanoids in Cluttered Environments via Projected
     Safe Set Algorithm is a 2025 work on manipulation for humanoid robots.
   zh: Dexterous Safe Control for Humanoids in Cluttered Environments via Projected
     Safe Set Algorithm is a 2025 work on manipulation for humanoid robots.
-  ko: ''
+  ko: Dexterous Safe Control for Humanoids in Cluttered Environments via Projected
+    Safe Set Algorithm is a 2025 work on manipulation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Dexterous Safe Control for Humanoids in Cluttered Environments via Projected Safe Set Algorithm is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+Dexterous Safe Control for Humanoids in Cluttered Environments via Projected Safe Set Algorithm is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 Dexterous Safe Control for Humanoids in Cluttered Environments via Projected Safe Set Algorithm is a 2025 work on manipulation for humanoid robots.

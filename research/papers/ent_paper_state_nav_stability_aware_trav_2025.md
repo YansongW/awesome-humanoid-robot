@@ -8,7 +8,8 @@ names:
     on Rough Terrain'
   zh: 'STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation
     on Rough Terrain'
-  ko: ''
+  ko: 'STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation
+    on Rough Terrain'
 summary:
   en: 'STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation
     on Rough Terrain is a 2025 work on navigation for humanoid robots, with open-source
@@ -16,7 +17,9 @@ summary:
   zh: 'STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation
     on Rough Terrain is a 2025 work on navigation for humanoid robots, with open-source
     code available.'
-  ko: ''
+  ko: 'STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation
+    on Rough Terrain is a 2025 work on navigation for humanoid robots, with open-source
+    code available.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain is a 2025 work on navigation for humanoid robots, with open-source code available.
+
+## Overview
+STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain is a 2025 work on navigation for humanoid robots, with open-source code available.
+
+## 개요
 STATE-NAV: Stability-Aware Traversability Estimation for Bipedal Navigation on Rough Terrain is a 2025 work on navigation for humanoid robots, with open-source code available.

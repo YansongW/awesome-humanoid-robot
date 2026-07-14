@@ -8,13 +8,15 @@ names:
     in collaboration with NVIDIA Halos for Robotics
   zh: FORT Robotics extends its Trust Layer for Physical AI by adding Outside-In Safety
     in collaboration with NVIDIA Halos for Robotics
-  ko: ''
+  ko: FORT Robotics extends its Trust Layer for Physical AI by adding Outside-In Safety
+    in collaboration with NVIDIA Halos for Robotics
 summary:
   en: Extends robot perception beyond on-board sensors by including external sensors
     to dynamically control robot behavior and perform at maximum efficiency
   zh: Extends robot perception beyond on-board sensors by including external sensors
     to dynamically control robot behavior and perform at maximum efficiency
-  ko: ''
+  ko: Extends robot perception beyond on-board sensors by including external sensors
+    to dynamically control robot behavior and perform at maximum efficiency
 domains:
 - 11_applications_markets
 layers:
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Extends robot perception beyond on-board sensors by including external sensors to dynamically control robot behavior and perform at maximum efficiency
+
+## Overview
+Extends robot perception beyond on-board sensors by including external sensors to dynamically control robot behavior and perform at maximum efficiency
+
+## 개요
 Extends robot perception beyond on-board sensors by including external sensors to dynamically control robot behavior and perform at maximum efficiency

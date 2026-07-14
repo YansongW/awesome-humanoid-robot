@@ -8,7 +8,8 @@ names:
   zh: 家庭服务
   ko: 가정 서비스
 summary:
-  en: The use of humanoid robots for domestic chores, security, entertainment, and eldercare within residential environments.
+  en: The use of humanoid robots for domestic chores, security, entertainment, and
+    eldercare within residential environments.
   zh: 在家庭环境中利用人形机器人完成家务、安防、娱乐与养老辅助。
   ko: 주거 환경에서 가사·보안·오락·노인 돌봄을 위해 휴로봇을 사용하는 적용.
 domains:
@@ -28,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -37,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+在家庭环境中利用人形机器人完成家务、安防、娱乐与养老辅助。
+
+## Overview
+The use of humanoid robots for domestic chores, security, entertainment, and eldercare within residential environments.
+
+## 개요
+The use of humanoid robots for domestic chores, security, entertainment, and eldercare within residential environments.

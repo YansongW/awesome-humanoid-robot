@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+用于机器人灵巧手的空心杯电机制造商。
+
+## Overview
+Chinese manufacturer of hollow-cup motors used in dexterous robot hands.
+
+## 개요
 Chinese manufacturer of hollow-cup motors used in dexterous robot hands.

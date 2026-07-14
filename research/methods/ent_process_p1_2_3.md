@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 关键技术指标权衡分析
-  ko: ''
+  ko: 关键技术指标权衡分析
 summary:
   en: ''
   zh: 权衡分析表、指标边界、设计空间图
-  ko: ''
+  ko: 权衡分析表、指标边界、设计空间图
 domains:
 - 06_design_engineering
 - 12_policy_regulation_ethics
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）

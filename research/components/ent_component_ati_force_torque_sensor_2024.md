@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+用于腕部和踝部接触控制和交互的力/力矩传感器。
+
+## Overview
+Wrist and ankle force/torque sensor for contact control and interaction.
+
+## 개요
 Wrist and ankle force/torque sensor for contact control and interaction.

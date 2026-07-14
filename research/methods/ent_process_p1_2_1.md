@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 概念方案发散与收敛
-  ko: ''
+  ko: 概念方案发散与收敛
 summary:
   en: ''
   zh: 至少 3 套概念方案、评分矩阵、选定方案理由
-  ko: ''
+  ko: 至少 3 套概念方案、评分矩阵、选定方案理由
 domains:
 - 06_design_engineering
 - 12_policy_regulation_ethics
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）

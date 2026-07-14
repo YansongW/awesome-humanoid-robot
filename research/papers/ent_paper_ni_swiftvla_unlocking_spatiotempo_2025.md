@@ -7,7 +7,8 @@ names:
   en: 'SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal
     Overhead'
   zh: SwiftVLA
-  ko: ''
+  ko: 'SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal
+    Overhead'
 summary:
   en: 'SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal
     Overhead (SwiftVLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Overhead (SwiftVLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by GigaAI, Peking University, Moxin (Huzhou) Technology
     Co., Ltd., Tsinghua University, X-Humanoid.'
-  ko: ''
+  ko: 'SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal
+    Overhead (SwiftVLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by GigaAI, Peking University, Moxin (Huzhou) Technology
+    Co., Ltd., Tsinghua University, X-Humanoid.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead (SwiftVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by GigaAI, Peking University, Moxin (Huzhou) Technology Co., Ltd., Tsinghua University, X-Humanoid.
+
+## Overview
+SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead (SwiftVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by GigaAI, Peking University, Moxin (Huzhou) Technology Co., Ltd., Tsinghua University, X-Humanoid.
+
+## 개요
 SwiftVLA: Unlocking Spatiotemporal Dynamics for Lightweight VLA Models at Minimal Overhead (SwiftVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by GigaAI, Peking University, Moxin (Huzhou) Technology Co., Ltd., Tsinghua University, X-Humanoid.

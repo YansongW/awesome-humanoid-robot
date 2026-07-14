@@ -8,13 +8,15 @@ names:
     Policy'
   zh: 'Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid
     Policy'
-  ko: ''
+  ko: 'Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid
+    Policy'
 summary:
   en: 'Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid
     Policy is a 2025 work on locomotion for humanoid robots.'
   zh: 'Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid
     Policy is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid
+    Policy is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Learning to Get Up Across Morphologies: Zero-Shot Recovery with a Unified Humanoid Policy is a 2025 work on locomotion for humanoid robots.

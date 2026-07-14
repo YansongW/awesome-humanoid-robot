@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+基于光学标记点的高精度三维人体跟踪与机器人重定向动作捕捉系统。
+
+## Overview
 Optical marker-based motion-capture system for high-precision 3-D body tracking and robot retargeting.
+
+## 개요
+고정밀 3차원 신체 추적 및 로봇 리타게팅을 위한 광학 마커 기반 모션 캡처 시스템.

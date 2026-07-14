@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 与手臂集成与手眼标定
-  ko: ''
+  ko: 与手臂集成与手眼标定
 summary:
   en: ''
   zh: 集成测试报告、手眼标定误差 < 目标
-  ko: ''
+  ko: 集成测试报告、手眼标定误差 < 目标
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）

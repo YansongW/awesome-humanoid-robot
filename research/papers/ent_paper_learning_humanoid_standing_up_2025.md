@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Humanoid Standing-up Control across Diverse Postures
   zh: Learning Humanoid Standing-up Control across Diverse Postures
-  ko: ''
+  ko: Learning Humanoid Standing-up Control across Diverse Postures
 summary:
   en: Learning Humanoid Standing-up Control across Diverse Postures is a 2025 work
     on loco-manipulation and whole-body-control for humanoid robots.
   zh: Learning Humanoid Standing-up Control across Diverse Postures is a 2025 work
     on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Learning Humanoid Standing-up Control across Diverse Postures is a 2025 work
+    on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Humanoid Standing-up Control across Diverse Postures is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Learning Humanoid Standing-up Control across Diverse Postures is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Learning Humanoid Standing-up Control across Diverse Postures is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

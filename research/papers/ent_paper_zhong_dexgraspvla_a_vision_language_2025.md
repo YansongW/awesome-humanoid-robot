@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'DexGraspVLA: A Vision-Language-Action Framework Towards General Dexterous Grasping'
   zh: DexGraspVLA
-  ko: ''
+  ko: 'DexGraspVLA: A Vision-Language-Action Framework Towards General Dexterous Grasping'
 summary:
   en: 'DexGraspVLA: A Vision-Language-Action Framework Towards General Dexterous Grasping
     (DexGraspVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -18,7 +18,11 @@ summary:
     introduced by Institute for Artificial Intelligence, Peking University, PKU-PsiBot
     Joint Lab, Hong Kong University of Science and Technology (Guangzhou), University
     of Pennsylvania.'
-  ko: ''
+  ko: 'DexGraspVLA: A Vision-Language-Action Framework Towards General Dexterous Grasping
+    (DexGraspVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Institute for Artificial Intelligence, Peking University, PKU-PsiBot
+    Joint Lab, Hong Kong University of Science and Technology (Guangzhou), University
+    of Pennsylvania.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +64,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DexGraspVLA: A Vision-Language-Action Framework Towards General Dexterous Grasping (DexGraspVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for Artificial Intelligence, Peking University, PKU-PsiBot Joint Lab, Hong Kong University of Science and Technology (Guangzhou), University of Pennsylvania.
+
+## Overview
+DexGraspVLA: A Vision-Language-Action Framework Towards General Dexterous Grasping (DexGraspVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for Artificial Intelligence, Peking University, PKU-PsiBot Joint Lab, Hong Kong University of Science and Technology (Guangzhou), University of Pennsylvania.
+
+## 개요
 DexGraspVLA: A Vision-Language-Action Framework Towards General Dexterous Grasping (DexGraspVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for Artificial Intelligence, Peking University, PKU-PsiBot Joint Lab, Hong Kong University of Science and Technology (Guangzhou), University of Pennsylvania.

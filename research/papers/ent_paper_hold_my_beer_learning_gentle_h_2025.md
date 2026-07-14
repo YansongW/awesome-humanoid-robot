@@ -7,12 +7,14 @@ names:
   en: 'Hold My Beer: Learning Gentle Humanoid Locomotion and End-Effector Stabilization
     Control'
   zh: Hold｜My Beer 学习温和的人形运动和末端执行器稳定控制
-  ko: ''
+  ko: 'Hold My Beer: Learning Gentle Humanoid Locomotion and End-Effector Stabilization
+    Control'
 summary:
   en: ''
   zh: Hold 先从相机图像/多视角观测恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习生成全身轨迹/动作序列、末端执行器/腕手目标、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作
     chunk 或闭环执行降低时序抖动。
-  ko: ''
+  ko: Hold 先从相机图像/多视角观测恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习生成全身轨迹/动作序列、末端执行器/腕手目标、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作
+    chunk 或闭环执行降低时序抖动。
 domains:
 - 06_design_engineering
 - 07_ai_models_algorithms
@@ -47,5 +49,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+Hold 先从相机图像/多视角观测恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习生成全身轨迹/动作序列、末端执行器/腕手目标、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作 chunk 或闭环执行降低时序抖动。
 
+## 개요
 Hold 先从相机图像/多视角观测恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习生成全身轨迹/动作序列、末端执行器/腕手目标、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作 chunk 或闭环执行降低时序抖动。

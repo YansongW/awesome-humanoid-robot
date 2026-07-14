@@ -7,7 +7,8 @@ names:
   en: 'Expertise need not monopolize: Action-Specialized Mixture of Experts for Vision-Language-Action
     Learning'
   zh: AdaMoE
-  ko: ''
+  ko: 'Expertise need not monopolize: Action-Specialized Mixture of Experts for Vision-Language-Action
+    Learning'
 summary:
   en: 'Expertise need not monopolize: Action-Specialized Mixture of Experts for Vision-Language-Action
     Learning (AdaMoE), is a 2025 large vision-language-action model for robotic manipulation,
@@ -21,7 +22,12 @@ summary:
     of Hong Kong, Tongji University, D-Robotics, Key Laboratory of System Control
     and Information Processing, Shanghai Key Laboratory of Integrated Administration
     Technologies for Information Security.'
-  ko: ''
+  ko: 'Expertise need not monopolize: Action-Specialized Mixture of Experts for Vision-Language-Action
+    Learning (AdaMoE), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Shanghai Jiao Tong University, Tsinghua University, The University
+    of Hong Kong, Tongji University, D-Robotics, Key Laboratory of System Control
+    and Information Processing, Shanghai Key Laboratory of Integrated Administration
+    Technologies for Information Security.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -64,4 +70,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Expertise need not monopolize: Action-Specialized Mixture of Experts for Vision-Language-Action Learning (AdaMoE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Tsinghua University, The University of Hong Kong, Tongji University, D-Robotics, Key Laboratory of System Control and Information Processing, Shanghai Key Laboratory of Integrated Administration Technologies for Information Security.
+
+## Overview
+Expertise need not monopolize: Action-Specialized Mixture of Experts for Vision-Language-Action Learning (AdaMoE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Tsinghua University, The University of Hong Kong, Tongji University, D-Robotics, Key Laboratory of System Control and Information Processing, Shanghai Key Laboratory of Integrated Administration Technologies for Information Security.
+
+## 개요
 Expertise need not monopolize: Action-Specialized Mixture of Experts for Vision-Language-Action Learning (AdaMoE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Tsinghua University, The University of Hong Kong, Tongji University, D-Robotics, Key Laboratory of System Control and Information Processing, Shanghai Key Laboratory of Integrated Administration Technologies for Information Security.

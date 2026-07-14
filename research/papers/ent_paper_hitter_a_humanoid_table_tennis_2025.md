@@ -6,11 +6,11 @@ type: paper
 names:
   en: 'HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning'
   zh: HITTER｜通过分层规划和学习的人形乒乓球机器人
-  ko: ''
+  ko: 'HITTER: A HumanoId Table TEnnis Robot via Hierarchical Planning and Learning'
 summary:
   en: ''
   zh: HITTER 先从人类视频/动捕轨迹、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、全身控制器/WBC/MPC生成全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
-  ko: ''
+  ko: HITTER 先从人类视频/动捕轨迹、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、全身控制器/WBC/MPC生成全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -43,5 +43,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+HITTER 先从人类视频/动捕轨迹、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、全身控制器/WBC/MPC生成全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
+## 개요
 HITTER 先从人类视频/动捕轨迹、接触力/触觉信号恢复场景、目标或运动表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、全身控制器/WBC/MPC生成全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。

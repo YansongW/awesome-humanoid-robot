@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+将旋转运动转换为直线运动的高效线性传动部件，用于机器人线性关节。
+
+## Overview
 High-efficiency linear transmission component converting rotary motion to linear motion, used in robot linear joints.
+
+## 개요
+회전 운 동을 선형 운 동으로 변환하는 고효율 선형 변환 부품, 로봇 선형 관절에 사용.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Refined Policy Distillation: From VLA Generalists to RL Experts'
   zh: RPD
-  ko: ''
+  ko: 'Refined Policy Distillation: From VLA Generalists to RL Experts'
 summary:
   en: 'Refined Policy Distillation: From VLA Generalists to RL Experts (RPD), is a
     2025 large vision-language-action model for robotic manipulation, introduced by
@@ -14,7 +14,9 @@ summary:
   zh: 'Refined Policy Distillation: From VLA Generalists to RL Experts (RPD), is a
     2025 large vision-language-action model for robotic manipulation, introduced by
     University of Technology Nuremberg, and published at IROS25.'
-  ko: ''
+  ko: 'Refined Policy Distillation: From VLA Generalists to RL Experts (RPD), is a
+    2025 large vision-language-action model for robotic manipulation, introduced by
+    University of Technology Nuremberg, and published at IROS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Refined Policy Distillation: From VLA Generalists to RL Experts (RPD), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Technology Nuremberg, and published at IROS25.
+
+## Overview
+Refined Policy Distillation: From VLA Generalists to RL Experts (RPD), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Technology Nuremberg, and published at IROS25.
+
+## 개요
 Refined Policy Distillation: From VLA Generalists to RL Experts (RPD), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Technology Nuremberg, and published at IROS25.

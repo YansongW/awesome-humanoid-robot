@@ -7,7 +7,8 @@ names:
   en: 'TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic
     Manipulation'
   zh: TinyVLA
-  ko: ''
+  ko: 'TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic
+    Manipulation'
 summary:
   en: 'TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic
     Manipulation (TinyVLA), is a 2024 large vision-language-action model for robotic
@@ -19,7 +20,11 @@ summary:
     manipulation, introduced by Shanghai University, Syracuse University, Beijing
     Innovation Center of Humanoid Robotics, East China Normal University, Midea Group
     AI Lab.'
-  ko: ''
+  ko: 'TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic
+    Manipulation (TinyVLA), is a 2024 large vision-language-action model for robotic
+    manipulation, introduced by Shanghai University, Syracuse University, Beijing
+    Innovation Center of Humanoid Robotics, East China Normal University, Midea Group
+    AI Lab.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation (TinyVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Shanghai University, Syracuse University, Beijing Innovation Center of Humanoid Robotics, East China Normal University, Midea Group AI Lab.
+
+## Overview
+TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation (TinyVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Shanghai University, Syracuse University, Beijing Innovation Center of Humanoid Robotics, East China Normal University, Midea Group AI Lab.
+
+## 개요
 TinyVLA: Towards Fast, Data-Efficient Vision-Language-Action Models for Robotic Manipulation (TinyVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Shanghai University, Syracuse University, Beijing Innovation Center of Humanoid Robotics, East China Normal University, Midea Group AI Lab.

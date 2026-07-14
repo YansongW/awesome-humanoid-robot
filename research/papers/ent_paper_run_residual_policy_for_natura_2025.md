@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'RuN: Residual Policy for Natural Humanoid Locomotion'
   zh: 'RuN: Residual Policy for Natural Humanoid Locomotion'
-  ko: ''
+  ko: 'RuN: Residual Policy for Natural Humanoid Locomotion'
 summary:
   en: 'RuN: Residual Policy for Natural Humanoid Locomotion is a 2025 work on locomotion
     for humanoid robots.'
   zh: 'RuN: Residual Policy for Natural Humanoid Locomotion is a 2025 work on locomotion
     for humanoid robots.'
-  ko: ''
+  ko: 'RuN: Residual Policy for Natural Humanoid Locomotion is a 2025 work on locomotion
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RuN: Residual Policy for Natural Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+RuN: Residual Policy for Natural Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 RuN: Residual Policy for Natural Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation
   zh: Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation
-  ko: ''
+  ko: Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation
 summary:
   en: Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation is a 2019 work
     on hardware design for humanoid robots.
   zh: Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation is a 2019 work
     on hardware design for humanoid robots.
-  ko: ''
+  ko: Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation is a 2019 work
+    on hardware design for humanoid robots.
 domains:
 - 06_design_engineering
 - 02_components
@@ -50,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation is a 2019 work on hardware design for humanoid robots.
+
+## Overview
+Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation is a 2019 work on hardware design for humanoid robots.
+
+## 개요
 Quasi-Direct Drive for Low-Cost Compliant Robotic Manipulation is a 2019 work on hardware design for humanoid robots.

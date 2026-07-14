@@ -6,13 +6,14 @@ type: paper
 names:
   en: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots
   zh: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots
-  ko: ''
+  ko: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots
 summary:
   en: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots
     is a 2025 work on teleoperation for humanoid robots.
   zh: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots
     is a 2025 work on teleoperation for humanoid robots.
-  ko: ''
+  ko: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots
+    is a 2025 work on teleoperation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+
+## Overview
+Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+
+## 개요
 Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots is a 2025 work on teleoperation for humanoid robots.

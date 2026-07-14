@@ -8,13 +8,15 @@ names:
     to End-to-End Control'
   zh: 'Learning Adaptive Neural Teleoperation for Humanoid Robots: From Inverse Kinematics
     to End-to-End Control'
-  ko: ''
+  ko: 'Learning Adaptive Neural Teleoperation for Humanoid Robots: From Inverse Kinematics
+    to End-to-End Control'
 summary:
   en: 'Learning Adaptive Neural Teleoperation for Humanoid Robots: From Inverse Kinematics
     to End-to-End Control is a paper on Teleoperation for humanoid robotics.'
   zh: 'Learning Adaptive Neural Teleoperation for Humanoid Robots: From Inverse Kinematics
     to End-to-End Control is a paper on Teleoperation for humanoid robotics.'
-  ko: ''
+  ko: 'Learning Adaptive Neural Teleoperation for Humanoid Robots: From Inverse Kinematics
+    to End-to-End Control is a paper on Teleoperation for humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Adaptive Neural Teleoperation for Humanoid Robots: From Inverse Kinematics to End-to-End Control is a paper on Teleoperation for humanoid robotics.
+
+## Overview
+Learning Adaptive Neural Teleoperation for Humanoid Robots: From Inverse Kinematics to End-to-End Control is a paper on Teleoperation for humanoid robotics.
+
+## 개요
 Learning Adaptive Neural Teleoperation for Humanoid Robots: From Inverse Kinematics to End-to-End Control is a paper on Teleoperation for humanoid robotics.

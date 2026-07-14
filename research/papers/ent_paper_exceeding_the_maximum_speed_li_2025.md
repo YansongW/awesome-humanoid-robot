@@ -8,7 +8,8 @@ names:
     Structures of Musculoskeletal Humanoids
   zh: Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven
     Structures of Musculoskeletal Humanoids
-  ko: ''
+  ko: Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven
+    Structures of Musculoskeletal Humanoids
 summary:
   en: Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven
     Structures of Musculoskeletal Humanoids is a 2025 work on hardware design for
@@ -16,7 +17,9 @@ summary:
   zh: Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven
     Structures of Musculoskeletal Humanoids is a 2025 work on hardware design for
     humanoid robots.
-  ko: ''
+  ko: Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven
+    Structures of Musculoskeletal Humanoids is a 2025 work on hardware design for
+    humanoid robots.
 domains:
 - 06_design_engineering
 - 02_components
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven Structures of Musculoskeletal Humanoids is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven Structures of Musculoskeletal Humanoids is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 Exceeding the Maximum Speed Limit of the Joint Angle for the Redundant Tendon-driven Structures of Musculoskeletal Humanoids is a 2025 work on hardware design for humanoid robots.

@@ -8,13 +8,15 @@ names:
     via Imitation Learning'
   zh: 'DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation
     via Imitation Learning'
-  ko: ''
+  ko: 'DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation
+    via Imitation Learning'
 summary:
   en: 'DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation
     via Imitation Learning is a 2024 work on simulation benchmark for humanoid robots.'
   zh: 'DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation
     via Imitation Learning is a 2024 work on simulation benchmark for humanoid robots.'
-  ko: ''
+  ko: 'DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation
+    via Imitation Learning is a 2024 work on simulation benchmark for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +57,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation via Imitation Learning is a 2024 work on simulation benchmark for humanoid robots.
+
+## Overview
+DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation via Imitation Learning is a 2024 work on simulation benchmark for humanoid robots.
+
+## 개요
 DexMimicGen: Automated Data Generation for Bimanual Dexterous Manipulation via Imitation Learning is a 2024 work on simulation benchmark for humanoid robots.

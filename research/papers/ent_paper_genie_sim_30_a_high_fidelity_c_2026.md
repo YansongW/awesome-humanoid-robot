@@ -8,13 +8,15 @@ names:
     Robot'
   zh: 'Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid
     Robot'
-  ko: ''
+  ko: 'Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid
+    Robot'
 summary:
   en: 'Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid
     Robot is a 2026 work on manipulation for humanoid robots.'
   zh: 'Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid
     Robot is a 2026 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid
+    Robot is a 2026 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot is a 2026 work on manipulation for humanoid robots.
+
+## Overview
+Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot is a 2026 work on manipulation for humanoid robots.
+
+## 개요
 Genie Sim 3.0 : A High-Fidelity Comprehensive Simulation Platform for Humanoid Robot is a 2026 work on manipulation for humanoid robots.

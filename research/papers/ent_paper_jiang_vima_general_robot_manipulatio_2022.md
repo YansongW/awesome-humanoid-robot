@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'VIMA: General Robot Manipulation with Multimodal Prompts'
   zh: VIMA
-  ko: ''
+  ko: 'VIMA: General Robot Manipulation with Multimodal Prompts'
 summary:
   en: 'VIMA: General Robot Manipulation with Multimodal Prompts (VIMA), is a 2022
     generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'VIMA: General Robot Manipulation with Multimodal Prompts (VIMA), is a 2022
     generalized vision-language-action model for robotic manipulation, introduced
     by NVIDIA, Stanford, Macalester College, Caltech, Tsinghua, UT Austin.'
-  ko: ''
+  ko: 'VIMA: General Robot Manipulation with Multimodal Prompts (VIMA), is a 2022
+    generalized vision-language-action model for robotic manipulation, introduced
+    by NVIDIA, Stanford, Macalester College, Caltech, Tsinghua, UT Austin.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VIMA: General Robot Manipulation with Multimodal Prompts (VIMA), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by NVIDIA, Stanford, Macalester College, Caltech, Tsinghua, UT Austin.
+
+## Overview
+VIMA: General Robot Manipulation with Multimodal Prompts (VIMA), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by NVIDIA, Stanford, Macalester College, Caltech, Tsinghua, UT Austin.
+
+## 개요
 VIMA: General Robot Manipulation with Multimodal Prompts (VIMA), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by NVIDIA, Stanford, Macalester College, Caltech, Tsinghua, UT Austin.

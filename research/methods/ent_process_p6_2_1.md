@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 正逆运动学解算验证
-  ko: ''
+  ko: 正逆运动学解算验证
 summary:
   en: ''
   zh: 随机 1000 组位姿 IK 成功率 > 99%、位置误差 < 1 mm
-  ko: ''
+  ko: 随机 1000 组位姿 IK 成功率 > 99%、位置误差 < 1 mm
 domains:
 - 06_design_engineering
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）

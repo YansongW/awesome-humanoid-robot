@@ -7,7 +7,8 @@ names:
   en: 'Dream-VL & Dream-VLA: Open Vision-Language and Vision-Language-Action Models
     with Diffusion Language Model Backbone'
   zh: Dream-VLA
-  ko: ''
+  ko: 'Dream-VL & Dream-VLA: Open Vision-Language and Vision-Language-Action Models
+    with Diffusion Language Model Backbone'
 summary:
   en: 'Dream-VL & Dream-VLA: Open Vision-Language and Vision-Language-Action Models
     with Diffusion Language Model Backbone (Dream-VLA), is a 2025 large vision-language-action
@@ -15,7 +16,9 @@ summary:
   zh: 'Dream-VL & Dream-VLA: Open Vision-Language and Vision-Language-Action Models
     with Diffusion Language Model Backbone (Dream-VLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by The University of Hong Kong.'
-  ko: ''
+  ko: 'Dream-VL & Dream-VLA: Open Vision-Language and Vision-Language-Action Models
+    with Diffusion Language Model Backbone (Dream-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by The University of Hong Kong.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Dream-VL & Dream-VLA: Open Vision-Language and Vision-Language-Action Models with Diffusion Language Model Backbone (Dream-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Hong Kong.
+
+## Overview
+Dream-VL & Dream-VLA: Open Vision-Language and Vision-Language-Action Models with Diffusion Language Model Backbone (Dream-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Hong Kong.
+
+## 개요
 Dream-VL & Dream-VLA: Open Vision-Language and Vision-Language-Action Models with Diffusion Language Model Backbone (Dream-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Hong Kong.

@@ -6,11 +6,11 @@ type: report
 names:
   en: DENSO Exhibits High-Performance Robots at Automate 2026
   zh: DENSO Exhibits High-Performance Robots at Automate 2026
-  ko: ''
+  ko: DENSO Exhibits High-Performance Robots at Automate 2026
 summary:
   en: DENSO to demonstrate its precision 4-axis, 6-axis and collaborative
   zh: DENSO to demonstrate its precision 4-axis, 6-axis and collaborative
-  ko: ''
+  ko: DENSO to demonstrate its precision 4-axis, 6-axis and collaborative
 domains:
 - 11_applications_markets
 layers:
@@ -40,4 +40,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DENSO to demonstrate its precision 4-axis, 6-axis and collaborative
+
+## Overview
+DENSO to demonstrate its precision 4-axis, 6-axis and collaborative
+
+## 개요
 DENSO to demonstrate its precision 4-axis, 6-axis and collaborative

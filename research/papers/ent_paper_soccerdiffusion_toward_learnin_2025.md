@@ -8,13 +8,15 @@ names:
     Recordings'
   zh: 'SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay
     Recordings'
-  ko: ''
+  ko: 'SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay
+    Recordings'
 summary:
   en: 'SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay
     Recordings is a 2025 work on locomotion for humanoid robots.'
   zh: 'SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay
     Recordings is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay
+    Recordings is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 SoccerDiffusion: Toward Learning End-to-End Humanoid Robot Soccer from Gameplay Recordings is a 2025 work on locomotion for humanoid robots.

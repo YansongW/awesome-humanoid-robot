@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'Gemini Robotics: Bringing AI into the Physical World'
   zh: Gemini Robotics｜将人工智能带入物理世界
-  ko: ''
+  ko: 'Gemini Robotics: Bringing AI into the Physical World'
 summary:
   en: ''
   zh: Gemini Robotics 的实现路径是先把语言指令、相机图像/多视角观测编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA
     多模态动作模型预测全身轨迹/动作序列、动作 chunk/token。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
-  ko: ''
+  ko: Gemini Robotics 的实现路径是先把语言指令、相机图像/多视角观测编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA
+    多模态动作模型预测全身轨迹/动作序列、动作 chunk/token。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,5 +48,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+Gemini Robotics 的实现路径是先把语言指令、相机图像/多视角观测编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测全身轨迹/动作序列、动作 chunk/token。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 
+## 개요
 Gemini Robotics 的实现路径是先把语言指令、相机图像/多视角观测编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测全身轨迹/动作序列、动作 chunk/token。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。

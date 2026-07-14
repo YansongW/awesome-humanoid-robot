@@ -8,7 +8,8 @@ names:
     Relevancy and Equivariant Language Mapping
   zh: Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual
     Relevancy and Equivariant Language Mapping
-  ko: ''
+  ko: Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual
+    Relevancy and Equivariant Language Mapping
 summary:
   en: Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual
     Relevancy and Equivariant Language Mapping (Learning Efficient and Robust Language-conditioned
@@ -22,7 +23,12 @@ summary:
     is a 2024 large vision-language-action model for robotic manipulation, introduced
     by Brown University, Northeastern University, and published at IEEE Robotics Autom.
     Lett. 2024.
-  ko: ''
+  ko: Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual
+    Relevancy and Equivariant Language Mapping (Learning Efficient and Robust Language-conditioned
+    Manipulation using Textual-Visual Relevancy and Equivariant Language Mapping),
+    is a 2024 large vision-language-action model for robotic manipulation, introduced
+    by Brown University, Northeastern University, and published at IEEE Robotics Autom.
+    Lett. 2024.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +64,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual Relevancy and Equivariant Language Mapping (Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual Relevancy and Equivariant Language Mapping), is a 2024 large vision-language-action model for robotic manipulation, introduced by Brown University, Northeastern University, and published at IEEE Robotics Autom. Lett. 2024.
+
+## Overview
+Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual Relevancy and Equivariant Language Mapping (Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual Relevancy and Equivariant Language Mapping), is a 2024 large vision-language-action model for robotic manipulation, introduced by Brown University, Northeastern University, and published at IEEE Robotics Autom. Lett. 2024.
+
+## 개요
 Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual Relevancy and Equivariant Language Mapping (Learning Efficient and Robust Language-conditioned Manipulation using Textual-Visual Relevancy and Equivariant Language Mapping), is a 2024 large vision-language-action model for robotic manipulation, introduced by Brown University, Northeastern University, and published at IEEE Robotics Autom. Lett. 2024.

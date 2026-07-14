@@ -6,7 +6,7 @@ type: paper
 names:
   en: A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter
   zh: A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter
-  ko: ''
+  ko: A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter
 summary:
   en: A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter
     (A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter),
@@ -16,7 +16,10 @@ summary:
     (A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter),
     is a 2023 large vision-language-action model for robotic manipulation, introduced
     by Zhejiang University, and published at ICRA23.
-  ko: ''
+  ko: A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter
+    (A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter),
+    is a 2023 large vision-language-action model for robotic manipulation, introduced
+    by Zhejiang University, and published at ICRA23.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter (A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter), is a 2023 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, and published at ICRA23.
+
+## Overview
+A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter (A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter), is a 2023 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, and published at ICRA23.
+
+## 개요
 A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter (A Joint Modeling of Vision-Language-Action for Target-oriented Grasping in Clutter), is a 2023 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, and published at ICRA23.

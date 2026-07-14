@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 运动控制算法开发与验证（Motion Control）
-  ko: ''
+  ko: 运动控制算法开发与验证（Motion Control）
 summary:
   en: ''
   zh: 运动控制算法开发与验证（Motion Control）
-  ko: ''
+  ko: 运动控制算法开发与验证（Motion Control）
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -36,5 +36,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+运动控制算法开发与验证（Motion Control）
 
+## Overview
+运动控制算法开发与验证（Motion Control）
 
+## 개요
+运动控制算法开发与验证（Motion Control）

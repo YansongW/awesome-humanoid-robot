@@ -8,13 +8,15 @@ names:
     Robot Manipulation
   zh: Generalizable Geometric Prior and Recurrent Spiking Feature Learning for Humanoid
     Robot Manipulation
-  ko: ''
+  ko: Generalizable Geometric Prior and Recurrent Spiking Feature Learning for Humanoid
+    Robot Manipulation
 summary:
   en: Generalizable Geometric Prior and Recurrent Spiking Feature Learning for Humanoid
     Robot Manipulation is a 2026 work on manipulation for humanoid robots.
   zh: Generalizable Geometric Prior and Recurrent Spiking Feature Learning for Humanoid
     Robot Manipulation is a 2026 work on manipulation for humanoid robots.
-  ko: ''
+  ko: Generalizable Geometric Prior and Recurrent Spiking Feature Learning for Humanoid
+    Robot Manipulation is a 2026 work on manipulation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Generalizable Geometric Prior and Recurrent Spiking Feature Learning for Humanoid Robot Manipulation is a 2026 work on manipulation for humanoid robots.
+
+## Overview
+Generalizable Geometric Prior and Recurrent Spiking Feature Learning for Humanoid Robot Manipulation is a 2026 work on manipulation for humanoid robots.
+
+## 개요
 Generalizable Geometric Prior and Recurrent Spiking Feature Learning for Humanoid Robot Manipulation is a 2026 work on manipulation for humanoid robots.

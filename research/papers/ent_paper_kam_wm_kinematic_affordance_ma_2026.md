@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'KAM-WM: Kinematic Affordance Maps from Latent World Models for Robot Manipulation'
   zh: 'KAM-WM: Kinematic Affordance Maps from Latent World Models for Robot Manipulation'
-  ko: ''
+  ko: 'KAM-WM: Kinematic Affordance Maps from Latent World Models for Robot Manipulation'
 summary:
   en: "arXiv:2607.04652v1 Announce Type: new \nAbstract: Learning manipulation from\
     \ few demonstrations requires visual priors that capture not only where to interact,\
@@ -42,7 +42,23 @@ summary:
     \ spatial localization alone. These results indicate that, in the evaluated settings,\
     \ a frozen video model can provide a useful first-order visual prior for control\
     \ without the test-time cost of future rollout."
-  ko: ''
+  ko: "arXiv:2607.04652v1 Announce Type: new \nAbstract: Learning manipulation from\
+    \ few demonstrations requires visual priors that capture not only where to interact,\
+    \ but also how the interaction should begin; static priors such as segmentation\
+    \ masks encode only the former. We present KAM-WM, a framework that extracts a\
+    \ coarse directional interaction cue from a frozen latent video world model without\
+    \ rollout or world-model fine-tuning. KAM-WM queries a Flow Matching image-to-video\
+    \ backbone once and interprets its single-step latent velocity as a Kinematic\
+    \ Affordance Map (KAM), which provides task-conditioned interaction regions and\
+    \ coarse motion structure. A lightweight Perceiver compresses KAM into tokens\
+    \ that condition a diffusion policy together with RGB observations and proprioception.\
+    \ Across LIBERO and RoboTwin2.0, KAM-WM reaches 90.6% average success on LIBERO\
+    \ and achieves 65.7% and 22.4% success rates in the Easy and Hard settings on\
+    \ RoboTwin2.0, respectively. Controlled comparisons against a zero-order mask\
+    \ prior suggest that part of the gains comes from directional information beyond\
+    \ spatial localization alone. These results indicate that, in the evaluated settings,\
+    \ a frozen video model can provide a useful first-order visual prior for control\
+    \ without the test-time cost of future rollout."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -73,5 +89,14 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+arXiv:2607.04652v1 Announce Type: new 
+Abstract: Learning manipulation from few demonstrations requires visual priors that capture not only where to interact, but also how the interaction should begin; static priors such as segmentation masks encode only the former. We present KAM-WM, a framework that extracts a coarse directional interaction cue from a frozen latent video world model without rollout or world-model fine-tuning. KAM-WM queries a Flow Matching image-to-video backbone once and interprets its single-step latent velocity as a Kinematic Affordance Map (KAM), which provides task-conditioned interaction regions and coarse motion structure. A lightweight Perceiver compresses KAM into tokens that condition a diffusion policy together with RGB observations and proprioception. Across LIBERO and RoboTwin2.0, KAM-WM reaches 90.6% average success on LIBERO and achieves 65.7% and 22.4% success rates in the Easy and Hard settings on RoboTwin2.0, respectively. Controlled comparisons against a zero-order mask prior suggest that part of the gains comes from directional information beyond spatial localization alone. These results indicate that, in the evaluated settings, a frozen video model can provide a useful first-order visual prior for control without the test-time cost of future rollout.
+
+## Overview
+arXiv:2607.04652v1 Announce Type: new 
+Abstract: Learning manipulation from few demonstrations requires visual priors that capture not only where to interact, but also how the interaction should begin; static priors such as segmentation masks encode only the former. We present KAM-WM, a framework that extracts a coarse directional interaction cue from a frozen latent video world model without rollout or world-model fine-tuning. KAM-WM queries a Flow Matching image-to-video backbone once and interprets its single-step latent velocity as a Kinematic Affordance Map (KAM), which provides task-conditioned interaction regions and coarse motion structure. A lightweight Perceiver compresses KAM into tokens that condition a diffusion policy together with RGB observations and proprioception. Across LIBERO and RoboTwin2.0, KAM-WM reaches 90.6% average success on LIBERO and achieves 65.7% and 22.4% success rates in the Easy and Hard settings on RoboTwin2.0, respectively. Controlled comparisons against a zero-order mask prior suggest that part of the gains comes from directional information beyond spatial localization alone. These results indicate that, in the evaluated settings, a frozen video model can provide a useful first-order visual prior for control without the test-time cost of future rollout.
+
+## 개요
 arXiv:2607.04652v1 Announce Type: new 
 Abstract: Learning manipulation from few demonstrations requires visual priors that capture not only where to interact, but also how the interaction should begin; static priors such as segmentation masks encode only the former. We present KAM-WM, a framework that extracts a coarse directional interaction cue from a frozen latent video world model without rollout or world-model fine-tuning. KAM-WM queries a Flow Matching image-to-video backbone once and interprets its single-step latent velocity as a Kinematic Affordance Map (KAM), which provides task-conditioned interaction regions and coarse motion structure. A lightweight Perceiver compresses KAM into tokens that condition a diffusion policy together with RGB observations and proprioception. Across LIBERO and RoboTwin2.0, KAM-WM reaches 90.6% average success on LIBERO and achieves 65.7% and 22.4% success rates in the Easy and Hard settings on RoboTwin2.0, respectively. Controlled comparisons against a zero-order mask prior suggest that part of the gains comes from directional information beyond spatial localization alone. These results indicate that, in the evaluated settings, a frozen video model can provide a useful first-order visual prior for control without the test-time cost of future rollout.

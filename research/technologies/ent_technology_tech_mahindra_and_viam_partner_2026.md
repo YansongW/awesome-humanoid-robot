@@ -6,13 +6,14 @@ type: technology
 names:
   en: Tech Mahindra and Viam partner to scale advanced robotics and automation solutions
   zh: Tech Mahindra and Viam partner to scale advanced robotics and automation solutions
-  ko: ''
+  ko: Tech Mahindra and Viam partner to scale advanced robotics and automation solutions
 summary:
   en: Tech Mahindra's global enterprise clients can harness the power of physical
     AI with direct access to Viam's advanced robotics and automation platform
   zh: Tech Mahindra's global enterprise clients can harness the power of physical
     AI with direct access to Viam's advanced robotics and automation platform
-  ko: ''
+  ko: Tech Mahindra's global enterprise clients can harness the power of physical
+    AI with direct access to Viam's advanced robotics and automation platform
 domains:
 - 11_applications_markets
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Tech Mahindra's global enterprise clients can harness the power of physical AI with direct access to Viam's advanced robotics and automation platform
+
+## Overview
+Tech Mahindra's global enterprise clients can harness the power of physical AI with direct access to Viam's advanced robotics and automation platform
+
+## 개요
 Tech Mahindra's global enterprise clients can harness the power of physical AI with direct access to Viam's advanced robotics and automation platform

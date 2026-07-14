@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'HAMSTER: Hierarchical Action Models For Open-World Robot Manipulation'
   zh: HAMSTER
-  ko: ''
+  ko: 'HAMSTER: Hierarchical Action Models For Open-World Robot Manipulation'
 summary:
   en: 'HAMSTER: Hierarchical Action Models For Open-World Robot Manipulation (HAMSTER),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'HAMSTER: Hierarchical Action Models For Open-World Robot Manipulation (HAMSTER),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by MIT CSAIL, Nvidia, and published at ICLR25.'
-  ko: ''
+  ko: 'HAMSTER: Hierarchical Action Models For Open-World Robot Manipulation (HAMSTER),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by MIT CSAIL, Nvidia, and published at ICLR25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HAMSTER: Hierarchical Action Models For Open-World Robot Manipulation (HAMSTER), is a 2025 large vision-language-action model for robotic manipulation, introduced by MIT CSAIL, Nvidia, and published at ICLR25.
+
+## Overview
+HAMSTER: Hierarchical Action Models For Open-World Robot Manipulation (HAMSTER), is a 2025 large vision-language-action model for robotic manipulation, introduced by MIT CSAIL, Nvidia, and published at ICLR25.
+
+## 개요
 HAMSTER: Hierarchical Action Models For Open-World Robot Manipulation (HAMSTER), is a 2025 large vision-language-action model for robotic manipulation, introduced by MIT CSAIL, Nvidia, and published at ICLR25.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: Open-Source Multimodal Moxin Models with Moxin-VLM and Moxin-VLA
   zh: Moxin-VLA
-  ko: ''
+  ko: Open-Source Multimodal Moxin Models with Moxin-VLM and Moxin-VLA
 summary:
   en: Open-Source Multimodal Moxin Models with Moxin-VLM and Moxin-VLA (Moxin-VLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: Open-Source Multimodal Moxin Models with Moxin-VLM and Moxin-VLA (Moxin-VLA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Harvard University.
-  ko: ''
+  ko: Open-Source Multimodal Moxin Models with Moxin-VLM and Moxin-VLA (Moxin-VLA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Harvard University.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Open-Source Multimodal Moxin Models with Moxin-VLM and Moxin-VLA (Moxin-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Harvard University.
+
+## Overview
+Open-Source Multimodal Moxin Models with Moxin-VLM and Moxin-VLA (Moxin-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Harvard University.
+
+## 개요
 Open-Source Multimodal Moxin Models with Moxin-VLM and Moxin-VLA (Moxin-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Harvard University.

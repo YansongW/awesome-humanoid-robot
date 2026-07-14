@@ -6,7 +6,7 @@ type: paper
 names:
   en: Robotic VLA Benefits from Joint Learning with Motion Image Diffusion
   zh: Robotic VLA Benefits from Joint Learning with Motion Image Diffusion
-  ko: ''
+  ko: Robotic VLA Benefits from Joint Learning with Motion Image Diffusion
 summary:
   en: Robotic VLA Benefits from Joint Learning with Motion Image Diffusion (Robotic
     VLA Benefits from Joint Learning with Motion Image Diffusion), is a 2025 large
@@ -16,7 +16,10 @@ summary:
     VLA Benefits from Joint Learning with Motion Image Diffusion), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by Salesforce,
     Stanford University.
-  ko: ''
+  ko: Robotic VLA Benefits from Joint Learning with Motion Image Diffusion (Robotic
+    VLA Benefits from Joint Learning with Motion Image Diffusion), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by Salesforce,
+    Stanford University.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Robotic VLA Benefits from Joint Learning with Motion Image Diffusion (Robotic VLA Benefits from Joint Learning with Motion Image Diffusion), is a 2025 large vision-language-action model for robotic manipulation, introduced by Salesforce, Stanford University.
+
+## Overview
+Robotic VLA Benefits from Joint Learning with Motion Image Diffusion (Robotic VLA Benefits from Joint Learning with Motion Image Diffusion), is a 2025 large vision-language-action model for robotic manipulation, introduced by Salesforce, Stanford University.
+
+## 개요
 Robotic VLA Benefits from Joint Learning with Motion Image Diffusion (Robotic VLA Benefits from Joint Learning with Motion Image Diffusion), is a 2025 large vision-language-action model for robotic manipulation, introduced by Salesforce, Stanford University.

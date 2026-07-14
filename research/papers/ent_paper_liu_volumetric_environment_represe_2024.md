@@ -6,7 +6,7 @@ type: paper
 names:
   en: Volumetric Environment Representation for Vision-Language Navigation
   zh: VER
-  ko: ''
+  ko: Volumetric Environment Representation for Vision-Language Navigation
 summary:
   en: Volumetric Environment Representation for Vision-Language Navigation (VER),
     is a 2024 generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: Volumetric Environment Representation for Vision-Language Navigation (VER),
     is a 2024 generalized vision-language-action model for robotic manipulation, introduced
     by ReLER, CCAI, Zhejiang University, and published at CVPR 2024.
-  ko: ''
+  ko: Volumetric Environment Representation for Vision-Language Navigation (VER),
+    is a 2024 generalized vision-language-action model for robotic manipulation, introduced
+    by ReLER, CCAI, Zhejiang University, and published at CVPR 2024.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Volumetric Environment Representation for Vision-Language Navigation (VER), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by ReLER, CCAI, Zhejiang University, and published at CVPR 2024.
+
+## Overview
+Volumetric Environment Representation for Vision-Language Navigation (VER), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by ReLER, CCAI, Zhejiang University, and published at CVPR 2024.
+
+## 개요
 Volumetric Environment Representation for Vision-Language Navigation (VER), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by ReLER, CCAI, Zhejiang University, and published at CVPR 2024.

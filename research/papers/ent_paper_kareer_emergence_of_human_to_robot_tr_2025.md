@@ -6,7 +6,7 @@ type: paper
 names:
   en: Emergence of Human to Robot Transfer in Vision-Language-Action Models
   zh: Emergence of Human to Robot Transfer in Vision-Language-Action Models
-  ko: ''
+  ko: Emergence of Human to Robot Transfer in Vision-Language-Action Models
 summary:
   en: Emergence of Human to Robot Transfer in Vision-Language-Action Models (Emergence
     of Human to Robot Transfer in Vision-Language-Action Models), is a 2025 large
@@ -16,7 +16,10 @@ summary:
     of Human to Robot Transfer in Vision-Language-Action Models), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by Physical
     Intelligence, Georgia Institute of Technology.
-  ko: ''
+  ko: Emergence of Human to Robot Transfer in Vision-Language-Action Models (Emergence
+    of Human to Robot Transfer in Vision-Language-Action Models), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by Physical
+    Intelligence, Georgia Institute of Technology.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -56,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Emergence of Human to Robot Transfer in Vision-Language-Action Models (Emergence of Human to Robot Transfer in Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Physical Intelligence, Georgia Institute of Technology.
+
+## Overview
+Emergence of Human to Robot Transfer in Vision-Language-Action Models (Emergence of Human to Robot Transfer in Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Physical Intelligence, Georgia Institute of Technology.
+
+## 개요
 Emergence of Human to Robot Transfer in Vision-Language-Action Models (Emergence of Human to Robot Transfer in Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Physical Intelligence, Georgia Institute of Technology.

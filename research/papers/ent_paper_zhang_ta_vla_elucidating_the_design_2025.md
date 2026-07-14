@@ -7,7 +7,8 @@ names:
   en: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action
     Models'
   zh: TA-VLA
-  ko: ''
+  ko: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action
+    Models'
 summary:
   en: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action
     Models (TA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -19,7 +20,11 @@ summary:
     introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for
     AI Industry Research (AIR), Tsinghua Univeristy, Nanyang Technological University,
     and published at CoRL25.'
-  ko: ''
+  ko: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action
+    Models (TA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for
+    AI Industry Research (AIR), Tsinghua Univeristy, Nanyang Technological University,
+    and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for AI Industry Research (AIR), Tsinghua Univeristy, Nanyang Technological University, and published at CoRL25.
+
+## Overview
+TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for AI Industry Research (AIR), Tsinghua Univeristy, Nanyang Technological University, and published at CoRL25.
+
+## 개요
 TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for AI Industry Research (AIR), Tsinghua Univeristy, Nanyang Technological University, and published at CoRL25.

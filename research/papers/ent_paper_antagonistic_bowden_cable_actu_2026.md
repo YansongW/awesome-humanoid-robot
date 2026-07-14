@@ -8,13 +8,16 @@ names:
     Manipulation for Payload-Constrained Humanoids'
   zh: 'Antagonistic Bowden-Cable Actuation of a Lightweight Robotic Hand: Toward Dexterous
     Manipulation for Payload-Constrained Humanoids'
-  ko: ''
+  ko: 'Antagonistic Bowden-Cable Actuation of a Lightweight Robotic Hand: Toward Dexterous
+    Manipulation for Payload-Constrained Humanoids'
 summary:
   en: ''
   zh: 'Antagonistic Bowden-Cable Actuation of a Lightweight Robotic Hand: Toward Dexterous
     Manipulation for Payload-Constrained Humanoids is a paper on 硬件设计 for humanoid
     robotics.'
-  ko: ''
+  ko: 'Antagonistic Bowden-Cable Actuation of a Lightweight Robotic Hand: Toward Dexterous
+    Manipulation for Payload-Constrained Humanoids is a paper on 硬件设计 for humanoid
+    robotics.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -48,5 +51,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Antagonistic Bowden-Cable Actuation of a Lightweight Robotic Hand: Toward Dexterous Manipulation for Payload-Constrained Humanoids is a paper on 硬件设计 for humanoid robotics.
 
+## 개요
 Antagonistic Bowden-Cable Actuation of a Lightweight Robotic Hand: Toward Dexterous Manipulation for Payload-Constrained Humanoids is a paper on 硬件设计 for humanoid robotics.

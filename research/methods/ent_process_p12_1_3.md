@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 人体/物体检测与跟踪
-  ko: ''
+  ko: 人体/物体检测与跟踪
 summary:
   en: ''
   zh: 检测准确率、跟踪 ID 稳定性、延迟
-  ko: ''
+  ko: 检测准确率、跟踪 ID 稳定性、延迟
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）

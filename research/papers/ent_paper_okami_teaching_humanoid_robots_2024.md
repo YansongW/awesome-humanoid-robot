@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'OKAMI: Teaching Humanoid Robots Manipulation Skills through Single Video Imitation'
   zh: 'OKAMI: Teaching Humanoid Robots Manipulation Skills through Single Video Imitation'
-  ko: ''
+  ko: 'OKAMI: Teaching Humanoid Robots Manipulation Skills through Single Video Imitation'
 summary:
   en: 'OKAMI: Teaching Humanoid Robots Manipulation Skills through Single Video Imitation
     is a 2024 work on manipulation for humanoid robots.'
   zh: 'OKAMI: Teaching Humanoid Robots Manipulation Skills through Single Video Imitation
     is a 2024 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'OKAMI: Teaching Humanoid Robots Manipulation Skills through Single Video Imitation
+    is a 2024 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+OKAMI: Teaching Humanoid Robots Manipulation Skills through Single Video Imitation is a 2024 work on manipulation for humanoid robots.
+
+## Overview
+OKAMI: Teaching Humanoid Robots Manipulation Skills through Single Video Imitation is a 2024 work on manipulation for humanoid robots.
+
+## 개요
 OKAMI: Teaching Humanoid Robots Manipulation Skills through Single Video Imitation is a 2024 work on manipulation for humanoid robots.

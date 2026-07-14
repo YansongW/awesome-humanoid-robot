@@ -6,13 +6,14 @@ type: paper
 names:
   en: Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation
   zh: Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation
-  ko: ''
+  ko: Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation
 summary:
   en: Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation
     is a 2019 work on state estimation for humanoid robots.
   zh: Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation
     is a 2019 work on state estimation for humanoid robots.
-  ko: ''
+  ko: Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation
+    is a 2019 work on state estimation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation is a 2019 work on state estimation for humanoid robots.
+
+## Overview
+Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation is a 2019 work on state estimation for humanoid robots.
+
+## 개요
 Contact-Aided Invariant Extended Kalman Filtering for Robot State Estimation is a 2019 work on state estimation for humanoid robots.

@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'EgoPriMo: Egocentric Motion Generation for Interactive Humanoid Control'
   zh: EgoPriMo｜用于交互式人形控制的第一视角运动生成
-  ko: ''
+  ko: 'EgoPriMo: Egocentric Motion Generation for Interactive Humanoid Control'
 summary:
   en: ''
   zh: EgoPriMo 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用AMP/运动先验、ACT/行为克隆模仿学习、扩散策略/流匹配预测全身轨迹/动作序列。关键点是保留
     VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
-  ko: ''
+  ko: EgoPriMo 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用AMP/运动先验、ACT/行为克隆模仿学习、扩散策略/流匹配预测全身轨迹/动作序列。关键点是保留
+    VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,5 +46,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+EgoPriMo 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用AMP/运动先验、ACT/行为克隆模仿学习、扩散策略/流匹配预测全身轨迹/动作序列。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 
+## 개요
 EgoPriMo 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用AMP/运动先验、ACT/行为克隆模仿学习、扩散策略/流匹配预测全身轨迹/动作序列。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。

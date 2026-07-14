@@ -7,7 +7,8 @@ names:
   en: 'CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning
     for Autonomous Driving'
   zh: CoT4AD
-  ko: ''
+  ko: 'CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning
+    for Autonomous Driving'
 summary:
   en: 'CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning
     for Autonomous Driving (CoT4AD), is a 2025 large vision-language-action model
@@ -15,7 +16,9 @@ summary:
   zh: 'CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning
     for Autonomous Driving (CoT4AD), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by Peking University.'
-  ko: ''
+  ko: 'CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning
+    for Autonomous Driving (CoT4AD), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by Peking University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning for Autonomous Driving (CoT4AD), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University.
+
+## Overview
+CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning for Autonomous Driving (CoT4AD), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University.
+
+## 개요
 CoT4AD: A Vision-Language-Action Model with Explicit Chain-of-Thought Reasoning for Autonomous Driving (CoT4AD), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University.

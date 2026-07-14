@@ -6,7 +6,7 @@ type: paper
 names:
   en: '3D Diffuser Actor: Policy Diffusion with 3D Scene Representations'
   zh: 3D Diffuser Actor
-  ko: ''
+  ko: '3D Diffuser Actor: Policy Diffusion with 3D Scene Representations'
 summary:
   en: '3D Diffuser Actor: Policy Diffusion with 3D Scene Representations (3D Diffuser
     Actor), is a 2024 generalized vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: '3D Diffuser Actor: Policy Diffusion with 3D Scene Representations (3D Diffuser
     Actor), is a 2024 generalized vision-language-action model for robotic manipulation,
     introduced by Carnegie Mellon University, and published at CoRL 2024.'
-  ko: ''
+  ko: '3D Diffuser Actor: Policy Diffusion with 3D Scene Representations (3D Diffuser
+    Actor), is a 2024 generalized vision-language-action model for robotic manipulation,
+    introduced by Carnegie Mellon University, and published at CoRL 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+3D Diffuser Actor: Policy Diffusion with 3D Scene Representations (3D Diffuser Actor), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, and published at CoRL 2024.
+
+## Overview
+3D Diffuser Actor: Policy Diffusion with 3D Scene Representations (3D Diffuser Actor), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, and published at CoRL 2024.
+
+## 개요
 3D Diffuser Actor: Policy Diffusion with 3D Scene Representations (3D Diffuser Actor), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, and published at CoRL 2024.

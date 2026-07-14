@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RVT-2: Learning Precise Manipulation from Few Demonstrations'
   zh: RVT-2
-  ko: ''
+  ko: 'RVT-2: Learning Precise Manipulation from Few Demonstrations'
 summary:
   en: 'RVT-2: Learning Precise Manipulation from Few Demonstrations (RVT-2), is a
     2024 generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'RVT-2: Learning Precise Manipulation from Few Demonstrations (RVT-2), is a
     2024 generalized vision-language-action model for robotic manipulation, introduced
     by NVIDIA, and published at Robotics - Science and Systems 2024.'
-  ko: ''
+  ko: 'RVT-2: Learning Precise Manipulation from Few Demonstrations (RVT-2), is a
+    2024 generalized vision-language-action model for robotic manipulation, introduced
+    by NVIDIA, and published at Robotics - Science and Systems 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RVT-2: Learning Precise Manipulation from Few Demonstrations (RVT-2), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by NVIDIA, and published at Robotics - Science and Systems 2024.
+
+## Overview
+RVT-2: Learning Precise Manipulation from Few Demonstrations (RVT-2), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by NVIDIA, and published at Robotics - Science and Systems 2024.
+
+## 개요
 RVT-2: Learning Precise Manipulation from Few Demonstrations (RVT-2), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by NVIDIA, and published at Robotics - Science and Systems 2024.

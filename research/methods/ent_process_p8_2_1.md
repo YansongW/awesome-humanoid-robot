@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 静动态应力与变形分析
-  ko: ''
+  ko: 静动态应力与变形分析
 summary:
   en: ''
   zh: 《FEA 应力报告》：应力、变形、安全系数
-  ko: ''
+  ko: 《FEA 应力报告》：应力、变形、安全系数
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：结构强度仿真与迭代（Structural FEA）

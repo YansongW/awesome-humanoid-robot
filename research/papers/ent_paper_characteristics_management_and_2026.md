@@ -6,13 +6,14 @@ type: paper
 names:
   en: Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids
   zh: Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids
-  ko: ''
+  ko: Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids
 summary:
   en: Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids
     is a 2026 work on hardware design for humanoid robots.
   zh: Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids
     is a 2026 work on hardware design for humanoid robots.
-  ko: ''
+  ko: Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids
+    is a 2026 work on hardware design for humanoid robots.
 domains:
 - 06_design_engineering
 - 02_components
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids is a 2026 work on hardware design for humanoid robots.
+
+## Overview
+Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids is a 2026 work on hardware design for humanoid robots.
+
+## 개요
 Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids is a 2026 work on hardware design for humanoid robots.

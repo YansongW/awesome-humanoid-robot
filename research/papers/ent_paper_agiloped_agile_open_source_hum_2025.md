@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'AGILOped: Agile Open-Source Humanoid Robot for Research'
   zh: 'AGILOped: Agile Open-Source Humanoid Robot for Research'
-  ko: ''
+  ko: 'AGILOped: Agile Open-Source Humanoid Robot for Research'
 summary:
   en: 'AGILOped: Agile Open-Source Humanoid Robot for Research is a 2025 work on hardware
     design for humanoid robots.'
   zh: 'AGILOped: Agile Open-Source Humanoid Robot for Research is a 2025 work on hardware
     design for humanoid robots.'
-  ko: ''
+  ko: 'AGILOped: Agile Open-Source Humanoid Robot for Research is a 2025 work on hardware
+    design for humanoid robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+AGILOped: Agile Open-Source Humanoid Robot for Research is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+AGILOped: Agile Open-Source Humanoid Robot for Research is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 AGILOped: Agile Open-Source Humanoid Robot for Research is a 2025 work on hardware design for humanoid robots.

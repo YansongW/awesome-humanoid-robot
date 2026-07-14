@@ -6,13 +6,14 @@ type: paper
 names:
   en: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation
   zh: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation
-  ko: ''
+  ko: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation
 summary:
   en: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation
     is a 2026 work on teleoperation for humanoid robots.
   zh: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation
     is a 2026 work on teleoperation for humanoid robots.
-  ko: ''
+  ko: A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation
+    is a 2026 work on teleoperation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation is a 2026 work on teleoperation for humanoid robots.
+
+## Overview
+A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation is a 2026 work on teleoperation for humanoid robots.
+
+## 개요
 A Closed-Form Geometric Retargeting Solver for Upper Body Humanoid Robot Teleoperation is a 2026 work on teleoperation for humanoid robots.

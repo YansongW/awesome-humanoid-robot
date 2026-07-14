@@ -6,7 +6,7 @@ type: paper
 names:
   en: Latent Action Pretraining from Videos
   zh: LAPA
-  ko: ''
+  ko: Latent Action Pretraining from Videos
 summary:
   en: Latent Action Pretraining from Videos (LAPA), is a 2024 large vision-language-action
     model for robotic manipulation, introduced by KAIST, University of Washington,
@@ -14,7 +14,9 @@ summary:
   zh: Latent Action Pretraining from Videos (LAPA), is a 2024 large vision-language-action
     model for robotic manipulation, introduced by KAIST, University of Washington,
     Microsoft Research, NVIDIA, Allen Institute for AI, and published at ICLR 2024.
-  ko: ''
+  ko: Latent Action Pretraining from Videos (LAPA), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by KAIST, University of Washington,
+    Microsoft Research, NVIDIA, Allen Institute for AI, and published at ICLR 2024.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Latent Action Pretraining from Videos (LAPA), is a 2024 large vision-language-action model for robotic manipulation, introduced by KAIST, University of Washington, Microsoft Research, NVIDIA, Allen Institute for AI, and published at ICLR 2024.
+
+## Overview
+Latent Action Pretraining from Videos (LAPA), is a 2024 large vision-language-action model for robotic manipulation, introduced by KAIST, University of Washington, Microsoft Research, NVIDIA, Allen Institute for AI, and published at ICLR 2024.
+
+## 개요
 Latent Action Pretraining from Videos (LAPA), is a 2024 large vision-language-action model for robotic manipulation, introduced by KAIST, University of Washington, Microsoft Research, NVIDIA, Allen Institute for AI, and published at ICLR 2024.

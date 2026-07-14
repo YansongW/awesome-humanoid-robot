@@ -7,7 +7,8 @@ names:
   en: 'QUART-Online: Latency-Free Large Multimodal Language Model for Quadruped Robot
     Learning'
   zh: QUART-Online
-  ko: ''
+  ko: 'QUART-Online: Latency-Free Large Multimodal Language Model for Quadruped Robot
+    Learning'
 summary:
   en: 'QUART-Online: Latency-Free Large Multimodal Language Model for Quadruped Robot
     Learning (QUART-Online), is a 2024 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: 'QUART-Online: Latency-Free Large Multimodal Language Model for Quadruped Robot
     Learning (QUART-Online), is a 2024 large vision-language-action model for robotic
     manipulation, introduced by Zhejiang University, and published at ICRA25.'
-  ko: ''
+  ko: 'QUART-Online: Latency-Free Large Multimodal Language Model for Quadruped Robot
+    Learning (QUART-Online), is a 2024 large vision-language-action model for robotic
+    manipulation, introduced by Zhejiang University, and published at ICRA25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+QUART-Online: Latency-Free Large Multimodal Language Model for Quadruped Robot Learning (QUART-Online), is a 2024 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, and published at ICRA25.
+
+## Overview
+QUART-Online: Latency-Free Large Multimodal Language Model for Quadruped Robot Learning (QUART-Online), is a 2024 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, and published at ICRA25.
+
+## 개요
 QUART-Online: Latency-Free Large Multimodal Language Model for Quadruped Robot Learning (QUART-Online), is a 2024 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, and published at ICRA25.

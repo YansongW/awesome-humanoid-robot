@@ -6,13 +6,14 @@ type: paper
 names:
   en: Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning
   zh: Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning
-  ko: ''
+  ko: Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning
 summary:
   en: Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning
     is a 2025 work on locomotion for humanoid robots.
   zh: Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning
     is a 2025 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning
+    is a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Stabilizing Humanoid Robot Trajectory Generation via Physics-Informed Learning is a 2025 work on locomotion for humanoid robots.

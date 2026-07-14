@@ -8,7 +8,8 @@ names:
     at Automate 2026
   zh: DexRobot Unveils Full Dexterous Hand Series and New DexTele Teleoperation System
     at Automate 2026
-  ko: ''
+  ko: DexRobot Unveils Full Dexterous Hand Series and New DexTele Teleoperation System
+    at Automate 2026
 summary:
   en: This year's show features a dedicated Humanoid Robot Pavilion and a sharpened
     focus on AI-driven industrial automation, making it the ideal venue for DexRobot
@@ -18,7 +19,10 @@ summary:
     focus on AI-driven industrial automation, making it the ideal venue for DexRobot
     to demonstrate how advanced manipulation and high-fidelity data acquisition are
     becoming practical, affordable, and ready for real-world deployment.
-  ko: ''
+  ko: This year's show features a dedicated Humanoid Robot Pavilion and a sharpened
+    focus on AI-driven industrial automation, making it the ideal venue for DexRobot
+    to demonstrate how advanced manipulation and high-fidelity data acquisition are
+    becoming practical, affordable, and ready for real-world deployment.
 domains:
 - 11_applications_markets
 layers:
@@ -51,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+This year's show features a dedicated Humanoid Robot Pavilion and a sharpened focus on AI-driven industrial automation, making it the ideal venue for DexRobot to demonstrate how advanced manipulation and high-fidelity data acquisition are becoming practical, affordable, and ready for real-world deployment.
+
+## Overview
+This year's show features a dedicated Humanoid Robot Pavilion and a sharpened focus on AI-driven industrial automation, making it the ideal venue for DexRobot to demonstrate how advanced manipulation and high-fidelity data acquisition are becoming practical, affordable, and ready for real-world deployment.
+
+## 개요
 This year's show features a dedicated Humanoid Robot Pavilion and a sharpened focus on AI-driven industrial automation, making it the ideal venue for DexRobot to demonstrate how advanced manipulation and high-fidelity data acquisition are becoming practical, affordable, and ready for real-world deployment.

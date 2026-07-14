@@ -8,7 +8,8 @@ names:
     Academic Research
   zh: Unitree Announces H2 Plus, an NVIDIA Isaac GR00T Reference Humanoid Robot for
     Academic Research
-  ko: ''
+  ko: Unitree Announces H2 Plus, an NVIDIA Isaac GR00T Reference Humanoid Robot for
+    Academic Research
 summary:
   en: 'News Summary: ●&nbsp;Unitree Robotics introduces H2 Plus, an NVIDIA Isaac GR00T
     Reference Humanoid Robot combining a Unitree H2 humanoid robot, Sharpa five-fingered
@@ -24,7 +25,13 @@ summary:
     development platform &mdash; spanning data capture and generation to robot model
     evaluation and deployment &mdash; helps developers accelerate humanoid development
     workflows. '
-  ko: ''
+  ko: 'News Summary: ●&nbsp;Unitree Robotics introduces H2 Plus, an NVIDIA Isaac GR00T
+    Reference Humanoid Robot combining a Unitree H2 humanoid robot, Sharpa five-fingered
+    hands for dexterous manipulation, NVIDIA Jetson Thor for advanced reasoning and
+    control, and the new NVIDIA Isaac GR00T development platform. ● The Isaac GR00T
+    development platform &mdash; spanning data capture and generation to robot model
+    evaluation and deployment &mdash; helps developers accelerate humanoid development
+    workflows. '
 domains:
 - 11_applications_markets
 - 06_design_engineering
@@ -59,4 +66,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
-News Summary: ●&nbsp;Unitree Robotics introduces H2 Plus, an NVIDIA Isaac GR00T Reference Humanoid Robot combining a Unitree H2 humanoid robot, Sharpa five-fingered hands for dexterous manipulation, NVIDIA Jetson Thor for advanced reasoning and control, and the new NVIDIA Isaac GR00T development platform. ● The Isaac GR00T development platform &mdash; spanning data capture and generation to robot model evaluation and deployment &mdash; helps developers accelerate humanoid development workflows.
+## 概述
+News Summary: ●&nbsp;Unitree Robotics introduces H2 Plus, an NVIDIA Isaac GR00T Reference Humanoid Robot combining a Unitree H2 humanoid robot, Sharpa five-fingered hands for dexterous manipulation, NVIDIA Jetson Thor for advanced reasoning and control, and the new NVIDIA Isaac GR00T development platform. ● The Isaac GR00T development platform &mdash; spanning data capture and generation to robot model evaluation and deployment &mdash; helps developers accelerate humanoid development workflows. 
+
+## Overview
+News Summary: ●&nbsp;Unitree Robotics introduces H2 Plus, an NVIDIA Isaac GR00T Reference Humanoid Robot combining a Unitree H2 humanoid robot, Sharpa five-fingered hands for dexterous manipulation, NVIDIA Jetson Thor for advanced reasoning and control, and the new NVIDIA Isaac GR00T development platform. ● The Isaac GR00T development platform &mdash; spanning data capture and generation to robot model evaluation and deployment &mdash; helps developers accelerate humanoid development workflows. 
+
+## 개요
+News Summary: ●&nbsp;Unitree Robotics introduces H2 Plus, an NVIDIA Isaac GR00T Reference Humanoid Robot combining a Unitree H2 humanoid robot, Sharpa five-fingered hands for dexterous manipulation, NVIDIA Jetson Thor for advanced reasoning and control, and the new NVIDIA Isaac GR00T development platform. ● The Isaac GR00T development platform &mdash; spanning data capture and generation to robot model evaluation and deployment &mdash; helps developers accelerate humanoid development workflows. 

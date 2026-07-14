@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 来料与过程异常处理
-  ko: ''
+  ko: 来料与过程异常处理
 summary:
   en: ''
   zh: 8D 报告、改善验证、不良率下降
-  ko: ''
+  ko: 8D 报告、改善验证、不良率下降
 domains:
 - 05_mass_production
 - 11_applications_markets
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：小批量试产与量产准备（Pilot & Production Ramp）

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning'
   zh: ThinkAct
-  ko: ''
+  ko: 'ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning'
 summary:
   en: 'ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning
     (ThinkAct), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning
     (ThinkAct), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by NVIDIA, National Taiwan University.'
-  ko: ''
+  ko: 'ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning
+    (ThinkAct), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by NVIDIA, National Taiwan University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning (ThinkAct), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, National Taiwan University.
+
+## Overview
+ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning (ThinkAct), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, National Taiwan University.
+
+## 개요
 ThinkAct: Vision-Language-Action Reasoning via Reinforced Visual Latent Planning (ThinkAct), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, National Taiwan University.

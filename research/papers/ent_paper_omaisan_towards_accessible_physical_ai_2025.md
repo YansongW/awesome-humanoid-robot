@@ -7,7 +7,8 @@ names:
   en: 'Towards Accessible Physical AI: LoRA-Based Fine-Tuning of VLA Models for Real-World
     Robot Control'
   zh: Towards Accessible Physical AI
-  ko: ''
+  ko: 'Towards Accessible Physical AI: LoRA-Based Fine-Tuning of VLA Models for Real-World
+    Robot Control'
 summary:
   en: 'Towards Accessible Physical AI: LoRA-Based Fine-Tuning of VLA Models for Real-World
     Robot Control (Towards Accessible Physical AI), is a 2025 large vision-language-action
@@ -15,7 +16,9 @@ summary:
   zh: 'Towards Accessible Physical AI: LoRA-Based Fine-Tuning of VLA Models for Real-World
     Robot Control (Towards Accessible Physical AI), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by QSS AI and Robotics Lab.'
-  ko: ''
+  ko: 'Towards Accessible Physical AI: LoRA-Based Fine-Tuning of VLA Models for Real-World
+    Robot Control (Towards Accessible Physical AI), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by QSS AI and Robotics Lab.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Towards Accessible Physical AI: LoRA-Based Fine-Tuning of VLA Models for Real-World Robot Control (Towards Accessible Physical AI), is a 2025 large vision-language-action model for robotic manipulation, introduced by QSS AI and Robotics Lab.
+
+## Overview
+Towards Accessible Physical AI: LoRA-Based Fine-Tuning of VLA Models for Real-World Robot Control (Towards Accessible Physical AI), is a 2025 large vision-language-action model for robotic manipulation, introduced by QSS AI and Robotics Lab.
+
+## 개요
 Towards Accessible Physical AI: LoRA-Based Fine-Tuning of VLA Models for Real-World Robot Control (Towards Accessible Physical AI), is a 2025 large vision-language-action model for robotic manipulation, introduced by QSS AI and Robotics Lab.

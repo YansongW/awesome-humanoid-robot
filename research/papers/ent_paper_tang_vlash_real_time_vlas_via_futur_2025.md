@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference'
   zh: VLASH
-  ko: ''
+  ko: 'VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference'
 summary:
   en: 'VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by MIT.'
-  ko: ''
+  ko: 'VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by MIT.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH), is a 2025 large vision-language-action model for robotic manipulation, introduced by MIT.
+
+## Overview
+VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH), is a 2025 large vision-language-action model for robotic manipulation, introduced by MIT.
+
+## 개요
 VLASH: Real-Time VLAs via Future-State-Aware Asynchronous Inference (VLASH), is a 2025 large vision-language-action model for robotic manipulation, introduced by MIT.

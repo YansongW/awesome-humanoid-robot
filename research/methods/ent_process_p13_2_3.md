@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 充电与能源管理
-  ko: ''
+  ko: 充电与能源管理
 summary:
   en: ''
   zh: 充电方案、充电时间、BMS 通信协议
-  ko: ''
+  ko: 充电方案、充电时间、BMS 通信协议
 domains:
 - 02_components
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：电子电气与能源系统（Electronics & Power）

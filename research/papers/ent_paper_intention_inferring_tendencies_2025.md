@@ -8,13 +8,15 @@ names:
     Intuition and Grounded VLM'
   zh: 'INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive
     Intuition and Grounded VLM'
-  ko: ''
+  ko: 'INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive
+    Intuition and Grounded VLM'
 summary:
   en: 'INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive
     Intuition and Grounded VLM is a 2025 work on navigation for humanoid robots.'
   zh: 'INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive
     Intuition and Grounded VLM is a 2025 work on navigation for humanoid robots.'
-  ko: ''
+  ko: 'INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive
+    Intuition and Grounded VLM is a 2025 work on navigation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded VLM is a 2025 work on navigation for humanoid robots.
+
+## Overview
+INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded VLM is a 2025 work on navigation for humanoid robots.
+
+## 개요
 INTENTION: Inferring Tendencies of Humanoid Robot Motion Through Interactive Intuition and Grounded VLM is a 2025 work on navigation for humanoid robots.

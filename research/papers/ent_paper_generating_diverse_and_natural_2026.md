@@ -6,12 +6,13 @@ type: paper
 names:
   en: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D)
   zh: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D)
-  ko: ''
+  ko: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D)
 summary:
   en: ''
   zh: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D)
     is a paper on 人类运动数据 for humanoid robotics.
-  ko: ''
+  ko: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D)
+    is a paper on 人类运动数据 for humanoid robotics.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -44,5 +45,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D) is a paper on 人类运动数据 for humanoid robotics.
 
+## 개요
 Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D) is a paper on 人类运动数据 for humanoid robotics.

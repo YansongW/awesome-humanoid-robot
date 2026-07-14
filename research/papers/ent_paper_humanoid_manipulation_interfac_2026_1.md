@@ -7,11 +7,12 @@ names:
   en: 'Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free
     Demonstrations'
   zh: 人形操作接口｜基于机器人无关示范的人形全身操作
-  ko: ''
+  ko: 'Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free
+    Demonstrations'
 summary:
   en: ''
   zh: 这篇工作主要解决数据闭环：用相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
-  ko: ''
+  ko: 这篇工作主要解决数据闭环：用相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -45,5 +46,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+这篇工作主要解决数据闭环：用相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
+## 개요
 这篇工作主要解决数据闭环：用相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。

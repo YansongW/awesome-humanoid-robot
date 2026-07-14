@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'QUAR-VLA: Vision-Language-Action Model for Quadruped Robots'
   zh: QUAR-VLA
-  ko: ''
+  ko: 'QUAR-VLA: Vision-Language-Action Model for Quadruped Robots'
 summary:
   en: 'QUAR-VLA: Vision-Language-Action Model for Quadruped Robots (QUAR-VLA), is
     a 2023 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'QUAR-VLA: Vision-Language-Action Model for Quadruped Robots (QUAR-VLA), is
     a 2023 large vision-language-action model for robotic manipulation, introduced
     by Westlake University, Zhejiang University, and published at ECCV24.'
-  ko: ''
+  ko: 'QUAR-VLA: Vision-Language-Action Model for Quadruped Robots (QUAR-VLA), is
+    a 2023 large vision-language-action model for robotic manipulation, introduced
+    by Westlake University, Zhejiang University, and published at ECCV24.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+QUAR-VLA: Vision-Language-Action Model for Quadruped Robots (QUAR-VLA), is a 2023 large vision-language-action model for robotic manipulation, introduced by Westlake University, Zhejiang University, and published at ECCV24.
+
+## Overview
+QUAR-VLA: Vision-Language-Action Model for Quadruped Robots (QUAR-VLA), is a 2023 large vision-language-action model for robotic manipulation, introduced by Westlake University, Zhejiang University, and published at ECCV24.
+
+## 개요
 QUAR-VLA: Vision-Language-Action Model for Quadruped Robots (QUAR-VLA), is a 2023 large vision-language-action model for robotic manipulation, introduced by Westlake University, Zhejiang University, and published at ECCV24.

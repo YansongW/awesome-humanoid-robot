@@ -7,7 +7,8 @@ names:
   en: 'PhysBrain: Human Egocentric Data as a Bridge from Vision Language Models to
     Physical Intelligence'
   zh: PhysBrain
-  ko: ''
+  ko: 'PhysBrain: Human Egocentric Data as a Bridge from Vision Language Models to
+    Physical Intelligence'
 summary:
   en: 'PhysBrain: Human Egocentric Data as a Bridge from Vision Language Models to
     Physical Intelligence (PhysBrain), is a 2025 large vision-language-action model
@@ -21,7 +22,12 @@ summary:
     The Hong Kong University of Science and Technology (Guangzhou), Zhongguancun Academy,
     Zhongguancun Institute of Artificial Intelligence, DeepCybo, Harbin Institute
     of Technology.'
-  ko: ''
+  ko: 'PhysBrain: Human Egocentric Data as a Bridge from Vision Language Models to
+    Physical Intelligence (PhysBrain), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by Huazhong University of Science and Technology,
+    The Hong Kong University of Science and Technology (Guangzhou), Zhongguancun Academy,
+    Zhongguancun Institute of Artificial Intelligence, DeepCybo, Harbin Institute
+    of Technology.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -63,4 +69,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+PhysBrain: Human Egocentric Data as a Bridge from Vision Language Models to Physical Intelligence (PhysBrain), is a 2025 large vision-language-action model for robotic manipulation, introduced by Huazhong University of Science and Technology, The Hong Kong University of Science and Technology (Guangzhou), Zhongguancun Academy, Zhongguancun Institute of Artificial Intelligence, DeepCybo, Harbin Institute of Technology.
+
+## Overview
+PhysBrain: Human Egocentric Data as a Bridge from Vision Language Models to Physical Intelligence (PhysBrain), is a 2025 large vision-language-action model for robotic manipulation, introduced by Huazhong University of Science and Technology, The Hong Kong University of Science and Technology (Guangzhou), Zhongguancun Academy, Zhongguancun Institute of Artificial Intelligence, DeepCybo, Harbin Institute of Technology.
+
+## 개요
 PhysBrain: Human Egocentric Data as a Bridge from Vision Language Models to Physical Intelligence (PhysBrain), is a 2025 large vision-language-action model for robotic manipulation, introduced by Huazhong University of Science and Technology, The Hong Kong University of Science and Technology (Guangzhou), Zhongguancun Academy, Zhongguancun Institute of Artificial Intelligence, DeepCybo, Harbin Institute of Technology.

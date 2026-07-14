@@ -6,13 +6,14 @@ type: paper
 names:
   en: Geometry-Aware Predictive Safety Filters on Humanoids
   zh: Geometry-Aware Predictive Safety Filters on Humanoids
-  ko: ''
+  ko: Geometry-Aware Predictive Safety Filters on Humanoids
 summary:
   en: Geometry-Aware Predictive Safety Filters on Humanoids is a 2025 work on locomotion
     for humanoid robots.
   zh: Geometry-Aware Predictive Safety Filters on Humanoids is a 2025 work on locomotion
     for humanoid robots.
-  ko: ''
+  ko: Geometry-Aware Predictive Safety Filters on Humanoids is a 2025 work on locomotion
+    for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Geometry-Aware Predictive Safety Filters on Humanoids is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Geometry-Aware Predictive Safety Filters on Humanoids is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Geometry-Aware Predictive Safety Filters on Humanoids is a 2025 work on locomotion for humanoid robots.

@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation'
   zh: Act3D
-  ko: ''
+  ko: 'Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation'
 summary:
   en: 'Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation (Act3D),
     is a 2023 generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation (Act3D),
     is a 2023 generalized vision-language-action model for robotic manipulation, introduced
     by Carnegie Mellon University, and published at CoRL 2023.'
-  ko: ''
+  ko: 'Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation (Act3D),
+    is a 2023 generalized vision-language-action model for robotic manipulation, introduced
+    by Carnegie Mellon University, and published at CoRL 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation (Act3D), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, and published at CoRL 2023.
+
+## Overview
+Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation (Act3D), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, and published at CoRL 2023.
+
+## 개요
 Act3D: 3D Feature Field Transformers for Multi-Task Robotic Manipulation (Act3D), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, and published at CoRL 2023.

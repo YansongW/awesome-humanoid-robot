@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+低成本双臂主从遥操作硬件，用于采集人类演示数据以进行模仿学习。
+
+## Overview
 Low-cost bimanual leader-follower teleoperation hardware used to collect human demonstrations for imitation learning.
+
+## 개요
+모방 학습을 위한 인간 시연 데이터를 수집하는 저비용 양손 리더-팔로워 텔레오퍼레이션 하드웨어.

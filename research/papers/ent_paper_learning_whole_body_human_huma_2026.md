@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations
   zh: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations
-  ko: ''
+  ko: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations
 summary:
   en: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations
     is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
   zh: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations
     is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations
+    is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Learning Whole-Body Human-Humanoid Interaction from Human-Human Demonstrations is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

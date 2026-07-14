@@ -7,7 +7,8 @@ names:
   en: 'RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic
     Augmentations and Action Chunking'
   zh: MT-ACT
-  ko: ''
+  ko: 'RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic
+    Augmentations and Action Chunking'
 summary:
   en: 'RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic
     Augmentations and Action Chunking (MT-ACT), is a 2023 generalized vision-language-action
@@ -17,7 +18,10 @@ summary:
     Augmentations and Action Chunking (MT-ACT), is a 2023 generalized vision-language-action
     model for robotic manipulation, introduced by Carnegie Mellon University, FAIR-MetaAI,
     and published at ICRA 2023.'
-  ko: ''
+  ko: 'RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic
+    Augmentations and Action Chunking (MT-ACT), is a 2023 generalized vision-language-action
+    model for robotic manipulation, introduced by Carnegie Mellon University, FAIR-MetaAI,
+    and published at ICRA 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic Augmentations and Action Chunking (MT-ACT), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, FAIR-MetaAI, and published at ICRA 2023.
+
+## Overview
+RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic Augmentations and Action Chunking (MT-ACT), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, FAIR-MetaAI, and published at ICRA 2023.
+
+## 개요
 RoboAgent: Generalization and Efficiency in Robot Manipulation via Semantic Augmentations and Action Chunking (MT-ACT), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Carnegie Mellon University, FAIR-MetaAI, and published at ICRA 2023.

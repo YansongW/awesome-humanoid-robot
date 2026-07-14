@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Octo: An Open-Source Generalist Robot Policy'
   zh: Octo
-  ko: ''
+  ko: 'Octo: An Open-Source Generalist Robot Policy'
 summary:
   en: 'Octo: An Open-Source Generalist Robot Policy (Octo), is a 2024 generalized
     vision-language-action model for robotic manipulation, introduced by UC Berkeley,
@@ -16,7 +16,10 @@ summary:
     vision-language-action model for robotic manipulation, introduced by UC Berkeley,
     Stanford, Carnegie Mellon University, and published at Robotics - Science and
     Systems 2024.'
-  ko: ''
+  ko: 'Octo: An Open-Source Generalist Robot Policy (Octo), is a 2024 generalized
+    vision-language-action model for robotic manipulation, introduced by UC Berkeley,
+    Stanford, Carnegie Mellon University, and published at Robotics - Science and
+    Systems 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Octo: An Open-Source Generalist Robot Policy (Octo), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by UC Berkeley, Stanford, Carnegie Mellon University, and published at Robotics - Science and Systems 2024.
+
+## Overview
+Octo: An Open-Source Generalist Robot Policy (Octo), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by UC Berkeley, Stanford, Carnegie Mellon University, and published at Robotics - Science and Systems 2024.
+
+## 개요
 Octo: An Open-Source Generalist Robot Policy (Octo), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by UC Berkeley, Stanford, Carnegie Mellon University, and published at Robotics - Science and Systems 2024.

@@ -8,13 +8,15 @@ names:
     Transfer'
   zh: 'H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment
     Transfer'
-  ko: ''
+  ko: 'H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment
+    Transfer'
 summary:
   en: 'H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment
     Transfer is a 2025 work on locomotion for humanoid robots.'
   zh: 'H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment
     Transfer is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment
+    Transfer is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 H-Zero: Cross-Humanoid Locomotion Pretraining Enables Few-shot Novel Embodiment Transfer is a 2025 work on locomotion for humanoid robots.

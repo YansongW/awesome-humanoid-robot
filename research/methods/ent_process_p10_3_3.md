@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 实物安全解锁与验证
-  ko: ''
+  ko: 实物安全解锁与验证
 summary:
   en: ''
   zh: Sim-to-Real 迁移报告、关键动作实物通过
-  ko: ''
+  ko: Sim-to-Real 迁移报告、关键动作实物通过
 domains:
 - 07_ai_models_algorithms
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）

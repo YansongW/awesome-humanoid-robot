@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Point What You Mean: Visually Grounded Instruction Policy'
   zh: Point-VLA
-  ko: ''
+  ko: 'Point What You Mean: Visually Grounded Instruction Policy'
 summary:
   en: 'Point What You Mean: Visually Grounded Instruction Policy (Point-VLA), is a
     2025 large vision-language-action model for robotic manipulation, introduced by
@@ -14,7 +14,9 @@ summary:
   zh: 'Point What You Mean: Visually Grounded Instruction Policy (Point-VLA), is a
     2025 large vision-language-action model for robotic manipulation, introduced by
     Tongji University, Shanghai Jiao Tong University, Spirit AI, Tsinghua University.'
-  ko: ''
+  ko: 'Point What You Mean: Visually Grounded Instruction Policy (Point-VLA), is a
+    2025 large vision-language-action model for robotic manipulation, introduced by
+    Tongji University, Shanghai Jiao Tong University, Spirit AI, Tsinghua University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Point What You Mean: Visually Grounded Instruction Policy (Point-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tongji University, Shanghai Jiao Tong University, Spirit AI, Tsinghua University.
+
+## Overview
+Point What You Mean: Visually Grounded Instruction Policy (Point-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tongji University, Shanghai Jiao Tong University, Spirit AI, Tsinghua University.
+
+## 개요
 Point What You Mean: Visually Grounded Instruction Policy (Point-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tongji University, Shanghai Jiao Tong University, Spirit AI, Tsinghua University.

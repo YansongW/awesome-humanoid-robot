@@ -8,13 +8,15 @@ names:
     District
   zh: Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School
     District
-  ko: ''
+  ko: Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School
+    District
 summary:
   en: Pilot program with Salamanca City Central School District marks major step for
     education technology
   zh: Pilot program with Salamanca City Central School District marks major step for
     education technology
-  ko: ''
+  ko: Pilot program with Salamanca City Central School District marks major step for
+    education technology
 domains:
 - 11_applications_markets
 layers:
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Pilot program with Salamanca City Central School District marks major step for education technology
+
+## Overview
+Pilot program with Salamanca City Central School District marks major step for education technology
+
+## 개요
 Pilot program with Salamanca City Central School District marks major step for education technology

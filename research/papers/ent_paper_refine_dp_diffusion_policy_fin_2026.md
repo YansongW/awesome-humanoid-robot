@@ -7,11 +7,12 @@ names:
   en: 'REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via
     Reinforcement Learning'
   zh: REFINE-DP｜通过强化学习对人形移动操作进行扩散策略微调
-  ko: ''
+  ko: 'REFINE-DP: Diffusion Policy Fine-tuning for Humanoid Loco-manipulation via
+    Reinforcement Learning'
 summary:
   en: ''
   zh: REFINE-DP 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、扩散策略/流匹配预测关节位置/力矩命令、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
-  ko: ''
+  ko: REFINE-DP 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、扩散策略/流匹配预测关节位置/力矩命令、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,5 +46,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+REFINE-DP 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、扩散策略/流匹配预测关节位置/力矩命令、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
+## 개요
 REFINE-DP 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用PPO/RL 策略训练、ACT/行为克隆模仿学习、扩散策略/流匹配预测关节位置/力矩命令、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。

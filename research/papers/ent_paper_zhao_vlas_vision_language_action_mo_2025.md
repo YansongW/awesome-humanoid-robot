@@ -7,7 +7,8 @@ names:
   en: 'VLAS: Vision-Language-Action Model With Speech Instructions For Customized
     Robot Manipulation'
   zh: VLAS
-  ko: ''
+  ko: 'VLAS: Vision-Language-Action Model With Speech Instructions For Customized
+    Robot Manipulation'
 summary:
   en: 'VLAS: Vision-Language-Action Model With Speech Instructions For Customized
     Robot Manipulation (VLAS), is a 2025 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: 'VLAS: Vision-Language-Action Model With Speech Instructions For Customized
     Robot Manipulation (VLAS), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Xi''an Jiaotong University, and published at ICLR25.'
-  ko: ''
+  ko: 'VLAS: Vision-Language-Action Model With Speech Instructions For Customized
+    Robot Manipulation (VLAS), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Xi''an Jiaotong University, and published at ICLR25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+VLAS: Vision-Language-Action Model With Speech Instructions For Customized Robot Manipulation (VLAS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Xi'an Jiaotong University, and published at ICLR25.
+
+## Overview
+VLAS: Vision-Language-Action Model With Speech Instructions For Customized Robot Manipulation (VLAS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Xi'an Jiaotong University, and published at ICLR25.
+
+## 개요
 VLAS: Vision-Language-Action Model With Speech Instructions For Customized Robot Manipulation (VLAS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Xi'an Jiaotong University, and published at ICLR25.

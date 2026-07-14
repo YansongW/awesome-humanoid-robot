@@ -8,13 +8,15 @@ names:
     in application for Humanoid Robots'
   zh: 'Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm
     in application for Humanoid Robots'
-  ko: ''
+  ko: 'Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm
+    in application for Humanoid Robots'
 summary:
   en: 'Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm
     in application for Humanoid Robots is a 2025 work on locomotion for humanoid robots.'
   zh: 'Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm
     in application for Humanoid Robots is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm
+    in application for Humanoid Robots is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Symphony: A Heuristic Normalized Calibrated Advantage Actor and Critic Algorithm in application for Humanoid Robots is a 2025 work on locomotion for humanoid robots.

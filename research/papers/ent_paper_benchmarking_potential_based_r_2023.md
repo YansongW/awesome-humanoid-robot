@@ -6,13 +6,14 @@ type: paper
 names:
   en: Benchmarking Potential Based Rewards for Learning Humanoid Locomotion
   zh: Benchmarking Potential Based Rewards for Learning Humanoid Locomotion
-  ko: ''
+  ko: Benchmarking Potential Based Rewards for Learning Humanoid Locomotion
 summary:
   en: Benchmarking Potential Based Rewards for Learning Humanoid Locomotion is a 2023
     work on locomotion for humanoid robots.
   zh: Benchmarking Potential Based Rewards for Learning Humanoid Locomotion is a 2023
     work on locomotion for humanoid robots.
-  ko: ''
+  ko: Benchmarking Potential Based Rewards for Learning Humanoid Locomotion is a 2023
+    work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Benchmarking Potential Based Rewards for Learning Humanoid Locomotion is a 2023 work on locomotion for humanoid robots.
+
+## Overview
+Benchmarking Potential Based Rewards for Learning Humanoid Locomotion is a 2023 work on locomotion for humanoid robots.
+
+## 개요
 Benchmarking Potential Based Rewards for Learning Humanoid Locomotion is a 2023 work on locomotion for humanoid robots.

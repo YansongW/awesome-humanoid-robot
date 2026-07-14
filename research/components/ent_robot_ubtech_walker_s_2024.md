@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+面向工厂作业的工业人形机器人，采用全电驱模块化关节。
+
+## Overview
+Industrial humanoid robot for factory operations, featuring all-electric modular joints.
+
+## 개요
 Industrial humanoid robot for factory operations, featuring all-electric modular joints.

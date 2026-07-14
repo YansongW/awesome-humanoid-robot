@@ -6,13 +6,14 @@ type: paper
 names:
   en: Quantum deep reinforcement learning for humanoid robot navigation task
   zh: Quantum deep reinforcement learning for humanoid robot navigation task
-  ko: ''
+  ko: Quantum deep reinforcement learning for humanoid robot navigation task
 summary:
   en: Quantum deep reinforcement learning for humanoid robot navigation task is a
     2025 work on navigation for humanoid robots.
   zh: Quantum deep reinforcement learning for humanoid robot navigation task is a
     2025 work on navigation for humanoid robots.
-  ko: ''
+  ko: Quantum deep reinforcement learning for humanoid robot navigation task is a
+    2025 work on navigation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Quantum deep reinforcement learning for humanoid robot navigation task is a 2025 work on navigation for humanoid robots.
+
+## Overview
+Quantum deep reinforcement learning for humanoid robot navigation task is a 2025 work on navigation for humanoid robots.
+
+## 개요
 Quantum deep reinforcement learning for humanoid robot navigation task is a 2025 work on navigation for humanoid robots.

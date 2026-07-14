@@ -7,7 +7,8 @@ names:
   en: 'RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and
     Manipulation'
   zh: RoboMamba
-  ko: ''
+  ko: 'RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and
+    Manipulation'
 summary:
   en: 'RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and
     Manipulation (RoboMamba), is a 2024 large vision-language-action model for robotic
@@ -19,7 +20,11 @@ summary:
     manipulation, introduced by State Key Laboratory of Multimedia Information Processing,
     School of Computer Science, Peking University, AI2Robotics, Beijing Academy of
     Artificial Intelligence (BAAI), and published at NIPS 2024.'
-  ko: ''
+  ko: 'RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and
+    Manipulation (RoboMamba), is a 2024 large vision-language-action model for robotic
+    manipulation, introduced by State Key Laboratory of Multimedia Information Processing,
+    School of Computer Science, Peking University, AI2Robotics, Beijing Academy of
+    Artificial Intelligence (BAAI), and published at NIPS 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +59,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and Manipulation (RoboMamba), is a 2024 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, AI2Robotics, Beijing Academy of Artificial Intelligence (BAAI), and published at NIPS 2024.
+
+## Overview
+RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and Manipulation (RoboMamba), is a 2024 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, AI2Robotics, Beijing Academy of Artificial Intelligence (BAAI), and published at NIPS 2024.
+
+## 개요
 RoboMamba: Efficient Vision-Language-Action Model for Robotic Reasoning and Manipulation (RoboMamba), is a 2024 large vision-language-action model for robotic manipulation, introduced by State Key Laboratory of Multimedia Information Processing, School of Computer Science, Peking University, AI2Robotics, Beijing Academy of Artificial Intelligence (BAAI), and published at NIPS 2024.

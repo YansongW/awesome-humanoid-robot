@@ -6,13 +6,14 @@ type: paper
 names:
   en: Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation
   zh: Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation
-  ko: ''
+  ko: Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation
 summary:
   en: Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation
     is a 2023 work on teleoperation for humanoid robots, with open-source code available.
   zh: Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation
     is a 2023 work on teleoperation for humanoid robots, with open-source code available.
-  ko: ''
+  ko: Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation
+    is a 2023 work on teleoperation for humanoid robots, with open-source code available.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation is a 2023 work on teleoperation for humanoid robots, with open-source code available.
+
+## Overview
+Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation is a 2023 work on teleoperation for humanoid robots, with open-source code available.
+
+## 개요
 Deep Imitation Learning for Humanoid Loco-manipulation through Human Teleoperation is a 2023 work on teleoperation for humanoid robots, with open-source code available.

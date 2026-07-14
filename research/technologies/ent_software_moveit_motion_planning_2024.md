@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+常用于机械臂和全身运动规划的框架。
+
+## Overview
+Motion-planning framework commonly used for manipulation arms and whole-body planning.
+
+## 개요
 Motion-planning framework commonly used for manipulation arms and whole-body planning.

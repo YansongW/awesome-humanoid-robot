@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learned motion matching
   zh: Learned motion matching
-  ko: ''
+  ko: Learned motion matching
 summary:
   en: Learned motion matching is a 2020 work on human motion analysis and synthesis
     for humanoid robots.
   zh: Learned motion matching is a 2020 work on human motion analysis and synthesis
     for humanoid robots.
-  ko: ''
+  ko: Learned motion matching is a 2020 work on human motion analysis and synthesis
+    for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learned motion matching is a 2020 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+Learned motion matching is a 2020 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 Learned motion matching is a 2020 work on human motion analysis and synthesis for humanoid robots.

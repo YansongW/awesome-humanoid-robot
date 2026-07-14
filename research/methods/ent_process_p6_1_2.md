@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: DH / 修改 DH 参数定义
-  ko: ''
+  ko: DH / 修改 DH 参数定义
 summary:
   en: ''
   zh: 《DH 参数表》、正运动学代码与 URDF 对比误差 < 1e-6
-  ko: ''
+  ko: 《DH 参数表》、正运动学代码与 URDF 对比误差 < 1e-6
 domains:
 - 06_design_engineering
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）

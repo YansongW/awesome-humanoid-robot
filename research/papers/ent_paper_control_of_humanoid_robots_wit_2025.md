@@ -8,13 +8,15 @@ names:
     Models
   zh: Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation
     Models
-  ko: ''
+  ko: Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation
+    Models
 summary:
   en: Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation
     Models is a 2025 work on hardware design for humanoid robots.
   zh: Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation
     Models is a 2025 work on hardware design for humanoid robots.
-  ko: ''
+  ko: Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation
+    Models is a 2025 work on hardware design for humanoid robots.
 domains:
 - 06_design_engineering
 - 02_components
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation Models is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation Models is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 Control of Humanoid Robots with Parallel Mechanisms using Kinematic Actuation Models is a 2025 work on hardware design for humanoid robots.

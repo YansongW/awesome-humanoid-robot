@@ -6,7 +6,7 @@ type: paper
 names:
   en: Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging
   zh: RETAIN
-  ko: ''
+  ko: Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging
 summary:
   en: Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging
     (RETAIN), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging
     (RETAIN), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by UC Berkeley.
-  ko: ''
+  ko: Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging
+    (RETAIN), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by UC Berkeley.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging (RETAIN), is a 2025 large vision-language-action model for robotic manipulation, introduced by UC Berkeley.
+
+## Overview
+Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging (RETAIN), is a 2025 large vision-language-action model for robotic manipulation, introduced by UC Berkeley.
+
+## 개요
 Robust Finetuning of Vision-Language-Action Robot Policies via Parameter Merging (RETAIN), is a 2025 large vision-language-action model for robotic manipulation, introduced by UC Berkeley.

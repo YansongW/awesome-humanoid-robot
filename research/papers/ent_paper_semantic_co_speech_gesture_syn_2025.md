@@ -6,13 +6,14 @@ type: paper
 names:
   en: Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots
   zh: Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots
-  ko: ''
+  ko: Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots
 summary:
   en: Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
   zh: Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots
+    is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Semantic Co-Speech Gesture Synthesis and Real-Time Control for Humanoid Robots is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

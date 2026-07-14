@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 热管理仿真与迭代（Thermal Management）
-  ko: ''
+  ko: 热管理仿真与迭代（Thermal Management）
 summary:
   en: ''
   zh: 热管理仿真与迭代（Thermal Management）
-  ko: ''
+  ko: 热管理仿真与迭代（Thermal Management）
 domains:
 - 06_design_engineering
 layers:
@@ -34,5 +34,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+热管理仿真与迭代（Thermal Management）
 
+## Overview
+热管理仿真与迭代（Thermal Management）
 
+## 개요
+热管理仿真与迭代（Thermal Management）

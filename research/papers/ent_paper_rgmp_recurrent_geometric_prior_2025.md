@@ -8,13 +8,15 @@ names:
     Robot Manipulation'
   zh: 'RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid
     Robot Manipulation'
-  ko: ''
+  ko: 'RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid
+    Robot Manipulation'
 summary:
   en: 'RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid
     Robot Manipulation is a 2025 work on manipulation for humanoid robots.'
   zh: 'RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid
     Robot Manipulation is a 2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid
+    Robot Manipulation is a 2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 RGMP: Recurrent Geometric-prior Multimodal Policy for Generalizable Humanoid Robot Manipulation is a 2025 work on manipulation for humanoid robots.

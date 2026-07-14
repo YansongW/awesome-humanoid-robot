@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation
   zh: Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation
-  ko: ''
+  ko: Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation
 summary:
   en: Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation
     is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
   zh: Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation
     is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation
+    is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Learning Humanoid End-Effector Control for Open-Vocabulary Visual Loco-Manipulation is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

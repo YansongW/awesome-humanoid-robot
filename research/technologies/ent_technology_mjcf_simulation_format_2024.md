@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+MuJoCo的XML建模格式，用于描述具有接触、执行器和传感器的铰接刚体系统。
+
+## Overview
 MuJoCo's XML modeling format for articulated rigid-body systems with contact, actuators, and sensors.
+
+## 개요
+접촉, 액추에이터 및 센서가 있는 관절 강체 시스템을 위한 MuJoCo의 XML 모델링 형식.

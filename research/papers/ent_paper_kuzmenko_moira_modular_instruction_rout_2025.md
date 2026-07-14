@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'MoIRA: Modular Instruction Routing Architecture for Multi-Task Robotics'
   zh: MoIRA
-  ko: ''
+  ko: 'MoIRA: Modular Instruction Routing Architecture for Multi-Task Robotics'
 summary:
   en: 'MoIRA: Modular Instruction Routing Architecture for Multi-Task Robotics (MoIRA),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Department of Multimedia Systems, National University of Kyiv-Mohyla Academy,
     Department of Mathematics, National University of Kyiv-Mohyla Academy.'
-  ko: ''
+  ko: 'MoIRA: Modular Instruction Routing Architecture for Multi-Task Robotics (MoIRA),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Department of Multimedia Systems, National University of Kyiv-Mohyla Academy,
+    Department of Mathematics, National University of Kyiv-Mohyla Academy.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MoIRA: Modular Instruction Routing Architecture for Multi-Task Robotics (MoIRA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Department of Multimedia Systems, National University of Kyiv-Mohyla Academy, Department of Mathematics, National University of Kyiv-Mohyla Academy.
+
+## Overview
+MoIRA: Modular Instruction Routing Architecture for Multi-Task Robotics (MoIRA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Department of Multimedia Systems, National University of Kyiv-Mohyla Academy, Department of Mathematics, National University of Kyiv-Mohyla Academy.
+
+## 개요
 MoIRA: Modular Instruction Routing Architecture for Multi-Task Robotics (MoIRA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Department of Multimedia Systems, National University of Kyiv-Mohyla Academy, Department of Mathematics, National University of Kyiv-Mohyla Academy.

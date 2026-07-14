@@ -6,13 +6,14 @@ type: paper
 names:
   en: Implicit Kinodynamic Motion Retargeting for Human-to-humanoid Imitation Learning
   zh: Implicit Kinodynamic Motion Retargeting for Human-to-humanoid Imitation Learning
-  ko: ''
+  ko: Implicit Kinodynamic Motion Retargeting for Human-to-humanoid Imitation Learning
 summary:
   en: Implicit Kinodynamic Motion Retargeting for Human-to-humanoid Imitation Learning
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
   zh: Implicit Kinodynamic Motion Retargeting for Human-to-humanoid Imitation Learning
     is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
-  ko: ''
+  ko: Implicit Kinodynamic Motion Retargeting for Human-to-humanoid Imitation Learning
+    is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Implicit Kinodynamic Motion Retargeting for Human-to-humanoid Imitation Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Implicit Kinodynamic Motion Retargeting for Human-to-humanoid Imitation Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Implicit Kinodynamic Motion Retargeting for Human-to-humanoid Imitation Learning is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

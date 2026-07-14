@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-13'
 ---
 
-七自由度机械臂是人形机器人上肢的核心子系统，通过冗余自由度改善可达空间与避障能力。本词条正文正在施工中。
+## 概述
+人形机器人中常用的七自由度机械臂，模仿人体手臂冗余度以提升操作灵活性。
+
+## Overview
+Seven-degree-of-freedom robotic arm commonly used in humanoid robots to mimic human arm redundancy and improve manipulation dexterity.
+
+## 개요
+Seven-degree-of-freedom robotic arm commonly used in humanoid robots to mimic human arm redundancy and improve manipulation dexterity.

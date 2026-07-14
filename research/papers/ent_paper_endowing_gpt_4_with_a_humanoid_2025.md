@@ -8,13 +8,15 @@ names:
     VLMs and the Physical World'
   zh: 'Endowing GPT-4 with a Humanoid Body: Building the Bridge Between Off-the-Shelf
     VLMs and the Physical World'
-  ko: ''
+  ko: 'Endowing GPT-4 with a Humanoid Body: Building the Bridge Between Off-the-Shelf
+    VLMs and the Physical World'
 summary:
   en: 'Endowing GPT-4 with a Humanoid Body: Building the Bridge Between Off-the-Shelf
     VLMs and the Physical World is a 2025 work on manipulation for humanoid robots.'
   zh: 'Endowing GPT-4 with a Humanoid Body: Building the Bridge Between Off-the-Shelf
     VLMs and the Physical World is a 2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'Endowing GPT-4 with a Humanoid Body: Building the Bridge Between Off-the-Shelf
+    VLMs and the Physical World is a 2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Endowing GPT-4 with a Humanoid Body: Building the Bridge Between Off-the-Shelf VLMs and the Physical World is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+Endowing GPT-4 with a Humanoid Body: Building the Bridge Between Off-the-Shelf VLMs and the Physical World is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 Endowing GPT-4 with a Humanoid Body: Building the Bridge Between Off-the-Shelf VLMs and the Physical World is a 2025 work on manipulation for humanoid robots.

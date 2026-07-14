@@ -7,11 +7,12 @@ names:
   en: 'TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation
     and Control'
   zh: TextOp｜实时交互式文本驱动的仿人机器人运动生成和控制
-  ko: ''
+  ko: 'TextOp: Real-time Interactive Text-Driven Humanoid Robot Motion Generation
+    and Control'
 summary:
   en: ''
   zh: TextOp 主要解决数据闭环：用语言指令、遥操作/外骨骼数据采集人类操作和机器人状态，再通过扩散策略/流匹配、全身控制器/WBC/MPC转成可训练、可复用的全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
-  ko: ''
+  ko: TextOp 主要解决数据闭环：用语言指令、遥操作/外骨骼数据采集人类操作和机器人状态，再通过扩散策略/流匹配、全身控制器/WBC/MPC转成可训练、可复用的全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,5 +46,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+TextOp 主要解决数据闭环：用语言指令、遥操作/外骨骼数据采集人类操作和机器人状态，再通过扩散策略/流匹配、全身控制器/WBC/MPC转成可训练、可复用的全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
+## 개요
 TextOp 主要解决数据闭环：用语言指令、遥操作/外骨骼数据采集人类操作和机器人状态，再通过扩散策略/流匹配、全身控制器/WBC/MPC转成可训练、可复用的全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。

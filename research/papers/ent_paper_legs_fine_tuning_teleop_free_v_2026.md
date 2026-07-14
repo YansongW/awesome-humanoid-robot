@@ -7,11 +7,12 @@ names:
   en: 'LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied
     Gaussian Splatting World'
   zh: LEGS｜微调无TeleopVLA，用于体现高斯泼溅世界中的人形移动操作
-  ko: ''
+  ko: 'LEGS: Fine-Tuning Teleop-Free VLAs for Humanoid Loco-manipulation in an Embodied
+    Gaussian Splatting World'
 summary:
   en: ''
   zh: LEGS 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、VLA 多模态动作模型、世界模型/视频预测预测低层控制器目标、地形/场景表征。关键点是让视频/世界模型提供可预测的物理先验，再由动作头把语义目标变成连续控制。
-  ko: ''
+  ko: LEGS 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、VLA 多模态动作模型、世界模型/视频预测预测低层控制器目标、地形/场景表征。关键点是让视频/世界模型提供可预测的物理先验，再由动作头把语义目标变成连续控制。
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,5 +46,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+LEGS 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、VLA 多模态动作模型、世界模型/视频预测预测低层控制器目标、地形/场景表征。关键点是让视频/世界模型提供可预测的物理先验，再由动作头把语义目标变成连续控制。
 
+## 개요
 LEGS 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、VLA 多模态动作模型、世界模型/视频预测预测低层控制器目标、地形/场景表征。关键点是让视频/世界模型提供可预测的物理先验，再由动作头把语义目标变成连续控制。

@@ -6,13 +6,14 @@ type: paper
 names:
   en: Scaling Large Motion Models with Million-Level Human Motions
   zh: Scaling Large Motion Models with Million-Level Human Motions
-  ko: ''
+  ko: Scaling Large Motion Models with Million-Level Human Motions
 summary:
   en: Scaling Large Motion Models with Million-Level Human Motions is a 2024 work
     on human motion analysis and synthesis for humanoid robots.
   zh: Scaling Large Motion Models with Million-Level Human Motions is a 2024 work
     on human motion analysis and synthesis for humanoid robots.
-  ko: ''
+  ko: Scaling Large Motion Models with Million-Level Human Motions is a 2024 work
+    on human motion analysis and synthesis for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Scaling Large Motion Models with Million-Level Human Motions is a 2024 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+Scaling Large Motion Models with Million-Level Human Motions is a 2024 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 Scaling Large Motion Models with Million-Level Human Motions is a 2024 work on human motion analysis and synthesis for humanoid robots.

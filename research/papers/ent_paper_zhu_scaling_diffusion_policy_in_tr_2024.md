@@ -7,7 +7,8 @@ names:
   en: Scaling Diffusion Policy in Transformer to 1 Billion Parameters for Robotic
     Manipulation
   zh: ScaleDP
-  ko: ''
+  ko: Scaling Diffusion Policy in Transformer to 1 Billion Parameters for Robotic
+    Manipulation
 summary:
   en: Scaling Diffusion Policy in Transformer to 1 Billion Parameters for Robotic
     Manipulation (ScaleDP), is a 2024 generalized vision-language-action model for
@@ -19,7 +20,11 @@ summary:
     robotic manipulation, introduced by East China Normal University, Midea Group,
     Beijing Innovation Center of Humanoid Robotics, Shanghai University, and published
     at ICRA 2024.
-  ko: ''
+  ko: Scaling Diffusion Policy in Transformer to 1 Billion Parameters for Robotic
+    Manipulation (ScaleDP), is a 2024 generalized vision-language-action model for
+    robotic manipulation, introduced by East China Normal University, Midea Group,
+    Beijing Innovation Center of Humanoid Robotics, Shanghai University, and published
+    at ICRA 2024.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Scaling Diffusion Policy in Transformer to 1 Billion Parameters for Robotic Manipulation (ScaleDP), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by East China Normal University, Midea Group, Beijing Innovation Center of Humanoid Robotics, Shanghai University, and published at ICRA 2024.
+
+## Overview
+Scaling Diffusion Policy in Transformer to 1 Billion Parameters for Robotic Manipulation (ScaleDP), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by East China Normal University, Midea Group, Beijing Innovation Center of Humanoid Robotics, Shanghai University, and published at ICRA 2024.
+
+## 개요
 Scaling Diffusion Policy in Transformer to 1 Billion Parameters for Robotic Manipulation (ScaleDP), is a 2024 generalized vision-language-action model for robotic manipulation, introduced by East China Normal University, Midea Group, Beijing Innovation Center of Humanoid Robotics, Shanghai University, and published at ICRA 2024.

@@ -8,13 +8,15 @@ names:
     Report'
   zh: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical
     Report'
-  ko: ''
+  ko: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical
+    Report'
 summary:
   en: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical
     Report is a 2025 work on simulation benchmark for humanoid robots.'
   zh: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical
     Report is a 2025 work on simulation benchmark for humanoid robots.'
-  ko: ''
+  ko: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical
+    Report is a 2025 work on simulation benchmark for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report is a 2025 work on simulation benchmark for humanoid robots.
+
+## Overview
+Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report is a 2025 work on simulation benchmark for humanoid robots.
+
+## 개요
 Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report is a 2025 work on simulation benchmark for humanoid robots.

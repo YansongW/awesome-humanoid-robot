@@ -6,7 +6,7 @@ type: paper
 names:
   en: Learning Agile Quadrotor Flight in the Real World
   zh: Learning Agile Quadrotor Flight in the Real World
-  ko: ''
+  ko: Learning Agile Quadrotor Flight in the Real World
 summary:
   en: "arXiv:2602.10111v2 Announce Type: replace \nAbstract: Learning-based controllers\
     \ have achieved impressive performance in agile quadrotor flight but typically\
@@ -52,7 +52,28 @@ summary:
     \ 100 seconds of flight time. These findings underscore that real-world adaptation\
     \ serves not merely to compensate for modeling errors, but as a practical mechanism\
     \ for sustained performance improvement in aggressive flight regimes."
-  ko: ''
+  ko: "arXiv:2602.10111v2 Announce Type: replace \nAbstract: Learning-based controllers\
+    \ have achieved impressive performance in agile quadrotor flight but typically\
+    \ rely on massive training in simulation, necessitating accurate system identification\
+    \ for effective Sim2Real transfer. However, even with precise modeling, fixed\
+    \ policies remain susceptible to out-of-distribution scenarios, ranging from external\
+    \ aerodynamic disturbances to internal hardware degradation. To ensure safety\
+    \ under these evolving uncertainties, such controllers are forced to operate with\
+    \ conservative safety margins, inherently constraining their agility outside of\
+    \ controlled settings. While online adaptation offers a potential remedy, safely\
+    \ exploring physical limits remains a critical bottleneck due to data scarcity\
+    \ and safety risks. To bridge this gap, we propose a self-adaptive framework that\
+    \ eliminates the need for precise system identification or offline Sim2Real transfer.\
+    \ We introduce Adaptive Temporal Scaling (ATS) to actively explore platform physical\
+    \ limits, and employ online residual learning to augment a simple nominal model.\
+    \ {Based on the learned hybrid model, we further propose Real-world Anchored Short-horizon\
+    \ Backpropagation Through Time (RASH-BPTT) to achieve efficient and robust in-flight\
+    \ policy updates. Extensive experiments demonstrate that our quadrotor reliably\
+    \ executes agile maneuvers near actuator saturation limits. The system evolves\
+    \ a conservative base policy with a peak speed of 1.9 m/s to 7.3 m/s within approximately\
+    \ 100 seconds of flight time. These findings underscore that real-world adaptation\
+    \ serves not merely to compensate for modeling errors, but as a practical mechanism\
+    \ for sustained performance improvement in aggressive flight regimes."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -82,5 +103,14 @@ sources:
   accessed_at: '2026-07-14'
 ---
 
+## 概述
+arXiv:2602.10111v2 Announce Type: replace 
+Abstract: Learning-based controllers have achieved impressive performance in agile quadrotor flight but typically rely on massive training in simulation, necessitating accurate system identification for effective Sim2Real transfer. However, even with precise modeling, fixed policies remain susceptible to out-of-distribution scenarios, ranging from external aerodynamic disturbances to internal hardware degradation. To ensure safety under these evolving uncertainties, such controllers are forced to operate with conservative safety margins, inherently constraining their agility outside of controlled settings. While online adaptation offers a potential remedy, safely exploring physical limits remains a critical bottleneck due to data scarcity and safety risks. To bridge this gap, we propose a self-adaptive framework that eliminates the need for precise system identification or offline Sim2Real transfer. We introduce Adaptive Temporal Scaling (ATS) to actively explore platform physical limits, and employ online residual learning to augment a simple nominal model. {Based on the learned hybrid model, we further propose Real-world Anchored Short-horizon Backpropagation Through Time (RASH-BPTT) to achieve efficient and robust in-flight policy updates. Extensive experiments demonstrate that our quadrotor reliably executes agile maneuvers near actuator saturation limits. The system evolves a conservative base policy with a peak speed of 1.9 m/s to 7.3 m/s within approximately 100 seconds of flight time. These findings underscore that real-world adaptation serves not merely to compensate for modeling errors, but as a practical mechanism for sustained performance improvement in aggressive flight regimes.
+
+## Overview
+arXiv:2602.10111v2 Announce Type: replace 
+Abstract: Learning-based controllers have achieved impressive performance in agile quadrotor flight but typically rely on massive training in simulation, necessitating accurate system identification for effective Sim2Real transfer. However, even with precise modeling, fixed policies remain susceptible to out-of-distribution scenarios, ranging from external aerodynamic disturbances to internal hardware degradation. To ensure safety under these evolving uncertainties, such controllers are forced to operate with conservative safety margins, inherently constraining their agility outside of controlled settings. While online adaptation offers a potential remedy, safely exploring physical limits remains a critical bottleneck due to data scarcity and safety risks. To bridge this gap, we propose a self-adaptive framework that eliminates the need for precise system identification or offline Sim2Real transfer. We introduce Adaptive Temporal Scaling (ATS) to actively explore platform physical limits, and employ online residual learning to augment a simple nominal model. {Based on the learned hybrid model, we further propose Real-world Anchored Short-horizon Backpropagation Through Time (RASH-BPTT) to achieve efficient and robust in-flight policy updates. Extensive experiments demonstrate that our quadrotor reliably executes agile maneuvers near actuator saturation limits. The system evolves a conservative base policy with a peak speed of 1.9 m/s to 7.3 m/s within approximately 100 seconds of flight time. These findings underscore that real-world adaptation serves not merely to compensate for modeling errors, but as a practical mechanism for sustained performance improvement in aggressive flight regimes.
+
+## 개요
 arXiv:2602.10111v2 Announce Type: replace 
 Abstract: Learning-based controllers have achieved impressive performance in agile quadrotor flight but typically rely on massive training in simulation, necessitating accurate system identification for effective Sim2Real transfer. However, even with precise modeling, fixed policies remain susceptible to out-of-distribution scenarios, ranging from external aerodynamic disturbances to internal hardware degradation. To ensure safety under these evolving uncertainties, such controllers are forced to operate with conservative safety margins, inherently constraining their agility outside of controlled settings. While online adaptation offers a potential remedy, safely exploring physical limits remains a critical bottleneck due to data scarcity and safety risks. To bridge this gap, we propose a self-adaptive framework that eliminates the need for precise system identification or offline Sim2Real transfer. We introduce Adaptive Temporal Scaling (ATS) to actively explore platform physical limits, and employ online residual learning to augment a simple nominal model. {Based on the learned hybrid model, we further propose Real-world Anchored Short-horizon Backpropagation Through Time (RASH-BPTT) to achieve efficient and robust in-flight policy updates. Extensive experiments demonstrate that our quadrotor reliably executes agile maneuvers near actuator saturation limits. The system evolves a conservative base policy with a peak speed of 1.9 m/s to 7.3 m/s within approximately 100 seconds of flight time. These findings underscore that real-world adaptation serves not merely to compensate for modeling errors, but as a practical mechanism for sustained performance improvement in aggressive flight regimes.

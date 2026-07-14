@@ -7,7 +7,8 @@ names:
   en: 'GraphCoT-VLA: A 3D Spatial-Aware Reasoning Vision-Language-Action Model for
     Robotic Manipulation with Ambiguous Instructions'
   zh: GraphCoT-VLA
-  ko: ''
+  ko: 'GraphCoT-VLA: A 3D Spatial-Aware Reasoning Vision-Language-Action Model for
+    Robotic Manipulation with Ambiguous Instructions'
 summary:
   en: 'GraphCoT-VLA: A 3D Spatial-Aware Reasoning Vision-Language-Action Model for
     Robotic Manipulation with Ambiguous Instructions (GraphCoT-VLA), is a 2025 large
@@ -17,7 +18,10 @@ summary:
     Robotic Manipulation with Ambiguous Instructions (GraphCoT-VLA), is a 2025 large
     vision-language-action model for robotic manipulation, introduced by Noah’s Ark
     Lab, Huawei, University of Science and Technology of China.'
-  ko: ''
+  ko: 'GraphCoT-VLA: A 3D Spatial-Aware Reasoning Vision-Language-Action Model for
+    Robotic Manipulation with Ambiguous Instructions (GraphCoT-VLA), is a 2025 large
+    vision-language-action model for robotic manipulation, introduced by Noah’s Ark
+    Lab, Huawei, University of Science and Technology of China.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GraphCoT-VLA: A 3D Spatial-Aware Reasoning Vision-Language-Action Model for Robotic Manipulation with Ambiguous Instructions (GraphCoT-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Noah’s Ark Lab, Huawei, University of Science and Technology of China.
+
+## Overview
+GraphCoT-VLA: A 3D Spatial-Aware Reasoning Vision-Language-Action Model for Robotic Manipulation with Ambiguous Instructions (GraphCoT-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Noah’s Ark Lab, Huawei, University of Science and Technology of China.
+
+## 개요
 GraphCoT-VLA: A 3D Spatial-Aware Reasoning Vision-Language-Action Model for Robotic Manipulation with Ambiguous Instructions (GraphCoT-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Noah’s Ark Lab, Huawei, University of Science and Technology of China.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 计算架构与节点分布
-  ko: ''
+  ko: 计算架构与节点分布
 summary:
   en: ''
   zh: 计算架构图、各节点算力/功耗预算、通信接口
-  ko: ''
+  ko: 计算架构图、各节点算力/功耗预算、通信接口
 domains:
 - 06_design_engineering
 - 02_components
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）

@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation'
   zh: 'ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation'
-  ko: ''
+  ko: 'ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation'
 summary:
   en: 'ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation
     is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation
     is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation
+    is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -52,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 ULTRA: Unified Multimodal Control for Autonomous Humanoid Whole-Body Loco-Manipulation is a 2026 work on loco-manipulation and whole-body-control for humanoid robots.

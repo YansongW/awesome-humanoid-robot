@@ -6,7 +6,7 @@ type: paper
 names:
   en: Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion
   zh: Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion
-  ko: ''
+  ko: Mixture-of-Experts RL for Fault-Tolerant Legged Locomotion
 summary:
   en: "arXiv:2606.25965v2 Announce Type: replace \nAbstract: Legged robots deployed\
     \ in planetary exploration and other remote environments must maintain reliable\
@@ -38,7 +38,21 @@ summary:
     \ significantly reduced network capacity, highlighting its suitability for compute-constrained\
     \ robotic platforms, such as those typically employed in space applications. The\
     \ code associated with this work is available at: https://github.com/iit-DLSLab/fault-locomotion-isaaclab."
-  ko: ''
+  ko: "arXiv:2606.25965v2 Announce Type: replace \nAbstract: Legged robots deployed\
+    \ in planetary exploration and other remote environments must maintain reliable\
+    \ locomotion despite actuator failures and challenging terrain conditions. Although\
+    \ reinforcement learning has achieved strong results in legged locomotion, monolithic\
+    \ policies can struggle to efficiently represent the diverse control strategies\
+    \ required to compensate for different fault conditions. In this work, we propose\
+    \ a fault-aware modular control architecture that explicitly leverages fault-diagnosis\
+    \ information to activate specialized control experts associated with distinct\
+    \ actuator failure modes. Experimental results show that explicit fault-conditioned\
+    \ modular policies consistently outperform monolithic policies of comparable size,\
+    \ achieving higher locomotion performance across failure scenarios. Moreover,\
+    \ the proposed modular architecture retains competitive performance even under\
+    \ significantly reduced network capacity, highlighting its suitability for compute-constrained\
+    \ robotic platforms, such as those typically employed in space applications. The\
+    \ code associated with this work is available at: https://github.com/iit-DLSLab/fault-locomotion-isaaclab."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -68,5 +82,14 @@ sources:
   accessed_at: '2026-07-03'
 ---
 
+## 概述
+arXiv:2606.25965v2 Announce Type: replace 
+Abstract: Legged robots deployed in planetary exploration and other remote environments must maintain reliable locomotion despite actuator failures and challenging terrain conditions. Although reinforcement learning has achieved strong results in legged locomotion, monolithic policies can struggle to efficiently represent the diverse control strategies required to compensate for different fault conditions. In this work, we propose a fault-aware modular control architecture that explicitly leverages fault-diagnosis information to activate specialized control experts associated with distinct actuator failure modes. Experimental results show that explicit fault-conditioned modular policies consistently outperform monolithic policies of comparable size, achieving higher locomotion performance across failure scenarios. Moreover, the proposed modular architecture retains competitive performance even under significantly reduced network capacity, highlighting its suitability for compute-constrained robotic platforms, such as those typically employed in space applications. The code associated with this work is available at: https://github.com/iit-DLSLab/fault-locomotion-isaaclab.
+
+## Overview
+arXiv:2606.25965v2 Announce Type: replace 
+Abstract: Legged robots deployed in planetary exploration and other remote environments must maintain reliable locomotion despite actuator failures and challenging terrain conditions. Although reinforcement learning has achieved strong results in legged locomotion, monolithic policies can struggle to efficiently represent the diverse control strategies required to compensate for different fault conditions. In this work, we propose a fault-aware modular control architecture that explicitly leverages fault-diagnosis information to activate specialized control experts associated with distinct actuator failure modes. Experimental results show that explicit fault-conditioned modular policies consistently outperform monolithic policies of comparable size, achieving higher locomotion performance across failure scenarios. Moreover, the proposed modular architecture retains competitive performance even under significantly reduced network capacity, highlighting its suitability for compute-constrained robotic platforms, such as those typically employed in space applications. The code associated with this work is available at: https://github.com/iit-DLSLab/fault-locomotion-isaaclab.
+
+## 개요
 arXiv:2606.25965v2 Announce Type: replace 
 Abstract: Legged robots deployed in planetary exploration and other remote environments must maintain reliable locomotion despite actuator failures and challenging terrain conditions. Although reinforcement learning has achieved strong results in legged locomotion, monolithic policies can struggle to efficiently represent the diverse control strategies required to compensate for different fault conditions. In this work, we propose a fault-aware modular control architecture that explicitly leverages fault-diagnosis information to activate specialized control experts associated with distinct actuator failure modes. Experimental results show that explicit fault-conditioned modular policies consistently outperform monolithic policies of comparable size, achieving higher locomotion performance across failure scenarios. Moreover, the proposed modular architecture retains competitive performance even under significantly reduced network capacity, highlighting its suitability for compute-constrained robotic platforms, such as those typically employed in space applications. The code associated with this work is available at: https://github.com/iit-DLSLab/fault-locomotion-isaaclab.

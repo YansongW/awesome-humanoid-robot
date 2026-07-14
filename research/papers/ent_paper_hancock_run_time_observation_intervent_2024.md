@@ -7,7 +7,8 @@ names:
   en: Run-time Observation Interventions Make Vision-Language-Action Models More Visually
     Robust
   zh: BYOVLA
-  ko: ''
+  ko: Run-time Observation Interventions Make Vision-Language-Action Models More Visually
+    Robust
 summary:
   en: Run-time Observation Interventions Make Vision-Language-Action Models More Visually
     Robust (BYOVLA), is a 2024 large vision-language-action model for robotic manipulation,
@@ -15,7 +16,9 @@ summary:
   zh: Run-time Observation Interventions Make Vision-Language-Action Models More Visually
     Robust (BYOVLA), is a 2024 large vision-language-action model for robotic manipulation,
     introduced by Princeton University, and published at ICRA 2024.
-  ko: ''
+  ko: Run-time Observation Interventions Make Vision-Language-Action Models More Visually
+    Robust (BYOVLA), is a 2024 large vision-language-action model for robotic manipulation,
+    introduced by Princeton University, and published at ICRA 2024.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Run-time Observation Interventions Make Vision-Language-Action Models More Visually Robust (BYOVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Princeton University, and published at ICRA 2024.
+
+## Overview
+Run-time Observation Interventions Make Vision-Language-Action Models More Visually Robust (BYOVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Princeton University, and published at ICRA 2024.
+
+## 개요
 Run-time Observation Interventions Make Vision-Language-Action Models More Visually Robust (BYOVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Princeton University, and published at ICRA 2024.

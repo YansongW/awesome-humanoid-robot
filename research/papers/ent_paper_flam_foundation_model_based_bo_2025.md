@@ -8,7 +8,8 @@ names:
     Manipulation'
   zh: 'FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and
     Manipulation'
-  ko: ''
+  ko: 'FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and
+    Manipulation'
 summary:
   en: 'FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and
     Manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and
     Manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid
     robots.'
-  ko: ''
+  ko: 'FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and
+    Manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 FLAM: Foundation Model-Based Body Stabilization for Humanoid Locomotion and Manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

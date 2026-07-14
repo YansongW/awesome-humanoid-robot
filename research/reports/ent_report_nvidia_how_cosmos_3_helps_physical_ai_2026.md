@@ -6,11 +6,11 @@ type: report
 names:
   en: How Cosmos 3 Helps Physical AI Think Before It Acts
   zh: How Cosmos 3 Helps Physical AI Think Before It Acts
-  ko: ''
+  ko: How Cosmos 3 Helps Physical AI Think Before It Acts
 summary:
   en: How Cosmos 3 Helps Physical AI Think Before It Acts
   zh: How Cosmos 3 Helps Physical AI Think Before It Acts
-  ko: ''
+  ko: How Cosmos 3 Helps Physical AI Think Before It Acts
 domains:
 - 11_applications_markets
 - 07_ai_models_algorithms
@@ -41,4 +41,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+How Cosmos 3 Helps Physical AI Think Before It Acts
+
+## Overview
+How Cosmos 3 Helps Physical AI Think Before It Acts
+
+## 개요
 How Cosmos 3 Helps Physical AI Think Before It Acts

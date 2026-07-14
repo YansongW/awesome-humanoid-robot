@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Humanoid World Models: Open World Foundation Models for Humanoid Robotics'
   zh: 'Humanoid World Models: Open World Foundation Models for Humanoid Robotics'
-  ko: ''
+  ko: 'Humanoid World Models: Open World Foundation Models for Humanoid Robotics'
 summary:
   en: 'Humanoid World Models: Open World Foundation Models for Humanoid Robotics is
     a 2025 work on simulation benchmark for humanoid robots.'
   zh: 'Humanoid World Models: Open World Foundation Models for Humanoid Robotics is
     a 2025 work on simulation benchmark for humanoid robots.'
-  ko: ''
+  ko: 'Humanoid World Models: Open World Foundation Models for Humanoid Robotics is
+    a 2025 work on simulation benchmark for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Humanoid World Models: Open World Foundation Models for Humanoid Robotics is a 2025 work on simulation benchmark for humanoid robots.
+
+## Overview
+Humanoid World Models: Open World Foundation Models for Humanoid Robotics is a 2025 work on simulation benchmark for humanoid robots.
+
+## 개요
 Humanoid World Models: Open World Foundation Models for Humanoid Robotics is a 2025 work on simulation benchmark for humanoid robots.

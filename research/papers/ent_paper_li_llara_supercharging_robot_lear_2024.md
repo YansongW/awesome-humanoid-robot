@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'LLaRA: Supercharging Robot Learning Data for Vision-Language Policy'
   zh: LLaRA
-  ko: ''
+  ko: 'LLaRA: Supercharging Robot Learning Data for Vision-Language Policy'
 summary:
   en: 'LLaRA: Supercharging Robot Learning Data for Vision-Language Policy (LLaRA),
     is a 2024 large vision-language-action model for robotic manipulation, introduced
@@ -16,7 +16,10 @@ summary:
     is a 2024 large vision-language-action model for robotic manipulation, introduced
     by Stony Brook University, University of Wisconsin-Madison, and published at ICLR
     2024.'
-  ko: ''
+  ko: 'LLaRA: Supercharging Robot Learning Data for Vision-Language Policy (LLaRA),
+    is a 2024 large vision-language-action model for robotic manipulation, introduced
+    by Stony Brook University, University of Wisconsin-Madison, and published at ICLR
+    2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+LLaRA: Supercharging Robot Learning Data for Vision-Language Policy (LLaRA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Stony Brook University, University of Wisconsin-Madison, and published at ICLR 2024.
+
+## Overview
+LLaRA: Supercharging Robot Learning Data for Vision-Language Policy (LLaRA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Stony Brook University, University of Wisconsin-Madison, and published at ICLR 2024.
+
+## 개요
 LLaRA: Supercharging Robot Learning Data for Vision-Language Policy (LLaRA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Stony Brook University, University of Wisconsin-Madison, and published at ICLR 2024.

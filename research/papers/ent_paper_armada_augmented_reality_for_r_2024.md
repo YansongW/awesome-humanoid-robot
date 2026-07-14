@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition'
   zh: 'ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition'
-  ko: ''
+  ko: 'ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition'
 summary:
   en: 'ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition
     is a 2024 work on manipulation for humanoid robots.'
   zh: 'ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition
     is a 2024 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition
+    is a 2024 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition is a 2024 work on manipulation for humanoid robots.
+
+## Overview
+ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition is a 2024 work on manipulation for humanoid robots.
+
+## 개요
 ARMADA: Augmented Reality for Robot Manipulation and Robot-Free Data Acquisition is a 2024 work on manipulation for humanoid robots.

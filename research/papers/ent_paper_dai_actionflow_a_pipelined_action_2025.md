@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge'
   zh: ActionFlow
-  ko: ''
+  ko: 'ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge'
 summary:
   en: 'ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge
     (ActionFlow), is a 2025 large vision-language-action model for robotic manipulation,
@@ -18,7 +18,11 @@ summary:
     introduced by School of Computer Science and Technology, University of Science
     and Technology of China, Suzhou Institute for Advanced Research, University of
     Science and Technology of China, IEIT SYSTEMS Co., Ltd..'
-  ko: ''
+  ko: 'ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge
+    (ActionFlow), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by School of Computer Science and Technology, University of Science
+    and Technology of China, Suzhou Institute for Advanced Research, University of
+    Science and Technology of China, IEIT SYSTEMS Co., Ltd..'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +64,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge (ActionFlow), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computer Science and Technology, University of Science and Technology of China, Suzhou Institute for Advanced Research, University of Science and Technology of China, IEIT SYSTEMS Co., Ltd..
+
+## Overview
+ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge (ActionFlow), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computer Science and Technology, University of Science and Technology of China, Suzhou Institute for Advanced Research, University of Science and Technology of China, IEIT SYSTEMS Co., Ltd..
+
+## 개요
 ActionFlow: A Pipelined Action Acceleration for Vision Language Models on Edge (ActionFlow), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computer Science and Technology, University of Science and Technology of China, Suzhou Institute for Advanced Research, University of Science and Technology of China, IEIT SYSTEMS Co., Ltd..

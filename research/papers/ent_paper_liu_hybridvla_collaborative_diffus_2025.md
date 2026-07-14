@@ -7,7 +7,8 @@ names:
   en: 'HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action
     Model'
   zh: HybridVLA
-  ko: ''
+  ko: 'HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action
+    Model'
 summary:
   en: 'HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action
     Model (HybridVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Model (HybridVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Peking University, Beijing Academy of Artificial Intelligence (BAAI),
     CUHK.'
-  ko: ''
+  ko: 'HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action
+    Model (HybridVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Peking University, Beijing Academy of Artificial Intelligence (BAAI),
+    CUHK.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model (HybridVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Beijing Academy of Artificial Intelligence (BAAI), CUHK.
+
+## Overview
+HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model (HybridVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Beijing Academy of Artificial Intelligence (BAAI), CUHK.
+
+## 개요
 HybridVLA: Collaborative Diffusion and Autoregression in a Unified Vision-Language-Action Model (HybridVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University, Beijing Academy of Artificial Intelligence (BAAI), CUHK.

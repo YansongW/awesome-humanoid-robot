@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+面向具身AI的GPU并行机器人仿真与渲染基准。
+
+## Overview
+GPU-parallelized robotics simulation and rendering benchmark for embodied AI.
+
+## 개요
 GPU-parallelized robotics simulation and rendering benchmark for embodied AI.

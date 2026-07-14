@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 结构拓扑与传力路径设计
-  ko: ''
+  ko: 结构拓扑与传力路径设计
 summary:
   en: ''
   zh: 结构拓扑方案、传力路径图、模块接口定义
-  ko: ''
+  ko: 结构拓扑方案、传力路径图、模块接口定义
 domains:
 - 06_design_engineering
 - 02_components
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 热测试与迭代
-  ko: ''
+  ko: 热测试与迭代
 summary:
   en: ''
   zh: 热测试报告、仿真-实测误差 < 20%、设计迭代记录
-  ko: ''
+  ko: 热测试报告、仿真-实测误差 < 20%、设计迭代记录
 domains:
 - 06_design_engineering
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：热管理仿真与迭代（Thermal Management）

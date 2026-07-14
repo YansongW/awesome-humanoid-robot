@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions'
   zh: 'InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions'
-  ko: ''
+  ko: 'InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions'
 summary:
   en: 'InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions
     is a 2026 work on physics-based character animation for humanoid robots.'
   zh: 'InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions
     is a 2026 work on physics-based character animation for humanoid robots.'
-  ko: ''
+  ko: 'InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions
+    is a 2026 work on physics-based character animation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions is a 2026 work on physics-based character animation for humanoid robots.
+
+## Overview
+InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions is a 2026 work on physics-based character animation for humanoid robots.
+
+## 개요
 InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions is a 2026 work on physics-based character animation for humanoid robots.

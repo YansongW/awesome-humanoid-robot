@@ -6,13 +6,14 @@ type: paper
 names:
   en: Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics
   zh: Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics
-  ko: ''
+  ko: Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics
 summary:
   en: Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics
     is a 2025 work on physics-based character animation for humanoid robots.
   zh: Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics
     is a 2025 work on physics-based character animation for humanoid robots.
-  ko: ''
+  ko: Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics
+    is a 2025 work on physics-based character animation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 Humanoid Robot Acrobatics Utilizing Complete Articulated Rigid Body Dynamics is a 2025 work on physics-based character animation for humanoid robots.

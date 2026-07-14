@@ -8,7 +8,8 @@ names:
     Collection and Teleoperation of Humanoid Robots'
   zh: 'NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data
     Collection and Teleoperation of Humanoid Robots'
-  ko: ''
+  ko: 'NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data
+    Collection and Teleoperation of Humanoid Robots'
 summary:
   en: 'NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data
     Collection and Teleoperation of Humanoid Robots is a 2025 work on teleoperation
@@ -16,7 +17,9 @@ summary:
   zh: 'NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data
     Collection and Teleoperation of Humanoid Robots is a 2025 work on teleoperation
     for humanoid robots.'
-  ko: ''
+  ko: 'NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data
+    Collection and Teleoperation of Humanoid Robots is a 2025 work on teleoperation
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +51,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+
+## Overview
+NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+
+## 개요
 NuExo: A Wearable Exoskeleton Covering all Upper Limb ROM for Outdoor Data Collection and Teleoperation of Humanoid Robots is a 2025 work on teleoperation for humanoid robots.

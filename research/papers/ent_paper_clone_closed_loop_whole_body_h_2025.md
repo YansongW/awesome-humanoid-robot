@@ -6,11 +6,11 @@ type: paper
 names:
   en: 'CLONE: Closed-Loop Whole-Body Humanoid Teleoperation for Long-Horizon Tasks'
   zh: CLONE｜用于长时程任务的闭环全身人形远程操作
-  ko: ''
+  ko: 'CLONE: Closed-Loop Whole-Body Humanoid Teleoperation for Long-Horizon Tasks'
 summary:
   en: ''
   zh: CLONE 主要解决数据闭环：用遥操作/外骨骼数据采集人类操作和机器人状态，再通过分层技能/专家策略、闭环纠错/人类干预转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
-  ko: ''
+  ko: CLONE 主要解决数据闭环：用遥操作/外骨骼数据采集人类操作和机器人状态，再通过分层技能/专家策略、闭环纠错/人类干预转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
 - 06_design_engineering
 - 07_ai_models_algorithms
@@ -48,5 +48,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+CLONE 主要解决数据闭环：用遥操作/外骨骼数据采集人类操作和机器人状态，再通过分层技能/专家策略、闭环纠错/人类干预转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
+## 개요
 CLONE 主要解决数据闭环：用遥操作/外骨骼数据采集人类操作和机器人状态，再通过分层技能/专家策略、闭环纠错/人类干预转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。

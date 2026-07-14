@@ -7,7 +7,8 @@ names:
   en: 'Impromptu VLA: Open Weights and Open Data for Driving Vision-Language-Action
     Models'
   zh: Impromptu VLA
-  ko: ''
+  ko: 'Impromptu VLA: Open Weights and Open Data for Driving Vision-Language-Action
+    Models'
 summary:
   en: 'Impromptu VLA: Open Weights and Open Data for Driving Vision-Language-Action
     Models (Impromptu VLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Models (Impromptu VLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by AIR, Tsinghua University, Bosch Research, IIIS, Tsinghua
     University, and published at NIPS25.'
-  ko: ''
+  ko: 'Impromptu VLA: Open Weights and Open Data for Driving Vision-Language-Action
+    Models (Impromptu VLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by AIR, Tsinghua University, Bosch Research, IIIS, Tsinghua
+    University, and published at NIPS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Impromptu VLA: Open Weights and Open Data for Driving Vision-Language-Action Models (Impromptu VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by AIR, Tsinghua University, Bosch Research, IIIS, Tsinghua University, and published at NIPS25.
+
+## Overview
+Impromptu VLA: Open Weights and Open Data for Driving Vision-Language-Action Models (Impromptu VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by AIR, Tsinghua University, Bosch Research, IIIS, Tsinghua University, and published at NIPS25.
+
+## 개요
 Impromptu VLA: Open Weights and Open Data for Driving Vision-Language-Action Models (Impromptu VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by AIR, Tsinghua University, Bosch Research, IIIS, Tsinghua University, and published at NIPS25.

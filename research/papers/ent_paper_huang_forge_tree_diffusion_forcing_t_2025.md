@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation'
   zh: FORGE-Tree
-  ko: ''
+  ko: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation'
 summary:
   en: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation
     (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation
     (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Karlsruhe Institute of Technology.'
-  ko: ''
+  ko: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation
+    (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Karlsruhe Institute of Technology.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology.
+
+## Overview
+FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology.
+
+## 개요
 FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology.

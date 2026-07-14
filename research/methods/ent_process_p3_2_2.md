@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 通信网络架构
-  ko: ''
+  ko: 通信网络架构
 summary:
   en: ''
   zh: 通信拓扑图、协议分配表、带宽/延迟预算
-  ko: ''
+  ko: 通信拓扑图、协议分配表、带宽/延迟预算
 domains:
 - 06_design_engineering
 - 02_components
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）

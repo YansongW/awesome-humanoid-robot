@@ -8,7 +8,8 @@ names:
     Prompts
   zh: Automating Robot Failure Recovery Using Vision-Language Models With Optimized
     Prompts
-  ko: ''
+  ko: Automating Robot Failure Recovery Using Vision-Language Models With Optimized
+    Prompts
 summary:
   en: Automating Robot Failure Recovery Using Vision-Language Models With Optimized
     Prompts (Automating Robot Failure Recovery Using Vision-Language Models With Optimized
@@ -16,7 +17,9 @@ summary:
   zh: Automating Robot Failure Recovery Using Vision-Language Models With Optimized
     Prompts (Automating Robot Failure Recovery Using Vision-Language Models With Optimized
     Prompts), is a 2024 large vision-language-action model for robotic manipulation.
-  ko: ''
+  ko: Automating Robot Failure Recovery Using Vision-Language Models With Optimized
+    Prompts (Automating Robot Failure Recovery Using Vision-Language Models With Optimized
+    Prompts), is a 2024 large vision-language-action model for robotic manipulation.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Automating Robot Failure Recovery Using Vision-Language Models With Optimized Prompts (Automating Robot Failure Recovery Using Vision-Language Models With Optimized Prompts), is a 2024 large vision-language-action model for robotic manipulation.
+
+## Overview
+Automating Robot Failure Recovery Using Vision-Language Models With Optimized Prompts (Automating Robot Failure Recovery Using Vision-Language Models With Optimized Prompts), is a 2024 large vision-language-action model for robotic manipulation.
+
+## 개요
 Automating Robot Failure Recovery Using Vision-Language Models With Optimized Prompts (Automating Robot Failure Recovery Using Vision-Language Models With Optimized Prompts), is a 2024 large vision-language-action model for robotic manipulation.

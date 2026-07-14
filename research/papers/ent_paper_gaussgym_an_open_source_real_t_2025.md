@@ -8,13 +8,15 @@ names:
     pixels'
   zh: 'GaussGym: An open-source real-to-sim framework for learning locomotion from
     pixels'
-  ko: ''
+  ko: 'GaussGym: An open-source real-to-sim framework for learning locomotion from
+    pixels'
 summary:
   en: 'GaussGym: An open-source real-to-sim framework for learning locomotion from
     pixels is a 2025 work on locomotion for humanoid robots.'
   zh: 'GaussGym: An open-source real-to-sim framework for learning locomotion from
     pixels is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'GaussGym: An open-source real-to-sim framework for learning locomotion from
+    pixels is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GaussGym: An open-source real-to-sim framework for learning locomotion from pixels is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+GaussGym: An open-source real-to-sim framework for learning locomotion from pixels is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 GaussGym: An open-source real-to-sim framework for learning locomotion from pixels is a 2025 work on locomotion for humanoid robots.

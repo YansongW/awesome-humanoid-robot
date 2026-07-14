@@ -41,4 +41,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+面向敏捷人形机器人全身控制的Sim-to-Real框架。
+
+## Overview
+Sim-to-real framework for agile humanoid whole-body control.
+
+## 개요
 Sim-to-real framework for agile humanoid whole-body control.

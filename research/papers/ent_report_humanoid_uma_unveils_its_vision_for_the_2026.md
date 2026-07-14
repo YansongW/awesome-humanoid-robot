@@ -6,7 +6,7 @@ type: report
 names:
   en: UMA Unveils Its Vision for the Next Generation of Humanoid Robots
   zh: UMA Unveils Its Vision for the Next Generation of Humanoid Robots
-  ko: ''
+  ko: UMA Unveils Its Vision for the Next Generation of Humanoid Robots
 summary:
   en: At Machina Summit, UMA unveils the design of its first humanoid robot and introduces
     Real-Time Learning, a new AI architecture that enables robots to learn new skills
@@ -14,7 +14,9 @@ summary:
   zh: At Machina Summit, UMA unveils the design of its first humanoid robot and introduces
     Real-Time Learning, a new AI architecture that enables robots to learn new skills
     through demonstration rather than programming.
-  ko: ''
+  ko: At Machina Summit, UMA unveils the design of its first humanoid robot and introduces
+    Real-Time Learning, a new AI architecture that enables robots to learn new skills
+    through demonstration rather than programming.
 domains:
 - 11_applications_markets
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+At Machina Summit, UMA unveils the design of its first humanoid robot and introduces Real-Time Learning, a new AI architecture that enables robots to learn new skills through demonstration rather than programming.
+
+## Overview
+At Machina Summit, UMA unveils the design of its first humanoid robot and introduces Real-Time Learning, a new AI architecture that enables robots to learn new skills through demonstration rather than programming.
+
+## 개요
 At Machina Summit, UMA unveils the design of its first humanoid robot and introduces Real-Time Learning, a new AI architecture that enables robots to learn new skills through demonstration rather than programming.

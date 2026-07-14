@@ -8,7 +8,8 @@ names:
     Whole-Body Control'
   zh: 'EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid
     Whole-Body Control'
-  ko: ''
+  ko: 'EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid
+    Whole-Body Control'
 summary:
   en: 'EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid
     Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control
@@ -16,7 +17,9 @@ summary:
   zh: 'EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid
     Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control
     for humanoid robots.'
-  ko: ''
+  ko: 'EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid
+    Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 EGM: Efficiently Learning General Motion Tracking Policy for High Dynamic Humanoid Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

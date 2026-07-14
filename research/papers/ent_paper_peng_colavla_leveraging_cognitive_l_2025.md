@@ -7,7 +7,8 @@ names:
   en: 'ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory
     Planning in Autonomous Driving'
   zh: ColaVLA
-  ko: ''
+  ko: 'ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory
+    Planning in Autonomous Driving'
 summary:
   en: 'ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory
     Planning in Autonomous Driving (ColaVLA), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Planning in Autonomous Driving (ColaVLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Tsinghua University, CUHK MMLab,
     Voyager Research, Didi Chuxing.'
-  ko: ''
+  ko: 'ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory
+    Planning in Autonomous Driving (ColaVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Tsinghua University, CUHK MMLab,
+    Voyager Research, Didi Chuxing.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving (ColaVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, CUHK MMLab, Voyager Research, Didi Chuxing.
+
+## Overview
+ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving (ColaVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, CUHK MMLab, Voyager Research, Didi Chuxing.
+
+## 개요
 ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving (ColaVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, CUHK MMLab, Voyager Research, Didi Chuxing.

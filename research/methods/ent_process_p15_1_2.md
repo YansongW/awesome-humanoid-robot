@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 手臂与手部集成
-  ko: ''
+  ko: 手臂与手部集成
 summary:
   en: ''
   zh: 单臂/双臂典型动作通过、抓取成功率达标
-  ko: ''
+  ko: 单臂/双臂典型动作通过、抓取成功率达标
 domains:
 - 04_assembly_integration_testing
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）

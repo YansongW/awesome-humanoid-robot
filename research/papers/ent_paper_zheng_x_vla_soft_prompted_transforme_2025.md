@@ -7,7 +7,8 @@ names:
   en: 'X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action
     Model'
   zh: X-VLA
-  ko: ''
+  ko: 'X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action
+    Model'
 summary:
   en: 'X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action
     Model (X-VLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Model (X-VLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Institute for AI Industry Research (AIR), Tsinghua University, Shanghai
     AI Lab, Peking University.'
-  ko: ''
+  ko: 'X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action
+    Model (X-VLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Institute for AI Industry Research (AIR), Tsinghua University, Shanghai
+    AI Lab, Peking University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model (X-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research (AIR), Tsinghua University, Shanghai AI Lab, Peking University.
+
+## Overview
+X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model (X-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research (AIR), Tsinghua University, Shanghai AI Lab, Peking University.
+
+## 개요
 X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model (X-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute for AI Industry Research (AIR), Tsinghua University, Shanghai AI Lab, Peking University.

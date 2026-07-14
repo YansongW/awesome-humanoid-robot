@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+第一视角厨房交互视频数据集，广泛用于操作与活动理解。
+
+## Overview
 Egocentric kitchen-interaction video dataset widely used for manipulation and activity understanding.
+
+## 개요
+조작 및 활동 이해에 널리 사용되는 자아중심 주방 상호작용 비디오 데이터셋.

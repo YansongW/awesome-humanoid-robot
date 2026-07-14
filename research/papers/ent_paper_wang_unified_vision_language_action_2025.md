@@ -6,13 +6,14 @@ type: paper
 names:
   en: Unified Vision-Language-Action Model
   zh: UniVLA
-  ko: ''
+  ko: Unified Vision-Language-Action Model
 summary:
   en: Unified Vision-Language-Action Model (UniVLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by CASIA, BAAI, THU, HKISI.
   zh: Unified Vision-Language-Action Model (UniVLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by CASIA, BAAI, THU, HKISI.
-  ko: ''
+  ko: Unified Vision-Language-Action Model (UniVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by CASIA, BAAI, THU, HKISI.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Unified Vision-Language-Action Model (UniVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by CASIA, BAAI, THU, HKISI.
+
+## Overview
+Unified Vision-Language-Action Model (UniVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by CASIA, BAAI, THU, HKISI.
+
+## 개요
 Unified Vision-Language-Action Model (UniVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by CASIA, BAAI, THU, HKISI.

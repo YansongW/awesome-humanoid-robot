@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Beyond Monotonic Progress: Retry-Supervised Value Learning for Robot Imitation'
   zh: 'Beyond Monotonic Progress: Retry-Supervised Value Learning for Robot Imitation'
-  ko: ''
+  ko: 'Beyond Monotonic Progress: Retry-Supervised Value Learning for Robot Imitation'
 summary:
   en: "arXiv:2606.24633v2 Announce Type: replace \nAbstract: Human demonstrations\
     \ for robot imitation learning often contain mistakes and corrective behaviors,\
@@ -46,7 +46,25 @@ summary:
     \ behaviors. Experiments on real-robot manipulation tasks show that ReTVL produces\
     \ more fine-grained value estimates than progress-based baselines and improves\
     \ imitation learning from imperfect demonstrations."
-  ko: ''
+  ko: "arXiv:2606.24633v2 Announce Type: replace \nAbstract: Human demonstrations\
+    \ for robot imitation learning often contain mistakes and corrective behaviors,\
+    \ such as imprecise grasps, object misalignment, unstable contact, and repeated\
+    \ attempts. While these segments are commonly treated as noisy or suboptimal data,\
+    \ they provide valuable evidence about when execution deviates from a desirable\
+    \ path and how task feasibility can be restored. However, existing reward and\
+    \ value models often rely on monotonic progress assumptions, which capture coarse\
+    \ task advancement but may overlook local execution errors and corrective behaviors\
+    \ in imperfect demonstrations. In this work, we propose ReTVL (ReTry-Supervised\
+    \ Value Learning), a framework for learning mistake-sensitive value functions\
+    \ from mixed-quality robot demonstrations by leveraging retry events as sparse\
+    \ supervision. ReTVL captures the local degradation-and-recovery structure around\
+    \ mistakes by combining global progress calibration with local pairwise preference\
+    \ learning induced by sparsely annotated retry keypoints. The learned value model\
+    \ is then used to reweight demonstration chunks for downstream behavior cloning,\
+    \ reducing the influence of harmful execution errors while preserving useful corrective\
+    \ behaviors. Experiments on real-robot manipulation tasks show that ReTVL produces\
+    \ more fine-grained value estimates than progress-based baselines and improves\
+    \ imitation learning from imperfect demonstrations."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -77,5 +95,14 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+arXiv:2606.24633v2 Announce Type: replace 
+Abstract: Human demonstrations for robot imitation learning often contain mistakes and corrective behaviors, such as imprecise grasps, object misalignment, unstable contact, and repeated attempts. While these segments are commonly treated as noisy or suboptimal data, they provide valuable evidence about when execution deviates from a desirable path and how task feasibility can be restored. However, existing reward and value models often rely on monotonic progress assumptions, which capture coarse task advancement but may overlook local execution errors and corrective behaviors in imperfect demonstrations. In this work, we propose ReTVL (ReTry-Supervised Value Learning), a framework for learning mistake-sensitive value functions from mixed-quality robot demonstrations by leveraging retry events as sparse supervision. ReTVL captures the local degradation-and-recovery structure around mistakes by combining global progress calibration with local pairwise preference learning induced by sparsely annotated retry keypoints. The learned value model is then used to reweight demonstration chunks for downstream behavior cloning, reducing the influence of harmful execution errors while preserving useful corrective behaviors. Experiments on real-robot manipulation tasks show that ReTVL produces more fine-grained value estimates than progress-based baselines and improves imitation learning from imperfect demonstrations.
+
+## Overview
+arXiv:2606.24633v2 Announce Type: replace 
+Abstract: Human demonstrations for robot imitation learning often contain mistakes and corrective behaviors, such as imprecise grasps, object misalignment, unstable contact, and repeated attempts. While these segments are commonly treated as noisy or suboptimal data, they provide valuable evidence about when execution deviates from a desirable path and how task feasibility can be restored. However, existing reward and value models often rely on monotonic progress assumptions, which capture coarse task advancement but may overlook local execution errors and corrective behaviors in imperfect demonstrations. In this work, we propose ReTVL (ReTry-Supervised Value Learning), a framework for learning mistake-sensitive value functions from mixed-quality robot demonstrations by leveraging retry events as sparse supervision. ReTVL captures the local degradation-and-recovery structure around mistakes by combining global progress calibration with local pairwise preference learning induced by sparsely annotated retry keypoints. The learned value model is then used to reweight demonstration chunks for downstream behavior cloning, reducing the influence of harmful execution errors while preserving useful corrective behaviors. Experiments on real-robot manipulation tasks show that ReTVL produces more fine-grained value estimates than progress-based baselines and improves imitation learning from imperfect demonstrations.
+
+## 개요
 arXiv:2606.24633v2 Announce Type: replace 
 Abstract: Human demonstrations for robot imitation learning often contain mistakes and corrective behaviors, such as imprecise grasps, object misalignment, unstable contact, and repeated attempts. While these segments are commonly treated as noisy or suboptimal data, they provide valuable evidence about when execution deviates from a desirable path and how task feasibility can be restored. However, existing reward and value models often rely on monotonic progress assumptions, which capture coarse task advancement but may overlook local execution errors and corrective behaviors in imperfect demonstrations. In this work, we propose ReTVL (ReTry-Supervised Value Learning), a framework for learning mistake-sensitive value functions from mixed-quality robot demonstrations by leveraging retry events as sparse supervision. ReTVL captures the local degradation-and-recovery structure around mistakes by combining global progress calibration with local pairwise preference learning induced by sparsely annotated retry keypoints. The learned value model is then used to reweight demonstration chunks for downstream behavior cloning, reducing the influence of harmful execution errors while preserving useful corrective behaviors. Experiments on real-robot manipulation tasks show that ReTVL produces more fine-grained value estimates than progress-based baselines and improves imitation learning from imperfect demonstrations.

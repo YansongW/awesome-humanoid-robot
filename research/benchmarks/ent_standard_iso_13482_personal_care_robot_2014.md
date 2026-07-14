@@ -40,4 +40,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+包括服务人形机器人在内的个人护理机器人安全要求。
+
+## Overview
+Safety requirements for personal care robots including service humanoids.
+
+## 개요
 Safety requirements for personal care robots including service humanoids.

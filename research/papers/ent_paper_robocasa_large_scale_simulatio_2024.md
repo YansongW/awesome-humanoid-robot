@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots'
   zh: 'RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots'
-  ko: ''
+  ko: 'RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots'
 summary:
   en: 'RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots is
     a 2024 work on simulation benchmark for humanoid robots, with open-source code
@@ -14,7 +14,9 @@ summary:
   zh: 'RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots is
     a 2024 work on simulation benchmark for humanoid robots, with open-source code
     available.'
-  ko: ''
+  ko: 'RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots is
+    a 2024 work on simulation benchmark for humanoid robots, with open-source code
+    available.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +57,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.
+
+## Overview
+RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.
+
+## 개요
 RoboCasa: Large-Scale Simulation of Everyday Tasks for Generalist Robots is a 2024 work on simulation benchmark for humanoid robots, with open-source code available.

@@ -8,7 +8,8 @@ names:
     Generalization'
   zh: 'InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional
     Generalization'
-  ko: ''
+  ko: 'InternVLA-A1.5: Unifying Understanding, Latent Foresight, and Action for Compositional
+    Generalization'
 summary:
   en: "arXiv:2607.04988v1 Announce Type: new \nAbstract: Unified models for robot\
     \ manipulation aim to equip one policy with both the semantic priors of pretrained\
@@ -46,7 +47,24 @@ summary:
     \ best overall results on all six simulation benchmarks. In the real world, the\
     \ preserved semantics deliver the strongest compositional generalization on held-out\
     \ instruction bindings, and the two designs together sustain long-horizon execution."
-  ko: ''
+  ko: "arXiv:2607.04988v1 Announce Type: new \nAbstract: Unified models for robot\
+    \ manipulation aim to equip one policy with both the semantic priors of pretrained\
+    \ VLMs and the physical dynamics learned through future prediction. In practice,\
+    \ existing designs tend to erode the semantics of the pretrained backbone, suffer\
+    \ interference among heterogeneous objectives, and learn future prediction from\
+    \ scratch in pixel space, leaving the dynamics priors of pretrained video generators\
+    \ unexploited. We present InternVLA-A1.5, which builds the policy on a native\
+    \ VLM backbone that keeps training on VQA and subtask prediction, and attaches\
+    \ a lightweight unified expert for continuous action generation. Future prediction\
+    \ is recast as a latent-querying problem, where a small set of learnable foresight\
+    \ tokens condenses the task-relevant future into a compact latent code under the\
+    \ supervision of a frozen pretrained video generation model, so the policy inherits\
+    \ world-model dynamics priors without ever learning pixel-level generation. The\
+    \ video branch is discarded at inference, keeping real-time control. Pretrained\
+    \ on 1.2M robot episodes and 3M multimodal samples, InternVLA-A1.5 achieves the\
+    \ best overall results on all six simulation benchmarks. In the real world, the\
+    \ preserved semantics deliver the strongest compositional generalization on held-out\
+    \ instruction bindings, and the two designs together sustain long-horizon execution."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -77,5 +95,14 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+arXiv:2607.04988v1 Announce Type: new 
+Abstract: Unified models for robot manipulation aim to equip one policy with both the semantic priors of pretrained VLMs and the physical dynamics learned through future prediction. In practice, existing designs tend to erode the semantics of the pretrained backbone, suffer interference among heterogeneous objectives, and learn future prediction from scratch in pixel space, leaving the dynamics priors of pretrained video generators unexploited. We present InternVLA-A1.5, which builds the policy on a native VLM backbone that keeps training on VQA and subtask prediction, and attaches a lightweight unified expert for continuous action generation. Future prediction is recast as a latent-querying problem, where a small set of learnable foresight tokens condenses the task-relevant future into a compact latent code under the supervision of a frozen pretrained video generation model, so the policy inherits world-model dynamics priors without ever learning pixel-level generation. The video branch is discarded at inference, keeping real-time control. Pretrained on 1.2M robot episodes and 3M multimodal samples, InternVLA-A1.5 achieves the best overall results on all six simulation benchmarks. In the real world, the preserved semantics deliver the strongest compositional generalization on held-out instruction bindings, and the two designs together sustain long-horizon execution.
+
+## Overview
+arXiv:2607.04988v1 Announce Type: new 
+Abstract: Unified models for robot manipulation aim to equip one policy with both the semantic priors of pretrained VLMs and the physical dynamics learned through future prediction. In practice, existing designs tend to erode the semantics of the pretrained backbone, suffer interference among heterogeneous objectives, and learn future prediction from scratch in pixel space, leaving the dynamics priors of pretrained video generators unexploited. We present InternVLA-A1.5, which builds the policy on a native VLM backbone that keeps training on VQA and subtask prediction, and attaches a lightweight unified expert for continuous action generation. Future prediction is recast as a latent-querying problem, where a small set of learnable foresight tokens condenses the task-relevant future into a compact latent code under the supervision of a frozen pretrained video generation model, so the policy inherits world-model dynamics priors without ever learning pixel-level generation. The video branch is discarded at inference, keeping real-time control. Pretrained on 1.2M robot episodes and 3M multimodal samples, InternVLA-A1.5 achieves the best overall results on all six simulation benchmarks. In the real world, the preserved semantics deliver the strongest compositional generalization on held-out instruction bindings, and the two designs together sustain long-horizon execution.
+
+## 개요
 arXiv:2607.04988v1 Announce Type: new 
 Abstract: Unified models for robot manipulation aim to equip one policy with both the semantic priors of pretrained VLMs and the physical dynamics learned through future prediction. In practice, existing designs tend to erode the semantics of the pretrained backbone, suffer interference among heterogeneous objectives, and learn future prediction from scratch in pixel space, leaving the dynamics priors of pretrained video generators unexploited. We present InternVLA-A1.5, which builds the policy on a native VLM backbone that keeps training on VQA and subtask prediction, and attaches a lightweight unified expert for continuous action generation. Future prediction is recast as a latent-querying problem, where a small set of learnable foresight tokens condenses the task-relevant future into a compact latent code under the supervision of a frozen pretrained video generation model, so the policy inherits world-model dynamics priors without ever learning pixel-level generation. The video branch is discarded at inference, keeping real-time control. Pretrained on 1.2M robot episodes and 3M multimodal samples, InternVLA-A1.5 achieves the best overall results on all six simulation benchmarks. In the real world, the preserved semantics deliver the strongest compositional generalization on held-out instruction bindings, and the two designs together sustain long-horizon execution.

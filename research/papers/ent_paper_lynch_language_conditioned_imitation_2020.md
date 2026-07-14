@@ -6,7 +6,7 @@ type: paper
 names:
   en: Language Conditioned Imitation Learning over Unstructured Data
   zh: MCIL
-  ko: ''
+  ko: Language Conditioned Imitation Learning over Unstructured Data
 summary:
   en: Language Conditioned Imitation Learning over Unstructured Data (MCIL), is a
     2020 generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: Language Conditioned Imitation Learning over Unstructured Data (MCIL), is a
     2020 generalized vision-language-action model for robotic manipulation, introduced
     by Robotics at Google, and published at RSS 2021.
-  ko: ''
+  ko: Language Conditioned Imitation Learning over Unstructured Data (MCIL), is a
+    2020 generalized vision-language-action model for robotic manipulation, introduced
+    by Robotics at Google, and published at RSS 2021.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Language Conditioned Imitation Learning over Unstructured Data (MCIL), is a 2020 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google, and published at RSS 2021.
+
+## Overview
+Language Conditioned Imitation Learning over Unstructured Data (MCIL), is a 2020 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google, and published at RSS 2021.
+
+## 개요
 Language Conditioned Imitation Learning over Unstructured Data (MCIL), is a 2020 generalized vision-language-action model for robotic manipulation, introduced by Robotics at Google, and published at RSS 2021.

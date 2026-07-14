@@ -8,8 +8,8 @@ names:
   zh: 步态规划
   ko: 보행 패턴 계획
 summary:
-  en: The generation of footstep sequences, timing, and phase transitions that produce stable and efficient locomotion for
-    legged robots.
+  en: The generation of footstep sequences, timing, and phase transitions that produce
+    stable and efficient locomotion for legged robots.
   zh: 为腿足机器人生成稳定高效行走的足端落点序列、时机与相态转换。
   ko: 족욕 로봇의 안정적이고 효율적인 이동을 위해 보행 순서·시기·상태 전이를 생성하는 방법.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+为腿足机器人生成稳定高效行走的足端落点序列、时机与相态转换。
+
+## Overview
+The generation of footstep sequences, timing, and phase transitions that produce stable and efficient locomotion for legged robots.
+
+## 개요
+The generation of footstep sequences, timing, and phase transitions that produce stable and efficient locomotion for legged robots.

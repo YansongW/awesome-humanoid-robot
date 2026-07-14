@@ -8,13 +8,15 @@ names:
     Control
   zh: Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid
     Control
-  ko: ''
+  ko: Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid
+    Control
 summary:
   en: Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid
     Control is a 2026 work on physics-based character animation for humanoid robots.
   zh: Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid
     Control is a 2026 work on physics-based character animation for humanoid robots.
-  ko: ''
+  ko: Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid
+    Control is a 2026 work on physics-based character animation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control is a 2026 work on physics-based character animation for humanoid robots.
+
+## Overview
+Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control is a 2026 work on physics-based character animation for humanoid robots.
+
+## 개요
 Iterative Closed-Loop Motion Synthesis for Scaling the Capabilities of Humanoid Control is a 2026 work on physics-based character animation for humanoid robots.

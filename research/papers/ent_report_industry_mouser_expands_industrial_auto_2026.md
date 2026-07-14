@@ -8,7 +8,8 @@ names:
     to Support Next-Gen Systems
   zh: Mouser Expands Industrial Automation Portfolio with New Manufacturer Additions
     to Support Next-Gen Systems
-  ko: ''
+  ko: Mouser Expands Industrial Automation Portfolio with New Manufacturer Additions
+    to Support Next-Gen Systems
 summary:
   en: This expansion broadens access to critical technologies across AI, connectivity,
     power, control, and sensing, which are key building blocks for today's increasingly
@@ -16,7 +17,9 @@ summary:
   zh: This expansion broadens access to critical technologies across AI, connectivity,
     power, control, and sensing, which are key building blocks for today's increasingly
     integrated industrial environments.
-  ko: ''
+  ko: This expansion broadens access to critical technologies across AI, connectivity,
+    power, control, and sensing, which are key building blocks for today's increasingly
+    integrated industrial environments.
 domains:
 - 11_applications_markets
 layers:
@@ -47,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+This expansion broadens access to critical technologies across AI, connectivity, power, control, and sensing, which are key building blocks for today's increasingly integrated industrial environments.
+
+## Overview
+This expansion broadens access to critical technologies across AI, connectivity, power, control, and sensing, which are key building blocks for today's increasingly integrated industrial environments.
+
+## 개요
 This expansion broadens access to critical technologies across AI, connectivity, power, control, and sensing, which are key building blocks for today's increasingly integrated industrial environments.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 仿真-试验闭环迭代
-  ko: ''
+  ko: 仿真-试验闭环迭代
 summary:
   en: ''
   zh: 仿真与试验误差 < 15%、设计迭代记录
-  ko: ''
+  ko: 仿真与试验误差 < 15%、设计迭代记录
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：结构强度仿真与迭代（Structural FEA）

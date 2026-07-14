@@ -41,4 +41,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+通过动作跟踪实现高级表现性全身人形控制。
+
+## Overview
+Advanced expressive whole-body humanoid control via motion tracking.
+
+## 개요
 Advanced expressive whole-body humanoid control via motion tracking.

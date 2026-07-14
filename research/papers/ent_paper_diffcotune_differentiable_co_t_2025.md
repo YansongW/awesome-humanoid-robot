@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control'
   zh: 'DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control'
-  ko: ''
+  ko: 'DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control'
 summary:
   en: 'DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control is a 2025
     work on sim-to-real for humanoid robots.'
   zh: 'DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control is a 2025
     work on sim-to-real for humanoid robots.'
-  ko: ''
+  ko: 'DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control is a 2025
+    work on sim-to-real for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control is a 2025 work on sim-to-real for humanoid robots.
+
+## Overview
+DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control is a 2025 work on sim-to-real for humanoid robots.
+
+## 개요
 DiffCoTune: Differentiable Co-Tuning for Cross-domain Robot Control is a 2025 work on sim-to-real for humanoid robots.

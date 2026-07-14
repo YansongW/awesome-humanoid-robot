@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+用于确定性关节控制的高性能工业以太网现场总线。
+
+## Overview
+High-performance industrial Ethernet field bus for deterministic joint control.
+
+## 개요
 High-performance industrial Ethernet field bus for deterministic joint control.

@@ -8,13 +8,15 @@ names:
     Demonstrations'
   zh: 'EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human
     Demonstrations'
-  ko: ''
+  ko: 'EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human
+    Demonstrations'
 summary:
   en: 'EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human
     Demonstrations is a 2025 work on manipulation for humanoid robots.'
   zh: 'EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human
     Demonstrations is a 2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human
+    Demonstrations is a 2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human Demonstrations is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human Demonstrations is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 EgoMI: Learning Active Vision and Whole-Body Manipulation from Egocentric Human Demonstrations is a 2025 work on manipulation for humanoid robots.

@@ -6,11 +6,13 @@ type: report
 names:
   en: 'Unitree H1: 1.5 Yrs Old "Debuted" at the SFG'
   zh: 'Unitree H1: 1.5 Yrs Old "Debuted" at the SFG'
-  ko: ''
+  ko: 'Unitree H1: 1.5 Yrs Old "Debuted" at the SFG'
 summary:
-  en: 'Unitree H1: 1.5 Yrs Old "Debuted" at the SFG is a knowledge node related to report in the humanoid robot value chain.'
+  en: 'Unitree H1: 1.5 Yrs Old "Debuted" at the SFG is a knowledge node related to
+    report in the humanoid robot value chain.'
   zh: ''
-  ko: ''
+  ko: 'Unitree H1: 1.5 Yrs Old "Debuted" at the SFG is a knowledge node related to
+    report in the humanoid robot value chain.'
 domains:
 - 11_applications_markets
 - 06_design_engineering
@@ -41,3 +43,12 @@ sources:
   date: '2025-02-05'
   accessed_at: '2026-07-01'
 ---
+
+## 概述
+Unitree H1: 1.5 Yrs Old "Debuted" at the SFG is a knowledge node related to report in the humanoid robot value chain.
+
+## Overview
+Unitree H1: 1.5 Yrs Old "Debuted" at the SFG is a knowledge node related to report in the humanoid robot value chain.
+
+## 개요
+Unitree H1: 1.5 Yrs Old "Debuted" at the SFG is a knowledge node related to report in the humanoid robot value chain.

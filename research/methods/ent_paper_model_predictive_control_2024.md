@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+用于生成接触丰富的全身运动的在线最优控制方法。
+
+## Overview
+Online optimal-control approach for generating contact-rich whole-body motion.
+
+## 개요
 Online optimal-control approach for generating contact-rich whole-body motion.

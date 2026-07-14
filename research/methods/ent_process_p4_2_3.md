@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 轴承与输出接口设计
-  ko: ''
+  ko: 轴承与输出接口设计
 summary:
   en: ''
   zh: 轴承选型表、接口图纸、寿命校核
-  ko: ''
+  ko: 轴承选型表、接口图纸、寿命校核
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）

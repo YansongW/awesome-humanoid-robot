@@ -8,13 +8,15 @@ names:
     Motion Prior'
   zh: 'TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with
     Motion Prior'
-  ko: ''
+  ko: 'TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with
+    Motion Prior'
 summary:
   en: 'TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with
     Motion Prior is a 2026 work on teleoperation for humanoid robots.'
   zh: 'TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with
     Motion Prior is a 2026 work on teleoperation for humanoid robots.'
-  ko: ''
+  ko: 'TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with
+    Motion Prior is a 2026 work on teleoperation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with Motion Prior is a 2026 work on teleoperation for humanoid robots.
+
+## Overview
+TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with Motion Prior is a 2026 work on teleoperation for humanoid robots.
+
+## 개요
 TeleGate: Whole-Body Humanoid Teleoperation via Gated Expert Selection with Motion Prior is a 2026 work on teleoperation for humanoid robots.

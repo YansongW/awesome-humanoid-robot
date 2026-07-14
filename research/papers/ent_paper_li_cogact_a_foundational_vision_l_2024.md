@@ -7,7 +7,8 @@ names:
   en: 'CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition
     and Action in Robotic Manipulation'
   zh: CogACT
-  ko: ''
+  ko: 'CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition
+    and Action in Robotic Manipulation'
 summary:
   en: 'CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition
     and Action in Robotic Manipulation (CogACT), is a 2024 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     and Action in Robotic Manipulation (CogACT), is a 2024 large vision-language-action
     model for robotic manipulation, introduced by Tsinghua University, Microsoft Research
     Asia, USTC, Institute of Microelectronics, CAS.'
-  ko: ''
+  ko: 'CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition
+    and Action in Robotic Manipulation (CogACT), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by Tsinghua University, Microsoft Research
+    Asia, USTC, Institute of Microelectronics, CAS.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation (CogACT), is a 2024 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Microsoft Research Asia, USTC, Institute of Microelectronics, CAS.
+
+## Overview
+CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation (CogACT), is a 2024 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Microsoft Research Asia, USTC, Institute of Microelectronics, CAS.
+
+## 개요
 CogACT: A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation (CogACT), is a 2024 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Microsoft Research Asia, USTC, Institute of Microelectronics, CAS.

@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。
+
+## Overview
 Transformer-based policy that predicts action chunks to reduce compounding errors in imitation learning.
+
+## 개요
+모방 학습에서 누적 오류를 줄이기 위해 동작 청크를 예측하는 Transformer 기반 정책.

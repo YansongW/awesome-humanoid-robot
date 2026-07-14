@@ -7,7 +7,8 @@ names:
   en: 'Seeing Space and Motion: Enhancing Latent Actions with Spatial and Dynamic
     Awareness for VLA'
   zh: SSM-VLA
-  ko: ''
+  ko: 'Seeing Space and Motion: Enhancing Latent Actions with Spatial and Dynamic
+    Awareness for VLA'
 summary:
   en: 'Seeing Space and Motion: Enhancing Latent Actions with Spatial and Dynamic
     Awareness for VLA (SSM-VLA), is a 2025 large vision-language-action model for
@@ -19,7 +20,11 @@ summary:
     robotic manipulation, introduced by Tsinghua Shenzhen International Graduate School,
     Tsinghua University, Amap, Alibaba Group, School of Software Engineering, Xi’an
     Jiaotong University, Xi’an Jiaotong University..'
-  ko: ''
+  ko: 'Seeing Space and Motion: Enhancing Latent Actions with Spatial and Dynamic
+    Awareness for VLA (SSM-VLA), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by Tsinghua Shenzhen International Graduate School,
+    Tsinghua University, Amap, Alibaba Group, School of Software Engineering, Xi’an
+    Jiaotong University, Xi’an Jiaotong University..'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +66,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Seeing Space and Motion: Enhancing Latent Actions with Spatial and Dynamic Awareness for VLA (SSM-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua Shenzhen International Graduate School, Tsinghua University, Amap, Alibaba Group, School of Software Engineering, Xi’an Jiaotong University, Xi’an Jiaotong University..
+
+## Overview
+Seeing Space and Motion: Enhancing Latent Actions with Spatial and Dynamic Awareness for VLA (SSM-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua Shenzhen International Graduate School, Tsinghua University, Amap, Alibaba Group, School of Software Engineering, Xi’an Jiaotong University, Xi’an Jiaotong University..
+
+## 개요
 Seeing Space and Motion: Enhancing Latent Actions with Spatial and Dynamic Awareness for VLA (SSM-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua Shenzhen International Graduate School, Tsinghua University, Amap, Alibaba Group, School of Software Engineering, Xi’an Jiaotong University, Xi’an Jiaotong University..

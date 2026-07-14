@@ -7,7 +7,8 @@ names:
   en: 'Steering Vision-Language-Action Models as Anti-Exploration: A Test-Time Scaling
     Approach'
   zh: TACO
-  ko: ''
+  ko: 'Steering Vision-Language-Action Models as Anti-Exploration: A Test-Time Scaling
+    Approach'
 summary:
   en: 'Steering Vision-Language-Action Models as Anti-Exploration: A Test-Time Scaling
     Approach (TACO), is a 2025 large vision-language-action model for robotic manipulation,
@@ -19,7 +20,11 @@ summary:
     introduced by Institute of Artificial Intelligence, China Telecom, University
     of Science and Technology of China, Tsinghua University, The Hong Kong University
     of Science and Technology.'
-  ko: ''
+  ko: 'Steering Vision-Language-Action Models as Anti-Exploration: A Test-Time Scaling
+    Approach (TACO), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Institute of Artificial Intelligence, China Telecom, University
+    of Science and Technology of China, Tsinghua University, The Hong Kong University
+    of Science and Technology.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +66,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Steering Vision-Language-Action Models as Anti-Exploration: A Test-Time Scaling Approach (TACO), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Artificial Intelligence, China Telecom, University of Science and Technology of China, Tsinghua University, The Hong Kong University of Science and Technology.
+
+## Overview
+Steering Vision-Language-Action Models as Anti-Exploration: A Test-Time Scaling Approach (TACO), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Artificial Intelligence, China Telecom, University of Science and Technology of China, Tsinghua University, The Hong Kong University of Science and Technology.
+
+## 개요
 Steering Vision-Language-Action Models as Anti-Exploration: A Test-Time Scaling Approach (TACO), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Artificial Intelligence, China Telecom, University of Science and Technology of China, Tsinghua University, The Hong Kong University of Science and Technology.

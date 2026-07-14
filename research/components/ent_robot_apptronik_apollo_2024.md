@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+面向物流和制造的模块化人形机器人，支持热插拔电池。
+
+## Overview
+Modular humanoid robot designed for logistics and manufacturing, with hot-swappable batteries.
+
+## 개요
 Modular humanoid robot designed for logistics and manufacturing, with hot-swappable batteries.

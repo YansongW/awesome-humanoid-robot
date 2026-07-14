@@ -7,7 +7,8 @@ names:
   en: 'Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language
     Action models'
   zh: Oat-VLA
-  ko: ''
+  ko: 'Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language
+    Action models'
 summary:
   en: 'Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language
     Action models (Oat-VLA), is a 2025 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Action models (Oat-VLA), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Centre for Artificial Intelligence, UCL, Qualcomm
     AI Research, and published at CoRL25.'
-  ko: ''
+  ko: 'Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language
+    Action models (Oat-VLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Centre for Artificial Intelligence, UCL, Qualcomm
+    AI Research, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language Action models (Oat-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Centre for Artificial Intelligence, UCL, Qualcomm AI Research, and published at CoRL25.
+
+## Overview
+Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language Action models (Oat-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Centre for Artificial Intelligence, UCL, Qualcomm AI Research, and published at CoRL25.
+
+## 개요
 Focusing on What Matters: Object-Agent-centric Tokenization for Vision Language Action models (Oat-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Centre for Artificial Intelligence, UCL, Qualcomm AI Research, and published at CoRL25.

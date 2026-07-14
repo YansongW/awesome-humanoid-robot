@@ -8,8 +8,8 @@ names:
   zh: 灵巧操作
   ko: 손재주 있는 조작
 summary:
-  en: The ability to manipulate objects with multi-fingered hands using fine finger motions, contact regulation, and in-hand
-    reorientation.
+  en: The ability to manipulate objects with multi-fingered hands using fine finger
+    motions, contact regulation, and in-hand reorientation.
   zh: 利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。
   ko: 다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。
+
+## Overview
+The ability to manipulate objects with multi-fingered hands using fine finger motions, contact regulation, and in-hand reorientation.
+
+## 개요
+The ability to manipulate objects with multi-fingered hands using fine finger motions, contact regulation, and in-hand reorientation.

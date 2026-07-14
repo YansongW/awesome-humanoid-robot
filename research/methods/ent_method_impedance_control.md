@@ -8,8 +8,8 @@ names:
   zh: 阻抗控制
   ko: 임피던스 제어
 summary:
-  en: A control approach that regulates the dynamic relationship between interaction force and displacement, making the robot
-    behave like a virtual mechanical impedance.
+  en: A control approach that regulates the dynamic relationship between interaction
+    force and displacement, making the robot behave like a virtual mechanical impedance.
   zh: 调节交互力与位移之间动态关系的控制方法，使机器人表现出虚拟机械阻抗特性。
   ko: 상호작용 힘과 변위 간의 동적 관계를 제어하여 로봇이 가상의 기계적 임피던스처럼 동작하도록 하는 제어 방식.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+调节交互力与位移之间动态关系的控制方法，使机器人表现出虚拟机械阻抗特性。
+
+## Overview
+A control approach that regulates the dynamic relationship between interaction force and displacement, making the robot behave like a virtual mechanical impedance.
+
+## 개요
+A control approach that regulates the dynamic relationship between interaction force and displacement, making the robot behave like a virtual mechanical impedance.

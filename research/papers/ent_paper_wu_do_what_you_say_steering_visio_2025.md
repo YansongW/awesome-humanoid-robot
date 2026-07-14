@@ -7,7 +7,8 @@ names:
   en: 'Do What You Say: Steering Vision-Language-Action Models via Runtime Reasoning-Action
     Alignment Verification'
   zh: SEAL
-  ko: ''
+  ko: 'Do What You Say: Steering Vision-Language-Action Models via Runtime Reasoning-Action
+    Alignment Verification'
 summary:
   en: 'Do What You Say: Steering Vision-Language-Action Models via Runtime Reasoning-Action
     Alignment Verification (SEAL), is a 2025 large vision-language-action model for
@@ -15,7 +16,9 @@ summary:
   zh: 'Do What You Say: Steering Vision-Language-Action Models via Runtime Reasoning-Action
     Alignment Verification (SEAL), is a 2025 large vision-language-action model for
     robotic manipulation, introduced by University of Utah, NVIDIA.'
-  ko: ''
+  ko: 'Do What You Say: Steering Vision-Language-Action Models via Runtime Reasoning-Action
+    Alignment Verification (SEAL), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by University of Utah, NVIDIA.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Do What You Say: Steering Vision-Language-Action Models via Runtime Reasoning-Action Alignment Verification (SEAL), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Utah, NVIDIA.
+
+## Overview
+Do What You Say: Steering Vision-Language-Action Models via Runtime Reasoning-Action Alignment Verification (SEAL), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Utah, NVIDIA.
+
+## 개요
 Do What You Say: Steering Vision-Language-Action Models via Runtime Reasoning-Action Alignment Verification (SEAL), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Utah, NVIDIA.

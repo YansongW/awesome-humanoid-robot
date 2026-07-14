@@ -8,13 +8,15 @@ names:
     Locomotion'
   zh: 'Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid
     Locomotion'
-  ko: ''
+  ko: 'Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid
+    Locomotion'
 summary:
   en: 'Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid
     Locomotion is a 2025 work on locomotion for humanoid robots.'
   zh: 'Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid
     Locomotion is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid
+    Locomotion is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Architecture Is All You Need: Diversity-Enabled Sweet Spots for Robust Humanoid Locomotion is a 2025 work on locomotion for humanoid robots.

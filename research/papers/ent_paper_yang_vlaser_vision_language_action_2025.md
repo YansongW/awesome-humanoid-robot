@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning'
   zh: Vlaser
-  ko: ''
+  ko: 'Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning'
 summary:
   en: 'Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning (Vlaser),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -18,7 +18,11 @@ summary:
     by University of Science and Technology of China, Shanghai AI Laboratory, Shanghai
     Jiao Tong University, Zhejiang University, Nanjing University, Fudan University,
     Tsinghua University, NUS, Northeastern University, Shenzhen University.'
-  ko: ''
+  ko: 'Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning (Vlaser),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by University of Science and Technology of China, Shanghai AI Laboratory, Shanghai
+    Jiao Tong University, Zhejiang University, Nanjing University, Fudan University,
+    Tsinghua University, NUS, Northeastern University, Shenzhen University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +64,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning (Vlaser), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Science and Technology of China, Shanghai AI Laboratory, Shanghai Jiao Tong University, Zhejiang University, Nanjing University, Fudan University, Tsinghua University, NUS, Northeastern University, Shenzhen University.
+
+## Overview
+Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning (Vlaser), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Science and Technology of China, Shanghai AI Laboratory, Shanghai Jiao Tong University, Zhejiang University, Nanjing University, Fudan University, Tsinghua University, NUS, Northeastern University, Shenzhen University.
+
+## 개요
 Vlaser: Vision-Language-Action Model with Synergistic Embodied Reasoning (Vlaser), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Science and Technology of China, Shanghai AI Laboratory, Shanghai Jiao Tong University, Zhejiang University, Nanjing University, Fudan University, Tsinghua University, NUS, Northeastern University, Shenzhen University.

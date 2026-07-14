@@ -8,7 +8,8 @@ names:
     Models as Embodied Brain'
   zh: 'Robobench: A Comprehensive Evaluation Benchmark for Multimodal Large Language
     Models as Embodied Brain'
-  ko: ''
+  ko: 'Robobench: A Comprehensive Evaluation Benchmark for Multimodal Large Language
+    Models as Embodied Brain'
 summary:
   en: "arXiv:2510.17801v2 Announce Type: replace \nAbstract: Building robots that\
     \ can perceive, reason, and act in dynamic, unstructured environments remains\
@@ -58,7 +59,30 @@ summary:
     \ to downstream robotic control. RoboBench offers a comprehensive scaffold for\
     \ quantifying high-level cognition and guiding next-generation MLLMs toward more\
     \ robust robotic intelligence."
-  ko: ''
+  ko: "arXiv:2510.17801v2 Announce Type: replace \nAbstract: Building robots that\
+    \ can perceive, reason, and act in dynamic, unstructured environments remains\
+    \ a central challenge. Recent embodied systems often follow a dual-system paradigm,\
+    \ where System 2 performs high-level reasoning and System 1 handles low-level\
+    \ control. We refer to System 2 as the embodied brain, the cognitive core for\
+    \ decision-making in manipulation. Although evaluating this embodied brain is\
+    \ crucial, existing benchmarks mainly measure execution success or cover only\
+    \ limited aspects of high-level cognition and task realism. We introduce RoboBench,\
+    \ a benchmark for evaluating multimodal large language models (MLLMs) as embodied\
+    \ brains. RoboBench covers five dimensions: Instruction Comprehension, Perception\
+    \ Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis.\
+    \ It spans 14 capabilities, 25 tasks, and 6,092 QA pairs. To improve realism,\
+    \ it draws from large-scale real robotic data and in-house collection across diverse\
+    \ embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation.\
+    \ For planning, RoboBench introduces an MLLM-as-world-simulator framework that\
+    \ assesses whether predicted plans can achieve critical object-state changes under\
+    \ physical and visual constraints, enabling more faithful evaluation of long-horizon\
+    \ reasoning than symbolic matching. Experiments on 18 state-of-the-art MLLMs reveal\
+    \ persistent limitations in implicit instruction understanding, spatiotemporal\
+    \ reasoning, cross-scenario planning, fine-grained affordance understanding, and\
+    \ failure diagnosis. We further analyze how embodied cognitive abilities relate\
+    \ to downstream robotic control. RoboBench offers a comprehensive scaffold for\
+    \ quantifying high-level cognition and guiding next-generation MLLMs toward more\
+    \ robust robotic intelligence."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -89,5 +113,14 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+arXiv:2510.17801v2 Announce Type: replace 
+Abstract: Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a central challenge. Recent embodied systems often follow a dual-system paradigm, where System 2 performs high-level reasoning and System 1 handles low-level control. We refer to System 2 as the embodied brain, the cognitive core for decision-making in manipulation. Although evaluating this embodied brain is crucial, existing benchmarks mainly measure execution success or cover only limited aspects of high-level cognition and task realism. We introduce RoboBench, a benchmark for evaluating multimodal large language models (MLLMs) as embodied brains. RoboBench covers five dimensions: Instruction Comprehension, Perception Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis. It spans 14 capabilities, 25 tasks, and 6,092 QA pairs. To improve realism, it draws from large-scale real robotic data and in-house collection across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation. For planning, RoboBench introduces an MLLM-as-world-simulator framework that assesses whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling more faithful evaluation of long-horizon reasoning than symbolic matching. Experiments on 18 state-of-the-art MLLMs reveal persistent limitations in implicit instruction understanding, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and failure diagnosis. We further analyze how embodied cognitive abilities relate to downstream robotic control. RoboBench offers a comprehensive scaffold for quantifying high-level cognition and guiding next-generation MLLMs toward more robust robotic intelligence.
+
+## Overview
+arXiv:2510.17801v2 Announce Type: replace 
+Abstract: Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a central challenge. Recent embodied systems often follow a dual-system paradigm, where System 2 performs high-level reasoning and System 1 handles low-level control. We refer to System 2 as the embodied brain, the cognitive core for decision-making in manipulation. Although evaluating this embodied brain is crucial, existing benchmarks mainly measure execution success or cover only limited aspects of high-level cognition and task realism. We introduce RoboBench, a benchmark for evaluating multimodal large language models (MLLMs) as embodied brains. RoboBench covers five dimensions: Instruction Comprehension, Perception Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis. It spans 14 capabilities, 25 tasks, and 6,092 QA pairs. To improve realism, it draws from large-scale real robotic data and in-house collection across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation. For planning, RoboBench introduces an MLLM-as-world-simulator framework that assesses whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling more faithful evaluation of long-horizon reasoning than symbolic matching. Experiments on 18 state-of-the-art MLLMs reveal persistent limitations in implicit instruction understanding, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and failure diagnosis. We further analyze how embodied cognitive abilities relate to downstream robotic control. RoboBench offers a comprehensive scaffold for quantifying high-level cognition and guiding next-generation MLLMs toward more robust robotic intelligence.
+
+## 개요
 arXiv:2510.17801v2 Announce Type: replace 
 Abstract: Building robots that can perceive, reason, and act in dynamic, unstructured environments remains a central challenge. Recent embodied systems often follow a dual-system paradigm, where System 2 performs high-level reasoning and System 1 handles low-level control. We refer to System 2 as the embodied brain, the cognitive core for decision-making in manipulation. Although evaluating this embodied brain is crucial, existing benchmarks mainly measure execution success or cover only limited aspects of high-level cognition and task realism. We introduce RoboBench, a benchmark for evaluating multimodal large language models (MLLMs) as embodied brains. RoboBench covers five dimensions: Instruction Comprehension, Perception Reasoning, Generalized Planning, Affordance Prediction, and Failure Analysis. It spans 14 capabilities, 25 tasks, and 6,092 QA pairs. To improve realism, it draws from large-scale real robotic data and in-house collection across diverse embodiments, attribute-rich objects, multi-view scenes, and memory-driven navigation. For planning, RoboBench introduces an MLLM-as-world-simulator framework that assesses whether predicted plans can achieve critical object-state changes under physical and visual constraints, enabling more faithful evaluation of long-horizon reasoning than symbolic matching. Experiments on 18 state-of-the-art MLLMs reveal persistent limitations in implicit instruction understanding, spatiotemporal reasoning, cross-scenario planning, fine-grained affordance understanding, and failure diagnosis. We further analyze how embodied cognitive abilities relate to downstream robotic control. RoboBench offers a comprehensive scaffold for quantifying high-level cognition and guiding next-generation MLLMs toward more robust robotic intelligence.

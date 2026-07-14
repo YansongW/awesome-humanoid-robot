@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation'
   zh: PerAct
-  ko: ''
+  ko: 'Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation'
 summary:
   en: 'Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation (PerAct),
     is a 2022 generalized vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation (PerAct),
     is a 2022 generalized vision-language-action model for robotic manipulation, introduced
     by University of Washington, NVIDIA, and published at CoRL 2022.'
-  ko: ''
+  ko: 'Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation (PerAct),
+    is a 2022 generalized vision-language-action model for robotic manipulation, introduced
+    by University of Washington, NVIDIA, and published at CoRL 2022.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation (PerAct), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by University of Washington, NVIDIA, and published at CoRL 2022.
+
+## Overview
+Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation (PerAct), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by University of Washington, NVIDIA, and published at CoRL 2022.
+
+## 개요
 Perceiver-Actor: A Multi-Task Transformer for Robotic Manipulation (PerAct), is a 2022 generalized vision-language-action model for robotic manipulation, introduced by University of Washington, NVIDIA, and published at CoRL 2022.

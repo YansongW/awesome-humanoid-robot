@@ -7,7 +7,8 @@ names:
   en: 'RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action
     Models'
   zh: RetoVLA
-  ko: ''
+  ko: 'RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action
+    Models'
 summary:
   en: 'RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action
     Models (RetoVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -15,7 +16,9 @@ summary:
   zh: 'RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action
     Models (RetoVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by School of Computing, Gachon University.'
-  ko: ''
+  ko: 'RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action
+    Models (RetoVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by School of Computing, Gachon University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models (RetoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computing, Gachon University.
+
+## Overview
+RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models (RetoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computing, Gachon University.
+
+## 개요
 RetoVLA: Reusing Register Tokens for Spatial Reasoning in Vision-Language-Action Models (RetoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Computing, Gachon University.

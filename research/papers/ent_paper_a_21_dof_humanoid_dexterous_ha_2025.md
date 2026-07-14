@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0'
   zh: 'A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0'
-  ko: ''
+  ko: 'A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0'
 summary:
   en: 'A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0
     is a 2025 work on hardware design for humanoid robots.'
   zh: 'A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0
     is a 2025 work on hardware design for humanoid robots.'
-  ko: ''
+  ko: 'A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0
+    is a 2025 work on hardware design for humanoid robots.'
 domains:
 - 06_design_engineering
 - 02_components
@@ -45,4 +46,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0 is a 2025 work on hardware design for humanoid robots.
+
+## Overview
+A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0 is a 2025 work on hardware design for humanoid robots.
+
+## 개요
 A 21-DOF Humanoid Dexterous Hand with Hybrid SMA-Motor Actuation: CYJ Hand-0 is a 2025 work on hardware design for humanoid robots.

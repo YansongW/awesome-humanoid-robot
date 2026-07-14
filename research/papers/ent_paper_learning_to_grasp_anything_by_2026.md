@@ -6,13 +6,14 @@ type: paper
 names:
   en: Learning to Grasp Anything by Playing with Random Toys
   zh: Learning to Grasp Anything by Playing with Random Toys
-  ko: ''
+  ko: Learning to Grasp Anything by Playing with Random Toys
 summary:
   en: Learning to Grasp Anything by Playing with Random Toys is a 2026 work on manipulation
     for humanoid robots.
   zh: Learning to Grasp Anything by Playing with Random Toys is a 2026 work on manipulation
     for humanoid robots.
-  ko: ''
+  ko: Learning to Grasp Anything by Playing with Random Toys is a 2026 work on manipulation
+    for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning to Grasp Anything by Playing with Random Toys is a 2026 work on manipulation for humanoid robots.
+
+## Overview
+Learning to Grasp Anything by Playing with Random Toys is a 2026 work on manipulation for humanoid robots.
+
+## 개요
 Learning to Grasp Anything by Playing with Random Toys is a 2026 work on manipulation for humanoid robots.

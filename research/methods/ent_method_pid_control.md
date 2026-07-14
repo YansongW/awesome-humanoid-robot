@@ -8,8 +8,8 @@ names:
   zh: PID控制
   ko: PID 제어
 summary:
-  en: A foundational feedback control method that computes a control signal as a linear combination of proportional, integral,
-    and derivative terms of the tracking error.
+  en: A foundational feedback control method that computes a control signal as a linear
+    combination of proportional, integral, and derivative terms of the tracking error.
   zh: 一种基础反馈控制方法，将控制量表示为跟踪误差的比例、积分、微分三项线性组合。
   ko: 추적 오차의 비례·적분·미분 항의 선형 조합으로 제어 신호를 계산하는 기초 피드백 제어 방법.
 domains:
@@ -33,8 +33,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_astrom_hagglund_2006
   type: other
@@ -52,7 +52,16 @@ related_entities:
 - id: ent_method_impedance_control
   relationship: mentions
   description:
-    en: PID control regulates position or velocity; impedance control extends this to regulate dynamic interaction forces
-      with the environment.
+    en: PID control regulates position or velocity; impedance control extends this
+      to regulate dynamic interaction forces with the environment.
     zh: PID 控制调节位置或速度；阻抗控制进一步调节与环境的动态交互力。
 ---
+
+## 概述
+一种基础反馈控制方法，将控制量表示为跟踪误差的比例、积分、微分三项线性组合。
+
+## Overview
+A foundational feedback control method that computes a control signal as a linear combination of proportional, integral, and derivative terms of the tracking error.
+
+## 개요
+A foundational feedback control method that computes a control signal as a linear combination of proportional, integral, and derivative terms of the tracking error.

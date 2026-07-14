@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model'
   zh: 'Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model'
-  ko: ''
+  ko: 'Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model'
 summary:
   en: 'Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model is a 2025
     work on human motion analysis and synthesis for humanoid robots.'
   zh: 'Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model is a 2025
     work on human motion analysis and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model is a 2025
+    work on human motion analysis and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 Being-M0.5: A Real-Time Controllable Vision-Language-Motion Model is a 2025 work on human motion analysis and synthesis for humanoid robots.

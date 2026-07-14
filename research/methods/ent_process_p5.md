@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 本体结构工程与原型（Mechanical Structure）
-  ko: ''
+  ko: 本体结构工程与原型（Mechanical Structure）
 summary:
   en: ''
   zh: 本体结构工程与原型（Mechanical Structure）
-  ko: ''
+  ko: 本体结构工程与原型（Mechanical Structure）
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -36,5 +36,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+本体结构工程与原型（Mechanical Structure）
 
+## Overview
+本体结构工程与原型（Mechanical Structure）
 
+## 개요
+本体结构工程与原型（Mechanical Structure）

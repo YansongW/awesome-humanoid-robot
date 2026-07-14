@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 实时控制框架
-  ko: ''
+  ko: 实时控制框架
 summary:
   en: ''
   zh: 实时性能测试报告、最大抖动 < 目标
-  ko: ''
+  ko: 实时性能测试报告、最大抖动 < 目标
 domains:
 - 08_software_middleware
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）

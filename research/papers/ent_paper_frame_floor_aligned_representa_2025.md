@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'FRAME: Floor-aligned Representation for Avatar Motion from Egocentric Video'
   zh: 'FRAME: Floor-aligned Representation for Avatar Motion from Egocentric Video'
-  ko: ''
+  ko: 'FRAME: Floor-aligned Representation for Avatar Motion from Egocentric Video'
 summary:
   en: 'FRAME: Floor-aligned Representation for Avatar Motion from Egocentric Video
     is a 2025 work on human motion analysis and synthesis for humanoid robots.'
   zh: 'FRAME: Floor-aligned Representation for Avatar Motion from Egocentric Video
     is a 2025 work on human motion analysis and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'FRAME: Floor-aligned Representation for Avatar Motion from Egocentric Video
+    is a 2025 work on human motion analysis and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -52,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FRAME: Floor-aligned Representation for Avatar Motion from Egocentric Video is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+FRAME: Floor-aligned Representation for Avatar Motion from Egocentric Video is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 FRAME: Floor-aligned Representation for Avatar Motion from Egocentric Video is a 2025 work on human motion analysis and synthesis for humanoid robots.

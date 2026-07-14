@@ -6,13 +6,14 @@ type: paper
 names:
   en: Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits
   zh: Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits
-  ko: ''
+  ko: Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits
 summary:
   en: Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits is a
     2026 work on locomotion for humanoid robots.
   zh: Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits is a
     2026 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits is a
+    2026 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits is a 2026 work on locomotion for humanoid robots.
+
+## Overview
+Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits is a 2026 work on locomotion for humanoid robots.
+
+## 개요
 Biomechanical Comparisons Reveal Divergence of Human and Humanoid Gaits is a 2026 work on locomotion for humanoid robots.

@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'SPIDER: Scalable Physics-Informed DExterous Retargeting'
   zh: 'SPIDER: Scalable Physics-Informed DExterous Retargeting'
-  ko: ''
+  ko: 'SPIDER: Scalable Physics-Informed DExterous Retargeting'
 summary:
   en: 'SPIDER: Scalable Physics-Informed DExterous Retargeting is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
   zh: 'SPIDER: Scalable Physics-Informed DExterous Retargeting is a 2025 work on loco-manipulation
     and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'SPIDER: Scalable Physics-Informed DExterous Retargeting is a 2025 work on loco-manipulation
+    and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SPIDER: Scalable Physics-Informed DExterous Retargeting is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+SPIDER: Scalable Physics-Informed DExterous Retargeting is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 SPIDER: Scalable Physics-Informed DExterous Retargeting is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

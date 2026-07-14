@@ -7,7 +7,8 @@ names:
   en: 'INSIGHT: INference-time Sequence Introspection for Generating Help Triggers
     in Vision-Language-Action Models'
   zh: INSIGHT
-  ko: ''
+  ko: 'INSIGHT: INference-time Sequence Introspection for Generating Help Triggers
+    in Vision-Language-Action Models'
 summary:
   en: 'INSIGHT: INference-time Sequence Introspection for Generating Help Triggers
     in Vision-Language-Action Models (INSIGHT), is a 2025 large vision-language-action
@@ -15,7 +16,9 @@ summary:
   zh: 'INSIGHT: INference-time Sequence Introspection for Generating Help Triggers
     in Vision-Language-Action Models (INSIGHT), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Yale University.'
-  ko: ''
+  ko: 'INSIGHT: INference-time Sequence Introspection for Generating Help Triggers
+    in Vision-Language-Action Models (INSIGHT), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Yale University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+INSIGHT: INference-time Sequence Introspection for Generating Help Triggers in Vision-Language-Action Models (INSIGHT), is a 2025 large vision-language-action model for robotic manipulation, introduced by Yale University.
+
+## Overview
+INSIGHT: INference-time Sequence Introspection for Generating Help Triggers in Vision-Language-Action Models (INSIGHT), is a 2025 large vision-language-action model for robotic manipulation, introduced by Yale University.
+
+## 개요
 INSIGHT: INference-time Sequence Introspection for Generating Help Triggers in Vision-Language-Action Models (INSIGHT), is a 2025 large vision-language-action model for robotic manipulation, introduced by Yale University.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 硬件抽象与驱动层
-  ko: ''
+  ko: 硬件抽象与驱动层
 summary:
   en: ''
   zh: HAL 接口规范、驱动覆盖清单、单元测试
-  ko: ''
+  ko: HAL 接口规范、驱动覆盖清单、单元测试
 domains:
 - 08_software_middleware
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）

@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'ANYmal Parkour: Robust Perceptive Locomotion'
   zh: 'ANYmal Parkour: Robust Perceptive Locomotion'
-  ko: ''
+  ko: 'ANYmal Parkour: Robust Perceptive Locomotion'
 summary:
   en: ''
   zh: 'ANYmal Parkour: Robust Perceptive Locomotion is a paper on 行走 Locomotion for
     humanoid robotics.'
-  ko: ''
+  ko: 'ANYmal Parkour: Robust Perceptive Locomotion is a paper on 行走 Locomotion for
+    humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -41,5 +42,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ANYmal Parkour: Robust Perceptive Locomotion is a paper on 行走 Locomotion for humanoid robotics.
 
+## Overview
+ANYmal Parkour: Robust Perceptive Locomotion is a paper on 行走 Locomotion for humanoid robotics.
+
+## 개요
 ANYmal Parkour: Robust Perceptive Locomotion is a paper on 行走 Locomotion for humanoid robotics.

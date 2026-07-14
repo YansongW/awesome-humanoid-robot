@@ -8,13 +8,15 @@ names:
     via Differentiable Simulation'
   zh: 'HALO: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills
     via Differentiable Simulation'
-  ko: ''
+  ko: 'HALO: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills
+    via Differentiable Simulation'
 summary:
   en: 'HALO: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills
     via Differentiable Simulation is a paper on Sim-to-Real for humanoid robotics.'
   zh: 'HALO: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills
     via Differentiable Simulation is a paper on Sim-to-Real for humanoid robotics.'
-  ko: ''
+  ko: 'HALO: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills
+    via Differentiable Simulation is a paper on Sim-to-Real for humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+HALO: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation is a paper on Sim-to-Real for humanoid robotics.
+
+## Overview
+HALO: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation is a paper on Sim-to-Real for humanoid robotics.
+
+## 개요
 HALO: Closing Sim-to-Real Gap for Heavy-loaded Humanoid Agile Motion Skills via Differentiable Simulation is a paper on Sim-to-Real for humanoid robotics.

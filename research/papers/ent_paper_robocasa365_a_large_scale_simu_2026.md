@@ -8,13 +8,15 @@ names:
     Generalist Robots'
   zh: 'RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking
     Generalist Robots'
-  ko: ''
+  ko: 'RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking
+    Generalist Robots'
 summary:
   en: 'RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking
     Generalist Robots is a 2026 work on simulation benchmark for humanoid robots.'
   zh: 'RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking
     Generalist Robots is a 2026 work on simulation benchmark for humanoid robots.'
-  ko: ''
+  ko: 'RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking
+    Generalist Robots is a 2026 work on simulation benchmark for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -48,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots is a 2026 work on simulation benchmark for humanoid robots.
+
+## Overview
+RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots is a 2026 work on simulation benchmark for humanoid robots.
+
+## 개요
 RoboCasa365: A Large-Scale Simulation Framework for Training and Benchmarking Generalist Robots is a 2026 work on simulation benchmark for humanoid robots.

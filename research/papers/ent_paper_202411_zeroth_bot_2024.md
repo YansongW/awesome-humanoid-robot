@@ -6,11 +6,11 @@ type: paper
 names:
   en: 2024.11, Zeroth Bot
   zh: 2024.11, Zeroth Bot
-  ko: ''
+  ko: 2024.11, Zeroth Bot
 summary:
   en: 2024.11, Zeroth Bot is a 2024 work on hardware design for humanoid robots.
   zh: 2024.11, Zeroth Bot is a 2024 work on hardware design for humanoid robots.
-  ko: ''
+  ko: 2024.11, Zeroth Bot is a 2024 work on hardware design for humanoid robots.
 domains:
 - 06_design_engineering
 - 02_components
@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+2024.11, Zeroth Bot is a 2024 work on hardware design for humanoid robots.
+
+## Overview
+2024.11, Zeroth Bot is a 2024 work on hardware design for humanoid robots.
+
+## 개요
 2024.11, Zeroth Bot is a 2024 work on hardware design for humanoid robots.

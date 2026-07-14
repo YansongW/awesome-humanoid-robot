@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Diffusion-VLA: Scaling Robot Foundation Models via Unified Diffusion and Autoregression'
   zh: Diffusion-VLA
-  ko: ''
+  ko: 'Diffusion-VLA: Scaling Robot Foundation Models via Unified Diffusion and Autoregression'
 summary:
   en: 'Diffusion-VLA: Scaling Robot Foundation Models via Unified Diffusion and Autoregression
     (Diffusion-VLA), is a 2024 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (Diffusion-VLA), is a 2024 large vision-language-action model for robotic manipulation,
     introduced by East China Normal University, Midea Group, Shanghai University,
     and published at ICML25.'
-  ko: ''
+  ko: 'Diffusion-VLA: Scaling Robot Foundation Models via Unified Diffusion and Autoregression
+    (Diffusion-VLA), is a 2024 large vision-language-action model for robotic manipulation,
+    introduced by East China Normal University, Midea Group, Shanghai University,
+    and published at ICML25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Diffusion-VLA: Scaling Robot Foundation Models via Unified Diffusion and Autoregression (Diffusion-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by East China Normal University, Midea Group, Shanghai University, and published at ICML25.
+
+## Overview
+Diffusion-VLA: Scaling Robot Foundation Models via Unified Diffusion and Autoregression (Diffusion-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by East China Normal University, Midea Group, Shanghai University, and published at ICML25.
+
+## 개요
 Diffusion-VLA: Scaling Robot Foundation Models via Unified Diffusion and Autoregression (Diffusion-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by East China Normal University, Midea Group, Shanghai University, and published at ICML25.

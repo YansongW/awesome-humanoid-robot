@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'OccVLA: Vision-Language-Action Model with Implicit 3D Occupancy Supervision'
   zh: OccVLA
-  ko: ''
+  ko: 'OccVLA: Vision-Language-Action Model with Implicit 3D Occupancy Supervision'
 summary:
   en: 'OccVLA: Vision-Language-Action Model with Implicit 3D Occupancy Supervision
     (OccVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -16,7 +16,10 @@ summary:
     (OccVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Shanghai Qi Zhi Institute, Xi’an Jiaotong University, Fudan University,
     Shanghai Jiao Tong University, Tsinghua University.'
-  ko: ''
+  ko: 'OccVLA: Vision-Language-Action Model with Implicit 3D Occupancy Supervision
+    (OccVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Shanghai Qi Zhi Institute, Xi’an Jiaotong University, Fudan University,
+    Shanghai Jiao Tong University, Tsinghua University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+OccVLA: Vision-Language-Action Model with Implicit 3D Occupancy Supervision (OccVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Qi Zhi Institute, Xi’an Jiaotong University, Fudan University, Shanghai Jiao Tong University, Tsinghua University.
+
+## Overview
+OccVLA: Vision-Language-Action Model with Implicit 3D Occupancy Supervision (OccVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Qi Zhi Institute, Xi’an Jiaotong University, Fudan University, Shanghai Jiao Tong University, Tsinghua University.
+
+## 개요
 OccVLA: Vision-Language-Action Model with Implicit 3D Occupancy Supervision (OccVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Qi Zhi Institute, Xi’an Jiaotong University, Fudan University, Shanghai Jiao Tong University, Tsinghua University.

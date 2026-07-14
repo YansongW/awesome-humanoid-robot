@@ -7,7 +7,8 @@ names:
   en: 'Bi-VLA: Bilateral Control-Based Imitation Learning via Vision-Language Fusion
     for Action Generation'
   zh: Bi-VLA 2025
-  ko: ''
+  ko: 'Bi-VLA: Bilateral Control-Based Imitation Learning via Vision-Language Fusion
+    for Action Generation'
 summary:
   en: 'Bi-VLA: Bilateral Control-Based Imitation Learning via Vision-Language Fusion
     for Action Generation (Bi-VLA 2025), is a 2025 large vision-language-action model
@@ -15,7 +16,9 @@ summary:
   zh: 'Bi-VLA: Bilateral Control-Based Imitation Learning via Vision-Language Fusion
     for Action Generation (Bi-VLA 2025), is a 2025 large vision-language-action model
     for robotic manipulation, introduced by The University of Osaka, Kobe University.'
-  ko: ''
+  ko: 'Bi-VLA: Bilateral Control-Based Imitation Learning via Vision-Language Fusion
+    for Action Generation (Bi-VLA 2025), is a 2025 large vision-language-action model
+    for robotic manipulation, introduced by The University of Osaka, Kobe University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Bi-VLA: Bilateral Control-Based Imitation Learning via Vision-Language Fusion for Action Generation (Bi-VLA 2025), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Osaka, Kobe University.
+
+## Overview
+Bi-VLA: Bilateral Control-Based Imitation Learning via Vision-Language Fusion for Action Generation (Bi-VLA 2025), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Osaka, Kobe University.
+
+## 개요
 Bi-VLA: Bilateral Control-Based Imitation Learning via Vision-Language Fusion for Action Generation (Bi-VLA 2025), is a 2025 large vision-language-action model for robotic manipulation, introduced by The University of Osaka, Kobe University.

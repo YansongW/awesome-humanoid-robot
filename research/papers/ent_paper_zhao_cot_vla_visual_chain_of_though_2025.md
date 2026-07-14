@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models'
   zh: CoT-VLA
-  ko: ''
+  ko: 'CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models'
 summary:
   en: 'CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models
     (CoT-VLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models
     (CoT-VLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by NVIDIA, Stanford University, MIT, and published at CVPR25.'
-  ko: ''
+  ko: 'CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models
+    (CoT-VLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by NVIDIA, Stanford University, MIT, and published at CVPR25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models (CoT-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, Stanford University, MIT, and published at CVPR25.
+
+## Overview
+CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models (CoT-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, Stanford University, MIT, and published at CVPR25.
+
+## 개요
 CoT-VLA: Visual Chain-of-Thought Reasoning for Vision-Language-Action Models (CoT-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by NVIDIA, Stanford University, MIT, and published at CVPR25.

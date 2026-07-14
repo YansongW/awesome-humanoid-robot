@@ -8,8 +8,8 @@ names:
   zh: 产品责任
   ko: 제품 책임
 summary:
-  en: The legal responsibility of manufacturers and sellers for injuries or damages caused by defective or unsafe products,
-    directly applicable to humanoid robots.
+  en: The legal responsibility of manufacturers and sellers for injuries or damages
+    caused by defective or unsafe products, directly applicable to humanoid robots.
   zh: 制造商与销售商因缺陷或不安全产品造成人身伤害或财产损失的法律责任，直接适用于人形机器人。
   ko: 결함이나 불안전한 제품으로 인한 상해·손해에 대해 제조업체와 판매자가 지는 법적 책임.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+制造商与销售商因缺陷或不安全产品造成人身伤害或财产损失的法律责任，直接适用于人形机器人。
+
+## Overview
+The legal responsibility of manufacturers and sellers for injuries or damages caused by defective or unsafe products, directly applicable to humanoid robots.
+
+## 개요
+The legal responsibility of manufacturers and sellers for injuries or damages caused by defective or unsafe products, directly applicable to humanoid robots.

@@ -7,12 +7,14 @@ names:
   en: 'SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via
     Residual RL'
   zh: SteadyTray：用残差强化学习教人形机器人端着托盘稳稳走路
-  ko: ''
+  ko: 'SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via
+    Residual RL'
 summary:
   en: ''
   zh: 'SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via
     Residual RL is a paper on Loco-Manipulation for humanoid robotics. SteadyTray：用残差强化学习教人形机器人端着托盘稳稳走路.'
-  ko: ''
+  ko: 'SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via
+    Residual RL is a paper on Loco-Manipulation for humanoid robotics. SteadyTray：用残差强化学习教人形机器人端着托盘稳稳走路.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,5 +48,8 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual RL is a paper on Loco-Manipulation for humanoid robotics. SteadyTray：用残差强化学习教人形机器人端着托盘稳稳走路.
 
+## 개요
 SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual RL is a paper on Loco-Manipulation for humanoid robotics. SteadyTray：用残差强化学习教人形机器人端着托盘稳稳走路.

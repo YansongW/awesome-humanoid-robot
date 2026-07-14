@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 人体尺度与可达域分析
-  ko: ''
+  ko: 人体尺度与可达域分析
 summary:
   en: ''
   zh: 可达域报告、关键操作姿态、干涉检查
-  ko: ''
+  ko: 可达域报告、关键操作姿态、干涉检查
 domains:
 - 06_design_engineering
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：工业设计与外观工程（ID / A-Surface）

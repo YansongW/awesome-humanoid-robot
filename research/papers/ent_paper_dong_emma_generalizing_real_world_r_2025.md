@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'EMMA: Generalizing Real-World Robot Manipulation via Generative Visual Transfer'
   zh: EMMA
-  ko: ''
+  ko: 'EMMA: Generalizing Real-World Robot Manipulation via Generative Visual Transfer'
 summary:
   en: 'EMMA: Generalizing Real-World Robot Manipulation via Generative Visual Transfer
     (EMMA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'EMMA: Generalizing Real-World Robot Manipulation via Generative Visual Transfer
     (EMMA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Singapore University of Technology and Design, Deepmind.'
-  ko: ''
+  ko: 'EMMA: Generalizing Real-World Robot Manipulation via Generative Visual Transfer
+    (EMMA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Singapore University of Technology and Design, Deepmind.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EMMA: Generalizing Real-World Robot Manipulation via Generative Visual Transfer (EMMA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Singapore University of Technology and Design, Deepmind.
+
+## Overview
+EMMA: Generalizing Real-World Robot Manipulation via Generative Visual Transfer (EMMA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Singapore University of Technology and Design, Deepmind.
+
+## 개요
 EMMA: Generalizing Real-World Robot Manipulation via Generative Visual Transfer (EMMA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Singapore University of Technology and Design, Deepmind.

@@ -8,13 +8,15 @@ names:
     in Robotic Manipulation'
   zh: 'EgoDemoGen: Egocentric Demonstration Generation for Viewpoint Generalization
     in Robotic Manipulation'
-  ko: ''
+  ko: 'EgoDemoGen: Egocentric Demonstration Generation for Viewpoint Generalization
+    in Robotic Manipulation'
 summary:
   en: 'EgoDemoGen: Egocentric Demonstration Generation for Viewpoint Generalization
     in Robotic Manipulation is a paper on Manipulation for humanoid robotics.'
   zh: 'EgoDemoGen: Egocentric Demonstration Generation for Viewpoint Generalization
     in Robotic Manipulation is a paper on Manipulation for humanoid robotics.'
-  ko: ''
+  ko: 'EgoDemoGen: Egocentric Demonstration Generation for Viewpoint Generalization
+    in Robotic Manipulation is a paper on Manipulation for humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EgoDemoGen: Egocentric Demonstration Generation for Viewpoint Generalization in Robotic Manipulation is a paper on Manipulation for humanoid robotics.
+
+## Overview
+EgoDemoGen: Egocentric Demonstration Generation for Viewpoint Generalization in Robotic Manipulation is a paper on Manipulation for humanoid robotics.
+
+## 개요
 EgoDemoGen: Egocentric Demonstration Generation for Viewpoint Generalization in Robotic Manipulation is a paper on Manipulation for humanoid robotics.

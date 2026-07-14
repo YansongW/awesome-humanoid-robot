@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 软件中间件与系统集成（Software & Integration）
-  ko: ''
+  ko: 软件中间件与系统集成（Software & Integration）
 summary:
   en: ''
   zh: 软件中间件与系统集成（Software & Integration）
-  ko: ''
+  ko: 软件中间件与系统集成（Software & Integration）
 domains:
 - 08_software_middleware
 layers:
@@ -34,5 +34,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+软件中间件与系统集成（Software & Integration）
 
+## Overview
+软件中间件与系统集成（Software & Integration）
 
+## 개요
+软件中间件与系统集成（Software & Integration）

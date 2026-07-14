@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+优化产品设计，使人形机器人关节和子系统能够快速可靠地装配的方法论。
+
+## Overview
 Methodology to optimize product design so that humanoid robot joints and subsystems can be assembled quickly and reliably.
+
+## 개요
+휨로봇 관절 및 하위 시스템을 빠르고 신뢰성 있게 조립할 수 있도록 제품 설계를 최적화하는 방법론.

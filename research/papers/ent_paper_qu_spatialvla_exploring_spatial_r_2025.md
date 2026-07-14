@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model'
   zh: SpatialVLA
-  ko: ''
+  ko: 'SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model'
 summary:
   en: 'SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model
     (SpatialVLA), is a 2025 large vision-language-action model for robotic manipulation,
@@ -14,7 +14,9 @@ summary:
   zh: 'SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model
     (SpatialVLA), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Shanghai AI Laboratory, ShanghaiTech, TeleAI.'
-  ko: ''
+  ko: 'SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model
+    (SpatialVLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Shanghai AI Laboratory, ShanghaiTech, TeleAI.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -54,4 +56,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model (SpatialVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, ShanghaiTech, TeleAI.
+
+## Overview
+SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model (SpatialVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, ShanghaiTech, TeleAI.
+
+## 개요
 SpatialVLA: Exploring Spatial Representations for Visual-Language-Action Model (SpatialVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, ShanghaiTech, TeleAI.

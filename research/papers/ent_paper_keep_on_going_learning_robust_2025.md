@@ -8,7 +8,8 @@ names:
     Training'
   zh: 'Keep on Going: Learning Robust Humanoid Motion Skills via Selective Adversarial
     Training'
-  ko: ''
+  ko: 'Keep on Going: Learning Robust Humanoid Motion Skills via Selective Adversarial
+    Training'
 summary:
   en: 'Keep on Going: Learning Robust Humanoid Motion Skills via Selective Adversarial
     Training is a 2025 work on loco-manipulation and whole-body-control for humanoid
@@ -16,7 +17,9 @@ summary:
   zh: 'Keep on Going: Learning Robust Humanoid Motion Skills via Selective Adversarial
     Training is a 2025 work on loco-manipulation and whole-body-control for humanoid
     robots.'
-  ko: ''
+  ko: 'Keep on Going: Learning Robust Humanoid Motion Skills via Selective Adversarial
+    Training is a 2025 work on loco-manipulation and whole-body-control for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Keep on Going: Learning Robust Humanoid Motion Skills via Selective Adversarial Training is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Keep on Going: Learning Robust Humanoid Motion Skills via Selective Adversarial Training is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Keep on Going: Learning Robust Humanoid Motion Skills via Selective Adversarial Training is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

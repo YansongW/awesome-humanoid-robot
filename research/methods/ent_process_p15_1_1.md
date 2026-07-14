@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 腿部系统集成与调试
-  ko: ''
+  ko: 腿部系统集成与调试
 summary:
   en: ''
   zh: 单腿/双腿站立稳定、关节跟随误差 < 目标
-  ko: ''
+  ko: 单腿/双腿站立稳定、关节跟随误差 < 目标
 domains:
 - 04_assembly_integration_testing
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）

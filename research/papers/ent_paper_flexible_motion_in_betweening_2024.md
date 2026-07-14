@@ -6,13 +6,14 @@ type: paper
 names:
   en: Flexible Motion In-betweening with Diffusion Models
   zh: Flexible Motion In-betweening with Diffusion Models
-  ko: ''
+  ko: Flexible Motion In-betweening with Diffusion Models
 summary:
   en: Flexible Motion In-betweening with Diffusion Models is a 2024 work on human
     motion analysis and synthesis for humanoid robots.
   zh: Flexible Motion In-betweening with Diffusion Models is a 2024 work on human
     motion analysis and synthesis for humanoid robots.
-  ko: ''
+  ko: Flexible Motion In-betweening with Diffusion Models is a 2024 work on human
+    motion analysis and synthesis for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Flexible Motion In-betweening with Diffusion Models is a 2024 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+Flexible Motion In-betweening with Diffusion Models is a 2024 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 Flexible Motion In-betweening with Diffusion Models is a 2024 work on human motion analysis and synthesis for humanoid robots.

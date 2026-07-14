@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'Ask-to-Clarify: Resolving Instruction Ambiguity through Multi-turn Dialogue'
   zh: 'Ask-to-Clarify: Resolving Instruction Ambiguity through Multi-turn Dialogue'
-  ko: ''
+  ko: 'Ask-to-Clarify: Resolving Instruction Ambiguity through Multi-turn Dialogue'
 summary:
   en: "arXiv:2509.15061v3 Announce Type: replace \nAbstract: Embodied agents are intelligent\
     \ systems designed to perceive, reason, and act within the physical world. While\
@@ -48,7 +48,26 @@ summary:
     \ evaluations across 11 real-world tasks demonstrate that \\framework{} significantly\
     \ outperforms existing methods, offering a promising path toward building truly\
     \ collaborative embodied agents."
-  ko: ''
+  ko: "arXiv:2509.15061v3 Announce Type: replace \nAbstract: Embodied agents are intelligent\
+    \ systems designed to perceive, reason, and act within the physical world. While\
+    \ the robotics community has long strived to build such versatile agents, a fundamental\
+    \ limitation persists: most current VLA-based models operate under a rigid ``Listen-and-Act''\
+    \ paradigm. These systems assume instructions are unambiguous and execute them\
+    \ in a passive fashion, preventing them from resolving uncertainty through dialogue.\
+    \ To address this, we propose Ask-to-Clarify, a unified end-to-end framework that\
+    \ seamlessly integrates multi-turn disambiguation dialogue with low-level visuomotor\
+    \ control, eliminating the reliance on high-level action primitives or external\
+    \ planners. Specifically, Ask-to-Clarify synergizes a VLM-based Cognitive Planner\
+    \ with a Diffusion-based Motor Executor. To bridge the disparity between high-level\
+    \ disambiguation and low-level execution, we introduce a Semantic-Visual Alignment\
+    \ Adapter, which functions as a cross-modal interface to synthesize semantic intent\
+    \ with visual perceptual streams. Furthermore, we observe severe catastrophic\
+    \ forgetting: visuomotor fine-tuning completely erases dialogue capabilities.\
+    \ To overcome this, we propose a two-stage knowledge-insulation training strategy,\
+    \ effectively decoupling dialogue logic from physical manipulation. Extensive\
+    \ evaluations across 11 real-world tasks demonstrate that \\framework{} significantly\
+    \ outperforms existing methods, offering a promising path toward building truly\
+    \ collaborative embodied agents."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -79,5 +98,14 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+arXiv:2509.15061v3 Announce Type: replace 
+Abstract: Embodied agents are intelligent systems designed to perceive, reason, and act within the physical world. While the robotics community has long strived to build such versatile agents, a fundamental limitation persists: most current VLA-based models operate under a rigid ``Listen-and-Act'' paradigm. These systems assume instructions are unambiguous and execute them in a passive fashion, preventing them from resolving uncertainty through dialogue. To address this, we propose Ask-to-Clarify, a unified end-to-end framework that seamlessly integrates multi-turn disambiguation dialogue with low-level visuomotor control, eliminating the reliance on high-level action primitives or external planners. Specifically, Ask-to-Clarify synergizes a VLM-based Cognitive Planner with a Diffusion-based Motor Executor. To bridge the disparity between high-level disambiguation and low-level execution, we introduce a Semantic-Visual Alignment Adapter, which functions as a cross-modal interface to synthesize semantic intent with visual perceptual streams. Furthermore, we observe severe catastrophic forgetting: visuomotor fine-tuning completely erases dialogue capabilities. To overcome this, we propose a two-stage knowledge-insulation training strategy, effectively decoupling dialogue logic from physical manipulation. Extensive evaluations across 11 real-world tasks demonstrate that \framework{} significantly outperforms existing methods, offering a promising path toward building truly collaborative embodied agents.
+
+## Overview
+arXiv:2509.15061v3 Announce Type: replace 
+Abstract: Embodied agents are intelligent systems designed to perceive, reason, and act within the physical world. While the robotics community has long strived to build such versatile agents, a fundamental limitation persists: most current VLA-based models operate under a rigid ``Listen-and-Act'' paradigm. These systems assume instructions are unambiguous and execute them in a passive fashion, preventing them from resolving uncertainty through dialogue. To address this, we propose Ask-to-Clarify, a unified end-to-end framework that seamlessly integrates multi-turn disambiguation dialogue with low-level visuomotor control, eliminating the reliance on high-level action primitives or external planners. Specifically, Ask-to-Clarify synergizes a VLM-based Cognitive Planner with a Diffusion-based Motor Executor. To bridge the disparity between high-level disambiguation and low-level execution, we introduce a Semantic-Visual Alignment Adapter, which functions as a cross-modal interface to synthesize semantic intent with visual perceptual streams. Furthermore, we observe severe catastrophic forgetting: visuomotor fine-tuning completely erases dialogue capabilities. To overcome this, we propose a two-stage knowledge-insulation training strategy, effectively decoupling dialogue logic from physical manipulation. Extensive evaluations across 11 real-world tasks demonstrate that \framework{} significantly outperforms existing methods, offering a promising path toward building truly collaborative embodied agents.
+
+## 개요
 arXiv:2509.15061v3 Announce Type: replace 
 Abstract: Embodied agents are intelligent systems designed to perceive, reason, and act within the physical world. While the robotics community has long strived to build such versatile agents, a fundamental limitation persists: most current VLA-based models operate under a rigid ``Listen-and-Act'' paradigm. These systems assume instructions are unambiguous and execute them in a passive fashion, preventing them from resolving uncertainty through dialogue. To address this, we propose Ask-to-Clarify, a unified end-to-end framework that seamlessly integrates multi-turn disambiguation dialogue with low-level visuomotor control, eliminating the reliance on high-level action primitives or external planners. Specifically, Ask-to-Clarify synergizes a VLM-based Cognitive Planner with a Diffusion-based Motor Executor. To bridge the disparity between high-level disambiguation and low-level execution, we introduce a Semantic-Visual Alignment Adapter, which functions as a cross-modal interface to synthesize semantic intent with visual perceptual streams. Furthermore, we observe severe catastrophic forgetting: visuomotor fine-tuning completely erases dialogue capabilities. To overcome this, we propose a two-stage knowledge-insulation training strategy, effectively decoupling dialogue logic from physical manipulation. Extensive evaluations across 11 real-world tasks demonstrate that \framework{} significantly outperforms existing methods, offering a promising path toward building truly collaborative embodied agents.

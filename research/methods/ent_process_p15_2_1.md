@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 安全功能测试
-  ko: ''
+  ko: 安全功能测试
 summary:
   en: ''
   zh: 安全测试报告、所有安全功能通过
-  ko: ''
+  ko: 安全测试报告、所有安全功能通过
 domains:
 - 04_assembly_integration_testing
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：整机集成与验证测试（Integration & V&V）

@@ -8,8 +8,8 @@ names:
   zh: Isaac Gym基准
   ko: Isaac Gym 벤치마크
 summary:
-  en: A collection of GPU-accelerated reinforcement-learning benchmarks built on NVIDIA Isaac Gym for high-throughput robot
-    policy training and evaluation.
+  en: A collection of GPU-accelerated reinforcement-learning benchmarks built on NVIDIA
+    Isaac Gym for high-throughput robot policy training and evaluation.
   zh: 基于NVIDIA Isaac Gym构建的GPU加速强化学习基准集合，用于高吞吐量机器人策略训练与评估。
   ko: NVIDIA Isaac Gym 기반 GPU 가속 강화학습 벤치마크 모음으로, 고처리량 로봇 정책 훈련·평가에 사용.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+基于NVIDIA Isaac Gym构建的GPU加速强化学习基准集合，用于高吞吐量机器人策略训练与评估。
+
+## Overview
+A collection of GPU-accelerated reinforcement-learning benchmarks built on NVIDIA Isaac Gym for high-throughput robot policy training and evaluation.
+
+## 개요
+A collection of GPU-accelerated reinforcement-learning benchmarks built on NVIDIA Isaac Gym for high-throughput robot policy training and evaluation.

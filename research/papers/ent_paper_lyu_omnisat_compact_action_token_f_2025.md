@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'OmniSAT: Compact Action Token, Faster Auto Regression'
   zh: OmniSAT
-  ko: ''
+  ko: 'OmniSAT: Compact Action Token, Faster Auto Regression'
 summary:
   en: 'OmniSAT: Compact Action Token, Faster Auto Regression (OmniSAT), is a 2025
     large vision-language-action model for robotic manipulation, introduced by University
@@ -14,7 +14,9 @@ summary:
   zh: 'OmniSAT: Compact Action Token, Faster Auto Regression (OmniSAT), is a 2025
     large vision-language-action model for robotic manipulation, introduced by University
     of Science and Technology of China.'
-  ko: ''
+  ko: 'OmniSAT: Compact Action Token, Faster Auto Regression (OmniSAT), is a 2025
+    large vision-language-action model for robotic manipulation, introduced by University
+    of Science and Technology of China.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+OmniSAT: Compact Action Token, Faster Auto Regression (OmniSAT), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Science and Technology of China.
+
+## Overview
+OmniSAT: Compact Action Token, Faster Auto Regression (OmniSAT), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Science and Technology of China.
+
+## 개요
 OmniSAT: Compact Action Token, Faster Auto Regression (OmniSAT), is a 2025 large vision-language-action model for robotic manipulation, introduced by University of Science and Technology of China.

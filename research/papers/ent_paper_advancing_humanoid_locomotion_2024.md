@@ -8,13 +8,15 @@ names:
     World Model Learning'
   zh: 'Advancing Humanoid Locomotion: Mastering Challenging Terrains with Denoising
     World Model Learning'
-  ko: ''
+  ko: 'Advancing Humanoid Locomotion: Mastering Challenging Terrains with Denoising
+    World Model Learning'
 summary:
   en: 'Advancing Humanoid Locomotion: Mastering Challenging Terrains with Denoising
     World Model Learning is a 2024 work on locomotion for humanoid robots.'
   zh: 'Advancing Humanoid Locomotion: Mastering Challenging Terrains with Denoising
     World Model Learning is a 2024 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'Advancing Humanoid Locomotion: Mastering Challenging Terrains with Denoising
+    World Model Learning is a 2024 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Advancing Humanoid Locomotion: Mastering Challenging Terrains with Denoising World Model Learning is a 2024 work on locomotion for humanoid robots.
+
+## Overview
+Advancing Humanoid Locomotion: Mastering Challenging Terrains with Denoising World Model Learning is a 2024 work on locomotion for humanoid robots.
+
+## 개요
 Advancing Humanoid Locomotion: Mastering Challenging Terrains with Denoising World Model Learning is a 2024 work on locomotion for humanoid robots.

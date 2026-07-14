@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 设计语言与品牌 DNA
-  ko: ''
+  ko: 设计语言与品牌 DNA
 summary:
   en: ''
   zh: 设计语言指南、3 套造型方向
-  ko: ''
+  ko: 设计语言指南、3 套造型方向
 domains:
 - 06_design_engineering
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：工业设计与外观工程（ID / A-Surface）

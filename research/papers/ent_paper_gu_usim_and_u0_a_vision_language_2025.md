@@ -7,7 +7,8 @@ names:
   en: 'USIM and U0: A Vision-Language-Action Dataset and Model for General Underwater
     Robots'
   zh: USIM & U0
-  ko: ''
+  ko: 'USIM and U0: A Vision-Language-Action Dataset and Model for General Underwater
+    Robots'
 summary:
   en: 'USIM and U0: A Vision-Language-Action Dataset and Model for General Underwater
     Robots (USIM & U0), is a 2025 large vision-language-action model for robotic manipulation,
@@ -17,7 +18,10 @@ summary:
     Robots (USIM & U0), is a 2025 large vision-language-action model for robotic manipulation,
     introduced by Institute of Automation, Chinese Academy of Sciences, Key Laboratory
     of Cognition and Decision Intelligence for Complex Systems.'
-  ko: ''
+  ko: 'USIM and U0: A Vision-Language-Action Dataset and Model for General Underwater
+    Robots (USIM & U0), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Institute of Automation, Chinese Academy of Sciences, Key Laboratory
+    of Cognition and Decision Intelligence for Complex Systems.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+USIM and U0: A Vision-Language-Action Dataset and Model for General Underwater Robots (USIM & U0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Automation, Chinese Academy of Sciences, Key Laboratory of Cognition and Decision Intelligence for Complex Systems.
+
+## Overview
+USIM and U0: A Vision-Language-Action Dataset and Model for General Underwater Robots (USIM & U0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Automation, Chinese Academy of Sciences, Key Laboratory of Cognition and Decision Intelligence for Complex Systems.
+
+## 개요
 USIM and U0: A Vision-Language-Action Dataset and Model for General Underwater Robots (USIM & U0), is a 2025 large vision-language-action model for robotic manipulation, introduced by Institute of Automation, Chinese Academy of Sciences, Key Laboratory of Cognition and Decision Intelligence for Complex Systems.

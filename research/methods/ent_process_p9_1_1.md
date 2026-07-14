@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 热源与功耗清单
-  ko: ''
+  ko: 热源与功耗清单
 summary:
   en: ''
   zh: 《热源清单》：各部件功耗、发热功率、占比
-  ko: ''
+  ko: 《热源清单》：各部件功耗、发热功率、占比
 domains:
 - 06_design_engineering
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：热管理仿真与迭代（Thermal Management）

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 装配顺序与工装夹具规划
-  ko: ''
+  ko: 装配顺序与工装夹具规划
 summary:
   en: ''
   zh: 装配顺序图、工装清单、SOP 草案
-  ko: ''
+  ko: 装配顺序图、工装清单、SOP 草案
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）

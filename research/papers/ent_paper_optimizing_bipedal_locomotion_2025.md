@@ -6,13 +6,14 @@ type: paper
 names:
   en: Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running
   zh: Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running
-  ko: ''
+  ko: Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running
 summary:
   en: Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running
     is a 2025 work on locomotion for humanoid robots.
   zh: Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running
     is a 2025 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running
+    is a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Optimizing Bipedal Locomotion for The 100m Dash With Comparison to Human Running is a 2025 work on locomotion for humanoid robots.

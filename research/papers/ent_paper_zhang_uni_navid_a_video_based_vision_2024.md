@@ -7,7 +7,8 @@ names:
   en: 'Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied
     Navigation Tasks'
   zh: Uni-NaVid
-  ko: ''
+  ko: 'Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied
+    Navigation Tasks'
 summary:
   en: 'Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied
     Navigation Tasks (Uni-NaVid), is a 2024 large vision-language-action model for
@@ -17,7 +18,10 @@ summary:
     Navigation Tasks (Uni-NaVid), is a 2024 large vision-language-action model for
     robotic manipulation, introduced by CFCS, School of Computer Science, Peking University,
     Galbot, Beijing Academy of Artificial Intelligence, and published at RSS25.'
-  ko: ''
+  ko: 'Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied
+    Navigation Tasks (Uni-NaVid), is a 2024 large vision-language-action model for
+    robotic manipulation, introduced by CFCS, School of Computer Science, Peking University,
+    Galbot, Beijing Academy of Artificial Intelligence, and published at RSS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -58,4 +62,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks (Uni-NaVid), is a 2024 large vision-language-action model for robotic manipulation, introduced by CFCS, School of Computer Science, Peking University, Galbot, Beijing Academy of Artificial Intelligence, and published at RSS25.
+
+## Overview
+Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks (Uni-NaVid), is a 2024 large vision-language-action model for robotic manipulation, introduced by CFCS, School of Computer Science, Peking University, Galbot, Beijing Academy of Artificial Intelligence, and published at RSS25.
+
+## 개요
 Uni-NaVid: A Video-based Vision-Language-Action Model for Unifying Embodied Navigation Tasks (Uni-NaVid), is a 2024 large vision-language-action model for robotic manipulation, introduced by CFCS, School of Computer Science, Peking University, Galbot, Beijing Academy of Artificial Intelligence, and published at RSS25.

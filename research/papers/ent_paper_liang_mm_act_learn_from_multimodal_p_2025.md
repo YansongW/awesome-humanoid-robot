@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'MM-ACT: Learn from Multimodal Parallel Generation to Act'
   zh: MM-ACT
-  ko: ''
+  ko: 'MM-ACT: Learn from Multimodal Parallel Generation to Act'
 summary:
   en: 'MM-ACT: Learn from Multimodal Parallel Generation to Act (MM-ACT), is a 2025
     large vision-language-action model for robotic manipulation, introduced by Shanghai
@@ -16,7 +16,10 @@ summary:
     large vision-language-action model for robotic manipulation, introduced by Shanghai
     AI Laboratory, Shanghai Jiao Tong University, The University of Hong Kong, University
     of Science and Technology of China, Fudan University, Zhejiang University.'
-  ko: ''
+  ko: 'MM-ACT: Learn from Multimodal Parallel Generation to Act (MM-ACT), is a 2025
+    large vision-language-action model for robotic manipulation, introduced by Shanghai
+    AI Laboratory, Shanghai Jiao Tong University, The University of Hong Kong, University
+    of Science and Technology of China, Fudan University, Zhejiang University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MM-ACT: Learn from Multimodal Parallel Generation to Act (MM-ACT), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, Shanghai Jiao Tong University, The University of Hong Kong, University of Science and Technology of China, Fudan University, Zhejiang University.
+
+## Overview
+MM-ACT: Learn from Multimodal Parallel Generation to Act (MM-ACT), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, Shanghai Jiao Tong University, The University of Hong Kong, University of Science and Technology of China, Fudan University, Zhejiang University.
+
+## 개요
 MM-ACT: Learn from Multimodal Parallel Generation to Act (MM-ACT), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai AI Laboratory, Shanghai Jiao Tong University, The University of Hong Kong, University of Science and Technology of China, Fudan University, Zhejiang University.

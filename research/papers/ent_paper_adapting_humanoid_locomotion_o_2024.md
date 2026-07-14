@@ -6,13 +6,14 @@ type: paper
 names:
   en: Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training
   zh: Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training
-  ko: ''
+  ko: Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training
 summary:
   en: Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training
     is a 2024 work on locomotion for humanoid robots.
   zh: Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training
     is a 2024 work on locomotion for humanoid robots.
-  ko: ''
+  ko: Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training
+    is a 2024 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -42,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training is a 2024 work on locomotion for humanoid robots.
+
+## Overview
+Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training is a 2024 work on locomotion for humanoid robots.
+
+## 개요
 Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training is a 2024 work on locomotion for humanoid robots.

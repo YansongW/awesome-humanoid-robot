@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 结构强度仿真与迭代（Structural FEA）
-  ko: ''
+  ko: 结构强度仿真与迭代（Structural FEA）
 summary:
   en: ''
   zh: 结构强度仿真与迭代（Structural FEA）
-  ko: ''
+  ko: 结构强度仿真与迭代（Structural FEA）
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -36,5 +36,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+结构强度仿真与迭代（Structural FEA）
 
+## Overview
+结构强度仿真与迭代（Structural FEA）
 
+## 개요
+结构强度仿真与迭代（Structural FEA）

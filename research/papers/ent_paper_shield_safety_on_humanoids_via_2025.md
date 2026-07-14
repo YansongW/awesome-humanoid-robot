@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics'
   zh: 'SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics'
-  ko: ''
+  ko: 'SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics'
 summary:
   en: 'SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics is
     a 2025 work on locomotion for humanoid robots.'
   zh: 'SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics is
     a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics is
+    a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 SHIELD: Safety on Humanoids via CBFs In Expectation on Learned Dynamics is a 2025 work on locomotion for humanoid robots.

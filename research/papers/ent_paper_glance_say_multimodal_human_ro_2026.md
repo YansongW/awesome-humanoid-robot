@@ -8,7 +8,8 @@ names:
     Sticky Glance'
   zh: 'Glance-Say: Multimodal Human-Robot Collaboration and Intent Recognition via
     Sticky Glance'
-  ko: ''
+  ko: 'Glance-Say: Multimodal Human-Robot Collaboration and Intent Recognition via
+    Sticky Glance'
 summary:
   en: "arXiv:2603.06121v2 Announce Type: replace \nAbstract: Gaze and speech are promising\
     \ interaction modalities for individuals with motor impairments, yet robust intent\
@@ -38,7 +39,20 @@ summary:
     \ for moving targets, selection accuracy of 0.97 for static targets, and reduced\
     \ task duration. These results indicate improved robustness, efficiency, and usability\
     \ over representative interaction paradigms."
-  ko: ''
+  ko: "arXiv:2603.06121v2 Announce Type: replace \nAbstract: Gaze and speech are promising\
+    \ interaction modalities for individuals with motor impairments, yet robust intent\
+    \ recognition in multi-object environments remains challenging due to micro-saccades,\
+    \ semantic ambiguity, and viewpoint changes. This paper presents a multimodal\
+    \ interaction framework for assistive robotic manipulation. We propose a sticky-glance\
+    \ algorithm that stabilizes gaze-based intent by jointly accumulating geometric\
+    \ distance and directional evidence, enabling robust real-time target selection\
+    \ and switching. We further introduce Glance-Say, a gaze-speech interaction paradigm\
+    \ in which gaze specifies objects and speech specifies actions, together with\
+    \ a continuous shared-control scheme that provides high-readiness robot motion\
+    \ and human-in-the-loop feedback. Experiments demonstrate a tracking rate of 0.92\
+    \ for moving targets, selection accuracy of 0.97 for static targets, and reduced\
+    \ task duration. These results indicate improved robustness, efficiency, and usability\
+    \ over representative interaction paradigms."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -69,5 +83,14 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+arXiv:2603.06121v2 Announce Type: replace 
+Abstract: Gaze and speech are promising interaction modalities for individuals with motor impairments, yet robust intent recognition in multi-object environments remains challenging due to micro-saccades, semantic ambiguity, and viewpoint changes. This paper presents a multimodal interaction framework for assistive robotic manipulation. We propose a sticky-glance algorithm that stabilizes gaze-based intent by jointly accumulating geometric distance and directional evidence, enabling robust real-time target selection and switching. We further introduce Glance-Say, a gaze-speech interaction paradigm in which gaze specifies objects and speech specifies actions, together with a continuous shared-control scheme that provides high-readiness robot motion and human-in-the-loop feedback. Experiments demonstrate a tracking rate of 0.92 for moving targets, selection accuracy of 0.97 for static targets, and reduced task duration. These results indicate improved robustness, efficiency, and usability over representative interaction paradigms.
+
+## Overview
+arXiv:2603.06121v2 Announce Type: replace 
+Abstract: Gaze and speech are promising interaction modalities for individuals with motor impairments, yet robust intent recognition in multi-object environments remains challenging due to micro-saccades, semantic ambiguity, and viewpoint changes. This paper presents a multimodal interaction framework for assistive robotic manipulation. We propose a sticky-glance algorithm that stabilizes gaze-based intent by jointly accumulating geometric distance and directional evidence, enabling robust real-time target selection and switching. We further introduce Glance-Say, a gaze-speech interaction paradigm in which gaze specifies objects and speech specifies actions, together with a continuous shared-control scheme that provides high-readiness robot motion and human-in-the-loop feedback. Experiments demonstrate a tracking rate of 0.92 for moving targets, selection accuracy of 0.97 for static targets, and reduced task duration. These results indicate improved robustness, efficiency, and usability over representative interaction paradigms.
+
+## 개요
 arXiv:2603.06121v2 Announce Type: replace 
 Abstract: Gaze and speech are promising interaction modalities for individuals with motor impairments, yet robust intent recognition in multi-object environments remains challenging due to micro-saccades, semantic ambiguity, and viewpoint changes. This paper presents a multimodal interaction framework for assistive robotic manipulation. We propose a sticky-glance algorithm that stabilizes gaze-based intent by jointly accumulating geometric distance and directional evidence, enabling robust real-time target selection and switching. We further introduce Glance-Say, a gaze-speech interaction paradigm in which gaze specifies objects and speech specifies actions, together with a continuous shared-control scheme that provides high-readiness robot motion and human-in-the-loop feedback. Experiments demonstrate a tracking rate of 0.92 for moving targets, selection accuracy of 0.97 for static targets, and reduced task duration. These results indicate improved robustness, efficiency, and usability over representative interaction paradigms.

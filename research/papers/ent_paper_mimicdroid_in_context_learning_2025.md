@@ -8,13 +8,15 @@ names:
     Play Videos'
   zh: 'MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human
     Play Videos'
-  ko: ''
+  ko: 'MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human
+    Play Videos'
 summary:
   en: 'MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human
     Play Videos is a 2025 work on manipulation for humanoid robots.'
   zh: 'MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human
     Play Videos is a 2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human
+    Play Videos is a 2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human Play Videos is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human Play Videos is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 MimicDroid: In-Context Learning for Humanoid Robot Manipulation from Human Play Videos is a 2025 work on manipulation for humanoid robots.

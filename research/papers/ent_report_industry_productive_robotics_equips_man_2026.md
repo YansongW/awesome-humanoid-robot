@@ -8,13 +8,15 @@ names:
     At IMTS
   zh: Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation
     At IMTS
-  ko: ''
+  ko: Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation
+    At IMTS
 summary:
   en: Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation
     At IMTS
   zh: Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation
     At IMTS
-  ko: ''
+  ko: Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation
+    At IMTS
 domains:
 - 11_applications_markets
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-03'
 ---
 
+## 概述
+Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS
+
+## Overview
+Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS
+
+## 개요
 Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS

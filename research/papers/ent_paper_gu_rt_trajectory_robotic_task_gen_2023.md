@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'RT-Trajectory: Robotic Task Generalization via Hindsight Trajectory Sketches'
   zh: RT-Trajectory
-  ko: ''
+  ko: 'RT-Trajectory: Robotic Task Generalization via Hindsight Trajectory Sketches'
 summary:
   en: 'RT-Trajectory: Robotic Task Generalization via Hindsight Trajectory Sketches
     (RT-Trajectory), is a 2023 generalized vision-language-action model for robotic
@@ -16,7 +16,10 @@ summary:
     (RT-Trajectory), is a 2023 generalized vision-language-action model for robotic
     manipulation, introduced by Google DeepMind, University of California San Diego,
     Stanford University, Intrinsic, and published at ICLR 2023.'
-  ko: ''
+  ko: 'RT-Trajectory: Robotic Task Generalization via Hindsight Trajectory Sketches
+    (RT-Trajectory), is a 2023 generalized vision-language-action model for robotic
+    manipulation, introduced by Google DeepMind, University of California San Diego,
+    Stanford University, Intrinsic, and published at ICLR 2023.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+RT-Trajectory: Robotic Task Generalization via Hindsight Trajectory Sketches (RT-Trajectory), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, University of California San Diego, Stanford University, Intrinsic, and published at ICLR 2023.
+
+## Overview
+RT-Trajectory: Robotic Task Generalization via Hindsight Trajectory Sketches (RT-Trajectory), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, University of California San Diego, Stanford University, Intrinsic, and published at ICLR 2023.
+
+## 개요
 RT-Trajectory: Robotic Task Generalization via Hindsight Trajectory Sketches (RT-Trajectory), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, University of California San Diego, Stanford University, Intrinsic, and published at ICLR 2023.

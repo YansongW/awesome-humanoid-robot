@@ -7,7 +7,8 @@ names:
   en: 'Unified World Models: Coupling Video and Action Diffusion for Pretraining on
     Large Robotic Datasets'
   zh: UWM
-  ko: ''
+  ko: 'Unified World Models: Coupling Video and Action Diffusion for Pretraining on
+    Large Robotic Datasets'
 summary:
   en: 'Unified World Models: Coupling Video and Action Diffusion for Pretraining on
     Large Robotic Datasets (UWM), is a 2025 large vision-language-action model for
@@ -19,7 +20,11 @@ summary:
     robotic manipulation, introduced by Paul G. Allen School of Computer Science and
     Engineering, University of Washington, Toyota Research Institute, and published
     at RSS26.'
-  ko: ''
+  ko: 'Unified World Models: Coupling Video and Action Diffusion for Pretraining on
+    Large Robotic Datasets (UWM), is a 2025 large vision-language-action model for
+    robotic manipulation, introduced by Paul G. Allen School of Computer Science and
+    Engineering, University of Washington, Toyota Research Institute, and published
+    at RSS26.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -60,4 +65,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets (UWM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Paul G. Allen School of Computer Science and Engineering, University of Washington, Toyota Research Institute, and published at RSS26.
+
+## Overview
+Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets (UWM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Paul G. Allen School of Computer Science and Engineering, University of Washington, Toyota Research Institute, and published at RSS26.
+
+## 개요
 Unified World Models: Coupling Video and Action Diffusion for Pretraining on Large Robotic Datasets (UWM), is a 2025 large vision-language-action model for robotic manipulation, introduced by Paul G. Allen School of Computer Science and Engineering, University of Washington, Toyota Research Institute, and published at RSS26.

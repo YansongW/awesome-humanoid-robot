@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 关节模组集成与台架测试
-  ko: ''
+  ko: 关节模组集成与台架测试
 summary:
   en: ''
   zh: 《关节测试报告》：扭矩-电流、效率图、温升曲线、带宽
-  ko: ''
+  ko: 《关节测试报告》：扭矩-电流、效率图、温升曲线、带宽
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）

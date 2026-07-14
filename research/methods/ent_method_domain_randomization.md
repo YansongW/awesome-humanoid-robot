@@ -8,8 +8,8 @@ names:
   zh: 域随机化
   ko: 도메인 랜덤화
 summary:
-  en: A sim-to-real technique that randomizes simulation parameters during training to improve policy robustness against real-world
-    model mismatch.
+  en: A sim-to-real technique that randomizes simulation parameters during training
+    to improve policy robustness against real-world model mismatch.
   zh: 训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。
   ko: 훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.
 domains:
@@ -30,8 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,3 +39,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。
+
+## Overview
+A sim-to-real technique that randomizes simulation parameters during training to improve policy robustness against real-world model mismatch.
+
+## 개요
+A sim-to-real technique that randomizes simulation parameters during training to improve policy robustness against real-world model mismatch.

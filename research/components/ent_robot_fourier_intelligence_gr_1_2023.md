@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+全尺寸人形机器人，44自由度，自研一体化关节执行器。
+
+## Overview
+Full-size humanoid robot with 44 DoF and self-developed integrated joint actuators.
+
+## 개요
 Full-size humanoid robot with 44 DoF and self-developed integrated joint actuators.

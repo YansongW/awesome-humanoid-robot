@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 雅可比与速度/力传递分析
-  ko: ''
+  ko: 雅可比与速度/力传递分析
 summary:
   en: ''
   zh: 典型姿态可操作度指标、力传递效率分析
-  ko: ''
+  ko: 典型姿态可操作度指标、力传递效率分析
 domains:
 - 06_design_engineering
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）

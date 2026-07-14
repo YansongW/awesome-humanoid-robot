@@ -8,13 +8,15 @@ names:
     Manipulation'
   zh: 'EgoDemoGen: Novel Egocentric Demonstration Generation Enables Viewpoint-Robust
     Manipulation'
-  ko: ''
+  ko: 'EgoDemoGen: Novel Egocentric Demonstration Generation Enables Viewpoint-Robust
+    Manipulation'
 summary:
   en: 'EgoDemoGen: Novel Egocentric Demonstration Generation Enables Viewpoint-Robust
     Manipulation is a 2025 work on manipulation for humanoid robots.'
   zh: 'EgoDemoGen: Novel Egocentric Demonstration Generation Enables Viewpoint-Robust
     Manipulation is a 2025 work on manipulation for humanoid robots.'
-  ko: ''
+  ko: 'EgoDemoGen: Novel Egocentric Demonstration Generation Enables Viewpoint-Robust
+    Manipulation is a 2025 work on manipulation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+EgoDemoGen: Novel Egocentric Demonstration Generation Enables Viewpoint-Robust Manipulation is a 2025 work on manipulation for humanoid robots.
+
+## Overview
+EgoDemoGen: Novel Egocentric Demonstration Generation Enables Viewpoint-Robust Manipulation is a 2025 work on manipulation for humanoid robots.
+
+## 개요
 EgoDemoGen: Novel Egocentric Demonstration Generation Enables Viewpoint-Robust Manipulation is a 2025 work on manipulation for humanoid robots.

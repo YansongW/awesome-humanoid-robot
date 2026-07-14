@@ -6,13 +6,14 @@ type: paper
 names:
   en: Seeing to Act Prompting to Specify
   zh: BayesVLA
-  ko: ''
+  ko: Seeing to Act Prompting to Specify
 summary:
   en: Seeing to Act Prompting to Specify (BayesVLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Zhejiang University, UC Berkeley.
   zh: Seeing to Act Prompting to Specify (BayesVLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Zhejiang University, UC Berkeley.
-  ko: ''
+  ko: Seeing to Act Prompting to Specify (BayesVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Zhejiang University, UC Berkeley.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Seeing to Act Prompting to Specify (BayesVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, UC Berkeley.
+
+## Overview
+Seeing to Act Prompting to Specify (BayesVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, UC Berkeley.
+
+## 개요
 Seeing to Act Prompting to Specify (BayesVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Zhejiang University, UC Berkeley.

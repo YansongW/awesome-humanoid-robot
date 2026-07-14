@@ -8,13 +8,15 @@ names:
     Navigation'
   zh: 'FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local
     Navigation'
-  ko: ''
+  ko: 'FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local
+    Navigation'
 summary:
   en: 'FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local
     Navigation is a 2026 work on navigation for humanoid robots.'
   zh: 'FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local
     Navigation is a 2026 work on navigation for humanoid robots.'
-  ko: ''
+  ko: 'FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local
+    Navigation is a 2026 work on navigation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local Navigation is a 2026 work on navigation for humanoid robots.
+
+## Overview
+FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local Navigation is a 2026 work on navigation for humanoid robots.
+
+## 개요
 FocusNav: Spatial Selective Attention with Waypoint Guidance for Humanoid Local Navigation is a 2026 work on navigation for humanoid robots.

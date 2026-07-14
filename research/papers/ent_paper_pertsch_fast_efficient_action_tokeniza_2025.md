@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'FAST: Efficient Action Tokenization for Vision-Language-Action Models'
   zh: FAST
-  ko: ''
+  ko: 'FAST: Efficient Action Tokenization for Vision-Language-Action Models'
 summary:
   en: 'FAST: Efficient Action Tokenization for Vision-Language-Action Models (FAST),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'FAST: Efficient Action Tokenization for Vision-Language-Action Models (FAST),
     is a 2025 large vision-language-action model for robotic manipulation, introduced
     by Physical Intelligence, UC Berkeley, Stanford, and published at RSS25.'
-  ko: ''
+  ko: 'FAST: Efficient Action Tokenization for Vision-Language-Action Models (FAST),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by Physical Intelligence, UC Berkeley, Stanford, and published at RSS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+FAST: Efficient Action Tokenization for Vision-Language-Action Models (FAST), is a 2025 large vision-language-action model for robotic manipulation, introduced by Physical Intelligence, UC Berkeley, Stanford, and published at RSS25.
+
+## Overview
+FAST: Efficient Action Tokenization for Vision-Language-Action Models (FAST), is a 2025 large vision-language-action model for robotic manipulation, introduced by Physical Intelligence, UC Berkeley, Stanford, and published at RSS25.
+
+## 개요
 FAST: Efficient Action Tokenization for Vision-Language-Action Models (FAST), is a 2025 large vision-language-action model for robotic manipulation, introduced by Physical Intelligence, UC Berkeley, Stanford, and published at RSS25.

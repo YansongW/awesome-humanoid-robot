@@ -7,7 +7,8 @@ names:
   en: 'Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous
     Manipulations'
   zh: Bi-VLA
-  ko: ''
+  ko: 'Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous
+    Manipulations'
 summary:
   en: 'Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous
     Manipulations (Bi-VLA), is a 2024 large vision-language-action model for robotic
@@ -17,7 +18,10 @@ summary:
     Manipulations (Bi-VLA), is a 2024 large vision-language-action model for robotic
     manipulation, introduced by Skolkovo Institute of Science and Technology, and
     published at SMC 2024.'
-  ko: ''
+  ko: 'Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous
+    Manipulations (Bi-VLA), is a 2024 large vision-language-action model for robotic
+    manipulation, introduced by Skolkovo Institute of Science and Technology, and
+    published at SMC 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous Manipulations (Bi-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Skolkovo Institute of Science and Technology, and published at SMC 2024.
+
+## Overview
+Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous Manipulations (Bi-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Skolkovo Institute of Science and Technology, and published at SMC 2024.
+
+## 개요
 Bi-VLA: Vision-Language-Action Model-Based System for Bimanual Robotic Dexterous Manipulations (Bi-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Skolkovo Institute of Science and Technology, and published at SMC 2024.

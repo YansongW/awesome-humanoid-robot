@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+面向机器人和自动化的精密减速器和伺服执行器德国制造商。
+
+## Overview
+German manufacturer of precision gearboxes and servo actuators for robotics and automation.
+
+## 개요
 German manufacturer of precision gearboxes and servo actuators for robotics and automation.

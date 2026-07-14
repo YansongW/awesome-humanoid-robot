@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 面向量产工艺评估
-  ko: ''
+  ko: 面向量产工艺评估
 summary:
   en: ''
   zh: 量产工艺路线图、关键件工艺选择
-  ko: ''
+  ko: 量产工艺路线图、关键件工艺选择
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）

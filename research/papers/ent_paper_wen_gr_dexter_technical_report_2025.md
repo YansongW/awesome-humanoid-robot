@@ -6,13 +6,14 @@ type: paper
 names:
   en: GR-Dexter Technical Report
   zh: GR-Dexter
-  ko: ''
+  ko: GR-Dexter Technical Report
 summary:
   en: GR-Dexter Technical Report (GR-Dexter), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by ByteDance Seed.
   zh: GR-Dexter Technical Report (GR-Dexter), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by ByteDance Seed.
-  ko: ''
+  ko: GR-Dexter Technical Report (GR-Dexter), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by ByteDance Seed.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -51,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+GR-Dexter Technical Report (GR-Dexter), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed.
+
+## Overview
+GR-Dexter Technical Report (GR-Dexter), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed.
+
+## 개요
 GR-Dexter Technical Report (GR-Dexter), is a 2025 large vision-language-action model for robotic manipulation, introduced by ByteDance Seed.

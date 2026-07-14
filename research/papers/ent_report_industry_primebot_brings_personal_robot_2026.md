@@ -6,11 +6,11 @@ type: report
 names:
   en: PrimeBOT Brings Personal Robotics to the UN's AI for Good Summit in Geneva
   zh: PrimeBOT Brings Personal Robotics to the UN's AI for Good Summit in Geneva
-  ko: ''
+  ko: PrimeBOT Brings Personal Robotics to the UN's AI for Good Summit in Geneva
 summary:
   en: PrimeBOT Brings Personal Robotics to the UN's AI for Good Summit in Geneva
   zh: PrimeBOT Brings Personal Robotics to the UN's AI for Good Summit in Geneva
-  ko: ''
+  ko: PrimeBOT Brings Personal Robotics to the UN's AI for Good Summit in Geneva
 domains:
 - 11_applications_markets
 layers:
@@ -40,4 +40,11 @@ sources:
   accessed_at: '2026-07-14'
 ---
 
+## 概述
+PrimeBOT Brings Personal Robotics to the UN's AI for Good Summit in Geneva
+
+## Overview
+PrimeBOT Brings Personal Robotics to the UN's AI for Good Summit in Geneva
+
+## 개요
 PrimeBOT Brings Personal Robotics to the UN's AI for Good Summit in Geneva

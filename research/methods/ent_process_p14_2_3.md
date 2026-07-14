@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: CI/CD 与仿真测试链
-  ko: ''
+  ko: CI/CD 与仿真测试链
 summary:
   en: ''
   zh: CI 流水线、自动测试通过率、覆盖率指标
-  ko: ''
+  ko: CI 流水线、自动测试通过率、覆盖率指标
 domains:
 - 08_software_middleware
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）

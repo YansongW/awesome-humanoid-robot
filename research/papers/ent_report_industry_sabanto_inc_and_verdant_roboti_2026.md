@@ -8,7 +8,8 @@ names:
     Tractor Operation with SharpShooter Plant-Level Precision Application
   zh: Sabanto Inc. and Verdant Robotics Announce Technical Integration of Autonomous
     Tractor Operation with SharpShooter Plant-Level Precision Application
-  ko: ''
+  ko: Sabanto Inc. and Verdant Robotics Announce Technical Integration of Autonomous
+    Tractor Operation with SharpShooter Plant-Level Precision Application
 summary:
   en: The two systems now operate as a single, integrated solution, enabling fully
     autonomous field work from navigation to plant-level application without an operator
@@ -16,7 +17,9 @@ summary:
   zh: The two systems now operate as a single, integrated solution, enabling fully
     autonomous field work from navigation to plant-level application without an operator
     in the cab.
-  ko: ''
+  ko: The two systems now operate as a single, integrated solution, enabling fully
+    autonomous field work from navigation to plant-level application without an operator
+    in the cab.
 domains:
 - 11_applications_markets
 layers:
@@ -47,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+The two systems now operate as a single, integrated solution, enabling fully autonomous field work from navigation to plant-level application without an operator in the cab.
+
+## Overview
+The two systems now operate as a single, integrated solution, enabling fully autonomous field work from navigation to plant-level application without an operator in the cab.
+
+## 개요
 The two systems now operate as a single, integrated solution, enabling fully autonomous field work from navigation to plant-level application without an operator in the cab.

@@ -8,7 +8,8 @@ names:
     Finetuning'
   zh: 'From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL
     Finetuning'
-  ko: ''
+  ko: 'From Prior to Pro: Efficient Skill Mastery via Distribution Contractive RL
+    Finetuning'
 summary:
   en: "arXiv:2603.10263v2 Announce Type: replace \nAbstract: We introduce Distribution\
     \ Contractive Reinforcement Learning (DICE-RL), a framework that uses reinforcement\
@@ -34,7 +35,18 @@ summary:
     \ improves performance with strong stability and sample efficiency. It enables\
     \ mastery of complex long-horizon manipulation skills directly from high-dimensional\
     \ pixel inputs, both in simulation and on a real robot. Project website: https://zhanyisun.github.io/dice.rl.2026/."
-  ko: ''
+  ko: "arXiv:2603.10263v2 Announce Type: replace \nAbstract: We introduce Distribution\
+    \ Contractive Reinforcement Learning (DICE-RL), a framework that uses reinforcement\
+    \ learning (RL) as a \"distribution contraction\" operator to refine pretrained\
+    \ generative robot policies. DICE-RL turns a pretrained behavior prior into a\
+    \ high-performing \"pro\" policy by amplifying high-success behaviors from online\
+    \ feedback. We pretrain a diffusion- or flow-based policy for broad behavioral\
+    \ coverage, then finetune it with a stable, sample-efficient residual off-policy\
+    \ RL framework that combines selective behavior regularization with value-guided\
+    \ action selection. Extensive experiments and analyses show that DICE-RL reliably\
+    \ improves performance with strong stability and sample efficiency. It enables\
+    \ mastery of complex long-horizon manipulation skills directly from high-dimensional\
+    \ pixel inputs, both in simulation and on a real robot. Project website: https://zhanyisun.github.io/dice.rl.2026/."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -65,5 +77,14 @@ sources:
   accessed_at: '2026-07-03'
 ---
 
+## 概述
+arXiv:2603.10263v2 Announce Type: replace 
+Abstract: We introduce Distribution Contractive Reinforcement Learning (DICE-RL), a framework that uses reinforcement learning (RL) as a "distribution contraction" operator to refine pretrained generative robot policies. DICE-RL turns a pretrained behavior prior into a high-performing "pro" policy by amplifying high-success behaviors from online feedback. We pretrain a diffusion- or flow-based policy for broad behavioral coverage, then finetune it with a stable, sample-efficient residual off-policy RL framework that combines selective behavior regularization with value-guided action selection. Extensive experiments and analyses show that DICE-RL reliably improves performance with strong stability and sample efficiency. It enables mastery of complex long-horizon manipulation skills directly from high-dimensional pixel inputs, both in simulation and on a real robot. Project website: https://zhanyisun.github.io/dice.rl.2026/.
+
+## Overview
+arXiv:2603.10263v2 Announce Type: replace 
+Abstract: We introduce Distribution Contractive Reinforcement Learning (DICE-RL), a framework that uses reinforcement learning (RL) as a "distribution contraction" operator to refine pretrained generative robot policies. DICE-RL turns a pretrained behavior prior into a high-performing "pro" policy by amplifying high-success behaviors from online feedback. We pretrain a diffusion- or flow-based policy for broad behavioral coverage, then finetune it with a stable, sample-efficient residual off-policy RL framework that combines selective behavior regularization with value-guided action selection. Extensive experiments and analyses show that DICE-RL reliably improves performance with strong stability and sample efficiency. It enables mastery of complex long-horizon manipulation skills directly from high-dimensional pixel inputs, both in simulation and on a real robot. Project website: https://zhanyisun.github.io/dice.rl.2026/.
+
+## 개요
 arXiv:2603.10263v2 Announce Type: replace 
 Abstract: We introduce Distribution Contractive Reinforcement Learning (DICE-RL), a framework that uses reinforcement learning (RL) as a "distribution contraction" operator to refine pretrained generative robot policies. DICE-RL turns a pretrained behavior prior into a high-performing "pro" policy by amplifying high-success behaviors from online feedback. We pretrain a diffusion- or flow-based policy for broad behavioral coverage, then finetune it with a stable, sample-efficient residual off-policy RL framework that combines selective behavior regularization with value-guided action selection. Extensive experiments and analyses show that DICE-RL reliably improves performance with strong stability and sample efficiency. It enables mastery of complex long-horizon manipulation skills directly from high-dimensional pixel inputs, both in simulation and on a real robot. Project website: https://zhanyisun.github.io/dice.rl.2026/.

@@ -7,7 +7,8 @@ names:
   en: 'QDepth-VLA: Quantized Depth Prediction as Auxiliary Supervision for Vision-Language-Action
     Models'
   zh: QDepth-VLA
-  ko: ''
+  ko: 'QDepth-VLA: Quantized Depth Prediction as Auxiliary Supervision for Vision-Language-Action
+    Models'
 summary:
   en: 'QDepth-VLA: Quantized Depth Prediction as Auxiliary Supervision for Vision-Language-Action
     Models (QDepth-VLA), is a 2025 large vision-language-action model for robotic
@@ -19,7 +20,11 @@ summary:
     manipulation, introduced by School of Artificial Intelligence, University of the
     Chinese Academy of Sciences, Institute of Automation, Chinese Academy of Science,
     Beijing Zhongke Huiling Robot Technology Co.'
-  ko: ''
+  ko: 'QDepth-VLA: Quantized Depth Prediction as Auxiliary Supervision for Vision-Language-Action
+    Models (QDepth-VLA), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by School of Artificial Intelligence, University of the
+    Chinese Academy of Sciences, Institute of Automation, Chinese Academy of Science,
+    Beijing Zhongke Huiling Robot Technology Co.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -61,4 +66,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+QDepth-VLA: Quantized Depth Prediction as Auxiliary Supervision for Vision-Language-Action Models (QDepth-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Artificial Intelligence, University of the Chinese Academy of Sciences, Institute of Automation, Chinese Academy of Science, Beijing Zhongke Huiling Robot Technology Co.
+
+## Overview
+QDepth-VLA: Quantized Depth Prediction as Auxiliary Supervision for Vision-Language-Action Models (QDepth-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Artificial Intelligence, University of the Chinese Academy of Sciences, Institute of Automation, Chinese Academy of Science, Beijing Zhongke Huiling Robot Technology Co.
+
+## 개요
 QDepth-VLA: Quantized Depth Prediction as Auxiliary Supervision for Vision-Language-Action Models (QDepth-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by School of Artificial Intelligence, University of the Chinese Academy of Sciences, Institute of Automation, Chinese Academy of Science, Beijing Zhongke Huiling Robot Technology Co.

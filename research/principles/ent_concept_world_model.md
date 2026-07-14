@@ -8,8 +8,8 @@ names:
   zh: 世界模型
   ko: 세계 모델
 summary:
-  en: A learned or hand-crafted internal model that predicts future states of the environment, enabling planning and reasoning
-    in robotics and AI.
+  en: A learned or hand-crafted internal model that predicts future states of the
+    environment, enabling planning and reasoning in robotics and AI.
   zh: 预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。
   ko: 환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。
+
+## Overview
+A learned or hand-crafted internal model that predicts future states of the environment, enabling planning and reasoning in robotics and AI.
+
+## 개요
+A learned or hand-crafted internal model that predicts future states of the environment, enabling planning and reasoning in robotics and AI.

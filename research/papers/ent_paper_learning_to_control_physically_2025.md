@@ -8,13 +8,15 @@ names:
     2D Motions
   zh: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking
     2D Motions
-  ko: ''
+  ko: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking
+    2D Motions
 summary:
   en: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking
     2D Motions is a 2025 work on physics-based character animation for humanoid robots.
   zh: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking
     2D Motions is a 2025 work on physics-based character animation for humanoid robots.
-  ko: ''
+  ko: Learning to Control Physically-simulated 3D Characters via Generating and Mimicking
+    2D Motions is a 2025 work on physics-based character animation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions is a 2025 work on physics-based character animation for humanoid robots.
+
+## Overview
+Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions is a 2025 work on physics-based character animation for humanoid robots.
+
+## 개요
 Learning to Control Physically-simulated 3D Characters via Generating and Mimicking 2D Motions is a 2025 work on physics-based character animation for humanoid robots.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 扰动与跌倒仿真
-  ko: ''
+  ko: 扰动与跌倒仿真
 summary:
   en: ''
   zh: 扰动恢复能力、跌倒损伤评估、安全边界定义
-  ko: ''
+  ko: 扰动恢复能力、跌倒损伤评估、安全边界定义
 domains:
 - 08_software_middleware
 - 10_evaluation_benchmarks
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）

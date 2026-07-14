@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: URDF/SDF 文件生成
-  ko: ''
+  ko: URDF/SDF 文件生成
 summary:
   en: ''
   zh: 可在 RViz/Gazebo/Isaac Sim 中正确加载、无解析错误
-  ko: ''
+  ko: 可在 RViz/Gazebo/Isaac Sim 中正确加载、无解析错误
 domains:
 - 06_design_engineering
 - 08_software_middleware
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）

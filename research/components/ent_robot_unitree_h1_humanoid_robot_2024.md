@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+全尺寸电驱人形机器人，25-27自由度，自研高扭矩关节，腿部峰值扭矩360N·m，扭矩密度约189N·m/kg。
+
+## Overview
 Full-size electric humanoid with 25-27 DoF, proprietary high-torque joints, peak leg-joint torque up to 360 N·m and torque density ~189 N·m/kg.
+
+## 개요
+25-27자유도를 가진 전기식 휨로봇, 최대 360 N·m 다리 관절 토크 및 약 189 N·m/kg 토크 밀도.

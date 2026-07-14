@@ -4,14 +4,17 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills'
+  en: 'DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character
+    Skills'
   zh: 很多人形控制论文的源头问题
-  ko: ''
+  ko: 'DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character
+    Skills'
 summary:
-  en: 'DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills is a knowledge node related
-    to paper in the humanoid robot value chain.'
+  en: 'DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character
+    Skills is a knowledge node related to paper in the humanoid robot value chain.'
   zh: ''
-  ko: ''
+  ko: 'DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character
+    Skills is a knowledge node related to paper in the humanoid robot value chain.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -31,11 +34,13 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: 'Imported from WeChat curated list (011). Institution: 伯克利；英属哥伦比亚大学. arXiv: 1804.02717.'
+  notes: 'Imported from WeChat curated list (011). Institution: 伯克利；英属哥伦比亚大学. arXiv:
+    1804.02717.'
 sources:
 - id: src_001
   type: paper
-  title: 'DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills (arXiv)'
+  title: 'DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character
+    Skills (arXiv)'
   url: https://arxiv.org/abs/1804.02717
   date: '2026'
   accessed_at: '2026-07-01'
@@ -48,3 +53,12 @@ sources:
 theoretical_depth:
 - system
 ---
+
+## 概述
+DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills is a knowledge node related to paper in the humanoid robot value chain.
+
+## Overview
+DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills is a knowledge node related to paper in the humanoid robot value chain.
+
+## 개요
+DeepMimic: Example-Guided Deep Reinforcement Learning of Physics-Based Character Skills is a knowledge node related to paper in the humanoid robot value chain.

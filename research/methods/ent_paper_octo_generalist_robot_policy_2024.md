@@ -42,4 +42,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+在异构跨具身数据上训练的开源通才机器人策略。
+
+## Overview
+Open-source generalist robot policy trained on heterogeneous cross-embodiment data.
+
+## 개요
 Open-source generalist robot policy trained on heterogeneous cross-embodiment data.

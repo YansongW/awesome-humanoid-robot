@@ -7,7 +7,8 @@ names:
   en: Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic
     Manipulation
   zh: DuoCore-FS
-  ko: ''
+  ko: Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic
+    Manipulation
 summary:
   en: Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic
     Manipulation (DuoCore-FS), is a 2025 large vision-language-action model for robotic
@@ -15,7 +16,9 @@ summary:
   zh: Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic
     Manipulation (DuoCore-FS), is a 2025 large vision-language-action model for robotic
     manipulation, introduced by Astribot.
-  ko: ''
+  ko: Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic
+    Manipulation (DuoCore-FS), is a 2025 large vision-language-action model for robotic
+    manipulation, introduced by Astribot.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -55,4 +58,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic Manipulation (DuoCore-FS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Astribot.
+
+## Overview
+Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic Manipulation (DuoCore-FS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Astribot.
+
+## 개요
 Asynchronous Fast-Slow Vision-Language-Action Policies for Whole-Body Robotic Manipulation (DuoCore-FS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Astribot.

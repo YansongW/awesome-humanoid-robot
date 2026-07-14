@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 关节寿命与失效分析
-  ko: ''
+  ko: 关节寿命与失效分析
 summary:
   en: ''
   zh: 寿命测试计划、失效模式分析、维护周期建议
-  ko: ''
+  ko: 寿命测试计划、失效模式分析、维护周期建议
 domains:
 - 02_components
 - 06_design_engineering
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：关节模组与驱动系统设计（Actuator & Drive）

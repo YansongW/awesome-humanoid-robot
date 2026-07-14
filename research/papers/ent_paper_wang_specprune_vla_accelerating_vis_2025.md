@@ -7,7 +7,8 @@ names:
   en: 'SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware
     Self-Speculative Pruning'
   zh: SpecPrune-VLA
-  ko: ''
+  ko: 'SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware
+    Self-Speculative Pruning'
 summary:
   en: 'SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware
     Self-Speculative Pruning (SpecPrune-VLA), is a 2025 large vision-language-action
@@ -17,7 +18,10 @@ summary:
     Self-Speculative Pruning (SpecPrune-VLA), is a 2025 large vision-language-action
     model for robotic manipulation, introduced by Shanghai Jiao Tong University, Infinigence-AI,
     SII.'
-  ko: ''
+  ko: 'SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware
+    Self-Speculative Pruning (SpecPrune-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Shanghai Jiao Tong University, Infinigence-AI,
+    SII.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +61,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware Self-Speculative Pruning (SpecPrune-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Infinigence-AI, SII.
+
+## Overview
+SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware Self-Speculative Pruning (SpecPrune-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Infinigence-AI, SII.
+
+## 개요
 SpecPrune-VLA: Accelerating Vision-Language-Action Models via Action-Aware Self-Speculative Pruning (SpecPrune-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Infinigence-AI, SII.

@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+监控急停、关节限位和故障状态以执行安全关扭矩的独立微控制器。
+
+## Overview
 Independent microcontroller that monitors emergency stops, joint limits, and fault conditions to enforce safe torque-off.
+
+## 개요
+비상 정지, 관절 한계 및 결함 상태를 모니터링하여 안전한 토크 차단을 실행하는 독립형 마이크로컨트롤러.

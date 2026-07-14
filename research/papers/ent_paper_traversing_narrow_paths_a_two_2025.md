@@ -8,13 +8,15 @@ names:
     Walking'
   zh: 'Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid
     Walking'
-  ko: ''
+  ko: 'Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid
+    Walking'
 summary:
   en: 'Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid
     Walking is a 2025 work on locomotion for humanoid robots.'
   zh: 'Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid
     Walking is a 2025 work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid
+    Walking is a 2025 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -45,4 +47,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking is a 2025 work on locomotion for humanoid robots.
+
+## Overview
+Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking is a 2025 work on locomotion for humanoid robots.
+
+## 개요
 Traversing Narrow Paths: A Two-Stage RL Framework for Robust and Safe Humanoid Walking is a 2025 work on locomotion for humanoid robots.

@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 非线性分析与稳定性
-  ko: ''
+  ko: 非线性分析与稳定性
 summary:
   en: ''
   zh: 屈曲模态、大变形下的应力/应变
-  ko: ''
+  ko: 屈曲模态、大变形下的应力/应变
 domains:
 - 06_design_engineering
 - 03_manufacturing_processes
@@ -35,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：结构强度仿真与迭代（Structural FEA）

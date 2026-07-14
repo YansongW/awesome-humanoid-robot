@@ -8,13 +8,15 @@ names:
     Data'
   zh: 'arXiv 2025.07, Go to Zero: Towards Zero-shot Motion Generation with Million-scale
     Data'
-  ko: ''
+  ko: 'arXiv 2025.07, Go to Zero: Towards Zero-shot Motion Generation with Million-scale
+    Data'
 summary:
   en: 'arXiv 2025.07, Go to Zero: Towards Zero-shot Motion Generation with Million-scale
     Data is a 2025 work on human motion analysis and synthesis for humanoid robots.'
   zh: 'arXiv 2025.07, Go to Zero: Towards Zero-shot Motion Generation with Million-scale
     Data is a 2025 work on human motion analysis and synthesis for humanoid robots.'
-  ko: ''
+  ko: 'arXiv 2025.07, Go to Zero: Towards Zero-shot Motion Generation with Million-scale
+    Data is a 2025 work on human motion analysis and synthesis for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+arXiv 2025.07, Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## Overview
+arXiv 2025.07, Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data is a 2025 work on human motion analysis and synthesis for humanoid robots.
+
+## 개요
 arXiv 2025.07, Go to Zero: Towards Zero-shot Motion Generation with Million-scale Data is a 2025 work on human motion analysis and synthesis for humanoid robots.

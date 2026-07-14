@@ -8,7 +8,8 @@ names:
     Robot Manipulation'
   zh: 'ShapeGrasp: Simultaneous Visuo-Haptic Shape Completion and Grasping for Improved
     Robot Manipulation'
-  ko: ''
+  ko: 'ShapeGrasp: Simultaneous Visuo-Haptic Shape Completion and Grasping for Improved
+    Robot Manipulation'
 summary:
   en: "arXiv:2605.02347v2 Announce Type: replace \nAbstract: Humans grasp unfamiliar\
     \ objects by combining an initial visual estimate with tactile and proprioceptive\
@@ -46,7 +47,24 @@ summary:
     \ success rate of 84% with a three-finger gripper and 91% with a two-finger gripper),\
     \ while improving the 3D shape reconstruction quality in all evaluation metrics\
     \ used."
-  ko: ''
+  ko: "arXiv:2605.02347v2 Announce Type: replace \nAbstract: Humans grasp unfamiliar\
+    \ objects by combining an initial visual estimate with tactile and proprioceptive\
+    \ feedback during interaction. We present ShapeGrasp, a robotic implementation\
+    \ of this approach. The proposed method is an iterative grasp-and-complete pipeline\
+    \ that couples implicit surface visuo-haptic shape completion (creation of full\
+    \ 3D shape from partial information) with physics-based grasp planning. From a\
+    \ single RGB-D view, ShapeGrasp infers a complete shape (point cloud or triangular\
+    \ mesh), generates candidate grasps via rigid-body simulation, and executes the\
+    \ best feasible grasp. Each grasp attempt yields additional geometric constraints\
+    \ -- tactile surface contacts and space occupied by the gripper body -- which\
+    \ are fused to update the object shape. Failures trigger pose re-estimation and\
+    \ regrasping using the refined shape. We evaluate ShapeGrasp in the real world\
+    \ using two different robots and grippers. To the best of our knowledge, this\
+    \ is the first approach that updates shape representations following a real-world\
+    \ grasp. We achieved superior results over baselines for both grippers (grasp\
+    \ success rate of 84% with a three-finger gripper and 91% with a two-finger gripper),\
+    \ while improving the 3D shape reconstruction quality in all evaluation metrics\
+    \ used."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -77,5 +95,14 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+arXiv:2605.02347v2 Announce Type: replace 
+Abstract: Humans grasp unfamiliar objects by combining an initial visual estimate with tactile and proprioceptive feedback during interaction. We present ShapeGrasp, a robotic implementation of this approach. The proposed method is an iterative grasp-and-complete pipeline that couples implicit surface visuo-haptic shape completion (creation of full 3D shape from partial information) with physics-based grasp planning. From a single RGB-D view, ShapeGrasp infers a complete shape (point cloud or triangular mesh), generates candidate grasps via rigid-body simulation, and executes the best feasible grasp. Each grasp attempt yields additional geometric constraints -- tactile surface contacts and space occupied by the gripper body -- which are fused to update the object shape. Failures trigger pose re-estimation and regrasping using the refined shape. We evaluate ShapeGrasp in the real world using two different robots and grippers. To the best of our knowledge, this is the first approach that updates shape representations following a real-world grasp. We achieved superior results over baselines for both grippers (grasp success rate of 84% with a three-finger gripper and 91% with a two-finger gripper), while improving the 3D shape reconstruction quality in all evaluation metrics used.
+
+## Overview
+arXiv:2605.02347v2 Announce Type: replace 
+Abstract: Humans grasp unfamiliar objects by combining an initial visual estimate with tactile and proprioceptive feedback during interaction. We present ShapeGrasp, a robotic implementation of this approach. The proposed method is an iterative grasp-and-complete pipeline that couples implicit surface visuo-haptic shape completion (creation of full 3D shape from partial information) with physics-based grasp planning. From a single RGB-D view, ShapeGrasp infers a complete shape (point cloud or triangular mesh), generates candidate grasps via rigid-body simulation, and executes the best feasible grasp. Each grasp attempt yields additional geometric constraints -- tactile surface contacts and space occupied by the gripper body -- which are fused to update the object shape. Failures trigger pose re-estimation and regrasping using the refined shape. We evaluate ShapeGrasp in the real world using two different robots and grippers. To the best of our knowledge, this is the first approach that updates shape representations following a real-world grasp. We achieved superior results over baselines for both grippers (grasp success rate of 84% with a three-finger gripper and 91% with a two-finger gripper), while improving the 3D shape reconstruction quality in all evaluation metrics used.
+
+## 개요
 arXiv:2605.02347v2 Announce Type: replace 
 Abstract: Humans grasp unfamiliar objects by combining an initial visual estimate with tactile and proprioceptive feedback during interaction. We present ShapeGrasp, a robotic implementation of this approach. The proposed method is an iterative grasp-and-complete pipeline that couples implicit surface visuo-haptic shape completion (creation of full 3D shape from partial information) with physics-based grasp planning. From a single RGB-D view, ShapeGrasp infers a complete shape (point cloud or triangular mesh), generates candidate grasps via rigid-body simulation, and executes the best feasible grasp. Each grasp attempt yields additional geometric constraints -- tactile surface contacts and space occupied by the gripper body -- which are fused to update the object shape. Failures trigger pose re-estimation and regrasping using the refined shape. We evaluate ShapeGrasp in the real world using two different robots and grippers. To the best of our knowledge, this is the first approach that updates shape representations following a real-world grasp. We achieved superior results over baselines for both grippers (grasp success rate of 84% with a three-finger gripper and 91% with a two-finger gripper), while improving the 3D shape reconstruction quality in all evaluation metrics used.

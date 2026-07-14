@@ -8,7 +8,8 @@ names:
     Models
   zh: Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action
     Models
-  ko: ''
+  ko: Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action
+    Models
 summary:
   en: Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action
     Models (Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action
@@ -16,7 +17,9 @@ summary:
   zh: Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action
     Models (Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action
     Models), is a 2025 large vision-language-action model for robotic manipulation.
-  ko: ''
+  ko: Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action
+    Models (Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action
+    Models), is a 2025 large vision-language-action model for robotic manipulation.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -57,4 +60,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action Models (Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation.
+
+## Overview
+Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action Models (Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation.
+
+## 개요
 Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action Models (Reinforcement Fine-Tuning of Flow-Matching Policies for Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation.

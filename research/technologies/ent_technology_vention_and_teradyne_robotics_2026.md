@@ -8,7 +8,8 @@ names:
     Optimized for UR Robotic Cells
   zh: Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform
     Optimized for UR Robotic Cells
-  ko: ''
+  ko: Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform
+    Optimized for UR Robotic Cells
 summary:
   en: Live demonstrations at Automate 2026 showcase the integration, featuring Vention's
     Rapid Operator AI, powered by NVIDIA Isaac open robotics platform, and advanced
@@ -16,7 +17,9 @@ summary:
   zh: Live demonstrations at Automate 2026 showcase the integration, featuring Vention's
     Rapid Operator AI, powered by NVIDIA Isaac open robotics platform, and advanced
     welding applications enabled by Universal Robots' UR12e and UR20 cobot models.
-  ko: ''
+  ko: Live demonstrations at Automate 2026 showcase the integration, featuring Vention's
+    Rapid Operator AI, powered by NVIDIA Isaac open robotics platform, and advanced
+    welding applications enabled by Universal Robots' UR12e and UR20 cobot models.
 domains:
 - 11_applications_markets
 layers:
@@ -47,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Live demonstrations at Automate 2026 showcase the integration, featuring Vention's Rapid Operator AI, powered by NVIDIA Isaac open robotics platform, and advanced welding applications enabled by Universal Robots' UR12e and UR20 cobot models.
+
+## Overview
+Live demonstrations at Automate 2026 showcase the integration, featuring Vention's Rapid Operator AI, powered by NVIDIA Isaac open robotics platform, and advanced welding applications enabled by Universal Robots' UR12e and UR20 cobot models.
+
+## 개요
 Live demonstrations at Automate 2026 showcase the integration, featuring Vention's Rapid Operator AI, powered by NVIDIA Isaac open robotics platform, and advanced welding applications enabled by Universal Robots' UR12e and UR20 cobot models.

@@ -43,4 +43,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+无外壳和轴承的直驱电机，直接集成到机器人关节中，实现高扭矩密度。
+
+## Overview
 Direct-drive motor without housing or bearings, integrated into robot joints for high torque density.
+
+## 개요
+하우징이나 베어링이 없는 직접 구동 모터, 로봇 관절에 통합되어 높은 토크 밀도 제공.

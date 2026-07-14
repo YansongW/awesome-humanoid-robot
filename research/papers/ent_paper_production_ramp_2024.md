@@ -44,4 +44,11 @@ sources:
   accessed_at: '2026-07-02'
 ---
 
+## 概述
+从试产线向批量制造过渡，同时提升良率、周期时间和成本。
+
+## Overview
 Transition from pilot-line builds to volume manufacturing while improving yield, cycle time, and cost.
+
+## 개요
+파일럿 라인에서 볼륨 제조로 전환하면서 수율, 사이클 타임 및 비용을 개선하는 과정.

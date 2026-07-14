@@ -6,11 +6,11 @@ type: report
 names:
   en: Humanoids Summit Continues Global Expansion with Seoul Edition
   zh: Humanoids Summit Continues Global Expansion with Seoul Edition
-  ko: ''
+  ko: Humanoids Summit Continues Global Expansion with Seoul Edition
 summary:
   en: Humanoids Summit Continues Global Expansion with Seoul Edition
   zh: Humanoids Summit Continues Global Expansion with Seoul Edition
-  ko: ''
+  ko: Humanoids Summit Continues Global Expansion with Seoul Edition
 domains:
 - 11_applications_markets
 layers:
@@ -41,4 +41,11 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+Humanoids Summit Continues Global Expansion with Seoul Edition
+
+## Overview
+Humanoids Summit Continues Global Expansion with Seoul Edition
+
+## 개요
 Humanoids Summit Continues Global Expansion with Seoul Edition

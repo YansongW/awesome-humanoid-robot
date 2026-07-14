@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: URDF 建模与运动学校核（Kinematics & URDF）
-  ko: ''
+  ko: URDF 建模与运动学校核（Kinematics & URDF）
 summary:
   en: ''
   zh: URDF 建模与运动学校核（Kinematics & URDF）
-  ko: ''
+  ko: URDF 建模与运动学校核（Kinematics & URDF）
 domains:
 - 06_design_engineering
 - 08_software_middleware
@@ -36,5 +36,11 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+URDF 建模与运动学校核（Kinematics & URDF）
 
+## Overview
+URDF 建模与运动学校核（Kinematics & URDF）
 
+## 개요
+URDF 建模与运动学校核（Kinematics & URDF）

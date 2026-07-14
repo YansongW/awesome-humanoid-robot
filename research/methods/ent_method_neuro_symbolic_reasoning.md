@@ -8,8 +8,8 @@ names:
   zh: 符号-神经混合推理
   ko: 신경-기호 추론
 summary:
-  en: An AI approach that combines neural perception and learning with symbolic reasoning to obtain interpretable and generalizable
-    long-horizon decision-making.
+  en: An AI approach that combines neural perception and learning with symbolic reasoning
+    to obtain interpretable and generalizable long-horizon decision-making.
   zh: 将神经感知与学习同符号推理结合，以获得可解释、可泛化的长程决策能力的人工智能方法。
   ko: 신경 인식·학습과 기호 추론을 결합하여 해석 가능하고 일반화된 장기 의사결정을 얻는 AI 접근법.
 domains:
@@ -29,8 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-13'
   confidence: high
-  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py; pending human review and translation
-    to en/ko.
+  notes: Body populated from Wiki chapter section by scripts/fill_gap_bodies_from_wiki.py;
+    pending human review and translation to en/ko.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,3 +38,12 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+## 概述
+将神经感知与学习同符号推理结合，以获得可解释、可泛化的长程决策能力的人工智能方法。
+
+## Overview
+An AI approach that combines neural perception and learning with symbolic reasoning to obtain interpretable and generalizable long-horizon decision-making.
+
+## 개요
+An AI approach that combines neural perception and learning with symbolic reasoning to obtain interpretable and generalizable long-horizon decision-making.

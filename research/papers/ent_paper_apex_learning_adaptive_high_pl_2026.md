@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots'
   zh: 'APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots'
-  ko: ''
+  ko: 'APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots'
 summary:
   en: 'APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots is a 2026
     work on locomotion for humanoid robots.'
   zh: 'APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots is a 2026
     work on locomotion for humanoid robots.'
-  ko: ''
+  ko: 'APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots is a 2026
+    work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -49,4 +50,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots is a 2026 work on locomotion for humanoid robots.
+
+## Overview
+APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots is a 2026 work on locomotion for humanoid robots.
+
+## 개요
 APEX: Learning Adaptive High-Platform Traversal for Humanoid Robots is a 2026 work on locomotion for humanoid robots.

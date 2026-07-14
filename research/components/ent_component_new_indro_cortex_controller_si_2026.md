@@ -6,7 +6,7 @@ type: component
 names:
   en: NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION
   zh: NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION
-  ko: ''
+  ko: NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION
 summary:
   en: InDro Cortex is a powerful compute and sensor integrator that can be mounted
     on any robotic platform. It can transmit data over 5G networks with imperceptible
@@ -18,7 +18,11 @@ summary:
     lag and receive instructions from a remote operator. Measuring 11cm x 14cm x 10cm,
     and weighing a mere 679 grams, Cortex is platform-agnostic and can be used with
     virtually any robotic framework.
-  ko: ''
+  ko: InDro Cortex is a powerful compute and sensor integrator that can be mounted
+    on any robotic platform. It can transmit data over 5G networks with imperceptible
+    lag and receive instructions from a remote operator. Measuring 11cm x 14cm x 10cm,
+    and weighing a mere 679 grams, Cortex is platform-agnostic and can be used with
+    virtually any robotic framework.
 domains:
 - 11_applications_markets
 layers:
@@ -49,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+InDro Cortex is a powerful compute and sensor integrator that can be mounted on any robotic platform. It can transmit data over 5G networks with imperceptible lag and receive instructions from a remote operator. Measuring 11cm x 14cm x 10cm, and weighing a mere 679 grams, Cortex is platform-agnostic and can be used with virtually any robotic framework.
+
+## Overview
+InDro Cortex is a powerful compute and sensor integrator that can be mounted on any robotic platform. It can transmit data over 5G networks with imperceptible lag and receive instructions from a remote operator. Measuring 11cm x 14cm x 10cm, and weighing a mere 679 grams, Cortex is platform-agnostic and can be used with virtually any robotic framework.
+
+## 개요
 InDro Cortex is a powerful compute and sensor integrator that can be mounted on any robotic platform. It can transmit data over 5G networks with imperceptible lag and receive instructions from a remote operator. Measuring 11cm x 14cm x 10cm, and weighing a mere 679 grams, Cortex is platform-agnostic and can be used with virtually any robotic framework.

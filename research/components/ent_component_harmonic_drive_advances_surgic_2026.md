@@ -8,7 +8,8 @@ names:
     Actuator Control Component
   zh: Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact
     Actuator Control Component
-  ko: ''
+  ko: Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact
+    Actuator Control Component
 summary:
   en: Harmonic Drive's launch of the LPA 20 integrated servo actuator strengthens
     the company's position as a top supplier of surgical robotic motion control components,
@@ -18,7 +19,10 @@ summary:
     the company's position as a top supplier of surgical robotic motion control components,
     delivering precision and a compact design to address critical challenges for original
     equipment manufacturers (OEMs).
-  ko: ''
+  ko: Harmonic Drive's launch of the LPA 20 integrated servo actuator strengthens
+    the company's position as a top supplier of surgical robotic motion control components,
+    delivering precision and a compact design to address critical challenges for original
+    equipment manufacturers (OEMs).
 domains:
 - 11_applications_markets
 layers:
@@ -50,4 +54,11 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+Harmonic Drive's launch of the LPA 20 integrated servo actuator strengthens the company's position as a top supplier of surgical robotic motion control components, delivering precision and a compact design to address critical challenges for original equipment manufacturers (OEMs).
+
+## Overview
+Harmonic Drive's launch of the LPA 20 integrated servo actuator strengthens the company's position as a top supplier of surgical robotic motion control components, delivering precision and a compact design to address critical challenges for original equipment manufacturers (OEMs).
+
+## 개요
 Harmonic Drive's launch of the LPA 20 integrated servo actuator strengthens the company's position as a top supplier of surgical robotic motion control components, delivering precision and a compact design to address critical challenges for original equipment manufacturers (OEMs).

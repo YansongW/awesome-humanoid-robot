@@ -6,13 +6,14 @@ type: paper
 names:
   en: Composite Motion Learning with Task Control
   zh: Composite Motion Learning with Task Control
-  ko: ''
+  ko: Composite Motion Learning with Task Control
 summary:
   en: Composite Motion Learning with Task Control is a 2023 work on physics-based
     character animation for humanoid robots.
   zh: Composite Motion Learning with Task Control is a 2023 work on physics-based
     character animation for humanoid robots.
-  ko: ''
+  ko: Composite Motion Learning with Task Control is a 2023 work on physics-based
+    character animation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -43,4 +44,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Composite Motion Learning with Task Control is a 2023 work on physics-based character animation for humanoid robots.
+
+## Overview
+Composite Motion Learning with Task Control is a 2023 work on physics-based character animation for humanoid robots.
+
+## 개요
 Composite Motion Learning with Task Control is a 2023 work on physics-based character animation for humanoid robots.

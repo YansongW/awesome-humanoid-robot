@@ -6,7 +6,7 @@ type: paper
 names:
   en: 'ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models'
   zh: ReVLA
-  ko: ''
+  ko: 'ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models'
 summary:
   en: 'ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA),
     is a 2024 large vision-language-action model for robotic manipulation, introduced
@@ -14,7 +14,9 @@ summary:
   zh: 'ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA),
     is a 2024 large vision-language-action model for robotic manipulation, introduced
     by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.'
-  ko: ''
+  ko: 'ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA),
+    is a 2024 large vision-language-action model for robotic manipulation, introduced
+    by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -47,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.
+
+## Overview
+ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.
+
+## 개요
 ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.

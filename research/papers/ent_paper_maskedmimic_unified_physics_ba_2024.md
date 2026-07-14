@@ -8,13 +8,15 @@ names:
     Inpainting'
   zh: 'MaskedMimic: Unified Physics-Based Character Control Through Masked Motion
     Inpainting'
-  ko: ''
+  ko: 'MaskedMimic: Unified Physics-Based Character Control Through Masked Motion
+    Inpainting'
 summary:
   en: 'MaskedMimic: Unified Physics-Based Character Control Through Masked Motion
     Inpainting is a 2024 work on physics-based character animation for humanoid robots.'
   zh: 'MaskedMimic: Unified Physics-Based Character Control Through Masked Motion
     Inpainting is a 2024 work on physics-based character animation for humanoid robots.'
-  ko: ''
+  ko: 'MaskedMimic: Unified Physics-Based Character Control Through Masked Motion
+    Inpainting is a 2024 work on physics-based character animation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -53,4 +55,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+MaskedMimic: Unified Physics-Based Character Control Through Masked Motion Inpainting is a 2024 work on physics-based character animation for humanoid robots.
+
+## Overview
+MaskedMimic: Unified Physics-Based Character Control Through Masked Motion Inpainting is a 2024 work on physics-based character animation for humanoid robots.
+
+## 개요
 MaskedMimic: Unified Physics-Based Character Control Through Masked Motion Inpainting is a 2024 work on physics-based character animation for humanoid robots.

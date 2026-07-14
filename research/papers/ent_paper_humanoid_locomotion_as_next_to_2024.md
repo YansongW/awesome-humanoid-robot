@@ -6,13 +6,14 @@ type: paper
 names:
   en: Humanoid Locomotion as Next Token Prediction
   zh: Humanoid Locomotion as Next Token Prediction
-  ko: ''
+  ko: Humanoid Locomotion as Next Token Prediction
 summary:
   en: Humanoid Locomotion as Next Token Prediction is a 2024 work on locomotion for
     humanoid robots.
   zh: Humanoid Locomotion as Next Token Prediction is a 2024 work on locomotion for
     humanoid robots.
-  ko: ''
+  ko: Humanoid Locomotion as Next Token Prediction is a 2024 work on locomotion for
+    humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -48,4 +49,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Humanoid Locomotion as Next Token Prediction is a 2024 work on locomotion for humanoid robots.
+
+## Overview
+Humanoid Locomotion as Next Token Prediction is a 2024 work on locomotion for humanoid robots.
+
+## 개요
 Humanoid Locomotion as Next Token Prediction is a 2024 work on locomotion for humanoid robots.

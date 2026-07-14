@@ -8,7 +8,8 @@ names:
     a Live Auto OEM Factory Without Production Downtime'
   zh: 'Brownfield Is the Real Test of Automation: How ForwardX Scaled 484 AMRs in
     a Live Auto OEM Factory Without Production Downtime'
-  ko: ''
+  ko: 'Brownfield Is the Real Test of Automation: How ForwardX Scaled 484 AMRs in
+    a Live Auto OEM Factory Without Production Downtime'
 summary:
   en: More than one year after deployment began, ForwardX's AMR system continues to
     scale across Chery Automobile's Dalian manufacturing facility without disrupting
@@ -18,7 +19,10 @@ summary:
     scale across Chery Automobile's Dalian manufacturing facility without disrupting
     production. Today, the project ranks among the largest brownfield AMR deployments
     in the automotive industry.
-  ko: ''
+  ko: More than one year after deployment began, ForwardX's AMR system continues to
+    scale across Chery Automobile's Dalian manufacturing facility without disrupting
+    production. Today, the project ranks among the largest brownfield AMR deployments
+    in the automotive industry.
 domains:
 - 11_applications_markets
 layers:
@@ -49,4 +53,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments in the automotive industry.
+
+## Overview
+More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments in the automotive industry.
+
+## 개요
 More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments in the automotive industry.

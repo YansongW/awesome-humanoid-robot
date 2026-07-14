@@ -6,11 +6,11 @@ type: method
 names:
   en: ''
   zh: 传感器选型与标定
-  ko: ''
+  ko: 传感器选型与标定
 summary:
   en: ''
   zh: 感知模块架构、标定结果、精度指标
-  ko: ''
+  ko: 感知模块架构、标定结果、精度指标
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -33,6 +33,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）

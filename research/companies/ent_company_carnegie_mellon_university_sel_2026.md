@@ -8,7 +8,8 @@ names:
     for New Robotics Innovation Center
   zh: Carnegie Mellon University Selects OptiTrack as Motion Capture Technology Partner
     for New Robotics Innovation Center
-  ko: ''
+  ko: Carnegie Mellon University Selects OptiTrack as Motion Capture Technology Partner
+    for New Robotics Innovation Center
 summary:
   en: Partnership equips a world-class robotics program with precision motion capture
     solutions and cutting-edge active tracking technology across two state-of-the-art
@@ -16,7 +17,9 @@ summary:
   zh: Partnership equips a world-class robotics program with precision motion capture
     solutions and cutting-edge active tracking technology across two state-of-the-art
     research facilities
-  ko: ''
+  ko: Partnership equips a world-class robotics program with precision motion capture
+    solutions and cutting-edge active tracking technology across two state-of-the-art
+    research facilities
 domains:
 - 11_applications_markets
 layers:
@@ -47,4 +50,11 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+Partnership equips a world-class robotics program with precision motion capture solutions and cutting-edge active tracking technology across two state-of-the-art research facilities
+
+## Overview
+Partnership equips a world-class robotics program with precision motion capture solutions and cutting-edge active tracking technology across two state-of-the-art research facilities
+
+## 개요
 Partnership equips a world-class robotics program with precision motion capture solutions and cutting-edge active tracking technology across two state-of-the-art research facilities

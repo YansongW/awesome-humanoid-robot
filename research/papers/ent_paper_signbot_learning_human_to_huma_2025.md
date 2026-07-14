@@ -6,13 +6,14 @@ type: paper
 names:
   en: 'SignBot: Learning Human-to-Humanoid Sign Language Interaction'
   zh: 'SignBot: Learning Human-to-Humanoid Sign Language Interaction'
-  ko: ''
+  ko: 'SignBot: Learning Human-to-Humanoid Sign Language Interaction'
 summary:
   en: 'SignBot: Learning Human-to-Humanoid Sign Language Interaction is a 2025 work
     on loco-manipulation and whole-body-control for humanoid robots.'
   zh: 'SignBot: Learning Human-to-Humanoid Sign Language Interaction is a 2025 work
     on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: ''
+  ko: 'SignBot: Learning Human-to-Humanoid Sign Language Interaction is a 2025 work
+    on loco-manipulation and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,4 +45,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+SignBot: Learning Human-to-Humanoid Sign Language Interaction is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+SignBot: Learning Human-to-Humanoid Sign Language Interaction is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 SignBot: Learning Human-to-Humanoid Sign Language Interaction is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.

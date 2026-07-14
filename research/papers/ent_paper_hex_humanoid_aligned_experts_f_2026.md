@@ -6,12 +6,13 @@ type: paper
 names:
   en: 'HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation'
   zh: HEX｜用于跨实体全身操作的人形对齐专家
-  ko: ''
+  ko: 'HEX: Humanoid-Aligned Experts for Cross-Embodiment Whole-Body Manipulation'
 summary:
   en: ''
   zh: HEX 的实现路径是先把本体状态与关节序列编码成多模态表征，再用PPO/RL 策略训练、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、低层控制器目标。关键点是保留
     VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
-  ko: ''
+  ko: HEX 的实现路径是先把本体状态与关节序列编码成多模态表征，再用PPO/RL 策略训练、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、低层控制器目标。关键点是保留
+    VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 domains:
 - 06_design_engineering
 - 07_ai_models_algorithms
@@ -47,5 +48,8 @@ theoretical_depth:
 - system
 ---
 
+## 概述
+HEX 的实现路径是先把本体状态与关节序列编码成多模态表征，再用PPO/RL 策略训练、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、低层控制器目标。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 
+## 개요
 HEX 的实现路径是先把本体状态与关节序列编码成多模态表征，再用PPO/RL 策略训练、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、低层控制器目标。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。

@@ -8,13 +8,15 @@ names:
     Sim2Real Learning
   zh: Sampling-Based System Identification with Active Exploration for Legged Robot
     Sim2Real Learning
-  ko: ''
+  ko: Sampling-Based System Identification with Active Exploration for Legged Robot
+    Sim2Real Learning
 summary:
   en: Sampling-Based System Identification with Active Exploration for Legged Robot
     Sim2Real Learning is a 2025 work on sim-to-real for humanoid robots.
   zh: Sampling-Based System Identification with Active Exploration for Legged Robot
     Sim2Real Learning is a 2025 work on sim-to-real for humanoid robots.
-  ko: ''
+  ko: Sampling-Based System Identification with Active Exploration for Legged Robot
+    Sim2Real Learning is a 2025 work on sim-to-real for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -46,4 +48,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning is a 2025 work on sim-to-real for humanoid robots.
+
+## Overview
+Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning is a 2025 work on sim-to-real for humanoid robots.
+
+## 개요
 Sampling-Based System Identification with Active Exploration for Legged Robot Sim2Real Learning is a 2025 work on sim-to-real for humanoid robots.

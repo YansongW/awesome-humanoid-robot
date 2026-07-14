@@ -8,7 +8,8 @@ names:
     Perception
   zh: Robbyant Unveils LingBot-Depth 2.0 and LingBot-Vision to Redefine Robotic Spatial
     Perception
-  ko: ''
+  ko: Robbyant Unveils LingBot-Depth 2.0 and LingBot-Vision to Redefine Robotic Spatial
+    Perception
 summary:
   en: Building upon the success of LingBot-Depth, which pioneered the Masked Depth
     Modeling (MDM) technique to resolve depth sensing challenges for transparent and
@@ -18,7 +19,10 @@ summary:
     Modeling (MDM) technique to resolve depth sensing challenges for transparent and
     reflective surfaces, LingBot-Depth 2.0 represents a massive scale-up in training
     data and performance.
-  ko: ''
+  ko: Building upon the success of LingBot-Depth, which pioneered the Masked Depth
+    Modeling (MDM) technique to resolve depth sensing challenges for transparent and
+    reflective surfaces, LingBot-Depth 2.0 represents a massive scale-up in training
+    data and performance.
 domains:
 - 11_applications_markets
 layers:
@@ -49,4 +53,11 @@ sources:
   accessed_at: '2026-07-08'
 ---
 
+## 概述
+Building upon the success of LingBot-Depth, which pioneered the Masked Depth Modeling (MDM) technique to resolve depth sensing challenges for transparent and reflective surfaces, LingBot-Depth 2.0 represents a massive scale-up in training data and performance.
+
+## Overview
+Building upon the success of LingBot-Depth, which pioneered the Masked Depth Modeling (MDM) technique to resolve depth sensing challenges for transparent and reflective surfaces, LingBot-Depth 2.0 represents a massive scale-up in training data and performance.
+
+## 개요
 Building upon the success of LingBot-Depth, which pioneered the Masked Depth Modeling (MDM) technique to resolve depth sensing challenges for transparent and reflective surfaces, LingBot-Depth 2.0 represents a massive scale-up in training data and performance.

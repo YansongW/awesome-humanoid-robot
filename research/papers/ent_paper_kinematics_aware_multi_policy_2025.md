@@ -8,7 +8,8 @@ names:
     Loco-Manipulation
   zh: Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid
     Loco-Manipulation
-  ko: ''
+  ko: Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid
+    Loco-Manipulation
 summary:
   en: Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid
     Loco-Manipulation is a 2025 work on loco-manipulation and whole-body-control for
@@ -16,7 +17,9 @@ summary:
   zh: Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid
     Loco-Manipulation is a 2025 work on loco-manipulation and whole-body-control for
     humanoid robots.
-  ko: ''
+  ko: Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid
+    Loco-Manipulation is a 2025 work on loco-manipulation and whole-body-control for
+    humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -49,4 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+## 概述
+Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid Loco-Manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## Overview
+Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid Loco-Manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+
+## 개요
 Kinematics-Aware Multi-Policy Reinforcement Learning for Force-Capable Humanoid Loco-Manipulation is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
