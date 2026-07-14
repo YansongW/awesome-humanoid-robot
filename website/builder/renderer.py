@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 import xml.sax.saxutils as saxutils
@@ -17,6 +18,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = BASE_DIR / "templates"
 SRC_DIR = BASE_DIR / "src"
 DIST_DIR = BASE_DIR / "dist"
+
+# Base URL for sitemap and canonical links. Override via RTKG_SITE_URL env var.
+SITE_BASE_URL = os.environ.get("RTKG_SITE_URL", "https://kg.rounds-tech.com").rstrip("/")
 
 
 # UI strings for the three supported languages.
@@ -466,14 +470,23 @@ class Renderer:
             )
 
     def write_sitemap(self, wiki_pages: list[dict] | None = None) -> None:
+        from datetime import datetime, timezone
+
         lines = ['<?xml version="1.0" encoding="UTF-8"?>']
         lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
-        base = "https://kg.rounds-tech.com"
+        base = SITE_BASE_URL
         prefix = f"/{self.lang}" if self.lang != "zh" else ""
+        lastmod = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 
         def _url(loc: str, priority: str = "0.5") -> None:
             full = saxutils.escape(f"{base}{prefix}{loc}")
-            lines.append(f"  <url><loc>{full}</loc><priority>{priority}</priority></url>")
+            lines.append(
+                f"  <url>"
+                f"<loc>{full}</loc>"
+                f"<lastmod>{lastmod}</lastmod>"
+                f"<priority>{priority}</priority>"
+                f"</url>"
+            )
 
         _url("/", "1.0")
         _url("/search/", "0.8")
