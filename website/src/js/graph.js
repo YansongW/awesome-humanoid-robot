@@ -129,18 +129,18 @@
         style: {
           'background-color': ele => getDomainColor(getPrimaryDomain(ele)),
           'label': 'data(name)',
-          'font-size': 13,
+          'font-size': 14,
           'font-weight': 600,
           'color': t.text,
           'text-valign': 'bottom',
           'text-halign': 'center',
-          'text-margin-y': 10,
+          'text-margin-y': 12,
           'text-wrap': 'wrap',
-          'text-max-width': 140,
+          'text-max-width': 160,
           'text-background-color': t.bg,
           'text-background-opacity': 0.98,
           'text-background-shape': 'roundrectangle',
-          'text-background-padding': 4,
+          'text-background-padding': 5,
           'text-border-color': t.border,
           'text-border-width': 1,
           'text-border-opacity': 0.6,
@@ -173,21 +173,24 @@
       {
         selector: 'node[!isCluster]',
         style: {
-          'width': 22,
-          'height': 22,
+          'width': 28,
+          'height': 28,
+          'min-zoomed-font-size': 12,
         },
       },
       {
         selector: 'edge',
         style: {
-          'width': 1.5,
+          'width': 2,
           'line-color': t.edge,
           'target-arrow-color': t.edge,
           'target-arrow-shape': 'triangle',
           'curve-style': 'unbundled-bezier',
           'control-point-step-size': 30,
-          'arrow-scale': 0.8,
-          'opacity': 0.85,
+          'arrow-scale': 0.9,
+          'opacity': 0.75,
+          'transition-property': 'line-color, target-arrow-color, width, opacity',
+          'transition-duration': '0.15s',
         },
       },
       {
@@ -207,6 +210,23 @@
           'border-color': t.accent,
           'border-opacity': 1,
           'background-color': t.accent,
+          'color': '#fff',
+          'text-background-color': t.accent,
+          'text-border-color': t.accent,
+        },
+      },
+      {
+        selector: 'node[!isCluster]:hover',
+        style: {
+          'border-width': 4,
+          'border-color': t.accent,
+          'width': 36,
+          'height': 36,
+          'background-color': t.accent,
+          'color': '#fff',
+          'text-background-color': t.accent,
+          'text-border-color': t.accent,
+          'z-index': 999,
         },
       },
       {
@@ -214,8 +234,8 @@
         style: {
           'border-width': 4,
           'border-color': t.accent,
-          'width': 30,
-          'height': 30,
+          'width': 34,
+          'height': 34,
           'background-color': t.accent,
         },
       },
@@ -274,7 +294,7 @@
 
   const activeDomains = new Set();
 
-  const MAX_FULL_GRAPH_NODES = 400;
+  const MAX_FULL_GRAPH_NODES = 250;
 
   function getFilteredFullElements() {
     const domainFilter = activeDomains.size > 0 ? activeDomains : null;

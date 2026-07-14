@@ -120,8 +120,9 @@
     for (const t of qTokens) {
       if (t.length === 0) continue;
       const isLatin = /^[a-z0-9]+$/.test(t);
-      const inName = name.split(/[^a-z0-9\u4e00-\u9fff]+/).includes(t) || name.includes(t);
-      const inNameEn = nameEn.split(/[^a-z0-9\u4e00-\u9fff]+/).includes(t) || nameEn.includes(t);
+      const WORD_RE = /[^a-z0-9\u4e00-\u9fff\uac00-\ud7af]+/;
+      const inName = name.split(WORD_RE).includes(t) || name.includes(t);
+      const inNameEn = nameEn.split(WORD_RE).includes(t) || nameEn.includes(t);
       const inId = eid.split(/[^a-z0-9_]+/).includes(t) || eid.includes(t);
       const inSummary = summary.includes(t);
       const inType = type.includes(t);
@@ -130,7 +131,7 @@
       if (isLatin) {
         // Require a whole-token match somewhere; otherwise penalize.
         const whole = inName || inNameEn || inId || inType || inDomain ||
-          summary.split(/[^a-z0-9\u4e00-\u9fff]+/).includes(t);
+          summary.split(WORD_RE).includes(t);
         if (whole) {
           if (inName) { score += 20; strongMatches++; }
           else if (inNameEn) { score += 16; strongMatches++; }

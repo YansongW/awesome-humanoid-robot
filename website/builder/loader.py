@@ -213,9 +213,25 @@ def split_frontmatter(text: str, source: str = "<unknown>") -> tuple[dict[str, A
 
 
 def pick_lang(value: Any, lang: str = "zh") -> str:
-    """Pick a language value from a dict or return string."""
+    """Pick a language value from a dict or return string.
+
+    Fallback order ensures every language site has usable content rather than
+    empty fields when a translation is missing:
+      - zh: zh -> en -> ko -> ""
+      - en: en -> zh -> ko -> ""
+      - ko: ko -> en -> zh -> ""
+    """
     if isinstance(value, dict):
-        return value.get(lang) or value.get("en") or value.get("ko") or ""
+        order = {
+            "zh": ["zh", "en", "ko"],
+            "en": ["en", "zh", "ko"],
+            "ko": ["ko", "en", "zh"],
+        }.get(lang, [lang, "en", "zh", "ko"])
+        for key in order:
+            v = value.get(key)
+            if v:
+                return v
+        return ""
     return str(value or "")
 
 
