@@ -2,7 +2,7 @@
 $id: rel_ent_paper_ghansah_hierarchical_reduced_order_mod_2025_uses_ent_oem_unitree_robotics
 $schema: ../schema/v1/relationship_schema.json
 $version: 1
-type: uses
+type: uses_product_of
 source:
   id: ent_paper_ghansah_hierarchical_reduced_order_mod_2025
   name:
