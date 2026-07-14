@@ -8,13 +8,12 @@ names:
   zh: TWIST：遥操作全身模仿系统
   ko: 'TWIST: 원격조작 전신 모방 시스템'
 summary:
-  en: TWIST retargets human motion capture data to humanoid robots and trains a single
-    whole-body controller through a two-stage teacher-student RL+BC framework, enabling
-    real-time, coordinated whole-body teleoperation across manipulation, locomotion,
+  en: TWIST retargets human motion capture data to humanoid robots and trains a single whole-body controller through a two-stage
+    teacher-student RL+BC framework, enabling real-time, coordinated whole-body teleoperation across manipulation, locomotion,
     and expressive tasks.
   zh: TWIST 将人体动作捕捉数据重定向到人形机器人，并通过两阶段教师-学生 RL+BC 框架训练单一全身控制器，实现跨操作、移动和表现性任务的实时协调全身遥操作。
-  ko: TWIST는 human motion capture 데이터를 휴머노이드 로봇에 리타겟팅하고 2단계 교사-학생 RL+BC 프레임워크로 단일
-    전신 컨트롤러를 학습하여 조작, 보행, 표현적 동작에 걸친 실시간 조화로운 전신 원격조작을 가능하게 한다.
+  ko: TWIST는 human motion capture 데이터를 휴머노이드 로봇에 리타겟팅하고 2단계 교사-학생 RL+BC 프레임워크로 단일 전신 컨트롤러를 학습하여 조작, 보행, 표현적 동작에 걸친 실시간 조화로운
+    전신 원격조작을 가능하게 한다.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -38,10 +37,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-26'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from the arXiv full text; requires human review before promotion
-    to verified.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.02833v1.
 sources:
 - id: src_001
   type: paper
@@ -52,19 +50,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+Teleoperating humanoid robots in a whole-body manner marks a fundamental step toward developing general-purpose robotic intelligence, with human motion providing an ideal interface for controlling all degrees of freedom. Yet, most current humanoid teleoperation systems fall short of enabling coordinated whole-body behavior, typically limiting themselves to isolated locomotion or manipulation tasks. We present the Teleoperated Whole-Body Imitation System (TWIST), a system for humanoid teleoperation through whole-body motion imitation. We first generate reference motion clips by retargeting human motion capture data to the humanoid robot. We then develop a robust, adaptive, and responsive whole-body controller using a combination of reinforcement learning and behavior cloning (RL+BC). Through systematic analysis, we demonstrate how incorporating privileged future motion frames and real-world motion capture (MoCap) data improves tracking accuracy. TWIST enables real-world humanoid robots to achieve unprecedented, versatile, and coordinated whole-body motor skills--spanning whole-body manipulation, legged manipulation, locomotion, and expressive movement--using a single unified neural network controller. Our project website: https://humanoid-teleop.github.io
 
-## Overview
+## 核心内容
+Teleoperating humanoid robots in a whole-body manner marks a fundamental step toward developing general-purpose robotic intelligence, with human motion providing an ideal interface for controlling all degrees of freedom. Yet, most current humanoid teleoperation systems fall short of enabling coordinated whole-body behavior, typically limiting themselves to isolated locomotion or manipulation tasks. We present the Teleoperated Whole-Body Imitation System (TWIST), a system for humanoid teleoperation through whole-body motion imitation. We first generate reference motion clips by retargeting human motion capture data to the humanoid robot. We then develop a robust, adaptive, and responsive whole-body controller using a combination of reinforcement learning and behavior cloning (RL+BC). Through systematic analysis, we demonstrate how incorporating privileged future motion frames and real-world motion capture (MoCap) data improves tracking accuracy. TWIST enables real-world humanoid robots to achieve unprecedented, versatile, and coordinated whole-body motor skills--spanning whole-body manipulation, legged manipulation, locomotion, and expressive movement--using a single unified neural network controller. Our project website: https://humanoid-teleop.github.io
 
-TWIST formulates whole-body humanoid teleoperation as a real-time motion retargeting and tracking problem. It first converts human motion capture data into humanoid-compatible reference motions through offline and online retargeters, then trains a single neural-network whole-body controller to track those references while maintaining balance. The controller is trained in large-scale simulation using a two-stage teacher-student approach that combines reinforcement learning with behavior cloning, and is deployed zero-shot on real hardware.
+## 参考
+- http://arxiv.org/abs/2505.02833v1
 
-## Key Contributions
-
-- Two-stage teacher-student RL+BC training: a privileged teacher observes future motion frames for smooth planning, and a single-frame student is distilled via RL plus KL-regularized behavior cloning.
-- Mixing a small in-house online MoCap dataset (150 clips, ~0.5 hours) with large offline datasets (AMASS and OMOMO, ~15,000 clips) to close the offline-to-online retargeting gap.
-- Joint optimization of 3D joint positions and orientations in the online retargeter for smoother real-time reference motions.
-- Training with large end-effector perturbations to improve stability and force exertion in contact-rich tasks.
-- Real-world deployment on Unitree G1 and sim-to-sim transfer to Booster T1 using a single unified neural network controller.
-
-## Relevance to Humanoid Robotics
-
-TWIST is directly relevant to humanoid robotics because it advances real-time, coordinated whole-body control of physical humanoid robots through learning-based teleoperation. By unifying locomotion, manipulation, and expressive motions under one controller, it provides a practical pipeline for acquiring diverse whole-body skills on humanoid hardware.

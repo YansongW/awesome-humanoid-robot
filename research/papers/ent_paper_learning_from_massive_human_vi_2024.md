@@ -8,12 +8,12 @@ names:
   zh: Learning from Massive Human Videos for Universal Humanoid Pose Control
   ko: Learning from Massive Human Videos for Universal Humanoid Pose Control
 summary:
-  en: Learning from Massive Human Videos for Universal Humanoid Pose Control is a
-    2024 work on loco-manipulation and whole-body-control for humanoid robots.
-  zh: Learning from Massive Human Videos for Universal Humanoid Pose Control is a
-    2024 work on loco-manipulation and whole-body-control for humanoid robots.
-  ko: Learning from Massive Human Videos for Universal Humanoid Pose Control is a
-    2024 work on loco-manipulation and whole-body-control for humanoid robots.
+  en: Learning from Massive Human Videos for Universal Humanoid Pose Control is a 2024 work on loco-manipulation and whole-body-control
+    for humanoid robots.
+  zh: Learning from Massive Human Videos for Universal Humanoid Pose Control is a 2024 work on loco-manipulation and whole-body-control
+    for humanoid robots.
+  ko: Learning from Massive Human Videos for Universal Humanoid Pose Control is a 2024 work on loco-manipulation and whole-body-control
+    for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -32,10 +32,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Loco-Manipulation
-    and Whole-Body-Control. arXiv: 2412.14172.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.14172v1.
 sources:
 - id: src_001
   type: paper
@@ -45,18 +44,17 @@ sources:
   accessed_at: '2026-07-01'
 - id: src_002
   type: website
-  title: Learning from Massive Human Videos for Universal Humanoid Pose Control project
-    page
+  title: Learning from Massive Human Videos for Universal Humanoid Pose Control project page
   url: https://usc-gvl.github.io/UH-1/
   date: '2024'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Learning from Massive Human Videos for Universal Humanoid Pose Control is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+Scalable learning of humanoid robots is crucial for their deployment in real-world applications. While traditional approaches primarily rely on reinforcement learning or teleoperation to achieve whole-body control, they are often limited by the diversity of simulated environments and the high costs of demonstration collection. In contrast, human videos are ubiquitous and present an untapped source of semantic and motion information that could significantly enhance the generalization capabilities of humanoid robots. This paper introduces Humanoid-X, a large-scale dataset of over 20 million humanoid robot poses with corresponding text-based motion descriptions, designed to leverage this abundant data. Humanoid-X is curated through a comprehensive pipeline: data mining from the Internet, video caption generation, motion retargeting of humans to humanoid robots, and policy learning for real-world deployment. With Humanoid-X, we further train a large humanoid model, UH-1, which takes text instructions as input and outputs corresponding actions to control a humanoid robot. Extensive simulated and real-world experiments validate that our scalable training approach leads to superior generalization in text-based humanoid control, marking a significant step toward adaptable, real-world-ready humanoid robots.
 
-## Overview
-Learning from Massive Human Videos for Universal Humanoid Pose Control is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+## 核心内容
+Scalable learning of humanoid robots is crucial for their deployment in real-world applications. While traditional approaches primarily rely on reinforcement learning or teleoperation to achieve whole-body control, they are often limited by the diversity of simulated environments and the high costs of demonstration collection. In contrast, human videos are ubiquitous and present an untapped source of semantic and motion information that could significantly enhance the generalization capabilities of humanoid robots. This paper introduces Humanoid-X, a large-scale dataset of over 20 million humanoid robot poses with corresponding text-based motion descriptions, designed to leverage this abundant data. Humanoid-X is curated through a comprehensive pipeline: data mining from the Internet, video caption generation, motion retargeting of humans to humanoid robots, and policy learning for real-world deployment. With Humanoid-X, we further train a large humanoid model, UH-1, which takes text instructions as input and outputs corresponding actions to control a humanoid robot. Extensive simulated and real-world experiments validate that our scalable training approach leads to superior generalization in text-based humanoid control, marking a significant step toward adaptable, real-world-ready humanoid robots.
 
-## 개요
-Learning from Massive Human Videos for Universal Humanoid Pose Control is a 2024 work on loco-manipulation and whole-body-control for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2412.14172v1
+

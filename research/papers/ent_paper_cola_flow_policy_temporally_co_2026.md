@@ -4,67 +4,46 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'CoLA-Flow Policy: Temporally Coherent Imitation Learning via Continuous Latent
-    Action Flow Matching for Robotic Manipulation'
-  zh: 'CoLA-Flow Policy: Temporally Coherent Imitation Learning via Continuous Latent
-    Action Flow Matching for Robotic Manipulation'
-  ko: 'CoLA-Flow Policy: Temporally Coherent Imitation Learning via Continuous Latent
-    Action Flow Matching for Robotic Manipulation'
+  en: 'CoLA-Flow Policy: Temporally Coherent Imitation Learning via Continuous Latent Action Flow Matching for Robotic Manipulation'
+  zh: 'CoLA-Flow Policy: Temporally Coherent Imitation Learning via Continuous Latent Action Flow Matching for Robotic Manipulation'
+  ko: 'CoLA-Flow Policy: Temporally Coherent Imitation Learning via Continuous Latent Action Flow Matching for Robotic Manipulation'
 summary:
-  en: "arXiv:2601.23087v5 Announce Type: replace \nAbstract: Learning long-horizon\
-    \ robotic manipulation requires jointly achieving expressive behavior modeling,\
-    \ real-time inference, and stable execution, which remains challenging for existing\
-    \ generative policies. Diffusion-based approaches offer strong modeling capacity\
-    \ but incur high inference latency, while flow matching enables fast, near-single-step\
-    \ generation yet often suffers from unstable execution when operating directly\
-    \ in the raw action space. We propose Continuous Latent Action Flow Policy (CoLA-Flow\
-    \ Policy), a trajectory-level imitation learning framework that performs flow\
-    \ matching in a continuous latent action space. By encoding action sequences into\
-    \ temporally coherent latent trajectories and learning an explicit latent-space\
-    \ flow, CoLA-Flow Policy decouples global motion structure from low-level control\
-    \ noise, enabling smooth and reliable long-horizon execution. The framework further\
-    \ integrates geometry-aware point cloud conditioning and execution-time multimodal\
-    \ modulation, using visual cues as a representative modality to enhance real-world\
-    \ robustness. Experiments in simulation and on real robots show that CoLA-Flow\
-    \ Policy achieves near-single-step inference, improves trajectory smoothness by\
-    \ up to 93.7% and task success by up to 25 percentage points over raw action-space\
-    \ flow baselines, while remaining significantly faster than diffusion-based policies."
-  zh: "arXiv:2601.23087v5 Announce Type: replace \nAbstract: Learning long-horizon\
-    \ robotic manipulation requires jointly achieving expressive behavior modeling,\
-    \ real-time inference, and stable execution, which remains challenging for existing\
-    \ generative policies. Diffusion-based approaches offer strong modeling capacity\
-    \ but incur high inference latency, while flow matching enables fast, near-single-step\
-    \ generation yet often suffers from unstable execution when operating directly\
-    \ in the raw action space. We propose Continuous Latent Action Flow Policy (CoLA-Flow\
-    \ Policy), a trajectory-level imitation learning framework that performs flow\
-    \ matching in a continuous latent action space. By encoding action sequences into\
-    \ temporally coherent latent trajectories and learning an explicit latent-space\
-    \ flow, CoLA-Flow Policy decouples global motion structure from low-level control\
-    \ noise, enabling smooth and reliable long-horizon execution. The framework further\
-    \ integrates geometry-aware point cloud conditioning and execution-time multimodal\
-    \ modulation, using visual cues as a representative modality to enhance real-world\
-    \ robustness. Experiments in simulation and on real robots show that CoLA-Flow\
-    \ Policy achieves near-single-step inference, improves trajectory smoothness by\
-    \ up to 93.7% and task success by up to 25 percentage points over raw action-space\
-    \ flow baselines, while remaining significantly faster than diffusion-based policies."
-  ko: "arXiv:2601.23087v5 Announce Type: replace \nAbstract: Learning long-horizon\
-    \ robotic manipulation requires jointly achieving expressive behavior modeling,\
-    \ real-time inference, and stable execution, which remains challenging for existing\
-    \ generative policies. Diffusion-based approaches offer strong modeling capacity\
-    \ but incur high inference latency, while flow matching enables fast, near-single-step\
-    \ generation yet often suffers from unstable execution when operating directly\
-    \ in the raw action space. We propose Continuous Latent Action Flow Policy (CoLA-Flow\
-    \ Policy), a trajectory-level imitation learning framework that performs flow\
-    \ matching in a continuous latent action space. By encoding action sequences into\
-    \ temporally coherent latent trajectories and learning an explicit latent-space\
-    \ flow, CoLA-Flow Policy decouples global motion structure from low-level control\
-    \ noise, enabling smooth and reliable long-horizon execution. The framework further\
-    \ integrates geometry-aware point cloud conditioning and execution-time multimodal\
-    \ modulation, using visual cues as a representative modality to enhance real-world\
-    \ robustness. Experiments in simulation and on real robots show that CoLA-Flow\
-    \ Policy achieves near-single-step inference, improves trajectory smoothness by\
-    \ up to 93.7% and task success by up to 25 percentage points over raw action-space\
-    \ flow baselines, while remaining significantly faster than diffusion-based policies."
+  en: "arXiv:2601.23087v5 Announce Type: replace \nAbstract: Learning long-horizon robotic manipulation requires jointly achieving\
+    \ expressive behavior modeling, real-time inference, and stable execution, which remains challenging for existing generative\
+    \ policies. Diffusion-based approaches offer strong modeling capacity but incur high inference latency, while flow matching\
+    \ enables fast, near-single-step generation yet often suffers from unstable execution when operating directly in the raw\
+    \ action space. We propose Continuous Latent Action Flow Policy (CoLA-Flow Policy), a trajectory-level imitation learning\
+    \ framework that performs flow matching in a continuous latent action space. By encoding action sequences into temporally\
+    \ coherent latent trajectories and learning an explicit latent-space flow, CoLA-Flow Policy decouples global motion structure\
+    \ from low-level control noise, enabling smooth and reliable long-horizon execution. The framework further integrates\
+    \ geometry-aware point cloud conditioning and execution-time multimodal modulation, using visual cues as a representative\
+    \ modality to enhance real-world robustness. Experiments in simulation and on real robots show that CoLA-Flow Policy achieves\
+    \ near-single-step inference, improves trajectory smoothness by up to 93.7% and task success by up to 25 percentage points\
+    \ over raw action-space flow baselines, while remaining significantly faster than diffusion-based policies."
+  zh: "arXiv:2601.23087v5 Announce Type: replace \nAbstract: Learning long-horizon robotic manipulation requires jointly achieving\
+    \ expressive behavior modeling, real-time inference, and stable execution, which remains challenging for existing generative\
+    \ policies. Diffusion-based approaches offer strong modeling capacity but incur high inference latency, while flow matching\
+    \ enables fast, near-single-step generation yet often suffers from unstable execution when operating directly in the raw\
+    \ action space. We propose Continuous Latent Action Flow Policy (CoLA-Flow Policy), a trajectory-level imitation learning\
+    \ framework that performs flow matching in a continuous latent action space. By encoding action sequences into temporally\
+    \ coherent latent trajectories and learning an explicit latent-space flow, CoLA-Flow Policy decouples global motion structure\
+    \ from low-level control noise, enabling smooth and reliable long-horizon execution. The framework further integrates\
+    \ geometry-aware point cloud conditioning and execution-time multimodal modulation, using visual cues as a representative\
+    \ modality to enhance real-world robustness. Experiments in simulation and on real robots show that CoLA-Flow Policy achieves\
+    \ near-single-step inference, improves trajectory smoothness by up to 93.7% and task success by up to 25 percentage points\
+    \ over raw action-space flow baselines, while remaining significantly faster than diffusion-based policies."
+  ko: "arXiv:2601.23087v5 Announce Type: replace \nAbstract: Learning long-horizon robotic manipulation requires jointly achieving\
+    \ expressive behavior modeling, real-time inference, and stable execution, which remains challenging for existing generative\
+    \ policies. Diffusion-based approaches offer strong modeling capacity but incur high inference latency, while flow matching\
+    \ enables fast, near-single-step generation yet often suffers from unstable execution when operating directly in the raw\
+    \ action space. We propose Continuous Latent Action Flow Policy (CoLA-Flow Policy), a trajectory-level imitation learning\
+    \ framework that performs flow matching in a continuous latent action space. By encoding action sequences into temporally\
+    \ coherent latent trajectories and learning an explicit latent-space flow, CoLA-Flow Policy decouples global motion structure\
+    \ from low-level control noise, enabling smooth and reliable long-horizon execution. The framework further integrates\
+    \ geometry-aware point cloud conditioning and execution-time multimodal modulation, using visual cues as a representative\
+    \ modality to enhance real-world robustness. Experiments in simulation and on real robots show that CoLA-Flow Policy achieves\
+    \ near-single-step inference, improves trajectory smoothness by up to 93.7% and task success by up to 25 percentage points\
+    \ over raw action-space flow baselines, while remaining significantly faster than diffusion-based policies."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -82,27 +61,24 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-08'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=paper.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.23087v5.
 sources:
 - id: src_001
   type: paper
-  title: 'CoLA-Flow Policy: Temporally Coherent Imitation Learning via Continuous
-    Latent Action Flow Matching for Robotic Manipulation (arXiv)'
+  title: 'CoLA-Flow Policy: Temporally Coherent Imitation Learning via Continuous Latent Action Flow Matching for Robotic
+    Manipulation (arXiv)'
   url: https://arxiv.org/abs/2601.23087
   date: '2026'
   accessed_at: '2026-07-08'
 ---
-
 ## 概述
-arXiv:2601.23087v5 Announce Type: replace 
-Abstract: Learning long-horizon robotic manipulation requires jointly achieving expressive behavior modeling, real-time inference, and stable execution, which remains challenging for existing generative policies. Diffusion-based approaches offer strong modeling capacity but incur high inference latency, while flow matching enables fast, near-single-step generation yet often suffers from unstable execution when operating directly in the raw action space. We propose Continuous Latent Action Flow Policy (CoLA-Flow Policy), a trajectory-level imitation learning framework that performs flow matching in a continuous latent action space. By encoding action sequences into temporally coherent latent trajectories and learning an explicit latent-space flow, CoLA-Flow Policy decouples global motion structure from low-level control noise, enabling smooth and reliable long-horizon execution. The framework further integrates geometry-aware point cloud conditioning and execution-time multimodal modulation, using visual cues as a representative modality to enhance real-world robustness. Experiments in simulation and on real robots show that CoLA-Flow Policy achieves near-single-step inference, improves trajectory smoothness by up to 93.7% and task success by up to 25 percentage points over raw action-space flow baselines, while remaining significantly faster than diffusion-based policies.
+Learning long-horizon robotic manipulation requires jointly achieving expressive behavior modeling, real-time inference, and stable execution, which remains challenging for existing generative policies. Diffusion-based approaches offer strong modeling capacity but incur high inference latency, while flow matching enables fast, near-single-step generation yet often suffers from unstable execution when operating directly in the raw action space. We propose Continuous Latent Action Flow Policy (CoLA-Flow Policy), a trajectory-level imitation learning framework that performs flow matching in a continuous latent action space. By encoding action sequences into temporally coherent latent trajectories and learning an explicit latent-space flow, CoLA-Flow Policy decouples global motion structure from low-level control noise, enabling smooth and reliable long-horizon execution. The framework further integrates geometry-aware point cloud conditioning and execution-time multimodal modulation, using visual cues as a representative modality to enhance real-world robustness. Experiments in simulation and on real robots show that CoLA-Flow Policy achieves near-single-step inference, improves trajectory smoothness by up to 93.7% and task success by up to 25 percentage points over raw action-space flow baselines, while remaining significantly faster than diffusion-based policies.
 
-## Overview
-arXiv:2601.23087v5 Announce Type: replace 
-Abstract: Learning long-horizon robotic manipulation requires jointly achieving expressive behavior modeling, real-time inference, and stable execution, which remains challenging for existing generative policies. Diffusion-based approaches offer strong modeling capacity but incur high inference latency, while flow matching enables fast, near-single-step generation yet often suffers from unstable execution when operating directly in the raw action space. We propose Continuous Latent Action Flow Policy (CoLA-Flow Policy), a trajectory-level imitation learning framework that performs flow matching in a continuous latent action space. By encoding action sequences into temporally coherent latent trajectories and learning an explicit latent-space flow, CoLA-Flow Policy decouples global motion structure from low-level control noise, enabling smooth and reliable long-horizon execution. The framework further integrates geometry-aware point cloud conditioning and execution-time multimodal modulation, using visual cues as a representative modality to enhance real-world robustness. Experiments in simulation and on real robots show that CoLA-Flow Policy achieves near-single-step inference, improves trajectory smoothness by up to 93.7% and task success by up to 25 percentage points over raw action-space flow baselines, while remaining significantly faster than diffusion-based policies.
+## 核心内容
+Learning long-horizon robotic manipulation requires jointly achieving expressive behavior modeling, real-time inference, and stable execution, which remains challenging for existing generative policies. Diffusion-based approaches offer strong modeling capacity but incur high inference latency, while flow matching enables fast, near-single-step generation yet often suffers from unstable execution when operating directly in the raw action space. We propose Continuous Latent Action Flow Policy (CoLA-Flow Policy), a trajectory-level imitation learning framework that performs flow matching in a continuous latent action space. By encoding action sequences into temporally coherent latent trajectories and learning an explicit latent-space flow, CoLA-Flow Policy decouples global motion structure from low-level control noise, enabling smooth and reliable long-horizon execution. The framework further integrates geometry-aware point cloud conditioning and execution-time multimodal modulation, using visual cues as a representative modality to enhance real-world robustness. Experiments in simulation and on real robots show that CoLA-Flow Policy achieves near-single-step inference, improves trajectory smoothness by up to 93.7% and task success by up to 25 percentage points over raw action-space flow baselines, while remaining significantly faster than diffusion-based policies.
 
-## 개요
-arXiv:2601.23087v5 Announce Type: replace 
-Abstract: Learning long-horizon robotic manipulation requires jointly achieving expressive behavior modeling, real-time inference, and stable execution, which remains challenging for existing generative policies. Diffusion-based approaches offer strong modeling capacity but incur high inference latency, while flow matching enables fast, near-single-step generation yet often suffers from unstable execution when operating directly in the raw action space. We propose Continuous Latent Action Flow Policy (CoLA-Flow Policy), a trajectory-level imitation learning framework that performs flow matching in a continuous latent action space. By encoding action sequences into temporally coherent latent trajectories and learning an explicit latent-space flow, CoLA-Flow Policy decouples global motion structure from low-level control noise, enabling smooth and reliable long-horizon execution. The framework further integrates geometry-aware point cloud conditioning and execution-time multimodal modulation, using visual cues as a representative modality to enhance real-world robustness. Experiments in simulation and on real robots show that CoLA-Flow Policy achieves near-single-step inference, improves trajectory smoothness by up to 93.7% and task success by up to 25 percentage points over raw action-space flow baselines, while remaining significantly faster than diffusion-based policies.
+## 参考
+- http://arxiv.org/abs/2601.23087v5
+

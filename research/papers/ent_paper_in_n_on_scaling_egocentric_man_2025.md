@@ -8,12 +8,12 @@ names:
   zh: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data'
   ko: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data'
 summary:
-  en: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data
-    is a 2025 work on manipulation for humanoid robots.'
-  zh: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data
-    is a 2025 work on manipulation for humanoid robots.'
-  ko: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data
-    is a 2025 work on manipulation for humanoid robots.'
+  en: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data is a 2025 work on manipulation for humanoid
+    robots.'
+  zh: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data is a 2025 work on manipulation for humanoid
+    robots.'
+  ko: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data is a 2025 work on manipulation for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -31,25 +31,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Manipulation.
-    arXiv: 2511.15704.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.15704v1.
 sources:
 - id: src_001
   type: paper
-  title: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data
-    (arXiv)'
+  title: 'In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data (arXiv)'
   url: https://arxiv.org/abs/2511.15704
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data is a 2025 work on manipulation for humanoid robots.
+Egocentric videos are a valuable and scalable data source to learn manipulation policies. However, due to significant data heterogeneity, most existing approaches utilize human data for simple pre-training, which does not unlock its full potential. This paper first provides a scalable recipe for collecting and using egocentric data by categorizing human data into two categories: in-the-wild and on-task alongside with systematic analysis on how to use the data. We first curate a dataset, PHSD, which contains over 1,000 hours of diverse in-the-wild egocentric data and over 20 hours of on-task data directly aligned to the target manipulation tasks. This enables learning a large egocentric language-conditioned flow matching policy, Human0. With domain adaptation techniques, Human0 minimizes the gap between humans and humanoids. Empirically, we show Human0 achieves several novel properties from scaling human data, including language following of instructions from only human data, few-shot learning, and improved robustness using on-task data. Project website: https://xiongyicai.github.io/In-N-On/
 
-## Overview
-In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data is a 2025 work on manipulation for humanoid robots.
+## 核心内容
+Egocentric videos are a valuable and scalable data source to learn manipulation policies. However, due to significant data heterogeneity, most existing approaches utilize human data for simple pre-training, which does not unlock its full potential. This paper first provides a scalable recipe for collecting and using egocentric data by categorizing human data into two categories: in-the-wild and on-task alongside with systematic analysis on how to use the data. We first curate a dataset, PHSD, which contains over 1,000 hours of diverse in-the-wild egocentric data and over 20 hours of on-task data directly aligned to the target manipulation tasks. This enables learning a large egocentric language-conditioned flow matching policy, Human0. With domain adaptation techniques, Human0 minimizes the gap between humans and humanoids. Empirically, we show Human0 achieves several novel properties from scaling human data, including language following of instructions from only human data, few-shot learning, and improved robustness using on-task data. Project website: https://xiongyicai.github.io/In-N-On/
 
-## 개요
-In-N-On: Scaling Egocentric Manipulation with in-the-wild and on-task Data is a 2025 work on manipulation for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2511.15704v1
+

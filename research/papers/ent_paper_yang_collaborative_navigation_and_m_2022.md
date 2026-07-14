@@ -4,18 +4,16 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: Collaborative Navigation and Manipulation of a Cable-towed Load by Multiple
-    Quadrupedal Robots
+  en: Collaborative Navigation and Manipulation of a Cable-towed Load by Multiple Quadrupedal Robots
   zh: 多四足机器人协同牵引缆绳负载的导航与操作
   ko: 다수의 사족 로봇을 이용한 케이블 견인 하중의 협업 내비게이션 및 조작
 summary:
-  en: This paper proposes an online cascaded planning framework in which multiple
-    quadrupedal robots collaboratively tow a cable-suspended load to a goal while
-    avoiding obstacles, combining parallelized centralized hybrid-mode trajectory
-    optimization with decentralized per-robot planners.
+  en: This paper proposes an online cascaded planning framework in which multiple quadrupedal robots collaboratively tow a
+    cable-suspended load to a goal while avoiding obstacles, combining parallelized centralized hybrid-mode trajectory optimization
+    with decentralized per-robot planners.
   zh: 本文提出一种在线级联规划框架，使多台四足机器人协同牵引缆绳负载抵达目标并实时避障，结合并行化的集中式混合模式轨迹优化与单机器人分布式规划器。
-  ko: 본 논문은 다수의 사족 로봇이 케이블로 연결된 하중을 목표 지점으로 협업하여 견인하면서 실시간으로 장애물을 회피할 수 있는 온라인 캐스케이드
-    계획 프레임워크를 제안하며, 병렬화된 중앙집중식 하이브리드 모드 궤적 최적화와 로봇별 분산 계획기를 결합한다.
+  ko: 본 논문은 다수의 사족 로봇이 케이블로 연결된 하중을 목표 지점으로 협업하여 견인하면서 실시간으로 장애물을 회피할 수 있는 온라인 캐스케이드 계획 프레임워크를 제안하며, 병렬화된 중앙집중식 하이브리드 모드 궤적
+    최적화와 로봇별 분산 계획기를 결합한다.
 domains:
 - 07_ai_models_algorithms
 - 11_applications_markets
@@ -39,37 +37,25 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-28'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from the provided paper metadata and abstract; exact section-level
-    citations and hardware details require human review against the PDF.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2206.14424v1.
 sources:
 - id: src_001
   type: paper
-  title: Collaborative Navigation and Manipulation of a Cable-towed Load by Multiple
-    Quadrupedal Robots
+  title: Collaborative Navigation and Manipulation of a Cable-towed Load by Multiple Quadrupedal Robots
   url: https://arxiv.org/abs/2206.14424
   date: '2022'
   accessed_at: '2026-06-28'
 theoretical_depth:
 - method
 ---
+## 概述
+This paper tackles the problem of robots collaboratively towing a load with cables to a specified goal location while avoiding collisions in real time. The introduction of cables (as opposed to rigid links) enables the robotic team to travel through narrow spaces by changing its intrinsic dimensions through slack/taut switches of the cable. However, this is a challenging problem because of the hybrid mode switches and the dynamical coupling among multiple robots and the load. Previous attempts at addressing such a problem were performed offline and do not consider avoiding obstacles online. In this paper, we introduce a cascaded planning scheme with a parallelized centralized trajectory optimization that deals with hybrid mode switches. We additionally develop a set of decentralized planners per robot, which enables our approach to solve the problem of collaborative load manipulation online. We develop and demonstrate one of the first collaborative autonomy framework that is able to move a cable-towed load, which is too heavy to move by a single robot, through narrow spaces with real-time feedback and reactive planning in experiments.
 
-## Overview
+## 核心内容
+This paper tackles the problem of robots collaboratively towing a load with cables to a specified goal location while avoiding collisions in real time. The introduction of cables (as opposed to rigid links) enables the robotic team to travel through narrow spaces by changing its intrinsic dimensions through slack/taut switches of the cable. However, this is a challenging problem because of the hybrid mode switches and the dynamical coupling among multiple robots and the load. Previous attempts at addressing such a problem were performed offline and do not consider avoiding obstacles online. In this paper, we introduce a cascaded planning scheme with a parallelized centralized trajectory optimization that deals with hybrid mode switches. We additionally develop a set of decentralized planners per robot, which enables our approach to solve the problem of collaborative load manipulation online. We develop and demonstrate one of the first collaborative autonomy framework that is able to move a cable-towed load, which is too heavy to move by a single robot, through narrow spaces with real-time feedback and reactive planning in experiments.
 
-This paper addresses the problem of multiple quadrupedal robots collaboratively towing a cable-attached load to a specified goal while avoiding obstacles in real time. Because the cable can switch between slack and taut modes, the team can reconfigure its effective shape to pass through narrow spaces, but these hybrid transitions together with coupled robot-load dynamics make online planning difficult. The authors introduce a cascaded autonomy architecture that handles these challenges without requiring offline computation.
+## 参考
+- http://arxiv.org/abs/2206.14424v1
 
-At the top level, an A* planner generates a global path, while a parallelized centralized trajectory optimizer reasons over hybrid slack/taut cable modes for the team. At the lower level, each robot runs its own decentralized optimization-based planner that tracks the centralized trajectory, avoids obstacles, and maintains safe separation from other robots and the load. The planners share a layered cost-map representation and run onboard the robots using current sensor feedback.
-
-Experiments are conducted with teams of up to three Mini Cheetah and Unitree A1 quadrupeds towing payloads too heavy for a single robot. The demonstrations include traversal of narrow gaps, diagonal gaps, and cluttered environments, validating real-time reactive planning and collaborative transport.
-
-## Key Contributions
-
-- Real-time collaborative autonomy framework for cable-towed load manipulation with multiple quadrupedal robots.
-- Parallelized centralized trajectory optimization that explicitly handles hybrid slack/taut cable mode switches online.
-- Decentralized optimization-based planners per robot for reactive trajectory tracking, obstacle avoidance, and collision avoidance with teammates and the load.
-- Experimental validation on teams of three quadrupedal robots navigating narrow gaps, diagonal gaps, and cluttered spaces with heavy loads.
-
-## Relevance to Humanoid Robotics
-
-Although the paper focuses on quadrupedal platforms, the core capabilities—multi-robot collaborative manipulation, hybrid contact planning, and decentralized reactive control for heavy-payload transport—are directly relevant to future humanoid robot fleets. Humanoid mass production and industrial deployment will likely require teams of legged robots to coordinate material handling, logistics, and load relocation in cluttered or narrow factory and warehouse environments. The cascaded planning approach and the handling of cable-based coupling provide a transferable template for coordinating mixed teams of humanoids and other legged systems in such workflows.

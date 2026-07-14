@@ -8,12 +8,10 @@ names:
   zh: 敏捷与稳定兼得：基于异构数据的多用途人形机器人控制
   ko: '민첩성과 안정성의 결합: 이종 데이터를 활용한 다목적 휴머노이드 제어'
 summary:
-  en: AMS trains a single humanoid control policy on heterogeneous data—human motion
-    capture plus controllable synthetic balance motions—using a hybrid reward scheme
-    and adaptive learning to unify agile dynamic skills with extreme balance maintenance.
+  en: AMS trains a single humanoid control policy on heterogeneous data—human motion capture plus controllable synthetic balance
+    motions—using a hybrid reward scheme and adaptive learning to unify agile dynamic skills with extreme balance maintenance.
   zh: AMS通过异构数据（人体动作捕捉与可控合成平衡动作）、混合奖励机制与自适应学习训练单一控制策略，将敏捷动态技能与极限平衡能力统一于人形机器人控制中。
-  ko: AMS는 인체 동작 캡처와 제어 가능한 합성 균형 동작으로 구성된 이종 데이터, 하이브리드 보상 체계 및 적응형 학습을 통해 단일 정책을
-    훈련시켜 민첩한 동적 기술과 극한 균형 유지를 통합한다.
+  ko: AMS는 인체 동작 캡처와 제어 가능한 합성 균형 동작으로 구성된 이종 데이터, 하이브리드 보상 체계 및 적응형 학습을 통해 단일 정책을 훈련시켜 민첩한 동적 기술과 극한 균형 유지를 통합한다.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -39,10 +37,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-26'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from abstract and metadata; full-text verification needed for
-    exact section citations and relationship evidence.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.17373v3.
 sources:
 - id: src_001
   type: paper
@@ -53,21 +50,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+Humanoid robots are envisioned to perform a wide range of tasks in human-centered environments, requiring controllers that combine agility with robust balance. Recent advances in locomotion and whole-body tracking have enabled impressive progress in either agile dynamic skills or stability-critical behaviors, but existing methods remain specialized, focusing on one capability while compromising the other. In this work, we introduce AMS (Agility Meets Stability), the first framework that unifies both dynamic motion tracking and extreme balance maintenance in a single policy. Our key insight is to leverage heterogeneous data sources: human motion capture datasets that provide rich, agile behaviors, and physically constrained synthetic balance motions that capture stability configurations. To reconcile the divergent optimization goals of agility and stability, we design a hybrid reward scheme that applies general tracking objectives across all data while injecting balance-specific priors only into synthetic motions. Further, an adaptive learning strategy with performance-driven sampling and motion-specific reward shaping enables efficient training across diverse motion distributions. We validate AMS extensively in simulation and on a real Unitree G1 humanoid. Experiments demonstrate that a single policy can execute agile skills such as dancing and running, while also performing zero-shot extreme balance motions like Ip Man's Squat, highlighting AMS as a versatile control paradigm for future humanoid applications.
 
-## Overview
+## 核心内容
+Humanoid robots are envisioned to perform a wide range of tasks in human-centered environments, requiring controllers that combine agility with robust balance. Recent advances in locomotion and whole-body tracking have enabled impressive progress in either agile dynamic skills or stability-critical behaviors, but existing methods remain specialized, focusing on one capability while compromising the other. In this work, we introduce AMS (Agility Meets Stability), the first framework that unifies both dynamic motion tracking and extreme balance maintenance in a single policy. Our key insight is to leverage heterogeneous data sources: human motion capture datasets that provide rich, agile behaviors, and physically constrained synthetic balance motions that capture stability configurations. To reconcile the divergent optimization goals of agility and stability, we design a hybrid reward scheme that applies general tracking objectives across all data while injecting balance-specific priors only into synthetic motions. Further, an adaptive learning strategy with performance-driven sampling and motion-specific reward shaping enables efficient training across diverse motion distributions. We validate AMS extensively in simulation and on a real Unitree G1 humanoid. Experiments demonstrate that a single policy can execute agile skills such as dancing and running, while also performing zero-shot extreme balance motions like Ip Man's Squat, highlighting AMS as a versatile control paradigm for future humanoid applications.
 
-Existing humanoid controllers excel at either agile dynamic motions or stability-critical behaviors, but rarely both. AMS addresses this specialization gap by training a single policy on heterogeneous data that combines human motion capture datasets with physically constrained synthetic balance motions. The framework uses a teacher-student reinforcement learning pipeline in which a teacher policy is trained on privileged state information and distilled into a student policy for deployment.
+## 参考
+- http://arxiv.org/abs/2511.17373v3
 
-To reconcile the divergent optimization goals of agility and stability, AMS employs a hybrid reward scheme: general tracking objectives are applied across all data sources, while balance-specific priors are injected only into synthetic balance motions. An adaptive learning strategy further adjusts data sampling and reward shaping based on training performance, enabling efficient learning across diverse motion distributions. The approach is validated extensively in simulation and on a real Unitree G1 humanoid, where a single policy executes both dancing and running, as well as zero-shot extreme balance motions such as Ip Man's Squat.
-
-The work also explores interactive teleoperation as an application, using RGB-based pose estimation to drive the policy on real hardware. However, the authors note limitations in precise end-effector control and noise in global motion estimation from RGB teleoperation.
-
-## Key Contributions
-
-- Introduced AMS, the first framework to unify dynamic motion tracking and extreme balance maintenance in a single policy.
-- Developed a heterogeneous-data learning approach combining human MoCap (AMASS, LAFAN1) and controllable synthetic balance motions with hybrid rewards and adaptive learning.
-- Demonstrated real-world execution of both agile dynamic motions and zero-shot extreme balance control on a Unitree G1 humanoid, enabling interactive teleoperation.
-
-## Relevance to Humanoid Robotics
-
-AMS advances versatile whole-body control for humanoid robots by showing that a single policy can span both agility-demanding skills and stability-critical postures. This capability is essential for real-world deployment in human-centered environments, where controllers must switch between dynamic locomotion and contact-rich, balance-sensitive tasks. The sim-to-real transfer on a commercially relevant platform (Unitree G1) further strengthens its practical relevance for the humanoid robotics industry.

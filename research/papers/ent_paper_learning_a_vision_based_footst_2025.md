@@ -8,12 +8,12 @@ names:
   zh: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control
   ko: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control
 summary:
-  en: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is
-    a 2025 work on locomotion for humanoid robots.
-  zh: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is
-    a 2025 work on locomotion for humanoid robots.
-  ko: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is
-    a 2025 work on locomotion for humanoid robots.
+  en: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is a 2025 work on locomotion for humanoid
+    robots.
+  zh: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is a 2025 work on locomotion for humanoid
+    robots.
+  ko: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is a 2025 work on locomotion for humanoid
+    robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -30,25 +30,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Locomotion.
-    arXiv: 2510.12215.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.12215v1.
 sources:
 - id: src_001
   type: paper
-  title: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control
-    (arXiv)
+  title: Learning a Vision-Based Footstep Planner for Hierarchical Walking Control (arXiv)
   url: https://arxiv.org/abs/2510.12215
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is a 2025 work on locomotion for humanoid robots.
+Mobile robot navigation in dynamic human environments requires policies that balance adaptability to diverse behaviors with compliance to safety constraints. We hypothesize that integrating data-driven rewards with rule-based objectives enables navigation policies to achieve a more effective balance of adaptability and safety. To this end, we develop a framework that learns a density-based reward from positive and negative demonstrations and augments it with rule-based objectives for obstacle avoidance and goal reaching. A sampling-based lookahead controller produces supervisory actions that are both safe and adaptive, which are subsequently distilled into a compact student policy suitable for real-time operation with uncertainty estimates. Experiments in synthetic and elevator co-boarding simulations show consistent gains in success rate and time efficiency over baselines, and real-world demonstrations with human participants confirm the practicality of deployment. A video illustrating this work can be found on our project page https://chanwookim971024.github.io/PioneeR/.
 
-## Overview
-Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is a 2025 work on locomotion for humanoid robots.
+## 核心内容
+Mobile robot navigation in dynamic human environments requires policies that balance adaptability to diverse behaviors with compliance to safety constraints. We hypothesize that integrating data-driven rewards with rule-based objectives enables navigation policies to achieve a more effective balance of adaptability and safety. To this end, we develop a framework that learns a density-based reward from positive and negative demonstrations and augments it with rule-based objectives for obstacle avoidance and goal reaching. A sampling-based lookahead controller produces supervisory actions that are both safe and adaptive, which are subsequently distilled into a compact student policy suitable for real-time operation with uncertainty estimates. Experiments in synthetic and elevator co-boarding simulations show consistent gains in success rate and time efficiency over baselines, and real-world demonstrations with human participants confirm the practicality of deployment. A video illustrating this work can be found on our project page https://chanwookim971024.github.io/PioneeR/.
 
-## 개요
-Learning a Vision-Based Footstep Planner for Hierarchical Walking Control is a 2025 work on locomotion for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2510.12215v1
+

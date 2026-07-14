@@ -4,67 +4,46 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under
-    Budget Constraints'
-  zh: 'Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under
-    Budget Constraints'
-  ko: 'Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under
-    Budget Constraints'
+  en: 'Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints'
+  zh: 'Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints'
+  ko: 'Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints'
 summary:
-  en: "arXiv:2607.09060v1 Announce Type: new \nAbstract: Multi-UAV exploration is\
-    \ often constrained by unreliable communication, limited field-of-view sensing\
-    \ (e.g., lightweight onboard camera), and finite travel budgets that require each\
-    \ robot to reserve enough budget to return to its base. We present Dec-MARVEL,\
-    \ a decentralized budget-aware exploration framework for communication-free teams\
-    \ with directional sensing. Rather than exchanging maps, goals, or messages, each\
-    \ robot coordinates through its incidental observations: any teammate trajectory\
-    \ within its field of view serves as a coordination signal. A graph-attention\
-    \ actor fuses local frontier geometry, teammate motion, and budget features to\
-    \ select return-feasible waypoint-heading actions. The actor is trained with phase-conditioned\
-    \ critics, a training-only task-oriented privileged critic, and a mixture-based\
-    \ budget curriculum. Across 900 held-out trials spanning three team sizes (2,\
-    \ 4, 8 robots) and three travel budgets (720, 800, 1024 meters) against four baselines,\
-    \ Dec-MARVEL achieves the highest or tied-highest exploration rate and lowest\
-    \ sensing overlap across all nine team-size budget configurations. Under our tightest\
-    \ 720m budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus\
-    \ 37%, 83%, and 99% for the strongest baseline. Physical-robot experiments demonstrate\
-    \ successful sim-to-real transfer and real-world deployment of Dec-MARVEL."
-  zh: "arXiv:2607.09060v1 Announce Type: new \nAbstract: Multi-UAV exploration is\
-    \ often constrained by unreliable communication, limited field-of-view sensing\
-    \ (e.g., lightweight onboard camera), and finite travel budgets that require each\
-    \ robot to reserve enough budget to return to its base. We present Dec-MARVEL,\
-    \ a decentralized budget-aware exploration framework for communication-free teams\
-    \ with directional sensing. Rather than exchanging maps, goals, or messages, each\
-    \ robot coordinates through its incidental observations: any teammate trajectory\
-    \ within its field of view serves as a coordination signal. A graph-attention\
-    \ actor fuses local frontier geometry, teammate motion, and budget features to\
-    \ select return-feasible waypoint-heading actions. The actor is trained with phase-conditioned\
-    \ critics, a training-only task-oriented privileged critic, and a mixture-based\
-    \ budget curriculum. Across 900 held-out trials spanning three team sizes (2,\
-    \ 4, 8 robots) and three travel budgets (720, 800, 1024 meters) against four baselines,\
-    \ Dec-MARVEL achieves the highest or tied-highest exploration rate and lowest\
-    \ sensing overlap across all nine team-size budget configurations. Under our tightest\
-    \ 720m budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus\
-    \ 37%, 83%, and 99% for the strongest baseline. Physical-robot experiments demonstrate\
-    \ successful sim-to-real transfer and real-world deployment of Dec-MARVEL."
-  ko: "arXiv:2607.09060v1 Announce Type: new \nAbstract: Multi-UAV exploration is\
-    \ often constrained by unreliable communication, limited field-of-view sensing\
-    \ (e.g., lightweight onboard camera), and finite travel budgets that require each\
-    \ robot to reserve enough budget to return to its base. We present Dec-MARVEL,\
-    \ a decentralized budget-aware exploration framework for communication-free teams\
-    \ with directional sensing. Rather than exchanging maps, goals, or messages, each\
-    \ robot coordinates through its incidental observations: any teammate trajectory\
-    \ within its field of view serves as a coordination signal. A graph-attention\
-    \ actor fuses local frontier geometry, teammate motion, and budget features to\
-    \ select return-feasible waypoint-heading actions. The actor is trained with phase-conditioned\
-    \ critics, a training-only task-oriented privileged critic, and a mixture-based\
-    \ budget curriculum. Across 900 held-out trials spanning three team sizes (2,\
-    \ 4, 8 robots) and three travel budgets (720, 800, 1024 meters) against four baselines,\
-    \ Dec-MARVEL achieves the highest or tied-highest exploration rate and lowest\
-    \ sensing overlap across all nine team-size budget configurations. Under our tightest\
-    \ 720m budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus\
-    \ 37%, 83%, and 99% for the strongest baseline. Physical-robot experiments demonstrate\
-    \ successful sim-to-real transfer and real-world deployment of Dec-MARVEL."
+  en: "arXiv:2607.09060v1 Announce Type: new \nAbstract: Multi-UAV exploration is often constrained by unreliable communication,\
+    \ limited field-of-view sensing (e.g., lightweight onboard camera), and finite travel budgets that require each robot\
+    \ to reserve enough budget to return to its base. We present Dec-MARVEL, a decentralized budget-aware exploration framework\
+    \ for communication-free teams with directional sensing. Rather than exchanging maps, goals, or messages, each robot coordinates\
+    \ through its incidental observations: any teammate trajectory within its field of view serves as a coordination signal.\
+    \ A graph-attention actor fuses local frontier geometry, teammate motion, and budget features to select return-feasible\
+    \ waypoint-heading actions. The actor is trained with phase-conditioned critics, a training-only task-oriented privileged\
+    \ critic, and a mixture-based budget curriculum. Across 900 held-out trials spanning three team sizes (2, 4, 8 robots)\
+    \ and three travel budgets (720, 800, 1024 meters) against four baselines, Dec-MARVEL achieves the highest or tied-highest\
+    \ exploration rate and lowest sensing overlap across all nine team-size budget configurations. Under our tightest 720m\
+    \ budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus 37%, 83%, and 99% for the strongest baseline.\
+    \ Physical-robot experiments demonstrate successful sim-to-real transfer and real-world deployment of Dec-MARVEL."
+  zh: "arXiv:2607.09060v1 Announce Type: new \nAbstract: Multi-UAV exploration is often constrained by unreliable communication,\
+    \ limited field-of-view sensing (e.g., lightweight onboard camera), and finite travel budgets that require each robot\
+    \ to reserve enough budget to return to its base. We present Dec-MARVEL, a decentralized budget-aware exploration framework\
+    \ for communication-free teams with directional sensing. Rather than exchanging maps, goals, or messages, each robot coordinates\
+    \ through its incidental observations: any teammate trajectory within its field of view serves as a coordination signal.\
+    \ A graph-attention actor fuses local frontier geometry, teammate motion, and budget features to select return-feasible\
+    \ waypoint-heading actions. The actor is trained with phase-conditioned critics, a training-only task-oriented privileged\
+    \ critic, and a mixture-based budget curriculum. Across 900 held-out trials spanning three team sizes (2, 4, 8 robots)\
+    \ and three travel budgets (720, 800, 1024 meters) against four baselines, Dec-MARVEL achieves the highest or tied-highest\
+    \ exploration rate and lowest sensing overlap across all nine team-size budget configurations. Under our tightest 720m\
+    \ budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus 37%, 83%, and 99% for the strongest baseline.\
+    \ Physical-robot experiments demonstrate successful sim-to-real transfer and real-world deployment of Dec-MARVEL."
+  ko: "arXiv:2607.09060v1 Announce Type: new \nAbstract: Multi-UAV exploration is often constrained by unreliable communication,\
+    \ limited field-of-view sensing (e.g., lightweight onboard camera), and finite travel budgets that require each robot\
+    \ to reserve enough budget to return to its base. We present Dec-MARVEL, a decentralized budget-aware exploration framework\
+    \ for communication-free teams with directional sensing. Rather than exchanging maps, goals, or messages, each robot coordinates\
+    \ through its incidental observations: any teammate trajectory within its field of view serves as a coordination signal.\
+    \ A graph-attention actor fuses local frontier geometry, teammate motion, and budget features to select return-feasible\
+    \ waypoint-heading actions. The actor is trained with phase-conditioned critics, a training-only task-oriented privileged\
+    \ critic, and a mixture-based budget curriculum. Across 900 held-out trials spanning three team sizes (2, 4, 8 robots)\
+    \ and three travel budgets (720, 800, 1024 meters) against four baselines, Dec-MARVEL achieves the highest or tied-highest\
+    \ exploration rate and lowest sensing overlap across all nine team-size budget configurations. Under our tightest 720m\
+    \ budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus 37%, 83%, and 99% for the strongest baseline.\
+    \ Physical-robot experiments demonstrate successful sim-to-real transfer and real-world deployment of Dec-MARVEL."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -84,25 +63,21 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=paper.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.09060v2.
 sources:
 - id: src_001
   type: paper
-  title: 'Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication
-    under Budget Constraints (arXiv)'
+  title: 'Dec-MARVEL: Decentralized Multi-Agent Exploration without Communication under Budget Constraints (arXiv)'
   url: https://arxiv.org/abs/2607.09060
   date: '2026'
   accessed_at: '2026-07-14'
 ---
-
 ## 概述
-arXiv:2607.09060v1 Announce Type: new 
-Abstract: Multi-UAV exploration is often constrained by unreliable communication, limited field-of-view sensing (e.g., lightweight onboard camera), and finite travel budgets that require each robot to reserve enough budget to return to its base. We present Dec-MARVEL, a decentralized budget-aware exploration framework for communication-free teams with directional sensing. Rather than exchanging maps, goals, or messages, each robot coordinates through its incidental observations: any teammate trajectory within its field of view serves as a coordination signal. A graph-attention actor fuses local frontier geometry, teammate motion, and budget features to select return-feasible waypoint-heading actions. The actor is trained with phase-conditioned critics, a training-only task-oriented privileged critic, and a mixture-based budget curriculum. Across 900 held-out trials spanning three team sizes (2, 4, 8 robots) and three travel budgets (720, 800, 1024 meters) against four baselines, Dec-MARVEL achieves the highest or tied-highest exploration rate and lowest sensing overlap across all nine team-size budget configurations. Under our tightest 720m budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus 37%, 83%, and 99% for the strongest baseline. Physical-robot experiments demonstrate successful sim-to-real transfer and real-world deployment of Dec-MARVEL.
+Multi-UAV exploration is often constrained by unreliable communication, limited field-of-view sensing (e.g., lightweight onboard camera), and finite travel budgets that require each robot to reserve enough budget to return to its base. We present Dec-MARVEL, a decentralized budget-aware exploration framework for communication-free teams with directional sensing. Rather than exchanging maps, goals, or messages, each robot coordinates through its incidental observations: any teammate trajectory within its field of view serves as a coordination signal. A graph-attention actor fuses local frontier geometry, teammate motion, and budget features to select return-feasible waypoint-heading actions. The actor is trained with phase-conditioned critics, a training-only task-oriented privileged critic, and a mixture-based budget curriculum. Across 900 held-out trials spanning three team sizes (2, 4, 8 robots) and three travel budgets (720, 800, 1024 meters) against four baselines, Dec-MARVEL achieves the highest or tied-highest exploration rate and lowest sensing overlap across all nine team-size budget configurations. Under our tightest 720m budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus 37%, 83%, and 99% for the strongest baseline. Physical-robot experiments demonstrate successful sim-to-real transfer and real-world deployment of Dec-MARVEL.
 
-## Overview
-arXiv:2607.09060v1 Announce Type: new 
-Abstract: Multi-UAV exploration is often constrained by unreliable communication, limited field-of-view sensing (e.g., lightweight onboard camera), and finite travel budgets that require each robot to reserve enough budget to return to its base. We present Dec-MARVEL, a decentralized budget-aware exploration framework for communication-free teams with directional sensing. Rather than exchanging maps, goals, or messages, each robot coordinates through its incidental observations: any teammate trajectory within its field of view serves as a coordination signal. A graph-attention actor fuses local frontier geometry, teammate motion, and budget features to select return-feasible waypoint-heading actions. The actor is trained with phase-conditioned critics, a training-only task-oriented privileged critic, and a mixture-based budget curriculum. Across 900 held-out trials spanning three team sizes (2, 4, 8 robots) and three travel budgets (720, 800, 1024 meters) against four baselines, Dec-MARVEL achieves the highest or tied-highest exploration rate and lowest sensing overlap across all nine team-size budget configurations. Under our tightest 720m budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus 37%, 83%, and 99% for the strongest baseline. Physical-robot experiments demonstrate successful sim-to-real transfer and real-world deployment of Dec-MARVEL.
+## 核心内容
+Multi-UAV exploration is often constrained by unreliable communication, limited field-of-view sensing (e.g., lightweight onboard camera), and finite travel budgets that require each robot to reserve enough budget to return to its base. We present Dec-MARVEL, a decentralized budget-aware exploration framework for communication-free teams with directional sensing. Rather than exchanging maps, goals, or messages, each robot coordinates through its incidental observations: any teammate trajectory within its field of view serves as a coordination signal. A graph-attention actor fuses local frontier geometry, teammate motion, and budget features to select return-feasible waypoint-heading actions. The actor is trained with phase-conditioned critics, a training-only task-oriented privileged critic, and a mixture-based budget curriculum. Across 900 held-out trials spanning three team sizes (2, 4, 8 robots) and three travel budgets (720, 800, 1024 meters) against four baselines, Dec-MARVEL achieves the highest or tied-highest exploration rate and lowest sensing overlap across all nine team-size budget configurations. Under our tightest 720m budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus 37%, 83%, and 99% for the strongest baseline. Physical-robot experiments demonstrate successful sim-to-real transfer and real-world deployment of Dec-MARVEL.
 
-## 개요
-arXiv:2607.09060v1 Announce Type: new 
-Abstract: Multi-UAV exploration is often constrained by unreliable communication, limited field-of-view sensing (e.g., lightweight onboard camera), and finite travel budgets that require each robot to reserve enough budget to return to its base. We present Dec-MARVEL, a decentralized budget-aware exploration framework for communication-free teams with directional sensing. Rather than exchanging maps, goals, or messages, each robot coordinates through its incidental observations: any teammate trajectory within its field of view serves as a coordination signal. A graph-attention actor fuses local frontier geometry, teammate motion, and budget features to select return-feasible waypoint-heading actions. The actor is trained with phase-conditioned critics, a training-only task-oriented privileged critic, and a mixture-based budget curriculum. Across 900 held-out trials spanning three team sizes (2, 4, 8 robots) and three travel budgets (720, 800, 1024 meters) against four baselines, Dec-MARVEL achieves the highest or tied-highest exploration rate and lowest sensing overlap across all nine team-size budget configurations. Under our tightest 720m budget, it reaches 53%, 94%, and 100% success for 2, 4, and 8 robots, versus 37%, 83%, and 99% for the strongest baseline. Physical-robot experiments demonstrate successful sim-to-real transfer and real-world deployment of Dec-MARVEL.
+## 参考
+- http://arxiv.org/abs/2607.09060v2
+

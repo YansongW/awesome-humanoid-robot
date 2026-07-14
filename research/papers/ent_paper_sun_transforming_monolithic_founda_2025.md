@@ -4,23 +4,18 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures
-    for Human-Robot Collaboration
+  en: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot Collaboration
   zh: InteractGen
-  ko: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures
-    for Human-Robot Collaboration
+  ko: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot Collaboration
 summary:
-  en: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures
-    for Human-Robot Collaboration (InteractGen), is a 2025 large vision-language-action
-    model for robotic manipulation, introduced by Tsinghua University, Beijing University
+  en: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot Collaboration (InteractGen),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Beijing University
     of Posts and Telecommunications.
-  zh: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures
-    for Human-Robot Collaboration (InteractGen), is a 2025 large vision-language-action
-    model for robotic manipulation, introduced by Tsinghua University, Beijing University
+  zh: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot Collaboration (InteractGen),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Beijing University
     of Posts and Telecommunications.
-  ko: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures
-    for Human-Robot Collaboration (InteractGen), is a 2025 large vision-language-action
-    model for robotic manipulation, introduced by Tsinghua University, Beijing University
+  ko: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot Collaboration (InteractGen),
+    is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Beijing University
     of Posts and Telecommunications.
 domains:
 - 07_ai_models_algorithms
@@ -41,16 +36,13 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: InteractGen. Institution:
-    Tsinghua University, Beijing University of Posts and Telecommunications. arXiv:
-    2512.00797.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.00797v1.
 sources:
 - id: src_001
   type: paper
-  title: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures
-    for Human-Robot Collaboration (arXiv)
+  title: Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot Collaboration (arXiv)
   url: https://arxiv.org/abs/2512.00797
   date: '2025'
   accessed_at: '2026-07-01'
@@ -61,12 +53,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot Collaboration (InteractGen), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Beijing University of Posts and Telecommunications.
+Foundation models have become central to unifying perception and planning in robotics, yet real-world deployment exposes a mismatch between their monolithic assumption that a single model can handle all cognitive functions and the distributed, dynamic nature of practical service workflows. Vision-language models offer strong semantic understanding but lack embodiment-aware action capabilities while relying on hand-crafted skills. Vision-Language-Action policies enable reactive manipulation but remain brittle across embodiments, weak in geometric grounding, and devoid of proactive collaboration mechanisms. These limitations indicate that scaling a single model alone cannot deliver reliable autonomy for service robots operating in human-populated settings. To address this gap, we present InteractGen, an LLM-powered multi-agent framework that decomposes robot intelligence into specialized agents for continuous perception, dependency-aware planning, decision and verification, failure reflection, and dynamic human delegation, treating foundation models as regulated components within a closed-loop collective. Deployed on a heterogeneous robot team and evaluated in a three-month open-use study, InteractGen improves task success, adaptability, and human-robot collaboration, providing evidence that multi-agent orchestration offers a more feasible path toward socially grounded service autonomy than further scaling standalone models.
 
-## Overview
-Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot Collaboration (InteractGen), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Beijing University of Posts and Telecommunications.
+## 核心内容
+Foundation models have become central to unifying perception and planning in robotics, yet real-world deployment exposes a mismatch between their monolithic assumption that a single model can handle all cognitive functions and the distributed, dynamic nature of practical service workflows. Vision-language models offer strong semantic understanding but lack embodiment-aware action capabilities while relying on hand-crafted skills. Vision-Language-Action policies enable reactive manipulation but remain brittle across embodiments, weak in geometric grounding, and devoid of proactive collaboration mechanisms. These limitations indicate that scaling a single model alone cannot deliver reliable autonomy for service robots operating in human-populated settings. To address this gap, we present InteractGen, an LLM-powered multi-agent framework that decomposes robot intelligence into specialized agents for continuous perception, dependency-aware planning, decision and verification, failure reflection, and dynamic human delegation, treating foundation models as regulated components within a closed-loop collective. Deployed on a heterogeneous robot team and evaluated in a three-month open-use study, InteractGen improves task success, adaptability, and human-robot collaboration, providing evidence that multi-agent orchestration offers a more feasible path toward socially grounded service autonomy than further scaling standalone models.
 
-## 개요
-Transforming Monolithic Foundation Models into Embodied Multi-Agent Architectures for Human-Robot Collaboration (InteractGen), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Beijing University of Posts and Telecommunications.
+## 参考
+- http://arxiv.org/abs/2512.00797v1
+

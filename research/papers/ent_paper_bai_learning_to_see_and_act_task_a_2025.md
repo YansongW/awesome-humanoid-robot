@@ -8,21 +8,15 @@ names:
   zh: TVVE
   ko: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation'
 summary:
-  en: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation
-    (TVVE), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological
-    University, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences,
-    X-Era AI Lab.'
-  zh: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation
-    (TVVE), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological
-    University, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences,
-    X-Era AI Lab.'
-  ko: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation
-    (TVVE), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological
-    University, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences,
-    X-Era AI Lab.'
+  en: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation (TVVE), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological University,
+    Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, X-Era AI Lab.'
+  zh: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation (TVVE), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological University,
+    Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, X-Era AI Lab.'
+  ko: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation (TVVE), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological University,
+    Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, X-Era AI Lab.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -42,26 +36,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: TVVE. Institution: Sun Yat-sen
-    University, Pengcheng Laboratory, Nanyang Technological University, Shenzhen Institutes
-    of Advanced Technology, Chinese Academy of Sciences, X-Era AI Lab. arXiv: 2508.05186.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.05186v5.
 sources:
 - id: src_001
   type: paper
-  title: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic
-    Manipulation (arXiv)'
+  title: 'Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation (arXiv)'
   url: https://arxiv.org/abs/2508.05186
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation (TVVE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological University, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, X-Era AI Lab.
+Recent vision-language-action (VLA) models for multi-task robot manipulation often rely on fixed camera setups and shared visual encoders, which limit their performance under occlusions and during cross-task transfer. To address these challenges, we propose Task-aware Virtual View Exploration (TVVE), a framework that learns to select task-relevant virtual camera viewpoints and dynamically re-render observations from a reconstructed scene representation using the selected viewpoints. To enable efficient view selection, we train an exploration policy in a pseudo-environment. In addition, we introduce a Task-aware Mixture-of-Experts (TaskMoE) visual encoder that routes visual features to task-specialized experts, mitigating interference in multi-task learning. To evaluate robustness under distribution shifts, we construct RLBench-OG, an out-of-distribution benchmark with visual perturbations and camera pose variations. Experiments on RLBench and RLBench-OG demonstrate that TVVE achieves higher success rates than strong baselines, while real-robot experiments further confirm its robustness to visual disturbances and unseen instructions. Code and visualizations are available at: https://hcplab-sysu.github.io/TAVP.
 
-## Overview
-Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation (TVVE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological University, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, X-Era AI Lab.
+## 核心内容
+Recent vision-language-action (VLA) models for multi-task robot manipulation often rely on fixed camera setups and shared visual encoders, which limit their performance under occlusions and during cross-task transfer. To address these challenges, we propose Task-aware Virtual View Exploration (TVVE), a framework that learns to select task-relevant virtual camera viewpoints and dynamically re-render observations from a reconstructed scene representation using the selected viewpoints. To enable efficient view selection, we train an exploration policy in a pseudo-environment. In addition, we introduce a Task-aware Mixture-of-Experts (TaskMoE) visual encoder that routes visual features to task-specialized experts, mitigating interference in multi-task learning. To evaluate robustness under distribution shifts, we construct RLBench-OG, an out-of-distribution benchmark with visual perturbations and camera pose variations. Experiments on RLBench and RLBench-OG demonstrate that TVVE achieves higher success rates than strong baselines, while real-robot experiments further confirm its robustness to visual disturbances and unseen instructions. Code and visualizations are available at: https://hcplab-sysu.github.io/TAVP.
 
-## 개요
-Learning to See and Act: Task-Aware Virtual View Exploration for Robotic Manipulation (TVVE), is a 2025 large vision-language-action model for robotic manipulation, introduced by Sun Yat-sen University, Pengcheng Laboratory, Nanyang Technological University, Shenzhen Institutes of Advanced Technology, Chinese Academy of Sciences, X-Era AI Lab.
+## 参考
+- http://arxiv.org/abs/2508.05186v5
+

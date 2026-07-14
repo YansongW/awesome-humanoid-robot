@@ -8,18 +8,15 @@ names:
   zh: VLAPS
   ko: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search
 summary:
-  en: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search
-    (VLAPS), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University
-    of British Columbia.
-  zh: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search
-    (VLAPS), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University
-    of British Columbia.
-  ko: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search
-    (VLAPS), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University
-    of British Columbia.
+  en: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search (VLAPS), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University of
+    British Columbia.
+  zh: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search (VLAPS), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University of
+    British Columbia.
+  ko: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search (VLAPS), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University of
+    British Columbia.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -39,16 +36,13 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: VLAPS. Institution: Mila
-    — Quebec AI Institute, Universit´e de Montr´eal, The University of British Columbia.
-    arXiv: 2508.12211.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.12211v2.
 sources:
 - id: src_001
   type: paper
-  title: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search
-    (arXiv)
+  title: Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search (arXiv)
   url: https://arxiv.org/abs/2508.12211
   date: '2025'
   accessed_at: '2026-07-01'
@@ -59,12 +53,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search (VLAPS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University of British Columbia.
+Pre-trained vision-language-action (VLA) models offer a promising foundation for generalist robot policies, but often produce brittle behaviors or unsafe failures when deployed zero-shot in out-of-distribution scenarios. We present Vision-Language-Action Planning & Search (VLAPS) -- a novel framework and accompanying algorithms that embed model-based search into the inference procedure of pre-trained VLA policies to improve their performance on robotic tasks. Specifically, our method biases a modified Monte Carlo Tree Search (MCTS) algorithm -- run using a model of the target environment -- using action priors defined by the VLA policy. By using VLA-derived abstractions and priors in model-based search, VLAPS efficiently explores language-conditioned robotics tasks whose search spaces would otherwise be intractably large. Conversely, by integrating model-based search with the VLA policy's inference procedure, VLAPS yields behaviors that are more performant than those obtained by directly following the VLA policy's action predictions. VLAPS offers a principled framework to: i) control test-time compute in VLA models, ii) leverage a priori knowledge of the robotic environment, and iii) integrate established planning and reinforcement learning techniques into the VLA inference process. Across all experiments, VLAPS significantly outperforms VLA-only baselines on language-specified tasks that would otherwise be intractable for uninformed search algorithms, increasing success rates by as much as 67 percentage points.
 
-## Overview
-Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search (VLAPS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University of British Columbia.
+## 核心内容
+Pre-trained vision-language-action (VLA) models offer a promising foundation for generalist robot policies, but often produce brittle behaviors or unsafe failures when deployed zero-shot in out-of-distribution scenarios. We present Vision-Language-Action Planning & Search (VLAPS) -- a novel framework and accompanying algorithms that embed model-based search into the inference procedure of pre-trained VLA policies to improve their performance on robotic tasks. Specifically, our method biases a modified Monte Carlo Tree Search (MCTS) algorithm -- run using a model of the target environment -- using action priors defined by the VLA policy. By using VLA-derived abstractions and priors in model-based search, VLAPS efficiently explores language-conditioned robotics tasks whose search spaces would otherwise be intractably large. Conversely, by integrating model-based search with the VLA policy's inference procedure, VLAPS yields behaviors that are more performant than those obtained by directly following the VLA policy's action predictions. VLAPS offers a principled framework to: i) control test-time compute in VLA models, ii) leverage a priori knowledge of the robotic environment, and iii) integrate established planning and reinforcement learning techniques into the VLA inference process. Across all experiments, VLAPS significantly outperforms VLA-only baselines on language-specified tasks that would otherwise be intractable for uninformed search algorithms, increasing success rates by as much as 67 percentage points.
 
-## 개요
-Improving Pre-Trained Vision-Language-Action Policies with Model-Based Search (VLAPS), is a 2025 large vision-language-action model for robotic manipulation, introduced by Mila — Quebec AI Institute, Universit´e de Montr´eal, The University of British Columbia.
+## 参考
+- http://arxiv.org/abs/2508.12211v2
+

@@ -8,12 +8,12 @@ names:
   zh: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why'
   ko: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why'
 summary:
-  en: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a
-    2025 work on physics-based character animation for humanoid robots.'
-  zh: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a
-    2025 work on physics-based character animation for humanoid robots.'
-  ko: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a
-    2025 work on physics-based character animation for humanoid robots.'
+  en: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a 2025 work on physics-based character animation
+    for humanoid robots.'
+  zh: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a 2025 work on physics-based character animation
+    for humanoid robots.'
+  ko: 'Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a 2025 work on physics-based character animation
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -31,10 +31,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Physics-Based
-    Character Animation. arXiv: 2507.05906.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.05906v2.
 sources:
 - id: src_001
   type: paper
@@ -43,12 +42,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a 2025 work on physics-based character animation for humanoid robots.
+This survey provides a comparative analysis of feature-based and GAN-based approaches to learning from demonstrations, with a focus on the structure of reward functions and their implications for policy learning. Feature-based methods offer dense, interpretable rewards that excel at high-fidelity motion imitation, yet often require sophisticated representations of references and struggle with generalization in unstructured settings. GAN-based methods, in contrast, use implicit, distributional supervision that enables scalability and adaptation flexibility, but are prone to training instability and coarse reward signals. Recent advancements in both paradigms converge on the importance of structured motion representations, which enable smoother transitions, controllable synthesis, and improved task integration. We argue that the dichotomy between feature-based and GAN-based methods is increasingly nuanced: rather than one paradigm dominating the other, the choice should be guided by task-specific priorities such as fidelity, diversity, interpretability, and adaptability. This work outlines the algorithmic trade-offs and design considerations that underlie method selection, offering a framework for principled decision-making in learning from demonstrations.
 
-## Overview
-Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a 2025 work on physics-based character animation for humanoid robots.
+## 核心内容
+This survey provides a comparative analysis of feature-based and GAN-based approaches to learning from demonstrations, with a focus on the structure of reward functions and their implications for policy learning. Feature-based methods offer dense, interpretable rewards that excel at high-fidelity motion imitation, yet often require sophisticated representations of references and struggle with generalization in unstructured settings. GAN-based methods, in contrast, use implicit, distributional supervision that enables scalability and adaptation flexibility, but are prone to training instability and coarse reward signals. Recent advancements in both paradigms converge on the importance of structured motion representations, which enable smoother transitions, controllable synthesis, and improved task integration. We argue that the dichotomy between feature-based and GAN-based methods is increasingly nuanced: rather than one paradigm dominating the other, the choice should be guided by task-specific priorities such as fidelity, diversity, interpretability, and adaptability. This work outlines the algorithmic trade-offs and design considerations that underlie method selection, offering a framework for principled decision-making in learning from demonstrations.
 
-## 개요
-Feature-Based vs. GAN-Based Learning from Demonstrations: When and Why is a 2025 work on physics-based character animation for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2507.05906v2
+

@@ -8,13 +8,11 @@ names:
   zh: 基于物理的锂离子电池模型连续谱综述
   ko: 물리 기반 리튬 이온 배터리 모델의 연속체에 대한 리뷰
 summary:
-  en: A review that presents a unified reductive framework deriving continuum electrochemical
-    battery models from a high-fidelity microscale model down to the Single Particle
-    Model, with critical discussion of assumptions, limitations, and coupled thermal
-    extensions.
+  en: A review that presents a unified reductive framework deriving continuum electrochemical battery models from a high-fidelity
+    microscale model down to the Single Particle Model, with critical discussion of assumptions, limitations, and coupled
+    thermal extensions.
   zh: 该综述提出了一个统一的约化框架，从高保真微尺度模型推导出单粒子模型等连续电化学电池模型，并批判性讨论了各种假设、局限性以及热耦合扩展。
-  ko: 고충실도 미시규모 모델에서 단일 입자 모델까지의 연속 전기화학 배터리 모델을 유도하는 통합적 환원 프레임워크를 제시하고, 가정들과 한계,
-    열-전기화학 결합 확장에 대해 비판적으로 논의한 리뷰이다.
+  ko: 고충실도 미시규모 모델에서 단일 입자 모델까지의 연속 전기화학 배터리 모델을 유도하는 통합적 환원 프레임워크를 제시하고, 가정들과 한계, 열-전기화학 결합 확장에 대해 비판적으로 논의한 리뷰이다.
 domains:
 - 02_components
 - 06_design_engineering
@@ -38,10 +36,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-25'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from supplied metadata and abstract; full-text section-level
-    citations were not independently verified.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2203.16091v1.
 sources:
 - id: src_001
   type: paper
@@ -52,24 +49,12 @@ sources:
 theoretical_depth:
 - system
 ---
+## 概述
+Physics-based electrochemical battery models derived from porous electrode theory are a very powerful tool for understanding lithium-ion batteries, as well as for improving their design and management. Different model fidelity, and thus model complexity, is needed for different applications. For example, in battery design we can afford longer computational times and the use of powerful computers, while for real-time battery control (e.g. in electric vehicles) we need to perform very fast calculations using simple devices. For this reason, simplified models that retain most of the features at a lower computational cost are widely used. Even though in the literature we often find these simplified models posed independently, leading to inconsistencies between models, they can actually be derived from more complicated models using a unified and systematic framework. In this review, we showcase this reductive framework, starting from a high-fidelity microscale model and reducing it all the way down to the Single Particle Model (SPM), deriving in the process other common models, such as the Doyle-Fuller-Newman (DFN) model. We also provide a critical discussion on the advantages and shortcomings of each of the models, which can aid model selection for a particular application. Finally, we provide an overview of possible extensions to the models, with a special focus on thermal models. Any of these extensions could be incorporated into the microscale model and the reductive framework re-applied to lead to a new generation of simplified, multi-physics models.
 
-## Overview
+## 核心内容
+Physics-based electrochemical battery models derived from porous electrode theory are a very powerful tool for understanding lithium-ion batteries, as well as for improving their design and management. Different model fidelity, and thus model complexity, is needed for different applications. For example, in battery design we can afford longer computational times and the use of powerful computers, while for real-time battery control (e.g. in electric vehicles) we need to perform very fast calculations using simple devices. For this reason, simplified models that retain most of the features at a lower computational cost are widely used. Even though in the literature we often find these simplified models posed independently, leading to inconsistencies between models, they can actually be derived from more complicated models using a unified and systematic framework. In this review, we showcase this reductive framework, starting from a high-fidelity microscale model and reducing it all the way down to the Single Particle Model (SPM), deriving in the process other common models, such as the Doyle-Fuller-Newman (DFN) model. We also provide a critical discussion on the advantages and shortcomings of each of the models, which can aid model selection for a particular application. Finally, we provide an overview of possible extensions to the models, with a special focus on thermal models. Any of these extensions could be incorporated into the microscale model and the reductive framework re-applied to lead to a new generation of simplified, multi-physics models.
 
-This review article surveys physics-based lithium-ion battery models that are derived from porous electrode theory. Rather than treating simplified models as independent formulations, the authors organize them into a single reductive framework that begins with a detailed microscale model and proceeds through homogenised, Doyle-Fuller-Newman (DFN), Single Particle Model with electrolyte (SPMe), and Single Particle Model (SPM) representations. Each reduction step is tied to explicit physical and geometric assumptions, which clarifies why different model fidelities are appropriate for different applications.
+## 参考
+- http://arxiv.org/abs/2203.16091v1
 
-The paper emphasizes that model selection should balance accuracy against computational cost. High-fidelity microscale and homogenised models can capture microstructural effects but require detailed geometric data and substantial compute resources; the DFN model offers a widely used compromise for cell-level simulation; and SPM-type models are suitable for fast calculations such as battery management and real-time control. The authors also provide a critical discussion of the strengths and weaknesses of each level, including parameter requirements and rate limitations.
-
-Finally, the review surveys extensions beyond isothermal electrochemistry, with particular attention to coupled thermal models for large-format cells. Additional topics include phase-field models, double-layer capacitance, particle-size distributions, mechanical deformation, and degradation mechanisms such as solid electrolyte interphase growth.
-
-## Key Contributions
-
-- Unified reductive framework linking microscale, homogenised, DFN, SPMe, and SPM models through explicit assumptions.
-- Critical comparison of the advantages and shortcomings of each model fidelity to aid application-specific model selection.
-- Overview of coupled thermal-electrochemical models for large-format cells.
-- Survey of extensions including phase-field models, double-layer capacitance, particle-size distributions, mechanical models, and degradation mechanisms.
-
-## Relevance to Humanoid Robotics
-
-Mobile humanoid robots depend on high-energy-density, safe, and reliable lithium-ion battery packs for untethered operation. The modeling hierarchy reviewed in this paper provides the electrochemical foundation needed to select appropriate cell models, design thermal management systems, and develop battery management algorithms for humanoid power systems. In particular, the trade-off between detailed DFN simulations for offline pack design and reduced-order SPM/SPMe models for online state estimation is directly relevant to mass-produced humanoid platforms.
-
-Because humanoids impose dynamic load profiles and have limited space and mass budgets, accurate yet computationally efficient battery models are essential for predicting range, preventing thermal runaway, and optimizing charging strategies. This review offers a principled map of which physics-based simplifications are valid under which operating conditions, supporting safer and more efficient integration of lithium-ion power systems into humanoid robots.

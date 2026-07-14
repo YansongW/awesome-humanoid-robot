@@ -8,60 +8,45 @@ names:
   zh: 'Neural Control: Adjoint Learning Through Equilibrium Constraints'
   ko: 'Neural Control: Adjoint Learning Through Equilibrium Constraints'
 summary:
-  en: "arXiv:2605.03288v2 Announce Type: replace \nAbstract: Many physical AI tasks\
-    \ require sequential implicit computation: at each step, boundary controls are\
-    \ applied, and the resulting configuration is obtained by solving an equilibrium\
-    \ problem. This setting arises naturally in deformable object manipulation, where\
-    \ even bending a deformable linear object (DLO) to a target shape can be nonlinear\
-    \ and multistable: identical boundary conditions may produce different configurations\
-    \ depending on actuation history. Unlike explicit transition models, the control-to-configuration\
-    \ relation is implicit and history-dependent, making long-horizon learning and\
-    \ control brittle; backpropagating through iterative solves is also memory- and\
-    \ compute-intensive. We propose Neural Control, a boundary-control framework that\
-    \ propagates gradients through branch-dependent sequences of equilibrium solves\
-    \ rather than a single fixed point. Neural Control computes trajectory-dependent\
-    \ proxy gradients by differentiating equilibrium conditions with an adjoint formulation,\
-    \ avoiding solver unrolling while keeping forward rollouts on converged equilibria.\
-    \ Combined with receding-horizon continuation, Neural Control re-anchors optimization\
-    \ to realized equilibria and mitigates basin switching. We validate Neural Control\
-    \ on simulated and real DLO manipulation, compare against SPSA and iCEM, and demonstrate\
-    \ applicability to a learned DEQ-style implicit equilibrium model."
-  zh: "arXiv:2605.03288v2 Announce Type: replace \nAbstract: Many physical AI tasks\
-    \ require sequential implicit computation: at each step, boundary controls are\
-    \ applied, and the resulting configuration is obtained by solving an equilibrium\
-    \ problem. This setting arises naturally in deformable object manipulation, where\
-    \ even bending a deformable linear object (DLO) to a target shape can be nonlinear\
-    \ and multistable: identical boundary conditions may produce different configurations\
-    \ depending on actuation history. Unlike explicit transition models, the control-to-configuration\
-    \ relation is implicit and history-dependent, making long-horizon learning and\
-    \ control brittle; backpropagating through iterative solves is also memory- and\
-    \ compute-intensive. We propose Neural Control, a boundary-control framework that\
-    \ propagates gradients through branch-dependent sequences of equilibrium solves\
-    \ rather than a single fixed point. Neural Control computes trajectory-dependent\
-    \ proxy gradients by differentiating equilibrium conditions with an adjoint formulation,\
-    \ avoiding solver unrolling while keeping forward rollouts on converged equilibria.\
-    \ Combined with receding-horizon continuation, Neural Control re-anchors optimization\
-    \ to realized equilibria and mitigates basin switching. We validate Neural Control\
-    \ on simulated and real DLO manipulation, compare against SPSA and iCEM, and demonstrate\
-    \ applicability to a learned DEQ-style implicit equilibrium model."
-  ko: "arXiv:2605.03288v2 Announce Type: replace \nAbstract: Many physical AI tasks\
-    \ require sequential implicit computation: at each step, boundary controls are\
-    \ applied, and the resulting configuration is obtained by solving an equilibrium\
-    \ problem. This setting arises naturally in deformable object manipulation, where\
-    \ even bending a deformable linear object (DLO) to a target shape can be nonlinear\
-    \ and multistable: identical boundary conditions may produce different configurations\
-    \ depending on actuation history. Unlike explicit transition models, the control-to-configuration\
-    \ relation is implicit and history-dependent, making long-horizon learning and\
-    \ control brittle; backpropagating through iterative solves is also memory- and\
-    \ compute-intensive. We propose Neural Control, a boundary-control framework that\
-    \ propagates gradients through branch-dependent sequences of equilibrium solves\
-    \ rather than a single fixed point. Neural Control computes trajectory-dependent\
-    \ proxy gradients by differentiating equilibrium conditions with an adjoint formulation,\
-    \ avoiding solver unrolling while keeping forward rollouts on converged equilibria.\
-    \ Combined with receding-horizon continuation, Neural Control re-anchors optimization\
-    \ to realized equilibria and mitigates basin switching. We validate Neural Control\
-    \ on simulated and real DLO manipulation, compare against SPSA and iCEM, and demonstrate\
-    \ applicability to a learned DEQ-style implicit equilibrium model."
+  en: "arXiv:2605.03288v2 Announce Type: replace \nAbstract: Many physical AI tasks require sequential implicit computation:\
+    \ at each step, boundary controls are applied, and the resulting configuration is obtained by solving an equilibrium problem.\
+    \ This setting arises naturally in deformable object manipulation, where even bending a deformable linear object (DLO)\
+    \ to a target shape can be nonlinear and multistable: identical boundary conditions may produce different configurations\
+    \ depending on actuation history. Unlike explicit transition models, the control-to-configuration relation is implicit\
+    \ and history-dependent, making long-horizon learning and control brittle; backpropagating through iterative solves is\
+    \ also memory- and compute-intensive. We propose Neural Control, a boundary-control framework that propagates gradients\
+    \ through branch-dependent sequences of equilibrium solves rather than a single fixed point. Neural Control computes trajectory-dependent\
+    \ proxy gradients by differentiating equilibrium conditions with an adjoint formulation, avoiding solver unrolling while\
+    \ keeping forward rollouts on converged equilibria. Combined with receding-horizon continuation, Neural Control re-anchors\
+    \ optimization to realized equilibria and mitigates basin switching. We validate Neural Control on simulated and real\
+    \ DLO manipulation, compare against SPSA and iCEM, and demonstrate applicability to a learned DEQ-style implicit equilibrium\
+    \ model."
+  zh: "arXiv:2605.03288v2 Announce Type: replace \nAbstract: Many physical AI tasks require sequential implicit computation:\
+    \ at each step, boundary controls are applied, and the resulting configuration is obtained by solving an equilibrium problem.\
+    \ This setting arises naturally in deformable object manipulation, where even bending a deformable linear object (DLO)\
+    \ to a target shape can be nonlinear and multistable: identical boundary conditions may produce different configurations\
+    \ depending on actuation history. Unlike explicit transition models, the control-to-configuration relation is implicit\
+    \ and history-dependent, making long-horizon learning and control brittle; backpropagating through iterative solves is\
+    \ also memory- and compute-intensive. We propose Neural Control, a boundary-control framework that propagates gradients\
+    \ through branch-dependent sequences of equilibrium solves rather than a single fixed point. Neural Control computes trajectory-dependent\
+    \ proxy gradients by differentiating equilibrium conditions with an adjoint formulation, avoiding solver unrolling while\
+    \ keeping forward rollouts on converged equilibria. Combined with receding-horizon continuation, Neural Control re-anchors\
+    \ optimization to realized equilibria and mitigates basin switching. We validate Neural Control on simulated and real\
+    \ DLO manipulation, compare against SPSA and iCEM, and demonstrate applicability to a learned DEQ-style implicit equilibrium\
+    \ model."
+  ko: "arXiv:2605.03288v2 Announce Type: replace \nAbstract: Many physical AI tasks require sequential implicit computation:\
+    \ at each step, boundary controls are applied, and the resulting configuration is obtained by solving an equilibrium problem.\
+    \ This setting arises naturally in deformable object manipulation, where even bending a deformable linear object (DLO)\
+    \ to a target shape can be nonlinear and multistable: identical boundary conditions may produce different configurations\
+    \ depending on actuation history. Unlike explicit transition models, the control-to-configuration relation is implicit\
+    \ and history-dependent, making long-horizon learning and control brittle; backpropagating through iterative solves is\
+    \ also memory- and compute-intensive. We propose Neural Control, a boundary-control framework that propagates gradients\
+    \ through branch-dependent sequences of equilibrium solves rather than a single fixed point. Neural Control computes trajectory-dependent\
+    \ proxy gradients by differentiating equilibrium conditions with an adjoint formulation, avoiding solver unrolling while\
+    \ keeping forward rollouts on converged equilibria. Combined with receding-horizon continuation, Neural Control re-anchors\
+    \ optimization to realized equilibria and mitigates basin switching. We validate Neural Control on simulated and real\
+    \ DLO manipulation, compare against SPSA and iCEM, and demonstrate applicability to a learned DEQ-style implicit equilibrium\
+    \ model."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -79,9 +64,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported from arXiv cs.RO RSS feed.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2605.03288v2.
 sources:
 - id: src_001
   type: paper
@@ -90,15 +75,12 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-arXiv:2605.03288v2 Announce Type: replace 
-Abstract: Many physical AI tasks require sequential implicit computation: at each step, boundary controls are applied, and the resulting configuration is obtained by solving an equilibrium problem. This setting arises naturally in deformable object manipulation, where even bending a deformable linear object (DLO) to a target shape can be nonlinear and multistable: identical boundary conditions may produce different configurations depending on actuation history. Unlike explicit transition models, the control-to-configuration relation is implicit and history-dependent, making long-horizon learning and control brittle; backpropagating through iterative solves is also memory- and compute-intensive. We propose Neural Control, a boundary-control framework that propagates gradients through branch-dependent sequences of equilibrium solves rather than a single fixed point. Neural Control computes trajectory-dependent proxy gradients by differentiating equilibrium conditions with an adjoint formulation, avoiding solver unrolling while keeping forward rollouts on converged equilibria. Combined with receding-horizon continuation, Neural Control re-anchors optimization to realized equilibria and mitigates basin switching. We validate Neural Control on simulated and real DLO manipulation, compare against SPSA and iCEM, and demonstrate applicability to a learned DEQ-style implicit equilibrium model.
+Many physical AI tasks require sequential implicit computation: at each step, boundary controls are applied, and the resulting configuration is obtained by solving an equilibrium problem. This setting arises naturally in deformable object manipulation, where even bending a deformable linear object (DLO) to a target shape can be nonlinear and multistable: identical boundary conditions may produce different configurations depending on actuation history. Unlike explicit transition models, the control-to-configuration relation is implicit and history-dependent, making long-horizon learning and control brittle; backpropagating through iterative solves is also memory- and compute-intensive. We propose Neural Control, a boundary-control framework that propagates gradients through branch-dependent sequences of equilibrium solves rather than a single fixed point. Neural Control computes trajectory-dependent proxy gradients by differentiating equilibrium conditions with an adjoint formulation, avoiding solver unrolling while keeping forward rollouts on converged equilibria. Combined with receding-horizon continuation, Neural Control re-anchors optimization to realized equilibria and mitigates basin switching. We validate Neural Control on simulated and real DLO manipulation, compare against SPSA and iCEM, and demonstrate applicability to a learned DEQ-style implicit equilibrium model.
 
-## Overview
-arXiv:2605.03288v2 Announce Type: replace 
-Abstract: Many physical AI tasks require sequential implicit computation: at each step, boundary controls are applied, and the resulting configuration is obtained by solving an equilibrium problem. This setting arises naturally in deformable object manipulation, where even bending a deformable linear object (DLO) to a target shape can be nonlinear and multistable: identical boundary conditions may produce different configurations depending on actuation history. Unlike explicit transition models, the control-to-configuration relation is implicit and history-dependent, making long-horizon learning and control brittle; backpropagating through iterative solves is also memory- and compute-intensive. We propose Neural Control, a boundary-control framework that propagates gradients through branch-dependent sequences of equilibrium solves rather than a single fixed point. Neural Control computes trajectory-dependent proxy gradients by differentiating equilibrium conditions with an adjoint formulation, avoiding solver unrolling while keeping forward rollouts on converged equilibria. Combined with receding-horizon continuation, Neural Control re-anchors optimization to realized equilibria and mitigates basin switching. We validate Neural Control on simulated and real DLO manipulation, compare against SPSA and iCEM, and demonstrate applicability to a learned DEQ-style implicit equilibrium model.
+## 核心内容
+Many physical AI tasks require sequential implicit computation: at each step, boundary controls are applied, and the resulting configuration is obtained by solving an equilibrium problem. This setting arises naturally in deformable object manipulation, where even bending a deformable linear object (DLO) to a target shape can be nonlinear and multistable: identical boundary conditions may produce different configurations depending on actuation history. Unlike explicit transition models, the control-to-configuration relation is implicit and history-dependent, making long-horizon learning and control brittle; backpropagating through iterative solves is also memory- and compute-intensive. We propose Neural Control, a boundary-control framework that propagates gradients through branch-dependent sequences of equilibrium solves rather than a single fixed point. Neural Control computes trajectory-dependent proxy gradients by differentiating equilibrium conditions with an adjoint formulation, avoiding solver unrolling while keeping forward rollouts on converged equilibria. Combined with receding-horizon continuation, Neural Control re-anchors optimization to realized equilibria and mitigates basin switching. We validate Neural Control on simulated and real DLO manipulation, compare against SPSA and iCEM, and demonstrate applicability to a learned DEQ-style implicit equilibrium model.
 
-## 개요
-arXiv:2605.03288v2 Announce Type: replace 
-Abstract: Many physical AI tasks require sequential implicit computation: at each step, boundary controls are applied, and the resulting configuration is obtained by solving an equilibrium problem. This setting arises naturally in deformable object manipulation, where even bending a deformable linear object (DLO) to a target shape can be nonlinear and multistable: identical boundary conditions may produce different configurations depending on actuation history. Unlike explicit transition models, the control-to-configuration relation is implicit and history-dependent, making long-horizon learning and control brittle; backpropagating through iterative solves is also memory- and compute-intensive. We propose Neural Control, a boundary-control framework that propagates gradients through branch-dependent sequences of equilibrium solves rather than a single fixed point. Neural Control computes trajectory-dependent proxy gradients by differentiating equilibrium conditions with an adjoint formulation, avoiding solver unrolling while keeping forward rollouts on converged equilibria. Combined with receding-horizon continuation, Neural Control re-anchors optimization to realized equilibria and mitigates basin switching. We validate Neural Control on simulated and real DLO manipulation, compare against SPSA and iCEM, and demonstrate applicability to a learned DEQ-style implicit equilibrium model.
+## 参考
+- http://arxiv.org/abs/2605.03288v2
+

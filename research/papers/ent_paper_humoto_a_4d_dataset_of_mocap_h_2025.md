@@ -8,12 +8,12 @@ names:
   zh: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions'
   ko: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions'
 summary:
-  en: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human
-    motion analysis and synthesis for humanoid robots.'
-  zh: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human
-    motion analysis and synthesis for humanoid robots.'
-  ko: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human
-    motion analysis and synthesis for humanoid robots.'
+  en: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human motion analysis and synthesis for humanoid
+    robots.'
+  zh: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human motion analysis and synthesis for humanoid
+    robots.'
+  ko: 'HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human motion analysis and synthesis for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -32,10 +32,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Human
-    Motion Analysis and Synthesis. arXiv: 2504.10414.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2504.10414v2.
 sources:
 - id: src_001
   type: paper
@@ -50,12 +49,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human motion analysis and synthesis for humanoid robots.
+We present Human Motions with Objects (HUMOTO), a high-fidelity dataset of human-object interactions for motion generation, computer vision, and robotics applications. Featuring 735 sequences (7,875 seconds at 30 fps), HUMOTO captures interactions with 63 precisely modeled objects and 72 articulated parts. Our innovations include a scene-driven LLM scripting pipeline creating complete, purposeful tasks with natural progression, and a mocap-and-camera recording setup to effectively handle occlusions. Spanning diverse activities from cooking to outdoor picnics, HUMOTO preserves both physical accuracy and logical task flow. Professional artists rigorously clean and verify each sequence, minimizing foot sliding and object penetrations. We also provide benchmarks compared to other datasets. HUMOTO's comprehensive full-body motion and simultaneous multi-object interactions address key data-capturing challenges and provide opportunities to advance realistic human-object interaction modeling across research domains with practical applications in animation, robotics, and embodied AI systems. Project: https://jiaxin-lu.github.io/humoto/ .
 
-## Overview
-HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human motion analysis and synthesis for humanoid robots.
+## 核心内容
+We present Human Motions with Objects (HUMOTO), a high-fidelity dataset of human-object interactions for motion generation, computer vision, and robotics applications. Featuring 735 sequences (7,875 seconds at 30 fps), HUMOTO captures interactions with 63 precisely modeled objects and 72 articulated parts. Our innovations include a scene-driven LLM scripting pipeline creating complete, purposeful tasks with natural progression, and a mocap-and-camera recording setup to effectively handle occlusions. Spanning diverse activities from cooking to outdoor picnics, HUMOTO preserves both physical accuracy and logical task flow. Professional artists rigorously clean and verify each sequence, minimizing foot sliding and object penetrations. We also provide benchmarks compared to other datasets. HUMOTO's comprehensive full-body motion and simultaneous multi-object interactions address key data-capturing challenges and provide opportunities to advance realistic human-object interaction modeling across research domains with practical applications in animation, robotics, and embodied AI systems. Project: https://jiaxin-lu.github.io/humoto/ .
 
-## 개요
-HUMOTO: A 4D Dataset of Mocap Human Object Interactions is a 2025 work on human motion analysis and synthesis for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2504.10414v2
+

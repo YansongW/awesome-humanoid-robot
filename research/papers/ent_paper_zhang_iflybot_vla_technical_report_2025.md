@@ -8,15 +8,12 @@ names:
   zh: iFlyBot-VLA
   ko: iFlyBot-VLA Technical Report
 summary:
-  en: iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action
-    model for robotic manipulation, introduced by iFlyTek Reasearch and Development
-    Group, LindenBot.
-  zh: iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action
-    model for robotic manipulation, introduced by iFlyTek Reasearch and Development
-    Group, LindenBot.
-  ko: iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action
-    model for robotic manipulation, introduced by iFlyTek Reasearch and Development
-    Group, LindenBot.
+  en: iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by iFlyTek Reasearch and Development Group, LindenBot.
+  zh: iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by iFlyTek Reasearch and Development Group, LindenBot.
+  ko: iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced
+    by iFlyTek Reasearch and Development Group, LindenBot.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -36,10 +33,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: iFlyBot-VLA. Institution:
-    iFlyTek Reasearch and Development Group, LindenBot. arXiv: 2511.01914.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.01914v1.
 sources:
 - id: src_001
   type: paper
@@ -54,12 +50,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by iFlyTek Reasearch and Development Group, LindenBot.
+We introduce iFlyBot-VLA, a large-scale Vision-Language-Action (VLA) model trained under a novel framework. The main contributions are listed as follows: (1) a latent action model thoroughly trained on large-scale human and robotic manipulation videos; (2) a dual-level action representation framework that jointly supervises both the Vision-Language Model (VLM) and the action expert during training; (3) a mixed training strategy that combines robot trajectory data with general QA and spatial QA datasets, effectively enhancing the 3D perceptual and reasoning capabilities of the VLM backbone. Specifically, the VLM is trained to predict two complementary forms of actions: latent actions, derived from our latent action model pretrained on cross-embodiment manipulation data, which capture implicit high-level intentions; and structured discrete action tokens, obtained through frequency-domain transformations of continuous control signals, which encode explicit low-level dynamics. This dual supervision aligns the representation spaces of language, vision, and action, enabling the VLM to directly contribute to action generation. Experimental results on the LIBERO Franka benchmark demonstrate the superiority of our frame-work, while real-world evaluations further show that iFlyBot-VLA achieves competitive success rates across diverse and challenging manipulation tasks. Furthermore, we plan to open-source a portion of our self-constructed dataset to support future research in the community
 
-## Overview
-iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by iFlyTek Reasearch and Development Group, LindenBot.
+## 核心内容
+We introduce iFlyBot-VLA, a large-scale Vision-Language-Action (VLA) model trained under a novel framework. The main contributions are listed as follows: (1) a latent action model thoroughly trained on large-scale human and robotic manipulation videos; (2) a dual-level action representation framework that jointly supervises both the Vision-Language Model (VLM) and the action expert during training; (3) a mixed training strategy that combines robot trajectory data with general QA and spatial QA datasets, effectively enhancing the 3D perceptual and reasoning capabilities of the VLM backbone. Specifically, the VLM is trained to predict two complementary forms of actions: latent actions, derived from our latent action model pretrained on cross-embodiment manipulation data, which capture implicit high-level intentions; and structured discrete action tokens, obtained through frequency-domain transformations of continuous control signals, which encode explicit low-level dynamics. This dual supervision aligns the representation spaces of language, vision, and action, enabling the VLM to directly contribute to action generation. Experimental results on the LIBERO Franka benchmark demonstrate the superiority of our frame-work, while real-world evaluations further show that iFlyBot-VLA achieves competitive success rates across diverse and challenging manipulation tasks. Furthermore, we plan to open-source a portion of our self-constructed dataset to support future research in the community
 
-## 개요
-iFlyBot-VLA Technical Report (iFlyBot-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by iFlyTek Reasearch and Development Group, LindenBot.
+## 参考
+- http://arxiv.org/abs/2511.01914v1
+

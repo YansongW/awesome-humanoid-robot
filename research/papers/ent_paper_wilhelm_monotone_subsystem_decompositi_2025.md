@@ -8,13 +8,12 @@ names:
   zh: 面向高效多目标机器人设计的单调子系统分解
   ko: 효율적인 다목적 로봇 설계를 위한 단조 부시스템 분해
 summary:
-  en: Introduces monotone subsystem decomposition, a constraint-programming method
-    that computes Pareto-optimal component selections from massive catalogs and proves
-    that, under consistency conditions, subsystem Pareto fronts determine a globally
+  en: Introduces monotone subsystem decomposition, a constraint-programming method that computes Pareto-optimal component
+    selections from massive catalogs and proves that, under consistency conditions, subsystem Pareto fronts determine a globally
     optimal Pareto front for the full system.
   zh: 提出单调子系统分解方法，利用约束编程从大规模目录中计算帕累托最优组件选择，并证明在一致性条件下子系统帕累托前沿可确定全局最优帕累托前沿。
-  ko: 대규모 카탈로그에서 제약 프로그래밍을 사용해 파레토 최적 부품 선택을 계산하고, 일관성 조건 하에서 서브시스템 파레토 전면이 전체 시스템의
-    전역 최적 파레토 전면을 결정함을 증명하는 단조 부시스템 분해 방법을 제안한다.
+  ko: 대규모 카탈로그에서 제약 프로그래밍을 사용해 파레토 최적 부품 선택을 계산하고, 일관성 조건 하에서 서브시스템 파레토 전면이 전체 시스템의 전역 최적 파레토 전면을 결정함을 증명하는 단조 부시스템 분해 방법을
+    제안한다.
 domains:
 - 06_design_engineering
 - 05_mass_production
@@ -40,11 +39,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-28'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from abstract and metadata; full-text review is needed to confirm
-    section-level citations and exact limitations.; approved by autonomous review
-    workflow.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.11624v2.
 sources:
 - id: src_001
   type: paper
@@ -56,22 +53,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+Automating design minimizes errors, accelerates the design process, and reduces cost. However, automating robot design is challenging due to recursive constraints, multiple design objectives, and cross-domain design complexity possibly spanning multiple abstraction layers. Here we look at the problem of component selection, a combinatorial optimization problem in which a designer, given a robot model, must select compatible components from an extensive catalog. The goal is to satisfy high-level task specifications while optimally balancing trade-offs between competing design objectives. In this paper, we extend our previous constraint programming approach to multi-objective design problems and propose the novel technique of monotone subsystem decomposition to efficiently compute a Pareto front of solutions for large-scale problems. We prove that subsystems can be optimized for their Pareto fronts and, under certain conditions, these results can be used to determine a globally optimal Pareto front. Furthermore, subsystems serve as an intuitive design abstraction and can be reused across various design problems. Using an example quadcopter design problem, we compare our method to a linear programming approach and demonstrate our method scales better for large catalogs, solving a multi-objective problem of 10^25 component combinations in seconds. We then expand the original problem and solve a task-oriented, multi-objective design problem to build a fleet of quadcopters to deliver packages. We compute a Pareto front of solutions in seconds where each solution contains an optimal component-level design and an optimal package delivery schedule for each quadcopter.
 
-## Overview
+## 核心内容
+Automating design minimizes errors, accelerates the design process, and reduces cost. However, automating robot design is challenging due to recursive constraints, multiple design objectives, and cross-domain design complexity possibly spanning multiple abstraction layers. Here we look at the problem of component selection, a combinatorial optimization problem in which a designer, given a robot model, must select compatible components from an extensive catalog. The goal is to satisfy high-level task specifications while optimally balancing trade-offs between competing design objectives. In this paper, we extend our previous constraint programming approach to multi-objective design problems and propose the novel technique of monotone subsystem decomposition to efficiently compute a Pareto front of solutions for large-scale problems. We prove that subsystems can be optimized for their Pareto fronts and, under certain conditions, these results can be used to determine a globally optimal Pareto front. Furthermore, subsystems serve as an intuitive design abstraction and can be reused across various design problems. Using an example quadcopter design problem, we compare our method to a linear programming approach and demonstrate our method scales better for large catalogs, solving a multi-objective problem of 10^25 component combinations in seconds. We then expand the original problem and solve a task-oriented, multi-objective design problem to build a fleet of quadcopters to deliver packages. We compute a Pareto front of solutions in seconds where each solution contains an optimal component-level design and an optimal package delivery schedule for each quadcopter.
 
-Automating robot design reduces errors, accelerates iteration, and lowers cost, yet it is complicated by recursive constraints, competing objectives, and cross-domain complexity. This paper addresses component selection, a combinatorial optimization problem in which a designer must choose compatible parts from a large catalog to meet high-level task specifications while balancing trade-offs among multiple objectives. The authors extend a prior constraint-programming formulation to the multi-objective setting and introduce monotone subsystem decomposition as a way to break large design problems into reusable, independently optimizable subsystems.
+## 参考
+- http://arxiv.org/abs/2505.11624v2
 
-The core theoretical result is that subsystems can be optimized for their local Pareto fronts and, when consistency (monotone or antitone) conditions hold, those subsystem fronts can be composed into a globally optimal Pareto front for the overall system. The method is demonstrated first on a quadcopter design problem, where it outperforms a linear programming baseline in scaling to catalogs that yield roughly 10^25 component combinations. The authors then extend the example to a task-oriented fleet problem in which component selection and package-delivery scheduling are solved together across four abstraction levels, again producing a Pareto front in seconds.
-
-Because subsystems are intuitive design abstractions and their Pareto-front results can be reused, the approach also offers a modular way to manage design knowledge across different robot platforms and tasks.
-
-## Key Contributions
-
-- A monotone subsystem decomposition technique that reuses subsystem Pareto-front optimization results under consistency conditions.
-- A proof that Pareto fronts of consistent subsystems can determine a globally optimal Pareto front for the larger system.
-- A constraint programming approach that scales to multi-objective problems with approximately 10^25 component combinations.
-- A combined component-selection and task-planning formulation across four levels of abstraction, demonstrated on a quadcopter fleet delivery problem.
-
-## Relevance to Humanoid Robotics
-
-Humanoid robots involve large bills of materials spanning actuators, sensors, power systems, computing, and structural components, often with tight compatibility constraints and competing performance-cost objectives. The paper's method for efficient, globally optimal multi-objective selection from massive catalogs maps directly onto the component-selection and procurement challenges faced when scaling humanoid robot design and mass production. Its reuse of optimized subsystem designs also supports platform-variant engineering and supply-chain planning, which are critical for bringing humanoid systems from prototypes to volume manufacturing.

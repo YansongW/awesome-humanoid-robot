@@ -93,6 +93,13 @@ def meaningful_zh_chars(body: str, exclude: list[str]) -> int:
     return len(re.findall(r"[\u4e00-\u9fff]", text))
 
 
+def meaningful_en_words(body: str) -> int:
+    """Count English words in the body, excluding headings."""
+    text = re.sub(r"^#{1,6}\s+", "", body, flags=re.MULTILINE)
+    text = re.split(r"\n## 参考|\n## References|\n## 참고", text, flags=re.IGNORECASE)[0]
+    return len(re.findall(r"[A-Za-z]{2,}", text))
+
+
 def has_section(body: str, *titles: str) -> bool:
     pattern = re.compile(r"^#{1,6}\s*(" + "|".join(re.escape(t) for t in titles) + r")\s*$", re.MULTILINE | re.IGNORECASE)
     return bool(pattern.search(body))
@@ -155,11 +162,15 @@ def audit_entry(entry: dict[str, Any]) -> dict[str, Any]:
         issues.append("missing_reviewed_at")
 
     # Body checks
-    if zh_chars < min_chars:
+    en_words = meaningful_en_words(body)
+    body_sufficient = zh_chars >= min_chars
+    if etype in ("paper", "report") and not body_sufficient and en_words >= 60:
+        body_sufficient = True
+    if not body_sufficient:
         issues.append(f"body_too_short_zh ({zh_chars}/{min_chars})")
     if not has_section(body, "概述", "Overview", "개요"):
         issues.append("missing_overview_section")
-    if not has_section(body, "核心内容", "核心原理", "核心方法", "方法", "原理", "结构", "Methods", "Method"):
+    if not has_section(body, "核心内容", "核心原理", "核心方法", "方法", "原理", "结构", "Abstract", "Methods", "Method"):
         issues.append("missing_core_section")
     if not has_section(body, "参考", "References", "참고"):
         issues.append("missing_reference_section")

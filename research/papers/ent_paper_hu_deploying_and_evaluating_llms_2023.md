@@ -8,16 +8,12 @@ names:
   zh: 部署与评估用于服务移动机器人编程的大语言模型
   ko: 서비스 모바일 로봇 프로그래밍을 위한 LLM 배포 및 평가
 summary:
-  en: Introduces CODEBOTLER, an open-source, robot-agnostic tool that few-shot prompts
-    LLMs to generate programs for service mobile robots using a Python eDSL over skill
-    abstractions, and ROBOEVAL, a symbolic-simulation benchmark that checks generated
-    programs against temporal-logic correctness properties across multiple prompts
-    and initial states.
-  zh: 提出 CODEBOTLER，一个开源且与机器人无关的工具，通过少样本提示大语言模型，使用基于技能抽象的 Python 嵌入式领域特定语言为服务移动机器人生成程序；并提出
-    ROBOEVAL，一个符号仿真基准，通过多提示与多初始状态检验生成程序是否满足时序逻辑正确性属性。
-  ko: 로봇에 무관한 오픈소스 도구 CODEBOTLER를 제안하며, Python eDSL을 기반으로 한 기술 추상화를 통해 서비스 모바일 로봇용
-    프로그램을 생성하도록 LLM을 퓨샷 프롬프팅하고, ROBOEVAL이라는 기호 시뮬레이션 벤치마크로 다양한 프롬프트와 초기 상태에서 생성된 프로그램의
-    시간 논리적 정답 속성을 검증한다.
+  en: Introduces CODEBOTLER, an open-source, robot-agnostic tool that few-shot prompts LLMs to generate programs for service
+    mobile robots using a Python eDSL over skill abstractions, and ROBOEVAL, a symbolic-simulation benchmark that checks generated
+    programs against temporal-logic correctness properties across multiple prompts and initial states.
+  zh: 提出 CODEBOTLER，一个开源且与机器人无关的工具，通过少样本提示大语言模型，使用基于技能抽象的 Python 嵌入式领域特定语言为服务移动机器人生成程序；并提出 ROBOEVAL，一个符号仿真基准，通过多提示与多初始状态检验生成程序是否满足时序逻辑正确性属性。
+  ko: 로봇에 무관한 오픈소스 도구 CODEBOTLER를 제안하며, Python eDSL을 기반으로 한 기술 추상화를 통해 서비스 모바일 로봇용 프로그램을 생성하도록 LLM을 퓨샷 프롬프팅하고, ROBOEVAL이라는
+    기호 시뮬레이션 벤치마크로 다양한 프롬프트와 초기 상태에서 생성된 프로그램의 시간 논리적 정답 속성을 검증한다.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,10 +40,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from provided metadata and abstract; requires human review before
-    full verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2311.11183v3.
 sources:
 - id: src_001
   type: paper
@@ -58,20 +53,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+Recent advancements in large language models (LLMs) have spurred interest in using them for generating robot programs from natural language, with promising initial results. We investigate the use of LLMs to generate programs for service mobile robots leveraging mobility, perception, and human interaction skills, and where accurate sequencing and ordering of actions is crucial for success. We contribute CodeBotler, an open-source robot-agnostic tool to program service mobile robots from natural language, and RoboEval, a benchmark for evaluating LLMs' capabilities of generating programs to complete service robot tasks. CodeBotler performs program generation via few-shot prompting of LLMs with an embedded domain-specific language (eDSL) in Python, and leverages skill abstractions to deploy generated programs on any general-purpose mobile robot. RoboEval evaluates the correctness of generated programs by checking execution traces starting with multiple initial states, and checking whether the traces satisfy temporal logic properties that encode correctness for each task. RoboEval also includes multiple prompts per task to test for the robustness of program generation. We evaluate several popular state-of-the-art LLMs with the RoboEval benchmark, and perform a thorough analysis of the modes of failures, resulting in a taxonomy that highlights common pitfalls of LLMs at generating robot programs. We release our code and benchmark at https://amrl.cs.utexas.edu/codebotler/.
 
-## Overview
+## 核心内容
+Recent advancements in large language models (LLMs) have spurred interest in using them for generating robot programs from natural language, with promising initial results. We investigate the use of LLMs to generate programs for service mobile robots leveraging mobility, perception, and human interaction skills, and where accurate sequencing and ordering of actions is crucial for success. We contribute CodeBotler, an open-source robot-agnostic tool to program service mobile robots from natural language, and RoboEval, a benchmark for evaluating LLMs' capabilities of generating programs to complete service robot tasks. CodeBotler performs program generation via few-shot prompting of LLMs with an embedded domain-specific language (eDSL) in Python, and leverages skill abstractions to deploy generated programs on any general-purpose mobile robot. RoboEval evaluates the correctness of generated programs by checking execution traces starting with multiple initial states, and checking whether the traces satisfy temporal logic properties that encode correctness for each task. RoboEval also includes multiple prompts per task to test for the robustness of program generation. We evaluate several popular state-of-the-art LLMs with the RoboEval benchmark, and perform a thorough analysis of the modes of failures, resulting in a taxonomy that highlights common pitfalls of LLMs at generating robot programs. We release our code and benchmark at https://amrl.cs.utexas.edu/codebotler/.
 
-This paper investigates the use of large language models (LLMs) to generate executable programs for service mobile robots from natural-language instructions. The authors identify that accurate sequencing and ordering of actions—leveraging mobility, perception, and human interaction skills—is crucial for reliable task completion in home and office service scenarios. To address this, they present CODEBOTLER, an open-source, robot-agnostic tool that few-shot prompts an LLM to synthesize programs in a Python-embedded domain-specific language (eDSL). The eDSL abstracts robot capabilities as skills such as go_to, pick, place, ask, say, and perception helpers like get_current_location and is_in_room, enabling deployment on any general-purpose mobile robot that exposes compatible skill interfaces.
+## 参考
+- http://arxiv.org/abs/2311.11183v3
 
-The paper also introduces ROBOEVAL, a benchmark for evaluating LLM-generated robot programs. ROBOEVAL uses a symbolic simulator to execute generated programs from multiple initial world states and checks the resulting traces against temporal logic properties that encode task-specific correctness. Each task includes multiple paraphrased prompts to test robustness of program generation across linguistic variation. The authors evaluate several state-of-the-art LLMs and analyze failure modes, resulting in a taxonomy of common pitfalls such as incorrect action ordering, missing actions, hallucinated objects or locations, and condition-handling errors. A rejection-sampling mechanism uses simulation to filter out programs that would produce Python or robot execution errors before deployment.
-
-## Key Contributions
-
-- CODEBOTLER: an open-source, robot-agnostic natural-language programming tool for service mobile robots.
-- ROBOEVAL: a benchmark evaluating LLM-generated robot programs via symbolic simulation, multiple initial states, and temporal-logic correctness checks.
-- A comprehensive taxonomy and empirical analysis of failure modes for LLM-generated robot programs.
-- A rejection-sampling mechanism that uses simulation to reduce Python runtime and robot execution errors before deployment.
-
-## Relevance to Humanoid Robotics
-
-Although the experiments focus on service mobile robots rather than bipedal humanoids, the toolchain is explicitly designed to be robot-agnostic. The skill-abstraction layer, the LLM program-generation pipeline, and the simulation-based verification workflow are all directly transferable to humanoid robots operating in home service and automation contexts. Humanoid platforms must likewise sequence mobility, manipulation, perception, and human-interaction skills from natural-language instructions, and they face similar failure modes around ordering, hallucination, and environmental assumptions. The ROBOEVAL framework could therefore be adapted to evaluate LLM-generated behavior for humanoid robots by defining appropriate skill abstractions and temporal-logic task specifications.

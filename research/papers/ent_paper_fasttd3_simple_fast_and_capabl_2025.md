@@ -8,12 +8,12 @@ names:
   zh: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control'
   ko: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control'
 summary:
-  en: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control
-    is a 2025 work on locomotion for humanoid robots.'
-  zh: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control
-    is a 2025 work on locomotion for humanoid robots.'
-  ko: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control
-    is a 2025 work on locomotion for humanoid robots.'
+  en: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control is a 2025 work on locomotion for humanoid
+    robots.'
+  zh: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control is a 2025 work on locomotion for humanoid
+    robots.'
+  ko: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control is a 2025 work on locomotion for humanoid
+    robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -30,32 +30,29 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Locomotion.
-    arXiv: 2505.22642.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2505.22642v3.
 sources:
 - id: src_001
   type: paper
-  title: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control
-    (arXiv)'
+  title: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control (arXiv)'
   url: https://arxiv.org/abs/2505.22642
   date: '2025'
   accessed_at: '2026-07-01'
 - id: src_002
   type: website
-  title: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control
-    project page'
+  title: 'FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control project page'
   url: https://younggyo.me/fast_td3/
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control is a 2025 work on locomotion for humanoid robots.
+Reinforcement learning (RL) has driven significant progress in robotics, but its complexity and long training times remain major bottlenecks. In this report, we introduce FastTD3, a simple, fast, and capable RL algorithm that significantly speeds up training for humanoid robots in popular suites such as HumanoidBench, IsaacLab, and MuJoCo Playground. Our recipe is remarkably simple: we train an off-policy TD3 agent with several modifications -- parallel simulation, large-batch updates, a distributional critic, and carefully tuned hyperparameters. FastTD3 solves a range of HumanoidBench tasks in under 3 hours on a single A100 GPU, while remaining stable during training. We also provide a lightweight and easy-to-use implementation of FastTD3 to accelerate RL research in robotics.
 
-## Overview
-FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control is a 2025 work on locomotion for humanoid robots.
+## 核心内容
+Reinforcement learning (RL) has driven significant progress in robotics, but its complexity and long training times remain major bottlenecks. In this report, we introduce FastTD3, a simple, fast, and capable RL algorithm that significantly speeds up training for humanoid robots in popular suites such as HumanoidBench, IsaacLab, and MuJoCo Playground. Our recipe is remarkably simple: we train an off-policy TD3 agent with several modifications -- parallel simulation, large-batch updates, a distributional critic, and carefully tuned hyperparameters. FastTD3 solves a range of HumanoidBench tasks in under 3 hours on a single A100 GPU, while remaining stable during training. We also provide a lightweight and easy-to-use implementation of FastTD3 to accelerate RL research in robotics.
 
-## 개요
-FastTD3: Simple, Fast, and Capable Reinforcement Learning for Humanoid Control is a 2025 work on locomotion for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2505.22642v3
+

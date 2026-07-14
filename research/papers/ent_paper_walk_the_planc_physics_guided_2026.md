@@ -4,19 +4,16 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained
-    Footholds'
-  zh: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained
-    Footholds'
-  ko: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained
-    Footholds'
+  en: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds'
+  zh: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds'
+  ko: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds'
 summary:
-  en: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained
-    Footholds is a 2026 work on locomotion for humanoid robots.'
-  zh: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained
-    Footholds is a 2026 work on locomotion for humanoid robots.'
-  ko: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained
-    Footholds is a 2026 work on locomotion for humanoid robots.'
+  en: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds is a 2026 work on locomotion
+    for humanoid robots.'
+  zh: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds is a 2026 work on locomotion
+    for humanoid robots.'
+  ko: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds is a 2026 work on locomotion
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -33,25 +30,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Locomotion.
-    arXiv: 2601.06286.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.06286v1.
 sources:
 - id: src_001
   type: paper
-  title: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained
-    Footholds (arXiv)'
+  title: 'Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds (arXiv)'
   url: https://arxiv.org/abs/2601.06286
   date: '2026'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds is a 2026 work on locomotion for humanoid robots.
+Bipedal humanoid robots must precisely coordinate balance, timing, and contact decisions when locomoting on constrained footholds such as stepping stones, beams, and planks -- even minor errors can lead to catastrophic failure. Classical optimization and control pipelines handle these constraints well but depend on highly accurate mathematical representations of terrain geometry, making them prone to error when perception is noisy or incomplete. Meanwhile, reinforcement learning has shown strong resilience to disturbances and modeling errors, yet end-to-end policies rarely discover the precise foothold placement and step sequencing required for discontinuous terrain. These contrasting limitations motivate approaches that guide learning with physics-based structure rather than relying purely on reward shaping. In this work, we introduce a locomotion framework in which a reduced-order stepping planner supplies dynamically consistent motion targets that steer the RL training process via Control Lyapunov Function (CLF) rewards. This combination of structured footstep planning and data-driven adaptation produces accurate, agile, and hardware-validated stepping-stone locomotion on a humanoid robot, substantially improving reliability compared to conventional model-free reinforcement-learning baselines.
 
-## Overview
-Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds is a 2026 work on locomotion for humanoid robots.
+## 核心内容
+Bipedal humanoid robots must precisely coordinate balance, timing, and contact decisions when locomoting on constrained footholds such as stepping stones, beams, and planks -- even minor errors can lead to catastrophic failure. Classical optimization and control pipelines handle these constraints well but depend on highly accurate mathematical representations of terrain geometry, making them prone to error when perception is noisy or incomplete. Meanwhile, reinforcement learning has shown strong resilience to disturbances and modeling errors, yet end-to-end policies rarely discover the precise foothold placement and step sequencing required for discontinuous terrain. These contrasting limitations motivate approaches that guide learning with physics-based structure rather than relying purely on reward shaping. In this work, we introduce a locomotion framework in which a reduced-order stepping planner supplies dynamically consistent motion targets that steer the RL training process via Control Lyapunov Function (CLF) rewards. This combination of structured footstep planning and data-driven adaptation produces accurate, agile, and hardware-validated stepping-stone locomotion on a humanoid robot, substantially improving reliability compared to conventional model-free reinforcement-learning baselines.
 
-## 개요
-Walk the PLANC: Physics-Guided RL for Agile Humanoid Locomotion on Constrained Footholds is a 2026 work on locomotion for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2601.06286v1
+

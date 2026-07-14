@@ -4,18 +4,16 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'RoboBallet: Planning for Multi-Robot Reaching with Graph Neural Networks and
-    Reinforcement Learning'
+  en: 'RoboBallet: Planning for Multi-Robot Reaching with Graph Neural Networks and Reinforcement Learning'
   zh: RoboBallet：基于图神经网络与强化学习的多机器人 reaching 规划
   ko: 'RoboBallet: 그래프 신경망과 강화학습을 활용한 다중 로봇 reaching 계획'
 summary:
-  en: RoboBallet trains a graph neural network policy via deep reinforcement learning
-    to jointly allocate, schedule, and plan collision-free motions for multiple robots
-    in shared, obstacle-rich workcells, demonstrating zero-shot generalization to
-    unseen layouts and real-time inference.
+  en: RoboBallet trains a graph neural network policy via deep reinforcement learning to jointly allocate, schedule, and plan
+    collision-free motions for multiple robots in shared, obstacle-rich workcells, demonstrating zero-shot generalization
+    to unseen layouts and real-time inference.
   zh: RoboBallet 通过深度强化学习训练图神经网络策略，在共享的、充满障碍的工作单元中联合为多台机器人分配任务、调度并规划无碰撞运动，展现出对未见过布局的零样本泛化能力与实时推理能力。
-  ko: RoboBallet는 심층 강화학습으로 그래프 신경망 정책을 학습시켜 장애물이 많은 공유 워크셀에서 여러 로봇의 작업 할당, 스케줄링 및
-    충돌 없는 모션 계획을 통합적으로 수행하며, 보지 못한 레이아웃에 대한 제로샷 일반화와 실시간 추론을 보여준다.
+  ko: RoboBallet는 심층 강화학습으로 그래프 신경망 정책을 학습시켜 장애물이 많은 공유 워크셀에서 여러 로봇의 작업 할당, 스케줄링 및 충돌 없는 모션 계획을 통합적으로 수행하며, 보지 못한 레이아웃에 대한
+    제로샷 일반화와 실시간 추론을 보여준다.
 domains:
 - 07_ai_models_algorithms
 - 03_manufacturing_processes
@@ -40,15 +38,13 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from the provided metadata/abstract; requires human review of
-    the full paper before verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.05397v1.
 sources:
 - id: src_001
   type: paper
-  title: 'RoboBallet: Planning for Multi-Robot Reaching with Graph Neural Networks
-    and Reinforcement Learning'
+  title: 'RoboBallet: Planning for Multi-Robot Reaching with Graph Neural Networks and Reinforcement Learning'
   url: https://arxiv.org/abs/2509.05397
   date: '2025'
   accessed_at: '2026-06-27'
@@ -56,21 +52,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+Modern robotic manufacturing requires collision-free coordination of multiple robots to complete numerous tasks in shared, obstacle-rich workspaces. Although individual tasks may be simple in isolation, automated joint task allocation, scheduling, and motion planning under spatio-temporal constraints remain computationally intractable for classical methods at real-world scales. Existing multi-arm systems deployed in the industry rely on human intuition and experience to design feasible trajectories manually in a labor-intensive process. To address this challenge, we propose a reinforcement learning (RL) framework to achieve automated task and motion planning, tested in an obstacle-rich environment with eight robots performing 40 reaching tasks in a shared workspace, where any robot can perform any task in any order. Our approach builds on a graph neural network (GNN) policy trained via RL on procedurally-generated environments with diverse obstacle layouts, robot configurations, and task distributions. It employs a graph representation of scenes and a graph policy neural network trained through reinforcement learning to generate trajectories of multiple robots, jointly solving the sub-problems of task allocation, scheduling, and motion planning. Trained on large randomly generated task sets in simulation, our policy generalizes zero-shot to unseen settings with varying robot placements, obstacle geometries, and task poses. We further demonstrate that the high-speed capability of our solution enables its use in workcell layout optimization, improving solution times. The speed and scalability of our planner also open the door to new capabilities such as fault-tolerant planning and online perception-based re-planning, where rapid adaptation to dynamic task sets is required.
 
-## Overview
+## 核心内容
+Modern robotic manufacturing requires collision-free coordination of multiple robots to complete numerous tasks in shared, obstacle-rich workspaces. Although individual tasks may be simple in isolation, automated joint task allocation, scheduling, and motion planning under spatio-temporal constraints remain computationally intractable for classical methods at real-world scales. Existing multi-arm systems deployed in the industry rely on human intuition and experience to design feasible trajectories manually in a labor-intensive process. To address this challenge, we propose a reinforcement learning (RL) framework to achieve automated task and motion planning, tested in an obstacle-rich environment with eight robots performing 40 reaching tasks in a shared workspace, where any robot can perform any task in any order. Our approach builds on a graph neural network (GNN) policy trained via RL on procedurally-generated environments with diverse obstacle layouts, robot configurations, and task distributions. It employs a graph representation of scenes and a graph policy neural network trained through reinforcement learning to generate trajectories of multiple robots, jointly solving the sub-problems of task allocation, scheduling, and motion planning. Trained on large randomly generated task sets in simulation, our policy generalizes zero-shot to unseen settings with varying robot placements, obstacle geometries, and task poses. We further demonstrate that the high-speed capability of our solution enables its use in workcell layout optimization, improving solution times. The speed and scalability of our planner also open the door to new capabilities such as fault-tolerant planning and online perception-based re-planning, where rapid adaptation to dynamic task sets is required.
 
-RoboBallet addresses the problem of coordinating multiple robotic manipulators in dense, shared workspaces. It frames task allocation, scheduling, and collision-free motion planning as a single learning problem and solves it with a graph neural network policy trained via deep reinforcement learning. The policy operates on a scene graph whose nodes represent robots, tasks, and obstacles, and directly outputs joint velocities for all robots at each timestep. By training on procedurally generated environments with varied robot placements, obstacle geometries, and task distributions, the method generalizes zero-shot to unseen hand-designed workcells. The authors report real-time inference speeds and demonstrate downstream uses such as workcell layout optimization, fault-tolerant re-planning, and online perception-based re-planning.
+## 参考
+- http://arxiv.org/abs/2509.05397v1
 
-The paper situates its contribution in industrial robotic manufacturing, where existing multi-arm deployments still rely on human experts to manually design trajectories. The proposed approach removes the need for hand-engineered simplifications by jointly learning the sub-problems that are normally treated separately. The method is compared against an RRT-Connect baseline and validated both in simulation and on a real multi-Franka-Panda workcell.
-
-## Key Contributions
-
-- A graph-based state representation and GNN policy/value architecture that scales to varying numbers of robots, tasks, and obstacles without increasing model size.
-- Joint learning of task allocation, scheduling, inverse-kinematics selection, and collision-free motion planning in a single RL framework.
-- Zero-shot generalization from randomized simulation training to unseen hand-designed workcells with real-world obstacle geometry.
-- Real-time planning enabling downstream applications including workcell layout optimization, fault-tolerant re-planning, and perception-based online re-planning.
-- Real-world validation on a multi-Franka-Panda workcell and empirical comparison with an RRT-Connect baseline.
-
-## Relevance to Humanoid Robotics
-
-The paper's core contribution—scalable, collision-free multi-robot task allocation, scheduling, and motion planning—is directly relevant to humanoid robot mass production. Humanoid manufacturing workcells are expected to coordinate multiple manipulators or whole-body robots in dense, shared assembly spaces, where fast planning and layout optimization can increase throughput and adaptability. The graph-based, learning-driven approach could be transferred to humanoid workcells that must dynamically re-plan around moving obstacles, robot faults, or changing task sets. Although the demonstrations use fixed-base industrial arms, the method's emphasis on generalization and real-time inference addresses key bottlenecks for humanoid deployment at scale.

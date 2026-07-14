@@ -8,12 +8,9 @@ names:
   zh: Hierarchical visuomotor control of humanoids
   ko: Hierarchical visuomotor control of humanoids
 summary:
-  en: Hierarchical visuomotor control of humanoids is a 2018 work on physics-based
-    character animation for humanoid robots.
-  zh: Hierarchical visuomotor control of humanoids is a 2018 work on physics-based
-    character animation for humanoid robots.
-  ko: Hierarchical visuomotor control of humanoids is a 2018 work on physics-based
-    character animation for humanoid robots.
+  en: Hierarchical visuomotor control of humanoids is a 2018 work on physics-based character animation for humanoid robots.
+  zh: Hierarchical visuomotor control of humanoids is a 2018 work on physics-based character animation for humanoid robots.
+  ko: Hierarchical visuomotor control of humanoids is a 2018 work on physics-based character animation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -31,10 +28,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Physics-Based
-    Character Animation. arXiv: 1811.09656.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1811.09656v2.
 sources:
 - id: src_001
   type: paper
@@ -43,12 +39,12 @@ sources:
   date: '2018'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Hierarchical visuomotor control of humanoids is a 2018 work on physics-based character animation for humanoid robots.
+We aim to build complex humanoid agents that integrate perception, motor control, and memory. In this work, we partly factor this problem into low-level motor control from proprioception and high-level coordination of the low-level skills informed by vision. We develop an architecture capable of surprisingly flexible, task-directed motor control of a relatively high-DoF humanoid body by combining pre-training of low-level motor controllers with a high-level, task-focused controller that switches among low-level sub-policies. The resulting system is able to control a physically-simulated humanoid body to solve tasks that require coupling visual perception from an unstabilized egocentric RGB camera during locomotion in the environment. For a supplementary video link, see https://youtu.be/7GISvfbykLE .
 
-## Overview
-Hierarchical visuomotor control of humanoids is a 2018 work on physics-based character animation for humanoid robots.
+## 核心内容
+We aim to build complex humanoid agents that integrate perception, motor control, and memory. In this work, we partly factor this problem into low-level motor control from proprioception and high-level coordination of the low-level skills informed by vision. We develop an architecture capable of surprisingly flexible, task-directed motor control of a relatively high-DoF humanoid body by combining pre-training of low-level motor controllers with a high-level, task-focused controller that switches among low-level sub-policies. The resulting system is able to control a physically-simulated humanoid body to solve tasks that require coupling visual perception from an unstabilized egocentric RGB camera during locomotion in the environment. For a supplementary video link, see https://youtu.be/7GISvfbykLE .
 
-## 개요
-Hierarchical visuomotor control of humanoids is a 2018 work on physics-based character animation for humanoid robots.
+## 参考
+- http://arxiv.org/abs/1811.09656v2
+

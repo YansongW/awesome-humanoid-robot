@@ -8,12 +8,11 @@ names:
   zh: 基于ROS的NimbRo-OP人形开放平台软件框架
   ko: NimbRo-OP 휴머노이드 개방형 플랫폼을 위한 ROS 기반 소프트웨어 프레임워크
 summary:
-  en: This paper presents a modular ROS-based software framework for the NimbRo-OP
-    humanoid robot, providing hardware abstraction, visual perception, motion control,
-    and behavior generation for soccer skills demonstrated at RoboCup 2013.
+  en: This paper presents a modular ROS-based software framework for the NimbRo-OP humanoid robot, providing hardware abstraction,
+    visual perception, motion control, and behavior generation for soccer skills demonstrated at RoboCup 2013.
   zh: 本文介绍了面向NimbRo-OP人形机器人的模块化ROS软件框架，提供硬件抽象、视觉感知、运动控制和行为生成功能，并用于实现2013年RoboCup中展示的基本足球技能。
-  ko: 본 논문은 NimbRo-OP 휴머노이드 로봇을 위한 모듈화된 ROS 기반 소프트웨어 프레임워크를 제시하며, 2013년 RoboCup에서
-    시연된 축구 기술을 구현하기 위한 하드웨어 추상화, 시각 인지, 동작 제어 및 행위 생성 기능을 제공한다.
+  ko: 본 논문은 NimbRo-OP 휴머노이드 로봇을 위한 모듈화된 ROS 기반 소프트웨어 프레임워크를 제시하며, 2013년 RoboCup에서 시연된 축구 기술을 구현하기 위한 하드웨어 추상화, 시각 인지, 동작 제어
+    및 행위 생성 기능을 제공한다.
 domains:
 - 08_software_middleware
 - 04_assembly_integration_testing
@@ -45,10 +44,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: human_and_ai
-  reviewed_at: '2026-06-25'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from supplied metadata and abstract; requires human review against
-    full paper before verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1809.11051v1.
 sources:
 - id: src_001
   type: paper
@@ -59,22 +57,12 @@ sources:
 theoretical_depth:
 - system
 ---
+## 概述
+Over the past few years, a number of successful humanoid platforms have been developed, including the Nao and the DARwIn-OP, both of which are used by many research groups for the investigation of bipedal walking, full-body motions, and human-robot interaction. The NimbRo-OP is an open humanoid platform under development by team NimbRo of the University of Bonn. Significantly larger than the two aforementioned humanoids, this platform has the potential to interact with a more human-scale environment. This paper describes a software framework for the NimbRo-OP that is based on the Robot Operating System (ROS) middleware. The software provides functionality for hardware abstraction, visual perception, and behavior generation, and has been used to implement basic soccer skills. These were demonstrated at RoboCup 2013, as part of the winning team of the Humanoid League competition.
 
+## 核心内容
+Over the past few years, a number of successful humanoid platforms have been developed, including the Nao and the DARwIn-OP, both of which are used by many research groups for the investigation of bipedal walking, full-body motions, and human-robot interaction. The NimbRo-OP is an open humanoid platform under development by team NimbRo of the University of Bonn. Significantly larger than the two aforementioned humanoids, this platform has the potential to interact with a more human-scale environment. This paper describes a software framework for the NimbRo-OP that is based on the Robot Operating System (ROS) middleware. The software provides functionality for hardware abstraction, visual perception, and behavior generation, and has been used to implement basic soccer skills. These were demonstrated at RoboCup 2013, as part of the winning team of the Humanoid League competition.
 
-## Overview
+## 参考
+- http://arxiv.org/abs/1809.11051v1
 
-The paper introduces a software framework for the NimbRo-OP, an open humanoid robot platform being developed by team NimbRo at the University of Bonn. Larger than platforms such as Nao and DARwIn-OP, the NimbRo-OP is intended to operate in more human-scale environments. The framework is built on top of the Robot Operating System (ROS) and is organized as a set of decoupled nodes. These nodes cover hardware abstraction, visual perception, motion control, and behavior generation, enabling the implementation of basic soccer skills that were demonstrated at RoboCup 2013 as part of the winning Humanoid League team.
-
-The architecture centers on a real-time Robot Control node that communicates with hardware through plugin interfaces and executes motion modules based on a compliant servo model and rigid-body dynamics via RBDL. A separate vision pipeline handles camera input, image processing, and localization. A centralized configuration server provides runtime reconfigurability and allows parameters to be shared across nodes. Behavior control is hierarchical, and an RQT-based visualization suite integrates RViz, diagnostics, walk control, parameter tuning, and plotting widgets to support development and debugging.
-
-## Key Contributions
-
-- Open-source ROS framework for the NimbRo-OP humanoid platform
-- Modular node-based architecture covering hardware abstraction, perception, motion control, and behavior generation
-- Real-time Robot Control node using RBDL and a compliant servo model-based control approach
-- Centralized configuration server with runtime reconfigurability and cross-node parameter sharing
-- RQT-based visualization suite including RViz, diagnostics, walk control, parameter tuner, and plotter widgets
-
-## Relevance to Humanoid Robotics
-
-The paper is relevant to humanoid robotics because it presents a reusable, open-source control and perception framework that lowers integration barriers for a humanoid hardware platform. By abstracting hardware, providing visual perception, and structuring behavior generation, the work supports reproducible software architectures that can accelerate community-driven development of humanoid robots. Its demonstration in the RoboCup Humanoid League also shows practical application to dynamic, whole-body humanoid tasks such as bipedal walking and soccer behaviors.

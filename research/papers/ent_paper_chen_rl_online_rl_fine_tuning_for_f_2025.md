@@ -8,18 +8,15 @@ names:
   zh: π_RL
   ko: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models'
 summary:
-  en: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced
-    by Tsinghua University, Peking University, Institute of Automation, Chinese Academy
-    of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.'
-  zh: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced
-    by Tsinghua University, Peking University, Institute of Automation, Chinese Academy
-    of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.'
-  ko: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced
-    by Tsinghua University, Peking University, Institute of Automation, Chinese Academy
-    of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.'
+  en: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Tsinghua University, Peking University, Institute of Automation, Chinese
+    Academy of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.'
+  zh: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Tsinghua University, Peking University, Institute of Automation, Chinese
+    Academy of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.'
+  ko: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Tsinghua University, Peking University, Institute of Automation, Chinese
+    Academy of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -39,16 +36,13 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: π_RL. Institution: Tsinghua
-    University, Peking University, Institute of Automation, Chinese Academy of Sciences,
-    Carnegie Mellon University, Infinigence AI, Zhongguancun Academy. arXiv: 2510.25889.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.25889v3.
 sources:
 - id: src_001
   type: paper
-  title: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models
-    (arXiv)'
+  title: 'πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (arXiv)'
   url: https://arxiv.org/abs/2510.25889
   date: '2025'
   accessed_at: '2026-07-01'
@@ -59,12 +53,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Peking University, Institute of Automation, Chinese Academy of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.
+Vision-Language-Action (VLA) models enable robots to understand and perform complex tasks from multimodal input. Although recent work explores using reinforcement learning (RL) to automate the laborious data collection process in scaling supervised fine-tuning (SFT), applying RL to large-scale flow-based VLAs (\eg, $π_0$, $π_{0.5}$) remains challenging due to intractable action log-likelihoods raised from flow matching. We address this challenge with $π_{\texttt{RL}}$, featuring two technical approaches: (1) \textbf{Flow-Noise} models the denoising process as a discrete-time MDP with a learnable noise network for exact log-likelihood computation. (2) \textbf{Flow-SDE} integrates denoising with agent-environment interaction, formulating a two-layer MDP that employs ODE-to-SDE conversion for efficient RL exploration. We evaluate $π_{\texttt{RL}}$ across various benchmarks, with experiments demonstrating that RL yields significant performance improvements in both in-distribution and out-of-distribution settings.
 
-## Overview
-πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Peking University, Institute of Automation, Chinese Academy of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.
+## 核心内容
+Vision-Language-Action (VLA) models enable robots to understand and perform complex tasks from multimodal input. Although recent work explores using reinforcement learning (RL) to automate the laborious data collection process in scaling supervised fine-tuning (SFT), applying RL to large-scale flow-based VLAs (\eg, $π_0$, $π_{0.5}$) remains challenging due to intractable action log-likelihoods raised from flow matching. We address this challenge with $π_{\texttt{RL}}$, featuring two technical approaches: (1) \textbf{Flow-Noise} models the denoising process as a discrete-time MDP with a learnable noise network for exact log-likelihood computation. (2) \textbf{Flow-SDE} integrates denoising with agent-environment interaction, formulating a two-layer MDP that employs ODE-to-SDE conversion for efficient RL exploration. We evaluate $π_{\texttt{RL}}$ across various benchmarks, with experiments demonstrating that RL yields significant performance improvements in both in-distribution and out-of-distribution settings.
 
-## 개요
-πRL: Online RL Fine-tuning for Flow-based Vision-Language-Action Models (π_RL), is a 2025 large vision-language-action model for robotic manipulation, introduced by Tsinghua University, Peking University, Institute of Automation, Chinese Academy of Sciences, Carnegie Mellon University, Infinigence AI, Zhongguancun Academy.
+## 参考
+- http://arxiv.org/abs/2510.25889v3
+

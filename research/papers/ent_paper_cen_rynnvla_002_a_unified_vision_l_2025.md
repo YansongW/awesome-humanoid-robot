@@ -8,15 +8,12 @@ names:
   zh: RynnVLA-002
   ko: 'RynnVLA-002: A Unified Vision-Language-Action and World Model'
 summary:
-  en: 'RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced
-    by DAMO Academy, Hupan Lab, Zhejiang University.'
-  zh: 'RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced
-    by DAMO Academy, Hupan Lab, Zhejiang University.'
-  ko: 'RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced
-    by DAMO Academy, Hupan Lab, Zhejiang University.'
+  en: 'RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by DAMO Academy, Hupan Lab, Zhejiang University.'
+  zh: 'RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by DAMO Academy, Hupan Lab, Zhejiang University.'
+  ko: 'RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by DAMO Academy, Hupan Lab, Zhejiang University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -36,10 +33,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: RynnVLA-002. Institution:
-    DAMO Academy, Hupan Lab, Zhejiang University. arXiv: 2511.17502.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.17502v3.
 sources:
 - id: src_001
   type: paper
@@ -54,12 +50,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002), is a 2025 large vision-language-action model for robotic manipulation, introduced by DAMO Academy, Hupan Lab, Zhejiang University.
+We introduce RynnVLA-002, a unified Vision-Language-Action (VLA) and world model. The world model leverages action and visual inputs to predict future image states, learning the underlying physics of the environment to refine action generation. Conversely, the VLA model produces subsequent actions from image observations, enhancing visual understanding and supporting the world model's image generation. The unified framework of RynnVLA-002 enables joint learning of environmental dynamics and action planning. Our experiments show that RynnVLA-002 surpasses individual VLA and world models, demonstrating their mutual enhancement. We evaluate RynnVLA-002 in both simulation and real-world robot tasks. RynnVLA-002 achieves 97.4% success rate on the LIBERO simulation benchmark without pretraining, while in real-world LeRobot experiments, its integrated world model boosts the overall success rate by 50%.
 
-## Overview
-RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002), is a 2025 large vision-language-action model for robotic manipulation, introduced by DAMO Academy, Hupan Lab, Zhejiang University.
+## 核心内容
+We introduce RynnVLA-002, a unified Vision-Language-Action (VLA) and world model. The world model leverages action and visual inputs to predict future image states, learning the underlying physics of the environment to refine action generation. Conversely, the VLA model produces subsequent actions from image observations, enhancing visual understanding and supporting the world model's image generation. The unified framework of RynnVLA-002 enables joint learning of environmental dynamics and action planning. Our experiments show that RynnVLA-002 surpasses individual VLA and world models, demonstrating their mutual enhancement. We evaluate RynnVLA-002 in both simulation and real-world robot tasks. RynnVLA-002 achieves 97.4% success rate on the LIBERO simulation benchmark without pretraining, while in real-world LeRobot experiments, its integrated world model boosts the overall success rate by 50%.
 
-## 개요
-RynnVLA-002: A Unified Vision-Language-Action and World Model (RynnVLA-002), is a 2025 large vision-language-action model for robotic manipulation, introduced by DAMO Academy, Hupan Lab, Zhejiang University.
+## 参考
+- http://arxiv.org/abs/2511.17502v3
+

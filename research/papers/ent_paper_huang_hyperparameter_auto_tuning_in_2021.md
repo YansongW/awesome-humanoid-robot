@@ -8,13 +8,12 @@ names:
   zh: 自监督机器人学习中的超参数自动调优
   ko: 자기지도 로봇 학습의 하이퍼파라미터 자동 튜닝
 summary:
-  en: Proposes an online ELBO-based auto-tuning technique for self-supervised reinforcement
-    learning (RIG+SAC) that dynamically adjusts the replay buffer size, the number
-    of policy gradient updates per epoch, and the number of exploration steps per
+  en: Proposes an online ELBO-based auto-tuning technique for self-supervised reinforcement learning (RIG+SAC) that dynamically
+    adjusts the replay buffer size, the number of policy gradient updates per epoch, and the number of exploration steps per
     epoch to reduce manual tuning and sample/compute cost.
   zh: 提出一种基于变分自编码器证据下界（ELBO）的在线自动调参方法，用于自监督强化学习（RIG+SAC），动态调整回放缓冲区大小、每轮策略梯度更新次数和每轮探索步数，以减少人工调参及样本/计算开销。
-  ko: 자기지도 강화학습(RIG+SAC)을 위해 VAE ELBO에 기반한 온라인 하이퍼파라미터 자동 튜닝 기법을 제안하며, 재생 버퍼 크기·에폭당
-    정책 그래디언트 업데이트 횟수·탐색 스텝 수를 동적으로 조정하여 수동 튜닝과 샘플/계산 비용을 줄인다.
+  ko: 자기지도 강화학습(RIG+SAC)을 위해 VAE ELBO에 기반한 온라인 하이퍼파라미터 자동 튜닝 기법을 제안하며, 재생 버퍼 크기·에폭당 정책 그래디언트 업데이트 횟수·탐색 스텝 수를 동적으로 조정하여 수동
+    튜닝과 샘플/계산 비용을 줄인다.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -35,10 +34,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-28'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from the abstract and provided metadata; full paper text was
-    not consulted. Requires human review before full verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2010.08252v4.
 sources:
 - id: src_001
   type: paper
@@ -50,22 +48,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+Policy optimization in reinforcement learning requires the selection of numerous hyperparameters across different environments. Fixing them incorrectly may negatively impact optimization performance leading notably to insufficient or redundant learning. Insufficient learning (due to convergence to local optima) results in under-performing policies whilst redundant learning wastes time and resources. The effects are further exacerbated when using single policies to solve multi-task learning problems. Observing that the Evidence Lower Bound (ELBO) used in Variational Auto-Encoders correlates with the diversity of image samples, we propose an auto-tuning technique based on the ELBO for self-supervised reinforcement learning. Our approach can auto-tune three hyperparameters: the replay buffer size, the number of policy gradient updates during each epoch, and the number of exploration steps during each epoch. We use a state-of-the-art self-supervised robot learning framework (Reinforcement Learning with Imagined Goals (RIG) using Soft Actor-Critic) as baseline for experimental verification. Experiments show that our method can auto-tune online and yields the best performance at a fraction of the time and computational resources. Code, video, and appendix for simulated and real-robot experiments can be found at the project page \url{www.JuanRojas.net/autotune}.
 
-## Overview
+## 核心内容
+Policy optimization in reinforcement learning requires the selection of numerous hyperparameters across different environments. Fixing them incorrectly may negatively impact optimization performance leading notably to insufficient or redundant learning. Insufficient learning (due to convergence to local optima) results in under-performing policies whilst redundant learning wastes time and resources. The effects are further exacerbated when using single policies to solve multi-task learning problems. Observing that the Evidence Lower Bound (ELBO) used in Variational Auto-Encoders correlates with the diversity of image samples, we propose an auto-tuning technique based on the ELBO for self-supervised reinforcement learning. Our approach can auto-tune three hyperparameters: the replay buffer size, the number of policy gradient updates during each epoch, and the number of exploration steps during each epoch. We use a state-of-the-art self-supervised robot learning framework (Reinforcement Learning with Imagined Goals (RIG) using Soft Actor-Critic) as baseline for experimental verification. Experiments show that our method can auto-tune online and yields the best performance at a fraction of the time and computational resources. Code, video, and appendix for simulated and real-robot experiments can be found at the project page \url{www.JuanRojas.net/autotune}.
 
-Policy optimization in reinforcement learning depends on many hyperparameters that are usually fixed by hand. Setting them incorrectly can cause insufficient learning (convergence to poor local optima) or redundant learning (wasted samples, time, and computation), and these problems are amplified in multi-task and curriculum settings. This paper observes that the Evidence Lower Bound (ELBO) used in Variational Auto-Encoders correlates with the diversity of generated image samples, and proposes an online auto-tuning method that uses the negative ELBO of the VAE goal generator in RIG+SAC to adapt three hyperparameters: replay buffer size, the number of policy gradient updates per epoch, and the number of exploration steps per epoch. A single scaling factor ξ ties the three hyperparameters together so that the system can increase exploration and updates when goal diversity is high and reduce them when diversity is low.
+## 参考
+- http://arxiv.org/abs/2010.08252v4
 
-The authors instantiate their method on Reinforcement Learning with Imagined Goals (RIG) combined with Soft Actor-Critic (SAC). They report experiments on simulated visual manipulation/navigation tasks and a real-robot reaching task, including curriculum learning, showing that the proposed auto-tuning can match or exceed fixed hyperparameter settings while using less time and fewer computational resources.
-
-## Key Contributions
-
-- Identified and theoretically linked the negative ELBO of the VAE goal generator to the empirical entropy/diversity of training samples.
-- Proposed an online auto-tuning method that replaces three RIG+SAC hyperparameters with a single scaling factor ξ.
-- Demonstrated the method on simulated visual manipulation/navigation tasks and a real-robot visual reaching task, including curriculum learning, while reportedly using fewer resources than fixed Optuna-tuned values.
-- Reduced the manual tuning burden for self-supervised visual RL by enabling dynamic, online hyperparameter adjustment.
-
-## Relevance to Humanoid Robotics
-
-Humanoid robots must learn versatile, vision-based behaviors in unstructured environments, which typically requires self-supervised or multi-task reinforcement learning from high-dimensional image observations. Such learning is notoriously sensitive to hyperparameters and expensive in terms of samples, wall-clock time, and compute, making manual tuning a major scalability bottleneck. By using the VAE ELBO as an online diversity signal to auto-tune key hyperparameters, this work directly addresses the sample-efficiency and tuning burden that limit scaling of visual self-supervised RL to complex humanoid platforms.
-
-Although the experiments are performed on a general robot-learning framework rather than a humanoid, the underlying problem—tuning visual multi-task RL with limited samples and compute—is central to humanoid skill acquisition. The method’s emphasis on reducing redundant learning and avoiding local optima is especially relevant for humanoid systems where real-world interaction is costly and curricula are often required to learn whole-body behaviors.

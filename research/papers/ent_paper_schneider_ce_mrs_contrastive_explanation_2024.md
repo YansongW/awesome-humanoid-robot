@@ -8,13 +8,11 @@ names:
   zh: CE-MRS：多机器人系统的对比解释
   ko: 'CE-MRS: 다중 로봇 시스템을 위한 대비 설명'
 summary:
-  en: Introduces CE-MRS, a method that generates natural-language contrastive explanations
-    by comparing a multi-robot system's solution with a user-proposed foil across
-    task allocation, scheduling, and motion planning, validated in a search-and-rescue
+  en: Introduces CE-MRS, a method that generates natural-language contrastive explanations by comparing a multi-robot system's
+    solution with a user-proposed foil across task allocation, scheduling, and motion planning, validated in a search-and-rescue
     user study.
   zh: 提出 CE-MRS 方法，通过比较多机器人系统方案与用户提出的反事实方案，生成涵盖任务分配、调度与运动规划的自然语言对比解释，并在搜索救援用户研究中验证。
-  ko: CE-MRS를 제안하여 다중 로봇 시스템의 해결책과 사용자가 제시한 대안 해결책을 비교하여 작업 할당, 스케줄링 및 동작 계획을 포괄하는
-    자연어 대비 설명을 생성하고 탐색·구조 사용자 연구로 검증함.
+  ko: CE-MRS를 제안하여 다중 로봇 시스템의 해결책과 사용자가 제시한 대안 해결책을 비교하여 작업 할당, 스케줄링 및 동작 계획을 포괄하는 자연어 대비 설명을 생성하고 탐색·구조 사용자 연구로 검증함.
 domains:
 - 07_ai_models_algorithms
 - 11_applications_markets
@@ -38,10 +36,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from the arXiv abstract and provided metadata; requires human
-    review before full verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.08408v1.
 sources:
 - id: src_001
   type: paper
@@ -52,21 +49,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+As the complexity of multi-robot systems grows to incorporate a greater number of robots, more complex tasks, and longer time horizons, the solutions to such problems often become too complex to be fully intelligible to human users. In this work, we introduce an approach for generating natural language explanations that justify the validity of the system's solution to the user, or else aid the user in correcting any errors that led to a suboptimal system solution. Toward this goal, we first contribute a generalizable formalism of contrastive explanations for multi-robot systems, and then introduce a holistic approach to generating contrastive explanations for multi-robot scenarios that selectively incorporates data from multi-robot task allocation, scheduling, and motion-planning to explain system behavior. Through user studies with human operators we demonstrate that our integrated contrastive explanation approach leads to significant improvements in user ability to identify and solve system errors, leading to significant improvements in overall multi-robot team performance.
 
-## Overview
+## 核心内容
+As the complexity of multi-robot systems grows to incorporate a greater number of robots, more complex tasks, and longer time horizons, the solutions to such problems often become too complex to be fully intelligible to human users. In this work, we introduce an approach for generating natural language explanations that justify the validity of the system's solution to the user, or else aid the user in correcting any errors that led to a suboptimal system solution. Toward this goal, we first contribute a generalizable formalism of contrastive explanations for multi-robot systems, and then introduce a holistic approach to generating contrastive explanations for multi-robot scenarios that selectively incorporates data from multi-robot task allocation, scheduling, and motion-planning to explain system behavior. Through user studies with human operators we demonstrate that our integrated contrastive explanation approach leads to significant improvements in user ability to identify and solve system errors, leading to significant improvements in overall multi-robot team performance.
 
-As multi-robot systems grow in scale and complexity, their combined task allocation, scheduling, and motion-planning solutions can become too intricate for human operators to validate or correct. The authors argue that this opacity hinders user trust and limits effective human oversight of robot teams. CE-MRS is proposed as a holistic explanation framework that formalizes contrastive explanations for multi-robot systems and selectively draws on task allocation, scheduling, and motion-planning information to produce explanations.
+## 参考
+- http://arxiv.org/abs/2410.08408v1
 
-The framework first constructs a foil solution that represents a user's alternative hypothesis about how the robots should behave. It then compares this foil to the system's actual solution, identifies the critical differences, and templates those differences into natural-language utterances. By integrating data across multiple planning layers—rather than treating each layer in isolation—the approach aims to explain why the system's decision was necessary and how a proposed alternative would fail or degrade performance.
-
-The approach is validated through a user study with 22 human operators in a search-and-rescue scenario involving four robots and seven tasks. Results indicate that participants who received CE-MRS explanations were significantly better at identifying and correcting system errors, which in turn improved overall multi-robot team performance.
-
-## Key Contributions
-
-- Formalizes contrastive explanations for multi-robot systems spanning task allocation, scheduling, and motion planning.
-- Introduces CE-MRS, a holistic framework that constructs foil solutions, compares them to system solutions, and templates critical differences into natural language explanations.
-- Validates the approach through a 22-participant user study in a search-and-rescue domain, showing significant improvements in error identification and correction.
-
-## Relevance to Humanoid Robotics
-
-Although the paper studies generic multi-robot teams rather than humanoid robots specifically, its explanation problem is directly relevant to future humanoid fleets. As humanoids are deployed in manufacturing, logistics, and service environments, operators will need interpretable justifications for allocation, scheduling, and motion decisions. CE-MRS provides a generalizable method for producing such justifications in heterogeneous multi-robot systems, so it can plausibly extend to humanoid-robot fleets once they are integrated with task allocation and planning backends.

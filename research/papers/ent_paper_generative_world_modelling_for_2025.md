@@ -4,19 +4,16 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical
-    Report'
-  zh: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical
-    Report'
-  ko: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical
-    Report'
+  en: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report'
+  zh: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report'
+  ko: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report'
 summary:
-  en: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical
-    Report is a 2025 work on simulation benchmark for humanoid robots.'
-  zh: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical
-    Report is a 2025 work on simulation benchmark for humanoid robots.'
-  ko: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical
-    Report is a 2025 work on simulation benchmark for humanoid robots.'
+  en: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report is a 2025 work on simulation benchmark
+    for humanoid robots.'
+  zh: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report is a 2025 work on simulation benchmark
+    for humanoid robots.'
+  ko: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report is a 2025 work on simulation benchmark
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -36,25 +33,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Simulation
-    Benchmark. arXiv: 2510.07092.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.07092v1.
 sources:
 - id: src_001
   type: paper
-  title: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical
-    Report (arXiv)'
+  title: 'Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report (arXiv)'
   url: https://arxiv.org/abs/2510.07092
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report is a 2025 work on simulation benchmark for humanoid robots.
+World models are a powerful paradigm in AI and robotics, enabling agents to reason about the future by predicting visual observations or compact latent states. The 1X World Model Challenge introduces an open-source benchmark of real-world humanoid interaction, with two complementary tracks: sampling, focused on forecasting future image frames, and compression, focused on predicting future discrete latent codes. For the sampling track, we adapt the video generation foundation model Wan-2.2 TI2V-5B to video-state-conditioned future frame prediction. We condition the video generation on robot states using AdaLN-Zero, and further post-train the model using LoRA. For the compression track, we train a Spatio-Temporal Transformer model from scratch. Our models achieve 23.0 dB PSNR in the sampling task and a Top-500 CE of 6.6386 in the compression task, securing 1st place in both challenges.
 
-## Overview
-Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report is a 2025 work on simulation benchmark for humanoid robots.
+## 核心内容
+World models are a powerful paradigm in AI and robotics, enabling agents to reason about the future by predicting visual observations or compact latent states. The 1X World Model Challenge introduces an open-source benchmark of real-world humanoid interaction, with two complementary tracks: sampling, focused on forecasting future image frames, and compression, focused on predicting future discrete latent codes. For the sampling track, we adapt the video generation foundation model Wan-2.2 TI2V-5B to video-state-conditioned future frame prediction. We condition the video generation on robot states using AdaLN-Zero, and further post-train the model using LoRA. For the compression track, we train a Spatio-Temporal Transformer model from scratch. Our models achieve 23.0 dB PSNR in the sampling task and a Top-500 CE of 6.6386 in the compression task, securing 1st place in both challenges.
 
-## 개요
-Generative World Modelling for Humanoids: 1X World Model Challenge Technical Report is a 2025 work on simulation benchmark for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2510.07092v1
+

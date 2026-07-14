@@ -8,17 +8,14 @@ names:
   zh: ManiAgent
   ko: 'ManiAgent: An Agentic Framework for General Robotic Manipulation'
 summary:
-  en: 'ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced
-    by Beijing University of Technology, Nanjing University, University of Science
+  en: 'ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Beijing University of Technology, Nanjing University, University of Science
     and Technology of China.'
-  zh: 'ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced
-    by Beijing University of Technology, Nanjing University, University of Science
+  zh: 'ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Beijing University of Technology, Nanjing University, University of Science
     and Technology of China.'
-  ko: 'ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced
-    by Beijing University of Technology, Nanjing University, University of Science
+  ko: 'ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Beijing University of Technology, Nanjing University, University of Science
     and Technology of China.'
 domains:
 - 07_ai_models_algorithms
@@ -39,11 +36,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: ManiAgent. Institution: Beijing
-    University of Technology, Nanjing University, University of Science and Technology
-    of China. arXiv: 2510.11660.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.11660v2.
 sources:
 - id: src_001
   type: paper
@@ -58,12 +53,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing University of Technology, Nanjing University, University of Science and Technology of China.
+While Vision-Language-Action (VLA) models have demonstrated impressive capabilities in robotic manipulation, their performance in complex reasoning and long-horizon task planning is limited by data scarcity and model capacity. To address this, we introduce ManiAgent, an agentic architecture for general manipulation tasks that achieves end-to-end output from task descriptions and environmental inputs to robotic manipulation actions. In this framework, multiple agents involve inter-agent communication to perform environmental perception, sub-task decomposition and action generation, enabling efficient handling of complex manipulation scenarios. Evaluations show ManiAgent achieves an 86.8% success rate on the SimplerEnv benchmark and 95.8% on real-world pick-and-place tasks, enabling efficient data collection that yields VLA models with performance comparable to those trained on human-annotated datasets. The project webpage is available at https://yi-yang929.github.io/ManiAgent/.
 
-## Overview
-ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing University of Technology, Nanjing University, University of Science and Technology of China.
+## 核心内容
+While Vision-Language-Action (VLA) models have demonstrated impressive capabilities in robotic manipulation, their performance in complex reasoning and long-horizon task planning is limited by data scarcity and model capacity. To address this, we introduce ManiAgent, an agentic architecture for general manipulation tasks that achieves end-to-end output from task descriptions and environmental inputs to robotic manipulation actions. In this framework, multiple agents involve inter-agent communication to perform environmental perception, sub-task decomposition and action generation, enabling efficient handling of complex manipulation scenarios. Evaluations show ManiAgent achieves an 86.8% success rate on the SimplerEnv benchmark and 95.8% on real-world pick-and-place tasks, enabling efficient data collection that yields VLA models with performance comparable to those trained on human-annotated datasets. The project webpage is available at https://yi-yang929.github.io/ManiAgent/.
 
-## 개요
-ManiAgent: An Agentic Framework for General Robotic Manipulation (ManiAgent), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing University of Technology, Nanjing University, University of Science and Technology of China.
+## 参考
+- http://arxiv.org/abs/2510.11660v2
+

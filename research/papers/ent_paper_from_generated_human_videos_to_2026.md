@@ -8,11 +8,17 @@ names:
   zh: 生成视频不能直接给机器人用
   ko: From Generated Human Videos to Physically Plausible Robot Trajectories
 summary:
-  en: From Generated Human Videos to Physically Plausible Robot Trajectories is a
-    knowledge node related to paper in the humanoid robot value chain.
-  zh: ''
-  ko: From Generated Human Videos to Physically Plausible Robot Trajectories is a
-    knowledge node related to paper in the humanoid robot value chain.
+  en: From Generated Human Videos to Physically Plausible Robot Trajectories is a knowledge node related to paper in the humanoid
+    robot value chain.
+  zh: 'Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding
+    the potential to serve as high-level planners for contextual robot control. To realize this potential, a key research
+    question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? This
+    challenge arises because generated videos are often noisy and exhibit morphological distortions that make direct imitation
+    difficult compared to real video. To address this, we introduce a two-stage pipeline. First, we lift video pixels into
+    a 4D human representation and then retarget to the humanoid morphology. Second, we propose GenMimic-a physics-aware reinforcement
+    learning policy conditioned on 3D keypoints, and trained with symmetry reg'
+  ko: From Generated Human Videos to Physically Plausible Robot Trajectories is a knowledge node related to paper in the humanoid
+    robot value chain.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -31,10 +37,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from WeChat curated list (004). Institution: 伯克利；纽约大学；约翰内斯开普勒大学.
-    arXiv: 2512.05094.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.05094v2.
 sources:
 - id: src_001
   type: paper
@@ -51,12 +56,12 @@ sources:
 theoretical_depth:
 - system
 ---
-
 ## 概述
-From Generated Human Videos to Physically Plausible Robot Trajectories is a knowledge node related to paper in the humanoid robot value chain.
+Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding the potential to serve as high-level planners for contextual robot control. To realize this potential, a key research question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? This challenge arises because generated videos are often noisy and exhibit morphological distortions that make direct imitation difficult compared to real video. To address this, we introduce a two-stage pipeline. First, we lift video pixels into a 4D human representation and then retarget to the humanoid morphology. Second, we propose GenMimic-a physics-aware reinforcement learning policy conditioned on 3D keypoints, and trained with symmetry regularization and keypoint-weighted tracking rewards. As a result, GenMimic can mimic human actions from noisy, generated videos. We curate GenMimicBench, a synthetic human-motion dataset generated using two video generation models across a spectrum of actions and contexts, establishing a benchmark for assessing zero-shot generalization and policy robustness. Extensive experiments demonstrate improvements over strong baselines in simulation and confirm coherent, physically stable motion tracking on a Unitree G1 humanoid robot without fine-tuning. This work offers a promising path to realizing the potential of video generation models as high-level policies for robot control.
 
-## Overview
-From Generated Human Videos to Physically Plausible Robot Trajectories is a knowledge node related to paper in the humanoid robot value chain.
+## 核心内容
+Video generation models are rapidly improving in their ability to synthesize human actions in novel contexts, holding the potential to serve as high-level planners for contextual robot control. To realize this potential, a key research question remains open: how can a humanoid execute the human actions from generated videos in a zero-shot manner? This challenge arises because generated videos are often noisy and exhibit morphological distortions that make direct imitation difficult compared to real video. To address this, we introduce a two-stage pipeline. First, we lift video pixels into a 4D human representation and then retarget to the humanoid morphology. Second, we propose GenMimic-a physics-aware reinforcement learning policy conditioned on 3D keypoints, and trained with symmetry regularization and keypoint-weighted tracking rewards. As a result, GenMimic can mimic human actions from noisy, generated videos. We curate GenMimicBench, a synthetic human-motion dataset generated using two video generation models across a spectrum of actions and contexts, establishing a benchmark for assessing zero-shot generalization and policy robustness. Extensive experiments demonstrate improvements over strong baselines in simulation and confirm coherent, physically stable motion tracking on a Unitree G1 humanoid robot without fine-tuning. This work offers a promising path to realizing the potential of video generation models as high-level policies for robot control.
 
-## 개요
-From Generated Human Videos to Physically Plausible Robot Trajectories is a knowledge node related to paper in the humanoid robot value chain.
+## 参考
+- http://arxiv.org/abs/2512.05094v2
+

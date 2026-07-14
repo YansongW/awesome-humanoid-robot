@@ -8,12 +8,9 @@ names:
   zh: Learning Perceptive Humanoid Locomotion over Challenging Terrain
   ko: Learning Perceptive Humanoid Locomotion over Challenging Terrain
 summary:
-  en: Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work
-    on locomotion for humanoid robots.
-  zh: Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work
-    on locomotion for humanoid robots.
-  ko: Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work
-    on locomotion for humanoid robots.
+  en: Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work on locomotion for humanoid robots.
+  zh: Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work on locomotion for humanoid robots.
+  ko: Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -30,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Locomotion.
-    arXiv: 2503.00692.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.00692v3.
 sources:
 - id: src_001
   type: paper
@@ -42,12 +38,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work on locomotion for humanoid robots.
+Humanoid robots are engineered to navigate terrains akin to those encountered by humans, which necessitates human-like locomotion and perceptual abilities. Currently, the most reliable controllers for humanoid motion rely exclusively on proprioception, a reliance that becomes both dangerous and unreliable when coping with rugged terrain. Although the integration of height maps into perception can enable proactive gait planning, robust utilization of this information remains a significant challenge, especially when exteroceptive perception is noisy. To surmount these challenges, we propose a solution based on a teacher-student distillation framework. In this paradigm, an oracle policy accesses noise-free data to establish an optimal reference policy, while the student policy not only imitates the teacher's actions but also simultaneously trains a world model with a variational information bottleneck for sensor denoising and state estimation. Extensive evaluations demonstrate that our approach markedly enhances performance in scenarios characterized by unreliable terrain estimations. Moreover, we conducted rigorous testing in both challenging urban settings and off-road environments, the model successfully traverse 2 km of varied terrain without external intervention.
 
-## Overview
-Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work on locomotion for humanoid robots.
+## 核心内容
+Humanoid robots are engineered to navigate terrains akin to those encountered by humans, which necessitates human-like locomotion and perceptual abilities. Currently, the most reliable controllers for humanoid motion rely exclusively on proprioception, a reliance that becomes both dangerous and unreliable when coping with rugged terrain. Although the integration of height maps into perception can enable proactive gait planning, robust utilization of this information remains a significant challenge, especially when exteroceptive perception is noisy. To surmount these challenges, we propose a solution based on a teacher-student distillation framework. In this paradigm, an oracle policy accesses noise-free data to establish an optimal reference policy, while the student policy not only imitates the teacher's actions but also simultaneously trains a world model with a variational information bottleneck for sensor denoising and state estimation. Extensive evaluations demonstrate that our approach markedly enhances performance in scenarios characterized by unreliable terrain estimations. Moreover, we conducted rigorous testing in both challenging urban settings and off-road environments, the model successfully traverse 2 km of varied terrain without external intervention.
 
-## 개요
-Learning Perceptive Humanoid Locomotion over Challenging Terrain is a 2025 work on locomotion for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2503.00692v3
+

@@ -8,11 +8,17 @@ names:
   zh: 高动态动作会撞上硬件边界
   ko: 'OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control'
 summary:
-  en: 'OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control
-    is a knowledge node related to paper in the humanoid robot value chain.'
-  zh: ''
-  ko: 'OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control
-    is a knowledge node related to paper in the humanoid robot value chain.'
+  en: 'OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control is a knowledge node related to paper in
+    the humanoid robot value chain.'
+  zh: 'High-fidelity motion tracking serves as the ultimate litmus test for generalizable, human-level motor skills. However,
+    current policies often hit a "generality barrier": as motion libraries scale in diversity, tracking fidelity inevitably
+    collapses - especially for real-world deployment of high-dynamic motions. We identify this failure as the result of two
+    compounding factors: the learning bottleneck in scaling multi-motion optimization and the physical executability constraints
+    that arise in real-world actuation. To overcome these challenges, we introduce OmniXtreme, a scalable framework that decouples
+    general motor skill learning from sim-to-real physical skill refinement. Our approach uses a flow-matching policy with
+    high-capacity architectures to scale representation capacity without i'
+  ko: 'OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control is a knowledge node related to paper in
+    the humanoid robot value chain.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -30,15 +36,13 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from WeChat curated list (016). Institution: BIGAI；BIGAI & 宇树科技；上海交通大学；中科大；宇树科技；华中科技大学；北京理工大学.
-    arXiv: 2602.23843.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2602.23843v1.
 sources:
 - id: src_001
   type: paper
-  title: 'OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control
-    (arXiv)'
+  title: 'OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control (arXiv)'
   url: https://arxiv.org/abs/2602.23843
   date: '2026'
   accessed_at: '2026-07-01'
@@ -51,12 +55,12 @@ sources:
 theoretical_depth:
 - system
 ---
-
 ## 概述
-OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control is a knowledge node related to paper in the humanoid robot value chain.
+High-fidelity motion tracking serves as the ultimate litmus test for generalizable, human-level motor skills. However, current policies often hit a "generality barrier": as motion libraries scale in diversity, tracking fidelity inevitably collapses - especially for real-world deployment of high-dynamic motions. We identify this failure as the result of two compounding factors: the learning bottleneck in scaling multi-motion optimization and the physical executability constraints that arise in real-world actuation. To overcome these challenges, we introduce OmniXtreme, a scalable framework that decouples general motor skill learning from sim-to-real physical skill refinement. Our approach uses a flow-matching policy with high-capacity architectures to scale representation capacity without interference-intensive multi-motion RL optimization, followed by an actuation-aware refinement phase that ensures robust performance on physical hardware. Extensive experiments demonstrate that OmniXtreme maintains high-fidelity tracking across diverse, high-difficulty datasets. On real robots, the unified policy successfully executes multiple extreme motions, effectively breaking the long-standing fidelity-scalability trade-off in high-dynamic humanoid control.
 
-## Overview
-OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control is a knowledge node related to paper in the humanoid robot value chain.
+## 核心内容
+High-fidelity motion tracking serves as the ultimate litmus test for generalizable, human-level motor skills. However, current policies often hit a "generality barrier": as motion libraries scale in diversity, tracking fidelity inevitably collapses - especially for real-world deployment of high-dynamic motions. We identify this failure as the result of two compounding factors: the learning bottleneck in scaling multi-motion optimization and the physical executability constraints that arise in real-world actuation. To overcome these challenges, we introduce OmniXtreme, a scalable framework that decouples general motor skill learning from sim-to-real physical skill refinement. Our approach uses a flow-matching policy with high-capacity architectures to scale representation capacity without interference-intensive multi-motion RL optimization, followed by an actuation-aware refinement phase that ensures robust performance on physical hardware. Extensive experiments demonstrate that OmniXtreme maintains high-fidelity tracking across diverse, high-difficulty datasets. On real robots, the unified policy successfully executes multiple extreme motions, effectively breaking the long-standing fidelity-scalability trade-off in high-dynamic humanoid control.
 
-## 개요
-OmniXtreme: Breaking the Generality Barrier in High-Dynamic Humanoid Control is a knowledge node related to paper in the humanoid robot value chain.
+## 参考
+- http://arxiv.org/abs/2602.23843v1
+

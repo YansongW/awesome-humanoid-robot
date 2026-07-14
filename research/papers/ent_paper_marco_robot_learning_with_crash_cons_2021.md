@@ -8,15 +8,12 @@ names:
   zh: 具有碰撞约束的机器人学习
   ko: 충돌 제약 조건을 갖는 로봇 학습
 summary:
-  en: This paper introduces EIC2, a constrained Bayesian optimization framework for
-    robot learning with crash constraints, where failed experiments yield no data;
-    it models constraints with a Gaussian process for classified regression (GPCR)
-    that combines discrete failure/success labels with continuous observations and
-    learns the constraint threshold as a hyperparameter.
+  en: This paper introduces EIC2, a constrained Bayesian optimization framework for robot learning with crash constraints,
+    where failed experiments yield no data; it models constraints with a Gaussian process for classified regression (GPCR)
+    that combines discrete failure/success labels with continuous observations and learns the constraint threshold as a hyperparameter.
   zh: 本文提出了EIC2，一种用于具有碰撞约束的机器人学习的约束贝叶斯优化框架：失败实验不产生数据；它使用高斯过程分类回归（GPCR）对约束建模，将离散的成功/失败标签与连续观测结合，并将约束阈值作为超参数学习。
-  ko: 본 논문은 충돌 제약 조건이 있는 로봇 학습을 위한 제약 베이지안 최적화 프레임워크인 EIC2를 제안한다. 실패한 실험에서는 데이터를 얻을
-    수 없으며, GPCR(분류 회귀를 위한 가우시안 프로세스)을 사용하여 이산적 성공/실패 레이블과 연속적 관측을 결합하고 제약 임계값을 하이퍼파라미터로
-    학습한다.
+  ko: 본 논문은 충돌 제약 조건이 있는 로봇 학습을 위한 제약 베이지안 최적화 프레임워크인 EIC2를 제안한다. 실패한 실험에서는 데이터를 얻을 수 없으며, GPCR(분류 회귀를 위한 가우시안 프로세스)을 사용하여
+    이산적 성공/실패 레이블과 연속적 관측을 결합하고 제약 임계값을 하이퍼파라미터로 학습한다.
 domains:
 - 07_ai_models_algorithms
 - 02_components
@@ -48,10 +45,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-28'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from arXiv full text (arXiv:2010.08669v3, accepted January 2021);
-    requires human review before verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2010.08669v3.
 sources:
 - id: src_001
   type: paper
@@ -62,24 +58,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+In the past decade, numerous machine learning algorithms have been shown to successfully learn optimal policies to control real robotic systems. However, it is common to encounter failing behaviors as the learning loop progresses. Specifically, in robot applications where failing is undesired but not catastrophic, many algorithms struggle with leveraging data obtained from failures. This is usually caused by (i) the failed experiment ending prematurely, or (ii) the acquired data being scarce or corrupted. Both complicate the design of proper reward functions to penalize failures. In this paper, we propose a framework that addresses those issues. We consider failing behaviors as those that violate a constraint and address the problem of learning with crash constraints, where no data is obtained upon constraint violation. The no-data case is addressed by a novel GP model (GPCR) for the constraint that combines discrete events (failure/success) with continuous observations (only obtained upon success). We demonstrate the effectiveness of our framework on simulated benchmarks and on a real jumping quadruped, where the constraint threshold is unknown a priori. Experimental data is collected, by means of constrained Bayesian optimization, directly on the real robot. Our results outperform manual tuning and GPCR proves useful on estimating the constraint threshold.
 
-## Overview
+## 核心内容
+In the past decade, numerous machine learning algorithms have been shown to successfully learn optimal policies to control real robotic systems. However, it is common to encounter failing behaviors as the learning loop progresses. Specifically, in robot applications where failing is undesired but not catastrophic, many algorithms struggle with leveraging data obtained from failures. This is usually caused by (i) the failed experiment ending prematurely, or (ii) the acquired data being scarce or corrupted. Both complicate the design of proper reward functions to penalize failures. In this paper, we propose a framework that addresses those issues. We consider failing behaviors as those that violate a constraint and address the problem of learning with crash constraints, where no data is obtained upon constraint violation. The no-data case is addressed by a novel GP model (GPCR) for the constraint that combines discrete events (failure/success) with continuous observations (only obtained upon success). We demonstrate the effectiveness of our framework on simulated benchmarks and on a real jumping quadruped, where the constraint threshold is unknown a priori. Experimental data is collected, by means of constrained Bayesian optimization, directly on the real robot. Our results outperform manual tuning and GPCR proves useful on estimating the constraint threshold.
 
-Many robot learning algorithms encounter failing behaviors during the search for optimal controller parameters. When failures are undesired but not catastrophic, they often end the experiment prematurely or produce scarce or corrupted measurements, making it hard to design reward functions that properly penalize failures. This paper frames this situation as the problem of learning with crash constraints (LCC): a reward is observed upon successful execution, but only a discrete failure label is available when the robot crashes. The authors address LCC with constrained Bayesian optimization (BOC) and propose the EIC2 framework, which stands for expected improvement with crash constraints.
+## 参考
+- http://arxiv.org/abs/2010.08669v3
 
-The key modeling contribution is the Gaussian process for classified regression (GPCR). Unlike a standard GP regressor or classifier, GPCR combines two observation types in a single-output GP: a discrete label indicating failure or success, and a continuous constraint value that is only observed when the constraint is satisfied. This allows EIC2 to exploit failure information without hand-crafted penalty terms in the objective, while also modeling the objective cost with a standard GP. In addition, GPCR treats the constraint threshold as a hyperparameter and estimates it from data via maximum a posteriori (MAP), reducing the need for expert knowledge that is typically required to set this threshold.
-
-The effectiveness of EIC2 is demonstrated in two settings. First, numerical benchmarks for global minimization—Michalewicz 10D, Hartman 6D, and Egg Crate 2D—are used to compare EIC2 against heuristic penalty strategies and against baseline constrained BO methods such as EIC, PIBU, and SAFEOPT. Second, and most importantly, EIC2 is validated on a real jumping quadruped, the Solo robot. Using a kinodynamic planner, a PD controller with variable gains, and a 200 Hz motion capture system, EIC2 automatically tunes four controller gains to maximize jump height while keeping the total motor current below an unknown threshold. The learned controller achieved a jump height of 0.784 m, about 34% higher than the 0.65 m obtained with manual tuning, and GPCR estimated the current threshold at 112.34 A.
-
-## Key Contributions
-
-- EIC2: a constrained Bayesian optimization framework that explicitly addresses learning with crash constraints (LCC), where no objective or constraint data is obtained upon failure.
-- GPCR: a single-output Gaussian process model that jointly handles discrete failure/success labels and continuous constraint observations.
-- Constraint threshold treated as a learnable hyperparameter via MAP estimation, reducing reliance on expert knowledge and ad hoc choices.
-- First real-system solution to LCC, validated on a jumping Solo quadruped robot, with learned jumps about 34% higher than manual tuning.
-
-## Relevance to Humanoid Robotics
-
-Humanoid robots are complex, high-dimensional systems where controller tuning for locomotion, balance, and manipulation is expensive, time-consuming, and failure-prone. The EIC2/GPCR framework is directly relevant because it automates sample-efficient controller tuning under safety constraints directly on hardware, without requiring a pre-specified constraint threshold or hand-designed failure penalties. This can reduce the expert labor currently needed to tune gaits, balance controllers, and whole-body policies, and it provides a principled way to learn safe operating regions from crash events.
-
-More broadly, the ability to learn from crash constraints supports the scalability and mass deployment of humanoid platforms. As manufacturers move from one-off prototypes to larger fleets, automated, safe learning methods that minimize hardware damage and manual intervention become critical. EIC2's combination of constrained Bayesian optimization, hybrid discrete/continuous GP modeling, and threshold learning offers a reusable building block for safe learning pipelines in humanoid locomotion and beyond.

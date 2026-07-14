@@ -8,12 +8,10 @@ names:
   zh: 面向云机器人技术的服务导向机器人计算
   ko: 클라우드 로보틱스를 위한 서비스 지향 로봇 컴퓨팅
 summary:
-  en: A survey of service-oriented architecture and Web services for cloud robotics,
-    distinguishing the virtualization of robotic systems from computation offloading
-    to cloud-based services.
+  en: A survey of service-oriented architecture and Web services for cloud robotics, distinguishing the virtualization of
+    robotic systems from computation offloading to cloud-based services.
   zh: 本文综述了面向服务的架构与Web服务在云机器人中的应用，区分了机器人系统虚拟化和向云端服务卸载计算两类方法。
-  ko: 본 논문은 서비스 지향 아키텍처와 웹 서비스를 활용한 클라우드 로보틱스를 개괄하며, 로봇 시스템 가상화와 클라우드 기반 서비스로의 계산
-    오프로딩을 구분한다.
+  ko: 본 논문은 서비스 지향 아키텍처와 웹 서비스를 활용한 클라우드 로보틱스를 개괄하며, 로봇 시스템 가상화와 클라우드 기반 서비스로의 계산 오프로딩을 구분한다.
 domains:
 - 08_software_middleware
 - 05_mass_production
@@ -38,10 +36,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from the arXiv full text (v2); requires human review before
-    verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1901.08173v2.
 sources:
 - id: src_001
   type: paper
@@ -52,22 +49,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+In this article, we present an overview of the use of service-oriented architecture and Web services in developing robotics applications and software integrated with the Internet and the Cloud. This is a recent trend that emerged since 2010 from the concept of cloud robotics, which leverages the use of cloud infrastructures for robotics applications following a service-oriented architecture approach. In particular, we distinguish two main categories: (\textit{i.}) virtualization of robotics systems and (\textit{ii.}) computation offloading from robots to cloud-based services. We discuss the main approaches proposed in the literature to design robotics systems through the Web and their integration to the cloud through a service-oriented computing framework.
 
-## Overview
+## 核心内容
+In this article, we present an overview of the use of service-oriented architecture and Web services in developing robotics applications and software integrated with the Internet and the Cloud. This is a recent trend that emerged since 2010 from the concept of cloud robotics, which leverages the use of cloud infrastructures for robotics applications following a service-oriented architecture approach. In particular, we distinguish two main categories: (\textit{i.}) virtualization of robotics systems and (\textit{ii.}) computation offloading from robots to cloud-based services. We discuss the main approaches proposed in the literature to design robotics systems through the Web and their integration to the cloud through a service-oriented computing framework.
 
-This article surveys the use of service-oriented architecture (SOA) and Web services in robotics applications integrated with the Internet and the Cloud. The author traces the emergence of this trend from the broader concept of cloud robotics, which leverages cloud infrastructures for robotics following a service-oriented approach.
+## 参考
+- http://arxiv.org/abs/1901.08173v2
 
-The survey organizes the literature into two main categories: (i) the virtualization of robotic systems through Web services, and (ii) the offloading of computation from robots to cloud-based services. For each category, the paper reviews representative technologies and systems, compares SOAP, REST, and Websocket communication paradigms, and discusses their implications for building scalable, Internet-accessible robotic software.
-
-## Key Contributions
-
-- Defines core concepts including SOA, Web services, REST, cloud robotics, virtualization, and computation offloading.
-- Compares SOAP, REST, and Websocket technologies as communication mechanisms for robot virtualization.
-- Reviews robotic virtualization contributions such as rosbridge, ROS Web services, Dronemap Planner, and ROSLink.
-- Reviews cloud computation offloading contributions including DaVinci, Rapyuta, OpenEASE, and AWS RoboMaker.
-
-## Relevance to Humanoid Robotics
-
-Service-oriented cloud robotics can reduce onboard hardware requirements for humanoid robots by offloading computation-intensive tasks such as perception, planning, and machine learning to cloud services. This supports cost-effective mass production and deployment because less powerful onboard computers can be used while still achieving complex behaviors.
-
-However, the paper also notes that the performance of cloud-dependent robotics systems is heavily affected by network quality-of-service, which is a critical concern for real-time humanoid control. In addition, several reviewed prototypes rely on simulators or lack extensive real-world validation, so their direct transfer to humanoid platforms requires further verification.

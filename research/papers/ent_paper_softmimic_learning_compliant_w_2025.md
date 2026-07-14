@@ -8,12 +8,12 @@ names:
   zh: 'SoftMimic: Learning Compliant Whole-body Control from Examples'
   ko: 'SoftMimic: Learning Compliant Whole-body Control from Examples'
 summary:
-  en: 'SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work
-    on loco-manipulation and whole-body-control for humanoid robots.'
-  zh: 'SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work
-    on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: 'SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work
-    on loco-manipulation and whole-body-control for humanoid robots.'
+  en: 'SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work on loco-manipulation and whole-body-control
+    for humanoid robots.'
+  zh: 'SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work on loco-manipulation and whole-body-control
+    for humanoid robots.'
+  ko: 'SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work on loco-manipulation and whole-body-control
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -32,10 +32,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Loco-Manipulation
-    and Whole-Body-Control. arXiv: 2510.17792.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.17792v1.
 sources:
 - id: src_001
   type: paper
@@ -44,12 +43,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+We introduce SoftMimic, a framework for learning compliant whole-body control policies for humanoid robots from example motions. Imitating human motions with reinforcement learning allows humanoids to quickly learn new skills, but existing methods incentivize stiff control that aggressively corrects deviations from a reference motion, leading to brittle and unsafe behavior when the robot encounters unexpected contacts. In contrast, SoftMimic enables robots to respond compliantly to external forces while maintaining balance and posture. Our approach leverages an inverse kinematics solver to generate an augmented dataset of feasible compliant motions, which we use to train a reinforcement learning policy. By rewarding the policy for matching compliant responses rather than rigidly tracking the reference motion, SoftMimic learns to absorb disturbances and generalize to varied tasks from a single motion clip. We validate our method through simulations and real-world experiments, demonstrating safe and effective interaction with the environment.
 
-## Overview
-SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+## 核心内容
+We introduce SoftMimic, a framework for learning compliant whole-body control policies for humanoid robots from example motions. Imitating human motions with reinforcement learning allows humanoids to quickly learn new skills, but existing methods incentivize stiff control that aggressively corrects deviations from a reference motion, leading to brittle and unsafe behavior when the robot encounters unexpected contacts. In contrast, SoftMimic enables robots to respond compliantly to external forces while maintaining balance and posture. Our approach leverages an inverse kinematics solver to generate an augmented dataset of feasible compliant motions, which we use to train a reinforcement learning policy. By rewarding the policy for matching compliant responses rather than rigidly tracking the reference motion, SoftMimic learns to absorb disturbances and generalize to varied tasks from a single motion clip. We validate our method through simulations and real-world experiments, demonstrating safe and effective interaction with the environment.
 
-## 개요
-SoftMimic: Learning Compliant Whole-body Control from Examples is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2510.17792v1
+

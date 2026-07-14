@@ -8,16 +8,12 @@ names:
   zh: 移动机器人软件架构
   ko: 모바일 로봇을 위한 소프트웨어 아키텍처
 summary:
-  en: A survey chapter that reviews software architectures and middleware frameworks
-    for mobile robots, including ROS, ROS2, YARP, Orocos, Player, CARMEN, MATLAB,
-    and Microsoft Robotics Developer Studio, and catalogs common architectural patterns
-    such as component-based design, publish-subscribe, peer-to-peer, and service-oriented
-    approaches.
-  zh: 一篇综述章节，回顾了移动机器人的软件架构和中间件框架，包括 ROS、ROS2、YARP、Orocos、Player、CARMEN、MATLAB 和 Microsoft
-    Robotics Developer Studio，并梳理了基于组件设计、发布-订阅、点对点、面向服务等常见架构模式。
-  ko: ROS, ROS2, YARP, Orocos, Player, CARMEN, MATLAB, Microsoft Robotics Developer
-    Studio 등 모바일 로봇용 소프트웨어 아키텍처와 미들웨어 프레임워크를 검토하고, 컴포넌트 기반 설계, 발행-구독, 피어 투 피어, 서비스
-    지향 등의 일반적인 아키텍처 패턴을 정리한 서베이 장이다.
+  en: A survey chapter that reviews software architectures and middleware frameworks for mobile robots, including ROS, ROS2,
+    YARP, Orocos, Player, CARMEN, MATLAB, and Microsoft Robotics Developer Studio, and catalogs common architectural patterns
+    such as component-based design, publish-subscribe, peer-to-peer, and service-oriented approaches.
+  zh: 一篇综述章节，回顾了移动机器人的软件架构和中间件框架，包括 ROS、ROS2、YARP、Orocos、Player、CARMEN、MATLAB 和 Microsoft Robotics Developer Studio，并梳理了基于组件设计、发布-订阅、点对点、面向服务等常见架构模式。
+  ko: ROS, ROS2, YARP, Orocos, Player, CARMEN, MATLAB, Microsoft Robotics Developer Studio 등 모바일 로봇용 소프트웨어 아키텍처와 미들웨어 프레임워크를
+    검토하고, 컴포넌트 기반 설계, 발행-구독, 피어 투 피어, 서비스 지향 등의 일반적인 아키텍처 패턴을 정리한 서베이 장이다.
 domains:
 - 08_software_middleware
 - 06_design_engineering
@@ -41,10 +37,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from supplied metadata and abstract; full-text review required
-    before verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2206.03233v2.
 sources:
 - id: src_001
   type: paper
@@ -56,24 +51,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+A software architecture defines the blueprints of a large computational system, and is thus a crucial part of the design and development effort. This task has been explored extensively in the context of mobile robots, resulting in a plethora of reference designs and implementations. As the software architecture defines the framework in which all components are implemented, it is naturally a very important aspect of a mobile robot system. In this chapter, we overview the requirements that the particular problem domain (a mobile robot system) imposes on the software framework. We discuss some of the current design solutions, provide a historical perspective on common frameworks, and outline directions for future development.
 
-## Overview
+## 核心内容
+A software architecture defines the blueprints of a large computational system, and is thus a crucial part of the design and development effort. This task has been explored extensively in the context of mobile robots, resulting in a plethora of reference designs and implementations. As the software architecture defines the framework in which all components are implemented, it is naturally a very important aspect of a mobile robot system. In this chapter, we overview the requirements that the particular problem domain (a mobile robot system) imposes on the software framework. We discuss some of the current design solutions, provide a historical perspective on common frameworks, and outline directions for future development.
 
-This Encyclopedia of Robotics chapter provides a broad survey of software architectures and middleware frameworks developed for mobile robots. The authors review historically influential and currently prominent frameworks, including ROS, ROS2, YARP, Orocos, Player, CARMEN, MATLAB, and Microsoft Robotics Developer Studio, and identify common functional and non-functional requirements that such systems must satisfy. These requirements include support for asynchronous communication, real-time behavior, distributed processing, hardware heterogeneity, modularity, fault tolerance, and reuse. The chapter maps each framework to the architectural patterns it embodies, offering a conceptual basis for comparing and selecting middleware for specific robotic platforms.
+## 参考
+- http://arxiv.org/abs/2206.03233v2
 
-The chapter organizes architectural patterns into categories such as component-based design, publish-subscribe, peer-to-peer, client-server, event-driven, service-oriented, plug-in, blackboard, and database-centric approaches. For each pattern, the authors discuss how it addresses communication, coordination, scalability, and dynamic reconfiguration. The discussion also covers supporting infrastructure such as hardware abstraction layers, simulation tools (e.g., Gazebo, Stage, RViz), and communication buses (e.g., CAN bus, Ethernet, serial bus). The chapter concludes by outlining convergence trends and future research directions toward more distributed, efficient, and dynamically reconfigurable component-based systems.
-
-Overall, the work is positioned as a methodological survey rather than an empirical benchmark study. It synthesizes existing knowledge about robot software architectures and provides a taxonomy that can guide practitioners in choosing or designing middleware for mobile robots, including complex humanoid platforms.
-
-## Key Contributions
-
-- Comparative survey of widely used mobile-robotic frameworks and their core communication designs.
-- Enumeration of common functional and non-functional requirements for mobile-robot middleware, including real-time capabilities, asynchronous communication, and distributed processing.
-- Taxonomy of architectural patterns used in mobile robotics, including peer-to-peer, publish-subscribe, component-based, and service-oriented designs.
-- Discussion of convergence trends and future research directions toward distributed component-based systems.
-
-## Relevance to Humanoid Robotics
-
-Humanoid robots are complex mobile robotic platforms that integrate diverse sensors, actuators, perception modules, planners, and controllers into a single system. The middleware and architectural patterns surveyed in this chapter are directly relevant to humanoid robotics because they provide the communication, modularity, and real-time coordination infrastructure required to integrate these subsystems. Frameworks such as ROS2 and YARP, in particular, are widely used in humanoid research and development.
-
-For mass production and deployment of humanoids, selecting scalable, maintainable, and dynamically reconfigurable software architectures is critical. This chapter's taxonomy of component-based, publish-subscribe, and service-oriented patterns offers a knowledge foundation for making such architectural decisions in humanoid-robot engineering and production pipelines.

@@ -8,15 +8,12 @@ names:
   zh: NaVILA
   ko: 'NaVILA: Legged Robot Vision-Language-Action Model for Navigation'
 summary:
-  en: 'NaVILA: Legged Robot Vision-Language-Action Model for Navigation (NaVILA),
-    is a 2024 large vision-language-action model for robotic manipulation, introduced
-    by UC San Diego, USC, NVIDIA, and published at RSS25.'
-  zh: 'NaVILA: Legged Robot Vision-Language-Action Model for Navigation (NaVILA),
-    is a 2024 large vision-language-action model for robotic manipulation, introduced
-    by UC San Diego, USC, NVIDIA, and published at RSS25.'
-  ko: 'NaVILA: Legged Robot Vision-Language-Action Model for Navigation (NaVILA),
-    is a 2024 large vision-language-action model for robotic manipulation, introduced
-    by UC San Diego, USC, NVIDIA, and published at RSS25.'
+  en: 'NaVILA: Legged Robot Vision-Language-Action Model for Navigation (NaVILA), is a 2024 large vision-language-action model
+    for robotic manipulation, introduced by UC San Diego, USC, NVIDIA, and published at RSS25.'
+  zh: 'NaVILA: Legged Robot Vision-Language-Action Model for Navigation (NaVILA), is a 2024 large vision-language-action model
+    for robotic manipulation, introduced by UC San Diego, USC, NVIDIA, and published at RSS25.'
+  ko: 'NaVILA: Legged Robot Vision-Language-Action Model for Navigation (NaVILA), is a 2024 large vision-language-action model
+    for robotic manipulation, introduced by UC San Diego, USC, NVIDIA, and published at RSS25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -36,10 +33,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: NaVILA. Institution: UC San
-    Diego, USC, NVIDIA. Venue: RSS25. arXiv: 2412.04453.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2412.04453v2.
 sources:
 - id: src_001
   type: paper
@@ -54,12 +50,12 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-NaVILA: Legged Robot Vision-Language-Action Model for Navigation (NaVILA), is a 2024 large vision-language-action model for robotic manipulation, introduced by UC San Diego, USC, NVIDIA, and published at RSS25.
+This paper proposes to solve the problem of Vision-and-Language Navigation with legged robots, which not only provides a flexible way for humans to command but also allows the robot to navigate through more challenging and cluttered scenes. However, it is non-trivial to translate human language instructions all the way to low-level leg joint actions. We propose NaVILA, a 2-level framework that unifies a Vision-Language-Action model (VLA) with locomotion skills. Instead of directly predicting low-level actions from VLA, NaVILA first generates mid-level actions with spatial information in the form of language, (e.g., "moving forward 75cm"), which serves as an input for a visual locomotion RL policy for execution. NaVILA substantially improves previous approaches on existing benchmarks. The same advantages are demonstrated in our newly developed benchmarks with IsaacLab, featuring more realistic scenes, low-level controls, and real-world robot experiments. We show more results at https://navila-bot.github.io/
 
-## Overview
-NaVILA: Legged Robot Vision-Language-Action Model for Navigation (NaVILA), is a 2024 large vision-language-action model for robotic manipulation, introduced by UC San Diego, USC, NVIDIA, and published at RSS25.
+## 核心内容
+This paper proposes to solve the problem of Vision-and-Language Navigation with legged robots, which not only provides a flexible way for humans to command but also allows the robot to navigate through more challenging and cluttered scenes. However, it is non-trivial to translate human language instructions all the way to low-level leg joint actions. We propose NaVILA, a 2-level framework that unifies a Vision-Language-Action model (VLA) with locomotion skills. Instead of directly predicting low-level actions from VLA, NaVILA first generates mid-level actions with spatial information in the form of language, (e.g., "moving forward 75cm"), which serves as an input for a visual locomotion RL policy for execution. NaVILA substantially improves previous approaches on existing benchmarks. The same advantages are demonstrated in our newly developed benchmarks with IsaacLab, featuring more realistic scenes, low-level controls, and real-world robot experiments. We show more results at https://navila-bot.github.io/
 
-## 개요
-NaVILA: Legged Robot Vision-Language-Action Model for Navigation (NaVILA), is a 2024 large vision-language-action model for robotic manipulation, introduced by UC San Diego, USC, NVIDIA, and published at RSS25.
+## 参考
+- http://arxiv.org/abs/2412.04453v2
+

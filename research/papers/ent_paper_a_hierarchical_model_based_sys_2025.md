@@ -8,12 +8,9 @@ names:
   zh: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer
   ko: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer
 summary:
-  en: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a
-    2025 work on locomotion for humanoid robots.
-  zh: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a
-    2025 work on locomotion for humanoid robots.
-  ko: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a
-    2025 work on locomotion for humanoid robots.
+  en: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a 2025 work on locomotion for humanoid robots.
+  zh: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a 2025 work on locomotion for humanoid robots.
+  ko: A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -30,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Locomotion.
-    arXiv: 2512.09431.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2512.09431v1.
 sources:
 - id: src_001
   type: paper
@@ -42,12 +38,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a 2025 work on locomotion for humanoid robots.
+The development of athletic humanoid robots has gained significant attention as advances in actuation, sensing, and control enable increasingly dynamic, real-world capabilities. RoboCup, an international competition of fully autonomous humanoid robots, provides a uniquely challenging benchmark for such systems, culminating in the long-term goal of competing against human soccer players by 2050. This paper presents the hardware and software innovations underlying our team's victory in the RoboCup 2024 Adult-Sized Humanoid Soccer Competition. On the hardware side, we introduce an adult-sized humanoid platform built with lightweight structural components, high-torque quasi-direct-drive actuators, and a specialized foot design that enables powerful in-gait kicks while preserving locomotion robustness. On the software side, we develop an integrated perception and localization framework that combines stereo vision, object detection, and landmark-based fusion to provide reliable estimates of the ball, goals, teammates, and opponents. A mid-level navigation stack then generates collision-aware, dynamically feasible trajectories, while a centralized behavior manager coordinates high-level decision making, role selection, and kick execution based on the evolving game state. The seamless integration of these subsystems results in fast, precise, and tactically effective gameplay, enabling robust performance under the dynamic and adversarial conditions of real matches. This paper presents the design principles, system architecture, and experimental results that contributed to ARTEMIS's success as the 2024 Adult-Sized Humanoid Soccer champion.
 
-## Overview
-A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a 2025 work on locomotion for humanoid robots.
+## 核心内容
+The development of athletic humanoid robots has gained significant attention as advances in actuation, sensing, and control enable increasingly dynamic, real-world capabilities. RoboCup, an international competition of fully autonomous humanoid robots, provides a uniquely challenging benchmark for such systems, culminating in the long-term goal of competing against human soccer players by 2050. This paper presents the hardware and software innovations underlying our team's victory in the RoboCup 2024 Adult-Sized Humanoid Soccer Competition. On the hardware side, we introduce an adult-sized humanoid platform built with lightweight structural components, high-torque quasi-direct-drive actuators, and a specialized foot design that enables powerful in-gait kicks while preserving locomotion robustness. On the software side, we develop an integrated perception and localization framework that combines stereo vision, object detection, and landmark-based fusion to provide reliable estimates of the ball, goals, teammates, and opponents. A mid-level navigation stack then generates collision-aware, dynamically feasible trajectories, while a centralized behavior manager coordinates high-level decision making, role selection, and kick execution based on the evolving game state. The seamless integration of these subsystems results in fast, precise, and tactically effective gameplay, enabling robust performance under the dynamic and adversarial conditions of real matches. This paper presents the design principles, system architecture, and experimental results that contributed to ARTEMIS's success as the 2024 Adult-Sized Humanoid Soccer champion.
 
-## 개요
-A Hierarchical, Model-Based System for High-Performance Humanoid Soccer is a 2025 work on locomotion for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2512.09431v1
+

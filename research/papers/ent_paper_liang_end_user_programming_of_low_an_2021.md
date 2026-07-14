@@ -8,13 +8,12 @@ names:
   zh: 面向机器人任务规划的最终用户低层与高层动作编程
   ko: 로봇 작업 계획을 위한 최종 사용자의 저수준 및 고수준 동작 프로그래밍
 summary:
-  en: Introduces iRoPro, an interactive Programming-by-Demonstration framework that
-    lets end-users teach robots reusable low-level manipulation actions and high-level
-    PDDL-style conditions, then reuses them with a Fast-Forward task planner to solve
+  en: Introduces iRoPro, an interactive Programming-by-Demonstration framework that lets end-users teach robots reusable low-level
+    manipulation actions and high-level PDDL-style conditions, then reuses them with a Fast-Forward task planner to solve
     unseen tasks.
   zh: 提出iRoPro交互式演示编程框架，使最终用户能够教授机器人可复用的低层操作动作和高层PDDL风格条件，并结合Fast-Forward任务规划器解决未见过任务。
-  ko: 최종 사용자가 재사용 가능한 저수준 조작 동작과 PDDL 스타일의 고수준 조건을 로봇에 가르치고 Fast-Forward 작업 플래너를 활용해
-    보지 못한 작업을 해결하는 iRoPro 대화형 시연 프로그래밍 프레임워크를 소개한다.
+  ko: 최종 사용자가 재사용 가능한 저수준 조작 동작과 PDDL 스타일의 고수준 조건을 로봇에 가르치고 Fast-Forward 작업 플래너를 활용해 보지 못한 작업을 해결하는 iRoPro 대화형 시연 프로그래밍 프레임워크를
+    소개한다.
 domains:
 - 08_software_middleware
 - 07_ai_models_algorithms
@@ -38,11 +37,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from the provided metadata (abstract, method summary, and component
-    lists); full-text verification by a human reviewer is required before promotion
-    to verified.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2103.14342v1.
 sources:
 - id: src_001
   type: paper
@@ -53,23 +50,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+Programming robots for general purpose applications is extremely challenging due to the great diversity of end-user tasks ranging from manufacturing environments to personal homes. Recent work has focused on enabling end-users to program robots using Programming by Demonstration. However, teaching robots new actions from scratch that can be reused for unseen tasks remains a difficult challenge and is generally left up to robotic experts. We propose iRoPro, an interactive Robot Programming framework that allows end-users to teach robots new actions from scratch and reuse them with a task planner. In this work we provide a system implementation on a two-armed Baxter robot that (i) allows simultaneous teaching of low- and high-level actions by demonstration, (ii) includes a user interface for action creation with condition inference and modification, and (iii) allows creating and solving previously unseen problems using a task planner for the robot to execute in real-time. We evaluate the generalisation power of the system on six benchmark tasks and show how taught actions can be easily reused for complex tasks. We further demonstrate its usability with a user study (N=21), where users completed eight tasks to teach the robot new actions that are reused with a task planner. The study demonstrates that users with any programming level and educational background can easily learn and use the system.
 
-## Overview
+## 核心内容
+Programming robots for general purpose applications is extremely challenging due to the great diversity of end-user tasks ranging from manufacturing environments to personal homes. Recent work has focused on enabling end-users to program robots using Programming by Demonstration. However, teaching robots new actions from scratch that can be reused for unseen tasks remains a difficult challenge and is generally left up to robotic experts. We propose iRoPro, an interactive Robot Programming framework that allows end-users to teach robots new actions from scratch and reuse them with a task planner. In this work we provide a system implementation on a two-armed Baxter robot that (i) allows simultaneous teaching of low- and high-level actions by demonstration, (ii) includes a user interface for action creation with condition inference and modification, and (iii) allows creating and solving previously unseen problems using a task planner for the robot to execute in real-time. We evaluate the generalisation power of the system on six benchmark tasks and show how taught actions can be easily reused for complex tasks. We further demonstrate its usability with a user study (N=21), where users completed eight tasks to teach the robot new actions that are reused with a task planner. The study demonstrates that users with any programming level and educational background can easily learn and use the system.
 
-This paper presents iRoPro, an interactive robot-programming framework designed to let non-expert end-users teach robots reusable actions from scratch. The system combines kinesthetic Programming by Demonstration for low-level manipulation with automatic inference of high-level action conditions in a PDDL-style representation. A graphical user interface allows users to inspect and correct the inferred preconditions and effects. Once actions are taught, iRoPro invokes a Fast-Forward task planner to assemble the actions into plans for previously unseen tasks, which the robot executes in real time.
+## 参考
+- http://arxiv.org/abs/2103.14342v1
 
-The work situates itself at the intersection of end-user robot programming and AI planning. By capturing both low-level trajectories and high-level symbolic descriptions in a single demonstration, iRoPro aims to reduce the engineering effort normally required to make learned actions reusable across changing goals. The implementation is demonstrated on a dual-armed Baxter robot equipped with claw and suction grippers and a Kinect Xbox 360 depth camera, running on ROS.
-
-## Key Contributions
-
-- iRoPro framework enabling simultaneous end-user teaching of low- and high-level actions by demonstration.
-- Single-demonstration inference of action conditions with a graphical interface for user correction and modification.
-- Integration with a PDDL task planner to create and solve previously unseen problems in real time.
-- End-to-end implementation and evaluation on a dual-armed Baxter robot.
-- User study (N=21) showing usability across different educational backgrounds and programming levels.
-
-## Relevance to Humanoid Robotics
-
-Although the experiments were conducted on the stationary Baxter research platform, the underlying problem—enabling end-users to program reusable manipulation actions and combine them with a task planner—is directly relevant to humanoid robot deployment. Humanoid robots are expected to operate in diverse, unstructured manufacturing and service environments where tasks and goals change frequently. A method that lets non-experters teach new actions and automatically generate plans for novel tasks could substantially lower the deployment and reprogramming barrier for humanoid systems.
-
-The paper’s focus on combining low-level motion learning with high-level symbolic planning also mirrors the software-stack requirements of humanoid robots, which must bridge perception, control, planning, and human interaction. Components such as ROS, PDDL planners, and depth sensing are common in humanoid middleware, making the technical contributions transferable to bipedal or dual-arm humanoid platforms.

@@ -8,12 +8,10 @@ names:
   zh: 移动机器人传感器
   ko: 모바일 로봇 센서
 summary:
-  en: A survey chapter that presents a taxonomy, key specifications, and bottom-up
-    survey of sensors used in mobile robots, covering tactile, proximity, vision-based,
-    and ranging sensors.
+  en: A survey chapter that presents a taxonomy, key specifications, and bottom-up survey of sensors used in mobile robots,
+    covering tactile, proximity, vision-based, and ranging sensors.
   zh: 一篇综述章节，介绍移动机器人所用传感器的分类法、关键规格和自下而上的概述，涵盖触觉、接近、基于视觉和测距传感器。
-  ko: 모바일 로봇에 사용되는 센서의 분류법, 주요 사양 및 하향식 개요를 제시하는 서베이 챕터로 촉각, 근접, 비전 기반 및 거리 측정 센서를
-    다룬다.
+  ko: 모바일 로봇에 사용되는 센서의 분류법, 주요 사양 및 하향식 개요를 제시하는 서베이 챕터로 촉각, 근접, 비전 기반 및 거리 측정 센서를 다룬다.
 domains:
 - 02_components
 - 06_design_engineering
@@ -40,10 +38,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from the supplied metadata and abstract; full-text review is
-    needed before verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2206.03223v3.
 sources:
 - id: src_001
   type: paper
@@ -55,25 +52,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+A sensor is a device that converts a physical parameter or an environmental characteristic (e.g., temperature, distance, speed, etc.) into a signal that can be digitally measured and processed to perform specific tasks. Mobile robots need sensors to measure properties of their environment, thus allowing for safe navigation, complex perception and corresponding actions, and effective interactions with other agents that populate it. Sensors used by mobile robots range from simple tactile sensors, such as bumpers, to complex vision-based sensors such as structured light RGB-D cameras. All of them provide a digital output (e.g., a string, a set of values, a matrix, etc.) that can be processed by the robot's computer. Such output is typically obtained by discretizing one or more analog electrical signals by using an Analog to Digital Converter (ADC) included in the sensor. In this chapter we present the most common sensors used in mobile robotics, providing an introduction to their taxonomy, basic features, and specifications. The description of the functionalities and the types of applications follows a bottom-up approach: the basic principles and components on which the sensors are based are presented before describing real-world sensors, which are generally based on multiple technologies and basic devices.
 
-## Overview
+## 核心内容
+A sensor is a device that converts a physical parameter or an environmental characteristic (e.g., temperature, distance, speed, etc.) into a signal that can be digitally measured and processed to perform specific tasks. Mobile robots need sensors to measure properties of their environment, thus allowing for safe navigation, complex perception and corresponding actions, and effective interactions with other agents that populate it. Sensors used by mobile robots range from simple tactile sensors, such as bumpers, to complex vision-based sensors such as structured light RGB-D cameras. All of them provide a digital output (e.g., a string, a set of values, a matrix, etc.) that can be processed by the robot's computer. Such output is typically obtained by discretizing one or more analog electrical signals by using an Analog to Digital Converter (ADC) included in the sensor. In this chapter we present the most common sensors used in mobile robotics, providing an introduction to their taxonomy, basic features, and specifications. The description of the functionalities and the types of applications follows a bottom-up approach: the basic principles and components on which the sensors are based are presented before describing real-world sensors, which are generally based on multiple technologies and basic devices.
 
-This chapter provides a broad survey of the sensors used in mobile robotics. It begins by explaining why mobile robots need diverse sensors to measure environmental and internal-state properties for safe navigation, perception, and interaction. The authors then introduce a taxonomy that classifies sensors according to their excitation source (passive or active), measurement domain (proprioceptive or exteroceptive), and measurement type. This organizational framework is used to structure the rest of the chapter.
+## 参考
+- http://arxiv.org/abs/2206.03223v3
 
-Following the taxonomy, the paper characterizes key sensor specifications such as linearity, range, resolution, precision, accuracy, bandwidth, and response time. It then takes a bottom-up approach by describing basic transducer components—those based on force/deformation, light, electromagnetic, and magnetic principles—and the signal-conversion methods that turn physical measurements into usable data. Finally, the chapter surveys real-world sensor implementations, including encoders, GNSS/UWB positioning systems, IMUs, cameras, sonar, LiDAR, radar, Time-of-Flight cameras, stereo systems, structured-light cameras, and RGB-D cameras, and briefly discusses application scenarios and future trends.
-
-The work is explicitly positioned as a survey and does not report new experimental results or quantitative benchmarks. Its value lies in providing a unified, accessible reference for sensor selection and integration in mobile robotics, including the supply-chain and design considerations relevant to humanoid mass production.
-
-## Key Contributions
-
-- A taxonomy of mobile-robot sensors based on passive/active excitation, proprioceptive/exteroceptive measurement domain, and measurement type.
-- A characterization of key sensor specifications including linearity, range, resolution, precision, accuracy, bandwidth, and response time.
-- A bottom-up presentation of basic transducer components (force/deformation, light, electromagnetic, magnetic) and signal-conversion methods.
-- A comprehensive survey of real-world sensors: encoders, GNSS/UWB, IMUs, cameras, sonar, LiDAR, radar, ToF, stereo, structured light, and RGB-D cameras.
-- Discussion of example application scenarios and emerging future directions such as solid-state LiDAR, event cameras, MIMO radar, and AI-enabled smart sensors.
-
-## Relevance to Humanoid Robotics
-
-Humanoid robots are a special class of mobile robots and depend on the same core sensor classes surveyed in this chapter—vision sensors, ranging sensors, IMUs, encoders, and proximity/contact sensors—to maintain balance, navigate, avoid obstacles, manipulate objects, and interact safely with humans. The taxonomy and specification framework therefore provide a direct foundation for humanoid sensor selection, system integration, and trade-off analysis.
-
-Because the chapter also covers real-world implementations and commercial examples, it is relevant to the design-engineering, manufacturing-process, and mass-production domains of humanoid robotics. Engineers can use the survey to compare sensing technologies, understand supply-chain options, and anticipate emerging components such as solid-state LiDAR, event cameras, and AI-enabled smart sensors. However, the survey does not address humanoid-specific sensing needs such as whole-body tactile skins, joint-torque sensing, or expressive human-robot interaction sensors, which must be supplemented from other sources.

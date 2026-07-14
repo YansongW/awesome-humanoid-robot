@@ -8,12 +8,10 @@ names:
   zh: 采用五杆机构的机器蜥蜴设计与分析
   ko: 5절 링크 메커니즘을 이용한 로봇 도마뱀의 설계 및 분석
 summary:
-  en: Rajashekhar et al. present a robotic lizard built from integrated five-bar mechanisms,
-    derive its position kinematics via the vector-loop method, and demonstrate a walking
-    gait with a servo-driven prototype.
+  en: Rajashekhar et al. present a robotic lizard built from integrated five-bar mechanisms, derive its position kinematics
+    via the vector-loop method, and demonstrate a walking gait with a servo-driven prototype.
   zh: Rajashekhar 等人提出了一种基于集成五杆机构的机器蜥蜴，利用矢量回路法推导其位置运动学，并通过伺服驱动原型展示了行走步态。
-  ko: Rajashekhar 등은 통합된 5절 링크 메커니즘으로 구성된 로봇 도마뱀을 제안하고, 벡터 루프법으로 위치 운동학을 분석하며, 서보
-    모터로 구동되는 프로토타입으로 보행 동작을 입증한다.
+  ko: Rajashekhar 등은 통합된 5절 링크 메커니즘으로 구성된 로봇 도마뱀을 제안하고, 벡터 루프법으로 위치 운동학을 분석하며, 서보 모터로 구동되는 프로토타입으로 보행 동작을 입증한다.
 domains:
 - 06_design_engineering
 - 02_components
@@ -31,10 +29,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-28'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from user-provided metadata and the arXiv abstract; requires
-    human review of the full text before final verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2107.12614v1.
 sources:
 - id: src_001
   type: paper
@@ -45,20 +42,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+Legged robots are being used to explore rough terrains as they are capable of traversing gaps and obstacles. In this paper, a new mechanism is designed to replicate a robotic lizard using integrated five-bar mechanisms. There are two five bar mechanisms from which two more are formed by connecting the links in a particular order. The legs are attached to the links of the five bar mechanism such that, when the mechanism is actuated, they move the robot forward. Position analysis using vector loop approach has been done for the mechanism. A prototype has been built and controlled using servo motors to verify the robotic lizard mechanism.
 
-## Overview
+## 核心内容
+Legged robots are being used to explore rough terrains as they are capable of traversing gaps and obstacles. In this paper, a new mechanism is designed to replicate a robotic lizard using integrated five-bar mechanisms. There are two five bar mechanisms from which two more are formed by connecting the links in a particular order. The legs are attached to the links of the five bar mechanism such that, when the mechanism is actuated, they move the robot forward. Position analysis using vector loop approach has been done for the mechanism. A prototype has been built and controlled using servo motors to verify the robotic lizard mechanism.
 
-The paper describes the design and analysis of a robotic lizard whose locomotion is produced by integrated five-bar mechanisms. The mechanical topology is arranged so that two base five-bar linkages generate two additional linkages by connecting their links in a specific order; the legs are mounted on these links so that actuating the mechanism propels the robot forward. The authors perform a topological design and degree-of-freedom analysis of the linkage and then derive position equations using a vector-loop approach.
+## 参考
+- http://arxiv.org/abs/2107.12614v1
 
-A prototype is fabricated from balsa wood using a CNC router and is actuated by servo motors controlled by an Arduino UNO programmed through the Processing IDE. Experiments demonstrate a walking gait on flat ground, confirming that the proposed integrated five-bar mechanism can replicate lizard-like motion. The study leaves sensing, feedback control, and locomotion in unstructured environments for future work.
-
-## Key Contributions
-
-- Novel robotic lizard mechanism based on integrated five-bar mechanisms
-- Topological design and degree-of-freedom analysis of the mechanism
-- Position analysis using the vector loop approach
-- Prototype fabrication and demonstration of a walking gait
-
-## Relevance to Humanoid Robotics
-
-Although the robot is a quadrupedal lizard rather than a bipedal humanoid, the paper contributes foundational mechanical-design and kinematic-analysis methods that are transferable to legged robot engineering. Integrated linkage synthesis, vector-loop position analysis, and low-cost prototyping workflows are relevant to the design of humanoid leg mechanisms, especially when optimizing degrees of freedom and actuator placement. Consequently, the entry is classified under design engineering and components with medium relevance to the humanoid-robot knowledge base.

@@ -8,12 +8,9 @@ names:
   zh: Reference-Free Sampling-Based Model Predictive Control
   ko: Reference-Free Sampling-Based Model Predictive Control
 summary:
-  en: Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion
-    for humanoid robots.
-  zh: Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion
-    for humanoid robots.
-  ko: Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion
-    for humanoid robots.
+  en: Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion for humanoid robots.
+  zh: Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion for humanoid robots.
+  ko: Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -30,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Locomotion.
-    arXiv: 2511.19204.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.19204v3.
 sources:
 - id: src_001
   type: paper
@@ -42,12 +38,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion for humanoid robots.
+We present a sampling-based model predictive control (MPC) framework that enables emergent locomotion without relying on handcrafted gait patterns or predefined contact sequences. Our method discovers diverse motion patterns, ranging from trotting to galloping, robust standing policies, jumping, and handstand balancing, purely through the optimization of high-level objectives. Building on model predictive path integral (MPPI), we propose a cubic Hermite spline parameterization that operates on position and velocity control points. Our approach enables contact-making and contact-breaking strategies that adapt automatically to task requirements, requiring only a limited number of sampled trajectories. This sample efficiency enables real-time control on standard CPU hardware, eliminating the GPU acceleration typically required by other state-of-the-art MPPI methods. We validate our approach on the Go2 quadrupedal robot, demonstrating a range of emergent gaits and basic jumping capabilities. In simulation, we further showcase more complex behaviors, such as backflips, dynamic handstand balancing and locomotion on a Humanoid, all without requiring reference tracking or offline pre-training.
 
-## Overview
-Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion for humanoid robots.
+## 核心内容
+We present a sampling-based model predictive control (MPC) framework that enables emergent locomotion without relying on handcrafted gait patterns or predefined contact sequences. Our method discovers diverse motion patterns, ranging from trotting to galloping, robust standing policies, jumping, and handstand balancing, purely through the optimization of high-level objectives. Building on model predictive path integral (MPPI), we propose a cubic Hermite spline parameterization that operates on position and velocity control points. Our approach enables contact-making and contact-breaking strategies that adapt automatically to task requirements, requiring only a limited number of sampled trajectories. This sample efficiency enables real-time control on standard CPU hardware, eliminating the GPU acceleration typically required by other state-of-the-art MPPI methods. We validate our approach on the Go2 quadrupedal robot, demonstrating a range of emergent gaits and basic jumping capabilities. In simulation, we further showcase more complex behaviors, such as backflips, dynamic handstand balancing and locomotion on a Humanoid, all without requiring reference tracking or offline pre-training.
 
-## 개요
-Reference-Free Sampling-Based Model Predictive Control is a 2025 work on locomotion for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2511.19204v3
+

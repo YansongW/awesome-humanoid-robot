@@ -8,15 +8,12 @@ names:
   zh: FORGE-Tree
   ko: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation'
 summary:
-  en: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation
-    (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Karlsruhe Institute of Technology.'
-  zh: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation
-    (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Karlsruhe Institute of Technology.'
-  ko: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation
-    (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Karlsruhe Institute of Technology.'
+  en: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation (FORGE-Tree), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Karlsruhe Institute of Technology.'
+  zh: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation (FORGE-Tree), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Karlsruhe Institute of Technology.'
+  ko: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation (FORGE-Tree), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Karlsruhe Institute of Technology.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -36,15 +33,13 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: FORGE-Tree. Institution:
-    Karlsruhe Institute of Technology. arXiv: 2510.21744.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.21744v1.
 sources:
 - id: src_001
   type: paper
-  title: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation
-    (arXiv)'
+  title: 'FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation (arXiv)'
   url: https://arxiv.org/abs/2510.21744
   date: '2025'
   accessed_at: '2026-07-01'
@@ -55,12 +50,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology.
+Long-horizon robot manipulation tasks remain challenging for Vision-Language-Action (VLA) policies due to drift and exposure bias, often denoise the entire trajectory with fixed hyperparameters, causing small geometric errors to compound across stages and offering no mechanism to allocate extra test-time compute where clearances are tight. To address these challenges, we introduce FORGE-Tree, a plug-in control layer that couples a stage-aligned Diffusion Forcing (DF) head with test-time Monte Carlo Tree Diffusion (MCTD). With a frozen VLA encoder, DF aligns timesteps to subtask stages; during inference we partially denoise only a target segment while keeping other tokens frozen, turning trajectory refinement into a sequence of local edits. We then apply Monte Carlo Tree Diffusion to select the next segment to refine. A scene graph supplies priors for expansion and geometry relation-aware scoring for rollouts, yielding tree-structured denoising whose performance scales with search budget while preserving the executed prefix. Evaluation on LIBERO, FORGE-Tree improves success rate by 13.4 to 17.2 pp over the native VLA baselines with both OpenVLA and Octo-Base. Gains remain consistent under comparable compute budgets, especially on long-horizon variants. Videos available at: https://taco-group.github.io/FORGE-Tree/
 
-## Overview
-FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology.
+## 核心内容
+Long-horizon robot manipulation tasks remain challenging for Vision-Language-Action (VLA) policies due to drift and exposure bias, often denoise the entire trajectory with fixed hyperparameters, causing small geometric errors to compound across stages and offering no mechanism to allocate extra test-time compute where clearances are tight. To address these challenges, we introduce FORGE-Tree, a plug-in control layer that couples a stage-aligned Diffusion Forcing (DF) head with test-time Monte Carlo Tree Diffusion (MCTD). With a frozen VLA encoder, DF aligns timesteps to subtask stages; during inference we partially denoise only a target segment while keeping other tokens frozen, turning trajectory refinement into a sequence of local edits. We then apply Monte Carlo Tree Diffusion to select the next segment to refine. A scene graph supplies priors for expansion and geometry relation-aware scoring for rollouts, yielding tree-structured denoising whose performance scales with search budget while preserving the executed prefix. Evaluation on LIBERO, FORGE-Tree improves success rate by 13.4 to 17.2 pp over the native VLA baselines with both OpenVLA and Octo-Base. Gains remain consistent under comparable compute budgets, especially on long-horizon variants. Videos available at: https://taco-group.github.io/FORGE-Tree/
 
-## 개요
-FORGE-Tree: Diffusion-Forcing Tree Search for Long-Horizon Robot Manipulation (FORGE-Tree), is a 2025 large vision-language-action model for robotic manipulation, introduced by Karlsruhe Institute of Technology.
+## 参考
+- http://arxiv.org/abs/2510.21744v1
+

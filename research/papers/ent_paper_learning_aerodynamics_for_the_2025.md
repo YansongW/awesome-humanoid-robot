@@ -8,12 +8,9 @@ names:
   zh: Learning Aerodynamics for the Control of Flying Humanoid Robots
   ko: Learning Aerodynamics for the Control of Flying Humanoid Robots
 summary:
-  en: Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work
-    on locomotion for humanoid robots.
-  zh: Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work
-    on locomotion for humanoid robots.
-  ko: Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work
-    on locomotion for humanoid robots.
+  en: Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+  zh: Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+  ko: Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -30,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Locomotion.
-    arXiv: 2506.00305.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.00305v2.
 sources:
 - id: src_001
   type: paper
@@ -42,12 +38,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+Robots with multi-modal locomotion are an active research field due to their versatility in diverse environments. In this context, additional actuation can provide humanoid robots with aerial capabilities. Flying humanoid robots face challenges in modeling and control, particularly with aerodynamic forces. This paper addresses these challenges from a technological and scientific standpoint. The technological contribution includes the mechanical design of iRonCub-Mk1, a jet-powered humanoid robot, optimized for jet engine integration, and hardware modifications for wind tunnel experiments on humanoid robots for precise aerodynamic forces and surface pressure measurements. The scientific contribution offers a comprehensive approach to model and control aerodynamic forces using classical and learning techniques. Computational Fluid Dynamics (CFD) simulations calculate aerodynamic forces, validated through wind tunnel experiments on iRonCub-Mk1. An automated CFD framework expands the aerodynamic dataset, enabling the training of a Deep Neural Network and a linear regression model. These models are integrated into a simulator for designing aerodynamic-aware controllers, validated through flight simulations and balancing experiments on the iRonCub-Mk1 physical prototype.
 
-## Overview
-Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+## 核心内容
+Robots with multi-modal locomotion are an active research field due to their versatility in diverse environments. In this context, additional actuation can provide humanoid robots with aerial capabilities. Flying humanoid robots face challenges in modeling and control, particularly with aerodynamic forces. This paper addresses these challenges from a technological and scientific standpoint. The technological contribution includes the mechanical design of iRonCub-Mk1, a jet-powered humanoid robot, optimized for jet engine integration, and hardware modifications for wind tunnel experiments on humanoid robots for precise aerodynamic forces and surface pressure measurements. The scientific contribution offers a comprehensive approach to model and control aerodynamic forces using classical and learning techniques. Computational Fluid Dynamics (CFD) simulations calculate aerodynamic forces, validated through wind tunnel experiments on iRonCub-Mk1. An automated CFD framework expands the aerodynamic dataset, enabling the training of a Deep Neural Network and a linear regression model. These models are integrated into a simulator for designing aerodynamic-aware controllers, validated through flight simulations and balancing experiments on the iRonCub-Mk1 physical prototype.
 
-## 개요
-Learning Aerodynamics for the Control of Flying Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2506.00305v2
+

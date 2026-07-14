@@ -8,16 +8,13 @@ names:
   zh: 基于模型自适应原语的机器人六自由度抓取学习
   ko: 모델 기반 적응형 프리미티브를 이용한 6자유도 그래스핑 로봇 학습
 summary:
-  en: This paper presents a hybrid 6-DoF bin-picking approach that combines a fully-convolutional
-    neural network for planar grasp-reward estimation with a model-based controller
-    for lateral orientation adaptation, achieving over 92% real-world grasp success
-    in dense clutter after 27,000 self-supervised grasp attempts with inference under
-    50 ms.
-  zh: 本文提出了一种混合六自由度料箱拣选方法，将用于平面抓取奖励估计的全卷积神经网络与用于侧向朝向自适应的基于模型控制器相结合，在 27,000 次自监督真实世界抓取尝试后，于密集
-    clutter 中实现了超过 92% 的抓取成功率，推理时间低于 50 毫秒。
-  ko: 본 논문은 평면 그래스프 보상 추정을 위한 완전 컨볼루션 신경망과 측면 방향 적응을 위한 모델 기반 컨트롤러를 결합한 하이브리드 6자유도
-    빈 피킹 접근법을 제안하며, 27,000회의 자기 감독 실제 그래스프 시도 후 밀집된 clutter에서 92% 이상의 그래스프 성공률과 50ms
-    미만의 추론 시간을 달성하였다.
+  en: This paper presents a hybrid 6-DoF bin-picking approach that combines a fully-convolutional neural network for planar
+    grasp-reward estimation with a model-based controller for lateral orientation adaptation, achieving over 92% real-world
+    grasp success in dense clutter after 27,000 self-supervised grasp attempts with inference under 50 ms.
+  zh: 本文提出了一种混合六自由度料箱拣选方法，将用于平面抓取奖励估计的全卷积神经网络与用于侧向朝向自适应的基于模型控制器相结合，在 27,000 次自监督真实世界抓取尝试后，于密集 clutter 中实现了超过 92% 的抓取成功率，推理时间低于
+    50 毫秒。
+  ko: 본 논문은 평면 그래스프 보상 추정을 위한 완전 컨볼루션 신경망과 측면 방향 적응을 위한 모델 기반 컨트롤러를 결합한 하이브리드 6자유도 빈 피킹 접근법을 제안하며, 27,000회의 자기 감독 실제 그래스프
+    시도 후 밀집된 clutter에서 92% 이상의 그래스프 성공률과 50ms 미만의 추론 시간을 달성하였다.
 domains:
 - 07_ai_models_algorithms
 - 02_components
@@ -43,10 +40,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-28'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from supplied metadata and abstract; full-text review is required
-    to confirm section-level citations and exact quantitative claims.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2103.12810v1.
 sources:
 - id: src_001
   type: paper
@@ -57,21 +53,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+Robot learning is often simplified to planar manipulation due to its data consumption. Then, a common approach is to use a fully-convolutional neural network to estimate the reward of grasp primitives. In this work, we extend this approach by parametrizing the two remaining, lateral Degrees of Freedom (DoFs) of the primitives. We apply this principle to the task of 6 DoF bin picking: We introduce a model-based controller to calculate angles that avoid collisions, maximize the grasp quality while keeping the uncertainty small. As the controller is integrated into the training, our hybrid approach is able to learn about and exploit the model-based controller. After real-world training of 27000 grasp attempts, the robot is able to grasp known objects with a success rate of over 92% in dense clutter. Grasp inference takes less than 50ms. In further real-world experiments, we evaluate grasp rates in a range of scenarios including its ability to generalize to unknown objects. We show that the system is able to avoid collisions, enabling grasps that would not be possible without primitive adaption.
 
-## Overview
+## 核心内容
+Robot learning is often simplified to planar manipulation due to its data consumption. Then, a common approach is to use a fully-convolutional neural network to estimate the reward of grasp primitives. In this work, we extend this approach by parametrizing the two remaining, lateral Degrees of Freedom (DoFs) of the primitives. We apply this principle to the task of 6 DoF bin picking: We introduce a model-based controller to calculate angles that avoid collisions, maximize the grasp quality while keeping the uncertainty small. As the controller is integrated into the training, our hybrid approach is able to learn about and exploit the model-based controller. After real-world training of 27000 grasp attempts, the robot is able to grasp known objects with a success rate of over 92% in dense clutter. Grasp inference takes less than 50ms. In further real-world experiments, we evaluate grasp rates in a range of scenarios including its ability to generalize to unknown objects. We show that the system is able to avoid collisions, enabling grasps that would not be possible without primitive adaption.
 
-The paper addresses the limitation that robot learning for grasping is often reduced to planar 4-DoF manipulation to limit data consumption. It proposes a hybrid method for 6-DoF bin picking in which a fully-convolutional neural network (FCNN) estimates planar grasp rewards, while a fixed model-based controller calculates the two remaining lateral orientation degrees of freedom (angles b and c). The controller is designed to avoid collisions with the bin or other objects, maximize antipodal grasp quality, and keep orientation uncertainty small.
+## 参考
+- http://arxiv.org/abs/2103.12810v1
 
-The model-based controller is integrated into the real-world self-supervised training loop, allowing the FCNN to learn about and exploit the controller rather than treating it as a post-processing step. After approximately 27,000 real-world grasp attempts over about 120 hours, the system grasps known objects with over 92% success in dense clutter, with inference taking less than 50 ms. Additional experiments evaluate generalization to unknown objects, performance with short gripper fingers, and the importance of integrating the controller during training.
-
-## Key Contributions
-
-- Hybrid 6-DoF grasping that combines learned planar grasp evaluation with model-based lateral angle adaptation.
-- Model-based controller that calculates lateral angles for collision avoidance, antipodal grasp quality maximization, and uncertainty minimization.
-- Integration of the model-based controller into the real-world self-supervised training loop so the FCNN learns to exploit it.
-- Real-world evaluation showing over 92% grasp success in dense clutter and inference under 50 ms.
-- Demonstration of generalization to unknown objects and robust performance with short gripper fingers.
-
-## Relevance to Humanoid Robotics
-
-Although the experiments use an industrial Franka Panda arm rather than a full humanoid, the core contribution—fast, collision-aware 6-DoF grasp primitive adaptation—is directly transferable to end-effector manipulation modules in humanoid robots. The sub-50 ms inference time and the use of low-cost RGB-D sensing align with the real-time, unstructured-environment requirements typical of warehouse, manufacturing, and service deployments for humanoids. The hybrid learning-plus-model-based-control architecture also offers a practical path to data-efficient manipulation skill acquisition on humanoid platforms.

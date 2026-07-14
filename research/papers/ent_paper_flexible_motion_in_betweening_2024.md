@@ -8,12 +8,12 @@ names:
   zh: Flexible Motion In-betweening with Diffusion Models
   ko: Flexible Motion In-betweening with Diffusion Models
 summary:
-  en: Flexible Motion In-betweening with Diffusion Models is a 2024 work on human
-    motion analysis and synthesis for humanoid robots.
-  zh: Flexible Motion In-betweening with Diffusion Models is a 2024 work on human
-    motion analysis and synthesis for humanoid robots.
-  ko: Flexible Motion In-betweening with Diffusion Models is a 2024 work on human
-    motion analysis and synthesis for humanoid robots.
+  en: Flexible Motion In-betweening with Diffusion Models is a 2024 work on human motion analysis and synthesis for humanoid
+    robots.
+  zh: Flexible Motion In-betweening with Diffusion Models is a 2024 work on human motion analysis and synthesis for humanoid
+    robots.
+  ko: Flexible Motion In-betweening with Diffusion Models is a 2024 work on human motion analysis and synthesis for humanoid
+    robots.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -32,10 +32,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Human
-    Motion Analysis and Synthesis. arXiv: 2405.11126.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2405.11126v2.
 sources:
 - id: src_001
   type: paper
@@ -44,12 +43,12 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Flexible Motion In-betweening with Diffusion Models is a 2024 work on human motion analysis and synthesis for humanoid robots.
+Motion in-betweening, a fundamental task in character animation, consists of generating motion sequences that plausibly interpolate user-provided keyframe constraints. It has long been recognized as a labor-intensive and challenging process. We investigate the potential of diffusion models in generating diverse human motions guided by keyframes. Unlike previous inbetweening methods, we propose a simple unified model capable of generating precise and diverse motions that conform to a flexible range of user-specified spatial constraints, as well as text conditioning. To this end, we propose Conditional Motion Diffusion In-betweening (CondMDI) which allows for arbitrary dense-or-sparse keyframe placement and partial keyframe constraints while generating high-quality motions that are diverse and coherent with the given keyframes. We evaluate the performance of CondMDI on the text-conditioned HumanML3D dataset and demonstrate the versatility and efficacy of diffusion models for keyframe in-betweening. We further explore the use of guidance and imputation-based approaches for inference-time keyframing and compare CondMDI against these methods.
 
-## Overview
-Flexible Motion In-betweening with Diffusion Models is a 2024 work on human motion analysis and synthesis for humanoid robots.
+## 核心内容
+Motion in-betweening, a fundamental task in character animation, consists of generating motion sequences that plausibly interpolate user-provided keyframe constraints. It has long been recognized as a labor-intensive and challenging process. We investigate the potential of diffusion models in generating diverse human motions guided by keyframes. Unlike previous inbetweening methods, we propose a simple unified model capable of generating precise and diverse motions that conform to a flexible range of user-specified spatial constraints, as well as text conditioning. To this end, we propose Conditional Motion Diffusion In-betweening (CondMDI) which allows for arbitrary dense-or-sparse keyframe placement and partial keyframe constraints while generating high-quality motions that are diverse and coherent with the given keyframes. We evaluate the performance of CondMDI on the text-conditioned HumanML3D dataset and demonstrate the versatility and efficacy of diffusion models for keyframe in-betweening. We further explore the use of guidance and imputation-based approaches for inference-time keyframing and compare CondMDI against these methods.
 
-## 개요
-Flexible Motion In-betweening with Diffusion Models is a 2024 work on human motion analysis and synthesis for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2405.11126v2
+

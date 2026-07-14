@@ -8,15 +8,12 @@ names:
   zh: VLM2VLA
   ko: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting'
 summary:
-  en: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting
-    (VLM2VLA), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Princeton University.'
-  zh: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting
-    (VLM2VLA), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Princeton University.'
-  ko: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting
-    (VLM2VLA), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Princeton University.'
+  en: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting (VLM2VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Princeton University.'
+  zh: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting (VLM2VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Princeton University.'
+  ko: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting (VLM2VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Princeton University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -36,15 +33,13 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: VLM2VLA. Institution: Princeton
-    University. arXiv: 2509.22195.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.22195v1.
 sources:
 - id: src_001
   type: paper
-  title: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting
-    (arXiv)'
+  title: 'Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting (arXiv)'
   url: https://arxiv.org/abs/2509.22195
   date: '2025'
   accessed_at: '2026-07-01'
@@ -55,12 +50,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting (VLM2VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Princeton University.
+Fine-tuning vision-language models (VLMs) on robot teleoperation data to create vision-language-action (VLA) models is a promising paradigm for training generalist policies, but it suffers from a fundamental tradeoff: learning to produce actions often diminishes the VLM's foundational reasoning and multimodal understanding, hindering generalization to novel scenarios, instruction following, and semantic understanding. We argue that this catastrophic forgetting is due to a distribution mismatch between the VLM's internet-scale pretraining corpus and the robotics fine-tuning data. Inspired by this observation, we introduce VLM2VLA: a VLA training paradigm that first resolves this mismatch at the data level by representing low-level actions with natural language. This alignment makes it possible to train VLAs solely with Low-Rank Adaptation (LoRA), thereby minimally modifying the VLM backbone and averting catastrophic forgetting. As a result, the VLM can be fine-tuned on robot teleoperation data without fundamentally altering the underlying architecture and without expensive co-training on internet-scale VLM datasets. Through extensive Visual Question Answering (VQA) studies and over 800 real-world robotics experiments, we demonstrate that VLM2VLA preserves the VLM's core capabilities, enabling zero-shot generalization to novel tasks that require open-world semantic reasoning and multilingual instruction following.
 
-## Overview
-Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting (VLM2VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Princeton University.
+## 核心内容
+Fine-tuning vision-language models (VLMs) on robot teleoperation data to create vision-language-action (VLA) models is a promising paradigm for training generalist policies, but it suffers from a fundamental tradeoff: learning to produce actions often diminishes the VLM's foundational reasoning and multimodal understanding, hindering generalization to novel scenarios, instruction following, and semantic understanding. We argue that this catastrophic forgetting is due to a distribution mismatch between the VLM's internet-scale pretraining corpus and the robotics fine-tuning data. Inspired by this observation, we introduce VLM2VLA: a VLA training paradigm that first resolves this mismatch at the data level by representing low-level actions with natural language. This alignment makes it possible to train VLAs solely with Low-Rank Adaptation (LoRA), thereby minimally modifying the VLM backbone and averting catastrophic forgetting. As a result, the VLM can be fine-tuned on robot teleoperation data without fundamentally altering the underlying architecture and without expensive co-training on internet-scale VLM datasets. Through extensive Visual Question Answering (VQA) studies and over 800 real-world robotics experiments, we demonstrate that VLM2VLA preserves the VLM's core capabilities, enabling zero-shot generalization to novel tasks that require open-world semantic reasoning and multilingual instruction following.
 
-## 개요
-Actions as Language: Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting (VLM2VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Princeton University.
+## 参考
+- http://arxiv.org/abs/2509.22195v1
+

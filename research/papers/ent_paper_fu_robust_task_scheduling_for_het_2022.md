@@ -8,13 +8,11 @@ names:
   zh: 能力不确定下异构机器人团队的鲁棒任务调度
   ko: 능력 불확실성 하에서 이종 로봇 팀을 위한 강건한 작업 스케줄링
 summary:
-  en: Proposes CTAS, a stochastic mixed-integer programming framework that jointly
-    optimizes task decomposition, assignment, and scheduling for heterogeneous robot
-    teams under capability and requirement uncertainty, using CVaR to quantify non-completion
+  en: Proposes CTAS, a stochastic mixed-integer programming framework that jointly optimizes task decomposition, assignment,
+    and scheduling for heterogeneous robot teams under capability and requirement uncertainty, using CVaR to quantify non-completion
     risk.
   zh: 提出CTAS，一种随机混合整数规划框架，在能力和需求不确定下联合优化异构机器人团队的任务分解、分配与调度，并使用条件风险价值（CVaR）量化未完成任务的风险。
-  ko: 능력 및 요구사항 불확실성 하에서 이종 로봇 팀의 작업 분해, 할당 및 스케줄링을 동시에 최적화하고 CVaR을 사용하여 미완료 위험을 정량화하는
-    CTAS 확률 혼합정수계획 프레임워크를 제안함.
+  ko: 능력 및 요구사항 불확실성 하에서 이종 로봇 팀의 작업 분해, 할당 및 스케줄링을 동시에 최적화하고 CVaR을 사용하여 미완료 위험을 정량화하는 CTAS 확률 혼합정수계획 프레임워크를 제안함.
 domains:
 - 07_ai_models_algorithms
 - 11_applications_markets
@@ -37,10 +35,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from supplied metadata and abstract; full-text verification
-    needed before promotion to verified.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2106.12111v3.
 sources:
 - id: src_001
   type: paper
@@ -51,21 +48,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+This paper develops a stochastic programming framework for multi-agent systems where task decomposition, assignment, and scheduling problems are simultaneously optimized. The framework can be applied to heterogeneous mobile robot teams with distributed sub-tasks. Examples include pandemic robotic service coordination, explore and rescue, and delivery systems with heterogeneous vehicles. Due to their inherent flexibility and robustness, multi-agent systems are applied in a growing range of real-world problems that involve heterogeneous tasks and uncertain information. Most previous works assume one fixed way to decompose a task into roles that can later be assigned to the agents. This assumption is not valid for a complex task where the roles can vary and multiple decomposition structures exist. Meanwhile, it is unclear how uncertainties in task requirements and agent capabilities can be systematically quantified and optimized under a multi-agent system setting. A representation for complex tasks is proposed: agent capabilities are represented as a vector of random distributions, and task requirements are verified by a generalizable binary function. The conditional value at risk (CVaR) is chosen as a metric in the objective function to generate robust plans. An efficient algorithm is described to solve the model, and the whole framework is evaluated in two different practical test cases: capture-the-flag and robotic service coordination during a pandemic (e.g., COVID-19). Results demonstrate that the framework is generalizable, scalable up to 140 agents and 40 tasks for the example test cases, and provides low-cost plans that ensure a high probability of success.
 
-## Overview
+## 核心内容
+This paper develops a stochastic programming framework for multi-agent systems where task decomposition, assignment, and scheduling problems are simultaneously optimized. The framework can be applied to heterogeneous mobile robot teams with distributed sub-tasks. Examples include pandemic robotic service coordination, explore and rescue, and delivery systems with heterogeneous vehicles. Due to their inherent flexibility and robustness, multi-agent systems are applied in a growing range of real-world problems that involve heterogeneous tasks and uncertain information. Most previous works assume one fixed way to decompose a task into roles that can later be assigned to the agents. This assumption is not valid for a complex task where the roles can vary and multiple decomposition structures exist. Meanwhile, it is unclear how uncertainties in task requirements and agent capabilities can be systematically quantified and optimized under a multi-agent system setting. A representation for complex tasks is proposed: agent capabilities are represented as a vector of random distributions, and task requirements are verified by a generalizable binary function. The conditional value at risk (CVaR) is chosen as a metric in the objective function to generate robust plans. An efficient algorithm is described to solve the model, and the whole framework is evaluated in two different practical test cases: capture-the-flag and robotic service coordination during a pandemic (e.g., COVID-19). Results demonstrate that the framework is generalizable, scalable up to 140 agents and 40 tasks for the example test cases, and provides low-cost plans that ensure a high probability of success.
 
-This paper develops CTAS, a stochastic mixed-integer programming framework for coordinating heterogeneous robot teams. Unlike prior work that assumes a single fixed task decomposition into roles, CTAS jointly optimizes task decomposition, assignment, and scheduling while representing agent capabilities and task requirements as random vectors. Task requirements are verified by a generalizable binary function, allowing the framework to handle multiple decomposition structures for complex tasks.
+## 参考
+- http://arxiv.org/abs/2106.12111v3
 
-The objective function combines energy, time, and a conditional value at risk (CVaR) term that quantifies the risk of task non-completion under uncertainty. The authors solve the resulting model via sample average approximation and an L-shaped decomposition method, followed by network-flow rounding and splitting to generate individual agent routes and schedules. The framework is evaluated in two practical scenarios: a capture-the-flag game and pandemic robotic service coordination (e.g., COVID-19), demonstrating scalability up to 140 agents and 40 tasks in the reported test cases.
-
-## Key Contributions
-
-- A modeling framework that captures uncertainties in both task requirements and agent capabilities.
-- A cost function incorporating conditional value at risk (CVaR) to quantify and minimize task non-completion risk.
-- A scalable reformulation using species-level network flows and a flow decomposition subproblem.
-- A capture-the-flag simulation comparing CTAS against the STRATA baseline.
-- A pandemic robotic service coordination case study demonstrating generalizability and scalability.
-
-## Relevance to Humanoid Robotics
-
-Although the paper studies general heterogeneous robot teams rather than humanoids specifically, its methods for robust task decomposition, assignment, and scheduling under capability uncertainty are directly applicable to coordinating fleets of humanoid robots with diverse skills. Service, logistics, and emergency-response deployments involving humanoids can use similar stochastic programming formulations to allocate complex tasks while accounting for uncertain robot capabilities and task requirements.

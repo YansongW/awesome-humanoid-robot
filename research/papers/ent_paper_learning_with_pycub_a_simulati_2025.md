@@ -8,12 +8,12 @@ names:
   zh: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics'
   ko: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics'
 summary:
-  en: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics
-    is a 2025 work on simulation benchmark for humanoid robots.'
-  zh: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics
-    is a 2025 work on simulation benchmark for humanoid robots.'
-  ko: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics
-    is a 2025 work on simulation benchmark for humanoid robots.'
+  en: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics is a 2025 work on simulation benchmark
+    for humanoid robots.'
+  zh: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics is a 2025 work on simulation benchmark
+    for humanoid robots.'
+  ko: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics is a 2025 work on simulation benchmark
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -33,25 +33,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Simulation
-    Benchmark. arXiv: 2506.01756.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.01756v3.
 sources:
 - id: src_001
   type: paper
-  title: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics
-    (arXiv)'
+  title: 'Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics (arXiv)'
   url: https://arxiv.org/abs/2506.01756
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics is a 2025 work on simulation benchmark for humanoid robots.
+We present pyCub, an open-source physics-based simulation of the humanoid robot iCub, along with exercises to teach students the basics of humanoid robotics. Compared to existing iCub simulators (iCub SIM, iCub Gazebo), which require C++ code and YARP as middleware, pyCub works without YARP and with Python code. The complete robot with all articulations has been simulated, with two cameras in the eyes and the unique sensitive skin of the iCub comprising 4000 receptors on its body surface. The exercises range from basic control of the robot in velocity, joint, and Cartesian space to more complex tasks like gazing, grasping, or reactive control. The whole framework is written and controlled with Python, thus allowing to be used even by people with small or almost no programming practice. The exercises can be scaled to different difficulty levels. We tested the framework in two runs of a course on humanoid robotics. The simulation, exercises, documentation, Docker images, and example videos are publicly available at https://rustlluk.github.io/pyCub.
 
-## Overview
-Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics is a 2025 work on simulation benchmark for humanoid robots.
+## 核心内容
+We present pyCub, an open-source physics-based simulation of the humanoid robot iCub, along with exercises to teach students the basics of humanoid robotics. Compared to existing iCub simulators (iCub SIM, iCub Gazebo), which require C++ code and YARP as middleware, pyCub works without YARP and with Python code. The complete robot with all articulations has been simulated, with two cameras in the eyes and the unique sensitive skin of the iCub comprising 4000 receptors on its body surface. The exercises range from basic control of the robot in velocity, joint, and Cartesian space to more complex tasks like gazing, grasping, or reactive control. The whole framework is written and controlled with Python, thus allowing to be used even by people with small or almost no programming practice. The exercises can be scaled to different difficulty levels. We tested the framework in two runs of a course on humanoid robotics. The simulation, exercises, documentation, Docker images, and example videos are publicly available at https://rustlluk.github.io/pyCub.
 
-## 개요
-Learning with pyCub: A Simulation and Exercise Framework for Humanoid Robotics is a 2025 work on simulation benchmark for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2506.01756v3
+

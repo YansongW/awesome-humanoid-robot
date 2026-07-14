@@ -8,12 +8,9 @@ names:
   zh: Learning Adaptive Neural Teleoperation for Humanoid Robots
   ko: Learning Adaptive Neural Teleoperation for Humanoid Robots
 summary:
-  en: Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on
-    teleoperation for humanoid robots.
-  zh: Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on
-    teleoperation for humanoid robots.
-  ko: Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on
-    teleoperation for humanoid robots.
+  en: Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+  zh: Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+  ko: Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -31,10 +28,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Teleoperation.
-    arXiv: 2511.12390.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.12390v1.
 sources:
 - id: src_001
   type: paper
@@ -43,12 +39,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+Virtual reality (VR) teleoperation has emerged as a promising approach for controlling humanoid robots in complex manipulation tasks. However, traditional teleoperation systems rely on inverse kinematics (IK) solvers and hand-tuned PD controllers, which struggle to handle external forces, adapt to different users, and produce natural motions under dynamic conditions. In this work, we propose a learning-based neural teleoperation framework that replaces the conventional IK+PD pipeline with learned policies trained via reinforcement learning. Our approach learns to directly map VR controller inputs to robot joint commands while implicitly handling force disturbances, producing smooth trajectories, and adapting to user preferences. We train our policies in simulation using demonstrations collected from IK-based teleoperation as initialization, then fine-tune them with force randomization and trajectory smoothness rewards. Experiments on the Unitree G1 humanoid robot demonstrate that our learned policies achieve 34% lower tracking error, 45% smoother motions, and superior force adaptation compared to the IK baseline, while maintaining real-time performance (50Hz control frequency). We validate our approach on manipulation tasks including object pick-and-place, door opening, and bimanual coordination. These results suggest that learning-based approaches can significantly improve the naturalness and robustness of humanoid teleoperation systems.
 
-## Overview
-Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+## 核心内容
+Virtual reality (VR) teleoperation has emerged as a promising approach for controlling humanoid robots in complex manipulation tasks. However, traditional teleoperation systems rely on inverse kinematics (IK) solvers and hand-tuned PD controllers, which struggle to handle external forces, adapt to different users, and produce natural motions under dynamic conditions. In this work, we propose a learning-based neural teleoperation framework that replaces the conventional IK+PD pipeline with learned policies trained via reinforcement learning. Our approach learns to directly map VR controller inputs to robot joint commands while implicitly handling force disturbances, producing smooth trajectories, and adapting to user preferences. We train our policies in simulation using demonstrations collected from IK-based teleoperation as initialization, then fine-tune them with force randomization and trajectory smoothness rewards. Experiments on the Unitree G1 humanoid robot demonstrate that our learned policies achieve 34% lower tracking error, 45% smoother motions, and superior force adaptation compared to the IK baseline, while maintaining real-time performance (50Hz control frequency). We validate our approach on manipulation tasks including object pick-and-place, door opening, and bimanual coordination. These results suggest that learning-based approaches can significantly improve the naturalness and robustness of humanoid teleoperation systems.
 
-## 개요
-Learning Adaptive Neural Teleoperation for Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2511.12390v1
+

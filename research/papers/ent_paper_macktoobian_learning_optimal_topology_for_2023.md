@@ -8,12 +8,10 @@ names:
   zh: 面向自组网机器人的最优拓扑学习
   ko: 임시 로봇 네트워크를 위한 최적 토폴로지 학습
 summary:
-  en: Proposes OpTopNET, a stacked ensemble learning framework that predicts optimal
-    communication topologies for ad-hoc robot networks by decomposing the problem
-    into per-robot multi-class classification tasks.
+  en: Proposes OpTopNET, a stacked ensemble learning framework that predicts optimal communication topologies for ad-hoc robot
+    networks by decomposing the problem into per-robot multi-class classification tasks.
   zh: 提出OpTopNET，一种堆叠集成学习框架，通过将问题分解为每个机器人的多类别分类任务来预测自组网机器人的最优通信拓扑。
-  ko: 임시 로봇 네트워크의 최적 통신 토폴로지를 예측하기 위해 문제를 로봇별 다중 클래스 분류 작업으로 분해하는 스택 앙상블 학습 프레임워크인
-    OpTopNET을 제안한다.
+  ko: 임시 로봇 네트워크의 최적 통신 토폴로지를 예측하기 위해 문제를 로봇별 다중 클래스 분류 작업으로 분해하는 스택 앙상블 학습 프레임워크인 OpTopNET을 제안한다.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -34,10 +32,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from abstract and metadata; requires human review of the full
-    paper before verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2201.12900v2.
 sources:
 - id: src_001
   type: paper
@@ -49,24 +46,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+In this paper, we synthesize a data-driven method to predict the optimal topology of an ad-hoc robot network. This problem is technically a multi-task classification problem. However, we divide it into a class of multi-class classification problems that can be more efficiently solved. For this purpose, we first compose an algorithm to create ground-truth optimal topologies associated with various configurations of a robot network. This algorithm incorporates a complex collection of optimality criteria that our learning model successfully manages to learn. This model is an stacked ensemble whose output is the topology prediction for a particular robot. Each stacked ensemble instance constitutes three low-level estimators whose outputs will be aggregated by a high-level boosting blender. Applying our model to a network of 10 robots displays over 80% accuracy in the prediction of optimal topologies corresponding to various configurations of the cited network.
 
-## Overview
+## 核心内容
+In this paper, we synthesize a data-driven method to predict the optimal topology of an ad-hoc robot network. This problem is technically a multi-task classification problem. However, we divide it into a class of multi-class classification problems that can be more efficiently solved. For this purpose, we first compose an algorithm to create ground-truth optimal topologies associated with various configurations of a robot network. This algorithm incorporates a complex collection of optimality criteria that our learning model successfully manages to learn. This model is an stacked ensemble whose output is the topology prediction for a particular robot. Each stacked ensemble instance constitutes three low-level estimators whose outputs will be aggregated by a high-level boosting blender. Applying our model to a network of 10 robots displays over 80% accuracy in the prediction of optimal topologies corresponding to various configurations of the cited network.
 
-This paper addresses the problem of predicting the optimal communication topology for ad-hoc robot networks. Computing such topologies directly is computationally hard because identifying the largest cycle (backbone) in the network is equivalent to solving a Hamiltonian-cycle problem. To circumvent this difficulty, the authors reformulate the multi-task topology prediction problem as a collection of simpler per-robot multi-class classification problems.
+## 参考
+- http://arxiv.org/abs/2201.12900v2
 
-The proposed method, called OpTopNET, uses a divide-and-conquer strategy. It first constructs ground-truth optimal topologies for various network configurations using an algorithm that encodes a complex set of optimality criteria. The topology is represented as a backbone cycle together with a set of branches, and this structure is encoded into integer vectors suitable for machine learning. OpTopNET then applies a stacked ensemble architecture in which three low-level estimators—random forest, k-nearest-neighbors, and a deep neural network—feed their outputs into a high-level XGBoost blender that produces the final topology prediction for each robot.
-
-Evaluation on a simulated network of ten robots shows that OpTopNET achieves over 80% accuracy in predicting optimal topologies across synthetically generated configurations. However, per-robot accuracy varies, and the model must be retrained when the number of robots or optimality criteria change.
-
-## Key Contributions
-
-- Transform the multi-task topology prediction problem into a set of simpler per-robot multi-class classification problems using a divide-and-conquer strategy.
-- Represent topology as a backbone cycle plus a branch set and encode it into integer vectors for efficient machine-learning processing.
-- Propose OpTopNET, a stacked ensemble architecture combining random forest, k-nearest-neighbors, deep neural networks, and an XGBoost blender.
-- Demonstrate over 80% accuracy in predicting optimal topologies for a simulated 10-robot network.
-
-## Relevance to Humanoid Robotics
-
-Although the framework targets general ad-hoc mobile robot networks rather than humanoid-specific hardware, scalable topology prediction can support communication-aware coordination for deployed fleets of mobile robots, including humanoids, in dynamic multi-robot missions. Predicting and maintaining optimal communication structures is relevant when humanoid robots operate alongside other agents in environments where infrastructure is unavailable or unreliable.
-
-The relevance is therefore tangential: the method is not designed around humanoid morphology, locomotion, or manipulation, but it provides a machine-learning tool that could be applied to humanoid fleet coordination in distributed, infrastructure-less scenarios.

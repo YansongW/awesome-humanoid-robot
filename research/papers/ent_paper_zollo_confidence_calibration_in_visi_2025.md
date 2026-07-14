@@ -8,15 +8,12 @@ names:
   zh: Confidence Calibration in Vision-Language-Action Models
   ko: Confidence Calibration in Vision-Language-Action Models
 summary:
-  en: Confidence Calibration in Vision-Language-Action Models (Confidence Calibration
-    in Vision-Language-Action Models), is a 2025 large vision-language-action model
-    for robotic manipulation, introduced by Columbia University.
-  zh: Confidence Calibration in Vision-Language-Action Models (Confidence Calibration
-    in Vision-Language-Action Models), is a 2025 large vision-language-action model
-    for robotic manipulation, introduced by Columbia University.
-  ko: Confidence Calibration in Vision-Language-Action Models (Confidence Calibration
-    in Vision-Language-Action Models), is a 2025 large vision-language-action model
-    for robotic manipulation, introduced by Columbia University.
+  en: Confidence Calibration in Vision-Language-Action Models (Confidence Calibration in Vision-Language-Action Models), is
+    a 2025 large vision-language-action model for robotic manipulation, introduced by Columbia University.
+  zh: Confidence Calibration in Vision-Language-Action Models (Confidence Calibration in Vision-Language-Action Models), is
+    a 2025 large vision-language-action model for robotic manipulation, introduced by Columbia University.
+  ko: Confidence Calibration in Vision-Language-Action Models (Confidence Calibration in Vision-Language-Action Models), is
+    a 2025 large vision-language-action model for robotic manipulation, introduced by Columbia University.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -36,10 +33,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: Confidence Calibration in
-    Vision-Language-Action Models. Institution: Columbia University. arXiv: 2507.17383.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2507.17383v2.
 sources:
 - id: src_001
   type: paper
@@ -54,12 +50,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Confidence Calibration in Vision-Language-Action Models (Confidence Calibration in Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Columbia University.
+Trustworthy robot behavior requires not only high levels of task success but also that the robot can reliably quantify how likely it is to succeed. To this end, we present a first-of-its-kind study of confidence calibration in vision-language-action (VLA) foundation models, which map visual observations and natural language instructions to low-level robot motor commands. We establish a confidence baseline for VLAs, examine how task success relates to calibration error and how calibration evolves over time, and introduce two lightweight techniques to remedy the miscalibration we observe: prompt ensembles and action-wise Platt scaling. Our aim in this study is to begin to develop the tools and conceptual understanding necessary to render VLAs both highly performant and highly trustworthy via reliable uncertainty quantification.
 
-## Overview
-Confidence Calibration in Vision-Language-Action Models (Confidence Calibration in Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Columbia University.
+## 核心内容
+Trustworthy robot behavior requires not only high levels of task success but also that the robot can reliably quantify how likely it is to succeed. To this end, we present a first-of-its-kind study of confidence calibration in vision-language-action (VLA) foundation models, which map visual observations and natural language instructions to low-level robot motor commands. We establish a confidence baseline for VLAs, examine how task success relates to calibration error and how calibration evolves over time, and introduce two lightweight techniques to remedy the miscalibration we observe: prompt ensembles and action-wise Platt scaling. Our aim in this study is to begin to develop the tools and conceptual understanding necessary to render VLAs both highly performant and highly trustworthy via reliable uncertainty quantification.
 
-## 개요
-Confidence Calibration in Vision-Language-Action Models (Confidence Calibration in Vision-Language-Action Models), is a 2025 large vision-language-action model for robotic manipulation, introduced by Columbia University.
+## 参考
+- http://arxiv.org/abs/2507.17383v2
+

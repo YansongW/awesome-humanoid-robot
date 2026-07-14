@@ -4,27 +4,19 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action
-    Models'
+  en: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models'
   zh: TA-VLA
-  ko: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action
-    Models'
+  ko: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models'
 summary:
-  en: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action
-    Models (TA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for
-    AI Industry Research (AIR), Tsinghua Univeristy, Nanyang Technological University,
-    and published at CoRL25.'
-  zh: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action
-    Models (TA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for
-    AI Industry Research (AIR), Tsinghua Univeristy, Nanyang Technological University,
-    and published at CoRL25.'
-  ko: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action
-    Models (TA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for
-    AI Industry Research (AIR), Tsinghua Univeristy, Nanyang Technological University,
-    and published at CoRL25.'
+  en: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for AI Industry
+    Research (AIR), Tsinghua Univeristy, Nanyang Technological University, and published at CoRL25.'
+  zh: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for AI Industry
+    Research (AIR), Tsinghua Univeristy, Nanyang Technological University, and published at CoRL25.'
+  ko: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for AI Industry
+    Research (AIR), Tsinghua Univeristy, Nanyang Technological University, and published at CoRL25.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,16 +36,13 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: TA-VLA. Institution: Beijing
-    Academy of Artificial Intelligence, BAAI, Institute for AI Industry Research (AIR),
-    Tsinghua Univeristy, Nanyang Technological University. Venue: CoRL25. arXiv: 2509.07962.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.07962v1.
 sources:
 - id: src_001
   type: paper
-  title: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action
-    Models (arXiv)'
+  title: 'TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (arXiv)'
   url: https://arxiv.org/abs/2509.07962
   date: '2025'
   accessed_at: '2026-07-01'
@@ -64,12 +53,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for AI Industry Research (AIR), Tsinghua Univeristy, Nanyang Technological University, and published at CoRL25.
+Many robotic manipulation tasks require sensing and responding to force signals such as torque to assess whether the task has been successfully completed and to enable closed-loop control. However, current Vision-Language-Action (VLA) models lack the ability to integrate such subtle physical feedback. In this work, we explore Torque-aware VLA models, aiming to bridge this gap by systematically studying the design space for incorporating torque signals into existing VLA architectures. We identify and evaluate several strategies, leading to three key findings. First, introducing torque adapters into the decoder consistently outperforms inserting them into the encoder.Third, inspired by joint prediction and planning paradigms in autonomous driving, we propose predicting torque as an auxiliary output, which further improves performance. This strategy encourages the model to build a physically grounded internal representation of interaction dynamics. Extensive quantitative and qualitative experiments across contact-rich manipulation benchmarks validate our findings.
 
-## Overview
-TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for AI Industry Research (AIR), Tsinghua Univeristy, Nanyang Technological University, and published at CoRL25.
+## 核心内容
+Many robotic manipulation tasks require sensing and responding to force signals such as torque to assess whether the task has been successfully completed and to enable closed-loop control. However, current Vision-Language-Action (VLA) models lack the ability to integrate such subtle physical feedback. In this work, we explore Torque-aware VLA models, aiming to bridge this gap by systematically studying the design space for incorporating torque signals into existing VLA architectures. We identify and evaluate several strategies, leading to three key findings. First, introducing torque adapters into the decoder consistently outperforms inserting them into the encoder.Third, inspired by joint prediction and planning paradigms in autonomous driving, we propose predicting torque as an auxiliary output, which further improves performance. This strategy encourages the model to build a physically grounded internal representation of interaction dynamics. Extensive quantitative and qualitative experiments across contact-rich manipulation benchmarks validate our findings.
 
-## 개요
-TA-VLA: Elucidating the Design Space of Torque-aware Vision-Language-Action Models (TA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Beijing Academy of Artificial Intelligence, BAAI, Institute for AI Industry Research (AIR), Tsinghua Univeristy, Nanyang Technological University, and published at CoRL25.
+## 参考
+- http://arxiv.org/abs/2509.07962v1
+

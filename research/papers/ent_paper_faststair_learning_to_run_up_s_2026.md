@@ -8,12 +8,9 @@ names:
   zh: 'FastStair: Learning to Run Up Stairs with Humanoid Robots'
   ko: 'FastStair: Learning to Run Up Stairs with Humanoid Robots'
 summary:
-  en: 'FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on
-    locomotion for humanoid robots.'
-  zh: 'FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on
-    locomotion for humanoid robots.'
-  ko: 'FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on
-    locomotion for humanoid robots.'
+  en: 'FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid robots.'
+  zh: 'FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid robots.'
+  ko: 'FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -30,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Locomotion.
-    arXiv: 2601.10365.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.10365v1.
 sources:
 - id: src_001
   type: paper
@@ -42,12 +38,12 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid robots.
+Running up stairs is effortless for humans but remains extremely challenging for humanoid robots due to the simultaneous requirements of high agility and strict stability. Model-free reinforcement learning (RL) can generate dynamic locomotion, yet implicit stability rewards and heavy reliance on task-specific reward shaping tend to result in unsafe behaviors, especially on stairs; conversely, model-based foothold planners encode contact feasibility and stability structure, but enforcing their hard constraints often induces conservative motion that limits speed. We present FastStair, a planner-guided, multi-stage learning framework that reconciles these complementary strengths to achieve fast and stable stair ascent. FastStair integrates a parallel model-based foothold planner into the RL training loop to bias exploration toward dynamically feasible contacts and to pretrain a safety-focused base policy. To mitigate planner-induced conservatism and the discrepancy between low- and high-speed action distributions, the base policy was fine-tuned into speed-specialized experts and then integrated via Low-Rank Adaptation (LoRA) to enable smooth operation across the full commanded-speed range. We deploy the resulting controller on the Oli humanoid robot, achieving stable stair ascent at commanded speeds up to 1.65 m/s and traversing a 33-step spiral staircase (17 cm rise per step) in 12 s, demonstrating robust high-speed performance on long staircases. Notably, the proposed approach served as the champion solution in the Canton Tower Robot Run Up Competition.
 
-## Overview
-FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid robots.
+## 核心内容
+Running up stairs is effortless for humans but remains extremely challenging for humanoid robots due to the simultaneous requirements of high agility and strict stability. Model-free reinforcement learning (RL) can generate dynamic locomotion, yet implicit stability rewards and heavy reliance on task-specific reward shaping tend to result in unsafe behaviors, especially on stairs; conversely, model-based foothold planners encode contact feasibility and stability structure, but enforcing their hard constraints often induces conservative motion that limits speed. We present FastStair, a planner-guided, multi-stage learning framework that reconciles these complementary strengths to achieve fast and stable stair ascent. FastStair integrates a parallel model-based foothold planner into the RL training loop to bias exploration toward dynamically feasible contacts and to pretrain a safety-focused base policy. To mitigate planner-induced conservatism and the discrepancy between low- and high-speed action distributions, the base policy was fine-tuned into speed-specialized experts and then integrated via Low-Rank Adaptation (LoRA) to enable smooth operation across the full commanded-speed range. We deploy the resulting controller on the Oli humanoid robot, achieving stable stair ascent at commanded speeds up to 1.65 m/s and traversing a 33-step spiral staircase (17 cm rise per step) in 12 s, demonstrating robust high-speed performance on long staircases. Notably, the proposed approach served as the champion solution in the Canton Tower Robot Run Up Competition.
 
-## 개요
-FastStair: Learning to Run Up Stairs with Humanoid Robots is a 2026 work on locomotion for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2601.10365v1
+

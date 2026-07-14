@@ -8,66 +8,48 @@ names:
   zh: Motion Planning in Compressed Representation Spaces
   ko: Motion Planning in Compressed Representation Spaces
 summary:
-  en: "arXiv:2606.30940v1 Announce Type: new \nAbstract: Deep learning methods have\
-    \ vastly expanded the capabilities of motion planning in robotics applications,\
-    \ as learning priors from large-scale data has been shown to be essential in capturing\
-    \ the highly complex behavior required for solving tasks such as manipulation\
-    \ or navigation for autonomous vehicles. At the same time, model-based planning\
-    \ algorithms based on search or optimization remain an essential tool due to their\
-    \ flexibility, efficiency, and the ability to incorporate domain knowledge via\
-    \ expert-designed algorithms and objective functions. We propose a new generative\
-    \ framework to unify these two paradigms. First, we learn an autoencoder with\
-    \ a high compression ratio and a latent space of hierarchically ordered, discrete-valued\
-    \ tokens. Leveraging both the dimensionality reduction and the hierarchical coarse-to-fine\
-    \ structure learned by this autoencoder, we then perform motion planning by directly\
-    \ searching in the latent space of tokens. This search can optimize arbitrary\
-    \ objective functions specified at test time, providing a large degree of flexibility\
-    \ while maintaining efficiency and producing realistic solutions by relying on\
-    \ the generative capabilities of the highly compressed autoencoder. We evaluate\
-    \ our method on nuPlan and the Waymo Open Motion Dataset, showing how latent space\
-    \ search can be used for a variety of guided behavior generation tasks, achieving\
-    \ strong performance for closed-loop motion planning and multi-agent guided scenario\
-    \ synthesis without requiring any task-specific training."
-  zh: "arXiv:2606.30940v1 Announce Type: new \nAbstract: Deep learning methods have\
-    \ vastly expanded the capabilities of motion planning in robotics applications,\
-    \ as learning priors from large-scale data has been shown to be essential in capturing\
-    \ the highly complex behavior required for solving tasks such as manipulation\
-    \ or navigation for autonomous vehicles. At the same time, model-based planning\
-    \ algorithms based on search or optimization remain an essential tool due to their\
-    \ flexibility, efficiency, and the ability to incorporate domain knowledge via\
-    \ expert-designed algorithms and objective functions. We propose a new generative\
-    \ framework to unify these two paradigms. First, we learn an autoencoder with\
-    \ a high compression ratio and a latent space of hierarchically ordered, discrete-valued\
-    \ tokens. Leveraging both the dimensionality reduction and the hierarchical coarse-to-fine\
-    \ structure learned by this autoencoder, we then perform motion planning by directly\
-    \ searching in the latent space of tokens. This search can optimize arbitrary\
-    \ objective functions specified at test time, providing a large degree of flexibility\
-    \ while maintaining efficiency and producing realistic solutions by relying on\
-    \ the generative capabilities of the highly compressed autoencoder. We evaluate\
-    \ our method on nuPlan and the Waymo Open Motion Dataset, showing how latent space\
-    \ search can be used for a variety of guided behavior generation tasks, achieving\
-    \ strong performance for closed-loop motion planning and multi-agent guided scenario\
-    \ synthesis without requiring any task-specific training."
-  ko: "arXiv:2606.30940v1 Announce Type: new \nAbstract: Deep learning methods have\
-    \ vastly expanded the capabilities of motion planning in robotics applications,\
-    \ as learning priors from large-scale data has been shown to be essential in capturing\
-    \ the highly complex behavior required for solving tasks such as manipulation\
-    \ or navigation for autonomous vehicles. At the same time, model-based planning\
-    \ algorithms based on search or optimization remain an essential tool due to their\
-    \ flexibility, efficiency, and the ability to incorporate domain knowledge via\
-    \ expert-designed algorithms and objective functions. We propose a new generative\
-    \ framework to unify these two paradigms. First, we learn an autoencoder with\
-    \ a high compression ratio and a latent space of hierarchically ordered, discrete-valued\
-    \ tokens. Leveraging both the dimensionality reduction and the hierarchical coarse-to-fine\
-    \ structure learned by this autoencoder, we then perform motion planning by directly\
-    \ searching in the latent space of tokens. This search can optimize arbitrary\
-    \ objective functions specified at test time, providing a large degree of flexibility\
-    \ while maintaining efficiency and producing realistic solutions by relying on\
-    \ the generative capabilities of the highly compressed autoencoder. We evaluate\
-    \ our method on nuPlan and the Waymo Open Motion Dataset, showing how latent space\
-    \ search can be used for a variety of guided behavior generation tasks, achieving\
-    \ strong performance for closed-loop motion planning and multi-agent guided scenario\
-    \ synthesis without requiring any task-specific training."
+  en: "arXiv:2606.30940v1 Announce Type: new \nAbstract: Deep learning methods have vastly expanded the capabilities of motion\
+    \ planning in robotics applications, as learning priors from large-scale data has been shown to be essential in capturing\
+    \ the highly complex behavior required for solving tasks such as manipulation or navigation for autonomous vehicles. At\
+    \ the same time, model-based planning algorithms based on search or optimization remain an essential tool due to their\
+    \ flexibility, efficiency, and the ability to incorporate domain knowledge via expert-designed algorithms and objective\
+    \ functions. We propose a new generative framework to unify these two paradigms. First, we learn an autoencoder with a\
+    \ high compression ratio and a latent space of hierarchically ordered, discrete-valued tokens. Leveraging both the dimensionality\
+    \ reduction and the hierarchical coarse-to-fine structure learned by this autoencoder, we then perform motion planning\
+    \ by directly searching in the latent space of tokens. This search can optimize arbitrary objective functions specified\
+    \ at test time, providing a large degree of flexibility while maintaining efficiency and producing realistic solutions\
+    \ by relying on the generative capabilities of the highly compressed autoencoder. We evaluate our method on nuPlan and\
+    \ the Waymo Open Motion Dataset, showing how latent space search can be used for a variety of guided behavior generation\
+    \ tasks, achieving strong performance for closed-loop motion planning and multi-agent guided scenario synthesis without\
+    \ requiring any task-specific training."
+  zh: "arXiv:2606.30940v1 Announce Type: new \nAbstract: Deep learning methods have vastly expanded the capabilities of motion\
+    \ planning in robotics applications, as learning priors from large-scale data has been shown to be essential in capturing\
+    \ the highly complex behavior required for solving tasks such as manipulation or navigation for autonomous vehicles. At\
+    \ the same time, model-based planning algorithms based on search or optimization remain an essential tool due to their\
+    \ flexibility, efficiency, and the ability to incorporate domain knowledge via expert-designed algorithms and objective\
+    \ functions. We propose a new generative framework to unify these two paradigms. First, we learn an autoencoder with a\
+    \ high compression ratio and a latent space of hierarchically ordered, discrete-valued tokens. Leveraging both the dimensionality\
+    \ reduction and the hierarchical coarse-to-fine structure learned by this autoencoder, we then perform motion planning\
+    \ by directly searching in the latent space of tokens. This search can optimize arbitrary objective functions specified\
+    \ at test time, providing a large degree of flexibility while maintaining efficiency and producing realistic solutions\
+    \ by relying on the generative capabilities of the highly compressed autoencoder. We evaluate our method on nuPlan and\
+    \ the Waymo Open Motion Dataset, showing how latent space search can be used for a variety of guided behavior generation\
+    \ tasks, achieving strong performance for closed-loop motion planning and multi-agent guided scenario synthesis without\
+    \ requiring any task-specific training."
+  ko: "arXiv:2606.30940v1 Announce Type: new \nAbstract: Deep learning methods have vastly expanded the capabilities of motion\
+    \ planning in robotics applications, as learning priors from large-scale data has been shown to be essential in capturing\
+    \ the highly complex behavior required for solving tasks such as manipulation or navigation for autonomous vehicles. At\
+    \ the same time, model-based planning algorithms based on search or optimization remain an essential tool due to their\
+    \ flexibility, efficiency, and the ability to incorporate domain knowledge via expert-designed algorithms and objective\
+    \ functions. We propose a new generative framework to unify these two paradigms. First, we learn an autoencoder with a\
+    \ high compression ratio and a latent space of hierarchically ordered, discrete-valued tokens. Leveraging both the dimensionality\
+    \ reduction and the hierarchical coarse-to-fine structure learned by this autoencoder, we then perform motion planning\
+    \ by directly searching in the latent space of tokens. This search can optimize arbitrary objective functions specified\
+    \ at test time, providing a large degree of flexibility while maintaining efficiency and producing realistic solutions\
+    \ by relying on the generative capabilities of the highly compressed autoencoder. We evaluate our method on nuPlan and\
+    \ the Waymo Open Motion Dataset, showing how latent space search can be used for a variety of guided behavior generation\
+    \ tasks, achieving strong performance for closed-loop motion planning and multi-agent guided scenario synthesis without\
+    \ requiring any task-specific training."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -85,9 +67,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported from arXiv cs.RO RSS feed.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.30940v1.
 sources:
 - id: src_001
   type: paper
@@ -96,15 +78,12 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-arXiv:2606.30940v1 Announce Type: new 
-Abstract: Deep learning methods have vastly expanded the capabilities of motion planning in robotics applications, as learning priors from large-scale data has been shown to be essential in capturing the highly complex behavior required for solving tasks such as manipulation or navigation for autonomous vehicles. At the same time, model-based planning algorithms based on search or optimization remain an essential tool due to their flexibility, efficiency, and the ability to incorporate domain knowledge via expert-designed algorithms and objective functions. We propose a new generative framework to unify these two paradigms. First, we learn an autoencoder with a high compression ratio and a latent space of hierarchically ordered, discrete-valued tokens. Leveraging both the dimensionality reduction and the hierarchical coarse-to-fine structure learned by this autoencoder, we then perform motion planning by directly searching in the latent space of tokens. This search can optimize arbitrary objective functions specified at test time, providing a large degree of flexibility while maintaining efficiency and producing realistic solutions by relying on the generative capabilities of the highly compressed autoencoder. We evaluate our method on nuPlan and the Waymo Open Motion Dataset, showing how latent space search can be used for a variety of guided behavior generation tasks, achieving strong performance for closed-loop motion planning and multi-agent guided scenario synthesis without requiring any task-specific training.
+Deep learning methods have vastly expanded the capabilities of motion planning in robotics applications, as learning priors from large-scale data has been shown to be essential in capturing the highly complex behavior required for solving tasks such as manipulation or navigation for autonomous vehicles. At the same time, model-based planning algorithms based on search or optimization remain an essential tool due to their flexibility, efficiency, and the ability to incorporate domain knowledge via expert-designed algorithms and objective functions. We propose a new generative framework to unify these two paradigms. First, we learn an autoencoder with a high compression ratio and a latent space of hierarchically ordered, discrete-valued tokens. Leveraging both the dimensionality reduction and the hierarchical coarse-to-fine structure learned by this autoencoder, we then perform motion planning by directly searching in the latent space of tokens. This search can optimize arbitrary objective functions specified at test time, providing a large degree of flexibility while maintaining efficiency and producing realistic solutions by relying on the generative capabilities of the highly compressed autoencoder. We evaluate our method on nuPlan and the Waymo Open Motion Dataset, showing how latent space search can be used for a variety of guided behavior generation tasks, achieving strong performance for closed-loop motion planning and multi-agent guided scenario synthesis without requiring any task-specific training.
 
-## Overview
-arXiv:2606.30940v1 Announce Type: new 
-Abstract: Deep learning methods have vastly expanded the capabilities of motion planning in robotics applications, as learning priors from large-scale data has been shown to be essential in capturing the highly complex behavior required for solving tasks such as manipulation or navigation for autonomous vehicles. At the same time, model-based planning algorithms based on search or optimization remain an essential tool due to their flexibility, efficiency, and the ability to incorporate domain knowledge via expert-designed algorithms and objective functions. We propose a new generative framework to unify these two paradigms. First, we learn an autoencoder with a high compression ratio and a latent space of hierarchically ordered, discrete-valued tokens. Leveraging both the dimensionality reduction and the hierarchical coarse-to-fine structure learned by this autoencoder, we then perform motion planning by directly searching in the latent space of tokens. This search can optimize arbitrary objective functions specified at test time, providing a large degree of flexibility while maintaining efficiency and producing realistic solutions by relying on the generative capabilities of the highly compressed autoencoder. We evaluate our method on nuPlan and the Waymo Open Motion Dataset, showing how latent space search can be used for a variety of guided behavior generation tasks, achieving strong performance for closed-loop motion planning and multi-agent guided scenario synthesis without requiring any task-specific training.
+## 核心内容
+Deep learning methods have vastly expanded the capabilities of motion planning in robotics applications, as learning priors from large-scale data has been shown to be essential in capturing the highly complex behavior required for solving tasks such as manipulation or navigation for autonomous vehicles. At the same time, model-based planning algorithms based on search or optimization remain an essential tool due to their flexibility, efficiency, and the ability to incorporate domain knowledge via expert-designed algorithms and objective functions. We propose a new generative framework to unify these two paradigms. First, we learn an autoencoder with a high compression ratio and a latent space of hierarchically ordered, discrete-valued tokens. Leveraging both the dimensionality reduction and the hierarchical coarse-to-fine structure learned by this autoencoder, we then perform motion planning by directly searching in the latent space of tokens. This search can optimize arbitrary objective functions specified at test time, providing a large degree of flexibility while maintaining efficiency and producing realistic solutions by relying on the generative capabilities of the highly compressed autoencoder. We evaluate our method on nuPlan and the Waymo Open Motion Dataset, showing how latent space search can be used for a variety of guided behavior generation tasks, achieving strong performance for closed-loop motion planning and multi-agent guided scenario synthesis without requiring any task-specific training.
 
-## 개요
-arXiv:2606.30940v1 Announce Type: new 
-Abstract: Deep learning methods have vastly expanded the capabilities of motion planning in robotics applications, as learning priors from large-scale data has been shown to be essential in capturing the highly complex behavior required for solving tasks such as manipulation or navigation for autonomous vehicles. At the same time, model-based planning algorithms based on search or optimization remain an essential tool due to their flexibility, efficiency, and the ability to incorporate domain knowledge via expert-designed algorithms and objective functions. We propose a new generative framework to unify these two paradigms. First, we learn an autoencoder with a high compression ratio and a latent space of hierarchically ordered, discrete-valued tokens. Leveraging both the dimensionality reduction and the hierarchical coarse-to-fine structure learned by this autoencoder, we then perform motion planning by directly searching in the latent space of tokens. This search can optimize arbitrary objective functions specified at test time, providing a large degree of flexibility while maintaining efficiency and producing realistic solutions by relying on the generative capabilities of the highly compressed autoencoder. We evaluate our method on nuPlan and the Waymo Open Motion Dataset, showing how latent space search can be used for a variety of guided behavior generation tasks, achieving strong performance for closed-loop motion planning and multi-agent guided scenario synthesis without requiring any task-specific training.
+## 参考
+- http://arxiv.org/abs/2606.30940v1
+

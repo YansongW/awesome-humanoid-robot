@@ -8,13 +8,12 @@ names:
   zh: 面向机器人感知的超级激光雷达强度
   ko: 로봇 인식을 위한 슈퍼 LiDAR 강도
 summary:
-  en: This paper proposes a real-time CNN-based framework to densify sparse intensity
-    images from low-cost non-repeating scanning LiDAR, enabling illumination-invariant
-    reflectance estimation for robotic perception tasks such as loop closure and lane
+  en: This paper proposes a real-time CNN-based framework to densify sparse intensity images from low-cost non-repeating scanning
+    LiDAR, enabling illumination-invariant reflectance estimation for robotic perception tasks such as loop closure and lane
     detection.
   zh: 本文提出了一种基于CNN的实时框架，用于将低成本非重复扫描激光雷达的稀疏强度图像稠密化，从而实现对光照不敏感的反射率估计，并应用于回环检测和车道检测等机器人感知任务。
-  ko: 본 논문은 저비용 비반복 스캐닝 LiDAR의 희소 강도 이미지를 실시간으로 고밀도화하는 CNN 기반 프레임워크를 제안하여, 루프 클로저
-    및 차선 검출과 같은 로봇 인식 작업을 위한 조명 불변 반사율 추정을 가능하게 한다.
+  ko: 본 논문은 저비용 비반복 스캐닝 LiDAR의 희소 강도 이미지를 실시간으로 고밀도화하는 CNN 기반 프레임워크를 제안하여, 루프 클로저 및 차선 검출과 같은 로봇 인식 작업을 위한 조명 불변 반사율 추정을 가능하게
+    한다.
 domains:
 - 07_ai_models_algorithms
 - 02_components
@@ -41,10 +40,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-28'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from provided metadata and abstract; full-text verification
-    required before promotion to verified status.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.10398v2.
 sources:
 - id: src_001
   type: paper
@@ -55,20 +53,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+Conventionally, human intuition defines vision as a modality of passive optical sensing, relying on ambient light to perceive the environment. However, active optical sensing, which involves emitting and receiving signals, offers unique advantages by capturing both radiometric and geometric properties of the environment, independent of external illumination conditions. This work focuses on advancing active optical sensing using Light Detection and Ranging (LiDAR), which captures intensity data, enabling the estimation of surface reflectance that remains invariant under varying illumination. Such properties are crucial for robotic perception tasks, including detection, recognition, segmentation, and Simultaneous Localization and Mapping (SLAM). A key challenge with low-cost LiDARs lies in the sparsity of scan data, which limits their broader application. To address this limitation, this work introduces an innovative framework for generating dense LiDAR intensity images from sparse data, leveraging the unique attributes of non-repeating scanning LiDAR (NRS-LiDAR). We tackle critical challenges, including intensity calibration and the transition from static to dynamic scene domains, facilitating the reconstruction of dense intensity images in real-world settings. The key contributions of this work include a comprehensive dataset for LiDAR intensity image densification, a densification network tailored for NRS-LiDAR, and diverse applications such as loop closure and traffic lane detection using the generated dense intensity images. Experimental results validate the efficacy of the proposed approach, which successfully integrates computer vision techniques with LiDAR data processing, enhancing the applicability of low-cost LiDAR systems and establishing a novel paradigm for robotic vision via active optical sensing--LiDAR as a Camera.
 
-## Overview
+## 核心内容
+Conventionally, human intuition defines vision as a modality of passive optical sensing, relying on ambient light to perceive the environment. However, active optical sensing, which involves emitting and receiving signals, offers unique advantages by capturing both radiometric and geometric properties of the environment, independent of external illumination conditions. This work focuses on advancing active optical sensing using Light Detection and Ranging (LiDAR), which captures intensity data, enabling the estimation of surface reflectance that remains invariant under varying illumination. Such properties are crucial for robotic perception tasks, including detection, recognition, segmentation, and Simultaneous Localization and Mapping (SLAM). A key challenge with low-cost LiDARs lies in the sparsity of scan data, which limits their broader application. To address this limitation, this work introduces an innovative framework for generating dense LiDAR intensity images from sparse data, leveraging the unique attributes of non-repeating scanning LiDAR (NRS-LiDAR). We tackle critical challenges, including intensity calibration and the transition from static to dynamic scene domains, facilitating the reconstruction of dense intensity images in real-world settings. The key contributions of this work include a comprehensive dataset for LiDAR intensity image densification, a densification network tailored for NRS-LiDAR, and diverse applications such as loop closure and traffic lane detection using the generated dense intensity images. Experimental results validate the efficacy of the proposed approach, which successfully integrates computer vision techniques with LiDAR data processing, enhancing the applicability of low-cost LiDAR systems and establishing a novel paradigm for robotic vision via active optical sensing--LiDAR as a Camera.
 
-The paper addresses the limitation of low-cost LiDAR sensors, which produce sparse intensity scans that hinder their direct use in robotic perception tasks requiring dense, illumination-invariant reflectance images. It introduces a CNN-based encoder-decoder framework specifically designed for non-repeating scanning LiDAR (NRS-LiDAR), incorporating an Adaptive Fusion Module and a Dynamic Compensation Module. These modules adaptively compensate for distance and incidence-angle effects and bridge the gap between static and dynamic scene domains, enabling real-time densification of LiDAR intensity images in real-world settings.
+## 参考
+- http://arxiv.org/abs/2508.10398v2
 
-The proposed framework is validated on applications including loop closure detection and traffic lane detection, demonstrating that dense intensity images from low-cost LiDAR can serve as camera-grade, illumination-invariant inputs for robotic vision. The authors argue that this work establishes a novel paradigm of 'LiDAR as a Camera' by integrating computer vision techniques with LiDAR data processing, thereby enhancing the applicability of low-cost LiDAR systems.
-
-## Key Contributions
-
-- First benchmark dataset for LiDAR intensity image densification with paired sparse-to-dense ground-truth data.
-- Real-time densification network tailored for NRS-LiDAR that bridges the static-to-dynamic domain gap and performs adaptive intensity calibration.
-- Validation on loop closure detection and traffic lane detection using dense intensity images generated from a low-cost LiDAR.
-- Integration of computer vision techniques with LiDAR data processing to enhance the applicability of low-cost LiDAR systems.
-
-## Relevance to Humanoid Robotics
-
-The densification and calibration framework enables low-cost LiDAR to deliver camera-grade, illumination-invariant reflectance images, which is directly applicable to navigation and environmental awareness systems in humanoid robots. This supports robust localization and perception for humanoid platforms deployed in industrial tasks and mass-produced applications, particularly under varying illumination conditions where passive vision may fail.

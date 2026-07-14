@@ -4,17 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'AISPO: Enhancing Depth Reliability for Robotic Manipulation of Non-Lambertian
-    Objects via Affine-Invariant Shape Prior'
+  en: 'AISPO: Enhancing Depth Reliability for Robotic Manipulation of Non-Lambertian Objects via Affine-Invariant Shape Prior'
   zh: AISPO：基于仿射不变形状先验的非朗伯物体机器人操作深度可靠性增强
   ko: 'AISPO: 아핀 불변 형상 사전을 활용한 비람베르티안 객체 로봇 조작을 위한 깊이 신뢰성 강화'
 summary:
-  en: AISPO is a depth completion framework that fuses multi-scale RGB-D features
-    with an affine-invariant shape prior to improve depth reliability for robotic
-    manipulation of transparent and specular objects.
+  en: AISPO is a depth completion framework that fuses multi-scale RGB-D features with an affine-invariant shape prior to
+    improve depth reliability for robotic manipulation of transparent and specular objects.
   zh: AISPO是一个深度补全框架，通过融合多尺度RGB-D特征与仿射不变形状先验，提升透明及高反光非朗伯物体机器人操作时的深度可靠性。
-  ko: AISPO는 다중 스케일 RGB-D 특징과 아핀 불변 형상 사전을 융합하여 투명하거나 반사성이 강한 비람베르티안 객체의 로봇 조작을 위한
-    깊이 신뢰성을 향상시키는 깊이 완성 프레임워크이다.
+  ko: AISPO는 다중 스케일 RGB-D 특징과 아핀 불변 형상 사전을 융합하여 투명하거나 반사성이 강한 비람베르티안 객체의 로봇 조작을 위한 깊이 신뢰성을 향상시키는 깊이 완성 프레임워크이다.
 domains:
 - 07_ai_models_algorithms
 - 02_components
@@ -38,38 +35,26 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from provided metadata (abstract, method summary, and dataset
-    lists); requires human review against the full paper before full verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.25503v1.
 sources:
 - id: src_001
   type: paper
-  title: 'AISPO: Enhancing Depth Reliability for Robotic Manipulation of Non-Lambertian
-    Objects via Affine-Invariant Shape Prior'
+  title: 'AISPO: Enhancing Depth Reliability for Robotic Manipulation of Non-Lambertian Objects via Affine-Invariant Shape
+    Prior'
   url: https://arxiv.org/abs/2606.25503
   date: '2026'
   accessed_at: '2026-06-28'
 theoretical_depth:
 - method
 ---
+## 概述
+Reliable depth perception is critical for robotic manipulation, especially for non-Lambertian objects such as transparent or highly specular surfaces, where raw depth measurements are often corrupted or missing. These failures frequently propagate to motion planning, resulting in invalid grasp poses and execution errors. We propose AISPO, a depth completion framework that improves depth reliability for manipulation in challenging sensing conditions. AISPO combines multi-scale RGB-D feature fusion with an affine-invariant shape prior to enforce geometric consistency and mitigate catastrophic depth failures. Unlike methods that focus primarily on average depth accuracy, our approach emphasizes physical plausibility and structural integrity of the predicted depth maps. Extensive benchmark evaluations demonstrate competitive performance and strong generalization to unseen objects and novel scenes. Real-world grasping experiments further show that enhanced depth reliability significantly improves manipulation success rates, particularly for transparent objects where many existing methods fail to produce physically usable depth estimates.
 
-## Overview
+## 核心内容
+Reliable depth perception is critical for robotic manipulation, especially for non-Lambertian objects such as transparent or highly specular surfaces, where raw depth measurements are often corrupted or missing. These failures frequently propagate to motion planning, resulting in invalid grasp poses and execution errors. We propose AISPO, a depth completion framework that improves depth reliability for manipulation in challenging sensing conditions. AISPO combines multi-scale RGB-D feature fusion with an affine-invariant shape prior to enforce geometric consistency and mitigate catastrophic depth failures. Unlike methods that focus primarily on average depth accuracy, our approach emphasizes physical plausibility and structural integrity of the predicted depth maps. Extensive benchmark evaluations demonstrate competitive performance and strong generalization to unseen objects and novel scenes. Real-world grasping experiments further show that enhanced depth reliability significantly improves manipulation success rates, particularly for transparent objects where many existing methods fail to produce physically usable depth estimates.
 
-Reliable depth perception is fundamental to robotic manipulation, yet conventional depth sensors frequently fail on non-Lambertian surfaces such as transparent containers, glassware, and specular metallic objects. These failures produce corrupted or missing depth measurements that propagate downstream to motion planning, resulting in invalid grasp poses and execution errors during manipulation tasks.
+## 参考
+- http://arxiv.org/abs/2606.25503v1
 
-To address this problem, the authors propose AISPO, a depth completion framework that combines multi-scale RGB-D feature fusion with an affine-invariant shape prior. A frozen vision-transformer-based autoencoder extracts the shape prior, which is then integrated through cross-attention hierarchical fusion modules and decoded by a DPT-style decoder. The network is trained in two stages using synthetic data to enforce geometric consistency and reduce catastrophic depth failures.
-
-AISPO is evaluated on multiple benchmarks covering both known and novel object categories, and validated through real-world grasping experiments with a Franka robotic arm. The results show competitive benchmark performance, strong generalization to unseen objects and scenes, and significant improvements in manipulation success rates—especially for transparent objects where many prior methods fail to produce physically usable depth estimates.
-
-## Key Contributions
-
-- A depth completion framework that fuses multi-scale RGB-D features with an affine-invariant shape prior to improve depth reliability for non-Lambertian objects.
-- A ViT-based shape-prior autoencoder and a two-stage training strategy designed to enforce structural regularity and mitigate catastrophic depth failures.
-- Extensive benchmark evaluations and real-world robotic grasping experiments demonstrating improved manipulation success, particularly on transparent objects.
-
-## Relevance to Humanoid Robotics
-
-Humanoid robots operating in unstructured human environments must handle a wide variety of common household and industrial objects, many of which are transparent, reflective, or otherwise non-Lambertian. AISPO's emphasis on physically plausible and structurally intact depth maps directly supports robust perception-driven grasp planning in these scenarios.
-
-By improving depth reliability for transparent and specular objects, the framework reduces invalid grasp poses and execution errors, enabling more scalable and dependable manipulation behavior for humanoid systems deployed in real-world settings.

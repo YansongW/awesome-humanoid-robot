@@ -4,46 +4,31 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video
-    for Dexterous Humanoid Learning'
-  zh: 'AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video
-    for Dexterous Humanoid Learning'
-  ko: 'AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video
-    for Dexterous Humanoid Learning'
+  en: 'AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning'
+  zh: 'AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning'
+  ko: 'AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning'
 summary:
-  en: "arXiv:2607.08857v1 Announce Type: new \nAbstract: Human egocentric video is\
-    \ a scalable supervision source for humanoid policy learning, but current pipelines\
-    \ struggle with hand-object occlusion, oversimplified motion, or specialized capture\
-    \ hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that\
-    \ converts ordinary first-person-view human videos into robot-trainable demonstrations\
-    \ by restoring occluded object geometry, reconstructing full-hand motion, and\
-    \ retargeting it to a humanoid embodiment through camera-relative alignment and\
-    \ layered compositing. The resulting dataset pairs focused visual observations\
-    \ with synchronized robot actions and states. AgenticFocus achieves lower trajectory\
-    \ error and smoother wrist motion than cross-embodiment baselines, with SPARC\
-    \ scores of -5.18 versus -5.56 and -6.05."
-  zh: "arXiv:2607.08857v1 Announce Type: new \nAbstract: Human egocentric video is\
-    \ a scalable supervision source for humanoid policy learning, but current pipelines\
-    \ struggle with hand-object occlusion, oversimplified motion, or specialized capture\
-    \ hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that\
-    \ converts ordinary first-person-view human videos into robot-trainable demonstrations\
-    \ by restoring occluded object geometry, reconstructing full-hand motion, and\
-    \ retargeting it to a humanoid embodiment through camera-relative alignment and\
-    \ layered compositing. The resulting dataset pairs focused visual observations\
-    \ with synchronized robot actions and states. AgenticFocus achieves lower trajectory\
-    \ error and smoother wrist motion than cross-embodiment baselines, with SPARC\
-    \ scores of -5.18 versus -5.56 and -6.05."
-  ko: "arXiv:2607.08857v1 Announce Type: new \nAbstract: Human egocentric video is\
-    \ a scalable supervision source for humanoid policy learning, but current pipelines\
-    \ struggle with hand-object occlusion, oversimplified motion, or specialized capture\
-    \ hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that\
-    \ converts ordinary first-person-view human videos into robot-trainable demonstrations\
-    \ by restoring occluded object geometry, reconstructing full-hand motion, and\
-    \ retargeting it to a humanoid embodiment through camera-relative alignment and\
-    \ layered compositing. The resulting dataset pairs focused visual observations\
-    \ with synchronized robot actions and states. AgenticFocus achieves lower trajectory\
-    \ error and smoother wrist motion than cross-embodiment baselines, with SPARC\
-    \ scores of -5.18 versus -5.56 and -6.05."
+  en: "arXiv:2607.08857v1 Announce Type: new \nAbstract: Human egocentric video is a scalable supervision source for humanoid\
+    \ policy learning, but current pipelines struggle with hand-object occlusion, oversimplified motion, or specialized capture\
+    \ hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that converts ordinary first-person-view human\
+    \ videos into robot-trainable demonstrations by restoring occluded object geometry, reconstructing full-hand motion, and\
+    \ retargeting it to a humanoid embodiment through camera-relative alignment and layered compositing. The resulting dataset\
+    \ pairs focused visual observations with synchronized robot actions and states. AgenticFocus achieves lower trajectory\
+    \ error and smoother wrist motion than cross-embodiment baselines, with SPARC scores of -5.18 versus -5.56 and -6.05."
+  zh: "arXiv:2607.08857v1 Announce Type: new \nAbstract: Human egocentric video is a scalable supervision source for humanoid\
+    \ policy learning, but current pipelines struggle with hand-object occlusion, oversimplified motion, or specialized capture\
+    \ hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that converts ordinary first-person-view human\
+    \ videos into robot-trainable demonstrations by restoring occluded object geometry, reconstructing full-hand motion, and\
+    \ retargeting it to a humanoid embodiment through camera-relative alignment and layered compositing. The resulting dataset\
+    \ pairs focused visual observations with synchronized robot actions and states. AgenticFocus achieves lower trajectory\
+    \ error and smoother wrist motion than cross-embodiment baselines, with SPARC scores of -5.18 versus -5.56 and -6.05."
+  ko: "arXiv:2607.08857v1 Announce Type: new \nAbstract: Human egocentric video is a scalable supervision source for humanoid\
+    \ policy learning, but current pipelines struggle with hand-object occlusion, oversimplified motion, or specialized capture\
+    \ hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that converts ordinary first-person-view human\
+    \ videos into robot-trainable demonstrations by restoring occluded object geometry, reconstructing full-hand motion, and\
+    \ retargeting it to a humanoid embodiment through camera-relative alignment and layered compositing. The resulting dataset\
+    \ pairs focused visual observations with synchronized robot actions and states. AgenticFocus achieves lower trajectory\
+    \ error and smoother wrist motion than cross-embodiment baselines, with SPARC scores of -5.18 versus -5.56 and -6.05."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -63,25 +48,21 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=paper.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.08857v2.
 sources:
 - id: src_001
   type: paper
-  title: 'AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video
-    for Dexterous Humanoid Learning (arXiv)'
+  title: 'AgenticFocus: Object-Preserving Mixed Reality Synthesis from Human FPV Video for Dexterous Humanoid Learning (arXiv)'
   url: https://arxiv.org/abs/2607.08857
   date: '2026'
   accessed_at: '2026-07-14'
 ---
-
 ## 概述
-arXiv:2607.08857v1 Announce Type: new 
-Abstract: Human egocentric video is a scalable supervision source for humanoid policy learning, but current pipelines struggle with hand-object occlusion, oversimplified motion, or specialized capture hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that converts ordinary first-person-view human videos into robot-trainable demonstrations by restoring occluded object geometry, reconstructing full-hand motion, and retargeting it to a humanoid embodiment through camera-relative alignment and layered compositing. The resulting dataset pairs focused visual observations with synchronized robot actions and states. AgenticFocus achieves lower trajectory error and smoother wrist motion than cross-embodiment baselines, with SPARC scores of -5.18 versus -5.56 and -6.05.
+Human egocentric video is a scalable supervision source for humanoid policy learning, but current pipelines struggle with hand-object occlusion, oversimplified motion, or specialized capture hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that converts ordinary first-person-view human videos into robot-trainable demonstrations by restoring occluded object geometry, reconstructing full-hand motion, and retargeting it to a humanoid embodiment through camera-relative alignment and layered compositing. The resulting dataset pairs focused visual observations with synchronized robot actions and states. AgenticFocus achieves lower trajectory error and smoother wrist motion than cross-embodiment baselines, with SPARC scores of -5.18 versus -5.56 and -6.05.
 
-## Overview
-arXiv:2607.08857v1 Announce Type: new 
-Abstract: Human egocentric video is a scalable supervision source for humanoid policy learning, but current pipelines struggle with hand-object occlusion, oversimplified motion, or specialized capture hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that converts ordinary first-person-view human videos into robot-trainable demonstrations by restoring occluded object geometry, reconstructing full-hand motion, and retargeting it to a humanoid embodiment through camera-relative alignment and layered compositing. The resulting dataset pairs focused visual observations with synchronized robot actions and states. AgenticFocus achieves lower trajectory error and smoother wrist motion than cross-embodiment baselines, with SPARC scores of -5.18 versus -5.56 and -6.05.
+## 核心内容
+Human egocentric video is a scalable supervision source for humanoid policy learning, but current pipelines struggle with hand-object occlusion, oversimplified motion, or specialized capture hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that converts ordinary first-person-view human videos into robot-trainable demonstrations by restoring occluded object geometry, reconstructing full-hand motion, and retargeting it to a humanoid embodiment through camera-relative alignment and layered compositing. The resulting dataset pairs focused visual observations with synchronized robot actions and states. AgenticFocus achieves lower trajectory error and smoother wrist motion than cross-embodiment baselines, with SPARC scores of -5.18 versus -5.56 and -6.05.
 
-## 개요
-arXiv:2607.08857v1 Announce Type: new 
-Abstract: Human egocentric video is a scalable supervision source for humanoid policy learning, but current pipelines struggle with hand-object occlusion, oversimplified motion, or specialized capture hardware. We introduce AgenticFocus, a Mixed Reality synthesis pipeline that converts ordinary first-person-view human videos into robot-trainable demonstrations by restoring occluded object geometry, reconstructing full-hand motion, and retargeting it to a humanoid embodiment through camera-relative alignment and layered compositing. The resulting dataset pairs focused visual observations with synchronized robot actions and states. AgenticFocus achieves lower trajectory error and smoother wrist motion than cross-embodiment baselines, with SPARC scores of -5.18 versus -5.56 and -6.05.
+## 参考
+- http://arxiv.org/abs/2607.08857v2
+

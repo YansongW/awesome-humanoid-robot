@@ -8,12 +8,9 @@ names:
   zh: 'LookOut: Real-World Humanoid Egocentric Navigation'
   ko: 'LookOut: Real-World Humanoid Egocentric Navigation'
 summary:
-  en: 'LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation
-    for humanoid robots.'
-  zh: 'LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation
-    for humanoid robots.'
-  ko: 'LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation
-    for humanoid robots.'
+  en: 'LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation for humanoid robots.'
+  zh: 'LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation for humanoid robots.'
+  ko: 'LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -31,10 +28,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Navigation.
-    arXiv: 2508.14466.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2508.14466v1.
 sources:
 - id: src_001
   type: paper
@@ -43,12 +39,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation for humanoid robots.
+The ability to predict collision-free future trajectories from egocentric observations is crucial in applications such as humanoid robotics, VR / AR, and assistive navigation. In this work, we introduce the challenging problem of predicting a sequence of future 6D head poses from an egocentric video. In particular, we predict both head translations and rotations to learn the active information-gathering behavior expressed through head-turning events. To solve this task, we propose a framework that reasons over temporally aggregated 3D latent features, which models the geometric and semantic constraints for both the static and dynamic parts of the environment. Motivated by the lack of training data in this space, we further contribute a data collection pipeline using the Project Aria glasses, and present a dataset collected through this approach. Our dataset, dubbed Aria Navigation Dataset (AND), consists of 4 hours of recording of users navigating in real-world scenarios. It includes diverse situations and navigation behaviors, providing a valuable resource for learning real-world egocentric navigation policies. Extensive experiments show that our model learns human-like navigation behaviors such as waiting / slowing down, rerouting, and looking around for traffic while generalizing to unseen environments. Check out our project webpage at https://sites.google.com/stanford.edu/lookout.
 
-## Overview
-LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation for humanoid robots.
+## 核心内容
+The ability to predict collision-free future trajectories from egocentric observations is crucial in applications such as humanoid robotics, VR / AR, and assistive navigation. In this work, we introduce the challenging problem of predicting a sequence of future 6D head poses from an egocentric video. In particular, we predict both head translations and rotations to learn the active information-gathering behavior expressed through head-turning events. To solve this task, we propose a framework that reasons over temporally aggregated 3D latent features, which models the geometric and semantic constraints for both the static and dynamic parts of the environment. Motivated by the lack of training data in this space, we further contribute a data collection pipeline using the Project Aria glasses, and present a dataset collected through this approach. Our dataset, dubbed Aria Navigation Dataset (AND), consists of 4 hours of recording of users navigating in real-world scenarios. It includes diverse situations and navigation behaviors, providing a valuable resource for learning real-world egocentric navigation policies. Extensive experiments show that our model learns human-like navigation behaviors such as waiting / slowing down, rerouting, and looking around for traffic while generalizing to unseen environments. Check out our project webpage at https://sites.google.com/stanford.edu/lookout.
 
-## 개요
-LookOut: Real-World Humanoid Egocentric Navigation is a 2025 work on navigation for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2508.14466v1
+

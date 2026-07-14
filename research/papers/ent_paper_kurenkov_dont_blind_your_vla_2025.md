@@ -8,12 +8,12 @@ names:
   zh: Don't Blind Your VLA
   ko: Don't Blind Your VLA
 summary:
-  en: Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action
-    model for robotic manipulation, introduced by Cognitive AI Lab, IAI MIPT.
-  zh: Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action
-    model for robotic manipulation, introduced by Cognitive AI Lab, IAI MIPT.
-  ko: Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action
-    model for robotic manipulation, introduced by Cognitive AI Lab, IAI MIPT.
+  en: Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Cognitive AI Lab, IAI MIPT.
+  zh: Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Cognitive AI Lab, IAI MIPT.
+  ko: Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action model for robotic manipulation,
+    introduced by Cognitive AI Lab, IAI MIPT.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -33,10 +33,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: Don''t Blind Your VLA. Institution:
-    Cognitive AI Lab, IAI MIPT. arXiv: 2510.25616.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.25616v1.
 sources:
 - id: src_001
   type: paper
@@ -51,12 +50,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Cognitive AI Lab, IAI MIPT.
+The growing success of Vision-Language-Action (VLA) models stems from the promise that pretrained Vision-Language Models (VLMs) can endow agents with transferable world knowledge and vision-language (VL) grounding, laying a foundation for action models with broader generalization. Yet when these VLMs are adapted to the action modality, it remains unclear to what extent their original VL representations and knowledge are preserved. In this work, we conduct a systematic study of representation retention during VLA fine-tuning, showing that naive action fine-tuning leads to degradation of visual representations. To characterize and measure these effects, we probe VLA's hidden representations and analyze attention maps, further, we design a set of targeted tasks and methods that contrast VLA models with their counterpart VLMs, isolating changes in VL capabilities induced by action fine-tuning. We further evaluate a range of strategies for aligning visual representations and introduce a simple yet effective method that mitigates degradation and yields improved generalization to out-of-distribution (OOD) scenarios. Taken together, our analysis clarifies the trade-off between action fine-tuning and the degradation of VL representations and highlights practical approaches to recover inherited VL capabilities. Code is publicly available: https://blind-vla-paper.github.io
 
-## Overview
-Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Cognitive AI Lab, IAI MIPT.
+## 核心内容
+The growing success of Vision-Language-Action (VLA) models stems from the promise that pretrained Vision-Language Models (VLMs) can endow agents with transferable world knowledge and vision-language (VL) grounding, laying a foundation for action models with broader generalization. Yet when these VLMs are adapted to the action modality, it remains unclear to what extent their original VL representations and knowledge are preserved. In this work, we conduct a systematic study of representation retention during VLA fine-tuning, showing that naive action fine-tuning leads to degradation of visual representations. To characterize and measure these effects, we probe VLA's hidden representations and analyze attention maps, further, we design a set of targeted tasks and methods that contrast VLA models with their counterpart VLMs, isolating changes in VL capabilities induced by action fine-tuning. We further evaluate a range of strategies for aligning visual representations and introduce a simple yet effective method that mitigates degradation and yields improved generalization to out-of-distribution (OOD) scenarios. Taken together, our analysis clarifies the trade-off between action fine-tuning and the degradation of VL representations and highlights practical approaches to recover inherited VL capabilities. Code is publicly available: https://blind-vla-paper.github.io
 
-## 개요
-Don't Blind Your VLA (Don't Blind Your VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Cognitive AI Lab, IAI MIPT.
+## 参考
+- http://arxiv.org/abs/2510.25616v1
+

@@ -8,11 +8,15 @@ names:
   zh: Unitree H1 Humanoid Robot Whitepaper & Specifications
   ko: Unitree H1 Humanoid Robot Whitepaper & Specifications
 summary:
-  en: ''
-  zh: Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for
-    humanoid robotics.
-  ko: Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for
-    humanoid robotics.
+  en: This paper presents a vision-based human action imitation system based on humanoid robots. A forward-facing OAK-Lite
+    RGB-D camera mounted approximately 1.2 m in front of the robot is used to capture human motion and reproduce upper-body
+    actions in real time. To improve the stability of depth-based keypoints, we employ a cascaded Kalman and weighted moving
+    average filter that effectively reduces shake. A warm-start symbolic inverse kinematics solver with velocity-bounded optimization
+    enables stable 8-DoF arm control within 12–18 ms. In addition, a finite-state lower-limb gesture recognizer provides intuitive
+    locomotion commands, forming a unified full-body imitation framework. Experiments on the Unitree H1 robot demonstrate
+    72 ms end-to-end latency, 3.38° joint error, and 95% gesture recogn
+  zh: Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for humanoid robotics.
+  ko: Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for humanoid robotics.
 domains:
 - 06_design_engineering
 - 02_components
@@ -31,10 +35,10 @@ theoretical_depth:
 verification:
   status: unverified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: low
-  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder:
-    papers/12_Hardware_Design/Unitree_H1_Whitepaper. Route: 硬件设计.'
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: Unitree H1 Humanoid Robot
+    Whitepaper & Specifications.'
 sources:
 - id: src_001
   type: website
@@ -43,12 +47,12 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for humanoid robotics.
+This paper presents a vision-based human action imitation system based on humanoid robots. A forward-facing OAK-Lite RGB-D camera mounted approximately 1.2 m in front of the robot is used to capture human motion and reproduce upper-body actions in real time. To improve the stability of depth-based keypoints, we employ a cascaded Kalman and weighted moving average filter that effectively reduces shake. A warm-start symbolic inverse kinematics solver with velocity-bounded optimization enables stable 8-DoF arm control within 12–18 ms. In addition, a finite-state lower-limb gesture recognizer provides intuitive locomotion commands, forming a unified full-body imitation framework. Experiments on the Unitree H1 robot demonstrate 72 ms end-to-end latency, 3.38° joint error, and 95% gesture recognition accuracy, validating the system’s smooth and responsive imitation performance.
 
-## Overview
-Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for humanoid robotics.
+## 核心内容
+This paper presents a vision-based human action imitation system based on humanoid robots. A forward-facing OAK-Lite RGB-D camera mounted approximately 1.2 m in front of the robot is used to capture human motion and reproduce upper-body actions in real time. To improve the stability of depth-based keypoints, we employ a cascaded Kalman and weighted moving average filter that effectively reduces shake. A warm-start symbolic inverse kinematics solver with velocity-bounded optimization enables stable 8-DoF arm control within 12–18 ms. In addition, a finite-state lower-limb gesture recognizer provides intuitive locomotion commands, forming a unified full-body imitation framework. Experiments on the Unitree H1 robot demonstrate 72 ms end-to-end latency, 3.38° joint error, and 95% gesture recognition accuracy, validating the system’s smooth and responsive imitation performance.
 
-## 개요
-Unitree H1 Humanoid Robot Whitepaper & Specifications is a paper on 硬件设计 for humanoid robotics.
+## 参考
+- Semantic Scholar search: Unitree H1 Humanoid Robot Whitepaper & Specifications
+

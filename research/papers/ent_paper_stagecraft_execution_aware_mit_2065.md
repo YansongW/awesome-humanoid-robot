@@ -4,84 +4,57 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'StageCraft: Execution Aware Mitigation of Distractor and Obstruction Failures
-    in VLA Models'
-  zh: 'StageCraft: Execution Aware Mitigation of Distractor and Obstruction Failures
-    in VLA Models'
-  ko: 'StageCraft: Execution Aware Mitigation of Distractor and Obstruction Failures
-    in VLA Models'
+  en: 'StageCraft: Execution Aware Mitigation of Distractor and Obstruction Failures in VLA Models'
+  zh: 'StageCraft: Execution Aware Mitigation of Distractor and Obstruction Failures in VLA Models'
+  ko: 'StageCraft: Execution Aware Mitigation of Distractor and Obstruction Failures in VLA Models'
 summary:
-  en: "arXiv:2603.20659v2 Announce Type: replace \nAbstract: Large scale pre-training\
-    \ on text and image data along with diverse robot demonstrations has helped Vision\
-    \ Language Action models (VLAs) to generalize to novel tasks, objects and scenes.\
-    \ However, these models are still susceptible to failure in the presence of execution-time\
-    \ impediments such as distractors and physical obstructions in the robot's workspace.\
-    \ Existing policy improvement methods finetune base VLAs to improve generalization,\
-    \ yet they still struggle in unseen distractor settings. To address this problem,\
-    \ we investigate whether internet-scale pretraining of large vision-language models\
-    \ (VLMs) can be leveraged to reason about these impediments and mitigate policy\
-    \ failures. To this end, we propose StageCraft, a training-free approach to improve\
-    \ pretrained VLA policy performance by manipulating the environment's initial\
-    \ state using VLM-based in-context reasoning. StageCraft takes policy rollout\
-    \ videos and success labels as input and leverages VLM's reasoning ability to\
-    \ infer which objects in the initial state need to be manipulated to avoid anticipated\
-    \ execution failures. StageCraft is an extensible plug-and-play module that does\
-    \ not introduce additional constraints on the underlying policy, and only requires\
-    \ a few policy rollouts to work. We evaluate performance of state-of-the-art VLA\
-    \ models with StageCraft and show an absolute 40% performance improvement across\
-    \ three real world task domains involving diverse distractors and obstructions.\
-    \ Our simulation experiments in RLBench empirically show that StageCraft tailors\
-    \ its extent of intervention based on the strength of the underlying policy and\
-    \ improves its performance with more in-context samples. Videos of StageCraft\
-    \ in effect can be found at https://stagecraft-decorator.github.io/stagecraft/\
+  en: "arXiv:2603.20659v2 Announce Type: replace \nAbstract: Large scale pre-training on text and image data along with diverse\
+    \ robot demonstrations has helped Vision Language Action models (VLAs) to generalize to novel tasks, objects and scenes.\
+    \ However, these models are still susceptible to failure in the presence of execution-time impediments such as distractors\
+    \ and physical obstructions in the robot's workspace. Existing policy improvement methods finetune base VLAs to improve\
+    \ generalization, yet they still struggle in unseen distractor settings. To address this problem, we investigate whether\
+    \ internet-scale pretraining of large vision-language models (VLMs) can be leveraged to reason about these impediments\
+    \ and mitigate policy failures. To this end, we propose StageCraft, a training-free approach to improve pretrained VLA\
+    \ policy performance by manipulating the environment's initial state using VLM-based in-context reasoning. StageCraft\
+    \ takes policy rollout videos and success labels as input and leverages VLM's reasoning ability to infer which objects\
+    \ in the initial state need to be manipulated to avoid anticipated execution failures. StageCraft is an extensible plug-and-play\
+    \ module that does not introduce additional constraints on the underlying policy, and only requires a few policy rollouts\
+    \ to work. We evaluate performance of state-of-the-art VLA models with StageCraft and show an absolute 40% performance\
+    \ improvement across three real world task domains involving diverse distractors and obstructions. Our simulation experiments\
+    \ in RLBench empirically show that StageCraft tailors its extent of intervention based on the strength of the underlying\
+    \ policy and improves its performance with more in-context samples. Videos of StageCraft in effect can be found at https://stagecraft-decorator.github.io/stagecraft/\
     \ ."
-  zh: "arXiv:2603.20659v2 Announce Type: replace \nAbstract: Large scale pre-training\
-    \ on text and image data along with diverse robot demonstrations has helped Vision\
-    \ Language Action models (VLAs) to generalize to novel tasks, objects and scenes.\
-    \ However, these models are still susceptible to failure in the presence of execution-time\
-    \ impediments such as distractors and physical obstructions in the robot's workspace.\
-    \ Existing policy improvement methods finetune base VLAs to improve generalization,\
-    \ yet they still struggle in unseen distractor settings. To address this problem,\
-    \ we investigate whether internet-scale pretraining of large vision-language models\
-    \ (VLMs) can be leveraged to reason about these impediments and mitigate policy\
-    \ failures. To this end, we propose StageCraft, a training-free approach to improve\
-    \ pretrained VLA policy performance by manipulating the environment's initial\
-    \ state using VLM-based in-context reasoning. StageCraft takes policy rollout\
-    \ videos and success labels as input and leverages VLM's reasoning ability to\
-    \ infer which objects in the initial state need to be manipulated to avoid anticipated\
-    \ execution failures. StageCraft is an extensible plug-and-play module that does\
-    \ not introduce additional constraints on the underlying policy, and only requires\
-    \ a few policy rollouts to work. We evaluate performance of state-of-the-art VLA\
-    \ models with StageCraft and show an absolute 40% performance improvement across\
-    \ three real world task domains involving diverse distractors and obstructions.\
-    \ Our simulation experiments in RLBench empirically show that StageCraft tailors\
-    \ its extent of intervention based on the strength of the underlying policy and\
-    \ improves its performance with more in-context samples. Videos of StageCraft\
-    \ in effect can be found at https://stagecraft-decorator.github.io/stagecraft/\
+  zh: "arXiv:2603.20659v2 Announce Type: replace \nAbstract: Large scale pre-training on text and image data along with diverse\
+    \ robot demonstrations has helped Vision Language Action models (VLAs) to generalize to novel tasks, objects and scenes.\
+    \ However, these models are still susceptible to failure in the presence of execution-time impediments such as distractors\
+    \ and physical obstructions in the robot's workspace. Existing policy improvement methods finetune base VLAs to improve\
+    \ generalization, yet they still struggle in unseen distractor settings. To address this problem, we investigate whether\
+    \ internet-scale pretraining of large vision-language models (VLMs) can be leveraged to reason about these impediments\
+    \ and mitigate policy failures. To this end, we propose StageCraft, a training-free approach to improve pretrained VLA\
+    \ policy performance by manipulating the environment's initial state using VLM-based in-context reasoning. StageCraft\
+    \ takes policy rollout videos and success labels as input and leverages VLM's reasoning ability to infer which objects\
+    \ in the initial state need to be manipulated to avoid anticipated execution failures. StageCraft is an extensible plug-and-play\
+    \ module that does not introduce additional constraints on the underlying policy, and only requires a few policy rollouts\
+    \ to work. We evaluate performance of state-of-the-art VLA models with StageCraft and show an absolute 40% performance\
+    \ improvement across three real world task domains involving diverse distractors and obstructions. Our simulation experiments\
+    \ in RLBench empirically show that StageCraft tailors its extent of intervention based on the strength of the underlying\
+    \ policy and improves its performance with more in-context samples. Videos of StageCraft in effect can be found at https://stagecraft-decorator.github.io/stagecraft/\
     \ ."
-  ko: "arXiv:2603.20659v2 Announce Type: replace \nAbstract: Large scale pre-training\
-    \ on text and image data along with diverse robot demonstrations has helped Vision\
-    \ Language Action models (VLAs) to generalize to novel tasks, objects and scenes.\
-    \ However, these models are still susceptible to failure in the presence of execution-time\
-    \ impediments such as distractors and physical obstructions in the robot's workspace.\
-    \ Existing policy improvement methods finetune base VLAs to improve generalization,\
-    \ yet they still struggle in unseen distractor settings. To address this problem,\
-    \ we investigate whether internet-scale pretraining of large vision-language models\
-    \ (VLMs) can be leveraged to reason about these impediments and mitigate policy\
-    \ failures. To this end, we propose StageCraft, a training-free approach to improve\
-    \ pretrained VLA policy performance by manipulating the environment's initial\
-    \ state using VLM-based in-context reasoning. StageCraft takes policy rollout\
-    \ videos and success labels as input and leverages VLM's reasoning ability to\
-    \ infer which objects in the initial state need to be manipulated to avoid anticipated\
-    \ execution failures. StageCraft is an extensible plug-and-play module that does\
-    \ not introduce additional constraints on the underlying policy, and only requires\
-    \ a few policy rollouts to work. We evaluate performance of state-of-the-art VLA\
-    \ models with StageCraft and show an absolute 40% performance improvement across\
-    \ three real world task domains involving diverse distractors and obstructions.\
-    \ Our simulation experiments in RLBench empirically show that StageCraft tailors\
-    \ its extent of intervention based on the strength of the underlying policy and\
-    \ improves its performance with more in-context samples. Videos of StageCraft\
-    \ in effect can be found at https://stagecraft-decorator.github.io/stagecraft/\
+  ko: "arXiv:2603.20659v2 Announce Type: replace \nAbstract: Large scale pre-training on text and image data along with diverse\
+    \ robot demonstrations has helped Vision Language Action models (VLAs) to generalize to novel tasks, objects and scenes.\
+    \ However, these models are still susceptible to failure in the presence of execution-time impediments such as distractors\
+    \ and physical obstructions in the robot's workspace. Existing policy improvement methods finetune base VLAs to improve\
+    \ generalization, yet they still struggle in unseen distractor settings. To address this problem, we investigate whether\
+    \ internet-scale pretraining of large vision-language models (VLMs) can be leveraged to reason about these impediments\
+    \ and mitigate policy failures. To this end, we propose StageCraft, a training-free approach to improve pretrained VLA\
+    \ policy performance by manipulating the environment's initial state using VLM-based in-context reasoning. StageCraft\
+    \ takes policy rollout videos and success labels as input and leverages VLM's reasoning ability to infer which objects\
+    \ in the initial state need to be manipulated to avoid anticipated execution failures. StageCraft is an extensible plug-and-play\
+    \ module that does not introduce additional constraints on the underlying policy, and only requires a few policy rollouts\
+    \ to work. We evaluate performance of state-of-the-art VLA models with StageCraft and show an absolute 40% performance\
+    \ improvement across three real world task domains involving diverse distractors and obstructions. Our simulation experiments\
+    \ in RLBench empirically show that StageCraft tailors its extent of intervention based on the strength of the underlying\
+    \ policy and improves its performance with more in-context samples. Videos of StageCraft in effect can be found at https://stagecraft-decorator.github.io/stagecraft/\
     \ ."
 domains:
 - 07_ai_models_algorithms
@@ -100,27 +73,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-08'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=paper.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2603.20659v2.
 sources:
 - id: src_001
   type: paper
-  title: 'StageCraft: Execution Aware Mitigation of Distractor and Obstruction Failures
-    in VLA Models (arXiv)'
+  title: 'StageCraft: Execution Aware Mitigation of Distractor and Obstruction Failures in VLA Models (arXiv)'
   url: https://arxiv.org/abs/2603.20659
   date: '2065'
   accessed_at: '2026-07-08'
 ---
-
 ## 概述
-arXiv:2603.20659v2 Announce Type: replace 
-Abstract: Large scale pre-training on text and image data along with diverse robot demonstrations has helped Vision Language Action models (VLAs) to generalize to novel tasks, objects and scenes. However, these models are still susceptible to failure in the presence of execution-time impediments such as distractors and physical obstructions in the robot's workspace. Existing policy improvement methods finetune base VLAs to improve generalization, yet they still struggle in unseen distractor settings. To address this problem, we investigate whether internet-scale pretraining of large vision-language models (VLMs) can be leveraged to reason about these impediments and mitigate policy failures. To this end, we propose StageCraft, a training-free approach to improve pretrained VLA policy performance by manipulating the environment's initial state using VLM-based in-context reasoning. StageCraft takes policy rollout videos and success labels as input and leverages VLM's reasoning ability to infer which objects in the initial state need to be manipulated to avoid anticipated execution failures. StageCraft is an extensible plug-and-play module that does not introduce additional constraints on the underlying policy, and only requires a few policy rollouts to work. We evaluate performance of state-of-the-art VLA models with StageCraft and show an absolute 40% performance improvement across three real world task domains involving diverse distractors and obstructions. Our simulation experiments in RLBench empirically show that StageCraft tailors its extent of intervention based on the strength of the underlying policy and improves its performance with more in-context samples. Videos of StageCraft in effect can be found at https://stagecraft-decorator.github.io/stagecraft/ .
+Large scale pre-training on text and image data along with diverse robot demonstrations has helped Vision Language Action models (VLAs) to generalize to novel tasks, objects and scenes. However, these models are still susceptible to failure in the presence of execution-time impediments such as distractors and physical obstructions in the robot's workspace. Existing policy improvement methods finetune base VLAs to improve generalization, yet they still struggle in unseen distractor settings. To address this problem, we investigate whether internet-scale pretraining of large vision-language models (VLMs) can be leveraged to reason about these impediments and mitigate policy failures. To this end, we propose StageCraft, a training-free approach to improve pretrained VLA policy performance by manipulating the environment's initial state using VLM-based in-context reasoning. StageCraft takes policy rollout videos and success labels as input and leverages VLM's reasoning ability to infer which objects in the initial state need to be manipulated to avoid anticipated execution failures. StageCraft is an extensible plug-and-play module that does not introduce additional constraints on the underlying policy, and only requires a few policy rollouts to work. We evaluate performance of state-of-the-art VLA models with StageCraft and show an absolute 40% performance improvement across three real world task domains involving diverse distractors and obstructions. Our simulation experiments in RLBench empirically show that StageCraft tailors its extent of intervention based on the strength of the underlying policy and improves its performance with more in-context samples. Videos of StageCraft in effect can be found at https://stagecraft-decorator.github.io/stagecraft/ .
 
-## Overview
-arXiv:2603.20659v2 Announce Type: replace 
-Abstract: Large scale pre-training on text and image data along with diverse robot demonstrations has helped Vision Language Action models (VLAs) to generalize to novel tasks, objects and scenes. However, these models are still susceptible to failure in the presence of execution-time impediments such as distractors and physical obstructions in the robot's workspace. Existing policy improvement methods finetune base VLAs to improve generalization, yet they still struggle in unseen distractor settings. To address this problem, we investigate whether internet-scale pretraining of large vision-language models (VLMs) can be leveraged to reason about these impediments and mitigate policy failures. To this end, we propose StageCraft, a training-free approach to improve pretrained VLA policy performance by manipulating the environment's initial state using VLM-based in-context reasoning. StageCraft takes policy rollout videos and success labels as input and leverages VLM's reasoning ability to infer which objects in the initial state need to be manipulated to avoid anticipated execution failures. StageCraft is an extensible plug-and-play module that does not introduce additional constraints on the underlying policy, and only requires a few policy rollouts to work. We evaluate performance of state-of-the-art VLA models with StageCraft and show an absolute 40% performance improvement across three real world task domains involving diverse distractors and obstructions. Our simulation experiments in RLBench empirically show that StageCraft tailors its extent of intervention based on the strength of the underlying policy and improves its performance with more in-context samples. Videos of StageCraft in effect can be found at https://stagecraft-decorator.github.io/stagecraft/ .
+## 核心内容
+Large scale pre-training on text and image data along with diverse robot demonstrations has helped Vision Language Action models (VLAs) to generalize to novel tasks, objects and scenes. However, these models are still susceptible to failure in the presence of execution-time impediments such as distractors and physical obstructions in the robot's workspace. Existing policy improvement methods finetune base VLAs to improve generalization, yet they still struggle in unseen distractor settings. To address this problem, we investigate whether internet-scale pretraining of large vision-language models (VLMs) can be leveraged to reason about these impediments and mitigate policy failures. To this end, we propose StageCraft, a training-free approach to improve pretrained VLA policy performance by manipulating the environment's initial state using VLM-based in-context reasoning. StageCraft takes policy rollout videos and success labels as input and leverages VLM's reasoning ability to infer which objects in the initial state need to be manipulated to avoid anticipated execution failures. StageCraft is an extensible plug-and-play module that does not introduce additional constraints on the underlying policy, and only requires a few policy rollouts to work. We evaluate performance of state-of-the-art VLA models with StageCraft and show an absolute 40% performance improvement across three real world task domains involving diverse distractors and obstructions. Our simulation experiments in RLBench empirically show that StageCraft tailors its extent of intervention based on the strength of the underlying policy and improves its performance with more in-context samples. Videos of StageCraft in effect can be found at https://stagecraft-decorator.github.io/stagecraft/ .
 
-## 개요
-arXiv:2603.20659v2 Announce Type: replace 
-Abstract: Large scale pre-training on text and image data along with diverse robot demonstrations has helped Vision Language Action models (VLAs) to generalize to novel tasks, objects and scenes. However, these models are still susceptible to failure in the presence of execution-time impediments such as distractors and physical obstructions in the robot's workspace. Existing policy improvement methods finetune base VLAs to improve generalization, yet they still struggle in unseen distractor settings. To address this problem, we investigate whether internet-scale pretraining of large vision-language models (VLMs) can be leveraged to reason about these impediments and mitigate policy failures. To this end, we propose StageCraft, a training-free approach to improve pretrained VLA policy performance by manipulating the environment's initial state using VLM-based in-context reasoning. StageCraft takes policy rollout videos and success labels as input and leverages VLM's reasoning ability to infer which objects in the initial state need to be manipulated to avoid anticipated execution failures. StageCraft is an extensible plug-and-play module that does not introduce additional constraints on the underlying policy, and only requires a few policy rollouts to work. We evaluate performance of state-of-the-art VLA models with StageCraft and show an absolute 40% performance improvement across three real world task domains involving diverse distractors and obstructions. Our simulation experiments in RLBench empirically show that StageCraft tailors its extent of intervention based on the strength of the underlying policy and improves its performance with more in-context samples. Videos of StageCraft in effect can be found at https://stagecraft-decorator.github.io/stagecraft/ .
+## 参考
+- http://arxiv.org/abs/2603.20659v2
+

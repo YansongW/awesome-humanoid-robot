@@ -8,11 +8,15 @@ names:
   zh: 全身动作必须理解环境几何
   ko: Deep Whole-body Parkour
 summary:
-  en: Deep Whole-body Parkour is a knowledge node related to paper in the humanoid
-    robot value chain.
-  zh: ''
-  ko: Deep Whole-body Parkour is a knowledge node related to paper in the humanoid
-    robot value chain.
+  en: Deep Whole-body Parkour is a knowledge node related to paper in the humanoid robot value chain.
+  zh: 'Current approaches to humanoid control generally fall into two paradigms: perceptive locomotion, which handles terrain
+    well but is limited to pedal gaits, and general motion tracking, which reproduces complex skills but ignores environmental
+    capabilities. This work unites these paradigms to achieve perceptive general motion control. We present a framework where
+    exteroceptive sensing is integrated into whole-body motion tracking, permitting a humanoid to perform highly dynamic,
+    non-locomotion tasks on uneven terrain. By training a single policy to perform multiple distinct motions across varied
+    terrestrial features, we demonstrate the non-trivial benefit of integrating perception into the control loop. Our results
+    show that this framework enables robust, highly dynamic multi-contact motions'
+  ko: Deep Whole-body Parkour is a knowledge node related to paper in the humanoid robot value chain.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -29,10 +33,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from WeChat curated list (023). Institution: 清华大学交叉信息研究院；上海期智研究院.
-    arXiv: 2601.07701.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2601.07701v1.
 sources:
 - id: src_001
   type: paper
@@ -49,12 +52,12 @@ sources:
 theoretical_depth:
 - system
 ---
-
 ## 概述
-Deep Whole-body Parkour is a knowledge node related to paper in the humanoid robot value chain.
+Current approaches to humanoid control generally fall into two paradigms: perceptive locomotion, which handles terrain well but is limited to pedal gaits, and general motion tracking, which reproduces complex skills but ignores environmental capabilities. This work unites these paradigms to achieve perceptive general motion control. We present a framework where exteroceptive sensing is integrated into whole-body motion tracking, permitting a humanoid to perform highly dynamic, non-locomotion tasks on uneven terrain. By training a single policy to perform multiple distinct motions across varied terrestrial features, we demonstrate the non-trivial benefit of integrating perception into the control loop. Our results show that this framework enables robust, highly dynamic multi-contact motions, such as vaulting and dive-rolling, on unstructured terrain, significantly expanding the robot's traversability beyond simple walking or running. https://project-instinct.github.io/deep-whole-body-parkour
 
-## Overview
-Deep Whole-body Parkour is a knowledge node related to paper in the humanoid robot value chain.
+## 核心内容
+Current approaches to humanoid control generally fall into two paradigms: perceptive locomotion, which handles terrain well but is limited to pedal gaits, and general motion tracking, which reproduces complex skills but ignores environmental capabilities. This work unites these paradigms to achieve perceptive general motion control. We present a framework where exteroceptive sensing is integrated into whole-body motion tracking, permitting a humanoid to perform highly dynamic, non-locomotion tasks on uneven terrain. By training a single policy to perform multiple distinct motions across varied terrestrial features, we demonstrate the non-trivial benefit of integrating perception into the control loop. Our results show that this framework enables robust, highly dynamic multi-contact motions, such as vaulting and dive-rolling, on unstructured terrain, significantly expanding the robot's traversability beyond simple walking or running. https://project-instinct.github.io/deep-whole-body-parkour
 
-## 개요
-Deep Whole-body Parkour is a knowledge node related to paper in the humanoid robot value chain.
+## 参考
+- http://arxiv.org/abs/2601.07701v1
+

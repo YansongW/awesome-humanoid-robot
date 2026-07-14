@@ -4,79 +4,52 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid
-    Fall Recovery and Locomotion'
-  zh: 'CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid
-    Fall Recovery and Locomotion'
-  ko: 'CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid
-    Fall Recovery and Locomotion'
+  en: 'CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion'
+  zh: 'CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion'
+  ko: 'CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion'
 summary:
-  en: "arXiv:2606.08922v2 Announce Type: replace \nAbstract: Falling is an inherent\
-    \ risk for humanoid robots operating in unstructured environments. Existing reinforcement\
-    \ learning methods that leverage expert motion priors are predominantly trained\
-    \ on flat-ground fall-recovery tasks and typically rely on hard switching between\
-    \ separate recovery and locomotion controllers. As a result, such policies struggle\
-    \ to achieve smooth and robust recovery behaviors when deployed on complex terrains\
-    \ such as slopes and gravel. This paper presents \\textbf{CG-MuTra}, a unified\
-    \ continuously-gated multi-scale discriminator framework for multi-terrain adaptive\
-    \ fall recovery. CG-MuTra introduces a proprioceptively-derived continuous gate\
-    \ $\\alpha = f(z_{\\mathrm{root}}, s)$ that softly blends three discriminators\
-    \ operating at different temporal horizons: frame-level stability ($\\Phi_{\\\
-    mathrm{frame}}$, $H=1$), temporal smoothness ($\\Phi_{\\mathrm{seq}}$, $H=5$),\
-    \ and gait periodicity ($\\Phi_{\\mathrm{gait}}$, $H=10$). This design enables\
-    \ seamless recovery-to-locomotion transitions without explicit mode switching.\
-    \ Furthermore, we propose a Terrain-Pose Risk Coupling Sampler (TPRCS) that explicitly\
-    \ couples dangerous edge initial poses with terrain dynamics during training,\
-    \ forming a closed-loop synergy with the terrain-privileged shaping term $\\Xi_\\\
-    kappa$. We validate CG-MuTra on a Unitree G1 humanoid across grass, slopes ($10^\\\
-    circ$--$15^\\circ$), and gravel in both simulation and hardware. Experimental\
-    \ results demonstrate that CG-MuTra achieves smooth, highly robust fall recovery\
-    \ and locomotion transitions across multiple terrains while maintaining a single\
-    \ deployable policy."
-  zh: "arXiv:2606.08922v2 Announce Type: replace \nAbstract: Falling is an inherent\
-    \ risk for humanoid robots operating in unstructured environments. Existing reinforcement\
-    \ learning methods that leverage expert motion priors are predominantly trained\
-    \ on flat-ground fall-recovery tasks and typically rely on hard switching between\
-    \ separate recovery and locomotion controllers. As a result, such policies struggle\
-    \ to achieve smooth and robust recovery behaviors when deployed on complex terrains\
-    \ such as slopes and gravel. This paper presents \\textbf{CG-MuTra}, a unified\
-    \ continuously-gated multi-scale discriminator framework for multi-terrain adaptive\
-    \ fall recovery. CG-MuTra introduces a proprioceptively-derived continuous gate\
-    \ $\\alpha = f(z_{\\mathrm{root}}, s)$ that softly blends three discriminators\
-    \ operating at different temporal horizons: frame-level stability ($\\Phi_{\\\
-    mathrm{frame}}$, $H=1$), temporal smoothness ($\\Phi_{\\mathrm{seq}}$, $H=5$),\
-    \ and gait periodicity ($\\Phi_{\\mathrm{gait}}$, $H=10$). This design enables\
-    \ seamless recovery-to-locomotion transitions without explicit mode switching.\
-    \ Furthermore, we propose a Terrain-Pose Risk Coupling Sampler (TPRCS) that explicitly\
-    \ couples dangerous edge initial poses with terrain dynamics during training,\
-    \ forming a closed-loop synergy with the terrain-privileged shaping term $\\Xi_\\\
-    kappa$. We validate CG-MuTra on a Unitree G1 humanoid across grass, slopes ($10^\\\
-    circ$--$15^\\circ$), and gravel in both simulation and hardware. Experimental\
-    \ results demonstrate that CG-MuTra achieves smooth, highly robust fall recovery\
-    \ and locomotion transitions across multiple terrains while maintaining a single\
-    \ deployable policy."
-  ko: "arXiv:2606.08922v2 Announce Type: replace \nAbstract: Falling is an inherent\
-    \ risk for humanoid robots operating in unstructured environments. Existing reinforcement\
-    \ learning methods that leverage expert motion priors are predominantly trained\
-    \ on flat-ground fall-recovery tasks and typically rely on hard switching between\
-    \ separate recovery and locomotion controllers. As a result, such policies struggle\
-    \ to achieve smooth and robust recovery behaviors when deployed on complex terrains\
-    \ such as slopes and gravel. This paper presents \\textbf{CG-MuTra}, a unified\
-    \ continuously-gated multi-scale discriminator framework for multi-terrain adaptive\
-    \ fall recovery. CG-MuTra introduces a proprioceptively-derived continuous gate\
-    \ $\\alpha = f(z_{\\mathrm{root}}, s)$ that softly blends three discriminators\
-    \ operating at different temporal horizons: frame-level stability ($\\Phi_{\\\
-    mathrm{frame}}$, $H=1$), temporal smoothness ($\\Phi_{\\mathrm{seq}}$, $H=5$),\
-    \ and gait periodicity ($\\Phi_{\\mathrm{gait}}$, $H=10$). This design enables\
-    \ seamless recovery-to-locomotion transitions without explicit mode switching.\
-    \ Furthermore, we propose a Terrain-Pose Risk Coupling Sampler (TPRCS) that explicitly\
-    \ couples dangerous edge initial poses with terrain dynamics during training,\
-    \ forming a closed-loop synergy with the terrain-privileged shaping term $\\Xi_\\\
-    kappa$. We validate CG-MuTra on a Unitree G1 humanoid across grass, slopes ($10^\\\
-    circ$--$15^\\circ$), and gravel in both simulation and hardware. Experimental\
-    \ results demonstrate that CG-MuTra achieves smooth, highly robust fall recovery\
-    \ and locomotion transitions across multiple terrains while maintaining a single\
-    \ deployable policy."
+  en: "arXiv:2606.08922v2 Announce Type: replace \nAbstract: Falling is an inherent risk for humanoid robots operating in\
+    \ unstructured environments. Existing reinforcement learning methods that leverage expert motion priors are predominantly\
+    \ trained on flat-ground fall-recovery tasks and typically rely on hard switching between separate recovery and locomotion\
+    \ controllers. As a result, such policies struggle to achieve smooth and robust recovery behaviors when deployed on complex\
+    \ terrains such as slopes and gravel. This paper presents \\textbf{CG-MuTra}, a unified continuously-gated multi-scale\
+    \ discriminator framework for multi-terrain adaptive fall recovery. CG-MuTra introduces a proprioceptively-derived continuous\
+    \ gate $\\alpha = f(z_{\\mathrm{root}}, s)$ that softly blends three discriminators operating at different temporal horizons:\
+    \ frame-level stability ($\\Phi_{\\mathrm{frame}}$, $H=1$), temporal smoothness ($\\Phi_{\\mathrm{seq}}$, $H=5$), and\
+    \ gait periodicity ($\\Phi_{\\mathrm{gait}}$, $H=10$). This design enables seamless recovery-to-locomotion transitions\
+    \ without explicit mode switching. Furthermore, we propose a Terrain-Pose Risk Coupling Sampler (TPRCS) that explicitly\
+    \ couples dangerous edge initial poses with terrain dynamics during training, forming a closed-loop synergy with the terrain-privileged\
+    \ shaping term $\\Xi_\\kappa$. We validate CG-MuTra on a Unitree G1 humanoid across grass, slopes ($10^\\circ$--$15^\\\
+    circ$), and gravel in both simulation and hardware. Experimental results demonstrate that CG-MuTra achieves smooth, highly\
+    \ robust fall recovery and locomotion transitions across multiple terrains while maintaining a single deployable policy."
+  zh: "arXiv:2606.08922v2 Announce Type: replace \nAbstract: Falling is an inherent risk for humanoid robots operating in\
+    \ unstructured environments. Existing reinforcement learning methods that leverage expert motion priors are predominantly\
+    \ trained on flat-ground fall-recovery tasks and typically rely on hard switching between separate recovery and locomotion\
+    \ controllers. As a result, such policies struggle to achieve smooth and robust recovery behaviors when deployed on complex\
+    \ terrains such as slopes and gravel. This paper presents \\textbf{CG-MuTra}, a unified continuously-gated multi-scale\
+    \ discriminator framework for multi-terrain adaptive fall recovery. CG-MuTra introduces a proprioceptively-derived continuous\
+    \ gate $\\alpha = f(z_{\\mathrm{root}}, s)$ that softly blends three discriminators operating at different temporal horizons:\
+    \ frame-level stability ($\\Phi_{\\mathrm{frame}}$, $H=1$), temporal smoothness ($\\Phi_{\\mathrm{seq}}$, $H=5$), and\
+    \ gait periodicity ($\\Phi_{\\mathrm{gait}}$, $H=10$). This design enables seamless recovery-to-locomotion transitions\
+    \ without explicit mode switching. Furthermore, we propose a Terrain-Pose Risk Coupling Sampler (TPRCS) that explicitly\
+    \ couples dangerous edge initial poses with terrain dynamics during training, forming a closed-loop synergy with the terrain-privileged\
+    \ shaping term $\\Xi_\\kappa$. We validate CG-MuTra on a Unitree G1 humanoid across grass, slopes ($10^\\circ$--$15^\\\
+    circ$), and gravel in both simulation and hardware. Experimental results demonstrate that CG-MuTra achieves smooth, highly\
+    \ robust fall recovery and locomotion transitions across multiple terrains while maintaining a single deployable policy."
+  ko: "arXiv:2606.08922v2 Announce Type: replace \nAbstract: Falling is an inherent risk for humanoid robots operating in\
+    \ unstructured environments. Existing reinforcement learning methods that leverage expert motion priors are predominantly\
+    \ trained on flat-ground fall-recovery tasks and typically rely on hard switching between separate recovery and locomotion\
+    \ controllers. As a result, such policies struggle to achieve smooth and robust recovery behaviors when deployed on complex\
+    \ terrains such as slopes and gravel. This paper presents \\textbf{CG-MuTra}, a unified continuously-gated multi-scale\
+    \ discriminator framework for multi-terrain adaptive fall recovery. CG-MuTra introduces a proprioceptively-derived continuous\
+    \ gate $\\alpha = f(z_{\\mathrm{root}}, s)$ that softly blends three discriminators operating at different temporal horizons:\
+    \ frame-level stability ($\\Phi_{\\mathrm{frame}}$, $H=1$), temporal smoothness ($\\Phi_{\\mathrm{seq}}$, $H=5$), and\
+    \ gait periodicity ($\\Phi_{\\mathrm{gait}}$, $H=10$). This design enables seamless recovery-to-locomotion transitions\
+    \ without explicit mode switching. Furthermore, we propose a Terrain-Pose Risk Coupling Sampler (TPRCS) that explicitly\
+    \ couples dangerous edge initial poses with terrain dynamics during training, forming a closed-loop synergy with the terrain-privileged\
+    \ shaping term $\\Xi_\\kappa$. We validate CG-MuTra on a Unitree G1 humanoid across grass, slopes ($10^\\circ$--$15^\\\
+    circ$), and gravel in both simulation and hardware. Experimental results demonstrate that CG-MuTra achieves smooth, highly\
+    \ robust fall recovery and locomotion transitions across multiple terrains while maintaining a single deployable policy."
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -94,27 +67,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-08'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=paper.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2606.08922v2.
 sources:
 - id: src_001
   type: paper
-  title: 'CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified
-    Humanoid Fall Recovery and Locomotion (arXiv)'
+  title: 'CG-MuTra: Continuously-Gated Multi-Terrain Adaptive Recovery for Unified Humanoid Fall Recovery and Locomotion (arXiv)'
   url: https://arxiv.org/abs/2606.08922
   date: '2026'
   accessed_at: '2026-07-08'
 ---
-
 ## 概述
-arXiv:2606.08922v2 Announce Type: replace 
-Abstract: Falling is an inherent risk for humanoid robots operating in unstructured environments. Existing reinforcement learning methods that leverage expert motion priors are predominantly trained on flat-ground fall-recovery tasks and typically rely on hard switching between separate recovery and locomotion controllers. As a result, such policies struggle to achieve smooth and robust recovery behaviors when deployed on complex terrains such as slopes and gravel. This paper presents \textbf{CG-MuTra}, a unified continuously-gated multi-scale discriminator framework for multi-terrain adaptive fall recovery. CG-MuTra introduces a proprioceptively-derived continuous gate $\alpha = f(z_{\mathrm{root}}, s)$ that softly blends three discriminators operating at different temporal horizons: frame-level stability ($\Phi_{\mathrm{frame}}$, $H=1$), temporal smoothness ($\Phi_{\mathrm{seq}}$, $H=5$), and gait periodicity ($\Phi_{\mathrm{gait}}$, $H=10$). This design enables seamless recovery-to-locomotion transitions without explicit mode switching. Furthermore, we propose a Terrain-Pose Risk Coupling Sampler (TPRCS) that explicitly couples dangerous edge initial poses with terrain dynamics during training, forming a closed-loop synergy with the terrain-privileged shaping term $\Xi_\kappa$. We validate CG-MuTra on a Unitree G1 humanoid across grass, slopes ($10^\circ$--$15^\circ$), and gravel in both simulation and hardware. Experimental results demonstrate that CG-MuTra achieves smooth, highly robust fall recovery and locomotion transitions across multiple terrains while maintaining a single deployable policy.
+Falling is an inherent risk for humanoid robots operating in unstructured environments. Existing reinforcement learning methods that leverage expert motion priors are predominantly trained on flat-ground fall-recovery tasks and typically rely on hard switching between separate recovery and locomotion controllers. As a result, such policies struggle to achieve smooth and robust recovery behaviors when deployed on complex terrains such as slopes and gravel. This paper presents \textbf{CG-MuTra}, a unified continuously-gated multi-scale discriminator framework for multi-terrain adaptive fall recovery. CG-MuTra introduces a proprioceptively-derived continuous gate $α= f(z_{\mathrm{root}}, s)$ that softly blends three discriminators operating at different temporal horizons: frame-level stability ($Φ_{\mathrm{frame}}$, $H=1$), temporal smoothness ($Φ_{\mathrm{seq}}$, $H=5$), and gait periodicity ($Φ_{\mathrm{gait}}$, $H=10$). This design enables seamless recovery-to-locomotion transitions without explicit mode switching. Furthermore, we propose a Terrain-Pose Risk Coupling Sampler (TPRCS) that explicitly couples dangerous edge initial poses with terrain dynamics during training, forming a closed-loop synergy with the terrain-privileged shaping term $Ξ_κ$. We validate CG-MuTra on a Unitree G1 humanoid across grass, slopes ($10^\circ$--$15^\circ$), and gravel in both simulation and hardware. Experimental results demonstrate that CG-MuTra achieves smooth, highly robust fall recovery and locomotion transitions across multiple terrains while maintaining a single deployable policy.
 
-## Overview
-arXiv:2606.08922v2 Announce Type: replace 
-Abstract: Falling is an inherent risk for humanoid robots operating in unstructured environments. Existing reinforcement learning methods that leverage expert motion priors are predominantly trained on flat-ground fall-recovery tasks and typically rely on hard switching between separate recovery and locomotion controllers. As a result, such policies struggle to achieve smooth and robust recovery behaviors when deployed on complex terrains such as slopes and gravel. This paper presents \textbf{CG-MuTra}, a unified continuously-gated multi-scale discriminator framework for multi-terrain adaptive fall recovery. CG-MuTra introduces a proprioceptively-derived continuous gate $\alpha = f(z_{\mathrm{root}}, s)$ that softly blends three discriminators operating at different temporal horizons: frame-level stability ($\Phi_{\mathrm{frame}}$, $H=1$), temporal smoothness ($\Phi_{\mathrm{seq}}$, $H=5$), and gait periodicity ($\Phi_{\mathrm{gait}}$, $H=10$). This design enables seamless recovery-to-locomotion transitions without explicit mode switching. Furthermore, we propose a Terrain-Pose Risk Coupling Sampler (TPRCS) that explicitly couples dangerous edge initial poses with terrain dynamics during training, forming a closed-loop synergy with the terrain-privileged shaping term $\Xi_\kappa$. We validate CG-MuTra on a Unitree G1 humanoid across grass, slopes ($10^\circ$--$15^\circ$), and gravel in both simulation and hardware. Experimental results demonstrate that CG-MuTra achieves smooth, highly robust fall recovery and locomotion transitions across multiple terrains while maintaining a single deployable policy.
+## 核心内容
+Falling is an inherent risk for humanoid robots operating in unstructured environments. Existing reinforcement learning methods that leverage expert motion priors are predominantly trained on flat-ground fall-recovery tasks and typically rely on hard switching between separate recovery and locomotion controllers. As a result, such policies struggle to achieve smooth and robust recovery behaviors when deployed on complex terrains such as slopes and gravel. This paper presents \textbf{CG-MuTra}, a unified continuously-gated multi-scale discriminator framework for multi-terrain adaptive fall recovery. CG-MuTra introduces a proprioceptively-derived continuous gate $α= f(z_{\mathrm{root}}, s)$ that softly blends three discriminators operating at different temporal horizons: frame-level stability ($Φ_{\mathrm{frame}}$, $H=1$), temporal smoothness ($Φ_{\mathrm{seq}}$, $H=5$), and gait periodicity ($Φ_{\mathrm{gait}}$, $H=10$). This design enables seamless recovery-to-locomotion transitions without explicit mode switching. Furthermore, we propose a Terrain-Pose Risk Coupling Sampler (TPRCS) that explicitly couples dangerous edge initial poses with terrain dynamics during training, forming a closed-loop synergy with the terrain-privileged shaping term $Ξ_κ$. We validate CG-MuTra on a Unitree G1 humanoid across grass, slopes ($10^\circ$--$15^\circ$), and gravel in both simulation and hardware. Experimental results demonstrate that CG-MuTra achieves smooth, highly robust fall recovery and locomotion transitions across multiple terrains while maintaining a single deployable policy.
 
-## 개요
-arXiv:2606.08922v2 Announce Type: replace 
-Abstract: Falling is an inherent risk for humanoid robots operating in unstructured environments. Existing reinforcement learning methods that leverage expert motion priors are predominantly trained on flat-ground fall-recovery tasks and typically rely on hard switching between separate recovery and locomotion controllers. As a result, such policies struggle to achieve smooth and robust recovery behaviors when deployed on complex terrains such as slopes and gravel. This paper presents \textbf{CG-MuTra}, a unified continuously-gated multi-scale discriminator framework for multi-terrain adaptive fall recovery. CG-MuTra introduces a proprioceptively-derived continuous gate $\alpha = f(z_{\mathrm{root}}, s)$ that softly blends three discriminators operating at different temporal horizons: frame-level stability ($\Phi_{\mathrm{frame}}$, $H=1$), temporal smoothness ($\Phi_{\mathrm{seq}}$, $H=5$), and gait periodicity ($\Phi_{\mathrm{gait}}$, $H=10$). This design enables seamless recovery-to-locomotion transitions without explicit mode switching. Furthermore, we propose a Terrain-Pose Risk Coupling Sampler (TPRCS) that explicitly couples dangerous edge initial poses with terrain dynamics during training, forming a closed-loop synergy with the terrain-privileged shaping term $\Xi_\kappa$. We validate CG-MuTra on a Unitree G1 humanoid across grass, slopes ($10^\circ$--$15^\circ$), and gravel in both simulation and hardware. Experimental results demonstrate that CG-MuTra achieves smooth, highly robust fall recovery and locomotion transitions across multiple terrains while maintaining a single deployable policy.
+## 参考
+- http://arxiv.org/abs/2606.08922v2
+

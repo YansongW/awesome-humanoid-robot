@@ -4,18 +4,16 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'Prioritized Motion-Force Control of Constrained Fully-Actuated Robots: "Task
-    Space Inverse Dynamics"'
+  en: 'Prioritized Motion-Force Control of Constrained Fully-Actuated Robots: "Task Space Inverse Dynamics"'
   zh: 受约束全驱动机器人的优先级运动-力控制：“任务空间逆动力学”
   ko: '구속된 완전 구동 로봇의 우선순위 운동-힘 제어: “작업 공간 역역학”'
 summary:
-  en: Introduces Task Space Inverse Dynamics (TSID), an optimal whole-body torque
-    control framework for fully-actuated robots that decouples acceleration-level
-    inverse kinematics from joint-space inverse dynamics to support prioritized motion/force
+  en: Introduces Task Space Inverse Dynamics (TSID), an optimal whole-body torque control framework for fully-actuated robots
+    that decouples acceleration-level inverse kinematics from joint-space inverse dynamics to support prioritized motion/force
     control with soft and rigid contacts.
   zh: 提出任务空间逆动力学（TSID），一种面向全驱动机器人的最优全身力矩控制框架，通过将加速度级逆运动学与关节空间逆动力学解耦，支持柔性和刚性接触下的优先级运动/力控制。
-  ko: 가속도 수준 역기구학과 관절 공간 역역학을 분리하여 부드러운 접촉과 경성 접촉이 있는 우선순위 운동/힘 제어를 지원하는 완전 구동 로봇을
-    위한 최적 전신 토크 제어 프레임워크인 작업 공간 역역학(TSID)을 제안한다.
+  ko: 가속도 수준 역기구학과 관절 공간 역역학을 분리하여 부드러운 접촉과 경성 접촉이 있는 우선순위 운동/힘 제어를 지원하는 완전 구동 로봇을 위한 최적 전신 토크 제어 프레임워크인 작업 공간 역역학(TSID)을
+    제안한다.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -40,38 +38,25 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from provided metadata; exact in-paper citations and section
-    numbers require human review against the full text before verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1410.3863v1.
 sources:
 - id: src_001
   type: paper
-  title: 'Prioritized Motion-Force Control of Constrained Fully-Actuated Robots: "Task
-    Space Inverse Dynamics"'
+  title: 'Prioritized Motion-Force Control of Constrained Fully-Actuated Robots: "Task Space Inverse Dynamics"'
   url: https://arxiv.org/abs/1410.3863
   date: '2014'
   accessed_at: '2026-06-27'
 theoretical_depth:
 - method
 ---
+## 概述
+We present a new framework for prioritized multi-task motion-force control of fully-actuated robots. This work is established on a careful review and comparison of the state of the art. Some control frameworks are not optimal, that is they do not find the optimal solution for the secondary tasks. Other frameworks are optimal, but they tackle the control problem at kinematic level, hence they neglect the robot dynamics and they do not allow for force control. Still other frameworks are optimal and consider force control, but they are computationally less efficient than ours. Our final claim is that, for fully-actuated robots, computing the operational-space inverse dynamics is equivalent to computing the inverse kinematics (at acceleration level) and then the joint-space inverse dynamics. Thanks to this fact, our control framework can efficiently compute the optimal solution by decoupling kinematics and dynamics of the robot. We take into account: motion and force control, soft and rigid contacts, free and constrained robots. Tests in simulation validate our control framework, comparing it with other state-of-the-art equivalent frameworks and showing remarkable improvements in optimality and efficiency.
 
-## Overview
+## 核心内容
+We present a new framework for prioritized multi-task motion-force control of fully-actuated robots. This work is established on a careful review and comparison of the state of the art. Some control frameworks are not optimal, that is they do not find the optimal solution for the secondary tasks. Other frameworks are optimal, but they tackle the control problem at kinematic level, hence they neglect the robot dynamics and they do not allow for force control. Still other frameworks are optimal and consider force control, but they are computationally less efficient than ours. Our final claim is that, for fully-actuated robots, computing the operational-space inverse dynamics is equivalent to computing the inverse kinematics (at acceleration level) and then the joint-space inverse dynamics. Thanks to this fact, our control framework can efficiently compute the optimal solution by decoupling kinematics and dynamics of the robot. We take into account: motion and force control, soft and rigid contacts, free and constrained robots. Tests in simulation validate our control framework, comparing it with other state-of-the-art equivalent frameworks and showing remarkable improvements in optimality and efficiency.
 
-This paper proposes Task Space Inverse Dynamics (TSID), a control framework for prioritized multi-task motion and force control of fully-actuated robots. The core idea is that, for fully-actuated systems, computing operational-space inverse dynamics is equivalent to solving acceleration-level inverse kinematics and then joint-space inverse dynamics. By decoupling kinematics and dynamics, TSID can efficiently compute optimal joint torques using recursive algorithms while handling both motion and force tasks, soft and rigid contacts, and free or constrained robots.
+## 参考
+- http://arxiv.org/abs/1410.3863v1
 
-The authors position TSID against existing approaches: some prior frameworks are not optimal for secondary tasks, others are optimal but kinematic and therefore ignore dynamics and force control, and still others are optimal and force-aware but computationally slower. TSID is claimed to combine optimality, force control, and O(n) efficiency. Simulation tests on a 23-degree-of-freedom humanoid compare TSID with the Unifying Framework and the Whole-Body Control Framework, reportedly showing improvements in both optimality and computational efficiency.
-
-## Key Contributions
-
-- Proposed the Task Space Inverse Dynamics (TSID) framework for prioritized multi-task motion/force control of fully-actuated robots.
-- Proved that operational-space inverse dynamics is equivalent to acceleration-level inverse kinematics followed by joint-space inverse dynamics for fully-actuated robots.
-- Achieved both optimality and O(n) computational efficiency using the Recursive Newton-Euler Algorithm.
-- Supported soft/rigid contacts and free/constrained robots within a unified formulation.
-- Validated the framework through simulation comparisons with the Unifying Framework and Whole-Body Control Framework on a 23-DoF humanoid.
-
-## Relevance to Humanoid Robotics
-
-TSID is directly relevant to humanoid robotics because it provides an efficient, optimal whole-body torque controller that can manage multiple prioritized tasks simultaneously while respecting contact forces. Humanoid robots must coordinate many degrees of freedom, maintain balance, and interact with environments through contacts, all under real-time constraints. By decoupling kinematic prioritization from inverse dynamics and achieving linear-time complexity, TSID addresses key computational and control challenges for fully-actuated humanoid platforms.
-
-However, the paper explicitly restricts its scope to fully-actuated robots and does not treat floating-base or underactuated systems, which are common in humanoid locomotion. It also neglects inequality constraints such as joint limits and torque bounds, and it only guarantees instantaneous optimality rather than planning over a horizon. These limitations mean that, while foundational for torque-level whole-body control, TSID may require extensions for deployment on typical free-floating humanoids.

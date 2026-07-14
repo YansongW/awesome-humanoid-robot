@@ -4,69 +4,48 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: '[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface
-    Bore Propagator'
-  zh: '[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface
-    Bore Propagator'
-  ko: '[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface
-    Bore Propagator'
+  en: '[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator'
+  zh: '[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator'
+  ko: '[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator'
 summary:
-  en: "arXiv:2607.00569v1 Announce Type: new \nAbstract: In this article, we present\
-    \ dynamic modeling, gait synthesis, and feedback control design for a modular\
-    \ novel subsurface robot, designed for human-free subsurface exploration and excavation.\
-    \ The subsurface propagator design is based on two major aspects: 1) anchor and\
-    \ propel movement like an earthworm and 2) excavation similar to tunnel boring\
-    \ machines. This design is decoupled into five separate modules: one drill head\
-    \ to excavate and create cavity for propagation, two modules to anchor the robot,\
-    \ and two modules to enable propagation of the body. In order to design a controller\
-    \ for each of the modules, dynamic models using the Euler-Lagrange framework are\
-    \ developed. These mathematical models are used as a baseline to design controlled\
-    \ decoupled operation of the different joint movements. The operation of robotic\
-    \ assembly is constructed via a centralized state machine for gait synthesis with\
-    \ integration of the designed feedback controller. The controllers are tested\
-    \ on the real robot geometry to aid sim-to-real integration: A physics-based Unity\
-    \ simulation using a CAD model of the robot and integration of the trained controller\
-    \ via ROS verifies the performance of the robot. The experimental results demonstrate\
-    \ that the proposed design, controllers and the gait synthesis strategy together\
-    \ are capable of anchoring the robot in place and creating an total advancement\
+  en: "arXiv:2607.00569v1 Announce Type: new \nAbstract: In this article, we present dynamic modeling, gait synthesis, and\
+    \ feedback control design for a modular novel subsurface robot, designed for human-free subsurface exploration and excavation.\
+    \ The subsurface propagator design is based on two major aspects: 1) anchor and propel movement like an earthworm and\
+    \ 2) excavation similar to tunnel boring machines. This design is decoupled into five separate modules: one drill head\
+    \ to excavate and create cavity for propagation, two modules to anchor the robot, and two modules to enable propagation\
+    \ of the body. In order to design a controller for each of the modules, dynamic models using the Euler-Lagrange framework\
+    \ are developed. These mathematical models are used as a baseline to design controlled decoupled operation of the different\
+    \ joint movements. The operation of robotic assembly is constructed via a centralized state machine for gait synthesis\
+    \ with integration of the designed feedback controller. The controllers are tested on the real robot geometry to aid sim-to-real\
+    \ integration: A physics-based Unity simulation using a CAD model of the robot and integration of the trained controller\
+    \ via ROS verifies the performance of the robot. The experimental results demonstrate that the proposed design, controllers\
+    \ and the gait synthesis strategy together are capable of anchoring the robot in place and creating an total advancement\
     \ of 30\\,mm into the soil after completing 3 gait cycles."
-  zh: "arXiv:2607.00569v1 Announce Type: new \nAbstract: In this article, we present\
-    \ dynamic modeling, gait synthesis, and feedback control design for a modular\
-    \ novel subsurface robot, designed for human-free subsurface exploration and excavation.\
-    \ The subsurface propagator design is based on two major aspects: 1) anchor and\
-    \ propel movement like an earthworm and 2) excavation similar to tunnel boring\
-    \ machines. This design is decoupled into five separate modules: one drill head\
-    \ to excavate and create cavity for propagation, two modules to anchor the robot,\
-    \ and two modules to enable propagation of the body. In order to design a controller\
-    \ for each of the modules, dynamic models using the Euler-Lagrange framework are\
-    \ developed. These mathematical models are used as a baseline to design controlled\
-    \ decoupled operation of the different joint movements. The operation of robotic\
-    \ assembly is constructed via a centralized state machine for gait synthesis with\
-    \ integration of the designed feedback controller. The controllers are tested\
-    \ on the real robot geometry to aid sim-to-real integration: A physics-based Unity\
-    \ simulation using a CAD model of the robot and integration of the trained controller\
-    \ via ROS verifies the performance of the robot. The experimental results demonstrate\
-    \ that the proposed design, controllers and the gait synthesis strategy together\
-    \ are capable of anchoring the robot in place and creating an total advancement\
+  zh: "arXiv:2607.00569v1 Announce Type: new \nAbstract: In this article, we present dynamic modeling, gait synthesis, and\
+    \ feedback control design for a modular novel subsurface robot, designed for human-free subsurface exploration and excavation.\
+    \ The subsurface propagator design is based on two major aspects: 1) anchor and propel movement like an earthworm and\
+    \ 2) excavation similar to tunnel boring machines. This design is decoupled into five separate modules: one drill head\
+    \ to excavate and create cavity for propagation, two modules to anchor the robot, and two modules to enable propagation\
+    \ of the body. In order to design a controller for each of the modules, dynamic models using the Euler-Lagrange framework\
+    \ are developed. These mathematical models are used as a baseline to design controlled decoupled operation of the different\
+    \ joint movements. The operation of robotic assembly is constructed via a centralized state machine for gait synthesis\
+    \ with integration of the designed feedback controller. The controllers are tested on the real robot geometry to aid sim-to-real\
+    \ integration: A physics-based Unity simulation using a CAD model of the robot and integration of the trained controller\
+    \ via ROS verifies the performance of the robot. The experimental results demonstrate that the proposed design, controllers\
+    \ and the gait synthesis strategy together are capable of anchoring the robot in place and creating an total advancement\
     \ of 30\\,mm into the soil after completing 3 gait cycles."
-  ko: "arXiv:2607.00569v1 Announce Type: new \nAbstract: In this article, we present\
-    \ dynamic modeling, gait synthesis, and feedback control design for a modular\
-    \ novel subsurface robot, designed for human-free subsurface exploration and excavation.\
-    \ The subsurface propagator design is based on two major aspects: 1) anchor and\
-    \ propel movement like an earthworm and 2) excavation similar to tunnel boring\
-    \ machines. This design is decoupled into five separate modules: one drill head\
-    \ to excavate and create cavity for propagation, two modules to anchor the robot,\
-    \ and two modules to enable propagation of the body. In order to design a controller\
-    \ for each of the modules, dynamic models using the Euler-Lagrange framework are\
-    \ developed. These mathematical models are used as a baseline to design controlled\
-    \ decoupled operation of the different joint movements. The operation of robotic\
-    \ assembly is constructed via a centralized state machine for gait synthesis with\
-    \ integration of the designed feedback controller. The controllers are tested\
-    \ on the real robot geometry to aid sim-to-real integration: A physics-based Unity\
-    \ simulation using a CAD model of the robot and integration of the trained controller\
-    \ via ROS verifies the performance of the robot. The experimental results demonstrate\
-    \ that the proposed design, controllers and the gait synthesis strategy together\
-    \ are capable of anchoring the robot in place and creating an total advancement\
+  ko: "arXiv:2607.00569v1 Announce Type: new \nAbstract: In this article, we present dynamic modeling, gait synthesis, and\
+    \ feedback control design for a modular novel subsurface robot, designed for human-free subsurface exploration and excavation.\
+    \ The subsurface propagator design is based on two major aspects: 1) anchor and propel movement like an earthworm and\
+    \ 2) excavation similar to tunnel boring machines. This design is decoupled into five separate modules: one drill head\
+    \ to excavate and create cavity for propagation, two modules to anchor the robot, and two modules to enable propagation\
+    \ of the body. In order to design a controller for each of the modules, dynamic models using the Euler-Lagrange framework\
+    \ are developed. These mathematical models are used as a baseline to design controlled decoupled operation of the different\
+    \ joint movements. The operation of robotic assembly is constructed via a centralized state machine for gait synthesis\
+    \ with integration of the designed feedback controller. The controllers are tested on the real robot geometry to aid sim-to-real\
+    \ integration: A physics-based Unity simulation using a CAD model of the robot and integration of the trained controller\
+    \ via ROS verifies the performance of the robot. The experimental results demonstrate that the proposed design, controllers\
+    \ and the gait synthesis strategy together are capable of anchoring the robot in place and creating an total advancement\
     \ of 30\\,mm into the soil after completing 3 gait cycles."
 domains:
 - 07_ai_models_algorithms
@@ -85,27 +64,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-03'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=paper.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2607.00569v1.
 sources:
 - id: src_001
   type: paper
-  title: '[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface
-    Bore Propagator (arXiv)'
+  title: '[Preprint] Dynamic Modeling, Gait Synthesis, and Control of a Novel Subsurface Bore Propagator (arXiv)'
   url: https://arxiv.org/abs/2607.00569
   date: '2026'
   accessed_at: '2026-07-03'
 ---
-
 ## 概述
-arXiv:2607.00569v1 Announce Type: new 
-Abstract: In this article, we present dynamic modeling, gait synthesis, and feedback control design for a modular novel subsurface robot, designed for human-free subsurface exploration and excavation. The subsurface propagator design is based on two major aspects: 1) anchor and propel movement like an earthworm and 2) excavation similar to tunnel boring machines. This design is decoupled into five separate modules: one drill head to excavate and create cavity for propagation, two modules to anchor the robot, and two modules to enable propagation of the body. In order to design a controller for each of the modules, dynamic models using the Euler-Lagrange framework are developed. These mathematical models are used as a baseline to design controlled decoupled operation of the different joint movements. The operation of robotic assembly is constructed via a centralized state machine for gait synthesis with integration of the designed feedback controller. The controllers are tested on the real robot geometry to aid sim-to-real integration: A physics-based Unity simulation using a CAD model of the robot and integration of the trained controller via ROS verifies the performance of the robot. The experimental results demonstrate that the proposed design, controllers and the gait synthesis strategy together are capable of anchoring the robot in place and creating an total advancement of 30\,mm into the soil after completing 3 gait cycles.
+In this article, we present dynamic modeling, gait synthesis, and feedback control design for a modular novel subsurface robot, designed for human-free subsurface exploration and excavation. The subsurface propagator design is based on two major aspects: 1) anchor and propel movement like an earthworm and 2) excavation similar to tunnel boring machines. This design is decoupled into five separate modules: one drill head to excavate and create cavity for propagation, two modules to anchor the robot, and two modules to enable propagation of the body. In order to design a controller for each of the modules, dynamic models using the Euler-Lagrange framework are developed. These mathematical models are used as a baseline to design controlled decoupled operation of the different joint movements. The operation of robotic assembly is constructed via a centralized state machine for gait synthesis with integration of the designed feedback controller. The controllers are tested on the real robot geometry to aid sim-to-real integration: A physics-based Unity simulation using a CAD model of the robot and integration of the trained controller via ROS verifies the performance of the robot. The experimental results demonstrate that the proposed design, controllers and the gait synthesis strategy together are capable of anchoring the robot in place and creating an total advancement of 30\,mm into the soil after completing 3 gait cycles.
 
-## Overview
-arXiv:2607.00569v1 Announce Type: new 
-Abstract: In this article, we present dynamic modeling, gait synthesis, and feedback control design for a modular novel subsurface robot, designed for human-free subsurface exploration and excavation. The subsurface propagator design is based on two major aspects: 1) anchor and propel movement like an earthworm and 2) excavation similar to tunnel boring machines. This design is decoupled into five separate modules: one drill head to excavate and create cavity for propagation, two modules to anchor the robot, and two modules to enable propagation of the body. In order to design a controller for each of the modules, dynamic models using the Euler-Lagrange framework are developed. These mathematical models are used as a baseline to design controlled decoupled operation of the different joint movements. The operation of robotic assembly is constructed via a centralized state machine for gait synthesis with integration of the designed feedback controller. The controllers are tested on the real robot geometry to aid sim-to-real integration: A physics-based Unity simulation using a CAD model of the robot and integration of the trained controller via ROS verifies the performance of the robot. The experimental results demonstrate that the proposed design, controllers and the gait synthesis strategy together are capable of anchoring the robot in place and creating an total advancement of 30\,mm into the soil after completing 3 gait cycles.
+## 核心内容
+In this article, we present dynamic modeling, gait synthesis, and feedback control design for a modular novel subsurface robot, designed for human-free subsurface exploration and excavation. The subsurface propagator design is based on two major aspects: 1) anchor and propel movement like an earthworm and 2) excavation similar to tunnel boring machines. This design is decoupled into five separate modules: one drill head to excavate and create cavity for propagation, two modules to anchor the robot, and two modules to enable propagation of the body. In order to design a controller for each of the modules, dynamic models using the Euler-Lagrange framework are developed. These mathematical models are used as a baseline to design controlled decoupled operation of the different joint movements. The operation of robotic assembly is constructed via a centralized state machine for gait synthesis with integration of the designed feedback controller. The controllers are tested on the real robot geometry to aid sim-to-real integration: A physics-based Unity simulation using a CAD model of the robot and integration of the trained controller via ROS verifies the performance of the robot. The experimental results demonstrate that the proposed design, controllers and the gait synthesis strategy together are capable of anchoring the robot in place and creating an total advancement of 30\,mm into the soil after completing 3 gait cycles.
 
-## 개요
-arXiv:2607.00569v1 Announce Type: new 
-Abstract: In this article, we present dynamic modeling, gait synthesis, and feedback control design for a modular novel subsurface robot, designed for human-free subsurface exploration and excavation. The subsurface propagator design is based on two major aspects: 1) anchor and propel movement like an earthworm and 2) excavation similar to tunnel boring machines. This design is decoupled into five separate modules: one drill head to excavate and create cavity for propagation, two modules to anchor the robot, and two modules to enable propagation of the body. In order to design a controller for each of the modules, dynamic models using the Euler-Lagrange framework are developed. These mathematical models are used as a baseline to design controlled decoupled operation of the different joint movements. The operation of robotic assembly is constructed via a centralized state machine for gait synthesis with integration of the designed feedback controller. The controllers are tested on the real robot geometry to aid sim-to-real integration: A physics-based Unity simulation using a CAD model of the robot and integration of the trained controller via ROS verifies the performance of the robot. The experimental results demonstrate that the proposed design, controllers and the gait synthesis strategy together are capable of anchoring the robot in place and creating an total advancement of 30\,mm into the soil after completing 3 gait cycles.
+## 参考
+- http://arxiv.org/abs/2607.00569v1
+

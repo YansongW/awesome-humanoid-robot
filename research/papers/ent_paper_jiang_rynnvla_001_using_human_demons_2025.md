@@ -8,15 +8,12 @@ names:
   zh: RynnVLA-001
   ko: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation'
 summary:
-  en: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced
-    by Peking University.'
-  zh: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced
-    by Peking University.'
-  ko: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001),
-    is a 2025 large vision-language-action model for robotic manipulation, introduced
-    by Peking University.'
+  en: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Peking University.'
+  zh: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Peking University.'
+  ko: 'RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Peking University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -36,10 +33,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: RynnVLA-001. Institution:
-    Peking University. arXiv: 2509.15212.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.15212v1.
 sources:
 - id: src_001
   type: paper
@@ -54,12 +50,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University.
+This paper presents RynnVLA-001, a vision-language-action(VLA) model built upon large-scale video generative pretraining from human demonstrations. We propose a novel two-stage pretraining methodology. The first stage, Ego-Centric Video Generative Pretraining, trains an Image-to-Video model on 12M ego-centric manipulation videos to predict future frames conditioned on an initial frame and a language instruction. The second stage, Human-Centric Trajectory-Aware Modeling, extends this by jointly predicting future keypoint trajectories, thereby effectively bridging visual frame prediction with action prediction. Furthermore, to enhance action representation, we propose ActionVAE, a variational autoencoder that compresses sequences of actions into compact latent embeddings, reducing the complexity of the VLA output space. When finetuned on the same downstream robotics datasets, RynnVLA-001 achieves superior performance over state-of-the-art baselines, demonstrating that the proposed pretraining strategy provides a more effective initialization for VLA models.
 
-## Overview
-RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University.
+## 核心内容
+This paper presents RynnVLA-001, a vision-language-action(VLA) model built upon large-scale video generative pretraining from human demonstrations. We propose a novel two-stage pretraining methodology. The first stage, Ego-Centric Video Generative Pretraining, trains an Image-to-Video model on 12M ego-centric manipulation videos to predict future frames conditioned on an initial frame and a language instruction. The second stage, Human-Centric Trajectory-Aware Modeling, extends this by jointly predicting future keypoint trajectories, thereby effectively bridging visual frame prediction with action prediction. Furthermore, to enhance action representation, we propose ActionVAE, a variational autoencoder that compresses sequences of actions into compact latent embeddings, reducing the complexity of the VLA output space. When finetuned on the same downstream robotics datasets, RynnVLA-001 achieves superior performance over state-of-the-art baselines, demonstrating that the proposed pretraining strategy provides a more effective initialization for VLA models.
 
-## 개요
-RynnVLA-001: Using Human Demonstrations to Improve Robot Manipulation (RynnVLA-001), is a 2025 large vision-language-action model for robotic manipulation, introduced by Peking University.
+## 参考
+- http://arxiv.org/abs/2509.15212v1
+

@@ -8,13 +8,10 @@ names:
   zh: 双参数与三参数 Mittag–Leffler 函数的数值计算
   ko: 두 변수 및 세 변수 Mittag–Leffler 함수의 수치 평가
 summary:
-  en: Presents an optimal parabolic contour algorithm that evaluates the two- and
-    three-parameter Mittag–Leffler functions by numerical inversion of their Laplace
-    transforms, with error control and a public MATLAB implementation.
-  zh: 提出一种基于最优抛物线围道的拉普拉斯变换数值反演算法，用于计算双参数与三参数 Mittag–Leffler 函数，并包含误差控制与公开的 MATLAB
-    实现。
-  ko: 최적 포물선 경로를 이용한 라플라스 변환 수치 역변환 알고리즘을 제안하여 2-변수 및 3-변수 Mittag–Leffler 함수를 평가하고,
-    오차 제어와 공개 MATLAB 구현을 제공한다.
+  en: Presents an optimal parabolic contour algorithm that evaluates the two- and three-parameter Mittag–Leffler functions
+    by numerical inversion of their Laplace transforms, with error control and a public MATLAB implementation.
+  zh: 提出一种基于最优抛物线围道的拉普拉斯变换数值反演算法，用于计算双参数与三参数 Mittag–Leffler 函数，并包含误差控制与公开的 MATLAB 实现。
+  ko: 최적 포물선 경로를 이용한 라플라스 변환 수치 역변환 알고리즘을 제안하여 2-변수 및 3-변수 Mittag–Leffler 함수를 평가하고, 오차 제어와 공개 MATLAB 구현을 제공한다.
 domains:
 - 06_design_engineering
 - 02_components
@@ -36,10 +33,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from provided metadata and abstract; exact section-level citations
-    were not verified against the full paper.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/1503.06569v2.
 sources:
 - id: src_001
   type: paper
@@ -50,20 +46,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+The Mittag-Leffler (ML) function plays a fundamental role in fractional calculus but very few methods are available for its numerical evaluation. In this work we present a method for the efficient computation of the ML function based on the numerical inversion of its Laplace transform (LT): an optimal parabolic contour is selected on the basis of the distance and the strength of the singularities of the LT, with the aim of minimizing the computational effort and reduce the propagation of errors. Numerical experiments are presented to show accuracy and efficiency of the proposed approach. The application to the three parameter ML (also known as Prabhakar) function is also presented.
 
-## Overview
+## 核心内容
+The Mittag-Leffler (ML) function plays a fundamental role in fractional calculus but very few methods are available for its numerical evaluation. In this work we present a method for the efficient computation of the ML function based on the numerical inversion of its Laplace transform (LT): an optimal parabolic contour is selected on the basis of the distance and the strength of the singularities of the LT, with the aim of minimizing the computational effort and reduce the propagation of errors. Numerical experiments are presented to show accuracy and efficiency of the proposed approach. The application to the three parameter ML (also known as Prabhakar) function is also presented.
 
-Mittag–Leffler functions are central to fractional calculus, but their numerical evaluation over the complex plane is challenging: direct series summation can converge very slowly or overflow, and existing algorithms are often inaccurate or computationally uneven. This paper proposes an optimal parabolic contour (OPC) scheme that evaluates the two-parameter Mittag–Leffler function by numerically inverting its Laplace transform. The contour shape and quadrature parameters are chosen according to the location and strength of the Laplace-transform singularities, balancing discretization, truncation, and round-off errors.
+## 参考
+- http://arxiv.org/abs/1503.06569v2
 
-The algorithm uses the trapezoidal rule along a parabolic contour in the complex plane. The authors derive practical rules for selecting contour parameters so that the overall computational cost is minimized while preserving accuracy. They also extend the approach to the three-parameter Mittag–Leffler function, commonly called the Prabhakar function, under restrictions on the parameters. A public MATLAB implementation is provided and tested against variable-precision reference values.
-
-## Key Contributions
-
-- Optimal parabolic contour algorithm for Laplace-transform inversion of the Mittag–Leffler function.
-- Error analysis and parameter-selection strategy tied to the singularities of the Laplace transform.
-- Extension of the method to the three-parameter (Prabhakar) Mittag–Leffler function.
-- Public MATLAB code and numerical validation against variable-precision reference values.
-
-## Relevance to Humanoid Robotics
-
-The paper does not address humanoid robot hardware or deployment directly. Its relevance is indirect: fractional-order dynamics, viscoelastic material models, and advanced control formulations used in humanoid locomotion and actuation can require repeated evaluation of Mittag–Leffler functions. A robust and efficient numerical method for these functions therefore supports modeling and simulation work in humanoid design engineering and component-level material/control analysis.

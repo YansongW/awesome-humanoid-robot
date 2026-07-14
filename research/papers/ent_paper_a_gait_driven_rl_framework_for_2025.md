@@ -8,12 +8,9 @@ names:
   zh: A Gait Driven RL Framework for Humanoid Robots
   ko: A Gait Driven RL Framework for Humanoid Robots
 summary:
-  en: A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion
-    for humanoid robots.
-  zh: A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion
-    for humanoid robots.
-  ko: A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion
-    for humanoid robots.
+  en: A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+  zh: A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+  ko: A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -30,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Locomotion.
-    arXiv: 2506.08416.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.08416v2.
 sources:
 - id: src_001
   type: paper
@@ -42,12 +38,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+This paper presents a real-time gait driven training framework for humanoid robots. First, we introduce a novel gait planner that incorporates dynamics to design the desired joint trajectory. In the gait design process, the 3D robot model is decoupled into two 2D models, which are then approximated as hybrid inverted pendulums (H-LIP) for trajectory planning. The gait planner operates in parallel in real time within the robot's learning environment. Second, based on this gait planner, we design three effective reward functions within a reinforcement learning framework, forming a reward composition to achieve periodic bipedal gait. This reward composition reduces the robot's learning time and enhances locomotion performance. Finally, a gait design example, along with simulation and experimental comparisons, is presented to demonstrate the effectiveness of the proposed method.
 
-## Overview
-A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+## 核心内容
+This paper presents a real-time gait driven training framework for humanoid robots. First, we introduce a novel gait planner that incorporates dynamics to design the desired joint trajectory. In the gait design process, the 3D robot model is decoupled into two 2D models, which are then approximated as hybrid inverted pendulums (H-LIP) for trajectory planning. The gait planner operates in parallel in real time within the robot's learning environment. Second, based on this gait planner, we design three effective reward functions within a reinforcement learning framework, forming a reward composition to achieve periodic bipedal gait. This reward composition reduces the robot's learning time and enhances locomotion performance. Finally, a gait design example, along with simulation and experimental comparisons, is presented to demonstrate the effectiveness of the proposed method.
 
-## 개요
-A Gait Driven RL Framework for Humanoid Robots is a 2025 work on locomotion for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2506.08416v2
+

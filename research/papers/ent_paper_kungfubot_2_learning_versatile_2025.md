@@ -8,12 +8,12 @@ names:
   zh: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control'
   ko: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control'
 summary:
-  en: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control
-    is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
-  zh: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control
-    is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
-  ko: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control
-    is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.'
+  en: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control is a 2025 work on loco-manipulation and
+    whole-body-control for humanoid robots.'
+  zh: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control is a 2025 work on loco-manipulation and
+    whole-body-control for humanoid robots.'
+  ko: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control is a 2025 work on loco-manipulation and
+    whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -32,25 +32,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Loco-Manipulation
-    and Whole-Body-Control. arXiv: 2509.16638.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2509.16638v1.
 sources:
 - id: src_001
   type: paper
-  title: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control
-    (arXiv)'
+  title: 'KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control (arXiv)'
   url: https://arxiv.org/abs/2509.16638
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+Learning versatile whole-body skills by tracking various human motions is a fundamental step toward general-purpose humanoid robots. This task is particularly challenging because a single policy must master a broad repertoire of motion skills while ensuring stability over long-horizon sequences. To this end, we present VMS, a unified whole-body controller that enables humanoid robots to learn diverse and dynamic behaviors within a single policy. Our framework integrates a hybrid tracking objective that balances local motion fidelity with global trajectory consistency, and an Orthogonal Mixture-of-Experts (OMoE) architecture that encourages skill specialization while enhancing generalization across motions. A segment-level tracking reward is further introduced to relax rigid step-wise matching, enhancing robustness when handling global displacements and transient inaccuracies. We validate VMS extensively in both simulation and real-world experiments, demonstrating accurate imitation of dynamic skills, stable performance over minute-long sequences, and strong generalization to unseen motions. These results highlight the potential of VMS as a scalable foundation for versatile humanoid whole-body control. The project page is available at https://kungfubot2-humanoid.github.io.
 
-## Overview
-KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+## 核心内容
+Learning versatile whole-body skills by tracking various human motions is a fundamental step toward general-purpose humanoid robots. This task is particularly challenging because a single policy must master a broad repertoire of motion skills while ensuring stability over long-horizon sequences. To this end, we present VMS, a unified whole-body controller that enables humanoid robots to learn diverse and dynamic behaviors within a single policy. Our framework integrates a hybrid tracking objective that balances local motion fidelity with global trajectory consistency, and an Orthogonal Mixture-of-Experts (OMoE) architecture that encourages skill specialization while enhancing generalization across motions. A segment-level tracking reward is further introduced to relax rigid step-wise matching, enhancing robustness when handling global displacements and transient inaccuracies. We validate VMS extensively in both simulation and real-world experiments, demonstrating accurate imitation of dynamic skills, stable performance over minute-long sequences, and strong generalization to unseen motions. These results highlight the potential of VMS as a scalable foundation for versatile humanoid whole-body control. The project page is available at https://kungfubot2-humanoid.github.io.
 
-## 개요
-KungfuBot 2: Learning Versatile Motion Skills for Humanoid Whole-Body Control is a 2025 work on loco-manipulation and whole-body-control for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2509.16638v1
+

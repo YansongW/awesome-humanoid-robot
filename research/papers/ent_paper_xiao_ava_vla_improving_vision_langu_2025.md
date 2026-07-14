@@ -8,21 +8,15 @@ names:
   zh: AVA-VLA
   ko: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention'
 summary:
-  en: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention
-    (AVA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by LiAuto Inc., School of Information Science and Technology, Beijing
-    University of Technology, School of Data Science, The Chinese University of Hong
-    Kong, Shenzhen.'
-  zh: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention
-    (AVA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by LiAuto Inc., School of Information Science and Technology, Beijing
-    University of Technology, School of Data Science, The Chinese University of Hong
-    Kong, Shenzhen.'
-  ko: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention
-    (AVA-VLA), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by LiAuto Inc., School of Information Science and Technology, Beijing
-    University of Technology, School of Data Science, The Chinese University of Hong
-    Kong, Shenzhen.'
+  en: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention (AVA-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by LiAuto Inc., School of Information Science and Technology, Beijing University
+    of Technology, School of Data Science, The Chinese University of Hong Kong, Shenzhen.'
+  zh: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention (AVA-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by LiAuto Inc., School of Information Science and Technology, Beijing University
+    of Technology, School of Data Science, The Chinese University of Hong Kong, Shenzhen.'
+  ko: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention (AVA-VLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by LiAuto Inc., School of Information Science and Technology, Beijing University
+    of Technology, School of Data Science, The Chinese University of Hong Kong, Shenzhen.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -42,17 +36,13 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: AVA-VLA. Institution: LiAuto
-    Inc., School of Information Science and Technology, Beijing University of Technology,
-    School of Data Science, The Chinese University of Hong Kong, Shenzhen. arXiv:
-    2511.18960.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.18960v4.
 sources:
 - id: src_001
   type: paper
-  title: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention
-    (arXiv)'
+  title: 'AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention (arXiv)'
   url: https://arxiv.org/abs/2511.18960
   date: '2025'
   accessed_at: '2026-07-01'
@@ -63,12 +53,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention (AVA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by LiAuto Inc., School of Information Science and Technology, Beijing University of Technology, School of Data Science, The Chinese University of Hong Kong, Shenzhen.
+Vision-Language-Action (VLA) models have shown remarkable progress in embodied tasks recently, but most methods process visual observations independently at each timestep. This history-agnostic design treats robot manipulation as a Markov Decision Process, even though real-world robotic control is inherently partially observable and requires reasoning over past interactions. To address this mismatch, we reformulate VLA policy learning from a Partially Observable Markov Decision Process perspective and propose AVA-VLA, a framework that conditions action generation on a recurrent state that serves as a neural approximation to the agent's belief over task history. Built on this recurrent state, we introduce Active Visual Attention (AVA), which dynamically reweights visual tokens in the current observation to focus on regions most relevant given both the instruction and execution history. Extensive experiments show that AVA-VLA achieves state-of-the-art performance on standard robotic benchmarks, including LIBERO and CALVIN, and transfers effectively to real-world dual-arm manipulation tasks. These results demonstrate the effectiveness of temporally grounded active visual processing for improving VLA performance in robotic sequential decision-making. The project page is available at https://liauto-dsr.github.io/AVA-VLA-Page.
 
-## Overview
-AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention (AVA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by LiAuto Inc., School of Information Science and Technology, Beijing University of Technology, School of Data Science, The Chinese University of Hong Kong, Shenzhen.
+## 核心内容
+Vision-Language-Action (VLA) models have shown remarkable progress in embodied tasks recently, but most methods process visual observations independently at each timestep. This history-agnostic design treats robot manipulation as a Markov Decision Process, even though real-world robotic control is inherently partially observable and requires reasoning over past interactions. To address this mismatch, we reformulate VLA policy learning from a Partially Observable Markov Decision Process perspective and propose AVA-VLA, a framework that conditions action generation on a recurrent state that serves as a neural approximation to the agent's belief over task history. Built on this recurrent state, we introduce Active Visual Attention (AVA), which dynamically reweights visual tokens in the current observation to focus on regions most relevant given both the instruction and execution history. Extensive experiments show that AVA-VLA achieves state-of-the-art performance on standard robotic benchmarks, including LIBERO and CALVIN, and transfers effectively to real-world dual-arm manipulation tasks. These results demonstrate the effectiveness of temporally grounded active visual processing for improving VLA performance in robotic sequential decision-making. The project page is available at https://liauto-dsr.github.io/AVA-VLA-Page.
 
-## 개요
-AVA-VLA: Improving Vision-Language-Action models with Active Visual Attention (AVA-VLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by LiAuto Inc., School of Information Science and Technology, Beijing University of Technology, School of Data Science, The Chinese University of Hong Kong, Shenzhen.
+## 参考
+- http://arxiv.org/abs/2511.18960v4
+

@@ -8,12 +8,12 @@ names:
   zh: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis'
   ko: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis'
 summary:
-  en: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023
-    work on human motion analysis and synthesis for humanoid robots.'
-  zh: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023
-    work on human motion analysis and synthesis for humanoid robots.'
-  ko: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023
-    work on human motion analysis and synthesis for humanoid robots.'
+  en: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023 work on human motion analysis and synthesis
+    for humanoid robots.'
+  zh: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023 work on human motion analysis and synthesis
+    for humanoid robots.'
+  ko: 'TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023 work on human motion analysis and synthesis
+    for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -32,10 +32,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Human
-    Motion Analysis and Synthesis. arXiv: 2307.15042.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2307.15042v2.
 sources:
 - id: src_001
   type: paper
@@ -44,12 +43,12 @@ sources:
   date: '2023'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023 work on human motion analysis and synthesis for humanoid robots.
+The gradual nature of a diffusion process that synthesizes samples in small increments constitutes a key ingredient of Denoising Diffusion Probabilistic Models (DDPM), which have presented unprecedented quality in image synthesis and been recently explored in the motion domain. In this work, we propose to adapt the gradual diffusion concept (operating along a diffusion time-axis) into the temporal-axis of the motion sequence. Our key idea is to extend the DDPM framework to support temporally varying denoising, thereby entangling the two axes. Using our special formulation, we iteratively denoise a motion buffer that contains a set of increasingly-noised poses, which auto-regressively produces an arbitrarily long stream of frames. With a stationary diffusion time-axis, in each diffusion step we increment only the temporal-axis of the motion such that the framework produces a new, clean frame which is removed from the beginning of the buffer, followed by a newly drawn noise vector that is appended to it. This new mechanism paves the way towards a new framework for long-term motion synthesis with applications to character animation and other domains.
 
-## Overview
-TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023 work on human motion analysis and synthesis for humanoid robots.
+## 核心内容
+The gradual nature of a diffusion process that synthesizes samples in small increments constitutes a key ingredient of Denoising Diffusion Probabilistic Models (DDPM), which have presented unprecedented quality in image synthesis and been recently explored in the motion domain. In this work, we propose to adapt the gradual diffusion concept (operating along a diffusion time-axis) into the temporal-axis of the motion sequence. Our key idea is to extend the DDPM framework to support temporally varying denoising, thereby entangling the two axes. Using our special formulation, we iteratively denoise a motion buffer that contains a set of increasingly-noised poses, which auto-regressively produces an arbitrarily long stream of frames. With a stationary diffusion time-axis, in each diffusion step we increment only the temporal-axis of the motion such that the framework produces a new, clean frame which is removed from the beginning of the buffer, followed by a newly drawn noise vector that is appended to it. This new mechanism paves the way towards a new framework for long-term motion synthesis with applications to character animation and other domains.
 
-## 개요
-TEDi: Temporally-Entangled Diffusion for Long-Term Motion Synthesis is a 2023 work on human motion analysis and synthesis for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2307.15042v2
+

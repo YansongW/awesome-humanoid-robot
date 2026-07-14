@@ -31,6 +31,35 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r website/requirements.txt
 
+      - name: Audit knowledge graph quality
+        run: |
+          python scripts/audit_entry_quality.py --json-only
+          python - <<'PY'
+          import json, sys
+          from pathlib import Path
+          report = sorted(Path('.staging/quality_reports').glob('quality_report_*.json'))[-1]
+          r = json.loads(report.read_text())
+          rel = r['relationships']
+          failed = False
+          print(f"Entries: {r['total_entries']}, critical: {r['severity_counts'].get('critical', 0)}, warning: {r['severity_counts'].get('warning', 0)}")
+          print(f"Relationships: {rel['total']}, dangling: {len(rel['dangling'])}, missing_type: {len(rel['missing_type'])}, duplicates: {len(rel['duplicates'])}")
+          print(f"Parse errors: {len(r['parse_errors'])}")
+          if rel['dangling'] or rel['missing_type'] or rel['duplicates'] or r['parse_errors']:
+              print("Quality gate failed: relationship or parse errors detected.")
+              failed = True
+          # Future gate: fail on any critical entry once the backlog is cleared.
+          # if r['severity_counts'].get('critical', 0) > 0:
+          #     print("Quality gate failed: critical entry content gaps remain.")
+          #     failed = True
+          sys.exit(1 if failed else 0)
+          PY
+
+      - name: Upload quality report
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-report
+          path: .staging/quality_reports/
+
       - name: Build static site
         run: python -m website.builder.build
 

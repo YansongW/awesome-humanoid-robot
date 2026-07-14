@@ -8,12 +8,10 @@ names:
   zh: 类量子机器人感知模型中的多感官融合
   ko: 양자유사 로봇 인지 모델에서의 다중감각 통합
 summary:
-  en: Generalizes a quantum-like robot perception model to multi-sensory inputs using
-    a multi-qubit system, encoding continuous sensor readings and supporting belief
-    queries for decision-making.
+  en: Generalizes a quantum-like robot perception model to multi-sensory inputs using a multi-qubit system, encoding continuous
+    sensor readings and supporting belief queries for decision-making.
   zh: 将类量子机器人感知模型推广到多感官输入，利用多量子比特系统编码连续传感器读数并支持用于决策的信念查询。
-  ko: 다중 큐비트 시스템을 사용하여 연속적인 센서 판독값을 인코딩하고 의사결정을 위한 신념 쿼리를 지원하는 양자유사 로봇 인지 모델을 다중감각
-    입력으로 일반화함.
+  ko: 다중 큐비트 시스템을 사용하여 연속적인 센서 판독값을 인코딩하고 의사결정을 위한 신념 쿼리를 지원하는 양자유사 로봇 인지 모델을 다중감각 입력으로 일반화함.
 domains:
 - 07_ai_models_algorithms
 - 02_components
@@ -35,10 +33,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-28'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from supplied metadata and abstract; requires human review against
-    full text before verification.; approved by autonomous review workflow.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2006.16404v1.
 sources:
 - id: src_001
   type: paper
@@ -49,23 +46,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+Formalisms inspired by Quantum theory have been used in Cognitive Science for decades. Indeed, Quantum-Like (QL) approaches provide descriptive features that are inherently suitable for perception, cognition, and decision processing. A preliminary study on the feasibility of a QL robot perception model has been carried out for a robot with limited sensing capabilities. In this paper, we generalize such a model for multi-sensory inputs, creating a multidimensional world representation directly based on sensor readings. Given a 3-dimensional case study, we highlight how this model provides a compact and elegant representation, embodying features that are extremely useful for modeling uncertainty and decision. Moreover, the model enables to naturally define query operators to inspect any world state, which answers quantifies the robot's degree of belief on that state.
 
-## Overview
+## 核心内容
+Formalisms inspired by Quantum theory have been used in Cognitive Science for decades. Indeed, Quantum-Like (QL) approaches provide descriptive features that are inherently suitable for perception, cognition, and decision processing. A preliminary study on the feasibility of a QL robot perception model has been carried out for a robot with limited sensing capabilities. In this paper, we generalize such a model for multi-sensory inputs, creating a multidimensional world representation directly based on sensor readings. Given a 3-dimensional case study, we highlight how this model provides a compact and elegant representation, embodying features that are extremely useful for modeling uncertainty and decision. Moreover, the model enables to naturally define query operators to inspect any world state, which answers quantifies the robot's degree of belief on that state.
 
-This paper extends a prior single-qubit Quantum-Like (QL) robot perception model to handle multiple sensory input channels. By representing each sensor dimension as a qubit, the authors construct a multi-dimensional world representation directly from normalized continuous sensor readings. The model encodes sensor values through rotation operators in Hilbert space and defines query operators via basis changes, yielding probability distributions that quantify the robot's degree of belief about target world states.
+## 参考
+- http://arxiv.org/abs/2006.16404v1
 
-The generalized framework preserves descriptive features of quantum formalisms—superposition, interference, and probabilistic measurement—that are argued to be well-suited for modeling perception, cognition, and decision processes. The authors instantiate the model on a 3-qubit RGB camera-like sensor scenario, sampling 132,651 inputs across the color space to demonstrate compact, uncertainty-aware representations and natural belief queries.
-
-Although framed generally for robot perception, the validation remains entirely simulation-based, with no real robot or humanoid platform experiments. Computational cost is also noted as a limitation, with full RGB-space sampling requiring several days.
-
-## Key Contributions
-
-- Multi-qubit generalization of a quantum-like robot perception model for multi-sensory inputs.
-- Encoding of continuous, bounded sensor readings into qubit states using rotation operators (Ry).
-- Query operators that quantify the robot's degree of belief about a target world state through Hilbert-space basis changes.
-- Empirical validation on a 3-qubit RGB camera-like sensor case study with 132,651 sampled inputs.
-- Demonstration that the model compactly represents uncertainty and supports decision-making processes.
-
-## Relevance to Humanoid Robotics
-
-Humanoid robots must fuse noisy, high-dimensional sensory streams into coherent world representations under uncertainty. This paper's QL multi-sensory framework directly addresses that need by offering a compact, mathematically principled method for encoding and querying continuous sensor data. Its emphasis on belief quantification and decision-oriented queries aligns with perception-action loops central to humanoid autonomy. However, its practical relevance to humanoids remains theoretical until validated on real sensor suites or humanoid platforms.

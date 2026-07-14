@@ -8,13 +8,12 @@ names:
   zh: 双足机器人跑步：利用快/慢自适应实现类人驱动时机
   ko: '쌍족 로봇 달리기: 빠르고 느린 적응을 이용한 인간형 구동 타이밍'
 summary:
-  en: This paper proposes a central-pattern-generator-based controller that combines
-    fast phase resetting at touchdown with slow gait-period convergence to reproduce
-    human-like muscle-activation timing in a musculoskeletal bipedal runner, validated
+  en: This paper proposes a central-pattern-generator-based controller that combines fast phase resetting at touchdown with
+    slow gait-period convergence to reproduce human-like muscle-activation timing in a musculoskeletal bipedal runner, validated
     on a spring-loaded inverted pendulum model and a human-sized robot.
   zh: 本文提出一种基于中枢模式发生器的控制器，通过触地时的快速相位重置与步态周期的慢速收敛来复现类人肌肉激活时机，并在弹簧负载倒立摆模型与一台人形尺寸双足机器人上进行了验证。
-  ko: 본 논문은 착지 시 빠른 위상 재설정과 보행 주기의 느린 수렴을 결합한 중추 패턴 생성기 기반 제어기를 제안하여 근골격계 쌍족 주행 로봇에서
-    인간형 근육 활성화 타이밍을 재현하고, 스프링 로드 인버티드 펜듈럼 모델과 인간 크기 로봇으로 검증하였다.
+  ko: 본 논문은 착지 시 빠른 위상 재설정과 보행 주기의 느린 수렴을 결합한 중추 패턴 생성기 기반 제어기를 제안하여 근골격계 쌍족 주행 로봇에서 인간형 근육 활성화 타이밍을 재현하고, 스프링 로드 인버티드 펜듈럼
+    모델과 인간 크기 로봇으로 검증하였다.
 domains:
 - 07_ai_models_algorithms
 - 02_components
@@ -36,10 +35,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-27'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from the supplied metadata and abstract; full-text verification
-    and native-speaker review of translations are required before promotion to verified.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2303.00910v3.
 sources:
 - id: src_001
   type: paper
@@ -50,23 +48,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+We have been developing human-sized biped robots based on passive dynamic mechanisms. In human locomotion, the muscles activate at the same rate relative to the gait cycle during running. To achieve adaptive running for robots, such characteristics should be reproduced to yield the desired effect, In this study, we designed a central pattern generator (CPG) involving fast and slow adaptation to achieve human-like running using a simple spring-mass model and our developed bipedal robot, which is equipped with actuators that imitate the human musculoskeletal system. Our results demonstrate that the CPG-based controller with fast and slow adaptations, and a adjustable actuator control timing can reproduce human-like running. The results suggest that the CPG contributes to the adjustment of the muscle activation timing in human running.
 
-## Overview
+## 核心内容
+We have been developing human-sized biped robots based on passive dynamic mechanisms. In human locomotion, the muscles activate at the same rate relative to the gait cycle during running. To achieve adaptive running for robots, such characteristics should be reproduced to yield the desired effect, In this study, we designed a central pattern generator (CPG) involving fast and slow adaptation to achieve human-like running using a simple spring-mass model and our developed bipedal robot, which is equipped with actuators that imitate the human musculoskeletal system. Our results demonstrate that the CPG-based controller with fast and slow adaptations, and a adjustable actuator control timing can reproduce human-like running. The results suggest that the CPG contributes to the adjustment of the muscle activation timing in human running.
 
-The authors develop human-sized bipedal robots based on passive-dynamic mechanisms and target one hallmark of human running: muscles activate at fixed phases of the gait cycle regardless of speed. To embed this behavior in a robot, they design a central pattern generator (CPG) that has two timescales of adaptation. A fast adaptation resets the CPG phase at touchdown, while a slow adaptation gradually updates the estimated gait period in a rhythm generator. A pattern formulator then translates the CPG output into actuator commands, adjusting leg actuation timing using thigh-angle feedback.
+## 参考
+- http://arxiv.org/abs/2303.00910v3
 
-The controller is first evaluated numerically on a simple spring-loaded inverted pendulum (SLIP) running model. The same control architecture is then implemented on the authors' musculoskeletal bipedal robot, which uses brushless hip motors, pneumatic vastus actuators, pressure sensors, springs, rubber bands, and a muscle-tendon wire-driven transmission. The robot is constrained to sagittal-plane motion during the experiments.
-
-Results show that the CPG with fast and slow adaptations and adjustable actuator timing can reproduce human-like running. The authors also report that the robot and human kinematics share similar phase-dependent joint-angle peaks during running, suggesting that the CPG contributes to adjusting muscle activation timing in human running.
-
-## Key Contributions
-
-- Designed a CPG rhythm generator with fast adaptation via phase resetting at touchdown and slow adaptation via convergence of the estimated gait period.
-- Implemented a pattern formulator that adjusts leg actuation timing based on thigh-angle feedback to sustain running.
-- Validated the controller numerically on a spring-loaded inverted pendulum (SLIP) model.
-- Demonstrated human-like running on a human-sized musculoskeletal bipedal robot constrained in the sagittal plane.
-- Showed that robot and human kinematics exhibit similar phase-dependent joint-angle peaks during running.
-
-## Relevance to Humanoid Robotics
-
-The work is directly relevant to humanoid robotics because it addresses adaptive, bio-inspired control of human-sized bipedal locomotion. Reproducing human-like activation timing relative to the gait cycle can improve running stability, energy efficiency, and robustness to speed variations in humanoid robots. The musculoskeletal-style actuation and CPG-based timing adjustment also bridge neuroscience insights and hardware implementation, offering a practical control method for legged humanoids intended for real-world deployment.

@@ -8,7 +8,13 @@ names:
   zh: AMO｜超灵巧人形全身控制的自适应运动优化
   ko: 'AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control'
 summary:
-  en: ''
+  en: 'Humanoid robots derive much of their dexterity from hyper-dexterous whole-body movements, enabling tasks that require
+    a large operational workspace: such as picking objects off the ground. However, achieving these capabilities on real humanoids
+    remains challenging due to their high degrees of freedom (DoF) and nonlinear dynamics. We propose Adaptive Motion Optimization
+    (AMO), a framework that integrates sim-to-real reinforcement learning (RL) with trajectory optimization for real-time,
+    adaptive whole-body control. To mitigate distribution bias in motion imitation RL, we construct a hybrid AMO dataset and
+    train a network capable of robust, on-demand adaptation to potentially O.O.D. commands. We validate AMO in simulation
+    and on a 29-DoF Unitree G1 humanoid robot, demonstrating superior stab'
   zh: AMO 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、ACT/行为克隆模仿学习、全身控制器/WBC/MPC训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作
     chunk 或闭环执行降低时序抖动。
   ko: AMO 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、ACT/行为克隆模仿学习、全身控制器/WBC/MPC训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作
@@ -31,11 +37,10 @@ tags:
 verification:
   status: unverified
   reviewed_by: ai
-  reviewed_at: '2026-06-26'
+  reviewed_at: '2026-07-14'
   confidence: low
-  notes: 'Imported from WeChat curated list (032). Institution: UC San Diego. Full
-    title: AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body
-    Control.'
+  notes: 'Abstract backfilled by scripts/backfill_paper_abstracts.py from Semantic Scholar search: AMO: Adaptive Motion Optimization
+    for Hyper-Dexterous Humanoid Whole-Body Control.'
 sources:
 - id: src_001
   type: website
@@ -46,9 +51,12 @@ sources:
 theoretical_depth:
 - system
 ---
-
 ## 概述
-AMO 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、ACT/行为克隆模仿学习、全身控制器/WBC/MPC训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作 chunk 或闭环执行降低时序抖动。
+Humanoid robots derive much of their dexterity from hyper-dexterous whole-body movements, enabling tasks that require a large operational workspace: such as picking objects off the ground. However, achieving these capabilities on real humanoids remains challenging due to their high degrees of freedom (DoF) and nonlinear dynamics. We propose Adaptive Motion Optimization (AMO), a framework that integrates sim-to-real reinforcement learning (RL) with trajectory optimization for real-time, adaptive whole-body control. To mitigate distribution bias in motion imitation RL, we construct a hybrid AMO dataset and train a network capable of robust, on-demand adaptation to potentially O.O.D. commands. We validate AMO in simulation and on a 29-DoF Unitree G1 humanoid robot, demonstrating superior stability and an expanded workspace compared to strong baselines. Finally, we show that AMO's consistent performance supports autonomous task execution via imitation learning, underscoring the system's versatility and robustness.
 
-## 개요
-AMO 把本体状态与关节序列、仿真交互数据、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、ACT/行为克隆模仿学习、全身控制器/WBC/MPC训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作 chunk 或闭环执行降低时序抖动。
+## 核心内容
+Humanoid robots derive much of their dexterity from hyper-dexterous whole-body movements, enabling tasks that require a large operational workspace: such as picking objects off the ground. However, achieving these capabilities on real humanoids remains challenging due to their high degrees of freedom (DoF) and nonlinear dynamics. We propose Adaptive Motion Optimization (AMO), a framework that integrates sim-to-real reinforcement learning (RL) with trajectory optimization for real-time, adaptive whole-body control. To mitigate distribution bias in motion imitation RL, we construct a hybrid AMO dataset and train a network capable of robust, on-demand adaptation to potentially O.O.D. commands. We validate AMO in simulation and on a 29-DoF Unitree G1 humanoid robot, demonstrating superior stability and an expanded workspace compared to strong baselines. Finally, we show that AMO's consistent performance supports autonomous task execution via imitation learning, underscoring the system's versatility and robustness.
+
+## 参考
+- Semantic Scholar search: AMO: Adaptive Motion Optimization for Hyper-Dexterous Humanoid Whole-Body Control
+

@@ -8,12 +8,12 @@ names:
   zh: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots
   ko: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots
 summary:
-  en: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots
-    is a 2025 work on teleoperation for humanoid robots.
-  zh: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots
-    is a 2025 work on teleoperation for humanoid robots.
-  ko: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots
-    is a 2025 work on teleoperation for humanoid robots.
+  en: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots is a 2025 work on teleoperation for
+    humanoid robots.
+  zh: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots is a 2025 work on teleoperation for
+    humanoid robots.
+  ko: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots is a 2025 work on teleoperation for
+    humanoid robots.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -31,25 +31,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Teleoperation.
-    arXiv: 2510.13594.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.13594v1.
 sources:
 - id: src_001
   type: paper
-  title: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid
-    Robots (arXiv)
+  title: Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots (arXiv)
   url: https://arxiv.org/abs/2510.13594
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+The operation of humanoid robotics is an essential field of research with many practical and competitive applications. Many of these systems, however, do not invest heavily in developing a non-expert-centered graphical user interface (GUI) for operation. The focus of this research is to develop a scalable GUI that is tailored to be simple and intuitive so non-expert operators can control the robot through a FIRA-regulated obstacle course. Using common practices from user interface development (UI) and understanding concepts described in human-robot interaction (HRI) and other related concepts, we will develop a new interface with the goal of a non-expert teleoperation system.
 
-## Overview
-Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+## 核心内容
+The operation of humanoid robotics is an essential field of research with many practical and competitive applications. Many of these systems, however, do not invest heavily in developing a non-expert-centered graphical user interface (GUI) for operation. The focus of this research is to develop a scalable GUI that is tailored to be simple and intuitive so non-expert operators can control the robot through a FIRA-regulated obstacle course. Using common practices from user interface development (UI) and understanding concepts described in human-robot interaction (HRI) and other related concepts, we will develop a new interface with the goal of a non-expert teleoperation system.
 
-## 개요
-Development of an Intuitive GUI for Non-Expert Teleoperation of Humanoid Robots is a 2025 work on teleoperation for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2510.13594v1
+

@@ -8,12 +8,9 @@ names:
   zh: 'Teleoperation of Humanoid Robots: A Survey'
   ko: 'Teleoperation of Humanoid Robots: A Survey'
 summary:
-  en: 'Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation
-    for humanoid robots.'
-  zh: 'Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation
-    for humanoid robots.'
-  ko: 'Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation
-    for humanoid robots.'
+  en: 'Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation for humanoid robots.'
+  zh: 'Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation for humanoid robots.'
+  ko: 'Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation for humanoid robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -31,10 +28,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Teleoperation.
-    arXiv: 2301.04317.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2301.04317v1.
 sources:
 - id: src_001
   type: paper
@@ -49,12 +45,12 @@ sources:
   date: '2023'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation for humanoid robots.
+Teleoperation of humanoid robots enables the integration of the cognitive skills and domain expertise of humans with the physical capabilities of humanoid robots. The operational versatility of humanoid robots makes them the ideal platform for a wide range of applications when teleoperating in a remote environment. However, the complexity of humanoid robots imposes challenges for teleoperation, particularly in unstructured dynamic environments with limited communication. Many advancements have been achieved in the last decades in this area, but a comprehensive overview is still missing. This survey paper gives an extensive overview of humanoid robot teleoperation, presenting the general architecture of a teleoperation system and analyzing the different components. We also discuss different aspects of the topic, including technological and methodological advances, as well as potential applications. A web-based version of the paper can be found at https://humanoid-teleoperation.github.io/.
 
-## Overview
-Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation for humanoid robots.
+## 核心内容
+Teleoperation of humanoid robots enables the integration of the cognitive skills and domain expertise of humans with the physical capabilities of humanoid robots. The operational versatility of humanoid robots makes them the ideal platform for a wide range of applications when teleoperating in a remote environment. However, the complexity of humanoid robots imposes challenges for teleoperation, particularly in unstructured dynamic environments with limited communication. Many advancements have been achieved in the last decades in this area, but a comprehensive overview is still missing. This survey paper gives an extensive overview of humanoid robot teleoperation, presenting the general architecture of a teleoperation system and analyzing the different components. We also discuss different aspects of the topic, including technological and methodological advances, as well as potential applications. A web-based version of the paper can be found at https://humanoid-teleoperation.github.io/.
 
-## 개요
-Teleoperation of Humanoid Robots: A Survey is a 2023 work on teleoperation for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2301.04317v1
+

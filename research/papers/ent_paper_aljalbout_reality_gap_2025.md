@@ -8,12 +8,10 @@ names:
   zh: 机器人中的现实鸿沟：挑战、解决方案与最佳实践
   ko: '로보틱스의 현실 격차: 과제, 해결책 및 모범 사례'
 summary:
-  en: A 2025 survey that maps the sim-to-real reality gap into perception and action-dynamics
-    discrepancies, and reviews mitigation strategies including domain randomization,
-    system identification, and sim-real co-training.
+  en: A 2025 survey that maps the sim-to-real reality gap into perception and action-dynamics discrepancies, and reviews mitigation
+    strategies including domain randomization, system identification, and sim-real co-training.
   zh: 2025 年综述，将仿真到现实的现实鸿沟划分为感知差异与动作动力学差异，并综述了域随机化、系统辨识和仿真-现实协同训练等缓解策略。
-  ko: 2025년 서베이로, 시뮬레이션-현실 간 현실 격차를 지각 및 동작 역학 불일치로 분류하고 도메인 랜덤화, 시스템 식별, 시뮬-현실 공동
-    학습 등 완화 전략을 검토함.
+  ko: 2025년 서베이로, 시뮬레이션-현실 간 현실 격차를 지각 및 동작 역학 불일치로 분류하고 도메인 랜덤화, 시스템 식별, 시뮬-현실 공동 학습 등 완화 전략을 검토함.
 domains:
 - 07_ai_models_algorithms
 - 02_components
@@ -34,9 +32,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-25'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from arXiv abstract and HTML preview; full-paper review pending.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.20808v1.
 sources:
 - id: src_paper_aljalbout_reality_gap_2025
   type: paper
@@ -47,25 +45,12 @@ sources:
 theoretical_depth:
 - system
 ---
+## 概述
+Machine learning has facilitated significant advancements across various robotics domains, including navigation, locomotion, and manipulation. Many such achievements have been driven by the extensive use of simulation as a critical tool for training and testing robotic systems prior to their deployment in real-world environments. However, simulations consist of abstractions and approximations that inevitably introduce discrepancies between simulated and real environments, known as the reality gap. These discrepancies significantly hinder the successful transfer of systems from simulation to the real world. Closing this gap remains one of the most pressing challenges in robotics. Recent advances in sim-to-real transfer have demonstrated promising results across various platforms, including locomotion, navigation, and manipulation. By leveraging techniques such as domain randomization, real-to-sim transfer, state and action abstractions, and sim-real co-training, many works have overcome the reality gap. However, challenges persist, and a deeper understanding of the reality gap's root causes and solutions is necessary. In this survey, we present a comprehensive overview of the sim-to-real landscape, highlighting the causes, solutions, and evaluation metrics for the reality gap and sim-to-real transfer.
 
-# The Reality Gap in Robotics: Challenges, Solutions, and Best Practices
+## 核心内容
+Machine learning has facilitated significant advancements across various robotics domains, including navigation, locomotion, and manipulation. Many such achievements have been driven by the extensive use of simulation as a critical tool for training and testing robotic systems prior to their deployment in real-world environments. However, simulations consist of abstractions and approximations that inevitably introduce discrepancies between simulated and real environments, known as the reality gap. These discrepancies significantly hinder the successful transfer of systems from simulation to the real world. Closing this gap remains one of the most pressing challenges in robotics. Recent advances in sim-to-real transfer have demonstrated promising results across various platforms, including locomotion, navigation, and manipulation. By leveraging techniques such as domain randomization, real-to-sim transfer, state and action abstractions, and sim-real co-training, many works have overcome the reality gap. However, challenges persist, and a deeper understanding of the reality gap's root causes and solutions is necessary. In this survey, we present a comprehensive overview of the sim-to-real landscape, highlighting the causes, solutions, and evaluation metrics for the reality gap and sim-to-real transfer.
 
-## 抽象
+## 参考
+- http://arxiv.org/abs/2510.20808v1
 
-> **生活实例**：它就像飞行模拟器与真实驾驶之间的差距——模拟里你能完美降落，但真机上风切变、仪表延迟、轮胎摩擦都会让同样操作出问题。
-
-> **自然语言逻辑**：这篇 2025 年综述系统梳理了机器人从仿真到现实部署之间的“现实鸿沟”，将其分为感知差异和动作动力学差异；它回顾了域随机化、系统辨识、仿真-现实协同训练等缓解方法，帮助人形机器人开发者理解为什么仿真里好用的策略到了真机上可能失效。
-
-## Overview
-
-This survey (Aljalbout et al., 2025) provides a structured taxonomy of the "reality gap" between physics simulators and real-world robot deployment. It groups discrepancies into **perception gaps** (sensor noise, lighting, rendering, calibration) and **action-dynamics gaps** (contact friction, actuator latency, deformable objects, controller timing), then reviews mitigation approaches and evaluation metrics.
-
-## Key Themes
-
-- **Causes**: abstractions and approximations in physics engines, simplified sensor models, and unmodeled hardware dynamics.
-- **Solutions**: calibration and explicit modeling, domain randomization, domain adaptation, residual learning, real-to-sim transfer, and sim-real co-training.
-- **Evaluation**: metrics that correlate simulated and real-world performance, increasingly using learned world models and physics-aware digital cousins.
-
-## Relevance to Humanoid Robotics
-
-Humanoids amplify the reality gap because whole-body control involves high-DoF contact dynamics, balance, and morphological diversity. The survey's framing is directly relevant to co-designing simulators, actuators, and learning algorithms for humanoid platforms.

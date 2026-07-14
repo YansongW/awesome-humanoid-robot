@@ -4,21 +4,16 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist
-    Robot Policy'
+  en: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy'
   zh: InternVLA-M1
-  ko: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist
-    Robot Policy'
+  ko: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy'
 summary:
-  en: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist
-    Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for
-    robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.'
-  zh: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist
-    Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for
-    robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.'
-  ko: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist
-    Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for
-    robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.'
+  en: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (InternVLA-M1), is a
+    2025 large vision-language-action model for robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.'
+  zh: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (InternVLA-M1), is a
+    2025 large vision-language-action model for robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.'
+  ko: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (InternVLA-M1), is a
+    2025 large vision-language-action model for robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -38,15 +33,13 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: InternVLA-M1. Institution:
-    Intern Robotics, Shanghai AI Laboratory. arXiv: 2510.13778.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2510.13778v1.
 sources:
 - id: src_001
   type: paper
-  title: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist
-    Robot Policy (arXiv)'
+  title: 'InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (arXiv)'
   url: https://arxiv.org/abs/2510.13778
   date: '2025'
   accessed_at: '2026-07-01'
@@ -57,12 +50,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.
+We introduce InternVLA-M1, a unified framework for spatial grounding and robot control that advances instruction-following robots toward scalable, general-purpose intelligence. Its core idea is spatially guided vision-language-action training, where spatial grounding serves as the critical link between instructions and robot actions. InternVLA-M1 employs a two-stage pipeline: (i) spatial grounding pre-training on over 2.3M spatial reasoning data to determine ``where to act'' by aligning instructions with visual, embodiment-agnostic positions, and (ii) spatially guided action post-training to decide ``how to act'' by generating embodiment-aware actions through plug-and-play spatial prompting. This spatially guided training recipe yields consistent gains: InternVLA-M1 outperforms its variant without spatial guidance by +14.6% on SimplerEnv Google Robot, +17% on WidowX, and +4.3% on LIBERO Franka, while demonstrating stronger spatial reasoning capability in box, point, and trace prediction. To further scale instruction following, we built a simulation engine to collect 244K generalizable pick-and-place episodes, enabling a 6.2% average improvement across 200 tasks and 3K+ objects. In real-world clustered pick-and-place, InternVLA-M1 improved by 7.3%, and with synthetic co-training, achieved +20.6% on unseen objects and novel configurations. Moreover, in long-horizon reasoning-intensive scenarios, it surpassed existing works by over 10%. These results highlight spatially guided training as a unifying principle for scalable and resilient generalist robots. Code and models are available at https://github.com/InternRobotics/InternVLA-M1.
 
-## Overview
-InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.
+## 核心内容
+We introduce InternVLA-M1, a unified framework for spatial grounding and robot control that advances instruction-following robots toward scalable, general-purpose intelligence. Its core idea is spatially guided vision-language-action training, where spatial grounding serves as the critical link between instructions and robot actions. InternVLA-M1 employs a two-stage pipeline: (i) spatial grounding pre-training on over 2.3M spatial reasoning data to determine ``where to act'' by aligning instructions with visual, embodiment-agnostic positions, and (ii) spatially guided action post-training to decide ``how to act'' by generating embodiment-aware actions through plug-and-play spatial prompting. This spatially guided training recipe yields consistent gains: InternVLA-M1 outperforms its variant without spatial guidance by +14.6% on SimplerEnv Google Robot, +17% on WidowX, and +4.3% on LIBERO Franka, while demonstrating stronger spatial reasoning capability in box, point, and trace prediction. To further scale instruction following, we built a simulation engine to collect 244K generalizable pick-and-place episodes, enabling a 6.2% average improvement across 200 tasks and 3K+ objects. In real-world clustered pick-and-place, InternVLA-M1 improved by 7.3%, and with synthetic co-training, achieved +20.6% on unseen objects and novel configurations. Moreover, in long-horizon reasoning-intensive scenarios, it surpassed existing works by over 10%. These results highlight spatially guided training as a unifying principle for scalable and resilient generalist robots. Code and models are available at https://github.com/InternRobotics/InternVLA-M1.
 
-## 개요
-InternVLA-M1: A Spatially Guided Vision-Language-Action Framework for Generalist Robot Policy (InternVLA-M1), is a 2025 large vision-language-action model for robotic manipulation, introduced by Intern Robotics, Shanghai AI Laboratory.
+## 参考
+- http://arxiv.org/abs/2510.13778v1
+

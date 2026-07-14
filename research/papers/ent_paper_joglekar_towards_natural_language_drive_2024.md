@@ -8,18 +8,15 @@ names:
   zh: Towards Natural Language-Driven Assembly Using Foundation Models
   ko: Towards Natural Language-Driven Assembly Using Foundation Models
 summary:
-  en: Towards Natural Language-Driven Assembly Using Foundation Models (Towards Natural
-    Language-Driven Assembly Using Foundation Models), is a 2024 large vision-language-action
-    model for robotic manipulation, introduced by Bosch Center for Artificial Intelligence,
-    Tel Aviv University.
-  zh: Towards Natural Language-Driven Assembly Using Foundation Models (Towards Natural
-    Language-Driven Assembly Using Foundation Models), is a 2024 large vision-language-action
-    model for robotic manipulation, introduced by Bosch Center for Artificial Intelligence,
-    Tel Aviv University.
-  ko: Towards Natural Language-Driven Assembly Using Foundation Models (Towards Natural
-    Language-Driven Assembly Using Foundation Models), is a 2024 large vision-language-action
-    model for robotic manipulation, introduced by Bosch Center for Artificial Intelligence,
-    Tel Aviv University.
+  en: Towards Natural Language-Driven Assembly Using Foundation Models (Towards Natural Language-Driven Assembly Using Foundation
+    Models), is a 2024 large vision-language-action model for robotic manipulation, introduced by Bosch Center for Artificial
+    Intelligence, Tel Aviv University.
+  zh: Towards Natural Language-Driven Assembly Using Foundation Models (Towards Natural Language-Driven Assembly Using Foundation
+    Models), is a 2024 large vision-language-action model for robotic manipulation, introduced by Bosch Center for Artificial
+    Intelligence, Tel Aviv University.
+  ko: Towards Natural Language-Driven Assembly Using Foundation Models (Towards Natural Language-Driven Assembly Using Foundation
+    Models), is a 2024 large vision-language-action model for robotic manipulation, introduced by Bosch Center for Artificial
+    Intelligence, Tel Aviv University.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -39,11 +36,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: Towards Natural Language-Driven
-    Assembly Using Foundation Models. Institution: Bosch Center for Artificial Intelligence,
-    Tel Aviv University. arXiv: 2406.16093.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2406.16093v1.
 sources:
 - id: src_001
   type: paper
@@ -58,12 +53,12 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Towards Natural Language-Driven Assembly Using Foundation Models (Towards Natural Language-Driven Assembly Using Foundation Models), is a 2024 large vision-language-action model for robotic manipulation, introduced by Bosch Center for Artificial Intelligence, Tel Aviv University.
+Large Language Models (LLMs) and strong vision models have enabled rapid research and development in the field of Vision-Language-Action models that enable robotic control. The main objective of these methods is to develop a generalist policy that can control robots with various embodiments. However, in industrial robotic applications such as automated assembly and disassembly, some tasks, such as insertion, demand greater accuracy and involve intricate factors like contact engagement, friction handling, and refined motor skills. Implementing these skills using a generalist policy is challenging because these policies might integrate further sensory data, including force or torque measurements, for enhanced precision. In our method, we present a global control policy based on LLMs that can transfer the control policy to a finite set of skills that are specifically trained to perform high-precision tasks through dynamic context switching. The integration of LLMs into this framework underscores their significance in not only interpreting and processing language inputs but also in enriching the control mechanisms for diverse and intricate robotic operations.
 
-## Overview
-Towards Natural Language-Driven Assembly Using Foundation Models (Towards Natural Language-Driven Assembly Using Foundation Models), is a 2024 large vision-language-action model for robotic manipulation, introduced by Bosch Center for Artificial Intelligence, Tel Aviv University.
+## 核心内容
+Large Language Models (LLMs) and strong vision models have enabled rapid research and development in the field of Vision-Language-Action models that enable robotic control. The main objective of these methods is to develop a generalist policy that can control robots with various embodiments. However, in industrial robotic applications such as automated assembly and disassembly, some tasks, such as insertion, demand greater accuracy and involve intricate factors like contact engagement, friction handling, and refined motor skills. Implementing these skills using a generalist policy is challenging because these policies might integrate further sensory data, including force or torque measurements, for enhanced precision. In our method, we present a global control policy based on LLMs that can transfer the control policy to a finite set of skills that are specifically trained to perform high-precision tasks through dynamic context switching. The integration of LLMs into this framework underscores their significance in not only interpreting and processing language inputs but also in enriching the control mechanisms for diverse and intricate robotic operations.
 
-## 개요
-Towards Natural Language-Driven Assembly Using Foundation Models (Towards Natural Language-Driven Assembly Using Foundation Models), is a 2024 large vision-language-action model for robotic manipulation, introduced by Bosch Center for Artificial Intelligence, Tel Aviv University.
+## 参考
+- http://arxiv.org/abs/2406.16093v1
+

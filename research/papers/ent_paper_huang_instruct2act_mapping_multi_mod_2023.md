@@ -4,27 +4,19 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large
-    Language Model'
+  en: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model'
   zh: Instruct2Act
-  ko: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large
-    Language Model'
+  ko: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model'
 summary:
-  en: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large
-    Language Model (Instruct2Act), is a 2023 generalized vision-language-action model
-    for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai
-    AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University
-    of Hong Kong.'
-  zh: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large
-    Language Model (Instruct2Act), is a 2023 generalized vision-language-action model
-    for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai
-    AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University
-    of Hong Kong.'
-  ko: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large
-    Language Model (Instruct2Act), is a 2023 generalized vision-language-action model
-    for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai
-    AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University
-    of Hong Kong.'
+  en: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model (Instruct2Act), is a
+    2023 generalized vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai
+    AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University of Hong Kong.'
+  zh: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model (Instruct2Act), is a
+    2023 generalized vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai
+    AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University of Hong Kong.'
+  ko: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model (Instruct2Act), is a
+    2023 generalized vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai
+    AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University of Hong Kong.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -44,16 +36,13 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: Instruct2Act. Institution:
-    Shanghai Jiao Tong University, Shanghai AI Laboratory, PKU, University of Chinese
-    Academy of Sciences, The Chinese University of Hong Kong. arXiv: 2305.11176.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2305.11176v3.
 sources:
 - id: src_001
   type: paper
-  title: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with
-    Large Language Model (arXiv)'
+  title: 'Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model (arXiv)'
   url: https://arxiv.org/abs/2305.11176
   date: '2023'
   accessed_at: '2026-07-01'
@@ -64,12 +53,12 @@ sources:
   date: '2023'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model (Instruct2Act), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University of Hong Kong.
+Foundation models have made significant strides in various applications, including text-to-image generation, panoptic segmentation, and natural language processing. This paper presents Instruct2Act, a framework that utilizes Large Language Models to map multi-modal instructions to sequential actions for robotic manipulation tasks. Specifically, Instruct2Act employs the LLM model to generate Python programs that constitute a comprehensive perception, planning, and action loop for robotic tasks. In the perception section, pre-defined APIs are used to access multiple foundation models where the Segment Anything Model (SAM) accurately locates candidate objects, and CLIP classifies them. In this way, the framework leverages the expertise of foundation models and robotic abilities to convert complex high-level instructions into precise policy codes. Our approach is adjustable and flexible in accommodating various instruction modalities and input types and catering to specific task demands. We validated the practicality and efficiency of our approach by assessing it on robotic tasks in different scenarios within tabletop manipulation domains. Furthermore, our zero-shot method outperformed many state-of-the-art learning-based policies in several tasks. The code for our proposed approach is available at https://github.com/OpenGVLab/Instruct2Act, serving as a robust benchmark for high-level robotic instruction tasks with assorted modality inputs.
 
-## Overview
-Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model (Instruct2Act), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University of Hong Kong.
+## 核心内容
+Foundation models have made significant strides in various applications, including text-to-image generation, panoptic segmentation, and natural language processing. This paper presents Instruct2Act, a framework that utilizes Large Language Models to map multi-modal instructions to sequential actions for robotic manipulation tasks. Specifically, Instruct2Act employs the LLM model to generate Python programs that constitute a comprehensive perception, planning, and action loop for robotic tasks. In the perception section, pre-defined APIs are used to access multiple foundation models where the Segment Anything Model (SAM) accurately locates candidate objects, and CLIP classifies them. In this way, the framework leverages the expertise of foundation models and robotic abilities to convert complex high-level instructions into precise policy codes. Our approach is adjustable and flexible in accommodating various instruction modalities and input types and catering to specific task demands. We validated the practicality and efficiency of our approach by assessing it on robotic tasks in different scenarios within tabletop manipulation domains. Furthermore, our zero-shot method outperformed many state-of-the-art learning-based policies in several tasks. The code for our proposed approach is available at https://github.com/OpenGVLab/Instruct2Act, serving as a robust benchmark for high-level robotic instruction tasks with assorted modality inputs.
 
-## 개요
-Instruct2Act: Mapping Multi-modality Instructions to Robotic Actions with Large Language Model (Instruct2Act), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Shanghai Jiao Tong University, Shanghai AI Laboratory, PKU, University of Chinese Academy of Sciences, The Chinese University of Hong Kong.
+## 参考
+- http://arxiv.org/abs/2305.11176v3
+

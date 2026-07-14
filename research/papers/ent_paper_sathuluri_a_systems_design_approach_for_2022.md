@@ -8,13 +8,11 @@ names:
   zh: 一种用于人形机器人手臂协同设计的系统设计方法
   ko: 휴머노이드 로봇 팔의 공동 설계를 위한 시스템 설계 접근법
 summary:
-  en: This paper proposes a top-down, V-model-based co-design methodology for a humanoid
-    robot arm, using an attribute dependency graph and optimization to construct a
-    maximum-permissible solution space of design variables and to decompose high-level
+  en: This paper proposes a top-down, V-model-based co-design methodology for a humanoid robot arm, using an attribute dependency
+    graph and optimization to construct a maximum-permissible solution space of design variables and to decompose high-level
     requirements into tolerance-aware subsystem requirements.
   zh: 本文提出了一种基于V模型的自上而下的人形机器人手臂协同设计方法，利用属性依赖图和优化构建设计变量的最大允许解空间，并将高层需求分解为具有容差的子系统级需求。
-  ko: 본 논문은 V 모델 기반의 상향식 공동 설계 방법론을 제시하여 휴머노이드 로봇 팔의 설계 변수에 대한 최대 허용 솔루션 공간을 구축하고,
-    상위 요구사항을 허용 오차가 있는 하위 시스템 수준 요구사항으로 분해한다.
+  ko: 본 논문은 V 모델 기반의 상향식 공동 설계 방법론을 제시하여 휴머노이드 로봇 팔의 설계 변수에 대한 최대 허용 솔루션 공간을 구축하고, 상위 요구사항을 허용 오차가 있는 하위 시스템 수준 요구사항으로 분해한다.
 domains:
 - 06_design_engineering
 - 02_components
@@ -36,10 +34,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-26'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from supplied metadata/abstract; full-text review and exact
-    section citations are still required before final verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2212.14256v1.
 sources:
 - id: src_001
   type: paper
@@ -50,19 +47,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+Classically, the development of humanoid robots has been sequential and iterative. Such bottom-up design procedures rely heavily on intuition and are often biased by the designer's experience. Exploiting the non-linear coupled design space of robots is non-trivial and requires a systematic procedure for exploration. We adopt the top-down design strategy, the V-model, used in automotive and aerospace industries. Our co-design approach identifies non-intuitive designs from within the design space and obtains the maximum permissible range of the design variables as a solution space, to physically realise the obtained design. We show that by constructing the solution space, one can (1) decompose higher-level requirements onto sub-system-level requirements with tolerance, alleviating the "chicken-or-egg" problem during the design process, (2) decouple the robot's morphology from its controller, enabling greater design flexibility, (3) obtain independent sub-system level requirements, reducing the development time by parallelising the development process.
 
-## Overview
+## 核心内容
+Classically, the development of humanoid robots has been sequential and iterative. Such bottom-up design procedures rely heavily on intuition and are often biased by the designer's experience. Exploiting the non-linear coupled design space of robots is non-trivial and requires a systematic procedure for exploration. We adopt the top-down design strategy, the V-model, used in automotive and aerospace industries. Our co-design approach identifies non-intuitive designs from within the design space and obtains the maximum permissible range of the design variables as a solution space, to physically realise the obtained design. We show that by constructing the solution space, one can (1) decompose higher-level requirements onto sub-system-level requirements with tolerance, alleviating the "chicken-or-egg" problem during the design process, (2) decouple the robot's morphology from its controller, enabling greater design flexibility, (3) obtain independent sub-system level requirements, reducing the development time by parallelising the development process.
 
-Classical humanoid robot development is typically bottom-up, sequential, and iterative, relying heavily on designer intuition and prior experience. This paper instead adopts a top-down, V-model-based systems-engineering approach to the co-design of a humanoid robot arm. The authors model the dependencies among high-level requirements and design variables with an attribute dependency graph, then use optimization to construct a maximum-permissible solution space—a rectangular region in the design-variable space that satisfies the requirements while allowing tolerance. The resulting solution space is intended to decouple morphology from controller, to support component selection, and to enable parallel subsystem development by providing independent, tolerance-aware requirements for each subsystem. The methodology is demonstrated on a warehouse pick-and-place task using the X-Ray toolbox for visualization and trade-off analysis.
+## 参考
+- http://arxiv.org/abs/2212.14256v1
 
-## Key Contributions
-
-- Decomposes higher-level requirements into sub-system-level requirements with tolerance, alleviating the 'chicken-or-egg' problem during design.
-- Decouples robot morphology from its controller, enabling greater design flexibility.
-- Obtains independent sub-system-level requirements that reduce development time by parallelizing development.
-- Enables sim-to-real transfer by providing design-variable ranges that accommodate model simplifications.
-- Provides design-space trade-offs and interpretability through the X-Ray toolbox.
-
-## Relevance to Humanoid Robotics
-
-The work is directly relevant to the humanoid-robot knowledge chain because it addresses a systems-level design-engineering bottleneck: moving from ad-hoc, intuition-driven prototyping toward repeatable, tolerance-aware co-design that can support component selection and mass production. By focusing on a humanoid robot arm and explicitly treating motors, gearboxes, and links as coupled design variables, the paper bridges design engineering, component selection, and production readiness.

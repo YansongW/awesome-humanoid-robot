@@ -8,11 +8,17 @@ names:
   zh: 足球任务里，视觉和动作是同一件事
   ko: Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots
 summary:
-  en: Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots is a knowledge
-    node related to paper in the humanoid robot value chain.
-  zh: ''
-  ko: Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots is a knowledge
-    node related to paper in the humanoid robot value chain.
+  en: Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots is a knowledge node related to paper in the humanoid
+    robot value chain.
+  zh: Humanoid soccer poses a representative challenge for embodied intelligence, requiring robots to operate within a tightly
+    coupled perception-action loop. However, existing systems typically rely on decoupled modules, resulting in delayed responses
+    and incoherent behaviors in dynamic environments, while real-world perceptual limitations further exacerbate these issues.
+    In this work, we present a unified reinforcement learning-based controller that enables humanoid robots to acquire reactive
+    soccer skills through the direct integration of visual perception and motion control. Our approach extends Adversarial
+    Motion Priors to perceptual settings in real-world dynamic environments, bridging motion imitation and visually grounded
+    dynamic control. We introduce an encoder-decoder architecture comb
+  ko: Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots is a knowledge node related to paper in the humanoid
+    robot value chain.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -31,10 +37,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from WeChat curated list (026). Institution: 清华大学；字节跳动 Seed；中国农业大学.
-    arXiv: 2511.03996.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2511.03996v1.
 sources:
 - id: src_001
   type: paper
@@ -51,12 +56,12 @@ sources:
 theoretical_depth:
 - system
 ---
-
 ## 概述
-Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots is a knowledge node related to paper in the humanoid robot value chain.
+Humanoid soccer poses a representative challenge for embodied intelligence, requiring robots to operate within a tightly coupled perception-action loop. However, existing systems typically rely on decoupled modules, resulting in delayed responses and incoherent behaviors in dynamic environments, while real-world perceptual limitations further exacerbate these issues. In this work, we present a unified reinforcement learning-based controller that enables humanoid robots to acquire reactive soccer skills through the direct integration of visual perception and motion control. Our approach extends Adversarial Motion Priors to perceptual settings in real-world dynamic environments, bridging motion imitation and visually grounded dynamic control. We introduce an encoder-decoder architecture combined with a virtual perception system that models real-world visual characteristics, allowing the policy to recover privileged states from imperfect observations and establish active coordination between perception and action. The resulting controller demonstrates strong reactivity, consistently executing coherent and robust soccer behaviors across various scenarios, including real RoboCup matches.
 
-## Overview
-Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots is a knowledge node related to paper in the humanoid robot value chain.
+## 核心内容
+Humanoid soccer poses a representative challenge for embodied intelligence, requiring robots to operate within a tightly coupled perception-action loop. However, existing systems typically rely on decoupled modules, resulting in delayed responses and incoherent behaviors in dynamic environments, while real-world perceptual limitations further exacerbate these issues. In this work, we present a unified reinforcement learning-based controller that enables humanoid robots to acquire reactive soccer skills through the direct integration of visual perception and motion control. Our approach extends Adversarial Motion Priors to perceptual settings in real-world dynamic environments, bridging motion imitation and visually grounded dynamic control. We introduce an encoder-decoder architecture combined with a virtual perception system that models real-world visual characteristics, allowing the policy to recover privileged states from imperfect observations and establish active coordination between perception and action. The resulting controller demonstrates strong reactivity, consistently executing coherent and robust soccer behaviors across various scenarios, including real RoboCup matches.
 
-## 개요
-Learning Vision-Driven Reactive Soccer Skills for Humanoid Robots is a knowledge node related to paper in the humanoid robot value chain.
+## 参考
+- http://arxiv.org/abs/2511.03996v1
+

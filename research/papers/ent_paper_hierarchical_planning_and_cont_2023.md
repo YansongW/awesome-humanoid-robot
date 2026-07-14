@@ -8,12 +8,12 @@ names:
   zh: Hierarchical Planning and Control for Box Loco-Manipulation
   ko: Hierarchical Planning and Control for Box Loco-Manipulation
 summary:
-  en: Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on
-    physics-based character animation for humanoid robots.
-  zh: Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on
-    physics-based character animation for humanoid robots.
-  ko: Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on
-    physics-based character animation for humanoid robots.
+  en: Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based character animation for
+    humanoid robots.
+  zh: Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based character animation for
+    humanoid robots.
+  ko: Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based character animation for
+    humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -31,10 +31,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Physics-Based
-    Character Animation. arXiv: 2306.09532.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2306.09532v2.
 sources:
 - id: src_001
   type: paper
@@ -43,12 +42,12 @@ sources:
   date: '2023'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based character animation for humanoid robots.
+Humans perform everyday tasks using a combination of locomotion and manipulation skills. Building a system that can handle both skills is essential to creating virtual humans. We present a physically-simulated human capable of solving box rearrangement tasks, which requires a combination of both skills. We propose a hierarchical control architecture, where each level solves the task at a different level of abstraction, and the result is a physics-based simulated virtual human capable of rearranging boxes in a cluttered environment. The control architecture integrates a planner, diffusion models, and physics-based motion imitation of sparse motion clips using deep reinforcement learning. Boxes can vary in size, weight, shape, and placement height. Code and trained control policies are provided.
 
-## Overview
-Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based character animation for humanoid robots.
+## 核心内容
+Humans perform everyday tasks using a combination of locomotion and manipulation skills. Building a system that can handle both skills is essential to creating virtual humans. We present a physically-simulated human capable of solving box rearrangement tasks, which requires a combination of both skills. We propose a hierarchical control architecture, where each level solves the task at a different level of abstraction, and the result is a physics-based simulated virtual human capable of rearranging boxes in a cluttered environment. The control architecture integrates a planner, diffusion models, and physics-based motion imitation of sparse motion clips using deep reinforcement learning. Boxes can vary in size, weight, shape, and placement height. Code and trained control policies are provided.
 
-## 개요
-Hierarchical Planning and Control for Box Loco-Manipulation is a 2023 work on physics-based character animation for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2306.09532v2
+

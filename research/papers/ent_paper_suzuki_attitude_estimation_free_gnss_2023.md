@@ -8,13 +8,11 @@ names:
   zh: 无需姿态估计的GNSS/IMU融合定位
   ko: 자세 추정 없는 GNSS/IMU 통합 위치 추정
 summary:
-  en: Proposes an optimization-based GNSS/IMU integration method that avoids attitude
-    estimation by using acceleration-magnitude and velocity-vector angular-change
-    constraints, reducing calibration sensitivity and improving robustness to multipath
+  en: Proposes an optimization-based GNSS/IMU integration method that avoids attitude estimation by using acceleration-magnitude
+    and velocity-vector angular-change constraints, reducing calibration sensitivity and improving robustness to multipath
     and GNSS outages.
   zh: 提出了一种基于优化的GNSS/IMU融合定位方法，仅利用加速度计幅值与速度矢量角度变化约束来避免姿态估计，从而降低对IMU安装标定的敏感性，并提升多路径与GNSS中断时的鲁棒性。
-  ko: 가속도계 크기와 속도 벡터 각도 변화 제약만을 사용하여 자세 추정 없이 GNSS/IMU를 융합하는 최적화 기반 위치 추정 방법을 제안하여
-    IMU 장착 오차에 둔감하고 다중경로·GNSS 단절에 강건함을 보였다.
+  ko: 가속도계 크기와 속도 벡터 각도 변화 제약만을 사용하여 자세 추정 없이 GNSS/IMU를 융합하는 최적화 기반 위치 추정 방법을 제안하여 IMU 장착 오차에 둔감하고 다중경로·GNSS 단절에 강건함을 보였다.
 domains:
 - 07_ai_models_algorithms
 - 02_components
@@ -36,10 +34,9 @@ tags:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-06-28'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: AI-extracted from provided metadata and abstract; requires human review of
-    the full paper before verification.
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2304.10142v2.
 sources:
 - id: src_001
   type: paper
@@ -50,25 +47,12 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+A global navigation satellite system (GNSS) is a sensor that can acquire 3D position and velocity in an earth-fixed coordinate system and is widely used for outdoor position estimation of robots and vehicles. Various GNSS/inertial measurement unit (IMU) integration methods have been proposed to improve the accuracy and availability of GNSS positioning. However, all these methods require the addition of a 3D attitude to the estimated state to fuse the IMU data. In this study, we propose a new optimization-based positioning method for combining GNSS and IMU that does not require attitude estimation. The proposed method uses two types of constraints: one is a constraint between states using only the magnitude of the 3D acceleration observed by an accelerometer, and the other is a constraint on the angle between the velocity vectors using the angular change measured by a gyroscope. The evaluation results with the simulation data show that the proposed method maintains the position estimation accuracy even when the IMU mounting position error increases and improves the accuracy when the GNSS observations contain multipath errors or missing data. The proposed method could improve positioning accuracy in experiments using IMUs acquired in real environments.
 
-## Overview
+## 核心内容
+A global navigation satellite system (GNSS) is a sensor that can acquire 3D position and velocity in an earth-fixed coordinate system and is widely used for outdoor position estimation of robots and vehicles. Various GNSS/inertial measurement unit (IMU) integration methods have been proposed to improve the accuracy and availability of GNSS positioning. However, all these methods require the addition of a 3D attitude to the estimated state to fuse the IMU data. In this study, we propose a new optimization-based positioning method for combining GNSS and IMU that does not require attitude estimation. The proposed method uses two types of constraints: one is a constraint between states using only the magnitude of the 3D acceleration observed by an accelerometer, and the other is a constraint on the angle between the velocity vectors using the angular change measured by a gyroscope. The evaluation results with the simulation data show that the proposed method maintains the position estimation accuracy even when the IMU mounting position error increases and improves the accuracy when the GNSS observations contain multipath errors or missing data. The proposed method could improve positioning accuracy in experiments using IMUs acquired in real environments.
 
-Global navigation satellite systems (GNSS) provide 3D position and velocity in an earth-fixed frame and are widely used for outdoor localization of robots and vehicles. Existing GNSS/inertial measurement unit (IMU) integration techniques generally augment the estimated state with a 3D attitude in order to fuse IMU measurements, which increases calibration demands and can degrade accuracy when the IMU mounting angle or position is imperfect.
+## 参考
+- http://arxiv.org/abs/2304.10142v2
 
-This paper proposes an optimization-based positioning method that combines GNSS and IMU without estimating attitude. The approach introduces two attitude-independent constraints in a factor-graph framework: an acceleration-magnitude factor derived from 3D accelerometer readings, and an angular-velocity factor that constrains the angle between successive velocity vectors. By removing attitude from the state vector, the method reduces state dimension and computation time while becoming insensitive to IMU mounting-angle errors.
-
-Evaluation on MATLAB-generated simulation trajectories based on the Google Smartphone Decimeter Challenge shows that the proposed method preserves positioning accuracy as IMU mounting-position error grows and improves accuracy when GNSS observations contain multipath errors or short outages. Real-world experiments using smartphone GNSS/IMU data collected in driving environments further demonstrate that the reduced-state approach achieves comparable accuracy to conventional 6-DOF pose estimation while running faster and requiring less calibration.
-
-## Key Contributions
-
-- Introduced an IMU constraint that avoids attitude estimation, making GNSS/IMU integration independent of IMU mounting angle and position.
-- Developed a factor-graph formulation with acceleration magnitude and angular-velocity factors, reducing state dimension and computation time.
-- Demonstrated robustness to IMU mounting-position errors through simulation experiments.
-- Showed improved position accuracy under multipath and short GNSS outages in both simulation and real-world smartphone driving tests.
-- Validated that the reduced-state method achieves comparable accuracy to conventional 6-DOF pose estimation while being faster and less sensitive to calibration errors.
-
-## Relevance to Humanoid Robotics
-
-Humanoid robots deployed outdoors for logistics, inspection, or service require reliable localization in challenging environments where GNSS signals may be reflected or temporarily obstructed. This method reduces the sensor calibration overhead associated with precise IMU mounting-angle and position estimation, supporting scalable deployment where IMUs may be placed in varying positions and orientations on the robot body.
-
-By fusing GNSS with IMU without attitude estimation, the approach offers a lightweight and robust localization option for outdoor humanoid platforms, particularly in scenarios with multipath, short GNSS outages, or hardware configurations where tight IMU-to-body calibration is impractical.

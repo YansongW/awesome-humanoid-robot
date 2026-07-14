@@ -8,15 +8,12 @@ names:
   zh: LoHoVLA
   ko: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks'
 summary:
-  en: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks
-    (LoHoVLA), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.'
-  zh: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks
-    (LoHoVLA), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.'
-  ko: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks
-    (LoHoVLA), is a 2025 large vision-language-action model for robotic manipulation,
-    introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.'
+  en: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks (LoHoVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.'
+  zh: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks (LoHoVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.'
+  ko: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks (LoHoVLA), is a 2025 large vision-language-action
+    model for robotic manipulation, introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -36,15 +33,13 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: LoHoVLA. Institution: Fudan
-    University, ShanghaiTech University, Shanghai Jiao Tong University. arXiv: 2506.00411.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.00411v1.
 sources:
 - id: src_001
   type: paper
-  title: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied
-    Tasks (arXiv)'
+  title: 'LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks (arXiv)'
   url: https://arxiv.org/abs/2506.00411
   date: '2025'
   accessed_at: '2026-07-01'
@@ -55,12 +50,12 @@ sources:
   date: '2025'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks (LoHoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.
+Real-world embodied agents face long-horizon tasks, characterized by high-level goals demanding multi-step solutions beyond single actions. Successfully navigating these requires both high-level task planning (i.e., decomposing goals into sub-tasks) and low-level motion control (i.e., generating precise robot actions). While existing vision language action (VLA) models and hierarchical architectures offer potential in embodied tasks, the former often falter in planning, and the latter can suffer from coordination issues, both hampering performance. We introduce a new unified VLA framework for long-horizon tasks, dubbed LoHoVLA, to overcome these limitations. LoHoVLA leverages a large pretrained vision language model (VLM) as the backbone to jointly generate language and action tokens for sub-task generation and robot action prediction, respectively. This shared representation promotes better generalization across tasks. Additionally, LoHoVLA embraces a hierarchical closed-loop control mechanism to mitigate errors originating from both high-level planning and low-level control. To train LoHoVLA, we introduce LoHoSet, a dataset built on the Ravens simulator, containing 20 long-horizon tasks, each with 1,000 expert demonstrations composed of visual observations, linguistic goals, sub-tasks, and robot actions. Experimental results show that LoHoVLA significantly surpasses both hierarchical and standard VLA approaches on long-horizon embodied tasks in the Ravens simulator. These findings underscore the promise of unified architectures for advancing generalizable embodied intelligence.
 
-## Overview
-LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks (LoHoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.
+## 核心内容
+Real-world embodied agents face long-horizon tasks, characterized by high-level goals demanding multi-step solutions beyond single actions. Successfully navigating these requires both high-level task planning (i.e., decomposing goals into sub-tasks) and low-level motion control (i.e., generating precise robot actions). While existing vision language action (VLA) models and hierarchical architectures offer potential in embodied tasks, the former often falter in planning, and the latter can suffer from coordination issues, both hampering performance. We introduce a new unified VLA framework for long-horizon tasks, dubbed LoHoVLA, to overcome these limitations. LoHoVLA leverages a large pretrained vision language model (VLM) as the backbone to jointly generate language and action tokens for sub-task generation and robot action prediction, respectively. This shared representation promotes better generalization across tasks. Additionally, LoHoVLA embraces a hierarchical closed-loop control mechanism to mitigate errors originating from both high-level planning and low-level control. To train LoHoVLA, we introduce LoHoSet, a dataset built on the Ravens simulator, containing 20 long-horizon tasks, each with 1,000 expert demonstrations composed of visual observations, linguistic goals, sub-tasks, and robot actions. Experimental results show that LoHoVLA significantly surpasses both hierarchical and standard VLA approaches on long-horizon embodied tasks in the Ravens simulator. These findings underscore the promise of unified architectures for advancing generalizable embodied intelligence.
 
-## 개요
-LoHoVLA: A Unified Vision-Language-Action Model for Long-Horizon Embodied Tasks (LoHoVLA), is a 2025 large vision-language-action model for robotic manipulation, introduced by Fudan University, ShanghaiTech University, Shanghai Jiao Tong University.
+## 参考
+- http://arxiv.org/abs/2506.00411v1
+

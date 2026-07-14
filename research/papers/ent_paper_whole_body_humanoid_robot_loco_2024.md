@@ -8,12 +8,9 @@ names:
   zh: Whole-body Humanoid Robot Locomotion with Human Reference
   ko: Whole-body Humanoid Robot Locomotion with Human Reference
 summary:
-  en: Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on
-    locomotion for humanoid robots.
-  zh: Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on
-    locomotion for humanoid robots.
-  ko: Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on
-    locomotion for humanoid robots.
+  en: Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid robots.
+  zh: Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid robots.
+  ko: Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid robots.
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -30,10 +27,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-Humanoid-Robot-Learning curated list. Category: Locomotion.
-    arXiv: 2402.18294.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2402.18294v4.
 sources:
 - id: src_001
   type: paper
@@ -48,12 +44,12 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid robots.
+Recently, humanoid robots have made significant advances in their ability to perform challenging tasks due to the deployment of Reinforcement Learning (RL), however, the inherent complexity of humanoid robots, including the difficulty of designing complicated reward functions and training entire sophisticated systems, still poses a notable challenge. To conquer these challenges, after many iterations and in-depth investigations, we have meticulously developed a full-size humanoid robot, "Adam", whose innovative structural design greatly improves the efficiency and effectiveness of the imitation learning process. In addition, we have developed a novel imitation learning framework based on an adversarial motion prior, which applies not only to Adam but also to humanoid robots in general. Using the framework, Adam can exhibit unprecedented human-like characteristics in locomotion tasks. Our experimental results demonstrate that the proposed framework enables Adam to achieve human-comparable performance in complex locomotion tasks, marking the first time that human locomotion data has been used for imitation learning in a full-size humanoid robot.
 
-## Overview
-Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid robots.
+## 核心内容
+Recently, humanoid robots have made significant advances in their ability to perform challenging tasks due to the deployment of Reinforcement Learning (RL), however, the inherent complexity of humanoid robots, including the difficulty of designing complicated reward functions and training entire sophisticated systems, still poses a notable challenge. To conquer these challenges, after many iterations and in-depth investigations, we have meticulously developed a full-size humanoid robot, "Adam", whose innovative structural design greatly improves the efficiency and effectiveness of the imitation learning process. In addition, we have developed a novel imitation learning framework based on an adversarial motion prior, which applies not only to Adam but also to humanoid robots in general. Using the framework, Adam can exhibit unprecedented human-like characteristics in locomotion tasks. Our experimental results demonstrate that the proposed framework enables Adam to achieve human-comparable performance in complex locomotion tasks, marking the first time that human locomotion data has been used for imitation learning in a full-size humanoid robot.
 
-## 개요
-Whole-body Humanoid Robot Locomotion with Human Reference is a 2024 work on locomotion for humanoid robots.
+## 参考
+- http://arxiv.org/abs/2402.18294v4
+
