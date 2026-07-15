@@ -8,7 +8,11 @@ names:
   zh: Thor｜在强烈接触的环境中实现人类水平的全身反应
   ko: 'Thor: Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments'
 summary:
-  en: ''
+  en: Thor converts camera images/multi-view observations, body state and joint sequences, contact force/tactile signals into
+    trackable body targets, and trains them through PPO/RL strategies, diffusion strategies/flow matching, whole-body controller/WBC/MPC
+    training, or combined whole-body strategies, ultimately outputting joint position/torque commands, whole-body trajectories/action
+    sequences, and low-level controller targets. The key point is to view action generation as a conditional generation problem
+    and use diffusion or flow matching to sample executable trajectories in a multimodal action distribution.
   zh: Thor 把相机图像/多视角观测、本体状态与关节序列、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、扩散策略/流匹配、全身控制器/WBC/MPC训练或组合全身策略，最终输出关节位置/力矩命令、全身轨迹/动作序列、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
   ko: Thor 把相机图像/多视角观测、本体状态与关节序列、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、扩散策略/流匹配、全身控制器/WBC/MPC训练或组合全身策略，最终输出关节位置/力矩命令、全身轨迹/动作序列、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
@@ -31,8 +35,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (047). Institution: . Full title: Thor:
-    Towards Human-Level Whole-Body Reactions for Intense Contact-Rich Environments.'
+  notes: 'Imported from WeChat curated list (047). Institution: . Full title: Thor: Towards Human-Level Whole-Body Reactions
+    for Intense Contact-Rich Environments. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -44,8 +48,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 Thor 把相机图像/多视角观测、本体状态与关节序列、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、扩散策略/流匹配、全身控制器/WBC/MPC训练或组合全身策略，最终输出关节位置/力矩命令、全身轨迹/动作序列、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
 ## 개요
 Thor 把相机图像/多视角观测、本体状态与关节序列、接触力/触觉信号转成可跟踪的身体目标，并通过PPO/RL 策略训练、扩散策略/流匹配、全身控制器/WBC/MPC训练或组合全身策略，最终输出关节位置/力矩命令、全身轨迹/动作序列、低层控制器目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
+

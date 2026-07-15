@@ -46,6 +46,8 @@ The project is **AI-assisted, human-verified**. We use AI4Sci pipelines to accel
 - 🗂️ **2,143 validated KG entries** and **1,063 typed relationships** covering the full stack from raw materials to market applications.
 - 🔄 **Automated CI/CD** — GitHub Actions builds and deploys the site to GitHub Pages on every push to `main`.
 - 🛡️ **Hardened deployment** — concurrency control and clean `gh-pages` branch recreation prevent race-condition failures.
+- 🧩 **Backfilled core non-paper entity bodies** — 233 critical entities now have structured Chinese bodies with 概述 / 核心内容 / 参考 sections, sourced from the Wiki where available and from entity metadata otherwise.
+- 🌏 **Machine-translated missing English names and summaries** — all process and paper entries missing `names.en` / `summary.en` have been filled via machine translation and marked for human review.
 
 ---
 
@@ -203,6 +205,7 @@ For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4
 | Wiki appendices | 7 |
 | Supported languages | en, zh, ko |
 | Validation status | ✅ passing |
+| Quality audit | 1,643 ok / 285 warning / 215 paper-body gaps |
 
 ---
 
@@ -215,7 +218,7 @@ For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4
 | **Phase 2** | Workstream-driven content population + schema/relationship evolution | ✅ Complete |
 | **Phase 2.5** | Static product website with search, graph, and Wiki | ✅ Complete |
 | **Phase 3** | Public v0.1.0 release (open source + live site) | ✅ Complete |
-| **Phase 4** | Content completeness: fill gaps, deepen foundational knowledge, expand Wiki–KG links | 🔄 In progress |
+| **Phase 4** | Content completeness: fill gaps, deepen foundational knowledge, expand Wiki–KG links | 🔄 In progress (non-paper core entities done; English translation done; paper abstract backfill remaining) |
 | **Phase 5** | Verification workflow, community contributions, v0.2.0 | ⏳ Planned |
 
 See [`docs/ai4sci/WORKSTREAM_TREE.md`](docs/ai4sci/WORKSTREAM_TREE.md) for the full workstream TODO list and [`docs/session_status.md`](docs/session_status.md) for the latest session notes.

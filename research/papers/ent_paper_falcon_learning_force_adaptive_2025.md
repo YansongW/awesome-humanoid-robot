@@ -8,7 +8,11 @@ names:
   zh: FALCON｜学习力自适应人形移动操作
   ko: 'FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation'
 summary:
-  en: ''
+  en: 'Falcon primarily addresses data closed-loop: capturing human manipulation and robot states with body states and joint
+    sequences, teleoperation/exoskeleton data, contact force/tactile signals, and data fusion, then through the whole-body
+    Controller/WBC/Mpc into trainable and reusable joint position/torque commands, whole-body trajectories/action sequences,
+    end-effectors/wrist-hand targets. The key is to put the Full-body Controller/WBC/MPC in the same training/deployment link,
+    reducing the discontinuity between high-level goals and low-level actions.'
   zh: FALCON 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过全身控制器/WBC/MPC转成可训练、可复用的关节位置/力矩命令、全身轨迹/动作序列、末端执行器/腕手目标。关键点是把全身控制器/WBC/MPC放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
   ko: FALCON 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过全身控制器/WBC/MPC转成可训练、可复用的关节位置/力矩命令、全身轨迹/动作序列、末端执行器/腕手目标。关键点是把全身控制器/WBC/MPC放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 domains:
@@ -31,8 +35,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (036). Institution: Carnegie Mellon University.
-    Full title: FALCON: Learning Force-Adaptive Humanoid Loco-Manipulation.'
+  notes: 'Imported from WeChat curated list (036). Institution: Carnegie Mellon University. Full title: FALCON: Learning Force-Adaptive
+    Humanoid Loco-Manipulation. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -44,8 +48,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 FALCON 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过全身控制器/WBC/MPC转成可训练、可复用的关节位置/力矩命令、全身轨迹/动作序列、末端执行器/腕手目标。关键点是把全身控制器/WBC/MPC放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 
 ## 개요
 FALCON 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过全身控制器/WBC/MPC转成可训练、可复用的关节位置/力矩命令、全身轨迹/动作序列、末端执行器/腕手目标。关键点是把全身控制器/WBC/MPC放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
+

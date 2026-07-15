@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: ''
+  en: Structural material selection
   zh: 结构材料选型
   ko: 结构材料选型
 summary:
-  en: ''
+  en: 'Material Selection Table: Materials, Processes, and Reasons for Each Component'
   zh: 《材料选型表》：各部件材料、工艺、原因
   ko: 《材料选型表》：各部件材料、工艺、原因
 domains:
@@ -26,7 +26,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
+    from Chinese by scripts/backfill_en_translations.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -35,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）
 
@@ -81,4 +83,5 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 

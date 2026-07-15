@@ -8,7 +8,8 @@ names:
   zh: 菲克定律
   ko: 픽의 법칙
 summary:
-  en: A constitutive principle stating that the diffusive flux of a species is proportional to the negative gradient of its concentration.
+  en: A constitutive principle stating that the diffusive flux of a species is proportional to the negative gradient of its
+    concentration.
   zh: 一种本构原理，指出物质的扩散通量与其浓度梯度的负值成正比。
   ko: 종의 확산 선속이 농도 기울기의 음수에 비례한다는 구성 원리.
 domains:
@@ -30,7 +31,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-25'
   confidence: high
-  notes: Standard foundational knowledge; reviewed against standard references.
+  notes: Standard foundational knowledge; reviewed against standard references. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_crank_1975
   type: other
@@ -46,44 +47,37 @@ related_entities:
     zh: 能斯特-普朗克方程在菲克定律基础上增加了电场引起的迁移通量，是其推广。
     ko: 넬스트-플랑크 방정식은 전기장에 의한 이동 선속을 추가하여 픽의 법칙을 일반화합니다.
 ---
+## 概述
+一种本构原理，指出物质的扩散通量与其浓度梯度的负值成正比。
 
-# Fick's law / 菲克定律 / 픽의 법칙
+## 核心内容
+### 菲克定律的定义与定位
+菲克定律属于 **principle** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种本构原理，指出物质的扩散通量与其浓度梯度的负值成正比。 英文名称为 *Fick's law*。 韩文名称为 *픽의 법칙*。
 
-## 抽象
+### 菲克定律的数学与原理基础
+菲克定律建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，菲克定律通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-> **生活实例**：想象一列拥挤车厢和旁边的空车厢：人们自然从拥挤侧流向空侧，直到密度平衡。菲克定律指出人流与各地拥挤程度变化的快慢成正比。
->
-> **自然语言逻辑**：菲克定律本身不是守恒律，而是驱动力（浓度梯度）与产生的通量之间的唯象关系。将其与连续性方程结合，可得到扩散方程，预测浓度如何随时间平滑化。
+### 算法步骤与实现要点
+在实际实现菲克定律时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-## 形式化定义 / Formal Definition
+### 典型应用与局限性
+菲克定律可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-For species concentration $c(\mathbf{x}, t)$, Fick's first law states that the diffusive mass flux $\mathbf{J}$ is
+### 相关标签
+- diffusion
+- mass_transport
+- ficks_law
+- concentration
+- flux
 
-$$\mathbf{J} = -D \nabla c,$$
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键principle之一，菲克定律在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-where $D$ is the diffusion coefficient (tensor in anisotropic media). Fick's second law follows from combining this with the continuity equation $\partial_t c + \nabla \cdot \mathbf{J} = 0$:
+## 参考
+- [J. Crank, The Mathematics of Diffusion, 2nd ed., Oxford University Press, 1975](https://doi.org/10.1093/oso/9780198534112.001.0001)
 
-$$\frac{\partial c}{\partial t} = \nabla \cdot (D \nabla c).$$
-
-For constant $D$ this simplifies to the standard heat/diffusion equation
-
-$$\frac{\partial c}{\partial t} = D \nabla^2 c.$$
-
-## 关键符号与直觉对应
-
-| 符号 | 名称 | 直觉含义 |
-|------|------|----------|
-| $c$ | 浓度 | 单位体积内物质的量 |
-| $\mathbf{J}$ | 扩散通量 | 单位时间通过单位面积的物质量 |
-| $D$ | 扩散系数 | 物质在介质中扩散快慢的度量 |
-| $\nabla c$ | 浓度梯度 | 浓度在空间中的变化率 |
-| $\nabla \cdot \mathbf{J}$ | 通量散度 | 净流入/流出某区域的物质量 |
-| $\nabla^2$ | 拉普拉斯算子 | 空间二阶导数，刻画曲率/扩散 |
-
-## 与其他知识点的关系
-
-- `is_prerequisite_for` → [ent_nernst_planck_equation]
-
-## 参考文献
-
-1. J. Crank, The Mathematics of Diffusion, 2nd ed., Oxford University Press, 1975

@@ -8,11 +8,15 @@ names:
   zh: Psi0｜面向通用人形移动操作的开放基础模型
   ko: '$\Psi_0$: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation'
 summary:
-  en: ''
-  zh: Psi0 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用异构动捕与合成平衡数据、VLM 语义规划/路由、潜变量/动作
-    token预测动作 chunk/token。关键点是把异构动捕与合成平衡数据、VLM 语义规划/路由放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
-  ko: Psi0 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用异构动捕与合成平衡数据、VLM 语义规划/路由、潜变量/动作
-    token预测动作 chunk/token。关键点是把异构动捕与合成平衡数据、VLM 语义规划/路由放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
+  en: The implementation path of PSI0 is to encode language instructions, camera images/multi-view observations, ontological
+    states, and joint sequences into multimodal representations, then, heterogeneous dynamic capture and synthesis balance
+    data, VLM semantic planning/routing, latent variable/action token are used to predict action chunk/token. The key point
+    is to put heterogeneous dynamic capture and synthesis balance data, VLM semantic planning/routing in the same training/deployment
+    link, and reduce the breakpoints between high-level targets and low-level actions.
+  zh: Psi0 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用异构动捕与合成平衡数据、VLM 语义规划/路由、潜变量/动作 token预测动作 chunk/token。关键点是把异构动捕与合成平衡数据、VLM
+    语义规划/路由放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
+  ko: Psi0 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用异构动捕与合成平衡数据、VLM 语义规划/路由、潜变量/动作 token预测动作 chunk/token。关键点是把异构动捕与合成平衡数据、VLM
+    语义规划/路由放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -32,8 +36,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (156). Institution: NVIDIA. Full title:
-    $\Psi_0$: An Open Foundation Model Towards Universal Humanoid Loco-Manipulation.'
+  notes: 'Imported from WeChat curated list (156). Institution: NVIDIA. Full title: $\Psi_0$: An Open Foundation Model Towards
+    Universal Humanoid Loco-Manipulation. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -45,8 +49,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 Psi0 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用异构动捕与合成平衡数据、VLM 语义规划/路由、潜变量/动作 token预测动作 chunk/token。关键点是把异构动捕与合成平衡数据、VLM 语义规划/路由放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 
 ## 개요
 Psi0 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用异构动捕与合成平衡数据、VLM 语义规划/路由、潜变量/动作 token预测动作 chunk/token。关键点是把异构动捕与合成平衡数据、VLM 语义规划/路由放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
+

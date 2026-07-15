@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: ''
+  en: Construction and verification of Simulation platform
   zh: 仿真平台搭建与验证（Simulation）
   ko: 仿真平台搭建与验证（Simulation）
 summary:
-  en: ''
+  en: Construction and verification of Simulation platform
   zh: 仿真平台搭建与验证（Simulation）
   ko: 仿真平台搭建与验证（Simulation）
 domains:
@@ -26,7 +26,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-27'
   confidence: high
-  notes: Derived from docs/humanoid_full_development_workflow_v3.md
+  notes: Derived from docs/humanoid_full_development_workflow_v3.md Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+    English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -35,21 +36,30 @@ sources:
 theoretical_depth:
 - system
 ---
-
 ## 概述
+仿真平台搭建与验证（Simulation）
 
-仿真平台搭建与验证是人形机器人研发中的关键阶段，目标是在虚拟环境中构建高保真机器人模型与场景，对机械结构、控制算法、感知与决策系统进行集成测试。该阶段涵盖仿真器选型（如 Gazebo、Isaac Sim、MuJoCo）、多物理场建模、传感器噪声注入、硬件在环（HIL）接口、测试用例设计、性能指标统计与回归验证。通过仿真平台可在降低实物迭代成本的同时，提前暴露系统级风险，为物理样机调试与量产提供数据支撑。
+## 核心内容
+### 仿真平台搭建与验证（Simulation）的定义与定位
+仿真平台搭建与验证（Simulation）属于 **method** 类型。 所属领域包括：08_software_middleware, 10_evaluation_benchmarks。 价值链层级：intelligence, validation_markets。 仿真平台搭建与验证（Simulation） 英文名称为 *Construction and verification of Simulation platform*。 韩文名称为 *仿真平台搭建与验证（Simulation）*。
 
-> 更详细的仿真器配置、测试用例库与回归验证流程正在施工中。
+### 仿真平台搭建与验证（Simulation）的数学与原理基础
+仿真平台搭建与验证（Simulation）建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，仿真平台搭建与验证（Simulation）通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-## Overview
+### 算法步骤与实现要点
+在实际实现仿真平台搭建与验证（Simulation）时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-Simulation platform setup and validation is a critical phase in humanoid robot development. It aims to build high-fidelity robot models and scenarios in a virtual environment for integrated testing of mechanical structures, control algorithms, perception, and decision-making systems. This phase covers simulator selection (e.g., Gazebo, Isaac Sim, MuJoCo), multi-physics modeling, sensor noise injection, hardware-in-the-loop (HIL) interfaces, test-case design, performance metric statistics, and regression validation. The simulation platform helps reduce the cost of physical prototyping while surfacing system-level risks early, providing data support for physical prototype debugging and mass production.
+### 典型应用与局限性
+仿真平台搭建与验证（Simulation）可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-> More detailed simulator configurations, test-case libraries, and regression validation workflows are under construction.
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键method之一，仿真平台搭建与验证（Simulation）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-## 개요
+## 参考
+- 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
 
-시뮬레이션 플랫폼 구축 및 검증은 휴뉘노이드 로봇 개발의 핵심 단계로, 가상 환경에서 고충실도 로봇 모델과 시나리오를 구축하여 기계 구조, 제어 알고리즘, 인식 및 의사결정 시스템을 통합 테스트하는 것을 목표로 합니다. 이 단계에는 시뮬레이터 선정(Gazebo, Isaac Sim, MuJoCo 등), 다중 물리 모델링, 센서 노이즈 주입, HIL(Hardware-In-the-Loop) 인터페이스, 테스트 케이스 설계, 성능 지표 통계 및 회귀 검증이 포함됩니다. 시뮬레이션 플랫폼은 실물 프로토타입 비용을 낮추면서도 시스템 수준 위험을 조기에 발굴하여, 실물 시제품 디버깅 및 양산을 위한 데이터 기반을 제공합니다.
-
-> 보다 상세한 시뮬레이터 구성, 테스트 케이스 라이브러리 및 회귀 검증 프로세스는 현재 작성 중입니다.

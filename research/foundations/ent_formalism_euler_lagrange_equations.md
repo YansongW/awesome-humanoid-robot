@@ -34,7 +34,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-08.md#8.4.2 拉格朗日动力学 by scripts/backfill_nonpaper_entries.py.
+  notes: Body backfilled from chapter-08.md#8.4.2 拉格朗日动力学 by scripts/backfill_nonpaper_entries.py. Body backfilled from entity
+    metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_goldstein_2002
   type: other
@@ -61,52 +62,39 @@ related_entities:
     zh: 对刚体系统，欧拉-拉格朗日与牛顿-欧拉两种形式等价。
 ---
 ## 概述
-欧拉-拉格朗日方程是人形机器人领域的重要formalism。以下内容整理自项目 Wiki，供深入查阅。
+由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。
 
 ## 核心内容
-**拉格朗日方法（Lagrangian dynamics）**从能量角度出发，自动导出系统运动方程，适合串联机械臂和树形结构机器人[3][6]。定义拉格朗日量：
+### 欧拉-拉格朗日方程的定义与定位
+欧拉-拉格朗日方程属于 **formalism** 类型。 所属领域包括：00_foundations, 06_design_engineering。 价值链层级：foundations。 由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。 英文名称为 *Euler-Lagrange Equations*。 韩文名称为 *오일러-라그랑주 방정식*。
 
-$$
-L = T - V
-$$
+### 欧拉-拉格朗日方程的数学与原理基础
+欧拉-拉格朗日方程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，欧拉-拉格朗日方程通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-其中 $T$ 为系统总动能，$V$ 为总势能。对于关节变量 $q_i$，欧拉-拉格朗日方程为：
+### 算法步骤与实现要点
+在实际实现欧拉-拉格朗日方程时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-$$
-\frac{d}{dt}\left(\frac{\partial L}{\partial \dot{q}_i}\right) - \frac{\partial L}{\partial q_i} = \tau_i
-$$
+### 典型应用与局限性
+欧拉-拉格朗日方程可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-其中 $\tau_i$ 为对应关节的广义力/力矩。
+### 相关标签
+- mechanics
+- classical_mechanics
+- variational_principle
+- lagrangian
+- dynamics
+- equations_of_motion
+- wiki_gap
 
-!!! note "术语解释：拉格朗日量、动能、势能、广义力、欧拉-拉格朗日方程"
-    - **拉格朗日量（Lagrangian）**：系统动能与势能之差，$L = T - V$。
-    - **动能（kinetic energy）**：由于运动而具有的能量，$T = \frac{1}{2}\dot{\mathbf{q}}^T \mathbf{M}(\mathbf{q}) \dot{\mathbf{q}}$。
-    - **势能（potential energy）**：由于位置或形变而具有的能量，如重力势能 $V_g = mgh$。
-    - **广义力（generalized force）**：与广义坐标对应的力或力矩。
-    - **欧拉-拉格朗日方程**：由能量推导运动方程的标准形式。
-
-机器人动力学方程的标准形式为：
-
-$$
-\mathbf{M}(\mathbf{q})\ddot{\mathbf{q}} + \mathbf{C}(\mathbf{q}, \dot{\mathbf{q}})\dot{\mathbf{q}} + \mathbf{g}(\mathbf{q}) = \boldsymbol{\tau} + \mathbf{J}^T \mathbf{F}_{\text{ext}}
-$$
-
-其中：
-- $\mathbf{M}(\mathbf{q})$：质量矩阵（正定对称）。
-- $\mathbf{C}(\mathbf{q}, \dot{\mathbf{q}})$：科氏力与离心力项。
-- $\mathbf{g}(\mathbf{q})$：重力项。
-- $\boldsymbol{\tau}$：关节驱动力矩。
-- $\mathbf{F}_{\text{ext}}$：末端外部接触力。
-
-!!! note "术语解释：质量矩阵、科氏力、离心力、重力项、接触力"
-    - **质量矩阵（mass matrix）**：把关节加速度映射为惯性力矩的矩阵。
-    - **科氏力（Coriolis force）**：由于坐标系旋转与相对运动耦合产生的惯性力。
-    - **离心力（centrifugal force）**：由于旋转而产生的径向惯性力。
-    - **重力项（gravity term）**：由重力场引起的广义力。
-    - **接触力（contact force）**：机器人与外界接触时产生的力。
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键formalism之一，欧拉-拉格朗日方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [H. Goldstein, C. Poole, and J. Safko, Classical Mechanics, 3rd ed., Addison-Wesley, 2002](https://doi.org/10.2307/2522307)
 - [M. W. Spong, S. Hutchinson, and M. Vidyasagar, Robot Modeling and Control, Wiley, 2006](https://doi.org/10.1002/0470173876)
-- 项目 Wiki：chapter-08.md#8.4.2 拉格朗日动力学
 

@@ -8,7 +8,11 @@ names:
   zh: HumanoidMimicGen｜通过全身规划进行移动操作的数据生成
   ko: 'HumanoidMimicGen: Data Generation for Loco-Manipulation via Whole-Body Planning'
 summary:
-  en: ''
+  en: 'HumanoidMimicGen primarily addresses data closure: acquiring human and robot states using camera images/multi-view
+    observations, ontology states and joint sequences, and teleoperation/exoskeleton data, which are then converted into trainable
+    and reusable whole-body trajectories/action sequences through ACT/behavioral cloning imitation learning and hierarchical
+    skills/expert strategies. The key is to break down tasks into routable skills or expert strategies, which are then selected
+    and combined in execution using high-level modules.'
   zh: HumanoidMimicGen 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
   ko: HumanoidMimicGen 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
@@ -31,9 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (068). Institution: NVIDIA、The University
-    of Texas at Austin. Full title: HumanoidMimicGen: Data Generation for Loco-Manipulation
-    via Whole-Body Planning.'
+  notes: 'Imported from WeChat curated list (068). Institution: NVIDIA、The University of Texas at Austin. Full title: HumanoidMimicGen:
+    Data Generation for Loco-Manipulation via Whole-Body Planning. English name/summary machine-translated from Chinese by
+    scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -45,8 +49,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 HumanoidMimicGen 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
 ## 개요
 HumanoidMimicGen 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
+

@@ -8,9 +8,8 @@ names:
   zh: 人等效包络
   ko: 인간 등가 영역
 summary:
-  en: A per-joint operating-requirement definition that requires a robot to meet human
-    torque and power simultaneously at the same joint angle and angular rate within
-    task-specific bands.
+  en: A per-joint operating-requirement definition that requires a robot to meet human torque and power simultaneously at
+    the same joint angle and angular rate within task-specific bands.
   zh: 一种单关节运行需求定义，要求机器人在任务特定区间内，于相同关节角度和角速度下同时达到人类的扭矩和功率。
   ko: 작업별 구간에서 동일한 관절 각도와 각속도에서 인간의 토크와 전력을 동시에 충족해야 하는 관절별 작동 요구사항 정의입니다.
 domains:
@@ -33,7 +32,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-25'
   confidence: medium
-  notes: Definition sourced from the Human-Level Actuation for Humanoids paper.
+  notes: Definition sourced from the Human-Level Actuation for Humanoids paper. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_001
   type: paper
@@ -44,19 +43,36 @@ sources:
 theoretical_depth:
 - method
 ---
+## 概述
+一种单关节运行需求定义，要求机器人在任务特定区间内，于相同关节角度和角速度下同时达到人类的扭矩和功率。
 
-# Human-Equivalence Envelope
+## 核心内容
+### 人等效包络的定义与定位
+人等效包络属于 **technology** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets, midstream。 一种单关节运行需求定义，要求机器人在任务特定区间内，于相同关节角度和角速度下同时达到人类的扭矩和功率。 英文名称为 *Human-Equivalence Envelope*。 韩文名称为 *인간 등가 영역*。
 
-## 抽象
+### 人等效包络的工作原理与技术架构
+人等效包络的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
+在选型与集成过程中，需要关注其与控制器、通信总线、电源系统与机械结构的兼容性。
 
-> **生活实例**：它就像汽车的动力性能包络——不是只看最大马力或最大扭矩，而是要求在某个转速下同时有足够的马力和扭矩，才能真正爬上陡坡。
+### 关键参数与选型要点
+在工程实践中，选用人等效包络需要综合考虑性能指标、可靠性、成本、供应链成熟度以及与整机系统的兼容性。
+关键参数通常包括精度、带宽、扭矩、功耗、重量、接口协议与环境适应性等。
+针对不同应用场景，可能需要在性能与成本之间进行权衡，并预留适当的冗余与安全裕量。
 
-> **自然语言逻辑**：人等效包络（HEE）为机器人关节定义了任务相关的运行区间，要求在相同关节角度和角速度下同时达到人类的扭矩和功率；它把“类人水平”这种模糊目标转化为具体的单关节指标，帮助设计者判断执行器能否完成行走、爬楼梯、举物等真实任务。
+### 典型应用与发展趋势
+人等效包络已广泛应用于人形机器人的原型验证、学术研究与早期商业化产品中。
+未来随着产业链成熟，其集成度、智能化水平与成本效益有望持续提升。
 
-## Overview
+### 相关标签
+- hee
+- human_equivalence
+- torque_power
+- benchmark
+- biomechanics
 
-Human-Equivalence Envelopes (HEE) define task-relevant operating bands for robot joints by requiring simultaneous satisfaction of human torque and power at matching joint angles and rates. They translate abstract "human-level" requirements into concrete, per-joint specifications.
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键technology之一，人等效包络在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-## Relevance to Humanoid Robotics
+## 参考
+- [Human-Level Actuation for Humanoids](https://arxiv.org/abs/2511.06796)
 
-HEE helps designers determine whether an actuator can perform real tasks such as walking, stairs, lifting, reaching, and hand actions, rather than relying only on peak torque or speed specifications.

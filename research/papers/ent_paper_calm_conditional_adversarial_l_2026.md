@@ -8,11 +8,12 @@ names:
   zh: 条件对抗潜变量模型：可控虚拟角色
   ko: 'CALM: Conditional Adversarial Latent Models for Directable Virtual Characters'
 summary:
-  en: ''
-  zh: 'CALM: Conditional Adversarial Latent Models for Directable Virtual Characters
-    is a paper on 技能组合 for humanoid robotics. 条件对抗潜变量模型：可控虚拟角色.'
-  ko: 'CALM: Conditional Adversarial Latent Models for Directable Virtual Characters
-    is a paper on 技能组合 for humanoid robotics. 条件对抗潜变量模型：可控虚拟角色.'
+  en: 'CALM: Conditional Adversarial Latent Models for Directory Virtual Characters is a paper on skill sets for humanoid
+    robots.  Conditional adversarial latent variable model: controllable virtual characters.'
+  zh: 'CALM: Conditional Adversarial Latent Models for Directable Virtual Characters is a paper on 技能组合 for humanoid robotics.
+    条件对抗潜变量模型：可控虚拟角色.'
+  ko: 'CALM: Conditional Adversarial Latent Models for Directable Virtual Characters is a paper on 技能组合 for humanoid robotics.
+    条件对抗潜变量模型：可控虚拟角色.'
 domains:
 - 07_ai_models_algorithms
 layers:
@@ -32,9 +33,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: low
-  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder:
-    papers/01_Foundational_RL/CALM_Conditional_Adversarial_Latent_Models_for_Directable_Virtual_Characters.
-    Route: 技能组合.'
+  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder: papers/01_Foundational_RL/CALM_Conditional_Adversarial_Latent_Models_for_Directable_Virtual_Characters.
+    Route: 技能组合. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -44,8 +44,10 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+
 ## 概述
 CALM: Conditional Adversarial Latent Models for Directable Virtual Characters is a paper on 技能组合 for humanoid robotics. 条件对抗潜变量模型：可控虚拟角色.
 
 ## 개요
 CALM: Conditional Adversarial Latent Models for Directable Virtual Characters is a paper on 技能组合 for humanoid robotics. 条件对抗潜变量模型：可控虚拟角色.
+

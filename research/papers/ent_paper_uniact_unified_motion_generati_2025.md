@@ -8,7 +8,10 @@ names:
   zh: UniAct｜人形机器人的统一运动生成和动作流
   ko: 'UniAct: Unified Motion Generation and Action Streaming for Humanoid Robots'
 summary:
-  en: ''
+  en: UniAct converts language instructions into trackable body targets and trains or combines whole-body policies through
+    policy networks and control modules, ultimately outputting whole-body trajectories/action sequences and low-level controller
+    targets. The key point is to put the policy network and control modules in the same training/deployment chain to reduce
+    the breakpoints between high-level goals and low-level actions.
   zh: UniAct 把语言指令转成可跟踪的身体目标，并通过策略网络和控制模块训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把策略网络和控制模块放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
   ko: UniAct 把语言指令转成可跟踪的身体目标，并通过策略网络和控制模块训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把策略网络和控制模块放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 domains:
@@ -32,11 +35,10 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (023). Institution: Institute for AI,
-    Peking University、Beijing Institute for General Artificial Intelligence (BIGAI)、School
-    of Psychological and Cognitive Sciences, Peking University、School of Computer
-    Science, Peking University. Full title: UniAct: Unified Motion Generation and
-    Action Streaming for Humanoid Robots.'
+  notes: 'Imported from WeChat curated list (023). Institution: Institute for AI, Peking University、Beijing Institute for
+    General Artificial Intelligence (BIGAI)、School of Psychological and Cognitive Sciences, Peking University、School of Computer
+    Science, Peking University. Full title: UniAct: Unified Motion Generation and Action Streaming for Humanoid Robots. English
+    name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -48,8 +50,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 UniAct 把语言指令转成可跟踪的身体目标，并通过策略网络和控制模块训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把策略网络和控制模块放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 
 ## 개요
 UniAct 把语言指令转成可跟踪的身体目标，并通过策略网络和控制模块训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把策略网络和控制模块放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
+

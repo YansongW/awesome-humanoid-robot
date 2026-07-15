@@ -8,7 +8,12 @@ names:
   zh: 人形机器人富有表现力的全身控制
   ko: Expressive Whole-Body Control for Humanoid Robots
 summary:
-  en: ''
+  en: This work transforms ontology state and joint sequences, human video/motion capture trajectories, and simulation interaction
+    data into trackable body objects, which can be used to track human motion, through heterogeneous dynamic capture and synthetic
+    balance data, PPO/RL Strategy Training, ACT/behavior clone imitation learning training or combined whole-body strategy,
+    the whole-body trajectory/action sequence and low-level controller target are finally output. The key point is to compress
+    the demonstration trajectory into a supervised action prediction problem, and then reduce timing jitter through action
+    chunk or closed-loop execution.
   zh: 这篇工作把本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据转成可跟踪的身体目标，并通过异构动捕与合成平衡数据、PPO/RL 策略训练、ACT/行为克隆模仿学习训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作
     chunk 或闭环执行降低时序抖动。
   ko: 这篇工作把本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据转成可跟踪的身体目标，并通过异构动捕与合成平衡数据、PPO/RL 策略训练、ACT/行为克隆模仿学习训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作
@@ -33,8 +38,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (026). Institution: UC San Diego. Full
-    title: Expressive Whole-Body Control for Humanoid Robots.'
+  notes: 'Imported from WeChat curated list (026). Institution: UC San Diego. Full title: Expressive Whole-Body Control for
+    Humanoid Robots. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -46,8 +51,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 这篇工作把本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据转成可跟踪的身体目标，并通过异构动捕与合成平衡数据、PPO/RL 策略训练、ACT/行为克隆模仿学习训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作 chunk 或闭环执行降低时序抖动。
 
 ## 개요
 这篇工作把本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据转成可跟踪的身体目标，并通过异构动捕与合成平衡数据、PPO/RL 策略训练、ACT/行为克隆模仿学习训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作 chunk 或闭环执行降低时序抖动。
+

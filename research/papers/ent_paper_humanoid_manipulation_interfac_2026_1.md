@@ -4,13 +4,15 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free
-    Demonstrations'
+  en: 'Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations'
   zh: 人形操作接口｜基于机器人无关示范的人形全身操作
-  ko: 'Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free
-    Demonstrations'
+  ko: 'Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations'
 summary:
-  en: ''
+  en: 'This work mainly addresses the data closed loop: collecting human operations and robot states using camera images/multi-view
+    observations, human videos/kinetach trajectories, teleoperation/exoskeleton data, and then converting them into trainable
+    and reusable whole-body trajectory/action sequences through PPO/RL strategy training and hierarchical skills/expert strategies.
+    The key is to break down tasks into routable skills or expert strategies, which are then selected and combined in execution
+    using high-level modules.'
   zh: 这篇工作主要解决数据闭环：用相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
   ko: 这篇工作主要解决数据闭环：用相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
@@ -32,9 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (084). Institution: ∗Equal contribution、Tsinghua
-    University、Shanghai Qi Zhi Institute、Spirit.AI. Full title: Humanoid Manipulation
-    Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations.'
+  notes: 'Imported from WeChat curated list (084). Institution: ∗Equal contribution、Tsinghua University、Shanghai Qi Zhi Institute、Spirit.AI.
+    Full title: Humanoid Manipulation Interface: Humanoid Whole-Body Manipulation from Robot-Free Demonstrations. English
+    name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -46,8 +48,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 这篇工作主要解决数据闭环：用相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
 ## 개요
 这篇工作主要解决数据闭环：用相机图像/多视角观测、人类视频/动捕轨迹、遥操作/外骨骼数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
+

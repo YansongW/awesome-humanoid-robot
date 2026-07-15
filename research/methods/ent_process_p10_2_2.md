@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: ''
+  en: Gait Planning and Terrain Adaptation
   zh: 步态规划与地形适应
   ko: 步态规划与地形适应
 summary:
-  en: ''
+  en: Data on level-ground, sloped, and obstacle-crossing walking, as well as speed and energy consumption, meet the PRD requirements.
   zh: 平地/斜坡/障碍行走数据、速度/能耗满足 PRD
   ko: 平地/斜坡/障碍行走数据、速度/能耗满足 PRD
 domains:
@@ -26,7 +26,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
+    from Chinese by scripts/backfill_en_translations.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -35,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）
 
@@ -81,4 +83,5 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 

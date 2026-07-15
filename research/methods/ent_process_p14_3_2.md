@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: ''
+  en: Hardware/software in the loop testing (HIL/SIL)
   zh: 软硬件在环测试（HIL/SIL）
   ko: 软硬件在环测试（HIL/SIL）
 summary:
-  en: ''
+  en: HIL/SIL test reports, 100% coverage of key use cases
   zh: HIL/SIL 测试报告、关键用例 100% 覆盖
   ko: HIL/SIL 测试报告、关键用例 100% 覆盖
 domains:
@@ -24,7 +24,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
+    from Chinese by scripts/backfill_en_translations.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -33,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）
 
@@ -79,4 +81,5 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 

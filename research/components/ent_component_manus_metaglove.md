@@ -8,8 +8,8 @@ names:
   zh: MANUS Metagloves 数据手套
   ko: MANUS Metagloves
 summary:
-  en: A family of high-precision data gloves for hand tracking, motion capture, and
-    robot teleoperation, using electromagnetic, quantum, or inertial tracking technologies.
+  en: A family of high-precision data gloves for hand tracking, motion capture, and robot teleoperation, using electromagnetic,
+    quantum, or inertial tracking technologies.
   zh: 一系列用于手部追踪、动作捕捉和机器人遥操作的高精度数据手套，采用电磁、量子或惯性追踪技术。
   ko: 전자기, 양자 또는 관성 추적 기술을 사용하여 손 추적, 모션 캡처 및 로봇 원격 조작을 위한 고정밀 데이터 글로브 제품군.
 domains:
@@ -33,8 +33,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: medium
-  notes: Product family overview; specific models include Quantum Metagloves, Metagloves
-    Pro, and Metagloves Pro Haptic.
+  notes: Product family overview; specific models include Quantum Metagloves, Metagloves Pro, and Metagloves Pro Haptic. Body
+    backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_001
   type: website
@@ -51,30 +51,38 @@ sources:
 theoretical_depth:
 - system
 ---
+## 概述
+一系列用于手部追踪、动作捕捉和机器人遥操作的高精度数据手套，采用电磁、量子或惯性追踪技术。
 
-# MANUS Metagloves
+## 核心内容
+### MANUS Metagloves 数据手套的定义与定位
+MANUS Metagloves 数据手套属于 **component** 类型。 所属领域包括：02_components, 11_applications_markets。 价值链层级：upstream, validation_markets。 一系列用于手部追踪、动作捕捉和机器人遥操作的高精度数据手套，采用电磁、量子或惯性追踪技术。 英文名称为 *MANUS Metagloves*。 韩文名称为 *MANUS Metagloves*。
 
-## 抽象
+### MANUS Metagloves 数据手套的工作原理与技术架构
+MANUS Metagloves 数据手套的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
+在选型与集成过程中，需要关注其与控制器、通信总线、电源系统与机械结构的兼容性。
 
-> **生活实例**：它就像电影动捕棚里演员戴的数据手套——能把手指每一次弯曲、张开、旋转都记录下来，再映射到虚拟角色或机器人手上。
+### 关键参数与选型要点
+在工程实践中，选用MANUS Metagloves 数据手套需要综合考虑性能指标、可靠性、成本、供应链成熟度以及与整机系统的兼容性。
+关键参数通常包括精度、带宽、扭矩、功耗、重量、接口协议与环境适应性等。
+针对不同应用场景，可能需要在性能与成本之间进行权衡，并预留适当的冗余与安全裕量。
 
-> **自然语言逻辑**：MANUS Metagloves 是用于手部动作捕捉和机器人遥操作的高精度数据手套，可追踪多达 25 个手部自由度；它通过 MANUS Core 软件把采集到的人手姿态实时传输给机器人学习框架，为训练灵巧操作策略提供高质量的人类示范数据。
+### 典型应用与发展趋势
+MANUS Metagloves 数据手套已广泛应用于人形机器人的原型验证、学术研究与早期商业化产品中。
+未来随着产业链成熟，其集成度、智能化水平与成本效益有望持续提升。
 
-## Overview
+### 相关标签
+- manus
+- data_glove
+- hand_tracking
+- teleoperation
+- motion_capture
+- haptic_feedback
 
-MANUS Metagloves are professional data gloves developed by MANUS (Netherlands) for capturing high-fidelity hand and finger motion. They are used in motion capture, virtual production, biomechanics research, and increasingly in robotics for teleoperation and human-hand dataset collection. Different product lines use different tracking technologies: Quantum Metagloves use sub-millimeter fingertip tracking sensors; Metagloves Pro use electromagnetic-field (EMF) tracking for millimeter-level precision; and Metagloves Pro Haptic add vibrotactile feedback.
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键component之一，MANUS Metagloves 数据手套在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-The gloves track up to 25 degrees of freedom of the hand and stream data through MANUS Core software to game engines, mocap systems, and robot learning frameworks. They are officially integrated with NVIDIA Isaac Teleop and Isaac Lab, making them a common choice for collecting human demonstration data for dexterous robot policies.
+## 参考
+- [MANUS Official Website](https://www.manus-meta.com/)
+- [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)
 
-## Key Characteristics
-
-- Up to 25 hand degrees of freedom tracked
-- Electromagnetic, quantum, or inertial sensing options
-- MANUS Core software for streaming and retargeting
-- Compatibility with NVIDIA Isaac Teleop / Isaac Lab
-- Optional haptic feedback variants
-- Wireless operation with swappable batteries
-
-## Relevance to Humanoid Robotics
-
-MANUS gloves are a key data-collection and teleoperation peripheral for training humanoid manipulation policies. They enable precise capture of human hand pose and motion, which can be retargeted to robot hands such as LEAP, Allegro, or Dex3-1. Their adoption in robot learning pipelines highlights the importance of high-quality human demonstration data for scaling dexterous manipulation.

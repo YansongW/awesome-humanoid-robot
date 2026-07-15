@@ -8,7 +8,11 @@ names:
   zh: VisualMimic｜通过运动跟踪和生成进行视觉人形移动操作
   ko: 'VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking and Generation'
 summary:
-  en: ''
+  en: VisualMimic first recovers scene, target, or motion representations from camera images/multi-view observations, ontology
+    states and joint sequences, human videos/motion capture trajectories, and then generates executable action commands using
+    teacher-student knowledge transfer and whole-body controllers/WBCs/MPCs. The key point is to train teacher strategies
+    with privileged information and then distill the capabilities to the point where only student strategies with deployed
+    observations can be used.
   zh: VisualMimic 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用教师-学生知识迁移、全身控制器/WBC/MPC生成可执行动作命令。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
   ko: VisualMimic 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用教师-学生知识迁移、全身控制器/WBC/MPC生成可执行动作命令。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
 domains:
@@ -31,9 +35,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (082). Institution: Stanford University.
-    Full title: VisualMimic: Visual Humanoid Loco-Manipulation via Motion Tracking
-    and Generation.'
+  notes: 'Imported from WeChat curated list (082). Institution: Stanford University. Full title: VisualMimic: Visual Humanoid
+    Loco-Manipulation via Motion Tracking and Generation. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -45,8 +48,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 VisualMimic 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用教师-学生知识迁移、全身控制器/WBC/MPC生成可执行动作命令。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
 
 ## 개요
 VisualMimic 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用教师-学生知识迁移、全身控制器/WBC/MPC生成可执行动作命令。关键点是用特权信息训练教师策略，再把能力蒸馏到只能使用部署观测的学生策略。
+

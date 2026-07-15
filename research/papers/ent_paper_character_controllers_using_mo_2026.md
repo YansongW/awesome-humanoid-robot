@@ -8,7 +8,7 @@ names:
   zh: Character Controllers using Motion VAEs
   ko: Character Controllers using Motion VAEs
 summary:
-  en: ''
+  en: Character Controllers using Motion VAEs is a paper on physics simulation animation for humanoid robotics.
   zh: Character Controllers using Motion VAEs is a paper on 物理仿真动画 for humanoid robotics.
   ko: Character Controllers using Motion VAEs is a paper on 物理仿真动画 for humanoid robotics.
 domains:
@@ -30,8 +30,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: low
-  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder:
-    papers/13_Physics-Based_Animation/MotionVAE. Route: 物理仿真动画.'
+  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder: papers/13_Physics-Based_Animation/MotionVAE.
+    Route: 物理仿真动画. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -41,6 +41,7 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+
 ## 概述
 Character Controllers using Motion VAEs is a paper on 物理仿真动画 for humanoid robotics.
 
@@ -49,3 +50,4 @@ Character Controllers using Motion VAEs is a paper on 物理仿真动画 for hum
 
 ## 개요
 Character Controllers using Motion VAEs is a paper on 物理仿真动画 for humanoid robotics.
+

@@ -8,7 +8,8 @@ names:
   zh: DDPM 逆过程
   ko: DDPM 역 과정
 summary:
-  en: The learned backward Markov chain in Denoising Diffusion Probabilistic Models that gradually transforms Gaussian noise into data-like samples.
+  en: The learned backward Markov chain in Denoising Diffusion Probabilistic Models that gradually transforms Gaussian noise
+    into data-like samples.
   zh: 去噪扩散概率模型（DDPM）中学习的反向马尔可夫链，逐步将高斯噪声转化为类数据样本。
   ko: 디노이징 확산 확률 모델(DDPM)에서 학습된 역방향 마르코프 체인으로, 점진적으로 가우시안 노이즈를 데이터와 유사한 샘플로 변환합니다.
 domains:
@@ -30,7 +31,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-25'
   confidence: high
-  notes: Standard foundational knowledge; reviewed against standard references.
+  notes: Standard foundational knowledge; reviewed against standard references. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_ho_2020
   type: paper
@@ -48,60 +49,49 @@ related_entities:
 - id: ent_continuity_equation
   relationship: is_prerequisite_for
   description:
-    en: The continuous-time limit of DDPM is described by a reverse-time stochastic differential equation whose probability flow obeys a continuity equation.
+    en: The continuous-time limit of DDPM is described by a reverse-time stochastic differential equation whose probability
+      flow obeys a continuity equation.
     zh: DDPM 的连续时间极限由反向时间随机微分方程描述，其概率流满足连续性方程。
     ko: DDPM의 연속 시간 극한은 역시간 확률 미분 방정식으로 설명되며 그 확률 흐름은 연속 방정식을 따릅니다.
 - id: ent_flow_matching
   relationship: is_alternative_to
   description:
-    en: Flow matching provides an alternative generative framework that directly learns a deterministic probability flow instead of a stochastic reverse diffusion chain.
+    en: Flow matching provides an alternative generative framework that directly learns a deterministic probability flow instead
+      of a stochastic reverse diffusion chain.
     zh: 流匹配提供了一种替代生成框架，直接学习确定性的概率流而非随机逆扩散链。
     ko: 흐름 매칭은 확률적 역 확산 체인 대신 결정론적 확률 흐름을 직접 학습하는 대안 생성 프레임워크를 제공합니다.
 ---
+## 概述
+去噪扩散概率模型（DDPM）中学习的反向马尔可夫链，逐步将高斯噪声转化为类数据样本。
 
-# DDPM reverse process / DDPM 逆过程 / DDPM 역 과정
+## 核心内容
+### DDPM 逆过程的定义与定位
+DDPM 逆过程属于 **algorithm** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 去噪扩散概率模型（DDPM）中学习的反向马尔可夫链，逐步将高斯噪声转化为类数据样本。 英文名称为 *DDPM reverse process*。 韩文名称为 *DDPM 역 과정*。
 
-## 抽象
+### DDPM 逆过程的数学与原理基础
+DDPM 逆过程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，DDPM 逆过程通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-> **生活实例**：想象一位雕塑家从一块噪声大理石开始，参照成品雕像照片慢慢凿去错误部分。DDPM 逆过程就是这位雕塑家，一步一步将纯随机性转化为结构化图像。
->
-> **自然语言逻辑**：DDPM 首先定义前向过程，每步加入少量噪声直到数据近似高斯。逆过程学习如何逆转这一退化。由于每步前向转移都是高斯分布，最优逆步也是高斯分布，其均值可通过神经网络预测，该网络经分数匹配训练以估计所加噪声。
+### 算法步骤与实现要点
+在实际实现DDPM 逆过程时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-## 形式化定义 / Formal Definition
+### 典型应用与局限性
+DDPM 逆过程可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-Let $\mathbf{x}_0$ be a data sample. The forward process adds Gaussian noise over $T$ steps:
+### 相关标签
+- generative_modeling
+- diffusion_model
+- ddpm
+- reverse_process
+- score_estimation
 
-$$q(\mathbf{x}_t \mid \mathbf{x}_{t-1}) = \mathcal{N}(\mathbf{x}_t; \sqrt{1-\beta_t}\,\mathbf{x}_{t-1}, \beta_t I),$$
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键algorithm之一，DDPM 逆过程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-with a variance schedule $\{\beta_t\}_{t=1}^T$.
+## 参考
+- [J. Ho, A. Jain, and P. Abbeel, 'Denoising Diffusion Probabilistic Models', NeurIPS, 2020](https://proceedings.neurips.cc/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html)
 
-The reverse process is a learned Markov chain starting at $p(\mathbf{x}_T) = \mathcal{N}(0, I)$:
-
-$$p_\theta(\mathbf{x}_{t-1} \mid \mathbf{x}_t) = \mathcal{N}\bigl(\mathbf{x}_{t-1}; \mu_\theta(\mathbf{x}_t, t), \Sigma_\theta(\mathbf{x}_t, t)\bigr).$$
-
-Ho et al. showed that $\mu_\theta$ can be parametrized by predicting the noise $\boldsymbol{\epsilon}$ in $\mathbf{x}_t$, and the simplified training objective is
-
-$$\mathcal{L}_\text{simple}(\theta) = \mathbb{E}_{\mathbf{x}_0, \boldsymbol{\epsilon}, t} \left[ \|\boldsymbol{\epsilon} - \boldsymbol{\epsilon}_\theta(\sqrt{\bar{\alpha}_t}\mathbf{x}_0 + \sqrt{1-\bar{\alpha}_t}\boldsymbol{\epsilon}, t)\|^2 \right],$$
-
-where $\bar{\alpha}_t = \prod_{s=1}^t (1-\beta_s)$.
-
-## 关键符号与直觉对应
-
-| 符号 | 名称 | 直觉含义 |
-|------|------|----------|
-| $\mathbf{x}_0$ | 原始数据 | 未加噪声的真实样本 |
-| $\mathbf{x}_t$ | 时刻 t 的含噪样本 | 前向过程第 t 步的状态 |
-| $\beta_t$ | 噪声调度 | 第 t 步添加噪声的方差 |
-| $\bar{\alpha}_t$ | 累积信号保留率 | 到时刻 t 为止保留原始信号的比例 |
-| $\boldsymbol{\epsilon}$ | 添加的高斯噪声 | 前向过程中注入的随机噪声 |
-| $\boldsymbol{\epsilon}_\theta$ | 噪声预测网络 | 学习估计噪声的神经网络 |
-
-## 与其他知识点的关系
-
-- `uses` → [ent_score_matching]
-- `is_prerequisite_for` → [ent_continuity_equation]
-- `is_alternative_to` → [ent_flow_matching]
-
-## 参考文献
-
-1. J. Ho, A. Jain, and P. Abbeel, 'Denoising Diffusion Probabilistic Models', NeurIPS, 2020

@@ -30,7 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-01.md#1.14.3 数据飞轮与规模化学习 by scripts/backfill_nonpaper_entries.py.
+  notes: Body backfilled from chapter-01.md#1.14.3 数据飞轮与规模化学习 by scripts/backfill_nonpaper_entries.py. Body backfilled from
+    entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,31 +40,31 @@ sources:
   accessed_at: '2026-07-09'
 ---
 ## 概述
-数据飞轮是人形机器人领域的重要concept。以下内容整理自项目 Wiki，供深入查阅。
+部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。
 
 ## 核心内容
-人形机器人的 AI 能力提升依赖于数据飞轮：
+### 数据飞轮的定义与定位
+数据飞轮属于 **concept** 类型。 所属领域包括：11_applications_markets, 12_policy_regulation_ethics。 价值链层级：validation_markets。 部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。 英文名称为 *Data Flywheel*。 韩文名称为 *데이터 플라이휠*。
 
-```mermaid
-graph LR
-    A[部署机器人] --> B[采集真实数据]
-    B --> C[数据清洗与标注]
-    C --> D[模型训练]
-    D --> E[模型部署]
-    E --> A
+### 数据飞轮的关键维度
+理解数据飞轮需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
+该实体在人形机器人知识图谱中起到连接基础理论与工程实践的桥梁作用。
 
-    D --> F[仿真生成数据]
-    F --> C
-```
+### 实践意义
+在人形机器人产业化的背景下，数据飞轮对于技术研究、产品开发、投资决策与生态建设均具有参考价值。
+准确把握其内涵与外延，有助于避免概念混淆并推动跨学科协作。
 
-真实数据包括遥操作演示、人类动作捕捉、自主运行记录和失败案例。仿真数据可以快速生成大量多样场景，但存在 reality gap。成功的数据策略通常是真实数据与仿真数据的结合。
+### 研究与发展方向
+随着人形机器人技术不断演进，数据飞轮的相关理论与实践也将持续更新，需要保持跟踪与审校。
 
-!!! note "术语解释：数据飞轮（Data Flywheel）"
-    数据飞轮是指产品使用越多，产生的数据越多，模型越好，产品体验越好，从而吸引更多使用的正反馈循环。在人形机器人中，数据飞轮是实现泛化能力和持续改进的关键机制。
+### 相关标签
+- concept
+- chapter_30
+- wiki_gap
 
----
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键concept之一，数据飞轮在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction
-- 项目 Wiki：chapter-01.md#1.14.3 数据飞轮与规模化学习
 

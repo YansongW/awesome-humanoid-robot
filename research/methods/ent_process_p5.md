@@ -4,11 +4,12 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: ''
+  en: Ontological Structure Engineering and Prototyping (Mechanical Structure)
   zh: 本体结构工程与原型（Mechanical Structure）
   ko: 本体结构工程与原型（Mechanical Structure）
 summary:
-  en: ''
+  en: Mechanical Structure (MED)——The fifth phase of the humanoid robot product development process, covering solution design,
+    implementation verification, and documentation delivery.
   zh: 本体结构工程与原型（Mechanical Structure）——人形机器人产品开发全流程第 5 阶段，涵盖方案设计、实施验证与文档交付。
   ko: 本体结构工程与原型（Mechanical Structure）
 domains:
@@ -26,7 +27,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body populated from docs/humanoid_full_development_workflow_v3.md by scripts/backfill_process_bodies.py.
+  notes: Body populated from docs/humanoid_full_development_workflow_v3.md by scripts/backfill_process_bodies.py. English
+    name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -35,6 +37,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 本体结构工程与原型（Mechanical Structure）是人形机器人产品开发全流程中的第 5 个阶段，在 WBS V3 中展开为若干三级子任务。
 
@@ -340,4 +343,5 @@ theoretical_depth:
 
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
+
 

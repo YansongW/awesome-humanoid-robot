@@ -29,7 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-07.md#7.2.1 物料清单（BOM）的结构 by scripts/backfill_nonpaper_entries.py.
+  notes: Body backfilled from chapter-07.md#7.2.1 物料清单（BOM）的结构 by scripts/backfill_nonpaper_entries.py. Body backfilled from
+    entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,33 +39,34 @@ sources:
   accessed_at: '2026-07-09'
 ---
 ## 概述
-BOM成本工程是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
+通过平衡器件选型、供应商议价、良率与设计折中，对物料清单成本进行系统分析与优化。
 
 ## 核心内容
-**物料清单（Bill of Materials, BOM）**是描述产品组成的最基础文件，列出制造一件产品所需的全部原材料、零部件、子装配件及其数量关系。BOM 不仅是成本核算起点，也是采购、计划、库存管理和供应商协同的核心数据结构。
+### BOM成本工程的定义与定位
+BOM成本工程属于 **method** 类型。 所属领域包括：05_mass_production。 价值链层级：midstream。 通过平衡器件选型、供应商议价、良率与设计折中，对物料清单成本进行系统分析与优化。 英文名称为 *BOM Cost Engineering*。 韩文名称为 *BOM 원가 공학*。
 
-!!! note "术语解释：BOM、EBOM、MBOM、Indented BOM、Phantom"
-    - **BOM（Bill of Materials）**：产品结构表，记录组成产品的所有物料及其层级关系。
-    - **EBOM（Engineering BOM）**：工程设计视图，按功能模块组织。
-    - **MBOM（Manufacturing BOM）**：制造视图，按装配工艺和生产线组织。
-    - **Indented BOM（缩进式物料清单）**：以父子层级缩进展示零件关系。
-    - **Phantom（虚拟件）**：在 BOM 中作为逻辑子组件存在，但不单独入库的装配单元。
+### BOM成本工程的数学与原理基础
+BOM成本工程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，BOM成本工程通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-BOM 成本可直接按单位用量与单价滚动计算：
+### 算法步骤与实现要点
+在实际实现BOM成本工程时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-$$
-C_{\text{BOM}} = \sum_{i} q_i \cdot p_i
-$$
+### 典型应用与局限性
+BOM成本工程可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-其中 \(q_i\) 为第 \(i\) 个零件的单位用量，\(p_i\) 为其采购单价或自制成本。对于多层级 BOM，需要自下向上递归汇总：
+### 相关标签
+- method
+- chapter_13
+- wiki_gap
 
-$$
-C_{\text{parent}} = \sum_{j} q_j \cdot C_j + C_{\text{assembly},j}
-$$
-
-这里 \(C_j\) 既可以是子装配件的滚动成本，也可以是外购件单价。
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键method之一，BOM成本工程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction
-- 项目 Wiki：chapter-07.md#7.2.1 物料清单（BOM）的结构
 

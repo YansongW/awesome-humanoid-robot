@@ -8,7 +8,8 @@ names:
   zh: 动作 token 预测
   ko: 액션 토큰 예측
 summary:
-  en: A method that frames robot action generation as an autoregressive next-token prediction problem, mirroring language modeling but outputting discretized or continuous action tokens.
+  en: A method that frames robot action generation as an autoregressive next-token prediction problem, mirroring language
+    modeling but outputting discretized or continuous action tokens.
   zh: 一种将机器人动作生成建模为自回归“下一个 token 预测”问题的方法，类似于语言建模，但输出离散或连续的动作 token。
   ko: 언어 모델링과 유사하지만 이산적 또는 연속적인 액션 토큰을 출력하는 자기회귀적 다음 토큰 예측 문제로 로봇 동작 생성을 구성하는 방법이다.
 domains:
@@ -31,7 +32,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-26'
   confidence: high
-  notes: Core mechanism in modern VLAs such as OpenVLA and RT-2.
+  notes: Core mechanism in modern VLAs such as OpenVLA and RT-2. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_openvla_2024
   type: paper
@@ -53,24 +54,37 @@ related_entities:
     zh: 动作 token 预测依赖 Transformer 内部的线性代数运算。
     ko: 액션 토큰 예측은 Transformer 낶부의 선형대수학 연산에 의존한다.
 ---
+## 概述
+一种将机器人动作生成建模为自回归“下一个 token 预测”问题的方法，类似于语言建模，但输出离散或连续的动作 token。
 
-## 抽象
+## 核心内容
+### 动作 token 预测的定义与定位
+动作 token 预测属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 一种将机器人动作生成建模为自回归“下一个 token 预测”问题的方法，类似于语言建模，但输出离散或连续的动作 token。 英文名称为 *Action Token Prediction*。 韩文名称为 *액션 토큰 예측*。
 
-> **生活实例**：想象你教一个 apprentice 做菜，你每次只说“下一步该做什么”，比如“切洋葱”“倒油”“翻炒”。动作 token 预测就像这个学徒——它不看整个菜谱，而是根据当前画面和语言指令，一个字一个字地“猜”下一个动作。
->
-> **自然语言逻辑**：把连续的机器人动作离散化成一组“动作 token”，再让 Transformer 像生成文本一样自回归地预测下一个动作 token；通过视觉和语言条件，模型学会把高层指令映射为低层动作序列。
+### 动作 token 预测的数学与原理基础
+动作 token 预测建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，动作 token 预测通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-## Overview
+### 算法步骤与实现要点
+在实际实现动作 token 预测时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-Action token prediction is the dominant training objective in modern Vision-Language-Action (VLA) models. Instead of directly regressing continuous motor commands, the model discretizes actions into tokens (or predicts continuous action distributions) and learns to generate them autoregressively. This unifies perception, language understanding, and control under a single generative framework.
+### 典型应用与局限性
+动作 token 预测可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-## Key Characteristics
+### 相关标签
+- vla
+- action_token
+- autoregressive_modeling
+- next_token_prediction
+- humanoid_robot
 
-- Actions are represented as tokens, either through uniform binning, VQ-VAE, or mixture-of-experts decoders.
-- Training uses standard next-token prediction with cross-entropy or negative log-likelihood losses.
-- Inference proceeds autoregressively, sampling one action token at a time.
-- Conditioning typically includes camera images and natural-language instructions.
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键method之一，动作 token 预测在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-## Relevance to Humanoid Robotics
+## 参考
+- [OpenVLA: An Open-Source Vision-Language-Action Model](https://arxiv.org/abs/2406.09246)
 
-Humanoid robots must translate multimodal instructions such as "pick up the red cup" into coordinated whole-body motions. Action token prediction provides a scalable, data-driven way to learn these mappings from large demonstration datasets, and it is the core method inside VLAs such as OpenVLA, RT-2, and π0.

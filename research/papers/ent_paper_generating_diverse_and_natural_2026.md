@@ -8,11 +8,12 @@ names:
   zh: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D)
   ko: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D)
 summary:
-  en: ''
-  zh: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D)
-    is a paper on 人类运动数据 for humanoid robotics.
-  ko: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D)
-    is a paper on 人类运动数据 for humanoid robotics.
+  en: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D) is a paper on Human motion data
+    for humanoid robotics.
+  zh: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D) is a paper on 人类运动数据 for humanoid
+    robotics.
+  ko: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D) is a paper on 人类运动数据 for humanoid
+    robotics.
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -33,20 +34,21 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: low
-  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder:
-    papers/14_Human_Motion/HumanML3D. Route: 人类运动数据.'
+  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder: papers/14_Human_Motion/HumanML3D. Route:
+    人类运动数据. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
-  title: Generating Diverse and Natural 3D Human Motions from Textual Descriptions
-    (HumanML3D)
+  title: Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D)
   url: ''
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 ## 概述
 Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D) is a paper on 人类运动数据 for humanoid robotics.
 
 ## 개요
 Generating Diverse and Natural 3D Human Motions from Textual Descriptions (HumanML3D) is a paper on 人类运动数据 for humanoid robotics.
+

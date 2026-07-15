@@ -4,11 +4,12 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: ''
+  en: Dexterous Hand Selection/Design and Integration
   zh: 灵巧手选型/设计与集成（Dexterous Hand）
   ko: 灵巧手选型/设计与集成（Dexterous Hand）
 summary:
-  en: ''
+  en: Dexterous Hand Selection/Design and Integration — the 11th phase of the full-cycle humanoid robot product development
+    process, encompassing conceptual design, implementation and validation, and documentation delivery.
   zh: 灵巧手选型/设计与集成（Dexterous Hand）——人形机器人产品开发全流程第 11 阶段，涵盖方案设计、实施验证与文档交付。
   ko: 灵巧手选型/设计与集成（Dexterous Hand）
 domains:
@@ -26,7 +27,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
+    from Chinese by scripts/backfill_en_translations.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -35,6 +37,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 灵巧手选型/设计与集成（Dexterous Hand）是人形机器人产品开发全流程中的第 11 个阶段，在 WBS V3 中展开为若干三级子任务。
 ## 核心内容
@@ -242,4 +245,5 @@ theoretical_depth:
 
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
+
 

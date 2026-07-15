@@ -8,11 +8,16 @@ names:
   zh: OpenHLM｜全身人形移动操作的经验配方
   ko: 'OpenHLM: An Empirical Recipe for Whole-Body Humanoid Loco-Manipulation'
 summary:
-  en: ''
-  zh: OpenHLM 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA
-    多模态动作模型预测全身轨迹/动作序列、低层控制器目标、地形/场景表征。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
-  ko: OpenHLM 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA
-    多模态动作模型预测全身轨迹/动作序列、低层控制器目标、地形/场景表征。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
+  en: The implementation path of OpenHLM is to first encode language instructions, camera images/multi-view observations,
+    ontological states, and joint sequences into multimodal representations, which can be used as a basis for the design and
+    implementation of OpenHLM, then, the whole body trajectory/action sequence, low-level controller target, terrain/scene
+    representation were predicted by Act/behavior clone imitation learning, diffusion strategy/flow matching, VLA multimodal
+    action model. The key point is to retain the semantic understanding of VLM, while increasing the robot state and action
+    head, so as to avoid remaining in the language planning.
+  zh: OpenHLM 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测全身轨迹/动作序列、低层控制器目标、地形/场景表征。关键点是保留
+    VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
+  ko: OpenHLM 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测全身轨迹/动作序列、低层控制器目标、地形/场景表征。关键点是保留
+    VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -32,9 +37,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (154). Institution: Tsinghua University、Shanghai
-    Qi Zhi Institute、Spirit AI. Full title: OpenHLM: An Empirical Recipe for Whole-Body
-    Humanoid Loco-Manipulation.'
+  notes: 'Imported from WeChat curated list (154). Institution: Tsinghua University、Shanghai Qi Zhi Institute、Spirit AI. Full
+    title: OpenHLM: An Empirical Recipe for Whole-Body Humanoid Loco-Manipulation. English name/summary machine-translated
+    from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -46,8 +51,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 OpenHLM 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测全身轨迹/动作序列、低层控制器目标、地形/场景表征。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 
 ## 개요
 OpenHLM 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测全身轨迹/动作序列、低层控制器目标、地形/场景表征。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
+

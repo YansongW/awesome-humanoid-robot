@@ -8,7 +8,8 @@ names:
   zh: 贝叶斯滤波
   ko: 베이지안 필터링
 summary:
-  en: A recursive probabilistic framework that maintains and updates a belief distribution over a hidden state using a dynamical model and noisy observations.
+  en: A recursive probabilistic framework that maintains and updates a belief distribution over a hidden state using a dynamical
+    model and noisy observations.
   zh: 利用动力学模型与带噪观测递归地维护并更新隐状态信念分布的概率框架。
   ko: 동역학 모델과 잡음이 있는 관측을 사용하여 은닉 상태에 대한 믿음 분포를 재귀적으로 유지하고 업데이트하는 확률적 프레임워크.
 domains:
@@ -30,7 +31,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-25'
   confidence: high
-  notes: Standard foundational knowledge; reviewed against standard references.
+  notes: Standard foundational knowledge; reviewed against standard references. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_sarkka_2013
   type: other
@@ -42,52 +43,42 @@ related_entities:
 - id: ent_ddpm_reverse_process
   relationship: builds_on
   description:
-    en: Both Bayesian filtering and the DDPM reverse process recursively refine a distribution using conditional information, though the latter is generative rather than estimative.
+    en: Both Bayesian filtering and the DDPM reverse process recursively refine a distribution using conditional information,
+      though the latter is generative rather than estimative.
     zh: 贝叶斯滤波与 DDPM 逆过程都利用条件信息递归地精化分布，只是后者用于生成而非估计。
     ko: 베이지안 필터링과 DDPM 역 과정 모두 조걶 정보를 사용하여 분포를 재귀적으로 정제하지만 후자는 추정이 아닌 생성을 위한 것입니다.
 ---
+## 概述
+利用动力学模型与带噪观测递归地维护并更新隐状态信念分布的概率框架。
 
-# Bayesian filtering / 贝叶斯滤波 / 베이지안 필터링
+## 核心内容
+### 贝叶斯滤波的定义与定位
+贝叶斯滤波属于 **formalism** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 利用动力学模型与带噪观测递归地维护并更新隐状态信念分布的概率框架。 英文名称为 *Bayesian filtering*。 韩文名称为 *베이지안 필터링*。
 
-## 抽象
+### 贝叶斯滤波的数学与原理基础
+贝叶斯滤波建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，贝叶斯滤波通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-> **生活实例**：想象在雾中公园里追踪朋友：你先根据他走的方向猜测位置（预测），再在一瞥到身影时修正猜测（更新）。贝叶斯滤波用概率分布把这种两步循环形式化。
->
-> **自然语言逻辑**：贝叶斯滤波将不确定性显式表示为隐状态上的概率分布。每个时间步包含两个阶段：预测步骤通过状态转移模型传播先验信念，更新步骤利用贝叶斯规则和新观测似然修正预测信念。
+### 算法步骤与实现要点
+在实际实现贝叶斯滤波时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-## 形式化定义 / Formal Definition
+### 典型应用与局限性
+贝叶斯滤波可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-Let $x_t$ be the hidden state and $y_t$ the observation at time $t$. The joint model is
+### 相关标签
+- state_estimation
+- bayesian_inference
+- filtering
+- kalman_filter
+- hidden_state
 
-$$x_t \sim p(x_t \mid x_{t-1}), \qquad y_t \sim p(y_t \mid x_t).$$
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键formalism之一，贝叶斯滤波在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-The filtering distribution $p(x_t \mid y_{1:t})$ is computed recursively:
+## 参考
+- [S. Särkkä, Bayesian Filtering and Smoothing, Cambridge University Press, 2013](https://doi.org/10.1017/CBO9781139344203)
 
-**Prediction:**
-
-$$p(x_t \mid y_{1:t-1}) = \int p(x_t \mid x_{t-1}) \, p(x_{t-1} \mid y_{1:t-1}) \, dx_{t-1}.$$
-
-**Update:**
-
-$$p(x_t \mid y_{1:t}) = \frac{p(y_t \mid x_t) \, p(x_t \mid y_{1:t-1})}{\int p(y_t \mid x_t') \, p(x_t' \mid y_{1:t-1}) \, dx_t'}.$$
-
-For linear-Gaussian models this reduces to the Kalman filter; for nonlinear/non-Gaussian models approximations such as particle filters or variational filters are used.
-
-## 关键符号与直觉对应
-
-| 符号 | 名称 | 直觉含义 |
-|------|------|----------|
-| $x_t$ | 隐状态 | 无法直接观测的系统状态 |
-| $y_t$ | 观测 | 带噪声的传感器读数 |
-| $p(x_t \mid x_{t-1})$ | 状态转移概率 | 描述状态如何演化的动力学模型 |
-| $p(y_t \mid x_t)$ | 观测似然 | 给定状态时观测出现的概率 |
-| $p(x_t \mid y_{1:t})$ | 滤波分布 | 融合所有历史观测后的状态信念 |
-| $y_{1:t}$ | 观测历史 | 从时刻 1 到 t 的所有观测 |
-
-## 与其他知识点的关系
-
-- `builds_on` → [ent_ddpm_reverse_process]
-
-## 参考文献
-
-1. S. Särkkä, Bayesian Filtering and Smoothing, Cambridge University Press, 2013

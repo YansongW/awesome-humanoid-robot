@@ -8,7 +8,11 @@ names:
   zh: Pro-HOI｜感知根引导的人形物体交互
   ko: 'Pro-HOI: Perceptive Root-guided Humanoid-Object Interaction'
 summary:
-  en: ''
+  en: Pro-hoi first recovers scenes, targets, or motion representations from camera images/multi-view observations, proprioceptive
+    states and joint sequences, human videos/motion-capture trajectories, and a visual representation of the target, then
+    the diffusion strategy/flow matching, IK/action redirection, whole-body Controller/WBC/MPC are used to generate the whole-body
+    trajectory/action sequence. The key point is to treat action generation as a conditional generation problem, and use diffusion
+    or flow matching to sample executable trajectories in multimodal action distributions.
   zh: Pro-HOI 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、IK/动作重定向、全身控制器/WBC/MPC生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
   ko: Pro-HOI 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、IK/动作重定向、全身控制器/WBC/MPC生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
@@ -31,10 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (074). Institution: Institute of Artificial
-    Intelligence (TeleAI), China Telecom、Zhejiang University、University of Science
-    and Technology of China、ShanghaiTech University. Full title: Pro-HOI: Perceptive
-    Root-guided Humanoid-Object Interaction.'
+  notes: 'Imported from WeChat curated list (074). Institution: Institute of Artificial Intelligence (TeleAI), China Telecom、Zhejiang
+    University、University of Science and Technology of China、ShanghaiTech University. Full title: Pro-HOI: Perceptive Root-guided
+    Humanoid-Object Interaction. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -46,8 +49,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 Pro-HOI 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、IK/动作重定向、全身控制器/WBC/MPC生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
 ## 개요
 Pro-HOI 先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用扩散策略/流匹配、IK/动作重定向、全身控制器/WBC/MPC生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
+

@@ -8,11 +8,12 @@ names:
   zh: MAGNet：用扩散强制把多人长时序交互装进一个自回归生成模型
   ko: 'MAGNet: Diffusion Forcing for Multi-Agent Interaction Sequence Modeling'
 summary:
-  en: ''
-  zh: 'MAGNet: Diffusion Forcing for Multi-Agent Interaction Sequence Modeling is
-    a paper on 人体动作生成 for humanoid robotics. MAGNet：用扩散强制把多人长时序交互装进一个自回归生成模型.'
-  ko: 'MAGNet: Diffusion Forcing for Multi-Agent Interaction Sequence Modeling is
-    a paper on 人体动作生成 for humanoid robotics. MAGNet：用扩散强制把多人长时序交互装进一个自回归生成模型.'
+  en: 'MAGNet: Diffusion Forcing for Multi-Agent Interaction Sequence Modeling is a paper on Human Action Generation for Humanoid
+    Robotics.  MAGNet: Enforcing multi-person long-term interactions into an autoregressive generative model using diffusion.'
+  zh: 'MAGNet: Diffusion Forcing for Multi-Agent Interaction Sequence Modeling is a paper on 人体动作生成 for humanoid robotics.
+    MAGNet：用扩散强制把多人长时序交互装进一个自回归生成模型.'
+  ko: 'MAGNet: Diffusion Forcing for Multi-Agent Interaction Sequence Modeling is a paper on 人体动作生成 for humanoid robotics.
+    MAGNet：用扩散强制把多人长时序交互装进一个自回归生成模型.'
 domains:
 - 07_ai_models_algorithms
 - 09_data_datasets
@@ -33,9 +34,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: low
-  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder:
-    papers/14_Human_Motion/MAGNet__Diffusion_Forcing_for_Multi-Agent_Interaction_Sequence_Modeling.
-    Route: 人体动作生成.'
+  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder: papers/14_Human_Motion/MAGNet__Diffusion_Forcing_for_Multi-Agent_Interaction_Sequence_Modeling.
+    Route: 人体动作生成. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -45,8 +45,10 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+
 ## 概述
 MAGNet: Diffusion Forcing for Multi-Agent Interaction Sequence Modeling is a paper on 人体动作生成 for humanoid robotics. MAGNet：用扩散强制把多人长时序交互装进一个自回归生成模型.
 
 ## 개요
 MAGNet: Diffusion Forcing for Multi-Agent Interaction Sequence Modeling is a paper on 人体动作生成 for humanoid robotics. MAGNet：用扩散强制把多人长时序交互装进一个自回归生成模型.
+

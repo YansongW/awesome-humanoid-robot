@@ -4,13 +4,16 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: Gait-Adaptive Perceptive Humanoid Locomotion with Real-Time Under-Base Terrain
-    Reconstruction
+  en: Gait-Adaptive Perceptive Humanoid Locomotion with Real-Time Under-Base Terrain Reconstruction
   zh: 具有实时基础地形重建的步态自适应感知人形运动
-  ko: Gait-Adaptive Perceptive Humanoid Locomotion with Real-Time Under-Base Terrain
-    Reconstruction
+  ko: Gait-Adaptive Perceptive Humanoid Locomotion with Real-Time Under-Base Terrain Reconstruction
 summary:
-  en: ''
+  en: This work first recovers the scene, object, or motion representation from camera images/multi-view observations, proprioceptive
+    states and joint sequences, depth/point cloud/height maps, and then reconstructs the object from the depth/point cloud/height
+    maps, then, downward-looking depth camera and U-Net height map reconstruction, gait phase/frequency adjustment, teacher-student
+    knowledge transfer were used to generate joint position/torque commands, and terrain/scene representation. The key point
+    is to put terrain reconstruction, gait phase and whole body posture into the same control circuit, rather than disassembling
+    perception and motion control into a loose series.
   zh: 这篇工作先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用下视深度相机和 U-Net 高度图重建、步态相位/频率调节、教师-学生知识迁移生成关节位置/力矩命令、地形/场景表征。关键点是把地形重建、步态相位和全身姿态放进同一个控制回路，而不是把感知和运控拆成松散串联。
   ko: 这篇工作先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用下视深度相机和 U-Net 高度图重建、步态相位/频率调节、教师-学生知识迁移生成关节位置/力矩命令、地形/场景表征。关键点是把地形重建、步态相位和全身姿态放进同一个控制回路，而不是把感知和运控拆成松散串联。
 domains:
@@ -32,8 +35,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (142). Institution: . Full title: Gait-Adaptive
-    Perceptive Humanoid Locomotion with Real-Time Under-Base Terrain Reconstruction.'
+  notes: 'Imported from WeChat curated list (142). Institution: . Full title: Gait-Adaptive Perceptive Humanoid Locomotion
+    with Real-Time Under-Base Terrain Reconstruction. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -45,8 +48,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 这篇工作先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用下视深度相机和 U-Net 高度图重建、步态相位/频率调节、教师-学生知识迁移生成关节位置/力矩命令、地形/场景表征。关键点是把地形重建、步态相位和全身姿态放进同一个控制回路，而不是把感知和运控拆成松散串联。
 
 ## 개요
 这篇工作先从相机图像/多视角观测、本体状态与关节序列、深度/点云/高度图恢复场景、目标或运动表征，再用下视深度相机和 U-Net 高度图重建、步态相位/频率调节、教师-学生知识迁移生成关节位置/力矩命令、地形/场景表征。关键点是把地形重建、步态相位和全身姿态放进同一个控制回路，而不是把感知和运控拆成松散串联。
+

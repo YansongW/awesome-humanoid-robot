@@ -8,7 +8,12 @@ names:
   zh: DemoHLM｜从单一示范到通用人形移动操作
   ko: 'DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation'
 summary:
-  en: ''
+  en: 'DemoHLM mainly solves the closed-loop data problem: using camera images/multi-view observation, ontology state and
+    joint sequence, teleoperation/exoskeleton data to collect human operation and robot state, and then through ACT/behavioral
+    cloning imitation learning, whole-body controller/WBC/MPC, closed-loop error correction/human intervention to transform
+    into trainable and reusable joint position/torque commands, whole-body trajectory/action sequence, and low-level controller
+    targets. The key point is to press the demonstration trajectory into a supervised action prediction problem, and then
+    reduce timing jitter through action chunk or closed-loop execution.'
   zh: DemoHLM 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、全身控制器/WBC/MPC、闭环纠错/人类干预转成可训练、可复用的关节位置/力矩命令、全身轨迹/动作序列、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作
     chunk 或闭环执行降低时序抖动。
   ko: DemoHLM 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、全身控制器/WBC/MPC、闭环纠错/人类干预转成可训练、可复用的关节位置/力矩命令、全身轨迹/动作序列、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作
@@ -33,8 +38,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (059). Institution: Peking University.
-    Full title: DemoHLM: From One Demonstration to Generalizable Humanoid Loco-Manipulation.'
+  notes: 'Imported from WeChat curated list (059). Institution: Peking University. Full title: DemoHLM: From One Demonstration
+    to Generalizable Humanoid Loco-Manipulation. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -46,8 +51,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 DemoHLM 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、全身控制器/WBC/MPC、闭环纠错/人类干预转成可训练、可复用的关节位置/力矩命令、全身轨迹/动作序列、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作 chunk 或闭环执行降低时序抖动。
 
 ## 개요
 DemoHLM 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、全身控制器/WBC/MPC、闭环纠错/人类干预转成可训练、可复用的关节位置/力矩命令、全身轨迹/动作序列、低层控制器目标。关键点是把示范轨迹压成可监督的动作预测问题，再通过动作 chunk 或闭环执行降低时序抖动。
+

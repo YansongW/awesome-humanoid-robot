@@ -8,12 +8,10 @@ names:
   zh: 端侧 VLA 推理
   ko: 온디바이스 VLA 추론
 summary:
-  en: The practice of running Vision-Language-Action models directly on robot-embedded
-    edge compute rather than offloading to edge or cloud servers, driven by latency,
-    connectivity, and privacy constraints.
+  en: The practice of running Vision-Language-Action models directly on robot-embedded edge compute rather than offloading
+    to edge or cloud servers, driven by latency, connectivity, and privacy constraints.
   zh: 将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。
-  ko: 지연 시간, 연결성 및 프라이버시 제약을 해결하기 위해 VLA 모델을 엣지 또는 클라우드 서버가 아닌 로봇 임베디드 엣지 컴퓨팅에서 직접
-    실행하는 기술 방식.
+  ko: 지연 시간, 연결성 및 프라이버시 제약을 해결하기 위해 VLA 모델을 엣지 또는 클라우드 서버가 아닌 로봇 임베디드 엣지 컴퓨팅에서 직접 실행하는 기술 방식.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -35,8 +33,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-26'
   confidence: high
-  notes: AI-extracted from VLA-Perf paper and NVIDIA deployment blog; specific latency
-    claims depend on model and quantization configuration.
+  notes: AI-extracted from VLA-Perf paper and NVIDIA deployment blog; specific latency claims depend on model and quantization
+    configuration. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_vla_perf_paper
   type: paper
@@ -46,8 +44,7 @@ sources:
   accessed_at: '2026-06-26'
 - id: src_nvidia_gr00t_n16_blog
   type: website
-  title: Building Generalist Humanoid Capabilities with NVIDIA Isaac GR00T N1.6 Using
-    a Sim-to-Real Workflow
+  title: Building Generalist Humanoid Capabilities with NVIDIA Isaac GR00T N1.6 Using a Sim-to-Real Workflow
   url: https://developer.nvidia.com/blog/building-generalist-humanoid-capabilities-with-nvidia-isaac-gr00t-n1-6-using-a-sim-to-real-workflow/
   date: '2026-01-08'
   accessed_at: '2026-06-26'
@@ -67,26 +64,38 @@ related_entities:
     zh: 端侧 VLA 推理建立在 OpenVLA 等架构之上。
     ko: 온디바이스 VLA 추론은 OpenVLA와 같은 아키텍처에 기반한다.
 ---
+## 概述
+将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。
 
-# On-Device VLA Inference
+## 核心内容
+### 端侧 VLA 推理的定义与定位
+端侧 VLA 推理属于 **technology** 类型。 所属领域包括：07_ai_models_algorithms, 08_software_middleware, 02_components。 价值链层级：intelligence。 将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。 英文名称为 *On-Device VLA Inference*。 韩文名称为 *온디바이스 VLA 추론*。
 
-## 抽象
+### 端侧 VLA 推理的工作原理与技术架构
+端侧 VLA 推理的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
+在选型与集成过程中，需要关注其与控制器、通信总线、电源系统与机械结构的兼容性。
 
-> **生活实例**：它就像在一台性能强劲的笔记本上本地玩竞技游戏，而不是通过云端串流——虽然本机硬件压力大，但能避免网络延迟，反应更快、更稳定。
+### 关键参数与选型要点
+在工程实践中，选用端侧 VLA 推理需要综合考虑性能指标、可靠性、成本、供应链成熟度以及与整机系统的兼容性。
+关键参数通常包括精度、带宽、扭矩、功耗、重量、接口协议与环境适应性等。
+针对不同应用场景，可能需要在性能与成本之间进行权衡，并预留适当的冗余与安全裕量。
 
-> **自然语言逻辑**：端侧 VLA 推理指将视觉-语言-动作模型直接部署在机器人本体的边缘计算设备上运行，而不是依赖远程服务器；它能满足实时控制对低延迟的要求，并保护数据隐私，但需要在功耗、散热和算力受限的条件下运行大模型。
+### 典型应用与发展趋势
+端侧 VLA 推理已广泛应用于人形机器人的原型验证、学术研究与早期商业化产品中。
+未来随着产业链成熟，其集成度、智能化水平与成本效益有望持续提升。
 
-## Overview
+### 相关标签
+- vla
+- on_device_inference
+- edge_compute
+- latency
+- real_time_control
+- humanoid
 
-On-device VLA inference refers to executing Vision-Language-Action models entirely on the robot's embedded compute, avoiding round-trips to edge or cloud servers. This deployment mode is motivated by the tight latency budgets of high-frequency control loops (e.g., balance recovery, dexterous manipulation) and by operational constraints such as network availability and data privacy.
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键technology之一，端侧 VLA 推理在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-## Key Trade-offs
+## 参考
+- [How Fast Can I Run My VLA? Demystifying VLA Inference Performance with VLA-Perf](https://arxiv.org/abs/2602.18397)
+- [Building Generalist Humanoid Capabilities with NVIDIA Isaac GR00T N1.6 Using a Sim-to-Real Workflow](https://developer.nvidia.com/blog/building-generalist-humanoid-capabilities-with-nvidia-isaac-gr00t-n1-6-using-a-sim-to-real-workflow/)
 
-- **Latency**: on-device execution removes network latency, but edge GPUs such as Jetson Thor still achieve lower inference frequency than datacenter GPUs.
-- **Power and thermal**: robot-embedded compute must fit within onboard power budgets and cooling limits.
-- **Model size**: quantization (FP8, FP4, INT8/INT4) and distillation are commonly used to fit large VLAs on edge hardware.
-- **Reliability**: local inference is preferable when network conditions are poor, while server-side inference can deliver higher throughput when connectivity is reliable.
-
-## Relevance to Humanoid Robotics
-
-Humanoid robots must close sensorimotor loops quickly enough to maintain balance and manipulate safely. On-device VLA inference is therefore a key systems question for production humanoids, balancing model capability against hardware cost, power, and real-time performance.

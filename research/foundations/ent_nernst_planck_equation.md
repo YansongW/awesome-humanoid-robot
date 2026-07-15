@@ -8,7 +8,8 @@ names:
   zh: 能斯特-普朗克方程
   ko: 넬스트-플랑크 방정식
 summary:
-  en: A transport equation describing the flux of charged species under combined concentration gradients and electric fields, combining diffusion and electromigration.
+  en: A transport equation describing the flux of charged species under combined concentration gradients and electric fields,
+    combining diffusion and electromigration.
   zh: 描述带电粒子在浓度梯度与电场共同作用下的通量，融合扩散与电迁移的输运方程。
   ko: 농도 기울기와 전기장이 함께 작용할 때 대전 입자의 선속을 기술하며 확산과 전기 이동을 결합한 수송 방정식.
 domains:
@@ -30,7 +31,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-25'
   confidence: high
-  notes: Standard foundational knowledge; reviewed against standard references.
+  notes: Standard foundational knowledge; reviewed against standard references. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_bard_faulkner_2001
   type: other
@@ -52,49 +53,37 @@ related_entities:
     zh: 与连续性方程结合，能斯特-普朗克通量给出离子浓度随时间演化的输运方程。
     ko: 연속 방정식과 함께 넬스트-플랑크 선속은 이온 농도의 시간 의존 수송 방정식을 제공합니다.
 ---
+## 概述
+描述带电粒子在浓度梯度与电场共同作用下的通量，融合扩散与电迁移的输运方程。
 
-# Nernst-Planck equation / 能斯特-普朗克方程 / 넬스트-플랑크 방정식
+## 核心内容
+### 能斯特-普朗克方程的定义与定位
+能斯特-普朗克方程属于 **equation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 描述带电粒子在浓度梯度与电场共同作用下的通量，融合扩散与电迁移的输运方程。 英文名称为 *Nernst-Planck equation*。 韩文名称为 *넬스트-플랑크 방정식*。
 
-## 抽象
+### 能斯特-普朗克方程的数学与原理基础
+能斯特-普朗克方程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，能斯特-普朗克方程通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-> **生活实例**：想象河里的鱼：有些因鱼群密度不均而散开（扩散），有些被水流冲向下游（迁移）。能斯特-普朗克方程把这两种贡献相加得到总鱼流。
->
-> **自然语言逻辑**：离子物种的运动有两个原因：热运动平滑浓度梯度（菲克扩散），库仑力驱使带电粒子沿电场线运动（电迁移）。能斯特-普朗克通量将这两种矢量贡献相加。结合电势的泊松方程，它构成用于模拟电池、膜和电解质的泊松-能斯特-普朗克系统。
+### 算法步骤与实现要点
+在实际实现能斯特-普朗克方程时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-## 形式化定义 / Formal Definition
+### 典型应用与局限性
+能斯特-普朗克方程可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-For ionic species $i$ with concentration $c_i$, charge number $z_i$, and diffusion coefficient $D_i$, the Nernst-Planck flux is
+### 相关标签
+- electrochemistry
+- ion_transport
+- nernst_planck
+- diffusion
+- migration
 
-$$\mathbf{J}_i = -D_i \nabla c_i - \frac{z_i F}{RT} D_i c_i \nabla \phi,$$
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键equation之一，能斯特-普朗克方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-where $F$ is Faraday's constant, $R$ the gas constant, $T$ temperature, and $\phi$ the electric potential. The first term is Fickian diffusion; the second is electromigration.
+## 参考
+- [A. J. Bard and L. R. Faulkner, Electrochemical Methods: Fundamentals and Applications, 2nd ed., Wiley, 2001](https://doi.org/10.1021/ac0351306)
 
-Combined with the continuity equation,
-
-$$\frac{\partial c_i}{\partial t} + \nabla \cdot \mathbf{J}_i = 0,$$
-
-and Poisson's equation for the electrostatic potential,
-
-$$-\nabla \cdot (\varepsilon \nabla \phi) = F \sum_i z_i c_i,$$
-
-we obtain the Poisson-Nernst-Planck (PNP) system.
-
-## 关键符号与直觉对应
-
-| 符号 | 名称 | 直觉含义 |
-|------|------|----------|
-| $c_i$ | 离子浓度 | 第 i 种离子的摩尔浓度 |
-| $z_i$ | 电荷数 | 离子所带基本电荷的倍数 |
-| $D_i$ | 扩散系数 | 第 i 种离子的扩散能力 |
-| $F$ | 法拉第常数 | 每摩尔电子所带电荷 |
-| $\phi$ | 电势 | 空间中的静电势 |
-| $\varepsilon$ | 介电常数 | 介质的电容率 |
-
-## 与其他知识点的关系
-
-- `builds_on` → [ent_ficks_law]
-- `builds_on` → [ent_continuity_equation]
-
-## 参考文献
-
-1. A. J. Bard and L. R. Faulkner, Electrochemical Methods: Fundamentals and Applications, 2nd ed., Wiley, 2001

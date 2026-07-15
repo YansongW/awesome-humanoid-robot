@@ -4,13 +4,14 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human
-    Videos'
+  en: 'HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos'
   zh: HumanX｜从人类视频中走向敏捷和可推广的人形交互技能
-  ko: 'HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human
-    Videos'
+  ko: 'HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos'
 summary:
-  en: ''
+  en: HumanX first recovers scene, target, or motion representations from human videos/move-capture trajectories, and then
+    generates actionable action commands using ACT/behavior cloning imitation learning, IK/action redirection, and hierarchical
+    skills/expert strategies. The key is to break down tasks into routable skills or expert strategies, which are then selected
+    and combined in execution using high-level modules.
   zh: HumanX 先从人类视频/动捕轨迹恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习、IK/动作重定向、分层技能/专家策略生成可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
   ko: HumanX 先从人类视频/动捕轨迹恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习、IK/动作重定向、分层技能/专家策略生成可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
@@ -32,9 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (112). Institution: The Hong Kong University
-    of Science and Technology、Shanghai AI Laboratory. Full title: HumanX: Toward Agile
-    and Generalizable Humanoid Interaction Skills from Human Videos.'
+  notes: 'Imported from WeChat curated list (112). Institution: The Hong Kong University of Science and Technology、Shanghai
+    AI Laboratory. Full title: HumanX: Toward Agile and Generalizable Humanoid Interaction Skills from Human Videos. English
+    name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -46,8 +47,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 HumanX 先从人类视频/动捕轨迹恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习、IK/动作重定向、分层技能/专家策略生成可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
 ## 개요
 HumanX 先从人类视频/动捕轨迹恢复场景、目标或运动表征，再用ACT/行为克隆模仿学习、IK/动作重定向、分层技能/专家策略生成可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
+

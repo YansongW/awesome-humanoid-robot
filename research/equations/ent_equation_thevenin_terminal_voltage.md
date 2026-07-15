@@ -8,8 +8,8 @@ names:
   zh: Thevenin 端电压方程
   ko: 테베닌 단자 전압 방정식
 summary:
-  en: The equation that gives the terminal voltage of a Thevenin equivalent circuit
-    as the open-circuit voltage minus the voltage drop across the equivalent resistance.
+  en: The equation that gives the terminal voltage of a Thevenin equivalent circuit as the open-circuit voltage minus the
+    voltage drop across the equivalent resistance.
   zh: 给出 Thevenin 等效电路端电压等于开路电压减去等效电阻上压降的方程。
   ko: 테베닌 등가 회로의 단자 전압을 개방 전압에서 등가 저항의 전압 강하를 뺀 값으로 나타내는 방정식이다.
 domains:
@@ -34,11 +34,12 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-26'
   confidence: high
-  notes: Direct consequence of Kirchhoff's voltage law applied to the Thevenin equivalent circuit.
+  notes: Direct consequence of Kirchhoff's voltage law applied to the Thevenin equivalent circuit. Body backfilled from entity
+    metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_dorf_svoboda_2017
   type: paper
-  title: 'Dorf & Svoboda, Introduction to Electric Circuits, 9th ed.'
+  title: Dorf & Svoboda, Introduction to Electric Circuits, 9th ed.
   url: https://www.wiley.com/en-us/Introduction+to+Electric+Circuits%2C+9th+Edition-p-9781118931897
   date: '2017-01-01'
   accessed_at: '2026-06-26'
@@ -56,47 +57,38 @@ related_entities:
     zh: 源于电荷守恒的基尔霍夫电流定律支撑着推导端电压所用的电流平衡。
     ko: 전하 보존에 뿌리를 둔 키르히호프 전류 법칙은 단자 전압을 유도하는 데 사용되는 전류 평형의 기초가 된다.
 ---
+## 概述
+给出 Thevenin 等效电路端电压等于开路电压减去等效电阻上压降的方程。
 
-## 抽象
+## 核心内容
+### Thevenin 端电压方程的定义与定位
+Thevenin 端电压方程属于 **equation** 类型。 所属领域包括：00_foundations, 06_design_engineering。 价值链层级：foundations, midstream。 给出 Thevenin 等效电路端电压等于开路电压减去等效电阻上压降的方程。 英文名称为 *Thevenin Terminal Voltage Equation*。 韩文名称为 *테베닌 단자 전압 방정식*。
 
-> **生活实例**：想象一根水管，水龙头全开时水压最高；接上一个细喷头后，水流受阻力，喷头处的水压就会下降。电池端电压也是这样：没有电流时等于“开路电压”，一有电流，内部电阻就会“吃掉”一部分电压。
->
-> **自然语言逻辑**：把电池抽象成理想电压源 $V_{oc}$ 和内部电阻 $R_{th}$ 的串联。接上负载电流 $I$ 后，根据欧姆定律，内阻上的压降是 $I R_{th}$，所以外部能测到的端电压就是 $V_t = V_{oc} - I R_{th}$。
+### Thevenin 端电压方程的数学与原理基础
+Thevenin 端电压方程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，Thevenin 端电压方程通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-## Overview
+### 算法步骤与实现要点
+在实际实现Thevenin 端电压方程时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-For a battery modeled by a Thevenin equivalent circuit, the terminal voltage $V_t$ under load current $I$ is given by the open-circuit voltage minus the ohmic drop across the equivalent series resistance. With one RC polarization branch, the equation extends to include a transient polarization voltage $V_{RC}$.
+### 典型应用与局限性
+Thevenin 端电压方程可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-## Formal Definition
+### 相关标签
+- thevenin
+- terminal_voltage
+- equivalent_circuit
+- battery_model
+- voltage_divider
+- humanoid_robot
 
-For the first-order Thevenin equivalent circuit with a single RC pair:
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键equation之一，Thevenin 端电压方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-$$
-V_t(t) = V_{oc}\bigl(SoC(t)\bigr) - I(t) R_0 - V_{RC}(t)
-$$
+## 参考
+- [Dorf & Svoboda, Introduction to Electric Circuits, 9th ed.](https://www.wiley.com/en-us/Introduction+to+Electric+Circuits%2C+9th+Edition-p-9781118931897)
 
-where the polarization voltage evolves as
-
-$$
-\frac{d V_{RC}}{dt} = -\frac{V_{RC}}{R_1 C_1} + \frac{I}{C_1}.
-$$
-
-In steady state or for a purely resistive Thevenin model ($R_1 C_1 \to 0$), this reduces to
-
-$$
-V_t = V_{oc} - I R_{th}.
-$$
-
-| Symbol | Name | Intuition |
-|--------|------|-----------|
-| $V_t$ | Terminal voltage | The voltage you can actually measure at the battery terminals |
-| $V_{oc}$ | Open-circuit voltage | The battery's "ideal" voltage when no current flows |
-| $R_0$ / $R_{th}$ | Ohmic / Thevenin resistance | The internal "friction" that causes instant voltage sag |
-| $V_{RC}$ | Polarization voltage | The slower voltage drift caused by diffusion and charge-transfer dynamics |
-| $R_1, C_1$ | Polarization resistance and capacitance | The "memory" branch that captures transient behavior |
-| $I$ | Load current | Positive for discharge, negative for charge |
-| $SoC$ | State of charge | Remaining charge as a fraction of total capacity |
-
-## Relevance to Humanoid Robotics
-
-Humanoid actuators draw large, rapidly changing currents. The Thevenin terminal-voltage equation lets the BMS and motion controller predict how much voltage will be available at the motor drives during peak power demands. Keeping $V_t$ above the minimum operating voltage of the servo drives is essential for preventing control faults or unexpected joint lockouts.

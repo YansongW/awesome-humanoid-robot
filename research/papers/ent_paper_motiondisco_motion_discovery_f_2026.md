@@ -8,7 +8,11 @@ names:
   zh: MotionDisco｜用于极端人形移动操作的运动发现
   ko: 'MotionDisco: Motion Discovery for Extreme Humanoid Loco-Manipulation'
 summary:
-  en: ''
+  en: 'MotionDisco primarily addresses data closed loops: acquiring human manipulation and robot states using teleoperation/exoskeleton
+    data, contact force/tactile signals, and then converting them into trainable and reusable whole-body trajectories/action
+    sequences through ACT/behavioral cloning imitation learning, IK/action redirection, and hierarchical skills/expert strategies.
+    The key is to break down tasks into routable skills or expert strategies, which are then selected and combined in execution
+    using high-level modules.'
   zh: MotionDisco 主要解决数据闭环：用遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、IK/动作重定向、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
   ko: MotionDisco 主要解决数据闭环：用遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、IK/动作重定向、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
@@ -29,9 +33,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (099). Institution: Technical University
-    of Munich, Germany、New York University, USA、Carnegie Mellon University, USA. Full
-    title: MotionDisco: Motion Discovery for Extreme Humanoid Loco-Manipulation.'
+  notes: 'Imported from WeChat curated list (099). Institution: Technical University of Munich, Germany、New York University,
+    USA、Carnegie Mellon University, USA. Full title: MotionDisco: Motion Discovery for Extreme Humanoid Loco-Manipulation.
+    English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -43,8 +47,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 MotionDisco 主要解决数据闭环：用遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、IK/动作重定向、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
 ## 개요
 MotionDisco 主要解决数据闭环：用遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、IK/动作重定向、分层技能/专家策略转成可训练、可复用的全身轨迹/动作序列。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
+

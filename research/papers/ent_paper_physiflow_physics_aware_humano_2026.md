@@ -4,17 +4,19 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'PhysiFlow: Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent Flow
-    Matching and Robust Tracking'
+  en: 'PhysiFlow: Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent Flow Matching and Robust Tracking'
   zh: PhysiFlow｜通过多脑潜在流匹配和鲁棒跟踪实现物理感知的人形全身VLA
-  ko: 'PhysiFlow: Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent Flow
-    Matching and Robust Tracking'
+  ko: 'PhysiFlow: Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent Flow Matching and Robust Tracking'
 summary:
-  en: ''
-  zh: PhysiFlow 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、VLM
-    语义规划/路由预测全身轨迹/动作序列、动作 chunk/token。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
-  ko: PhysiFlow 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、VLM
-    语义规划/路由预测全身轨迹/动作序列、动作 chunk/token。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
+  en: The implementation path of PhysiFlow is to encode language instructions, camera images/multi-view observations, ontological
+    states, and joint sequences into multimodal representations, then diffusion strategy/flow matching, VLA multimodal action
+    model, VLM Semantic Planning/routing are used to predict the whole body trajectory/action sequence, action chunk/token.
+    The key point is to retain the semantic understanding of VLM, while increasing the robot state and action head, so as
+    to avoid remaining in the language planning.
+  zh: PhysiFlow 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、动作 chunk/token。关键点是保留
+    VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
+  ko: PhysiFlow 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、动作 chunk/token。关键点是保留
+    VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -34,14 +36,13 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (155). Institution: . Full title: PhysiFlow:
-    Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent Flow Matching and
-    Robust Tracking.'
+  notes: 'Imported from WeChat curated list (155). Institution: . Full title: PhysiFlow: Physics-Aware Humanoid Whole-Body
+    VLA via Multi-Brain Latent Flow Matching and Robust Tracking. English name/summary machine-translated from Chinese by
+    scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
-  title: 'PhysiFlow: Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent
-    Flow Matching and Robust Tracking'
+  title: 'PhysiFlow: Physics-Aware Humanoid Whole-Body VLA via Multi-Brain Latent Flow Matching and Robust Tracking'
   url: ''
   date: '2026'
   accessed_at: '2026-06-26'
@@ -49,8 +50,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 PhysiFlow 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、动作 chunk/token。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 
 ## 개요
 PhysiFlow 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用扩散策略/流匹配、VLA 多模态动作模型、VLM 语义规划/路由预测全身轨迹/动作序列、动作 chunk/token。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
+

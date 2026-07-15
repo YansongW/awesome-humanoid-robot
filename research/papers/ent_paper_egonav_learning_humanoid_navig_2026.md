@@ -8,11 +8,13 @@ names:
   zh: 只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到 Unitree G1 真机长时自主行走
   ko: 'EgoNav: Learning Humanoid Navigation from Human Data'
 summary:
-  en: ''
-  zh: 'EgoNav: Learning Humanoid Navigation from Human Data is a paper on 导航任务 for
-    humanoid robotics. 只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到 Unitree G1 真机长时自主行走.'
-  ko: 'EgoNav: Learning Humanoid Navigation from Human Data is a paper on 导航任务 for
-    humanoid robotics. 只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到 Unitree G1 真机长时自主行走.'
+  en: 'EgoNav: Learning Humanoid Navigation from Human Data is a paper on navigation tasks for humanoid robots.  Using only
+    5 hours of human walking data to learn an embodied-independent diffusion navigation prior, zero-shot migration to Unitree
+    G1 autonomously walking while a real captain.'
+  zh: 'EgoNav: Learning Humanoid Navigation from Human Data is a paper on 导航任务 for humanoid robotics. 只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到
+    Unitree G1 真机长时自主行走.'
+  ko: 'EgoNav: Learning Humanoid Navigation from Human Data is a paper on 导航任务 for humanoid robotics. 只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到
+    Unitree G1 真机长时自主行走.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -32,9 +34,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: low
-  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder:
-    papers/08_Navigation/EgoNav__Learning_Humanoid_Navigation_from_Human_Data. Route:
-    导航任务.'
+  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder: papers/08_Navigation/EgoNav__Learning_Humanoid_Navigation_from_Human_Data.
+    Route: 导航任务. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -44,8 +45,10 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+
 ## 概述
 EgoNav: Learning Humanoid Navigation from Human Data is a paper on 导航任务 for humanoid robotics. 只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到 Unitree G1 真机长时自主行走.
 
 ## 개요
 EgoNav: Learning Humanoid Navigation from Human Data is a paper on 导航任务 for humanoid robotics. 只用 5 小时人类行走数据学一个具身无关的扩散导航先验，零样本迁移到 Unitree G1 真机长时自主行走.
+

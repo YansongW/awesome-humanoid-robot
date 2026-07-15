@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: ''
+  en: Integration of tactile and force sensors
   zh: 触觉与力觉传感器集成
   ko: 触觉与力觉传感器集成
 summary:
-  en: ''
+  en: Sensor deployment scheme, signal processing chain, and calibration method
   zh: 传感器布置方案、信号处理链、标定方法
   ko: 传感器布置方案、信号处理链、标定方法
 domains:
@@ -26,7 +26,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
+    from Chinese by scripts/backfill_en_translations.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -35,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）
 
@@ -81,4 +83,5 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 

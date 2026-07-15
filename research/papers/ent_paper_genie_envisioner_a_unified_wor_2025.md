@@ -8,7 +8,11 @@ names:
   zh: Genie Envisioner｜机器人操作的统一世界基础平台
   ko: 'Genie Envisioner: A Unified World Foundation Platform for Robotic Manipulation'
 summary:
-  en: ''
+  en: Genie Envisioner is implemented by encoding language instructions, camera images/multi-view observations, ontological
+    states, and joint sequences into multimodal representations, then Act/behavior clone imitation learning, diffusion strategy/flow
+    matching, World Model/video prediction are used to predict terrain/scene representation. The key point is to treat action
+    generation as a conditional generation problem, and use diffusion or flow matching to sample executable trajectories in
+    multimodal action distributions.
   zh: Genie Envisioner 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、世界模型/视频预测预测地形/场景表征。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
   ko: Genie Envisioner 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、世界模型/视频预测预测地形/场景表征。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
@@ -30,8 +34,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (150). Institution: . Full title: Genie
-    Envisioner: A Unified World Foundation Platform for Robotic Manipulation.'
+  notes: 'Imported from WeChat curated list (150). Institution: . Full title: Genie Envisioner: A Unified World Foundation
+    Platform for Robotic Manipulation. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -43,8 +47,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 Genie Envisioner 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、世界模型/视频预测预测地形/场景表征。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
 ## 개요
 Genie Envisioner 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、世界模型/视频预测预测地形/场景表征。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
+

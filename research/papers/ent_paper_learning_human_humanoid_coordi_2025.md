@@ -8,11 +8,13 @@ names:
   zh: COLA｜学习人机协调以协作搬运物体
   ko: Learning Human-Humanoid Coordination for Collaborative Object Carrying
 summary:
-  en: ''
-  zh: COLA 先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL 策略训练、世界模型/视频预测、闭环纠错/人类干预生成全身轨迹/动作序列、低层控制器目标。关键点是把PPO/RL
-    策略训练、世界模型/视频预测放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
-  ko: COLA 先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL 策略训练、世界模型/视频预测、闭环纠错/人类干预生成全身轨迹/动作序列、低层控制器目标。关键点是把PPO/RL
-    策略训练、世界模型/视频预测放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
+  en: COLA first recovers scene, target or motion representations from ontology state and joint sequences, human video/motion
+    capture trajectories, and simulation interaction data, and then uses PPO/RL policy training, world model/video prediction,
+    closed-loop error correction/human intervention to generate whole-body trajectories/action sequences and low-level controller
+    targets. The key point is to put PPO/RL policy training and world model/video prediction in the same training/deployment
+    chain to reduce the breakpoints between high-level goals and low-level actions.
+  zh: COLA 先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL 策略训练、世界模型/视频预测、闭环纠错/人类干预生成全身轨迹/动作序列、低层控制器目标。关键点是把PPO/RL 策略训练、世界模型/视频预测放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
+  ko: COLA 先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL 策略训练、世界模型/视频预测、闭环纠错/人类干预生成全身轨迹/动作序列、低层控制器目标。关键点是把PPO/RL 策略训练、世界模型/视频预测放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 domains:
 - 06_design_engineering
 - 07_ai_models_algorithms
@@ -33,11 +35,10 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (034). Institution: Department of Electrical
-    and Electronic Engineering, the University of Hong Kong、State Key Laboratory of
-    General Artificial Intelligence, BIGAI、School of Computer Science and Technology,
-    Beijing Institute of Technology、Yuanpei College, Peking University. Full title:
-    Learning Human-Humanoid Coordination for Collaborative Object Carrying.'
+  notes: 'Imported from WeChat curated list (034). Institution: Department of Electrical and Electronic Engineering, the University
+    of Hong Kong、State Key Laboratory of General Artificial Intelligence, BIGAI、School of Computer Science and Technology,
+    Beijing Institute of Technology、Yuanpei College, Peking University. Full title: Learning Human-Humanoid Coordination for
+    Collaborative Object Carrying. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -49,8 +50,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 COLA 先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL 策略训练、世界模型/视频预测、闭环纠错/人类干预生成全身轨迹/动作序列、低层控制器目标。关键点是把PPO/RL 策略训练、世界模型/视频预测放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 
 ## 개요
 COLA 先从本体状态与关节序列、人类视频/动捕轨迹、仿真交互数据恢复场景、目标或运动表征，再用PPO/RL 策略训练、世界模型/视频预测、闭环纠错/人类干预生成全身轨迹/动作序列、低层控制器目标。关键点是把PPO/RL 策略训练、世界模型/视频预测放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
+

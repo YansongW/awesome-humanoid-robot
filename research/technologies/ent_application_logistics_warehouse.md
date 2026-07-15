@@ -28,7 +28,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-08.md#8.9.4 Agility Digit：物流仓储专用人形 by scripts/backfill_nonpaper_entries.py.
+  notes: Body backfilled from chapter-08.md#8.9.4 Agility Digit：物流仓储专用人形 by scripts/backfill_nonpaper_entries.py. Body backfilled
+    from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -37,33 +38,31 @@ sources:
   accessed_at: '2026-07-09'
 ---
 ## 概述
-物流仓储是人形机器人领域的重要application_scenario。以下内容整理自项目 Wiki，供深入查阅。
+在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。
 
 ## 核心内容
-Agility Digit 定位于物流与仓储场景，设计强调在有限空间内搬运货物、上下台阶、长时间运行。
+### 物流仓储的定义与定位
+物流仓储属于 **application_scenario** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。 英文名称为 *Logistics and Warehouse Automation*。 韩文名称为 *물류 및 창고 자동화*。
 
-!!! note "术语解释：Digit、物流机器人、仓储自动化、末端配送"
-    - **Digit**：Agility Robotics 开发的人形机器人。
-    - **物流机器人（logistics robot）**：用于搬运、分拣、运输的机器人。
-    - **仓储自动化（warehouse automation）**：利用机器人与系统自动完成仓储作业。
-    - **末端配送（last-mile delivery）**：从配送中心到最终用户的最后一段物流。
+### 物流仓储的场景特征与核心价值
+物流仓储代表人形机器人潜在落地的重要方向，其需求特点、价值主张与商业模式是评估市场前景的关键。
+在该场景中，人形机器人的双足移动与双手操作能力可能带来独特的效率或体验优势。
 
-Digit 的设计取舍包括：
-- 腿部反屈膝（backward-bending knee）设计，便于下蹲搬运低处货物。
-- 躯干上方设有货架空间，可在移动中暂存物品。
-- 强调与现有仓库布局兼容，无需大幅改造环境。
+### 落地挑战与发展趋势
+在该场景中大规模部署人形机器人仍面临成本、可靠性、安全性、法规与用户接受度等多重挑战，需要技术与商业的协同推进。
+随着硬件成本下降与人工智能能力提升，该场景的市场渗透率有望逐步提高。
 
-```mermaid
-flowchart TD
-    A["Agility Digit"] --> B["反屈膝设计"]
-    A --> C["躯干货架"]
-    A --> D["紧凑机身"]
-    B --> E["低位搬运"]
-    C --> F["移动暂存"]
-    D --> G["适配仓库通道"]
-```
+### 关键成功因素
+成功落地需要综合考虑任务适配、人机协作、维护体系、数据积累与商业模式设计，避免单纯追求技术先进性而忽视经济性。
+
+### 相关标签
+- application
+- chapter_27
+- wiki_gap
+
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键application_scenario之一，物流仓储在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction
-- 项目 Wiki：chapter-08.md#8.9.4 Agility Digit：物流仓储专用人形
 

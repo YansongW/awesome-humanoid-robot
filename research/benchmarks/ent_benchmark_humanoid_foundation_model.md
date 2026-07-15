@@ -8,12 +8,10 @@ names:
   zh: 人形机器人基础模型基准
   ko: 휴리노이드 파울데이션 모델 벤치마크
 summary:
-  en: An independent, publicly accessible benchmark that rates and compares AI foundation
-    models for humanoid robots across ten capability dimensions, including locomotion,
-    manipulation, reasoning, and sim-to-real transfer.
+  en: An independent, publicly accessible benchmark that rates and compares AI foundation models for humanoid robots across
+    ten capability dimensions, including locomotion, manipulation, reasoning, and sim-to-real transfer.
   zh: 一个独立、公开可访问的基准，从十个能力维度对人形机器人 AI 基础模型进行评级和比较，包括移动、操作、推理和仿真到现实迁移。
-  ko: 휴리노이드 로봇을 위한 AI 파울데이션 모델을 이동, 조작, 추론, 시뮬레이션-투-리얼 전이 등 10가지 역량 차원에서 평가하고 비교하는
-    독립적이고 공개적으로 접근 가능한 벤치마크.
+  ko: 휴리노이드 로봇을 위한 AI 파울데이션 모델을 이동, 조작, 추론, 시뮬레이션-투-리얼 전이 등 10가지 역량 차원에서 평가하고 비교하는 독립적이고 공개적으로 접근 가능한 벤치마크.
 domains:
 - 10_evaluation_benchmarks
 - 11_applications_markets
@@ -34,9 +32,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-25'
   confidence: medium
-  notes: AI-extracted from the benchmark launch page and model directory page; methodology
-    and model counts are consistent with the source. Individual model scores are not
-    independently verified.
+  notes: AI-extracted from the benchmark launch page and model directory page; methodology and model counts are consistent
+    with the source. Individual model scores are not independently verified. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_humanoid_foundation_model_benchmark_2026
   type: website
@@ -66,8 +63,16 @@ related_entities:
 theoretical_depth:
 - system
 ---
+## 概述
+一个独立、公开可访问的基准，从十个能力维度对人形机器人 AI 基础模型进行评级和比较，包括移动、操作、推理和仿真到现实迁移。
 
-# Humanoid Foundation Model Benchmark
+## 核心内容
+### 人形机器人基础模型基准的定义与定位
+人形机器人基础模型基准属于 **benchmark** 类型，英文名称为 *Humanoid Foundation Model Benchmark*。
+一个独立、公开可访问的基准，从十个能力维度对人形机器人 AI 基础模型进行评级和比较，包括移动、操作、推理和仿真到现实迁移。
+
+### 人形机器人基础模型基准的关键信息
+以下整理了关于人形机器人基础模型基准的详细说明，供中英文读者参考。
 
 ## 抽象
 
@@ -99,3 +104,10 @@ Models are categorized as VLA models, world models, or reward models. Filters al
 ## Relevance to the VLA Workstream
 
 The benchmark provides a structured, cross-model view of the VLA landscape specifically for humanoid embodiments. It helps identify which open or closed VLAs are considered deployment-ready for humanoid tasks and surfaces capability gaps such as long-horizon planning and sim-to-real transfer.
+
+## 参考
+- [Humanoid Foundation Models – humanoid.guide](https://humanoid.guide/foundation-models/)
+- [Humanoid Foundation Model Benchmark Launch](https://humanoid.guide/humanoid-foundation-model-benchmark-launch/)
+
+人形机器人基础模型基准的相关技术仍在快速发展。从系统科学角度看，它与其他benchmark相互耦合，共同决定了人形机器人的整体性能。深入理解其原理、边界条件与工程约束，是将实验室样机转化为可量产产品的必要环节。
+

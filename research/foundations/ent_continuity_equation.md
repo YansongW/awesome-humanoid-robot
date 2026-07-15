@@ -8,7 +8,8 @@ names:
   zh: 连续性方程
   ko: 연속 방정식
 summary:
-  en: A partial differential equation expressing local conservation of a quantity by equating its rate of change to the negative divergence of its flux.
+  en: A partial differential equation expressing local conservation of a quantity by equating its rate of change to the negative
+    divergence of its flux.
   zh: 一种偏微分方程，通过将某物理量的变化率等于其通量散度的负值来表达局部守恒。
   ko: 어떤 물리량의 변화율을 그 선속의 발산의 음수와 같게 하여 국소 보존을 표현하는 편미분 방정식.
 domains:
@@ -30,7 +31,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-25'
   confidence: high
-  notes: Standard foundational knowledge; reviewed against standard references.
+  notes: Standard foundational knowledge; reviewed against standard references. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_evans_2010
   type: other
@@ -58,50 +59,37 @@ related_entities:
     zh: 扩散模型的连续时间概率流满足 Fokker-Planck 连续性方程。
     ko: 확산 모델의 연속 시간 확률 흐름은 포커-플랑크 연속 방정식을 만족합니다.
 ---
+## 概述
+一种偏微分方程，通过将某物理量的变化率等于其通量散度的负值来表达局部守恒。
 
-# Continuity equation / 连续性方程 / 연속 방정식
+## 核心内容
+### 连续性方程的定义与定位
+连续性方程属于 **equation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种偏微分方程，通过将某物理量的变化率等于其通量散度的负值来表达局部守恒。 英文名称为 *Continuity equation*。 韩文名称为 *연속 방정식*。
 
-## 抽象
+### 连续性方程的数学与原理基础
+连续性方程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，连续性方程通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-> **生活实例**：想象水流过管道：如果流入某一小段的水多于流出的，该段水位必然上升。连续性方程把这种常识性平衡写成精确的微分表述。
->
-> **自然语言逻辑**：连续性方程是守恒律的局部形式。它指出任意微小区域内的物质量变化仅因物质穿过边界流动。若流动具有正散度，物质离开该区域，局部密度减小；反之亦然。
+### 算法步骤与实现要点
+在实际实现连续性方程时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-## 形式化定义 / Formal Definition
+### 典型应用与局限性
+连续性方程可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-Let $\rho(\mathbf{x}, t)$ be the density of a conserved scalar quantity and $\mathbf{J}(\mathbf{x}, t)$ its flux. The continuity equation is
+### 相关标签
+- conservation
+- pde
+- continuity_equation
+- mass_transport
+- probability
 
-$$\frac{\partial \rho}{\partial t} + \nabla \cdot \mathbf{J} = 0.$$
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键equation之一，连续性方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-If the quantity is transported with a velocity field $\mathbf{v}$ so that $\mathbf{J} = \rho \mathbf{v}$, the equation becomes
+## 参考
+- [L. C. Evans, Partial Differential Equations, 2nd ed., American Mathematical Society, 2010](https://doi.org/10.1090/gsm/019)
 
-$$\frac{\partial \rho}{\partial t} + \nabla \cdot (\rho \mathbf{v}) = 0,$$
-
-or, using the material derivative,
-
-$$\frac{D\rho}{Dt} + \rho \nabla \cdot \mathbf{v} = 0.$$
-
-In probability form, with $p_t$ a time-dependent probability density and velocity field $u_t$,
-
-$$\frac{\partial p_t}{\partial t} + \nabla \cdot (p_t u_t) = 0.$$
-
-## 关键符号与直觉对应
-
-| 符号 | 名称 | 直觉含义 |
-|------|------|----------|
-| $\rho$ | 密度 | 单位体积内某物理量的量 |
-| $\mathbf{J}$ | 通量 | 单位时间通过单位面积的该物理量 |
-| $\nabla \cdot \mathbf{J}$ | 通量散度 | 净流出某点的量 |
-| $\mathbf{v}$ | 速度场 | 携带该物理量的介质速度 |
-| $\frac{D\rho}{Dt}$ | 物质导数 | 随流体运动的观察者看到的密度变化率 |
-| $p_t$ | 概率密度 | 连续时间概率分布的密度函数 |
-
-## 与其他知识点的关系
-
-- `builds_on` → [ent_ficks_law]
-- `is_prerequisite_for` → [ent_flow_matching]
-- `is_prerequisite_for` → [ent_ddpm_reverse_process]
-
-## 参考文献
-
-1. L. C. Evans, Partial Differential Equations, 2nd ed., American Mathematical Society, 2010

@@ -8,12 +8,10 @@ names:
   zh: LIBERO-Plus
   ko: LIBERO-Plus
 summary:
-  en: A robustness benchmark for Vision-Language-Action models that extends LIBERO
-    with 10,030 tasks across seven perturbation dimensions including camera viewpoint,
-    robot initial state, language, lighting, background, noise, and object layout.
+  en: A robustness benchmark for Vision-Language-Action models that extends LIBERO with 10,030 tasks across seven perturbation
+    dimensions including camera viewpoint, robot initial state, language, lighting, background, noise, and object layout.
   zh: 一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。
-  ko: LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지
-    섭동 차원에 걸쳐 10,030개 작업을 포함함.
+  ko: LIBERO를 확장한 VLA 모델 견고성 벤치마크로, 칔대 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈, 객체 배치 등 7가지 섭동 차원에 걸쳐 10,030개 작업을 포함함.
 domains:
 - 07_ai_models_algorithms
 - 10_evaluation_benchmarks
@@ -36,7 +34,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: high
-  notes: Benchmark scope and leaderboard retrieved from arXiv paper and GitHub repository.
+  notes: Benchmark scope and leaderboard retrieved from arXiv paper and GitHub repository. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py.
 sources:
 - id: src_libero_plus_paper
   type: paper
@@ -66,8 +65,16 @@ related_entities:
 theoretical_depth:
 - system
 ---
+## 概述
+一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。
 
-# LIBERO-Plus
+## 核心内容
+### LIBERO-Plus的定义与定位
+LIBERO-Plus属于 **benchmark** 类型，英文名称为 *LIBERO-Plus*。
+一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。
+
+### LIBERO-Plus的关键信息
+以下整理了关于LIBERO-Plus的详细说明，供中英文读者参考。
 
 ## 抽象
 
@@ -107,3 +114,8 @@ LIBERO-Plus is a robustness-focused extension of the LIBERO benchmark. It system
 ## Relevance to Humanoid Robotics
 
 Robustness evaluation is critical for humanoid deployment in unstructured human environments. LIBERO-Plus provides a methodology for stress-testing perception-language grounding under visual and linguistic variation, though its tasks are still tabletop arm manipulation rather than whole-body locomotion.
+
+## 参考
+- [LIBERO-Plus: In-depth Robustness Analysis of Vision-Language-Action Models](https://arxiv.org/abs/2510.13626)
+- [LIBERO-Plus GitHub Repository](https://github.com/sylvestf/LIBERO-plus)
+

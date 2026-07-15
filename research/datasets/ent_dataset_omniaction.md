@@ -8,12 +8,10 @@ names:
   zh: OmniAction 数据集
   ko: OmniAction 데이터셋
 summary:
-  en: A large-scale multimodal dataset for proactive robot manipulation, comprising
-    141k episodes with vision, speech, and environmental sound context across 112
-    skills and 748 objects.
+  en: A large-scale multimodal dataset for proactive robot manipulation, comprising 141k episodes with vision, speech, and
+    environmental sound context across 112 skills and 748 objects.
   zh: 一个用于主动式机器人操作的大规模多模态数据集，包含 14.1 万条片段，涵盖 112 项技能与 748 个物体，融合视觉、语音与环境声音上下文。
-  ko: 주도적 로봇 조작을 위한 대규모 멀티모달 데이터셋으로, 112개 기술과 748개 객체에 걸쳐 141,000개 에피소드의 시각, 음성, 환경
-    소리 맥락을 포함함.
+  ko: 주도적 로봇 조작을 위한 대규모 멀티모달 데이터셋으로, 112개 기술과 748개 객체에 걸쳐 141,000개 에피소드의 시각, 음성, 환경 소리 맥락을 포함함.
 domains:
 - 09_data_datasets
 layers:
@@ -35,8 +33,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: high
-  notes: Dataset statistics retrieved from the official RoboOmni GitHub repository
-    and arXiv paper.
+  notes: Dataset statistics retrieved from the official RoboOmni GitHub repository and arXiv paper. Body backfilled from entity
+    metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_omniaction_paper
   type: paper
@@ -66,8 +64,16 @@ related_entities:
 theoretical_depth:
 - system
 ---
+## 概述
+一个用于主动式机器人操作的大规模多模态数据集，包含 14.1 万条片段，涵盖 112 项技能与 748 个物体，融合视觉、语音与环境声音上下文。
 
-# OmniAction Dataset
+## 核心内容
+### OmniAction 数据集的定义与定位
+OmniAction 数据集属于 **dataset** 类型，英文名称为 *OmniAction Dataset*。
+一个用于主动式机器人操作的大规模多模态数据集，包含 14.1 万条片段，涵盖 112 项技能与 748 个物体，融合视觉、语音与环境声音上下文。
+
+### OmniAction 数据集的关键信息
+以下整理了关于OmniAction 数据集的详细说明，供中英文读者参考。
 
 ## 抽象
 
@@ -94,3 +100,8 @@ Released in RLDS (Reinforcement Learning Datasets standard) format.
 ## Relevance to Humanoid Robotics
 
 Humanoid robots in home and service settings must interpret implicit, multimodal human intent. OmniAction provides a rare large-scale resource for training such capabilities, though it currently focuses on arm manipulation rather than whole-body locomotion.
+
+## 参考
+- [RoboOmni: Proactive Robot Manipulation in Omni-modal Context](https://arxiv.org/abs/2510.23763)
+- [OmniAction Dataset on Hugging Face](https://huggingface.co/datasets/fnlp/OmniAction)
+

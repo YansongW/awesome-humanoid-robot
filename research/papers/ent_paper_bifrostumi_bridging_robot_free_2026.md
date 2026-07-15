@@ -8,7 +8,12 @@ names:
   zh: BifrostUMI｜连接机器人无关示范和人形全身操作
   ko: 'BifrostUMI: Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation'
 summary:
-  en: ''
+  en: 'BifrostUMI mainly solves the data closed loop: using camera images/multi-view observations, ontology state and joint
+    sequences, teleoperation/exoskeleton data to collect human operation and robot state, and then converting it into trainable
+    and reusable whole-body trajectory/action sequences, low-level controller targets, and terrain/scene representations through
+    ACT/behavioral cloning imitation learning, diffusion strategy/flow matching, DINO/visual feature extraction. The key point
+    is to view action generation as a conditional generation problem and use diffusion or flow matching to sample executable
+    trajectories in a multimodal action distribution.'
   zh: BifrostUMI 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配、DINO/视觉特征抽取转成可训练、可复用的全身轨迹/动作序列、低层控制器目标、地形/场景表征。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
   ko: BifrostUMI 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配、DINO/视觉特征抽取转成可训练、可复用的全身轨迹/动作序列、低层控制器目标、地形/场景表征。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
@@ -30,8 +35,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (128). Institution: . Full title: BifrostUMI:
-    Bridging Robot-Free Demonstrations and Humanoid Whole-Body Manipulation.'
+  notes: 'Imported from WeChat curated list (128). Institution: . Full title: BifrostUMI: Bridging Robot-Free Demonstrations
+    and Humanoid Whole-Body Manipulation. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -43,8 +48,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 BifrostUMI 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配、DINO/视觉特征抽取转成可训练、可复用的全身轨迹/动作序列、低层控制器目标、地形/场景表征。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
 ## 개요
 BifrostUMI 主要解决数据闭环：用相机图像/多视角观测、本体状态与关节序列、遥操作/外骨骼数据采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配、DINO/视觉特征抽取转成可训练、可复用的全身轨迹/动作序列、低层控制器目标、地形/场景表征。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
+

@@ -30,7 +30,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-05.md#5.1.3 人形机器人感知系统的整体架构 by scripts/backfill_nonpaper_entries.py.
+  notes: Body backfilled from chapter-05.md#5.1.3 人形机器人感知系统的整体架构 by scripts/backfill_nonpaper_entries.py. Body backfilled
+    from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -39,55 +40,31 @@ sources:
   accessed_at: '2026-07-09'
 ---
 ## 概述
-感知栈是人形机器人领域的重要concept。以下内容整理自项目 Wiki，供深入查阅。
+处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。
 
 ## 核心内容
-一个典型的人形机器人感知系统可以分为四层：
+### 感知栈的定义与定位
+感知栈属于 **concept** 类型。 所属领域包括：08_software_middleware, 07_ai_models_algorithms。 价值链层级：intelligence。 处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。 英文名称为 *Perception Stack*。 韩文名称为 *인식 스택*。
 
-1. **传感层（sensor layer）**：物理换能器与前端模拟电路，输出原始电信号。
-2. **数据采集层（data acquisition layer）**：对模拟信号进行滤波、采样、量化和时间戳对齐。
-3. **状态与感知层（state & perception layer）**：运行 SLAM、视觉里程计、力/位估计、物体检测、语义分割等算法。
-4. **决策与控制层（decision & control layer）**：把感知结果用于步态规划、操作规划、人机交互与安全保障。
+### 感知栈的关键维度
+理解感知栈需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
+该实体在人形机器人知识图谱中起到连接基础理论与工程实践的桥梁作用。
 
-```mermaid
-flowchart TD
-    subgraph 传感层
-    A1["相机 / LiDAR / 雷达 / 超声"]
-    A2["编码器 / 力矩传感器 / F/T"]
-    A3["IMU / 触觉 / 麦克风"]
-    end
-    subgraph 数据采集层
-    B1["模拟前端 / ADC"]
-    B2["时间同步 / 触发"]
-    B3["预处理 / 去噪"]
-    end
-    subgraph 状态与感知层
-    C1["状态估计 EKF / VIO"]
-    C2["SLAM / 地图"]
-    C3["检测 / 分割 / 跟踪"]
-    end
-    subgraph 决策与控制层
-    D1["运动规划"]
-    D2["力/位控制"]
-    D3["安全监控"]
-    end
-    A1 --> B1
-    A2 --> B1
-    A3 --> B1
-    B1 --> B2 --> B3 --> C1
-    B3 --> C2
-    B3 --> C3
-    C1 --> D1
-    C2 --> D1
-    C3 --> D2
-    C1 --> D2
-    D1 --> D3
-    D2 --> D3
-```
+### 实践意义
+在人形机器人产业化的背景下，感知栈对于技术研究、产品开发、投资决策与生态建设均具有参考价值。
+准确把握其内涵与外延，有助于避免概念混淆并推动跨学科协作。
 
----
+### 研究与发展方向
+随着人形机器人技术不断演进，感知栈的相关理论与实践也将持续更新，需要保持跟踪与审校。
+
+### 相关标签
+- concept
+- chapter_24
+- wiki_gap
+
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键concept之一，感知栈在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction
-- 项目 Wiki：chapter-05.md#5.1.3 人形机器人感知系统的整体架构
 

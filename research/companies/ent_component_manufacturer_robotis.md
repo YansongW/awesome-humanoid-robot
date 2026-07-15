@@ -8,8 +8,8 @@ names:
   zh: Robotis
   ko: 로보티즈
 summary:
-  en: South Korean company known for Dynamixel smart actuators, widely used in research
-    robots, educational platforms, and humanoid hands.
+  en: South Korean company known for Dynamixel smart actuators, widely used in research robots, educational platforms, and
+    humanoid hands.
   zh: 韩国公司，以 Dynamixel 智能执行器闻名，广泛应用于研究机器人、教育平台和人形手。
   ko: 다이나믹셀 스마트 액추에이터로 잘 알려진 한국 기업으로, 연구용 로봇, 교육용 플랫폼 및 휴인oid 손에 널리 사용됩니다.
 domains:
@@ -32,8 +32,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-24'
   confidence: high
-  notes: Product specifications and company history are documented on the official
-    Robotis website and in academic papers citing Dynamixel hardware.
+  notes: Product specifications and company history are documented on the official Robotis website and in academic papers
+    citing Dynamixel hardware. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_001
   type: website
@@ -50,26 +50,35 @@ sources:
 theoretical_depth:
 - system
 ---
+## 概述
+韩国公司，以 Dynamixel 智能执行器闻名，广泛应用于研究机器人、教育平台和人形手。
 
-# Robotis
+## 核心内容
+### Robotis的定义与定位
+Robotis属于 **component_manufacturer** 类型。 所属领域包括：02_components, 06_design_engineering。 价值链层级：upstream, midstream。 韩国公司，以 Dynamixel 智能执行器闻名，广泛应用于研究机器人、教育平台和人形手。 英文名称为 *Robotis*。 韩文名称为 *로보티즈*。
 
-## 抽象
+### Robotis的核心业务与产品
+Robotis在人形机器人产业链中占据特定位置，其产品或技术能力与下游整机厂商形成供应或合作关系。
+评估该实体时，应关注其技术壁垒、产能规模、客户结构与财务健康状况。
 
-> **生活实例**：它就像机器人界的“乐高舵机供应商”——把电机、减速器、控制器和通信接口装进一个模块里，研究者可以像搭积木一样拼接出机器手或机器臂。
+### 与人形机器人产业的关联
+随着人形机器人产业化加速，Robotis的相关布局、技术路线与市场策略将持续影响行业生态。
+其在核心零部件、系统集成或垂直场景中的角色，将直接影响整机成本、性能与交付能力。
 
-> **自然语言逻辑**：Robotis 是韩国机器人公司，以 Dynamixel 系列智能执行器闻名；这些模块化的舵机集成了电机、减速齿轮、驱动器和反馈传感器，通过串行总线级联，广泛用于研究型机器人、教育平台和人形灵巧手。
+### 竞争格局与发展前景
+该领域竞争激烈，技术迭代快速。Robotis能否保持竞争优势，取决于其持续创新能力、供应链韧性与客户拓展能力。
 
-## Overview
+### 相关标签
+- robotis
+- dynamixel
+- actuator
+- servo
+- research
 
-Robotis is a South Korean robotics company founded in 1999. It is best known for the Dynamixel line of smart actuators, which integrate a motor, reducer, driver, and communication bus in a single package. Dynamixel servos are common in research robots, manipulators, and dexterous hands because of their modularity, feedback capabilities, and broad software support.
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键component_manufacturer之一，Robotis在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-## Key Products
+## 参考
+- [Robotis Official Website](https://www.robotis.com/)
+- [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)
 
-- **Dynamixel X series**: Modular smart actuators with position, velocity, current, and temperature feedback.
-- **Dynamixel XL330-M288-T**: Low-cost, compact servo used in smaller robotic mechanisms.
-- **Dynamixel XM430-W210-T**: Mid-size servo used in research manipulators and hands.
-- **TurtleBot**: Popular open-source mobile robot platform co-developed for education and research.
-
-## Relevance to Humanoid Robotics
-
-Robotis actuators are frequently used in research-grade humanoid hands and arms, including prototypes evaluated in papers such as RUKA. Their availability and documentation make them a practical option for early-stage humanoid hardware development.

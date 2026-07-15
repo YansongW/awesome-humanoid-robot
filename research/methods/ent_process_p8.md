@@ -4,11 +4,12 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: ''
+  en: Structural FEA and iteration
   zh: 结构强度仿真与迭代（Structural FEA）
   ko: 结构强度仿真与迭代（Structural FEA）
 summary:
-  en: ''
+  en: Structural FEA-the 8th stage of the Android product development process, covering conceptual design, implementation
+    verification, and document delivery.
   zh: 结构强度仿真与迭代（Structural FEA）——人形机器人产品开发全流程第 8 阶段，涵盖方案设计、实施验证与文档交付。
   ko: 结构强度仿真与迭代（Structural FEA）
 domains:
@@ -26,7 +27,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
+    from Chinese by scripts/backfill_en_translations.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -35,6 +37,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 结构强度仿真与迭代（Structural FEA）是人形机器人产品开发全流程中的第 8 个阶段，在 WBS V3 中展开为若干三级子任务。
 ## 核心内容
@@ -274,4 +277,5 @@ theoretical_depth:
 
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
+
 

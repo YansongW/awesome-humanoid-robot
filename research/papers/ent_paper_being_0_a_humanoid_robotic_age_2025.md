@@ -8,7 +8,10 @@ names:
   zh: Being-0｜具有视觉语言模型和模块化技能的人形机器人智能体
   ko: 'Being-0: A Humanoid Robotic Agent with Vision-Language Models and Modular Skills'
 summary:
-  en: ''
+  en: Being-0 first recovers scene, target, or motion representations from language instructions, camera images/multi-view
+    observations, and then generates actionable action commands using VLM semantic planning/routing, hierarchical skills/expert
+    strategies. The key is to break down tasks into routable skills or expert strategies, which are then selected and combined
+    in execution using high-level modules.
   zh: Being-0 先从语言指令、相机图像/多视角观测恢复场景、目标或运动表征，再用VLM 语义规划/路由、分层技能/专家策略生成可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
   ko: Being-0 先从语言指令、相机图像/多视角观测恢复场景、目标或运动表征，再用VLM 语义规划/路由、分层技能/专家策略生成可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
@@ -31,10 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (057). Institution: FM and low-level skills,
-    and () the Modular Skill Library for robust locomotion and dexterous manipulation.
-    Together, these components. Full title: Being-0: A Humanoid Robotic Agent with
-    Vision-Language Models and Modular Skills.'
+  notes: 'Imported from WeChat curated list (057). Institution: FM and low-level skills, and () the Modular Skill Library
+    for robust locomotion and dexterous manipulation. Together, these components. Full title: Being-0: A Humanoid Robotic
+    Agent with Vision-Language Models and Modular Skills. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -46,8 +48,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 Being-0 先从语言指令、相机图像/多视角观测恢复场景、目标或运动表征，再用VLM 语义规划/路由、分层技能/专家策略生成可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
 ## 개요
 Being-0 先从语言指令、相机图像/多视角观测恢复场景、目标或运动表征，再用VLM 语义规划/路由、分层技能/专家策略生成可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
+

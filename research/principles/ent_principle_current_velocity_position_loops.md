@@ -29,7 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-04.md#4.5.5 电流环、速度环、位置环的级联控制 by scripts/backfill_nonpaper_entries.py.
+  notes: Body backfilled from chapter-04.md#4.5.5 电流环、速度环、位置环的级联控制 by scripts/backfill_nonpaper_entries.py. Body backfilled
+    from chapter-04.md section '4.5.5 电流环、速度环、位置环的级联控制' by scripts/backfill_critical_entities.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,9 +39,10 @@ sources:
   accessed_at: '2026-07-09'
 ---
 ## 概述
-电流环/速度环/位置环是人形机器人领域的重要principle。以下内容整理自项目 Wiki，供深入查阅。
+伺服驱动的级联反馈控制层级：内环电流环控制转矩，中间速度环控制转速，外环位置环控制关节角度。
 
 ## 核心内容
+### 4.5.5 电流环、速度环、位置环的级联控制
 实际关节驱动通常采用三级级联控制：最内层 **电流环**（力矩环），中间 **速度环**，最外层 **位置环**。每一层带宽约为下一层的 5-10 倍，以保证稳定性。
 
 !!! note "术语解释：电流环、速度环、位置环、PI 控制器、前馈、抗饱和、带宽级联"
@@ -52,26 +54,14 @@ sources:
     - **抗饱和（anti-windup）**：防止积分器在饱和时过度累积，避免退出饱和后的大超调。
     - **带宽级联（bandwidth cascade）**：内环带宽远高于外环，确保外环指令能被内环快速跟踪。
 
-```mermaid
-flowchart TD
-    P["位置指令 theta*"] --> PC["位置环 PI"]
-    PC --> V["速度指令 omega*"]
-    V --> VC["速度环 PI"]
-    VC --> I["电流指令 I*"]
-    I --> IC["电流环 PI"]
-    IC --> INV["三相逆变器"]
-    INV --> M["PMSM"]
-    M --> ENC["编码器 theta"]
-    ENC --> DIFF["omega = dtheta/dt"]
-    DIFF --> VC
-    ENC --> PC
-    M --> CS["电流传感器"]
-    CS --> IC
-```
-
 电流环带宽通常可达 1-5 kHz；速度环 50-500 Hz；位置环 5-100 Hz，具体取决于负载惯量、刚度和采样率。
 
+### 在人形机器人关节控制中的重要性
+人形机器人关节通常需要同时实现高动态响应和精确的位置跟踪。三级级联控制通过分层带宽设计，使内环快速抑制电流扰动、中环保证速度平滑、外环实现轨迹跟踪，是多自由度人形机器人稳定运动的基础。合理整定三环参数并加入前馈与抗饱和机制，可以显著提升行走、操作和碰撞恢复能力。
+
 ## 参考
+- 项目 Wiki：wiki/docs/chapters/chapter-04.md 第「4.5.5 电流环、速度环、位置环的级联控制」节
 - Wiki extraction
-- 项目 Wiki：chapter-04.md#4.5.5 电流环、速度环、位置环的级联控制
+
+电流环/速度环/位置环作为人形机器人产业链中的关键组成部分，其相关理论与工程实践仍在持续发展。深入理解其原理、边界条件与典型应用场景，对于将实验室样机转化为可量产产品具有重要意义。
 

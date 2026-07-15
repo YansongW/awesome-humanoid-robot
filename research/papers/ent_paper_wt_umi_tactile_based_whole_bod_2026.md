@@ -4,13 +4,15 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware
-    Planning'
+  en: 'WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning'
   zh: WT-UMI｜通过力监督接触感知规划进行基于触觉的全身操作
-  ko: 'WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware
-    Planning'
+  ko: 'WT-UMI: Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning'
 summary:
-  en: ''
+  en: 'WT-UMI mainly solves the data closed loop: using camera images/multi-view observation, teleoperation/exoskeleton data,
+    contact force/tactile signals to collect human operation and robot state, and then through ACT/behavioral cloning imitation
+    learning, diffusion strategy/flow matching to transform into trainable and reusable whole-body trajectory/action sequences,
+    end effector/wrist target, and action chunk/token. The key point is to view action generation as a conditional generation
+    problem and use diffusion or flow matching to sample executable trajectories in a multimodal action distribution.'
   zh: WT-UMI 主要解决数据闭环：用相机图像/多视角观测、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配转成可训练、可复用的全身轨迹/动作序列、末端执行器/腕手目标、动作
     chunk/token。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
   ko: WT-UMI 主要解决数据闭环：用相机图像/多视角观测、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配转成可训练、可复用的全身轨迹/动作序列、末端执行器/腕手目标、动作
@@ -34,8 +36,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (134). Institution: . Full title: WT-UMI:
-    Tactile-based Whole-Body Manipulation via Force-Supervised Contact-Aware Planning.'
+  notes: 'Imported from WeChat curated list (134). Institution: . Full title: WT-UMI: Tactile-based Whole-Body Manipulation
+    via Force-Supervised Contact-Aware Planning. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -47,8 +49,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 WT-UMI 主要解决数据闭环：用相机图像/多视角观测、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配转成可训练、可复用的全身轨迹/动作序列、末端执行器/腕手目标、动作 chunk/token。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
 ## 개요
 WT-UMI 主要解决数据闭环：用相机图像/多视角观测、遥操作/外骨骼数据、接触力/触觉信号采集人类操作和机器人状态，再通过ACT/行为克隆模仿学习、扩散策略/流匹配转成可训练、可复用的全身轨迹/动作序列、末端执行器/腕手目标、动作 chunk/token。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
+

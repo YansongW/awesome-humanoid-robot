@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: ''
+  en: Grasp Pose Generation and Force Closure Analysis
   zh: 抓取姿态生成与力闭合分析
   ko: 抓取姿态生成与力闭合分析
 summary:
-  en: ''
+  en: Pick-and-place library/policy, success rate for typical objects&gt; target
   zh: 抓取库/策略、典型物体成功率 > 目标
   ko: 抓取库/策略、典型物体成功率 > 目标
 domains:
@@ -26,7 +26,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
+    from Chinese by scripts/backfill_en_translations.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -35,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）
 
@@ -81,4 +83,5 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 

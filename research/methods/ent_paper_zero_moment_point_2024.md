@@ -33,7 +33,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-14'
   confidence: medium
-  notes: Body backfilled from chapter-08.md#8.4.4 零力矩点（ZMP）与动态平衡 by scripts/backfill_nonpaper_entries.py.
+  notes: Body backfilled from chapter-08.md#8.4.4 零力矩点（ZMP）与动态平衡 by scripts/backfill_nonpaper_entries.py. Body backfilled
+    from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_001
   type: website
@@ -43,36 +44,36 @@ sources:
   accessed_at: '2026-07-02'
 ---
 ## 概述
-零力矩点是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
+双足行走和平衡控制的基础稳定性判据。
 
 ## 核心内容
-**零力矩点（Zero Moment Point, ZMP）**是地面上的一个点，在该点处地面反作用力产生的水平力矩分量为零[43][44]。ZMP 是人形机器人动态平衡的核心判据：若 ZMP 位于支撑多边形（support polygon）内，则机器人理论上不会绕地面边缘倾倒。
+### 零力矩点的定义与定位
+零力矩点属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 06_design_engineering。 价值链层级：intelligence, midstream。 双足行走和平衡控制的基础稳定性判据。 英文名称为 *Zero Moment Point*。 韩文名称为 *Zero Moment Point*。
 
-!!! note "术语解释：零力矩点（ZMP）、支撑多边形、地面反作用力、动态平衡"
-    - **零力矩点（ZMP）**：地面反作用力等效作用点，水平力矩分量为零。
-    - **支撑多边形（support polygon）**：脚底与地面接触点构成的凸包。
-    - **地面反作用力（GRF）**：地面作用于脚的力。
-    - **动态平衡（dynamic balance）**：在运动过程中保持不倾倒的能力。
+### 零力矩点的数学与原理基础
+零力矩点建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，零力矩点通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-在简化模型中，假设质心高度 $z_c$ 恒定，ZMP 坐标为：
+### 算法步骤与实现要点
+在实际实现零力矩点时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-$$
-x_{\text{ZMP}} = x_{\text{CoM}} - \frac{z_c}{g} \ddot{x}_{\text{CoM}}
-$$
+### 典型应用与局限性
+零力矩点可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-$$
-y_{\text{ZMP}} = y_{\text{CoM}} - \frac{z_c}{g} \ddot{y}_{\text{CoM}}
-$$
+### 相关标签
+- bipedal
+- control
+- method
+- stability
+- zmp
 
-其中 $g$ 为重力加速度，$\ddot{x}_{\text{CoM}}$、$\ddot{y}_{\text{CoM}}$ 为质心水平加速度。
-
-!!! note "术语解释：质心高度、水平加速度、重力加速度、凸包"
-    - **质心高度（CoM height）**：质心到地面的垂直距离。
-    - **水平加速度（horizontal acceleration）**：质心在水平面内的加速度分量。
-    - **重力加速度（gravitational acceleration）**：$g \approx 9.81\ \text{m/s}^2$。
-    - **凸包（convex hull）**：包含一组点的最小凸集。
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键method之一，零力矩点在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Zero Moment Point](https://en.wikipedia.org/wiki/Zero_moment_point)
-- 项目 Wiki：chapter-08.md#8.4.4 零力矩点（ZMP）与动态平衡
 

@@ -8,7 +8,10 @@ names:
   zh: HYPERmotion｜学习自主移动操作的混合行为规划
   ko: 'HYPERmotion: Learning Hybrid Behavior Planning for Autonomous Loco-manipulation'
 summary:
-  en: ''
+  en: HYPERmotion first recovers scene, target, or motion representations from language instructions, camera images/multi-view
+    observations, ontology states, and joint sequences, and then generates executable action commands using PPO/RL policy
+    training, VLM semantic planning/routing, and whole-body controller/WBC/MPC. The key is to break down tasks into routable
+    skills or expert strategies, which are then selected and combined in execution using high-level modules.
   zh: HYPERmotion 先从语言指令、相机图像/多视角观测、本体状态与关节序列恢复场景、目标或运动表征，再用PPO/RL 策略训练、VLM 语义规划/路由、全身控制器/WBC/MPC生成可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
   ko: HYPERmotion 先从语言指令、相机图像/多视角观测、本体状态与关节序列恢复场景、目标或运动表征，再用PPO/RL 策略训练、VLM 语义规划/路由、全身控制器/WBC/MPC生成可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
@@ -31,8 +34,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (065). Institution: . Full title: HYPERmotion:
-    Learning Hybrid Behavior Planning for Autonomous Loco-manipulation.'
+  notes: 'Imported from WeChat curated list (065). Institution: . Full title: HYPERmotion: Learning Hybrid Behavior Planning
+    for Autonomous Loco-manipulation. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -44,8 +47,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 HYPERmotion 先从语言指令、相机图像/多视角观测、本体状态与关节序列恢复场景、目标或运动表征，再用PPO/RL 策略训练、VLM 语义规划/路由、全身控制器/WBC/MPC生成可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
 ## 개요
 HYPERmotion 先从语言指令、相机图像/多视角观测、本体状态与关节序列恢复场景、目标或运动表征，再用PPO/RL 策略训练、VLM 语义规划/路由、全身控制器/WBC/MPC生成可执行动作命令。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
+

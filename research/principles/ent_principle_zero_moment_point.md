@@ -33,7 +33,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-08.md#8.4.4 零力矩点（ZMP）与动态平衡 by scripts/backfill_nonpaper_entries.py.
+  notes: Body backfilled from chapter-08.md#8.4.4 零力矩点（ZMP）与动态平衡 by scripts/backfill_nonpaper_entries.py. Body backfilled
+    from chapter-08.md section '8.4.4 零力矩点（ZMP）与动态平衡' by scripts/backfill_critical_entities.py.
 sources:
 - id: src_vukobratovic_2004_zmp
   type: paper
@@ -57,9 +58,10 @@ related_entities:
     zh: ZMP 条件来源于机器人运动方程的力矩平衡，通常由欧拉-拉格朗日方程或牛顿-欧拉动力学表达。
 ---
 ## 概述
-零力矩点（ZMP）是人形机器人领域的重要principle。以下内容整理自项目 Wiki，供深入查阅。
+地面反作用力水平分力矩为零的地面点，常用于判断双足机器人动态行走的稳定性。
 
 ## 核心内容
+### 8.4.4 零力矩点（ZMP）与动态平衡
 **零力矩点（Zero Moment Point, ZMP）**是地面上的一个点，在该点处地面反作用力产生的水平力矩分量为零[43][44]。ZMP 是人形机器人动态平衡的核心判据：若 ZMP 位于支撑多边形（support polygon）内，则机器人理论上不会绕地面边缘倾倒。
 
 !!! note "术语解释：零力矩点（ZMP）、支撑多边形、地面反作用力、动态平衡"
@@ -86,8 +88,13 @@ $$
     - **重力加速度（gravitational acceleration）**：$g \approx 9.81\ \text{m/s}^2$。
     - **凸包（convex hull）**：包含一组点的最小凸集。
 
+### ZMP 判据的适用边界
+虽然 ZMP 是双足机器人动态平衡的经典判据，但它基于平坦地面和刚性接触的假设。在复杂地形、多接触点或受到外部扰动时，需要结合捕获点、动量控制和全身控制等方法进行综合稳定性判断。此外，ZMP 只保证不绕支撑边界倾倒，并不直接保证全局动态可行性，因此常与轨迹优化和 preview 控制结合使用。
+
 ## 参考
+- 项目 Wiki：wiki/docs/chapters/chapter-08.md 第「8.4.4 零力矩点（ZMP）与动态平衡」节
 - [M. Vukobratović and B. Borovac, Zero-Moment Point — Thirty Five Years of Its Life, IJHR, 2004](https://doi.org/10.1142/S0219843604000083)
 - [P. Sardain and G. Bessonnet, Forces Acting on a Biped Robot. Center of Pressure—Zero Moment Point, IEEE Trans. SMC-A, 2004](https://doi.org/10.1109/TSMCA.2004.832811)
-- 项目 Wiki：chapter-08.md#8.4.4 零力矩点（ZMP）与动态平衡
+
+零力矩点（ZMP）作为人形机器人产业链中的关键组成部分，其相关理论与工程实践仍在持续发展。深入理解其原理、边界条件与典型应用场景，对于将实验室样机转化为可量产产品具有重要意义。
 

@@ -4,13 +4,16 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and
-    Reaching'
+  en: 'Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching'
   zh: 手眼自主配送｜学习人形机器人导航运动和伸手
-  ko: 'Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and
-    Reaching'
+  ko: 'Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion and Reaching'
 summary:
-  en: ''
+  en: This work first recovers scenes, targets, or motion representations from camera images/multi-view observations, proprioceptive
+    states and joint sequences, human videos/motion-capture trajectories, and then reconstructs the motion of the target from
+    the video sequence, then, the heterogeneous dynamic capture and synthesis balance data, the whole body controller/WBC/Mpc,
+    and the hierarchical skill/expert strategy are used to generate the low-level controller target, navigation/reaching target.
+    The key is to break the task down into routable skills or expert strategies, which are then selected and combined in execution
+    using high-level modules.
   zh: 这篇工作先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用异构动捕与合成平衡数据、全身控制器/WBC/MPC、分层技能/专家策略生成低层控制器目标、导航/到达目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
   ko: 这篇工作先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用异构动捕与合成平衡数据、全身控制器/WBC/MPC、分层技能/专家策略生成低层控制器目标、导航/到达目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
@@ -32,9 +35,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (126). Institution: Stanford University.
-    Full title: Hand-Eye Autonomous Delivery: Learning Humanoid Navigation, Locomotion
-    and Reaching.'
+  notes: 'Imported from WeChat curated list (126). Institution: Stanford University. Full title: Hand-Eye Autonomous Delivery:
+    Learning Humanoid Navigation, Locomotion and Reaching. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -46,8 +48,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 这篇工作先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用异构动捕与合成平衡数据、全身控制器/WBC/MPC、分层技能/专家策略生成低层控制器目标、导航/到达目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
 ## 개요
 这篇工作先从相机图像/多视角观测、本体状态与关节序列、人类视频/动捕轨迹恢复场景、目标或运动表征，再用异构动捕与合成平衡数据、全身控制器/WBC/MPC、分层技能/专家策略生成低层控制器目标、导航/到达目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
+

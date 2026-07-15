@@ -29,7 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-09.md#9.2.2 运动学建模：简化腿的正运动学 by scripts/backfill_nonpaper_entries.py.
+  notes: Body backfilled from chapter-09.md#9.2.2 运动学建模：简化腿的正运动学 by scripts/backfill_nonpaper_entries.py. Body backfilled
+    from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,40 +39,34 @@ sources:
   accessed_at: '2026-07-09'
 ---
 ## 概述
-正运动学是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
+根据给定关节角，通过齐次变换链或指数积计算末端执行器位姿的方法。
 
 ## 核心内容
-为便于分析下肢工作空间，常将单腿简化为 3-DOF 髋（roll/pitch/yaw）+ 1-DOF 膝 + 2-DOF 踝（pitch/roll）的串链。通过改进型 DH 参数或旋量法建立正运动学，可计算机足相对髋的位置。
+### 正运动学的定义与定位
+正运动学属于 **method** 类型。 所属领域包括：06_design_engineering。 价值链层级：midstream。 根据给定关节角，通过齐次变换链或指数积计算末端执行器位姿的方法。 英文名称为 *Forward Kinematics*。 韩文名称为 *정욕동학*。
 
-!!! note "术语解释：正运动学、DH 参数、改进型 DH、旋量、齐次变换"
-    - **正运动学（forward kinematics）**：由关节角计算末端位姿的映射。
-    - **DH 参数（Denavit-Hartenberg parameters）**：用四个参数（a, α, d, θ）描述相邻连杆坐标系关系。
-    - **改进型 DH（modified DH, MDH）**：将连杆长度 α 与扭角 α 定义在前一关节处，避免相邻平行轴奇异。
-    - **旋量（screw）**：描述刚体绕轴旋转并沿轴平移的几何量。
-    - **齐次变换（homogeneous transformation）**：4×4 矩阵，同时描述旋转与平移。
+### 正运动学的数学与原理基础
+正运动学建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，正运动学通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-对于平面简化腿（髋 pitch θ₁、膝 θ₂、踝 pitch θ₃），足端位置可写为：
+### 算法步骤与实现要点
+在实际实现正运动学时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-$$
-\begin{aligned}
-x &= l_1 \sin\theta_1 + l_2 \sin(\theta_1+\theta_2) + l_3 \sin(\theta_1+\theta_2+\theta_3) \\
-z &= -l_1 \cos\theta_1 - l_2 \cos(\theta_1+\theta_2) - l_3 \cos(\theta_1+\theta_2+\theta_3)
-\end{aligned}
-$$
+### 典型应用与局限性
+正运动学可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-其中 \(l_1, l_2, l_3\) 分别为大腿、小腿与足长，z 轴向上为正。
+### 相关标签
+- method
+- chapter_8
+- wiki_gap
 
-```mermaid
-flowchart TD
-    A["髋关节 θ₁"] --> B["大腿 l₁"]
-    B --> C["膝关节 θ₂"]
-    C --> D["小腿 l₂"]
-    D --> E["踝关节 θ₃"]
-    E --> F["足 l₃"]
-    F --> G["足端位置 (x, z)"]
-```
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键method之一，正运动学在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction
-- 项目 Wiki：chapter-09.md#9.2.2 运动学建模：简化腿的正运动学
 

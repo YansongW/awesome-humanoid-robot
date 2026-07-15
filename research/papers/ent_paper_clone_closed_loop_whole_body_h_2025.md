@@ -8,7 +8,11 @@ names:
   zh: CLONE｜用于长时程任务的闭环全身人形远程操作
   ko: 'CLONE: Closed-Loop Whole-Body Humanoid Teleoperation for Long-Horizon Tasks'
 summary:
-  en: ''
+  en: 'CLONE mainly solves the closed-loop data problem: using teleoperation/exoskeleton data to collect human operation and
+    robot status, and then transforming it into trainable and reusable whole-body trajectories/action sequences and low-level
+    controller targets through hierarchical skills/expert strategies, closed-loop error correction/human intervention. The
+    key is to break down tasks into routable skills or expert strategies, which are then selected and combined in execution
+    using high-level modules.'
   zh: CLONE 主要解决数据闭环：用遥操作/外骨骼数据采集人类操作和机器人状态，再通过分层技能/专家策略、闭环纠错/人类干预转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
   ko: CLONE 主要解决数据闭环：用遥操作/外骨骼数据采集人类操作和机器人状态，再通过分层技能/专家策略、闭环纠错/人类干预转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 domains:
@@ -32,11 +36,10 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (006). Institution: School of Computer
-    Science and Technology, Beijing Institute of Technology、State Key Laboratory of
-    General Artificial Intelligence, BIGAI、School of Psychological and Cognitive Sciences,
-    Peking University、Institute for Artificial Intelligence, Peking University. Full
-    title: CLONE: Closed-Loop Whole-Body Humanoid Teleoperation for Long-Horizon Tasks.'
+  notes: 'Imported from WeChat curated list (006). Institution: School of Computer Science and Technology, Beijing Institute
+    of Technology、State Key Laboratory of General Artificial Intelligence, BIGAI、School of Psychological and Cognitive Sciences,
+    Peking University、Institute for Artificial Intelligence, Peking University. Full title: CLONE: Closed-Loop Whole-Body
+    Humanoid Teleoperation for Long-Horizon Tasks. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -48,8 +51,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 CLONE 主要解决数据闭环：用遥操作/外骨骼数据采集人类操作和机器人状态，再通过分层技能/专家策略、闭环纠错/人类干预转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
 
 ## 개요
 CLONE 主要解决数据闭环：用遥操作/外骨骼数据采集人类操作和机器人状态，再通过分层技能/专家策略、闭环纠错/人类干预转成可训练、可复用的全身轨迹/动作序列、低层控制器目标。关键点是把任务拆成可路由的技能或专家策略，再用高层模块在执行中选择和组合。
+

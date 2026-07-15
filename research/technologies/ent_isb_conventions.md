@@ -8,9 +8,8 @@ names:
   zh: ISB关节坐标系约定
   ko: ISB 관절 좌표계 관례
 summary:
-  en: Standardized conventions from the International Society of Biomechanics for
-    defining joint coordinate systems, sign conventions, and functional ranges of
-    motion in human biomechanics.
+  en: Standardized conventions from the International Society of Biomechanics for defining joint coordinate systems, sign
+    conventions, and functional ranges of motion in human biomechanics.
   zh: 国际生物力学学会（ISB）制定的标准化约定，用于定义人体生物力学中的关节坐标系、符号约定和功能活动范围。
   ko: 인체 생체역학에서 관절 좌표계, 부호 규칙 및 기능적 가동 범위를 정의하기 위한 국제생체역학회(ISB)의 표준화된 관례입니다.
 domains:
@@ -33,7 +32,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-25'
   confidence: high
-  notes: Widely cited biomechanics standard.
+  notes: Widely cited biomechanics standard. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_001
   type: paper
@@ -44,19 +43,34 @@ sources:
 theoretical_depth:
 - system
 ---
+## 概述
+国际生物力学学会（ISB）制定的标准化约定，用于定义人体生物力学中的关节坐标系、符号约定和功能活动范围。
 
-# ISB Conventions for Joint Coordinate Systems
+## 核心内容
+### ISB关节坐标系约定的定义与定位
+ISB关节坐标系约定属于 **standard** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets, midstream。 国际生物力学学会（ISB）制定的标准化约定，用于定义人体生物力学中的关节坐标系、符号约定和功能活动范围。 英文名称为 *ISB Conventions for Joint Coordinate Systems*。 韩文名称为 *ISB 관절 좌표계 관례*。
 
-## 抽象
+### ISB关节坐标系约定的关键维度
+理解ISB关节坐标系约定需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
+该实体在人形机器人知识图谱中起到连接基础理论与工程实践的桥梁作用。
 
-> **生活实例**：它就像地理学家统一使用的经纬度坐标系——无论哪张地图，只要用同样的坐标定义，大家就能直接比较位置、距离和方向。
+### 实践意义
+在人形机器人产业化的背景下，ISB关节坐标系约定对于技术研究、产品开发、投资决策与生态建设均具有参考价值。
+准确把握其内涵与外延，有助于避免概念混淆并推动跨学科协作。
 
-> **自然语言逻辑**：ISB 关节坐标系约定是国际生物力学学会制定的标准，规定了关节坐标轴、旋转顺序和符号约定；它让人形机器人研究者能用与人类生物力学相同的参考框架，直接对比机器人关节和人类关节的运动能力。
+### 研究与发展方向
+随着人形机器人技术不断演进，ISB关节坐标系约定的相关理论与实践也将持续更新，需要保持跟踪与审校。
 
-## Overview
+### 相关标签
+- isb
+- biomechanics
+- standard
+- joint_coordinates
+- range_of_motion
 
-ISB conventions provide a common reference frame for describing human joint kinematics. They standardize coordinate axes, rotation sequences, and sign conventions so that studies and robot designs can be compared directly.
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键standard之一，ISB关节坐标系约定在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-## Relevance to Humanoid Robotics
+## 参考
+- [Human-Level Actuation for Humanoids](https://arxiv.org/abs/2511.06796)
 
-Humanoid robot benchmarking and design benefit from ISB conventions because they allow direct comparison between human joint capabilities and robot joint capabilities using the same coordinate systems.

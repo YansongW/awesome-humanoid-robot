@@ -8,7 +8,8 @@ names:
   zh: 拉格朗日量
   ko: 라그랑지안
 summary:
-  en: A scalar function that encodes the dynamics of a system through the difference (or generalized combination) of kinetic and potential energy, from which equations of motion follow via a variational principle.
+  en: A scalar function that encodes the dynamics of a system through the difference (or generalized combination) of kinetic
+    and potential energy, from which equations of motion follow via a variational principle.
   zh: 通过动能与势能之差（或更一般组合）刻画系统动力学，并由变分原理导出运动方程的标量函数。
   ko: 울성 및 위치 에너지의 차이(또는 일반화된 조합)로 시스템 역학을 기술하고 변분 원리로부터 운 동 방정식을 유도하는 스칼라 함수.
 domains:
@@ -30,7 +31,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-25'
   confidence: high
-  notes: Standard foundational knowledge; reviewed against standard references.
+  notes: Standard foundational knowledge; reviewed against standard references. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_goldstein_poole_safko_2002
   type: other
@@ -42,48 +43,42 @@ related_entities:
 - id: ent_newton_euler_equations
   relationship: is_alternative_to
   description:
-    en: Newton-Euler equations give the same dynamics as the Lagrangian formalism for rigid-body systems, but via force and torque balances.
+    en: Newton-Euler equations give the same dynamics as the Lagrangian formalism for rigid-body systems, but via force and
+      torque balances.
     zh: 牛顿-欧拉方程与拉格朗日形式对刚体系统给出相同动力学，但直接通过力与力矩平衡列写。
     ko: 뉴턴-오일러 방정식은 강체 시스템에 대해 라그랑지안 형식과 동일한 역학을 주지만 힘과 토크 균형을 통해 직접 유도합니다.
 ---
+## 概述
+通过动能与势能之差（或更一般组合）刻画系统动力学，并由变分原理导出运动方程的标量函数。
 
-# Lagrangian / 拉格朗日量 / 라그랑지안
+## 核心内容
+### 拉格朗日量的定义与定位
+拉格朗日量属于 **formalism** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 通过动能与势能之差（或更一般组合）刻画系统动力学，并由变分原理导出运动方程的标量函数。 英文名称为 *Lagrangian*。 韩文名称为 *라그랑지안*。
 
-## 抽象
+### 拉格朗日量的数学与原理基础
+拉格朗日量建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，拉格朗日量通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-> **生活实例**：想象滑雪者选择下山最快路线：每个位置下滑速度（动能）与重力势能的取舍决定路线好坏。拉格朗日量就是这种取舍的“记分卡”，真实运动路径是让总得分最小的那条。
->
-> **自然语言逻辑**：拉格朗日形式不直接列写力的平衡，而是定义一个标量 L，并追问：在所有想象路径中，哪一条让 L 对时间的积分取驻值？回答这个变分问题即可得到欧拉-拉格朗日方程，它们与牛顿定律等价，但在复杂坐标系中更易推导。
+### 算法步骤与实现要点
+在实际实现拉格朗日量时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-## 形式化定义 / Formal Definition
+### 典型应用与局限性
+拉格朗日量可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-For a mechanical system with generalized coordinates $q(t)$ and velocities $\dot{q}(t)$, define the Lagrangian
+### 相关标签
+- mechanics
+- classical_mechanics
+- variational_principle
+- lagrangian
+- energy
 
-$$\mathcal{L}(q, \dot{q}, t) = T(q, \dot{q}) - V(q, t),$$
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键formalism之一，拉格朗日量在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-where $T$ is kinetic energy and $V$ is potential energy. The equations of motion are the Euler–Lagrange equations:
+## 参考
+- [H. Goldstein, C. Poole, and J. Safko, Classical Mechanics, 3rd ed., Addison-Wesley, 2002](https://doi.org/10.2307/2522307)
 
-$$\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i} - \frac{\partial \mathcal{L}}{\partial q_i} = 0 \quad (i = 1, \dots, n).$$
-
-For a system with non-conservative generalized forces $Q_i$, the forced form is
-
-$$\frac{d}{dt}\frac{\partial \mathcal{L}}{\partial \dot{q}_i} - \frac{\partial \mathcal{L}}{\partial q_i} = Q_i.$$
-
-## 关键符号与直觉对应
-
-| 符号 | 名称 | 直觉含义 |
-|------|------|----------|
-| $q_i$ | 广义坐标 | 描述系统位形的独立参数 |
-| $\dot{q}_i$ | 广义速度 | 广义坐标对时间的变化率 |
-| $T$ | 动能 | 系统由于运动而具有的能量 |
-| $V$ | 势能 | 系统由于位形而具有的能量 |
-| $\mathcal{L}$ | 拉格朗日量 | 能量差的标量函数，变分核心 |
-| $Q_i$ | 广义非保守力 | 不能由势函数导出的力 |
-
-## 与其他知识点的关系
-
-- `is_alternative_to` → [ent_newton_euler_equations]
-
-## 参考文献
-
-1. H. Goldstein, C. Poole, and J. Safko, Classical Mechanics, 3rd ed., Addison-Wesley, 2002

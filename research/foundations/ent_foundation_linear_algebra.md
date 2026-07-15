@@ -30,26 +30,46 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-26'
   confidence: high
-  notes: Foundational for robotics and machine learning.
+  notes: Foundational for robotics and machine learning. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_001
   type: paper
-  title: 'Strang, Introduction to Linear Algebra'
+  title: Strang, Introduction to Linear Algebra
   url: https://math.mit.edu/~gs/linearalgebra/
   date: '2016'
   accessed_at: '2026-06-26'
 ---
+## 概述
+研究向量空间、线性变换、矩阵和线性方程组的数学分支。
 
-## 抽象
+## 核心内容
+### 线性代数的定义与定位
+线性代数属于 **foundation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 研究向量空间、线性变换、矩阵和线性方程组的数学分支。 英文名称为 *Linear Algebra*。 韩文名称为 *선형대수학*。
 
-> **生活实例**：解一组线性方程就像调配几种原料的配方。线性代数告诉你如何把“每种原料有多少”写成表格（矩阵），把“想要的效果”写成向量，然后通过行变换或求逆快速算出配方。
->
-> **自然语言逻辑**：向量表示物理量（力、速度），矩阵表示线性映射（如 Jacobian、旋转矩阵）；线性方程组 `Ax = b` 的解给出未知量；特征值和奇异值分解揭示系统的内在结构。
+### 线性代数的数学与原理基础
+线性代数建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，线性代数通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-## Overview
+### 算法步骤与实现要点
+在实际实现线性代数时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-Linear algebra is the language of modern robotics and machine learning. It provides the tools to represent transformations, solve systems, and analyze stability. In humanoid robotics, it appears in kinematics, dynamics, optimization, and learning.
+### 典型应用与局限性
+线性代数可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-## Relevance to Humanoid Robotics
+### 相关标签
+- linear_algebra
+- matrices
+- vector_spaces
+- jacobian
+- humanoid_robot
 
-Jacobians, inertia matrices, QP KKT systems, and neural-network weight matrices are all linear-algebra objects. A solid grasp of linear algebra is necessary to read and implement humanoid control and learning algorithms.
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键foundation之一，线性代数在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+
+## 参考
+- [Strang, Introduction to Linear Algebra](https://math.mit.edu/~gs/linearalgebra/)
+

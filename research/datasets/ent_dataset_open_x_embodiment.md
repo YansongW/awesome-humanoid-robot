@@ -8,12 +8,10 @@ names:
   zh: Open X-Embodiment 数据集
   ko: Open X-Embodiment 데이터셋
 summary:
-  en: A large-scale aggregated robot-learning dataset combining demonstrations from
-    diverse real-world robot platforms and institutions, widely used for cross-embodiment
-    VLA pretraining.
+  en: A large-scale aggregated robot-learning dataset combining demonstrations from diverse real-world robot platforms and
+    institutions, widely used for cross-embodiment VLA pretraining.
   zh: 一个大规模聚合机器人学习数据集，整合来自多种真实机器人平台和机构的演示数据，广泛用于跨具身 VLA 预训练。
-  ko: 다양한 실제 로봇 플랫폼과 기관의 데모를 결합한 대규모 로봇 학습 데이터셋으로, cross-embodiment VLA 사전 학습에 널리
-    사용됨.
+  ko: 다양한 실제 로봇 플랫폼과 기관의 데모를 결합한 대규모 로봇 학습 데이터셋으로, cross-embodiment VLA 사전 학습에 널리 사용됨.
 domains:
 - 09_data_datasets
 layers:
@@ -33,8 +31,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: high
-  notes: Dataset scope and usage are documented in the original RSS 2023 paper and
-    confirmed by Wang et al. 2026 VLA survey.
+  notes: Dataset scope and usage are documented in the original RSS 2023 paper and confirmed by Wang et al. 2026 VLA survey.
+    Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_oxe_paper
   type: paper
@@ -52,16 +50,22 @@ related_entities:
 - id: ent_paper_wang_vla_survey_2026
   relationship: cites
   description:
-    en: Wang et al. 2026 survey cites Open X-Embodiment as a widely used cross-embodiment
-      pretraining dataset.
+    en: Wang et al. 2026 survey cites Open X-Embodiment as a widely used cross-embodiment pretraining dataset.
     zh: Wang 等人 2026 综述将 Open X-Embodiment 引用为广泛使用的跨具身预训练数据集。
-    ko: Wang et al. 2026 서베이는 Open X-Embodiment를 널리 사용되는 cross-embodiment 사전 학습 데이터셋으로
-      인용함.
+    ko: Wang et al. 2026 서베이는 Open X-Embodiment를 널리 사용되는 cross-embodiment 사전 학습 데이터셋으로 인용함.
 theoretical_depth:
 - system
 ---
+## 概述
+一个大规模聚合机器人学习数据集，整合来自多种真实机器人平台和机构的演示数据，广泛用于跨具身 VLA 预训练。
 
-# Open X-Embodiment Dataset
+## 核心内容
+### Open X-Embodiment 数据集的定义与定位
+Open X-Embodiment 数据集属于 **dataset** 类型，英文名称为 *Open X-Embodiment Dataset*。
+一个大规模聚合机器人学习数据集，整合来自多种真实机器人平台和机构的演示数据，广泛用于跨具身 VLA 预训练。
+
+### Open X-Embodiment 数据集的关键信息
+以下整理了关于Open X-Embodiment 数据集的详细说明，供中英文读者参考。
 
 ## 抽象
 
@@ -87,3 +91,10 @@ Data is released in a standardized RLDS format with video, language instruction,
 ## Relevance to Humanoid Robotics
 
 Open X-Embodiment is the most common pretraining corpus for VLA models that may later be fine-tuned on humanoid platforms. However, humanoid-specific whole-body control and balancing data is under-represented compared to arm-only manipulation.
+
+## 参考
+- [Open X-Embodiment: Robotic Learning Datasets and RT-X Models](https://arxiv.org/abs/2310.08864)
+- [Open X-Embodiment Collaboration](https://www.open-x-embodiment.org/)
+
+Open X-Embodiment 数据集的相关技术仍在快速发展。从系统科学角度看，它与其他dataset相互耦合，共同决定了人形机器人的整体性能。深入理解其原理、边界条件与工程约束，是将实验室样机转化为可量产产品的必要环节。
+

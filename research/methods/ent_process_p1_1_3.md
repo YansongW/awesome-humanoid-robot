@@ -4,11 +4,11 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: method
 names:
-  en: ''
+  en: Mapping of regulations, standards and safety requirements
   zh: 法规、标准与安全需求映射
   ko: 法规、标准与安全需求映射
 summary:
-  en: ''
+  en: Regulatory requirements matrix, compliance roadmap, security objective level (SIL/PL)
   zh: 法规需求矩阵、合规路线图、安全目标等级（SIL/PL）
   ko: 法规需求矩阵、合规路线图、安全目标等级（SIL/PL）
 domains:
@@ -26,7 +26,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py.
+  notes: Body restructured into standard sections by scripts/restructure_entry_bodies.py. English name/summary machine-translated
+    from Chinese by scripts/backfill_en_translations.py.
 sources:
 - id: wbs_v3_report
   type: report
@@ -35,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）
 
@@ -81,4 +83,5 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 

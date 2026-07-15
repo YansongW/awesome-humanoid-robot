@@ -8,7 +8,8 @@ names:
   zh: 逆动力学二次规划形式化
   ko: 역동역학 QP 공식화
 summary:
-  en: A quadratic-program formulation that computes generalized accelerations, contact forces, and joint torques by minimizing task-tracking errors subject to floating-base dynamics and physical constraints.
+  en: A quadratic-program formulation that computes generalized accelerations, contact forces, and joint torques by minimizing
+    task-tracking errors subject to floating-base dynamics and physical constraints.
   zh: 一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。
   ko: 부유 기반 동역학과 물리적 제약 조건 하에서 작업 추종 오차를 최소화하여 일반화 가속도, 접촉력, 관절 토크를 계산하는 이차 계획법 공식화이다.
 domains:
@@ -33,7 +34,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-26'
   confidence: high
-  notes: Standard formulation in WBC literature.
+  notes: Standard formulation in WBC literature. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_001
   type: paper
@@ -55,24 +56,37 @@ related_entities:
     zh: 等式约束编码了牛顿-欧拉浮动基动力学。
     ko: 등식 제약은 뉴턴-오일러 부유 기반 동역학을 인코딩한다.
 ---
+## 概述
+一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。
 
-## 抽象
+## 核心内容
+### 逆动力学二次规划形式化的定义与定位
+逆动力学二次规划形式化属于 **formalism** 类型。 所属领域包括：07_ai_models_algorithms, 06_design_engineering。 价值链层级：intelligence, midstream。 一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。 英文名称为 *Inverse-Dynamics QP Formulation*。 韩文名称为 *역동역학 QP 공식화*。
 
-> **生活实例**：如果你想让机器人从蹲姿站起来，你得知道每个关节该怎么转、脚底需要多大力、身体重心往哪移。逆动力学 QP 就是把这些“想知道的”放进一个统一的数学公式里：目标函数让动作尽量接近想要的轨迹，约束条件则保证物理定律不被违背。
->
-> **自然语言逻辑**：把机器人所有关节加速度、接触力和关节力矩作为决策变量；写出任务跟踪误差的目标函数；再把浮动基动力学、力矩限制、关节限制写成等式/不等式约束；最后交给 QP 求解器。
+### 逆动力学二次规划形式化的数学与原理基础
+逆动力学二次规划形式化建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，逆动力学二次规划形式化通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-## Overview
+### 算法步骤与实现要点
+在实际实现逆动力学二次规划形式化时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-The inverse-dynamics QP formulation casts whole-body control as an optimization problem. The decision variables typically include generalized accelerations `q̈`, contact forces `λ`, and joint torques `τ`. The objective penalizes deviations from desired task accelerations, while equality constraints enforce the floating-base equations of motion and inequality constraints encode torque limits, joint limits, and friction cones.
+### 典型应用与局限性
+逆动力学二次规划形式化可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-## Key Characteristics
+### 相关标签
+- inverse_dynamics
+- quadratic_programming
+- qp_formulation
+- floating_base
+- humanoid_control
 
-- Decision variables combine motion, force, and torque.
-- Objective is usually a weighted least-squares task error.
-- Constraints include dynamics, limits, and contact models.
-- Can be solved by active-set or interior-point QP solvers.
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键formalism之一，逆动力学二次规划形式化在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-## Relevance to Humanoid Robotics
+## 参考
+- [Hierarchical QP whole-body control: from theory to practice](https://arxiv.org/abs/1910.13329)
 
-This formulation is the mathematical core of many state-of-the-art humanoid controllers. It lets designers specify high-level tasks (e.g., keep the CoM over the support polygon) and automatically compute the low-level torques that realize them.

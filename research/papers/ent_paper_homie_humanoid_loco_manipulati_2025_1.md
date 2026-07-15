@@ -8,11 +8,13 @@ names:
   zh: HOMIE｜具有同构外骨骼驾驶舱的人形移动操作
   ko: 'HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit'
 summary:
-  en: ''
-  zh: HOMIE 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、全身控制器/WBC/MPC转成可训练、可复用的地形/场景表征。关键点是把PPO/RL
-    策略训练、全身控制器/WBC/MPC放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
-  ko: HOMIE 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、全身控制器/WBC/MPC转成可训练、可复用的地形/场景表征。关键点是把PPO/RL
-    策略训练、全身控制器/WBC/MPC放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
+  en: 'HOMIE mainly solves the data closed loop: it uses ontology state and joint sequence, teleoperation/exoskeleton data,
+    and simulation interaction data to collect human operation and robot state, and then converts it into trainable and reusable
+    terrain/scene representation through PPO/RL strategy training and whole-body controller/WBC/MPC. The key point is to put
+    PPO/RL strategy training, full body controller/WBC/MPC in the same training/deployment chain to reduce the breakpoints
+    between high-level goals and low-level actions.'
+  zh: HOMIE 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、全身控制器/WBC/MPC转成可训练、可复用的地形/场景表征。关键点是把PPO/RL 策略训练、全身控制器/WBC/MPC放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
+  ko: HOMIE 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、全身控制器/WBC/MPC转成可训练、可复用的地形/场景表征。关键点是把PPO/RL 策略训练、全身控制器/WBC/MPC放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 domains:
 - 09_data_datasets
 - 07_ai_models_algorithms
@@ -32,9 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (129). Institution: Shanghai AI Laboratory、Multimedia
-    Laboratory, The Chinese University of Hong Kong. Full title: HOMIE: Humanoid Loco-Manipulation
-    with Isomorphic Exoskeleton Cockpit.'
+  notes: 'Imported from WeChat curated list (129). Institution: Shanghai AI Laboratory、Multimedia Laboratory, The Chinese
+    University of Hong Kong. Full title: HOMIE: Humanoid Loco-Manipulation with Isomorphic Exoskeleton Cockpit. English name/summary
+    machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -46,8 +48,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 HOMIE 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、全身控制器/WBC/MPC转成可训练、可复用的地形/场景表征。关键点是把PPO/RL 策略训练、全身控制器/WBC/MPC放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
 
 ## 개요
 HOMIE 主要解决数据闭环：用本体状态与关节序列、遥操作/外骨骼数据、仿真交互数据采集人类操作和机器人状态，再通过PPO/RL 策略训练、全身控制器/WBC/MPC转成可训练、可复用的地形/场景表征。关键点是把PPO/RL 策略训练、全身控制器/WBC/MPC放在同一条训练/部署链路里，减少高层目标到低层动作之间的断点。
+

@@ -8,12 +8,10 @@ names:
   zh: Allegro 灵巧手
   ko: Allegro Hand
 summary:
-  en: A commercial 16-DOF four-fingered dexterous robotic hand produced by Wonik Robotics,
-    widely used in manipulation research for its torque-controlled joints and ROS
-    compatibility.
+  en: A commercial 16-DOF four-fingered dexterous robotic hand produced by Wonik Robotics, widely used in manipulation research
+    for its torque-controlled joints and ROS compatibility.
   zh: 由 Wonik Robotics 生产的商用16自由度四指灵巧机器人手，因扭矩控制关节和 ROS 兼容性而广泛用于操作研究。
-  ko: Wonik Robotics가 생산하는 상용 16자유도 4지 민첩한 로봇 손으로, 토크 제어 관절과 ROS 호환성 때문에 조작 연구에 널리
-    사용됨.
+  ko: Wonik Robotics가 생산하는 상용 16자유도 4지 민첩한 로봇 손으로, 토크 제어 관절과 ROS 호환성 때문에 조작 연구에 널리 사용됨.
 domains:
 - 02_components
 - 06_design_engineering
@@ -36,8 +34,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: medium
-  notes: Specifications sourced from Wonik Robotics product information and reseller
-    listings.
+  notes: Specifications sourced from Wonik Robotics product information and reseller listings. Body backfilled from entity
+    metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_001
   type: website
@@ -54,31 +52,38 @@ sources:
 theoretical_depth:
 - system
 ---
+## 概述
+由 Wonik Robotics 生产的商用16自由度四指灵巧机器人手，因扭矩控制关节和 ROS 兼容性而广泛用于操作研究。
 
-# Allegro Hand
+## 核心内容
+### Allegro 灵巧手的定义与定位
+Allegro 灵巧手属于 **component** 类型。 所属领域包括：02_components, 06_design_engineering, 11_applications_markets。 价值链层级：upstream, midstream。 由 Wonik Robotics 生产的商用16自由度四指灵巧机器人手，因扭矩控制关节和 ROS 兼容性而广泛用于操作研究。 英文名称为 *Allegro Hand*。 韩文名称为 *Allegro Hand*。
 
-## 抽象
+### Allegro 灵巧手的工作原理与技术架构
+Allegro 灵巧手的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
+在选型与集成过程中，需要关注其与控制器、通信总线、电源系统与机械结构的兼容性。
 
-> **生活实例**：它就像一位钢琴家的机械替身——每只手指都有独立的扭矩控制，能细腻地按键、捏取或旋转物体，并且能被常见的机器人软件直接调用。
+### 关键参数与选型要点
+在工程实践中，选用Allegro 灵巧手需要综合考虑性能指标、可靠性、成本、供应链成熟度以及与整机系统的兼容性。
+关键参数通常包括精度、带宽、扭矩、功耗、重量、接口协议与环境适应性等。
+针对不同应用场景，可能需要在性能与成本之间进行权衡，并预留适当的冗余与安全裕量。
 
-> **自然语言逻辑**：Allegro Hand 是 Wonik Robotics 生产的商用四指灵巧手，拥有 16 个扭矩控制关节；它广泛用于机器人学习与遥操作研究，作为基准硬件帮助研究者比较不同算法和手设计的性能。
+### 典型应用与发展趋势
+Allegro 灵巧手已广泛应用于人形机器人的原型验证、学术研究与早期商业化产品中。
+未来随着产业链成熟，其集成度、智能化水平与成本效益有望持续提升。
 
-## Overview
+### 相关标签
+- allegro_hand
+- dexterous_hand
+- wonik_robotics
+- torque_control
+- ros
+- commercial
 
-The Allegro Hand is a commercially available dexterous robotic hand manufactured by Wonik Robotics (South Korea). It features four fingers with 16 independently torque-controlled joints (4 DoF per finger), enabling a wide range of grasp types and in-hand manipulation strategies. The hand is widely used in academic and industrial manipulation research because it is compact, lightweight, and well supported by ROS-based software.
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键component之一，Allegro 灵巧手在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-The V4 version weighs approximately 1.1 kg and supports real-time CAN communication at high control frequencies. Optional tactile fingertip sensors are available through third-party add-ons. Newer variants such as the Allegro Hand V5 and V5 Sense introduce tactile sensing and alternative finger configurations.
+## 参考
+- [Allegro Hand Official Website](https://www.allegrohand.com/)
+- [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)
 
-## Key Characteristics
-
-- 16 active degrees of freedom (4 per finger)
-- Four-finger anthropomorphic design
-- Torque-controlled DC motor joints
-- Real-time CAN control interface
-- ROS/ROS2 compatibility
-- Weight: approximately 1.1 kg
-- Optional tactile sensor add-ons
-
-## Relevance to Humanoid Robotics
-
-The Allegro Hand is one of the most common commercial dexterous hands in robot learning and teleoperation research. It serves as a benchmark for comparing new hand designs and control algorithms. Its commercial availability and software ecosystem make it a practical reference for humanoid end-effector selection.

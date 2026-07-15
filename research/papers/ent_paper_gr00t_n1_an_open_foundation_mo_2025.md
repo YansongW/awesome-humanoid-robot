@@ -8,11 +8,13 @@ names:
   zh: GR00T N1｜通用人形机器人的开放基础模型
   ko: 'GR00T N1: An Open Foundation Model for Generalist Humanoid Robots'
 summary:
-  en: ''
-  zh: GR00T N1 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA
-    多模态动作模型预测可执行动作命令。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
-  ko: GR00T N1 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA
-    多模态动作模型预测可执行动作命令。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
+  en: The implementation path of GR00T n 1 is to first encode language instructions, camera images/multi-view observations,
+    ontological states, and joint sequences into multimodal representations, which can be used to generate a multi-modal representation,
+    then, action/behavior clone imitation learning, Diffusion Policy/flow matching, and VLA multimodal action model are used
+    to predict executable action commands. The key point is to retain the semantic understanding of VLM, while increasing
+    the robot state and action head, so as to avoid remaining in the language planning.
+  zh: GR00T N1 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测可执行动作命令。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
+  ko: GR00T N1 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测可执行动作命令。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -32,8 +34,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (148). Institution: NVIDIA1. Full title:
-    GR00T N1: An Open Foundation Model for Generalist Humanoid Robots.'
+  notes: 'Imported from WeChat curated list (148). Institution: NVIDIA1. Full title: GR00T N1: An Open Foundation Model for
+    Generalist Humanoid Robots. English name/summary machine-translated from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -45,8 +47,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 GR00T N1 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测可执行动作命令。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
 
 ## 개요
 GR00T N1 的实现路径是先把语言指令、相机图像/多视角观测、本体状态与关节序列编码成多模态表征，再用ACT/行为克隆模仿学习、扩散策略/流匹配、VLA 多模态动作模型预测可执行动作命令。关键点是保留 VLM 的语义理解，同时增加机器人状态和动作头，避免只停留在语言规划。
+

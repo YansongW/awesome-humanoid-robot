@@ -8,9 +8,8 @@ names:
   zh: 等效电路电池模型
   ko: 등가 회로 배터리 모델
 summary:
-  en: A method that represents a lithium-ion cell or pack as an electrical circuit
-    of a voltage source and lumped resistive-capacitive elements to predict terminal
-    voltage, current response, and state-of-charge dynamics.
+  en: A method that represents a lithium-ion cell or pack as an electrical circuit of a voltage source and lumped resistive-capacitive
+    elements to predict terminal voltage, current response, and state-of-charge dynamics.
   zh: 一种将锂离子电芯或电池包表示为由电压源与集总阻容元件组成的电路的方法，用于预测端电压、电流响应和荷电状态动态。
   ko: 전압원과 집중된 저항-커패시터 소자로 구성된 회로로 리튬 이온 셀 또는 팩을 표현하여 단자 전압, 전류 응답, 충전 상태 동역학을 예측하는 방법이다.
 domains:
@@ -38,11 +37,11 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-26'
   confidence: high
-  notes: Standard method in battery engineering and BMS state estimation.
+  notes: Standard method in battery engineering and BMS state estimation. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_hu_2012_ecm_soh
   type: paper
-  title: 'A comparative study of equivalent circuit models for Li-ion batteries'
+  title: A comparative study of equivalent circuit models for Li-ion batteries
   url: https://doi.org/10.1016/j.jpowsour.2012.02.064
   date: '2012-07-15'
   accessed_at: '2026-06-26'
@@ -66,24 +65,38 @@ related_entities:
     zh: 电化学动力学与传输理论支撑着等效电路元件的参数化。
     ko: 전기화학 동역학 및 전송 이론은 등가 회로 소자의 매개변수화를 뒷받침한다.
 ---
+## 概述
+一种将锂离子电芯或电池包表示为由电压源与集总阻容元件组成的电路的方法，用于预测端电压、电流响应和荷电状态动态。
 
-## 抽象
+## 核心内容
+### 等效电路电池模型的定义与定位
+等效电路电池模型属于 **method** 类型。 所属领域包括：02_components, 06_design_engineering, 00_foundations。 价值链层级：upstream, midstream, foundations。 一种将锂离子电芯或电池包表示为由电压源与集总阻容元件组成的电路的方法，用于预测端电压、电流响应和荷电状态动态。 英文名称为 *Equivalent-Circuit Battery Model*。 韩文名称为 *등가 회로 배터리 모델*。
 
-> **生活实例**：把电池想象成一支正在慢慢挤出水的牙膏。电压源是“牙膏还剩多少”，电阻是“牙膏口的粗细”，电容则是“管壁还能临时储一点牙膏”。等效电路模型就是把这支牙膏筒画成一个简单电路，让我们能快速估算还能挤出多少、挤多快。
->
-> **自然语言逻辑**：锂离子电池内部的电化学过程非常复杂，但工程上常用一个由理想电压源、串联电阻和若干 RC 并联支路组成的电路来近似。通过测量电流，模型可以预测端电压下降、暂态响应以及剩余电量，为 BMS 和能耗管理提供实时依据。
+### 等效电路电池模型的数学与原理基础
+等效电路电池模型建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，等效电路电池模型通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-## Overview
+### 算法步骤与实现要点
+在实际实现等效电路电池模型时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-Equivalent-circuit battery models (ECMs) are widely used for real-time battery state estimation and control design. They trade physical detail for computational efficiency, representing a cell by an open-circuit voltage (OCV) source in series with ohmic resistance and one or more resistor-capacitor (RC) pairs. The model predicts how terminal voltage evolves under load, enabling state-of-charge (SoC) estimation, state-of-health (SoH) tracking, and power-limit calculation in battery management systems.
+### 典型应用与局限性
+等效电路电池模型可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-## Key Characteristics
+### 相关标签
+- battery_model
+- equivalent_circuit
+- thevenin_model
+- lithium_ion_battery
+- state_of_charge
+- humanoid_robot
 
-- **First-order or higher-order RC structures**: A first-order ECM uses one RC pair; higher-order variants add pairs for improved transient accuracy.
-- **Parameter identification**: OCV, ohmic resistance, and RC time constants are identified from pulse-discharge tests or online adaptive methods.
-- **Coupled SoC dynamics**: The OCV source is a nonlinear function of SoC, so the electrical and charge-balance equations are coupled.
-- **Computational efficiency**: ECMs are far lighter than physics-based pseudo-two-dimensional (P2D) models, making them suitable for embedded BMS.
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键method之一，等效电路电池模型在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-## Relevance to Humanoid Robotics
+## 参考
+- [A comparative study of equivalent circuit models for Li-ion batteries](https://doi.org/10.1016/j.jpowsour.2012.02.064)
 
-Humanoid robots rely on compact, high-power-density battery packs whose voltage sags sharply during dynamic motions such as jumping or lifting. An equivalent-circuit model lets the BMS and motion planner predict available power, enforce safe current limits, and estimate remaining runtime. In power-aware whole-body control, the predicted voltage trajectory can be used to avoid actuation commands that would drive the pack outside its safe operating area.

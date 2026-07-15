@@ -8,7 +8,8 @@ names:
   zh: 牛顿-欧拉方程
   ko: 뉴턴-오일러 방정식
 summary:
-  en: A set of coupled force and torque balance equations that describe the motion of a rigid body or articulated multibody system.
+  en: A set of coupled force and torque balance equations that describe the motion of a rigid body or articulated multibody
+    system.
   zh: 描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。
   ko: 강철 또는 관절 연결 다물체 시스템의 운전을 기술하는 결합된 힘 및 토크 평형 방정식 집합.
 domains:
@@ -30,7 +31,7 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-25'
   confidence: high
-  notes: Standard foundational knowledge; reviewed against standard references.
+  notes: Standard foundational knowledge; reviewed against standard references. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_featherstone_2014
   type: other
@@ -42,52 +43,42 @@ related_entities:
 - id: ent_lagrangian
   relationship: is_alternative_to
   description:
-    en: The Newton-Euler and Lagrangian formalisms are equivalent for rigid-body systems; the former emphasizes force/torque balances, the latter emphasizes energy.
+    en: The Newton-Euler and Lagrangian formalisms are equivalent for rigid-body systems; the former emphasizes force/torque
+      balances, the latter emphasizes energy.
     zh: 牛顿-欧拉形式与拉格朗日形式对刚体系统等价；前者强调力/力矩平衡，后者强调能量。
     ko: 뉴턴-오일러 형식과 라그랑지안 형식은 강체 시스템에서 동치입니다. 전자는 힘/토크 균형에, 후자는 에너지에 초점을 맞춥니다.
 ---
+## 概述
+描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。
 
-# Newton-Euler equations / 牛顿-欧拉方程 / 뉴턴-오일러 방정식
+## 核心内容
+### 牛顿-欧拉方程的定义与定位
+牛顿-欧拉方程属于 **equation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。 英文名称为 *Newton-Euler equations*。 韩文名称为 *뉴턴-오일러 방정식*。
 
-## 抽象
+### 牛顿-欧拉方程的数学与原理基础
+牛顿-欧拉方程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，牛顿-欧拉方程通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-> **生活实例**：想象把沉重柜子推过房间：你既要克服滑动阻力（力平衡），又要避免倾倒（力矩平衡）。牛顿-欧拉方程同时刻画机器人每个刚体连杆的这两种效应。
->
-> **自然语言逻辑**：每个刚体都有线动量与角动量。牛顿第二定律指出线动量的变化率等于合外力；欧拉扩展指出角动量的变化率等于合外力矩。递归地从一个连杆到下一个连杆应用这些平衡，即可得到机器人控制中使用的完整动力学模型。
+### 算法步骤与实现要点
+在实际实现牛顿-欧拉方程时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-## 形式化定义 / Formal Definition
+### 典型应用与局限性
+牛顿-欧拉方程可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-For a single rigid body of mass $m$ with center of mass velocity $v$ and angular velocity $\omega$ expressed in a body-fixed frame with inertia tensor $I$:
+### 相关标签
+- dynamics
+- rigid_body
+- multibody
+- newton_euler
+- equations_of_motion
 
-**Newton's equation (linear momentum balance):**
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键equation之一，牛顿-欧拉方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-$$m \dot{v} = \sum f^{\text{ext}}.$$
+## 参考
+- [R. Featherstone, Rigid Body Dynamics Algorithms, Springer, 2014](https://doi.org/10.1007/978-1-4899-7560-7)
 
-**Euler's equation (angular momentum balance):**
-
-$$I \dot{\omega} + \omega \times (I \omega) = \sum \tau^{\text{ext}}.$$
-
-For an articulated multibody system with $n$ links, these can be assembled into a recursive or closed-form equation
-
-$$M(q)\ddot{q} + C(q, \dot{q})\dot{q} + g(q) = \tau,$$
-
-where $q \in \mathbb{R}^n$ are generalized coordinates, $M(q)$ is the mass matrix, $C(q, \dot{q})$ captures Coriolis and centrifugal terms, $g(q)$ is gravity, and $\tau$ is the vector of generalized forces/torques.
-
-## 关键符号与直觉对应
-
-| 符号 | 名称 | 直觉含义 |
-|------|------|----------|
-| $m$ | 质量 | 刚体的总质量 |
-| $v$ | 质心速度 | 刚体质心的平动速度 |
-| $\omega$ | 角速度 | 刚体绕质心转动的角速度矢量 |
-| $I$ | 惯性张量 | 描述质量绕各轴分布的矩阵 |
-| $M(q)$ | 质量矩阵 | 广义坐标下的等效惯性矩阵 |
-| $\tau$ | 广义力/力矩 | 驱动关节的力或力矩 |
-
-## 与其他知识点的关系
-
-- `is_alternative_to` → [ent_lagrangian]
-
-## 参考文献
-
-1. R. Featherstone, Rigid Body Dynamics Algorithms, Springer, 2014

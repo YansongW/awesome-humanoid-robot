@@ -4,13 +4,16 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided
-    Rectified Flow and Selective Safety Gating'
+  en: 'SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified Flow and Selective Safety
+    Gating'
   zh: SafeFlow｜通过物理引导整流流和选择性安全门控进行实时文本驱动的人形全身控制
-  ko: 'SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided
-    Rectified Flow and Selective Safety Gating'
+  ko: 'SafeFlow: Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified Flow and Selective Safety
+    Gating'
 summary:
-  en: ''
+  en: SafeFlow first recovers the scene, target, or motion representation from the ontological state and joint sequence, and
+    then generates the whole-body trajectory/action sequence with diffusion strategy/flow matching, whole-body controller/WBC/Mpc,
+    and hierarchical skill/expert strategy. The key point is to treat action generation as a conditional generation problem,
+    and use diffusion or flow matching to sample executable trajectories in multimodal action distributions.
   zh: SafeFlow 先从本体状态与关节序列恢复场景、目标或运动表征，再用扩散策略/流匹配、全身控制器/WBC/MPC、分层技能/专家策略生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
   ko: SafeFlow 先从本体状态与关节序列恢复场景、目标或运动表征，再用扩散策略/流匹配、全身控制器/WBC/MPC、分层技能/专家策略生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
@@ -31,9 +34,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (104). Institution: . Full title: SafeFlow:
-    Real-Time Text-Driven Humanoid Whole-Body Control via Physics-Guided Rectified
-    Flow and Selective Safety Gating.'
+  notes: 'Imported from WeChat curated list (104). Institution: . Full title: SafeFlow: Real-Time Text-Driven Humanoid Whole-Body
+    Control via Physics-Guided Rectified Flow and Selective Safety Gating. English name/summary machine-translated from Chinese
+    by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -45,8 +48,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 SafeFlow 先从本体状态与关节序列恢复场景、目标或运动表征，再用扩散策略/流匹配、全身控制器/WBC/MPC、分层技能/专家策略生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
 ## 개요
 SafeFlow 先从本体状态与关节序列恢复场景、目标或运动表征，再用扩散策略/流匹配、全身控制器/WBC/MPC、分层技能/专家策略生成全身轨迹/动作序列。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
+

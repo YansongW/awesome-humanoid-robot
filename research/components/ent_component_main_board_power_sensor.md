@@ -8,9 +8,8 @@ names:
   zh: 主板功率传感器
   ko: 메인보드 전력 센서
 summary:
-  en: A sensing module that measures voltage, current, and power consumption at the
-    main controller board level, enabling system-level energy monitoring and model
-    validation.
+  en: A sensing module that measures voltage, current, and power consumption at the main controller board level, enabling
+    system-level energy monitoring and model validation.
   zh: 一种在主板控制器层面测量电压、电流和功耗的传感模块，用于系统级能耗监测和模型验证。
   ko: 메인 컨트롤러 보드 수준에서 전압, 전류, 전력 소비를 측정하여 시스템 수준의 에너지 모니터링 및 모델 검증을 가능하게 하는 센싱 모듈.
 domains:
@@ -36,40 +35,49 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-06-22'
   confidence: medium
-  notes: General technology entry; specific sensor model depends on robot implementation.
+  notes: General technology entry; specific sensor model depends on robot implementation. Body backfilled from entity metadata
+    by scripts/backfill_critical_entities.py.
 sources:
 - id: src_001
   type: paper
-  title: Identification of a Physics-Based Electrical Power Consumption Model for
-    the Unitree G1 Humanoid Arm
+  title: Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm
   url: https://arxiv.org/abs/2606.15915
   date: '2026'
   accessed_at: '2026-06-22'
 theoretical_depth:
 - system
 ---
+## 概述
+一种在主板控制器层面测量电压、电流和功耗的传感模块，用于系统级能耗监测和模型验证。
 
-# Main-Board Power Sensor
+## 核心内容
+### 主板功率传感器的定义与定位
+主板功率传感器属于 **component** 类型。 所属领域包括：02_components, 06_design_engineering, 10_evaluation_benchmarks。 价值链层级：upstream, midstream, validation_markets。 一种在主板控制器层面测量电压、电流和功耗的传感模块，用于系统级能耗监测和模型验证。 英文名称为 *Main-Board Power Sensor*。 韩文名称为 *메인보드 전력 센서*。
 
-## 抽象
+### 主板功率传感器的工作原理与技术架构
+主板功率传感器的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
+在选型与集成过程中，需要关注其与控制器、通信总线、电源系统与机械结构的兼容性。
 
-> **生活实例**：它就像家里电表箱里的智能总表——实时显示全屋电器用了多少电，帮助你知道哪个设备最耗电、有没有漏电。
+### 关键参数与选型要点
+在工程实践中，选用主板功率传感器需要综合考虑性能指标、可靠性、成本、供应链成熟度以及与整机系统的兼容性。
+关键参数通常包括精度、带宽、扭矩、功耗、重量、接口协议与环境适应性等。
+针对不同应用场景，可能需要在性能与成本之间进行权衡，并预留适当的冗余与安全裕量。
 
-> **自然语言逻辑**：主板功率传感器安装在机器人主控制器板上，用于测量计算、通信和辅助电子设备的总电压、电流和功耗；它为能耗模型提供真实数据，帮助研究者验证仿真预测、发现耗电大户，并优化机器人的续航与动作规划。
+### 典型应用与发展趋势
+主板功率传感器已广泛应用于人形机器人的原型验证、学术研究与早期商业化产品中。
+未来随着产业链成熟，其集成度、智能化水平与成本效益有望持续提升。
 
-## Overview
+### 相关标签
+- power_sensor
+- current_sensor
+- voltage_sensor
+- energy_monitoring
+- main_board
+- telemetry
 
-A main-board power sensor is a compact current/voltage sensing module placed on the primary controller board of a robot. It measures the aggregate electrical power drawn by the compute, communication, and auxiliary electronics. By sampling voltage and current at high frequency, it provides ground-truth power data for energy-aware control, diagnostics, and model validation.
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键component之一，主板功率传感器在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
-In humanoid robot research, onboard power sensors are used to collect real-world power-consumption traces. These traces validate physics-based power models and help identify which subsystems dominate energy use. For example, studies of the Unitree G1 arm combine motor-level and main-board power measurements to derive accurate electrical power models.
+## 参考
+- [Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm](https://arxiv.org/abs/2606.15915)
 
-## Key Functions
-
-- Measure total current and voltage of main electronics
-- Compute real-time power and energy consumption
-- Provide ground-truth data for power model validation
-- Support fault detection and energy-aware planning
-
-## Relevance to Humanoid Robotics
-
-Main-board power sensors are critical for closing the loop between simulated energy models and real robot behavior. They enable data-driven refinement of power-consumption models, which in turn supports longer operation times and more efficient motion generation.

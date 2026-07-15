@@ -8,7 +8,11 @@ names:
   zh: VOFA｜通过人形机器人的力自适应控制推动视觉对象目标
   ko: 'VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids'
 summary:
-  en: ''
+  en: VOFA converts camera images/multi-view observations, body state and joint sequences, and simulation interaction data
+    into trackable body targets, and finally outputs whole-body trajectories/action sequences, low-level controller targets,
+    and navigation/arrival targets through diffusion strategy/flow matching, whole-body controller/WBC/MPC, hierarchical skill/expert
+    strategy training, or combined whole-body strategies. The key point is to view action generation as a conditional generation
+    problem and use diffusion or flow matching to sample executable trajectories in a multimodal action distribution.
   zh: VOFA 把相机图像/多视角观测、本体状态与关节序列、仿真交互数据转成可跟踪的身体目标，并通过扩散策略/流匹配、全身控制器/WBC/MPC、分层技能/专家策略训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标、导航/到达目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
   ko: VOFA 把相机图像/多视角观测、本体状态与关节序列、仿真交互数据转成可跟踪的身体目标，并通过扩散策略/流匹配、全身控制器/WBC/MPC、分层技能/专家策略训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标、导航/到达目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 domains:
@@ -31,9 +35,9 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-26'
   confidence: low
-  notes: 'Imported from WeChat curated list (050). Institution: Department of Computer
-    Science, The University of Texas at Austin. Full title: VOFA: Visual Object Goal
-    Pushing with Force-Adaptive Control for Humanoids.'
+  notes: 'Imported from WeChat curated list (050). Institution: Department of Computer Science, The University of Texas at
+    Austin. Full title: VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids. English name/summary machine-translated
+    from Chinese by scripts/backfill_en_translations.py.'
 sources:
 - id: src_001
   type: website
@@ -45,8 +49,10 @@ theoretical_depth:
 - system
 ---
 
+
 ## 概述
 VOFA 把相机图像/多视角观测、本体状态与关节序列、仿真交互数据转成可跟踪的身体目标，并通过扩散策略/流匹配、全身控制器/WBC/MPC、分层技能/专家策略训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标、导航/到达目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
 
 ## 개요
 VOFA 把相机图像/多视角观测、本体状态与关节序列、仿真交互数据转成可跟踪的身体目标，并通过扩散策略/流匹配、全身控制器/WBC/MPC、分层技能/专家策略训练或组合全身策略，最终输出全身轨迹/动作序列、低层控制器目标、导航/到达目标。关键点是把动作生成看成条件生成问题，用扩散或流匹配在多模态动作分布里采样可执行轨迹。
+

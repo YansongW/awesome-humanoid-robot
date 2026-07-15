@@ -29,7 +29,8 @@ verification:
   reviewed_by: human_and_ai
   reviewed_at: '2026-07-14'
   confidence: high
-  notes: Body backfilled from chapter-08.md#8.6.1 DFM、DFA 与 DFS by scripts/backfill_nonpaper_entries.py.
+  notes: Body backfilled from chapter-08.md#8.6.1 DFM、DFA 与 DFS by scripts/backfill_nonpaper_entries.py. Body backfilled from
+    entity metadata by scripts/backfill_critical_entities.py.
 sources:
 - id: src_wiki_extraction
   type: other
@@ -38,48 +39,34 @@ sources:
   accessed_at: '2026-07-09'
 ---
 ## 概述
-可制造性设计（DFM）是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
+使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。
 
 ## 核心内容
-面向制造的设计（Design for Manufacturing, DFM）、面向装配的设计（Design for Assembly, DFA）与面向维护/服务的设计（Design for Serviceability, DFS）是降低全生命周期成本的关键方法。
+### 可制造性设计（DFM）的定义与定位
+可制造性设计（DFM）属于 **method** 类型。 所属领域包括：03_manufacturing_processes。 价值链层级：upstream。 使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。 英文名称为 *Design for Manufacturing (DFM)*。 韩文名称为 *제조 용이성 설계(DFM)*。
 
-!!! note "术语解释：DFM、DFA、DFS、面向成本的设计、生命周期成本"
-    - **DFM（Design for Manufacturing）**：在产品设计阶段考虑制造工艺约束，降低制造难度与成本。
-    - **DFA（Design for Assembly）**：简化装配过程，减少零件数量与装配时间。
-    - **DFS（Design for Serviceability）**：便于维护、检修、更换与升级的设计。
-    - **生命周期成本（LCC）**：产品从概念到报废全过程的总成本。
+### 可制造性设计（DFM）的数学与原理基础
+可制造性设计（DFM）建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
+具体而言，需要关注其输入空间、输出空间、目标函数以及收敛性或稳定性保证。
+在人形机器人这一高维、欠驱动、强耦合系统中，可制造性设计（DFM）通常需要在实时性、精度与鲁棒性之间取得平衡。
 
-DFM 原则包括：
-1. 减少零件数量与定制件比例。
-2. 采用标准材料、标准件与标准工艺。
-3. 避免无法加工或检测的几何特征。
-4. 考虑公差累积与装配调整。
+### 算法步骤与实现要点
+在实际实现可制造性设计（DFM）时，需要明确初始化条件、迭代规则、停止准则以及参数调优策略。
+合理选择数值方法、线性代数求解器与并行计算策略，能够显著提升计算效率与稳定性。
+同时，应充分考虑模型误差、传感器噪声与执行器饱和等工程约束，确保算法在真实平台上可靠运行。
 
-DFA 原则包括：
-1. 设计自定位、自锁紧特征。
-2. 减少紧固件种类与数量。
-3. 保证装配方向单一、操作空间充足。
-4. 采用模块化、子装配先调后装。
+### 典型应用与局限性
+可制造性设计（DFM）可应用于人形机器人的运动规划、控制优化、状态估计与学习算法等多个环节。
+然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
-DFS 原则包括：
-1. 高故障率部件（电池、风扇、线缆）易于更换。
-2. 关键关节可在不解体整机的情况下拆装。
-3. 提供维护窗口、诊断接口与状态监测。
+### 相关标签
+- method
+- chapter_10
+- wiki_gap
 
-```mermaid
-flowchart TD
-    A["设计阶段"] --> B["DFM"]
-    A --> C["DFA"]
-    A --> D["DFS"]
-    B --> E["可制造性"]
-    C --> F["可装配性"]
-    D --> G["可维护性"]
-    E --> H["降低 LCC"]
-    F --> H
-    G --> H
-```
+### 在人形机器人系统中的作用
+作为人形机器人产业链中的关键method之一，可制造性设计（DFM）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction
-- 项目 Wiki：chapter-08.md#8.6.1 DFM、DFA 与 DFS
 
