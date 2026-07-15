@@ -48,6 +48,7 @@ The project is **AI-assisted, human-verified**. We use AI4Sci pipelines to accel
 - 🛡️ **Hardened deployment** — concurrency control and clean `gh-pages` branch recreation prevent race-condition failures.
 - 🧩 **Backfilled core non-paper entity bodies** — 233 critical entities now have structured Chinese bodies with 概述 / 核心内容 / 参考 sections, sourced from the Wiki where available and from entity metadata otherwise.
 - 🌏 **Machine-translated missing English names and summaries** — all process and paper entries missing `names.en` / `summary.en` have been filled via machine translation and marked for human review.
+- 📝 **Backfilled structured bodies for all critical paper entries** — 215 paper entries now have Chinese 概述 / 核心内容 / 参考 sections generated from metadata and marked for human review; quality audit shows 0 critical issues.
 
 ---
 
