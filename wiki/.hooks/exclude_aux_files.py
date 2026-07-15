@@ -75,43 +75,6 @@ def _expand_path(path: str, docs_dir: Path, default_title: str | None = None) ->
     return {default_title or path: path}
 
 
-def _title_from_dir(path: Path) -> str:
-    # Use a .pages title if present
-    pages_file = path / ".pages"
-    if pages_file.exists():
-        try:
-            data = yaml.safe_load(pages_file.read_text(encoding="utf-8")) or {}
-            if isinstance(data, dict) and data.get("title"):
-                return str(data["title"])
-        except Exception:
-            pass
-    return path.name
-
-
-def _expand_item(item: Any, docs_dir: Path) -> Any:
-    if isinstance(item, str):
-        return _expand_path(item, docs_dir)
-    if isinstance(item, dict):
-        expanded = []
-        for title, path in item.items():
-            if isinstance(path, list):
-                expanded.append({title: [_expand_item(child, docs_dir) for child in path]})
-            else:
-                expanded.append(_expand_path(path, docs_dir, default_title=title))
-        # A dict entry always expands to a single node; keep it as dict
-        return expanded[0] if len(expanded) == 1 else expanded
-    if isinstance(item, list):
-        return [_expand_item(i, docs_dir) for i in item]
-    return item
-
-
-def on_config(config: dict[str, Any], **kwargs: Any) -> dict[str, Any]:
-    docs_dir = Path(config.get("docs_dir", "docs")).resolve()
-    nav = config.get("nav", [])
-    config["nav"] = [_expand_item(item, docs_dir) for item in nav]
-    return config
-
-
 def on_files(files: Any, config: dict[str, Any], **kwargs: Any) -> Any:
     """Exclude auto-generated relationship pages and underscore-prefixed templates from the build."""
     to_remove = [

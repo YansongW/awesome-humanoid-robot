@@ -128,17 +128,13 @@ nav:
     - 附录 A 实体与关系速查表: appendices/appendix-a.md
     - 附录 B 关键数据集清单: appendices/appendix-b.md
     - 附录 C 软件与仿真平台清单: appendices/appendix-c.md
-    - 附录 D 主要供应商与企业名录:
-      - 附录 D 说明: appendices/appendix-d.md
-      - appendices/appendix-d
+    - 附录 D 主要供应商与企业名录: appendices/appendix-d.md
     - 附录 E 标准、法规与认证清单: appendices/appendix-e.md
     - 附录 F 知识图谱查询示例: appendices/appendix-f.md
     - 附录 G 术语表: appendices/appendix-g.md
-  - 知识图谱:
-    - 实体: kg/entities
 
 hooks:
-  - .hooks/expand_dir_nav.py
+  - .hooks/exclude_aux_files.py
 
 copyright: Copyright &copy; 2026 yansong. 基于 Awesome Humanoid Robot 知识图谱构建。
 
