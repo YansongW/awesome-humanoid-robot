@@ -21,7 +21,7 @@ import requests
 import yaml
 
 ROOT = Path(__file__).parent.parent
-PAPERS_DIR = ROOT / "research" / "papers"
+SEARCH_DIRS = [ROOT / "research" / "papers", ROOT / "research" / "reports"]
 
 
 def split_fm(text: str) -> tuple[dict[str, Any] | None, str]:
@@ -117,7 +117,7 @@ def main() -> int:
     failed = 0
     skipped = 0
 
-    paths = sorted(PAPERS_DIR.glob("*.md"))
+    paths = sorted({p for d in SEARCH_DIRS for p in d.glob("*.md")})
     if args.ids:
         id_set = set(args.ids)
         paths = [p for p in paths if p.stem in id_set]
