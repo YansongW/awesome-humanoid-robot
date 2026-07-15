@@ -1554,6 +1554,40 @@ a:hover { text-decoration: underline; }
   color: var(--color-text-muted);
 }
 
+/* Nested wiki index tree */
+.wiki-list-section {
+  margin-top: 0.75rem;
+}
+
+.wiki-list-section-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.wiki-list-item-level-1,
+.wiki-list-section-level-1 {
+  margin-left: 1rem;
+}
+
+.wiki-list-item-level-2,
+.wiki-list-section-level-2 {
+  margin-left: 2rem;
+}
+
+.wiki-list-item-level-3,
+.wiki-list-section-level-3 {
+  margin-left: 3rem;
+}
+
+.wiki-list-section + .wiki-list-item-level-3,
+.wiki-list-section + .wiki-list-item-level-2,
+.wiki-list-item-level-1 + .wiki-list-section-level-2,
+.wiki-list-item-level-2 + .wiki-list-section-level-3 {
+  margin-top: 0.25rem;
+}
+
 .wiki-page {
   background: var(--color-surface-raised);
   border: 1px solid var(--color-border);

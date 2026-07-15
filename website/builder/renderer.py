@@ -429,11 +429,12 @@ class Renderer:
         ensure_dir(graph_dir)
         (graph_dir / "index.html").write_text(html, encoding="utf-8")
 
-    def render_wiki_index(self, wiki_pages: list[dict]) -> None:
+    def render_wiki_index(self, wiki_pages: list[dict], wiki_tree: dict | None = None) -> None:
         template = self.env.get_template("wiki-index.html")
         html = template.render(**self._ctx(
             title=f"Wiki · {self.ui['site_title']}",
             wiki_pages=wiki_pages,
+            wiki_tree=wiki_tree,
         ))
         wiki_dir = self.dist_dir / "wiki"
         ensure_dir(wiki_dir)
@@ -508,6 +509,7 @@ class Renderer:
         stats: dict,
         wiki_pages: list[dict] | None = None,
         subgraphs: dict[str, dict] | None = None,
+        wiki_tree: dict | None = None,
     ) -> None:
         self.copy_static_assets()
         self.render_home(stats)
@@ -517,7 +519,7 @@ class Renderer:
         for entry in self.store.entries.values():
             self.render_entry(entry)
         if wiki_pages:
-            self.render_wiki_index(wiki_pages)
+            self.render_wiki_index(wiki_pages, wiki_tree)
             for page in wiki_pages:
                 self.render_wiki_page(page)
         self.write_json_data(search_index, "search-index.json")
