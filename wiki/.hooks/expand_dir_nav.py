@@ -113,8 +113,11 @@ def on_config(config: dict[str, Any], **kwargs: Any) -> dict[str, Any]:
 
 
 def on_files(files: Any, config: dict[str, Any], **kwargs: Any) -> Any:
-    """Exclude auto-generated relationship pages from the build to avoid nav bloat."""
-    to_remove = [f for f in files if f.src_path.startswith("kg/relationships/")]
+    """Exclude auto-generated relationship pages and underscore-prefixed templates from the build."""
+    to_remove = [
+        f for f in files
+        if f.src_path.startswith("kg/relationships/") or f.name.startswith("_")
+    ]
     for f in to_remove:
         files.remove(f)
     return files
