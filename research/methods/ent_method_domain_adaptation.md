@@ -10,7 +10,8 @@ names:
 summary:
   en: A machine-learning technique that adapts a model trained on a source domain to perform well on a different but related
     target domain.
-  zh: 将源域训练的模型适配到不同但相关的目标域上以获得良好性能的机器学习技术。
+  zh: '核心内容 ### 域适应的定义与定位 域适应属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 09_data_datasets。 价值链层级：intelligence。 将源域训练的模型适配到不同但相关的目标域上以获得良好性能的机器学习技术。
+    英文名称为 *Domain Adaptation*。 韩文名称为 *도메인 적응*。'
   ko: 소스 도메인에서 학습한 모델을 다르지만 관련된 타겟 도메인에서 잘 작동하도록 적응시키는 기계학습 기법.
 domains:
 - 07_ai_models_algorithms
@@ -39,6 +40,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 将源域训练的模型适配到不同但相关的目标域上以获得良好性能的机器学习技术。
 
@@ -70,4 +72,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

@@ -11,7 +11,11 @@ summary:
   en: Presents a hierarchical human-robot learning framework that uses Q-learning to autonomously personalize instructional
     challenge and feedback levels for 17 children with autism spectrum disorders during month-long in-home interventions with
     a socially assistive robot.
-  zh: 提出一种层级式人机学习框架，利用Q学习在为期一个月的家庭干预中自主为17名自闭症谱系障碍儿童个性化教学挑战与反馈水平。
+  zh: Socially assistive robots (SAR) have shown great potential to augment the social and educational development of children
+    with autism spectrum disorders (ASD). As SAR continues to substantiate itself as an effective enhancement to human intervention,
+    researchers have sought to study its longitudinal impacts in real-world environments, including the home. Computational
+    personalization stands out as a central computational challenge as it is necessary to enable SAR systems to adapt to each
+    child's unique and changing needs. Toward that end, we formalized personalization as a hierarchical human ro
   ko: 사회적 보조 로봇을 활용한 한 달간의 가정 내 개입 동안 Q-러닝을 사용하여 17명의 자폐 스펙트럼 장애 아동을 대상으로 교육적 도전 수준과 피드백 수준을 자율적으로 개인화하는 계층적 인간-로봇 학습 프레임워크를
     제시한다.
 domains:
@@ -50,6 +54,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Socially assistive robots (SAR) have shown great potential to augment the social and educational development of children with autism spectrum disorders (ASD). As SAR continues to substantiate itself as an effective enhancement to human intervention, researchers have sought to study its longitudinal impacts in real-world environments, including the home. Computational personalization stands out as a central computational challenge as it is necessary to enable SAR systems to adapt to each child's unique and changing needs. Toward that end, we formalized personalization as a hierarchical human robot learning framework (hHRL) consisting of five controllers (disclosure, promise, instruction, feedback, and inquiry) mediated by a meta-controller that utilized reinforcement learning to personalize instruction challenge levels and robot feedback based on each user's unique learning patterns. We instantiated and evaluated the approach in a study with 17 children with ASD, aged 3 to 7 years old, over month-long interventions in their homes. Our findings demonstrate that the fully autonomous SAR system was able to personalize its instruction and feedback over time to each child's proficiency. As a result, every child participant showed improvements in targeted skills and long-term retention of intervention content. Moreover, all child users were engaged for a majority of the intervention, and their families reported the SAR system to be useful and adaptable. In summary, our results show that autonomous, personalized SAR interventions are both feasible and effective in providing long-term in-home developmental support for children with diverse learning needs.
 
@@ -58,4 +63,5 @@ Socially assistive robots (SAR) have shown great potential to augment the social
 
 ## 参考
 - http://arxiv.org/abs/1911.07992v1
+
 

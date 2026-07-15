@@ -39,6 +39,8 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
+
 ## 概述
 DENSO to demonstrate its precision 4-axis, 6-axis and collaborative
 
@@ -68,4 +70,6 @@ DENSO Exhibits High-Performance Robots at Automate 2026属于 **report** 类型�
 
 ## 参考
 - [DENSO Exhibits High-Performance Robots at Automate 2026](http://www.RoboticsTomorrow.com/news/2026/06/19/denso-exhibits-high-performance-robots-at-automate-2026/26746)
+
+
 

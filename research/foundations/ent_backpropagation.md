@@ -10,7 +10,8 @@ names:
 summary:
   en: An efficient algorithm for computing the gradient of a loss function with respect to all parameters of a feedforward
     neural network by applying the chain rule layer by layer in reverse order.
-  zh: 一种高效算法，通过按逆序逐层应用链式法则，计算损失函数对前馈神经网络所有参数的梯度。
+  zh: '核心内容 ### 反向传播的定义与定位 反向传播属于 **algorithm** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种高效算法，通过按逆序逐层应用链式法则，计算损失函数对前馈神经网络所有参数的梯度。
+    英文名称为 *Backpropagation*。 韩文名称为 *역전파*。'
   ko: 피드포워드 신경망의 모든 매개변수에 대한 손실 함수의 기울기를 계산하기 위해 연쇄 법칙을 역순으로 층별로 적용하는 효율적인 알고리즘.
 domains:
 - 00_foundations
@@ -49,6 +50,7 @@ related_entities:
     zh: 反向传播本质上是链式法则在计算图各层上的系统性反向应用。
     ko: 역전파는 기본적으로 계산 그래프의 층을 가로지르는 연쇄 법칙의 체계적인 역방향 적용입니다.
 ---
+
 ## 概述
 一种高效算法，通过按逆序逐层应用链式法则，计算损失函数对前馈神经网络所有参数的梯度。
 
@@ -82,4 +84,5 @@ related_entities:
 
 ## 参考
 - [D. E. Rumelhart, G. E. Hinton, and R. J. Williams, 'Learning Representations by Back-propagating Errors', Nature, vol. 323, pp. 533–536, 1986](https://doi.org/10.1038/323533a0)
+
 

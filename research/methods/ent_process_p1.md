@@ -10,7 +10,7 @@ names:
 summary:
   en: Requirement Definition and System Architecture (Concept / Pre-A) – the first phase of the full lifecycle for humanoid
     robot product development, encompassing conceptual design, implementation validation, and document delivery.
-  zh: 需求定义与系统方案（Concept / Pre-A）——人形机器人产品开发全流程第 1 阶段，涵盖方案设计、实施验证与文档交付。
+  zh: 需求定义与系统方案（Concept / Pre-A）是人形机器人产品开发全流程中的第 1 个阶段，在 WBS V3 中展开为若干三级子任务。
   ko: 需求定义与系统方案（Concept / Pre-A）
 domains:
 - 06_design_engineering
@@ -37,6 +37,8 @@ sources:
 theoretical_depth:
 - system
 ---
+
+
 
 ## 概述
 需求定义与系统方案（Concept / Pre-A）是人形机器人产品开发全流程中的第 1 个阶段，在 WBS V3 中展开为若干三级子任务。
@@ -309,5 +311,7 @@ theoretical_depth:
 
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
+
+
 
 

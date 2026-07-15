@@ -11,7 +11,11 @@ summary:
   en: This paper presents the design, actuator-aware kino-dynamic planning, and landing control of the MIT Humanoid robot,
     demonstrating back flips, front flips, and spinning jumps in a realistic dynamics simulation that includes validated actuator
     and battery models.
-  zh: 本文介绍了MIT人形机器人的设计、执行器感知运动动力学规划与着陆控制，并在包含经验验证执行器与电池模型的真实感动力学仿真中展示了后空翻、前空翻和旋转跳跃。
+  zh: Demonstrating acrobatic behavior of a humanoid robot such as flips and spinning jumps requires systematic approaches
+    across hardware design, motion planning, and control. In this paper, we present a new humanoid robot design, an actuator-aware
+    kino-dynamic motion planner, and a landing controller as part of a practical system design for highly dynamic motion control
+    of the humanoid robot. To achieve the impulsive motions, we develop two new proprioceptive actuators and experimentally
+    evaluate their performance using our custom-designed dynamometer. The actuator's torque, velocity, and power li
   ko: 본 논문은 MIT 휴머노이드 로봇의 설계, 액추에이터 인식 키노다이나믹 계획법 및 착륙 제어를 제시하며, 경험적으로 검증된 액추에이터 및 배터리 모델을 포함한 사실적인 동역학 시뮬레이션에서 백플립, 프론트플립,
     스핀 점프를 시연한다.
 domains:
@@ -54,6 +58,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 Demonstrating acrobatic behavior of a humanoid robot such as flips and spinning jumps requires systematic approaches across hardware design, motion planning, and control. In this paper, we present a new humanoid robot design, an actuator-aware kino-dynamic motion planner, and a landing controller as part of a practical system design for highly dynamic motion control of the humanoid robot. To achieve the impulsive motions, we develop two new proprioceptive actuators and experimentally evaluate their performance using our custom-designed dynamometer. The actuator's torque, velocity, and power limits are reflected in our kino-dynamic motion planner by approximating the configuration-dependent reaction force limits and in our dynamics simulator by including actuator dynamics along with the robot's full-body dynamics. For the landing control, we effectively integrate model-predictive control and whole-body impulse control by connecting them in a dynamically consistent way to accomplish both the long-time horizon optimal control and high-bandwidth full-body dynamics-based feedback. Actuators' torque output over the entire motion are validated based on the velocity-torque model including battery voltage droop and back-EMF voltage. With the carefully designed hardware and control framework, we successfully demonstrate dynamic behaviors such as back flips, front flips, and spinning jumps in our realistic dynamics simulation.
 
@@ -62,4 +67,5 @@ Demonstrating acrobatic behavior of a humanoid robot such as flips and spinning 
 
 ## 参考
 - http://arxiv.org/abs/2104.09025v1
+
 

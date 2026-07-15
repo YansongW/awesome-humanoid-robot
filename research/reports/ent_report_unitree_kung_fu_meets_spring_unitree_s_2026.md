@@ -4,20 +4,16 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: report
 names:
-  en: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the
-    Year of the Horse
-  zh: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the
-    Year of the Horse
-  ko: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the
-    Year of the Horse
+  en: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the Year of the Horse
+  zh: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the Year of the Horse
+  ko: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the Year of the Horse
 summary:
-  en: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the
-    Year of the Horse is a knowledge node related to report in the humanoid robot
-    value chain.
-  zh: ''
-  ko: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the
-    Year of the Horse is a knowledge node related to report in the humanoid robot
-    value chain.
+  en: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the Year of the Horse is a knowledge node related
+    to report in the humanoid robot value chain.
+  zh: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the Year of the Horse is a knowledge node related
+    to report in the humanoid robot value chain.
+  ko: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the Year of the Horse is a knowledge node related
+    to report in the humanoid robot value chain.
 domains:
 - 11_applications_markets
 - 06_design_engineering
@@ -42,12 +38,12 @@ verification:
 sources:
 - id: src_001
   type: website
-  title: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in
-    the Year of the Horse
+  title: Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the Year of the Horse
   url: https://www.unitree.com/mobile/news
   date: '2026-05-31'
   accessed_at: '2026-07-01'
 ---
+
 
 ## 概述
 Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the Year of the Horse is a knowledge node related to report in the humanoid robot value chain.
@@ -57,3 +53,7 @@ Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the Yea
 
 ## 개요
 Kung Fu Meets Spring, Unitree SFG Robots Present "Cyber Real Kung Fu" in the Year of the Horse is a knowledge node related to report in the humanoid robot value chain.
+
+## 参考
+- https://www.unitree.com/mobile/news
+

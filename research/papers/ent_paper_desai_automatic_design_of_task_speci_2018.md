@@ -10,7 +10,11 @@ names:
 summary:
   en: An interactive computational design system that synthesizes custom robot arms from a library of modular parts by searching
     over combinatorial arrangements to track user-specified end-effector trajectories.
-  zh: 一种交互式计算设计系统，通过组合搜索模块化零件库来生成能够跟踪用户指定末端执行器轨迹的定制机械臂。
+  zh: We present an interactive, computational design system for creating custom robotic arms given high-level task descriptions
+    and environmental constraints. Various task requirements can be encoded as desired motion trajectories for the robot arm's
+    end-effector. Given such end-effector trajectories, our system enables on-demand design of custom robot arms using a library
+    of modular and reconfigurable parts such as actuators and connecting links. By searching through the combinatorial set
+    of possible arrangements of these parts, our method generates a functional, as-simple-as-possible robot arm th
   ko: 모듈형 부품 라이브러리의 조합적 배열을 탐색하여 사용자가 지정한 종단 효과기 궤적을 추적할 수 있는 맞춤형 로봇 팔을 합성하는 상호작용형 컴퓨터 설계 시스템이다.
 domains:
 - 06_design_engineering
@@ -44,6 +48,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 We present an interactive, computational design system for creating custom robotic arms given high-level task descriptions and environmental constraints. Various task requirements can be encoded as desired motion trajectories for the robot arm's end-effector. Given such end-effector trajectories, our system enables on-demand design of custom robot arms using a library of modular and reconfigurable parts such as actuators and connecting links. By searching through the combinatorial set of possible arrangements of these parts, our method generates a functional, as-simple-as-possible robot arm that is capable of tracking the desired trajectories. We demonstrate our system's capabilities by creating robot arm designs in simulation, for various trajectory following scenarios.
 
@@ -52,4 +57,5 @@ We present an interactive, computational design system for creating custom robot
 
 ## 参考
 - http://arxiv.org/abs/1806.07419v1
+
 

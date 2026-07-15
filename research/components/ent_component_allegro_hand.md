@@ -52,6 +52,8 @@ sources:
 theoretical_depth:
 - system
 ---
+
+
 ## 概述
 由 Wonik Robotics 生产的商用16自由度四指灵巧机器人手，因扭矩控制关节和 ROS 兼容性而广泛用于操作研究。
 
@@ -86,4 +88,6 @@ Allegro 灵巧手已广泛应用于人形机器人的原型验证、学术研究
 ## 参考
 - [Allegro Hand Official Website](https://www.allegrohand.com/)
 - [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)
+
+
 

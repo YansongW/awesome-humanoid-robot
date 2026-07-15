@@ -10,7 +10,8 @@ names:
 summary:
   en: Actuator producing rotational motion, typically composed of frameless torque motor, harmonic reducer, encoder and torque
     sensor.
-  zh: 产生旋转运动的执行器，通常由无框力矩电机、谐波减速器、编码器和力矩传感器组成。
+  zh: '核心内容 ### 旋转执行器的定义与定位 旋转执行器属于 **component** 类型。 所属领域包括：02_components。 价值链层级：upstream。 产生旋转运动的执行器，通常由无框力矩电机、谐波减速器、编码器和力矩传感器组成。
+    英文名称为 *Rotary Actuator*。 韩文名称为 *Rotary Actuator*。'
   ko: 회전 운 동을 생성하는 액추에이터, 일반적으로 프레임리스 토크 모터, 하모닉 감속기, 인코더 및 토크 센서로 구성.
 domains:
 - 02_components
@@ -41,6 +42,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 产生旋转运动的执行器，通常由无框力矩电机、谐波减速器、编码器和力矩传感器组成。
 
@@ -73,4 +75,5 @@ sources:
 
 ## 参考
 - [Rotary Actuator](https://en.wikipedia.org/wiki/Actuator)
+
 

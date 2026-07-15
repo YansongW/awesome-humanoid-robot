@@ -9,7 +9,8 @@ names:
   ko: Zero Moment Point
 summary:
   en: Foundational stability criterion for bipedal walking and balance control.
-  zh: 双足行走和平衡控制的基础稳定性判据。
+  zh: '核心内容 ### 零力矩点的定义与定位 零力矩点属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 06_design_engineering。 价值链层级：intelligence,
+    midstream。 双足行走和平衡控制的基础稳定性判据。 英文名称为 *Zero Moment Point*。 韩文名称为 *Zero Moment Point*。'
   ko: 이족 보행 및 균형 제어의 기초적 안정성 기준.
 domains:
 - 07_ai_models_algorithms
@@ -43,6 +44,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 双足行走和平衡控制的基础稳定性判据。
 
@@ -76,4 +78,5 @@ sources:
 
 ## 参考
 - [Zero Moment Point](https://en.wikipedia.org/wiki/Zero_moment_point)
+
 

@@ -10,7 +10,7 @@ names:
 summary:
   en: The incumbent onboard energy storage technology for humanoid robots, balancing energy density, power density, and cycle
     life, but currently limiting runtime to 2-4 hours for typical dynamic operation.
-  zh: 人形机器人当前主流的机载储能技术，在能量密度、功率密度和循环寿命之间取得平衡，但目前通常将动态运行时间限制在 2-4 小时。
+  zh: '## 概述 人形机器人锂离子电池系统是人形机器人领域的重要technology。以下内容整理自项目 Wiki，供深入查阅。'
   ko: 휴로이드 로봇의 기존 온보드 에너지 저장 기술로, 에너지 밀도, 출력 밀도, 사이클 수명 간의 균형을 맞추지만, 일반적인 동적 작업 시 2-4시간으로 운영 시간을 제한함.
 domains:
 - 01_raw_materials
@@ -64,6 +64,7 @@ related_entities:
     zh: 电池系统集成电池管理系统以实现监测、保护和均衡。
     ko: 배터리 시스템은 모니터링, 보호 및 균형을 위해 배터리 관리 시스템을 통합한다.
 ---
+
 ## 概述
 人形机器人锂离子电池系统是人形机器人领域的重要technology。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -123,4 +124,5 @@ E=C \cdot V_{\text{nom}},
 - [Powering Humanoid Robots: The Central Role of Battery Technology](https://www.the-innovation.org/data/article/energy-use/preview/pdf/EU-2026-0002.pdf)
 - [Humanoid robots and lithium-ion batteries: Long-term commitment or short-term convenience?](https://interactanalysis.com/insight/humanoid-robots-and-lithium-ion-batteries/)
 - 项目 Wiki：kg/entities/ent_component_lithium_battery.md
+
 

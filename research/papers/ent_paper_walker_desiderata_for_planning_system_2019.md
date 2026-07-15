@@ -10,7 +10,11 @@ names:
 summary:
   en: Proposes desiderata for planning and reasoning systems to support general-purpose service robots operating in homes
     and offices, emphasizing natural human interfaces and robust fallback methods.
-  zh: 提出针对在家庭和办公室环境中运行的通用服务机器人的规划与推理系统的期望特性，强调自然人机交互与鲁棒的回退方法。
+  zh: General-purpose service robots are expected to undertake a broad range of tasks at the request of users. Knowledge representation
+    and planning systems are essential to flexible autonomous robots, but the field lacks a unified perspective on which features
+    are essential for general-purpose service robots. Progress towards planning and reasoning for general-purpose service
+    robots is hindered by differing assumptions about users, the environment, and the overall robot system. In this position
+    paper, we propose desiderata for planning and reasoning systems to promote general-purpose service robots
   ko: 가정과 사무실에서 동작하는 범용 서비스 로봇을 지원하기 위한 계획 및 추론 시스템의 요구사항을 제안하며, 자연스러운 인간-로봇 상호작용과 강건한 폴백 방법을 강조한다.
 domains:
 - 07_ai_models_algorithms
@@ -44,6 +48,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 General-purpose service robots are expected to undertake a broad range of tasks at the request of users. Knowledge representation and planning systems are essential to flexible autonomous robots, but the field lacks a unified perspective on which features are essential for general-purpose service robots. Progress towards planning and reasoning for general-purpose service robots is hindered by differing assumptions about users, the environment, and the overall robot system. In this position paper, we propose desiderata for planning and reasoning systems to promote general-purpose service robots. Each proposed item draws on our experience with research on service robots in the office and home and on the demands of these environments. Our desiderata emphasize support for natural human-interfaces as well as for robust fallback methods when interactions with humans and the environment fail. We highlight relevant work towards these goals.
 
@@ -52,4 +57,5 @@ General-purpose service robots are expected to undertake a broad range of tasks 
 
 ## 参考
 - http://arxiv.org/abs/1907.02300v1
+
 

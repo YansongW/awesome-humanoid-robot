@@ -10,7 +10,8 @@ names:
 summary:
   en: A differentiable operator that converts a vector of real-valued scores into a probability distribution, emphasizing
     the largest values while keeping all probabilities positive and summing to one.
-  zh: 一种可微算子，将实值分数向量转换为概率分布，突出最大值，同时保持所有概率为正且和为 1。
+  zh: '核心内容 ### Softmax 函数的定义与定位 Softmax 函数属于 **operator** 类型，英文名称为 *Softmax Function*。 一种可微算子，将实值分数向量转换为概率分布，突出最大值，同时保持所有概率为正且和为
+    1。'
   ko: 실수 값 점수 벡터를 확률 분포로 변환하여 가장 큰 값을 강조하면서도 모든 확률이 양수이고 합이 1이 되도록 하는 미분 가능한 연산자이다.
 domains:
 - 00_foundations
@@ -42,6 +43,7 @@ sources:
   date: '2006'
   accessed_at: '2026-06-26'
 ---
+
 ## 概述
 一种可微算子，将实值分数向量转换为概率分布，突出最大值，同时保持所有概率为正且和为 1。
 
@@ -103,4 +105,5 @@ In humanoid VLAs, softmax converts decoder logits into action-token probabilitie
 - [Bishop, Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/)
 
 Softmax 函数的相关技术仍在快速发展。从系统科学角度看，它与其他operator相互耦合，共同决定了人形机器人的整体性能。深入理解其原理、边界条件与工程约束，是将实验室样机转化为可量产产品的必要环节。
+
 

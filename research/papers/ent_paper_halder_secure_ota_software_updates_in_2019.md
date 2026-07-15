@@ -10,7 +10,12 @@ names:
 summary:
   en: A 2019 survey that classifies and compares secure over-the-air (OTA) software update techniques for connected vehicles,
     covering cryptographic methods, hardware security modules, security requirements, regulations, and industrial deployments.
-  zh: 2019年发表的综述论文，对联网汽车安全空中（OTA）软件更新技术进行分类与比较，涵盖加密方法、硬件安全模块、安全需求、法规及工业部署。
+  zh: 'This survey highlights and discusses remote OTA software updates in the automotive sector, mainly from the security
+    perspective. In particular, the major objective of this survey is to provide a comprehensive and structured outline of
+    various research directions and approaches in OTA update technologies in vehicles. At first, we discuss the connected
+    car technology and then integrate the relationship of remote OTA update features with the connected car. We also present
+    the benefits of remote OTA updates for cars along with relevant statistics. Then, we emphasize on the security challenges
+    and '
   ko: 2019년에 발표된 서베이로, 커넥티드 차량을 위한 보안 OTA 소프트웨어 업데이트 기술을 분류 및 비교하고 암호화 방법, 하드웨어 보안 모듈, 보안 요구사항, 규제 및 산업 배포를 다룬다.
 domains:
 - 08_software_middleware
@@ -52,6 +57,7 @@ theoretical_depth:
 - method
 - system
 ---
+
 ## 概述
 This survey highlights and discusses remote OTA software updates in the automotive sector, mainly from the security perspective. In particular, the major objective of this survey is to provide a comprehensive and structured outline of various research directions and approaches in OTA update technologies in vehicles. At first, we discuss the connected car technology and then integrate the relationship of remote OTA update features with the connected car. We also present the benefits of remote OTA updates for cars along with relevant statistics. Then, we emphasize on the security challenges and requirements of remote OTA updates along with use cases and standard road safety regulations followed in different countries. We also provide for a classification of the existing works in literature that deal with implementing different secured techniques for remote OTA updates in vehicles. We further provide an analytical discussion on the present scenario of remote OTA updates with respect to care manufacturers. Finally, we identify possible future research directions of remote OTA updates for automobiles, particularly in the area of security.
 
@@ -60,4 +66,5 @@ This survey highlights and discusses remote OTA software updates in the automoti
 
 ## 参考
 - http://arxiv.org/abs/1904.00685v1
+
 

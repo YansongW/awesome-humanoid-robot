@@ -10,7 +10,8 @@ names:
 summary:
   en: Techniques for transferring policies or controllers trained in simulation to physical robots, typically using domain
     randomization, system identification, or adaptation.
-  zh: 将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。
+  zh: '核心内容 ### Sim-to-Real迁移的定义与定位 Sim-to-Real迁移属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。
+    英文名称为 *Sim-to-Real Transfer*。 韩文名称为 *시뮬-실제 전이*。'
   ko: 시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。
 
@@ -69,4 +71,5 @@ Sim-to-Real迁移可应用于人形机器人的运动规划、控制优化、状
 
 ## 参考
 - Wiki extraction
+
 

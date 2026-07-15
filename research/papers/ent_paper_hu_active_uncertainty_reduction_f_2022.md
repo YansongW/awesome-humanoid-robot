@@ -10,7 +10,11 @@ names:
 summary:
   en: Presents an implicit dual-control stochastic MPC algorithm that enables robots to actively reduce uncertainty about
     hidden human states during interactive motion planning via scenario-tree-based stochastic dynamic programming.
-  zh: 提出了一种隐式双控制随机模型预测控制算法，使机器人能够通过基于场景树的随机动态规划，在交互式运动规划中主动降低对人类隐状态的感知不确定性。
+  zh: The ability to accurately predict human behavior is central to the safety and efficiency of robot autonomy in interactive
+    settings. Unfortunately, robots often lack access to key information on which these predictions may hinge, such as people's
+    goals, attention, and willingness to cooperate. Dual control theory addresses this challenge by treating unknown parameters
+    of a predictive model as stochastic hidden states and inferring their values at runtime using information gathered during
+    system operation. While able to optimally and automatically trade off exploration and exploitation, dual con
   ko: 시나리오 트리 기반 확률적 동적 프로그래밍을 통해 상호작용적 모션 계획 중 숨겨진 인간 상태에 대한 불확실성을 능동적으로 줄일 수 있는 암시적 이중 제어 확률적 MPC 알고리즘을 제시한다.
 domains:
 - 07_ai_models_algorithms
@@ -45,6 +49,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 The ability to accurately predict human behavior is central to the safety and efficiency of robot autonomy in interactive settings. Unfortunately, robots often lack access to key information on which these predictions may hinge, such as people's goals, attention, and willingness to cooperate. Dual control theory addresses this challenge by treating unknown parameters of a predictive model as stochastic hidden states and inferring their values at runtime using information gathered during system operation. While able to optimally and automatically trade off exploration and exploitation, dual control is computationally intractable for general interactive motion planning, mainly due to the fundamental coupling between robot trajectory optimization and human intent inference. In this paper, we present a novel algorithmic approach to enable active uncertainty reduction for interactive motion planning based on the implicit dual control paradigm. Our approach relies on sampling-based approximation of stochastic dynamic programming, leading to a model predictive control problem that can be readily solved by real-time gradient-based optimization methods. The resulting policy is shown to preserve the dual control effect for a broad class of predictive human models with both continuous and categorical uncertainty. The efficacy of our approach is demonstrated with simulated driving examples.
 
@@ -53,4 +58,5 @@ The ability to accurately predict human behavior is central to the safety and ef
 
 ## 参考
 - http://arxiv.org/abs/2202.07720v2
+
 

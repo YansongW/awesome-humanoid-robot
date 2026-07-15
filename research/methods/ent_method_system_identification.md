@@ -10,7 +10,8 @@ names:
 summary:
   en: The process of building mathematical models of dynamical systems from measured input-output data, used to align simulation
     with reality.
-  zh: 根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。
+  zh: '核心内容 ### 系统辨识的定义与定位 系统辨识属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 09_data_datasets。 价值链层级：intelligence。 根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。
+    英文名称为 *System Identification*。 韩文名称为 *시스템 동정*。'
   ko: 측정된 입출력 데이터로부터 동적 시스템의 수학적 모델을 구축하여 시뮬레이션과 현실을 일치시키는 과정.
 domains:
 - 07_ai_models_algorithms
@@ -39,6 +40,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 根据测量的输入输出数据建立动态系统数学模型，使仿真与现实一致的过程。
 
@@ -70,4 +72,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

@@ -10,7 +10,11 @@ names:
 summary:
   en: A survey of service-oriented architecture and Web services for cloud robotics, distinguishing the virtualization of
     robotic systems from computation offloading to cloud-based services.
-  zh: 本文综述了面向服务的架构与Web服务在云机器人中的应用，区分了机器人系统虚拟化和向云端服务卸载计算两类方法。
+  zh: 'In this article, we present an overview of the use of service-oriented architecture and Web services in developing
+    robotics applications and software integrated with the Internet and the Cloud. This is a recent trend that emerged since
+    2010 from the concept of cloud robotics, which leverages the use of cloud infrastructures for robotics applications following
+    a service-oriented architecture approach. In particular, we distinguish two main categories: (\textit{i.}) virtualization
+    of robotics systems and (\textit{ii.}) computation offloading from robots to cloud-based services. We discuss the ma'
   ko: 본 논문은 서비스 지향 아키텍처와 웹 서비스를 활용한 클라우드 로보틱스를 개괄하며, 로봇 시스템 가상화와 클라우드 기반 서비스로의 계산 오프로딩을 구분한다.
 domains:
 - 08_software_middleware
@@ -49,6 +53,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 In this article, we present an overview of the use of service-oriented architecture and Web services in developing robotics applications and software integrated with the Internet and the Cloud. This is a recent trend that emerged since 2010 from the concept of cloud robotics, which leverages the use of cloud infrastructures for robotics applications following a service-oriented architecture approach. In particular, we distinguish two main categories: (\textit{i.}) virtualization of robotics systems and (\textit{ii.}) computation offloading from robots to cloud-based services. We discuss the main approaches proposed in the literature to design robotics systems through the Web and their integration to the cloud through a service-oriented computing framework.
 
@@ -57,4 +62,5 @@ In this article, we present an overview of the use of service-oriented architect
 
 ## 参考
 - http://arxiv.org/abs/1901.08173v2
+
 

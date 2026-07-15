@@ -8,24 +8,18 @@ names:
   zh: NVIDIA and Doosan Group Collaborate to Advance Physical AI and AI Factory Infrastructure
   ko: NVIDIA and Doosan Group Collaborate to Advance Physical AI and AI Factory Infrastructure
 summary:
-  en: NVIDIA and Doosan Group are expanding their collaboration to advance new opportunities
-    across physical AI, robotics and AI factory infrastructure, spanning Doosan Robotics,
-    Doosan Bobcat, Doosan Enerbility and Doosan Corporation Electro-Materials BG.
-    The collaboration will bring together NVIDIA’s full-stack accelerated computing
-    platforms with Doosan Group’s capabilities in industrial automation, power generation
-    and advanced electronics materials [&#8230;]
-  zh: NVIDIA and Doosan Group are expanding their collaboration to advance new opportunities
-    across physical AI, robotics and AI factory infrastructure, spanning Doosan Robotics,
-    Doosan Bobcat, Doosan Enerbility and Doosan Corporation Electro-Materials BG.
-    The collaboration will bring together NVIDIA’s full-stack accelerated computing
-    platforms with Doosan Group’s capabilities in industrial automation, power generation
-    and advanced electronics materials [&#8230;]
-  ko: NVIDIA and Doosan Group are expanding their collaboration to advance new opportunities
-    across physical AI, robotics and AI factory infrastructure, spanning Doosan Robotics,
-    Doosan Bobcat, Doosan Enerbility and Doosan Corporation Electro-Materials BG.
-    The collaboration will bring together NVIDIA’s full-stack accelerated computing
-    platforms with Doosan Group’s capabilities in industrial automation, power generation
-    and advanced electronics materials [&#8230;]
+  en: NVIDIA and Doosan Group are expanding their collaboration to advance new opportunities across physical AI, robotics
+    and AI factory infrastructure, spanning Doosan Robotics, Doosan Bobcat, Doosan Enerbility and Doosan Corporation Electro-Materials
+    BG. The collaboration will bring together NVIDIA’s full-stack accelerated computing platforms with Doosan Group’s capabilities
+    in industrial automation, power generation and advanced electronics materials [&#8230;]
+  zh: NVIDIA and Doosan Group are expanding their collaboration to advance new opportunities across physical AI, robotics
+    and AI factory infrastructure, spanning Doosan Robotics, Doosan Bobcat, Doosan Enerbility and Doosan Corporation Electro-Materials
+    BG. The collaboration will bring together NVIDIA’s full-stack accelerated computing platforms with Doosan Group’s capabilities
+    in industrial automation, power generation and advanced electronics materials [&#8230;]
+  ko: NVIDIA and Doosan Group are expanding their collaboration to advance new opportunities across physical AI, robotics
+    and AI factory infrastructure, spanning Doosan Robotics, Doosan Bobcat, Doosan Enerbility and Doosan Corporation Electro-Materials
+    BG. The collaboration will bring together NVIDIA’s full-stack accelerated computing platforms with Doosan Group’s capabilities
+    in industrial automation, power generation and advanced electronics materials [&#8230;]
 domains:
 - 11_applications_markets
 - 07_ai_models_algorithms
@@ -50,12 +44,12 @@ verification:
 sources:
 - id: src_001
   type: website
-  title: NVIDIA and Doosan Group Collaborate to Advance Physical AI and AI Factory
-    Infrastructure
+  title: NVIDIA and Doosan Group Collaborate to Advance Physical AI and AI Factory Infrastructure
   url: https://blogs.nvidia.com/blog/nvidia-and-doosan-group-physical-ai/
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 ## 概述
 NVIDIA and Doosan Group are expanding their collaboration to advance new opportunities across physical AI, robotics and AI factory infrastructure, spanning Doosan Robotics, Doosan Bobcat, Doosan Enerbility and Doosan Corporation Electro-Materials BG. The collaboration will bring together NVIDIA’s full-stack accelerated computing platforms with Doosan Group’s capabilities in industrial automation, power generation and advanced electronics materials [&#8230;]
@@ -65,3 +59,7 @@ NVIDIA and Doosan Group are expanding their collaboration to advance new opportu
 
 ## 개요
 NVIDIA and Doosan Group are expanding their collaboration to advance new opportunities across physical AI, robotics and AI factory infrastructure, spanning Doosan Robotics, Doosan Bobcat, Doosan Enerbility and Doosan Corporation Electro-Materials BG. The collaboration will bring together NVIDIA’s full-stack accelerated computing platforms with Doosan Group’s capabilities in industrial automation, power generation and advanced electronics materials [&#8230;]
+
+## 参考
+- https://blogs.nvidia.com/blog/nvidia-and-doosan-group-physical-ai/
+

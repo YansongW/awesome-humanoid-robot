@@ -10,7 +10,8 @@ names:
 summary:
   en: A scalar function that encodes the dynamics of a system through the difference (or generalized combination) of kinetic
     and potential energy, from which equations of motion follow via a variational principle.
-  zh: 通过动能与势能之差（或更一般组合）刻画系统动力学，并由变分原理导出运动方程的标量函数。
+  zh: '核心内容 ### 拉格朗日量的定义与定位 拉格朗日量属于 **formalism** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 通过动能与势能之差（或更一般组合）刻画系统动力学，并由变分原理导出运动方程的标量函数。
+    英文名称为 *Lagrangian*。 韩文名称为 *라그랑지안*。'
   ko: 울성 및 위치 에너지의 차이(또는 일반화된 조합)로 시스템 역학을 기술하고 변분 원리로부터 운 동 방정식을 유도하는 스칼라 함수.
 domains:
 - 00_foundations
@@ -48,6 +49,7 @@ related_entities:
     zh: 牛顿-欧拉方程与拉格朗日形式对刚体系统给出相同动力学，但直接通过力与力矩平衡列写。
     ko: 뉴턴-오일러 방정식은 강체 시스템에 대해 라그랑지안 형식과 동일한 역학을 주지만 힘과 토크 균형을 통해 직접 유도합니다.
 ---
+
 ## 概述
 通过动能与势能之差（或更一般组合）刻画系统动力学，并由变分原理导出运动方程的标量函数。
 
@@ -81,4 +83,5 @@ related_entities:
 
 ## 参考
 - [H. Goldstein, C. Poole, and J. Safko, Classical Mechanics, 3rd ed., Addison-Wesley, 2002](https://doi.org/10.2307/2522307)
+
 

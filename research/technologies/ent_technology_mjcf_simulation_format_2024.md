@@ -9,7 +9,8 @@ names:
   ko: MJCF 시뮬레이션 형식
 summary:
   en: MuJoCo's XML modeling format for articulated rigid-body systems with contact, actuators, and sensors.
-  zh: MuJoCo的XML建模格式，用于描述具有接触、执行器和传感器的铰接刚体系统。
+  zh: '核心内容 ### MJCF 仿真格式的定义与定位 MJCF 仿真格式属于 **technology** 类型。 所属领域包括：08_software_middleware, 06_design_engineering。 价值链层级：intelligence,
+    midstream。 MuJoCo的XML建模格式，用于描述具有接触、执行器和传感器的铰接刚体系统。 英文名称为 *MJCF Simulation Format*。 韩文名称为 *MJCF 시뮬레이션 형식*。'
   ko: 접촉, 액추에이터 및 센서가 있는 관절 강체 시스템을 위한 MuJoCo의 XML 모델링 형식.
 domains:
 - 08_software_middleware
@@ -42,6 +43,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 MuJoCo的XML建模格式，用于描述具有接触、执行器和传感器的铰接刚体系统。
 
@@ -74,4 +76,5 @@ MJCF 仿真格式已广泛应用于人形机器人的原型验证、学术研究
 
 ## 参考
 - [MJCF Simulation Format](https://mujoco.readthedocs.io/en/stable/modeling.html)
+
 

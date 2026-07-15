@@ -10,7 +10,8 @@ names:
 summary:
   en: A family of optimization algorithms that solve constrained problems by following a smooth central path strictly inside
     the feasible region via barrier or penalty functions.
-  zh: 一类优化算法，通过障碍或惩罚函数在可行域内部沿光滑中心路径求解约束优化问题。
+  zh: '核心内容 ### 内点法的定义与定位 内点法属于 **algorithm** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一类优化算法，通过障碍或惩罚函数在可行域内部沿光滑中心路径求解约束优化问题。
+    英文名称为 *Interior-point method*。 韩文名称为 *내점법*。'
   ko: 장벽 또는 페널티 함수를 통해 실행 가능 영역 내에서 매끄러운 중심 경로를 따라 제약 최적화 문제를 푸는 최적화 알고리즘 집합.
 domains:
 - 00_foundations
@@ -55,6 +56,7 @@ related_entities:
     zh: 起作用集法显式追踪起作用约束，而内点法通过障碍项完全避开边界。
     ko: 활성 집합법은 명시적으로 구속 제약을 추적하는 반면, 내점법은 장벽 항을 통해 경계를 완전히 피합니다.
 ---
+
 ## 概述
 一类优化算法，通过障碍或惩罚函数在可行域内部沿光滑中心路径求解约束优化问题。
 
@@ -88,4 +90,5 @@ related_entities:
 
 ## 参考
 - [J. Nocedal and S. J. Wright, Numerical Optimization, 2nd ed., Springer, 2006](https://doi.org/10.1007/978-0-387-40065-5)
+
 

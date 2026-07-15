@@ -10,7 +10,8 @@ names:
 summary:
   en: A compact electric motor with precise position, velocity, and torque control, used as the core actuator in humanoid
     robot joints.
-  zh: 一种具有精确位置、速度和扭矩控制的紧凑型电机，用于人形机器人关节的核心执行器。
+  zh: 伺服电机（Servo Motor）是一种与专用伺服驱动器配套、具备闭环位置、速度与转矩控制能力的高性能电机，广泛应用于工业机器人、数控机床、人形机器人关节、AGV 舵轮及精密定位平台。工业机器人与高端自动化系统中最常见的为交流永磁同步伺服电机（PMSM），其转子采用稀土永磁材料，定子由逆变器供电，配合高分辨率编码器实现毫秒级动态响应。以安川（Yaskawa）Sigma-7
+    系列为例，小惯量型号 SGM7J-A5AFA61 额定功率 $50\,\text{W}$、额定转矩 $0.159\,\text{Nm}$、最高转速 $6000\,\text{rpm}$，并内置 24 位串行增量编码器。
   ko: 정밀한 위치, 속도 및 토크 제어가 가능한 소형 전동기로, 휨로봇 관절의 핵심 액추에이터로 사용됩니다.
 domains:
 - 02_components
@@ -46,6 +47,7 @@ related_entities:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 高性能伺服电机是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -110,4 +112,5 @@ $$
 ## 参考
 - [Humanoid Robot Actuator Survey 2025](https://example.com/actuator-survey-2025)
 - 项目 Wiki：kg/entities/ent_component_servo_motor.md
+
 

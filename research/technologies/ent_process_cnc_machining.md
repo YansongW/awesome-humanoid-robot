@@ -10,7 +10,9 @@ names:
 summary:
   en: Computer-numerical-control machining processes that produce high-precision structural parts such as joint housings,
     brackets, and shafts to tight tolerances.
-  zh: 通过数控加工以严格公差制造关节壳体、支架、轴类等高精度结构件。
+  zh: '!!! note "术语解释：铸造、锻造、CNC 加工、增材制造、复合材料、铺层" - **铸造（casting）**：将熔融金属倒入模具凝固成形。 - **锻造（forging）**：通过压力使金属塑性变形，改善晶粒组织。 -
+    **CNC 加工（CNC machining）**：计算机数控切削加工。 - **增材制造（Additive Manufacturing, AM）**：逐层堆积材料的成形技术。 - **复合材料（composite material）**：由两种及以上材料组成的新材料，如碳纤维增强塑料。
+    - **铺层（layup）**：复合材料中纤维层的铺设方式。'
   ko: 관절 하우징·브래킷·축 등의 고정밀 구조 부품을 엄격한 공차 내에서 생산하는 CNC 가공 공정.
 domains:
 - 03_manufacturing_processes
@@ -37,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 CNC精密机加工是人形机器人领域的重要technology。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -77,4 +80,5 @@ flowchart TD
 ## 参考
 - Wiki extraction
 - 项目 Wiki：chapter-09.md#9.8.2 制造工艺：铸造、锻造、CNC、增材制造与复合材料
+
 

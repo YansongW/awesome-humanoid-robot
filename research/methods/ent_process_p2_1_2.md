@@ -9,7 +9,7 @@ names:
   ko: A 面 3D 建模与可视化
 summary:
   en: High-precision A-side, renderings, CMF scheme, and key viewpoints passed the review
-  zh: 高精度 A 面、渲染图、CMF 方案、关键视角评审通过
+  zh: 核心内容 **方法 / 工具**：Alias / Rhino / Blender / Cinema 4D、KeyShot 渲染
   ko: 高精度 A 面、渲染图、CMF 方案、关键视角评审通过
 domains:
 - 06_design_engineering
@@ -34,6 +34,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：工业设计与外观工程（ID / A-Surface）
@@ -81,5 +82,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

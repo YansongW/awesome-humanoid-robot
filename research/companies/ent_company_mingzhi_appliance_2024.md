@@ -9,7 +9,7 @@ names:
   ko: Mingzhi Appliance
 summary:
   en: Chinese manufacturer of hollow-cup motors used in dexterous robot hands.
-  zh: 用于机器人灵巧手的空心杯电机制造商。
+  zh: '## 概述 鸣志电器是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。'
   ko: 로봇 능숙한 손에 사용되는 홀컵 모터 제조업체.
 domains:
 - 02_components
@@ -42,6 +42,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 鸣志电器是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -144,4 +145,5 @@ sources:
 ## 参考
 - [Mingzhi Appliance](http://www.moons.com.cn/)
 - 项目 Wiki：appendix-d/companies/company_moons.md
+
 

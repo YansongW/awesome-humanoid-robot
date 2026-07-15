@@ -9,7 +9,8 @@ names:
   ko: Joint Calibration Procedure
 summary:
   en: Post-assembly procedure to determine absolute zero positions, encoder offsets, and direction signs for each actuator.
-  zh: 装配后确定每个执行器绝对零位、编码器偏置和方向标志的流程。
+  zh: '核心内容 ### 关节标定流程的定义与定位 关节标定流程属于 **method** 类型。 所属领域包括：04_assembly_integration_testing, 06_design_engineering。 价值链层级：midstream。
+    装配后确定每个执行器绝对零位、编码器偏置和方向标志的流程。 英文名称为 *Joint Calibration Procedure*。 韩文名称为 *Joint Calibration Procedure*。'
   ko: 조립 후 각 액추에이터의 절대 원점, 인코더 오프셋 및 방향 부호를 결정하는 절차.
 domains:
 - 04_assembly_integration_testing
@@ -41,6 +42,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 装配后确定每个执行器绝对零位、编码器偏置和方向标志的流程。
 
@@ -74,4 +76,5 @@ sources:
 
 ## 参考
 - [Joint Calibration Procedure](https://en.wikipedia.org/wiki/Robot_calibration)
+
 

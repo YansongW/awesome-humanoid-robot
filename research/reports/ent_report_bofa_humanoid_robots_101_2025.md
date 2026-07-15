@@ -8,12 +8,10 @@ names:
   zh: 美国银行研究所——人形机器人入门
   ko: 뱅크오브아메리카 인스티튜트 — 휴이노이드 로봇 101
 summary:
-  en: An April 2025 primer from Bank of America Institute that breaks down humanoid
-    robot architecture, key components, BOM cost trajectory, and adoption stages through
-    2060.
-  zh: 美国银行研究所 2025 年 4 月发布的人形机器人入门报告，解析了人形机器人架构、核心零部件、物料成本轨迹及到 2060 年的应用阶段。
-  ko: 2025년 4월 Bank of America Institute가 발표한 휴이노이드 로봇 입문서로, 휴이노이드 로봇 아키텍처, 핵심 부품,
-    BOM 비용 궤적 및 2060년까지의 도입 단계를 분석함.
+  en: An April 2025 primer from Bank of America Institute that breaks down humanoid robot architecture, key components, BOM
+    cost trajectory, and adoption stages through 2060.
+  zh: '> **生活实例**：它就像给投资者写的《人形机器人入门手册》——拆解了机器人由哪些“器官”组成、每台成本大概多少、未来几十年可能怎么普及。'
+  ko: 2025년 4월 Bank of America Institute가 발표한 휴이노이드 로봇 입문서로, 휴이노이드 로봇 아키텍처, 핵심 부품, BOM 비용 궤적 및 2060년까지의 도입 단계를 분석함.
 domains:
 - 05_mass_production
 - 11_applications_markets
@@ -35,8 +33,8 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-25'
   confidence: medium
-  notes: AI-extracted from the published Bank of America Institute PDF; quantitative
-    forecasts are analyst estimates and should be treated as projections, not facts.
+  notes: AI-extracted from the published Bank of America Institute PDF; quantitative forecasts are analyst estimates and should
+    be treated as projections, not facts.
 sources:
 - id: src_report_bofa_humanoid_robots_101_2025
   type: report
@@ -48,13 +46,14 @@ related_entities:
 - id: ent_component_harmonic_drive_reducer
   relationship: cites
   description:
-    en: The report identifies harmonic reducers as a mainstream transmission choice
-      for rotary actuators in humanoid robots.
+    en: The report identifies harmonic reducers as a mainstream transmission choice for rotary actuators in humanoid robots.
     zh: 该报告指出谐波减速器是人形机器人旋转执行器的主流传动选择之一。
     ko: 해당 보고서는 하모닉 감속기가 휴이노이드 로봇의 회전 액추에이터에 사용되는 주류 전동 장치 중 하나임을 언급함.
 theoretical_depth:
 - system
 ---
+
+
 
 # Bank of America Institute — Humanoid Robots 101
 
@@ -87,3 +86,8 @@ The report highlights several near-term bottlenecks: availability of high-perfor
 ## Uncertainties
 
 The BOM and shipment figures are analyst estimates, not audited financials. The report itself notes that humanoid robots are not yet standard-spec products, so cost predictions are inherently uncertain.
+
+## 参考
+- https://institute.bankofamerica.com/content/dam/transformation/humanoid-robots.pdf
+
+

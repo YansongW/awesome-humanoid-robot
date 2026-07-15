@@ -10,7 +10,8 @@ names:
 summary:
   en: A statistical principle that chooses model parameters to maximize the probability of observing the training data, forming
     the basis of cross-entropy and next-token prediction losses.
-  zh: 一种统计原理，选择使训练数据出现概率最大的模型参数，是交叉熵和下一个 token 预测损失的基础。
+  zh: '核心内容 ### 最大似然估计的定义与定位 最大似然估计属于 **principle** 类型。 所属领域包括：00_foundations, 07_ai_models_algorithms。 价值链层级：foundations,
+    intelligence。 一种统计原理，选择使训练数据出现概率最大的模型参数，是交叉熵和下一个 token 预测损失的基础。 英文名称为 *Maximum Likelihood Estimation*。 韩文名称为 *최대우도추정*。'
   ko: 훈련 데이터가 관측될 확률을 최대화하는 모델 매개변수를 선택하는 통계적 원리로, 교차 엔트로피와 다음 토큰 예측 손실의 기초가 된다.
 domains:
 - 00_foundations
@@ -49,6 +50,7 @@ related_entities:
     zh: 最大似然估计建立在概率论和随机变量的基础之上。
     ko: 최대우도추정은 확률론과 확률 변수에 기반한다.
 ---
+
 ## 概述
 一种统计原理，选择使训练数据出现概率最大的模型参数，是交叉熵和下一个 token 预测损失的基础。
 
@@ -82,4 +84,5 @@ related_entities:
 
 ## 参考
 - [Bishop, Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/)
+
 

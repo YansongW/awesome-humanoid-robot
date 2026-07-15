@@ -10,7 +10,8 @@ names:
 summary:
   en: A high-performance rare-earth permanent magnet widely used in servo motors, electric vehicle motors, and high-precision
     actuators.
-  zh: 一种高性能稀土永磁体，广泛用于伺服电机、电动汽车电机和高精度执行器。
+  zh: '核心内容 ### 钕铁硼磁体的定义与定位 钕铁硼磁体属于 **material** 类型。 所属领域包括：01_raw_materials。 价值链层级：upstream。 一种高性能稀土永磁体，广泛用于伺服电机、电动汽车电机和高精度执行器。
+    英文名称为 *Neodymium-Iron-Boron Magnet*。 韩文名称为 *네오디뮴 철 붕자석*。'
   ko: 서보 모터, 전기차 모터 및 고정밀 액추에이터에 널리 사용되는 고성능 희토류 영구자석입니다.
 domains:
 - 01_raw_materials
@@ -47,6 +48,7 @@ related_entities:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 一种高性能稀土永磁体，广泛用于伺服电机、电动汽车电机和高精度执行器。
 
@@ -76,4 +78,5 @@ theoretical_depth:
 
 ## 参考
 - [Rare Earth Magnets in Robotics and EV Motors](https://example.com/rare-earth-robotics-report)
+
 

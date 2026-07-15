@@ -8,8 +8,20 @@ names:
   zh: AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
   ko: AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
 summary:
-  en: AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
-  zh: AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
+  en: As part of VivaTech’s 10th-anniversary celebration, AGIBOT participated in the public technology showcase on the Champs-Élysées,
+    where visitors experienced humanoid robotics alongside other emerging technologies. Online Robotics Trade Magazine Industrial
+    Automation, Robots and Unmanned Vehicles As part of VivaTech’s 10th-anniversary celebration, AGIBOT participated in the
+    public technology showcase on the Champs-Élysées, where visitors experienced humanoid robotics alongside other emerging
+    technologies. AGIBOT, a global leader in embodied AI and robotics, presented its embodied AI robotics portfolio at VivaTech
+    2026 in Paris. The company conducted live demonstrations across interaction, locomotion, manipulation, and multi-robot
+    coordination. More Headlines MassRobotics Opens Sponsorship Op
+  zh: As part of VivaTech’s 10th-anniversary celebration, AGIBOT participated in the public technology showcase on the Champs-Élysées,
+    where visitors experienced humanoid robotics alongside other emerging technologies. Online Robotics Trade Magazine Industrial
+    Automation, Robots and Unmanned Vehicles As part of VivaTech’s 10th-anniversary celebration, AGIBOT participated in the
+    public technology showcase on the Champs-Élysées, where visitors experienced humanoid robotics alongside other emerging
+    technologies. AGIBOT, a global leader in embodied AI and robotics, presented its embodied AI robotics portfolio at VivaTech
+    2026 in Paris. The company conducted live demonstrations across interaction, locomotion, manipulation, and multi-robot
+    coordination. More Headlines MassRobotics Opens Sponsorship Op
   ko: AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
 domains:
 - 11_applications_markets
@@ -28,9 +40,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/06/23/agibot-showcases-embodied-ai-robots-at-vivatech-2026-in-paris/26764.
 sources:
 - id: src_001
   type: website
@@ -40,32 +52,11 @@ sources:
   accessed_at: '2026-07-01'
 ---
 ## 概述
-AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris
+As part of VivaTech’s 10th-anniversary celebration, AGIBOT participated in the public technology showcase on the Champs-Élysées, where visitors experienced humanoid robotics alongside other emerging technologies. Online Robotics Trade Magazine Industrial Automation, Robots and Unmanned Vehicles As part of VivaTech’s 10th-anniversary celebration, AGIBOT participated in the public technology showcase on the Champs-Élysées, where visitors experienced humanoid robotics alongside other emerging technologies. AGIBOT, a global leader in embodied AI and robotics, presented its embodied AI robotics portfolio at VivaTech 2026 in Paris. The company conducted live demonstrations across interaction, locomotion, manipulation, and multi-robot coordination. More Headlines MassRobotics Opens Sponsorship Opportunities for RoboBoston 2026 and Invites Hiring Companies to Robotics & AI Technical Career Fair Actuate 26 Robotics Developer Conference Announces Speaker Lineup Featuring Leaders From Wayve, Aurora, Physical Intelligence, Zipline, Shield AI, Google DeepMind and NVIDIA document.write(' '); Walden Robotics Launches with $300 Million to Put General-Purpose Robots to Work Today KULR Selected by Icarus Robotics to Power Free-Flying Robotic Platform Bound for the International Space Station Oxford Technology funds next-generation human-robot safety technology Articles What Bastian Solutions’ experience reveals about the future of AGV navigation Benefits to OEMs from Working with a Good Robotics Integrator Unleash AI Innovation: The Power of NVIDIA RTX PRO 6000 Blackwell Workstation Edition Fueled by PNY-Supplied GPUs Automate 2026 Q&A with DESTACO Automate 2026 Q&A with Roboteon As part of VivaTech's 10th-anniversary celebration, AGIBOT participated in the public technology showcase on the Champs-Élysées, where visitors experienced humanoid robotics alongside other emerging technologies. At the main VivaTech venue, AGIBOT demonstrated how its "Three Intelligences in One" architecture integrates Locomotion Intelligence, Interaction Intelligence, and Manipulation Intelligence into a unified embodied system designed for real-world applications. "The humanoid robotics industry is moving from proof-of-concept demonstrations toward real-world deployment," said William Shi, President of EU and US markets at AGIBOT. "VivaTech provides an important platform for engaging with Europe's technology, business, and innovation communities. Through our live demonstrations, we hope to show how embodied AI can support practical applications across commercial, industrial, and service scenarios." On the Discovery Stage, AGIBOT X2 joined other robots in an autonomous presentation, showcasing the company's progress in interaction intelligence and coordinated robotic performance. In Hall 7.1, AGIBOT staged a robot parade featuring multiple robots, including its D1 and two X2 robots. AGIBOT also delivered an extended performance on the Theater Stage, with a total of 8 robots dancing in sync. Afterwards, Mr. Maurice Levy, Chairman of Publicis Groupe, and William Shi, President of AGIBOT Europe & Americas, interacted with X2 on stage. The audience of 2,000 was very enthusiastic. AGIBOT also participated in a bilingual English-French panel discussion on the future applications of AI and humanoid robotics, joining industry leaders and experts to explore how embodied AI may evolve from experimental demonstrations into practical deployment. Through these multi-scenario demonstrations, AGIBOT showcased its approach to building embodied AI systems that combine physical mobility, natural interaction, and task execution. The company will continue to advance robotics technologies from research and demonstration environments into broader real-world applications, working with partners to create smarter, safer, and more useful robotic experiences. About AGIBOT AGIBOT develops embodied AI foundation models and robotic systems that bring intelligence into the physical world. Its portfolio spans humanoid robots, quadrupeds, dexterous systems, and commercial cleaning solutions. In March 2026, AGIBOT announced that its 10,000th robot had rolled off the production line. For more about AGIBOT, visit https://www.agibot.com/.
 
 ## 核心内容
-### AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris的定义与定位
-AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris属于 **report** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris 英文名称为 *AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris*。 韩文名称为 *AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris*。
-
-### AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris的关键信息
-该报告记录了人形机器人产业中的最新动态、事件或观点，可作为观察市场与技术演化的参考。
-关键信息包括涉及主体、事件内容、时间节点以及可能的后续影响。
-
-### 产业影响与启示
-从系统视角看，AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris所反映的趋势可能与供应链、资本、政策或技术路线产生联动，值得持续跟踪。
-对投资者、研发人员与产业决策者而言，及时理解此类信息有助于把握行业节奏与风险。
-
-### 后续关注点
-建议关注该事件的后续进展、相关方的官方声明以及同类事件的累积效应，以形成更全面的判断。
-
-### 相关标签
-- industry
-- news
-- report
-- robotics
-
-### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键report之一，AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+As part of VivaTech’s 10th-anniversary celebration, AGIBOT participated in the public technology showcase on the Champs-Élysées, where visitors experienced humanoid robotics alongside other emerging technologies. Online Robotics Trade Magazine Industrial Automation, Robots and Unmanned Vehicles As part of VivaTech’s 10th-anniversary celebration, AGIBOT participated in the public technology showcase on the Champs-Élysées, where visitors experienced humanoid robotics alongside other emerging technologies. AGIBOT, a global leader in embodied AI and robotics, presented its embodied AI robotics portfolio at VivaTech 2026 in Paris. The company conducted live demonstrations across interaction, locomotion, manipulation, and multi-robot coordination. More Headlines MassRobotics Opens Sponsorship Opportunities for RoboBoston 2026 and Invites Hiring Companies to Robotics & AI Technical Career Fair Actuate 26 Robotics Developer Conference Announces Speaker Lineup Featuring Leaders From Wayve, Aurora, Physical Intelligence, Zipline, Shield AI, Google DeepMind and NVIDIA document.write(' '); Walden Robotics Launches with $300 Million to Put General-Purpose Robots to Work Today KULR Selected by Icarus Robotics to Power Free-Flying Robotic Platform Bound for the International Space Station Oxford Technology funds next-generation human-robot safety technology Articles What Bastian Solutions’ experience reveals about the future of AGV navigation Benefits to OEMs from Working with a Good Robotics Integrator Unleash AI Innovation: The Power of NVIDIA RTX PRO 6000 Blackwell Workstation Edition Fueled by PNY-Supplied GPUs Automate 2026 Q&A with DESTACO Automate 2026 Q&A with Roboteon As part of VivaTech's 10th-anniversary celebration, AGIBOT participated in the public technology showcase on the Champs-Élysées, where visitors experienced humanoid robotics alongside other emerging technologies. At the main VivaTech venue, AGIBOT demonstrated how its "Three Intelligences in One" architecture integrates Locomotion Intelligence, Interaction Intelligence, and Manipulation Intelligence into a unified embodied system designed for real-world applications. "The humanoid robotics industry is moving from proof-of-concept demonstrations toward real-world deployment," said William Shi, President of EU and US markets at AGIBOT. "VivaTech provides an important platform for engaging with Europe's technology, business, and innovation communities. Through our live demonstrations, we hope to show how embodied AI can support practical applications across commercial, industrial, and service scenarios." On the Discovery Stage, AGIBOT X2 joined other robots in an autonomous presentation, showcasing the company's progress in interaction intelligence and coordinated robotic performance. In Hall 7.1, AGIBOT staged a robot parade featuring multiple robots, including its D1 and two X2 robots. AGIBOT also delivered an extended performance on the Theater Stage, with a total of 8 robots dancing in sync. Afterwards, Mr. Maurice Levy, Chairman of Publicis Groupe, and William Shi, President of AGIBOT Europe & Americas, interacted with X2 on stage. The audience of 2,000 was very enthusiastic. AGIBOT also participated in a bilingual English-French panel discussion on the future applications of AI and humanoid robotics, joining industry leaders and experts to explore how embodied AI may evolve from experimental demonstrations into practical deployment. Through these multi-scenario demonstrations, AGIBOT showcased its approach to building embodied AI systems that combine physical mobility, natural interaction, and task execution. The company will continue to advance robotics technologies from research and demonstration environments into broader real-world applications, working with partners to create smarter, safer, and more useful robotic experiences. About AGIBOT AGIBOT develops embodied AI foundation models and robotic systems that bring intelligence into the physical world. Its portfolio spans humanoid robots, quadrupeds, dexterous systems, and commercial cleaning solutions. In March 2026, AGIBOT announced that its 10,000th robot had rolled off the production line. For more about AGIBOT, visit https://www.agibot.com/.
 
 ## 参考
-- [AGIBOT Showcases Embodied AI Robots at VivaTech 2026 in Paris](http://www.RoboticsTomorrow.com/news/2026/06/23/agibot-showcases-embodied-ai-robots-at-vivatech-2026-in-paris/26764)
+- http://www.RoboticsTomorrow.com/news/2026/06/23/agibot-showcases-embodied-ai-robots-at-vivatech-2026-in-paris/26764
 

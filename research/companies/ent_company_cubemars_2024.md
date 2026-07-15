@@ -9,7 +9,8 @@ names:
   ko: CubeMars
 summary:
   en: Chinese supplier of compact integrated robot joint motors and actuators.
-  zh: 紧凑型一体化机器人关节电机和执行器供应商。
+  zh: '核心内容 ### CubeMars的定义与定位 CubeMars属于 **component_manufacturer** 类型。 所属领域包括：02_components, 03_manufacturing_processes。
+    价值链层级：upstream。 紧凑型一体化机器人关节电机和执行器供应商。 英文名称为 *CubeMars*。 韩文名称为 *CubeMars*。'
   ko: 컴팩트한 통합 로봇 관절 모터 및 액추에이터 공급업체.
 domains:
 - 02_components
@@ -42,6 +43,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 紧凑型一体化机器人关节电机和执行器供应商。
 
@@ -73,4 +75,5 @@ CubeMars在人形机器人产业链中占据特定位置，其产品或技术能
 
 ## 参考
 - [CubeMars](https://www.cubemars.com/)
+
 

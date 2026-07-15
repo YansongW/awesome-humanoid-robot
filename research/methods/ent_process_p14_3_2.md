@@ -9,7 +9,8 @@ names:
   ko: 软硬件在环测试（HIL/SIL）
 summary:
   en: HIL/SIL test reports, 100% coverage of key use cases
-  zh: HIL/SIL 测试报告、关键用例 100% 覆盖
+  zh: '- P14.3.2.1 输入梳理与目标量化 - 整理「软硬件在环测试（HIL/SIL）」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化
+    KPI - 建立任务 Owner、时间节点与风险登记'
   ko: HIL/SIL 测试报告、关键用例 100% 覆盖
 domains:
 - 08_software_middleware
@@ -34,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：软件中间件与系统集成（Software & Integration）
@@ -81,5 +83,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

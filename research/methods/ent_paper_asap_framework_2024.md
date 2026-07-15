@@ -9,7 +9,8 @@ names:
   ko: ASAP 프레임워크
 summary:
   en: Sim-to-real framework for agile humanoid whole-body control.
-  zh: 面向敏捷人形机器人全身控制的Sim-to-Real框架。
+  zh: '核心内容 ### ASAP 框架的定义与定位 ASAP 框架属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 面向敏捷人形机器人全身控制的Sim-to-Real框架。
+    英文名称为 *ASAP Framework*。 韩文名称为 *ASAP 프레임워크*。'
   ko: 민첩한 휨로봇 전신 제어를 위한 Sim-to-Real 프레임워크.
 domains:
 - 07_ai_models_algorithms
@@ -40,6 +41,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 面向敏捷人形机器人全身控制的Sim-to-Real框架。
 
@@ -73,4 +75,5 @@ ASAP 框架可应用于人形机器人的运动规划、控制优化、状态估
 
 ## 参考
 - [ASAP Framework](https://agile.human2humanoid.com/)
+
 

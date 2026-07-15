@@ -9,7 +9,8 @@ names:
   ko: 선형대수학
 summary:
   en: The branch of mathematics concerning vector spaces, linear transformations, matrices, and systems of linear equations.
-  zh: 研究向量空间、线性变换、矩阵和线性方程组的数学分支。
+  zh: '核心内容 ### 线性代数的定义与定位 线性代数属于 **foundation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 研究向量空间、线性变换、矩阵和线性方程组的数学分支。
+    英文名称为 *Linear Algebra*。 韩文名称为 *선형대수학*。'
   ko: 벡터 공간, 선형 변환, 행렬, 선형 방정식 체계를 다루는 수학 분야이다.
 domains:
 - 00_foundations
@@ -39,6 +40,7 @@ sources:
   date: '2016'
   accessed_at: '2026-06-26'
 ---
+
 ## 概述
 研究向量空间、线性变换、矩阵和线性方程组的数学分支。
 
@@ -72,4 +74,5 @@ sources:
 
 ## 参考
 - [Strang, Introduction to Linear Algebra](https://math.mit.edu/~gs/linearalgebra/)
+
 

@@ -46,6 +46,8 @@ sources:
 theoretical_depth:
 - system
 ---
+
+
 ## 概述
 一种标量、可分解的基准指标，综合工作空间覆盖、扭矩-功率需求、带宽、效率和热可持续性，以量化人形机器人驱动能力接近类人水平的程度。
 
@@ -83,4 +85,6 @@ HLAS provides a design specification and benchmarking standard for actuation sys
 - [Human-Level Actuation for Humanoids](https://arxiv.org/abs/2511.06796)
 
 类人驱动评分的相关技术仍在快速发展。从系统科学角度看，它与其他benchmark相互耦合，共同决定了人形机器人的整体性能。深入理解其原理、边界条件与工程约束，是将实验室样机转化为可量产产品的必要环节。
+
+
 

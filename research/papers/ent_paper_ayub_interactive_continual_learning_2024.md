@@ -11,7 +11,11 @@ summary:
   en: This paper proposes an interactive continual learning architecture that enables a mobile manipulator to learn semantic
     knowledge of objects and contexts from real-time human-robot interaction, and validates it through two months of physical
     robot experiments.
-  zh: 本文提出了一种交互式持续学习架构，使移动操作机器人能够通过实时人机交互学习物体与环境的语义知识，并通过两个月的物理机器人实验进行了验证。
+  zh: For robots to perform assistive tasks in unstructured home environments, they must learn and reason on the semantic
+    knowledge of the environments. Despite a resurgence in the development of semantic reasoning architectures, these methods
+    assume that all the training data is available a priori. However, each user's environment is unique and can continue to
+    change over time, which makes these methods unsuitable for personalized home service robots. Although research in continual
+    learning develops methods that can learn and adapt over time, most of these methods are tested in the narrow context o
   ko: 본 논문은 실시간 인간-로봇 상호작용을 통해 물체와 맥락의 의미적 지식을 학습할 수 있는 대화형 지속 학습 아키텍처를 제안하고, 두 달간의 실제 로봇 실험을 통해 검증하였다.
 domains:
 - 07_ai_models_algorithms
@@ -50,6 +54,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 For robots to perform assistive tasks in unstructured home environments, they must learn and reason on the semantic knowledge of the environments. Despite a resurgence in the development of semantic reasoning architectures, these methods assume that all the training data is available a priori. However, each user's environment is unique and can continue to change over time, which makes these methods unsuitable for personalized home service robots. Although research in continual learning develops methods that can learn and adapt over time, most of these methods are tested in the narrow context of object classification on static image datasets. In this paper, we combine ideas from continual learning, semantic reasoning, and interactive machine learning literature and develop a novel interactive continual learning architecture for continual learning of semantic knowledge in a home environment through human-robot interaction. The architecture builds on core cognitive principles of learning and memory for efficient and real-time learning of new knowledge from humans. We integrate our architecture with a physical mobile manipulator robot and perform extensive system evaluations in a laboratory environment over two months. Our results demonstrate the effectiveness of our architecture to allow a physical robot to continually adapt to the changes in the environment from limited data provided by the users (experimenters), and use the learned knowledge to perform object fetching tasks.
 
@@ -58,4 +63,5 @@ For robots to perform assistive tasks in unstructured home environments, they mu
 
 ## 参考
 - http://arxiv.org/abs/2403.03462v1
+
 

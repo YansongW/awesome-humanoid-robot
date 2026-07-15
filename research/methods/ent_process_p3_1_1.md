@@ -9,7 +9,7 @@ names:
   ko: DOF 配置与关节布局
 summary:
   en: DOF configuration table, joint range of motion, joint speed/torque requirements v1
-  zh: DOF 配置表、关节运动范围、关节速度/扭矩需求 v1
+  zh: '**设计思考逻辑**：腿部 6×2、手臂 7×2、躯干 1–3、头部 2–3、手部 11–22；在满足任务前提下减少复杂度和重量'
   ko: DOF 配置表、关节运动范围、关节速度/扭矩需求 v1
 domains:
 - 06_design_engineering
@@ -36,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）
@@ -83,5 +84,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

@@ -10,7 +10,8 @@ names:
 summary:
   en: The mathematical discipline of minimizing convex functions over convex sets, guaranteeing that any local optimum is
     also global.
-  zh: 在凸集上最小化凸函数的数学学科，保证任何局部最优也是全局最优。
+  zh: '核心内容 ### 凸优化的定义与定位 凸优化属于 **foundation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 在凸集上最小化凸函数的数学学科，保证任何局部最优也是全局最优。
+    英文名称为 *Convex Optimization*。 韩文名称为 *볼록 최적화*。'
   ko: 볼록 집합 위에서 볼록 함수를 최소화하는 수학 분야로, 모든 국소 최적해가 전역 최적해임을 보장한다.
 domains:
 - 00_foundations
@@ -40,6 +41,7 @@ sources:
   date: '2004'
   accessed_at: '2026-06-26'
 ---
+
 ## 概述
 在凸集上最小化凸函数的数学学科，保证任何局部最优也是全局最优。
 
@@ -73,4 +75,5 @@ sources:
 
 ## 参考
 - [Boyd and Vandenberghe, Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/)
+
 

@@ -10,7 +10,9 @@ names:
 summary:
   en: An iterative algorithm for solving QPs that maintains a working set of active constraints and solves equality-constrained
     subproblems until optimality conditions are satisfied.
-  zh: 一种求解二次规划的迭代算法，维护一个活动约束工作集，并求解等式约束子问题直到满足最优性条件。
+  zh: '核心内容 ### 二次规划的积极集法的定义与定位 二次规划的积极集法属于 **algorithm** 类型。 所属领域包括：07_ai_models_algorithms, 00_foundations。 价值链层级：intelligence,
+    foundations。 一种求解二次规划的迭代算法，维护一个活动约束工作集，并求解等式约束子问题直到满足最优性条件。 英文名称为 *Active-Set Method for Quadratic Programming*。 韩文名称为
+    *이차 계획법의 활성 집합법*。'
   ko: 활성 제약 조건의 작업 집합을 유지하고 최적성 조건이 만족될 때까지 등식 제약 하위 문제를 푸는 QP를 위한 반복 알고리즘이다.
 domains:
 - 07_ai_models_algorithms
@@ -55,6 +57,7 @@ related_entities:
     zh: 积极集法可用于求解逆动力学 QP 形式化。
     ko: 활성 집합법은 역동역학 QP 공식화를 풀 수 있다.
 ---
+
 ## 概述
 一种求解二次规划的迭代算法，维护一个活动约束工作集，并求解等式约束子问题直到满足最优性条件。
 
@@ -88,4 +91,5 @@ related_entities:
 
 ## 参考
 - [Nocedal and Wright, Numerical Optimization](https://link.springer.com/book/10.1007/978-0-387-40065-5)
+
 

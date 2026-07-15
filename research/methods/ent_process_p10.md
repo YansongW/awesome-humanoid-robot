@@ -10,7 +10,7 @@ names:
 summary:
   en: Motion Control Algorithm Development and Validation – Phase 10 of the Full Lifecycle of Humanoid Robot Product Development,
     encompassing solution design, implementation and validation, and document delivery.
-  zh: 运动控制算法开发与验证（Motion Control）——人形机器人产品开发全流程第 10 阶段，涵盖方案设计、实施验证与文档交付。
+  zh: 运动控制算法开发与验证（Motion Control）是人形机器人产品开发全流程中的第 10 个阶段，在 WBS V3 中展开为若干三级子任务。
   ko: 运动控制算法开发与验证（Motion Control）
 domains:
 - 07_ai_models_algorithms
@@ -37,6 +37,8 @@ sources:
 theoretical_depth:
 - system
 ---
+
+
 
 ## 概述
 运动控制算法开发与验证（Motion Control）是人形机器人产品开发全流程中的第 10 个阶段，在 WBS V3 中展开为若干三级子任务。
@@ -375,5 +377,7 @@ theoretical_depth:
 
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
+
+
 
 

@@ -8,12 +8,10 @@ names:
   zh: 机器人与稀土瓶颈
   ko: 로보틱스와 희토류 병목
 summary:
-  en: An Oceanwall research note from July 2025 arguing that advanced robots, particularly
-    humanoids, rely on NdFeB permanent magnets, and that China's dominance in rare
-    earth refining creates a geopolitical supply-chain risk.
-  zh: Oceanwall 2025 年 7 月的研究简报，认为先进机器人尤其是人形机器人依赖钕铁硼永磁体，而中国稀土精炼主导地位带来地缘政治供应链风险。
-  ko: Oceanwall의 2025년 7월 연구 노트로, 고급 로봇 특히 휴로이드 로봇이 NdFeB 영구자석에 의존하며 중국의 희토류 정제 지배력이
-    지정학적 공급망 리스크를 초기한다고 주장함.
+  en: An Oceanwall research note from July 2025 arguing that advanced robots, particularly humanoids, rely on NdFeB permanent
+    magnets, and that China's dominance in rare earth refining creates a geopolitical supply-chain risk.
+  zh: '> **生活实例**：它就像一份提醒电动车行业的报告——如果制造高效电机所需的稀土材料高度依赖少数国家，那么供应链中断会让整车生产面临巨大风险。'
+  ko: Oceanwall의 2025년 7월 연구 노트로, 고급 로봇 특히 휴로이드 로봇이 NdFeB 영구자석에 의존하며 중국의 희토류 정제 지배력이 지정학적 공급망 리스크를 초기한다고 주장함.
 domains:
 - 01_raw_materials
 - 11_applications_markets
@@ -34,8 +32,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-25'
   confidence: medium
-  notes: AI-extracted from PDF report; market-size figures are third-party citations
-    within the report and should be cross-checked.
+  notes: AI-extracted from PDF report; market-size figures are third-party citations within the report and should be cross-checked.
 sources:
 - id: src_oceanwall_rare_earth_bottleneck_2025
   type: report
@@ -46,6 +43,8 @@ sources:
 theoretical_depth:
 - system
 ---
+
+
 
 # Robotics and The Rare Earth Bottleneck
 
@@ -70,3 +69,8 @@ This Oceanwall research note (24 July 2025) examines the explosive growth potent
 ## Relevance to Humanoid Robotics
 
 The report frames NdFeB magnets as a strategic choke point for scaling humanoid robot production. Because high-performance servo motors and actuators rely on rare-earth-containing magnets, supply concentration and export-control policies can directly constrain OEM production plans and cost targets.
+
+## 参考
+- https://oceanwall.com/wp-content/uploads/2025/10/Robotics-Market-and-Rare-Earth-Magnet-Supply-Chain_.pdf
+
+

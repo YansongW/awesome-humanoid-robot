@@ -10,7 +10,8 @@ names:
 summary:
   en: A constitutive principle stating that the diffusive flux of a species is proportional to the negative gradient of its
     concentration.
-  zh: 一种本构原理，指出物质的扩散通量与其浓度梯度的负值成正比。
+  zh: '核心内容 ### 菲克定律的定义与定位 菲克定律属于 **principle** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种本构原理，指出物质的扩散通量与其浓度梯度的负值成正比。
+    英文名称为 *Fick''s law*。 韩文名称为 *픽의 법칙*。'
   ko: 종의 확산 선속이 농도 기울기의 음수에 비례한다는 구성 원리.
 domains:
 - 00_foundations
@@ -47,6 +48,7 @@ related_entities:
     zh: 能斯特-普朗克方程在菲克定律基础上增加了电场引起的迁移通量，是其推广。
     ko: 넬스트-플랑크 방정식은 전기장에 의한 이동 선속을 추가하여 픽의 법칙을 일반화합니다.
 ---
+
 ## 概述
 一种本构原理，指出物质的扩散通量与其浓度梯度的负值成正比。
 
@@ -80,4 +82,5 @@ related_entities:
 
 ## 参考
 - [J. Crank, The Mathematics of Diffusion, 2nd ed., Oxford University Press, 1975](https://doi.org/10.1093/oso/9780198534112.001.0001)
+
 

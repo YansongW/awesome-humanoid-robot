@@ -9,7 +9,8 @@ names:
   ko: Safety MCU
 summary:
   en: Independent microcontroller that monitors emergency stops, joint limits, and fault conditions to enforce safe torque-off.
-  zh: 监控急停、关节限位和故障状态以执行安全关扭矩的独立微控制器。
+  zh: '核心内容 ### 安全微控制器的定义与定位 安全微控制器属于 **component** 类型。 所属领域包括：02_components, 12_policy_regulation_ethics。 价值链层级：upstream,
+    validation_markets。 监控急停、关节限位和故障状态以执行安全关扭矩的独立微控制器。 英文名称为 *Safety MCU*。 韩文名称为 *Safety MCU*。'
   ko: 비상 정지, 관절 한계 및 결함 상태를 모니터링하여 안전한 토크 차단을 실행하는 독립형 마이크로컨트롤러.
 domains:
 - 02_components
@@ -42,6 +43,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 监控急停、关节限位和故障状态以执行安全关扭矩的独立微控制器。
 
@@ -74,4 +76,5 @@ sources:
 
 ## 参考
 - [Safety MCU](https://en.wikipedia.org/wiki/Functional_safety)
+
 

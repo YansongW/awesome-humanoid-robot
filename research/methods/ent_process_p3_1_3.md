@@ -9,7 +9,8 @@ names:
   ko: 运动学与动力学初步分析
 summary:
   en: Joint requirements specifications v1, peak/continuous torque meter, critical action reaction force
-  zh: 关节需求规格 v1、峰值/连续扭矩表、关键动作反力
+  zh: '- P3.1.3.1 输入梳理与目标量化 - 整理「运动学与动力学初步分析」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化
+    KPI - 建立任务 Owner、时间节点与风险登记'
   ko: 关节需求规格 v1、峰值/连续扭矩表、关键动作反力
 domains:
 - 06_design_engineering
@@ -36,6 +37,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：系统架构与机电总体设计（System / Preliminary Design）
@@ -83,5 +85,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

@@ -10,7 +10,7 @@ names:
 summary:
   en: A high-ratio, zero-backlash gear reducer based on a flexible spline, circular spline, and wave generator, valued in
     humanoid joints for compact size, high torque capacity, and precise motion transmission.
-  zh: 一种基于柔性轴承、刚轮和波发生器的高减速比、零背隙减速器，因其结构紧凑、扭矩容量大、运动传递精确而广泛用于人形机器人关节。
+  zh: 谐波减速器（Harmonic Drive）是一种基于柔性齿轮弹性变形原理的精密减速装置，由波发生器（Wave Generator）、柔性齿轮（Flexspline）和刚性内齿圈（Circular Spline）组成。其核心优势为零背隙、高减速比、高扭矩密度和高定位精度，广泛应用于工业机器人、协作机器人、人形机器人关节、数控机床转台、半导体设备及医疗机器人。
   ko: 플렉스플라인, 서큘러 스플라인, 웨이브 제너레이터를 기반으로 한 고감속비, 제로 백래시 기어 감속기로, 컴팩트한 크기와 높은 토크 용량, 정밀한 동력 전달 때문에 휴머노이드 관절에서 높이 평가됨.
 domains:
 - 02_components
@@ -43,6 +43,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 谐波减速器是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -120,4 +121,5 @@ $$
 ## 参考
 - [Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm](https://arxiv.org/abs/2606.15915)
 - 项目 Wiki：kg/entities/ent_component_harmonic_drive.md
+
 

@@ -10,7 +10,7 @@ names:
 summary:
   en: The long-term goal of building agents that can learn, reason, and act flexibly in diverse physical environments through
     a body.
-  zh: 通过身体在多样物理环境中灵活学习、推理与行动的通用智能体长远目标。
+  zh: $$ \dot{x}(t) = f\big(x(t), u(t)\big), \quad y(t) = h\big(x(t), u(t)\big) $$
   ko: 신체를 통해 다양한 물리 환경에서 유연하게 학습·추론·행동할 수 있는 에이전트 구축의 장기 목표.
 domains:
 - 11_applications_markets
@@ -38,6 +38,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 具身通用智能是人形机器人领域的重要concept。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -100,4 +101,5 @@ graph LR
 ## 参考
 - Wiki extraction
 - 项目 Wiki：chapter-01.md#1.1.5 机器人的形式化定义
+
 

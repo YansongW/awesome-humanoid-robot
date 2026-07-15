@@ -10,7 +10,8 @@ names:
 summary:
   en: A parameter-estimation technique that learns the gradient of an unknown log-probability density, called the score, without
     requiring normalized probability densities.
-  zh: 一种参数估计技术，学习未知对数概率密度的梯度（称为分数），而无需归一化的概率密度。
+  zh: '核心内容 ### 分数匹配的定义与定位 分数匹配属于 **algorithm** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种参数估计技术，学习未知对数概率密度的梯度（称为分数），而无需归一化的概率密度。
+    英文名称为 *Score matching*。 韩文名称为 *점수 매칭*。'
   ko: 정규화된 확률 밀도 없이도 미지의 로그 확률 밀도의 기울기(점수)를 학습하는 매개변수 추정 기법.
 domains:
 - 00_foundations
@@ -55,6 +56,7 @@ related_entities:
     zh: 分数匹配与流匹配都学习引导样本在分布间转移的向量场，但流匹配直接回归速度场。
     ko: 점수 매칭과 흐름 매칭 모두 분포 사이에서 샘플을 안내하는 벡터 필드를 학습하지만, 흐름 매칭은 속도 필드를 직접 회귀합니다.
 ---
+
 ## 概述
 一种参数估计技术，学习未知对数概率密度的梯度（称为分数），而无需归一化的概率密度。
 
@@ -88,4 +90,5 @@ related_entities:
 
 ## 参考
 - [A. Hyvärinen, 'Estimation of Non-Normalized Statistical Models by Score Matching', J. Machine Learning Research, vol. 6, pp. 695–709, 2005](https://jmlr.org/papers/v6/hyvarinen05a.html)
+
 

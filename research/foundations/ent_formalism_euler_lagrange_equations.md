@@ -10,7 +10,8 @@ names:
 summary:
   en: Second-order differential equations derived from the stationarity of the action integral, giving the equations of motion
     for mechanical systems in generalized coordinates.
-  zh: 由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。
+  zh: '核心内容 ### 欧拉-拉格朗日方程的定义与定位 欧拉-拉格朗日方程属于 **formalism** 类型。 所属领域包括：00_foundations, 06_design_engineering。 价值链层级：foundations。
+    由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。 英文名称为 *Euler-Lagrange Equations*。 韩文名称为 *오일러-라그랑주 방정식*。'
   ko: 작용 적분의 정지 조건에서 도출된 2차 미분방정식으로, 일반화 좌표에서 기계 시스템의 용동 방정식을 제공.
 domains:
 - 00_foundations
@@ -61,6 +62,7 @@ related_entities:
     en: For rigid-body systems, Euler-Lagrange and Newton-Euler formulations yield the same equations of motion.
     zh: 对刚体系统，欧拉-拉格朗日与牛顿-欧拉两种形式等价。
 ---
+
 ## 概述
 由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。
 
@@ -97,4 +99,5 @@ related_entities:
 ## 参考
 - [H. Goldstein, C. Poole, and J. Safko, Classical Mechanics, 3rd ed., Addison-Wesley, 2002](https://doi.org/10.2307/2522307)
 - [M. W. Spong, S. Hutchinson, and M. Vidyasagar, Robot Modeling and Control, Wiley, 2006](https://doi.org/10.1002/0470173876)
+
 

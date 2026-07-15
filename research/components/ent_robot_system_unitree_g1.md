@@ -10,7 +10,7 @@ names:
 summary:
   en: A compact, mass-produced humanoid robot developed by Unitree Robotics, featuring 23–43 degrees of freedom, a 35 kg body,
     2 m/s walking speed, and options for dexterous hands, designed for research, education, and light industrial tasks.
-  zh: 由宇树科技开发的紧凑型量产人形机器人，具有23–43自由度、35公斤体重、2米/秒步行速度，可选配灵巧手，面向研究、教育和轻工业任务。
+  zh: Unitree G1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
   ko: Unitree Robotics가 개발한 컴팩트한 양산형 휴머노이드 로봇으로, 23~43자유도, 35kg 몸체, 2m/s 보행 속도를 갖추며 연구, 교육 및 경량 산업 작업을 위해 설계됨.
 domains:
 - 02_components
@@ -54,6 +54,8 @@ sources:
 theoretical_depth:
 - system
 ---
+
+
 ## 概述
 Unitree G1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -143,4 +145,6 @@ G1 采用 3D LiDAR、深度相机与 8 核 CPU（EDU 版增加 Jetson Orin），
 - [Unitree G1 Developer Specifications](https://support.unitree.com/home/en/G1_developer)
 - [Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm](https://arxiv.org/abs/2606.15915)
 - 项目 Wiki：appendix-d/products/product_unitree_g1.md
+
+
 

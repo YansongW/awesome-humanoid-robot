@@ -10,7 +10,11 @@ names:
 summary:
   en: A unified whole-body reinforcement-learning controller enables a 21-DoF humanoid to play badminton in simulation and
     on hardware, achieving 21-hit rallies in simulation and outgoing shuttle speeds up to 19.1 m/s in real-world tests.
-  zh: 统一的全身强化学习控制器使21自由度人形机器人能够在仿真和硬件中打羽毛球，仿真中实现21次连续击球回合，真实测试中羽毛球出球速度高达19.1米/秒。
+  zh: 'Humanoid robots have demonstrated strong capabilities for interacting with static scenes across locomotion and manipulation,
+    yet dynamic real-world interactions remain challenging. As a step toward fast-moving object interactions, we present a
+    reinforcement-learning training pipeline that yields a unified whole-body controller for humanoid badminton, coordinating
+    footwork and striking without motion priors or expert demonstrations. Training follows a three-stage curriculum (footwork
+    acquisition, precision-guided swing generation, and task-focused refinement) so legs and arms jointly serve the '
   ko: 통합된 전신 강화학습 제어기를 통해 21자유도 휴머노이드가 시뮬레이션 및 실제 환경에서 배드민턴을 칠 수 있으며, 시뮬레이션에서는 21회 연속 랠리를, 실제 테스트에서는 초당 최대 19.1m의 셔틀콕 속도를
     달성했다.
 domains:
@@ -53,6 +57,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 Humanoid robots have demonstrated strong capabilities for interacting with static scenes across locomotion and manipulation, yet dynamic real-world interactions remain challenging. As a step toward fast-moving object interactions, we present a reinforcement-learning training pipeline that yields a unified whole-body controller for humanoid badminton, coordinating footwork and striking without motion priors or expert demonstrations. Training follows a three-stage curriculum (footwork acquisition, precision-guided swing generation, and task-focused refinement) so legs and arms jointly serve the hitting objective. For deployment, we use an Extended Kalman Filter (EKF) to estimate and predict shuttlecock trajectories for target striking, and also develop a prediction-free variant that removes the EKF and explicit prediction. We validate the framework with five sets of experiments in simulation and on hardware. In simulation, two robots sustain a rally of 21 consecutive hits. In real-world tests with both machine-fed shuttles and human-robot rallies, the robot achieves outgoing shuttle speeds up to 19.1~m/s with a mean return landing distance of 4~m. Moreover, the prediction-free variant attains comparable performance to the EKF-based target-known policy. Overall, our approach enables dynamic yet precise goal striking in humanoid badminton and suggests a path toward more dynamics-critical whole-body interaction tasks.
 
@@ -61,4 +66,5 @@ Humanoid robots have demonstrated strong capabilities for interacting with stati
 
 ## 参考
 - http://arxiv.org/abs/2511.11218v3
+
 

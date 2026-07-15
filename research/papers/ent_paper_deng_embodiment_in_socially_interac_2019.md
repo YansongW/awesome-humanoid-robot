@@ -10,7 +10,11 @@ names:
 summary:
   en: A systematic review of 65 empirical studies from 2003 to 2017 that introduces three taxonomies for robot embodiment,
     social roles, and human-robot tasks, and characterizes the design space for socially interactive robot embodiments.
-  zh: 一项对2003年至2017年间65项实证研究的系统综述，提出了机器人具身类型、社会角色和人机任务的三类分类法，并刻画了社交互动机器人具身设计空间。
+  zh: Physical embodiment is a required component for robots that are structurally coupled with their real-world environments.
+    However, most socially interactive robots do not need to physically interact with their environments in order to perform
+    their tasks. When and why should embodied robots be used instead of simpler and cheaper virtual agents? This paper reviews
+    the existing work that explores the role of physical embodiment in socially interactive robots. This class consists of
+    robots that are not only capable of engaging in social interaction with humans, but are using primarily their social
   ko: 2003년부터 2017년까지 65개의 실증 연구를 체계적으로 검토하여 로봇 구체화 유형, 사회적 역할, 인간-로봇 작업을 위한 세 가지 분류법을 제시하고 사회적 상호작용 로봇의 구체화 설계 공간을 특성화한 연구.
 domains:
 - 06_design_engineering
@@ -46,6 +50,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Physical embodiment is a required component for robots that are structurally coupled with their real-world environments. However, most socially interactive robots do not need to physically interact with their environments in order to perform their tasks. When and why should embodied robots be used instead of simpler and cheaper virtual agents? This paper reviews the existing work that explores the role of physical embodiment in socially interactive robots. This class consists of robots that are not only capable of engaging in social interaction with humans, but are using primarily their social capabilities to perform their desired functions. Socially interactive robots provide entertainment, information, and/or assistance; this last category is typically encompassed by socially assistive robotics. In all cases, such robots can achieve their primary functions without performing functional physical work. To comprehensively evaluate the existing body of work on embodiment, we first review work from established related fields including psychology, philosophy, and sociology. We then systematically review 65 studies evaluating aspects of embodiment published from 2003 to 2017 in major peer-reviewed robotics publication venues. We examine relevant aspects of the selected studies, focusing on the embodiments compared, tasks evaluated, social roles of robots, and measurements. We introduce three taxonomies for the types of robot embodiment, robot social roles, and human-robot tasks. These taxonomies are used to deconstruct the design and interaction spaces of socially interactive robots and facilitate analysis and discussion of the reviewed studies. We use this newly-defined methodology to critically discuss existing works, revealing topics within embodiment research for social interaction, assistive robotics, and service robotics.
 
@@ -54,4 +59,5 @@ Physical embodiment is a required component for robots that are structurally cou
 
 ## 参考
 - http://arxiv.org/abs/1912.00312v1
+
 

@@ -10,7 +10,8 @@ names:
 summary:
   en: A structured methodology to improve product value by either reducing cost while preserving function or enhancing function
     at acceptable cost.
-  zh: 在保持功能的前提下降低成本，或在可接受成本下提升功能，以提升产品价值的结构化方法。
+  zh: '核心内容 ### 价值分析/价值工程（VA/VE）的定义与定位 价值分析/价值工程（VA/VE）属于 **method** 类型。 所属领域包括：05_mass_production。 价值链层级：midstream。 在保持功能的前提下降低成本，或在可接受成本下提升功能，以提升产品价值的结构化方法。
+    英文名称为 *Value Analysis / Value Engineering (VA/VE)*。 韩文名称为 *가치 분석/가치 공학(VA/VE)*。'
   ko: 기능을 유지하면서 비용을 줄이거나, 수용 가능한 비용 내에서 기능을 향상시켜 제품 가치를 높이는 구조화된 방법론.
 domains:
 - 05_mass_production
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 在保持功能的前提下降低成本，或在可接受成本下提升功能，以提升产品价值的结构化方法。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

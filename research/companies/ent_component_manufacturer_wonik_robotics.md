@@ -9,7 +9,8 @@ names:
   ko: 원익로보틱스
 summary:
   en: South Korean robotics company manufacturing the Allegro Hand, a widely used research-grade multi-fingered robot hand.
-  zh: 韩国机器人公司，生产 Allegro Hand，一种广泛使用的研究级多指机器人手。
+  zh: '核心内容 ### Wonik Robotics的定义与定位 Wonik Robotics属于 **component_manufacturer** 类型。 所属领域包括：02_components, 11_applications_markets。
+    价值链层级：upstream, validation_markets。 韩国机器人公司，生产 Allegro Hand，一种广泛使用的研究级多指机器人手。 英文名称为 *Wonik Robotics*。 韩文名称为 *원익로보틱스*。'
   ko: 연구용 다지향 로봇 손인 Allegro Hand를 제조하는 한국 로봇 기업입니다.
 domains:
 - 02_components
@@ -49,6 +50,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 韩国机器人公司，生产 Allegro Hand，一种广泛使用的研究级多指机器人手。
 
@@ -80,4 +82,5 @@ Wonik Robotics在人形机器人产业链中占据特定位置，其产品或技
 ## 参考
 - [Allegro Hand Official Product Page](https://www.allegrohand.com/)
 - [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)
+
 

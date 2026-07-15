@@ -9,7 +9,8 @@ names:
   ko: AgiBot Yuanzheng A1
 summary:
   en: Chinese humanoid robot using harmonic integrated joints and planetary-reducer joint motors.
-  zh: 国产人形机器人，采用谐波一体关节和带行星减速器的关节电机。
+  zh: '核心内容 ### 智元远征 A1的定义与定位 智元远征 A1属于 **robot_system** 类型。 所属领域包括：06_design_engineering, 02_components。 价值链层级：midstream,
+    upstream。 国产人形机器人，采用谐波一体关节和带行星减速器的关节电机。 英文名称为 *AgiBot Yuanzheng A1*。 韩文名称为 *AgiBot Yuanzheng A1*。'
   ko: 하모닉 통합 관절 및 행성 감속기 관절 모터를 사용하는 중국 휨로봇.
 domains:
 - 06_design_engineering
@@ -42,6 +43,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 国产人形机器人，采用谐波一体关节和带行星减速器的关节电机。
 
@@ -72,4 +74,5 @@ sources:
 
 ## 参考
 - [AgiBot Yuanzheng A1](https://www.agibot.com/)
+
 

@@ -10,7 +10,11 @@ names:
 summary:
   en: Presents projected gradient-ascent and extremum-seeking control laws for a unicycle robot using 3D-printed flexible
     graphene-based piezoresistive airflow sensors, with asymptotic convergence proofs and experimental validation.
-  zh: 该论文针对装有3D打印柔性石墨烯压阻气流传感器的独轮机器人，提出并验证了投影梯度上升与极值搜索源搜索控制律，给出了渐近收敛证明与实验验证。
+  zh: We present the design and experimental validation of source seeking control algorithms for a unicycle mobile robot that
+    is equipped with novel 3D-printed flexible graphene-based piezoresistive airflow sensors. Based solely on a local gradient
+    measurement from the airflow sensors, we propose and analyze a projected gradient ascent algorithm to solve the source
+    seeking problem. In the case of partial sensor failure, we propose a combination of Extremum-Seeking Control with our
+    projected gradient ascent algorithm. For both control laws, we prove the asymptotic convergence of the robot to the sour
   ko: 3D 프린팅된 유연한 그래핀 기반 압저항 기류 센서가 장착된 유니사이클 로봇을 위해 투영 경사 상승법 및 극값 탐색 제어 법칙을 제안하고, 점근적 수렴성을 증명하며 실험적으로 검증하였다.
 domains:
 - 07_ai_models_algorithms
@@ -49,6 +53,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 We present the design and experimental validation of source seeking control algorithms for a unicycle mobile robot that is equipped with novel 3D-printed flexible graphene-based piezoresistive airflow sensors. Based solely on a local gradient measurement from the airflow sensors, we propose and analyze a projected gradient ascent algorithm to solve the source seeking problem. In the case of partial sensor failure, we propose a combination of Extremum-Seeking Control with our projected gradient ascent algorithm. For both control laws, we prove the asymptotic convergence of the robot to the source. Numerical simulations were performed to validate the algorithms and experimental validations are presented to demonstrate the efficacy of the proposed methods.
 
@@ -57,4 +62,5 @@ We present the design and experimental validation of source seeking control algo
 
 ## 参考
 - http://arxiv.org/abs/2104.14267v2
+
 

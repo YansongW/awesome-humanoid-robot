@@ -10,7 +10,8 @@ names:
 summary:
   en: A self-reinforcing cycle in which deployed robots generate data that improves AI models, which improves robot performance
     and generates even more data.
-  zh: 部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。
+  zh: '核心内容 ### 数据飞轮的定义与定位 数据飞轮属于 **concept** 类型。 所属领域包括：11_applications_markets, 12_policy_regulation_ethics。 价值链层级：validation_markets。
+    部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。 英文名称为 *Data Flywheel*。 韩文名称为 *데이터 플라이휠*。'
   ko: 배포된 로봇이 데이터를 생성하고, 데이터가 AI 모델을 개선하며, 모델이 로봇 성능을 높여 더 많은 데이터를 생성하는 자기 강화 순환.
 domains:
 - 11_applications_markets
@@ -39,6 +40,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。
 
@@ -67,4 +69,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

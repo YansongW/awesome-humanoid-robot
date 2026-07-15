@@ -9,7 +9,8 @@ names:
   ko: 마누스
 summary:
   en: Dutch company specializing in high-precision data gloves for motion capture, virtual production, and robot teleoperation.
-  zh: 荷兰公司，专注于为动作捕捉、虚拟制作和机器人遥操作提供高精度数据手套。
+  zh: '核心内容 ### MANUS的定义与定位 MANUS属于 **component_manufacturer** 类型。 所属领域包括：02_components, 11_applications_markets。 价值链层级：upstream,
+    validation_markets。 荷兰公司，专注于为动作捕捉、虚拟制作和机器人遥操作提供高精度数据手套。 英文名称为 *MANUS*。 韩文名称为 *마누스*。'
   ko: 모션 캡처, 가상 제작 및 로봇 원격 조작을 위한 고정밀 데이터 글로브를 전문으로 하는 네덜란드 기업입니다.
 domains:
 - 02_components
@@ -43,6 +44,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 荷兰公司，专注于为动作捕捉、虚拟制作和机器人遥操作提供高精度数据手套。
 
@@ -73,4 +75,5 @@ MANUS在人形机器人产业链中占据特定位置，其产品或技术能力
 
 ## 参考
 - [MANUS Official Website](https://www.manus-meta.com/)
+
 

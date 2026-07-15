@@ -9,7 +9,7 @@ names:
   ko: The Industry's First Ultra-wide-angle 4D LiDAR
 summary:
   en: The Industry's First Ultra-wide-angle 4D LiDAR is a knowledge node related to report in the humanoid robot value chain.
-  zh: ''
+  zh: The Industry's First Ultra-wide-angle 4D LiDAR是人形机器人report知识图谱中的重要实体。
   ko: The Industry's First Ultra-wide-angle 4D LiDAR is a knowledge node related to report in the humanoid robot value chain.
 domains:
 - 11_applications_markets
@@ -40,6 +40,8 @@ sources:
   date: '2024-04-23'
   accessed_at: '2026-07-01'
 ---
+
+
 ## 概述
 The Industry's First Ultra-wide-angle 4D LiDAR是人形机器人report知识图谱中的重要实体。
 
@@ -68,4 +70,6 @@ The Industry's First Ultra-wide-angle 4D LiDAR属于 **report** 类型。 所属
 
 ## 参考
 - [The Industry's First Ultra-wide-angle 4D LiDAR](https://www.unitree.com/mobile/news)
+
+
 

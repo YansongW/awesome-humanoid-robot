@@ -10,7 +10,11 @@ names:
 summary:
   en: Ho, Jain, and Abbeel (2020) introduce a denoising diffusion probabilistic model trained with a simplified weighted variational
     bound, achieving high-quality image synthesis on CIFAR-10 and LSUN datasets.
-  zh: Ho、Jain和Abbeel（2020）提出了一种使用简化加权变分下界训练的去噪扩散概率模型，在CIFAR-10和LSUN数据集上实现了高质量的图像合成。
+  zh: We present high quality image synthesis results using diffusion probabilistic models, a class of latent variable models
+    inspired by considerations from nonequilibrium thermodynamics. Our best results are obtained by training on a weighted
+    variational bound designed according to a novel connection between diffusion probabilistic models and denoising score
+    matching with Langevin dynamics, and our models naturally admit a progressive lossy decompression scheme that can be interpreted
+    as a generalization of autoregressive decoding. On the unconditional CIFAR10 dataset, we obtain an Inception score
   ko: Ho, Jain, Abbeel(2020)는 단순화된 가중 변분 하한으로 학습된 노이즈 제거 확산 확률 모델을 제안하여 CIFAR-10 및 LSUN 데이터셋에서 고품질 이미지 합성을 달성했다.
 domains:
 - 07_ai_models_algorithms
@@ -45,6 +49,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 We present high quality image synthesis results using diffusion probabilistic models, a class of latent variable models inspired by considerations from nonequilibrium thermodynamics. Our best results are obtained by training on a weighted variational bound designed according to a novel connection between diffusion probabilistic models and denoising score matching with Langevin dynamics, and our models naturally admit a progressive lossy decompression scheme that can be interpreted as a generalization of autoregressive decoding. On the unconditional CIFAR10 dataset, we obtain an Inception score of 9.46 and a state-of-the-art FID score of 3.17. On 256x256 LSUN, we obtain sample quality similar to ProgressiveGAN. Our implementation is available at https://github.com/hojonathanho/diffusion
 
@@ -53,4 +58,5 @@ We present high quality image synthesis results using diffusion probabilistic mo
 
 ## 参考
 - http://arxiv.org/abs/2006.11239v2
+
 

@@ -11,7 +11,11 @@ names:
 summary:
   en: Proposes a hierarchical terminal sliding-mode direction controller (HTSMC), a model-predictive instruction planner (MPC),
     and the combined MHH trajectory-tracking framework for a nonholonomic spherical robot, validated with hardware experiments.
-  zh: 针对非完整球形机器人提出分层终端滑模方向控制器（HTSMC）、模型预测指令规划器（MPC）以及两者结合的MHH轨迹跟踪框架，并通过硬件实验验证。
+  zh: Spherical robot is a nonlinear, nonholonomic and unstable system which increases the difficulty of the direction and
+    trajectory tracking problem. In this study, we propose a new direction controller HTSMC, an instruction planning controller
+    MPC, and a trajectory tracking framework MHH. The HTSMC is designed by integrating a fast terminal algorithm, a hierarchical
+    method, the motion features of a spherical robot, and its dynamics. In addition, the new direction controller has an excellent
+    control effect with a quick response speed and strong stability. MPC can obtain optimal commands that are t
   ko: 비홀로노믹 구형 로봇을 위해 계층적 터미널 슬라이딩 모드 방향 제어기(HTSMC), 모델 예측 명령 계획기(MPC), 이를 결합한 MHH 궤적 추적 프레임워크를 제안하고 하드웨어 실험으로 검증함.
 domains:
 - 07_ai_models_algorithms
@@ -48,6 +52,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Spherical robot is a nonlinear, nonholonomic and unstable system which increases the difficulty of the direction and trajectory tracking problem. In this study, we propose a new direction controller HTSMC, an instruction planning controller MPC, and a trajectory tracking framework MHH. The HTSMC is designed by integrating a fast terminal algorithm, a hierarchical method, the motion features of a spherical robot, and its dynamics. In addition, the new direction controller has an excellent control effect with a quick response speed and strong stability. MPC can obtain optimal commands that are then transmitted to the velocity and direction controller. Since the two torque controllers in MHH are all Lyapunov-based sliding mode controllers, the MHH framework may achieve optimal control performance while assuring stability. Finally, the two controllers eliminate the requirement for MPC's stability and dynamic constraints. Finally, hardware experiments demonstrate the efficacy of the HTSMC, MPC, and MHH.
 
@@ -56,4 +61,5 @@ Spherical robot is a nonlinear, nonholonomic and unstable system which increases
 
 ## 参考
 - http://arxiv.org/abs/2205.14181v1
+
 

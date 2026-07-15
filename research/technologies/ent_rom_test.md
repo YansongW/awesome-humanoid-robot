@@ -10,7 +10,8 @@ names:
 summary:
   en: A benchmark that measures the reachable joint angles of a robot hand or limb, used to evaluate workspace coverage and
     joint flexibility.
-  zh: 一种测量机器人手或肢体可达关节角度的基准，用于评估工作空间覆盖范围和关节灵活性。
+  zh: '核心内容 ### 活动范围测试的定义与定位 活动范围测试属于 **benchmark** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets,
+    midstream。 一种测量机器人手或肢体可达关节角度的基准，用于评估工作空间覆盖范围和关节灵活性。 英文名称为 *Range of Motion Test*。 韩文名称为 *가동 범위 테스트*。'
   ko: 로봇 손이나 사지의 도달 가능한 관절 각도를 측정하여 작업 공간 커버리지와 관절 유연성을 평가하는 벤치마크입니다.
 domains:
 - 10_evaluation_benchmarks
@@ -44,6 +45,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 一种测量机器人手或肢体可达关节角度的基准，用于评估工作空间覆盖范围和关节灵活性。
 
@@ -75,4 +77,5 @@ theoretical_depth:
 
 ## 参考
 - [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)
+
 

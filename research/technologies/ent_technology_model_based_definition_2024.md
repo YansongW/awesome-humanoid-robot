@@ -10,7 +10,8 @@ names:
 summary:
   en: CAD-centric approach that embeds geometry, kinematics, mass properties, GD&T, and annotations in a single digital master
     model.
-  zh: 将几何、运动学、质量特性、GD&T和标注嵌入单一数字主模型的CAD中心方法。
+  zh: '核心内容 ### 基于模型的定义的定义与定位 基于模型的定义属于 **technology** 类型。 所属领域包括：06_design_engineering, 03_manufacturing_processes。 价值链层级：midstream,
+    upstream。 将几何、运动学、质量特性、GD&T和标注嵌入单一数字主模型的CAD中心方法。 英文名称为 *Model-Based Definition*。 韩文名称为 *Model-Based Definition*。'
   ko: 기하학, 운 동학, 질량 특성, GD&T 및 주석을 단일 디지털 마스터 모델에 포함하는 CAD 중심 접근법.
 domains:
 - 06_design_engineering
@@ -43,6 +44,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 将几何、运动学、质量特性、GD&T和标注嵌入单一数字主模型的CAD中心方法。
 
@@ -75,4 +77,5 @@ sources:
 
 ## 参考
 - [Model-Based Definition](https://en.wikipedia.org/wiki/Model-based_definition)
+
 

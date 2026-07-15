@@ -10,7 +10,8 @@ names:
 summary:
   en: A computational method that predicts temperature distribution, heat flux, and cooling requirements of electronic and
     mechanical systems under operating loads.
-  zh: 预测电子与机械系统在运行载荷下的温度分布、热流密度与散热需求的计算方法。
+  zh: 1. **建立功耗模型**：列出各组件的稳态功耗、峰值功耗和占空比。 2. **构建几何模型**：用 CAD 模型或简化几何表示机器人外壳、散热器、风道。 3. **设置材料属性**：导热系数、比热容、密度、发射率。 4. **划分网格**：对关键区域加密，对远处区域粗化。
+    5. **设定边界条件**：环境温度、对流系数、风扇曲线、接触热阻。 6. **求解稳态/瞬态温度场**：评估关键芯片结温和外壳温度。 7. **迭代优化**：调整散热器、风道、TIM、功耗分配，直到满足热目标。
   ko: 전자·기계 시스템의 작동 하중에서 온도 분포·열 유량·냉각 요구량을 예측하는 계산 방법.
 domains:
 - 02_components
@@ -39,6 +40,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 预测电子与机械系统在运行载荷下的温度分布、热流密度与散热需求的计算方法。
 
@@ -69,4 +71,5 @@ sources:
 - Wiki extraction
 
 热仿真作为人形机器人产业链中的关键组成部分，其相关理论与工程实践仍在持续发展。深入理解其原理、边界条件与典型应用场景，对于将实验室样机转化为可量产产品具有重要意义。
+
 

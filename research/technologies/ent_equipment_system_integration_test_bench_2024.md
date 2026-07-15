@@ -10,7 +10,9 @@ names:
 summary:
   en: Physical rig used to validate joint performance, communication buses, control loops, and safety systems before full
     robot assembly.
-  zh: 在整机装配前验证关节性能、通信总线、控制回路和安全系统的物理测试台。
+  zh: '核心内容 ### 系统集成测试台的定义与定位 系统集成测试台属于 **tool_equipment** 类型。 所属领域包括：04_assembly_integration_testing, 06_design_engineering。
+    价值链层级：midstream。 在整机装配前验证关节性能、通信总线、控制回路和安全系统的物理测试台。 英文名称为 *System Integration Test Bench*。 韩文名称为 *System Integration Test
+    Bench*。'
   ko: 완전한 로봇 조립 전 관절 성능, 통신 버스, 제어 루프 및 안전 시스템을 검증하는 물리적 테스트 벤치.
 domains:
 - 04_assembly_integration_testing
@@ -42,6 +44,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 在整机装配前验证关节性能、通信总线、控制回路和安全系统的物理测试台。
 
@@ -74,4 +77,5 @@ sources:
 
 ## 参考
 - [System Integration Test Bench](https://en.wikipedia.org/wiki/Test_bench)
+
 

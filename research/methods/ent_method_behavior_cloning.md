@@ -10,7 +10,8 @@ names:
 summary:
   en: A supervised imitation-learning method that trains a policy to replicate expert demonstrations, often used as a baseline
     for robot skill learning.
-  zh: 通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。
+  zh: '核心内容 ### 行为克隆的定义与定位 行为克隆属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 09_data_datasets。 价值链层级：intelligence。 通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。
+    英文名称为 *Behavior Cloning*。 韩文名称为 *행동 클로닝*。'
   ko: 전문가 시연을 모방하도록 정책을 지도학습하는 모방 학습 방법으로, 로봇 기술 학습의 기준선으로 자주 사용됨.
 domains:
 - 07_ai_models_algorithms
@@ -39,6 +40,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 通过监督学习训练策略复现专家示范的模仿学习方法，常作为机器人技能学习的基线。
 
@@ -70,4 +72,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

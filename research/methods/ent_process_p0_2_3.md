@@ -9,7 +9,8 @@ names:
   ko: 需求管理工具与追溯链
 summary:
   en: Requirement baseline established; IDs, statuses, owners, and acceptance criteria are all complete.
-  zh: 需求基线建立、ID/状态/Owner/验收条件完整
+  zh: '- P0.2.3.1 输入梳理与目标量化 - 整理「需求管理工具与追溯链」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化
+    KPI - 建立任务 Owner、时间节点与风险登记'
   ko: 需求基线建立、ID/状态/Owner/验收条件完整
 domains:
 - 11_applications_markets
@@ -35,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：项目立项与商业基线
@@ -82,5 +84,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

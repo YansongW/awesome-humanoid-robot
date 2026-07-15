@@ -9,7 +9,8 @@ names:
   ko: 装配顺序与工装夹具规划
 summary:
   en: Assembly sequence diagram, tooling list, SOP draft
-  zh: 装配顺序图、工装清单、SOP 草案
+  zh: '- P5.3.2.1 输入梳理与目标量化 - 整理「装配顺序与工装夹具规划」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化
+    KPI - 建立任务 Owner、时间节点与风险登记'
   ko: 装配顺序图、工装清单、SOP 草案
 domains:
 - 06_design_engineering
@@ -36,6 +37,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：本体结构工程与原型（Mechanical Structure）
@@ -83,5 +85,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

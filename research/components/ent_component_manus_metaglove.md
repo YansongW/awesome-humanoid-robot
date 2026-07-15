@@ -10,7 +10,9 @@ names:
 summary:
   en: A family of high-precision data gloves for hand tracking, motion capture, and robot teleoperation, using electromagnetic,
     quantum, or inertial tracking technologies.
-  zh: 一系列用于手部追踪、动作捕捉和机器人遥操作的高精度数据手套，采用电磁、量子或惯性追踪技术。
+  zh: '核心内容 ### MANUS Metagloves 数据手套的定义与定位 MANUS Metagloves 数据手套属于 **component** 类型。 所属领域包括：02_components, 11_applications_markets。
+    价值链层级：upstream, validation_markets。 一系列用于手部追踪、动作捕捉和机器人遥操作的高精度数据手套，采用电磁、量子或惯性追踪技术。 英文名称为 *MANUS Metagloves*。 韩文名称为 *MANUS
+    Metagloves*。'
   ko: 전자기, 양자 또는 관성 추적 기술을 사용하여 손 추적, 모션 캡처 및 로봇 원격 조작을 위한 고정밀 데이터 글로브 제품군.
 domains:
 - 02_components
@@ -51,6 +53,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 一系列用于手部追踪、动作捕捉和机器人遥操作的高精度数据手套，采用电磁、量子或惯性追踪技术。
 
@@ -85,4 +88,5 @@ MANUS Metagloves 数据手套已广泛应用于人形机器人的原型验证、
 ## 参考
 - [MANUS Official Website](https://www.manus-meta.com/)
 - [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)
+
 

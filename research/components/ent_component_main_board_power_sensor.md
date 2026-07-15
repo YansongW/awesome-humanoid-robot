@@ -10,7 +10,9 @@ names:
 summary:
   en: A sensing module that measures voltage, current, and power consumption at the main controller board level, enabling
     system-level energy monitoring and model validation.
-  zh: 一种在主板控制器层面测量电压、电流和功耗的传感模块，用于系统级能耗监测和模型验证。
+  zh: '核心内容 ### 主板功率传感器的定义与定位 主板功率传感器属于 **component** 类型。 所属领域包括：02_components, 06_design_engineering, 10_evaluation_benchmarks。
+    价值链层级：upstream, midstream, validation_markets。 一种在主板控制器层面测量电压、电流和功耗的传感模块，用于系统级能耗监测和模型验证。 英文名称为 *Main-Board Power Sensor*。
+    韩文名称为 *메인보드 전력 센서*。'
   ko: 메인 컨트롤러 보드 수준에서 전압, 전류, 전력 소비를 측정하여 시스템 수준의 에너지 모니터링 및 모델 검증을 가능하게 하는 센싱 모듈.
 domains:
 - 02_components
@@ -47,6 +49,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 一种在主板控制器层面测量电压、电流和功耗的传感模块，用于系统级能耗监测和模型验证。
 
@@ -80,4 +83,5 @@ theoretical_depth:
 
 ## 参考
 - [Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm](https://arxiv.org/abs/2606.15915)
+
 

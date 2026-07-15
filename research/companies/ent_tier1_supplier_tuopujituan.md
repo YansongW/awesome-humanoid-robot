@@ -10,7 +10,7 @@ names:
 summary:
   en: A Chinese Tier-1 supplier of aluminum/magnesium die-castings and CNC-machined structural parts, serving automotive and
     humanoid robot OEMs.
-  zh: 中国一级供应商，提供铝/镁合金压铸与CNC加工结构件，服务于汽车与人形机器人整机厂商。
+  zh: '> 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。 > 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。'
   ko: 알루미늄·마그네슘 다이캐스트 및 CNC 가공 구조 부품을 공급하는 중국 티어1 기업으로, 자동차 및 휴로봇 OEM에 납품.
 domains:
 - 02_components
@@ -38,6 +38,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 拓普集团是人形机器人领域的重要tier1_supplier。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -142,4 +143,5 @@ sources:
 ## 参考
 - Wiki extraction
 - 项目 Wiki：appendix-d/companies/company_tuopu.md
+
 

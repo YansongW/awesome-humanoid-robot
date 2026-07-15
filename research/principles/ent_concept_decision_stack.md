@@ -9,7 +9,8 @@ names:
   ko: 의사결정 스택
 summary:
   en: The software subsystem that converts perception and task goals into plans, policies, and behavioral decisions.
-  zh: 将感知结果与任务目标转化为规划、策略与行为决策的软件子系统。
+  zh: '核心内容 ### 决策栈的定义与定位 决策栈属于 **concept** 类型。 所属领域包括：08_software_middleware, 07_ai_models_algorithms。 价值链层级：intelligence。
+    将感知结果与任务目标转化为规划、策略与行为决策的软件子系统。 英文名称为 *Decision Stack*。 韩文名称为 *의사결정 스택*。'
   ko: 인식 결과와 작업 목표를 계획·정책·행동 결정으로 변환하는 소프트웨어 하위 시스템.
 domains:
 - 08_software_middleware
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 将感知结果与任务目标转化为规划、策略与行为决策的软件子系统。
 
@@ -66,4 +68,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

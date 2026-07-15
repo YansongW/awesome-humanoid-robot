@@ -10,7 +10,7 @@ names:
 summary:
   en: American automotive and energy company developing the Tesla Optimus humanoid robot, with stated goals of manufacturing
     at scale and deploying in its factories.
-  zh: 美国汽车和能源公司，开发 Tesla Optimus 人形机器人，目标是规模化制造并在其工厂内部署。
+  zh: '> 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。 > 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。'
   ko: 테슬라 옵티머스 휴인oid 로봇을 개발 중인 미국 자동차 및 에너지 기업으로, 대량 생산과 자사 공장 배치를 목표로 하고 있습니다.
 domains:
 - 05_mass_production
@@ -51,6 +51,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 特斯拉是人形机器人领域的重要oem。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -155,4 +156,5 @@ theoretical_depth:
 - [Tesla Optimus Official Page](https://www.tesla.com/optimus)
 - [Interact Analysis — Humanoid Robots and Lithium-Ion Batteries](https://interactanalysis.com/insight/humanoid-robots-and-lithium-ion-batteries/)
 - 项目 Wiki：appendix-d/companies/company_tesla.md
+
 

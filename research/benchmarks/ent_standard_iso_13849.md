@@ -10,7 +10,8 @@ names:
 summary:
   en: A safety standard for the design of control systems on machinery, specifying performance levels (PL) and safety categories
     for risk reduction.
-  zh: 机械控制系统安全设计的标准，规定了性能等级（PL）与安全类别以降低风险。
+  zh: 核心内容 人形机器人在人机共融环境中运行，其安全相关控制系统必须满足**功能安全（functional safety）**要求：当发生故障时，系统仍能将机器人带入安全状态。功能安全等级通常用 **IEC 61508 的 SIL（Safety
+    Integrity Level）** 或 **ISO 13849 的 PL（Performance Level）** 来量化[37][38]。
   ko: 기계의 제어 시스템 설계를 위한 안전 표준으로, 위험 감소를 위한 성능 등급(PL)과 안전 카테고리를 규정.
 domains:
 - 12_policy_regulation_ethics
@@ -37,6 +38,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 ISO 13849是人形机器人领域的重要standard。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -120,4 +122,5 @@ flowchart TD
 ## 参考
 - Wiki extraction
 - 项目 Wiki：chapter-08.md#8.7.5 功能安全与 SIL/PL
+
 

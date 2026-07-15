@@ -9,7 +9,8 @@ names:
   ko: Fleet Management Platform
 summary:
   en: Cloud platform for task orchestration, charging, health monitoring, and analytics across multiple deployed humanoids.
-  zh: 跨多台已部署人形机器人进行任务编排、充电、健康监控和分析的云平台。
+  zh: '核心内容 ### 机群管理平台的定义与定位 机群管理平台属于 **software_platform** 类型。 所属领域包括：08_software_middleware, 11_applications_markets。 价值链层级：intelligence,
+    validation_markets。 跨多台已部署人形机器人进行任务编排、充电、健康监控和分析的云平台。 英文名称为 *Fleet Management Platform*。 韩文名称为 *Fleet Management Platform*。'
   ko: 여러 대의 배포된 휨로봇에 걸쳐 작업 오케스트레이션, 충전, 건강 모니터링 및 분석을 위한 클라우드 플랫폼.
 domains:
 - 08_software_middleware
@@ -42,6 +43,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 跨多台已部署人形机器人进行任务编排、充电、健康监控和分析的云平台。
 
@@ -74,4 +76,5 @@ sources:
 
 ## 参考
 - [Fleet Management Platform](https://en.wikipedia.org/wiki/Fleet_management)
+
 

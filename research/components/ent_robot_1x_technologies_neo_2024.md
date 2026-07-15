@@ -9,7 +9,8 @@ names:
   ko: 1X Technologies NEO
 summary:
   en: Humanoid robot using soft, biomimetic pneumatic muscle actuation for safe human interaction.
-  zh: 采用仿生气动肌肉执行器的人形机器人，强调安全人机交互。
+  zh: '核心内容 ### 1X Technologies NEO的定义与定位 1X Technologies NEO属于 **robot_system** 类型。 所属领域包括：06_design_engineering, 11_applications_markets。
+    价值链层级：midstream, validation_markets。 采用仿生气动肌肉执行器的人形机器人，强调安全人机交互。 英文名称为 *1X Technologies NEO*。 韩文名称为 *1X Technologies NEO*。'
   ko: 안전한 인간 상호작용을 위한 생체 모방 공압 근육 액추에이터를 사용하는 휨로봇.
 domains:
 - 06_design_engineering
@@ -42,6 +43,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 采用仿生气动肌肉执行器的人形机器人，强调安全人机交互。
 
@@ -72,4 +74,5 @@ sources:
 
 ## 参考
 - [1X Technologies NEO](https://www.1x.tech/)
+
 

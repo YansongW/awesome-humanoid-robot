@@ -9,7 +9,8 @@ names:
   ko: Model Predictive Control
 summary:
   en: Online optimal-control approach for generating contact-rich whole-body motion.
-  zh: 用于生成接触丰富的全身运动的在线最优控制方法。
+  zh: '核心内容 ### 模型预测控制的定义与定位 模型预测控制属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 06_design_engineering。 价值链层级：intelligence,
+    midstream。 用于生成接触丰富的全身运动的在线最优控制方法。 英文名称为 *Model Predictive Control*。 韩文名称为 *Model Predictive Control*。'
   ko: 접촉이 풍부한 전신 동작을 생성하기 위한 온라인 최적 제어 접근법.
 domains:
 - 07_ai_models_algorithms
@@ -42,6 +43,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 用于生成接触丰富的全身运动的在线最优控制方法。
 
@@ -75,4 +77,5 @@ sources:
 
 ## 参考
 - [Model Predictive Control](https://roboti.us/lab/papers/KoenemannIROS15.pdf)
+
 

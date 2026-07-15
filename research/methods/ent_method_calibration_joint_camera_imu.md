@@ -10,7 +10,8 @@ names:
 summary:
   en: The process of estimating the intrinsic and extrinsic parameters, as well as time offsets, between joints, cameras,
     and inertial sensors to ensure coherent sensing and control.
-  zh: 估计关节、相机与惯性传感器之间的内外参及时延，以保证感知与控制一致性的过程。
+  zh: 核心内容 在人形机器人中，相机提供密集纹理与语义信息，LiDAR 提供精确三维几何。要实现 RGB 点云着色、深度融合、目标 3D 定位等功能，必须精确标定相机与 LiDAR 之间的外参（旋转 $\mathbf{R}_{CL}$ 和平移
+    $\mathbf{t}_{CL}$）。
   ko: 관절·칩라·관성 센서 간 내외부 파라미터와 시간 오프셋을 추정하여 감지와 제어의 일관성을 보장하는 과정.
 domains:
 - 04_assembly_integration_testing
@@ -37,6 +38,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 联合标定是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -127,4 +129,5 @@ def project_lidar_to_image(pts_lidar, R_cl, t_cl, K, dist_coeffs=None):
 ## 参考
 - Wiki extraction
 - 项目 Wiki：chapter-05.md#相机-LiDAR 联合标定
+
 

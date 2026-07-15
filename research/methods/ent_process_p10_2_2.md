@@ -9,7 +9,7 @@ names:
   ko: 步态规划与地形适应
 summary:
   en: Data on level-ground, sloped, and obstacle-crossing walking, as well as speed and energy consumption, meet the PRD requirements.
-  zh: 平地/斜坡/障碍行走数据、速度/能耗满足 PRD
+  zh: 核心内容 **方法 / 工具**：ZMP preview、Raibert heuristic、基于优化的步态、RL/IL
   ko: 平地/斜坡/障碍行走数据、速度/能耗满足 PRD
 domains:
 - 07_ai_models_algorithms
@@ -36,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）
@@ -83,5 +84,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

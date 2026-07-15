@@ -10,7 +10,7 @@ names:
 summary:
   en: Software & Integration-the 14th stage of the entire Android product development process, covering solution design, implementation
     verification, and document delivery.
-  zh: 软件中间件与系统集成（Software & Integration）——人形机器人产品开发全流程第 14 阶段，涵盖方案设计、实施验证与文档交付。
+  zh: 软件中间件与系统集成（Software & Integration）是人形机器人产品开发全流程中的第 14 个阶段，在 WBS V3 中展开为若干三级子任务。
   ko: 软件中间件与系统集成（Software & Integration）
 domains:
 - 08_software_middleware
@@ -35,6 +35,8 @@ sources:
 theoretical_depth:
 - system
 ---
+
+
 
 ## 概述
 软件中间件与系统集成（Software & Integration）是人形机器人产品开发全流程中的第 14 个阶段，在 WBS V3 中展开为若干三级子任务。
@@ -309,5 +311,7 @@ theoretical_depth:
 
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
+
+
 
 

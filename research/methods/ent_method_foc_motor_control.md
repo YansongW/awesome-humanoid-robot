@@ -10,7 +10,8 @@ names:
 summary:
   en: A motor-control method that transforms three-phase currents into a rotating dq reference frame to enable independent
     control of torque and flux, similar to a DC machine.
-  zh: 将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。
+  zh: '核心内容 ### 磁场定向控制（FOC）的定义与定位 磁场定向控制（FOC）属于 **method** 类型。 所属领域包括：02_components。 价值链层级：midstream。 将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。
+    英文名称为 *Field-Oriented Control (FOC)*。 韩文名称为 *자장 지향 제어(FOC)*。'
   ko: 삼상 전류를 회전하는 dq 좌표계로 변환하여 토크와 자속을 독립 제어하는 모터 제어 방식.
 domains:
 - 02_components
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

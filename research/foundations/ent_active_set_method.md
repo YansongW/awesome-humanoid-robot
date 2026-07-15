@@ -10,7 +10,8 @@ names:
 summary:
   en: An iterative optimization algorithm that tracks the set of constraints that are active at the solution and solves a
     sequence of equality-constrained subproblems.
-  zh: 一种迭代优化算法，追踪在最优解处起作用（取等号）的约束集合，并通过求解一系列等式约束子问题逼近最优解。
+  zh: '> **生活实例**：想象拼拼图时先猜哪些块接触边框（起作用约束），只拼这些边框块，再检查内部是否有块凸出。不断交换边框块，直到整幅图完整。 > > **自然语言逻辑**：起作用集法在每次迭代中假设哪些不等式约束取等号，然后在该工作集上求解等式约束子问题。若结果违反某个先前不起作用的约束，则将其加入工作集；若某起作用约束对应的乘子符号错误，则将其移除。重复直到满足
+    KKT 条件。'
   ko: 최적해에서 활성(등호를 만족하는) 제약 집합을 추적하고 일련의 등식 제약 부분 문제를 풀어 최적해를 접근하는 반복 최적화 알고리즘.
 domains:
 - 00_foundations
@@ -55,6 +56,8 @@ related_entities:
     zh: 内点法通过始终严格位于可行域内部来求解同一类约束问题，而非追踪起作用集。
     ko: 내점법은 활성 집합을 추적하는 대신 실행 가능 영역 내에서 엄격하게 머무륾며 동일한 제약 문제를 풉니다.
 ---
+
+
 ## 概述
 # Active-set method / 起作用集法 / 활성 집합법
 
@@ -96,4 +99,8 @@ Update $x_{k+1} = x_k + \alpha_k p_k$ with a step length chosen so no inequality
 ## 参考文献
 
 1. J. Nocedal and S. J. Wright, Numerical Optimization, 2nd ed., Springer, 2006
+
+## 参考
+- https://doi.org/10.1007/978-0-387-40065-5
+
 

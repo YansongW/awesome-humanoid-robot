@@ -9,7 +9,7 @@ names:
   ko: Unitree G1 Humanoid Agent | Price from $16K
 summary:
   en: Unitree G1, Humanoid Agent, AI avatar, Price from $16K!
-  zh: Unitree G1, Humanoid Agent, AI avatar, Price from $16K!
+  zh: '## 概述 Unitree G1, Humanoid Agent, AI avatar, Price from $16K!'
   ko: Unitree G1, Humanoid Agent, AI avatar, Price from $16K!
 domains:
 - 11_applications_markets
@@ -42,6 +42,7 @@ sources:
   date: '2024-07-05'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 Unitree G1, Humanoid Agent, AI avatar, Price from $16K!
 
@@ -72,4 +73,5 @@ Unitree G1 Humanoid Agent | Price from $16K属于 **report** 类型。 所属领
 
 ## 参考
 - [Unitree G1 Humanoid Agent | Price from $16K](https://www.unitree.com/mobile/news)
+
 

@@ -10,7 +10,8 @@ names:
 summary:
   en: The branch of physics describing the motion of macroscopic bodies under forces, including Newton's laws, conservation
     principles, and rigid-body dynamics.
-  zh: 描述宏观物体在力作用下运动的物理学分支，包括牛顿定律、守恒原理和刚体动力学。
+  zh: '核心内容 ### 经典力学的定义与定位 经典力学属于 **foundation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 描述宏观物体在力作用下运动的物理学分支，包括牛顿定律、守恒原理和刚体动力学。
+    英文名称为 *Classical Mechanics*。 韩文名称为 *고전역학*。'
   ko: 힘을 받는 거시적 물체의 운동을 기술하는 물리학 분야로, 뉴턴의 법칙, 보존 원리, 강체 동역학을 포함한다.
 domains:
 - 00_foundations
@@ -40,6 +41,7 @@ sources:
   date: '2001'
   accessed_at: '2026-06-26'
 ---
+
 ## 概述
 描述宏观物体在力作用下运动的物理学分支，包括牛顿定律、守恒原理和刚体动力学。
 
@@ -73,4 +75,5 @@ sources:
 
 ## 参考
 - [Classical Mechanics, Goldstein](https://www.pearson.com/en-us/subject-catalog/p/classical-mechanics/P200000005792)
+
 

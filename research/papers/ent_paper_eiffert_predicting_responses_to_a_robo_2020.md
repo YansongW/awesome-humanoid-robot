@@ -1,22 +1,19 @@
 ---
-
 $id: ent_paper_eiffert_predicting_responses_to_a_robo_2020
 $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: Predicting Responses to a Robot's Future Motion using Generative Recurrent Neural
-    Networks
+  en: Predicting Responses to a Robot's Future Motion using Generative Recurrent Neural Networks
   zh: 利用生成式循环神经网络预测机器人未来运动的响应
   ko: 생성 순환 신경망을 이용한 로봇의 미래 동작에 대한 반응 예측
 summary:
-  en: Proposes ResponseRNN, a spatio-temporal graph RNN that conditions future trajectory
-    predictions of surrounding pedestrians or livestock on a robot's planned next
-    action, improving close-range interaction prediction and enabling simulation of
+  en: Proposes ResponseRNN, a spatio-temporal graph RNN that conditions future trajectory predictions of surrounding pedestrians
+    or livestock on a robot's planned next action, improving close-range interaction prediction and enabling simulation of
     agent responses without hand-crafted interaction rules.
   zh: 提出 ResponseRNN，一种将周围行人或牲畜的未来轨迹预测条件于机器人规划动作之上的时空图循环神经网络，提升了近距离交互预测精度，并能在无需手工交互规则的情况下模拟周围智能体对机器人动作的响应。
-  ko: ResponseRNN을 제안하는데, 이는 로봇의 계획된 다음 행동을 조건으로 주변 보행자나 가축의 미래 궤적을 예측하는 시공간 그래프 RNN으로,
-    근거리 상호작용 예측 정확도를 높이고 수작업 상호작용 규칙 없이 주변 개체의 반응을 시뮬레이션할 수 있음을 보였다.
+  ko: ResponseRNN을 제안하는데, 이는 로봇의 계획된 다음 행동을 조건으로 주변 보행자나 가축의 미래 궤적을 예측하는 시공간 그래프 RNN으로, 근거리 상호작용 예측 정확도를 높이고 수작업 상호작용 규칙 없이
+    주변 개체의 반응을 시뮬레이션할 수 있음을 보였다.
 domains:
 - 07_ai_models_algorithms
 - 11_applications_markets
@@ -39,19 +36,18 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-06-27'
   confidence: medium
-  notes: AI-extracted from the arXiv abstract and provided metadata; human review
-    recommended before full verification.
+  notes: AI-extracted from the arXiv abstract and provided metadata; human review recommended before full verification.
 sources:
 - id: src_001
   type: paper
-  title: Predicting Responses to a Robot's Future Motion using Generative Recurrent
-    Neural Networks
+  title: Predicting Responses to a Robot's Future Motion using Generative Recurrent Neural Networks
   url: https://arxiv.org/abs/1909.13486
   date: '2020'
   accessed_at: '2026-06-27'
 theoretical_depth:
 - method
 ---
+
 
 ## Overview
 
@@ -109,3 +105,7 @@ Although the experiments use wheeled robots and vehicles, the learned interactio
 ## 휨로봇과의 관련성
 
 실험은 바퀴 로봇과 차량을 사용하지만, 학습된 상호작용 인식 예측 프레임워크는 인간과 공유하는 환경을 탐색하는 휴머노이드 로봇에 직접 적용할 수 있다. 휴머노이드는 ResponseRNN을 전방 모델로 사용하여 보행자가 후보 보행 궤적에 어떻게 반응할지 예측함으로써 혼잡한 공간에서 더 안전하고 사회적으로 적절한 동작 계획을 지원할 수 있다.
+
+## 参考
+- https://arxiv.org/abs/1909.13486
+

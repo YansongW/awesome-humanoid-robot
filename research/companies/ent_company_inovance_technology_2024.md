@@ -9,7 +9,7 @@ names:
   ko: Inovance Technology
 summary:
   en: Chinese industrial automation supplier of servo drives and frameless torque motors for robot joints.
-  zh: 面向机器人关节的伺服驱动和无框力矩电机工业自动化供应商。
+  zh: '## 概述 汇川技术是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。'
   ko: 로봇 관절용 서보 드라이브 및 프레임리스 토크 모터를 공급하는 중국 산업 자동화 업체.
 domains:
 - 02_components
@@ -42,6 +42,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 汇川技术是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -143,4 +144,5 @@ sources:
 ## 参考
 - [Inovance Technology](https://www.inovance.com/)
 - 项目 Wiki：appendix-d/companies/company_inovance.md
+
 

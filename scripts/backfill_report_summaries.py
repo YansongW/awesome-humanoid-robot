@@ -21,7 +21,7 @@ import requests
 import yaml
 
 ROOT = Path(__file__).parent.parent
-SEARCH_DIRS = [ROOT / "research" / "papers", ROOT / "research" / "reports"]
+SEARCH_DIRS = [p for p in (ROOT / "research").iterdir() if p.is_dir()]
 
 
 def split_fm(text: str) -> tuple[dict[str, Any] | None, str]:
@@ -111,6 +111,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description="Backfill empty report/blog entries from source pages.")
     parser.add_argument("--dry-run", action="store_true", help="Do not write files")
     parser.add_argument("--ids", nargs="*", help="Only process these entry IDs (stems)")
+    parser.add_argument("--all-types", action="store_true", help="Process all entity types, not just report/paper")
     args = parser.parse_args()
 
     updated = 0
@@ -125,9 +126,18 @@ def main() -> int:
     for p in paths:
         text = p.read_text(encoding="utf-8")
         fm, body = split_fm(text)
-        if fm is None or fm.get("type") not in ("report", "paper"):
+        if fm is None:
             continue
-        if not is_empty(fm, body):
+        if not args.all_types and fm.get("type") not in ("report", "paper"):
+            continue
+        summary = fm.get("summary", {}) or {}
+        names = fm.get("names", {}) or {}
+        summary_is_title = (
+            isinstance(summary, dict)
+            and isinstance(names, dict)
+            and summary.get("zh", "").strip() == names.get("zh", "").strip()
+        )
+        if not is_empty(fm, body) and not summary_is_title:
             skipped += 1
             continue
 
@@ -145,9 +155,9 @@ def main() -> int:
 
         names = fm.get("names", {}) or {}
         summaries = fm.get("summary", {}) or {}
-        if not summaries.get("en"):
+        if not summaries.get("en") or summary_is_title:
             summaries["en"] = summary[:800]
-        if not summaries.get("zh"):
+        if not summaries.get("zh") or summary_is_title:
             summaries["zh"] = summary[:800]
         fm["summary"] = summaries
 

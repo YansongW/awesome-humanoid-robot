@@ -10,7 +10,7 @@ names:
 summary:
   en: A distributed, diverse real-world robot manipulation dataset collected across multiple labs and environments, designed
     to improve visual and environmental robustness.
-  zh: 一个分布式、多样化的真实世界机器人操作数据集，跨多个实验室和环境收集，旨在提升视觉与环境鲁棒性。
+  zh: '核心内容 ### DROID 机器人操作数据集的定义与定位 DROID 机器人操作数据集属于 **dataset** 类型，英文名称为 *DROID*。 一个分布式、多样化的真实世界机器人操作数据集，跨多个实验室和环境收集，旨在提升视觉与环境鲁棒性。'
   ko: 여러 실험실과 환경에서 수집된 분산적이고 다양한 실제 로봇 조작 데이터셋으로, 시각 및 환경 견고성 향상을 목표로 함.
 domains:
 - 09_data_datasets
@@ -56,6 +56,7 @@ related_entities:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 一个分布式、多样化的真实世界机器人操作数据集，跨多个实验室和环境收集，旨在提升视觉与环境鲁棒性。
 
@@ -96,4 +97,5 @@ DROID demonstrates a scalable real-world data-collection model. For humanoids, s
 ## 参考
 - [DROID: A Large-Scale In-The-Wild Robot Manipulation Dataset](https://arxiv.org/abs/2403.12945)
 - [DROID Dataset](https://droid-dataset.github.io/)
+
 

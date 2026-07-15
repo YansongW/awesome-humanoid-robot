@@ -10,7 +10,8 @@ names:
 summary:
   en: A teleoperation architecture where command signals flow from master to slave and force/tactile feedback flows back to
     the master, improving transparency and safety.
-  zh: 命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。
+  zh: '核心内容 ### 双边遥操作的定义与定位 双边遥操作属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。
+    英文名称为 *Bilateral Teleoperation*。 韩文名称为 *양방향 원격 조작*。'
   ko: 명령 신호는 마스터→슬레이브, 힘·촉각 피드백은 슬레이브→마스터로 흐르는 원격 조작 구조로 투명성과 안전성을 향상.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 命令信号从主端流向从端、力/触觉反馈从从端返回主端的遥操作架构，可提升透明性与安全性。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

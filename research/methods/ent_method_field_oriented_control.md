@@ -10,7 +10,8 @@ names:
 summary:
   en: A motor control technique that transforms three-phase stator currents into a rotating d-q reference frame aligned with
     the rotor flux, enabling independent torque and flux control.
-  zh: 一种电机控制技术，将三相定子电流变换到与转子磁链对齐的旋转 d-q 坐标系，实现转矩与磁链的解耦控制。
+  zh: '核心内容 ### 磁场定向控制的定义与定位 磁场定向控制属于 **method** 类型。 所属领域包括：02_components, 07_ai_models_algorithms。 价值链层级：upstream。 一种电机控制技术，将三相定子电流变换到与转子磁链对齐的旋转
+    d-q 坐标系，实现转矩与磁链的解耦控制。 英文名称为 *Field-Oriented Control*。 韩文名称为 *전계 지향 제어*。'
   ko: 3상 정자 전류를 회전자 자속에 맞춘 d-q 좌표계로 변환하여 토크와 자속을 독립적으로 제어하는 모터 제어 기법.
 domains:
 - 02_components
@@ -61,6 +62,7 @@ related_entities:
     en: FOC typically uses PI/PID current controllers in the d-q frame to regulate flux and torque currents.
     zh: FOC 通常在 d-q 坐标系中使用 PI/PID 电流控制器调节磁链电流与转矩电流。
 ---
+
 ## 概述
 一种电机控制技术，将三相定子电流变换到与转子磁链对齐的旋转 d-q 坐标系，实现转矩与磁链的解耦控制。
 
@@ -96,4 +98,5 @@ related_entities:
 ## 参考
 - [N. Mohan, Advanced Electric Drives: Analysis, Control, and Modeling Using MATLAB/Simulink, Wiley, 2013](https://doi.org/10.1002/9781118704810)
 - [P. C. Krause, O. Wasynczuk, and S. D. Sudhoff, Analysis of Electric Machinery and Drive Systems, 3rd ed., IEEE Press/Wiley, 2013](https://doi.org/10.1002/9781118526030)
+
 

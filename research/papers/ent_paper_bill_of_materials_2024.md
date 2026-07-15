@@ -9,7 +9,8 @@ names:
   ko: Bill of Materials
 summary:
   en: Structured list of all parts, subassemblies, and raw materials required to build one humanoid robot unit.
-  zh: 构建一台人形机器人所需的所有零件、子装配件和原材料的结构化清单。
+  zh: '核心内容 ### 物料清单的定义与定位 物料清单属于 **concept** 类型。 所属领域包括：03_manufacturing_processes, 06_design_engineering。 价值链层级：midstream,
+    upstream。 构建一台人形机器人所需的所有零件、子装配件和原材料的结构化清单。 英文名称为 *Bill of Materials*。 韩文名称为 *Bill of Materials*。'
   ko: 한 대의 휨로봇을 제작하는 데 필요한 모든 부품, 하위 조립품 및 원자재의 구조화된 목록.
 domains:
 - 03_manufacturing_processes
@@ -43,6 +44,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 构建一台人形机器人所需的所有零件、子装配件和原材料的结构化清单。
 
@@ -73,4 +75,5 @@ sources:
 
 ## 参考
 - [Bill of Materials](https://en.wikipedia.org/wiki/Bill_of_materials)
+
 

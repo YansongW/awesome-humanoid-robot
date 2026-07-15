@@ -9,7 +9,7 @@ names:
   ko: Six Axis Force Torque Sensor
 summary:
   en: Sensor measuring forces and torques in all six degrees of freedom, critical for force-controlled manipulation.
-  zh: 测量六个自由度力和力矩的传感器，对力控操作至关重要。
+  zh: '核心内容 ## 神源生 MLL 系列六维力传感器 / Shenyuansheng MLL Series 6-Axis Force Sensor'
   ko: 6자유도의 힘과 토크를 측정하는 센서, 힘 제어 조작에 필수적.
 domains:
 - 02_components
@@ -40,6 +40,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 六维力传感器是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -137,4 +138,5 @@ sources:
 ## 参考
 - [Six Axis Force Torque Sensor](https://en.wikipedia.org/wiki/Force-sensing_resistor)
 - 项目 Wiki：appendix-d/products/product_shenyuan_6axis_sensor.md
+
 

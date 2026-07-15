@@ -9,7 +9,8 @@ names:
   ko: 项目立项与商业基线
 summary:
   en: Project Initiation and Business Baseline
-  zh: 项目立项与商业基线
+  zh: '核心内容 ### 项目立项与商业基线的定义与定位 项目立项与商业基线属于 **method** 类型。 所属领域包括：11_applications_markets, 12_policy_regulation_ethics。 价值链层级：validation_markets。
+    项目立项与商业基线 韩文名称为 *项目立项与商业基线*。'
   ko: 项目立项与商业基线
 domains:
 - 11_applications_markets
@@ -35,6 +36,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 ## 概述
 项目立项与商业基线
@@ -62,5 +64,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

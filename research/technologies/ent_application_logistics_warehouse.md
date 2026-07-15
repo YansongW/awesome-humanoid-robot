@@ -9,7 +9,8 @@ names:
   ko: 물류 및 창고 자동화
 summary:
   en: The use of humanoid robots for picking, sorting, packing, and moving goods in logistics centers and warehouses.
-  zh: 在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。
+  zh: '核心内容 ### 物流仓储的定义与定位 物流仓储属于 **application_scenario** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。
+    英文名称为 *Logistics and Warehouse Automation*。 韩文名称为 *물류 및 창고 자동화*。'
   ko: 물류 센터와 창고에서 휴로봇을 이용한 피킹·분류·포장·운반 적용.
 domains:
 - 11_applications_markets
@@ -37,6 +38,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。
 
@@ -65,4 +67,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

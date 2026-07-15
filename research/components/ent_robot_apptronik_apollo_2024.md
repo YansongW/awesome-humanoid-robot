@@ -9,7 +9,8 @@ names:
   ko: Apptronik Apollo
 summary:
   en: Modular humanoid robot designed for logistics and manufacturing, with hot-swappable batteries.
-  zh: 面向物流和制造的模块化人形机器人，支持热插拔电池。
+  zh: '核心内容 ### Apptronik Apollo的定义与定位 Apptronik Apollo属于 **robot_system** 类型。 所属领域包括：06_design_engineering, 11_applications_markets。
+    价值链层级：midstream, validation_markets。 面向物流和制造的模块化人形机器人，支持热插拔电池。 英文名称为 *Apptronik Apollo*。 韩文名称为 *Apptronik Apollo*。'
   ko: 물류 및 제조용 모듈형 휨로봇, 핫스왑 가능한 배터리.
 domains:
 - 06_design_engineering
@@ -43,6 +44,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 面向物流和制造的模块化人形机器人，支持热插拔电池。
 
@@ -73,4 +75,5 @@ Apptronik Apollo属于 **robot_system** 类型。 所属领域包括：06_design
 
 ## 参考
 - [Apptronik Apollo](https://www.apptronik.com/)
+
 

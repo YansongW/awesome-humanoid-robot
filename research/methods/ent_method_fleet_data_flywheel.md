@@ -10,7 +10,8 @@ names:
 summary:
   en: A closed-loop system where data from deployed robot fleets continuously improves models, which in turn improve fleet
     performance and generate more data.
-  zh: 部署机器人车队产生的数据持续改进模型，模型反过来提升车队性能并产生更多数据的闭环系统。
+  zh: '核心内容 ### 车队数据飞轮的定义与定位 车队数据飞轮属于 **method** 类型。 所属领域包括：09_data_datasets。 价值链层级：intelligence。 部署机器人车队产生的数据持续改进模型，模型反过来提升车队性能并产生更多数据的闭环系统。
+    英文名称为 *Fleet Data Flywheel*。 韩文名称为 *플릿 데이터 플라이휠*。'
   ko: 배포된 로봇 플릿의 데이터가 지속적으로 모델을 개선하고, 이 모델이 다시 플릿 성능을 높여 더 많은 데이터를 생성하는 폐쇄 루프 시스템.
 domains:
 - 09_data_datasets
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 部署机器人车队产生的数据持续改进模型，模型反过来提升车队性能并产生更多数据的闭环系统。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

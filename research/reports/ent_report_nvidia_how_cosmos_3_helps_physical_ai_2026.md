@@ -9,7 +9,10 @@ names:
   ko: How Cosmos 3 Helps Physical AI Think Before It Acts
 summary:
   en: How Cosmos 3 Helps Physical AI Think Before It Acts
-  zh: How Cosmos 3 Helps Physical AI Think Before It Acts
+  zh: '核心内容 ### How Cosmos 3 Helps Physical AI Think Before It Acts的定义与定位 How Cosmos 3 Helps Physical AI Think Before It Acts属于
+    **report** 类型。 所属领域包括：11_applications_markets, 07_ai_models_algorithms。 价值链层级：midstream, validation_markets。 How Cosmos
+    3 Helps Physical AI Think Before It Acts 英文名称为 *How Cosmos 3 Helps Physical AI Think Before It Acts*。 韩文名称为 *How Cosmos
+    3 Helps Physical AI Think Before It Acts*。'
   ko: How Cosmos 3 Helps Physical AI Think Before It Acts
 domains:
 - 11_applications_markets
@@ -40,6 +43,7 @@ sources:
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 How Cosmos 3 Helps Physical AI Think Before It Acts
 
@@ -68,4 +72,5 @@ How Cosmos 3 Helps Physical AI Think Before It Acts属于 **report** 类型。 �
 
 ## 参考
 - [How Cosmos 3 Helps Physical AI Think Before It Acts](https://blogs.nvidia.com/blog/cosmos-3-physical-ai-open-world-foundation-model/)
+
 

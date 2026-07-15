@@ -9,7 +9,8 @@ names:
   ko: Emergency Stop System
 summary:
   en: Hardwired safety circuit that immediately removes power or commands safe state when triggered by operator or fault.
-  zh: 操作员或故障触发时立即切断电源或命令安全状态的硬接线安全电路。
+  zh: '核心内容 ### 急停系统的定义与定位 急停系统属于 **component** 类型。 所属领域包括：02_components, 12_policy_regulation_ethics。 价值链层级：upstream, validation_markets。
+    操作员或故障触发时立即切断电源或命令安全状态的硬接线安全电路。 英文名称为 *Emergency Stop System*。 韩文名称为 *Emergency Stop System*。'
   ko: 운영자 또는 결함에 의해 트리거될 때 즉시 전원을 제거하거나 안전 상태를 명령하는 하드와이어 안전 회로.
 domains:
 - 02_components
@@ -42,6 +43,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 操作员或故障触发时立即切断电源或命令安全状态的硬接线安全电路。
 
@@ -74,4 +76,5 @@ sources:
 
 ## 参考
 - [Emergency Stop System](https://en.wikipedia.org/wiki/Emergency_stop)
+
 

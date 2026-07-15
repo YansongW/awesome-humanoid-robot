@@ -10,7 +10,8 @@ names:
 summary:
   en: An optimization-based control method that repeatedly solves a finite-horizon optimal control problem using a predictive
     model and applies only the first control action.
-  zh: 基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。
+  zh: '核心内容 ### 模型预测控制（MPC）的定义与定位 模型预测控制（MPC）属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。
+    英文名称为 *Model Predictive Control (MPC)*。 韩文名称为 *모델 예측 제어(MPC)*。'
   ko: 예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.
 domains:
 - 07_ai_models_algorithms
@@ -67,6 +68,7 @@ related_entities:
     en: Stability and tractability of MPC rely on convex optimization theory and efficient QP solvers.
     zh: MPC 的稳定性与可解性依赖于凸优化理论与高效 QP 求解器。
 ---
+
 ## 概述
 基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。
 
@@ -103,4 +105,5 @@ related_entities:
 ## 参考
 - [F. Borrelli, A. Bemporad, and M. Morari, Predictive Control for Linear and Hybrid Systems, Cambridge, 2017](https://doi.org/10.1017/9781139061799)
 - [S. Kuindersma et al., Optimization-based Locomotion Planning, Estimation, and Control Design for Atlas, Autonomous Robots, 2016](https://doi.org/10.1007/s10514-016-9572-3)
+
 

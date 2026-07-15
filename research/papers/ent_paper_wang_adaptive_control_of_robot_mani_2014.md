@@ -10,7 +10,11 @@ names:
 summary:
   en: This paper proposes two adaptive control schemes that achieve task-space trajectory tracking for robot manipulators
     when both kinematic and dynamic parameters are uncertain, using inverse-Jacobian feedback with separated adaptation loops.
-  zh: 本文提出了两种自适应控制方案，在机器人机械臂的运动学和动力学参数均不确定的情况下，利用逆雅可比反馈和分离的自适应环实现任务空间轨迹跟踪。
+  zh: In this paper, we investigate the adaptive control problem for robot manipulators with both the uncertain kinematics
+    and dynamics. We propose two adaptive control schemes to realize the objective of task-space trajectory tracking irrespective
+    of the uncertain kinematics and dynamics. The proposed controllers have the desirable separation property, and we also
+    show that the first adaptive controller with appropriate modifications can yield improved performance, without the expense
+    of conservative gain choice. The performance of the proposed controllers is shown by numerical simulations.
   ko: 본 논문은 운동학적 및 동역학적 매개변수가 모두 불확실한 로봇 매니퓰레이터의 작업 공간 궤적 추적을 분리된 적응 루프와 역-야코비안 피드백을 사용하여 달성하는 두 가지 적응 제어 기법을 제안한다.
 domains:
 - 07_ai_models_algorithms
@@ -46,6 +50,7 @@ sources:
   date: '2014'
   accessed_at: '2026-06-26'
 ---
+
 ## 概述
 In this paper, we investigate the adaptive control problem for robot manipulators with both the uncertain kinematics and dynamics. We propose two adaptive control schemes to realize the objective of task-space trajectory tracking irrespective of the uncertain kinematics and dynamics. The proposed controllers have the desirable separation property, and we also show that the first adaptive controller with appropriate modifications can yield improved performance, without the expense of conservative gain choice. The performance of the proposed controllers is shown by numerical simulations.
 
@@ -54,4 +59,5 @@ In this paper, we investigate the adaptive control problem for robot manipulator
 
 ## 参考
 - http://arxiv.org/abs/1403.5204v3
+
 

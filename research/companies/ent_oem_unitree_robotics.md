@@ -10,7 +10,7 @@ names:
 summary:
   en: Chinese robotics company developing quadruped and humanoid robots, including the Unitree H1 and G1 platforms, with a
     focus on high-torque actuators and cost-conscious design.
-  zh: 中国机器人公司，开发四足和人形机器人，包括 Unitree H1 和 G1 平台，专注于高扭矩执行器和成本导向设计。
+  zh: '> 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。 > 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。'
   ko: 중국 로봇 기업으로, 고토크 액추에이터와 비용 중심 설계에 초점을 맞춘 Unitree H1 및 G1 휴인oid 플랫폼을 개발하고 있습니다.
 domains:
 - 02_components
@@ -53,6 +53,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 宇树科技是人形机器人领域的重要oem。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -159,4 +160,5 @@ theoretical_depth:
 - [Unitree H1 Humanoid Robot — Product Specifications](https://unitreerobotics.us/products/unitree-h1-humanoid-robot)
 - [IDTechEx Humanoid Robots 2025-2035](https://www.idtechex.com/en/research-report/humanoid-robots/1093)
 - 项目 Wiki：appendix-d/companies/company_unitree.md
+
 

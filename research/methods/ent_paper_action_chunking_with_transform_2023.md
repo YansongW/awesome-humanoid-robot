@@ -9,7 +9,8 @@ names:
   ko: Action Chunking with Transformers
 summary:
   en: Transformer-based policy that predicts action chunks to reduce compounding errors in imitation learning.
-  zh: 基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。
+  zh: '核心内容 ### 基于Transformer的动作分块的定义与定位 基于Transformer的动作分块属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。
+    基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。 英文名称为 *Action Chunking with Transformers*。 韩文名称为 *Action Chunking with Transformers*。'
   ko: 모방 학습에서 누적 오류를 줄이기 위해 동작 청크를 예측하는 Transformer 기반 정책.
 domains:
 - 07_ai_models_algorithms
@@ -40,6 +41,7 @@ sources:
   date: '2023'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。
 
@@ -73,4 +75,5 @@ sources:
 
 ## 参考
 - [Action Chunking with Transformers](https://arxiv.org/abs/2304.13705)
+
 

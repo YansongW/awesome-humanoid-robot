@@ -10,7 +10,9 @@ names:
 summary:
   en: An electronic subsystem that monitors, protects, and balances battery cells to ensure safe and efficient energy storage
     and delivery in robots and electric vehicles.
-  zh: 一种电子子系统，用于监控、保护和均衡电池单体，确保机器人和电动车辆中能量存储与输送的安全性和效率。
+  zh: '!!! note "术语解释：BMS、SOC、SOH、均衡、热失控、过充、过放" - **BMS（Battery Management System）**：电池管理系统，负责监测、保护和控制电池组。 - **SOC（State of
+    Charge）**：荷电状态，表示剩余电量百分比。 - **SOH（State of Health）**：健康状态，反映电池当前最大容量与初始容量的比值。 - **均衡（balancing）**：让串联电池单体间电压/容量趋于一致，防止个别单体过充或过放。
+    - **热失控（thermal runaway）**：电池内部放热反应自我加速，导致温度急剧上升的现象。 - **过充 / 过放**：充电电压超过上限或放电电压低于下限，可能损害电池或引发安全事故。'
   ko: 로봇 및 전기차에서 안전하고 효율적인 에너지 저장 및 공급을 보장하기 위해 배터리 셀을 모니터링, 보호 및 균형 조정하는 전자 하위 시스템.
 domains:
 - 02_components
@@ -45,6 +47,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 电池管理系统是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -119,4 +122,5 @@ flowchart TD
 ## 参考
 - [Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm](https://arxiv.org/abs/2606.15915)
 - 项目 Wiki：chapter-06.md#6.5.2 电池管理系统 BMS：SOC/SOH 估计、均衡、过充过放保护、热失控
+
 

@@ -11,7 +11,11 @@ summary:
   en: This paper reports the first experimental observation of a crack-propagation velocity jump in a non-elastomer, semi-crystalline
     polymer sheet under constant-speed stretching, and interprets the jump using glass-transition dynamics near the crack
     tip.
-  zh: 本文首次报道了在恒速拉伸条件下，非弹性体半结晶聚合物薄膜中裂纹扩展速度跃变的实验现象，并基于裂纹尖端附近的玻璃化转变动力学进行了解释。
+  zh: It has long been known for elastomers that the velocity of crack propagation jumps as a function of strain. On the other
+    hand, such a jump has not been reported in the literature for polymers which do not exhibit a rubbery plateau in the storage-modulus
+    plot. Here, we report observation of jumps in crack propagation for semi-crystalline polymer sheets without the rubbery
+    plateau, as a result of pulling the sheets at a constant speed. We discuss the advantages of this crack-propagation test
+    under constant-speed stretching and provide physical interpretation of the velocity jump observed for non
   ko: 본 논문은 일정한 속도로 신장시킨 비탄성체 반결정성 고분자 시트에서 균열 전파 속도 점프를 처음으로 실험적으로 관찰하고, 균열 선단 유리 전이 역학을 기반으로 이를 해석한다.
 domains:
 - 01_raw_materials
@@ -46,6 +50,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 It has long been known for elastomers that the velocity of crack propagation jumps as a function of strain. On the other hand, such a jump has not been reported in the literature for polymers which do not exhibit a rubbery plateau in the storage-modulus plot. Here, we report observation of jumps in crack propagation for semi-crystalline polymer sheets without the rubbery plateau, as a result of pulling the sheets at a constant speed. We discuss the advantages of this crack-propagation test under constant-speed stretching and provide physical interpretation of the velocity jump observed for non-elastomer sheets on the basis of a recently proposed theory for the velocity jump in crack propagation.
 
@@ -54,4 +59,5 @@ It has long been known for elastomers that the velocity of crack propagation jum
 
 ## 参考
 - http://arxiv.org/abs/1904.03250v1
+
 

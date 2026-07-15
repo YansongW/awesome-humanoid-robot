@@ -9,7 +9,8 @@ names:
   ko: Joint Motor
 summary:
   en: Compact motor integrated into a robot joint, often paired with a reducer and encoder to form an actuator module.
-  zh: 集成到机器人关节中的紧凑型电机，通常与减速器和编码器配对形成执行器模组。
+  zh: '- 输出峰值扭矩：\(\tau_{peak} = 120\ \text{N·m}\) - 输出连续 RMS 转矩：\(\tau_{rms} = 35\ \text{N·m}\) - 输出最大角速度：\(\omega_{out,max}
+    = 8\ \text{rad/s}\) - 减速器效率：\(\eta = 0.85\)'
   ko: 로봇 관절에 통합된 컴팩트한 모터, 일반적으로 감속기 및 인코더와 짝을 이루어 액추에이터 모듈을 형성.
 domains:
 - 02_components
@@ -40,6 +41,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 关节电机是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -137,4 +139,5 @@ flowchart TD
 ## 参考
 - [Joint Motor](https://en.wikipedia.org/wiki/Servomotor)
 - 项目 Wiki：chapter-04.md#4.7.6 选型算例：髋关节电机+减速器
+
 

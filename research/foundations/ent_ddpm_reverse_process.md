@@ -10,7 +10,8 @@ names:
 summary:
   en: The learned backward Markov chain in Denoising Diffusion Probabilistic Models that gradually transforms Gaussian noise
     into data-like samples.
-  zh: 去噪扩散概率模型（DDPM）中学习的反向马尔可夫链，逐步将高斯噪声转化为类数据样本。
+  zh: '核心内容 ### DDPM 逆过程的定义与定位 DDPM 逆过程属于 **algorithm** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 去噪扩散概率模型（DDPM）中学习的反向马尔可夫链，逐步将高斯噪声转化为类数据样本。
+    英文名称为 *DDPM reverse process*。 韩文名称为 *DDPM 역 과정*。'
   ko: 디노이징 확산 확률 모델(DDPM)에서 학습된 역방향 마르코프 체인으로, 점진적으로 가우시안 노이즈를 데이터와 유사한 샘플로 변환합니다.
 domains:
 - 00_foundations
@@ -61,6 +62,7 @@ related_entities:
     zh: 流匹配提供了一种替代生成框架，直接学习确定性的概率流而非随机逆扩散链。
     ko: 흐름 매칭은 확률적 역 확산 체인 대신 결정론적 확률 흐름을 직접 학습하는 대안 생성 프레임워크를 제공합니다.
 ---
+
 ## 概述
 去噪扩散概率模型（DDPM）中学习的反向马尔可夫链，逐步将高斯噪声转化为类数据样本。
 
@@ -94,4 +96,5 @@ DDPM 逆过程可应用于人形机器人的运动规划、控制优化、状态
 
 ## 参考
 - [J. Ho, A. Jain, and P. Abbeel, 'Denoising Diffusion Probabilistic Models', NeurIPS, 2020](https://proceedings.neurips.cc/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html)
+
 

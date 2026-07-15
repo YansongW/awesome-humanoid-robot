@@ -10,7 +10,8 @@ names:
 summary:
   en: The process of generating a sequence of high-level actions to achieve a goal, often using symbolic representations such
     as PDDL.
-  zh: 生成实现目标的高层动作序列的过程，常用PDDL等符号表示。
+  zh: '核心内容 ### 任务规划的定义与定位 任务规划属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 生成实现目标的高层动作序列的过程，常用PDDL等符号表示。
+    英文名称为 *Task Planning*。 韩文名称为 *작업 계획*。'
   ko: 목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 生成实现目标的高层动作序列的过程，常用PDDL等符号表示。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

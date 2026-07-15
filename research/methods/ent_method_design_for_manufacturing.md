@@ -10,7 +10,8 @@ names:
 summary:
   en: An engineering practice of designing parts and assemblies so that they are easy, repeatable, and cost-effective to manufacture
     at scale.
-  zh: 使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。
+  zh: '核心内容 ### 可制造性设计（DFM）的定义与定位 可制造性设计（DFM）属于 **method** 类型。 所属领域包括：03_manufacturing_processes。 价值链层级：upstream。 使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。
+    英文名称为 *Design for Manufacturing (DFM)*。 韩文名称为 *제조 용이성 설계(DFM)*。'
   ko: 부품과 조립체를 쉽고 재현 가능하며 비용 효율적으로 대량 생산할 수 있도록 설계하는 공학 방법론.
 domains:
 - 03_manufacturing_processes
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

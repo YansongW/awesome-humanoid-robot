@@ -10,7 +10,8 @@ names:
 summary:
   en: A trajectory optimization method that discretizes both states and controls at collocation points and solves the resulting
     nonlinear program directly.
-  zh: 在配点处同时离散状态与控制量，并直接求解所得非线性规划的轨迹优化方法。
+  zh: '核心内容 ### 直接配点法的定义与定位 直接配点法属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 在配点处同时离散状态与控制量，并直接求解所得非线性规划的轨迹优化方法。
+    英文名称为 *Direct Collocation*。 韩文名称为 *직접 배치법*。'
   ko: 상태와 제어 입력을 배치점에서 이산화하고 결과 비선형 계획법을 직접 푸는 궤적 최적화 방법.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 在配点处同时离散状态与控制量，并直接求解所得非线性规划的轨迹优化方法。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

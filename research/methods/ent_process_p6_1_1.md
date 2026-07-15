@@ -9,7 +9,7 @@ names:
   ko: URDF/SDF 文件生成
 summary:
   en: It loads correctly in RViz/Gazebo/Isaac Sim with no parsing errors
-  zh: 可在 RViz/Gazebo/Isaac Sim 中正确加载、无解析错误
+  zh: 核心内容 **方法 / 工具**：ROS URDF、Xacro、SolidWorks/NX → URDF 插件、惯性参数校核
   ko: 可在 RViz/Gazebo/Isaac Sim 中正确加载、无解析错误
 domains:
 - 06_design_engineering
@@ -36,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）
@@ -83,5 +84,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

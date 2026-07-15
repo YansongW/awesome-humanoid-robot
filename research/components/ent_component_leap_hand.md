@@ -10,7 +10,7 @@ names:
 summary:
   en: A low-cost, open-source, 16-DOF anthropomorphic dexterous hand designed for robot learning research, using direct-drive
     Dynamixel servos and 3D-printed parts.
-  zh: 一种低成本、开源的16自由度拟人灵巧手，专为机器人学习研究设计，采用直驱Dynamixel舵机和3D打印部件。
+  zh: '## 概述 一种低成本、开源的16自由度拟人灵巧手，专为机器人学习研究设计，采用直驱Dynamixel舵机和3D打印部件。'
   ko: 저비용, 오픈소스, 16자유도 의인형 민첩한 손으로, 로봇 학습 연구를 위해 직접 구동식 Dynamixel 서보와 3D 프린팅 부품을 사용함.
 domains:
 - 02_components
@@ -52,6 +52,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 一种低成本、开源的16自由度拟人灵巧手，专为机器人学习研究设计，采用直驱Dynamixel舵机和3D打印部件。
 
@@ -86,4 +87,5 @@ LEAP 灵巧手已广泛应用于人形机器人的原型验证、学术研究与
 ## 参考
 - [LEAP Hand: Low-Cost, Efficient, and Anthropomorphic Hand for Robot Learning](https://arxiv.org/abs/2309.06440)
 - [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)
+
 

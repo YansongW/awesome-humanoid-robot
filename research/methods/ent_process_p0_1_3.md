@@ -9,7 +9,8 @@ names:
   ko: 知识产权与合规策略
 summary:
   en: FTO Report, List of Applicable Standards, and IP Layout Recommendations
-  zh: FTO 报告、适用标准清单、IP 布局建议
+  zh: '- P0.1.3.1 输入梳理与目标量化 - 整理「知识产权与合规策略」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化
+    KPI - 建立任务 Owner、时间节点与风险登记'
   ko: FTO 报告、适用标准清单、IP 布局建议
 domains:
 - 11_applications_markets
@@ -35,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：项目立项与商业基线
@@ -82,5 +84,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

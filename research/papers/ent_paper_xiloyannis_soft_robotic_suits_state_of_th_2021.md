@@ -10,7 +10,11 @@ names:
 summary:
   en: A 2021 arXiv survey that defines soft robotic suits, proposes a taxonomy, and reviews actuation, physical human-robot
     interfaces, intention-detection strategies, and biomechanical effects on human movement.
-  zh: 2021年发表于arXiv的综述，定义了软体机器人服并提出分类法，系统回顾了驱动方式、物理人机接口、意图检测策略及其对人体运动的影响。
+  zh: Wearable robots are undergoing a disruptive transition, from the rigid machines that populated the science-fiction world
+    in the early eighties to lightweight robotic apparel, hardly distinguishable from our daily clothes. In less than a decade
+    of development, soft robotic suits have achieved important results in human motor assistance and augmentation. In this
+    paper, we start by giving a definition of soft robotic suits and proposing a taxonomy to classify existing systems. We
+    then critically review the modes of actuation, the physical human-robot interface and the intention-detection strategi
   ko: 2021년 arXiv에 발표된 종합 논문으로, 소프트 로봇 슈트를 정의하고 분류 체계를 제안하며 구동 방식, 물리적 인간-로봇 인터페이스, 의도 검출 전략 및 인간 움직임에 대한 생체역학적 영향을 검토한다.
 domains:
 - 02_components
@@ -49,6 +53,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Wearable robots are undergoing a disruptive transition, from the rigid machines that populated the science-fiction world in the early eighties to lightweight robotic apparel, hardly distinguishable from our daily clothes. In less than a decade of development, soft robotic suits have achieved important results in human motor assistance and augmentation. In this paper, we start by giving a definition of soft robotic suits and proposing a taxonomy to classify existing systems. We then critically review the modes of actuation, the physical human-robot interface and the intention-detection strategies of state of the art soft robotic suits, highlighting the advantages and limitations of different approaches. Finally, we discuss the impact of this new technology on human movements, for both augmenting human function and supporting motor impairments, and identify areas that are in need of further development.
 
@@ -57,4 +62,5 @@ Wearable robots are undergoing a disruptive transition, from the rigid machines 
 
 ## 参考
 - http://arxiv.org/abs/2105.10588v2
+
 

@@ -9,7 +9,7 @@ names:
   ko: Frameless Torque Motor
 summary:
   en: Direct-drive motor without housing or bearings, integrated into robot joints for high torque density.
-  zh: 无外壳和轴承的直驱电机，直接集成到机器人关节中，实现高扭矩密度。
+  zh: 核心内容 人形机器人髋关节、肩关节往往需要几十到上百 N·m 的输出扭矩。若采用普通伺服电机加高减速比，虽可放大扭矩，但会牺牲透明度和带宽。一种方案是使用 **无框力矩电机**（frameless torque motor）：它把定子和转子直接嵌入关节结构，取消外壳、端盖和轴承，直径大、极数多，可在低转速下直接输出大扭矩。
   ko: 하우징이나 베어링이 없는 직접 구동 모터, 로봇 관절에 통합되어 높은 토크 밀도 제공.
 domains:
 - 02_components
@@ -41,6 +41,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 无框力矩电机是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -67,4 +68,5 @@ Tesla Optimus 的旋转关节 reportedly 采用无框力矩电机加谐波减速
 ## 参考
 - [Frameless Torque Motor](https://en.wikipedia.org/wiki/Torque_motor)
 - 项目 Wiki：chapter-04.md#4.2.5 无框力矩电机与关节集成
+
 

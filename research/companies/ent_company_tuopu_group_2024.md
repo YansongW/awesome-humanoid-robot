@@ -9,7 +9,7 @@ names:
   ko: Tuopu Group
 summary:
   en: Chinese supplier of integrated linear actuator assemblies, reportedly a key Tesla Optimus supplier.
-  zh: 一体化线性执行器总成供应商， reportedly 特斯拉Optimus核心供应商。
+  zh: '## 概述 拓普集团是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。'
   ko: 통합 선형 액추에이터 어셈블리 공급업체, 테슬라 Optimus의 핵심 공급업체로 알려짐.
 domains:
 - 02_components
@@ -42,6 +42,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 拓普集团是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -146,4 +147,5 @@ sources:
 ## 参考
 - [Tuopu Group](http://www.tuopu.com/)
 - 项目 Wiki：appendix-d/companies/company_tuopu.md
+
 

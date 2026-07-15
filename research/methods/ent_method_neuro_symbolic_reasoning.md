@@ -10,7 +10,8 @@ names:
 summary:
   en: An AI approach that combines neural perception and learning with symbolic reasoning to obtain interpretable and generalizable
     long-horizon decision-making.
-  zh: 将神经感知与学习同符号推理结合，以获得可解释、可泛化的长程决策能力的人工智能方法。
+  zh: '核心内容 ### 符号-神经混合推理的定义与定位 符号-神经混合推理属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 将神经感知与学习同符号推理结合，以获得可解释、可泛化的长程决策能力的人工智能方法。
+    英文名称为 *Neuro-Symbolic Reasoning*。 韩文名称为 *신경-기호 추론*。'
   ko: 신경 인식·학습과 기호 추론을 결합하여 해석 가능하고 일반화된 장기 의사결정을 얻는 AI 접근법.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 将神经感知与学习同符号推理结合，以获得可解释、可泛化的长程决策能力的人工智能方法。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

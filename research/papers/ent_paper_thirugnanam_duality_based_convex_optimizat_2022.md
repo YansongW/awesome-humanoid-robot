@@ -11,7 +11,11 @@ summary:
   en: Proposes a duality-based nonsmooth control barrier function framework that reformulates minimum-distance constraints
     between polytopes into a convex quadratic program, enabling real-time safety-critical obstacle avoidance for control-affine
     nonlinear systems.
-  zh: 提出一种基于对偶的非光滑控制障碍函数框架，将多面体间最小距离约束重构为凸二次规划，使控制仿射非线性系统能够实现实时安全关键避障。
+  zh: 'Developing controllers for obstacle avoidance between polytopes is a challenging and necessary problem for navigation
+    in tight spaces. Traditional approaches can only formulate the obstacle avoidance problem as an offline optimization problem.
+    To address these challenges, we propose a duality-based safety-critical optimal control using nonsmooth control barrier
+    functions for obstacle avoidance between polytopes, which can be solved in real-time with a QP-based optimization problem.
+    A dual optimization problem is introduced to represent the minimum distance between polytopes and the Lagrangian '
   ko: 제어 아핀 비선형 시스템을 위해 다면체 간 최소 거리 제약을 볼록 이차 계획법으로 재구성하는 이중성 기반 비연속 제어 장벽 함수 프레임워크를 제안하여 실시간 안전 필수 장애물 회피를 가능하게 함.
 domains:
 - 07_ai_models_algorithms
@@ -51,6 +55,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Developing controllers for obstacle avoidance between polytopes is a challenging and necessary problem for navigation in tight spaces. Traditional approaches can only formulate the obstacle avoidance problem as an offline optimization problem. To address these challenges, we propose a duality-based safety-critical optimal control using nonsmooth control barrier functions for obstacle avoidance between polytopes, which can be solved in real-time with a QP-based optimization problem. A dual optimization problem is introduced to represent the minimum distance between polytopes and the Lagrangian function for the dual form is applied to construct a control barrier function. We validate the obstacle avoidance with the proposed dual formulation for L-shaped (sofa-shaped) controlled robot in a corridor environment. We demonstrate real-time tight obstacle avoidance with non-conservative maneuvers on a moving sofa (piano) problem with nonlinear dynamics.
 
@@ -59,4 +64,5 @@ Developing controllers for obstacle avoidance between polytopes is a challenging
 
 ## 参考
 - http://arxiv.org/abs/2107.08360v4
+
 

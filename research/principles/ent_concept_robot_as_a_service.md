@@ -10,7 +10,8 @@ names:
 summary:
   en: A business model in which robots are leased or subscribed to rather than sold, bundling maintenance, software updates,
     and fleet management.
-  zh: 以租赁或订阅而非买断方式提供机器人，并打包维护、软件更新与车队管理的商业模式。
+  zh: '核心内容 ### 机器人即服务（RaaS）的定义与定位 机器人即服务（RaaS）属于 **concept** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。
+    以租赁或订阅而非买断方式提供机器人，并打包维护、软件更新与车队管理的商业模式。 英文名称为 *Robot-as-a-Service (RaaS)*。 韩文名称为 *로봇 as a Service(RaaS)*。'
   ko: 로봇을 판매가 아닌 임대·구독으로 제공하고 유지보수·소프트웨어 업데이트·플릿 관리를 묶은 비즈니스 모델.
 domains:
 - 11_applications_markets
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 以租赁或订阅而非买断方式提供机器人，并打包维护、软件更新与车队管理的商业模式。
 
@@ -66,4 +68,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

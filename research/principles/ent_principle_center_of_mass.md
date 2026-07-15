@@ -10,7 +10,8 @@ names:
 summary:
   en: The weighted average position of all mass in a body; its trajectory and height are central to balance, gait, and momentum-based
     control of humanoid robots.
-  zh: 物体内所有质量的加权平均位置；其轨迹与高度是人形机器人平衡、步态与动量控制的核心。
+  zh: 核心内容 人形机器人是多连杆系统，其整体运动状态不仅由各连杆速度决定，还可以通过**质心动量（centroidal momentum）**统一描述。质心动量把机器人所有连杆的线动量与角动量汇总到**质心（Center of Mass,
+    CoM）**处，是分析行走、奔跑、跳跃等动态运动的强有力工具[41]。
   ko: 강체 내 모든 질량의 가중 평균 위치로, 휴로봇의 균형·보행·울동량 기반 제어의 핵심 변수.
 domains:
 - 06_design_engineering
@@ -37,6 +38,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 #### 8.4.6 质心动量与中心角动量
 
@@ -101,4 +103,5 @@ $$
 
 ## 参考
 - Wiki extraction
+
 

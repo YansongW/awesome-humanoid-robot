@@ -11,7 +11,11 @@ summary:
   en: This paper presents a method to process readings from non-matrix tactile sensors as tactile images and train a Convolutional
     Neural Network to predict grasp stability, achieving 94.2% F1-score on over 2500 real three-fingered grasps of 41 everyday
     objects.
-  zh: 本文提出将非矩阵触觉传感器的读数处理为触觉图像，并训练卷积神经网络预测抓取稳定性，在41种日常物品的2500多次真实三指抓取上取得了94.2%的F1分数。
+  zh: Tactile sensors supply useful information during the interaction with an object that can be used for assessing the stability
+    of a grasp. Most of the previous works on this topic processed tactile readings as signals by calculating hand-picked
+    features. Some of them have processed these readings as images calculating characteristics on matrix-like sensors. In
+    this work, we explore how non-matrix sensors (sensors with taxels not arranged exactly in a matrix) can be processed as
+    tactile images as well. In addition, we prove that they can be used for predicting grasp stability by training a Convol
   ko: 본 논문은 비매트릭스 촉각 센서의 판독값을 촉각 이미지로 처리하고 합성곱 신경망을 훈련시켜 파지 안정성을 예측하는 방법을 제안하며, 41개 일상 물체에 대한 2500회 이상의 실제 세 손가락 파지에서 94.2%의
     F1 점수를 달성했다.
 domains:
@@ -49,6 +53,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Tactile sensors supply useful information during the interaction with an object that can be used for assessing the stability of a grasp. Most of the previous works on this topic processed tactile readings as signals by calculating hand-picked features. Some of them have processed these readings as images calculating characteristics on matrix-like sensors. In this work, we explore how non-matrix sensors (sensors with taxels not arranged exactly in a matrix) can be processed as tactile images as well. In addition, we prove that they can be used for predicting grasp stability by training a Convolutional Neural Network (CNN) with them. We captured over 2500 real three-fingered grasps on 41 everyday objects to train a CNN that exploited the local connectivity inherent on the non-matrix tactile sensors, achieving 94.2% F1-score on predicting stability.
 
@@ -57,4 +62,5 @@ Tactile sensors supply useful information during the interaction with an object 
 
 ## 参考
 - http://arxiv.org/abs/1809.05551v1
+
 

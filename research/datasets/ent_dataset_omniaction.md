@@ -64,6 +64,8 @@ related_entities:
 theoretical_depth:
 - system
 ---
+
+
 ## 概述
 一个用于主动式机器人操作的大规模多模态数据集，包含 14.1 万条片段，涵盖 112 项技能与 748 个物体，融合视觉、语音与环境声音上下文。
 
@@ -104,4 +106,6 @@ Humanoid robots in home and service settings must interpret implicit, multimodal
 ## 参考
 - [RoboOmni: Proactive Robot Manipulation in Omni-modal Context](https://arxiv.org/abs/2510.23763)
 - [OmniAction Dataset on Hugging Face](https://huggingface.co/datasets/fnlp/OmniAction)
+
+
 

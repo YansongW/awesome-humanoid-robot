@@ -9,7 +9,8 @@ names:
   ko: DH / 修改 DH 参数定义
 summary:
   en: “DH parameter table”, forward kinematics code and URDF contrast error < 1e-6
-  zh: 《DH 参数表》、正运动学代码与 URDF 对比误差 < 1e-6
+  zh: '- P6.1.2.1 输入梳理与目标量化 - 整理「DH / 修改 DH 参数定义」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化
+    KPI - 建立任务 Owner、时间节点与风险登记'
   ko: 《DH 参数表》、正运动学代码与 URDF 对比误差 < 1e-6
 domains:
 - 06_design_engineering
@@ -36,6 +37,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：URDF 建模与运动学校核（Kinematics & URDF）
@@ -83,5 +85,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

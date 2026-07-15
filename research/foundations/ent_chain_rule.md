@@ -10,7 +10,8 @@ names:
 summary:
   en: A fundamental calculus rule that gives the derivative of a composition of functions as the product of the derivatives
     of the composed functions.
-  zh: 一个基本微积分法则，给出复合函数导数等于各组成函数导数的乘积。
+  zh: '核心内容 ### 链式法则的定义与定位 链式法则属于 **theorem** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一个基本微积分法则，给出复合函数导数等于各组成函数导数的乘积。
+    英文名称为 *Chain rule*。 韩文名称为 *연쇄 법칙*。'
   ko: 함수의 합성에 대한 도함수를 구성 함수들의 도함수 곱으로 주는 기본 미적분 법칙.
 domains:
 - 00_foundations
@@ -47,6 +48,7 @@ related_entities:
     zh: 反向传播反复应用链式法则，计算损失对所有网络参数的梯度。
     ko: 역전파는 손실에 대한 모든 네트워크 매개변수의 기울기를 계산하기 위해 연쇄 법칙을 반복적으로 적용합니다.
 ---
+
 ## 概述
 一个基本微积分法则，给出复合函数导数等于各组成函数导数的乘积。
 
@@ -80,4 +82,5 @@ related_entities:
 
 ## 参考
 - [W. Rudin, Principles of Mathematical Analysis, 3rd ed., McGraw-Hill, 1976](https://doi.org/10.2307/2683801)
+
 

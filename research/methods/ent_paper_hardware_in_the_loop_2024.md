@@ -10,7 +10,8 @@ names:
 summary:
   en: Testing method where physical actuators and controllers are exercised against a real-time simulation model before full
     integration.
-  zh: 在完整集成前，将物理执行器和控制器与实时仿真模型对接进行测试的方法。
+  zh: '核心内容 ### 硬件在环仿真的定义与定位 硬件在环仿真属于 **method** 类型。 所属领域包括：04_assembly_integration_testing, 08_software_middleware。 价值链层级：intelligence,
+    midstream。 在完整集成前，将物理执行器和控制器与实时仿真模型对接进行测试的方法。 英文名称为 *Hardware-in-the-Loop*。 韩文名称为 *Hardware-in-the-Loop*。'
   ko: 완전한 통합 전 실제 액추에이터와 컨트롤러를 실시간 시뮬레이션 모델에 대해 테스트하는 방법.
 domains:
 - 04_assembly_integration_testing
@@ -43,6 +44,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 在完整集成前，将物理执行器和控制器与实时仿真模型对接进行测试的方法。
 
@@ -76,4 +78,5 @@ sources:
 
 ## 参考
 - [Hardware-in-the-Loop](https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation)
+
 

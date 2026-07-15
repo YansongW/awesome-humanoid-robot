@@ -10,7 +10,7 @@ names:
 summary:
   en: Pilot & Production Ramp-stage 16 of the Android product development process, covering concept design, implementation
     verification, and document delivery.
-  zh: 小批量试产与量产准备（Pilot & Production Ramp）——人形机器人产品开发全流程第 16 阶段，涵盖方案设计、实施验证与文档交付。
+  zh: 小批量试产与量产准备（Pilot & Production Ramp）是人形机器人产品开发全流程中的第 16 个阶段，在 WBS V3 中展开为若干三级子任务。
   ko: 小批量试产与量产准备（Pilot & Production Ramp）
 domains:
 - 05_mass_production
@@ -37,6 +37,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 ## 概述
 小批量试产与量产准备（Pilot & Production Ramp）是人形机器人产品开发全流程中的第 16 个阶段，在 WBS V3 中展开为若干三级子任务。
@@ -541,5 +542,6 @@ theoretical_depth:
 
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
+
 
 

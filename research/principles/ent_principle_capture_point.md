@@ -10,7 +10,7 @@ names:
 summary:
   en: A point on the ground where the robot must step to bring itself to a complete stop, used as a predictive balance criterion
     for bipedal walking.
-  zh: 机器人必须踏步其上才能完全停稳的地面点，是双足行走预测性平衡判据。
+  zh: 核心内容 **捕获点（Capture Point, CP）**是人形机器人推恢（push recovery）与步态规划中的核心概念：它是地面上这样一个点——若机器人能在该点立即踩下去并把质心置于支撑脚正上方，则无需再迈下一步即可停止[44][45]。捕获点的存在把复杂的动态平衡问题转化为“下一步应踩在哪里”的几何问题。
   ko: 로봇이 완전히 정지하려면 밟아야 하는 지면 점으로, 이족 보행의 예측적 균형 기준.
 domains:
 - 07_ai_models_algorithms
@@ -37,6 +37,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 捕获点是人形机器人领域的重要principle。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -144,4 +145,5 @@ def step_recovery_check(r_com, v_com, z_c, foot_place, g=9.81):
 ## 参考
 - Wiki extraction
 - 项目 Wiki：chapter-08.md#8.4.9 捕获点（Capture Point）与线性倒立摆
+
 

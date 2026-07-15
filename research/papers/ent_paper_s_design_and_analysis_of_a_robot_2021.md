@@ -10,7 +10,11 @@ names:
 summary:
   en: Rajashekhar et al. present a robotic lizard built from integrated five-bar mechanisms, derive its position kinematics
     via the vector-loop method, and demonstrate a walking gait with a servo-driven prototype.
-  zh: Rajashekhar 等人提出了一种基于集成五杆机构的机器蜥蜴，利用矢量回路法推导其位置运动学，并通过伺服驱动原型展示了行走步态。
+  zh: Legged robots are being used to explore rough terrains as they are capable of traversing gaps and obstacles. In this
+    paper, a new mechanism is designed to replicate a robotic lizard using integrated five-bar mechanisms. There are two five
+    bar mechanisms from which two more are formed by connecting the links in a particular order. The legs are attached to
+    the links of the five bar mechanism such that, when the mechanism is actuated, they move the robot forward. Position analysis
+    using vector loop approach has been done for the mechanism. A prototype has been built and controlled using servo mot
   ko: Rajashekhar 등은 통합된 5절 링크 메커니즘으로 구성된 로봇 도마뱀을 제안하고, 벡터 루프법으로 위치 운동학을 분석하며, 서보 모터로 구동되는 프로토타입으로 보행 동작을 입증한다.
 domains:
 - 06_design_engineering
@@ -42,6 +46,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Legged robots are being used to explore rough terrains as they are capable of traversing gaps and obstacles. In this paper, a new mechanism is designed to replicate a robotic lizard using integrated five-bar mechanisms. There are two five bar mechanisms from which two more are formed by connecting the links in a particular order. The legs are attached to the links of the five bar mechanism such that, when the mechanism is actuated, they move the robot forward. Position analysis using vector loop approach has been done for the mechanism. A prototype has been built and controlled using servo motors to verify the robotic lizard mechanism.
 
@@ -50,4 +55,5 @@ Legged robots are being used to explore rough terrains as they are capable of tr
 
 ## 参考
 - http://arxiv.org/abs/2107.12614v1
+
 

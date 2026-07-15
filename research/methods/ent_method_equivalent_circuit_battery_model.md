@@ -10,7 +10,7 @@ names:
 summary:
   en: A method that represents a lithium-ion cell or pack as an electrical circuit of a voltage source and lumped resistive-capacitive
     elements to predict terminal voltage, current response, and state-of-charge dynamics.
-  zh: 一种将锂离子电芯或电池包表示为由电压源与集总阻容元件组成的电路的方法，用于预测端电压、电流响应和荷电状态动态。
+  zh: '## 概述 一种将锂离子电芯或电池包表示为由电压源与集总阻容元件组成的电路的方法，用于预测端电压、电流响应和荷电状态动态。'
   ko: 전압원과 집중된 저항-커패시터 소자로 구성된 회로로 리튬 이온 셀 또는 팩을 표현하여 단자 전압, 전류 응답, 충전 상태 동역학을 예측하는 방법이다.
 domains:
 - 02_components
@@ -65,6 +65,7 @@ related_entities:
     zh: 电化学动力学与传输理论支撑着等效电路元件的参数化。
     ko: 전기화학 동역학 및 전송 이론은 등가 회로 소자의 매개변수화를 뒷받침한다.
 ---
+
 ## 概述
 一种将锂离子电芯或电池包表示为由电压源与集总阻容元件组成的电路的方法，用于预测端电压、电流响应和荷电状态动态。
 
@@ -99,4 +100,5 @@ related_entities:
 
 ## 参考
 - [A comparative study of equivalent circuit models for Li-ion batteries](https://doi.org/10.1016/j.jpowsour.2012.02.064)
+
 

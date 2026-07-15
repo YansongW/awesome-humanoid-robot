@@ -10,7 +10,12 @@ names:
 summary:
   en: The paper demonstrates the use of role-play and Hierarchical Task Analysis to design a community-pharmacy assistance
     robot on the Furhat platform, showing how expert behavior can be captured, modeled, and implemented for social-robot interaction.
-  zh: 本文展示了利用角色扮演与层次任务分析在Furhat平台上设计社区药房辅助机器人，说明如何捕获、建模并实现专家行为以用于社交机器人交互。
+  zh: 'We present the use of two methods we believe warrant more use than they currently have in the field of human-robot
+    interaction: role-play and Hierarchical Task Analysis. Some of its potential is showcased through our use of them in an
+    ongoing research project which entails developing a robot application meant to assist at a community pharmacy. The two
+    methods have provided us with several advantages. The role-playing provided a controlled and adjustable environment for
+    understanding the customers'' needs where pharmacists could act as models for the robot''s behavior; and the Hierarchical
+    Task A'
   ko: 본 논문은 Furhat 플랫폼에서 커뮤니티 약국 지원 로봇을 설계하기 위해 역할극과 계층적 작업 분석을 적용하여 전문가 행동을 포착, 모델링, 구현하는 방법을 보여준다.
 domains:
 - 06_design_engineering
@@ -47,6 +52,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 We present the use of two methods we believe warrant more use than they currently have in the field of human-robot interaction: role-play and Hierarchical Task Analysis. Some of its potential is showcased through our use of them in an ongoing research project which entails developing a robot application meant to assist at a community pharmacy. The two methods have provided us with several advantages. The role-playing provided a controlled and adjustable environment for understanding the customers' needs where pharmacists could act as models for the robot's behavior; and the Hierarchical Task Analysis ensured the behavior displayed was modelled correctly and aided development through facilitating co-design. Future research could focus on developing task analysis methods especially suited for social robot interaction.
 
@@ -55,4 +61,5 @@ We present the use of two methods we believe warrant more use than they currentl
 
 ## 参考
 - http://arxiv.org/abs/2509.13378v1
+
 

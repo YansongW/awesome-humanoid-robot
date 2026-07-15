@@ -54,6 +54,8 @@ related_entities:
     zh: 动作 token 预测依赖 Transformer 内部的线性代数运算。
     ko: 액션 토큰 예측은 Transformer 낶부의 선형대수학 연산에 의존한다.
 ---
+
+
 ## 概述
 一种将机器人动作生成建模为自回归“下一个 token 预测”问题的方法，类似于语言建模，但输出离散或连续的动作 token。
 
@@ -87,4 +89,6 @@ related_entities:
 
 ## 参考
 - [OpenVLA: An Open-Source Vision-Language-Action Model](https://arxiv.org/abs/2406.09246)
+
+
 

@@ -10,7 +10,8 @@ names:
 summary:
   en: Seven-degree-of-freedom robotic arm commonly used in humanoid robots to mimic human arm redundancy and improve manipulation
     dexterity.
-  zh: 人形机器人中常用的七自由度机械臂，模仿人体手臂冗余度以提升操作灵活性。
+  zh: '核心内容 ### 七自由度机械臂的定义与定位 七自由度机械臂属于 **component** 类型。 所属领域包括：02_components。 价值链层级：upstream。 人形机器人中常用的七自由度机械臂，模仿人体手臂冗余度以提升操作灵活性。
+    英文名称为 *7-DoF Robotic Arm*。 韩文名称为 *7자유도 로봇 팔*。'
   ko: 인간 팔의 중복성을 모방하여 조작 능숙도를 높이는 휘머노이드 로봇에 사용되는 7자유도 로봇 팔.
 domains:
 - 02_components
@@ -42,6 +43,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-13'
 ---
+
 ## 概述
 人形机器人中常用的七自由度机械臂，模仿人体手臂冗余度以提升操作灵活性。
 
@@ -74,4 +76,5 @@ sources:
 
 ## 参考
 - [7-DOF Robotic Arm](https://en.wikipedia.org/wiki/Robotic_arm)
+
 

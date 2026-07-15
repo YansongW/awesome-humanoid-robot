@@ -10,7 +10,12 @@ names:
 summary:
   en: This paper proposes a multi-robot herding method that combines Implicit Control with a dynamic assignment strategy based
     on convex-hull clustering to steer large numbers of evaders toward a desired reference using only a few herders.
-  zh: 本文提出了一种多机器人放牧方法，将隐式控制与基于凸包聚类的动态分配策略相结合，利用少量放牧机器人将大量逃逸者驱赶至期望轨迹。
+  zh: This paper solves the problem of herding countless evaders by means of a few robots. The objective is to steer all the
+    evaders towards a desired tracking reference while avoiding escapes. The problem is very challenging due to the highly
+    complex repulsive evaders' dynamics and the underdetermined states to control. We propose a solution that is based on
+    Implicit Control and a novel dynamic assignment strategy to select the evaders to be directly controlled. The former is
+    a general technique that explicitly computes control inputs even in highly complex input-nonaffine dynamics. The latter
+    is b
   ko: 본 논문은 음영 제어와 볼록 껍질 군집에 기반한 동적 할당 전략을 결합하여 소수의 로봇으로 대량의 도망자를 원하는 궤적으로 유도하는 다중 로봇 군집 제어 방법을 제시한다.
 domains:
 - 07_ai_models_algorithms
@@ -47,6 +52,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 This paper solves the problem of herding countless evaders by means of a few robots. The objective is to steer all the evaders towards a desired tracking reference while avoiding escapes. The problem is very challenging due to the highly complex repulsive evaders' dynamics and the underdetermined states to control. We propose a solution that is based on Implicit Control and a novel dynamic assignment strategy to select the evaders to be directly controlled. The former is a general technique that explicitly computes control inputs even in highly complex input-nonaffine dynamics. The latter is built upon a convex-hull dynamic clustering inspired by the Voronoi tessellation problem. The combination of both allows to choose the best evaders to directly control, while the others are indirectly controlled by exploiting the repulsive interactions among them. Simulations show that massive herds can be herd throughout complex patterns by means of a few herders.
 
@@ -55,4 +61,5 @@ This paper solves the problem of herding countless evaders by means of a few rob
 
 ## 参考
 - http://arxiv.org/abs/2209.09705v1
+
 

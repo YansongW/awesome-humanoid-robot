@@ -10,7 +10,8 @@ names:
 summary:
   en: The governance of personal data and biometric information collected by robots, including face recognition, voiceprints,
     and gait data.
-  zh: 机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。
+  zh: '核心内容 ### 隐私与生物识别的定义与定位 隐私与生物识别属于 **concept** 类型。 所属领域包括：12_policy_regulation_ethics。 价值链层级：validation_markets。 机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。
+    英文名称为 *Privacy and Biometrics*。 韩文名称为 *프라이버시 및 생체 인식*。'
   ko: 로봇이 수집하는 얼굴·음성·보행 등 개인정보와 생체 인식 데이터의 거버넌스.
 domains:
 - 12_policy_regulation_ethics
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。
 
@@ -66,4 +68,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

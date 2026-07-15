@@ -9,7 +9,7 @@ names:
   ko: Harmonic Drive Systems
 summary:
   en: Leading Japanese manufacturer of harmonic/strain-wave gearboxes for robot joints.
-  zh: 全球领先的机器人关节谐波减速器/应变波齿轮制造商。
+  zh: '## 概述 哈默纳科是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。'
   ko: 로봇 관절용 하모닉/스트레인 웨이브 기어박스의 선도적인 일본 제조업체.
 domains:
 - 02_components
@@ -42,6 +42,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 哈默纳科是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -143,4 +144,5 @@ Harmonic Drive Systems 提供 CSF/CSG、SHF/SHG 系列谐波减速器以及 FHA-
 ## 参考
 - [Harmonic Drive Systems](https://www.harmonicdrive.net/)
 - 项目 Wiki：appendix-d/companies/company_harmonic_drive.md
+
 

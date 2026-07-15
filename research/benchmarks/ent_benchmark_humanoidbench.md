@@ -59,6 +59,8 @@ related_entities:
 theoretical_depth:
 - system
 ---
+
+
 ## 概述
 一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。
 
@@ -101,4 +103,6 @@ HumanoidBench is one of the few benchmarks that explicitly targets whole-body hu
 - [HumanoidBench GitHub Repository](https://github.com/carlosferrazza/humanoid-bench)
 
 HumanoidBench的相关技术仍在快速发展。从系统科学角度看，它与其他benchmark相互耦合，共同决定了人形机器人的整体性能。深入理解其原理、边界条件与工程约束，是将实验室样机转化为可量产产品的必要环节。
+
+
 

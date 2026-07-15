@@ -9,7 +9,8 @@ names:
   ko: Kollmorgen Corporation
 summary:
   en: US supplier of motion systems including frameless torque motors and servo drives for robot joints.
-  zh: 提供机器人关节用无框力矩电机和伺服驱动等运动系统的美国供应商。
+  zh: '核心内容 ### 科尔摩根的定义与定位 科尔摩根属于 **component_manufacturer** 类型。 所属领域包括：02_components, 03_manufacturing_processes。 价值链层级：upstream。
+    提供机器人关节用无框力矩电机和伺服驱动等运动系统的美国供应商。 英文名称为 *Kollmorgen Corporation*。 韩文名称为 *Kollmorgen Corporation*。'
   ko: 로봇 관절용 프레임리스 토크 모터 및 서보 드라이브를 포함한 모션 시스템 미국 공급업체.
 domains:
 - 02_components
@@ -42,6 +43,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 提供机器人关节用无框力矩电机和伺服驱动等运动系统的美国供应商。
 
@@ -73,4 +75,5 @@ sources:
 
 ## 参考
 - [Kollmorgen Corporation](https://www.kollmorgen.com/)
+
 

@@ -10,7 +10,7 @@ names:
 summary:
   en: An imitation-learning method that predicts a sequence of future actions as a chunk using a transformer, reducing compounding
     errors in long-horizon tasks.
-  zh: 使用Transformer预测未来一段动作序列的模仿学习方法，可减少长程任务中的误差累积。
+  zh: 核心内容 配电系统把电池能量安全地输送到各负载，并在故障时快速切断。与消费电子产品不同，人形机器人的配电网络同时承载千瓦级瞬时功率、数十个低压子系统和高频 PWM 电机驱动电流，任何单一保护器件的误动作或失效都可能引发整机停机甚至安全事故。因此，配电与保护设计必须回到电路理论、电磁学、热学和功能安全标准，进行定量分析与协调配置。
   ko: 트랜스포머로 미래 행동 시퀀스를 한 덩어리로 예측하여 장기 과제의 오차 누적을 줄이는 모방 학습 방법.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +38,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 动作分块变压器（ACT）是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -57,4 +58,5 @@ sources:
 ## 参考
 - Wiki extraction
 - 项目 Wiki：chapter-06.md#6.5.4 配电与保护：fuses, contactors, E-stop, hot-swap, harness sizing
+
 

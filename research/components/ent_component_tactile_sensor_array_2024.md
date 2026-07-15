@@ -9,7 +9,8 @@ names:
   ko: 촉각 센서 어레이
 summary:
   en: Distributed tactile sensing surface that measures contact pressure, shear, or texture to support dexterous manipulation.
-  zh: 分布式触觉感知表面，测量接触压力、剪切力或纹理以支持灵巧操作。
+  zh: '核心内容 ### 触觉传感器阵列的定义与定位 触觉传感器阵列属于 **component** 类型。 所属领域包括：02_components。 价值链层级：upstream。 分布式触觉感知表面，测量接触压力、剪切力或纹理以支持灵巧操作。
+    英文名称为 *Tactile Sensor Array*。 韩文名称为 *촉각 센서 어레이*。'
   ko: 민첩한 조작을 지원하기 위해 접촉 압력, 전단력 또는 질감을 측정하는 분산형 촉각 감지 표면.
 domains:
 - 02_components
@@ -41,6 +42,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-13'
 ---
+
 ## 概述
 分布式触觉感知表面，测量接触压力、剪切力或纹理以支持灵巧操作。
 
@@ -73,4 +75,5 @@ sources:
 
 ## 参考
 - [Tactile Sensor](https://en.wikipedia.org/wiki/Tactile_sensor)
+
 

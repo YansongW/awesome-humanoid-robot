@@ -10,7 +10,8 @@ names:
 summary:
   en: A functionally-safe microcontroller that monitors critical signals, handles watchdogs, and executes safety reactions
     independently from the main compute unit.
-  zh: 独立于主计算单元的功能安全微控制器，负责关键信号监控、看门狗管理与安全响应执行。
+  zh: 1. **专用 NPU 与异构计算**。面向 Transformer、扩散模型和机器人策略的专用加速器（如 NVIDIA Blackwell、Qualcomm Hexagon NPU、Apple Neural Engine）持续提高能效。未来机器人主控将采用
+    CPU + GPU + NPU + ISP + DSP 的异构 SoC。
   ko: 주 컴퓨팅 유닛과 독립적으로 중요 신호를 모니터링하고 워치독 및 안전 반응을 수행하는 기능 안전 마이크로컨트롤러.
 domains:
 - 02_components
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 ## 6.9 前沿趋势
 
@@ -74,4 +76,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

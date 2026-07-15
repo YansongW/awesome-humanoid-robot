@@ -9,7 +9,7 @@ names:
   ko: 仿真平台选型与导入
 summary:
   en: “Simulation platform selection report”, URDF/SDF import success, basic standing simulation through
-  zh: 《仿真平台选型报告》、URDF/SDF 导入成功、基础站立仿真通过
+  zh: 核心内容 **方法 / 工具**：Isaac Sim / Gazebo / MuJoCo / RaiSim / Bullet 对比
   ko: 《仿真平台选型报告》、URDF/SDF 导入成功、基础站立仿真通过
 domains:
 - 08_software_middleware
@@ -36,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）
@@ -83,5 +84,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

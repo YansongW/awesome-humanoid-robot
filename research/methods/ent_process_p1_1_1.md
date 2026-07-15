@@ -9,7 +9,7 @@ names:
   ko: 利益相关方需求采集
 summary:
   en: Stakeholder list, demand pool, prioritization
-  zh: 利益相关方清单、需求池、优先级排序
+  zh: '**设计思考逻辑**：识别显性与隐性需求；区分 Must-have / Differentiator / Exciter'
   ko: 利益相关方清单、需求池、优先级排序
 domains:
 - 06_design_engineering
@@ -36,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）
@@ -83,5 +84,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

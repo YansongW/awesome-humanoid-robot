@@ -10,7 +10,7 @@ names:
 summary:
   en: A Chinese Tier-1 supplier of thermal management components and precision aluminum parts, increasingly active in humanoid
     and automotive robotics supply chains.
-  zh: 中国一级供应商，主营热管理零部件与精密铝件，正积极布局人形机器人及汽车机器人供应链。
+  zh: '> 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。 > 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。'
   ko: 열 관리 부품과 정밀 알루미늄 부품을 공급하는 중국 티어1 기업으로, 휴로봇 및 자동차 로봇 공급망에 활발히 진출 중.
 domains:
 - 02_components
@@ -38,6 +38,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 三花智控是人形机器人领域的重要tier1_supplier。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -142,4 +143,5 @@ sources:
 ## 参考
 - Wiki extraction
 - 项目 Wiki：appendix-d/companies/company_sanhua.md
+
 

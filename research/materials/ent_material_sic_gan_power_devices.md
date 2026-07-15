@@ -10,7 +10,8 @@ names:
 summary:
   en: Wide-bandgap semiconductor materials—silicon carbide (SiC) and gallium nitride (GaN)—that enable higher-efficiency,
     higher-frequency power conversion in motor drives and power electronics.
-  zh: 碳化硅（SiC）与氮化镓（GaN）等宽禁带半导体材料，可提升电机驱动与电力电子的转换效率和开关频率。
+  zh: 核心内容 GaN 通常以纤锌矿结构外延生长在异质衬底（Si、SiC、蓝宝石）上。由于纤锌矿结构缺乏反演对称性，GaN/AlGaN 异质界面存在**自发极化**（spontaneous polarization）和**压电极化**（piezoelectric
+    polarization）。极化不连续在界面处诱导高浓度二维电子气（2DEG）：
   ko: 모터 드라이브와 전력전자에서 더 높은 효율과 주파수 변환을 가능하게 하는 SiC 및 GaN 등 광대역 갭 반도체 재료.
 domains:
 - 01_raw_materials
@@ -37,6 +38,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 ### 3.4.3 氮化镓：极化效应与二维电子气
 
@@ -71,4 +73,5 @@ GaN HEMT 按栅极结构分为耗尽型（d-mode）、增强型（e-mode）和 c
 
 ## 参考
 - Wiki extraction
+
 

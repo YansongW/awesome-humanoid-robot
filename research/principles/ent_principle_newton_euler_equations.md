@@ -10,7 +10,8 @@ names:
 summary:
   en: The coupled translational and rotational equations that describe how forces and torques produce linear and angular accelerations
     of a rigid body.
-  zh: 描述力和力矩如何产生刚体平动和转动加速度的耦合平移与旋转方程。
+  zh: '核心内容 ### 牛顿-欧拉运动方程的定义与定位 牛顿-欧拉运动方程属于 **principle** 类型。 所属领域包括：00_foundations, 06_design_engineering。 价值链层级：foundations,
+    midstream。 描述力和力矩如何产生刚体平动和转动加速度的耦合平移与旋转方程。 英文名称为 *Newton-Euler Equations of Motion*。 韩文名称为 *뉴턴-오일러 운동 방정식*。'
   ko: 힘과 토크가 강체의 직선 및 각 가속도를 어떻게 생성하는지 기술하는 결합된 평행이동 및 회전 방정식이다.
 domains:
 - 00_foundations
@@ -49,6 +50,7 @@ related_entities:
     zh: 牛顿-欧拉方程由牛顿第二定律和欧拉旋转方程推导而来。
     ko: 뉴턴-오일러 방정식은 뉴턴의 제2법칙과 오일러 회전 방정식에서 유도된다.
 ---
+
 ## 概述
 描述力和力矩如何产生刚体平动和转动加速度的耦合平移与旋转方程。
 
@@ -82,4 +84,5 @@ related_entities:
 
 ## 参考
 - [Featherstone, Rigid Body Dynamics Algorithms](https://www.springer.com/gp/book/9780387743141)
+
 

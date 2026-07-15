@@ -10,7 +10,8 @@ names:
 summary:
   en: A design methodology that reduces part count, simplifies joining, and shortens assembly time to lower production cost
     and improve reliability.
-  zh: 减少零件数量、简化连接方式、缩短装配时间，从而降低生产成本并提高可靠性的设计方法。
+  zh: '核心内容 ### 可装配性设计（DFA）的定义与定位 可装配性设计（DFA）属于 **method** 类型。 所属领域包括：03_manufacturing_processes。 价值链层级：upstream。 减少零件数量、简化连接方式、缩短装配时间，从而降低生产成本并提高可靠性的设计方法。
+    英文名称为 *Design for Assembly (DFA)*。 韩文名称为 *조립 용이성 설계(DFA)*。'
   ko: 부품 수를 줄이고 결합을 단순화하며 조립 시간을 단축하여 생산 비용을 낮추고 신뢰성을 높이는 설계 방법론.
 domains:
 - 03_manufacturing_processes
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 减少零件数量、简化连接方式、缩短装配时间，从而降低生产成本并提高可靠性的设计方法。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

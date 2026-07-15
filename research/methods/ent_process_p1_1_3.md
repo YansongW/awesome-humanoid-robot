@@ -9,7 +9,7 @@ names:
   ko: 法规、标准与安全需求映射
 summary:
   en: Regulatory requirements matrix, compliance roadmap, security objective level (SIL/PL)
-  zh: 法规需求矩阵、合规路线图、安全目标等级（SIL/PL）
+  zh: 核心内容 **方法 / 工具**：ISO 10218-1/2、ISO/TS 15066、IEC 61508、IEC 62368、CE/FCC/UL 差距分析
   ko: 法规需求矩阵、合规路线图、安全目标等级（SIL/PL）
 domains:
 - 06_design_engineering
@@ -36,6 +36,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：需求定义与系统方案（Concept / Pre-A）
@@ -83,5 +84,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

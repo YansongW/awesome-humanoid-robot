@@ -10,7 +10,8 @@ names:
 summary:
   en: The ability to manipulate objects with multi-fingered hands using fine finger motions, contact regulation, and in-hand
     reorientation.
-  zh: 利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。
+  zh: '核心内容 ### 灵巧操作的定义与定位 灵巧操作属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。
+    英文名称为 *Dexterous Manipulation*。 韩文名称为 *손재주 있는 조작*。'
   ko: 다지 손을 이용한 섬세한 손가락 움직임·접촉 조절·손 내 재배향으로 물체를 조작하는 능력.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 利用多指手的精细手指运动、接触调节与手中重定向来操作物体的能力。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

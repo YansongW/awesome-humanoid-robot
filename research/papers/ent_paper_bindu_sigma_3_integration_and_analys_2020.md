@@ -10,7 +10,11 @@ names:
 summary:
   en: This paper presents Sigma-3, a teleoperated rescue robot integrating a 6-DOF robotic arm driven by MG996R servo motors,
     and experimentally evaluates kinematic modeling, end-effector control, oscillation damping, and power consumption.
-  zh: 本文介绍了Sigma-3，一种集成由MG996R伺服电机驱动的六自由度机械臂的遥控救援机器人，并实验评估了运动学建模、末端执行器控制、振荡抑制和功耗。
+  zh: 'This paper introduces a rescue robot named Sigma 3 which is developed for potential applications such as helping hands
+    for humans where a human can not reach to have an assessment of the hazardous environment. Also, these kinds of robot
+    can be controlled remotely with an adequate control system. The proposed methodology forces on two issues : 1. Novel mechanism
+    design for measuring rotation, joints, links of Degree of Freedom DOF for an arm which is integrated with Sigma 3, 2.
+    Precise measuring of end effector motion control over three dimensions. In the proposed mechanism design, the DOF meas'
   ko: 본 논문은 MG996R 서보 모터로 구동되는 6자유도 로봇 팔을 통합한 원격 조종 구조 로봇 Sigma-3를 제시하고, 운동학 모델링, 엔드이펙터 제어, 진동 감쇠 및 전력 소비를 실험적으로 평가한다.
 domains:
 - 02_components
@@ -49,6 +53,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 This paper introduces a rescue robot named Sigma 3 which is developed for potential applications such as helping hands for humans where a human can not reach to have an assessment of the hazardous environment. Also, these kinds of robot can be controlled remotely with an adequate control system. The proposed methodology forces on two issues : 1. Novel mechanism design for measuring rotation, joints, links of Degree of Freedom DOF for an arm which is integrated with Sigma 3, 2. Precise measuring of end effector motion control over three dimensions. In the proposed mechanism design, the DOF measurement is presented by a planar and spatial mechanism where 4 types of rigid joints build up each DOF with controlling by six High Torque MG996R servo motors. Rotation and DOF measurement are consisting of different theoretical references of Rotation Matrix, Inverse Kinematics with experimental results. Presented methodology over Oscillation Damping performance exhibits less than 3 percent error while configuring for on hands testing. Another evaluation of operating time state strongly defends the mechanism of low power consumption ability.
 
@@ -57,4 +62,5 @@ This paper introduces a rescue robot named Sigma 3 which is developed for potent
 
 ## 参考
 - http://arxiv.org/abs/2002.11944v2
+
 

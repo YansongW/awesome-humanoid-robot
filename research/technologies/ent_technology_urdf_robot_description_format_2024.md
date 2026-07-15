@@ -9,7 +9,9 @@ names:
   ko: URDF 로봇 설명 형식
 summary:
   en: XML-based format describing robot links, joints, inertial properties, and geometry for simulation and control.
-  zh: 用于仿真和控制的描述机器人连杆、关节、惯性和几何的XML格式。
+  zh: '核心内容 ### URDF 机器人描述格式的定义与定位 URDF 机器人描述格式属于 **technology** 类型。 所属领域包括：08_software_middleware, 06_design_engineering。
+    价值链层级：intelligence, midstream。 用于仿真和控制的描述机器人连杆、关节、惯性和几何的XML格式。 英文名称为 *URDF Robot Description Format*。 韩文名称为 *URDF 로봇 설명
+    형식*。'
   ko: 시뮬레이션 및 제어를 위한 로봇 링크, 관절, 관성 및 기하를 설명하는 XML 기반 형식.
 domains:
 - 08_software_middleware
@@ -42,6 +44,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 用于仿真和控制的描述机器人连杆、关节、惯性和几何的XML格式。
 
@@ -74,4 +77,5 @@ URDF 机器人描述格式已广泛应用于人形机器人的原型验证、学
 
 ## 参考
 - [URDF Robot Description Format](https://wiki.ros.org/urdf)
+
 

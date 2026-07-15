@@ -9,7 +9,7 @@ names:
   ko: Boston Dynamics Atlas
 summary:
   en: High-performance humanoid robot; latest generation uses all-electric actuation for dynamic athletic tasks.
-  zh: 高性能人形机器人，最新一代采用全电驱动执行器完成动态运动任务。
+  zh: '## 概述 波士顿动力 Atlas是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。'
   ko: 고성능 휨로봇, 최신 세대는 동적 운 동 작업을 위한 전기식 액추에이션 사용.
 domains:
 - 06_design_engineering
@@ -42,6 +42,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 波士顿动力 Atlas是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -73,4 +74,5 @@ flowchart TD
 ## 参考
 - [Boston Dynamics Atlas](https://bostondynamics.com/atlas)
 - 项目 Wiki：chapter-08.md#8.9.2 Boston Dynamics Atlas：液压驱动到电动驱动
+
 

@@ -9,7 +9,9 @@ names:
   ko: 仿真平台搭建与验证（Simulation）
 summary:
   en: Construction and verification of Simulation platform
-  zh: 仿真平台搭建与验证（Simulation）
+  zh: '核心内容 ### 仿真平台搭建与验证（Simulation）的定义与定位 仿真平台搭建与验证（Simulation）属于 **method** 类型。 所属领域包括：08_software_middleware, 10_evaluation_benchmarks。
+    价值链层级：intelligence, validation_markets。 仿真平台搭建与验证（Simulation） 英文名称为 *Construction and verification of Simulation platform*。
+    韩文名称为 *仿真平台搭建与验证（Simulation）*。'
   ko: 仿真平台搭建与验证（Simulation）
 domains:
 - 08_software_middleware
@@ -36,6 +38,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 仿真平台搭建与验证（Simulation）
 
@@ -62,4 +65,5 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 

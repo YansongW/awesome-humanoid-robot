@@ -10,7 +10,7 @@ names:
 summary:
   en: Design of Actuator & Drive-phase 4 of the entire product development process for Android, covering conceptual design,
     implementation verification, and document delivery.
-  zh: 关节模组与驱动系统设计（Actuator & Drive）——人形机器人产品开发全流程第 4 阶段，涵盖方案设计、实施验证与文档交付。
+  zh: 关节模组与驱动系统设计（Actuator & Drive）是人形机器人产品开发全流程中的第 4 个阶段，在 WBS V3 中展开为若干三级子任务。
   ko: 关节模组与驱动系统设计（Actuator & Drive）
 domains:
 - 02_components
@@ -37,6 +37,8 @@ sources:
 theoretical_depth:
 - system
 ---
+
+
 
 ## 概述
 关节模组与驱动系统设计（Actuator & Drive）是人形机器人产品开发全流程中的第 4 个阶段，在 WBS V3 中展开为若干三级子任务。
@@ -475,5 +477,7 @@ theoretical_depth:
 
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
+
+
 
 

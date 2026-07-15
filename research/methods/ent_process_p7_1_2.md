@@ -9,7 +9,8 @@ names:
   ko: 传感器与执行器模型配置
 summary:
   en: Sensor configuration files, noise/delay parameter tables, comparison with real hardware
-  zh: 传感器配置文件、噪声/延迟参数表、与真实硬件对比
+  zh: '- P7.1.2.1 输入梳理与目标量化 - 整理「传感器与执行器模型配置」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化
+    KPI - 建立任务 Owner、时间节点与风险登记'
   ko: 传感器配置文件、噪声/延迟参数表、与真实硬件对比
 domains:
 - 08_software_middleware
@@ -36,6 +37,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：仿真平台搭建与验证（Simulation）
@@ -83,5 +85,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

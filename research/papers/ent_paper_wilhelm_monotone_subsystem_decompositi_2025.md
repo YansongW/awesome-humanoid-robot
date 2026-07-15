@@ -11,7 +11,11 @@ summary:
   en: Introduces monotone subsystem decomposition, a constraint-programming method that computes Pareto-optimal component
     selections from massive catalogs and proves that, under consistency conditions, subsystem Pareto fronts determine a globally
     optimal Pareto front for the full system.
-  zh: 提出单调子系统分解方法，利用约束编程从大规模目录中计算帕累托最优组件选择，并证明在一致性条件下子系统帕累托前沿可确定全局最优帕累托前沿。
+  zh: Automating design minimizes errors, accelerates the design process, and reduces cost. However, automating robot design
+    is challenging due to recursive constraints, multiple design objectives, and cross-domain design complexity possibly spanning
+    multiple abstraction layers. Here we look at the problem of component selection, a combinatorial optimization problem
+    in which a designer, given a robot model, must select compatible components from an extensive catalog. The goal is to
+    satisfy high-level task specifications while optimally balancing trade-offs between competing design objectives. In thi
   ko: 대규모 카탈로그에서 제약 프로그래밍을 사용해 파레토 최적 부품 선택을 계산하고, 일관성 조건 하에서 서브시스템 파레토 전면이 전체 시스템의 전역 최적 파레토 전면을 결정함을 증명하는 단조 부시스템 분해 방법을
     제안한다.
 domains:
@@ -53,6 +57,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Automating design minimizes errors, accelerates the design process, and reduces cost. However, automating robot design is challenging due to recursive constraints, multiple design objectives, and cross-domain design complexity possibly spanning multiple abstraction layers. Here we look at the problem of component selection, a combinatorial optimization problem in which a designer, given a robot model, must select compatible components from an extensive catalog. The goal is to satisfy high-level task specifications while optimally balancing trade-offs between competing design objectives. In this paper, we extend our previous constraint programming approach to multi-objective design problems and propose the novel technique of monotone subsystem decomposition to efficiently compute a Pareto front of solutions for large-scale problems. We prove that subsystems can be optimized for their Pareto fronts and, under certain conditions, these results can be used to determine a globally optimal Pareto front. Furthermore, subsystems serve as an intuitive design abstraction and can be reused across various design problems. Using an example quadcopter design problem, we compare our method to a linear programming approach and demonstrate our method scales better for large catalogs, solving a multi-objective problem of 10^25 component combinations in seconds. We then expand the original problem and solve a task-oriented, multi-objective design problem to build a fleet of quadcopters to deliver packages. We compute a Pareto front of solutions in seconds where each solution contains an optimal component-level design and an optimal package delivery schedule for each quadcopter.
 
@@ -61,4 +66,5 @@ Automating design minimizes errors, accelerates the design process, and reduces 
 
 ## 参考
 - http://arxiv.org/abs/2505.11624v2
+
 

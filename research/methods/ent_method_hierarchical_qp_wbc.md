@@ -10,7 +10,8 @@ names:
 summary:
   en: A whole-body control method that stacks multiple tasks by priority and solves them as a cascade of quadratic programs,
     ensuring higher-priority tasks are fulfilled before lower-priority ones.
-  zh: 一种按优先级堆叠多个任务并通过级联二次规划求解的全身控制方法，确保高优先级任务优先满足。
+  zh: '核心内容 ### 分层二次规划全身控制的定义与定位 分层二次规划全身控制属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 06_design_engineering。 价值链层级：intelligence,
+    midstream。 一种按优先级堆叠多个任务并通过级联二次规划求解的全身控制方法，确保高优先级任务优先满足。 英文名称为 *Hierarchical QP Whole-Body Control*。 韩文名称为 *계층적 QP 전신 제어*。'
   ko: 여러 작업을 우선순위에 따라 쌓아 올리고 연속된 이차 계획법으로 풀어 높은 우선순위 작업을 먼저 만족시키는 전신 제어 방법이다.
 domains:
 - 07_ai_models_algorithms
@@ -56,6 +57,7 @@ related_entities:
     zh: 层级中的每个任务都通过其任务 Jacobian 表达。
     ko: 계층의 각 작업은 작업 Jacobian을 통해 표현된다.
 ---
+
 ## 概述
 一种按优先级堆叠多个任务并通过级联二次规划求解的全身控制方法，确保高优先级任务优先满足。
 
@@ -89,4 +91,5 @@ related_entities:
 
 ## 参考
 - [Hierarchical QP whole-body control: from theory to practice](https://arxiv.org/abs/1910.13329)
+
 

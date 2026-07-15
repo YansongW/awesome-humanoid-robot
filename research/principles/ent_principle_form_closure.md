@@ -10,7 +10,8 @@ names:
 summary:
   en: A grasp condition in which the object's motion is completely constrained by the geometry and placement of frictionless
     contacts alone.
-  zh: 仅通过无摩擦接触的几何与布局即可完全约束物体运动的抓取条件。
+  zh: '核心内容 ### 形闭合的定义与定位 形闭合属于 **principle** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 仅通过无摩擦接触的几何与布局即可完全约束物体运动的抓取条件。
+    英文名称为 *Form Closure*。 韩文名称为 *형태 폐쇄*。'
   ko: 마찰이 없는 접촉의 기하·배치만으로 물체의 운동을 완전히 구속하는 그래프 조건.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 仅通过无摩擦接触的几何与布局即可完全约束物体运动的抓取条件。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

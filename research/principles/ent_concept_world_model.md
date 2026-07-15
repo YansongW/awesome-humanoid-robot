@@ -10,7 +10,8 @@ names:
 summary:
   en: A learned or hand-crafted internal model that predicts future states of the environment, enabling planning and reasoning
     in robotics and AI.
-  zh: 预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。
+  zh: '核心内容 ### 世界模型的定义与定位 世界模型属于 **concept** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 预测环境未来状态的习得或 handcrafted
+    内部模型，支持机器人与AI中的规划与推理。 英文名称为 *World Model*。 韩文名称为 *세계 모델*。'
   ko: 환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로보틱스와 AI에서 계획·추론을 가능하게 함.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 预测环境未来状态的习得或 handcrafted 内部模型，支持机器人与AI中的规划与推理。
 
@@ -66,4 +68,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

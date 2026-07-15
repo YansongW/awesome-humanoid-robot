@@ -10,7 +10,11 @@ names:
 summary:
   en: Presents an online strategy for detecting deviations from nominal behavior in admittance-controlled robots and adapting
     controller parameters while guaranteeing passivity, validated experimentally on a KUKA LWR 4+.
-  zh: 提出了一种在线检测导纳控制机器人偏离标称行为的策略，并在保证无源性的同时自适应调整控制器参数，在KUKA LWR 4+上进行了实验验证。
+  zh: In physical human-robot interaction, the coexistence of robots and humans in the same workspace requires the guarantee
+    of a stable interaction, trying to minimize the effort for the operator. To this aim, the admittance control is widely
+    used and the appropriate selection of the its parameters is crucial, since they affect both the stability and the ability
+    of the robot to interact with the user. In this paper, we present a strategy for detecting deviations from the nominal
+    behavior of an admittance-controlled robot and for adapting the parameters of the controller while guaranteeing the passi
   ko: 어드미턴스 제어 로봇의 명목 동작에서 편차를 온라인으로 검출하고 수동성을 보장하면서 제어기 매개변수를 적응시키는 전략을 제안하며, KUKA LWR 4+에서 실험적으로 검증되었다.
 domains:
 - 02_components
@@ -50,6 +54,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 In physical human-robot interaction, the coexistence of robots and humans in the same workspace requires the guarantee of a stable interaction, trying to minimize the effort for the operator. To this aim, the admittance control is widely used and the appropriate selection of the its parameters is crucial, since they affect both the stability and the ability of the robot to interact with the user. In this paper, we present a strategy for detecting deviations from the nominal behavior of an admittance-controlled robot and for adapting the parameters of the controller while guaranteeing the passivity. The proposed methodology is validated on a KUKA LWR 4+.
 
@@ -58,4 +63,5 @@ In physical human-robot interaction, the coexistence of robots and humans in the
 
 ## 参考
 - http://arxiv.org/abs/1702.08376v1
+
 

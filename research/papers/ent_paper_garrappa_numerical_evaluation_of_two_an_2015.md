@@ -10,7 +10,12 @@ names:
 summary:
   en: Presents an optimal parabolic contour algorithm that evaluates the two- and three-parameter Mittag–Leffler functions
     by numerical inversion of their Laplace transforms, with error control and a public MATLAB implementation.
-  zh: 提出一种基于最优抛物线围道的拉普拉斯变换数值反演算法，用于计算双参数与三参数 Mittag–Leffler 函数，并包含误差控制与公开的 MATLAB 实现。
+  zh: 'The Mittag-Leffler (ML) function plays a fundamental role in fractional calculus but very few methods are available
+    for its numerical evaluation. In this work we present a method for the efficient computation of the ML function based
+    on the numerical inversion of its Laplace transform (LT): an optimal parabolic contour is selected on the basis of the
+    distance and the strength of the singularities of the LT, with the aim of minimizing the computational effort and reduce
+    the propagation of errors. Numerical experiments are presented to show accuracy and efficiency of the proposed approach.
+    The a'
   ko: 최적 포물선 경로를 이용한 라플라스 변환 수치 역변환 알고리즘을 제안하여 2-변수 및 3-변수 Mittag–Leffler 함수를 평가하고, 오차 제어와 공개 MATLAB 구현을 제공한다.
 domains:
 - 06_design_engineering
@@ -46,6 +51,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 The Mittag-Leffler (ML) function plays a fundamental role in fractional calculus but very few methods are available for its numerical evaluation. In this work we present a method for the efficient computation of the ML function based on the numerical inversion of its Laplace transform (LT): an optimal parabolic contour is selected on the basis of the distance and the strength of the singularities of the LT, with the aim of minimizing the computational effort and reduce the propagation of errors. Numerical experiments are presented to show accuracy and efficiency of the proposed approach. The application to the three parameter ML (also known as Prabhakar) function is also presented.
 
@@ -54,4 +60,5 @@ The Mittag-Leffler (ML) function plays a fundamental role in fractional calculus
 
 ## 参考
 - http://arxiv.org/abs/1503.06569v2
+
 

@@ -10,7 +10,8 @@ names:
 summary:
   en: The ratio of continuous output torque to actuator mass or volume, a key figure of merit for compact, high-performance
     humanoid joints.
-  zh: 执行器连续输出转矩与其质量或体积之比，是衡量人形机器人关节紧凑性与动力性能的关键指标。
+  zh: 1. **扭矩密度** \(\tau_d = \tau_{\text{peak}} / m\)（单位：N·m/kg）或 N·m/L，衡量单位质量/体积能产生多大扭矩。 2. **功率密度** \(P_d = P_{\text{peak}}
+    / m\)（单位：W/kg），衡量单位质量能输出多大机械功率。
   ko: 액추에이터 질량·부피 대비 연속 출력 토크 비율로, 휴로봇 관절의 소형·고성능을 평가하는 핵심 지표.
 domains:
 - 02_components
@@ -37,6 +38,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 ### 4.1.2 功率密度、扭矩密度与动态响应
 
@@ -81,4 +83,5 @@ flowchart LR
 
 ## 参考
 - Wiki extraction
+
 

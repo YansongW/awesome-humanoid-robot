@@ -10,7 +10,8 @@ names:
 summary:
   en: A clinical test of thumb opposability and digital dexterity, adapted in robotics to evaluate thumb range of motion and
     opposition quality in dexterous robot hands.
-  zh: 一种临床拇指对掌能力和手指灵活性测试，在机器人学中被改编用于评估灵巧机器人手的拇指活动范围和对掌质量。
+  zh: '核心内容 ### Kapandji测试的定义与定位 Kapandji测试属于 **benchmark** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets,
+    midstream。 一种临床拇指对掌能力和手指灵活性测试，在机器人学中被改编用于评估灵巧机器人手的拇指活动范围和对掌质量。 英文名称为 *Kapandji Test*。 韩文名称为 *Kapandji 테스트*。'
   ko: 임상적으로 엄지 대립 능력과 손가락 재주를 측정하는 테스트로, 로봇공학에서 능숙한 로봇 손의 엄지 가동 범위와 대립 품질을 평가하기 위해 채택되었습니다.
 domains:
 - 10_evaluation_benchmarks
@@ -44,6 +45,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 一种临床拇指对掌能力和手指灵活性测试，在机器人学中被改编用于评估灵巧机器人手的拇指活动范围和对掌质量。
 
@@ -75,4 +77,5 @@ Kapandji测试为学术界与工业界提供了统一的比较基准，推动了
 
 ## 参考
 - [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)
+
 

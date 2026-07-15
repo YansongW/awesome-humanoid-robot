@@ -10,7 +10,7 @@ names:
 summary:
   en: System Architecture and Electromechanical Design (System / Preliminary Design) —— Phase 3 of the humanoid robot product
     development process, covering solution design, implementation verification, and documentation delivery.
-  zh: 系统架构与机电总体设计（System / Preliminary Design）——人形机器人产品开发全流程第 3 阶段，涵盖方案设计、实施验证与文档交付。
+  zh: 系统架构与机电总体设计（System / Preliminary Design）是人形机器人产品开发全流程中的第 3 个阶段，在 WBS V3 中展开为若干三级子任务。
   ko: 系统架构与机电总体设计（System / Preliminary Design）
 domains:
 - 06_design_engineering
@@ -37,6 +37,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 
 ## 概述
 系统架构与机电总体设计（System / Preliminary Design）是人形机器人产品开发全流程中的第 3 个阶段，在 WBS V3 中展开为若干三级子任务。
@@ -505,5 +506,6 @@ theoretical_depth:
 
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
+
 
 

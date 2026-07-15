@@ -9,7 +9,8 @@ names:
   ko: Power Distribution System
 summary:
   en: DC-DC converters, busbars, fuses, and contactors that route battery power to compute, actuators, and sensors.
-  zh: 将电池电能分配给计算、执行器和传感器的DC-DC变换器、母线、保险丝和接触器。
+  zh: '核心内容 ### 配电系统的定义与定位 配电系统属于 **component** 类型。 所属领域包括：02_components, 06_design_engineering。 价值链层级：midstream, upstream。
+    将电池电能分配给计算、执行器和传感器的DC-DC变换器、母线、保险丝和接触器。 英文名称为 *Power Distribution System*。 韩文名称为 *Power Distribution System*。'
   ko: 배터리 전력을 컴퓨팅, 액추에이터 및 센서로 라우팅하는 DC-DC 컨버터, 버스바, 퓨즈 및 콘택터.
 domains:
 - 02_components
@@ -42,6 +43,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 将电池电能分配给计算、执行器和传感器的DC-DC变换器、母线、保险丝和接触器。
 
@@ -74,4 +76,5 @@ sources:
 
 ## 参考
 - [Power Distribution System](https://en.wikipedia.org/wiki/Power_distribution_unit)
+
 

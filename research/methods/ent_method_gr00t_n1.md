@@ -10,7 +10,8 @@ names:
 summary:
   en: NVIDIA's general-purpose humanoid robot foundation model designed to enable natural-language-conditioned manipulation
     and locomotion skills.
-  zh: NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。
+  zh: '核心内容 ### GR00T N1的定义与定位 GR00T N1属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 09_data_datasets。 价值链层级：intelligence。
+    NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。 英文名称为 *GR00T N1*。 韩文名称为 *GR00T N1*。'
   ko: NVIDIA의 범용 휴로봇 기반 모델로, 자연어 조건 하에서 조작 및 이동 기술을 가능하게 함.
 domains:
 - 07_ai_models_algorithms
@@ -39,6 +40,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 NVIDIA推出的通用人形机器人基础模型，支持自然语言条件下的操作与运动技能。
 
@@ -70,4 +72,5 @@ GR00T N1可应用于人形机器人的运动规划、控制优化、状态估计
 
 ## 参考
 - Wiki extraction
+
 

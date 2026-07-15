@@ -10,7 +10,8 @@ names:
 summary:
   en: Process of auditing and approving component manufacturers for quality, capacity, traceability, and compliance before
     mass production.
-  zh: 量产前对零部件制造商进行质量、产能、可追溯性和合规性审核与批准的过程。
+  zh: '核心内容 ### 供应商认证的定义与定位 供应商认证属于 **method** 类型。 所属领域包括：03_manufacturing_processes, 12_policy_regulation_ethics。 价值链层级：upstream,
+    validation_markets。 量产前对零部件制造商进行质量、产能、可追溯性和合规性审核与批准的过程。 英文名称为 *Supplier Qualification*。 韩文名称为 *Supplier Qualification*。'
   ko: 양산 전 부품 제조업체의 품질, 생산 능력, 추적 가능성 및 규정 준수를 감사 및 승인하는 프로세스.
 domains:
 - 03_manufacturing_processes
@@ -43,6 +44,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 量产前对零部件制造商进行质量、产能、可追溯性和合规性审核与批准的过程。
 
@@ -76,4 +78,5 @@ sources:
 
 ## 参考
 - [Supplier Qualification](https://en.wikipedia.org/wiki/Supplier_quality_management)
+
 

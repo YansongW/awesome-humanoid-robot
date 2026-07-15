@@ -10,7 +10,7 @@ names:
 summary:
   en: The nested feedback-control hierarchy for servo drives, where an inner current loop regulates torque, a velocity loop
     regulates speed, and an outer position loop regulates joint angle.
-  zh: 伺服驱动的级联反馈控制层级：内环电流环控制转矩，中间速度环控制转速，外环位置环控制关节角度。
+  zh: '核心内容 ### 4.5.5 电流环、速度环、位置环的级联控制 实际关节驱动通常采用三级级联控制：最内层 **电流环**（力矩环），中间 **速度环**，最外层 **位置环**。每一层带宽约为下一层的 5-10 倍，以保证稳定性。'
   ko: '서보 드라이브의 중첩 피드백 제어 계층: 내측 전류 루프는 토크, 속도 루프는 속도, 외측 위치 루프는 관절 각도를 제어.'
 domains:
 - 02_components
@@ -38,6 +38,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 伺服驱动的级联反馈控制层级：内环电流环控制转矩，中间速度环控制转速，外环位置环控制关节角度。
 
@@ -64,4 +65,5 @@ sources:
 - Wiki extraction
 
 电流环/速度环/位置环作为人形机器人产业链中的关键组成部分，其相关理论与工程实践仍在持续发展。深入理解其原理、边界条件与典型应用场景，对于将实验室样机转化为可量产产品具有重要意义。
+
 

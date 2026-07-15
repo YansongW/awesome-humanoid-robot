@@ -10,7 +10,8 @@ names:
 summary:
   en: Engineering practice of designing parts and assemblies to reduce production cost, improve yield, and simplify assembly
     for humanoid robots.
-  zh: 为人形机器人降低生产成本、提高良率、简化装配而进行的零部件与总成设计实践。
+  zh: '核心内容 ### 面向制造的设计的定义与定位 面向制造的设计属于 **method** 类型。 所属领域包括：03_manufacturing_processes, 06_design_engineering。 价值链层级：midstream,
+    upstream。 为人形机器人降低生产成本、提高良率、简化装配而进行的零部件与总成设计实践。 英文名称为 *Design for Manufacturing*。 韩文名称为 *Design for Manufacturing*。'
   ko: 휨로봇의 생산 비용 절감, 수율 향상 및 조립 단순화를 위한 부품 및 어셈블리 설계 관행.
 domains:
 - 03_manufacturing_processes
@@ -44,6 +45,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 为人形机器人降低生产成本、提高良率、简化装配而进行的零部件与总成设计实践。
 
@@ -78,4 +80,5 @@ sources:
 
 ## 参考
 - [Design for Manufacturing](https://en.wikipedia.org/wiki/Design_for_manufacturing)
+
 

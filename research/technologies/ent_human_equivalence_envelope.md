@@ -10,7 +10,8 @@ names:
 summary:
   en: A per-joint operating-requirement definition that requires a robot to meet human torque and power simultaneously at
     the same joint angle and angular rate within task-specific bands.
-  zh: 一种单关节运行需求定义，要求机器人在任务特定区间内，于相同关节角度和角速度下同时达到人类的扭矩和功率。
+  zh: '核心内容 ### 人等效包络的定义与定位 人等效包络属于 **technology** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets,
+    midstream。 一种单关节运行需求定义，要求机器人在任务特定区间内，于相同关节角度和角速度下同时达到人类的扭矩和功率。 英文名称为 *Human-Equivalence Envelope*。 韩文名称为 *인간 등가 영역*。'
   ko: 작업별 구간에서 동일한 관절 각도와 각속도에서 인간의 토크와 전력을 동시에 충족해야 하는 관절별 작동 요구사항 정의입니다.
 domains:
 - 10_evaluation_benchmarks
@@ -43,6 +44,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 一种单关节运行需求定义，要求机器人在任务特定区间内，于相同关节角度和角速度下同时达到人类的扭矩和功率。
 
@@ -75,4 +77,5 @@ theoretical_depth:
 
 ## 参考
 - [Human-Level Actuation for Humanoids](https://arxiv.org/abs/2511.06796)
+
 

@@ -9,7 +9,8 @@ names:
   ko: 관절 엔코더
 summary:
   en: Position or velocity sensor mounted on a robot joint to provide high-resolution feedback for motor control.
-  zh: 安装于机器人关节的位置或速度传感器，为电机控制提供高分辨率反馈。
+  zh: '核心内容 ### 关节编码器的定义与定位 关节编码器属于 **component** 类型。 所属领域包括：02_components。 价值链层级：upstream。 安装于机器人关节的位置或速度传感器，为电机控制提供高分辨率反馈。
+    英文名称为 *Joint Encoder*。 韩文名称为 *관절 엔코더*。'
   ko: 모터 제어를 위해 고해상도 피드백을 제공하기 위해 로봇 관절에 장착된 위치 또는 속도 센서.
 domains:
 - 02_components
@@ -41,6 +42,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-13'
 ---
+
 ## 概述
 安装于机器人关节的位置或速度传感器，为电机控制提供高分辨率反馈。
 
@@ -73,4 +75,5 @@ sources:
 
 ## 参考
 - [Rotary Encoder](https://en.wikipedia.org/wiki/Rotary_encoder)
+
 

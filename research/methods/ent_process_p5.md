@@ -10,7 +10,7 @@ names:
 summary:
   en: Mechanical Structure (MED)——The fifth phase of the humanoid robot product development process, covering solution design,
     implementation verification, and documentation delivery.
-  zh: 本体结构工程与原型（Mechanical Structure）——人形机器人产品开发全流程第 5 阶段，涵盖方案设计、实施验证与文档交付。
+  zh: 本体结构工程与原型（Mechanical Structure）是人形机器人产品开发全流程中的第 5 个阶段，在 WBS V3 中展开为若干三级子任务。
   ko: 本体结构工程与原型（Mechanical Structure）
 domains:
 - 06_design_engineering
@@ -37,6 +37,8 @@ sources:
 theoretical_depth:
 - system
 ---
+
+
 
 ## 概述
 本体结构工程与原型（Mechanical Structure）是人形机器人产品开发全流程中的第 5 个阶段，在 WBS V3 中展开为若干三级子任务。
@@ -343,5 +345,7 @@ theoretical_depth:
 
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
+
+
 
 

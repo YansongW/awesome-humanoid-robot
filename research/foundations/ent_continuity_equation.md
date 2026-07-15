@@ -10,7 +10,8 @@ names:
 summary:
   en: A partial differential equation expressing local conservation of a quantity by equating its rate of change to the negative
     divergence of its flux.
-  zh: 一种偏微分方程，通过将某物理量的变化率等于其通量散度的负值来表达局部守恒。
+  zh: '核心内容 ### 连续性方程的定义与定位 连续性方程属于 **equation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种偏微分方程，通过将某物理量的变化率等于其通量散度的负值来表达局部守恒。
+    英文名称为 *Continuity equation*。 韩文名称为 *연속 방정식*。'
   ko: 어떤 물리량의 변화율을 그 선속의 발산의 음수와 같게 하여 국소 보존을 표현하는 편미분 방정식.
 domains:
 - 00_foundations
@@ -59,6 +60,7 @@ related_entities:
     zh: 扩散模型的连续时间概率流满足 Fokker-Planck 连续性方程。
     ko: 확산 모델의 연속 시간 확률 흐름은 포커-플랑크 연속 방정식을 만족합니다.
 ---
+
 ## 概述
 一种偏微分方程，通过将某物理量的变化率等于其通量散度的负值来表达局部守恒。
 
@@ -92,4 +94,5 @@ related_entities:
 
 ## 参考
 - [L. C. Evans, Partial Differential Equations, 2nd ed., American Mathematical Society, 2010](https://doi.org/10.1090/gsm/019)
+
 

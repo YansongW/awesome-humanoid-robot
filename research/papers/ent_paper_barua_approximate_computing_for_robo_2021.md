@@ -11,7 +11,12 @@ summary:
   en: This paper applies loop perforation to approximate the A* path planning algorithm for battery-driven mobile warehouse
     robots, and demonstrates that individually safe approximations can cause inter-robot collisions in collaborative multi-robot
     fleets.
-  zh: 本文将循环穿孔应用于电池供电的移动仓库机器人A*路径规划算法的近似化，并证明在单机器人层面安全的近似在多机器人协同环境中可能引发机器人间碰撞。
+  zh: Approximate computing is a computation domain which can be used to trade time and energy with quality and therefore
+    is useful in embedded systems. Energy is the prime resource in battery-driven embedded systems, like robots. Approximate
+    computing can be used as a technique to generate approximate version of the control functionalities of a robot, enabling
+    it to ration energy for computation at the cost of degraded quality. Usually, the programmer of the function specifies
+    the extent of degradation that is safe for the overall safety of the system. However, in a collaborative environment,
+    where
   ko: 본 논문은 배터리 구동의 이동식 창고 로봇을 위한 A* 경로 계획 알고리즘을 근사화하기 위해 루프 퍼포레이션을 적용하고, 개별 로봇에게는 안전한 근사가 협업 다중 로봇 군집에서 로봇 간 충돌을 유발할 수 있음을
     보여준다.
 domains:
@@ -48,6 +53,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Approximate computing is a computation domain which can be used to trade time and energy with quality and therefore is useful in embedded systems. Energy is the prime resource in battery-driven embedded systems, like robots. Approximate computing can be used as a technique to generate approximate version of the control functionalities of a robot, enabling it to ration energy for computation at the cost of degraded quality. Usually, the programmer of the function specifies the extent of degradation that is safe for the overall safety of the system. However, in a collaborative environment, where several sub-systems co-exist and some of the functionality of each of them have been approximated, the safety of the overall system may be compromised. In this paper, we consider multiple identical robots operate in a warehouse, and the path planning function of the robot is approximated. Although the planned paths are safe for individual robots (i.e. they do not collide with the racks), we show that this leads to a collision among the robots. So, a controlled approximation needs to be carried out in such situations to harness the full power of this new paradigm if it needs to be a mainstream paradigm in future.
 
@@ -56,4 +62,5 @@ Approximate computing is a computation domain which can be used to trade time an
 
 ## 参考
 - http://arxiv.org/abs/2104.05773v2
+
 

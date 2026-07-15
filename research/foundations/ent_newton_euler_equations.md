@@ -10,7 +10,8 @@ names:
 summary:
   en: A set of coupled force and torque balance equations that describe the motion of a rigid body or articulated multibody
     system.
-  zh: 描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。
+  zh: '核心内容 ### 牛顿-欧拉方程的定义与定位 牛顿-欧拉方程属于 **equation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。
+    英文名称为 *Newton-Euler equations*。 韩文名称为 *뉴턴-오일러 방정식*。'
   ko: 강철 또는 관절 연결 다물체 시스템의 운전을 기술하는 결합된 힘 및 토크 평형 방정식 집합.
 domains:
 - 00_foundations
@@ -48,6 +49,7 @@ related_entities:
     zh: 牛顿-欧拉形式与拉格朗日形式对刚体系统等价；前者强调力/力矩平衡，后者强调能量。
     ko: 뉴턴-오일러 형식과 라그랑지안 형식은 강체 시스템에서 동치입니다. 전자는 힘/토크 균형에, 후자는 에너지에 초점을 맞춥니다.
 ---
+
 ## 概述
 描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。
 
@@ -81,4 +83,5 @@ related_entities:
 
 ## 参考
 - [R. Featherstone, Rigid Body Dynamics Algorithms, Springer, 2014](https://doi.org/10.1007/978-1-4899-7560-7)
+
 

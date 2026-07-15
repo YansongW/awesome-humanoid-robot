@@ -10,7 +10,7 @@ names:
 summary:
   en: Chinese Tier-1 supplier of thermal management and electromechanical actuators, reportedly a key actuator assembly partner
     for Tesla Optimus.
-  zh: 中国一级供应商，主营热管理和机电执行器，据报道是特斯拉 Optimus 执行器总成的核心合作伙伴。
+  zh: '> 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。 > 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。'
   ko: 중국의 Tier-1 열관리 및 전기기계 액추에이터 공급업체로, 테슬라 옵티머스의 액추에이터 어셈블리 핵심 파트너로 알려짐.
 domains:
 - 02_components
@@ -64,6 +64,7 @@ related_entities:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 三花智控是人形机器人领域的重要tier1_supplier。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -169,4 +170,5 @@ theoretical_depth:
 - [Elon Musk Places $685M Order with Sanhua](https://eu.36kr.com/en/p/3510288514980998)
 - [Tesla Optimus Supply Chain: Who Makes the Parts?](https://optimusk.blog/blog/tesla-optimus-suppliers/)
 - 项目 Wiki：appendix-d/companies/company_sanhua.md
+
 

@@ -10,7 +10,8 @@ names:
 summary:
   en: Heatsinks, heat pipes, fans, and liquid cooling used to keep compute, power electronics, and actuators within safe operating
     temperatures.
-  zh: 使计算、电力电子和执行器保持在安全工作温度范围内的散热器、热管、风扇和液冷。
+  zh: '核心内容 ### 热管理系统的定义与定位 热管理系统属于 **component** 类型。 所属领域包括：02_components, 06_design_engineering。 价值链层级：midstream, upstream。
+    使计算、电力电子和执行器保持在安全工作温度范围内的散热器、热管、风扇和液冷。 英文名称为 *Thermal Management System*。 韩文名称为 *Thermal Management System*。'
   ko: 컴퓨팅, 전력 전자 및 액추에이터를 안전한 작동 온도 범위 내로 유지하는 히트싱크, 히트 파이프, 팬 및 액체 냉각.
 domains:
 - 02_components
@@ -43,6 +44,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 使计算、电力电子和执行器保持在安全工作温度范围内的散热器、热管、风扇和液冷。
 
@@ -75,4 +77,5 @@ sources:
 
 ## 参考
 - [Thermal Management System](https://en.wikipedia.org/wiki/Thermal_management_in_electronics)
+
 

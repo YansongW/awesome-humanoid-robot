@@ -9,7 +9,7 @@ names:
   ko: Leaderdrive
 summary:
   en: Chinese harmonic drive manufacturer with growing market share in domestic robot supply chains.
-  zh: 国产谐波减速器龙头，在国内机器人供应链中市占率不断提升。
+  zh: '## 概述 绿的谐波是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。'
   ko: 국내 로봇 공급망에서 점유율이 증가하고 있는 중국 하모닉 드라이브 제조업체.
 domains:
 - 02_components
@@ -42,6 +42,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 绿的谐波是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -146,4 +147,5 @@ sources:
 ## 参考
 - [Leaderdrive](http://www.leaderdrive.com/)
 - 项目 Wiki：appendix-d/companies/company_leaderdrive.md
+
 

@@ -9,7 +9,8 @@ names:
   ko: SLAM 与场景理解
 summary:
   en: Positioning accuracy, map consistency, and semantic annotation accuracy
-  zh: 定位精度、地图一致性、语义标注准确率
+  zh: '- P12.1.2.1 输入梳理与目标量化 - 整理「SLAM 与场景理解」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化
+    KPI - 建立任务 Owner、时间节点与风险登记'
   ko: 定位精度、地图一致性、语义标注准确率
 domains:
 - 07_ai_models_algorithms
@@ -34,6 +35,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：VLA / WAM / AI 算法集成（AI & Perception）
@@ -81,5 +83,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

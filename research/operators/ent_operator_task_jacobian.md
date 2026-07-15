@@ -10,7 +10,8 @@ names:
 summary:
   en: The matrix that maps joint-space velocities and accelerations to the velocity/acceleration of a task coordinate in operational
     space.
-  zh: 将关节空间速度和加速度映射到操作空间任务坐标速度/加速度的矩阵。
+  zh: '核心内容 ### 任务 Jacobian的定义与定位 任务 Jacobian属于 **operator** 类型。 所属领域包括：07_ai_models_algorithms, 00_foundations。 价值链层级：intelligence,
+    foundations。 将关节空间速度和加速度映射到操作空间任务坐标速度/加速度的矩阵。 英文名称为 *Task Jacobian*。 韩文名称为 *작업 Jacobian*。'
   ko: 관절 공간 속도와 가속도를 작업 공간의 작업 좌표 속도/가속도로 매핑하는 행렬이다.
 domains:
 - 07_ai_models_algorithms
@@ -49,6 +50,7 @@ related_entities:
     zh: Jacobian 由偏导数构成，是线性代数的核心概念。
     ko: Jacobian은 편미분으로 구성되며, 선형대수학의 핵심 개념이다.
 ---
+
 ## 概述
 将关节空间速度和加速度映射到操作空间任务坐标速度/加速度的矩阵。
 
@@ -79,4 +81,5 @@ related_entities:
 
 ## 参考
 - [Robotics, Vision and Control](https://petercorke.com/rvc/home/)
+
 

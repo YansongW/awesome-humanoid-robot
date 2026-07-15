@@ -9,7 +9,8 @@ names:
   ko: Genesis 생성형 물리 엔진
 summary:
   en: Emerging generative universal physics engine for robotics and beyond.
-  zh: 面向机器人等领域的新兴生成式通用物理引擎。
+  zh: '核心内容 ### Genesis 生成式物理引擎的定义与定位 Genesis 生成式物理引擎属于 **software_platform** 类型。 所属领域包括：08_software_middleware, 07_ai_models_algorithms。
+    价值链层级：intelligence。 面向机器人等领域的新兴生成式通用物理引擎。 英文名称为 *Genesis Generative Physics Engine*。 韩文名称为 *Genesis 생성형 물리 엔진*。'
   ko: 로보틱스 등을 위한 신흥 생성형 범용 물리 엔진.
 domains:
 - 08_software_middleware
@@ -41,6 +42,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 面向机器人等领域的新兴生成式通用物理引擎。
 
@@ -73,4 +75,5 @@ Genesis 生成式物理引擎已广泛应用于人形机器人的原型验证、
 
 ## 参考
 - [Genesis Generative Physics Engine](https://genesis-world.readthedocs.io/)
+
 

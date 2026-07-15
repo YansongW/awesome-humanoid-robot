@@ -10,7 +10,7 @@ names:
 summary:
   en: Integration & V & v-phase 15 of the Android product development process, covering solution design, implementation verification,
     and document delivery.
-  zh: 整机集成与验证测试（Integration & V&V）——人形机器人产品开发全流程第 15 阶段，涵盖方案设计、实施验证与文档交付。
+  zh: 整机集成与验证测试（Integration & V&V）是人形机器人产品开发全流程中的第 15 个阶段，在 WBS V3 中展开为若干三级子任务。
   ko: 整机集成与验证测试（Integration & V&V）
 domains:
 - 04_assembly_integration_testing
@@ -37,6 +37,8 @@ sources:
 theoretical_depth:
 - system
 ---
+
+
 
 ## 概述
 整机集成与验证测试（Integration & V&V）是人形机器人产品开发全流程中的第 15 个阶段，在 WBS V3 中展开为若干三级子任务。
@@ -507,5 +509,7 @@ theoretical_depth:
 
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
+
+
 
 

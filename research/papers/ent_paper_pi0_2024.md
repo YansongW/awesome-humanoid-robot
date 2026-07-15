@@ -10,7 +10,11 @@ names:
 summary:
   en: A flow-matching VLA built on a pretrained VLM, trained on diverse dexterous robot data to perform language-conditioned
     tasks such as laundry folding and box assembly.
-  zh: 一种基于预训练视觉-语言模型的流匹配 VLA，在多样化的灵巧机器人数据上训练，可执行如叠衣服、组装盒子等语言条件任务。
+  zh: Robot learning holds tremendous promise to unlock the full potential of flexible, general, and dexterous robot systems,
+    as well as to address some of the deepest questions in artificial intelligence. However, bringing robot learning to the
+    level of generality required for effective real-world systems faces major obstacles in terms of data, generalization,
+    and robustness. In this paper, we discuss how generalist robot policies (i.e., robot foundation models) can address these
+    challenges, and how we can design effective generalist robot policies for complex and highly dexterous tasks. We propose
   ko: 사전 학습된 VLM 기반의 플로우 매칭 VLA로, 다양한 손재주 있는 로봇 데이터로 학습되어 빨래 개기, 상자 조립 등 언어 조건 작업을 수행함.
 domains:
 - 07_ai_models_algorithms
@@ -51,6 +55,7 @@ related_entities:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 Robot learning holds tremendous promise to unlock the full potential of flexible, general, and dexterous robot systems, as well as to address some of the deepest questions in artificial intelligence. However, bringing robot learning to the level of generality required for effective real-world systems faces major obstacles in terms of data, generalization, and robustness. In this paper, we discuss how generalist robot policies (i.e., robot foundation models) can address these challenges, and how we can design effective generalist robot policies for complex and highly dexterous tasks. We propose a novel flow matching architecture built on top of a pre-trained vision-language model (VLM) to inherit Internet-scale semantic knowledge. We then discuss how this model can be trained on a large and diverse dataset from multiple dexterous robot platforms, including single-arm robots, dual-arm robots, and mobile manipulators. We evaluate our model in terms of its ability to perform tasks in zero shot after pre-training, follow language instructions from people and from a high-level VLM policy, and its ability to acquire new skills via fine-tuning. Our results cover a wide variety of tasks, such as laundry folding, table cleaning, and assembling boxes.
 
@@ -59,4 +64,5 @@ Robot learning holds tremendous promise to unlock the full potential of flexible
 
 ## 参考
 - http://arxiv.org/abs/2410.24164v4
+
 

@@ -10,7 +10,7 @@ names:
 summary:
   en: Actuator producing linear motion, typically composed of frameless torque motor, planetary roller screw, encoder and
     force sensor.
-  zh: 产生直线运动的执行器，通常由无框力矩电机、行星滚柱丝杠、编码器和力传感器组成。
+  zh: '核心内容 ## 滚珠/梯形丝杠线性执行器 / Dingzhi Lead Screw / Ball Screw Actuator'
   ko: 선형 운 동을 생성하는 액추에이터, 일반적으로 프레임리스 토크 모터, 행성 롤러 스크류, 인코더 및 힘 센서로 구성.
 domains:
 - 02_components
@@ -41,6 +41,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 线性执行器是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -129,4 +130,5 @@ sources:
 ## 参考
 - [Linear Actuator](https://en.wikipedia.org/wiki/Linear_actuator)
 - 项目 Wiki：appendix-d/products/product_dingzhi_lead_screw.md
+
 

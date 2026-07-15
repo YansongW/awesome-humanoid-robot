@@ -10,7 +10,7 @@ names:
 summary:
   en: The upstream supply chain of rare-earth elements—especially neodymium, dysprosium, and terbium—used in high-performance
     permanent magnets for actuators.
-  zh: 用于高性能执行器永磁体的稀土元素（如钕、镝、铽）的上游供应链。
+  zh: '> 本词条属于 [附录 D 企业/产品 Wiki](../../appendix-d.md)。 > 数据更新时间：2026-07-01。所有参数以官方公开资料为准，缺失项标注为“未公开”。'
   ko: 액추에이터용 고성능 영구자석에 사용되는 네오디뮴·디스프로슘·터븀 등 희토류의 상류 공급망.
 domains:
 - 01_raw_materials
@@ -37,6 +37,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 稀土元素供应链是人形机器人领域的重要material。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -125,4 +126,5 @@ sources:
 ## 参考
 - Wiki extraction
 - 项目 Wiki：appendix-d/companies/company_china_northern_rare_earth.md
+
 

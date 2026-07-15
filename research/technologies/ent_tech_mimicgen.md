@@ -10,7 +10,8 @@ names:
 summary:
   en: A demonstration augmentation framework that scales a small set of human seed demonstrations in simulation by perturbing
     object poses and initial conditions.
-  zh: 一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。
+  zh: '核心内容 ### MimicGen的定义与定位 MimicGen属于 **technology** 类型。 所属领域包括：08_software_middleware, 09_data_datasets。 价值链层级：intelligence。
+    一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。 英文名称为 *MimicGen*。 韩文名称为 *MimicGen*。'
   ko: 물체 자세 및 초기 조건을 변형하여 시뮬레이션에서 소량의 인간 시드 데모를 확장하는 데모 증강 프레임워크.
 domains:
 - 08_software_middleware
@@ -57,6 +58,7 @@ related_entities:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。
 
@@ -91,4 +93,5 @@ MimicGen已广泛应用于人形机器人的原型验证、学术研究与早期
 ## 参考
 - [MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations](https://arxiv.org/abs/2310.17596)
 - [MimicGen GitHub Repository](https://github.com/NVlabs/mimicgen)
+
 

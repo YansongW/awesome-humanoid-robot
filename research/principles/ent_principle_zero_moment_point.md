@@ -10,7 +10,8 @@ names:
 summary:
   en: A point on the ground where the horizontal moment of the ground reaction force about it is zero; widely used as a dynamic
     stability criterion for bipedal walking.
-  zh: 地面反作用力水平分力矩为零的地面点，常用于判断双足机器人动态行走的稳定性。
+  zh: '核心内容 ### 8.4.4 零力矩点（ZMP）与动态平衡 **零力矩点（Zero Moment Point, ZMP）**是地面上的一个点，在该点处地面反作用力产生的水平力矩分量为零[43][44]。ZMP 是人形机器人动态平衡的核心判据：若
+    ZMP 位于支撑多边形（support polygon）内，则机器人理论上不会绕地面边缘倾倒。'
   ko: 지면 반력의 수평 모멘트가 0이 되는 지면 점으로, 이족 보행의 동적 안정성 판단에 널리 사용됨.
 domains:
 - 06_design_engineering
@@ -57,6 +58,7 @@ related_entities:
       or Newton-Euler dynamics.
     zh: ZMP 条件来源于机器人运动方程的力矩平衡，通常由欧拉-拉格朗日方程或牛顿-欧拉动力学表达。
 ---
+
 ## 概述
 地面反作用力水平分力矩为零的地面点，常用于判断双足机器人动态行走的稳定性。
 
@@ -97,4 +99,5 @@ $$
 - [P. Sardain and G. Bessonnet, Forces Acting on a Biped Robot. Center of Pressure—Zero Moment Point, IEEE Trans. SMC-A, 2004](https://doi.org/10.1109/TSMCA.2004.832811)
 
 零力矩点（ZMP）作为人形机器人产业链中的关键组成部分，其相关理论与工程实践仍在持续发展。深入理解其原理、边界条件与典型应用场景，对于将实验室样机转化为可量产产品具有重要意义。
+
 

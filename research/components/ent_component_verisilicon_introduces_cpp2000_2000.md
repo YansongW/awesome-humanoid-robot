@@ -39,6 +39,8 @@ sources:
   date: '2026'
   accessed_at: '2026-07-06'
 ---
+
+
 ## 概述
 Enhancing image quality and visual perception for moving-camera systems
 
@@ -70,4 +72,6 @@ VeriSilicon Introduces CPP2000 Camera Post-Processing IP for Embodied Robotics a
 
 ## 参考
 - [VeriSilicon Introduces CPP2000 Camera Post-Processing IP for Embodied Robotics and Mobile Vision Applications](http://www.RoboticsTomorrow.com/news/2026/07/03/verisilicon-introduces-cpp2000-camera-post-processing-ip-for-embodied-robotics-and-mobile-vision-applications/26802)
+
+
 

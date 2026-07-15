@@ -39,6 +39,8 @@ sources:
   date: '2026'
   accessed_at: '2026-07-14'
 ---
+
+
 ## 概述
 Revolutionary robot delivers end-to-end automation across supply chains
 
@@ -68,4 +70,6 @@ Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered
 
 ## 参考
 - [Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation](http://www.RoboticsTomorrow.com/news/2026/07/13/logic-highlights-the-logic-pallet-the-first-autonomous-mobile-pallet-engineered-for-multifacility-logistics-automation/26835)
+
+
 

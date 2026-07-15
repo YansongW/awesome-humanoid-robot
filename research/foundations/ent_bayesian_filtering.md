@@ -10,7 +10,8 @@ names:
 summary:
   en: A recursive probabilistic framework that maintains and updates a belief distribution over a hidden state using a dynamical
     model and noisy observations.
-  zh: 利用动力学模型与带噪观测递归地维护并更新隐状态信念分布的概率框架。
+  zh: '核心内容 ### 贝叶斯滤波的定义与定位 贝叶斯滤波属于 **formalism** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 利用动力学模型与带噪观测递归地维护并更新隐状态信念分布的概率框架。
+    英文名称为 *Bayesian filtering*。 韩文名称为 *베이지안 필터링*。'
   ko: 동역학 모델과 잡음이 있는 관측을 사용하여 은닉 상태에 대한 믿음 분포를 재귀적으로 유지하고 업데이트하는 확률적 프레임워크.
 domains:
 - 00_foundations
@@ -48,6 +49,7 @@ related_entities:
     zh: 贝叶斯滤波与 DDPM 逆过程都利用条件信息递归地精化分布，只是后者用于生成而非估计。
     ko: 베이지안 필터링과 DDPM 역 과정 모두 조걶 정보를 사용하여 분포를 재귀적으로 정제하지만 후자는 추정이 아닌 생성을 위한 것입니다.
 ---
+
 ## 概述
 利用动力学模型与带噪观测递归地维护并更新隐状态信念分布的概率框架。
 
@@ -81,4 +83,5 @@ related_entities:
 
 ## 参考
 - [S. Särkkä, Bayesian Filtering and Smoothing, Cambridge University Press, 2013](https://doi.org/10.1017/CBO9781139344203)
+
 

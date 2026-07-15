@@ -10,7 +10,8 @@ names:
 summary:
   en: A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks such as balance,
     gaze, and manipulation.
-  zh: 协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。
+  zh: '核心内容 ### 全身控制（WBC）的定义与定位 全身控制（WBC）属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。
+    英文名称为 *Whole-Body Control (WBC)*。 韩文名称为 *전신 제어(WBC)*。'
   ko: 휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

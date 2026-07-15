@@ -10,7 +10,11 @@ names:
 summary:
   en: This paper proposes a conditional denoising diffusion probabilistic model (DDPM) that translates paired RGB images into
     synthetic thermal images to augment autonomous navigation datasets lacking thermal imagery.
-  zh: 本文提出了一种条件去噪扩散概率模型（DDPM），将成对的RGB图像转换为合成热成像图像，以补充缺乏热成像数据的自主导航数据集。
+  zh: Autonomous systems rely on sensors to estimate the environment around them. However, cameras, LiDARs, and RADARs have
+    their own limitations. In nighttime or degraded environments such as fog, mist, or dust, thermal cameras can provide valuable
+    information regarding the presence of objects of interest due to their heat signature. They make it easy to identify humans
+    and vehicles that are usually at higher temperatures compared to their surroundings. In this paper, we focus on the adaptation
+    of thermal cameras for robotics and automation, where the biggest hurdle is the lack of data. Several mul
   ko: 본 논문은 열영상 데이터가 부족한 자율 주행 데이터셋을 보강하기 위해 쌍을 이룬 RGB 이미지를 합성 열영상으로 변환하는 조건부 노이즈 제거 확산 확률 모델(DDPM)을 제안한다.
 domains:
 - 07_ai_models_algorithms
@@ -47,6 +51,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Autonomous systems rely on sensors to estimate the environment around them. However, cameras, LiDARs, and RADARs have their own limitations. In nighttime or degraded environments such as fog, mist, or dust, thermal cameras can provide valuable information regarding the presence of objects of interest due to their heat signature. They make it easy to identify humans and vehicles that are usually at higher temperatures compared to their surroundings. In this paper, we focus on the adaptation of thermal cameras for robotics and automation, where the biggest hurdle is the lack of data. Several multi-modal datasets are available for driving robotics research in tasks such as scene segmentation, object detection, and depth estimation, which are the cornerstone of autonomous systems. However, they are found to be lacking in thermal imagery. Our paper proposes a solution to augment these datasets with synthetic thermal data to enable widespread and rapid adaptation of thermal cameras. We explore the use of conditional diffusion models to convert existing RGB images to thermal images using self-attention to learn the thermal properties of real-world objects.
 
@@ -55,4 +60,5 @@ Autonomous systems rely on sensors to estimate the environment around them. Howe
 
 ## 参考
 - http://arxiv.org/abs/2506.20969v1
+
 

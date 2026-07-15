@@ -10,7 +10,7 @@ names:
 summary:
   en: A regularity condition on the constraints of an optimization problem that guarantees the validity of the Karush-Kuhn-Tucker
     necessary optimality conditions at a local optimum.
-  zh: 优化问题约束的一种正则性条件，保证在局部最优处 Karush-Kuhn-Tucker 最优性必要条件的有效性。
+  zh: '## 概述 优化问题约束的一种正则性条件，保证在局部最优处 Karush-Kuhn-Tucker 最优性必要条件的有效性。'
   ko: 최적화 문제의 제약에 대한 정칙성 조건으로, 국부 최적해에서 Karush-Kuhn-Tucker 필요 최적성 조건의 타당성을 보장합니다.
 domains:
 - 00_foundations
@@ -55,6 +55,7 @@ related_entities:
     zh: 内点法保持严格不等式可行性，因此隐式依赖约束规范以保证收敛到 KKT 点。
     ko: 내점법은 엄격한 부등식 실행 가능성을 유지하므로 KKT 점으로의 수렴을 보장하기 위해 제약 자격에 암묵적으로 의존합니다.
 ---
+
 ## 概述
 优化问题约束的一种正则性条件，保证在局部最优处 Karush-Kuhn-Tucker 最优性必要条件的有效性。
 
@@ -85,4 +86,5 @@ related_entities:
 
 ## 参考
 - [J. Nocedal and S. J. Wright, Numerical Optimization, 2nd ed., Springer, 2006](https://doi.org/10.1007/978-0-387-40065-5)
+
 

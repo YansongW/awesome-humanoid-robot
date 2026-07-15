@@ -10,7 +10,8 @@ names:
 summary:
   en: A linear circuit operator that partitions a total voltage across a series of resistances in proportion to their resistance
     values.
-  zh: 一种线性电路算子，按电阻值比例将总电压分配到串联电阻上。
+  zh: '核心内容 ### 分压器的定义与定位 分压器属于 **operator** 类型。 所属领域包括：00_foundations, 06_design_engineering。 价值链层级：foundations, midstream。
+    一种线性电路算子，按电阻值比例将总电压分配到串联电阻上。 英文名称为 *Voltage Divider*。 韩文名称为 *전압 분배기*。'
   ko: 저항값에 비례하여 직렬 저항에 총 전압을 분배하는 선형 회로 연산자이다.
 domains:
 - 00_foundations
@@ -42,6 +43,7 @@ sources:
   date: '2017-01-01'
   accessed_at: '2026-06-26'
 ---
+
 ## 概述
 一种线性电路算子，按电阻值比例将总电压分配到串联电阻上。
 
@@ -72,4 +74,5 @@ sources:
 
 ## 参考
 - [Dorf & Svoboda, Introduction to Electric Circuits, 9th ed.](https://www.wiley.com/en-us/Introduction+to+Electric+Circuits%2C+9th+Edition-p-9781118931897)
+
 

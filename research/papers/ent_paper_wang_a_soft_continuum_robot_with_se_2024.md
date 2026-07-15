@@ -11,7 +11,11 @@ summary:
   en: This paper presents SCoReS, a pneumatic soft continuum robot that embeds a motor-controlled, granular-jamming growing
     spine to achieve continuous, segment-level curvature and stiffness variation without external forces or discrete locking
     mechanisms.
-  zh: 本文提出SCoReS，一种嵌入电机控制的颗粒阻塞生长脊柱的气动软连续体机器人，可在无需外力或离散锁定机构的情况下实现分段层面连续的曲率与刚度变化。
+  zh: This paper introduces a new type of soft continuum robot, called SCoReS, which is capable of self-controlling continuously
+    its curvature at the segment level; in contrast to previous designs which either require external forces or machine elements,
+    or whose variable curvature capabilities are discrete -- depending on the number of locking mechanisms and segments. The
+    ability to have a variable curvature, whose control is continuous and independent from external factors, makes a soft
+    continuum robot more adaptive in constrained environments, similar to what is observed in nature in the elephant
   ko: 본 논문은 외력이나 이산식 잠금 장치 없이 세그먼트 단위에서 연속적인 곡률과 강성 변화를 실현하는 모터 제어 입자 잠금 성장 척추를 내장한 공압식 소프트 연속체 로봇 SCoReS를 제안한다.
 domains:
 - 02_components
@@ -47,6 +51,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 This paper introduces a new type of soft continuum robot, called SCoReS, which is capable of self-controlling continuously its curvature at the segment level; in contrast to previous designs which either require external forces or machine elements, or whose variable curvature capabilities are discrete -- depending on the number of locking mechanisms and segments. The ability to have a variable curvature, whose control is continuous and independent from external factors, makes a soft continuum robot more adaptive in constrained environments, similar to what is observed in nature in the elephant's trunk or ostrich's neck for instance which exhibit multiple curvatures. To this end, our soft continuum robot enables reconfigurable variable curvatures utilizing a variable stiffness growing spine based on micro-particle granular jamming for the first time. We detail the design of the proposed robot, presenting its modeling through beam theory and FEA simulation -- which is validated through experiments. The robot's versatile bending profiles are then explored in experiments and an application to grasp fruits at different configurations is demonstrated.
 
@@ -55,4 +60,5 @@ This paper introduces a new type of soft continuum robot, called SCoReS, which i
 
 ## 参考
 - http://arxiv.org/abs/2401.01739v2
+
 

@@ -9,7 +9,8 @@ names:
   ko: 抓取姿态生成与力闭合分析
 summary:
   en: Pick-and-place library/policy, success rate for typical objects&gt; target
-  zh: 抓取库/策略、典型物体成功率 > 目标
+  zh: '- P11.2.1.1 输入梳理与目标量化 - 整理「抓取姿态生成与力闭合分析」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化
+    KPI - 建立任务 Owner、时间节点与风险登记'
   ko: 抓取库/策略、典型物体成功率 > 目标
 domains:
 - 02_components
@@ -36,6 +37,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：灵巧手选型/设计与集成（Dexterous Hand）
@@ -83,5 +85,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

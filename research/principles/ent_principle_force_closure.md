@@ -10,7 +10,8 @@ names:
 summary:
   en: A grasp condition in which arbitrary external wrench on the object can be balanced by contact forces without changing
     the contact configuration.
-  zh: 在不改变接触配置的前提下，接触力可平衡物体任意外部力螺旋的抓取条件。
+  zh: '核心内容 ### 力闭合的定义与定位 力闭合属于 **principle** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 在不改变接触配置的前提下，接触力可平衡物体任意外部力螺旋的抓取条件。
+    英文名称为 *Force Closure*。 韩文名称为 *힘 폐쇄*。'
   ko: 접촉 구성을 변경하지 않고 접촉력이 물체의 임의 외력 렌치를 평형시킬 수 있는 그래프 조건.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 在不改变接触配置的前提下，接触力可平衡物体任意外部力螺旋的抓取条件。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

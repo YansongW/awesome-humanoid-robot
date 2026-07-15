@@ -10,7 +10,11 @@ names:
 summary:
   en: Proposes OpTopNET, a stacked ensemble learning framework that predicts optimal communication topologies for ad-hoc robot
     networks by decomposing the problem into per-robot multi-class classification tasks.
-  zh: 提出OpTopNET，一种堆叠集成学习框架，通过将问题分解为每个机器人的多类别分类任务来预测自组网机器人的最优通信拓扑。
+  zh: In this paper, we synthesize a data-driven method to predict the optimal topology of an ad-hoc robot network. This problem
+    is technically a multi-task classification problem. However, we divide it into a class of multi-class classification problems
+    that can be more efficiently solved. For this purpose, we first compose an algorithm to create ground-truth optimal topologies
+    associated with various configurations of a robot network. This algorithm incorporates a complex collection of optimality
+    criteria that our learning model successfully manages to learn. This model is an stacked ensemble whos
   ko: 임시 로봇 네트워크의 최적 통신 토폴로지를 예측하기 위해 문제를 로봇별 다중 클래스 분류 작업으로 분해하는 스택 앙상블 학습 프레임워크인 OpTopNET을 제안한다.
 domains:
 - 07_ai_models_algorithms
@@ -46,6 +50,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 In this paper, we synthesize a data-driven method to predict the optimal topology of an ad-hoc robot network. This problem is technically a multi-task classification problem. However, we divide it into a class of multi-class classification problems that can be more efficiently solved. For this purpose, we first compose an algorithm to create ground-truth optimal topologies associated with various configurations of a robot network. This algorithm incorporates a complex collection of optimality criteria that our learning model successfully manages to learn. This model is an stacked ensemble whose output is the topology prediction for a particular robot. Each stacked ensemble instance constitutes three low-level estimators whose outputs will be aggregated by a high-level boosting blender. Applying our model to a network of 10 robots displays over 80% accuracy in the prediction of optimal topologies corresponding to various configurations of the cited network.
 
@@ -54,4 +59,5 @@ In this paper, we synthesize a data-driven method to predict the optimal topolog
 
 ## 参考
 - http://arxiv.org/abs/2201.12900v2
+
 

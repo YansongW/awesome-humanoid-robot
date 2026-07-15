@@ -10,7 +10,8 @@ names:
 summary:
   en: A compact, non-mechanically-rotating LiDAR using MEMS or solid-state scanning, providing reliable 3D ranging for robot
     localization and obstacle avoidance.
-  zh: 采用MEMS或固态扫描方案的紧凑型激光雷达，无需机械旋转即可为机器人定位与避障提供可靠三维测距。
+  zh: 核心内容 **激光雷达（Light Detection and Ranging, LiDAR）** 通过发射激光脉冲并测量其往返时间来获得目标距离。与相机不同，LiDAR 直接测量三维空间中的距离，输出的是离散的三维点集合，称为 **点云（point
+    cloud）**。
   ko: MEMS 또는 고체 스캔 방식의 소형 비회전식 라이다로, 로봇 위치 추정 및 장애물 회피를 위한 3D 거리 측정을 제공.
 domains:
 - 02_components
@@ -37,6 +38,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 ### 5.3.1 飞行时间测距与 LiDAR 点云
 
@@ -86,4 +88,5 @@ flowchart LR
 
 ## 参考
 - Wiki extraction
+
 

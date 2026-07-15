@@ -10,7 +10,7 @@ names:
 summary:
   en: Full-size electric humanoid with 25-27 DoF, proprietary high-torque joints, peak leg-joint torque up to 360 N·m and
     torque density ~189 N·m/kg.
-  zh: 全尺寸电驱人形机器人，25-27自由度，自研高扭矩关节，腿部峰值扭矩360N·m，扭矩密度约189N·m/kg。
+  zh: '## 概述 宇树 H1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。'
   ko: 25-27자유도를 가진 전기식 휨로봇, 최대 360 N·m 다리 관절 토크 및 약 189 N·m/kg 토크 밀도.
 domains:
 - 06_design_engineering
@@ -43,6 +43,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 宇树 H1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -131,4 +132,5 @@ H1 的基础版手臂为 4 DOF，可选配 H1-2 升级方案将手臂提升至 7
 ## 参考
 - [Unitree H1 Humanoid Robot](https://www.unitree.com/products/h1)
 - 项目 Wiki：appendix-d/products/product_unitree_h1.md
+
 

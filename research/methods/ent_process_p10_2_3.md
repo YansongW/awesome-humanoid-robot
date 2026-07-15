@@ -9,7 +9,8 @@ names:
   ko: 全身控制 WBC
 summary:
   en: WBC controller, multi-task coordination demonstration, solution time &lt;1 ms
-  zh: WBC 控制器、多任务协调演示、求解时间 < 1 ms
+  zh: '- P10.2.3.1 输入梳理与目标量化 - 整理「全身控制 WBC」所需的上游输入、参考标准与资源，将完成标准转化为可量化的验收指标，并明确 Owner 与里程碑。 - 列出所有上游输入清单并确认版本 - 将验收标准转化为可量化
+    KPI - 建立任务 Owner、时间节点与风险登记'
   ko: WBC 控制器、多任务协调演示、求解时间 < 1 ms
 domains:
 - 07_ai_models_algorithms
@@ -36,6 +37,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 
 ## 概述
 **所属阶段/工作包**：运动控制算法开发与验证（Motion Control）
@@ -83,5 +85,6 @@ theoretical_depth:
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
+
 
 

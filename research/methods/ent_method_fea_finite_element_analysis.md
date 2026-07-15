@@ -10,7 +10,7 @@ names:
 summary:
   en: A numerical method for predicting stress, deformation, vibration modes, and thermal behavior by discretizing complex
     geometries into finite elements.
-  zh: 将复杂几何离散为有限单元，预测应力、变形、模态与热行为的数值方法。
+  zh: 核心内容 **有限元分析（Finite Element Analysis, FEA）**是预测连杆、关节支架与壳体在载荷下应力、变形与模态的核心数值工具。通过把连续体离散为有限数量的单元，FEA 把偏微分方程转化为线性代数方程组求解，从而在设计阶段发现潜在的结构弱点[27][28]。
   ko: 복잡한 기하를 유한 요소로 이산화하여 응력·변형·진동 모드·열 거동을 예측하는 수치 해석 방법.
 domains:
 - 06_design_engineering
@@ -37,6 +37,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 #### 8.5.6 有限元分析在连杆设计中的应用
 
@@ -110,4 +111,5 @@ $$
 
 ## 参考
 - Wiki extraction
+
 

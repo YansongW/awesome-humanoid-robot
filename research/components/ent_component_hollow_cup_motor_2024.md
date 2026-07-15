@@ -9,7 +9,8 @@ names:
   ko: Hollow Cup Motor
 summary:
   en: Small, lightweight coreless DC motor used in dexterous robot hands and small joints.
-  zh: 体积小、重量轻的无铁芯直流电机，用于机器人灵巧手和小型关节。
+  zh: 鼎智空心杯电机（Dingzhi Coreless Motor）是江苏雷利电机股份有限公司子公司鼎智科技生产的微型直流伺服电机，采用无铁芯转子（空心杯）结构，具有低转动惯量、无齿槽转矩、高响应速度与低电磁干扰等特性。该产品覆盖 Ø10–Ø42
+    mm 多个系列，广泛应用于人形机器人灵巧手、医疗泵阀、无人机云台、安防摄像头、光学调焦与 3D 打印机等精密驱动场景。
   ko: 작고 가벼운 코어리스 DC 모터, 능숙한 로봇 손과 소형 관절에 사용.
 domains:
 - 02_components
@@ -40,6 +41,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 空心杯电机是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -109,4 +111,5 @@ $$
 ## 参考
 - [Hollow Cup Motor](https://en.wikipedia.org/wiki/Coreless_electric_motor)
 - 项目 Wiki：kg/entities/ent_component_dingzhi_coreless_motor.md
+
 

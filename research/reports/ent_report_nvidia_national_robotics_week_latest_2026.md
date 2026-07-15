@@ -8,21 +8,18 @@ names:
   zh: National Robotics Week — Latest Physical AI Research, Breakthroughs and Resources
   ko: National Robotics Week — Latest Physical AI Research, Breakthroughs and Resources
 summary:
-  en: This National Robotics Week, NVIDIA is highlighting the breakthroughs that are
-    bringing AI into the physical world — as well as the growing wave of robots transforming
-    industries, from agricultural and manufacturing to energy and beyond. Advancements
-    in robot learning, simulation and foundation models are accelerating development,
-    enabling robots to move from training in virtual [&#8230;]
-  zh: This National Robotics Week, NVIDIA is highlighting the breakthroughs that are
-    bringing AI into the physical world — as well as the growing wave of robots transforming
-    industries, from agricultural and manufacturing to energy and beyond. Advancements
-    in robot learning, simulation and foundation models are accelerating development,
-    enabling robots to move from training in virtual [&#8230;]
-  ko: This National Robotics Week, NVIDIA is highlighting the breakthroughs that are
-    bringing AI into the physical world — as well as the growing wave of robots transforming
-    industries, from agricultural and manufacturing to energy and beyond. Advancements
-    in robot learning, simulation and foundation models are accelerating development,
-    enabling robots to move from training in virtual [&#8230;]
+  en: This National Robotics Week, NVIDIA is highlighting the breakthroughs that are bringing AI into the physical world —
+    as well as the growing wave of robots transforming industries, from agricultural and manufacturing to energy and beyond.
+    Advancements in robot learning, simulation and foundation models are accelerating development, enabling robots to move
+    from training in virtual [&#8230;]
+  zh: This National Robotics Week, NVIDIA is highlighting the breakthroughs that are bringing AI into the physical world —
+    as well as the growing wave of robots transforming industries, from agricultural and manufacturing to energy and beyond.
+    Advancements in robot learning, simulation and foundation models are accelerating development, enabling robots to move
+    from training in virtual [&#8230;]
+  ko: This National Robotics Week, NVIDIA is highlighting the breakthroughs that are bringing AI into the physical world —
+    as well as the growing wave of robots transforming industries, from agricultural and manufacturing to energy and beyond.
+    Advancements in robot learning, simulation and foundation models are accelerating development, enabling robots to move
+    from training in virtual [&#8230;]
 domains:
 - 11_applications_markets
 - 07_ai_models_algorithms
@@ -53,6 +50,7 @@ sources:
   accessed_at: '2026-07-01'
 ---
 
+
 ## 概述
 This National Robotics Week, NVIDIA is highlighting the breakthroughs that are bringing AI into the physical world — as well as the growing wave of robots transforming industries, from agricultural and manufacturing to energy and beyond. Advancements in robot learning, simulation and foundation models are accelerating development, enabling robots to move from training in virtual [&#8230;]
 
@@ -61,3 +59,7 @@ This National Robotics Week, NVIDIA is highlighting the breakthroughs that are b
 
 ## 개요
 This National Robotics Week, NVIDIA is highlighting the breakthroughs that are bringing AI into the physical world — as well as the growing wave of robots transforming industries, from agricultural and manufacturing to energy and beyond. Advancements in robot learning, simulation and foundation models are accelerating development, enabling robots to move from training in virtual [&#8230;]
+
+## 参考
+- https://blogs.nvidia.com/blog/national-robotics-week-2026/
+

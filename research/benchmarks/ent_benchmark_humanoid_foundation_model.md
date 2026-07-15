@@ -63,6 +63,8 @@ related_entities:
 theoretical_depth:
 - system
 ---
+
+
 ## 概述
 一个独立、公开可访问的基准，从十个能力维度对人形机器人 AI 基础模型进行评级和比较，包括移动、操作、推理和仿真到现实迁移。
 
@@ -110,4 +112,6 @@ The benchmark provides a structured, cross-model view of the VLA landscape speci
 - [Humanoid Foundation Model Benchmark Launch](https://humanoid.guide/humanoid-foundation-model-benchmark-launch/)
 
 人形机器人基础模型基准的相关技术仍在快速发展。从系统科学角度看，它与其他benchmark相互耦合，共同决定了人形机器人的整体性能。深入理解其原理、边界条件与工程约束，是将实验室样机转化为可量产产品的必要环节。
+
+
 

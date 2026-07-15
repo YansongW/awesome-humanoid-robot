@@ -9,7 +9,8 @@ names:
   ko: Quasi Direct Drive Actuator
 summary:
   en: Actuator design using low-ratio gears with high-torque motors to achieve high bandwidth and force transparency.
-  zh: 采用低减速比齿轮和高扭矩电机，实现高带宽和力透明度的执行器设计。
+  zh: '核心内容 ### 准直驱执行器的定义与定位 准直驱执行器属于 **technology** 类型。 所属领域包括：07_ai_models_algorithms, 02_components。 价值链层级：intelligence,
+    upstream。 采用低减速比齿轮和高扭矩电机，实现高带宽和力透明度的执行器设计。 英文名称为 *Quasi Direct Drive Actuator*。 韩文名称为 *Quasi Direct Drive Actuator*。'
   ko: 저감속비 기어와 고토크 모터를 사용하여 높은 대역폭과 힘 투명성을 달성하는 액추에이터 설계.
 domains:
 - 07_ai_models_algorithms
@@ -43,6 +44,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 采用低减速比齿轮和高扭矩电机，实现高带宽和力透明度的执行器设计。
 
@@ -76,4 +78,5 @@ sources:
 
 ## 参考
 - [Quasi Direct Drive Actuator](https://en.wikipedia.org/wiki/Direct_drive_mechanism)
+
 

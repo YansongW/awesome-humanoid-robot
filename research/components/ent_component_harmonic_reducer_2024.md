@@ -9,7 +9,7 @@ names:
   ko: Harmonic Reducer
 summary:
   en: Compact precision gearbox with high reduction ratio and near-zero backlash, widely used in robot rotary joints.
-  zh: 体积小、传动比大、回程间隙极小的精密减速器，广泛用于机器人旋转关节。
+  zh: 谐波减速器（Harmonic Drive）是一种基于柔性齿轮弹性变形原理的精密减速装置，由波发生器（Wave Generator）、柔性齿轮（Flexspline）和刚性内齿圈（Circular Spline）组成。其核心优势为零背隙、高减速比、高扭矩密度和高定位精度，广泛应用于工业机器人、协作机器人、人形机器人关节、数控机床转台、半导体设备及医疗机器人。
   ko: 고감속비와 근접 제로 백래시를 가진 컴팩트한 정밀 기어박스, 로봇 회전 관절에 널리 사용.
 domains:
 - 02_components
@@ -41,6 +41,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 谐波减速器是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -118,4 +119,5 @@ $$
 ## 参考
 - [Harmonic Reducer](https://en.wikipedia.org/wiki/Harmonic_drive)
 - 项目 Wiki：kg/entities/ent_component_harmonic_drive.md
+
 

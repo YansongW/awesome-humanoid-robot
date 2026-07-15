@@ -10,7 +10,8 @@ names:
 summary:
   en: The deployment of humanoid robots in hospitals, eldercare, and rehabilitation settings for assistance, companionship,
     and therapy support.
-  zh: 在医院、养老与康复场景中部署人形机器人提供辅助、陪伴与治疗支持。
+  zh: '核心内容 ### 医疗健康的定义与定位 医疗健康属于 **application_scenario** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 在医院、养老与康复场景中部署人形机器人提供辅助、陪伴与治疗支持。
+    英文名称为 *Healthcare Assistance*。 韩文名称为 *의료 지원*。'
   ko: 병원·노인 돌봄·재활 환경에서 보조·동반·치료 지원을 위해 휴로봇을 배치하는 적용.
 domains:
 - 11_applications_markets
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 在医院、养老与康复场景中部署人形机器人提供辅助、陪伴与治疗支持。
 
@@ -66,4 +68,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

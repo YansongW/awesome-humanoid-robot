@@ -10,7 +10,8 @@ names:
 summary:
   en: The generation of footstep sequences, timing, and phase transitions that produce stable and efficient locomotion for
     legged robots.
-  zh: 为腿足机器人生成稳定高效行走的足端落点序列、时机与相态转换。
+  zh: '核心内容 ### 步态规划的定义与定位 步态规划属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 为腿足机器人生成稳定高效行走的足端落点序列、时机与相态转换。
+    英文名称为 *Gait Planning*。 韩文名称为 *보행 패턴 계획*。'
   ko: 족욕 로봇의 안정적이고 효율적인 이동을 위해 보행 순서·시기·상태 전이를 생성하는 방법.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 为腿足机器人生成稳定高效行走的足端落点序列、时机与相态转换。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

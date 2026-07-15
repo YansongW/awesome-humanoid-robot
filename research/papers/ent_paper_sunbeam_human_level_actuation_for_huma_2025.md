@@ -10,7 +10,11 @@ names:
 summary:
   en: Proposes a reproducible benchmarking framework that makes 'human-level' actuation measurable for humanoids through an
     ISB-based DoF atlas, Human-Equivalence Envelopes (HEE), and the Human-Level Actuation Score (HLAS).
-  zh: 提出一个可复现的基准框架，通过基于ISB的自由度图谱、人等效包络（HEE）和类人驱动评分（HLAS），使人形机器人的“类人级”驱动能力可量化。
+  zh: Claims that humanoid robots achieve ``human-level'' actuation are common but rarely quantified. Peak torque or speed
+    specifications tell us little about whether a joint can deliver the right combination of torque, power, and endurance
+    at task-relevant postures and rates. We introduce a comprehensive framework that makes ``human-level'' measurable and
+    comparable across systems. Our approach has three components. First, a kinematic \emph{DoF atlas} standardizes joint coordinate
+    systems and ranges of motion using ISB-based conventions, ensuring that human and robot joints are compared in the same
   ko: ISB 기반 자유도 아틀라스, 인간 등가 영역(HEE) 및 인간 수준 구동 점수(HLAS)를 통해 휴머노이드의 '인간 수준' 구동을 측정 가능하게 하는 재현 가능한 벤치마크 프레임워크를 제안한다.
 domains:
 - 10_evaluation_benchmarks
@@ -76,6 +80,7 @@ related_entities:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 Claims that humanoid robots achieve ``human-level'' actuation are common but rarely quantified. Peak torque or speed specifications tell us little about whether a joint can deliver the right combination of torque, power, and endurance at task-relevant postures and rates. We introduce a comprehensive framework that makes ``human-level'' measurable and comparable across systems. Our approach has three components. First, a kinematic \emph{DoF atlas} standardizes joint coordinate systems and ranges of motion using ISB-based conventions, ensuring that human and robot joints are compared in the same reference frames. Second, \emph{Human-Equivalence Envelopes (HEE)} define per-joint requirements by measuring whether a robot meets human torque \emph{and} power simultaneously at the same joint angle and rate $(q,ω)$, weighted by positive mechanical work in task-specific bands (walking, stairs, lifting, reaching, and hand actions). Third, the \emph{Human-Level Actuation Score (HLAS)} aggregates six physically grounded factors: workspace coverage (ROM and DoF), HEE coverage, torque-mode bandwidth, efficiency, and thermal sustainability. We provide detailed measurement protocols using dynamometry, electrical power monitoring, and thermal testing that yield every HLAS input from reproducible experiments. A worked example demonstrates HLAS computation for a multi-joint humanoid, showing how the score exposes actuator trade-offs (gearing ratio versus bandwidth and efficiency) that peak-torque specifications obscure. The framework serves as both a design specification for humanoid development and a benchmarking standard for comparing actuation systems, with all components grounded in published human biomechanics data.
 
@@ -84,4 +89,5 @@ Claims that humanoid robots achieve ``human-level'' actuation are common but rar
 
 ## 参考
 - http://arxiv.org/abs/2511.06796v1
+
 

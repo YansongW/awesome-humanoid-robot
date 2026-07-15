@@ -10,7 +10,7 @@ names:
 summary:
   en: A control approach that regulates the dynamic relationship between interaction force and displacement, making the robot
     behave like a virtual mechanical impedance.
-  zh: 调节交互力与位移之间动态关系的控制方法，使机器人表现出虚拟机械阻抗特性。
+  zh: 核心内容 **阻抗控制（impedance control）**不把位置与力分开控制，而是调节机器人末端表现出的**机械阻抗（mechanical impedance）**——即质量-阻尼-弹簧特性。它把力与位置/速度关系定义为：
   ko: 상호작용 힘과 변위 간의 동적 관계를 제어하여 로봇이 가상의 기계적 임피던스처럼 동작하도록 하는 제어 방식.
 domains:
 - 07_ai_models_algorithms
@@ -37,6 +37,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 阻抗控制是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -92,4 +93,5 @@ flowchart TD
 ## 参考
 - Wiki extraction
 - 项目 Wiki：chapter-08.md#阻抗控制
+
 

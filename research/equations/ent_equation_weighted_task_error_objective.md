@@ -10,7 +10,8 @@ names:
 summary:
   en: The QP objective that penalizes the weighted squared difference between desired and predicted task accelerations plus
     a regularization term on generalized accelerations.
-  zh: 惩罚期望任务加速度与预测任务加速度之间加权平方差，并对广义加速度添加正则项的 QP 目标。
+  zh: '核心内容 ### 加权任务误差目标函数的定义与定位 加权任务误差目标函数属于 **equation** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 惩罚期望任务加速度与预测任务加速度之间加权平方差，并对广义加速度添加正则项的
+    QP 目标。 英文名称为 *Weighted Task-Error Objective*。 韩文名称为 *가중 작업 오차 목적 함수*。'
   ko: 원하는 작업 가속도와 예측 작업 가속도 간의 가중 제곱 차이를 벌점으로 부여하고 일반화 가속도에 정규화 항을 추가한 QP 목적 함수이다.
 domains:
 - 07_ai_models_algorithms
@@ -47,6 +48,7 @@ related_entities:
     zh: 目标函数使用任务 Jacobian 将关节加速度映射到任务加速度。
     ko: 목적 함수는 작업 Jacobian을 사용하여 관절 가속도를 작업 가속도로 매핑한다.
 ---
+
 ## 概述
 惩罚期望任务加速度与预测任务加速度之间加权平方差，并对广义加速度添加正则项的 QP 目标。
 
@@ -80,4 +82,5 @@ related_entities:
 
 ## 参考
 - [Hierarchical QP whole-body control: from theory to practice](https://arxiv.org/abs/1910.13329)
+
 

@@ -11,7 +11,11 @@ summary:
   en: This paper introduces Sirius, a human-in-the-loop framework in which a partially autonomous robot handles reliable decisions
     while a human monitors and teleoperates interventions, then improves policies via weighted behavioral cloning on re-weighted
     deployment data.
-  zh: 本文提出Sirius框架，部分自主机器人在可靠决策中运行，人工监控并在困难情况下遥操作干预，然后通过对重新加权的部署数据进行加权行为克隆来持续改进策略。
+  zh: 'With the rapid growth of computing powers and recent advances in deep learning, we have witnessed impressive demonstrations
+    of novel robot capabilities in research settings. Nonetheless, these learning systems exhibit brittle generalization and
+    require excessive training data for practical tasks. To harness the capabilities of state-of-the-art robot learning models
+    while embracing their imperfections, we present Sirius, a principled framework for humans and robots to collaborate through
+    a division of work. In this framework, partially autonomous robots are tasked with handling a major portion '
   ko: 본 논문은 부분 자율 로봇이 안정적인 의사결정을 수행하고 인간이 모니터링하며 어려운 상황에서 텔레오퍼레이션으로 개입한 후, 재가중된 배포 데이터에 대한 가중 행동 복제를 통해 정책을 지속적으로 개선하는 Sirius
     프레임워크를 제안한다.
 domains:
@@ -50,6 +54,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 With the rapid growth of computing powers and recent advances in deep learning, we have witnessed impressive demonstrations of novel robot capabilities in research settings. Nonetheless, these learning systems exhibit brittle generalization and require excessive training data for practical tasks. To harness the capabilities of state-of-the-art robot learning models while embracing their imperfections, we present Sirius, a principled framework for humans and robots to collaborate through a division of work. In this framework, partially autonomous robots are tasked with handling a major portion of decision-making where they work reliably; meanwhile, human operators monitor the process and intervene in challenging situations. Such a human-robot team ensures safe deployments in complex tasks. Further, we introduce a new learning algorithm to improve the policy's performance on the data collected from the task executions. The core idea is re-weighing training samples with approximated human trust and optimizing the policies with weighted behavioral cloning. We evaluate Sirius in simulation and on real hardware, showing that Sirius consistently outperforms baselines over a collection of contact-rich manipulation tasks, achieving an 8% boost in simulation and 27% on real hardware than the state-of-the-art methods in policy success rate, with twice faster convergence and 85% memory size reduction. Videos and more details are available at https://ut-austin-rpl.github.io/sirius/
 
@@ -58,4 +63,5 @@ With the rapid growth of computing powers and recent advances in deep learning, 
 
 ## 参考
 - http://arxiv.org/abs/2211.08416v3
+
 

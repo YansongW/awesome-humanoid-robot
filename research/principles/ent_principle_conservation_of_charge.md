@@ -10,7 +10,8 @@ names:
 summary:
   en: A fundamental principle stating that electric charge cannot be created or destroyed, only redistributed; it underlies
     Kirchhoff's current law and charge-balance equations in electrochemical systems.
-  zh: 电荷既不能被创造也不能被消灭、只能重新分布的基本原理；它是基尔霍夫电流定律和电化学系统电荷平衡方程的基础。
+  zh: '核心内容 ### 电荷守恒的定义与定位 电荷守恒属于 **principle** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 电荷既不能被创造也不能被消灭、只能重新分布的基本原理；它是基尔霍夫电流定律和电化学系统电荷平衡方程的基础。
+    英文名称为 *Conservation of Charge*。 韩文名称为 *전하 보존*。'
   ko: 전하는 생성되거나 소멸될 수 없고 재분배될 뿐이라는 기본 원리이며, 키르히호프 전류 법칙과 전기화학 시스템의 전하 평형 방정식의 기초가 된다.
 domains:
 - 00_foundations
@@ -47,6 +48,7 @@ related_entities:
     zh: 电荷守恒在电化学理论中通过离子和电子传输平衡被形式化。
     ko: 전하 보존은 이온 및 전자 전송 평형을 통해 전기화학 이론 내에서 형식화된다.
 ---
+
 ## 概述
 电荷既不能被创造也不能被消灭、只能重新分布的基本原理；它是基尔霍夫电流定律和电化学系统电荷平衡方程的基础。
 
@@ -80,4 +82,5 @@ related_entities:
 
 ## 参考
 - [Halliday, Resnick & Walker, Fundamentals of Physics, 10th ed.](https://www.wiley.com/en-us/Fundamentals+of+Physics%2C+10th+Edition-p-9781118230730)
+
 

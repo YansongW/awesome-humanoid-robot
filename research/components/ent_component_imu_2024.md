@@ -10,7 +10,7 @@ names:
 summary:
   en: Sensor package combining accelerometers and gyroscopes to estimate orientation, angular velocity, and linear acceleration
     of a robot.
-  zh: 融合加速度计与陀螺仪的传感器组件，用于估计机器人的姿态、角速度与线加速度。
+  zh: '核心内容 ## Analog Devices ADIS16475 微型 MEMS 惯性测量单元 / Analog Devices ADIS16475 Miniature MEMS IMU'
   ko: 가속도계와 자이로스코프를 결합하여 로봇의 자세, 각속도, 선가속도를 추정하는 센서 패키지.
 domains:
 - 02_components
@@ -41,6 +41,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-13'
 ---
+
 ## 概述
 惯性测量单元是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -111,4 +112,5 @@ ADIS16475 采用 ADI iSensor 技术平台，核心架构包括：
 ## 参考
 - [Inertial Measurement Unit](https://en.wikipedia.org/wiki/Inertial_measurement_unit)
 - 项目 Wiki：kg/entities/ent_component_analog_devices_adis16475.md
+
 

@@ -10,7 +10,8 @@ names:
 summary:
   en: The computation of end-effector position and orientation from given joint angles, using a chain of homogeneous transformations
     or product-of-exponentials.
-  zh: 根据给定关节角，通过齐次变换链或指数积计算末端执行器位姿的方法。
+  zh: '核心内容 ### 正运动学的定义与定位 正运动学属于 **method** 类型。 所属领域包括：06_design_engineering。 价值链层级：midstream。 根据给定关节角，通过齐次变换链或指数积计算末端执行器位姿的方法。
+    英文名称为 *Forward Kinematics*。 韩文名称为 *정욕동학*。'
   ko: 주어진 관절 각도로부터 동차 변환 사슬 또는 지수곱을 이용해 말단 동작기 위치·방향을 계산하는 방법.
 domains:
 - 06_design_engineering
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 根据给定关节角，通过齐次变换链或指数积计算末端执行器位姿的方法。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

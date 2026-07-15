@@ -10,7 +10,7 @@ names:
 summary:
   en: The set of standards, sensors, control laws, and workplace designs that ensure safe coexistence and cooperation between
     humans and robots.
-  zh: 确保人与机器人安全共存与协作的标准、传感器、控制律与工作场所设计体系。
+  zh: 确保人与机器人安全共存与协作的标准、传感器、控制律与工作环境设计集合，涵盖 ISO 13482、ISO/TS 15066、IEC 61508、ISO 13849、IEC 62368 等核心标准及 CE、UL、FCC、CR、CCC 等区域市场准入要求。
   ko: 인간과 로봇의 안전한 공존·협력을 보장하는 표준·센서·제어법·작업장 설계 집합.
 domains:
 - 07_ai_models_algorithms
@@ -37,6 +37,8 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
+
 ## 概述
 人机协作安全是人形机器人领域的重要concept。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -68,4 +70,5 @@ sources:
 ## 参考
 - Wiki extraction
 - 项目 Wiki：chapter-01.md#1.4.4 合规性：从“实验室自由”到“市场准入”
+
 

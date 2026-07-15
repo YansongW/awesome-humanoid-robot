@@ -9,7 +9,7 @@ names:
   ko: Fourier Intelligence GR-1
 summary:
   en: Full-size humanoid robot with 44 DoF and self-developed integrated joint actuators.
-  zh: 全尺寸人形机器人，44自由度，自研一体化关节执行器。
+  zh: '## 概述 傅利叶智能 GR-1是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。'
   ko: 44자유도와 자체 개발 통합 관절 액추에이터를 갖춘 전신 휨로봇.
 domains:
 - 06_design_engineering
@@ -41,6 +41,7 @@ sources:
   date: '2023'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 傅利叶智能 GR-1是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -146,4 +147,5 @@ sources:
 ## 参考
 - [Fourier Intelligence GR-1](https://www.fourierintelligence.com/)
 - 项目 Wiki：appendix-d/companies/company_fourier.md
+
 

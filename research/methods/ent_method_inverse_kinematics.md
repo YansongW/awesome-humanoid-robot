@@ -10,7 +10,8 @@ names:
 summary:
   en: The computation of joint angles that realize a desired end-effector pose, often solved numerically via Jacobian pseudoinverse
     or analytically for simple geometries.
-  zh: 根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。
+  zh: '核心内容 ### 逆运动学的定义与定位 逆运动学属于 **method** 类型。 所属领域包括：06_design_engineering。 价值链层级：midstream。 根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。
+    英文名称为 *Inverse Kinematics*。 韩文名称为 *역욕동학*。'
   ko: 원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.
 domains:
 - 06_design_engineering
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

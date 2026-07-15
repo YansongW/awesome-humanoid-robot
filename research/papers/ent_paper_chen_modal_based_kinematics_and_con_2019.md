@@ -11,7 +11,11 @@ summary:
   en: Proposes modal-based forward and instantaneous kinematics for a 1-DoF pneumatic bellow soft actuator and uses fixed
     centrode deviation with nonlinear least-squares optimization to detect external contacts and estimate their location along
     the backbone.
-  zh: 提出了一种基于模态的一自由度气动波纹管软体驱动器正运动学与瞬时运动学建模方法，并利用固定中心线偏差结合非线性最小二乘优化来检测外部接触并估计接触位置。
+  zh: Soft robots offer an alternative approach to manipulate inside the constrained space while maintaining the safe interaction
+    with the external environment. Due to its adaptable compliance characteristic, external contact force can easily deform
+    the robot shapes and lead to undesired robot kinematic and dynamic properties. Accurate contact detection and contact
+    position estimation are of critical importance for soft robot modeling, control, trajectory planning, and eventually affect
+    the success of task completion. In this paper, we focus on the study of 1-DoF soft pneumatic bellow bending actuat
   ko: 1자유도 공기압 벨로우 연성 액츄에이터의 모달 기반 정운동학 및 순간운동학을 제안하고, 고정 중심선 편차법과 비선형 최소자승 최적화를 사용하여 외부 접촉을 감지하고 백본 상의 접촉 위치를 추정한다.
 domains:
 - 02_components
@@ -46,6 +50,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Soft robots offer an alternative approach to manipulate inside the constrained space while maintaining the safe interaction with the external environment. Due to its adaptable compliance characteristic, external contact force can easily deform the robot shapes and lead to undesired robot kinematic and dynamic properties. Accurate contact detection and contact position estimation are of critical importance for soft robot modeling, control, trajectory planning, and eventually affect the success of task completion. In this paper, we focus on the study of 1-DoF soft pneumatic bellow bending actuator, which is one of the fundamental components to construct complex, multi-DoF soft robots. This 1-DoF soft robot is modeled through the integral representation of the spacial curve. The direct and instantaneous kinematics are calculated explicitly through a modal method. The fixed centrode deviation (FCD) method is used to to detect the external contact and estimate contact location. Simulation results indicate that the contact location can be accurately estimated by solving a nonlinear least square optimization problem.
 
@@ -54,4 +59,5 @@ Soft robots offer an alternative approach to manipulate inside the constrained s
 
 ## 参考
 - http://arxiv.org/abs/1906.11654v1
+
 

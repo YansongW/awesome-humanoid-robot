@@ -11,7 +11,11 @@ summary:
   en: Proposes an AR-based teleoperation system that lets operators control ABB industrial and collaborative robots remotely
     via an HMD and hand controllers, using real-time point-cloud rendering to collect Programming by Demonstration data without
     entering the workspace.
-  zh: 提出一种基于增强现实的遥操作系统，操作者可通过头戴显示器和手柄远程控制ABB工业及协作机器人，并利用实时点云渲染在无需进入工作空间的情况下收集示教编程数据。
+  zh: Traditional industrial robot programming is often complex and time-consuming, typically requiring weeks or even months
+    of effort from expert programmers. Although Programming by Demonstration (PbD) offers a more accessible alternative, intuitive
+    interfaces for robot control and demonstration collection remain challenging. To address this, we propose an Augmented
+    Reality (AR)-enhanced robot teleoperation system that integrates AR-based control with spatial point cloud rendering,
+    enabling intuitive, contact-free demonstrations. This approach allows operators to control robots remotely without en
   ko: HMD와 컨트롤러를 이용해 ABB 산업용 및 협동 로봇을 원격으로 제어하고, 실시간 포인트 클라우드 렌더링을 통해 작업 공간에 들어가지 않고도 시연 기반 프로그래밍 데이터를 수집하는 AR 기반 원격 조작 시스템을
     제안한다.
 domains:
@@ -50,6 +54,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Traditional industrial robot programming is often complex and time-consuming, typically requiring weeks or even months of effort from expert programmers. Although Programming by Demonstration (PbD) offers a more accessible alternative, intuitive interfaces for robot control and demonstration collection remain challenging. To address this, we propose an Augmented Reality (AR)-enhanced robot teleoperation system that integrates AR-based control with spatial point cloud rendering, enabling intuitive, contact-free demonstrations. This approach allows operators to control robots remotely without entering the workspace or using conventional tools like the teach pendant. The proposed system is generally applicable and has been demonstrated on ABB robot platforms, specifically validated with the IRB 1200 industrial robot and the GoFa 5 collaborative robot. A user study evaluates the impact of real-time environmental perception, specifically with and without point cloud rendering, on task completion accuracy, efficiency, and user confidence. Results indicate that enhanced perception significantly improves task performance by 28% and enhances user experience, as reflected by a 12% increase in the System Usability Scale (SUS) score. This work contributes to the advancement of intuitive robot teleoperation, AR interface design, environmental perception, and teleoperation safety mechanisms in industrial settings for demonstration collection. The collected demonstrations may serve as valuable training data for machine learning applications.
 
@@ -58,4 +63,5 @@ Traditional industrial robot programming is often complex and time-consuming, ty
 
 ## 参考
 - http://arxiv.org/abs/2509.11783v1
+
 

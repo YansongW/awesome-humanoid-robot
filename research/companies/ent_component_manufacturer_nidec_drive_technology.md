@@ -10,7 +10,7 @@ names:
 summary:
   en: Japanese precision drive subsidiary of Nidec Corporation, manufacturer of FLEXWAVE strain-wave gear reducers and motion
     products targeted at humanoid robots.
-  zh: 日本电产株式会社旗下精密传动子公司，生产面向人形机器人的 FLEXWAVE 应变波齿轮减速器及运动控制产品。
+  zh: '## 概述 日本电产株式会社旗下精密传动子公司，生产面向人形机器人的 FLEXWAVE 应变波齿轮减速器及运动控制产品。'
   ko: Nidec Corporation의 일본 정밀 드라이브 자회사로, 휴이노이드 로봇용 FLEXWAVE 스트레인 웨이브 기어 감속기 및 모션 제품을 생산함.
 domains:
 - 02_components
@@ -63,6 +63,7 @@ related_entities:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 日本电产株式会社旗下精密传动子公司，生产面向人形机器人的 FLEXWAVE 应变波齿轮减速器及运动控制产品。
 
@@ -95,4 +96,5 @@ theoretical_depth:
 ## 参考
 - [Nidec — Highly Developed Humanoid Robots](https://www.nidec-dtc.com/humanoid-robots/)
 - [Humanoid Robot Market Key Player Ecosystem — Actuators & Actuator Parts](https://www.maximizemarketresearch.com/market-report/global-humanoid-robot-market/10567/)
+
 

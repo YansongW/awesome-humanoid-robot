@@ -10,7 +10,8 @@ names:
 summary:
   en: A human-to-robot demonstration dataset or teleoperation framework used to collect human hand motion data for training
     imitation-learning policies on dexterous robot hands.
-  zh: 一种用于采集人手动作数据以训练灵巧机器人手模仿学习策略的人类到机器人演示数据集或遥操作框架。
+  zh: '核心内容 ### HuDOR的定义与定位 HuDOR属于 **dataset** 类型。 所属领域包括：09_data_datasets, 07_ai_models_algorithms。 价值链层级：intelligence。
+    一种用于采集人手动作数据以训练灵巧机器人手模仿学习策略的人类到机器人演示数据集或遥操作框架。 英文名称为 *HuDOR*。 韩文名称为 *HuDOR*。'
   ko: 능숙한 로봇 손의 모방 학습 정책을 훈련하기 위해 인간 손 동작 데이터를 수집하는 데 사용되는 인간-로봇 시연 데이터 세트 또는 원격 조작 프레임워크입니다.
 domains:
 - 09_data_datasets
@@ -43,6 +44,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 一种用于采集人手动作数据以训练灵巧机器人手模仿学习策略的人类到机器人演示数据集或遥操作框架。
 
@@ -74,4 +76,5 @@ HuDOR为学术界与工业界提供了统一的比较基准，推动了相关算
 
 ## 参考
 - [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)
+
 

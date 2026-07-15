@@ -9,7 +9,7 @@ names:
   ko: 가정 서비스
 summary:
   en: The use of humanoid robots for domestic chores, security, entertainment, and eldercare within residential environments.
-  zh: 在家庭环境中利用人形机器人完成家务、安防、娱乐与养老辅助。
+  zh: '## 概述 家庭服务是人形机器人领域的重要application_scenario。以下内容整理自项目 Wiki，供深入查阅。'
   ko: 주거 환경에서 가사·보안·오락·노인 돌봄을 위해 휴로봇을 사용하는 적용.
 domains:
 - 11_applications_markets
@@ -36,6 +36,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 家庭服务是人形机器人领域的重要application_scenario。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -71,4 +72,5 @@ flowchart TD
 ## 参考
 - Wiki extraction
 - 项目 Wiki：chapter-09.md#9.10.4 UBTech Walker：家庭服务场景整机集成
+
 

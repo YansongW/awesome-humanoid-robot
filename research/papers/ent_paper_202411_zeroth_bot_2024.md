@@ -9,7 +9,8 @@ names:
   ko: 2024.11, Zeroth Bot
 summary:
   en: 2024.11, Zeroth Bot is a 2024 work on hardware design for humanoid robots.
-  zh: 2024.11, Zeroth Bot is a 2024 work on hardware design for humanoid robots.
+  zh: 本文介绍了2024年发布的Zeroth Bot项目，其核心贡献在于提出了一套面向人形机器人的开源硬件设计方案。该工作旨在降低人形机器人研发的硬件门槛，通过提供可复制的机械结构与电子系统设计，为学术界与工业界在仿人机器人领域的探索提供了基础平台。Zeroth
+    Bot的设计聚焦于关键组件的集成与优化，体现了从概念验证向实用化硬件迈进的研究动机。
   ko: 2024.11, Zeroth Bot is a 2024 work on hardware design for humanoid robots.
 domains:
 - 06_design_engineering
@@ -40,6 +41,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 
 本文介绍了2024年发布的Zeroth Bot项目，其核心贡献在于提出了一套面向人形机器人的开源硬件设计方案。该工作旨在降低人形机器人研发的硬件门槛，通过提供可复制的机械结构与电子系统设计，为学术界与工业界在仿人机器人领域的探索提供了基础平台。Zeroth Bot的设计聚焦于关键组件的集成与优化，体现了从概念验证向实用化硬件迈进的研究动机。
@@ -58,3 +60,4 @@ sources:
 
 ## 参考
 - 2024.11, Zeroth Bot project page (https://github.com/zeroth-robotics/zeroth-bot)
+

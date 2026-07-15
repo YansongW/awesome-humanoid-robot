@@ -10,7 +10,9 @@ names:
 summary:
   en: A survey chapter that defines robotics in snow and ice, taxonomizes cryosphere sub-domains, and synthesizes lessons
     from historical field deployments of ground, aerial, and underwater robots in cold environments.
-  zh: 本章定义了冰雪机器人学，对冰冻圈子领域进行分类，并综合了地面、空中和水下机器人在寒冷环境中历史野外部署的经验教训。
+  zh: 'Definition: The terms "robotics in snow and ice" refers to robotic systems being studied, developed, and used in areas
+    where water can be found in its solid state. This specialized branch of field robotics investigates the impact of extreme
+    conditions related to cold environments on autonomous vehicles.'
   ko: 이 장은 눈과 얼음 속의 로봇공학을 정의하고, 저온권 하위 영역을 분류하며, 지상·공중·수중 로봇의 역사적 현장 배포에서 얻은 교훈을 종합한다.
 domains:
 - 06_design_engineering
@@ -48,6 +50,7 @@ sources:
 theoretical_depth:
 - system
 ---
+
 ## 概述
 Definition: The terms "robotics in snow and ice" refers to robotic systems being studied, developed, and used in areas where water can be found in its solid state. This specialized branch of field robotics investigates the impact of extreme conditions related to cold environments on autonomous vehicles.
 
@@ -56,4 +59,5 @@ Definition: The terms "robotics in snow and ice" refers to robotic systems being
 
 ## 参考
 - http://arxiv.org/abs/2208.05095v1
+
 

@@ -8,8 +8,12 @@ names:
   zh: Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS
   ko: Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS
 summary:
-  en: Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS
-  zh: Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS
+  en: 'Booth #237138 in the north building will focus on abrasive machining, sawing and finishing with a special emphasis
+    on gear production. Unlike conventional cobots, Productive Robotics’ 7-axis OB7 collaborative robots feature zero programming
+    in a plug-and-play configuration.'
+  zh: 'Booth #237138 in the north building will focus on abrasive machining, sawing and finishing with a special emphasis
+    on gear production. Unlike conventional cobots, Productive Robotics’ 7-axis OB7 collaborative robots feature zero programming
+    in a plug-and-play configuration.'
   ko: Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS
 domains:
 - 11_applications_markets
@@ -28,9 +32,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-03'
+  reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/07/02/productive-robotics-equips-manufacturers-with-zero-programming-end-to-end-automation-at-imts/26799.
 sources:
 - id: src_001
   type: website
@@ -40,32 +44,11 @@ sources:
   accessed_at: '2026-07-03'
 ---
 ## 概述
-Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS
+Booth #237138 in the north building will focus on abrasive machining, sawing and finishing with a special emphasis on gear production. Unlike conventional cobots, Productive Robotics’ 7-axis OB7 collaborative robots feature zero programming in a plug-and-play configuration.
 
 ## 核心内容
-### Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS的定义与定位
-Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS属于 **report** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS 英文名称为 *Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS*。 韩文名称为 *Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS*。
-
-### Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS的关键信息
-该报告记录了人形机器人产业中的最新动态、事件或观点，可作为观察市场与技术演化的参考。
-关键信息包括涉及主体、事件内容、时间节点以及可能的后续影响。
-
-### 产业影响与启示
-从系统视角看，Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS所反映的趋势可能与供应链、资本、政策或技术路线产生联动，值得持续跟踪。
-对投资者、研发人员与产业决策者而言，及时理解此类信息有助于把握行业节奏与风险。
-
-### 后续关注点
-建议关注该事件的后续进展、相关方的官方声明以及同类事件的累积效应，以形成更全面的判断。
-
-### 相关标签
-- industry
-- news
-- report
-- robotics
-
-### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键report之一，Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+Booth #237138 in the north building will focus on abrasive machining, sawing and finishing with a special emphasis on gear production. Unlike conventional cobots, Productive Robotics’ 7-axis OB7 collaborative robots feature zero programming in a plug-and-play configuration.
 
 ## 参考
-- [Productive Robotics Equips Manufacturers With Zero Programming End-To-End Automation At IMTS](http://www.RoboticsTomorrow.com/news/2026/07/02/productive-robotics-equips-manufacturers-with-zero-programming-end-to-end-automation-at-imts/26799)
+- http://www.RoboticsTomorrow.com/news/2026/07/02/productive-robotics-equips-manufacturers-with-zero-programming-end-to-end-automation-at-imts/26799
 

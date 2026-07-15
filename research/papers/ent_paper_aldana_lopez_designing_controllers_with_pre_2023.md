@@ -10,7 +10,11 @@ names:
 summary:
   en: This chapter proposes a redesign methodology to construct robust predefined-time controllers for perturbed chains of
     integrators using uniformly bounded time-varying gains, and analyzes conditions for uniform Lyapunov stability.
-  zh: 本章提出了一种重设计方法，利用一致有界的时变增益为受扰动积分器链构建鲁棒的预设时间控制器，并分析了一致李雅普诺夫稳定性条件。
+  zh: 'Recently, there has been a great deal of attention in a class of controllers based on time-varying gains, called prescribed-time
+    controllers, that steer the system''s state to the origin in the desired time, a priori set by the user, regardless of
+    the initial condition. Furthermore, such a class of controllers has been shown to maintain a prescribed-time convergence
+    in the presence of disturbances even if the disturbance bound is unknown. However, such properties require a time-varying
+    gain that becomes singular at the terminal time, which limits its application to scenarios under quantization '
   ko: 본 장에서는 일정하게 유계인 시변 이득을 사용하여 외란이 있는 적분기 체인을 위한 강인한 사전 정의 시간 제어기를 구성하는 재설계 방법론을 제안하고, 균일 리아푸노프 안정성 조건을 분석한다.
 domains:
 - 07_ai_models_algorithms
@@ -48,6 +52,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Recently, there has been a great deal of attention in a class of controllers based on time-varying gains, called prescribed-time controllers, that steer the system's state to the origin in the desired time, a priori set by the user, regardless of the initial condition. Furthermore, such a class of controllers has been shown to maintain a prescribed-time convergence in the presence of disturbances even if the disturbance bound is unknown. However, such properties require a time-varying gain that becomes singular at the terminal time, which limits its application to scenarios under quantization or measurement noise. This chapter presents a methodology to design a broader class of controllers, called predefined-time controllers, with a prescribed convergence-time bound. Our approach allows designing robust predefined-time controllers based on time-varying gains while maintaining uniformly bounded time-varying gains. We analyze the condition for uniform Lyapunov stability under the proposed time-varying controllers.
 
@@ -56,4 +61,5 @@ Recently, there has been a great deal of attention in a class of controllers bas
 
 ## 参考
 - http://arxiv.org/abs/2311.02473v1
+
 

@@ -9,7 +9,8 @@ names:
   ko: Octo 제너럴리스트 로봇 정책
 summary:
   en: Open-source generalist robot policy trained on heterogeneous cross-embodiment data.
-  zh: 在异构跨具身数据上训练的开源通才机器人策略。
+  zh: '核心内容 ### Octo 通才机器人策略的定义与定位 Octo 通才机器人策略属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 在异构跨具身数据上训练的开源通才机器人策略。
+    英文名称为 *Octo Generalist Robot Policy*。 韩文名称为 *Octo 제너럴리스트 로봇 정책*。'
   ko: 이기종 크로스 임바디먼트 데이터로 학습된 오픈소스 제너럴리스트 로봇 정책.
 domains:
 - 07_ai_models_algorithms
@@ -40,6 +41,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 在异构跨具身数据上训练的开源通才机器人策略。
 
@@ -73,4 +75,5 @@ Octo 通才机器人策略可应用于人形机器人的运动规划、控制优
 
 ## 参考
 - [Octo Generalist Robot Policy](https://github.com/octo-models/octo)
+
 

@@ -10,7 +10,9 @@ names:
 summary:
   en: A quadratic-program formulation that computes generalized accelerations, contact forces, and joint torques by minimizing
     task-tracking errors subject to floating-base dynamics and physical constraints.
-  zh: 一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。
+  zh: '核心内容 ### 逆动力学二次规划形式化的定义与定位 逆动力学二次规划形式化属于 **formalism** 类型。 所属领域包括：07_ai_models_algorithms, 06_design_engineering。 价值链层级：intelligence,
+    midstream。 一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。 英文名称为 *Inverse-Dynamics QP Formulation*。 韩文名称为 *역동역학 QP
+    공식화*。'
   ko: 부유 기반 동역학과 물리적 제약 조건 하에서 작업 추종 오차를 최소화하여 일반화 가속도, 접촉력, 관절 토크를 계산하는 이차 계획법 공식화이다.
 domains:
 - 07_ai_models_algorithms
@@ -56,6 +58,7 @@ related_entities:
     zh: 等式约束编码了牛顿-欧拉浮动基动力学。
     ko: 등식 제약은 뉴턴-오일러 부유 기반 동역학을 인코딩한다.
 ---
+
 ## 概述
 一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。
 
@@ -89,4 +92,5 @@ related_entities:
 
 ## 参考
 - [Hierarchical QP whole-body control: from theory to practice](https://arxiv.org/abs/1910.13329)
+
 

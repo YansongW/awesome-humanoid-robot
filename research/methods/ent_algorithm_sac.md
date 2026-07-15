@@ -10,7 +10,8 @@ names:
 summary:
   en: An off-policy actor-critic reinforcement-learning algorithm that maximizes expected return while also maximizing policy
     entropy for exploration.
-  zh: 在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。
+  zh: '核心内容 ### 软演员-评论家（SAC）的定义与定位 软演员-评论家（SAC）属于 **algorithm** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。
+    英文名称为 *Soft Actor-Critic (SAC)*。 韩文名称为 *소프트 액터-크리틱(SAC)*。'
   ko: 기대 보상을 최대화하면서도 정책 엔트로피를 최대화해 탐색을 장려하는 오프폴리시 액터-크리틱 강화학습 알고리즘.
 domains:
 - 07_ai_models_algorithms
@@ -38,6 +39,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。
 
@@ -69,4 +71,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

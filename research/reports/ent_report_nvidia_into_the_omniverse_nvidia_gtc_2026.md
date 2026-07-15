@@ -4,28 +4,19 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: report
 names:
-  en: 'Into the Omniverse: NVIDIA GTC Showcases Virtual Worlds Powering the Physical
-    AI Era'
-  zh: 'Into the Omniverse: NVIDIA GTC Showcases Virtual Worlds Powering the Physical
-    AI Era'
-  ko: 'Into the Omniverse: NVIDIA GTC Showcases Virtual Worlds Powering the Physical
-    AI Era'
+  en: 'Into the Omniverse: NVIDIA GTC Showcases Virtual Worlds Powering the Physical AI Era'
+  zh: 'Into the Omniverse: NVIDIA GTC Showcases Virtual Worlds Powering the Physical AI Era'
+  ko: 'Into the Omniverse: NVIDIA GTC Showcases Virtual Worlds Powering the Physical AI Era'
 summary:
-  en: 'Editor’s note: This post is part of Into the Omniverse, a series focused on
-    how developers, 3D practitioners, and enterprises can transform their workflows
-    using the latest advances in OpenUSD and NVIDIA Omniverse. NVIDIA GTC last week
-    showcased a turning point in physical AI: Robots, vehicles and factories are scaling
-    from single use cases and [&#8230;]'
-  zh: 'Editor’s note: This post is part of Into the Omniverse, a series focused on
-    how developers, 3D practitioners, and enterprises can transform their workflows
-    using the latest advances in OpenUSD and NVIDIA Omniverse. NVIDIA GTC last week
-    showcased a turning point in physical AI: Robots, vehicles and factories are scaling
-    from single use cases and [&#8230;]'
-  ko: 'Editor’s note: This post is part of Into the Omniverse, a series focused on
-    how developers, 3D practitioners, and enterprises can transform their workflows
-    using the latest advances in OpenUSD and NVIDIA Omniverse. NVIDIA GTC last week
-    showcased a turning point in physical AI: Robots, vehicles and factories are scaling
-    from single use cases and [&#8230;]'
+  en: 'Editor’s note: This post is part of Into the Omniverse, a series focused on how developers, 3D practitioners, and enterprises
+    can transform their workflows using the latest advances in OpenUSD and NVIDIA Omniverse. NVIDIA GTC last week showcased
+    a turning point in physical AI: Robots, vehicles and factories are scaling from single use cases and [&#8230;]'
+  zh: 'Editor’s note: This post is part of Into the Omniverse, a series focused on how developers, 3D practitioners, and enterprises
+    can transform their workflows using the latest advances in OpenUSD and NVIDIA Omniverse. NVIDIA GTC last week showcased
+    a turning point in physical AI: Robots, vehicles and factories are scaling from single use cases and [&#8230;]'
+  ko: 'Editor’s note: This post is part of Into the Omniverse, a series focused on how developers, 3D practitioners, and enterprises
+    can transform their workflows using the latest advances in OpenUSD and NVIDIA Omniverse. NVIDIA GTC last week showcased
+    a turning point in physical AI: Robots, vehicles and factories are scaling from single use cases and [&#8230;]'
 domains:
 - 11_applications_markets
 - 07_ai_models_algorithms
@@ -50,12 +41,12 @@ verification:
 sources:
 - id: src_001
   type: website
-  title: 'Into the Omniverse: NVIDIA GTC Showcases Virtual Worlds Powering the Physical
-    AI Era'
+  title: 'Into the Omniverse: NVIDIA GTC Showcases Virtual Worlds Powering the Physical AI Era'
   url: https://blogs.nvidia.com/blog/gtc-2026-virtual-worlds-physical-ai/
   date: '2026'
   accessed_at: '2026-07-01'
 ---
+
 
 ## 概述
 Editor’s note: This post is part of Into the Omniverse, a series focused on how developers, 3D practitioners, and enterprises can transform their workflows using the latest advances in OpenUSD and NVIDIA Omniverse. NVIDIA GTC last week showcased a turning point in physical AI: Robots, vehicles and factories are scaling from single use cases and [&#8230;]
@@ -65,3 +56,7 @@ Editor’s note: This post is part of Into the Omniverse, a series focused on ho
 
 ## 개요
 Editor’s note: This post is part of Into the Omniverse, a series focused on how developers, 3D practitioners, and enterprises can transform their workflows using the latest advances in OpenUSD and NVIDIA Omniverse. NVIDIA GTC last week showcased a turning point in physical AI: Robots, vehicles and factories are scaling from single use cases and [&#8230;]
+
+## 参考
+- https://blogs.nvidia.com/blog/gtc-2026-virtual-worlds-physical-ai/
+

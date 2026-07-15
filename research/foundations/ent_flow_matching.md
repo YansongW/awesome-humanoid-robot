@@ -10,7 +10,8 @@ names:
 summary:
   en: A generative modeling method that directly regresses a vector field whose flow maps a simple source distribution to
     a target data distribution.
-  zh: 一种生成建模方法，直接回归一个向量场，使其流将简单源分布映射到目标数据分布。
+  zh: '核心内容 ### 流匹配的定义与定位 流匹配属于 **method** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种生成建模方法，直接回归一个向量场，使其流将简单源分布映射到目标数据分布。
+    英文名称为 *Flow matching*。 韩文名称为 *흐름 매칭*。'
   ko: 간단한 소스 분포를 목표 데이터 분포로 매핑하는 흐름을 가진 벡터 필드를 직접 회귀하는 생성 모델링 방법.
 domains:
 - 00_foundations
@@ -60,6 +61,7 @@ related_entities:
     zh: 流匹配为 DDPM 使用的随机逆扩散链提供了一种基于确定性 ODE 的替代方案。
     ko: 흐름 매칭은 DDPM에서 사용하는 확률적 역 확산 체인에 대한 결정론적 ODE 기반 대안을 제공합니다.
 ---
+
 ## 概述
 一种生成建模方法，直接回归一个向量场，使其流将简单源分布映射到目标数据分布。
 
@@ -93,4 +95,5 @@ related_entities:
 
 ## 参考
 - [Y. Lipman et al., 'Flow Matching for Generative Modeling', ICLR, 2023](https://openreview.net/forum?id=PqvMRDCJT9t)
+
 

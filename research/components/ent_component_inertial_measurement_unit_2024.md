@@ -9,7 +9,7 @@ names:
   ko: Inertial Measurement Unit
 summary:
   en: Torso/hip-mounted sensor fusing accelerometer and gyroscope for balance and state estimation.
-  zh: 安装于躯干/臀部的传感器，融合加速度计和陀螺仪用于平衡和状态估计。
+  zh: '核心内容 ## Analog Devices ADIS16475 微型 MEMS 惯性测量单元 / Analog Devices ADIS16475 Miniature MEMS IMU'
   ko: 몸통/엉덩이에 장착된 가속도계 및 자이로스코프를 융합한 균형 및 상태 추정 센서.
 domains:
 - 02_components
@@ -42,6 +42,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 惯性测量单元是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -112,4 +113,5 @@ ADIS16475 采用 ADI iSensor 技术平台，核心架构包括：
 ## 参考
 - [Inertial Measurement Unit](https://en.wikipedia.org/wiki/Inertial_measurement_unit)
 - 项目 Wiki：kg/entities/ent_component_analog_devices_adis16475.md
+
 

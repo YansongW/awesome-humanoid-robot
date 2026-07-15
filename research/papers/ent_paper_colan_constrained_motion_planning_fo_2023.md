@@ -10,7 +10,12 @@ names:
 summary:
   en: Proposes an online hierarchical quadratic programming framework for visual servoing control of a surgical endoscope,
     prioritizing remote-center-of-motion constraints while tracking visual features as a secondary task.
-  zh: 提出了一种用于手术内窥镜视觉伺服控制的在线分层二次规划框架，将远程运动中心约束作为高优先级任务，视觉特征跟踪作为次要任务。
+  zh: Minimally Invasive Surgeries (MIS) are challenging for surgeons due to the limited field of view and constrained range
+    of motion imposed by narrow access ports. These challenges can be addressed by robot-assisted endoscope systems which
+    provide precise and stabilized positioning, as well as constrained and smooth motion control of the endoscope. In this
+    work, we propose an online hierarchical optimization framework for visual servoing control of the endoscope in MIS. The
+    framework prioritizes maintaining a remote-center-of-motion (RCM) constraint to prevent tissue damage, while a visual
+    tracki
   ko: 수술용 내시경의 비주얼 서보 제어를 위한 온라인 계층적 이차 계획 프레임워크를 제안하며, 원격 운동 중심 제약을 높은 우선순위 작업으로 하고 시각적 특징 추적을 보조 작업으로 수행한다.
 domains:
 - 07_ai_models_algorithms
@@ -47,6 +52,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 Minimally Invasive Surgeries (MIS) are challenging for surgeons due to the limited field of view and constrained range of motion imposed by narrow access ports. These challenges can be addressed by robot-assisted endoscope systems which provide precise and stabilized positioning, as well as constrained and smooth motion control of the endoscope. In this work, we propose an online hierarchical optimization framework for visual servoing control of the endoscope in MIS. The framework prioritizes maintaining a remote-center-of-motion (RCM) constraint to prevent tissue damage, while a visual tracking task is defined as a secondary task to enable autonomous tracking of visual features of interest. We validated our approach using a 6-DOF Denso VS050 manipulator and achieved optimization solving times under 0.4 ms and maximum RCM deviation of approximately 0.4 mm. Our results demonstrate the effectiveness of the proposed approach in addressing the constrained motion planning challenges of MIS, enabling precise and autonomous endoscope positioning and visual tracking.
 
@@ -55,4 +61,5 @@ Minimally Invasive Surgeries (MIS) are challenging for surgeons due to the limit
 
 ## 参考
 - http://arxiv.org/abs/2406.09982v1
+
 

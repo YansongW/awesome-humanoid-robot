@@ -10,7 +10,11 @@ names:
 summary:
   en: Extends model-agnostic meta-learning (MAML) to imitation learning, enabling a robot to acquire new vision-based manipulation
     skills from a single demonstration via one or a few gradient updates.
-  zh: 将模型无关元学习（MAML）扩展到模仿学习，使机器人能够通过一次或少量梯度更新，从单次演示中学会新的基于视觉的操作技能。
+  zh: 'In order for a robot to be a generalist that can perform a wide range of jobs, it must be able to acquire a wide variety
+    of skills quickly and efficiently in complex unstructured environments. High-capacity models such as deep neural networks
+    can enable a robot to represent complex skills, but learning each skill from scratch then becomes infeasible. In this
+    work, we present a meta-imitation learning method that enables a robot to learn how to learn more efficiently, allowing
+    it to acquire new skills from just a single demonstration. Unlike prior methods for one-shot imitation, our method can '
   ko: 모델 무관 메타러닝(MAML)을 모방 학습으로 확장하여, 로봇이 단 하나의 시연을 통해 한 번 또는 소수의 그래디언트 업데이트로 새로운 비전 기반 조작 기술을 습득할 수 있게 함.
 domains:
 - 07_ai_models_algorithms
@@ -48,6 +52,7 @@ sources:
 theoretical_depth:
 - method
 ---
+
 ## 概述
 In order for a robot to be a generalist that can perform a wide range of jobs, it must be able to acquire a wide variety of skills quickly and efficiently in complex unstructured environments. High-capacity models such as deep neural networks can enable a robot to represent complex skills, but learning each skill from scratch then becomes infeasible. In this work, we present a meta-imitation learning method that enables a robot to learn how to learn more efficiently, allowing it to acquire new skills from just a single demonstration. Unlike prior methods for one-shot imitation, our method can scale to raw pixel inputs and requires data from significantly fewer prior tasks for effective learning of new skills. Our experiments on both simulated and real robot platforms demonstrate the ability to learn new tasks, end-to-end, from a single visual demonstration.
 
@@ -56,4 +61,5 @@ In order for a robot to be a generalist that can perform a wide range of jobs, i
 
 ## 参考
 - http://arxiv.org/abs/1709.04905v1
+
 

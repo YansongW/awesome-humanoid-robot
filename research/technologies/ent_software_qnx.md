@@ -10,7 +10,7 @@ names:
 summary:
   en: A commercial microkernel real-time operating system widely used in automotive and safety-critical systems, offering
     high reliability and deterministic scheduling.
-  zh: 广泛应用于汽车与安全关键系统的商用微内核实时操作系统，具有高可靠性与确定性调度能力。
+  zh: 核心内容 通用操作系统（如标准 Linux）并非为硬实时设计。实时操作系统（RTOS）通过内核抢占、优先级调度和确定性中断响应满足微秒级时序要求。
   ko: 자동차 및 안전 필수 시스템에 널리 사용되는 상용 마이크로커널 실시간 운영체제로, 높은 신뢰성과 결정적 스케줄링을 제공.
 domains:
 - 08_software_middleware
@@ -37,6 +37,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 QNX是人形机器人领域的重要software_platform。以下内容整理自项目 Wiki，供深入查阅。
 
@@ -75,4 +76,5 @@ flowchart TD
 ## 参考
 - Wiki extraction
 - 项目 Wiki：chapter-06.md#6.4.3 实时操作系统：Linux PREEMPT_RT, Xenomai, QNX, Zephyr
+
 

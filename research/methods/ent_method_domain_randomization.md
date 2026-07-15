@@ -10,7 +10,8 @@ names:
 summary:
   en: A sim-to-real technique that randomizes simulation parameters during training to improve policy robustness against real-world
     model mismatch.
-  zh: 训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。
+  zh: '核心内容 ### 域随机化的定义与定位 域随机化属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 09_data_datasets。 价值链层级：intelligence。 训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。
+    英文名称为 *Domain Randomization*。 韩文名称为 *도메인 랜덤화*。'
   ko: 훈련 중 시뮬레이션 파라미터를 무작위화하여 실제 세계의 모델 불일치에 대한 정책 강건성을 높이는 Sim-to-Real 기법.
 domains:
 - 07_ai_models_algorithms
@@ -39,6 +40,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 训练时随机化仿真参数以提升策略对真实世界模型失配的鲁棒性的Sim-to-Real技术。
 
@@ -70,4 +72,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

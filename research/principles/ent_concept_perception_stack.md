@@ -10,7 +10,8 @@ names:
 summary:
   en: The software subsystem that processes sensor data to estimate states, detect objects, and build environmental representations
     for decision-making.
-  zh: 处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。
+  zh: '核心内容 ### 感知栈的定义与定位 感知栈属于 **concept** 类型。 所属领域包括：08_software_middleware, 07_ai_models_algorithms。 价值链层级：intelligence。
+    处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。 英文名称为 *Perception Stack*。 韩文名称为 *인식 스택*。'
   ko: 센서 데이터를 처리하여 상태를 추정·물체를 검출·환경 표현을 구축하고 의사결정에 입력을 제공하는 소프트웨어 하위 시스템.
 domains:
 - 08_software_middleware
@@ -39,6 +40,7 @@ sources:
   date: '2026-07-09'
   accessed_at: '2026-07-09'
 ---
+
 ## 概述
 处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。
 
@@ -67,4 +69,5 @@ sources:
 
 ## 参考
 - Wiki extraction
+
 

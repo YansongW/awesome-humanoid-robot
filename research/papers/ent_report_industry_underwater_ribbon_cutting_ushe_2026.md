@@ -9,7 +9,10 @@ names:
   ko: Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory
 summary:
   en: Event marked milestone for Narragansett Bay Campus
-  zh: Event marked milestone for Narragansett Bay Campus
+  zh: '核心内容 ### Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory的定义与定位 Underwater ribbon cutting ushers
+    in new URI Ocean Robotics Laboratory属于 **report** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 Event
+    marked milestone for Narragansett Bay Campus 英文名称为 *Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory*。
+    韩文名称为 *Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory*。'
   ko: Event marked milestone for Narragansett Bay Campus
 domains:
 - 11_applications_markets
@@ -39,6 +42,7 @@ sources:
   date: '2026'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 Event marked milestone for Narragansett Bay Campus
 
@@ -68,4 +72,5 @@ Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory属于 **re
 
 ## 参考
 - [Underwater ribbon cutting ushers in new URI Ocean Robotics Laboratory](http://www.RoboticsTomorrow.com/news/2026/07/01/underwater-ribbon-cutting-ushers-in-new-uri-ocean-robotics-laboratory-/26797)
+
 

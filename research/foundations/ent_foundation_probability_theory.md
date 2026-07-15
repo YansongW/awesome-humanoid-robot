@@ -10,7 +10,8 @@ names:
 summary:
   en: The mathematical foundation for reasoning about uncertainty, random variables, distributions, and expectations, underlying
     all probabilistic models in machine learning and robotics.
-  zh: 关于不确定性、随机变量、分布和期望的数学基础，是机器人和机器学习中所有概率模型的根基。
+  zh: '核心内容 ### 概率论的定义与定位 概率论属于 **foundation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 关于不确定性、随机变量、分布和期望的数学基础，是机器人和机器学习中所有概率模型的根基。
+    英文名称为 *Probability Theory*。 韩文名称为 *확률론*。'
   ko: 불확실성, 확률 변수, 분포, 기댓값에 관한 수학적 기초로, 로보틱스와 머신러닝의 모든 확률적 모델의 근간이 된다.
 domains:
 - 00_foundations
@@ -40,6 +41,7 @@ sources:
   date: '2004'
   accessed_at: '2026-06-26'
 ---
+
 ## 概述
 关于不确定性、随机变量、分布和期望的数学基础，是机器人和机器学习中所有概率模型的根基。
 
@@ -73,4 +75,5 @@ sources:
 
 ## 参考
 - [Wasserman, All of Statistics](https://www.stat.cmu.edu/~larry/all-of-statistics/)
+
 

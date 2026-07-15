@@ -9,7 +9,8 @@ names:
   ko: Moog Inc.
 summary:
   en: Supplier of precision motion control components including high-performance actuators and servos.
-  zh: 高性能执行器和伺服等精密运动控制部件供应商。
+  zh: '核心内容 ### 穆格的定义与定位 穆格属于 **component_manufacturer** 类型。 所属领域包括：02_components, 03_manufacturing_processes。 价值链层级：upstream。
+    高性能执行器和伺服等精密运动控制部件供应商。 英文名称为 *Moog Inc.*。 韩文名称为 *Moog Inc.*。'
   ko: 고성능 액추에이터 및 서보를 포함한 정밀 모션 제어 부품 공급업체.
 domains:
 - 02_components
@@ -43,6 +44,7 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
+
 ## 概述
 高性能执行器和伺服等精密运动控制部件供应商。
 
@@ -75,4 +77,5 @@ sources:
 
 ## 参考
 - [Moog Inc.](https://www.moog.com/)
+
 

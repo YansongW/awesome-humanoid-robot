@@ -9,7 +9,8 @@ names:
   ko: Diffusion Policy
 summary:
   en: Visuomotor policy represented as a conditional denoising diffusion process, enabling multimodal action distributions.
-  zh: 以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。
+  zh: '核心内容 ### 扩散策略的定义与定位 扩散策略属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。
+    英文名称为 *Diffusion Policy*。 韩文名称为 *Diffusion Policy*。'
   ko: 조건적 노이즈 제거 확산 프로세스로 표현된 시각욱동 정책, 다중 모드 동작 분포 가능.
 domains:
 - 07_ai_models_algorithms
@@ -40,6 +41,7 @@ sources:
   date: '2023'
   accessed_at: '2026-07-02'
 ---
+
 ## 概述
 以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。
 
@@ -73,4 +75,5 @@ sources:
 
 ## 参考
 - [Diffusion Policy](https://diffusion-policy.cs.columbia.edu/)
+
 
