@@ -4,19 +4,16 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in
-    Humanoid Robot Navigation
-  zh: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in
-    Humanoid Robot Navigation
-  ko: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in
-    Humanoid Robot Navigation
+  en: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation
+  zh: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation
+  ko: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation
 summary:
-  en: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in
-    Humanoid Robot Navigation is a paper on Navigation for humanoid robotics.
-  zh: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in
-    Humanoid Robot Navigation is a paper on Navigation for humanoid robotics.
-  ko: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in
-    Humanoid Robot Navigation is a paper on Navigation for humanoid robotics.
+  en: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a paper on
+    Navigation for humanoid robotics.
+  zh: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a paper on
+    Navigation for humanoid robotics.
+  ko: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a paper on
+    Navigation for humanoid robotics.
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -34,26 +31,23 @@ theoretical_depth:
 verification:
   status: unverified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: low
-  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder:
-    papers/08_Navigation/RL_with_Data_Bootstrapping_for_Dynamic_Subgoal_Pursuit_in_Humanoid_Navigation.
-    Route: Navigation.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2506.02206v1.
 sources:
 - id: src_001
   type: website
-  title: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit
-    in Humanoid Robot Navigation
+  title: Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation
   url: ''
   date: '2026'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a paper on Navigation for humanoid robotics.
+Safe and real-time navigation is fundamental for humanoid robot applications. However, existing bipedal robot navigation frameworks often struggle to balance computational efficiency with the precision required for stable locomotion. We propose a novel hierarchical framework that continuously generates dynamic subgoals to guide the robot through cluttered environments. Our method comprises a high-level reinforcement learning (RL) planner for subgoal selection in a robot-centric coordinate system and a low-level Model Predictive Control (MPC) based planner which produces robust walking gaits to reach these subgoals. To expedite and stabilize the training process, we incorporate a data bootstrapping technique that leverages a model-based navigation approach to generate a diverse, informative dataset. We validate our method in simulation using the Agility Robotics Digit humanoid across multiple scenarios with random obstacles. Results show that our framework significantly improves navigation success rates and adaptability compared to both the original model-based method and other learning-based methods.
 
-## Overview
-Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a paper on Navigation for humanoid robotics.
+## 核心内容
+Safe and real-time navigation is fundamental for humanoid robot applications. However, existing bipedal robot navigation frameworks often struggle to balance computational efficiency with the precision required for stable locomotion. We propose a novel hierarchical framework that continuously generates dynamic subgoals to guide the robot through cluttered environments. Our method comprises a high-level reinforcement learning (RL) planner for subgoal selection in a robot-centric coordinate system and a low-level Model Predictive Control (MPC) based planner which produces robust walking gaits to reach these subgoals. To expedite and stabilize the training process, we incorporate a data bootstrapping technique that leverages a model-based navigation approach to generate a diverse, informative dataset. We validate our method in simulation using the Agility Robotics Digit humanoid across multiple scenarios with random obstacles. Results show that our framework significantly improves navigation success rates and adaptability compared to both the original model-based method and other learning-based methods.
 
-## 개요
-Reinforcement Learning with Data Bootstrapping for Dynamic Subgoal Pursuit in Humanoid Robot Navigation is a paper on Navigation for humanoid robotics.
+## 参考
+- http://arxiv.org/abs/2506.02206v1
+

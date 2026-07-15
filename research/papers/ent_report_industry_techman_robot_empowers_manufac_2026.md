@@ -4,25 +4,19 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: report
 names:
-  en: Techman Robot Empowers Manufacturers Moving to the US with Zero-Downtime AI
-    Solutions at Automate 2026
-  zh: Techman Robot Empowers Manufacturers Moving to the US with Zero-Downtime AI
-    Solutions at Automate 2026
-  ko: Techman Robot Empowers Manufacturers Moving to the US with Zero-Downtime AI
-    Solutions at Automate 2026
+  en: Techman Robot Empowers Manufacturers Moving to the US with Zero-Downtime AI Solutions at Automate 2026
+  zh: Techman Robot Empowers Manufacturers Moving to the US with Zero-Downtime AI Solutions at Automate 2026
+  ko: Techman Robot Empowers Manufacturers Moving to the US with Zero-Downtime AI Solutions at Automate 2026
 summary:
-  en: Techman Robot showcased its highly scalable AI automation solutions at Automate
-    2026. Designed to support global manufacturers expanding their US operations,
-    these technologies focus on rapid deployment, standardized quality control, and
-    eliminating the "Hidden Cost Trap" of traditional automation.
-  zh: Techman Robot showcased its highly scalable AI automation solutions at Automate
-    2026. Designed to support global manufacturers expanding their US operations,
-    these technologies focus on rapid deployment, standardized quality control, and
-    eliminating the "Hidden Cost Trap" of traditional automation.
-  ko: Techman Robot showcased its highly scalable AI automation solutions at Automate
-    2026. Designed to support global manufacturers expanding their US operations,
-    these technologies focus on rapid deployment, standardized quality control, and
-    eliminating the "Hidden Cost Trap" of traditional automation.
+  en: Techman Robot showcased its highly scalable AI automation solutions at Automate 2026. Designed to support global manufacturers
+    expanding their US operations, these technologies focus on rapid deployment, standardized quality control, and eliminating
+    the "Hidden Cost Trap" of traditional automation.
+  zh: Techman Robot showcased its highly scalable AI automation solutions at Automate 2026. Designed to support global manufacturers
+    expanding their US operations, these technologies focus on rapid deployment, standardized quality control, and eliminating
+    the "Hidden Cost Trap" of traditional automation.
+  ko: Techman Robot showcased its highly scalable AI automation solutions at Automate 2026. Designed to support global manufacturers
+    expanding their US operations, these technologies focus on rapid deployment, standardized quality control, and eliminating
+    the "Hidden Cost Trap" of traditional automation.
 domains:
 - 11_applications_markets
 layers:
@@ -41,24 +35,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website.
+  notes: Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/06/24/techman-robot-empowers-manufacturers-moving-to-the-us-with-zero-downtime-ai-solutions-at-automate-2026/26772.
 sources:
 - id: src_001
   type: website
-  title: Techman Robot Empowers Manufacturers Moving to the US with Zero-Downtime
-    AI Solutions at Automate 2026
+  title: Techman Robot Empowers Manufacturers Moving to the US with Zero-Downtime AI Solutions at Automate 2026
   url: http://www.RoboticsTomorrow.com/news/2026/06/24/techman-robot-empowers-manufacturers-moving-to-the-us-with-zero-downtime-ai-solutions-at-automate-2026/26772
   date: '2026'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Techman Robot showcased its highly scalable AI automation solutions at Automate 2026. Designed to support global manufacturers expanding their US operations, these technologies focus on rapid deployment, standardized quality control, and eliminating the "Hidden Cost Trap" of traditional automation.
+Techman Robot showcased its highly scalable AI automation solutions at Automate 2026. Designed to support global manufacturers expanding their US operations, these technologies focus on rapid deployment, standardized quality control, and eliminating the
 
-## Overview
-Techman Robot showcased its highly scalable AI automation solutions at Automate 2026. Designed to support global manufacturers expanding their US operations, these technologies focus on rapid deployment, standardized quality control, and eliminating the "Hidden Cost Trap" of traditional automation.
+## 核心内容
+Techman Robot showcased its highly scalable AI automation solutions at Automate 2026. Designed to support global manufacturers expanding their US operations, these technologies focus on rapid deployment, standardized quality control, and eliminating the
 
-## 개요
-Techman Robot showcased its highly scalable AI automation solutions at Automate 2026. Designed to support global manufacturers expanding their US operations, these technologies focus on rapid deployment, standardized quality control, and eliminating the "Hidden Cost Trap" of traditional automation.
+## 参考
+- http://www.RoboticsTomorrow.com/news/2026/06/24/techman-robot-empowers-manufacturers-moving-to-the-us-with-zero-downtime-ai-solutions-at-automate-2026/26772
+

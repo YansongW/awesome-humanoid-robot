@@ -102,6 +102,54 @@ def fetch_arxiv_batch(ids: list[str], cache: dict[str, Any]) -> dict[str, dict[s
     return results
 
 
+def _arxiv_title_search(title: str, cache: dict[str, Any]) -> dict[str, str] | None:
+    """Single arXiv title search; returns the first result or None."""
+    q = urllib.parse.quote(f'ti:"{title}"')
+    url = f"http://export.arxiv.org/api/query?search_query={q}&start=0&max_results=3"
+    try:
+        r = requests.get(url, timeout=30)
+        r.raise_for_status()
+    except Exception:
+        return None
+    results = parse_arxiv_response(r.text)
+    if not results:
+        return None
+    first = sorted(results.values(), key=lambda x: x.get("source", ""))[0]
+    return {
+        "title": first["title"],
+        "abstract": first["abstract"],
+        "source": first["source"],
+    }
+
+
+def fetch_arxiv_by_title(title: str, cache: dict[str, Any]) -> dict[str, str] | None:
+    """Search arXiv by title, trying a few variants, and return the first hit."""
+    key = f"arxiv_title:{title.lower().strip()}"
+    if key in cache:
+        return cache[key]
+
+    # Strip common suffixes/prefixes that are not part of the paper title.
+    clean_title = re.sub(r"\s*(project page|github|website)\s*$", "", title, flags=re.IGNORECASE)
+
+    variants = [clean_title]
+    # Many project pages prefix the actual paper title with a colon.
+    if ":" in clean_title:
+        variants.append(clean_title.split(":", 1)[1].strip())
+    # Try without text in parentheses.
+    no_paren = re.sub(r"\s*\([^)]*\)\s*$", "", clean_title).strip()
+    if no_paren and no_paren not in variants:
+        variants.append(no_paren)
+
+    for variant in variants:
+        result = _arxiv_title_search(variant, cache)
+        if result:
+            cache[key] = result
+            return result
+
+    cache[key] = None
+    return None
+
+
 def fetch_semantic_scholar(title: str, cache: dict[str, Any]) -> dict[str, str] | None:
     key = f"ss:{title.lower().strip()}"
     if key in cache:
@@ -223,6 +271,11 @@ def main() -> int:
             result = fetch_semantic_scholar(title, cache)
             if result:
                 time.sleep(SS_DELAY)
+
+        if not result and title and not args.ss_only:
+            result = fetch_arxiv_by_title(title, cache)
+            if result:
+                time.sleep(3)
 
         if not result or not result.get("abstract"):
             failed.append({"id": eid, "reason": "no abstract found"})

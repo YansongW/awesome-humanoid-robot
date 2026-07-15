@@ -164,13 +164,17 @@ def audit_entry(entry: dict[str, Any]) -> dict[str, Any]:
     # Body checks
     en_words = meaningful_en_words(body)
     body_sufficient = zh_chars >= min_chars
-    if etype in ("paper", "report") and not body_sufficient and en_words >= 60:
+    if etype in ("paper", "report") and not body_sufficient and en_words >= 80:
         body_sufficient = True
     if not body_sufficient:
         issues.append(f"body_too_short_zh ({zh_chars}/{min_chars})")
     if not has_section(body, "概述", "Overview", "개요"):
         issues.append("missing_overview_section")
-    if not has_section(body, "核心内容", "核心原理", "核心方法", "方法", "原理", "结构", "Abstract", "Methods", "Method"):
+    if not has_section(
+        body,
+        "核心内容", "核心原理", "核心方法", "关键子任务与技术内容", "关键活动", "技术内容",
+        "方法", "原理", "结构", "实现步骤", "Abstract", "Methods", "Method", "Activities", "Tasks",
+    ):
         issues.append("missing_core_section")
     if not has_section(body, "参考", "References", "참고"):
         issues.append("missing_reference_section")

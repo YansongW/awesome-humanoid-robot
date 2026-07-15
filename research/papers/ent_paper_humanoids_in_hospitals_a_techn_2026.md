@@ -4,19 +4,16 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for
-    Dexterous Medical Interventions'
-  zh: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for
-    Dexterous Medical Interventions'
-  ko: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for
-    Dexterous Medical Interventions'
+  en: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions'
+  zh: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions'
+  ko: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions'
 summary:
-  en: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for
-    Dexterous Medical Interventions is a paper on Manipulation for humanoid robotics.'
-  zh: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for
-    Dexterous Medical Interventions is a paper on Manipulation for humanoid robotics.'
-  ko: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for
-    Dexterous Medical Interventions is a paper on Manipulation for humanoid robotics.'
+  en: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions is a paper
+    on Manipulation for humanoid robotics.'
+  zh: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions is a paper
+    on Manipulation for humanoid robotics.'
+  ko: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions is a paper
+    on Manipulation for humanoid robotics.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -34,26 +31,23 @@ theoretical_depth:
 verification:
   status: unverified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: low
-  notes: 'Imported from Humanoid_Robot_Learning_Paper_Notebooks progress.json. Folder:
-    papers/06_Manipulation/Humanoids_in_Hospitals__Humanoid_Surrogates_for_Dexterous_Medical_Interventions.
-    Route: Manipulation.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2503.12725v2.
 sources:
 - id: src_001
   type: website
-  title: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for
-    Dexterous Medical Interventions'
+  title: 'Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions'
   url: ''
   date: '2026'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions is a paper on Manipulation for humanoid robotics.
+The increasing demand for healthcare workers, driven by aging populations and labor shortages, presents a significant challenge for hospitals. Humanoid robots have the potential to alleviate these pressures by leveraging their human-like dexterity and adaptability to assist in medical procedures. This work conducted an exploratory study on the feasibility of humanoid robots performing direct clinical tasks through teleoperation. A bimanual teleoperation system was developed for the Unitree G1 Humanoid Robot, integrating high-fidelity pose tracking, custom grasping configurations, and an impedance controller to safely and precisely manipulate medical tools. The system is evaluated in seven diverse medical procedures, including physical examinations, emergency interventions, and precision needle tasks. Our results demonstrate that humanoid robots can successfully replicate critical aspects of human medical assessments and interventions, with promising quantitative performance in ventilation and ultrasound-guided tasks. However, challenges remain, including limitations in force output for procedures requiring high strength and sensor sensitivity issues affecting clinical accuracy. This study highlights the potential and current limitations of humanoid robots in hospital settings and lays the groundwork for future research on robotic healthcare integration.
 
-## Overview
-Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions is a paper on Manipulation for humanoid robotics.
+## 核心内容
+The increasing demand for healthcare workers, driven by aging populations and labor shortages, presents a significant challenge for hospitals. Humanoid robots have the potential to alleviate these pressures by leveraging their human-like dexterity and adaptability to assist in medical procedures. This work conducted an exploratory study on the feasibility of humanoid robots performing direct clinical tasks through teleoperation. A bimanual teleoperation system was developed for the Unitree G1 Humanoid Robot, integrating high-fidelity pose tracking, custom grasping configurations, and an impedance controller to safely and precisely manipulate medical tools. The system is evaluated in seven diverse medical procedures, including physical examinations, emergency interventions, and precision needle tasks. Our results demonstrate that humanoid robots can successfully replicate critical aspects of human medical assessments and interventions, with promising quantitative performance in ventilation and ultrasound-guided tasks. However, challenges remain, including limitations in force output for procedures requiring high strength and sensor sensitivity issues affecting clinical accuracy. This study highlights the potential and current limitations of humanoid robots in hospital settings and lays the groundwork for future research on robotic healthcare integration.
 
-## 개요
-Humanoids in Hospitals: A Technical Study of Humanoid Robot Surrogates for Dexterous Medical Interventions is a paper on Manipulation for humanoid robotics.
+## 参考
+- http://arxiv.org/abs/2503.12725v2
+

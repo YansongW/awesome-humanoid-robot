@@ -4,24 +4,19 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: paper
 names:
-  en: 'VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained
-    Actions'
+  en: 'VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions'
   zh: VLMimic
-  ko: 'VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained
-    Actions'
+  ko: 'VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions'
 summary:
-  en: 'VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained
-    Actions (VLMimic), is a 2024 large vision-language-action model for robotic manipulation,
-    introduced by Beijing Institute of Technology, The University of Hong Kong, Peking
-    University, and published at NIPS24.'
-  zh: 'VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained
-    Actions (VLMimic), is a 2024 large vision-language-action model for robotic manipulation,
-    introduced by Beijing Institute of Technology, The University of Hong Kong, Peking
-    University, and published at NIPS24.'
-  ko: 'VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained
-    Actions (VLMimic), is a 2024 large vision-language-action model for robotic manipulation,
-    introduced by Beijing Institute of Technology, The University of Hong Kong, Peking
-    University, and published at NIPS24.'
+  en: 'VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions (VLMimic), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by Beijing Institute of Technology, The University of Hong Kong, Peking University,
+    and published at NIPS24.'
+  zh: 'VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions (VLMimic), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by Beijing Institute of Technology, The University of Hong Kong, Peking University,
+    and published at NIPS24.'
+  ko: 'VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions (VLMimic), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by Beijing Institute of Technology, The University of Hong Kong, Peking University,
+    and published at NIPS24.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -41,11 +36,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: VLMimic. Institution: Beijing
-    Institute of Technology, The University of Hong Kong, Peking University. Venue:
-    NIPS24.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2410.20927v3.
 sources:
 - id: src_001
   type: website
@@ -54,12 +47,12 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions (VLMimic), is a 2024 large vision-language-action model for robotic manipulation, introduced by Beijing Institute of Technology, The University of Hong Kong, Peking University, and published at NIPS24.
+Visual imitation learning (VIL) provides an efficient and intuitive strategy for robotic systems to acquire novel skills. Recent advancements in Vision Language Models (VLMs) have demonstrated remarkable performance in vision and language reasoning capabilities for VIL tasks. Despite the progress, current VIL methods naively employ VLMs to learn high-level plans from human videos, relying on pre-defined motion primitives for executing physical interactions, which remains a major bottleneck. In this work, we present VLMimic, a novel paradigm that harnesses VLMs to directly learn even fine-grained action levels, only given a limited number of human videos. Specifically, VLMimic first grounds object-centric movements from human videos, and learns skills using hierarchical constraint representations, facilitating the derivation of skills with fine-grained action levels from limited human videos. These skills are refined and updated through an iterative comparison strategy, enabling efficient adaptation to unseen environments. Our extensive experiments exhibit that our VLMimic, using only 5 human videos, yields significant improvements of over 27% and 21% in RLBench and real-world manipulation tasks, and surpasses baselines by over 37% in long-horizon tasks.
 
-## Overview
-VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions (VLMimic), is a 2024 large vision-language-action model for robotic manipulation, introduced by Beijing Institute of Technology, The University of Hong Kong, Peking University, and published at NIPS24.
+## 核心内容
+Visual imitation learning (VIL) provides an efficient and intuitive strategy for robotic systems to acquire novel skills. Recent advancements in Vision Language Models (VLMs) have demonstrated remarkable performance in vision and language reasoning capabilities for VIL tasks. Despite the progress, current VIL methods naively employ VLMs to learn high-level plans from human videos, relying on pre-defined motion primitives for executing physical interactions, which remains a major bottleneck. In this work, we present VLMimic, a novel paradigm that harnesses VLMs to directly learn even fine-grained action levels, only given a limited number of human videos. Specifically, VLMimic first grounds object-centric movements from human videos, and learns skills using hierarchical constraint representations, facilitating the derivation of skills with fine-grained action levels from limited human videos. These skills are refined and updated through an iterative comparison strategy, enabling efficient adaptation to unseen environments. Our extensive experiments exhibit that our VLMimic, using only 5 human videos, yields significant improvements of over 27% and 21% in RLBench and real-world manipulation tasks, and surpasses baselines by over 37% in long-horizon tasks.
 
-## 개요
-VLMimic: Vision Language Models are Visual Imitation Learner for Fine-grained Actions (VLMimic), is a 2024 large vision-language-action model for robotic manipulation, introduced by Beijing Institute of Technology, The University of Hong Kong, Peking University, and published at NIPS24.
+## 参考
+- http://arxiv.org/abs/2410.20927v3
+

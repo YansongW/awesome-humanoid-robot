@@ -8,24 +8,18 @@ names:
   zh: RoboNurse-VLA
   ko: 'RoboNurse-VLA: Robotic Scrub Nurse System based on Vision-Language-Action Model'
 summary:
-  en: 'RoboNurse-VLA: Robotic Scrub Nurse System based on Vision-Language-Action Model
-    (RoboNurse-VLA), is a 2024 large vision-language-action model for robotic manipulation,
-    introduced by Multi-Scale Medical Robotics Centre, Ltd., The Chinese University
-    of Hong Kong, Department of Surgery, The Chinese University of Hong Kong, Humanoids
-    and Human-Centered Mechatronics (HHCM), Istituto Italiano di Tecnologia, and published
-    at IROS 2024.'
-  zh: 'RoboNurse-VLA: Robotic Scrub Nurse System based on Vision-Language-Action Model
-    (RoboNurse-VLA), is a 2024 large vision-language-action model for robotic manipulation,
-    introduced by Multi-Scale Medical Robotics Centre, Ltd., The Chinese University
-    of Hong Kong, Department of Surgery, The Chinese University of Hong Kong, Humanoids
-    and Human-Centered Mechatronics (HHCM), Istituto Italiano di Tecnologia, and published
-    at IROS 2024.'
-  ko: 'RoboNurse-VLA: Robotic Scrub Nurse System based on Vision-Language-Action Model
-    (RoboNurse-VLA), is a 2024 large vision-language-action model for robotic manipulation,
-    introduced by Multi-Scale Medical Robotics Centre, Ltd., The Chinese University
-    of Hong Kong, Department of Surgery, The Chinese University of Hong Kong, Humanoids
-    and Human-Centered Mechatronics (HHCM), Istituto Italiano di Tecnologia, and published
-    at IROS 2024.'
+  en: 'RoboNurse-VLA: Robotic Scrub Nurse System based on Vision-Language-Action Model (RoboNurse-VLA), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by Multi-Scale Medical Robotics Centre, Ltd., The Chinese University of Hong
+    Kong, Department of Surgery, The Chinese University of Hong Kong, Humanoids and Human-Centered Mechatronics (HHCM), Istituto
+    Italiano di Tecnologia, and published at IROS 2024.'
+  zh: 'RoboNurse-VLA: Robotic Scrub Nurse System based on Vision-Language-Action Model (RoboNurse-VLA), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by Multi-Scale Medical Robotics Centre, Ltd., The Chinese University of Hong
+    Kong, Department of Surgery, The Chinese University of Hong Kong, Humanoids and Human-Centered Mechatronics (HHCM), Istituto
+    Italiano di Tecnologia, and published at IROS 2024.'
+  ko: 'RoboNurse-VLA: Robotic Scrub Nurse System based on Vision-Language-Action Model (RoboNurse-VLA), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by Multi-Scale Medical Robotics Centre, Ltd., The Chinese University of Hong
+    Kong, Department of Surgery, The Chinese University of Hong Kong, Humanoids and Human-Centered Mechatronics (HHCM), Istituto
+    Italiano di Tecnologia, and published at IROS 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -45,12 +39,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: RoboNurse-VLA. Institution:
-    Multi-Scale Medical Robotics Centre, Ltd., The Chinese University of Hong Kong,
-    Department of Surgery, The Chinese University of Hong Kong, Humanoids and Human-Centered
-    Mechatronics (HHCM), Istituto Italiano di Tecnologia. Venue: IROS 2024.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.19590v1.
 sources:
 - id: src_001
   type: website
@@ -59,12 +50,12 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-RoboNurse-VLA: Robotic Scrub Nurse System based on Vision-Language-Action Model (RoboNurse-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Multi-Scale Medical Robotics Centre, Ltd., The Chinese University of Hong Kong, Department of Surgery, The Chinese University of Hong Kong, Humanoids and Human-Centered Mechatronics (HHCM), Istituto Italiano di Tecnologia, and published at IROS 2024.
+In modern healthcare, the demand for autonomous robotic assistants has grown significantly, particularly in the operating room, where surgical tasks require precision and reliability. Robotic scrub nurses have emerged as a promising solution to improve efficiency and reduce human error during surgery. However, challenges remain in terms of accurately grasping and handing over surgical instruments, especially when dealing with complex or difficult objects in dynamic environments. In this work, we introduce a novel robotic scrub nurse system, RoboNurse-VLA, built on a Vision-Language-Action (VLA) model by integrating the Segment Anything Model 2 (SAM 2) and the Llama 2 language model.   The proposed RoboNurse-VLA system enables highly precise grasping and handover of surgical instruments in real-time based on voice commands from the surgeon. Leveraging state-of-the-art vision and language models, the system can address key challenges for object detection, pose optimization, and the handling of complex and difficult-to-grasp instruments. Through extensive evaluations, RoboNurse-VLA demonstrates superior performance compared to existing models, achieving high success rates in surgical instrument handovers, even with unseen tools and challenging items. This work presents a significant step forward in autonomous surgical assistance, showcasing the potential of integrating VLA models for real-world medical applications. More details can be found at https://robonurse-vla.github.io.
 
-## Overview
-RoboNurse-VLA: Robotic Scrub Nurse System based on Vision-Language-Action Model (RoboNurse-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Multi-Scale Medical Robotics Centre, Ltd., The Chinese University of Hong Kong, Department of Surgery, The Chinese University of Hong Kong, Humanoids and Human-Centered Mechatronics (HHCM), Istituto Italiano di Tecnologia, and published at IROS 2024.
+## 核心内容
+In modern healthcare, the demand for autonomous robotic assistants has grown significantly, particularly in the operating room, where surgical tasks require precision and reliability. Robotic scrub nurses have emerged as a promising solution to improve efficiency and reduce human error during surgery. However, challenges remain in terms of accurately grasping and handing over surgical instruments, especially when dealing with complex or difficult objects in dynamic environments. In this work, we introduce a novel robotic scrub nurse system, RoboNurse-VLA, built on a Vision-Language-Action (VLA) model by integrating the Segment Anything Model 2 (SAM 2) and the Llama 2 language model.   The proposed RoboNurse-VLA system enables highly precise grasping and handover of surgical instruments in real-time based on voice commands from the surgeon. Leveraging state-of-the-art vision and language models, the system can address key challenges for object detection, pose optimization, and the handling of complex and difficult-to-grasp instruments. Through extensive evaluations, RoboNurse-VLA demonstrates superior performance compared to existing models, achieving high success rates in surgical instrument handovers, even with unseen tools and challenging items. This work presents a significant step forward in autonomous surgical assistance, showcasing the potential of integrating VLA models for real-world medical applications. More details can be found at https://robonurse-vla.github.io.
 
-## 개요
-RoboNurse-VLA: Robotic Scrub Nurse System based on Vision-Language-Action Model (RoboNurse-VLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by Multi-Scale Medical Robotics Centre, Ltd., The Chinese University of Hong Kong, Department of Surgery, The Chinese University of Hong Kong, Humanoids and Human-Centered Mechatronics (HHCM), Istituto Italiano di Tecnologia, and published at IROS 2024.
+## 参考
+- http://arxiv.org/abs/2409.19590v1
+

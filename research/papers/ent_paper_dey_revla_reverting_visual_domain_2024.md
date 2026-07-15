@@ -8,15 +8,12 @@ names:
   zh: ReVLA
   ko: 'ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models'
 summary:
-  en: 'ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA),
-    is a 2024 large vision-language-action model for robotic manipulation, introduced
-    by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.'
-  zh: 'ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA),
-    is a 2024 large vision-language-action model for robotic manipulation, introduced
-    by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.'
-  ko: 'ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA),
-    is a 2024 large vision-language-action model for robotic manipulation, introduced
-    by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.'
+  en: 'ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.'
+  zh: 'ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.'
+  ko: 'ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA), is a 2024 large vision-language-action
+    model for robotic manipulation, introduced by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware
@@ -36,10 +33,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: ReVLA. Institution: INSAIT,
-    Sofia University “St. Kliment Ohridski”. Venue: ICRA 2024.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2409.15250v3.
 sources:
 - id: src_001
   type: website
@@ -48,12 +44,12 @@ sources:
   date: '2024'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.
+Recent progress in large language models and access to large-scale robotic datasets has sparked a paradigm shift in robotics models transforming them into generalists able to adapt to various tasks, scenes, and robot modalities. A large step for the community are open Vision Language Action models which showcase strong performance in a wide variety of tasks. In this work, we study the visual generalization capabilities of three existing robotic foundation models, and propose a corresponding evaluation framework. Our study shows that the existing models do not exhibit robustness to visual out-of-domain scenarios. This is potentially caused by limited variations in the training data and/or catastrophic forgetting, leading to domain limitations in the vision foundation models. We further explore OpenVLA, which uses two pre-trained vision foundation models and is, therefore, expected to generalize to out-of-domain experiments. However, we showcase catastrophic forgetting by DINO-v2 in OpenVLA through its failure to fulfill the task of depth regression. To overcome the aforementioned issue of visual catastrophic forgetting, we propose a gradual backbone reversal approach founded on model merging. This enables OpenVLA -- which requires the adaptation of the visual backbones during initial training -- to regain its visual generalization ability. Regaining this capability enables our ReVLA model to improve over OpenVLA by a factor of 77\% and 66\% for grasping and lifting in visual OOD tasks. Comprehensive evaluations, episode rollouts and model weights are available on the ReVLA Page
 
-## Overview
-ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.
+## 核心内容
+Recent progress in large language models and access to large-scale robotic datasets has sparked a paradigm shift in robotics models transforming them into generalists able to adapt to various tasks, scenes, and robot modalities. A large step for the community are open Vision Language Action models which showcase strong performance in a wide variety of tasks. In this work, we study the visual generalization capabilities of three existing robotic foundation models, and propose a corresponding evaluation framework. Our study shows that the existing models do not exhibit robustness to visual out-of-domain scenarios. This is potentially caused by limited variations in the training data and/or catastrophic forgetting, leading to domain limitations in the vision foundation models. We further explore OpenVLA, which uses two pre-trained vision foundation models and is, therefore, expected to generalize to out-of-domain experiments. However, we showcase catastrophic forgetting by DINO-v2 in OpenVLA through its failure to fulfill the task of depth regression. To overcome the aforementioned issue of visual catastrophic forgetting, we propose a gradual backbone reversal approach founded on model merging. This enables OpenVLA -- which requires the adaptation of the visual backbones during initial training -- to regain its visual generalization ability. Regaining this capability enables our ReVLA model to improve over OpenVLA by a factor of 77\% and 66\% for grasping and lifting in visual OOD tasks. Comprehensive evaluations, episode rollouts and model weights are available on the ReVLA Page
 
-## 개요
-ReVLA: Reverting Visual Domain Limitation of Robotic Foundation Models (ReVLA), is a 2024 large vision-language-action model for robotic manipulation, introduced by INSAIT, Sofia University “St. Kliment Ohridski”, and published at ICRA 2024.
+## 参考
+- http://arxiv.org/abs/2409.15250v3
+

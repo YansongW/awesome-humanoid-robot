@@ -4,24 +4,21 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: report
 names:
-  en: 'Brownfield Is the Real Test of Automation: How ForwardX Scaled 484 AMRs in
-    a Live Auto OEM Factory Without Production Downtime'
-  zh: 'Brownfield Is the Real Test of Automation: How ForwardX Scaled 484 AMRs in
-    a Live Auto OEM Factory Without Production Downtime'
-  ko: 'Brownfield Is the Real Test of Automation: How ForwardX Scaled 484 AMRs in
-    a Live Auto OEM Factory Without Production Downtime'
+  en: 'Brownfield Is the Real Test of Automation: How ForwardX Scaled 484 AMRs in a Live Auto OEM Factory Without Production
+    Downtime'
+  zh: 'Brownfield Is the Real Test of Automation: How ForwardX Scaled 484 AMRs in a Live Auto OEM Factory Without Production
+    Downtime'
+  ko: 'Brownfield Is the Real Test of Automation: How ForwardX Scaled 484 AMRs in a Live Auto OEM Factory Without Production
+    Downtime'
 summary:
-  en: More than one year after deployment began, ForwardX's AMR system continues to
-    scale across Chery Automobile's Dalian manufacturing facility without disrupting
-    production. Today, the project ranks among the largest brownfield AMR deployments
+  en: More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian
+    manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments
     in the automotive industry.
-  zh: More than one year after deployment began, ForwardX's AMR system continues to
-    scale across Chery Automobile's Dalian manufacturing facility without disrupting
-    production. Today, the project ranks among the largest brownfield AMR deployments
+  zh: More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian
+    manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments
     in the automotive industry.
-  ko: More than one year after deployment began, ForwardX's AMR system continues to
-    scale across Chery Automobile's Dalian manufacturing facility without disrupting
-    production. Today, the project ranks among the largest brownfield AMR deployments
+  ko: More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian
+    manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments
     in the automotive industry.
 domains:
 - 11_applications_markets
@@ -40,24 +37,24 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website.
+  notes: Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/06/19/brownfield-is-the-real-test-of-automation-how-forwardx-scaled-484-amrs-in-a-live-auto-oem-factory-without-production-downtime/26748.
 sources:
 - id: src_001
   type: website
-  title: 'Brownfield Is the Real Test of Automation: How ForwardX Scaled 484 AMRs
-    in a Live Auto OEM Factory Without Production Downtime'
+  title: 'Brownfield Is the Real Test of Automation: How ForwardX Scaled 484 AMRs in a Live Auto OEM Factory Without Production
+    Downtime'
   url: http://www.RoboticsTomorrow.com/news/2026/06/19/brownfield-is-the-real-test-of-automation-how-forwardx-scaled-484-amrs-in-a-live-auto-oem-factory-without-production-downtime/26748
   date: '2026'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments in the automotive industry.
+More than one year after deployment began, ForwardX Online Robotics Trade Magazine Industrial Automation, Robots and Unmanned Vehicles More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments in the automotive industry. Most automotive factories are not built for automation. They are built for production. More Headlines Impossible Metals to Open Advanced Marine Robotics Hub in Pittsburgh, Building the Next Generation of American Mineral Robotics ELECTRICAL CONNECTORS & TERMINALS DESIGNED FOR AUTOMATION SYSTEMS AND ROBOTICS document.write(' '); Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation PrimeBOT Brings Personal Robotics to the UN's AI for Good Summit in Geneva Hippo Harvest Closes $30 Million Series C Led by Cox Farms, Scaling Robotic Indoor Growing Technology and Expanding to New Markets Articles Benefits to OEMs from Working with a Good Robotics Integrator Unleash AI Innovation: The Power of NVIDIA RTX PRO 6000 Blackwell Workstation Edition Fueled by PNY-Supplied GPUs Automate 2026 Q&A with DESTACO Automate 2026 Q&A with Roboteon Key Features to Consider in Digital Twin and OLP Software More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments in the automotive industry. That reality makes brownfield automation one of the industry's most difficult challenges. Unlike greenfield facilities, existing factories must modernize while maintaining output. Automation must adapt to legacy systems, fixed layouts, and active operations rather than being designed into the facility from the start. With a fleet of 484 AMRs, the deployment continues to expand while production remains fully operational, allowing automation to scale without major reconstruction or factory shutdowns. The Chery Dalian facility produces approximately 1,000 vehicles per day, making production continuity a critical operational requirement. Across its welding and final assembly workshops, AMRs support a wide range of intralogistics processes, including line-side delivery, SPS cart transportation, powertrain delivery, and empty-container return. In the Bodyshop, 204 AMRs currently support delivery of 32 material categories, covering more than 80% of required material demand. In final assembly, 280 AMRs manage transportation for 95 material categories, supporting nearly 90% of assembly-line material requirements. Brownfield success depends on much more than vehicle autonomy. Existing factories present a unique set of challenges: limited line-side space, mixed traffic involving workers and forklifts, legacy IT infrastructure, changing production requirements, and minimal deployment windows. The challenge is transforming an existing logistics system without disrupting production. While many automation projects demonstrate success at the pilot stage, scaling to hundreds of robots in active automotive production environments is a different challenge altogether. To address these challenges, ForwardX combined vision-based autonomy, fleet orchestration, manufacturing integration, and phased implementation strategies. Rather than requiring major facility changes, the deployment was integrated into existing production and logistics workflows. The system operates alongside workers, conveyors, robotic equipment, and existing material-handling assets. Through phased rollout and continuous optimization, automation was introduced progressively while maintaining production stability. "The challenge is transforming an operating factory while protecting production," said Nicolas Chee, Founder and CEO of ForwardX Robotics. "Brownfield automation requires much more than robotics. It requires integration, orchestration, and a deep understanding of manufacturing operations." As OEMs and Tier 1 suppliers continue upgrading existing facilities, brownfield transformation is becoming a key focus across the automotive industry. For most manufacturers, future automation investments will be deployed inside existing factories rather than new ones. Greenfield projects prove that robots can operate. Brownfield projects prove that automation can scale inside real-world manufacturing environments. Chery Dalian demonstrates what that transformation looks like in practice. Want the full story? Download the Chery Dalian Brownfield Automation White Paper here: https://www.forwardx.com/ Join us at Automate 2026 in Booth #1025 to experience the future of automotive logistics.
 
-## Overview
-More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments in the automotive industry.
+## 核心内容
+More than one year after deployment began, ForwardX Online Robotics Trade Magazine Industrial Automation, Robots and Unmanned Vehicles More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments in the automotive industry. Most automotive factories are not built for automation. They are built for production. More Headlines Impossible Metals to Open Advanced Marine Robotics Hub in Pittsburgh, Building the Next Generation of American Mineral Robotics ELECTRICAL CONNECTORS & TERMINALS DESIGNED FOR AUTOMATION SYSTEMS AND ROBOTICS document.write(' '); Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation PrimeBOT Brings Personal Robotics to the UN's AI for Good Summit in Geneva Hippo Harvest Closes $30 Million Series C Led by Cox Farms, Scaling Robotic Indoor Growing Technology and Expanding to New Markets Articles Benefits to OEMs from Working with a Good Robotics Integrator Unleash AI Innovation: The Power of NVIDIA RTX PRO 6000 Blackwell Workstation Edition Fueled by PNY-Supplied GPUs Automate 2026 Q&A with DESTACO Automate 2026 Q&A with Roboteon Key Features to Consider in Digital Twin and OLP Software More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments in the automotive industry. That reality makes brownfield automation one of the industry's most difficult challenges. Unlike greenfield facilities, existing factories must modernize while maintaining output. Automation must adapt to legacy systems, fixed layouts, and active operations rather than being designed into the facility from the start. With a fleet of 484 AMRs, the deployment continues to expand while production remains fully operational, allowing automation to scale without major reconstruction or factory shutdowns. The Chery Dalian facility produces approximately 1,000 vehicles per day, making production continuity a critical operational requirement. Across its welding and final assembly workshops, AMRs support a wide range of intralogistics processes, including line-side delivery, SPS cart transportation, powertrain delivery, and empty-container return. In the Bodyshop, 204 AMRs currently support delivery of 32 material categories, covering more than 80% of required material demand. In final assembly, 280 AMRs manage transportation for 95 material categories, supporting nearly 90% of assembly-line material requirements. Brownfield success depends on much more than vehicle autonomy. Existing factories present a unique set of challenges: limited line-side space, mixed traffic involving workers and forklifts, legacy IT infrastructure, changing production requirements, and minimal deployment windows. The challenge is transforming an existing logistics system without disrupting production. While many automation projects demonstrate success at the pilot stage, scaling to hundreds of robots in active automotive production environments is a different challenge altogether. To address these challenges, ForwardX combined vision-based autonomy, fleet orchestration, manufacturing integration, and phased implementation strategies. Rather than requiring major facility changes, the deployment was integrated into existing production and logistics workflows. The system operates alongside workers, conveyors, robotic equipment, and existing material-handling assets. Through phased rollout and continuous optimization, automation was introduced progressively while maintaining production stability. "The challenge is transforming an operating factory while protecting production," said Nicolas Chee, Founder and CEO of ForwardX Robotics. "Brownfield automation requires much more than robotics. It requires integration, orchestration, and a deep understanding of manufacturing operations." As OEMs and Tier 1 suppliers continue upgrading existing facilities, brownfield transformation is becoming a key focus across the automotive industry. For most manufacturers, future automation investments will be deployed inside existing factories rather than new ones. Greenfield projects prove that robots can operate. Brownfield projects prove that automation can scale inside real-world manufacturing environments. Chery Dalian demonstrates what that transformation looks like in practice. Want the full story? Download the Chery Dalian Brownfield Automation White Paper here: https://www.forwardx.com/ Join us at Automate 2026 in Booth #1025 to experience the future of automotive logistics.
 
-## 개요
-More than one year after deployment began, ForwardX's AMR system continues to scale across Chery Automobile's Dalian manufacturing facility without disrupting production. Today, the project ranks among the largest brownfield AMR deployments in the automotive industry.
+## 参考
+- http://www.RoboticsTomorrow.com/news/2026/06/19/brownfield-is-the-real-test-of-automation-how-forwardx-scaled-484-amrs-in-a-live-auto-oem-factory-without-production-downtime/26748
+

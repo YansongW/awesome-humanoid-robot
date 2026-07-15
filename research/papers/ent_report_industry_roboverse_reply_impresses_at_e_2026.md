@@ -4,25 +4,19 @@ $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
 type: report
 names:
-  en: Roboverse Reply Impresses at ELROB 2026 With Intelligent Robotic Systems for
-    Critical Missions
-  zh: Roboverse Reply Impresses at ELROB 2026 With Intelligent Robotic Systems for
-    Critical Missions
-  ko: Roboverse Reply Impresses at ELROB 2026 With Intelligent Robotic Systems for
-    Critical Missions
+  en: Roboverse Reply Impresses at ELROB 2026 With Intelligent Robotic Systems for Critical Missions
+  zh: Roboverse Reply Impresses at ELROB 2026 With Intelligent Robotic Systems for Critical Missions
+  ko: Roboverse Reply Impresses at ELROB 2026 With Intelligent Robotic Systems for Critical Missions
 summary:
-  en: Teaming up with ELP, a specialist for technical equipment for defusing service,
-    the company demonstrated outstanding performance alongside a field of international
-    participants from June 15 to 19, proving that its autonomous solutions operate
-    reliably under real-world conditions.
-  zh: Teaming up with ELP, a specialist for technical equipment for defusing service,
-    the company demonstrated outstanding performance alongside a field of international
-    participants from June 15 to 19, proving that its autonomous solutions operate
-    reliably under real-world conditions.
-  ko: Teaming up with ELP, a specialist for technical equipment for defusing service,
-    the company demonstrated outstanding performance alongside a field of international
-    participants from June 15 to 19, proving that its autonomous solutions operate
-    reliably under real-world conditions.
+  en: Teaming up with ELP, a specialist for technical equipment for defusing service, the company demonstrated outstanding
+    performance alongside a field of international participants from June 15 to 19, proving that its autonomous solutions
+    operate reliably under real-world conditions.
+  zh: Teaming up with ELP, a specialist for technical equipment for defusing service, the company demonstrated outstanding
+    performance alongside a field of international participants from June 15 to 19, proving that its autonomous solutions
+    operate reliably under real-world conditions.
+  ko: Teaming up with ELP, a specialist for technical equipment for defusing service, the company demonstrated outstanding
+    performance alongside a field of international participants from June 15 to 19, proving that its autonomous solutions
+    operate reliably under real-world conditions.
 domains:
 - 11_applications_markets
 layers:
@@ -40,24 +34,23 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-15'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website.
+  notes: Summary backfilled by scripts/backfill_report_summaries.py from http://www.RoboticsTomorrow.com/news/2026/06/26/roboverse-reply-impresses-at-elrob-2026-with-intelligent-robotic-systems-for-critical-missions/26779.
 sources:
 - id: src_001
   type: website
-  title: Roboverse Reply Impresses at ELROB 2026 With Intelligent Robotic Systems
-    for Critical Missions
+  title: Roboverse Reply Impresses at ELROB 2026 With Intelligent Robotic Systems for Critical Missions
   url: http://www.RoboticsTomorrow.com/news/2026/06/26/roboverse-reply-impresses-at-elrob-2026-with-intelligent-robotic-systems-for-critical-missions/26779
   date: '2026'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
 Teaming up with ELP, a specialist for technical equipment for defusing service, the company demonstrated outstanding performance alongside a field of international participants from June 15 to 19, proving that its autonomous solutions operate reliably under real-world conditions.
 
-## Overview
+## 核心内容
 Teaming up with ELP, a specialist for technical equipment for defusing service, the company demonstrated outstanding performance alongside a field of international participants from June 15 to 19, proving that its autonomous solutions operate reliably under real-world conditions.
 
-## 개요
-Teaming up with ELP, a specialist for technical equipment for defusing service, the company demonstrated outstanding performance alongside a field of international participants from June 15 to 19, proving that its autonomous solutions operate reliably under real-world conditions.
+## 参考
+- http://www.RoboticsTomorrow.com/news/2026/06/26/roboverse-reply-impresses-at-elrob-2026-with-intelligent-robotic-systems-for-critical-missions/26779
+

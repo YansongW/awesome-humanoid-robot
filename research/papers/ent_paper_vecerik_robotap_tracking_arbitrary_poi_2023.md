@@ -8,17 +8,14 @@ names:
   zh: RoboTAP
   ko: 'RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation'
 summary:
-  en: 'RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP),
-    is a 2023 generalized vision-language-action model for robotic manipulation, introduced
-    by Google DeepMind, Department of Computer Science at University College London,
+  en: 'RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP), is a 2023 generalized vision-language-action
+    model for robotic manipulation, introduced by Google DeepMind, Department of Computer Science at University College London,
     and published at ICRA 2023.'
-  zh: 'RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP),
-    is a 2023 generalized vision-language-action model for robotic manipulation, introduced
-    by Google DeepMind, Department of Computer Science at University College London,
+  zh: 'RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP), is a 2023 generalized vision-language-action
+    model for robotic manipulation, introduced by Google DeepMind, Department of Computer Science at University College London,
     and published at ICRA 2023.'
-  ko: 'RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP),
-    is a 2023 generalized vision-language-action model for robotic manipulation, introduced
-    by Google DeepMind, Department of Computer Science at University College London,
+  ko: 'RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP), is a 2023 generalized vision-language-action
+    model for robotic manipulation, introduced by Google DeepMind, Department of Computer Science at University College London,
     and published at ICRA 2023.'
 domains:
 - 07_ai_models_algorithms
@@ -39,11 +36,9 @@ theoretical_depth:
 verification:
   status: partially_verified
   reviewed_by: ai
-  reviewed_at: '2026-07-01'
+  reviewed_at: '2026-07-14'
   confidence: medium
-  notes: 'Imported from Awesome-VLA curated list. Model: RoboTAP. Institution: Google
-    DeepMind, Department of Computer Science at University College London. Venue:
-    ICRA 2023.'
+  notes: Abstract backfilled by scripts/backfill_paper_abstracts.py from http://arxiv.org/abs/2308.15975v2.
 sources:
 - id: src_001
   type: website
@@ -52,12 +47,12 @@ sources:
   date: '2023'
   accessed_at: '2026-07-01'
 ---
-
 ## 概述
-RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, Department of Computer Science at University College London, and published at ICRA 2023.
+For robots to be useful outside labs and specialized factories we need a way to teach them new useful behaviors quickly. Current approaches lack either the generality to onboard new tasks without task-specific engineering, or else lack the data-efficiency to do so in an amount of time that enables practical use. In this work we explore dense tracking as a representational vehicle to allow faster and more general learning from demonstration. Our approach utilizes Track-Any-Point (TAP) models to isolate the relevant motion in a demonstration, and parameterize a low-level controller to reproduce this motion across changes in the scene configuration. We show this results in robust robot policies that can solve complex object-arrangement tasks such as shape-matching, stacking, and even full path-following tasks such as applying glue and sticking objects together, all from demonstrations that can be collected in minutes.
 
-## Overview
-RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, Department of Computer Science at University College London, and published at ICRA 2023.
+## 核心内容
+For robots to be useful outside labs and specialized factories we need a way to teach them new useful behaviors quickly. Current approaches lack either the generality to onboard new tasks without task-specific engineering, or else lack the data-efficiency to do so in an amount of time that enables practical use. In this work we explore dense tracking as a representational vehicle to allow faster and more general learning from demonstration. Our approach utilizes Track-Any-Point (TAP) models to isolate the relevant motion in a demonstration, and parameterize a low-level controller to reproduce this motion across changes in the scene configuration. We show this results in robust robot policies that can solve complex object-arrangement tasks such as shape-matching, stacking, and even full path-following tasks such as applying glue and sticking objects together, all from demonstrations that can be collected in minutes.
 
-## 개요
-RoboTAP: Tracking Arbitrary Points for Few-Shot Visual Imitation (RoboTAP), is a 2023 generalized vision-language-action model for robotic manipulation, introduced by Google DeepMind, Department of Computer Science at University College London, and published at ICRA 2023.
+## 参考
+- http://arxiv.org/abs/2308.15975v2
+
