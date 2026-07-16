@@ -251,3 +251,113 @@ code {
   .header-inner { flex-direction: column; align-items: stretch; }
   .search-form input { min-width: 0; width: 100%; }
 }
+
+/* 首页实时统计 */
+.stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* 站点导航 */
+.site-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+.site-nav a:hover { opacity: 1; text-decoration: underline; }
+
+/* 路线图徽章 */
+.roadmap-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.roadmap-badge {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--border);
+}
+.roadmap-badge.role-core {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.roadmap-badge.role-recommended {
+  background: #eef6fc;
+  color: var(--secondary);
+  border-color: var(--accent);
+}
+.roadmap-badge.role-optional {
+  background: #f3f4f6;
+  color: var(--muted);
+}
+a.roadmap-badge:hover { filter: brightness(1.08); }
+
+/* 路线图页 */
+.roadmap-stage {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem 2rem;
+  margin-bottom: 1.5rem;
+}
+.roadmap-stage h2 { margin-top: 0; }
+.roadmap-stage h2 a {
+  color: var(--primary);
+  text-decoration: none;
+}
+.roadmap-stage h2 a:hover { color: var(--accent); }
+.roadmap-role-group h3 { margin-bottom: 0.5rem; }
+.roadmap-empty { color: var(--muted); }
+.roadmap-full-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--secondary);
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.roadmap-full-link:hover { background: var(--accent); }
+
+/* 实体关系子图 */
+.entry-subgraph {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.subgraph-hint {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
+.subgraph-canvas {
+  width: 100%;
+  height: 480px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}

@@ -24,6 +24,7 @@
         <a href="{{ bp }}/graph/" {% if active_nav == 'graph' %}aria-current="page"{% endif %}>{{ ui.nav_graph }}</a>
         <a href="{{ bp }}/search/" {% if active_nav == 'search' %}aria-current="page"{% endif %}>{{ ui.nav_search }}</a>
         <a href="{{ bp }}/wiki/" {% if active_nav == 'wiki' %}aria-current="page"{% endif %}>{{ ui.nav_wiki }}</a>
+        <a href="{{ bp }}/about/" {% if active_nav == 'about' %}aria-current="page"{% endif %}>{{ ui.nav_about }}</a>
       </nav>
       <div class="header-actions">
         <form class="search-form" action="{{ bp }}/search/" method="get" role="search">
@@ -66,6 +67,7 @@
         <a href="{{ bp }}/graph/">{{ ui.nav_graph }}</a>
         <a href="{{ bp }}/search/">{{ ui.nav_search }}</a>
         <a href="{{ bp }}/wiki/">{{ ui.nav_wiki }}</a>
+        <a href="{{ bp }}/about/">{{ ui.nav_about }}</a>
         <a href="https://github.com/YansongW/awesome-humanoid-robot" target="_blank" rel="noopener">GitHub</a>
       </div>
       <div class="footer-copy">

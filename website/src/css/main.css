@@ -2005,3 +2005,22 @@ a:hover { text-decoration: underline; }
 [data-theme="dark"] .roadmap-badge-core { background: #16233d; color: #93b8ff; border-color: #2b3f66; }
 [data-theme="dark"] .roadmap-badge-recommended { background: #12291c; color: #7fd9a4; border-color: #24503a; }
 [data-theme="dark"] .roadmap-badge-optional { background: #201a35; color: #b9a5ec; border-color: #3d3162; }
+
+/* About page */
+.about-page { max-width: 880px; }
+.about-lead { font-size: 1.1rem; color: var(--color-text-secondary); }
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 1.5rem;
+}
+.about-card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  background: var(--color-surface);
+}
+.about-card h3 { margin-top: 0; font-size: 1rem; }
+.about-card p { font-size: 0.9rem; color: var(--color-text-secondary); }
+.about-card a { font-weight: 600; }

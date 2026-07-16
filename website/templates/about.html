@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}{{ ui.nav_about }} · {{ ui.site_title }}{% endblock %}
+
+{% block content %}
+{% set bp = '' if lang == 'zh' else '/' + lang %}
+<div class="container">
+  <article class="entry-page about-page">
+    {% if lang == 'zh' %}
+    <h1>关于本项目</h1>
+    <p class="about-lead">我们的目标：让一个对人形机器人完全陌生的人，也能借助这套系统学会并从零到一造出一台属于自己的人形机器人。</p>
+
+    <h2>三层结构：查、学、造</h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>🔍 查 · 知识图谱</h3>
+        <p><strong>{{ stats.entries }} 个实体、{{ stats.relationships }} 条带类型关系</strong>，覆盖从原材料、零部件、制造工艺到 AI 算法、数据、量产、市场的全栈。每张卡片都有来源、校验状态与证据链，支持按领域/类型检索与关系子图浏览。</p>
+        <p><a href="{{ bp }}/search/">开始检索 →</a> · <a href="{{ bp }}/graph/">打开全图 →</a></p>
+      </div>
+      <div class="about-card">
+        <h3>📖 学 · Wiki 教科书</h3>
+        <p>《人形机器人：从矿山到市场》30 章 + 7 篇附录，由知识图谱中的实体交叉引用生成，系统讲解从物理基础到产业落地的完整知识体系。</p>
+        <p><a href="{{ bp }}/wiki/">阅读 Wiki →</a></p>
+      </div>
+      <div class="about-card">
+        <h3>🛠️ 造 · 0→1 路线图</h3>
+        <p>面向动手者的实操路线：基础筑基 → 造一个关节 → 双足平台 → 完整人形。每一步都告诉你<strong>做什么、为什么（链接知识卡片）、怎么根据自己的预算与场景分析选型</strong>，并附验收标准与排坑表。</p>
+        <p><a href="{{ bp }}/wiki/roadmap/">开始路线图 →</a></p>
+      </div>
+    </div>
+
+    <h2>数据纪律</h2>
+    <ul>
+      <li><strong>来源可追溯</strong>：每个实体与关系都携带来源 URL 与访问日期；挖掘得到的关系记录证据句与规则编号，可批量回溯。</li>
+      <li><strong>校验状态透明</strong>：卡片标注 verified / partially_verified / unverified 与 confidence，AI 生成内容一律明确标示。</li>
+      <li><strong>只增不改</strong>：迭代以补充为主；除非存在事实性错误，不覆盖既有内容。</li>
+      <li><strong>持续审计</strong>：CI 每次部署前运行质量审计（悬空关系、重复、零度实体、完整性），当前零度实体率低于 2%。</li>
+    </ul>
+
+    <h2>技术栈</h2>
+    <p>知识图谱以 Markdown + YAML Frontmatter 存储（<code>research/</code>、<code>data/relationships/</code>），schema 受控（<code>data/schema/v1/</code>）；静态站由 <code>website/builder/</code> 构建，支持中/英/韩三语；本地 GUI 由 <code>web/</code>（FastAPI）提供检索、子图可视化与基于图谱的 LLM 问答；摄取与挖掘流水线见 <code>scripts/</code>（AI4Sci 工作流 + 关系挖掘）。仓库根目录 <code>Makefile</code> 提供全部常用命令（<code>make help</code>）。</p>
+
+    <h2>免责声明</h2>
+    <p>路线图与 Wiki 中的动手指导内容基于公开资料与理论知识整理，<strong>未经实机验证</strong>；涉及电气、机械与锂电池操作时，请自行核实安全规范并遵守当地法规。项目内容不构成工程交付物或安全认证依据。</p>
+
+    {% elif lang == 'en' %}
+    <h1>About This Project</h1>
+    <p class="about-lead">Our goal: enable a complete beginner to learn humanoid robotics with this system and build their own humanoid robot from 0 to 1.</p>
+
+    <h2>Three Layers: Search, Learn, Build</h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>🔍 Search · Knowledge Graph</h3>
+        <p><strong>{{ stats.entries }} entities and {{ stats.relationships }} typed relationships</strong> covering the full stack from raw materials and components to AI, data, mass production and markets. Every card carries sources, verification status and evidence.</p>
+        <p><a href="{{ bp }}/search/">Start searching →</a> · <a href="{{ bp }}/graph/">Open the graph →</a></p>
+      </div>
+      <div class="about-card">
+        <h3>📖 Learn · Wiki Textbook</h3>
+        <p><em>Humanoid Robots: From Mine to Market</em> — 30 chapters plus 7 appendices, cross-referenced with KG entities, from physics foundations to industrial deployment.</p>
+        <p><a href="{{ bp }}/wiki/">Read the Wiki →</a></p>
+      </div>
+      <div class="about-card">
+        <h3>🛠️ Build · 0→1 Roadmap</h3>
+        <p>A hands-on path: foundations → one joint → biped platform → full humanoid. Every step tells you <strong>what to do, why (via linked cards), and how to analyze your own budget and scenario</strong>, with acceptance criteria and troubleshooting tables.</p>
+        <p><a href="{{ bp }}/wiki/roadmap/">Start the roadmap →</a></p>
+      </div>
+    </div>
+
+    <h2>Data Discipline</h2>
+    <ul>
+      <li><strong>Traceable sources</strong>: every entity and relationship carries source URLs and access dates; mined relationships record evidence sentences and rule ids for bulk review.</li>
+      <li><strong>Transparent verification</strong>: cards show verified / partially_verified / unverified status and confidence; AI-generated content is always labeled.</li>
+      <li><strong>Additive only</strong>: iterations extend content; existing material is never overwritten except for factual errors.</li>
+      <li><strong>Continuous audit</strong>: CI runs quality audits before every deploy (dangling relations, duplicates, zero-degree entities, completeness); the zero-degree rate is now below 2%.</li>
+    </ul>
+
+    <h2>Tech Stack</h2>
+    <p>The knowledge graph is stored as Markdown + YAML frontmatter (<code>research/</code>, <code>data/relationships/</code>) with a controlled schema (<code>data/schema/v1/</code>). The static site is built by <code>website/builder/</code> in Chinese, English and Korean. A local GUI (<code>web/</code>, FastAPI) offers search, subgraph visualization and LLM Q&amp;A over the graph. Ingestion and relationship-mining pipelines live in <code>scripts/</code>. Common commands are available via the root <code>Makefile</code> (<code>make help</code>).</p>
+
+    <h2>Disclaimer</h2>
+    <p>Hands-on guidance in the roadmap and Wiki is compiled from public sources and theory, and <strong>has not been validated on physical hardware</strong>. When working with electronics, machinery or lithium batteries, verify safety practices yourself and follow local regulations. Nothing here constitutes an engineering deliverable or safety certification.</p>
+
+    {% else %}
+    <h1>프로젝트 소개</h1>
+    <p class="about-lead">우리의 목표: 휴로봇을 전혀 모르는 사람도 이 시스템으로 배우고, 0에서 1까지 자신만의 휴로봇을 만들 수 있게 하는 것입니다.</p>
+
+    <h2>3단 구조: 검색, 학습, 제작</h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <h3>🔍 검색 · 지식 그래프</h3>
+        <p><strong>{{ stats.entries }}개 개체, {{ stats.relationships }}개 타입 관계</strong>로 원자재·부품·제조부터 AI·데이터·양산·시장까지 전 스택을 커버합니다. 모든 카드는 출처, 검증 상태, 근거를 포함합니다.</p>
+        <p><a href="{{ bp }}/search/">검색 시작 →</a> · <a href="{{ bp }}/graph/">전체 그래프 →</a></p>
+      </div>
+      <div class="about-card">
+        <h3>📖 학습 · Wiki 교과서</h3>
+        <p>《휴로봇: 광산에서 시장까지》 30장 + 7개 부록. 지식 그래프 개체와 상호 참조되며, 물리 기초부터 산업 적용까지 체계적으로 다룹니다.</p>
+        <p><a href="{{ bp }}/wiki/">Wiki 읽기 →</a></p>
+      </div>
+      <div class="about-card">
+        <h3>🛠️ 제작 · 0→1 로드맵</h3>
+        <p>실습 경로: 기초 → 관절 하나 → 이족 플랫폼 → 완전한 휴로봇. 각 단계는 <strong>무엇을, 왜(카드 링크), 자신의 예산·시나리오에 맞게 어떻게 분석할지</strong>를 알려주며, 검수 기준과 트러블슈팅 표를 제공합니다.</p>
+        <p><a href="{{ bp }}/wiki/roadmap/">로드맵 시작 →</a></p>
+      </div>
+    </div>
+
+    <h2>데이터 원칙</h2>
+    <ul>
+      <li><strong>출처 추적</strong>: 모든 개체·관계는 출처 URL과 접근 일자를 포함하며, 마이닝된 관계는 근거 문장과 규칙 ID를 기록합니다.</li>
+      <li><strong>검증 투명성</strong>: 카드는 verified / partially_verified / unverified 상태와 confidence를 표시하고, AI 생성 콘텐츠는 항상 표기합니다.</li>
+      <li><strong>추가 전용</strong>: 사실 오류를 제외하고 기존 콘텐츠를 덮어쓰지 않습니다.</li>
+      <li><strong>지속 감사</strong>: CI가 배포 전 품질 감사(댕글링·중복·고립 개체·완전성)를 실행하며, 고립 개체 비율은 2% 미만입니다.</li>
+    </ul>
+
+    <h2>기술 스택</h2>
+    <p>지식 그래프는 Markdown + YAML 프런트매터(<code>research/</code>, <code>data/relationships/</code>)로 저장되며 스키마는 <code>data/schema/v1/</code>로 관리됩니다. 정적 사이트는 <code>website/builder/</code>가 중/영/한 3개 언어로 빌드하고, 로컬 GUI(<code>web/</code>, FastAPI)는 검색·서브그래프 시각화·LLM Q&amp;A를 제공합니다. 수집·마이닝 파이프라인은 <code>scripts/</code>에 있으며, 루트 <code>Makefile</code>(<code>make help</code>)로 주요 명령을 실행할 수 있습니다.</p>
+
+    <h2>면책 조항</h2>
+    <p>로드맵과 Wiki의 실습 안내는 공개 자료와 이론을 바탕으로 정리되었으며 <strong>실기 검증을 거치지 않았습니다</strong>. 전기·기계·리튬 배터리 작업 시 안전 규정을 직접 확인하고 현지 법규를 준수하세요. 이 콘텐츠는 엔지니어링 납품물이나 안전 인증 근거가 아닙니다.</p>
+    {% endif %}
+  </article>
+</div>
+{% endblock %}

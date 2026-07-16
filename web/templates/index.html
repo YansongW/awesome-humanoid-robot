@@ -5,6 +5,21 @@
   <h1>全尺寸双足人形机器人知识图谱</h1>
   <p>像维基百科一样浏览设计、制造、算法与量产知识；也可以直接提问，让 AI 基于图谱作答。</p>
 
+  <div class="stats-bar">
+    <div class="stat-item">
+      <span class="stat-value">{{ stats.entries }}</span>
+      <span class="stat-label">实体</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">{{ stats.relationships }}</span>
+      <span class="stat-label">关系</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-value">{{ "%.1f"|format(stats.zero_degree_ratio * 100) }}%</span>
+      <span class="stat-label">零度实体（{{ stats.zero_degree }} 个）</span>
+    </div>
+  </div>
+
   <div class="ask-box">
     <h2>💬 向知识图谱提问</h2>
     <form id="ask-form">

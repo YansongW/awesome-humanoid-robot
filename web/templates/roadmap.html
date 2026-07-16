@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}0→1 路线图 · 人形机器人知识图谱{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <h1>🗺️ 0→1 造人形机器人路线图</h1>
+  <p>
+    从零基础到完整人形机器人的四阶段学习路线。图谱中的实体按「核心 / 推荐 / 拓展」三种角色绑定到各阶段，
+    点击阶段标题可跳转到静态站的完整路线图页面。
+  </p>
+  <p>
+    <a class="roadmap-full-link" href="{{ roadmap_url }}" target="_blank" rel="noopener">
+      查看完整路线图（静态站） →
+    </a>
+  </p>
+</section>
+
+{% for stage in stages %}
+<section class="roadmap-stage">
+  <h2>
+    <a href="{{ stage.url }}" target="_blank" rel="noopener">{{ stage.title }}</a>
+  </h2>
+  {% if stage.groups %}
+    {% for group in stage.groups %}
+    <div class="roadmap-role-group">
+      <h3><span class="roadmap-badge role-{{ group.role }}">{{ group.role_label }}</span></h3>
+      <ul class="entry-grid">
+        {% for entry in group.entries %}
+        <li><a href="/entry/{{ entry.id }}">{{ entry.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endfor %}
+  {% else %}
+  <p class="roadmap-empty">该阶段暂未绑定知识图谱条目。</p>
+  {% endif %}
+</section>
+{% endfor %}
+{% endblock %}

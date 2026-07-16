@@ -42,6 +42,7 @@ def index(request: Request, q: str = ""):
             "all_entries": all_entries,
             "domains": domains,
             "types": types,
+            "stats": store.stats(),
         },
     )
 
@@ -65,6 +66,20 @@ def entry_page(request: Request, entry_id: str):
             "outgoing": outgoing,
             "incoming": incoming,
             "related": related,
+            "roadmap_badges": store.roadmap_badges(entry_id),
+        },
+    )
+
+
+@app.get("/roadmap", response_class=HTMLResponse)
+def roadmap_page(request: Request):
+    store = get_store()
+    return templates.TemplateResponse(
+        "roadmap.html",
+        {
+            "request": request,
+            "stages": store.roadmap_tree(),
+            "roadmap_url": "https://kg.rounds-tech.com/wiki/roadmap/",
         },
     )
 
@@ -112,6 +127,43 @@ def api_entry(entry_id: str):
             for r in store.incoming.get(entry_id, [])
         ],
     }
+
+
+@app.get("/api/entry/{entry_id}/subgraph")
+def api_entry_subgraph(entry_id: str):
+    store = get_store()
+    entry = store.get_entry(entry_id)
+    if not entry:
+        return JSONResponse({"error": "not found"}, status_code=404)
+    nodes: dict[str, dict] = {
+        entry_id: {
+            "id": entry_id,
+            "name": entry.name or entry_id,
+            "type": entry.type,
+            "center": True,
+        }
+    }
+    edges = []
+    rels = store.outgoing.get(entry_id, []) + store.incoming.get(entry_id, [])
+    for rel in rels:
+        for nid in (rel.source_id, rel.target_id):
+            if nid not in nodes:
+                neighbor = store.entries.get(nid)
+                nodes[nid] = {
+                    "id": nid,
+                    "name": (neighbor.name if neighbor else "") or nid,
+                    "type": neighbor.type if neighbor else "unknown",
+                    "center": False,
+                }
+        edges.append(
+            {
+                "id": rel.id,
+                "source": rel.source_id,
+                "target": rel.target_id,
+                "label": rel.type,
+            }
+        )
+    return {"nodes": list(nodes.values()), "edges": edges}
 
 
 @app.post("/api/ask")

@@ -12,6 +12,8 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 RESEARCH_DIR = ROOT / "research"
 RELATIONSHIPS_DIR = ROOT / "data" / "relationships"
+ROADMAP_MAPPING_FILE = ROOT / "data" / "roadmap_mapping.yaml"
+ROADMAP_SITE = "https://kg.rounds-tech.com"
 
 
 def _split_frontmatter(text: str) -> tuple[dict[str, Any], str]:
@@ -84,6 +86,10 @@ class KGStore:
     outgoing: dict[str, list[Relationship]] = field(default_factory=dict)
     incoming: dict[str, list[Relationship]] = field(default_factory=dict)
     index_tokens: dict[str, set[str]] = field(default_factory=dict)
+    roadmap_stages: list[dict[str, Any]] = field(default_factory=list)
+    roadmap_stage_index: dict[str, dict[str, Any]] = field(default_factory=dict)
+    roadmap_roles: dict[str, str] = field(default_factory=dict)
+    roadmap_map: dict[str, list[dict[str, str]]] = field(default_factory=dict)
 
     def load(self) -> None:
         self.entries.clear()
@@ -151,6 +157,96 @@ class KGStore:
                 self.relationships.append(rel)
                 self.outgoing.setdefault(source_id, []).append(rel)
                 self.incoming.setdefault(target_id, []).append(rel)
+
+        self._load_roadmap()
+
+    def _load_roadmap(self) -> None:
+        self.roadmap_stages.clear()
+        self.roadmap_stage_index.clear()
+        self.roadmap_roles.clear()
+        self.roadmap_map.clear()
+        if not ROADMAP_MAPPING_FILE.exists():
+            return
+        try:
+            data = yaml.safe_load(ROADMAP_MAPPING_FILE.read_text(encoding="utf-8")) or {}
+        except Exception:
+            return
+        stages = data.get("stages", {}) or {}
+        ordered = sorted(stages.items(), key=lambda kv: kv[1].get("order", 0))
+        for stage_id, info in ordered:
+            title = info.get("title", {}) or {}
+            stage = {
+                "id": stage_id,
+                "order": info.get("order", 0),
+                "title": title.get("zh") or title.get("en") or stage_id,
+                "url": ROADMAP_SITE + info.get("url", ""),
+            }
+            self.roadmap_stages.append(stage)
+            self.roadmap_stage_index[stage_id] = stage
+        for role_id, info in (data.get("roles", {}) or {}).items():
+            if isinstance(info, dict):
+                self.roadmap_roles[role_id] = info.get("zh") or info.get("en") or role_id
+            else:
+                self.roadmap_roles[role_id] = str(info)
+        for eid, bindings in (data.get("entities", {}) or {}).items():
+            if isinstance(bindings, list):
+                self.roadmap_map[eid] = [
+                    {"stage": b.get("stage", ""), "role": b.get("role", "")}
+                    for b in bindings
+                    if isinstance(b, dict)
+                ]
+
+    def roadmap_badges(self, eid: str) -> list[dict[str, str]]:
+        badges: list[dict[str, str]] = []
+        for b in self.roadmap_map.get(eid, []):
+            stage = self.roadmap_stage_index.get(b["stage"])
+            if not stage:
+                continue
+            badges.append(
+                {
+                    "stage_id": stage["id"],
+                    "stage_title": stage["title"],
+                    "stage_url": stage["url"],
+                    "role": b["role"],
+                    "role_label": self.roadmap_roles.get(b["role"], b["role"]),
+                }
+            )
+        return badges
+
+    def roadmap_tree(self) -> list[dict[str, Any]]:
+        tree: list[dict[str, Any]] = []
+        role_order = {r: i for i, r in enumerate(self.roadmap_roles)}
+        for stage in self.roadmap_stages:
+            by_role: dict[str, list[Entry]] = {}
+            for eid, bindings in self.roadmap_map.items():
+                for b in bindings:
+                    if b["stage"] == stage["id"]:
+                        entry = self.entries.get(eid)
+                        if entry:
+                            by_role.setdefault(b["role"], []).append(entry)
+            groups = [
+                {
+                    "role": role,
+                    "role_label": self.roadmap_roles.get(role, role),
+                    "entries": sorted(entries, key=lambda e: e.name or e.id),
+                }
+                for role, entries in sorted(
+                    by_role.items(), key=lambda kv: role_order.get(kv[0], 99)
+                )
+            ]
+            tree.append({**stage, "groups": groups})
+        return tree
+
+    def stats(self) -> dict[str, Any]:
+        connected = set(self.outgoing) | set(self.incoming)
+        zero_degree = sum(1 for eid in self.entries if eid not in connected)
+        total = len(self.entries)
+        return {
+            "entries": total,
+            "relationships": len(self.relationships),
+            "zero_degree": zero_degree,
+            "zero_degree_ratio": (zero_degree / total) if total else 0.0,
+        }
 
     def search(self, query: str, top_k: int = 10) -> list[Entry]:
         q = query.strip().lower()

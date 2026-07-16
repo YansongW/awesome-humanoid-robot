@@ -73,6 +73,7 @@ UI_STRINGS = {
         "roadmap_banner_title": "0→1 造一台人形机器人",
         "roadmap_banner_text": "面向零基础动手者的实操路线图：从基础筑基、造一个关节、双足平台到完整人形。每一步都链接知识卡片，告诉你做什么、为什么、怎么根据自己的情况分析选型。",
         "roadmap_banner_cta": "开始路线图",
+        "nav_about": "关于",
         "summary": "摘要",
         "domains": "领域",
         "layers": "层级",
@@ -167,6 +168,7 @@ UI_STRINGS = {
         "roadmap_banner_title": "Build a Humanoid from 0 to 1",
         "roadmap_banner_text": "A hands-on roadmap for complete beginners: foundations, one joint, a biped platform, then a full humanoid. Every step links to knowledge cards explaining what to do, why, and how to analyze your own case.",
         "roadmap_banner_cta": "Start the Roadmap",
+        "nav_about": "About",
         "summary": "Summary",
         "domains": "Domains",
         "layers": "Layers",
@@ -261,6 +263,7 @@ UI_STRINGS = {
         "roadmap_banner_title": "0→1 휴로봇 만들기",
         "roadmap_banner_text": "완전 초보자를 위한 실습 로드맵: 기초 다지기, 관절 하나, 이족 플랫폼, 완전한 휴로봇까지. 각 단계는 무엇을, 왜, 어떻게 분석할지 알려주는 지식 카드로 연결됩니다.",
         "roadmap_banner_cta": "로드맵 시작",
+        "nav_about": "소개",
         "summary": "요약",
         "domains": "영역",
         "layers": "계층",
@@ -631,6 +634,17 @@ class Renderer:
         ))
         (self.dist_dir / "404.html").write_text(html, encoding="utf-8")
 
+    def render_about(self, stats: dict[str, Any]) -> None:
+        template = self.env.get_template("about.html")
+        html = template.render(**self._ctx(
+            title=f"{self.ui['nav_about']} · {self.ui['site_title']}",
+            stats=stats,
+            active_nav="about",
+        ))
+        about_dir = self.dist_dir / "about"
+        ensure_dir(about_dir)
+        (about_dir / "index.html").write_text(html, encoding="utf-8")
+
     def write_json_data(self, data: dict, filename: str) -> None:
         path = self.dist_dir / "data" / filename
         path.write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
@@ -689,6 +703,7 @@ class Renderer:
     ) -> None:
         self.copy_static_assets()
         self.render_home(stats)
+        self.render_about(stats)
         self.render_search_page()
         self.render_graph_page(stats)
         self.render_404()

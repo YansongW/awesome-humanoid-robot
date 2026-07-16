@@ -39,6 +39,20 @@
 
 ---
 
+## 🧭 三种用法：查 · 学 · 造
+
+系统按三层组织，分别回答不同的问题：
+
+| 层 | 回答的问题 | 入口 |
+|----|-----------|------|
+| 🔍 **查** —— 知识图谱 | "有什么？谁在做？它和什么相连？" | [kg.rounds-tech.com/search/](https://kg.rounds-tech.com/search/) · [关系全图](https://kg.rounds-tech.com/graph/) |
+| 📖 **学** —— Wiki 教科书 | "为什么是这样？各部分如何拼起来？" | [kg.rounds-tech.com/wiki/](https://kg.rounds-tech.com/wiki/) |
+| 🛠️ **造** —— 0→1 路线图 | "以我的预算和基础，下一步该做什么？" | [kg.rounds-tech.com/wiki/roadmap/](https://kg.rounds-tech.com/wiki/roadmap/) |
+
+**0→1 路线图**是把一切串起来的一层：四个阶段（基础筑基 → 造一个关节 → 双足平台 → 完整人形）外加执行器/传感器/计算平台/仿真四本选型手册。每一步都是三段式——*做什么*、*为什么*（链接知识卡片）、*你的情况怎么分析*——并附验收标准与排坑表。参与路线图的卡片会带阶段徽章，点击跳回对应步骤。所有建造指导都基于真实可溯源的开源方案调研（ToddlerBot、Berkeley Humanoid Lite、Upkie、OpenLoong 等，见 `data/roadmap/research/`），并明确标注为未经实机验证的理论指导。
+
+---
+
 ## ✨ v0.1.0 更新亮点
 
 - 🌐 **产品站点上线**：[kg.rounds-tech.com](https://kg.rounds-tech.com) —— 中英韩三语界面、全文搜索、交互式 Cytoscape 图谱与关联 Wiki。
@@ -168,23 +182,23 @@ bash scripts/ingest_all_sources.sh
 git clone https://github.com/YansongW/awesome-humanoid-robot.git
 cd awesome-humanoid-robot
 
-# 2. 校验当前知识图谱
-python scripts/validate_entries.py
+# 2. 查看全部常用任务（审计/构建/GUI/路线图检查）
+make help
 
-# 3. 构建产品网站
-cd website
-pip install -r requirements.txt
-python3 -m builder.build
-python3 -m http.server 8080 --directory dist
+# 3. 审计知识图谱（质量 + 连通性指标）
+make kg
 
-# 4. 运行统一入库流水线（每日 cron）
+# 4. 构建并本地预览产品网站
+make serve          # http://127.0.0.1:8080
+
+# 5. 启动本地 GUI（检索、子图可视化、LLM 问答）
+make gui            # http://127.0.0.1:8000
+
+# 6. 编辑路线图页面后重新生成 路线图↔卡片 绑定
+make roadmap-check
+
+# 7. 运行统一入库流水线（每日 cron）
 python -m ingestion.pipeline --all
-
-# 5. 启动实验性 FastAPI 问答后端（可选）
-pip install -r web/requirements.txt
-export AI4SCI_API_KEY="your-openai-compatible-key"
-export AI4SCI_BASE_URL="https://api.deepseek.com/v1"
-uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 ```
 
 凭证配置见 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md) 和 [`web/README.md`](web/README.md)。
@@ -197,12 +211,17 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 |------|------|
 | 生产环境实体 | 2,144 |
 | 关系 | 5,687 |
+| 零度实体 | < 2% |
 | 本体领域 | 13（12 + `00_foundations`） |
 | 实体类型 | 24 |
 | Wiki 章节 | 30 |
 | Wiki 附录 | 7 |
+| 0→1 路线图页面 | 9（总览 + 4 阶段 + 4 手册） |
+| 开源机器人实体 | 10（标签：`open_source`） |
+| 路线图绑定卡片 | 94 |
 | 支持语言 | 中 / 英 / 韩 |
 | 校验状态 | ✅ 通过 |
+| 质量审计 | 2,136 ok / 8 warning / 0 critical |
 
 ---
 
@@ -215,6 +234,7 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 | **Phase 2** | 工作流驱动的内容填充与 schema/关系演进 | ✅ 完成 |
 | **Phase 2.5** | 产品级静态网站（搜索、图谱、Wiki） | ✅ 完成 |
 | **Phase 3** | 公开发布 v0.1.0（开源 + 上线） | ✅ 完成 |
+| **Phase 3.5** | 0→1 建造路线图层：9 个路线图页面、10 个开源机器人实体、94 张卡片绑定、关系系统化（1,063 → 5,687 条边，零度实体 80.6% → 1.7%） | ✅ 完成 |
 | **Phase 4** | 内容完整性：补齐缺口、深化基础学科、扩展 Wiki–KG 链接 | 🔄 进行中 |
 | **Phase 5** | 审校工作流、社区贡献、v0.2.0 | ⏳ 计划中 |
 

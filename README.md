@@ -39,6 +39,20 @@ The project is **AI-assisted, human-verified**. We use AI4Sci pipelines to accel
 
 ---
 
+## 🧭 Three ways to use it: Search · Learn · Build
+
+The system is organized as three layers that answer different questions:
+
+| Layer | Question it answers | Where |
+|-------|--------------------|-------|
+| 🔍 **Search** — the knowledge graph | "What exists? Who makes it? What does it connect to?" | [kg.rounds-tech.com/search/](https://kg.rounds-tech.com/search/) · [graph view](https://kg.rounds-tech.com/graph/) |
+| 📖 **Learn** — the Wiki textbook | "Why does it work this way? How do the pieces fit?" | [kg.rounds-tech.com/wiki/](https://kg.rounds-tech.com/wiki/) |
+| 🛠️ **Build** — the 0→1 roadmap | "What do I do next, with my budget and my skills?" | [kg.rounds-tech.com/wiki/roadmap/](https://kg.rounds-tech.com/wiki/roadmap/) |
+
+The **0→1 roadmap** is the layer that ties everything together for builders: four stages (foundations → build one joint → biped platform → full humanoid) plus selection playbooks for actuators, sensors, compute and simulation. Every step is three-part — *what to do*, *why* (via linked KG cards), and *how to analyze your own case* — with acceptance criteria and troubleshooting tables. Entity cards that participate in the roadmap carry stage badges linking back to the relevant step. All build guidance is grounded in real, sourced research on open-source platforms (ToddlerBot, Berkeley Humanoid Lite, Upkie, OpenLoong and more — see `data/roadmap/research/`) and is clearly marked as theory-based guidance that has not been validated on physical hardware.
+
+---
+
 ## ✨ What's new in v0.1.0
 
 - 🌐 **Live product site** at [kg.rounds-tech.com](https://kg.rounds-tech.com) — trilingual UI, full-text search, interactive Cytoscape graph, and linked Wiki.
@@ -171,23 +185,23 @@ The framework is documented in [`docs/ingestion/README.md`](docs/ingestion/READM
 git clone https://github.com/YansongW/awesome-humanoid-robot.git
 cd awesome-humanoid-robot
 
-# 2. Validate the current knowledge graph
-python scripts/validate_entries.py
+# 2. See all common tasks (audit / build / GUI / roadmap checks)
+make help
 
-# 3. Build the product website
-cd website
-pip install -r requirements.txt
-python3 -m builder.build
-python3 -m http.server 8080 --directory dist
+# 3. Audit the knowledge graph (quality + connectivity metrics)
+make kg
 
-# 4. Run the unified ingestion pipeline (daily cron)
+# 4. Build and preview the product website
+make serve          # http://127.0.0.1:8080
+
+# 5. Start the local GUI (search, subgraph viz, LLM Q&A)
+make gui            # http://127.0.0.1:8000
+
+# 6. Regenerate roadmap <-> card bindings after editing roadmap pages
+make roadmap-check
+
+# 7. Run the unified ingestion pipeline (daily cron)
 python -m ingestion.pipeline --all
-
-# 5. Start the experimental FastAPI Q&A backend (optional)
-pip install -r web/requirements.txt
-export AI4SCI_API_KEY="your-openai-compatible-key"
-export AI4SCI_BASE_URL="https://api.deepseek.com/v1"
-uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 ```
 
 For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md) and [`web/README.md`](web/README.md).
@@ -200,13 +214,17 @@ For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4
 |--------|-------|
 | Production entries | 2,144 |
 | Relationships | 5,687 |
+| Zero-degree entities | < 2% |
 | Ontology domains | 13 (12 + `00_foundations`) |
 | Entity types | 24 |
 | Wiki chapters | 30 |
 | Wiki appendices | 7 |
+| 0→1 roadmap pages | 9 (index + 4 stages + 4 playbooks) |
+| Open-source robot entities | 10 (tags: `open_source`) |
+| Roadmap-bound entities | 94 |
 | Supported languages | en, zh, ko |
 | Validation status | ✅ passing |
-| Quality audit | 1,643 ok / 285 warning / 215 paper-body gaps |
+| Quality audit | 2,136 ok / 8 warning / 0 critical |
 
 ---
 
@@ -219,6 +237,7 @@ For credential setup, see [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4
 | **Phase 2** | Workstream-driven content population + schema/relationship evolution | ✅ Complete |
 | **Phase 2.5** | Static product website with search, graph, and Wiki | ✅ Complete |
 | **Phase 3** | Public v0.1.0 release (open source + live site) | ✅ Complete |
+| **Phase 3.5** | 0→1 build roadmap layer: 9 roadmap pages, 10 open-source robot entities, 94 card bindings, relationship systematization (1,063 → 5,687 edges, zero-degree 80.6% → 1.7%) | ✅ Complete |
 | **Phase 4** | Content completeness: fill gaps, deepen foundational knowledge, expand Wiki–KG links | 🔄 In progress (non-paper core entities done; English translation done; paper abstract backfill remaining) |
 | **Phase 5** | Verification workflow, community contributions, v0.2.0 | ⏳ Planned |
 

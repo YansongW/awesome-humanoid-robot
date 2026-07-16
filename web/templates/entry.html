@@ -5,6 +5,15 @@
 {% block content %}
 <article class="entry-page">
   <h1>{{ entry.name }}</h1>
+  {% if roadmap_badges %}
+  <div class="roadmap-badges">
+    {% for badge in roadmap_badges %}
+    <a class="roadmap-badge role-{{ badge.role }}" href="{{ badge.stage_url }}" target="_blank" rel="noopener">
+      🗺️ {{ badge.stage_title }} · {{ badge.role_label }}
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
   <div class="entry-meta">
     <span>ID: <code>{{ entry.id }}</code></span>
     <span>类型: {{ entry.type }}</span>
@@ -20,6 +29,14 @@
   <section class="entry-body">
     {{ entry.body_html|safe }}
   </section>
+
+  {% if outgoing or incoming %}
+  <section class="entry-subgraph">
+    <h2>关系子图</h2>
+    <p class="subgraph-hint">该实体的一跳邻居。点击节点跳转到对应条目。</p>
+    <div id="subgraph" class="subgraph-canvas" data-entry-id="{{ entry.id }}"></div>
+  </section>
+  {% endif %}
 
   {% if outgoing or incoming %}
   <section class="entry-relations">
@@ -62,4 +79,74 @@
   </section>
   {% endif %}
 </article>
+
+{% if outgoing or incoming %}
+<script src="/static/lib/cytoscape.min.js"></script>
+<script>
+(async () => {
+  const el = document.getElementById('subgraph');
+  const entryId = el.dataset.entryId;
+  const res = await fetch('/api/entry/' + encodeURIComponent(entryId) + '/subgraph');
+  if (!res.ok) return;
+  const data = await res.json();
+  const cy = cytoscape({
+    container: el,
+    elements: [
+      ...data.nodes.map(n => ({data: {id: n.id, label: n.name, type: n.type, center: n.center}})),
+      ...data.edges.map(e => ({data: {id: e.id, source: e.source, target: e.target, label: e.label}}))
+    ],
+    style: [
+      {
+        selector: 'node',
+        style: {
+          'label': 'data(label)',
+          'background-color': '#3498db',
+          'color': '#1f2937',
+          'font-size': 11,
+          'text-valign': 'bottom',
+          'text-margin-y': 5,
+          'text-wrap': 'wrap',
+          'text-max-width': '110px',
+          'width': 28,
+          'height': 28
+        }
+      },
+      {
+        selector: 'node[?center]',
+        style: {
+          'background-color': '#0b2f5c',
+          'width': 42,
+          'height': 42,
+          'font-weight': 'bold'
+        }
+      },
+      {
+        selector: 'edge',
+        style: {
+          'label': 'data(label)',
+          'width': 1.5,
+          'line-color': '#9ca3af',
+          'target-arrow-shape': 'triangle',
+          'target-arrow-color': '#9ca3af',
+          'curve-style': 'bezier',
+          'font-size': 9,
+          'color': '#6b7280',
+          'text-rotation': 'autorotate',
+          'text-background-color': '#ffffff',
+          'text-background-opacity': 0.8,
+          'text-background-padding': '2px'
+        }
+      }
+    ],
+    layout: {name: 'cose', animate: false, padding: 30, nodeRepulsion: 8000}
+  });
+  cy.on('tap', 'node', evt => {
+    const id = evt.target.id();
+    if (id !== entryId) window.location.href = '/entry/' + encodeURIComponent(id);
+  });
+  cy.on('mouseover', 'node', () => { el.style.cursor = 'pointer'; });
+  cy.on('mouseout', 'node', () => { el.style.cursor = 'default'; });
+})();
+</script>
+{% endif %}
 {% endblock %}

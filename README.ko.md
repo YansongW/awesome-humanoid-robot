@@ -39,6 +39,20 @@
 
 ---
 
+## 🧭 세 가지 사용법: 검색 · 학습 · 제작
+
+이 시스템은 세 개의 층으로 구성되어 각각 다른 질문에 답합니다:
+
+| 층 | 답하는 질문 | 입구 |
+|----|-----------|------|
+| 🔍 **검색** — 지식 그래프 | "무엇이 있는가? 누가 만드는가? 무엇과 연결되는가?" | [kg.rounds-tech.com/search/](https://kg.rounds-tech.com/search/) · [그래프](https://kg.rounds-tech.com/graph/) |
+| 📖 **학습** — Wiki 교과서 | "왜 이렇게 동작하는가? 조각들이 어떻게 맞물리는가?" | [kg.rounds-tech.com/wiki/](https://kg.rounds-tech.com/wiki/) |
+| 🛠️ **제작** — 0→1 로드맵 | "내 예산과 실력으로 다음에 무엇을 해야 하는가?" | [kg.rounds-tech.com/wiki/roadmap/](https://kg.rounds-tech.com/wiki/roadmap/) |
+
+**0→1 로드맵**은 모든 것을 하나로 잇는 층입니다: 네 단계(기초 다지기 → 관절 하나 → 이족 플랫폼 → 완전한 휴로봇)와 액추에이터/센서/컴퓨팅/시뮬레이션 네 권의 선정 매뉴얼. 모든 단계는 세 부분 구조——*무엇을 할지*, *왜인지*(지식 카드 링크), *내 상황에서 어떻게 분석할지*——이며 검수 기준과 트러블슈팅 표를 갖춥니다. 로드맵에 참여하는 카드에는 단계 배지가 표시되어 해당 단계로 돌아갈 수 있습니다. 모든 제작 안내는 실제 출처가 있는 오픈소스 플랫폼 조사(ToddlerBot, Berkeley Humanoid Lite, Upkie, OpenLoong 등, `data/roadmap/research/` 참조)에 기반하며, 실기 검증을 거치지 않은 이론적 안내임을 명시합니다.
+
+---
+
 ## ✨ v0.1.0 하이라이트
 
 - 🌐 **라이브 제품 사이트** — [kg.rounds-tech.com](https://kg.rounds-tech.com): 중/영/한 3개 언어 UI, 전문 검색, 인터랙티브 Cytoscape 그래프, 연계 Wiki.
@@ -164,27 +178,27 @@ bash scripts/ingest_all_sources.sh
 ## 🚀 빠른 시작
 
 ```bash
-# 1. 리포지토리 클론
+# 1. 저장소 클론
 git clone https://github.com/YansongW/awesome-humanoid-robot.git
 cd awesome-humanoid-robot
 
-# 2. 현재 지식 그래프 검증
-python scripts/validate_entries.py
+# 2. 주요 작업 확인 (감사/빌드/GUI/로드맵 체크)
+make help
 
-# 3. 제품 웹사이트 빌드
-cd website
-pip install -r requirements.txt
-python3 -m builder.build
-python3 -m http.server 8080 --directory dist
+# 3. 지식 그래프 감사 (품질 + 연결성 지표)
+make kg
 
-# 4. 통합 수집 파이프라인 실행 (매일 cron)
+# 4. 제품 웹사이트 빌드 및 로컬 미리보기
+make serve          # http://127.0.0.1:8080
+
+# 5. 로컬 GUI 실행 (검색, 서브그래프 시각화, LLM Q&A)
+make gui            # http://127.0.0.1:8000
+
+# 6. 로드맵 페이지 편집 후 로드맵↔카드 바인딩 재생성
+make roadmap-check
+
+# 7. 통합 인제스천 파이프라인 실행 (일일 cron)
 python -m ingestion.pipeline --all
-
-# 5. 실험적 FastAPI Q&A 백엔드 시작 (선택)
-pip install -r web/requirements.txt
-export AI4SCI_API_KEY="your-openai-compatible-key"
-export AI4SCI_BASE_URL="https://api.deepseek.com/v1"
-uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 ```
 
 자격 증명 설정은 [`docs/ai4sci/literature_review_pipeline.md`](docs/ai4sci/literature_review_pipeline.md)와 [`web/README.md`](web/README.md)를 참조하세요.
@@ -197,12 +211,17 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 |------|------|
 | 프로덕션 엔티티 | 2,144 |
 | 관계 | 5,687 |
-| 온톨로지 영역 | 13 (12 + `00_foundations`) |
-| 엔티티 타입 | 24 |
-| Wiki 장 | 30 |
+| 고립 개체 | < 2% |
+| 온톨로지 도메인 | 13 (12 + `00_foundations`) |
+| 엔티티 유형 | 24 |
+| Wiki 챕터 | 30 |
 | Wiki 부록 | 7 |
-| 지원 언어 | 영 / 중 / 한 |
+| 0→1 로드맵 페이지 | 9 (개요 + 4단계 + 4매뉴얼) |
+| 오픈소스 로봇 엔티티 | 10 (태그: `open_source`) |
+| 로드맵 바인딩 카드 | 94 |
+| 지원 언어 | 중 / 영 / 한 |
 | 검증 상태 | ✅ 통과 |
+| 품질 감사 | 2,136 ok / 8 warning / 0 critical |
 
 ---
 
@@ -215,6 +234,7 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 | **Phase 2** | 워크스트림 기반 콘텐츠 채우기 및 schema/관계 진화 | ✅ 완료 |
 | **Phase 2.5** | 제품 수준 정적 웹사이트(검색, 그래프, Wiki) | ✅ 완료 |
 | **Phase 3** | 공개 v0.1.0 릴리스(오픈소스 + 라이브) | ✅ 완료 |
+| **Phase 3.5** | 0→1 제작 로드맵 층: 로드맵 페이지 9개, 오픈소스 로봇 엔티티 10개, 카드 바인딩 94개, 관계 체계화(엣지 1,063 → 5,687, 고립 개체 80.6% → 1.7%) | ✅ 완료 |
 | **Phase 4** | 콘텐츠 완성도: 공백 보충, 기초 학문 심화, Wiki–KG 링크 확장 | 🔄 진행 중 |
 | **Phase 5** | 검증 워크플로우, 커뮤니티 기여, v0.2.0 | ⏳ 계획 중 |
 
