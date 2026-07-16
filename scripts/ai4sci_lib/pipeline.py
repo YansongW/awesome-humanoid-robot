@@ -57,6 +57,47 @@ def threshold_to_int(threshold: str) -> int:
     return {"low": 1, "medium": 2, "high": 3}[threshold]
 
 
+# 注入提示词的候选实体数量上限，避免 prompt 过长
+MAX_CANDIDATE_ENTITIES = 80
+
+
+def resolve_domain_code(primary_domain: str | None) -> str | None:
+    """将相关性分类产出的 primary_domain 归一化为 schema 域代码。
+
+    分类器可能返回 "ai_models_algorithms"（无前缀）或 "07_ai_models_algorithms"
+    （完整代码）两种形式；无法映射时返回 None。
+    """
+    if not primary_domain:
+        return None
+    value = primary_domain.strip().lower()
+    if value in entry_builder.VALID_DOMAINS:
+        return value
+    for code in entry_builder.VALID_DOMAINS:
+        # 完整代码形如 "07_ai_models_algorithms"，去掉数字前缀后做后缀匹配
+        if code.split("_", 1)[-1] == value:
+            return code
+    return None
+
+
+def select_candidate_entities(
+    entity_index: dict[str, dict[str, Any]],
+    domain_code: str | None,
+    limit: int = MAX_CANDIDATE_ENTITIES,
+) -> list[str]:
+    """从实体索引中挑出候选实体，格式化为 "ent_id=名称" 清单。
+
+    优先按论文 primary_domain 过滤；无法映射或无匹配时退化为全量实体
+    （仍截断到 limit 条），保证 LLM 至少有真实 id 可选，而不是凭空编造。
+    按实体 id 排序以保证结果确定性。
+    """
+    items = sorted(entity_index.items())
+    if domain_code:
+        matched = [(eid, info) for eid, info in items if domain_code in info.get("domains", [])]
+        if matched:
+            items = matched
+    return [f"{eid}={info['name']}" for eid, info in items[:limit]]
+
+
 def process_source(
     source: SourceCandidate,
     output_dir: Path,
@@ -134,8 +175,16 @@ def process_source(
         )
         return result
 
+    # 加载生产实体索引，按论文 primary_domain 过滤出候选实体清单注入提示词，
+    # 要求 LLM 的 target_id 只能取自真实存在的实体，从源头遏制关系幻觉。
+    entity_index = entry_builder.load_entity_index()
+    domain_code = resolve_domain_code(relevance.get("primary_domain"))
+    candidate_entities = select_candidate_entities(entity_index, domain_code)
+
     try:
-        proposal = extraction.propose_entry(metadata, relevance, model=model)
+        proposal = extraction.propose_entry(
+            metadata, relevance, model=model, candidate_entities=candidate_entities
+        )
     except Exception as exc:
         result.status = "error"
         result.message = f"Error generating entry proposal: {exc}"
@@ -219,6 +268,17 @@ def process_source(
 
     for rel in relationships:
         rel["type"] = entry_builder.normalize_relationship_type(rel.get("type", ""))
+
+    # 产出后校验：target_id 不在真实实体集合中的关系一律丢弃并记录，
+    # 防止 LLM 幻觉产生的悬空关系进入 staging（此类文件永远无法挂接）。
+    kept_relationships = []
+    for rel in relationships:
+        target_id = rel.get("target_id")
+        if target_id and target_id in existing_ids:
+            kept_relationships.append(rel)
+        else:
+            review_notes.append(f"dropped dangling target_id: {target_id or '<empty>'}")
+    relationships = kept_relationships
 
     # Capture proposed knowledge-chain children for later expansion.
     if knowledge_chain:

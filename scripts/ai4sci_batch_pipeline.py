@@ -7,9 +7,9 @@ staging directory (e.g., `.staging/workstreams/vla/`).
 
 Usage:
     source .venv/bin/activate
-    python scripts/ai4sci_batch_pipeline.py scripts/ai4sci_workstreams/vla.yaml
-    python scripts/ai4sci_batch_pipeline.py scripts/ai4sci_workstreams/vla.yaml --dry-run
-    python scripts/ai4sci_batch_pipeline.py scripts/ai4sci_workstreams/vla.yaml --max-workers 2 --max-papers 5
+    python scripts/ai4sci_batch_pipeline.py scripts/ai4sci_workstreams/definition/algorithm_survey/high_level_ai/vla.yaml
+    python scripts/ai4sci_batch_pipeline.py scripts/ai4sci_workstreams/definition/algorithm_survey/high_level_ai/vla.yaml --dry-run
+    python scripts/ai4sci_batch_pipeline.py scripts/ai4sci_workstreams/definition/algorithm_survey/high_level_ai/vla.yaml --max-workers 2 --max-papers 5
 """
 
 from __future__ import annotations

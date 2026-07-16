@@ -1,4 +1,4 @@
-name: tactile_sensors
+name: tactile_sensing_humanoid_hands
 description: |
   Survey tactile and force sensing technologies for humanoid robot hands and
   skin: pressure-sensitive arrays, strain gauges, optical tactile sensors,

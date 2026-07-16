@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import shutil
+from datetime import datetime
 from pathlib import Path
 
 from . import config
@@ -76,5 +77,6 @@ def reject_entry(staged_path: Path, reason: str, base_dir: Path | None = None) -
         counter += 1
     shutil.move(str(staged_path), str(dest))
     note = base / "rejected" / f"{dest.stem}.reason.txt"
-    note.write_text(f"Rejected at: __TIMESTAMP__\nReason: {reason}\n", encoding="utf-8")
+    # 运行时生成 ISO 时间戳（此前此处残留未替换的 __TIMESTAMP__ 占位符）
+    note.write_text(f"Rejected at: {datetime.now().isoformat()}\nReason: {reason}\n", encoding="utf-8")
     return dest

@@ -6,8 +6,8 @@
 
 <p>
   <img src="https://img.shields.io/badge/status-public%20v0.1.0-success" alt="Status: public v0.1.0" />
-  <img src="https://img.shields.io/badge/entries-2143-green" alt="2143 entries" />
-  <img src="https://img.shields.io/badge/relationships-1063-brightgreen" alt="1063 relationships" />
+  <img src="https://img.shields.io/badge/entries-2144-green" alt="2144 entries" />
+  <img src="https://img.shields.io/badge/relationships-5687-brightgreen" alt="5687 relationships" />
   <img src="https://img.shields.io/badge/languages-zh%2Fen%2Fko-blue" alt="Languages: zh/en/ko" />
   <img src="https://img.shields.io/badge/validation-passing-success" alt="Validation passing" />
 </p>
@@ -43,7 +43,7 @@
 
 - 🌐 **라이브 제품 사이트** — [kg.rounds-tech.com](https://kg.rounds-tech.com): 중/영/한 3개 언어 UI, 전문 검색, 인터랙티브 Cytoscape 그래프, 연계 Wiki.
 - 📖 **리포지토리 내 Wiki** — *Humanoid Robots: From Mine to Market*에서 파생된 30개 서술 장 + 7개 부록, 경고 상자, Mermaid 다이어그램, KaTeX 수식 렌더링.
-- 🗂️ **2,143개 검증된 KG 엔티티** 및 **1,063개 타입 지정 관계**, 원자재부터 시장 적용까지 전체 스택을 커버.
+- 🗂️ **2,144개 검증된 KG 엔티티** 및 **5,687개 타입 지정 관계**, 원자재부터 시장 적용까지 전체 스택을 커버.
 - 🔄 **자동화 CI/CD** — `main` 브랜치 푸시마다 GitHub Actions가 사이트를 빌드하여 GitHub Pages에 배포.
 - 🛡️ **강화된 배포** — 동시성 제어와 깨끗한 `gh-pages` 브랜치 재생성으로 경쟁 상태로 인한 푸시 실패 방지.
 - 🧩 **핵심 비논문 엔티티 본문 보강** — Wiki 장에서 추출하거나 엔티티 메타데이터를 확장하여 233개 critical 비논문 엔티티에 概述/核心内容/参考 구조화 본문 추가.
@@ -195,8 +195,8 @@ uvicorn web.app:app --reload --host 127.0.0.1 --port 8000
 
 | 지표 | 수량 |
 |------|------|
-| 프로덕션 엔티티 | 2,143 |
-| 관계 | 1,063 |
+| 프로덕션 엔티티 | 2,144 |
+| 관계 | 5,687 |
 | 온톨로지 영역 | 13 (12 + `00_foundations`) |
 | 엔티티 타입 | 24 |
 | Wiki 장 | 30 |

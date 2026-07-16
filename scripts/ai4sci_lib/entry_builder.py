@@ -190,6 +190,37 @@ def write_relationship_file(
     return path
 
 
+def load_entity_index() -> dict[str, dict[str, Any]]:
+    """加载生产知识图谱的实体索引：实体 $id -> {"name": 英文名, "domains": [域代码]}。
+
+    仅扫描 ``research/**/*.md``（生产目录），用于：
+    1. 按论文 primary_domain 过滤出候选实体清单，注入 propose_entry 的提示词；
+    2. 产出后校验关系的 target_id 是否指向真实存在的实体（防幻觉挂接）。
+    """
+    index: dict[str, dict[str, Any]] = {}
+    base = config.RESEARCH_DIR
+    if not base.exists():
+        return index
+    for path in base.rglob("*.md"):
+        try:
+            text = path.read_text(encoding="utf-8")
+            if not text.startswith("---"):
+                continue
+            _, rest = text.split("---", 1)
+            yaml_text, _ = rest.split("---", 1)
+            data = yaml.safe_load(yaml_text)
+            if not data or "$id" not in data:
+                continue
+            names = data.get("names") or {}
+            index[data["$id"]] = {
+                "name": names.get("en") or data["$id"],
+                "domains": data.get("domains") or [],
+            }
+        except Exception:
+            continue
+    return index
+
+
 def load_existing_ids() -> set[str]:
     """Load all existing entity and relationship IDs from production and staging."""
     ids: set[str] = set()

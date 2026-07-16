@@ -1,0 +1,52 @@
+# ============================================================================
+# builder_track：0→1 造人形机器人路线图（wiki/docs/roadmap/）配套文献工作流
+# 阶段定位：贯穿单关节 → 双足平台 → 完整人形的仿真先行工作流
+# 目标读者：需要先搭仿真再烧真机的新手，强调仿真器选型与 sim-to-real 落地细节
+# ============================================================================
+name: sim_to_real_setup
+description: |
+  调研面向人形/双足机器人的仿真环境搭建与 sim-to-real 迁移实践：Isaac
+  Gym/Isaac Lab、MuJoCo、Gazebo 等仿真器的选型与 URDF/SDF 建模流程、域
+  随机化与系统辨识、执行器建模与延迟标定、以及把仿真训练的策略部署到
+  真实机器人时的常见坑与工程对策。
+seed_queries:
+  - "sim to real transfer humanoid robot reinforcement learning deployment"
+  - "Isaac Gym MuJoCo Gazebo humanoid robot simulation setup comparison"
+  - "domain randomization bipedal robot sim to real"
+  - "system identification actuator model sim to real legged robot"
+  - "URDF humanoid robot simulation reinforcement learning pipeline"
+paper_ids: []
+target_entity_types:
+  - paper
+  - method
+  - technology
+  - software_platform
+target_domains:
+  - 07_ai_models_algorithms
+  - 08_software_middleware
+relationship_patterns:
+  - uses
+  - enables
+  - requires
+  - transfers_to
+  - is_alternative_to
+  - evaluates_on
+relevance_threshold: medium
+max_papers: 15
+max_results_per_query: 50
+max_total: 100
+priority: 1
+sources:
+  - arxiv
+  - semantic_scholar
+metadata:
+  track: builder_track
+  roadmap: wiki/docs/roadmap/
+  audience: 动手造机器人的新手（0→1 路线图）
+relevance_context: >-
+  Relevant if it helps a first-time builder stand up a simulation environment
+  for a humanoid/biped robot and close the sim-to-real gap: simulator
+  comparisons and setup guides, URDF/SDF modeling workflows, domain
+  randomization, system identification, actuator/delay modeling, or documented
+  real-world deployments of simulation-trained controllers. Prioritize
+  practical pipelines over pure sim-to-real theory.

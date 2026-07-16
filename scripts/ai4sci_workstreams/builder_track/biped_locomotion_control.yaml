@@ -1,0 +1,51 @@
+# ============================================================================
+# builder_track：0→1 造人形机器人路线图（wiki/docs/roadmap/）配套文献工作流
+# 阶段定位：双足平台阶段——让机器人站起来的经典与现代控制方法
+# 目标读者：需要在 ZMP/MPC/WBC/RL 之间选择入门路线的新手，强调可复现实现
+# ============================================================================
+name: biped_locomotion_control
+description: |
+  调研双足行走控制的入门与进阶路线：ZMP/捕获点（DCM）与预览控制等经典
+  方法、基于模型的 MPC 与全身控制（WBC）、以及强化学习运控策略。关注
+  控制架构选型对比、开源实现（参考代码/仿真复现）、部署到真实双足平台
+  时的稳定性与调参经验。
+seed_queries:
+  - "ZMP preview control biped walking humanoid tutorial implementation"
+  - "model predictive control bipedal locomotion humanoid real robot"
+  - "whole body control humanoid torque based balance"
+  - "reinforcement learning bipedal locomotion humanoid deployment"
+  - "learning vs model based locomotion control comparison humanoid"
+paper_ids: []
+target_entity_types:
+  - paper
+  - method
+  - algorithm
+  - technology
+target_domains:
+  - 07_ai_models_algorithms
+relationship_patterns:
+  - is_based_on
+  - builds_on
+  - enables
+  - requires
+  - is_alternative_to
+  - instantiates
+relevance_threshold: medium
+max_papers: 15
+max_results_per_query: 50
+max_total: 100
+priority: 1
+sources:
+  - arxiv
+  - semantic_scholar
+metadata:
+  track: builder_track
+  roadmap: wiki/docs/roadmap/
+  audience: 动手造机器人的新手（0→1 路线图）
+relevance_context: >-
+  Relevant if it teaches or compares bipedal locomotion control approaches
+  (ZMP/DCM/preview control, MPC, WBC, RL) at a level a builder can
+  implement—especially papers with open-source code, reproducible simulation
+  setups, or honest accounts of deploying walking controllers on real biped
+  hardware. A survey contrasting these approaches for newcomers is highly
+  relevant; pure theory with no path to implementation is not.

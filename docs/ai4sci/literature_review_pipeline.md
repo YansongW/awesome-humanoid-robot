@@ -136,7 +136,8 @@ The workstream directory is organized as a tree that mirrors the 0→1 knowledge
 scripts/ai4sci_workstreams/
 ├── definition/
 │   └── algorithm_survey/
-│       └── vla.yaml
+│       └── high_level_ai/
+│           └── vla.yaml
 ├── design/
 │   ├── hardware/
 │   │   └── actuation/
@@ -147,14 +148,17 @@ scripts/ai4sci_workstreams/
 │   └── supply_chain/
 ├── safety_certification/
 ├── cross_domain/
+├── builder_track/
 └── ...
 ```
+
+完整清单见 [`WORKSTREAM_TREE.md`](WORKSTREAM_TREE.md)（按目录实况生成）。
 
 A workstream can be executed:
 
 - **As a single batch**:
   ```bash
-  python scripts/ai4sci_batch_pipeline.py scripts/ai4sci_workstreams/definition/algorithm_survey/vla.yaml --max-papers 10 --max-workers 2
+  python scripts/ai4sci_batch_pipeline.py scripts/ai4sci_workstreams/definition/algorithm_survey/high_level_ai/vla.yaml --max-papers 10 --max-workers 2
   ```
 
 - **Via the multi-agent orchestrator**:
@@ -238,7 +242,7 @@ Use `--auto-approve` only when you have already reviewed files manually.
 Batch runner for a single workstream. Discovers papers, classifies relevance, and extracts entries/relationships in parallel.
 
 ```bash
-python scripts/ai4sci_batch_pipeline.py scripts/ai4sci_workstreams/definition/algorithm_survey/vla.yaml --max-papers 10 --max-workers 2
+python scripts/ai4sci_batch_pipeline.py scripts/ai4sci_workstreams/definition/algorithm_survey/high_level_ai/vla.yaml --max-papers 10 --max-workers 2
 ```
 
 ### 4.4 `scripts/ai4sci_orchestrator.py`

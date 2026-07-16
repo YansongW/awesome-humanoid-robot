@@ -1,0 +1,51 @@
+# ============================================================================
+# builder_track：0→1 造人形机器人路线图（wiki/docs/roadmap/）配套文献工作流
+# 阶段定位：基础筑基 → 单关节 → 双足平台 → 完整人形（本工作流服务全阶段的载体选型）
+# 目标读者：第一次动手造机器人的新手，优先开源、可复现、有 BOM/图纸的方案
+# ============================================================================
+name: open_source_humanoid_hardware
+description: |
+  调研可复现的开源人形/双足机器人硬件方案，帮助新手选定第一台实体平台的
+  参考设计：整体机械架构、自由度配置、3D 打印/机加工结构件、公开 BOM 与
+  成本、配套固件与装配文档。覆盖 Berkeley Humanoid、ToddlerBot、Duke
+  Humanoid、Open Dynamic Robot Initiative、Upkie 等代表性开源平台。
+seed_queries:
+  - "open source humanoid robot hardware design bill of materials"
+  - "open source bipedal robot platform 3D printed reproducible"
+  - "Berkeley Humanoid open source hardware design"
+  - "ToddlerBot open source humanoid robot low cost"
+  - "Open Dynamic Robot Initiative biped hardware open source"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - component
+  - robot_system
+target_domains:
+  - 02_components
+  - 06_design_engineering
+relationship_patterns:
+  - integrates
+  - requires
+  - uses
+  - enables
+  - is_alternative_to
+relevance_threshold: medium
+max_papers: 15
+max_results_per_query: 50
+max_total: 100
+priority: 1
+sources:
+  - arxiv
+  - semantic_scholar
+metadata:
+  track: builder_track
+  roadmap: wiki/docs/roadmap/
+  audience: 动手造机器人的新手（0→1 路线图）
+relevance_context: >-
+  Relevant if it presents a concrete, buildable humanoid or biped robot
+  hardware platform—especially open-source designs with published BOMs, CAD
+  files, assembly docs, or cost breakdowns that a first-time builder could
+  replicate. Also relevant: comparative teardowns or design trade-off analyses
+  of existing small/mid-size humanoid platforms. Deprioritize pure algorithm
+  papers with no hardware build details.

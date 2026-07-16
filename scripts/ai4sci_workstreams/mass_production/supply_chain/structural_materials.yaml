@@ -1,5 +1,14 @@
-name: structural_materials
-description: 'Workstream for structural materials. Generated from WORKSTREAM_TREE
+# ============================================================================
+# DEPRECATED（已废弃，请勿执行）
+# 该工作流与 design/hardware/structure/structural_materials.yaml 内容实质重复，
+# 保留份为：scripts/ai4sci_workstreams/design/hardware/structure/structural_materials.yaml
+# 本文件仅为保留历史路径而存档；name 已改为 deprecated_structural_materials_supply_chain
+# 以避免 workstream 名称冲突（调度器按 name 建立 .staging/workstreams/<name> 目录）。
+# ============================================================================
+name: deprecated_structural_materials_supply_chain
+description: 'DEPRECATED 重复工作流存档。请使用保留份 design/hardware/structure/structural_materials.yaml。
+
+  原描述：Workstream for structural materials. Generated from WORKSTREAM_TREE
   leaf: mass_production/supply_chain/structural_materials.yaml.
 
   Query set refined for broader robotics relevance and relevance_context added.'

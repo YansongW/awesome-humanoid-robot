@@ -1,0 +1,51 @@
+# ============================================================================
+# builder_track：0→1 造人形机器人路线图（wiki/docs/roadmap/）配套文献工作流
+# 阶段定位：单关节阶段的核心——为第一个关节模组选型并跑通扭矩控制
+# 目标读者：需要在电机/减速器/驱动器之间做取舍的新手，强调可买到的现货方案
+# ============================================================================
+name: actuator_selection
+description: |
+  调研人形/双足机器人关节执行器的选型方法与实践：无框力矩电机与外转子
+  BLDC、谐波/行星/摆线减速器的扭矩密度与背隙取舍、准直驱（QDD）方案、
+  电机驱动器与 FOC 扭矩控制、热设计与成本对比。关注可购买的现货组合与
+  开源执行器模组（如 moteus、ODrive、MyActuator 等）的实测数据。
+seed_queries:
+  - "quasi direct drive actuator humanoid robot joint design"
+  - "frameless torque motor harmonic reducer humanoid joint selection"
+  - "planetary vs harmonic vs cycloidal reducer robot actuator comparison"
+  - "BLDC motor driver FOC torque control robot joint actuator"
+  - "low cost high torque density actuator biped robot"
+paper_ids: []
+target_entity_types:
+  - paper
+  - technology
+  - component
+  - method
+target_domains:
+  - 02_components
+  - 06_design_engineering
+relationship_patterns:
+  - integrates
+  - requires
+  - enables
+  - constrains
+  - is_alternative_to
+relevance_threshold: medium
+max_papers: 15
+max_results_per_query: 50
+max_total: 100
+priority: 1
+sources:
+  - arxiv
+  - semantic_scholar
+metadata:
+  track: builder_track
+  roadmap: wiki/docs/roadmap/
+  audience: 动手造机器人的新手（0→1 路线图）
+relevance_context: >-
+  Relevant if it helps a first-time builder choose or build a robot joint
+  actuator: motor/reducer/driver trade-offs, torque density and
+  backdrivability measurements, quasi-direct-drive designs, thermal limits, or
+  off-the-shelf actuator module benchmarks. Prioritize papers with concrete
+  hardware specs, bench-test data, or open-source actuator designs over purely
+  theoretical motor models.

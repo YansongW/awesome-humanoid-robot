@@ -168,8 +168,19 @@ def propose_entry(
     metadata: dict[str, Any],
     relevance: dict[str, Any],
     model: str | None = None,
+    candidate_entities: list[str] | None = None,
 ) -> dict[str, Any]:
-    """Generate a full entry proposal from metadata and relevance."""
+    """Generate a full entry proposal from metadata and relevance.
+
+    Args:
+        metadata: Paper metadata extracted from the full text.
+        relevance: Relevance classification result.
+        model: LLM model override.
+        candidate_entities: 知识图谱中真实存在的候选实体清单（每项格式为
+            "ent_id=名称"），由调用方按论文 primary_domain 过滤后传入。
+            relationships 与 related_entities 的 target_id 只允许从该清单中
+            选取，以杜绝 LLM 编造不存在 target_id 的幻觉问题。
+    """
     system_prompt = (
         "You are an ontology engineer for a humanoid-robot knowledge base. "
         "Generate a structured entry proposal in JSON that conforms to the project's schema. "
@@ -184,6 +195,21 @@ def propose_entry(
         "constant", "algorithm", "approximation", "theorem", "principle", "foundation",
     ]
     depth_options = ["foundation", "principle", "formalism", "method", "system"]
+
+    # 候选实体清单区块：target_id 只能从真实存在的实体中选取，杜绝幻觉。
+    if candidate_entities:
+        candidate_block = (
+            "Candidate entities already in the knowledge base (format: entity_id=name).\n"
+            "The target_id of every relationship and the id of every related_entities item "
+            "MUST be copied verbatim from this list; if no candidate fits, omit the item "
+            "(leave the list empty). Do NOT invent new target ids under any circumstance:\n"
+            + "\n".join(f"- {c}" for c in candidate_entities)
+        )
+    else:
+        candidate_block = (
+            "No candidate entity list was provided. Leave relationships and "
+            "related_entities empty rather than inventing target ids."
+        )
 
     user_prompt = f"""Generate a knowledge-base entry proposal for this paper.
 
@@ -201,6 +227,8 @@ Allowed entry types:
 
 Allowed theoretical_depth values (from foundation to system):
 {json.dumps(depth_options, indent=2)}
+
+{candidate_block}
 
 Return JSON with this structure:
 {{
@@ -231,9 +259,9 @@ Return JSON with this structure:
     ],
     "related_entities": [
       {{
-        "id": "existing_entity_id_or_proposed_id",
+        "id": "entity_id_from_candidate_list",
         "relationship": "cites",
-        "description": {{"en": "...", "zh": "...", "ko": "..."}}
+        "description": {{"en": "...", "zh": "..."}}
       }}
     ]
   }},
@@ -245,10 +273,10 @@ Return JSON with this structure:
   "relationships": [
     {{
       "type": "cites",
-      "target_id": "...",
+      "target_id": "entity_id_from_candidate_list",
       "target_name": {{"en": "..."}},
       "target_domain": "...",
-      "description": {{"en": "...", "zh": "...", "ko": "..."}},
+      "description": {{"en": "...", "zh": "..."}},
       "source_citation": "section or sentence in the paper supporting this relationship"
     }}
   ],
@@ -278,7 +306,11 @@ Guidelines:
 - Tags should be lowercase, snake_case, and specific to humanoid robotics.
 - Related_entities and relationships should only include items explicitly discussed in the paper.
 - For each proposed relationship, include a source_citation from the paper text.
-- If a target entity does not yet exist in the knowledge base, propose a stable target_id and target_name.
+- target_id (and related_entities id) MUST be copied verbatim from the candidate entity list above; if no candidate fits, omit the item. Never propose a target_id for an entity that is not in the candidate list.
+- Each relationship must conform to data/schema/v1/relationship_schema.json:
+  - "type" must come from the controlled relationship vocabulary (e.g. cites, uses, requires, enables, builds_on, is_based_on, extends, integrates, formalizes, instantiates, derived_from, has_prerequisite, solves, evaluates_on, verified_by, is_alternative_to, is_part_of, is_subsystem_of, produces, sources_from, proposes, surveys; see the schema file for the full list).
+  - "description" must include at least English ("en") and Simplified Chinese ("zh").
+  - The pipeline will attach the mandatory "verification" block (status / reviewed_by / confidence) and "sources" (at least 1 entry) downstream, so do not fabricate them.
 - knowledge_chain: extract 1-3 key methods/formalisms/equations the paper introduces or relies on. For each child, specify the relationship to the paper (e.g. uses, formalizes, instantiates, builds_on, derived_from). These will later be expanded into standalone knowledge-base nodes.
 - Mark any uncertain claims in review_notes.
 """

@@ -50,6 +50,8 @@ HUMANOID_KEYWORDS = [
 ]
 
 DOMAIN_MAP = {
+    # 基础知识域：数学/物理/化学/计算机等跨工程域共享的概念（对应 research/foundations/）
+    "foundation": "00_foundations",
     "raw material": "01_raw_materials",
     "component": "02_components",
     "manufacturing": "03_manufacturing_processes",
@@ -65,6 +67,8 @@ DOMAIN_MAP = {
 }
 
 LAYER_MAP = {
+    # 基础知识域单独成层，与 research/foundations/ 下实体的 frontmatter 保持一致
+    "00_foundations": "foundations",
     "01_raw_materials": "upstream",
     "02_components": "upstream",
     "03_manufacturing_processes": "upstream",
