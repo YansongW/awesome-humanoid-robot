@@ -1,0 +1,361 @@
+# 0→1 路线图 ↔ 知识图谱绑定表
+#
+# 新增卡片绑定时只需在 entities 下追加条目，builder 会在对应卡片页渲染
+# 路线图徽章（阶段 + 角色），并链接到 wiki/docs/roadmap/ 下的阶段页面。
+# 该文件只做"绑定"，不修改任何卡片本身的内容。
+# entities 区块由 scripts/build_roadmap_mapping.py 自动再生成，请勿手改。
+version: 1
+
+stages:
+  stage-0-foundations:
+    order: 0
+    title:
+      zh: 阶段 0 · 基础筑基
+      en: Stage 0 · Foundations
+      ko: 0단계 · 기초 다지기
+    url: /wiki/roadmap/stage-0-foundations/
+  stage-1-actuator:
+    order: 1
+    title:
+      zh: 阶段 1 · 造一个关节
+      en: Stage 1 · Build One Joint
+      ko: 1단계 · 관절 하나 만들기
+    url: /wiki/roadmap/stage-1-actuator/
+  stage-2-biped:
+    order: 2
+    title:
+      zh: 阶段 2 · 双足平台
+      en: Stage 2 · Biped Platform
+      ko: 2단계 · 이족 플랫폼
+    url: /wiki/roadmap/stage-2-biped/
+  stage-3-humanoid:
+    order: 3
+    title:
+      zh: 阶段 3 · 完整人形
+      en: Stage 3 · Full Humanoid
+      ko: 3단계 · 완전한 휴로봇
+    url: /wiki/roadmap/stage-3-humanoid/
+
+roles:
+  core:
+    zh: 核心
+    en: Core
+    ko: 핵심
+  recommended:
+    zh: 推荐
+    en: Recommended
+    ko: 추천
+  optional:
+    zh: 拓展
+    en: Optional
+    ko: 선택
+
+entities:
+  ent_algorithm_ppo:
+  - stage: stage-2-biped
+    role: core
+  ent_benchmark_humanoidbench:
+  - stage: stage-2-biped
+    role: optional
+  ent_benchmark_libero:
+  - stage: stage-3-humanoid
+    role: core
+  ent_benchmark_maniskill:
+  - stage: stage-2-biped
+    role: optional
+  ent_comp_servo_motor:
+  - stage: stage-1-actuator
+    role: core
+  ent_company_harmonic_drive_systems_2024:
+  - stage: stage-1-actuator
+    role: optional
+  ent_company_leaderdrive_2024:
+  - stage: stage-1-actuator
+    role: optional
+  ent_company_maxon_group_2024:
+  - stage: stage-1-actuator
+    role: optional
+  ent_component_7dof_arm_2024:
+  - stage: stage-3-humanoid
+    role: core
+  ent_component_allegro_hand:
+  - stage: stage-3-humanoid
+    role: core
+  ent_component_ati_force_torque_sensor_2024:
+  - stage: stage-3-humanoid
+    role: optional
+  ent_component_bldc_motor:
+  - stage: stage-1-actuator
+    role: core
+  ent_component_dexterous_hand_2024:
+  - stage: stage-3-humanoid
+    role: core
+  ent_component_dynamixel_xl330_m288_t:
+  - stage: stage-1-actuator
+    role: core
+  ent_component_dynamixel_xm430_w210_t:
+  - stage: stage-1-actuator
+    role: core
+  ent_component_emergency_stop_system_2024:
+  - stage: stage-2-biped
+    role: core
+  - stage: stage-3-humanoid
+    role: core
+  ent_component_frameless_torque_motor_2024:
+  - stage: stage-1-actuator
+    role: core
+  ent_component_harmonic_drive_reducer:
+  - stage: stage-1-actuator
+    role: core
+  ent_component_hollow_cup_motor_2024:
+  - stage: stage-1-actuator
+    role: optional
+  ent_component_imu_2024:
+  - stage: stage-2-biped
+    role: core
+  - stage: stage-3-humanoid
+    role: optional
+  ent_component_intel_realsense_depth_camera_2024:
+  - stage: stage-3-humanoid
+    role: core
+  ent_component_joint_encoder_2024:
+  - stage: stage-1-actuator
+    role: core
+  - stage: stage-3-humanoid
+    role: optional
+  ent_component_leap_hand:
+  - stage: stage-3-humanoid
+    role: core
+  ent_component_livox_mid_360_lidar_2024:
+  - stage: stage-3-humanoid
+    role: core
+  ent_component_nvidia_jetson_agx_orin_2024:
+  - stage: stage-2-biped
+    role: optional
+  - stage: stage-3-humanoid
+    role: core
+  ent_component_nvidia_jetson_thor:
+  - stage: stage-2-biped
+    role: optional
+  - stage: stage-3-humanoid
+    role: core
+  ent_component_planetary_roller_screw:
+  - stage: stage-1-actuator
+    role: optional
+  ent_component_rgbd_camera:
+  - stage: stage-3-humanoid
+    role: core
+  ent_component_rv_reducer:
+  - stage: stage-1-actuator
+    role: optional
+  ent_component_safety_mcu:
+  - stage: stage-2-biped
+    role: optional
+  ent_component_servo_drive_2024:
+  - stage: stage-1-actuator
+    role: core
+  ent_component_six_axis_force_torque_sensor_2024:
+  - stage: stage-3-humanoid
+    role: optional
+  ent_component_tactile_sensor_array_2024:
+  - stage: stage-3-humanoid
+    role: optional
+  ent_component_zed_stereo_camera_2024:
+  - stage: stage-3-humanoid
+    role: core
+  ent_dataset_droid:
+  - stage: stage-3-humanoid
+    role: core
+  ent_dataset_open_x_embodiment:
+  - stage: stage-3-humanoid
+    role: core
+  ent_foundation_classical_mechanics:
+  - stage: stage-0-foundations
+    role: core
+  ent_foundation_convex_optimization:
+  - stage: stage-0-foundations
+    role: core
+  ent_foundation_linear_algebra:
+  - stage: stage-0-foundations
+    role: core
+  ent_foundation_probability_theory:
+  - stage: stage-0-foundations
+    role: core
+  ent_method_action_chunking_transformer:
+  - stage: stage-3-humanoid
+    role: core
+  ent_method_behavior_cloning:
+  - stage: stage-3-humanoid
+    role: core
+  ent_method_calibration_joint_camera_imu:
+  - stage: stage-3-humanoid
+    role: core
+  ent_method_diffusion_policy:
+  - stage: stage-3-humanoid
+    role: core
+  ent_method_domain_randomization:
+  - stage: stage-2-biped
+    role: core
+  ent_method_field_oriented_control:
+  - stage: stage-1-actuator
+    role: core
+  ent_method_foc_motor_control:
+  - stage: stage-1-actuator
+    role: core
+  ent_method_forward_kinematics:
+  - stage: stage-3-humanoid
+    role: core
+  ent_method_gait_planning:
+  - stage: stage-2-biped
+    role: core
+  ent_method_gr00t_n1:
+  - stage: stage-3-humanoid
+    role: core
+  ent_method_hardware_in_the_loop:
+  - stage: stage-2-biped
+    role: optional
+  ent_method_impedance_control:
+  - stage: stage-1-actuator
+    role: core
+  ent_method_inverse_kinematics:
+  - stage: stage-3-humanoid
+    role: core
+  ent_method_model_predictive_control:
+  - stage: stage-2-biped
+    role: core
+  ent_method_openvla:
+  - stage: stage-3-humanoid
+    role: core
+  ent_method_pi0:
+  - stage: stage-3-humanoid
+    role: core
+  ent_method_pid_control:
+  - stage: stage-1-actuator
+    role: core
+  ent_method_sim_to_real:
+  - stage: stage-2-biped
+    role: core
+  ent_method_system_identification:
+  - stage: stage-2-biped
+    role: optional
+  ent_method_whole_body_control:
+  - stage: stage-2-biped
+    role: core
+  ent_oem_unitree_robotics:
+  - stage: stage-1-actuator
+    role: optional
+  ent_paper_zero_moment_point_2024:
+  - stage: stage-2-biped
+    role: core
+  ent_principle_current_velocity_position_loops:
+  - stage: stage-1-actuator
+    role: core
+  ent_robot_system_berkeley_humanoid_lite:
+  - stage: stage-2-biped
+    role: recommended
+  ent_robot_system_bruce:
+  - stage: stage-2-biped
+    role: optional
+  ent_robot_system_inmoov:
+  - stage: stage-3-humanoid
+    role: optional
+  ent_robot_system_odri_bolt:
+  - stage: stage-1-actuator
+    role: recommended
+  ent_robot_system_openloong:
+  - stage: stage-2-biped
+    role: optional
+  - stage: stage-3-humanoid
+    role: recommended
+  ent_robot_system_poppy_humanoid:
+  - stage: stage-3-humanoid
+    role: optional
+  ent_robot_system_robotis_op3:
+  - stage: stage-3-humanoid
+    role: optional
+  ent_robot_system_thormang3:
+  - stage: stage-3-humanoid
+    role: optional
+  ent_robot_system_toddlerbot:
+  - stage: stage-2-biped
+    role: recommended
+  ent_robot_system_upkie:
+  - stage: stage-2-biped
+    role: recommended
+  ent_software_drake_systems_toolbox_2024:
+  - stage: stage-2-biped
+    role: optional
+  ent_software_gazebo:
+  - stage: stage-2-biped
+    role: optional
+  ent_software_genesis_generative_physics_eng_2024:
+  - stage: stage-2-biped
+    role: optional
+  ent_software_mujoco_physics_engine_2022:
+  - stage: stage-0-foundations
+    role: core
+  - stage: stage-2-biped
+    role: core
+  ent_software_nvidia_isaac_lab_2024:
+  - stage: stage-2-biped
+    role: core
+  ent_software_nvidia_isaac_sim_2024:
+  - stage: stage-2-biped
+    role: optional
+  ent_software_pinocchio:
+  - stage: stage-2-biped
+    role: optional
+  ent_software_qnx:
+  - stage: stage-2-biped
+    role: optional
+  ent_software_ros_2_middleware_2024:
+  - stage: stage-0-foundations
+    role: core
+  - stage: stage-3-humanoid
+    role: core
+  ent_software_rt_preempt_linux:
+  - stage: stage-2-biped
+    role: optional
+  - stage: stage-3-humanoid
+    role: core
+  ent_tech_li_battery_humanoid:
+  - stage: stage-2-biped
+    role: core
+  ent_tech_on_device_vla_inference:
+  - stage: stage-2-biped
+    role: optional
+  - stage: stage-3-humanoid
+    role: core
+  ent_technology_aloha_teleoperation_system_2023:
+  - stage: stage-3-humanoid
+    role: core
+  ent_technology_can_bus_2024:
+  - stage: stage-0-foundations
+    role: core
+  - stage: stage-1-actuator
+    role: core
+  ent_technology_ethercat_2024:
+  - stage: stage-1-actuator
+    role: core
+  - stage: stage-2-biped
+    role: optional
+  ent_technology_mjcf_simulation_format_2024:
+  - stage: stage-2-biped
+    role: optional
+  ent_technology_mobile_aloha_2024:
+  - stage: stage-3-humanoid
+    role: core
+  ent_technology_ota_software_update_2024:
+  - stage: stage-3-humanoid
+    role: core
+  ent_technology_quasi_direct_drive_actuator_2024:
+  - stage: stage-1-actuator
+    role: core
+  ent_technology_umi_gripper_interface_2024:
+  - stage: stage-3-humanoid
+    role: core
+  ent_technology_urdf_robot_description_format_2024:
+  - stage: stage-0-foundations
+    role: core
+  - stage: stage-2-biped
+    role: optional

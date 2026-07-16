@@ -69,6 +69,10 @@ UI_STRINGS = {
         "wiki_banner_title": "Wiki 项目",
         "wiki_banner_text": "本知识图谱是《人形机器人：从矿山到市场》Wiki 的底层数据系统，按“物理层 → 感知层 → 决策层 → 执行层 → 系统层 → 产业层”展开。",
         "read_wiki_toc": "阅读 Wiki 目录",
+        "nav_roadmap": "路线图",
+        "roadmap_banner_title": "0→1 造一台人形机器人",
+        "roadmap_banner_text": "面向零基础动手者的实操路线图：从基础筑基、造一个关节、双足平台到完整人形。每一步都链接知识卡片，告诉你做什么、为什么、怎么根据自己的情况分析选型。",
+        "roadmap_banner_cta": "开始路线图",
         "summary": "摘要",
         "domains": "领域",
         "layers": "层级",
@@ -115,6 +119,7 @@ UI_STRINGS = {
         "untranslated_notice": "",
         "entries_of_type": "{count} 个实体",
         "back_to_top": "回到顶部",
+        "roadmap_label": "0→1 路线图定位",
     },
     "en": {
         "site_title": "Humanoid Robot Knowledge Graph",
@@ -158,6 +163,10 @@ UI_STRINGS = {
         "wiki_banner_title": "Wiki Project",
         "wiki_banner_text": "This knowledge graph underpins the Humanoid Robots: From Mine to Market wiki, organized from physics → perception → decision → actuation → system → industry.",
         "read_wiki_toc": "Read Wiki TOC",
+        "nav_roadmap": "Roadmap",
+        "roadmap_banner_title": "Build a Humanoid from 0 to 1",
+        "roadmap_banner_text": "A hands-on roadmap for complete beginners: foundations, one joint, a biped platform, then a full humanoid. Every step links to knowledge cards explaining what to do, why, and how to analyze your own case.",
+        "roadmap_banner_cta": "Start the Roadmap",
         "summary": "Summary",
         "domains": "Domains",
         "layers": "Layers",
@@ -204,6 +213,7 @@ UI_STRINGS = {
         "untranslated_notice": "This page has not been translated yet — the original Chinese content is shown below.",
         "entries_of_type": "{count} entries",
         "back_to_top": "Back to top",
+        "roadmap_label": "0→1 Roadmap",
     },
     "ko": {
         "site_title": "휴로봇 지식 그래프",
@@ -247,6 +257,10 @@ UI_STRINGS = {
         "wiki_banner_title": "Wiki 프로젝트",
         "wiki_banner_text": "이 지식 그래프는 '휴로봇: 광산에서 시장까지' Wiki의 데이터 기반이며, 물리 → 인식 → 의사결정 → 구동 → 시스템 → 산업 순으로 전개됩니다.",
         "read_wiki_toc": "Wiki 목차 보기",
+        "nav_roadmap": "로드맵",
+        "roadmap_banner_title": "0→1 휴로봇 만들기",
+        "roadmap_banner_text": "완전 초보자를 위한 실습 로드맵: 기초 다지기, 관절 하나, 이족 플랫폼, 완전한 휴로봇까지. 각 단계는 무엇을, 왜, 어떻게 분석할지 알려주는 지식 카드로 연결됩니다.",
+        "roadmap_banner_cta": "로드맵 시작",
         "summary": "요약",
         "domains": "영역",
         "layers": "계층",
@@ -293,6 +307,7 @@ UI_STRINGS = {
         "untranslated_notice": "이 페이지는 아직 번역되지 않았습니다. 아래에 중국어 원문을 표시합니다.",
         "entries_of_type": "{count}개 개체",
         "back_to_top": "맨 위로",
+        "roadmap_label": "0→1 로드맵",
     },
 }
 
@@ -516,6 +531,7 @@ class Renderer:
         outgoing = self.store.outgoing.get(entry.id, [])
         incoming = self.store.incoming.get(entry.id, [])
         related = self.store.related_entries(entry.id)
+        roadmap_badges = self._roadmap_badges(entry.id)
 
         def view(rels: list[Relationship], direction: str) -> list[dict]:
             out = []
@@ -533,11 +549,32 @@ class Renderer:
             outgoing=view(outgoing, "out"),
             incoming=view(incoming, "in"),
             related=related,
+            roadmap_badges=roadmap_badges,
             entry_name_lookup=self.entry_name_lookup,
         ))
         entry_dir = self.dist_dir / "entry" / entry.id
         ensure_dir(entry_dir)
         (entry_dir / "index.html").write_text(html, encoding="utf-8")
+
+    def _roadmap_badges(self, entry_id: str) -> list[dict]:
+        """Roadmap stage badges bound to this entity via roadmap_mapping.yaml."""
+        roadmap = getattr(self.store, "roadmap", None) or {}
+        bindings = (roadmap.get("entities") or {}).get(entry_id) or []
+        stages = roadmap.get("stages") or {}
+        roles = roadmap.get("roles") or {}
+        badges = []
+        for b in bindings:
+            stage = stages.get(b.get("stage", ""), {})
+            role = roles.get(b.get("role", ""), {})
+            title = stage.get("title", {})
+            badges.append({
+                "url": stage.get("url", ""),
+                "stage": title.get(self.lang) or title.get("zh") or b.get("stage", ""),
+                "role": role.get(self.lang) or role.get("zh") or b.get("role", ""),
+                "role_key": b.get("role", ""),
+                "step": b.get("step", ""),
+            })
+        return badges
 
     def render_search_page(self) -> None:
         template = self.env.get_template("search.html")

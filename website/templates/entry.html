@@ -66,6 +66,18 @@
       </div>
     </header>
 
+    {% if roadmap_badges %}
+    <div class="roadmap-badges" aria-label="{{ ui.roadmap_label }}">
+      <span class="roadmap-badges-label">{{ ui.roadmap_label }}</span>
+      {% for b in roadmap_badges %}
+      <a class="roadmap-badge roadmap-badge-{{ b.role_key }}" href="{{ b.url }}{% if b.step %}#{{ b.step }}{% endif %}">
+        <span class="roadmap-badge-stage">{{ b.stage }}</span>
+        {% if b.role %}<span class="roadmap-badge-role">{{ b.role }}</span>{% endif %}
+      </a>
+      {% endfor %}
+    </div>
+    {% endif %}
+
     {% if entry.body_fallback and ui.untranslated_notice %}
     <p class="untranslated-notice">{{ ui.untranslated_notice }}</p>
     {% endif %}

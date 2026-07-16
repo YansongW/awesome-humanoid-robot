@@ -38,6 +38,7 @@ def extract_title(text: str) -> str:
 # sidebar/index readable: chapters first, then appendices, with appendix-d
 # sub-pages nested under appendix-d rather than flattened.
 DIR_TITLES: dict[str, str] = {
+    "roadmap": "0→1 造机路线图",
     "chapters": "正文",
     "appendices": "附录",
     "appendix-d": "附录 D 主要供应商与企业名录",
@@ -48,12 +49,14 @@ DIR_TITLES: dict[str, str] = {
 
 
 def _sort_key(name: str) -> tuple[int, str]:
-    """Order: chapters -> appendices -> everything else, then alphabetically."""
-    if name == "chapters":
+    """Order: roadmap -> chapters -> appendices -> everything else."""
+    if name == "roadmap":
         return (0, name)
-    if name == "appendices":
+    if name == "chapters":
         return (1, name)
-    return (2, name)
+    if name == "appendices":
+        return (2, name)
+    return (3, name)
 
 
 def build_wiki_tree(pages: list[dict[str, Any]]) -> dict[str, Any]:
@@ -114,12 +117,14 @@ def build_wiki_tree(pages: list[dict[str, Any]]) -> dict[str, Any]:
         dirs = []
         files = []
         for key, child in children.items():
+            sort_rank = _sort_key(key)
             child = finalize(child)
             if child.get("is_dir"):
+                child["_sort"] = sort_rank
                 dirs.append(child)
             else:
                 files.append(child)
-        dirs.sort(key=lambda c: _sort_key(c.get("title", "")))
+        dirs.sort(key=lambda c: c.pop("_sort", (9, "")))
         files.sort(key=lambda c: c.get("path", ""))
         node["children"] = dirs + files
         return node
@@ -206,14 +211,16 @@ def build_wiki_pages() -> list[dict[str, Any]]:
         )
 
     # Prev/next navigation across substantive pages in reading order:
-    # chapters -> appendices -> everything else.
+    # roadmap -> chapters -> appendices -> everything else.
     def order_key(p: dict[str, Any]) -> tuple[int, str]:
         rel = Path(p["path"]).relative_to(WIKI_DIR).as_posix()
-        if rel.startswith("chapters/"):
+        if rel.startswith("roadmap/"):
             return (0, rel)
-        if rel.startswith("appendices/"):
+        if rel.startswith("chapters/"):
             return (1, rel)
-        return (2, rel)
+        if rel.startswith("appendices/"):
+            return (2, rel)
+        return (3, rel)
 
     readable = [p for p in pages if not p["stub"]]
     readable.sort(key=order_key)

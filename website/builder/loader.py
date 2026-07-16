@@ -12,6 +12,19 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent.parent
 RESEARCH_DIR = ROOT / "research"
 RELATIONSHIPS_DIR = ROOT / "data" / "relationships"
+ROADMAP_MAPPING = ROOT / "data" / "roadmap_mapping.yaml"
+
+
+def load_roadmap_mapping() -> dict[str, Any]:
+    """Load the roadmap↔KG binding table (additive; never edits entity files)."""
+    if not ROADMAP_MAPPING.exists():
+        return {"stages": {}, "roles": {}, "entities": {}}
+    data = yaml.safe_load(ROADMAP_MAPPING.read_text(encoding="utf-8")) or {}
+    return {
+        "stages": data.get("stages", {}) or {},
+        "roles": data.get("roles", {}) or {},
+        "entities": data.get("entities", {}) or {},
+    }
 
 # Domain display labels by language
 DOMAIN_LABELS = {
@@ -458,6 +471,7 @@ class KGStore:
     outgoing: dict[str, list[Relationship]] = field(default_factory=dict)
     incoming: dict[str, list[Relationship]] = field(default_factory=dict)
     lang: str = "zh"
+    roadmap: dict[str, Any] = field(default_factory=dict)
 
     def load(self, lang: str | None = None) -> None:
         if lang:
@@ -466,6 +480,7 @@ class KGStore:
         self.relationships.clear()
         self.outgoing.clear()
         self.incoming.clear()
+        self.roadmap = load_roadmap_mapping()
 
         import markdown
 
