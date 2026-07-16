@@ -81,13 +81,22 @@ def fetch_summary(url: str) -> str | None:
         return meta
 
     # Otherwise collect the first few substantial paragraphs.
+    sys.path.insert(0, str(ROOT / "scripts"))
+    from clean_entry_content import JUNK_MARKERS, SITE_BOILER, norm_boiler
+
     paragraphs: list[str] = []
     for p in re.findall(r"<p[^>]*>(.*?)</p>", text, re.IGNORECASE | re.DOTALL):
         p = re.sub(r"<[^>]+>", " ", p)
         p = html.unescape(p).strip()
-        # Skip navigation/footer-ish short fragments.
-        if len(p) >= 80 and not p.lower().startswith(("copyright", "all rights", "sign in", "log in")):
-            paragraphs.append(p)
+        p = re.sub(r"\s+", " ", p)
+        # Skip navigation/footer-ish fragments and scraped CSS/JS junk.
+        if len(p) < 80:
+            continue
+        if any(marker in p for marker in JUNK_MARKERS):
+            continue
+        if any(b in norm_boiler(p) for b in SITE_BOILER):
+            continue
+        paragraphs.append(p)
         if len(paragraphs) >= 3:
             break
 

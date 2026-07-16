@@ -66,7 +66,7 @@ theoretical_depth:
 
 ## 核心内容
 ### HumanoidBench的定义与定位
-HumanoidBench属于 **benchmark** 类型，英文名称为 *HumanoidBench*。
+HumanoidBench属于 **评测基准** 类型，英文名称为 *HumanoidBench*。
 一个基于 Unitree H1 机器人的全身人形运动与操作仿真基准，提供 40 余项任务用于 VLA 与控制算法的受控比较。
 
 ### HumanoidBench的关键信息

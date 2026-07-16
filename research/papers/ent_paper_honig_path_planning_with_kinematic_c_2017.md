@@ -10,11 +10,11 @@ names:
 summary:
   en: Presents a Simple Temporal Network postprocessing framework that converts discrete MAPF/TAPF plans into kinematically
     feasible trajectories while enforcing a minimum safety distance between robots, validated in simulation and on real robots.
-  zh: 'Path planning for multiple robots is well studied in the AI and robotics communities. For a given discretized environment,
+  zh: Path planning for multiple robots is well studied in the AI and robotics communities. For a given discretized environment,
     robots need to find collision-free paths to a set of specified goal locations. Robots can be fully anonymous, non-anonymous,
     or organized in groups. Although powerful solvers for this abstract problem exist, they make simplifying assumptions by
     ignoring kinematic constraints, making it difficult to use the resulting plans on actual robots. In this paper, we present
-    a solution which takes kinematic constraints, such as maximum velocities, into account, while guaranteeing a '
+    a solution which takes kinematic constraints, such as maximum velocities, into account, while guaranteeing a
   ko: 이산화된 MAPF/TAPF 계획을 운동학적으로 실행 가능한 궤적으로 변환하면서 로봇 간 최소 안전 거리를 보장하는 단순 시간 네트워크 기반 후처리 프레임워크를 제시하고 시뮬레이션 및 실제 로봇으로 검증한다.
 domains:
 - 07_ai_models_algorithms

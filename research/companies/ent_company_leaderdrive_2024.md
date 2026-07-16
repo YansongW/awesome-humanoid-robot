@@ -9,7 +9,7 @@ names:
   ko: Leaderdrive
 summary:
   en: Chinese harmonic drive manufacturer with growing market share in domestic robot supply chains.
-  zh: '## 概述 绿的谐波是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。'
+  zh: 概述 绿的谐波是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
   ko: 국내 로봇 공급망에서 점유율이 증가하고 있는 중국 하모닉 드라이브 제조업체.
 domains:
 - 02_components
@@ -44,7 +44,7 @@ sources:
 ---
 
 ## 概述
-绿的谐波是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
+绿的谐波是人形机器人领域的重要零部件_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## 绿的谐波 / Leaderdrive

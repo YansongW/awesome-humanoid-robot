@@ -10,8 +10,7 @@ names:
 summary:
   en: A transport equation describing the flux of charged species under combined concentration gradients and electric fields,
     combining diffusion and electromigration.
-  zh: '核心内容 ### 能斯特-普朗克方程的定义与定位 能斯特-普朗克方程属于 **equation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 描述带电粒子在浓度梯度与电场共同作用下的通量，融合扩散与电迁移的输运方程。
-    英文名称为 *Nernst-Planck equation*。 韩文名称为 *넬스트-플랑크 방정식*。'
+  zh: 描述带电粒子在浓度梯度与电场共同作用下的通量，融合扩散与电迁移的输运方程。
   ko: 농도 기울기와 전기장이 함께 작용할 때 대전 입자의 선속을 기술하며 확산과 전기 이동을 결합한 수송 방정식.
 domains:
 - 00_foundations
@@ -60,7 +59,7 @@ related_entities:
 
 ## 核心内容
 ### 能斯特-普朗克方程的定义与定位
-能斯特-普朗克方程属于 **equation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 描述带电粒子在浓度梯度与电场共同作用下的通量，融合扩散与电迁移的输运方程。 英文名称为 *Nernst-Planck equation*。 韩文名称为 *넬스트-플랑크 방정식*。
+能斯特-普朗克方程属于 **方程** 类型。 所属领域包括：基础学科。 价值链层级：基础层。 描述带电粒子在浓度梯度与电场共同作用下的通量，融合扩散与电迁移的输运方程。 英文名称为 *Nernst-Planck equation*。 韩文名称为 *넬스트-플랑크 방정식*。
 
 ### 能斯特-普朗克方程的数学与原理基础
 能斯特-普朗克方程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -84,7 +83,7 @@ related_entities:
 - migration
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键equation之一，能斯特-普朗克方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方程之一，能斯特-普朗克方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [A. J. Bard and L. R. Faulkner, Electrochemical Methods: Fundamentals and Applications, 2nd ed., Wiley, 2001](https://doi.org/10.1021/ac0351306)

@@ -9,8 +9,7 @@ names:
   ko: Model Predictive Control
 summary:
   en: Online optimal-control approach for generating contact-rich whole-body motion.
-  zh: '核心内容 ### 模型预测控制的定义与定位 模型预测控制属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 06_design_engineering。 价值链层级：intelligence,
-    midstream。 用于生成接触丰富的全身运动的在线最优控制方法。 英文名称为 *Model Predictive Control*。 韩文名称为 *Model Predictive Control*。'
+  zh: 用于生成接触丰富的全身运动的在线最优控制方法。
   ko: 접촉이 풍부한 전신 동작을 생성하기 위한 온라인 최적 제어 접근법.
 domains:
 - 07_ai_models_algorithms
@@ -49,7 +48,7 @@ sources:
 
 ## 核心内容
 ### 模型预测控制的定义与定位
-模型预测控制属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 06_design_engineering。 价值链层级：intelligence, midstream。 用于生成接触丰富的全身运动的在线最优控制方法。 英文名称为 *Model Predictive Control*。 韩文名称为 *Model Predictive Control*。
+模型预测控制属于 **方法** 类型。 所属领域包括：AI 模型与算法, 设计工程。 价值链层级：智能层, midstream。 用于生成接触丰富的全身运动的在线最优控制方法。 英文名称为 *Model Predictive Control*。 韩文名称为 *Model Predictive Control*。
 
 ### 模型预测控制的数学与原理基础
 模型预测控制建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -73,7 +72,7 @@ sources:
 - whole_body
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，模型预测控制在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，模型预测控制在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Model Predictive Control](https://roboti.us/lab/papers/KoenemannIROS15.pdf)

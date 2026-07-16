@@ -9,7 +9,7 @@ names:
   ko: UBTECH Walker S
 summary:
   en: Industrial humanoid robot for factory operations, featuring all-electric modular joints.
-  zh: '## 概述 优必选 Walker S是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。'
+  zh: 概述 优必选 Walker S是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
   ko: 공장 작업용 산업용 휨로봇, 전기식 모듈형 관절 특징.
 domains:
 - 06_design_engineering
@@ -44,7 +44,7 @@ sources:
 ---
 
 ## 概述
-优必选 Walker S是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
+优必选 Walker S是人形机器人领域的重要机器人系统。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## 优必选 Walker S2 / UBTECH Walker S2

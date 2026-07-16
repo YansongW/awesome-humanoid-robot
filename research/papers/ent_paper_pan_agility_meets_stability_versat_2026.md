@@ -10,11 +10,11 @@ names:
 summary:
   en: AMS trains a single humanoid control policy on heterogeneous data—human motion capture plus controllable synthetic balance
     motions—using a hybrid reward scheme and adaptive learning to unify agile dynamic skills with extreme balance maintenance.
-  zh: 'Humanoid robots are envisioned to perform a wide range of tasks in human-centered environments, requiring controllers
+  zh: Humanoid robots are envisioned to perform a wide range of tasks in human-centered environments, requiring controllers
     that combine agility with robust balance. Recent advances in locomotion and whole-body tracking have enabled impressive
     progress in either agile dynamic skills or stability-critical behaviors, but existing methods remain specialized, focusing
     on one capability while compromising the other. In this work, we introduce AMS (Agility Meets Stability), the first framework
-    that unifies both dynamic motion tracking and extreme balance maintenance in a single policy. Our key insight is '
+    that unifies both dynamic motion tracking and extreme balance maintenance in a single policy. Our key insight is
   ko: AMS는 인체 동작 캡처와 제어 가능한 합성 균형 동작으로 구성된 이종 데이터, 하이브리드 보상 체계 및 적응형 학습을 통해 단일 정책을 훈련시켜 민첩한 동적 기술과 극한 균형 유지를 통합한다.
 domains:
 - 07_ai_models_algorithms

@@ -9,8 +9,7 @@ names:
   ko: Octo 제너럴리스트 로봇 정책
 summary:
   en: Open-source generalist robot policy trained on heterogeneous cross-embodiment data.
-  zh: '核心内容 ### Octo 通才机器人策略的定义与定位 Octo 通才机器人策略属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 在异构跨具身数据上训练的开源通才机器人策略。
-    英文名称为 *Octo Generalist Robot Policy*。 韩文名称为 *Octo 제너럴리스트 로봇 정책*。'
+  zh: 在异构跨具身数据上训练的开源通才机器人策略。
   ko: 이기종 크로스 임바디먼트 데이터로 학습된 오픈소스 제너럴리스트 로봇 정책.
 domains:
 - 07_ai_models_algorithms
@@ -47,7 +46,7 @@ sources:
 
 ## 核心内容
 ### Octo 通才机器人策略的定义与定位
-Octo 通才机器人策略属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 在异构跨具身数据上训练的开源通才机器人策略。 英文名称为 *Octo Generalist Robot Policy*。 韩文名称为 *Octo 제너럴리스트 로봇 정책*。
+Octo 通才机器人策略属于 **方法** 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 在异构跨具身数据上训练的开源通才机器人策略。 英文名称为 *Octo Generalist Robot Policy*。 韩文名称为 *Octo 제너럴리스트 로봇 정책*。
 
 ### Octo 通才机器人策略的数学与原理基础
 Octo 通才机器人策略建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -71,7 +70,7 @@ Octo 通才机器人策略可应用于人形机器人的运动规划、控制优
 - vla
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，Octo 通才机器人策略在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，Octo 通才机器人策略在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Octo Generalist Robot Policy](https://github.com/octo-models/octo)

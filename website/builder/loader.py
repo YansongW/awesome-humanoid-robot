@@ -360,6 +360,52 @@ def filter_body_by_language(body: str, lang: str) -> str:
     return "\n".join(out_lines).strip()
 
 
+def _norm_text(text: str) -> str:
+    """Normalize markdown text for duplicate comparison."""
+    text = re.sub(r"[#>*_`\-|]", " ", text)
+    text = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", text)
+    return re.sub(r"\s+", "", text)
+
+
+def dedup_render_body(body: str, summary: str) -> str:
+    """Remove body sections that duplicate the summary or each other.
+
+    Only affects rendering: source files (and thus the audit) keep the full
+    概述 / 核心内容 structure, but the page should not show the same paragraph
+    two or three times.
+    """
+    if not body:
+        return body
+    parts = re.split(r"(?m)^(## .*)$", body)
+    # parts: [lead, heading1, content1, heading2, content2, ...]
+    if len(parts) < 3:
+        return body
+    sections = [(parts[i], parts[i + 1]) for i in range(1, len(parts) - 1, 2)]
+    norm_summary = _norm_text(summary) if summary else ""
+
+    def title_of(heading: str) -> str:
+        return re.sub(r"^##\s*", "", heading).strip()
+
+    overview_idx = next((i for i, (h, _) in enumerate(sections) if title_of(h) == "概述"), None)
+    core_idx = next((i for i, (h, _) in enumerate(sections) if title_of(h) == "核心内容"), None)
+
+    drop: set[int] = set()
+    if overview_idx is not None:
+        ov = _norm_text(sections[overview_idx][1])
+        if norm_summary and ov and ov == norm_summary:
+            drop.add(overview_idx)
+        elif core_idx is not None and ov and ov == _norm_text(sections[core_idx][1]):
+            drop.add(core_idx)
+    if not drop:
+        return body
+    kept = [parts[0]]
+    for i, (h, c) in enumerate(sections):
+        if i in drop:
+            continue
+        kept.extend([h, c])
+    return "\n".join(k for k in kept if k is not None).strip()
+
+
 def tokenize(text: str) -> list[str]:
     """Tokenize text for search; English words and CJK characters."""
     text = text or ""
@@ -386,6 +432,8 @@ class Entry:
     body_html: str
     frontmatter: dict[str, Any]
     path: Path
+    toc_html: str = ""
+    body_fallback: bool = False
 
     @property
     def url(self) -> str:
@@ -435,20 +483,34 @@ class KGStore:
 
             names = front.get("names", {})
             summaries = front.get("summary", {})
+            summary_text = pick_lang(summaries, self.lang)
             filtered_body = filter_body_by_language(body, self.lang)
+            body_fallback = False
+            if self.lang != "zh" and len(filtered_body.strip()) < 100:
+                # en/ko translations are largely missing; fall back to the
+                # Chinese body so the page still carries the full content.
+                zh_body = filter_body_by_language(body, "zh")
+                if len(zh_body.strip()) >= 100:
+                    filtered_body = zh_body
+                    body_fallback = True
+            render_body = dedup_render_body(filtered_body, summary_text)
+            body_html = md.convert(render_body)
+            toc_html = md.toc if "<li>" in (md.toc or "") else ""
             entry = Entry(
                 id=str(eid),
                 type=front.get("type", "unknown"),
                 name=pick_lang(names, self.lang),
                 name_en=pick_lang(names, "en"),
-                summary=pick_lang(summaries, self.lang),
+                summary=summary_text,
                 domains=front.get("domains", []) or [],
                 layers=front.get("layers", []) or [],
                 tags=front.get("tags", []) or [],
                 body=filtered_body,
-                body_html=md.convert(filtered_body),
+                body_html=body_html,
                 frontmatter=front,
                 path=path,
+                toc_html=toc_html,
+                body_fallback=body_fallback,
             )
             md.reset()
             self.entries[entry.id] = entry

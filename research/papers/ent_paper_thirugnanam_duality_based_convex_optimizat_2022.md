@@ -11,11 +11,11 @@ summary:
   en: Proposes a duality-based nonsmooth control barrier function framework that reformulates minimum-distance constraints
     between polytopes into a convex quadratic program, enabling real-time safety-critical obstacle avoidance for control-affine
     nonlinear systems.
-  zh: 'Developing controllers for obstacle avoidance between polytopes is a challenging and necessary problem for navigation
+  zh: Developing controllers for obstacle avoidance between polytopes is a challenging and necessary problem for navigation
     in tight spaces. Traditional approaches can only formulate the obstacle avoidance problem as an offline optimization problem.
     To address these challenges, we propose a duality-based safety-critical optimal control using nonsmooth control barrier
     functions for obstacle avoidance between polytopes, which can be solved in real-time with a QP-based optimization problem.
-    A dual optimization problem is introduced to represent the minimum distance between polytopes and the Lagrangian '
+    A dual optimization problem is introduced to represent the minimum distance between polytopes and the Lagrangian
   ko: 제어 아핀 비선형 시스템을 위해 다면체 간 최소 거리 제약을 볼록 이차 계획법으로 재구성하는 이중성 기반 비연속 제어 장벽 함수 프레임워크를 제안하여 실시간 안전 필수 장애물 회피를 가능하게 함.
 domains:
 - 07_ai_models_algorithms

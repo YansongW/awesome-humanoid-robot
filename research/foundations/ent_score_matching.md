@@ -10,8 +10,7 @@ names:
 summary:
   en: A parameter-estimation technique that learns the gradient of an unknown log-probability density, called the score, without
     requiring normalized probability densities.
-  zh: '核心内容 ### 分数匹配的定义与定位 分数匹配属于 **algorithm** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种参数估计技术，学习未知对数概率密度的梯度（称为分数），而无需归一化的概率密度。
-    英文名称为 *Score matching*。 韩文名称为 *점수 매칭*。'
+  zh: 一种参数估计技术，学习未知对数概率密度的梯度（称为分数），而无需归一化的概率密度。
   ko: 정규화된 확률 밀도 없이도 미지의 로그 확률 밀도의 기울기(점수)를 학습하는 매개변수 추정 기법.
 domains:
 - 00_foundations
@@ -62,7 +61,7 @@ related_entities:
 
 ## 核心内容
 ### 分数匹配的定义与定位
-分数匹配属于 **algorithm** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种参数估计技术，学习未知对数概率密度的梯度（称为分数），而无需归一化的概率密度。 英文名称为 *Score matching*。 韩文名称为 *점수 매칭*。
+分数匹配属于 **算法** 类型。 所属领域包括：基础学科。 价值链层级：基础层。 一种参数估计技术，学习未知对数概率密度的梯度（称为分数），而无需归一化的概率密度。 英文名称为 *Score matching*。 韩文名称为 *점수 매칭*。
 
 ### 分数匹配的数学与原理基础
 分数匹配建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -86,7 +85,7 @@ related_entities:
 - hyvarinen
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键algorithm之一，分数匹配在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键算法之一，分数匹配在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [A. Hyvärinen, 'Estimation of Non-Normalized Statistical Models by Score Matching', J. Machine Learning Research, vol. 6, pp. 695–709, 2005](https://jmlr.org/papers/v6/hyvarinen05a.html)

@@ -8,54 +8,54 @@ names:
   zh: 'MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency'
   ko: 'MorphQuad: Morphable Quadrotor for Superhuman Maneuverability, Manipulation, and Resiliency'
 summary:
-  en: "arXiv:2607.02764v1 Announce Type: new \nAbstract: Infrastructure maintenance, contact-based inspection, and emergency\
-    \ response can benefit from aerial vehicles that act as a flying human hand with extreme maneuverability, manipulation,\
-    \ and resiliency (MMR): maneuverability to fly in arbitrary orientations to reach remote and tight locations; manipulation\
-    \ to point sensors, turn valves, and press tools at arbitrary orientations; resiliency to maintain accurate motion and\
-    \ force control despite disturbances from arbitrary directions, such as wind, ground effects, and friction. Realizing\
-    \ MMR on aerial vehicles requires not only omnidirectional flight; it also requires (I) vectoring of maximum thrust in\
-    \ any direction, to maximize capacity for contact-force application and disturbance rejection, (II) global stability,\
-    \ to enable control over any orientation/position, and (III) compact, standard designs that build upon platforms such\
-    \ as quadrotors to inherit technological know-how. No current aerial vehicle simultaneously enables I--III, due to structural\
-    \ and control limitations that constrain actuation. We present MorphQuad: a morphable quadrotor that enjoys MMR. Key to\
-    \ our approach is a hardware and control co-design: on hardware, we independently articulate each of the four rotor systems\
-    \ via two-axis gimbals; on control, we introduce globally-stable control, and energy-optimal thrust allocation that permits\
-    \ inter-rotor thrust cancellations only to avoid downwash interference and gimbal lock. With fully-onboard autonomy, MorphQuad\
-    \ demonstrates multi-revolution rotation while translating or hovering, for pipe inspection and target tracking (maneuverability);\
-    \ valve turning, perching, and object pressing and pushing with human-level strengths (manipulation); and wind rejection\
-    \ from any direction, even directed to a single rotor, and push-pull recovery (resiliency)."
-  zh: "arXiv:2607.02764v1 Announce Type: new \nAbstract: Infrastructure maintenance, contact-based inspection, and emergency\
-    \ response can benefit from aerial vehicles that act as a flying human hand with extreme maneuverability, manipulation,\
-    \ and resiliency (MMR): maneuverability to fly in arbitrary orientations to reach remote and tight locations; manipulation\
-    \ to point sensors, turn valves, and press tools at arbitrary orientations; resiliency to maintain accurate motion and\
-    \ force control despite disturbances from arbitrary directions, such as wind, ground effects, and friction. Realizing\
-    \ MMR on aerial vehicles requires not only omnidirectional flight; it also requires (I) vectoring of maximum thrust in\
-    \ any direction, to maximize capacity for contact-force application and disturbance rejection, (II) global stability,\
-    \ to enable control over any orientation/position, and (III) compact, standard designs that build upon platforms such\
-    \ as quadrotors to inherit technological know-how. No current aerial vehicle simultaneously enables I--III, due to structural\
-    \ and control limitations that constrain actuation. We present MorphQuad: a morphable quadrotor that enjoys MMR. Key to\
-    \ our approach is a hardware and control co-design: on hardware, we independently articulate each of the four rotor systems\
-    \ via two-axis gimbals; on control, we introduce globally-stable control, and energy-optimal thrust allocation that permits\
-    \ inter-rotor thrust cancellations only to avoid downwash interference and gimbal lock. With fully-onboard autonomy, MorphQuad\
-    \ demonstrates multi-revolution rotation while translating or hovering, for pipe inspection and target tracking (maneuverability);\
-    \ valve turning, perching, and object pressing and pushing with human-level strengths (manipulation); and wind rejection\
-    \ from any direction, even directed to a single rotor, and push-pull recovery (resiliency)."
-  ko: "arXiv:2607.02764v1 Announce Type: new \nAbstract: Infrastructure maintenance, contact-based inspection, and emergency\
-    \ response can benefit from aerial vehicles that act as a flying human hand with extreme maneuverability, manipulation,\
-    \ and resiliency (MMR): maneuverability to fly in arbitrary orientations to reach remote and tight locations; manipulation\
-    \ to point sensors, turn valves, and press tools at arbitrary orientations; resiliency to maintain accurate motion and\
-    \ force control despite disturbances from arbitrary directions, such as wind, ground effects, and friction. Realizing\
-    \ MMR on aerial vehicles requires not only omnidirectional flight; it also requires (I) vectoring of maximum thrust in\
-    \ any direction, to maximize capacity for contact-force application and disturbance rejection, (II) global stability,\
-    \ to enable control over any orientation/position, and (III) compact, standard designs that build upon platforms such\
-    \ as quadrotors to inherit technological know-how. No current aerial vehicle simultaneously enables I--III, due to structural\
-    \ and control limitations that constrain actuation. We present MorphQuad: a morphable quadrotor that enjoys MMR. Key to\
-    \ our approach is a hardware and control co-design: on hardware, we independently articulate each of the four rotor systems\
-    \ via two-axis gimbals; on control, we introduce globally-stable control, and energy-optimal thrust allocation that permits\
-    \ inter-rotor thrust cancellations only to avoid downwash interference and gimbal lock. With fully-onboard autonomy, MorphQuad\
-    \ demonstrates multi-revolution rotation while translating or hovering, for pipe inspection and target tracking (maneuverability);\
-    \ valve turning, perching, and object pressing and pushing with human-level strengths (manipulation); and wind rejection\
-    \ from any direction, even directed to a single rotor, and push-pull recovery (resiliency)."
+  en: 'arXiv:2607.02764v1 Announce Type: new Abstract: Infrastructure maintenance, contact-based inspection, and emergency
+    response can benefit from aerial vehicles that act as a flying human hand with extreme maneuverability, manipulation,
+    and resiliency (MMR): maneuverability to fly in arbitrary orientations to reach remote and tight locations; manipulation
+    to point sensors, turn valves, and press tools at arbitrary orientations; resiliency to maintain accurate motion and force
+    control despite disturbances from arbitrary directions, such as wind, ground effects, and friction. Realizing MMR on aerial
+    vehicles requires not only omnidirectional flight; it also requires (I) vectoring of maximum thrust in any direction,
+    to maximize capacity for contact-force application and disturbance rejection, (II) global stability, to enable control
+    over any orientation/position, and (III) compact, standard designs that build upon platforms such as quadrotors to inherit
+    technological know-how. No current aerial vehicle simultaneously enables I--III, due to structural and control limitations
+    that constrain actuation. We present MorphQuad: a morphable quadrotor that enjoys MMR. Key to our approach is a hardware
+    and control co-design: on hardware, we independently articulate each of the four rotor systems via two-axis gimbals; on
+    control, we introduce globally-stable control, and energy-optimal thrust allocation that permits inter-rotor thrust cancellations
+    only to avoid downwash interference and gimbal lock. With fully-onboard autonomy, MorphQuad demonstrates multi-revolution
+    rotation while translating or hovering, for pipe inspection and target tracking (maneuverability); valve turning, perching,
+    and object pressing and pushing with human-level strengths (manipulation); and wind rejection from any direction, even
+    directed to a single rotor, and push-pull recovery (resiliency).'
+  zh: 'arXiv:2607.02764v1 Announce Type: new Abstract: Infrastructure maintenance, contact-based inspection, and emergency
+    response can benefit from aerial vehicles that act as a flying human hand with extreme maneuverability, manipulation,
+    and resiliency (MMR): maneuverability to fly in arbitrary orientations to reach remote and tight locations; manipulation
+    to point sensors, turn valves, and press tools at arbitrary orientations; resiliency to maintain accurate motion and force
+    control despite disturbances from arbitrary directions, such as wind, ground effects, and friction. Realizing MMR on aerial
+    vehicles requires not only omnidirectional flight; it also requires (I) vectoring of maximum thrust in any direction,
+    to maximize capacity for contact-force application and disturbance rejection, (II) global stability, to enable control
+    over any orientation/position, and (III) compact, standard designs that build upon platforms such as quadrotors to inherit
+    technological know-how. No current aerial vehicle simultaneously enables I--III, due to structural and control limitations
+    that constrain actuation. We present MorphQuad: a morphable quadrotor that enjoys MMR. Key to our approach is a hardware
+    and control co-design: on hardware, we independently articulate each of the four rotor systems via two-axis gimbals; on
+    control, we introduce globally-stable control, and energy-optimal thrust allocation that permits inter-rotor thrust cancellations
+    only to avoid downwash interference and gimbal lock. With fully-onboard autonomy, MorphQuad demonstrates multi-revolution
+    rotation while translating or hovering, for pipe inspection and target tracking (maneuverability); valve turning, perching,
+    and object pressing and pushing with human-level strengths (manipulation); and wind rejection from any direction, even
+    directed to a single rotor, and push-pull recovery (resiliency).'
+  ko: 'arXiv:2607.02764v1 Announce Type: new Abstract: Infrastructure maintenance, contact-based inspection, and emergency
+    response can benefit from aerial vehicles that act as a flying human hand with extreme maneuverability, manipulation,
+    and resiliency (MMR): maneuverability to fly in arbitrary orientations to reach remote and tight locations; manipulation
+    to point sensors, turn valves, and press tools at arbitrary orientations; resiliency to maintain accurate motion and force
+    control despite disturbances from arbitrary directions, such as wind, ground effects, and friction. Realizing MMR on aerial
+    vehicles requires not only omnidirectional flight; it also requires (I) vectoring of maximum thrust in any direction,
+    to maximize capacity for contact-force application and disturbance rejection, (II) global stability, to enable control
+    over any orientation/position, and (III) compact, standard designs that build upon platforms such as quadrotors to inherit
+    technological know-how. No current aerial vehicle simultaneously enables I--III, due to structural and control limitations
+    that constrain actuation. We present MorphQuad: a morphable quadrotor that enjoys MMR. Key to our approach is a hardware
+    and control co-design: on hardware, we independently articulate each of the four rotor systems via two-axis gimbals; on
+    control, we introduce globally-stable control, and energy-optimal thrust allocation that permits inter-rotor thrust cancellations
+    only to avoid downwash interference and gimbal lock. With fully-onboard autonomy, MorphQuad demonstrates multi-revolution
+    rotation while translating or hovering, for pipe inspection and target tracking (maneuverability); valve turning, perching,
+    and object pressing and pushing with human-level strengths (manipulation); and wind rejection from any direction, even
+    directed to a single rotor, and push-pull recovery (resiliency).'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

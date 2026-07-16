@@ -9,8 +9,8 @@ names:
   ko: 'LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control'
 summary:
   en: 'LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control is a paper
-    on Sim-to-Real for humanoid robots.  LIFT: Use batch SAC pre-training + fine-tuning of the physical prior world model
-    to reduce humanoid sim-to-real to 1 hour.'
+    on Sim-to-Real for humanoid robots. LIFT: Use batch SAC pre-training + fine-tuning of the physical prior world model to
+    reduce humanoid sim-to-real to 1 hour.'
   zh: 'LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control is a paper
     on Sim-to-Real for humanoid robotics. LIFT：用大批量 SAC 预训练 + 物理先验世界模型微调，把人形 sim-to-real 压到 1 小时.'
   ko: 'LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control is a paper

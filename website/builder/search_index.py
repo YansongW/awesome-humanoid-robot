@@ -86,6 +86,18 @@ def build_search_index(entries: dict[str, Entry], lang: str = "zh") -> dict[str,
     return {"entries": compact, "index": {k: sorted(v) for k, v in inverted.items()}}
 
 
+def build_names_index(entries: dict[str, Entry]) -> list[dict]:
+    """Build a lightweight id/name/type list for the graph-page sidebar search.
+
+    The full search-index.json (~1.4 MB) is overkill for jumping to a node by
+    name; this index is an order of magnitude smaller.
+    """
+    return [
+        {"id": e.id, "name": e.name, "type": e.type}
+        for e in sorted(entries.values(), key=lambda e: e.name or e.id)
+    ]
+
+
 def build_subgraph_data(center_id: str, entries: dict[str, Entry], relationships: list, max_nodes: int = 80) -> dict:
     """Build a localized subgraph (1-hop) for a single entry page."""
     member_ids = {center_id}

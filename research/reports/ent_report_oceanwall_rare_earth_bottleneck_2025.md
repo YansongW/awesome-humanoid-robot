@@ -10,7 +10,7 @@ names:
 summary:
   en: An Oceanwall research note from July 2025 arguing that advanced robots, particularly humanoids, rely on NdFeB permanent
     magnets, and that China's dominance in rare earth refining creates a geopolitical supply-chain risk.
-  zh: '> **生活实例**：它就像一份提醒电动车行业的报告——如果制造高效电机所需的稀土材料高度依赖少数国家，那么供应链中断会让整车生产面临巨大风险。'
+  zh: '> 生活实例：它就像一份提醒电动车行业的报告——如果制造高效电机所需的稀土材料高度依赖少数国家，那么供应链中断会让整车生产面临巨大风险。'
   ko: Oceanwall의 2025년 7월 연구 노트로, 고급 로봇 특히 휴로이드 로봇이 NdFeB 영구자석에 의존하며 중국의 희토류 정제 지배력이 지정학적 공급망 리스크를 초기한다고 주장함.
 domains:
 - 01_raw_materials

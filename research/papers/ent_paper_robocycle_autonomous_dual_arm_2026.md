@@ -8,33 +8,33 @@ names:
   zh: 'ROBOCYCLE: Autonomous Dual-Arm Robotic Manipulation and Coordination for Recycling Applications'
   ko: 'ROBOCYCLE: Autonomous Dual-Arm Robotic Manipulation and Coordination for Recycling Applications'
 summary:
-  en: "arXiv:2607.03616v1 Announce Type: new \nAbstract: As urban waste volumes escalate and labor shortages intensify, automated\
-    \ waste sorting systems are becoming a necessity. However, current robotic solutions often struggle with the 3D perception\
-    \ and manipulation of transparent, deformable, or cluttered objects. This work introduces ROBOCYCLE, an autonomous dual-arm\
-    \ robotic recycling platform designed to meet the recycling standards of the Tokyo metropolitan area. Our approach integrates\
-    \ multi-view RGB-D perception, transformer-based instance segmentation using RF-DETR, and 6-DoF grasp planning via the\
-    \ Anygrasp SDK. By processing segmentated point clouds, the system generates robust candidate poses for irregular and\
-    \ deformable waste. The system achieved a 90.3% grasp success rate and 84.3% overall task success rate, effectively performing\
-    \ complex coordinated tasks such as unscrewing PET bottle caps. The proposed platform offers a scalable solution for autonomous\
-    \ waste management in real-world human environments."
-  zh: "arXiv:2607.03616v1 Announce Type: new \nAbstract: As urban waste volumes escalate and labor shortages intensify, automated\
-    \ waste sorting systems are becoming a necessity. However, current robotic solutions often struggle with the 3D perception\
-    \ and manipulation of transparent, deformable, or cluttered objects. This work introduces ROBOCYCLE, an autonomous dual-arm\
-    \ robotic recycling platform designed to meet the recycling standards of the Tokyo metropolitan area. Our approach integrates\
-    \ multi-view RGB-D perception, transformer-based instance segmentation using RF-DETR, and 6-DoF grasp planning via the\
-    \ Anygrasp SDK. By processing segmentated point clouds, the system generates robust candidate poses for irregular and\
-    \ deformable waste. The system achieved a 90.3% grasp success rate and 84.3% overall task success rate, effectively performing\
-    \ complex coordinated tasks such as unscrewing PET bottle caps. The proposed platform offers a scalable solution for autonomous\
-    \ waste management in real-world human environments."
-  ko: "arXiv:2607.03616v1 Announce Type: new \nAbstract: As urban waste volumes escalate and labor shortages intensify, automated\
-    \ waste sorting systems are becoming a necessity. However, current robotic solutions often struggle with the 3D perception\
-    \ and manipulation of transparent, deformable, or cluttered objects. This work introduces ROBOCYCLE, an autonomous dual-arm\
-    \ robotic recycling platform designed to meet the recycling standards of the Tokyo metropolitan area. Our approach integrates\
-    \ multi-view RGB-D perception, transformer-based instance segmentation using RF-DETR, and 6-DoF grasp planning via the\
-    \ Anygrasp SDK. By processing segmentated point clouds, the system generates robust candidate poses for irregular and\
-    \ deformable waste. The system achieved a 90.3% grasp success rate and 84.3% overall task success rate, effectively performing\
-    \ complex coordinated tasks such as unscrewing PET bottle caps. The proposed platform offers a scalable solution for autonomous\
-    \ waste management in real-world human environments."
+  en: 'arXiv:2607.03616v1 Announce Type: new Abstract: As urban waste volumes escalate and labor shortages intensify, automated
+    waste sorting systems are becoming a necessity. However, current robotic solutions often struggle with the 3D perception
+    and manipulation of transparent, deformable, or cluttered objects. This work introduces ROBOCYCLE, an autonomous dual-arm
+    robotic recycling platform designed to meet the recycling standards of the Tokyo metropolitan area. Our approach integrates
+    multi-view RGB-D perception, transformer-based instance segmentation using RF-DETR, and 6-DoF grasp planning via the Anygrasp
+    SDK. By processing segmentated point clouds, the system generates robust candidate poses for irregular and deformable
+    waste. The system achieved a 90.3% grasp success rate and 84.3% overall task success rate, effectively performing complex
+    coordinated tasks such as unscrewing PET bottle caps. The proposed platform offers a scalable solution for autonomous
+    waste management in real-world human environments.'
+  zh: 'arXiv:2607.03616v1 Announce Type: new Abstract: As urban waste volumes escalate and labor shortages intensify, automated
+    waste sorting systems are becoming a necessity. However, current robotic solutions often struggle with the 3D perception
+    and manipulation of transparent, deformable, or cluttered objects. This work introduces ROBOCYCLE, an autonomous dual-arm
+    robotic recycling platform designed to meet the recycling standards of the Tokyo metropolitan area. Our approach integrates
+    multi-view RGB-D perception, transformer-based instance segmentation using RF-DETR, and 6-DoF grasp planning via the Anygrasp
+    SDK. By processing segmentated point clouds, the system generates robust candidate poses for irregular and deformable
+    waste. The system achieved a 90.3% grasp success rate and 84.3% overall task success rate, effectively performing complex
+    coordinated tasks such as unscrewing PET bottle caps. The proposed platform offers a scalable solution for autonomous
+    waste management in real-world human environments.'
+  ko: 'arXiv:2607.03616v1 Announce Type: new Abstract: As urban waste volumes escalate and labor shortages intensify, automated
+    waste sorting systems are becoming a necessity. However, current robotic solutions often struggle with the 3D perception
+    and manipulation of transparent, deformable, or cluttered objects. This work introduces ROBOCYCLE, an autonomous dual-arm
+    robotic recycling platform designed to meet the recycling standards of the Tokyo metropolitan area. Our approach integrates
+    multi-view RGB-D perception, transformer-based instance segmentation using RF-DETR, and 6-DoF grasp planning via the Anygrasp
+    SDK. By processing segmentated point clouds, the system generates robust candidate poses for irregular and deformable
+    waste. The system achieved a 90.3% grasp success rate and 84.3% overall task success rate, effectively performing complex
+    coordinated tasks such as unscrewing PET bottle caps. The proposed platform offers a scalable solution for autonomous
+    waste management in real-world human environments.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

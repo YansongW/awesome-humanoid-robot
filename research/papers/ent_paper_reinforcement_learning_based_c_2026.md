@@ -8,51 +8,51 @@ names:
   zh: Reinforcement Learning-Based Control for an Inline Skating Humanoid Robot
   ko: Reinforcement Learning-Based Control for an Inline Skating Humanoid Robot
 summary:
-  en: "arXiv:2606.31807v1 Announce Type: new \nAbstract: As humanoid robots become increasingly dynamic, coupling them with\
-    \ reinforcement learning offers a promising approach to solving the complex, underactuated mechanics of passive inline\
-    \ skating. Equipping a humanoid robot with passive inline skating wheels presents an opportunity to combine the versatile\
-    \ agility of humanoids with the high-speed, energy-efficient locomotion strategies utilized by human skaters. In this\
-    \ paper, we train and deploy a reinforcement learning control policy that enables novel locomotion strategies for a humanoid\
-    \ robot modified to equip consumer inline skates instead of conventional feet. Unlike previous work limited to quadrupedal\
-    \ robots or actively driven wheels, our system allows for precise 6-DoF control of the skates to execute dynamic, edge-driven\
-    \ propulsion strategies. Our skating strategies emerge entirely from our reward structure, without reliance on human motion\
-    \ data, imitation learning, or kinematic priors. We overcome the inherent instability of passive wheels and simulation\
-    \ contact artifacts by utilizing different geometric wheel models (spherical and ellipsoidal) during training and validation,\
-    \ along with a custom success-based command curriculum and a specialized rolling reward. Consequently, our policy demonstrates\
-    \ up to a 50% reduction in Cost of Transport (CoT) compared to standard walking gaits. The resulting policy successfully\
-    \ transfers zero-shot to the physical Booster T1 hardware. Real-world deployments demonstrate dynamic balance, the ability\
-    \ to reject active physical perturbations, and agile locomotion strategies capable of turning at speed. A video of our\
-    \ results can be found at https://www.youtube.com/watch?v=-_APcOS7uFo."
-  zh: "arXiv:2606.31807v1 Announce Type: new \nAbstract: As humanoid robots become increasingly dynamic, coupling them with\
-    \ reinforcement learning offers a promising approach to solving the complex, underactuated mechanics of passive inline\
-    \ skating. Equipping a humanoid robot with passive inline skating wheels presents an opportunity to combine the versatile\
-    \ agility of humanoids with the high-speed, energy-efficient locomotion strategies utilized by human skaters. In this\
-    \ paper, we train and deploy a reinforcement learning control policy that enables novel locomotion strategies for a humanoid\
-    \ robot modified to equip consumer inline skates instead of conventional feet. Unlike previous work limited to quadrupedal\
-    \ robots or actively driven wheels, our system allows for precise 6-DoF control of the skates to execute dynamic, edge-driven\
-    \ propulsion strategies. Our skating strategies emerge entirely from our reward structure, without reliance on human motion\
-    \ data, imitation learning, or kinematic priors. We overcome the inherent instability of passive wheels and simulation\
-    \ contact artifacts by utilizing different geometric wheel models (spherical and ellipsoidal) during training and validation,\
-    \ along with a custom success-based command curriculum and a specialized rolling reward. Consequently, our policy demonstrates\
-    \ up to a 50% reduction in Cost of Transport (CoT) compared to standard walking gaits. The resulting policy successfully\
-    \ transfers zero-shot to the physical Booster T1 hardware. Real-world deployments demonstrate dynamic balance, the ability\
-    \ to reject active physical perturbations, and agile locomotion strategies capable of turning at speed. A video of our\
-    \ results can be found at https://www.youtube.com/watch?v=-_APcOS7uFo."
-  ko: "arXiv:2606.31807v1 Announce Type: new \nAbstract: As humanoid robots become increasingly dynamic, coupling them with\
-    \ reinforcement learning offers a promising approach to solving the complex, underactuated mechanics of passive inline\
-    \ skating. Equipping a humanoid robot with passive inline skating wheels presents an opportunity to combine the versatile\
-    \ agility of humanoids with the high-speed, energy-efficient locomotion strategies utilized by human skaters. In this\
-    \ paper, we train and deploy a reinforcement learning control policy that enables novel locomotion strategies for a humanoid\
-    \ robot modified to equip consumer inline skates instead of conventional feet. Unlike previous work limited to quadrupedal\
-    \ robots or actively driven wheels, our system allows for precise 6-DoF control of the skates to execute dynamic, edge-driven\
-    \ propulsion strategies. Our skating strategies emerge entirely from our reward structure, without reliance on human motion\
-    \ data, imitation learning, or kinematic priors. We overcome the inherent instability of passive wheels and simulation\
-    \ contact artifacts by utilizing different geometric wheel models (spherical and ellipsoidal) during training and validation,\
-    \ along with a custom success-based command curriculum and a specialized rolling reward. Consequently, our policy demonstrates\
-    \ up to a 50% reduction in Cost of Transport (CoT) compared to standard walking gaits. The resulting policy successfully\
-    \ transfers zero-shot to the physical Booster T1 hardware. Real-world deployments demonstrate dynamic balance, the ability\
-    \ to reject active physical perturbations, and agile locomotion strategies capable of turning at speed. A video of our\
-    \ results can be found at https://www.youtube.com/watch?v=-_APcOS7uFo."
+  en: 'arXiv:2606.31807v1 Announce Type: new Abstract: As humanoid robots become increasingly dynamic, coupling them with
+    reinforcement learning offers a promising approach to solving the complex, underactuated mechanics of passive inline skating.
+    Equipping a humanoid robot with passive inline skating wheels presents an opportunity to combine the versatile agility
+    of humanoids with the high-speed, energy-efficient locomotion strategies utilized by human skaters. In this paper, we
+    train and deploy a reinforcement learning control policy that enables novel locomotion strategies for a humanoid robot
+    modified to equip consumer inline skates instead of conventional feet. Unlike previous work limited to quadrupedal robots
+    or actively driven wheels, our system allows for precise 6-DoF control of the skates to execute dynamic, edge-driven propulsion
+    strategies. Our skating strategies emerge entirely from our reward structure, without reliance on human motion data, imitation
+    learning, or kinematic priors. We overcome the inherent instability of passive wheels and simulation contact artifacts
+    by utilizing different geometric wheel models (spherical and ellipsoidal) during training and validation, along with a
+    custom success-based command curriculum and a specialized rolling reward. Consequently, our policy demonstrates up to
+    a 50% reduction in Cost of Transport (CoT) compared to standard walking gaits. The resulting policy successfully transfers
+    zero-shot to the physical Booster T1 hardware. Real-world deployments demonstrate dynamic balance, the ability to reject
+    active physical perturbations, and agile locomotion strategies capable of turning at speed. A video of our results can
+    be found at https://www.youtube.com/watch?v=-_APcOS7uFo.'
+  zh: 'arXiv:2606.31807v1 Announce Type: new Abstract: As humanoid robots become increasingly dynamic, coupling them with
+    reinforcement learning offers a promising approach to solving the complex, underactuated mechanics of passive inline skating.
+    Equipping a humanoid robot with passive inline skating wheels presents an opportunity to combine the versatile agility
+    of humanoids with the high-speed, energy-efficient locomotion strategies utilized by human skaters. In this paper, we
+    train and deploy a reinforcement learning control policy that enables novel locomotion strategies for a humanoid robot
+    modified to equip consumer inline skates instead of conventional feet. Unlike previous work limited to quadrupedal robots
+    or actively driven wheels, our system allows for precise 6-DoF control of the skates to execute dynamic, edge-driven propulsion
+    strategies. Our skating strategies emerge entirely from our reward structure, without reliance on human motion data, imitation
+    learning, or kinematic priors. We overcome the inherent instability of passive wheels and simulation contact artifacts
+    by utilizing different geometric wheel models (spherical and ellipsoidal) during training and validation, along with a
+    custom success-based command curriculum and a specialized rolling reward. Consequently, our policy demonstrates up to
+    a 50% reduction in Cost of Transport (CoT) compared to standard walking gaits. The resulting policy successfully transfers
+    zero-shot to the physical Booster T1 hardware. Real-world deployments demonstrate dynamic balance, the ability to reject
+    active physical perturbations, and agile locomotion strategies capable of turning at speed. A video of our results can
+    be found at https://www.youtube.com/watch?v=-_APcOS7uFo.'
+  ko: 'arXiv:2606.31807v1 Announce Type: new Abstract: As humanoid robots become increasingly dynamic, coupling them with
+    reinforcement learning offers a promising approach to solving the complex, underactuated mechanics of passive inline skating.
+    Equipping a humanoid robot with passive inline skating wheels presents an opportunity to combine the versatile agility
+    of humanoids with the high-speed, energy-efficient locomotion strategies utilized by human skaters. In this paper, we
+    train and deploy a reinforcement learning control policy that enables novel locomotion strategies for a humanoid robot
+    modified to equip consumer inline skates instead of conventional feet. Unlike previous work limited to quadrupedal robots
+    or actively driven wheels, our system allows for precise 6-DoF control of the skates to execute dynamic, edge-driven propulsion
+    strategies. Our skating strategies emerge entirely from our reward structure, without reliance on human motion data, imitation
+    learning, or kinematic priors. We overcome the inherent instability of passive wheels and simulation contact artifacts
+    by utilizing different geometric wheel models (spherical and ellipsoidal) during training and validation, along with a
+    custom success-based command curriculum and a specialized rolling reward. Consequently, our policy demonstrates up to
+    a 50% reduction in Cost of Transport (CoT) compared to standard walking gaits. The resulting policy successfully transfers
+    zero-shot to the physical Booster T1 hardware. Real-world deployments demonstrate dynamic balance, the ability to reject
+    active physical perturbations, and agile locomotion strategies capable of turning at speed. A video of our results can
+    be found at https://www.youtube.com/watch?v=-_APcOS7uFo.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

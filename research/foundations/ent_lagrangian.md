@@ -10,8 +10,7 @@ names:
 summary:
   en: A scalar function that encodes the dynamics of a system through the difference (or generalized combination) of kinetic
     and potential energy, from which equations of motion follow via a variational principle.
-  zh: '核心内容 ### 拉格朗日量的定义与定位 拉格朗日量属于 **formalism** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 通过动能与势能之差（或更一般组合）刻画系统动力学，并由变分原理导出运动方程的标量函数。
-    英文名称为 *Lagrangian*。 韩文名称为 *라그랑지안*。'
+  zh: 通过动能与势能之差（或更一般组合）刻画系统动力学，并由变分原理导出运动方程的标量函数。
   ko: 울성 및 위치 에너지의 차이(또는 일반화된 조합)로 시스템 역학을 기술하고 변분 원리로부터 운 동 방정식을 유도하는 스칼라 함수.
 domains:
 - 00_foundations
@@ -55,7 +54,7 @@ related_entities:
 
 ## 核心内容
 ### 拉格朗日量的定义与定位
-拉格朗日量属于 **formalism** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 通过动能与势能之差（或更一般组合）刻画系统动力学，并由变分原理导出运动方程的标量函数。 英文名称为 *Lagrangian*。 韩文名称为 *라그랑지안*。
+拉格朗日量属于 **形式化方法** 类型。 所属领域包括：基础学科。 价值链层级：基础层。 通过动能与势能之差（或更一般组合）刻画系统动力学，并由变分原理导出运动方程的标量函数。 英文名称为 *Lagrangian*。 韩文名称为 *라그랑지안*。
 
 ### 拉格朗日量的数学与原理基础
 拉格朗日量建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -79,7 +78,7 @@ related_entities:
 - energy
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键formalism之一，拉格朗日量在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键形式化方法之一，拉格朗日量在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [H. Goldstein, C. Poole, and J. Safko, Classical Mechanics, 3rd ed., Addison-Wesley, 2002](https://doi.org/10.2307/2522307)

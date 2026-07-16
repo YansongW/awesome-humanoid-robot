@@ -10,8 +10,7 @@ names:
 summary:
   en: An off-policy actor-critic reinforcement-learning algorithm that maximizes expected return while also maximizing policy
     entropy for exploration.
-  zh: '核心内容 ### 软演员-评论家（SAC）的定义与定位 软演员-评论家（SAC）属于 **algorithm** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。
-    英文名称为 *Soft Actor-Critic (SAC)*。 韩文名称为 *소프트 액터-크리틱(SAC)*。'
+  zh: 在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。
   ko: 기대 보상을 최대화하면서도 정책 엔트로피를 최대화해 탐색을 장려하는 오프폴리시 액터-크리틱 강화학습 알고리즘.
 domains:
 - 07_ai_models_algorithms
@@ -45,7 +44,7 @@ sources:
 
 ## 核心内容
 ### 软演员-评论家（SAC）的定义与定位
-软演员-评论家（SAC）属于 **algorithm** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。 英文名称为 *Soft Actor-Critic (SAC)*。 韩文名称为 *소프트 액터-크리틱(SAC)*。
+软演员-评论家（SAC）属于 **算法** 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 在最大化期望回报的同时最大化策略熵以促进探索的异策演员-评论家强化学习算法。 英文名称为 *Soft Actor-Critic (SAC)*。 韩文名称为 *소프트 액터-크리틱(SAC)*。
 
 ### 软演员-评论家（SAC）的数学与原理基础
 软演员-评论家（SAC）建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -67,7 +66,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键algorithm之一，软演员-评论家（SAC）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键算法之一，软演员-评论家（SAC）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

@@ -1817,3 +1817,125 @@ a:hover { text-decoration: underline; }
   .relations-layout { grid-template-columns: 1fr; }
   .entry-info-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== In-page table of contents ===== */
+.content-with-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 2.5rem;
+  align-items: start;
+}
+.page-toc {
+  position: sticky;
+  top: calc(var(--header-height) + 1rem);
+  max-height: calc(100vh - var(--header-height) - 2rem);
+  overflow-y: auto;
+  font-size: 0.9rem;
+  padding: 0.9rem 1rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+.page-toc summary {
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+  list-style-position: inside;
+}
+.page-toc .toc > ul,
+.page-toc .toc-nav > ul { list-style: none; padding-left: 0; margin: 0.4rem 0 0; }
+.page-toc .toc ul { list-style: none; padding-left: 0.9rem; }
+.page-toc .toc li { margin: 0; }
+.page-toc .toc a {
+  display: block;
+  padding: 0.18rem 0 0.18rem 0.6rem;
+  border-left: 2px solid var(--color-border);
+  color: var(--color-text-secondary);
+  line-height: 1.4;
+}
+.page-toc .toc a:hover { color: var(--color-accent); text-decoration: none; }
+.page-toc .toc a.active {
+  color: var(--color-accent);
+  border-left-color: var(--color-accent);
+  font-weight: 600;
+}
+
+/* Untranslated-content notice (en/ko pages showing zh original) */
+.untranslated-notice {
+  background: color-mix(in srgb, var(--color-accent) 8%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
+  border-radius: var(--radius);
+  padding: 0.75rem 1.1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+/* Wiki prev/next navigation */
+.wiki-prevnext {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+.wiki-prevnext a {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  max-width: 48%;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  transition: border-color 0.15s ease;
+}
+.wiki-prevnext a:hover { border-color: var(--color-accent); text-decoration: none; }
+.wiki-prevnext a span { color: var(--color-text); font-weight: 600; font-size: 1rem; }
+.wiki-prevnext a.next { text-align: right; margin-left: auto; }
+.wiki-prevnext > span { flex: 1; }
+
+/* Type listing page */
+.types-header { margin: 1.5rem 0; display: flex; align-items: baseline; gap: 1rem; }
+.types-count { color: var(--color-text-secondary); margin: 0; }
+
+/* Domain filter on search page */
+.filter-domain {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.85rem;
+  flex-wrap: wrap;
+}
+.filter-domain select {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: 0.95rem;
+  max-width: 100%;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+  .content-with-toc { grid-template-columns: minmax(0, 1fr) 220px; gap: 1.75rem; }
+}
+
+@media (max-width: 900px) {
+  .content-with-toc { grid-template-columns: minmax(0, 1fr); }
+  .page-toc { position: static; max-height: none; order: -1; }
+  .page-toc .toc a { padding-top: 0.3rem; padding-bottom: 0.3rem; }
+}
+
+@media (max-width: 640px) {
+  .entry-body table, .wiki-body table { display: block; overflow-x: auto; }
+  .wiki-prevnext { flex-direction: column; }
+  .wiki-prevnext a { max-width: 100%; }
+  .wiki-prevnext a.next { text-align: left; margin-left: 0; }
+  .breadcrumb { flex-wrap: wrap; row-gap: 0.25rem; }
+  .types-header { flex-direction: column; align-items: flex-start; gap: 0.25rem; }
+}

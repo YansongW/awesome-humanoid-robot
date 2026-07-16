@@ -9,7 +9,7 @@ names:
   ko: Production Ramp
 summary:
   en: Transition from pilot-line builds to volume manufacturing while improving yield, cycle time, and cost.
-  zh: 核心内容 当前人形机器人执行器供应链呈现**高端减速器与高端编码器高度集中**的特征：谐波减速器全球头部企业 Harmonic Drive、RV 减速器 Nabtesco 占据较大市场份额；高端磁编码器/光编也主要由日本、欧洲企业供应。这种集中度带来供应风险，尤其在地缘政治与产能紧张时。
+  zh: 当前人形机器人执行器供应链呈现高端减速器与高端编码器高度集中的特征：谐波减速器全球头部企业 Harmonic Drive、RV 减速器 Nabtesco 占据较大市场份额；高端磁编码器/光编也主要由日本、欧洲企业供应。这种集中度带来供应风险，尤其在地缘政治与产能紧张时。
   ko: 파일럿 라인에서 볼륨 제조로 전환하면서 수율, 사이클 타임 및 비용을 개선하는 과정.
 domains:
 - 05_mass_production
@@ -44,7 +44,7 @@ sources:
 ---
 
 ## 概述
-产能爬坡是人形机器人领域的重要concept。以下内容整理自项目 Wiki，供深入查阅。
+产能爬坡是人形机器人领域的重要概念。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 当前人形机器人执行器供应链呈现**高端减速器与高端编码器高度集中**的特征：谐波减速器全球头部企业 Harmonic Drive、RV 减速器 Nabtesco 占据较大市场份额；高端磁编码器/光编也主要由日本、欧洲企业供应。这种集中度带来供应风险，尤其在地缘政治与产能紧张时。

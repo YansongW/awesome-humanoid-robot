@@ -8,39 +8,39 @@ names:
   zh: 'PRISM: Personalized Robotic Dataset Generation via Image-based Scene and Motion Synthesis'
   ko: 'PRISM: Personalized Robotic Dataset Generation via Image-based Scene and Motion Synthesis'
 summary:
-  en: "arXiv:2607.04880v1 Announce Type: new \nAbstract: Recent advances in large-scale pretrained vision-language-action\
-    \ models have improved robot policy learning, but directly deploying such policies in user-specific environments remains\
-    \ challenging due to limited generalization, which inevitably requires collecting a dataset tailored to the target environment.\
-    \ Teleoperation yields well-aligned data but is costly and difficult to scale, whereas simulation scales easily but struggles\
-    \ to resemble the target environment and generate task-specific trajectories. To meet both simultaneously, we propose\
-    \ PRISM, an end-to-end pipeline that generates personalized robotic datasets from a single image and a natural-language\
-    \ instruction. PRISM constructs digital cousin scenes that are semantically and geometrically aligned with the user environment\
-    \ yet diverse at the instance level, and synthesizes executable demonstrations without human teleoperation. Extensive\
-    \ experiments show that policies trained on PRISM-generated datasets outperform those trained on baseline-generated datasets\
-    \ on LIBERO and LIBERO-Plus, achieve up to 100\\% success rate on three real-world manipulation tasks, and maintain stronger\
-    \ performance when evaluated in environments that differ from those seen during training."
-  zh: "arXiv:2607.04880v1 Announce Type: new \nAbstract: Recent advances in large-scale pretrained vision-language-action\
-    \ models have improved robot policy learning, but directly deploying such policies in user-specific environments remains\
-    \ challenging due to limited generalization, which inevitably requires collecting a dataset tailored to the target environment.\
-    \ Teleoperation yields well-aligned data but is costly and difficult to scale, whereas simulation scales easily but struggles\
-    \ to resemble the target environment and generate task-specific trajectories. To meet both simultaneously, we propose\
-    \ PRISM, an end-to-end pipeline that generates personalized robotic datasets from a single image and a natural-language\
-    \ instruction. PRISM constructs digital cousin scenes that are semantically and geometrically aligned with the user environment\
-    \ yet diverse at the instance level, and synthesizes executable demonstrations without human teleoperation. Extensive\
-    \ experiments show that policies trained on PRISM-generated datasets outperform those trained on baseline-generated datasets\
-    \ on LIBERO and LIBERO-Plus, achieve up to 100\\% success rate on three real-world manipulation tasks, and maintain stronger\
-    \ performance when evaluated in environments that differ from those seen during training."
-  ko: "arXiv:2607.04880v1 Announce Type: new \nAbstract: Recent advances in large-scale pretrained vision-language-action\
-    \ models have improved robot policy learning, but directly deploying such policies in user-specific environments remains\
-    \ challenging due to limited generalization, which inevitably requires collecting a dataset tailored to the target environment.\
-    \ Teleoperation yields well-aligned data but is costly and difficult to scale, whereas simulation scales easily but struggles\
-    \ to resemble the target environment and generate task-specific trajectories. To meet both simultaneously, we propose\
-    \ PRISM, an end-to-end pipeline that generates personalized robotic datasets from a single image and a natural-language\
-    \ instruction. PRISM constructs digital cousin scenes that are semantically and geometrically aligned with the user environment\
-    \ yet diverse at the instance level, and synthesizes executable demonstrations without human teleoperation. Extensive\
-    \ experiments show that policies trained on PRISM-generated datasets outperform those trained on baseline-generated datasets\
-    \ on LIBERO and LIBERO-Plus, achieve up to 100\\% success rate on three real-world manipulation tasks, and maintain stronger\
-    \ performance when evaluated in environments that differ from those seen during training."
+  en: 'arXiv:2607.04880v1 Announce Type: new Abstract: Recent advances in large-scale pretrained vision-language-action models
+    have improved robot policy learning, but directly deploying such policies in user-specific environments remains challenging
+    due to limited generalization, which inevitably requires collecting a dataset tailored to the target environment. Teleoperation
+    yields well-aligned data but is costly and difficult to scale, whereas simulation scales easily but struggles to resemble
+    the target environment and generate task-specific trajectories. To meet both simultaneously, we propose PRISM, an end-to-end
+    pipeline that generates personalized robotic datasets from a single image and a natural-language instruction. PRISM constructs
+    digital cousin scenes that are semantically and geometrically aligned with the user environment yet diverse at the instance
+    level, and synthesizes executable demonstrations without human teleoperation. Extensive experiments show that policies
+    trained on PRISM-generated datasets outperform those trained on baseline-generated datasets on LIBERO and LIBERO-Plus,
+    achieve up to 100\% success rate on three real-world manipulation tasks, and maintain stronger performance when evaluated
+    in environments that differ from those seen during training.'
+  zh: 'arXiv:2607.04880v1 Announce Type: new Abstract: Recent advances in large-scale pretrained vision-language-action models
+    have improved robot policy learning, but directly deploying such policies in user-specific environments remains challenging
+    due to limited generalization, which inevitably requires collecting a dataset tailored to the target environment. Teleoperation
+    yields well-aligned data but is costly and difficult to scale, whereas simulation scales easily but struggles to resemble
+    the target environment and generate task-specific trajectories. To meet both simultaneously, we propose PRISM, an end-to-end
+    pipeline that generates personalized robotic datasets from a single image and a natural-language instruction. PRISM constructs
+    digital cousin scenes that are semantically and geometrically aligned with the user environment yet diverse at the instance
+    level, and synthesizes executable demonstrations without human teleoperation. Extensive experiments show that policies
+    trained on PRISM-generated datasets outperform those trained on baseline-generated datasets on LIBERO and LIBERO-Plus,
+    achieve up to 100\% success rate on three real-world manipulation tasks, and maintain stronger performance when evaluated
+    in environments that differ from those seen during training.'
+  ko: 'arXiv:2607.04880v1 Announce Type: new Abstract: Recent advances in large-scale pretrained vision-language-action models
+    have improved robot policy learning, but directly deploying such policies in user-specific environments remains challenging
+    due to limited generalization, which inevitably requires collecting a dataset tailored to the target environment. Teleoperation
+    yields well-aligned data but is costly and difficult to scale, whereas simulation scales easily but struggles to resemble
+    the target environment and generate task-specific trajectories. To meet both simultaneously, we propose PRISM, an end-to-end
+    pipeline that generates personalized robotic datasets from a single image and a natural-language instruction. PRISM constructs
+    digital cousin scenes that are semantically and geometrically aligned with the user environment yet diverse at the instance
+    level, and synthesizes executable demonstrations without human teleoperation. Extensive experiments show that policies
+    trained on PRISM-generated datasets outperform those trained on baseline-generated datasets on LIBERO and LIBERO-Plus,
+    achieve up to 100\% success rate on three real-world manipulation tasks, and maintain stronger performance when evaluated
+    in environments that differ from those seen during training.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

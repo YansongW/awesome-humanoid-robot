@@ -10,8 +10,7 @@ names:
 summary:
   en: The process of generating a sequence of high-level actions to achieve a goal, often using symbolic representations such
     as PDDL.
-  zh: '核心内容 ### 任务规划的定义与定位 任务规划属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 生成实现目标的高层动作序列的过程，常用PDDL等符号表示。
-    英文名称为 *Task Planning*。 韩文名称为 *작업 계획*。'
+  zh: 生成实现目标的高层动作序列的过程，常用PDDL等符号表示。
   ko: 목표 달성을 위한 고수준 행동 시퀀스를 생성하는 과정으로, PDDL과 같은 기호 표현을 주로 사용.
 domains:
 - 07_ai_models_algorithms
@@ -45,7 +44,7 @@ sources:
 
 ## 核心内容
 ### 任务规划的定义与定位
-任务规划属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 生成实现目标的高层动作序列的过程，常用PDDL等符号表示。 英文名称为 *Task Planning*。 韩文名称为 *작업 계획*。
+任务规划属于 **方法** 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 生成实现目标的高层动作序列的过程，常用PDDL等符号表示。 英文名称为 *Task Planning*。 韩文名称为 *작업 계획*。
 
 ### 任务规划的数学与原理基础
 任务规划建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -67,7 +66,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，任务规划在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，任务规划在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

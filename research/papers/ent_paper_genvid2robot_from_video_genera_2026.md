@@ -8,54 +8,51 @@ names:
   zh: 'GenVid2Robot: From Video Generation to Robot Manipulation via Rigid-Geometric Consistency'
   ko: 'GenVid2Robot: From Video Generation to Robot Manipulation via Rigid-Geometric Consistency'
 summary:
-  en: "arXiv:2607.09191v1 Announce Type: new \nAbstract: Generated videos provide useful visual motion priors for robot manipulation,\
-    \ but their visual plausibility does not imply physical executability. A generated video usually lacks metric geometry,\
-    \ grasp grounding, robot kinematic feasibility, and execution-time feedback, which makes direct trajectory replay unreliable\
-    \ in real-world manipulation. This paper presents GenVid2Robot, a rigid-geometric consistency framework that converts\
-    \ generated video motion into executable real-robot manipulation trajectories. Given an initial RGB-D observation and\
-    \ a task instruction, GenVid2Robot samples task-relevant semantic anchors from the real first frame, tracks these anchors\
-    \ through generated video candidates, and verifies whether the resulting 2D motion can be explained by first-frame RGB-D\
-    \ anchors under a sparse relative $SE(3)$ model. In this way, generated videos are treated as uncertain visual motion\
-    \ hypotheses rather than direct robot demonstrations. Only geometrically consistent motion is transferred to the robot.\
-    \ The accepted relative motion is then applied to the real grasp-time TCP pose selected by mask-constrained grasping,\
-    \ producing a grasp-conditioned execution trajectory that is consistent with both the visual motion prior and the physical\
-    \ grasp configuration. To reduce execution mismatch caused by RGB-D noise, calibration residuals, and small contact-induced\
-    \ displacement, a bounded depth-compensation module corrects local depth-direction errors without assuming full online\
-    \ replanning. Real-robot experiments demonstrate that GenVid2Robot improves the reliability of generated-video-guided\
-    \ manipulation by grounding visual motion priors with sparse metric geometry, grasp constraints, robot feasibility checking,\
-    \ and bounded execution feedback."
-  zh: "arXiv:2607.09191v1 Announce Type: new \nAbstract: Generated videos provide useful visual motion priors for robot manipulation,\
-    \ but their visual plausibility does not imply physical executability. A generated video usually lacks metric geometry,\
-    \ grasp grounding, robot kinematic feasibility, and execution-time feedback, which makes direct trajectory replay unreliable\
-    \ in real-world manipulation. This paper presents GenVid2Robot, a rigid-geometric consistency framework that converts\
-    \ generated video motion into executable real-robot manipulation trajectories. Given an initial RGB-D observation and\
-    \ a task instruction, GenVid2Robot samples task-relevant semantic anchors from the real first frame, tracks these anchors\
-    \ through generated video candidates, and verifies whether the resulting 2D motion can be explained by first-frame RGB-D\
-    \ anchors under a sparse relative $SE(3)$ model. In this way, generated videos are treated as uncertain visual motion\
-    \ hypotheses rather than direct robot demonstrations. Only geometrically consistent motion is transferred to the robot.\
-    \ The accepted relative motion is then applied to the real grasp-time TCP pose selected by mask-constrained grasping,\
-    \ producing a grasp-conditioned execution trajectory that is consistent with both the visual motion prior and the physical\
-    \ grasp configuration. To reduce execution mismatch caused by RGB-D noise, calibration residuals, and small contact-induced\
-    \ displacement, a bounded depth-compensation module corrects local depth-direction errors without assuming full online\
-    \ replanning. Real-robot experiments demonstrate that GenVid2Robot improves the reliability of generated-video-guided\
-    \ manipulation by grounding visual motion priors with sparse metric geometry, grasp constraints, robot feasibility checking,\
-    \ and bounded execution feedback."
-  ko: "arXiv:2607.09191v1 Announce Type: new \nAbstract: Generated videos provide useful visual motion priors for robot manipulation,\
-    \ but their visual plausibility does not imply physical executability. A generated video usually lacks metric geometry,\
-    \ grasp grounding, robot kinematic feasibility, and execution-time feedback, which makes direct trajectory replay unreliable\
-    \ in real-world manipulation. This paper presents GenVid2Robot, a rigid-geometric consistency framework that converts\
-    \ generated video motion into executable real-robot manipulation trajectories. Given an initial RGB-D observation and\
-    \ a task instruction, GenVid2Robot samples task-relevant semantic anchors from the real first frame, tracks these anchors\
-    \ through generated video candidates, and verifies whether the resulting 2D motion can be explained by first-frame RGB-D\
-    \ anchors under a sparse relative $SE(3)$ model. In this way, generated videos are treated as uncertain visual motion\
-    \ hypotheses rather than direct robot demonstrations. Only geometrically consistent motion is transferred to the robot.\
-    \ The accepted relative motion is then applied to the real grasp-time TCP pose selected by mask-constrained grasping,\
-    \ producing a grasp-conditioned execution trajectory that is consistent with both the visual motion prior and the physical\
-    \ grasp configuration. To reduce execution mismatch caused by RGB-D noise, calibration residuals, and small contact-induced\
-    \ displacement, a bounded depth-compensation module corrects local depth-direction errors without assuming full online\
-    \ replanning. Real-robot experiments demonstrate that GenVid2Robot improves the reliability of generated-video-guided\
-    \ manipulation by grounding visual motion priors with sparse metric geometry, grasp constraints, robot feasibility checking,\
-    \ and bounded execution feedback."
+  en: 'arXiv:2607.09191v1 Announce Type: new Abstract: Generated videos provide useful visual motion priors for robot manipulation,
+    but their visual plausibility does not imply physical executability. A generated video usually lacks metric geometry,
+    grasp grounding, robot kinematic feasibility, and execution-time feedback, which makes direct trajectory replay unreliable
+    in real-world manipulation. This paper presents GenVid2Robot, a rigid-geometric consistency framework that converts generated
+    video motion into executable real-robot manipulation trajectories. Given an initial RGB-D observation and a task instruction,
+    GenVid2Robot samples task-relevant semantic anchors from the real first frame, tracks these anchors through generated
+    video candidates, and verifies whether the resulting 2D motion can be explained by first-frame RGB-D anchors under a sparse
+    relative $SE(3)$ model. In this way, generated videos are treated as uncertain visual motion hypotheses rather than direct
+    robot demonstrations. Only geometrically consistent motion is transferred to the robot. The accepted relative motion is
+    then applied to the real grasp-time TCP pose selected by mask-constrained grasping, producing a grasp-conditioned execution
+    trajectory that is consistent with both the visual motion prior and the physical grasp configuration. To reduce execution
+    mismatch caused by RGB-D noise, calibration residuals, and small contact-induced displacement, a bounded depth-compensation
+    module corrects local depth-direction errors without assuming full online replanning. Real-robot experiments demonstrate
+    that GenVid2Robot improves the reliability of generated-video-guided manipulation by grounding visual motion priors with
+    sparse metric geometry, grasp constraints, robot feasibility checking, and bounded execution feedback.'
+  zh: 'arXiv:2607.09191v1 Announce Type: new Abstract: Generated videos provide useful visual motion priors for robot manipulation,
+    but their visual plausibility does not imply physical executability. A generated video usually lacks metric geometry,
+    grasp grounding, robot kinematic feasibility, and execution-time feedback, which makes direct trajectory replay unreliable
+    in real-world manipulation. This paper presents GenVid2Robot, a rigid-geometric consistency framework that converts generated
+    video motion into executable real-robot manipulation trajectories. Given an initial RGB-D observation and a task instruction,
+    GenVid2Robot samples task-relevant semantic anchors from the real first frame, tracks these anchors through generated
+    video candidates, and verifies whether the resulting 2D motion can be explained by first-frame RGB-D anchors under a sparse
+    relative $SE(3)$ model. In this way, generated videos are treated as uncertain visual motion hypotheses rather than direct
+    robot demonstrations. Only geometrically consistent motion is transferred to the robot. The accepted relative motion is
+    then applied to the real grasp-time TCP pose selected by mask-constrained grasping, producing a grasp-conditioned execution
+    trajectory that is consistent with both the visual motion prior and the physical grasp configuration. To reduce execution
+    mismatch caused by RGB-D noise, calibration residuals, and small contact-induced displacement, a bounded depth-compensation
+    module corrects local depth-direction errors without assuming full online replanning. Real-robot experiments demonstrate
+    that GenVid2Robot improves the reliability of generated-video-guided manipulation by grounding visual motion priors with
+    sparse metric geometry, grasp constraints, robot feasibility checking, and bounded execution feedback.'
+  ko: 'arXiv:2607.09191v1 Announce Type: new Abstract: Generated videos provide useful visual motion priors for robot manipulation,
+    but their visual plausibility does not imply physical executability. A generated video usually lacks metric geometry,
+    grasp grounding, robot kinematic feasibility, and execution-time feedback, which makes direct trajectory replay unreliable
+    in real-world manipulation. This paper presents GenVid2Robot, a rigid-geometric consistency framework that converts generated
+    video motion into executable real-robot manipulation trajectories. Given an initial RGB-D observation and a task instruction,
+    GenVid2Robot samples task-relevant semantic anchors from the real first frame, tracks these anchors through generated
+    video candidates, and verifies whether the resulting 2D motion can be explained by first-frame RGB-D anchors under a sparse
+    relative $SE(3)$ model. In this way, generated videos are treated as uncertain visual motion hypotheses rather than direct
+    robot demonstrations. Only geometrically consistent motion is transferred to the robot. The accepted relative motion is
+    then applied to the real grasp-time TCP pose selected by mask-constrained grasping, producing a grasp-conditioned execution
+    trajectory that is consistent with both the visual motion prior and the physical grasp configuration. To reduce execution
+    mismatch caused by RGB-D noise, calibration residuals, and small contact-induced displacement, a bounded depth-compensation
+    module corrects local depth-direction errors without assuming full online replanning. Real-robot experiments demonstrate
+    that GenVid2Robot improves the reliability of generated-video-guided manipulation by grounding visual motion priors with
+    sparse metric geometry, grasp constraints, robot feasibility checking, and bounded execution feedback.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

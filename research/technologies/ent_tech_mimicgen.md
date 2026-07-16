@@ -10,8 +10,7 @@ names:
 summary:
   en: A demonstration augmentation framework that scales a small set of human seed demonstrations in simulation by perturbing
     object poses and initial conditions.
-  zh: '核心内容 ### MimicGen的定义与定位 MimicGen属于 **technology** 类型。 所属领域包括：08_software_middleware, 09_data_datasets。 价值链层级：intelligence。
-    一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。 英文名称为 *MimicGen*。 韩文名称为 *MimicGen*。'
+  zh: 一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。
   ko: 물체 자세 및 초기 조건을 변형하여 시뮬레이션에서 소량의 인간 시드 데모를 확장하는 데모 증강 프레임워크.
 domains:
 - 08_software_middleware
@@ -64,7 +63,7 @@ theoretical_depth:
 
 ## 核心内容
 ### MimicGen的定义与定位
-MimicGen属于 **technology** 类型。 所属领域包括：08_software_middleware, 09_data_datasets。 价值链层级：intelligence。 一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。 英文名称为 *MimicGen*。 韩文名称为 *MimicGen*。
+MimicGen属于 **技术** 类型。 所属领域包括：软件中间件, 数据与数据集。 价值链层级：智能层。 一种演示增强框架，通过扰动物体位姿和初始条件，在仿真中扩展少量人类种子演示。 英文名称为 *MimicGen*。 韩文名称为 *MimicGen*。
 
 ### MimicGen的工作原理与技术架构
 MimicGen的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -88,7 +87,7 @@ MimicGen已广泛应用于人形机器人的原型验证、学术研究与早期
 - imitation_learning
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键technology之一，MimicGen在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键技术之一，MimicGen在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [MimicGen: A Data Generation System for Scalable Robot Learning using Human Demonstrations](https://arxiv.org/abs/2310.17596)

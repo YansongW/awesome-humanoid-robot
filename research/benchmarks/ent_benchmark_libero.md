@@ -10,7 +10,7 @@ names:
 summary:
   en: A benchmark and dataset for learning library-generalizable robot manipulation skills from short-horizon tabletop tasks
     with procedural object and scene variations.
-  zh: '核心内容 ### LIBERO的定义与定位 LIBERO属于 **benchmark** 类型，英文名称为 *LIBERO*。 一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。'
+  zh: 一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。
   ko: 프로시저적 객체 및 장면 변화를 가진 단기 테이블탑 작업에서 라이브러리 일반화 가능한 로봇 조작 기술을 학습하기 위한 벤치마크 및 데이터셋.
 domains:
 - 09_data_datasets
@@ -65,7 +65,7 @@ theoretical_depth:
 
 ## 核心内容
 ### LIBERO的定义与定位
-LIBERO属于 **benchmark** 类型，英文名称为 *LIBERO*。
+LIBERO属于 **评测基准** 类型，英文名称为 *LIBERO*。
 一个用于从短程桌面任务中学习可泛化机器人操作技能的基准与数据集，支持程序化的物体与场景变化。
 
 ### LIBERO的关键信息

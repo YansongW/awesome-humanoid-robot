@@ -47,7 +47,7 @@ Tech Mahindra's global enterprise clients can harness the power of physical AI w
 
 ## 核心内容
 ### Tech Mahindra and Viam partner to scale advanced robotics and automation solutions的定义与定位
-Tech Mahindra and Viam partner to scale advanced robotics and automation solutions属于 **technology** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 Tech Mahindra's global enterprise clients can harness the power of physical AI with direct access to Viam's advanced robotics and automation platform 英文名称为 *Tech Mahindra and Viam partner to scale advanced robotics and automation solutions*。 韩文名称为 *Tech Mahindra and Viam partner to scale advanced robotics and automation solutions*。
+Tech Mahindra and Viam partner to scale advanced robotics and automation solutions属于 **技术** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 Tech Mahindra's global enterprise clients can harness the power of physical AI with direct access to Viam's advanced robotics and automation platform 英文名称为 *Tech Mahindra and Viam partner to scale advanced robotics and automation solutions*。 韩文名称为 *Tech Mahindra and Viam partner to scale advanced robotics and automation solutions*。
 
 ### Tech Mahindra and Viam partner to scale advanced robotics and automation solutions的工作原理与技术架构
 Tech Mahindra and Viam partner to scale advanced robotics and automation solutions的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -69,7 +69,7 @@ Tech Mahindra and Viam partner to scale advanced robotics and automation solutio
 - technology
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键technology之一，Tech Mahindra and Viam partner to scale advanced robotics and automation solutions在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键技术之一，Tech Mahindra and Viam partner to scale advanced robotics and automation solutions在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Tech Mahindra and Viam partner to scale advanced robotics and automation solutions](http://www.RoboticsTomorrow.com/news/2026/06/19/tech-mahindra-and-viam-partner-to-scale-advanced-robotics-and-automation-solutions/26747)

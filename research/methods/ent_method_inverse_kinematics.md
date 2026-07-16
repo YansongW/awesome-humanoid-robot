@@ -10,8 +10,7 @@ names:
 summary:
   en: The computation of joint angles that realize a desired end-effector pose, often solved numerically via Jacobian pseudoinverse
     or analytically for simple geometries.
-  zh: '核心内容 ### 逆运动学的定义与定位 逆运动学属于 **method** 类型。 所属领域包括：06_design_engineering。 价值链层级：midstream。 根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。
-    英文名称为 *Inverse Kinematics*。 韩文名称为 *역욕동학*。'
+  zh: 根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。
   ko: 원하는 말단 동작기 자세를 실현하는 관절 각도를 계산하는 방법; Jacobian 의역수나 단순 기하 해석법을 사용.
 domains:
 - 06_design_engineering
@@ -45,7 +44,7 @@ sources:
 
 ## 核心内容
 ### 逆运动学的定义与定位
-逆运动学属于 **method** 类型。 所属领域包括：06_design_engineering。 价值链层级：midstream。 根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。 英文名称为 *Inverse Kinematics*。 韩文名称为 *역욕동학*。
+逆运动学属于 **方法** 类型。 所属领域包括：设计工程。 价值链层级：中游。 根据期望的末端执行器位姿反求关节角，常用Jacobian伪逆数值求解或简单几何解析求解。 英文名称为 *Inverse Kinematics*。 韩文名称为 *역욕동학*。
 
 ### 逆运动学的数学与原理基础
 逆运动学建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -67,7 +66,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，逆运动学在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，逆运动学在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

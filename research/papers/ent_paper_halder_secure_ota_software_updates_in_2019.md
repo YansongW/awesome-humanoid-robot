@@ -10,12 +10,12 @@ names:
 summary:
   en: A 2019 survey that classifies and compares secure over-the-air (OTA) software update techniques for connected vehicles,
     covering cryptographic methods, hardware security modules, security requirements, regulations, and industrial deployments.
-  zh: 'This survey highlights and discusses remote OTA software updates in the automotive sector, mainly from the security
+  zh: This survey highlights and discusses remote OTA software updates in the automotive sector, mainly from the security
     perspective. In particular, the major objective of this survey is to provide a comprehensive and structured outline of
     various research directions and approaches in OTA update technologies in vehicles. At first, we discuss the connected
     car technology and then integrate the relationship of remote OTA update features with the connected car. We also present
     the benefits of remote OTA updates for cars along with relevant statistics. Then, we emphasize on the security challenges
-    and '
+    and
   ko: 2019년에 발표된 서베이로, 커넥티드 차량을 위한 보안 OTA 소프트웨어 업데이트 기술을 분류 및 비교하고 암호화 방법, 하드웨어 보안 모듈, 보안 요구사항, 규제 및 산업 배포를 다룬다.
 domains:
 - 08_software_middleware

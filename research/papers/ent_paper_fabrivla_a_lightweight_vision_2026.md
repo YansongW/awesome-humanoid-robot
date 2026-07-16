@@ -8,27 +8,27 @@ names:
   zh: 'FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation'
   ko: 'FabriVLA: A Lightweight Vision-Language-Action Model for Precise Multi-Task Manipulation'
 summary:
-  en: "arXiv:2607.08575v2 Announce Type: replace \nAbstract: We present FabriVLA, a lightweight Vision-Language-Action model\
-    \ for Precise Multi-Task Manipulation. FabriVLA combines an InternVL3.5 vision-language backbone with a flow-matching\
-    \ action head featuring gated self-attention across action tokens and shallow VLM layer fusion for enriched spatial context.\
-    \ The model is trained via single stage joint optimization from a pretrained VLM and randomly initialized action head.\
-    \ On the Meta-World MT50 benchmark spanning 50 diverse manipulation tasks, FabriVLA achieves a tier-average success rate\
-    \ of 90.0%, demonstrating that a compact VLA built on a 1B scale VLM can achieve strong performance without relying on\
-    \ multi billion parameter VLA backbones."
-  zh: "arXiv:2607.08575v2 Announce Type: replace \nAbstract: We present FabriVLA, a lightweight Vision-Language-Action model\
-    \ for Precise Multi-Task Manipulation. FabriVLA combines an InternVL3.5 vision-language backbone with a flow-matching\
-    \ action head featuring gated self-attention across action tokens and shallow VLM layer fusion for enriched spatial context.\
-    \ The model is trained via single stage joint optimization from a pretrained VLM and randomly initialized action head.\
-    \ On the Meta-World MT50 benchmark spanning 50 diverse manipulation tasks, FabriVLA achieves a tier-average success rate\
-    \ of 90.0%, demonstrating that a compact VLA built on a 1B scale VLM can achieve strong performance without relying on\
-    \ multi billion parameter VLA backbones."
-  ko: "arXiv:2607.08575v2 Announce Type: replace \nAbstract: We present FabriVLA, a lightweight Vision-Language-Action model\
-    \ for Precise Multi-Task Manipulation. FabriVLA combines an InternVL3.5 vision-language backbone with a flow-matching\
-    \ action head featuring gated self-attention across action tokens and shallow VLM layer fusion for enriched spatial context.\
-    \ The model is trained via single stage joint optimization from a pretrained VLM and randomly initialized action head.\
-    \ On the Meta-World MT50 benchmark spanning 50 diverse manipulation tasks, FabriVLA achieves a tier-average success rate\
-    \ of 90.0%, demonstrating that a compact VLA built on a 1B scale VLM can achieve strong performance without relying on\
-    \ multi billion parameter VLA backbones."
+  en: 'arXiv:2607.08575v2 Announce Type: replace Abstract: We present FabriVLA, a lightweight Vision-Language-Action model
+    for Precise Multi-Task Manipulation. FabriVLA combines an InternVL3.5 vision-language backbone with a flow-matching action
+    head featuring gated self-attention across action tokens and shallow VLM layer fusion for enriched spatial context. The
+    model is trained via single stage joint optimization from a pretrained VLM and randomly initialized action head. On the
+    Meta-World MT50 benchmark spanning 50 diverse manipulation tasks, FabriVLA achieves a tier-average success rate of 90.0%,
+    demonstrating that a compact VLA built on a 1B scale VLM can achieve strong performance without relying on multi billion
+    parameter VLA backbones.'
+  zh: 'arXiv:2607.08575v2 Announce Type: replace Abstract: We present FabriVLA, a lightweight Vision-Language-Action model
+    for Precise Multi-Task Manipulation. FabriVLA combines an InternVL3.5 vision-language backbone with a flow-matching action
+    head featuring gated self-attention across action tokens and shallow VLM layer fusion for enriched spatial context. The
+    model is trained via single stage joint optimization from a pretrained VLM and randomly initialized action head. On the
+    Meta-World MT50 benchmark spanning 50 diverse manipulation tasks, FabriVLA achieves a tier-average success rate of 90.0%,
+    demonstrating that a compact VLA built on a 1B scale VLM can achieve strong performance without relying on multi billion
+    parameter VLA backbones.'
+  ko: 'arXiv:2607.08575v2 Announce Type: replace Abstract: We present FabriVLA, a lightweight Vision-Language-Action model
+    for Precise Multi-Task Manipulation. FabriVLA combines an InternVL3.5 vision-language backbone with a flow-matching action
+    head featuring gated self-attention across action tokens and shallow VLM layer fusion for enriched spatial context. The
+    model is trained via single stage joint optimization from a pretrained VLM and randomly initialized action head. On the
+    Meta-World MT50 benchmark spanning 50 diverse manipulation tasks, FabriVLA achieves a tier-average success rate of 90.0%,
+    demonstrating that a compact VLA built on a 1B scale VLM can achieve strong performance without relying on multi billion
+    parameter VLA backbones.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

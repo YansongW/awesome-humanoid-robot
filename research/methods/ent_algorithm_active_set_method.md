@@ -10,9 +10,7 @@ names:
 summary:
   en: An iterative algorithm for solving QPs that maintains a working set of active constraints and solves equality-constrained
     subproblems until optimality conditions are satisfied.
-  zh: '核心内容 ### 二次规划的积极集法的定义与定位 二次规划的积极集法属于 **algorithm** 类型。 所属领域包括：07_ai_models_algorithms, 00_foundations。 价值链层级：intelligence,
-    foundations。 一种求解二次规划的迭代算法，维护一个活动约束工作集，并求解等式约束子问题直到满足最优性条件。 英文名称为 *Active-Set Method for Quadratic Programming*。 韩文名称为
-    *이차 계획법의 활성 집합법*。'
+  zh: 一种求解二次规划的迭代算法，维护一个活动约束工作集，并求解等式约束子问题直到满足最优性条件。
   ko: 활성 제약 조건의 작업 집합을 유지하고 최적성 조건이 만족될 때까지 등식 제약 하위 문제를 푸는 QP를 위한 반복 알고리즘이다.
 domains:
 - 07_ai_models_algorithms
@@ -63,7 +61,7 @@ related_entities:
 
 ## 核心内容
 ### 二次规划的积极集法的定义与定位
-二次规划的积极集法属于 **algorithm** 类型。 所属领域包括：07_ai_models_algorithms, 00_foundations。 价值链层级：intelligence, foundations。 一种求解二次规划的迭代算法，维护一个活动约束工作集，并求解等式约束子问题直到满足最优性条件。 英文名称为 *Active-Set Method for Quadratic Programming*。 韩文名称为 *이차 계획법의 활성 집합법*。
+二次规划的积极集法属于 **算法** 类型。 所属领域包括：AI 模型与算法, 基础学科。 价值链层级：智能层, foundations。 一种求解二次规划的迭代算法，维护一个活动约束工作集，并求解等式约束子问题直到满足最优性条件。 英文名称为 *Active-Set Method for Quadratic Programming*。 韩文名称为 *이차 계획법의 활성 집합법*。
 
 ### 二次规划的积极集法的数学与原理基础
 二次规划的积极集法建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -87,7 +85,7 @@ related_entities:
 - humanoid_control
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键algorithm之一，二次规划的积极集法在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键算法之一，二次规划的积极集法在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Nocedal and Wright, Numerical Optimization](https://link.springer.com/book/10.1007/978-0-387-40065-5)

@@ -9,7 +9,7 @@ names:
   ko: 민첩한 손
 summary:
   en: Multi-fingered robotic end-effector with independent joint control, designed for human-like grasping and in-hand manipulation.
-  zh: 核心内容 机器人手部主要分为**多指灵巧手（dexterous hand）**与**二指/三指夹爪（gripper）**。灵巧手自由度高、适应性强，但控制复杂、成本高；夹爪结构简单、成本低，但只能完成有限抓取类型。
+  zh: 机器人手部主要分为多指灵巧手（dexterous hand）与二指/三指夹爪（gripper）。灵巧手自由度高、适应性强，但控制复杂、成本高；夹爪结构简单、成本低，但只能完成有限抓取类型。
   ko: 인간과 유사한 파지 및 손 안에서의 조작을 위해 설계된 독립적인 관절 제어가 가능한 다지 로봇 엔드 이펙터.
 domains:
 - 02_components
@@ -42,7 +42,7 @@ sources:
 ---
 
 ## 概述
-灵巧手是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
+灵巧手是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 机器人手部主要分为**多指灵巧手（dexterous hand）**与**二指/三指夹爪（gripper）**。灵巧手自由度高、适应性强，但控制复杂、成本高；夹爪结构简单、成本低，但只能完成有限抓取类型。

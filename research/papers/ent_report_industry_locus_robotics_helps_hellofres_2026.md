@@ -47,7 +47,7 @@ Customized Locus Origin deployment supports refrigerated operations, expanded SK
 
 ## 核心内容
 ### Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio的定义与定位
-Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio属于 **report** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 Customized Locus Origin deployment supports refrigerated operations, expanded SKU variety, and continued automation growth across HelloFresh brands 英文名称为 *Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio*。 韩文名称为 *Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio*。
+Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio属于 **报告** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 Customized Locus Origin deployment supports refrigerated operations, expanded SKU variety, and continued automation growth across HelloFresh brands 英文名称为 *Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio*。 韩文名称为 *Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio*。
 
 ### Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio的关键信息
 该报告记录了人形机器人产业中的最新动态、事件或观点，可作为观察市场与技术演化的参考。
@@ -67,7 +67,7 @@ Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Ac
 - robotics
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键report之一，Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键报告之一，Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Locus Robotics Helps HelloFresh Expand Temperature-Controlled SKU Capacity 5X Across Growing Brand Portfolio](http://www.RoboticsTomorrow.com/news/2026/06/23/locus-robotics-helps-hellofresh-expand-temperature-controlled-sku-capacity-5x-across-growing-brand-portfolio/26768)

@@ -71,7 +71,7 @@ theoretical_depth:
 
 ## 核心内容
 ### OmniAction 数据集的定义与定位
-OmniAction 数据集属于 **dataset** 类型，英文名称为 *OmniAction Dataset*。
+OmniAction 数据集属于 **数据集** 类型，英文名称为 *OmniAction Dataset*。
 一个用于主动式机器人操作的大规模多模态数据集，包含 14.1 万条片段，涵盖 112 项技能与 748 个物体，融合视觉、语音与环境声音上下文。
 
 ### OmniAction 数据集的关键信息

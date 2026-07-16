@@ -9,8 +9,7 @@ names:
   ko: CubeMars
 summary:
   en: Chinese supplier of compact integrated robot joint motors and actuators.
-  zh: '核心内容 ### CubeMars的定义与定位 CubeMars属于 **component_manufacturer** 类型。 所属领域包括：02_components, 03_manufacturing_processes。
-    价值链层级：upstream。 紧凑型一体化机器人关节电机和执行器供应商。 英文名称为 *CubeMars*。 韩文名称为 *CubeMars*。'
+  zh: 紧凑型一体化机器人关节电机和执行器供应商。
   ko: 컴팩트한 통합 로봇 관절 모터 및 액추에이터 공급업체.
 domains:
 - 02_components
@@ -49,7 +48,7 @@ sources:
 
 ## 核心内容
 ### CubeMars的定义与定位
-CubeMars属于 **component_manufacturer** 类型。 所属领域包括：02_components, 03_manufacturing_processes。 价值链层级：upstream。 紧凑型一体化机器人关节电机和执行器供应商。 英文名称为 *CubeMars*。 韩文名称为 *CubeMars*。
+CubeMars属于 **零部件制造商** 类型。 所属领域包括：零部件, 制造工艺。 价值链层级：上游。 紧凑型一体化机器人关节电机和执行器供应商。 英文名称为 *CubeMars*。 韩文名称为 *CubeMars*。
 
 ### CubeMars的核心业务与产品
 CubeMars在人形机器人产业链中占据特定位置，其产品或技术能力与下游整机厂商形成供应或合作关系。
@@ -71,7 +70,7 @@ CubeMars在人形机器人产业链中占据特定位置，其产品或技术能
 - joint_motor
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component_manufacturer之一，CubeMars在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件制造商之一，CubeMars在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [CubeMars](https://www.cubemars.com/)

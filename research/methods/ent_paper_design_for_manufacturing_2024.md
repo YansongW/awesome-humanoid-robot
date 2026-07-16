@@ -10,8 +10,7 @@ names:
 summary:
   en: Engineering practice of designing parts and assemblies to reduce production cost, improve yield, and simplify assembly
     for humanoid robots.
-  zh: '核心内容 ### 面向制造的设计的定义与定位 面向制造的设计属于 **method** 类型。 所属领域包括：03_manufacturing_processes, 06_design_engineering。 价值链层级：midstream,
-    upstream。 为人形机器人降低生产成本、提高良率、简化装配而进行的零部件与总成设计实践。 英文名称为 *Design for Manufacturing*。 韩文名称为 *Design for Manufacturing*。'
+  zh: 为人形机器人降低生产成本、提高良率、简化装配而进行的零部件与总成设计实践。
   ko: 휨로봇의 생산 비용 절감, 수율 향상 및 조립 단순화를 위한 부품 및 어셈블리 설계 관행.
 domains:
 - 03_manufacturing_processes
@@ -51,7 +50,7 @@ sources:
 
 ## 核心内容
 ### 面向制造的设计的定义与定位
-面向制造的设计属于 **method** 类型。 所属领域包括：03_manufacturing_processes, 06_design_engineering。 价值链层级：midstream, upstream。 为人形机器人降低生产成本、提高良率、简化装配而进行的零部件与总成设计实践。 英文名称为 *Design for Manufacturing*。 韩文名称为 *Design for Manufacturing*。
+面向制造的设计属于 **方法** 类型。 所属领域包括：制造工艺, 设计工程。 价值链层级：中游, upstream。 为人形机器人降低生产成本、提高良率、简化装配而进行的零部件与总成设计实践。 英文名称为 *Design for Manufacturing*。 韩文名称为 *Design for Manufacturing*。
 
 ### 面向制造的设计的数学与原理基础
 面向制造的设计建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -76,7 +75,7 @@ sources:
 - yield
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，面向制造的设计在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，面向制造的设计在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Design for Manufacturing](https://en.wikipedia.org/wiki/Design_for_manufacturing)

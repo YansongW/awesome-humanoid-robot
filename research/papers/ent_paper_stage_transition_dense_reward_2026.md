@@ -8,45 +8,45 @@ names:
   zh: Stage-Transition Dense Reward Modeling for Reinforcement Learning
   ko: Stage-Transition Dense Reward Modeling for Reinforcement Learning
 summary:
-  en: "arXiv:2606.31377v1 Announce Type: new \nAbstract: Reinforcement learning for long-horizon robotic manipulation is often\
-    \ limited by sparse and delayed rewards, while manually designing dense shaping signals is costly and brittle to changes\
-    \ in environments and object configurations. This work proposes Stage-Transition Dense Reward (STDR), a visual reward-learning\
-    \ framework that converts unstructured expert videos into logically grounded dense rewards for training RL agents from\
-    \ scratch. STDR leverages semantic understanding to infer a task's stage structure from demonstrations, and delivers two\
-    \ complementary learning signals during online training: (i) stage-transition feedback that provides goal-directed reward,\
-    \ and (ii) within-stage progress feedback that supplies fine-grained guidance toward completing each stage. Furthermore,\
-    \ an out-of-distribution (OOD) detection mechanism and a grasping regulation module are integrated to enhance robustness\
-    \ and prevent reward hacking. Experiments on 14 manipulation tasks across MetaWorld, ManiSkill, and Franka Kitchen show\
-    \ that STDR consistently improves sample efficiency and success rates over multiple baselines, and matches or surpasses\
-    \ handcrafted dense rewards on several challenging tasks. Real-robot evaluations further indicate that STDR assigns stable,\
-    \ progress-aligned rewards on successful executions while producing appropriately low rewards for failures, suggesting\
-    \ robustness to visual noise and better-calibrated reward assignment across settings."
-  zh: "arXiv:2606.31377v1 Announce Type: new \nAbstract: Reinforcement learning for long-horizon robotic manipulation is often\
-    \ limited by sparse and delayed rewards, while manually designing dense shaping signals is costly and brittle to changes\
-    \ in environments and object configurations. This work proposes Stage-Transition Dense Reward (STDR), a visual reward-learning\
-    \ framework that converts unstructured expert videos into logically grounded dense rewards for training RL agents from\
-    \ scratch. STDR leverages semantic understanding to infer a task's stage structure from demonstrations, and delivers two\
-    \ complementary learning signals during online training: (i) stage-transition feedback that provides goal-directed reward,\
-    \ and (ii) within-stage progress feedback that supplies fine-grained guidance toward completing each stage. Furthermore,\
-    \ an out-of-distribution (OOD) detection mechanism and a grasping regulation module are integrated to enhance robustness\
-    \ and prevent reward hacking. Experiments on 14 manipulation tasks across MetaWorld, ManiSkill, and Franka Kitchen show\
-    \ that STDR consistently improves sample efficiency and success rates over multiple baselines, and matches or surpasses\
-    \ handcrafted dense rewards on several challenging tasks. Real-robot evaluations further indicate that STDR assigns stable,\
-    \ progress-aligned rewards on successful executions while producing appropriately low rewards for failures, suggesting\
-    \ robustness to visual noise and better-calibrated reward assignment across settings."
-  ko: "arXiv:2606.31377v1 Announce Type: new \nAbstract: Reinforcement learning for long-horizon robotic manipulation is often\
-    \ limited by sparse and delayed rewards, while manually designing dense shaping signals is costly and brittle to changes\
-    \ in environments and object configurations. This work proposes Stage-Transition Dense Reward (STDR), a visual reward-learning\
-    \ framework that converts unstructured expert videos into logically grounded dense rewards for training RL agents from\
-    \ scratch. STDR leverages semantic understanding to infer a task's stage structure from demonstrations, and delivers two\
-    \ complementary learning signals during online training: (i) stage-transition feedback that provides goal-directed reward,\
-    \ and (ii) within-stage progress feedback that supplies fine-grained guidance toward completing each stage. Furthermore,\
-    \ an out-of-distribution (OOD) detection mechanism and a grasping regulation module are integrated to enhance robustness\
-    \ and prevent reward hacking. Experiments on 14 manipulation tasks across MetaWorld, ManiSkill, and Franka Kitchen show\
-    \ that STDR consistently improves sample efficiency and success rates over multiple baselines, and matches or surpasses\
-    \ handcrafted dense rewards on several challenging tasks. Real-robot evaluations further indicate that STDR assigns stable,\
-    \ progress-aligned rewards on successful executions while producing appropriately low rewards for failures, suggesting\
-    \ robustness to visual noise and better-calibrated reward assignment across settings."
+  en: 'arXiv:2606.31377v1 Announce Type: new Abstract: Reinforcement learning for long-horizon robotic manipulation is often
+    limited by sparse and delayed rewards, while manually designing dense shaping signals is costly and brittle to changes
+    in environments and object configurations. This work proposes Stage-Transition Dense Reward (STDR), a visual reward-learning
+    framework that converts unstructured expert videos into logically grounded dense rewards for training RL agents from scratch.
+    STDR leverages semantic understanding to infer a task''s stage structure from demonstrations, and delivers two complementary
+    learning signals during online training: (i) stage-transition feedback that provides goal-directed reward, and (ii) within-stage
+    progress feedback that supplies fine-grained guidance toward completing each stage. Furthermore, an out-of-distribution
+    (OOD) detection mechanism and a grasping regulation module are integrated to enhance robustness and prevent reward hacking.
+    Experiments on 14 manipulation tasks across MetaWorld, ManiSkill, and Franka Kitchen show that STDR consistently improves
+    sample efficiency and success rates over multiple baselines, and matches or surpasses handcrafted dense rewards on several
+    challenging tasks. Real-robot evaluations further indicate that STDR assigns stable, progress-aligned rewards on successful
+    executions while producing appropriately low rewards for failures, suggesting robustness to visual noise and better-calibrated
+    reward assignment across settings.'
+  zh: 'arXiv:2606.31377v1 Announce Type: new Abstract: Reinforcement learning for long-horizon robotic manipulation is often
+    limited by sparse and delayed rewards, while manually designing dense shaping signals is costly and brittle to changes
+    in environments and object configurations. This work proposes Stage-Transition Dense Reward (STDR), a visual reward-learning
+    framework that converts unstructured expert videos into logically grounded dense rewards for training RL agents from scratch.
+    STDR leverages semantic understanding to infer a task''s stage structure from demonstrations, and delivers two complementary
+    learning signals during online training: (i) stage-transition feedback that provides goal-directed reward, and (ii) within-stage
+    progress feedback that supplies fine-grained guidance toward completing each stage. Furthermore, an out-of-distribution
+    (OOD) detection mechanism and a grasping regulation module are integrated to enhance robustness and prevent reward hacking.
+    Experiments on 14 manipulation tasks across MetaWorld, ManiSkill, and Franka Kitchen show that STDR consistently improves
+    sample efficiency and success rates over multiple baselines, and matches or surpasses handcrafted dense rewards on several
+    challenging tasks. Real-robot evaluations further indicate that STDR assigns stable, progress-aligned rewards on successful
+    executions while producing appropriately low rewards for failures, suggesting robustness to visual noise and better-calibrated
+    reward assignment across settings.'
+  ko: 'arXiv:2606.31377v1 Announce Type: new Abstract: Reinforcement learning for long-horizon robotic manipulation is often
+    limited by sparse and delayed rewards, while manually designing dense shaping signals is costly and brittle to changes
+    in environments and object configurations. This work proposes Stage-Transition Dense Reward (STDR), a visual reward-learning
+    framework that converts unstructured expert videos into logically grounded dense rewards for training RL agents from scratch.
+    STDR leverages semantic understanding to infer a task''s stage structure from demonstrations, and delivers two complementary
+    learning signals during online training: (i) stage-transition feedback that provides goal-directed reward, and (ii) within-stage
+    progress feedback that supplies fine-grained guidance toward completing each stage. Furthermore, an out-of-distribution
+    (OOD) detection mechanism and a grasping regulation module are integrated to enhance robustness and prevent reward hacking.
+    Experiments on 14 manipulation tasks across MetaWorld, ManiSkill, and Franka Kitchen show that STDR consistently improves
+    sample efficiency and success rates over multiple baselines, and matches or surpasses handcrafted dense rewards on several
+    challenging tasks. Real-robot evaluations further indicate that STDR assigns stable, progress-aligned rewards on successful
+    executions while producing appropriately low rewards for failures, suggesting robustness to visual noise and better-calibrated
+    reward assignment across settings.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

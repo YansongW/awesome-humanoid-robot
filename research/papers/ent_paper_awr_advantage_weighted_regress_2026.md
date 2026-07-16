@@ -8,7 +8,7 @@ names:
   zh: 优势加权回归
   ko: 'AWR: Advantage Weighted Regression'
 summary:
-  en: 'AWR: Advantage Weighted Regression is a paper on base RL for humanoid robotics.  Advantage-weighted regression.'
+  en: 'AWR: Advantage Weighted Regression is a paper on base RL for humanoid robotics. Advantage-weighted regression.'
   zh: 'AWR: Advantage Weighted Regression is a paper on 基础RL for humanoid robotics. 优势加权回归.'
   ko: 'AWR: Advantage Weighted Regression is a paper on 基础RL for humanoid robotics. 优势加权回归.'
 domains:

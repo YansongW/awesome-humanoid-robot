@@ -8,39 +8,39 @@ names:
   zh: 'SEAM: Smooth Execution of Action-Chunked Motion for Vision-Language-Action Policies'
   ko: 'SEAM: Smooth Execution of Action-Chunked Motion for Vision-Language-Action Policies'
 summary:
-  en: "arXiv:2607.04609v1 Announce Type: new \nAbstract: Vision-Language-Action (VLA) policies that execute fixed-length action\
-    \ chunks can exhibit multimodal bifurcation: a cross-chunk inconsistency in which adjacent chunks generated from independent\
-    \ Gaussian latents can converge to incompatible trajectory modes, producing abrupt discontinuities at chunk boundaries.\
-    \ Existing remedies either require backpropagation through the policy at each denoising step, rely on rejection sampling,\
-    \ or require retraining, each trading computational cost or task reliability for smoother transitions. We propose SEAM\
-    \ (Smooth Execution of Action-Chunked Motion), a training-free inference-time method for flow matching VLAs. SEAM exploits\
-    \ a simple synchronous-execution insight: after the robot consumes the executed prefix, the previous chunk's unexecuted\
-    \ tail is already available as an analytic consistency reference. Its core mechanism, Velocity-guided Loss Steering (VLS),\
-    \ derives a time-dependent target from this tail and applies a closed-form correction after each Euler step without backpropagating\
-    \ through the policy network. On LIBERO-10 with pi_0.5, SEAM reduces boundary jerk by 28%, reduces chunk transition discontinuity\
-    \ by 27%, preserves baseline-level task success, and keeps denoising-loop cost near the unguided baseline."
-  zh: "arXiv:2607.04609v1 Announce Type: new \nAbstract: Vision-Language-Action (VLA) policies that execute fixed-length action\
-    \ chunks can exhibit multimodal bifurcation: a cross-chunk inconsistency in which adjacent chunks generated from independent\
-    \ Gaussian latents can converge to incompatible trajectory modes, producing abrupt discontinuities at chunk boundaries.\
-    \ Existing remedies either require backpropagation through the policy at each denoising step, rely on rejection sampling,\
-    \ or require retraining, each trading computational cost or task reliability for smoother transitions. We propose SEAM\
-    \ (Smooth Execution of Action-Chunked Motion), a training-free inference-time method for flow matching VLAs. SEAM exploits\
-    \ a simple synchronous-execution insight: after the robot consumes the executed prefix, the previous chunk's unexecuted\
-    \ tail is already available as an analytic consistency reference. Its core mechanism, Velocity-guided Loss Steering (VLS),\
-    \ derives a time-dependent target from this tail and applies a closed-form correction after each Euler step without backpropagating\
-    \ through the policy network. On LIBERO-10 with pi_0.5, SEAM reduces boundary jerk by 28%, reduces chunk transition discontinuity\
-    \ by 27%, preserves baseline-level task success, and keeps denoising-loop cost near the unguided baseline."
-  ko: "arXiv:2607.04609v1 Announce Type: new \nAbstract: Vision-Language-Action (VLA) policies that execute fixed-length action\
-    \ chunks can exhibit multimodal bifurcation: a cross-chunk inconsistency in which adjacent chunks generated from independent\
-    \ Gaussian latents can converge to incompatible trajectory modes, producing abrupt discontinuities at chunk boundaries.\
-    \ Existing remedies either require backpropagation through the policy at each denoising step, rely on rejection sampling,\
-    \ or require retraining, each trading computational cost or task reliability for smoother transitions. We propose SEAM\
-    \ (Smooth Execution of Action-Chunked Motion), a training-free inference-time method for flow matching VLAs. SEAM exploits\
-    \ a simple synchronous-execution insight: after the robot consumes the executed prefix, the previous chunk's unexecuted\
-    \ tail is already available as an analytic consistency reference. Its core mechanism, Velocity-guided Loss Steering (VLS),\
-    \ derives a time-dependent target from this tail and applies a closed-form correction after each Euler step without backpropagating\
-    \ through the policy network. On LIBERO-10 with pi_0.5, SEAM reduces boundary jerk by 28%, reduces chunk transition discontinuity\
-    \ by 27%, preserves baseline-level task success, and keeps denoising-loop cost near the unguided baseline."
+  en: 'arXiv:2607.04609v1 Announce Type: new Abstract: Vision-Language-Action (VLA) policies that execute fixed-length action
+    chunks can exhibit multimodal bifurcation: a cross-chunk inconsistency in which adjacent chunks generated from independent
+    Gaussian latents can converge to incompatible trajectory modes, producing abrupt discontinuities at chunk boundaries.
+    Existing remedies either require backpropagation through the policy at each denoising step, rely on rejection sampling,
+    or require retraining, each trading computational cost or task reliability for smoother transitions. We propose SEAM (Smooth
+    Execution of Action-Chunked Motion), a training-free inference-time method for flow matching VLAs. SEAM exploits a simple
+    synchronous-execution insight: after the robot consumes the executed prefix, the previous chunk''s unexecuted tail is
+    already available as an analytic consistency reference. Its core mechanism, Velocity-guided Loss Steering (VLS), derives
+    a time-dependent target from this tail and applies a closed-form correction after each Euler step without backpropagating
+    through the policy network. On LIBERO-10 with pi_0.5, SEAM reduces boundary jerk by 28%, reduces chunk transition discontinuity
+    by 27%, preserves baseline-level task success, and keeps denoising-loop cost near the unguided baseline.'
+  zh: 'arXiv:2607.04609v1 Announce Type: new Abstract: Vision-Language-Action (VLA) policies that execute fixed-length action
+    chunks can exhibit multimodal bifurcation: a cross-chunk inconsistency in which adjacent chunks generated from independent
+    Gaussian latents can converge to incompatible trajectory modes, producing abrupt discontinuities at chunk boundaries.
+    Existing remedies either require backpropagation through the policy at each denoising step, rely on rejection sampling,
+    or require retraining, each trading computational cost or task reliability for smoother transitions. We propose SEAM (Smooth
+    Execution of Action-Chunked Motion), a training-free inference-time method for flow matching VLAs. SEAM exploits a simple
+    synchronous-execution insight: after the robot consumes the executed prefix, the previous chunk''s unexecuted tail is
+    already available as an analytic consistency reference. Its core mechanism, Velocity-guided Loss Steering (VLS), derives
+    a time-dependent target from this tail and applies a closed-form correction after each Euler step without backpropagating
+    through the policy network. On LIBERO-10 with pi_0.5, SEAM reduces boundary jerk by 28%, reduces chunk transition discontinuity
+    by 27%, preserves baseline-level task success, and keeps denoising-loop cost near the unguided baseline.'
+  ko: 'arXiv:2607.04609v1 Announce Type: new Abstract: Vision-Language-Action (VLA) policies that execute fixed-length action
+    chunks can exhibit multimodal bifurcation: a cross-chunk inconsistency in which adjacent chunks generated from independent
+    Gaussian latents can converge to incompatible trajectory modes, producing abrupt discontinuities at chunk boundaries.
+    Existing remedies either require backpropagation through the policy at each denoising step, rely on rejection sampling,
+    or require retraining, each trading computational cost or task reliability for smoother transitions. We propose SEAM (Smooth
+    Execution of Action-Chunked Motion), a training-free inference-time method for flow matching VLAs. SEAM exploits a simple
+    synchronous-execution insight: after the robot consumes the executed prefix, the previous chunk''s unexecuted tail is
+    already available as an analytic consistency reference. Its core mechanism, Velocity-guided Loss Steering (VLS), derives
+    a time-dependent target from this tail and applies a closed-form correction after each Euler step without backpropagating
+    through the policy network. On LIBERO-10 with pi_0.5, SEAM reduces boundary jerk by 28%, reduces chunk transition discontinuity
+    by 27%, preserves baseline-level task success, and keeps denoising-loop cost near the unguided baseline.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

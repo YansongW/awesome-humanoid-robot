@@ -66,6 +66,9 @@ def build_wiki_tree(pages: list[dict[str, Any]]) -> dict[str, Any]:
     """
     root: dict[str, Any] = {"title": "Wiki", "is_dir": True, "children": {}, "path": ""}
 
+    # Stub chapters (e.g. "本章正在撰写中") are rendered but hidden from the index.
+    pages = [p for p in pages if not p.get("stub")]
+
     # Process deepest pages first so that directories are created before their
     # matching index file (e.g. appendices/appendix-d/ before appendix-d.md).
     sorted_pages = sorted(pages, key=lambda p: -len(Path(p["path"]).relative_to(WIKI_DIR).parts))
@@ -124,10 +127,32 @@ def build_wiki_tree(pages: list[dict[str, Any]]) -> dict[str, Any]:
     return finalize(root)
 
 
+def rewrite_md_links(text: str) -> str:
+    """Rewrite relative .md links (e.g. chapters/chapter-01.md#sec) to /wiki/ URLs."""
+
+    def repl(m: re.Match) -> str:
+        label, href = m.group(1), m.group(2)
+        if href.startswith(("http://", "https://", "#", "/", "mailto:")):
+            return m.group(0)
+        mm = re.match(r"^(?:\.\./)*(.+?)\.md(#.*)?$", href)
+        if not mm:
+            return m.group(0)
+        path, anchor = mm.group(1), mm.group(2) or ""
+        return f"[{label}](/wiki/{path}/{anchor})"
+
+    return re.sub(r"(?<!!)\[([^\]]*)\]\(([^)\s]+)\)", repl, text)
+
+
+def is_stub_page(text: str) -> bool:
+    """Detect placeholder chapters/appendices with no real content."""
+    return len(text.strip()) < 500 or "正在撰写中" in text
+
+
 def build_wiki_pages() -> list[dict[str, Any]]:
     """Load all wiki Markdown files and convert them to HTML.
 
-    Returns a list of page dicts with title, url, body_html, and metadata.
+    Returns a list of page dicts with title, url, body_html, toc_html, stub flag,
+    and metadata.
     """
     if not WIKI_DIR.exists():
         return []
@@ -165,7 +190,9 @@ def build_wiki_pages() -> list[dict[str, Any]]:
         # TODO: when per-language wiki directories are introduced, filter here.
         # For now all languages share the same wiki source.
         url = slugify_path(path)
+        text = rewrite_md_links(text)
         body_html = md.convert(text)
+        toc_html = md.toc if "<li>" in (md.toc or "") else ""
         md.reset()
         pages.append(
             {
@@ -173,6 +200,24 @@ def build_wiki_pages() -> list[dict[str, Any]]:
                 "url": url,
                 "path": str(path),
                 "body_html": body_html,
+                "toc_html": toc_html,
+                "stub": is_stub_page(text),
             }
         )
+
+    # Prev/next navigation across substantive pages in reading order:
+    # chapters -> appendices -> everything else.
+    def order_key(p: dict[str, Any]) -> tuple[int, str]:
+        rel = Path(p["path"]).relative_to(WIKI_DIR).as_posix()
+        if rel.startswith("chapters/"):
+            return (0, rel)
+        if rel.startswith("appendices/"):
+            return (1, rel)
+        return (2, rel)
+
+    readable = [p for p in pages if not p["stub"]]
+    readable.sort(key=order_key)
+    for i, page in enumerate(readable):
+        page["prev_page"] = readable[i - 1] if i > 0 else None
+        page["next_page"] = readable[i + 1] if i < len(readable) - 1 else None
     return pages

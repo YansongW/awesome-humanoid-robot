@@ -10,8 +10,7 @@ names:
 summary:
   en: Projections of market size, growth rates, regional adoption, and segment demand for humanoid robots over a multi-year
     horizon.
-  zh: '核心内容 ### 人形机器人全球市场预测的定义与定位 人形机器人全球市场预测属于 **market_segment** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。
-    对人形机器人在未来多年市场规模、增长率、区域采用与细分需求的预测。 英文名称为 *Global Humanoid Robot Market Forecast*。 韩文名称为 *글로벌 휴로봇 시장 전망*。'
+  zh: 对人形机器人在未来多年市场规模、增长率、区域采用与细分需求的预测。
   ko: 향후 수년간 휴로봇의 시장 규모·성장률·지역 도입·세분 수요를 전망하는 예측.
 domains:
 - 11_applications_markets
@@ -45,7 +44,7 @@ sources:
 
 ## 核心内容
 ### 人形机器人全球市场预测的定义与定位
-人形机器人全球市场预测属于 **market_segment** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 对人形机器人在未来多年市场规模、增长率、区域采用与细分需求的预测。 英文名称为 *Global Humanoid Robot Market Forecast*。 韩文名称为 *글로벌 휴로봇 시장 전망*。
+人形机器人全球市场预测属于 **市场细分** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 对人形机器人在未来多年市场规模、增长率、区域采用与细分需求的预测。 英文名称为 *Global Humanoid Robot Market Forecast*。 韩文名称为 *글로벌 휴로봇 시장 전망*。
 
 ### 人形机器人全球市场预测的场景特征与核心价值
 人形机器人全球市场预测代表人形机器人潜在落地的重要方向，其需求特点、价值主张与商业模式是评估市场前景的关键。
@@ -64,7 +63,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键market_segment之一，人形机器人全球市场预测在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键市场细分之一，人形机器人全球市场预测在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

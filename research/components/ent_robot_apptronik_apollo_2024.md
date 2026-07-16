@@ -9,8 +9,7 @@ names:
   ko: Apptronik Apollo
 summary:
   en: Modular humanoid robot designed for logistics and manufacturing, with hot-swappable batteries.
-  zh: '核心内容 ### Apptronik Apollo的定义与定位 Apptronik Apollo属于 **robot_system** 类型。 所属领域包括：06_design_engineering, 11_applications_markets。
-    价值链层级：midstream, validation_markets。 面向物流和制造的模块化人形机器人，支持热插拔电池。 英文名称为 *Apptronik Apollo*。 韩文名称为 *Apptronik Apollo*。'
+  zh: 面向物流和制造的模块化人形机器人，支持热插拔电池。
   ko: 물류 및 제조용 모듈형 휨로봇, 핫스왑 가능한 배터리.
 domains:
 - 06_design_engineering
@@ -50,7 +49,7 @@ sources:
 
 ## 核心内容
 ### Apptronik Apollo的定义与定位
-Apptronik Apollo属于 **robot_system** 类型。 所属领域包括：06_design_engineering, 11_applications_markets。 价值链层级：midstream, validation_markets。 面向物流和制造的模块化人形机器人，支持热插拔电池。 英文名称为 *Apptronik Apollo*。 韩文名称为 *Apptronik Apollo*。
+Apptronik Apollo属于 **机器人系统** 类型。 所属领域包括：设计工程, 应用与市场。 价值链层级：中游, validation_markets。 面向物流和制造的模块化人形机器人，支持热插拔电池。 英文名称为 *Apptronik Apollo*。 韩文名称为 *Apptronik Apollo*。
 
 ### Apptronik Apollo的关键维度
 理解Apptronik Apollo需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -71,7 +70,7 @@ Apptronik Apollo属于 **robot_system** 类型。 所属领域包括：06_design
 - robot_system
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键robot_system之一，Apptronik Apollo在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键机器人系统之一，Apptronik Apollo在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Apptronik Apollo](https://www.apptronik.com/)

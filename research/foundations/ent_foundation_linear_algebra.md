@@ -9,8 +9,7 @@ names:
   ko: 선형대수학
 summary:
   en: The branch of mathematics concerning vector spaces, linear transformations, matrices, and systems of linear equations.
-  zh: '核心内容 ### 线性代数的定义与定位 线性代数属于 **foundation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 研究向量空间、线性变换、矩阵和线性方程组的数学分支。
-    英文名称为 *Linear Algebra*。 韩文名称为 *선형대수학*。'
+  zh: 研究向量空间、线性变换、矩阵和线性方程组的数学分支。
   ko: 벡터 공간, 선형 변환, 행렬, 선형 방정식 체계를 다루는 수학 분야이다.
 domains:
 - 00_foundations
@@ -46,7 +45,7 @@ sources:
 
 ## 核心内容
 ### 线性代数的定义与定位
-线性代数属于 **foundation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 研究向量空间、线性变换、矩阵和线性方程组的数学分支。 英文名称为 *Linear Algebra*。 韩文名称为 *선형대수학*。
+线性代数属于 **基础学科** 类型。 所属领域包括：基础学科。 价值链层级：基础层。 研究向量空间、线性变换、矩阵和线性方程组的数学分支。 英文名称为 *Linear Algebra*。 韩文名称为 *선형대수학*。
 
 ### 线性代数的数学与原理基础
 线性代数建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -70,7 +69,7 @@ sources:
 - humanoid_robot
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键foundation之一，线性代数在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键基础学科之一，线性代数在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Strang, Introduction to Linear Algebra](https://math.mit.edu/~gs/linearalgebra/)

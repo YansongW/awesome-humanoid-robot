@@ -10,8 +10,7 @@ names:
 summary:
   en: Second-order differential equations derived from the stationarity of the action integral, giving the equations of motion
     for mechanical systems in generalized coordinates.
-  zh: '核心内容 ### 欧拉-拉格朗日方程的定义与定位 欧拉-拉格朗日方程属于 **formalism** 类型。 所属领域包括：00_foundations, 06_design_engineering。 价值链层级：foundations。
-    由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。 英文名称为 *Euler-Lagrange Equations*。 韩文名称为 *오일러-라그랑주 방정식*。'
+  zh: 由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。
   ko: 작용 적분의 정지 조건에서 도출된 2차 미분방정식으로, 일반화 좌표에서 기계 시스템의 용동 방정식을 제공.
 domains:
 - 00_foundations
@@ -68,7 +67,7 @@ related_entities:
 
 ## 核心内容
 ### 欧拉-拉格朗日方程的定义与定位
-欧拉-拉格朗日方程属于 **formalism** 类型。 所属领域包括：00_foundations, 06_design_engineering。 价值链层级：foundations。 由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。 英文名称为 *Euler-Lagrange Equations*。 韩文名称为 *오일러-라그랑주 방정식*。
+欧拉-拉格朗日方程属于 **形式化方法** 类型。 所属领域包括：基础学科, 设计工程。 价值链层级：基础层。 由作用量变分驻值条件导出的二阶微分方程组，给出广义坐标下机械系统的运动方程。 英文名称为 *Euler-Lagrange Equations*。 韩文名称为 *오일러-라그랑주 방정식*。
 
 ### 欧拉-拉格朗日方程的数学与原理基础
 欧拉-拉格朗日方程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -94,7 +93,7 @@ related_entities:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键formalism之一，欧拉-拉格朗日方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键形式化方法之一，欧拉-拉格朗日方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [H. Goldstein, C. Poole, and J. Safko, Classical Mechanics, 3rd ed., Addison-Wesley, 2002](https://doi.org/10.2307/2522307)

@@ -52,7 +52,7 @@ theoretical_depth:
 ---
 
 ## 概述
-Figure AI是人形机器人领域的重要oem。以下内容整理自项目 Wiki，供深入查阅。
+Figure AI是人形机器人领域的重要整机厂商。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## Figure AI / Figure AI

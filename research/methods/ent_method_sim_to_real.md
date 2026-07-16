@@ -10,8 +10,7 @@ names:
 summary:
   en: Techniques for transferring policies or controllers trained in simulation to physical robots, typically using domain
     randomization, system identification, or adaptation.
-  zh: '核心内容 ### Sim-to-Real迁移的定义与定位 Sim-to-Real迁移属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。
-    英文名称为 *Sim-to-Real Transfer*。 韩文名称为 *시뮬-실제 전이*。'
+  zh: 将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。
   ko: 시뮬레이션에서 학습한 정책·컨트롤러를 실제 로봇으로 전이하는 기술; 도메인 랜덤화·시스템 동정·적응 등을 사용.
 domains:
 - 07_ai_models_algorithms
@@ -45,7 +44,7 @@ sources:
 
 ## 核心内容
 ### Sim-to-Real迁移的定义与定位
-Sim-to-Real迁移属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。 英文名称为 *Sim-to-Real Transfer*。 韩文名称为 *시뮬-실제 전이*。
+Sim-to-Real迁移属于 **方法** 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 将仿真中训练的策略或控制器迁移到真实机器人的技术，常用域随机化、系统辨识或自适应方法。 英文名称为 *Sim-to-Real Transfer*。 韩文名称为 *시뮬-실제 전이*。
 
 ### Sim-to-Real迁移的数学与原理基础
 Sim-to-Real迁移建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -67,7 +66,7 @@ Sim-to-Real迁移可应用于人形机器人的运动规划、控制优化、状
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，Sim-to-Real迁移在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，Sim-to-Real迁移在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

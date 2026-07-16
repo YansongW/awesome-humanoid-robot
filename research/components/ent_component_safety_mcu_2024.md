@@ -9,8 +9,7 @@ names:
   ko: Safety MCU
 summary:
   en: Independent microcontroller that monitors emergency stops, joint limits, and fault conditions to enforce safe torque-off.
-  zh: '核心内容 ### 安全微控制器的定义与定位 安全微控制器属于 **component** 类型。 所属领域包括：02_components, 12_policy_regulation_ethics。 价值链层级：upstream,
-    validation_markets。 监控急停、关节限位和故障状态以执行安全关扭矩的独立微控制器。 英文名称为 *Safety MCU*。 韩文名称为 *Safety MCU*。'
+  zh: 监控急停、关节限位和故障状态以执行安全关扭矩的独立微控制器。
   ko: 비상 정지, 관절 한계 및 결함 상태를 모니터링하여 안전한 토크 차단을 실행하는 독립형 마이크로컨트롤러.
 domains:
 - 02_components
@@ -49,7 +48,7 @@ sources:
 
 ## 核心内容
 ### 安全微控制器的定义与定位
-安全微控制器属于 **component** 类型。 所属领域包括：02_components, 12_policy_regulation_ethics。 价值链层级：upstream, validation_markets。 监控急停、关节限位和故障状态以执行安全关扭矩的独立微控制器。 英文名称为 *Safety MCU*。 韩文名称为 *Safety MCU*。
+安全微控制器属于 **零部件** 类型。 所属领域包括：零部件, 政策法规伦理。 价值链层级：上游, validation_markets。 监控急停、关节限位和故障状态以执行安全关扭矩的独立微控制器。 英文名称为 *Safety MCU*。 韩文名称为 *Safety MCU*。
 
 ### 安全微控制器的工作原理与技术架构
 安全微控制器的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -72,7 +71,7 @@ sources:
 - safety
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component之一，安全微控制器在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件之一，安全微控制器在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Safety MCU](https://en.wikipedia.org/wiki/Functional_safety)

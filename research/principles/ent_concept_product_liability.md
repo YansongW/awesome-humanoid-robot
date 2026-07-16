@@ -10,8 +10,7 @@ names:
 summary:
   en: The legal responsibility of manufacturers and sellers for injuries or damages caused by defective or unsafe products,
     directly applicable to humanoid robots.
-  zh: '核心内容 ### 产品责任的定义与定位 产品责任属于 **concept** 类型。 所属领域包括：12_policy_regulation_ethics。 价值链层级：validation_markets。 制造商与销售商因缺陷或不安全产品造成人身伤害或财产损失的法律责任，直接适用于人形机器人。
-    英文名称为 *Product Liability*。 韩文名称为 *제품 책임*。'
+  zh: 制造商与销售商因缺陷或不安全产品造成人身伤害或财产损失的法律责任，直接适用于人形机器人。
   ko: 결함이나 불안전한 제품으로 인한 상해·손해에 대해 제조업체와 판매자가 지는 법적 책임.
 domains:
 - 12_policy_regulation_ethics
@@ -45,7 +44,7 @@ sources:
 
 ## 核心内容
 ### 产品责任的定义与定位
-产品责任属于 **concept** 类型。 所属领域包括：12_policy_regulation_ethics。 价值链层级：validation_markets。 制造商与销售商因缺陷或不安全产品造成人身伤害或财产损失的法律责任，直接适用于人形机器人。 英文名称为 *Product Liability*。 韩文名称为 *제품 책임*。
+产品责任属于 **概念** 类型。 所属领域包括：政策法规伦理。 价值链层级：验证与市场层。 制造商与销售商因缺陷或不安全产品造成人身伤害或财产损失的法律责任，直接适用于人形机器人。 英文名称为 *Product Liability*。 韩文名称为 *제품 책임*。
 
 ### 产品责任的关键维度
 理解产品责任需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -64,7 +63,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键concept之一，产品责任在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键概念之一，产品责任在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

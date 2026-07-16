@@ -70,7 +70,7 @@ theoretical_depth:
 
 ## 核心内容
 ### LIBERO-Plus的定义与定位
-LIBERO-Plus属于 **benchmark** 类型，英文名称为 *LIBERO-Plus*。
+LIBERO-Plus属于 **评测基准** 类型，英文名称为 *LIBERO-Plus*。
 一个针对视觉-语言-动作模型的鲁棒性基准，扩展自 LIBERO，涵盖 10,030 项任务，覆盖相机视角、机器人初始状态、语言、光照、背景、噪声与物体布局七种扰动维度。
 
 ### LIBERO-Plus的关键信息

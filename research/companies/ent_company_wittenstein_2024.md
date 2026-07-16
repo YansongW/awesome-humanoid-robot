@@ -45,7 +45,7 @@ sources:
 
 
 ## 概述
-Wittenstein是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
+Wittenstein是人形机器人领域的重要零部件_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## WITTENSTEIN alpha SP+ 行星减速器 / WITTENSTEIN alpha SP+ Planetary Gearbox

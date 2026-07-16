@@ -10,9 +10,7 @@ names:
 summary:
   en: A quadratic-program formulation that computes generalized accelerations, contact forces, and joint torques by minimizing
     task-tracking errors subject to floating-base dynamics and physical constraints.
-  zh: '核心内容 ### 逆动力学二次规划形式化的定义与定位 逆动力学二次规划形式化属于 **formalism** 类型。 所属领域包括：07_ai_models_algorithms, 06_design_engineering。 价值链层级：intelligence,
-    midstream。 一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。 英文名称为 *Inverse-Dynamics QP Formulation*。 韩文名称为 *역동역학 QP
-    공식화*。'
+  zh: 一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。
   ko: 부유 기반 동역학과 물리적 제약 조건 하에서 작업 추종 오차를 최소화하여 일반화 가속도, 접촉력, 관절 토크를 계산하는 이차 계획법 공식화이다.
 domains:
 - 07_ai_models_algorithms
@@ -64,7 +62,7 @@ related_entities:
 
 ## 核心内容
 ### 逆动力学二次规划形式化的定义与定位
-逆动力学二次规划形式化属于 **formalism** 类型。 所属领域包括：07_ai_models_algorithms, 06_design_engineering。 价值链层级：intelligence, midstream。 一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。 英文名称为 *Inverse-Dynamics QP Formulation*。 韩文名称为 *역동역학 QP 공식화*。
+逆动力学二次规划形式化属于 **形式化方法** 类型。 所属领域包括：AI 模型与算法, 设计工程。 价值链层级：智能层, midstream。 一种二次规划形式化，通过最小化任务跟踪误差并受浮动基动力学和物理约束，计算广义加速度、接触力和关节力矩。 英文名称为 *Inverse-Dynamics QP Formulation*。 韩文名称为 *역동역학 QP 공식화*。
 
 ### 逆动力学二次规划形式化的数学与原理基础
 逆动力学二次规划形式化建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -88,7 +86,7 @@ related_entities:
 - humanoid_control
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键formalism之一，逆动力学二次规划形式化在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键形式化方法之一，逆动力学二次规划形式化在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Hierarchical QP whole-body control: from theory to practice](https://arxiv.org/abs/1910.13329)

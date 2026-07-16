@@ -46,7 +46,7 @@ sources:
 
 
 ## 概述
-NVIDIA Jetson AGX Orin是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
+NVIDIA Jetson AGX Orin是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## NVIDIA Jetson AGX Orin

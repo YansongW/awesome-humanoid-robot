@@ -8,8 +8,8 @@ names:
   zh: 深度模仿：基于示例引导的物理角色技能深度强化学习
   ko: 'DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills'
 summary:
-  en: 'DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills is a paper on exact imitation for humanoid robotics.  Deep
-    Imitation: Example-Guided Deep Reinforcement Learning of Physical Role Skills.'
+  en: 'DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills is a paper on exact imitation for humanoid robotics.
+    Deep Imitation: Example-Guided Deep Reinforcement Learning of Physical Role Skills.'
   zh: 'DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills is a paper on 精确模仿 for humanoid robotics. 深度模仿：基于示例引导的物理角色技能深度强化学习.'
   ko: 'DeepMimic: Example-Guided Deep RL of Physics-Based Character Skills is a paper on 精确模仿 for humanoid robotics. 深度模仿：基于示例引导的物理角色技能深度强化学习.'
 domains:

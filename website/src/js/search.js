@@ -19,6 +19,8 @@
 
   let searchData = { entries: [], index: {} };
   let activeType = 'all';
+  let activeDomain = '';
+  const domainFilter = document.getElementById('domain-filter');
   let currentQuery = '';
   let currentResults = [];
   let displayedCount = 0;
@@ -173,6 +175,15 @@
 
   function search(query, typeFilter) {
     const q = query.trim().toLowerCase();
+
+    // No query: list entries honoring the active filters (browse mode).
+    if (!q) {
+      let list = searchData.entries;
+      if (typeFilter !== 'all') list = list.filter(e => e.type === typeFilter);
+      if (activeDomain) list = list.filter(e => (e.domains || []).includes(activeDomain));
+      return list.slice().sort((a, b) => (a.name || a.id).localeCompare(b.name || b.id));
+    }
+
     const qTokens = uniqueTokens(q);
 
     // Use inverted index to get candidates.
@@ -183,6 +194,7 @@
       const e = searchData.entries[idx];
       if (!e) continue;
       if (typeFilter !== 'all' && e.type !== typeFilter) continue;
+      if (activeDomain && !(e.domains || []).includes(activeDomain)) continue;
       // For multi-token queries, require at least one token match (already
       // guaranteed) but do not require all tokens to match.
       const score = scoreEntry(e, q, qTokens, matchCount);
@@ -193,6 +205,7 @@
     if (scores.length === 0 && q) {
       for (const e of searchData.entries) {
         if (typeFilter !== 'all' && e.type !== typeFilter) continue;
+        if (activeDomain && !(e.domains || []).includes(activeDomain)) continue;
         const score = scoreEntry(e, q, qTokens, 0);
         if (score > 0) scores.push({ entry: e, score });
       }
@@ -300,10 +313,27 @@
   function init() {
     const params = new URLSearchParams(window.location.search);
     const q = params.get('q') || '';
+    const typeParam = params.get('type') || '';
+    const domainParam = params.get('domain') || '';
     if (searchInput) searchInput.value = q;
 
-    if (q) {
-      if (resultsTitle) resultsTitle.textContent = `“${q}”`;
+    if (typeParam) {
+      activeType = typeParam;
+      typeFilters.forEach(b => b.classList.toggle('active', b.dataset.type === typeParam));
+    }
+    if (domainParam) {
+      activeDomain = domainParam;
+      if (domainFilter) domainFilter.value = domainParam;
+    }
+
+    if (q || typeParam || domainParam) {
+      if (resultsTitle) {
+        let title = q ? `“${q}”` : '';
+        if (domainParam && domainFilter && domainFilter.selectedOptions.length) {
+          title = (title ? title + ' · ' : '') + domainFilter.selectedOptions[0].textContent;
+        }
+        resultsTitle.textContent = title;
+      }
       performSearch();
     } else {
       if (resultsTitle) resultsTitle.textContent = '';
@@ -343,6 +373,13 @@
         performSearch();
       });
     });
+
+    if (domainFilter) {
+      domainFilter.addEventListener('change', () => {
+        activeDomain = domainFilter.value;
+        performSearch();
+      });
+    }
 
     if (loadMoreBtn) {
       loadMoreBtn.addEventListener('click', () => {

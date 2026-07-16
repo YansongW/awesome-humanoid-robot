@@ -9,7 +9,7 @@ names:
   ko: Servo Drive
 summary:
   en: Electronic amplifier that converts low-power command signals into high-current motor control for robot joints.
-  zh: 核心内容 伺服驱动器把控制器指令转换为电机功率输出，通常采用 FOC 控制，包含电流环、速度环和位置环。关节驱动器对体积、散热、EMI 和电流环带宽要求较高，是国产替代的重点环节。
+  zh: 伺服驱动器把控制器指令转换为电机功率输出，通常采用 FOC 控制，包含电流环、速度环和位置环。关节驱动器对体积、散热、EMI 和电流环带宽要求较高，是国产替代的重点环节。
   ko: 로봇 관절용 모터 제어를 위한 고전류로 저전력 명령 신호를 변환하는 전자 증폭기.
 domains:
 - 02_components
@@ -44,7 +44,7 @@ sources:
 ---
 
 ## 概述
-伺服驱动器是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
+伺服驱动器是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 伺服驱动器把控制器指令转换为电机功率输出，通常采用 FOC 控制，包含电流环、速度环和位置环。关节驱动器对体积、散热、EMI 和电流环带宽要求较高，是国产替代的重点环节。

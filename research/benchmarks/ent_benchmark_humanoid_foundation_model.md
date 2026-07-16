@@ -70,7 +70,7 @@ theoretical_depth:
 
 ## 核心内容
 ### 人形机器人基础模型基准的定义与定位
-人形机器人基础模型基准属于 **benchmark** 类型，英文名称为 *Humanoid Foundation Model Benchmark*。
+人形机器人基础模型基准属于 **评测基准** 类型，英文名称为 *Humanoid Foundation Model Benchmark*。
 一个独立、公开可访问的基准，从十个能力维度对人形机器人 AI 基础模型进行评级和比较，包括移动、操作、推理和仿真到现实迁移。
 
 ### 人形机器人基础模型基准的关键信息

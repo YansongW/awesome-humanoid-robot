@@ -9,7 +9,7 @@ names:
   ko: 표준 이차 계획법(QP)
 summary:
   en: A convex optimization problem where a quadratic objective is minimized subject to linear equality and inequality constraints.
-  zh: 核心内容 现代 WBC 的主流实现是**全身 QP 控制**。它把所有任务统一为二次规划问题，同时显式施加动力学、摩擦锥、关节力矩限、关节限位等约束。
+  zh: 现代 WBC 的主流实现是全身 QP 控制。它把所有任务统一为二次规划问题，同时显式施加动力学、摩擦锥、关节力矩限、关节限位等约束。
   ko: 등식 및 부등식 선형 제약 조건 하에서 이차 목적 함수를 최소화하는 볼록 최적화 문제.
 domains:
 - 00_foundations
@@ -40,7 +40,7 @@ sources:
 ---
 
 ## 概述
-标准二次规划（QP）是人形机器人领域的重要formalism。以下内容整理自项目 Wiki，供深入查阅。
+标准二次规划（QP）是人形机器人领域的重要形式化方法。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 现代 WBC 的主流实现是**全身 QP 控制**。它把所有任务统一为二次规划问题，同时显式施加动力学、摩擦锥、关节力矩限、关节限位等约束。

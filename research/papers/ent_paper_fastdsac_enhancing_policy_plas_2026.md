@@ -8,51 +8,48 @@ names:
   zh: 'FastDSAC: Enhancing Policy Plasticity via Constrained Exploration for Scalable Humanoid Locomotion'
   ko: 'FastDSAC: Enhancing Policy Plasticity via Constrained Exploration for Scalable Humanoid Locomotion'
 summary:
-  en: "arXiv:2606.31691v1 Announce Type: new \nAbstract: Scalable reinforcement learning has popularized high-throughput sampling\
-    \ architectures, which significantly compresses the training time for off-policy methods in robotic locomotion. However,\
-    \ the rapid increase of data volume and update frequency undermines the stability of value-based methods and diminishes\
-    \ the plasticity of policy networks. To address these challenges, this work presents FastDSAC, a fast and high-performance\
-    \ variant of the Distributional Actor-Critic algorithm designed for parallel sampling scenarios. Specifically, we introduce\
-    \ a truncated Gaussian distribution to approximate the learned policy, which effectively excludes out-of-distribution\
-    \ actions that strain target value estimation while keeping necessary stochasticity for exploration. The proposed action\
-    \ constraint functions as an implicit regularization, which counteracts the plasticity loss typically caused by aggressive\
-    \ gradient updates. This preservation of network adaptability enhances sample efficiency, particularly in scenarios with\
-    \ a high update-to-data ratio, and accelerates the early training process. In contrast to prior fast reinforcement learning\
-    \ approaches that rely on discrete value distributions, our method utilizes a continuous Gaussian representation equipped\
-    \ with adaptive variance regulation, which improves value estimation accuracy by sampling confident and informative transitions.\
-    \ Extensive experiments on MuJoCo Playground and HumanoidBench demonstrate that FastDSAC not only stabilizes the overall\
-    \ training process but also achieves superior asymptotic performance and faster convergence compared to state-of-the-art\
-    \ baselines."
-  zh: "arXiv:2606.31691v1 Announce Type: new \nAbstract: Scalable reinforcement learning has popularized high-throughput sampling\
-    \ architectures, which significantly compresses the training time for off-policy methods in robotic locomotion. However,\
-    \ the rapid increase of data volume and update frequency undermines the stability of value-based methods and diminishes\
-    \ the plasticity of policy networks. To address these challenges, this work presents FastDSAC, a fast and high-performance\
-    \ variant of the Distributional Actor-Critic algorithm designed for parallel sampling scenarios. Specifically, we introduce\
-    \ a truncated Gaussian distribution to approximate the learned policy, which effectively excludes out-of-distribution\
-    \ actions that strain target value estimation while keeping necessary stochasticity for exploration. The proposed action\
-    \ constraint functions as an implicit regularization, which counteracts the plasticity loss typically caused by aggressive\
-    \ gradient updates. This preservation of network adaptability enhances sample efficiency, particularly in scenarios with\
-    \ a high update-to-data ratio, and accelerates the early training process. In contrast to prior fast reinforcement learning\
-    \ approaches that rely on discrete value distributions, our method utilizes a continuous Gaussian representation equipped\
-    \ with adaptive variance regulation, which improves value estimation accuracy by sampling confident and informative transitions.\
-    \ Extensive experiments on MuJoCo Playground and HumanoidBench demonstrate that FastDSAC not only stabilizes the overall\
-    \ training process but also achieves superior asymptotic performance and faster convergence compared to state-of-the-art\
-    \ baselines."
-  ko: "arXiv:2606.31691v1 Announce Type: new \nAbstract: Scalable reinforcement learning has popularized high-throughput sampling\
-    \ architectures, which significantly compresses the training time for off-policy methods in robotic locomotion. However,\
-    \ the rapid increase of data volume and update frequency undermines the stability of value-based methods and diminishes\
-    \ the plasticity of policy networks. To address these challenges, this work presents FastDSAC, a fast and high-performance\
-    \ variant of the Distributional Actor-Critic algorithm designed for parallel sampling scenarios. Specifically, we introduce\
-    \ a truncated Gaussian distribution to approximate the learned policy, which effectively excludes out-of-distribution\
-    \ actions that strain target value estimation while keeping necessary stochasticity for exploration. The proposed action\
-    \ constraint functions as an implicit regularization, which counteracts the plasticity loss typically caused by aggressive\
-    \ gradient updates. This preservation of network adaptability enhances sample efficiency, particularly in scenarios with\
-    \ a high update-to-data ratio, and accelerates the early training process. In contrast to prior fast reinforcement learning\
-    \ approaches that rely on discrete value distributions, our method utilizes a continuous Gaussian representation equipped\
-    \ with adaptive variance regulation, which improves value estimation accuracy by sampling confident and informative transitions.\
-    \ Extensive experiments on MuJoCo Playground and HumanoidBench demonstrate that FastDSAC not only stabilizes the overall\
-    \ training process but also achieves superior asymptotic performance and faster convergence compared to state-of-the-art\
-    \ baselines."
+  en: 'arXiv:2606.31691v1 Announce Type: new Abstract: Scalable reinforcement learning has popularized high-throughput sampling
+    architectures, which significantly compresses the training time for off-policy methods in robotic locomotion. However,
+    the rapid increase of data volume and update frequency undermines the stability of value-based methods and diminishes
+    the plasticity of policy networks. To address these challenges, this work presents FastDSAC, a fast and high-performance
+    variant of the Distributional Actor-Critic algorithm designed for parallel sampling scenarios. Specifically, we introduce
+    a truncated Gaussian distribution to approximate the learned policy, which effectively excludes out-of-distribution actions
+    that strain target value estimation while keeping necessary stochasticity for exploration. The proposed action constraint
+    functions as an implicit regularization, which counteracts the plasticity loss typically caused by aggressive gradient
+    updates. This preservation of network adaptability enhances sample efficiency, particularly in scenarios with a high update-to-data
+    ratio, and accelerates the early training process. In contrast to prior fast reinforcement learning approaches that rely
+    on discrete value distributions, our method utilizes a continuous Gaussian representation equipped with adaptive variance
+    regulation, which improves value estimation accuracy by sampling confident and informative transitions. Extensive experiments
+    on MuJoCo Playground and HumanoidBench demonstrate that FastDSAC not only stabilizes the overall training process but
+    also achieves superior asymptotic performance and faster convergence compared to state-of-the-art baselines.'
+  zh: 'arXiv:2606.31691v1 Announce Type: new Abstract: Scalable reinforcement learning has popularized high-throughput sampling
+    architectures, which significantly compresses the training time for off-policy methods in robotic locomotion. However,
+    the rapid increase of data volume and update frequency undermines the stability of value-based methods and diminishes
+    the plasticity of policy networks. To address these challenges, this work presents FastDSAC, a fast and high-performance
+    variant of the Distributional Actor-Critic algorithm designed for parallel sampling scenarios. Specifically, we introduce
+    a truncated Gaussian distribution to approximate the learned policy, which effectively excludes out-of-distribution actions
+    that strain target value estimation while keeping necessary stochasticity for exploration. The proposed action constraint
+    functions as an implicit regularization, which counteracts the plasticity loss typically caused by aggressive gradient
+    updates. This preservation of network adaptability enhances sample efficiency, particularly in scenarios with a high update-to-data
+    ratio, and accelerates the early training process. In contrast to prior fast reinforcement learning approaches that rely
+    on discrete value distributions, our method utilizes a continuous Gaussian representation equipped with adaptive variance
+    regulation, which improves value estimation accuracy by sampling confident and informative transitions. Extensive experiments
+    on MuJoCo Playground and HumanoidBench demonstrate that FastDSAC not only stabilizes the overall training process but
+    also achieves superior asymptotic performance and faster convergence compared to state-of-the-art baselines.'
+  ko: 'arXiv:2606.31691v1 Announce Type: new Abstract: Scalable reinforcement learning has popularized high-throughput sampling
+    architectures, which significantly compresses the training time for off-policy methods in robotic locomotion. However,
+    the rapid increase of data volume and update frequency undermines the stability of value-based methods and diminishes
+    the plasticity of policy networks. To address these challenges, this work presents FastDSAC, a fast and high-performance
+    variant of the Distributional Actor-Critic algorithm designed for parallel sampling scenarios. Specifically, we introduce
+    a truncated Gaussian distribution to approximate the learned policy, which effectively excludes out-of-distribution actions
+    that strain target value estimation while keeping necessary stochasticity for exploration. The proposed action constraint
+    functions as an implicit regularization, which counteracts the plasticity loss typically caused by aggressive gradient
+    updates. This preservation of network adaptability enhances sample efficiency, particularly in scenarios with a high update-to-data
+    ratio, and accelerates the early training process. In contrast to prior fast reinforcement learning approaches that rely
+    on discrete value distributions, our method utilizes a continuous Gaussian representation equipped with adaptive variance
+    regulation, which improves value estimation accuracy by sampling confident and informative transitions. Extensive experiments
+    on MuJoCo Playground and HumanoidBench demonstrate that FastDSAC not only stabilizes the overall training process but
+    also achieves superior asymptotic performance and faster convergence compared to state-of-the-art baselines.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

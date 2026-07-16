@@ -10,7 +10,7 @@ names:
 summary:
   en: The incumbent onboard energy storage technology for humanoid robots, balancing energy density, power density, and cycle
     life, but currently limiting runtime to 2-4 hours for typical dynamic operation.
-  zh: '## 概述 人形机器人锂离子电池系统是人形机器人领域的重要technology。以下内容整理自项目 Wiki，供深入查阅。'
+  zh: 概述 人形机器人锂离子电池系统是人形机器人领域的重要technology。以下内容整理自项目 Wiki，供深入查阅。
   ko: 휴로이드 로봇의 기존 온보드 에너지 저장 기술로, 에너지 밀도, 출력 밀도, 사이클 수명 간의 균형을 맞추지만, 일반적인 동적 작업 시 2-4시간으로 운영 시간을 제한함.
 domains:
 - 01_raw_materials
@@ -66,7 +66,7 @@ related_entities:
 ---
 
 ## 概述
-人形机器人锂离子电池系统是人形机器人领域的重要technology。以下内容整理自项目 Wiki，供深入查阅。
+人形机器人锂离子电池系统是人形机器人领域的重要技术。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## 锂离子电池 / Lithium-ion Battery

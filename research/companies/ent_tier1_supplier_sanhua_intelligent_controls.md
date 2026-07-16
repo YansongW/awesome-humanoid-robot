@@ -66,7 +66,7 @@ theoretical_depth:
 ---
 
 ## 概述
-三花智控是人形机器人领域的重要tier1_supplier。以下内容整理自项目 Wiki，供深入查阅。
+三花智控是人形机器人领域的重要Tier 1 供应商。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## 三花智控 / Sanhua Intelligent Controls

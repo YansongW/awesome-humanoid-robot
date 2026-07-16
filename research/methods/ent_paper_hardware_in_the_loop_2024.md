@@ -10,8 +10,7 @@ names:
 summary:
   en: Testing method where physical actuators and controllers are exercised against a real-time simulation model before full
     integration.
-  zh: '核心内容 ### 硬件在环仿真的定义与定位 硬件在环仿真属于 **method** 类型。 所属领域包括：04_assembly_integration_testing, 08_software_middleware。 价值链层级：intelligence,
-    midstream。 在完整集成前，将物理执行器和控制器与实时仿真模型对接进行测试的方法。 英文名称为 *Hardware-in-the-Loop*。 韩文名称为 *Hardware-in-the-Loop*。'
+  zh: 在完整集成前，将物理执行器和控制器与实时仿真模型对接进行测试的方法。
   ko: 완전한 통합 전 실제 액추에이터와 컨트롤러를 실시간 시뮬레이션 모델에 대해 테스트하는 방법.
 domains:
 - 04_assembly_integration_testing
@@ -50,7 +49,7 @@ sources:
 
 ## 核心内容
 ### 硬件在环仿真的定义与定位
-硬件在环仿真属于 **method** 类型。 所属领域包括：04_assembly_integration_testing, 08_software_middleware。 价值链层级：intelligence, midstream。 在完整集成前，将物理执行器和控制器与实时仿真模型对接进行测试的方法。 英文名称为 *Hardware-in-the-Loop*。 韩文名称为 *Hardware-in-the-Loop*。
+硬件在环仿真属于 **方法** 类型。 所属领域包括：组装集成测试, 软件中间件。 价值链层级：智能层, midstream。 在完整集成前，将物理执行器和控制器与实时仿真模型对接进行测试的方法。 英文名称为 *Hardware-in-the-Loop*。 韩文名称为 *Hardware-in-the-Loop*。
 
 ### 硬件在环仿真的数学与原理基础
 硬件在环仿真建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -74,7 +73,7 @@ sources:
 - validation
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，硬件在环仿真在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，硬件在环仿真在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Hardware-in-the-Loop](https://en.wikipedia.org/wiki/Hardware-in-the-loop_simulation)

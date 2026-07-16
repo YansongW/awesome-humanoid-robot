@@ -63,4 +63,30 @@
       }
     }
   });
+
+  // Scrollspy for the in-page table of contents
+  const tocLinks = Array.from(document.querySelectorAll('.page-toc .toc-nav a[href^="#"]'));
+  if (tocLinks.length) {
+    const headingMap = new Map();
+    tocLinks.forEach(a => {
+      let id = a.getAttribute('href').slice(1);
+      try { id = decodeURIComponent(id); } catch (e) { /* keep raw id */ }
+      const el = document.getElementById(id);
+      if (el) headingMap.set(el, a);
+    });
+    if (headingMap.size) {
+      const headings = Array.from(headingMap.keys());
+      const onScroll = () => {
+        let current = null;
+        for (const el of headings) {
+          if (el.getBoundingClientRect().top <= 110) current = el;
+          else break;
+        }
+        tocLinks.forEach(a => a.classList.remove('active'));
+        if (current) headingMap.get(current).classList.add('active');
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+  }
 })();

@@ -21,6 +21,15 @@
         <button class="filter-tag" data-type="{{ t }}">{{ t | type_label(lang) }}</button>
         {% endfor %}
       </div>
+      <div class="filter-domain">
+        <label for="domain-filter" class="filter-label">{{ ui.filter_by_domain }}</label>
+        <select id="domain-filter">
+          <option value="">{{ ui.all }}</option>
+          {% for d in domains %}
+          <option value="{{ d }}">{{ d | domain_label(lang) }}</option>
+          {% endfor %}
+        </select>
+      </div>
     </div>
   </section>
 

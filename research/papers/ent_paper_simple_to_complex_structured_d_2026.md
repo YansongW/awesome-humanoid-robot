@@ -8,54 +8,54 @@ names:
   zh: Simple-to-Complex Structured Demonstrations for Vision-Language-Action Learning
   ko: Simple-to-Complex Structured Demonstrations for Vision-Language-Action Learning
 summary:
-  en: "arXiv:2607.04591v1 Announce Type: new \nAbstract: Vision-Language-Action (VLA) models have demonstrated strong capabilities\
-    \ in robotic manipulation by integrating visual perception, language understanding, and robot action generation. Existing\
-    \ research has primarily focused on improving model architectures, training strategies, and dataset scale, while little\
-    \ attention has been paid to how demonstrations are collected and organized. We identify demonstration organization as\
-    \ a fundamental yet overlooked aspect of imitation learning, as it directly affects policy learning efficiency, training\
-    \ stability, and policy generalization. To address this gap, we propose a simple-to-complex structured demonstration collection\
-    \ strategy for VLA learning using a dual-arm robotic platform. Our approach systematically organizes data through three\
-    \ general principles: (i) decomposing complex manipulation tasks into progressively learnable sub-skills, (ii) standardizing\
-    \ the interaction environment to reduce unnecessary variability, and (iii) organizing demonstrations according to progressively\
-    \ increasing task complexity. This structured design enables VLA models to first acquire fundamental manipulation skills\
-    \ before learning increasingly complex task compositions, facilitating more effective learning of long-horizon manipulation\
-    \ tasks. We evaluate the proposed strategy on two representative robotic manipulation tasks: block grasping and sorting,\
-    \ and towel folding. Experimental results show consistent improvements in task success rate and training stability compared\
-    \ with the baseline method of directly collecting end-to-end complete task trajectories. These findings highlight demonstration\
-    \ organization as a previously underexplored but important factor in VLA learning and provide practical insights into\
-    \ efficient skill acquisition, scalable dataset construction, and long-horizon robotic manipulation."
-  zh: "arXiv:2607.04591v1 Announce Type: new \nAbstract: Vision-Language-Action (VLA) models have demonstrated strong capabilities\
-    \ in robotic manipulation by integrating visual perception, language understanding, and robot action generation. Existing\
-    \ research has primarily focused on improving model architectures, training strategies, and dataset scale, while little\
-    \ attention has been paid to how demonstrations are collected and organized. We identify demonstration organization as\
-    \ a fundamental yet overlooked aspect of imitation learning, as it directly affects policy learning efficiency, training\
-    \ stability, and policy generalization. To address this gap, we propose a simple-to-complex structured demonstration collection\
-    \ strategy for VLA learning using a dual-arm robotic platform. Our approach systematically organizes data through three\
-    \ general principles: (i) decomposing complex manipulation tasks into progressively learnable sub-skills, (ii) standardizing\
-    \ the interaction environment to reduce unnecessary variability, and (iii) organizing demonstrations according to progressively\
-    \ increasing task complexity. This structured design enables VLA models to first acquire fundamental manipulation skills\
-    \ before learning increasingly complex task compositions, facilitating more effective learning of long-horizon manipulation\
-    \ tasks. We evaluate the proposed strategy on two representative robotic manipulation tasks: block grasping and sorting,\
-    \ and towel folding. Experimental results show consistent improvements in task success rate and training stability compared\
-    \ with the baseline method of directly collecting end-to-end complete task trajectories. These findings highlight demonstration\
-    \ organization as a previously underexplored but important factor in VLA learning and provide practical insights into\
-    \ efficient skill acquisition, scalable dataset construction, and long-horizon robotic manipulation."
-  ko: "arXiv:2607.04591v1 Announce Type: new \nAbstract: Vision-Language-Action (VLA) models have demonstrated strong capabilities\
-    \ in robotic manipulation by integrating visual perception, language understanding, and robot action generation. Existing\
-    \ research has primarily focused on improving model architectures, training strategies, and dataset scale, while little\
-    \ attention has been paid to how demonstrations are collected and organized. We identify demonstration organization as\
-    \ a fundamental yet overlooked aspect of imitation learning, as it directly affects policy learning efficiency, training\
-    \ stability, and policy generalization. To address this gap, we propose a simple-to-complex structured demonstration collection\
-    \ strategy for VLA learning using a dual-arm robotic platform. Our approach systematically organizes data through three\
-    \ general principles: (i) decomposing complex manipulation tasks into progressively learnable sub-skills, (ii) standardizing\
-    \ the interaction environment to reduce unnecessary variability, and (iii) organizing demonstrations according to progressively\
-    \ increasing task complexity. This structured design enables VLA models to first acquire fundamental manipulation skills\
-    \ before learning increasingly complex task compositions, facilitating more effective learning of long-horizon manipulation\
-    \ tasks. We evaluate the proposed strategy on two representative robotic manipulation tasks: block grasping and sorting,\
-    \ and towel folding. Experimental results show consistent improvements in task success rate and training stability compared\
-    \ with the baseline method of directly collecting end-to-end complete task trajectories. These findings highlight demonstration\
-    \ organization as a previously underexplored but important factor in VLA learning and provide practical insights into\
-    \ efficient skill acquisition, scalable dataset construction, and long-horizon robotic manipulation."
+  en: 'arXiv:2607.04591v1 Announce Type: new Abstract: Vision-Language-Action (VLA) models have demonstrated strong capabilities
+    in robotic manipulation by integrating visual perception, language understanding, and robot action generation. Existing
+    research has primarily focused on improving model architectures, training strategies, and dataset scale, while little
+    attention has been paid to how demonstrations are collected and organized. We identify demonstration organization as a
+    fundamental yet overlooked aspect of imitation learning, as it directly affects policy learning efficiency, training stability,
+    and policy generalization. To address this gap, we propose a simple-to-complex structured demonstration collection strategy
+    for VLA learning using a dual-arm robotic platform. Our approach systematically organizes data through three general principles:
+    (i) decomposing complex manipulation tasks into progressively learnable sub-skills, (ii) standardizing the interaction
+    environment to reduce unnecessary variability, and (iii) organizing demonstrations according to progressively increasing
+    task complexity. This structured design enables VLA models to first acquire fundamental manipulation skills before learning
+    increasingly complex task compositions, facilitating more effective learning of long-horizon manipulation tasks. We evaluate
+    the proposed strategy on two representative robotic manipulation tasks: block grasping and sorting, and towel folding.
+    Experimental results show consistent improvements in task success rate and training stability compared with the baseline
+    method of directly collecting end-to-end complete task trajectories. These findings highlight demonstration organization
+    as a previously underexplored but important factor in VLA learning and provide practical insights into efficient skill
+    acquisition, scalable dataset construction, and long-horizon robotic manipulation.'
+  zh: 'arXiv:2607.04591v1 Announce Type: new Abstract: Vision-Language-Action (VLA) models have demonstrated strong capabilities
+    in robotic manipulation by integrating visual perception, language understanding, and robot action generation. Existing
+    research has primarily focused on improving model architectures, training strategies, and dataset scale, while little
+    attention has been paid to how demonstrations are collected and organized. We identify demonstration organization as a
+    fundamental yet overlooked aspect of imitation learning, as it directly affects policy learning efficiency, training stability,
+    and policy generalization. To address this gap, we propose a simple-to-complex structured demonstration collection strategy
+    for VLA learning using a dual-arm robotic platform. Our approach systematically organizes data through three general principles:
+    (i) decomposing complex manipulation tasks into progressively learnable sub-skills, (ii) standardizing the interaction
+    environment to reduce unnecessary variability, and (iii) organizing demonstrations according to progressively increasing
+    task complexity. This structured design enables VLA models to first acquire fundamental manipulation skills before learning
+    increasingly complex task compositions, facilitating more effective learning of long-horizon manipulation tasks. We evaluate
+    the proposed strategy on two representative robotic manipulation tasks: block grasping and sorting, and towel folding.
+    Experimental results show consistent improvements in task success rate and training stability compared with the baseline
+    method of directly collecting end-to-end complete task trajectories. These findings highlight demonstration organization
+    as a previously underexplored but important factor in VLA learning and provide practical insights into efficient skill
+    acquisition, scalable dataset construction, and long-horizon robotic manipulation.'
+  ko: 'arXiv:2607.04591v1 Announce Type: new Abstract: Vision-Language-Action (VLA) models have demonstrated strong capabilities
+    in robotic manipulation by integrating visual perception, language understanding, and robot action generation. Existing
+    research has primarily focused on improving model architectures, training strategies, and dataset scale, while little
+    attention has been paid to how demonstrations are collected and organized. We identify demonstration organization as a
+    fundamental yet overlooked aspect of imitation learning, as it directly affects policy learning efficiency, training stability,
+    and policy generalization. To address this gap, we propose a simple-to-complex structured demonstration collection strategy
+    for VLA learning using a dual-arm robotic platform. Our approach systematically organizes data through three general principles:
+    (i) decomposing complex manipulation tasks into progressively learnable sub-skills, (ii) standardizing the interaction
+    environment to reduce unnecessary variability, and (iii) organizing demonstrations according to progressively increasing
+    task complexity. This structured design enables VLA models to first acquire fundamental manipulation skills before learning
+    increasingly complex task compositions, facilitating more effective learning of long-horizon manipulation tasks. We evaluate
+    the proposed strategy on two representative robotic manipulation tasks: block grasping and sorting, and towel folding.
+    Experimental results show consistent improvements in task success rate and training stability compared with the baseline
+    method of directly collecting end-to-end complete task trajectories. These findings highlight demonstration organization
+    as a previously underexplored but important factor in VLA learning and provide practical insights into efficient skill
+    acquisition, scalable dataset construction, and long-horizon robotic manipulation.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

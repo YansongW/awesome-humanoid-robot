@@ -10,7 +10,7 @@ names:
 summary:
   en: The foundational science of electron and ion transport across interfaces, governing reactions, potentials, and mass
     transfer in batteries, fuel cells, and corrosion.
-  zh: 核心内容 锂离子电池的能量存储本质上是锂在正负极活性材料晶格中的可逆嵌入/脱嵌反应。要理解标称电压、倍率性能、低温衰减和老化，需要回到电化学热力学与动力学。
+  zh: 锂离子电池的能量存储本质上是锂在正负极活性材料晶格中的可逆嵌入/脱嵌反应。要理解标称电压、倍率性能、低温衰减和老化，需要回到电化学热力学与动力学。
   ko: 전지, 연료 전지 및 부식에서 반응, 전위 및 물질 이동을 지배하는 계면을 통한 전자와 이온 전송의 기초 과학이다.
 domains:
 - 00_foundations
@@ -42,7 +42,7 @@ sources:
 ---
 
 ## 概述
-电化学是人形机器人领域的重要foundation。以下内容整理自项目 Wiki，供深入查阅。
+电化学是人形机器人领域的重要基础学科。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 锂离子电池的能量存储本质上是锂在正负极活性材料晶格中的可逆嵌入/脱嵌反应。要理解标称电压、倍率性能、低温衰减和老化，需要回到电化学热力学与动力学。

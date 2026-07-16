@@ -11,11 +11,11 @@ summary:
   en: This paper presents a proprioceptive soft actuator that uses conductive saline as both the actuation fluid and the sensing
     medium, enabling shape reconstruction via Electrical Impedance Tomography (EIT) with a custom Frequency Division Multiplexed
     (FDM) system.
-  zh: 'Soft robotic systems offer benefits over traditional rigid systems through reduced contact trauma with soft tissues
+  zh: Soft robotic systems offer benefits over traditional rigid systems through reduced contact trauma with soft tissues
     and by enabling access through tortuous paths in minimally invasive surgery. However, the inherent deformability of soft
     robots places both a greater onus on accurate modelling of their shape, and greater challenges in realising intraoperative
     shape sensing. Herein we present a proprioceptive (self-sensing) soft actuator, with an electrically conductive working
-    fluid. Electrical impedance measurements from up to six electrodes enabled tomographic reconstructions using Electrical '
+    fluid. Electrical impedance measurements from up to six electrodes enabled tomographic reconstructions using Electrical
   ko: 본 논문은 전도성 식염수를 구동 유체와 센싱 매질로 동시에 사용하는 본체감각형 소프트 액추에이터를 제안하며, 맞춤형 주파수 분할 다중화 전기 임피던스 단층촬영(FDM-EIT) 시스템을 통해 형상 재구성을 수행한다.
 domains:
 - 02_components

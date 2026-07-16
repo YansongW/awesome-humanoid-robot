@@ -8,11 +8,11 @@ names:
   zh: 'Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action Framework'
   ko: 'Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action Framework'
 summary:
-  en: 'Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action Framework is a 2026 work on loco-manipulation
+  en: 'Learning Soccer Skills for Humanoid Robots: A Progressive Perception-Action Framework is a 2026 work on loco-manipulation
     and whole-body-control for humanoid robots.'
-  zh: 'Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action Framework is a 2026 work on loco-manipulation
+  zh: 'Learning Soccer Skills for Humanoid Robots: A Progressive Perception-Action Framework is a 2026 work on loco-manipulation
     and whole-body-control for humanoid robots.'
-  ko: 'Learning Soccer Skills for Humanoid Robots:   A Progressive Perception-Action Framework is a 2026 work on loco-manipulation
+  ko: 'Learning Soccer Skills for Humanoid Robots: A Progressive Perception-Action Framework is a 2026 work on loco-manipulation
     and whole-body-control for humanoid robots.'
 domains:
 - 07_ai_models_algorithms

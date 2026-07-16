@@ -9,7 +9,7 @@ names:
   ko: Bonfiglioli
 summary:
   en: Italian manufacturer of gearboxes and drive systems used in industrial and mobile robotics.
-  zh: '## 概述 邦飞利是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。'
+  zh: 概述 邦飞利是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
   ko: 산업 및 모바일 로보틱스에 사용되는 기어박스 및 드라이브 시스템 이탈리아 제조업체.
 domains:
 - 02_components
@@ -44,7 +44,7 @@ sources:
 ---
 
 ## 概述
-邦飞利是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
+邦飞利是人形机器人领域的重要零部件_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## Bonfiglioli / 邦飞利

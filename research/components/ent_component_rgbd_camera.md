@@ -10,7 +10,7 @@ names:
 summary:
   en: A vision sensor that combines color imaging with per-pixel depth measurement, enabling 3D scene understanding for manipulation
     and navigation.
-  zh: 核心内容 视觉/深度相机是人形机器人外部感知与场景理解的核心入口。当前主流三维深度获取技术包括**结构光（structured light）**、**飞行时间（ToF，含 dToF/iToF）**和**双目立体视觉（stereo vision）**三条路线，分别依赖不同的光学器件、发射器和图像传感器组合。
+  zh: 视觉/深度相机是人形机器人外部感知与场景理解的核心入口。当前主流三维深度获取技术包括结构光（structured light）、飞行时间（ToF，含 dToF/iToF）和双目立体视觉（stereo vision）三条路线，分别依赖不同的光学器件、发射器和图像传感器组合。
   ko: 컬러 영상과 픽셀별 깊이 정보를 결합하여 조작 및 납품을 위한 3D 장면 이해를 제공하는 비전 센서.
 domains:
 - 02_components
@@ -39,7 +39,7 @@ sources:
 ---
 
 ## 概述
-RGB-D相机是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
+RGB-D相机是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 视觉/深度相机是人形机器人外部感知与场景理解的核心入口。当前主流三维深度获取技术包括**结构光（structured light）**、**飞行时间（ToF，含 dToF/iToF）**和**双目立体视觉（stereo vision）**三条路线，分别依赖不同的光学器件、发射器和图像传感器组合。

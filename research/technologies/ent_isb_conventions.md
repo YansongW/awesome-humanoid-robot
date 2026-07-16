@@ -10,9 +10,7 @@ names:
 summary:
   en: Standardized conventions from the International Society of Biomechanics for defining joint coordinate systems, sign
     conventions, and functional ranges of motion in human biomechanics.
-  zh: '核心内容 ### ISB关节坐标系约定的定义与定位 ISB关节坐标系约定属于 **standard** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets,
-    midstream。 国际生物力学学会（ISB）制定的标准化约定，用于定义人体生物力学中的关节坐标系、符号约定和功能活动范围。 英文名称为 *ISB Conventions for Joint Coordinate Systems*。
-    韩文名称为 *ISB 관절 좌표계 관례*。'
+  zh: 国际生物力学学会（ISB）制定的标准化约定，用于定义人体生物力学中的关节坐标系、符号约定和功能活动范围。
   ko: 인체 생체역학에서 관절 좌표계, 부호 규칙 및 기능적 가동 범위를 정의하기 위한 국제생체역학회(ISB)의 표준화된 관례입니다.
 domains:
 - 10_evaluation_benchmarks
@@ -51,7 +49,7 @@ theoretical_depth:
 
 ## 核心内容
 ### ISB关节坐标系约定的定义与定位
-ISB关节坐标系约定属于 **standard** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets, midstream。 国际生物力学学会（ISB）制定的标准化约定，用于定义人体生物力学中的关节坐标系、符号约定和功能活动范围。 英文名称为 *ISB Conventions for Joint Coordinate Systems*。 韩文名称为 *ISB 관절 좌표계 관례*。
+ISB关节坐标系约定属于 **标准** 类型。 所属领域包括：评测基准, 设计工程。 价值链层级：验证与市场层, midstream。 国际生物力学学会（ISB）制定的标准化约定，用于定义人体生物力学中的关节坐标系、符号约定和功能活动范围。 英文名称为 *ISB Conventions for Joint Coordinate Systems*。 韩文名称为 *ISB 관절 좌표계 관례*。
 
 ### ISB关节坐标系约定的关键维度
 理解ISB关节坐标系约定需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -72,7 +70,7 @@ ISB关节坐标系约定属于 **standard** 类型。 所属领域包括：10_ev
 - range_of_motion
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键standard之一，ISB关节坐标系约定在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键标准之一，ISB关节坐标系约定在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Human-Level Actuation for Humanoids](https://arxiv.org/abs/2511.06796)

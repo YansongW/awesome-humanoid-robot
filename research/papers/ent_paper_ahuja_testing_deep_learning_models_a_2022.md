@@ -10,11 +10,11 @@ names:
 summary:
   en: This paper reviews and experimentally compares differential, metamorphic, mutation, combinatorial, and adversarial perturbation
     testing for deep learning models, using MNIST as a benchmark to assess their complementary fault-detection capabilities.
-  zh: 'Deep Learning (DL) has revolutionized the capabilities of vision-based systems (VBS) in critical applications such
-    as autonomous driving, robotic surgery, critical infrastructure surveillance, air and maritime traffic control, etc. By
-    analyzing images, voice, videos, or any type of complex signals, DL has considerably increased the situation awareness
-    of these systems. At the same time, while relying more and more on trained DL models, the reliability and robustness of
-    VBS have been challenged and it has become crucial to test thoroughly these models to assess their capabilities and potential '
+  zh: Deep Learning (DL) has revolutionized the capabilities of vision-based systems (VBS) in critical applications such as
+    autonomous driving, robotic surgery, critical infrastructure surveillance, air and maritime traffic control, etc. By analyzing
+    images, voice, videos, or any type of complex signals, DL has considerably increased the situation awareness of these
+    systems. At the same time, while relying more and more on trained DL models, the reliability and robustness of VBS have
+    been challenged and it has become crucial to test thoroughly these models to assess their capabilities and potential
   ko: 본 논문은 딥러닝 모델을 위한 차분 테스트, 변태 테스트, 변이 테스트, 조합 테스트 및 적대적 교란 테스트를 검토하고 MNIST 벤치마크를 사용하여 이들의 상호 보완적인 결함 탐지 능력을 실험적으로 비교한다.
 domains:
 - 10_evaluation_benchmarks

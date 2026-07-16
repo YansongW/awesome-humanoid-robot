@@ -9,9 +9,7 @@ names:
   ko: 仿真平台搭建与验证（Simulation）
 summary:
   en: Construction and verification of Simulation platform
-  zh: '核心内容 ### 仿真平台搭建与验证（Simulation）的定义与定位 仿真平台搭建与验证（Simulation）属于 **method** 类型。 所属领域包括：08_software_middleware, 10_evaluation_benchmarks。
-    价值链层级：intelligence, validation_markets。 仿真平台搭建与验证（Simulation） 英文名称为 *Construction and verification of Simulation platform*。
-    韩文名称为 *仿真平台搭建与验证（Simulation）*。'
+  zh: 搭建仿真平台并在仿真环境中验证感知、规划与控制算法，覆盖仿真场景配置、模型标定、域随机化与 sim-to-real 迁移评估，降低实机调试成本与风险。
   ko: 仿真平台搭建与验证（Simulation）
 domains:
 - 08_software_middleware
@@ -44,7 +42,7 @@ theoretical_depth:
 
 ## 核心内容
 ### 仿真平台搭建与验证（Simulation）的定义与定位
-仿真平台搭建与验证（Simulation）属于 **method** 类型。 所属领域包括：08_software_middleware, 10_evaluation_benchmarks。 价值链层级：intelligence, validation_markets。 仿真平台搭建与验证（Simulation） 英文名称为 *Construction and verification of Simulation platform*。 韩文名称为 *仿真平台搭建与验证（Simulation）*。
+仿真平台搭建与验证（Simulation）属于 **方法** 类型。 所属领域包括：软件中间件, 评测基准。 价值链层级：智能层, validation_markets。 仿真平台搭建与验证（Simulation） 英文名称为 *Construction and verification of Simulation platform*。 韩文名称为 *仿真平台搭建与验证（Simulation）*。
 
 ### 仿真平台搭建与验证（Simulation）的数学与原理基础
 仿真平台搭建与验证（Simulation）建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -61,7 +59,7 @@ theoretical_depth:
 然而，其计算复杂度、对模型精度的依赖以及在线适应能力仍是实际部署中需要重点解决的问题。
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，仿真平台搭建与验证（Simulation）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，仿真平台搭建与验证（Simulation）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）

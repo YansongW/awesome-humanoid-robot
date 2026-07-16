@@ -12,11 +12,11 @@ summary:
   en: Empirically evaluates Fitts' List by allocating position and force control between a human and a robot in an abstract
     blending task, showing that assigning position control to the human and force control to the robot improves performance
     and user acceptance.
-  zh: 'In this letter, we investigate whether classical function allocation-the principle of assigning tasks to either a human
+  zh: In this letter, we investigate whether classical function allocation-the principle of assigning tasks to either a human
     or a machine-holds for physical Human-Robot Collaboration, which is important for providing insights for Industry 5.0
-    to guide how to best augment rather than replace workers. This study empirically tests the applicability of Fitts'' List
+    to guide how to best augment rather than replace workers. This study empirically tests the applicability of Fitts' List
     within physical Human-Robot Collaboration, by conducting a user study (N=26, within-subject design) to evaluate four distinct
-    allocations of position/force control between human and robot in an abstract blending task. We hypothesize that the '
+    allocations of position/force control between human and robot in an abstract blending task. We hypothesize that the
   ko: 추상적 블렌딩 작업에서 인간과 로봇 간 위치 및 힘 제어 할당을 통해 피츠 목록을 실증적으로 평가하였으며, 위치 제어를 인간에게, 힘 제어를 로봇에게 할당할 때 성능과 사용자 수용도가 향상됨을 보임.
 domains:
 - 05_mass_production

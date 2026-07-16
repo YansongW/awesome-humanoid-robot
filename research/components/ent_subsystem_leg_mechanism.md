@@ -10,9 +10,9 @@ names:
 summary:
   en: The kinematic and structural design of the leg linkage, including hip, knee, and ankle joints, that supports weight,
     absorbs impact, and enables locomotion.
-  zh: '!!! note "术语解释：连杆长度、关节轴线偏移、轴承座孔公差、同轴度、H7/g6、形位公差" - **连杆长度（link length）**：相邻关节轴线之间的垂直距离。 - **关节轴线偏移（joint axis offset）**：实际旋转轴线与名义轴线之间的位置偏差。
-    - **轴承座孔公差（bearing housing tolerance）**：安装轴承的孔的直径允许变动范围。 - **同轴度（coaxiality）**：两轴或孔轴线重合程度的形位公差。 - **H7/g6**：孔 H7、轴 g6
-    的配合代号，表示间隙配合。 - **形位公差（geometric dimensioning and tolerancing, GD&T）**：控制零件几何特征相对理想形状、方向、位置和跳动允许的变动量。'
+  zh: '!!! note "术语解释：连杆长度、关节轴线偏移、轴承座孔公差、同轴度、H7/g6、形位公差" - 连杆长度（link length）：相邻关节轴线之间的垂直距离。 - 关节轴线偏移（joint axis offset）：实际旋转轴线与名义轴线之间的位置偏差。
+    - 轴承座孔公差（bearing housing tolerance）：安装轴承的孔的直径允许变动范围。 - 同轴度（coaxiality）：两轴或孔轴线重合程度的形位公差。 - H7/g6：孔 H7、轴 g6 的配合代号，表示间隙配合。
+    - 形位公差（geometric dimensioning and tolerancing, GD&T）：控制零件几何特征相对理想形状、方向、位置和跳动允许的变动量。'
   ko: 고관절·무릎·발목 관절을 포함하는 다리 연결 기구의 용동·구조 설계로, 하중 지지·충격 흡수·이동을 담당.
 domains:
 - 06_design_engineering
@@ -41,7 +41,7 @@ sources:
 ---
 
 ## 概述
-腿部机构是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
+腿部机构是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 下肢连杆长度、关节轴线偏移与配合公差直接决定运动学精度、装配可行性与动态性能。

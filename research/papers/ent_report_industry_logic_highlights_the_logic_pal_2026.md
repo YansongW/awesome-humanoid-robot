@@ -46,7 +46,7 @@ Revolutionary robot delivers end-to-end automation across supply chains
 
 ## 核心内容
 ### Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation的定义与定位
-Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation属于 **report** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 Revolutionary robot delivers end-to-end automation across supply chains 英文名称为 *Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation*。 韩文名称为 *Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation*。
+Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation属于 **报告** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 Revolutionary robot delivers end-to-end automation across supply chains 英文名称为 *Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation*。 韩文名称为 *Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation*。
 
 ### Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation的关键信息
 该报告记录了人形机器人产业中的最新动态、事件或观点，可作为观察市场与技术演化的参考。
@@ -66,7 +66,7 @@ Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered
 - robotics
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键report之一，Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键报告之一，Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Logic Highlights the Logic Pallet: The First Autonomous Mobile Pallet Engineered for Multifacility Logistics Automation](http://www.RoboticsTomorrow.com/news/2026/07/13/logic-highlights-the-logic-pallet-the-first-autonomous-mobile-pallet-engineered-for-multifacility-logistics-automation/26835)

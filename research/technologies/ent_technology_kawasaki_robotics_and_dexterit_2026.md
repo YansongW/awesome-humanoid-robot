@@ -47,7 +47,7 @@ RL030N 8 DoF robot arm platform brings together Kawasaki Robotics' industrial ro
 
 ## 核心内容
 ### Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Warehouse Logistics的定义与定位
-Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Warehouse Logistics属于 **technology** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 RL030N 8 DoF robot arm platform brings together Kawasaki Robotics' industrial robot engineering, Dexterity's Mech hardware, and Foresight World Model 英文名称为 *Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Warehouse Logistics*。 韩文名称为 *Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Warehouse Logistics*。
+Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Warehouse Logistics属于 **技术** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 RL030N 8 DoF robot arm platform brings together Kawasaki Robotics' industrial robot engineering, Dexterity's Mech hardware, and Foresight World Model 英文名称为 *Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Warehouse Logistics*。 韩文名称为 *Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Warehouse Logistics*。
 
 ### Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Warehouse Logistics的工作原理与技术架构
 Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Warehouse Logistics的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -69,7 +69,7 @@ Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Wa
 - technology
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键technology之一，Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Warehouse Logistics在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键技术之一，Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Warehouse Logistics在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Kawasaki Robotics and Dexterity Expand Collaboration to Scale Physical AI for Warehouse Logistics](http://www.RoboticsTomorrow.com/news/2026/06/23/kawasaki-robotics-and-dexterity-expand-collaboration-to-scale-physical-ai-for-warehouse-logistics/26767)

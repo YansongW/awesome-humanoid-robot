@@ -8,42 +8,42 @@ names:
   zh: 'Robustness of Robotic Manipulation: Foundations and Frontiers'
   ko: 'Robustness of Robotic Manipulation: Foundations and Frontiers'
 summary:
-  en: "arXiv:2606.31494v1 Announce Type: new \nAbstract: Humans and animals exhibit remarkable robustness in physical manipulation,\
-    \ yet robots remain far behind. Progress toward human-level manipulation robustness is hindered by the absence of a unified\
-    \ and systematic understanding: different subfields frame robustness in distinct ways, often leaving the concept ambiguous\
-    \ and limiting deeper analysis as well as communication across research areas. This paper presents a systematic study\
-    \ of manipulation robustness. We begin with a formal definition, characterizing robustness as the degree to which a manipulation\
-    \ system can achieve its goal in the presence of uncertainty and variation. Building on this definition, we introduce\
-    \ general formulations of manipulation robustness from probabilistic and control-theoretic perspectives. We then synthesize\
-    \ the guiding principles and concrete mechanisms of manipulation robustness across perception, planning, control, policy\
-    \ learning, and hardware, illustrating each mechanism through representative works, including foundational and recent\
-    \ studies. In addition, we revisit existing metrics and evaluation methods for quantifying manipulation robustness. Finally,\
-    \ we distill broader lessons for designing robust manipulation systems and discuss open problems and future directions\
-    \ toward achieving human-level robustness in robotic manipulation."
-  zh: "arXiv:2606.31494v1 Announce Type: new \nAbstract: Humans and animals exhibit remarkable robustness in physical manipulation,\
-    \ yet robots remain far behind. Progress toward human-level manipulation robustness is hindered by the absence of a unified\
-    \ and systematic understanding: different subfields frame robustness in distinct ways, often leaving the concept ambiguous\
-    \ and limiting deeper analysis as well as communication across research areas. This paper presents a systematic study\
-    \ of manipulation robustness. We begin with a formal definition, characterizing robustness as the degree to which a manipulation\
-    \ system can achieve its goal in the presence of uncertainty and variation. Building on this definition, we introduce\
-    \ general formulations of manipulation robustness from probabilistic and control-theoretic perspectives. We then synthesize\
-    \ the guiding principles and concrete mechanisms of manipulation robustness across perception, planning, control, policy\
-    \ learning, and hardware, illustrating each mechanism through representative works, including foundational and recent\
-    \ studies. In addition, we revisit existing metrics and evaluation methods for quantifying manipulation robustness. Finally,\
-    \ we distill broader lessons for designing robust manipulation systems and discuss open problems and future directions\
-    \ toward achieving human-level robustness in robotic manipulation."
-  ko: "arXiv:2606.31494v1 Announce Type: new \nAbstract: Humans and animals exhibit remarkable robustness in physical manipulation,\
-    \ yet robots remain far behind. Progress toward human-level manipulation robustness is hindered by the absence of a unified\
-    \ and systematic understanding: different subfields frame robustness in distinct ways, often leaving the concept ambiguous\
-    \ and limiting deeper analysis as well as communication across research areas. This paper presents a systematic study\
-    \ of manipulation robustness. We begin with a formal definition, characterizing robustness as the degree to which a manipulation\
-    \ system can achieve its goal in the presence of uncertainty and variation. Building on this definition, we introduce\
-    \ general formulations of manipulation robustness from probabilistic and control-theoretic perspectives. We then synthesize\
-    \ the guiding principles and concrete mechanisms of manipulation robustness across perception, planning, control, policy\
-    \ learning, and hardware, illustrating each mechanism through representative works, including foundational and recent\
-    \ studies. In addition, we revisit existing metrics and evaluation methods for quantifying manipulation robustness. Finally,\
-    \ we distill broader lessons for designing robust manipulation systems and discuss open problems and future directions\
-    \ toward achieving human-level robustness in robotic manipulation."
+  en: 'arXiv:2606.31494v1 Announce Type: new Abstract: Humans and animals exhibit remarkable robustness in physical manipulation,
+    yet robots remain far behind. Progress toward human-level manipulation robustness is hindered by the absence of a unified
+    and systematic understanding: different subfields frame robustness in distinct ways, often leaving the concept ambiguous
+    and limiting deeper analysis as well as communication across research areas. This paper presents a systematic study of
+    manipulation robustness. We begin with a formal definition, characterizing robustness as the degree to which a manipulation
+    system can achieve its goal in the presence of uncertainty and variation. Building on this definition, we introduce general
+    formulations of manipulation robustness from probabilistic and control-theoretic perspectives. We then synthesize the
+    guiding principles and concrete mechanisms of manipulation robustness across perception, planning, control, policy learning,
+    and hardware, illustrating each mechanism through representative works, including foundational and recent studies. In
+    addition, we revisit existing metrics and evaluation methods for quantifying manipulation robustness. Finally, we distill
+    broader lessons for designing robust manipulation systems and discuss open problems and future directions toward achieving
+    human-level robustness in robotic manipulation.'
+  zh: 'arXiv:2606.31494v1 Announce Type: new Abstract: Humans and animals exhibit remarkable robustness in physical manipulation,
+    yet robots remain far behind. Progress toward human-level manipulation robustness is hindered by the absence of a unified
+    and systematic understanding: different subfields frame robustness in distinct ways, often leaving the concept ambiguous
+    and limiting deeper analysis as well as communication across research areas. This paper presents a systematic study of
+    manipulation robustness. We begin with a formal definition, characterizing robustness as the degree to which a manipulation
+    system can achieve its goal in the presence of uncertainty and variation. Building on this definition, we introduce general
+    formulations of manipulation robustness from probabilistic and control-theoretic perspectives. We then synthesize the
+    guiding principles and concrete mechanisms of manipulation robustness across perception, planning, control, policy learning,
+    and hardware, illustrating each mechanism through representative works, including foundational and recent studies. In
+    addition, we revisit existing metrics and evaluation methods for quantifying manipulation robustness. Finally, we distill
+    broader lessons for designing robust manipulation systems and discuss open problems and future directions toward achieving
+    human-level robustness in robotic manipulation.'
+  ko: 'arXiv:2606.31494v1 Announce Type: new Abstract: Humans and animals exhibit remarkable robustness in physical manipulation,
+    yet robots remain far behind. Progress toward human-level manipulation robustness is hindered by the absence of a unified
+    and systematic understanding: different subfields frame robustness in distinct ways, often leaving the concept ambiguous
+    and limiting deeper analysis as well as communication across research areas. This paper presents a systematic study of
+    manipulation robustness. We begin with a formal definition, characterizing robustness as the degree to which a manipulation
+    system can achieve its goal in the presence of uncertainty and variation. Building on this definition, we introduce general
+    formulations of manipulation robustness from probabilistic and control-theoretic perspectives. We then synthesize the
+    guiding principles and concrete mechanisms of manipulation robustness across perception, planning, control, policy learning,
+    and hardware, illustrating each mechanism through representative works, including foundational and recent studies. In
+    addition, we revisit existing metrics and evaluation methods for quantifying manipulation robustness. Finally, we distill
+    broader lessons for designing robust manipulation systems and discuss open problems and future directions toward achieving
+    human-level robustness in robotic manipulation.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

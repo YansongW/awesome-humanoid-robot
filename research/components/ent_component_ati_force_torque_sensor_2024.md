@@ -9,7 +9,7 @@ names:
   ko: ATI 힘/토크 센서
 summary:
   en: Wrist and ankle force/torque sensor for contact control and interaction.
-  zh: '核心内容 ## OnRobot HEX-E QC 六维力/力矩传感器 / OnRobot HEX-E QC 6-Axis Force/Torque Sensor'
+  zh: OnRobot HEX-E QC 六维力/力矩传感器 / OnRobot HEX-E QC 6-Axis Force/Torque Sensor
   ko: 접촉 제어 및 상호작용을 위한 손목 및 발목 힘/토크 센서.
 domains:
 - 02_components
@@ -45,7 +45,7 @@ sources:
 ---
 
 ## 概述
-ATI 力/力矩传感器是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
+ATI 力/力矩传感器是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## OnRobot HEX-E QC 六维力/力矩传感器 / OnRobot HEX-E QC 6-Axis Force/Torque Sensor

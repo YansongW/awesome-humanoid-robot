@@ -9,8 +9,7 @@ names:
   ko: Bill of Materials
 summary:
   en: Structured list of all parts, subassemblies, and raw materials required to build one humanoid robot unit.
-  zh: '核心内容 ### 物料清单的定义与定位 物料清单属于 **concept** 类型。 所属领域包括：03_manufacturing_processes, 06_design_engineering。 价值链层级：midstream,
-    upstream。 构建一台人形机器人所需的所有零件、子装配件和原材料的结构化清单。 英文名称为 *Bill of Materials*。 韩文名称为 *Bill of Materials*。'
+  zh: 构建一台人形机器人所需的所有零件、子装配件和原材料的结构化清单。
   ko: 한 대의 휨로봇을 제작하는 데 필요한 모든 부품, 하위 조립품 및 원자재의 구조화된 목록.
 domains:
 - 03_manufacturing_processes
@@ -50,7 +49,7 @@ sources:
 
 ## 核心内容
 ### 物料清单的定义与定位
-物料清单属于 **concept** 类型。 所属领域包括：03_manufacturing_processes, 06_design_engineering。 价值链层级：midstream, upstream。 构建一台人形机器人所需的所有零件、子装配件和原材料的结构化清单。 英文名称为 *Bill of Materials*。 韩文名称为 *Bill of Materials*。
+物料清单属于 **概念** 类型。 所属领域包括：制造工艺, 设计工程。 价值链层级：中游, upstream。 构建一台人形机器人所需的所有零件、子装配件和原材料的结构化清单。 英文名称为 *Bill of Materials*。 韩文名称为 *Bill of Materials*。
 
 ### 物料清单的关键维度
 理解物料清单需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -71,7 +70,7 @@ sources:
 - supply_chain
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键concept之一，物料清单在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键概念之一，物料清单在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Bill of Materials](https://en.wikipedia.org/wiki/Bill_of_materials)

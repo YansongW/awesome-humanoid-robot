@@ -45,7 +45,7 @@ Pilot program with Salamanca City Central School District marks major step for e
 
 ## 核心内容
 ### Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District的定义与定位
-Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District属于 **report** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 Pilot program with Salamanca City Central School District marks major step for education technology 英文名称为 *Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District*。 韩文名称为 *Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District*。
+Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District属于 **报告** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 Pilot program with Salamanca City Central School District marks major step for education technology 英文名称为 *Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District*。 韩文名称为 *Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District*。
 
 ### Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District的关键信息
 该报告记录了人形机器人产业中的最新动态、事件或观点，可作为观察市场与技术演化的参考。
@@ -66,7 +66,7 @@ Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. Schoo
 - robotics
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键report之一，Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键报告之一，Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Realbotix to Deploy First Humanoid Robot and AI Teachers Assistant in U.S. School District](http://www.RoboticsTomorrow.com/news/2026/06/24/realbotix-to-deploy-first-humanoid-robot-and-ai-teachers-assistant-in-us-school-district/26774)

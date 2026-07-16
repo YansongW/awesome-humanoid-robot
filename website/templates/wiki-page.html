@@ -21,11 +21,37 @@
     <span class="breadcrumb-current">{{ page.title }}</span>
   </nav>
 
+  {% if untranslated and ui.untranslated_notice %}
+  <p class="untranslated-notice">{{ ui.untranslated_notice }}</p>
+  {% endif %}
+
+  <div class="content-with-toc">
   <article class="wiki-page">
     <div class="wiki-body">
       {{ page.body_html | safe }}
     </div>
+
+    {% if page.prev_page or page.next_page %}
+    <nav class="wiki-prevnext" aria-label="{{ ui.toc_title }}">
+      {% if page.prev_page %}
+      <a class="prev" href="{{ bp }}/{{ page.prev_page.url }}/">← {{ ui.prev_page }}<span>{{ page.prev_page.title }}</span></a>
+      {% else %}<span></span>{% endif %}
+      {% if page.next_page %}
+      <a class="next" href="{{ bp }}/{{ page.next_page.url }}/">{{ ui.next_page }} →<span>{{ page.next_page.title }}</span></a>
+      {% else %}<span></span>{% endif %}
+    </nav>
+    {% endif %}
   </article>
+
+  {% if page.toc_html %}
+  <aside class="page-toc" aria-label="{{ ui.toc_title }}">
+    <details open>
+      <summary>{{ ui.toc_title }}</summary>
+      <nav class="toc-nav">{{ page.toc_html | safe }}</nav>
+    </details>
+  </aside>
+  {% endif %}
+  </div>
 </div>
 {% endblock %}
 

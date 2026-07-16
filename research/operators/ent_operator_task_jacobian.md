@@ -10,8 +10,7 @@ names:
 summary:
   en: The matrix that maps joint-space velocities and accelerations to the velocity/acceleration of a task coordinate in operational
     space.
-  zh: '核心内容 ### 任务 Jacobian的定义与定位 任务 Jacobian属于 **operator** 类型。 所属领域包括：07_ai_models_algorithms, 00_foundations。 价值链层级：intelligence,
-    foundations。 将关节空间速度和加速度映射到操作空间任务坐标速度/加速度的矩阵。 英文名称为 *Task Jacobian*。 韩文名称为 *작업 Jacobian*。'
+  zh: 将关节空间速度和加速度映射到操作空间任务坐标速度/加速度的矩阵。
   ko: 관절 공간 속도와 가속도를 작업 공간의 작업 좌표 속도/가속도로 매핑하는 행렬이다.
 domains:
 - 07_ai_models_algorithms
@@ -56,7 +55,7 @@ related_entities:
 
 ## 核心内容
 ### 任务 Jacobian的定义与定位
-任务 Jacobian属于 **operator** 类型。 所属领域包括：07_ai_models_algorithms, 00_foundations。 价值链层级：intelligence, foundations。 将关节空间速度和加速度映射到操作空间任务坐标速度/加速度的矩阵。 英文名称为 *Task Jacobian*。 韩文名称为 *작업 Jacobian*。
+任务 Jacobian属于 **运营商** 类型。 所属领域包括：AI 模型与算法, 基础学科。 价值链层级：智能层, foundations。 将关节空间速度和加速度映射到操作空间任务坐标速度/加速度的矩阵。 英文名称为 *Task Jacobian*。 韩文名称为 *작업 Jacobian*。
 
 ### 任务 Jacobian的关键维度
 理解任务 Jacobian需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -77,7 +76,7 @@ related_entities:
 - humanoid_control
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键operator之一，任务 Jacobian在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键运营商之一，任务 Jacobian在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Robotics, Vision and Control](https://petercorke.com/rvc/home/)

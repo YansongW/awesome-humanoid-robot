@@ -9,7 +9,7 @@ names:
   ko: 利益相关方需求采集
 summary:
   en: Stakeholder list, demand pool, prioritization
-  zh: '**设计思考逻辑**：识别显性与隐性需求；区分 Must-have / Differentiator / Exciter'
+  zh: 设计思考逻辑：识别显性与隐性需求；区分 Must-have / Differentiator / Exciter
   ko: 利益相关方清单、需求池、优先级排序
 domains:
 - 06_design_engineering

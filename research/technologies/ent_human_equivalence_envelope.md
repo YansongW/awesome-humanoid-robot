@@ -10,8 +10,7 @@ names:
 summary:
   en: A per-joint operating-requirement definition that requires a robot to meet human torque and power simultaneously at
     the same joint angle and angular rate within task-specific bands.
-  zh: '核心内容 ### 人等效包络的定义与定位 人等效包络属于 **technology** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets,
-    midstream。 一种单关节运行需求定义，要求机器人在任务特定区间内，于相同关节角度和角速度下同时达到人类的扭矩和功率。 英文名称为 *Human-Equivalence Envelope*。 韩文名称为 *인간 등가 영역*。'
+  zh: 一种单关节运行需求定义，要求机器人在任务特定区间内，于相同关节角度和角速度下同时达到人类的扭矩和功率。
   ko: 작업별 구간에서 동일한 관절 각도와 각속도에서 인간의 토크와 전력을 동시에 충족해야 하는 관절별 작동 요구사항 정의입니다.
 domains:
 - 10_evaluation_benchmarks
@@ -50,7 +49,7 @@ theoretical_depth:
 
 ## 核心内容
 ### 人等效包络的定义与定位
-人等效包络属于 **technology** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets, midstream。 一种单关节运行需求定义，要求机器人在任务特定区间内，于相同关节角度和角速度下同时达到人类的扭矩和功率。 英文名称为 *Human-Equivalence Envelope*。 韩文名称为 *인간 등가 영역*。
+人等效包络属于 **技术** 类型。 所属领域包括：评测基准, 设计工程。 价值链层级：验证与市场层, midstream。 一种单关节运行需求定义，要求机器人在任务特定区间内，于相同关节角度和角速度下同时达到人类的扭矩和功率。 英文名称为 *Human-Equivalence Envelope*。 韩文名称为 *인간 등가 영역*。
 
 ### 人等效包络的工作原理与技术架构
 人等效包络的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -73,7 +72,7 @@ theoretical_depth:
 - biomechanics
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键technology之一，人等效包络在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键技术之一，人等效包络在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Human-Level Actuation for Humanoids](https://arxiv.org/abs/2511.06796)

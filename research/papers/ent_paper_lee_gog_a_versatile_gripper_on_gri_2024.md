@@ -10,11 +10,11 @@ names:
 summary:
   en: Proposes G.O.G., a gripper-on-gripper end effector that enables bimanual cloth manipulation with a single robotic arm
     by combining a width-controlled outer gripper with two variable-friction finger grippers.
-  zh: 'The manipulation of garments poses research challenges due to their deformable nature and the extensive variability
+  zh: The manipulation of garments poses research challenges due to their deformable nature and the extensive variability
     in shapes and sizes. Despite numerous attempts by researchers to address these via approaches involving robot perception
     and control, there has been a relatively limited interest in resolving it through the co-development of robot hardware.
     Consequently, the majority of studies employ off-the-shelf grippers in conjunction with dual robot arms to enable bimanual
-    manipulation and high dexterity. However, this dual-arm system increases the overall cost of the robotic system as well '
+    manipulation and high dexterity. However, this dual-arm system increases the overall cost of the robotic system as well
   ko: 폭 조절 가능한 외부 그리퍼와 두 개의 가변 마찰 손가락 그리퍼를 결합하여 단일 로봇 팔로 양손 천 조작을 가능하게 하는 G.O.G. 엔드 이펙터를 제안한다.
 domains:
 - 02_components

@@ -8,54 +8,54 @@ names:
   zh: 'OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation'
   ko: 'OopsieVerse: A Safety Benchmark with Damage-Aware Simulation for Robot Manipulation'
 summary:
-  en: "arXiv:2606.31993v1 Announce Type: new \nAbstract: While robotic manipulation capabilities have advanced rapidly, physical\
-    \ safety remains a major barrier to deploying household robots: task success is insufficient if the robot damages itself\
-    \ or its surroundings. Simulation offers a harm-free alternative to costly and dangerous real-world training and evaluation,\
-    \ yet existing simulators lack general mechanisms to detect, quantify, and represent damage. To address this gap, we introduce\
-    \ OOPSIEVERSE, a unified simulation framework and benchmark for damage-aware household manipulation. OOPSIEVERSE provides\
-    \ damage as an explicit, physically-grounded, and taskagnostic signal by converting sources such as contact forces, temperature\
-    \ changes, and liquid interactions into corresponding mechanical, thermal or fluid damage. OOPSIEVERSE comprises two core\
-    \ elements: (1) DAMAGESIM, a simulator-agnostic framework for detecting and quantifying damage during navigation and manipulation,\
-    \ and (2) a suite of household tasks designed to evaluate common damage modes and distinguish between task completion\
-    \ and safe execution. We demonstrate the generality of our framework by instantiating DAMAGESIM in two simulators with\
-    \ different physics backends, OmniGibson (Nvidia Omniverse) and RoboCasa (MuJoCo). We further showcase the utility of\
-    \ OOPSIEVERSE across multiple use cases, including (1) guiding safer demonstration collection via real-time damage feedback,\
-    \ (2) learning safer manipulation policies through damage-conditioned imitation learning and reinforcement learning, (3)\
-    \ benchmarking the safety of state-of-the-art Vision Language Action policies, and (4) improving real-world safety of\
-    \ sim-to-real transferred policies. Together, our results highlight the potential of OOPSIEVERSE as an open-source foundation\
-    \ for systematic, scalable research on safe robot manipulation. For code and more information, please refer to https://robin-lab.cs.utexas.edu/oopsieverse/"
-  zh: "arXiv:2606.31993v1 Announce Type: new \nAbstract: While robotic manipulation capabilities have advanced rapidly, physical\
-    \ safety remains a major barrier to deploying household robots: task success is insufficient if the robot damages itself\
-    \ or its surroundings. Simulation offers a harm-free alternative to costly and dangerous real-world training and evaluation,\
-    \ yet existing simulators lack general mechanisms to detect, quantify, and represent damage. To address this gap, we introduce\
-    \ OOPSIEVERSE, a unified simulation framework and benchmark for damage-aware household manipulation. OOPSIEVERSE provides\
-    \ damage as an explicit, physically-grounded, and taskagnostic signal by converting sources such as contact forces, temperature\
-    \ changes, and liquid interactions into corresponding mechanical, thermal or fluid damage. OOPSIEVERSE comprises two core\
-    \ elements: (1) DAMAGESIM, a simulator-agnostic framework for detecting and quantifying damage during navigation and manipulation,\
-    \ and (2) a suite of household tasks designed to evaluate common damage modes and distinguish between task completion\
-    \ and safe execution. We demonstrate the generality of our framework by instantiating DAMAGESIM in two simulators with\
-    \ different physics backends, OmniGibson (Nvidia Omniverse) and RoboCasa (MuJoCo). We further showcase the utility of\
-    \ OOPSIEVERSE across multiple use cases, including (1) guiding safer demonstration collection via real-time damage feedback,\
-    \ (2) learning safer manipulation policies through damage-conditioned imitation learning and reinforcement learning, (3)\
-    \ benchmarking the safety of state-of-the-art Vision Language Action policies, and (4) improving real-world safety of\
-    \ sim-to-real transferred policies. Together, our results highlight the potential of OOPSIEVERSE as an open-source foundation\
-    \ for systematic, scalable research on safe robot manipulation. For code and more information, please refer to https://robin-lab.cs.utexas.edu/oopsieverse/"
-  ko: "arXiv:2606.31993v1 Announce Type: new \nAbstract: While robotic manipulation capabilities have advanced rapidly, physical\
-    \ safety remains a major barrier to deploying household robots: task success is insufficient if the robot damages itself\
-    \ or its surroundings. Simulation offers a harm-free alternative to costly and dangerous real-world training and evaluation,\
-    \ yet existing simulators lack general mechanisms to detect, quantify, and represent damage. To address this gap, we introduce\
-    \ OOPSIEVERSE, a unified simulation framework and benchmark for damage-aware household manipulation. OOPSIEVERSE provides\
-    \ damage as an explicit, physically-grounded, and taskagnostic signal by converting sources such as contact forces, temperature\
-    \ changes, and liquid interactions into corresponding mechanical, thermal or fluid damage. OOPSIEVERSE comprises two core\
-    \ elements: (1) DAMAGESIM, a simulator-agnostic framework for detecting and quantifying damage during navigation and manipulation,\
-    \ and (2) a suite of household tasks designed to evaluate common damage modes and distinguish between task completion\
-    \ and safe execution. We demonstrate the generality of our framework by instantiating DAMAGESIM in two simulators with\
-    \ different physics backends, OmniGibson (Nvidia Omniverse) and RoboCasa (MuJoCo). We further showcase the utility of\
-    \ OOPSIEVERSE across multiple use cases, including (1) guiding safer demonstration collection via real-time damage feedback,\
-    \ (2) learning safer manipulation policies through damage-conditioned imitation learning and reinforcement learning, (3)\
-    \ benchmarking the safety of state-of-the-art Vision Language Action policies, and (4) improving real-world safety of\
-    \ sim-to-real transferred policies. Together, our results highlight the potential of OOPSIEVERSE as an open-source foundation\
-    \ for systematic, scalable research on safe robot manipulation. For code and more information, please refer to https://robin-lab.cs.utexas.edu/oopsieverse/"
+  en: 'arXiv:2606.31993v1 Announce Type: new Abstract: While robotic manipulation capabilities have advanced rapidly, physical
+    safety remains a major barrier to deploying household robots: task success is insufficient if the robot damages itself
+    or its surroundings. Simulation offers a harm-free alternative to costly and dangerous real-world training and evaluation,
+    yet existing simulators lack general mechanisms to detect, quantify, and represent damage. To address this gap, we introduce
+    OOPSIEVERSE, a unified simulation framework and benchmark for damage-aware household manipulation. OOPSIEVERSE provides
+    damage as an explicit, physically-grounded, and taskagnostic signal by converting sources such as contact forces, temperature
+    changes, and liquid interactions into corresponding mechanical, thermal or fluid damage. OOPSIEVERSE comprises two core
+    elements: (1) DAMAGESIM, a simulator-agnostic framework for detecting and quantifying damage during navigation and manipulation,
+    and (2) a suite of household tasks designed to evaluate common damage modes and distinguish between task completion and
+    safe execution. We demonstrate the generality of our framework by instantiating DAMAGESIM in two simulators with different
+    physics backends, OmniGibson (Nvidia Omniverse) and RoboCasa (MuJoCo). We further showcase the utility of OOPSIEVERSE
+    across multiple use cases, including (1) guiding safer demonstration collection via real-time damage feedback, (2) learning
+    safer manipulation policies through damage-conditioned imitation learning and reinforcement learning, (3) benchmarking
+    the safety of state-of-the-art Vision Language Action policies, and (4) improving real-world safety of sim-to-real transferred
+    policies. Together, our results highlight the potential of OOPSIEVERSE as an open-source foundation for systematic, scalable
+    research on safe robot manipulation. For code and more information, please refer to https://robin-lab.cs.utexas.edu/oopsieverse/'
+  zh: 'arXiv:2606.31993v1 Announce Type: new Abstract: While robotic manipulation capabilities have advanced rapidly, physical
+    safety remains a major barrier to deploying household robots: task success is insufficient if the robot damages itself
+    or its surroundings. Simulation offers a harm-free alternative to costly and dangerous real-world training and evaluation,
+    yet existing simulators lack general mechanisms to detect, quantify, and represent damage. To address this gap, we introduce
+    OOPSIEVERSE, a unified simulation framework and benchmark for damage-aware household manipulation. OOPSIEVERSE provides
+    damage as an explicit, physically-grounded, and taskagnostic signal by converting sources such as contact forces, temperature
+    changes, and liquid interactions into corresponding mechanical, thermal or fluid damage. OOPSIEVERSE comprises two core
+    elements: (1) DAMAGESIM, a simulator-agnostic framework for detecting and quantifying damage during navigation and manipulation,
+    and (2) a suite of household tasks designed to evaluate common damage modes and distinguish between task completion and
+    safe execution. We demonstrate the generality of our framework by instantiating DAMAGESIM in two simulators with different
+    physics backends, OmniGibson (Nvidia Omniverse) and RoboCasa (MuJoCo). We further showcase the utility of OOPSIEVERSE
+    across multiple use cases, including (1) guiding safer demonstration collection via real-time damage feedback, (2) learning
+    safer manipulation policies through damage-conditioned imitation learning and reinforcement learning, (3) benchmarking
+    the safety of state-of-the-art Vision Language Action policies, and (4) improving real-world safety of sim-to-real transferred
+    policies. Together, our results highlight the potential of OOPSIEVERSE as an open-source foundation for systematic, scalable
+    research on safe robot manipulation. For code and more information, please refer to https://robin-lab.cs.utexas.edu/oopsieverse/'
+  ko: 'arXiv:2606.31993v1 Announce Type: new Abstract: While robotic manipulation capabilities have advanced rapidly, physical
+    safety remains a major barrier to deploying household robots: task success is insufficient if the robot damages itself
+    or its surroundings. Simulation offers a harm-free alternative to costly and dangerous real-world training and evaluation,
+    yet existing simulators lack general mechanisms to detect, quantify, and represent damage. To address this gap, we introduce
+    OOPSIEVERSE, a unified simulation framework and benchmark for damage-aware household manipulation. OOPSIEVERSE provides
+    damage as an explicit, physically-grounded, and taskagnostic signal by converting sources such as contact forces, temperature
+    changes, and liquid interactions into corresponding mechanical, thermal or fluid damage. OOPSIEVERSE comprises two core
+    elements: (1) DAMAGESIM, a simulator-agnostic framework for detecting and quantifying damage during navigation and manipulation,
+    and (2) a suite of household tasks designed to evaluate common damage modes and distinguish between task completion and
+    safe execution. We demonstrate the generality of our framework by instantiating DAMAGESIM in two simulators with different
+    physics backends, OmniGibson (Nvidia Omniverse) and RoboCasa (MuJoCo). We further showcase the utility of OOPSIEVERSE
+    across multiple use cases, including (1) guiding safer demonstration collection via real-time damage feedback, (2) learning
+    safer manipulation policies through damage-conditioned imitation learning and reinforcement learning, (3) benchmarking
+    the safety of state-of-the-art Vision Language Action policies, and (4) improving real-world safety of sim-to-real transferred
+    policies. Together, our results highlight the potential of OOPSIEVERSE as an open-source foundation for systematic, scalable
+    research on safe robot manipulation. For code and more information, please refer to https://robin-lab.cs.utexas.edu/oopsieverse/'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

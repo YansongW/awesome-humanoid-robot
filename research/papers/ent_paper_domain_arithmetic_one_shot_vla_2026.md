@@ -8,36 +8,36 @@ names:
   zh: 'Domain Arithmetic: One-Shot VLA Adaptation under Environmental Shifts'
   ko: 'Domain Arithmetic: One-Shot VLA Adaptation under Environmental Shifts'
 summary:
-  en: "arXiv:2607.00666v1 Announce Type: new \nAbstract: Vision-Language-Action (VLA) models often fail to perform the same\
-    \ learned tasks under environmental shifts, such as changes in camera pose and shifts to a different but similar robot\
-    \ (e.g., from Panda to UR5e). Adapting these models to the shifted environment (i.e., target domain) often requires training\
-    \ on multiple demonstrations for each task, which are costly to collect. To reduce the burden of data curation and training,\
-    \ we propose an analogy-based method that adapts VLA models under environmental shifts through weight vector arithmetic\
-    \ with domain-specific information addition, named Domain ARiThmetic (DART). Unlike prior approaches, DART requires collecting\
-    \ only a single demonstration, enabling efficient adaptation. To accurately isolate domain-specific information for addition,\
-    \ DART performs subspace alignment between singular components in weight vectors to filter out noisy components. In both\
-    \ simulated and real-world experiments, DART outperforms existing VLA adaptation methods in one-shot scenarios across\
-    \ diverse visual and embodiment shifts. Code is available at https://github.com/snumprlab/dart."
-  zh: "arXiv:2607.00666v1 Announce Type: new \nAbstract: Vision-Language-Action (VLA) models often fail to perform the same\
-    \ learned tasks under environmental shifts, such as changes in camera pose and shifts to a different but similar robot\
-    \ (e.g., from Panda to UR5e). Adapting these models to the shifted environment (i.e., target domain) often requires training\
-    \ on multiple demonstrations for each task, which are costly to collect. To reduce the burden of data curation and training,\
-    \ we propose an analogy-based method that adapts VLA models under environmental shifts through weight vector arithmetic\
-    \ with domain-specific information addition, named Domain ARiThmetic (DART). Unlike prior approaches, DART requires collecting\
-    \ only a single demonstration, enabling efficient adaptation. To accurately isolate domain-specific information for addition,\
-    \ DART performs subspace alignment between singular components in weight vectors to filter out noisy components. In both\
-    \ simulated and real-world experiments, DART outperforms existing VLA adaptation methods in one-shot scenarios across\
-    \ diverse visual and embodiment shifts. Code is available at https://github.com/snumprlab/dart."
-  ko: "arXiv:2607.00666v1 Announce Type: new \nAbstract: Vision-Language-Action (VLA) models often fail to perform the same\
-    \ learned tasks under environmental shifts, such as changes in camera pose and shifts to a different but similar robot\
-    \ (e.g., from Panda to UR5e). Adapting these models to the shifted environment (i.e., target domain) often requires training\
-    \ on multiple demonstrations for each task, which are costly to collect. To reduce the burden of data curation and training,\
-    \ we propose an analogy-based method that adapts VLA models under environmental shifts through weight vector arithmetic\
-    \ with domain-specific information addition, named Domain ARiThmetic (DART). Unlike prior approaches, DART requires collecting\
-    \ only a single demonstration, enabling efficient adaptation. To accurately isolate domain-specific information for addition,\
-    \ DART performs subspace alignment between singular components in weight vectors to filter out noisy components. In both\
-    \ simulated and real-world experiments, DART outperforms existing VLA adaptation methods in one-shot scenarios across\
-    \ diverse visual and embodiment shifts. Code is available at https://github.com/snumprlab/dart."
+  en: 'arXiv:2607.00666v1 Announce Type: new Abstract: Vision-Language-Action (VLA) models often fail to perform the same
+    learned tasks under environmental shifts, such as changes in camera pose and shifts to a different but similar robot (e.g.,
+    from Panda to UR5e). Adapting these models to the shifted environment (i.e., target domain) often requires training on
+    multiple demonstrations for each task, which are costly to collect. To reduce the burden of data curation and training,
+    we propose an analogy-based method that adapts VLA models under environmental shifts through weight vector arithmetic
+    with domain-specific information addition, named Domain ARiThmetic (DART). Unlike prior approaches, DART requires collecting
+    only a single demonstration, enabling efficient adaptation. To accurately isolate domain-specific information for addition,
+    DART performs subspace alignment between singular components in weight vectors to filter out noisy components. In both
+    simulated and real-world experiments, DART outperforms existing VLA adaptation methods in one-shot scenarios across diverse
+    visual and embodiment shifts. Code is available at https://github.com/snumprlab/dart.'
+  zh: 'arXiv:2607.00666v1 Announce Type: new Abstract: Vision-Language-Action (VLA) models often fail to perform the same
+    learned tasks under environmental shifts, such as changes in camera pose and shifts to a different but similar robot (e.g.,
+    from Panda to UR5e). Adapting these models to the shifted environment (i.e., target domain) often requires training on
+    multiple demonstrations for each task, which are costly to collect. To reduce the burden of data curation and training,
+    we propose an analogy-based method that adapts VLA models under environmental shifts through weight vector arithmetic
+    with domain-specific information addition, named Domain ARiThmetic (DART). Unlike prior approaches, DART requires collecting
+    only a single demonstration, enabling efficient adaptation. To accurately isolate domain-specific information for addition,
+    DART performs subspace alignment between singular components in weight vectors to filter out noisy components. In both
+    simulated and real-world experiments, DART outperforms existing VLA adaptation methods in one-shot scenarios across diverse
+    visual and embodiment shifts. Code is available at https://github.com/snumprlab/dart.'
+  ko: 'arXiv:2607.00666v1 Announce Type: new Abstract: Vision-Language-Action (VLA) models often fail to perform the same
+    learned tasks under environmental shifts, such as changes in camera pose and shifts to a different but similar robot (e.g.,
+    from Panda to UR5e). Adapting these models to the shifted environment (i.e., target domain) often requires training on
+    multiple demonstrations for each task, which are costly to collect. To reduce the burden of data curation and training,
+    we propose an analogy-based method that adapts VLA models under environmental shifts through weight vector arithmetic
+    with domain-specific information addition, named Domain ARiThmetic (DART). Unlike prior approaches, DART requires collecting
+    only a single demonstration, enabling efficient adaptation. To accurately isolate domain-specific information for addition,
+    DART performs subspace alignment between singular components in weight vectors to filter out noisy components. In both
+    simulated and real-world experiments, DART outperforms existing VLA adaptation methods in one-shot scenarios across diverse
+    visual and embodiment shifts. Code is available at https://github.com/snumprlab/dart.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

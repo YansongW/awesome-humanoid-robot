@@ -10,8 +10,8 @@ names:
 summary:
   en: An international standard for functional safety of electrical/electronic/programmable electronic safety-related systems,
     foundational for industrial and robot safety.
-  zh: 核心内容 人形机器人在人机共融环境中运行，其安全相关控制系统必须满足**功能安全（functional safety）**要求：当发生故障时，系统仍能将机器人带入安全状态。功能安全等级通常用 **IEC 61508 的 SIL（Safety
-    Integrity Level）** 或 **ISO 13849 的 PL（Performance Level）** 来量化[37][38]。
+  zh: 人形机器人在人机共融环境中运行，其安全相关控制系统必须满足功能安全（functional safety）要求：当发生故障时，系统仍能将机器人带入安全状态。功能安全等级通常用 IEC 61508 的 SIL（Safety Integrity
+    Level） 或 ISO 13849 的 PL（Performance Level） 来量化[37][38]。
   ko: 전기·전자·프로그래머블 전자 안전 관련 시스템의 기능 안전에 관한 국제 표준.
 domains:
 - 12_policy_regulation_ethics
@@ -40,7 +40,7 @@ sources:
 ---
 
 ## 概述
-IEC 61508是人形机器人领域的重要standard。以下内容整理自项目 Wiki，供深入查阅。
+IEC 61508是人形机器人领域的重要标准。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 人形机器人在人机共融环境中运行，其安全相关控制系统必须满足**功能安全（functional safety）**要求：当发生故障时，系统仍能将机器人带入安全状态。功能安全等级通常用 **IEC 61508 的 SIL（Safety Integrity Level）** 或 **ISO 13849 的 PL（Performance Level）** 来量化[37][38]。

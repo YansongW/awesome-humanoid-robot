@@ -57,7 +57,7 @@
     </div>
     <div class="domain-grid">
       {% for d in domains %}
-      <a class="domain-card" href="{{ bp }}/search/?q={{ d | urlencode }}" style="--domain-color: {{ domain_colors[d] }}">
+      <a class="domain-card" href="{{ bp }}/search/?domain={{ d | urlencode }}" style="--domain-color: {{ domain_colors[d] }}">
         <span class="domain-name">{{ domain_label(d, lang) }}</span>
         <span class="domain-arrow">→</span>
       </a>
@@ -73,7 +73,7 @@
     </div>
     <div class="type-cloud">
       {% for t in types %}
-      <a class="type-tag" href="{{ bp }}/search/?q={{ t | urlencode }}">{{ t | type_label(lang) }}</a>
+      <a class="type-tag" href="{{ bp }}/types/{{ t }}/">{{ t | type_label(lang) }}</a>
       {% endfor %}
     </div>
   </div>

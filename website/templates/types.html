@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+{% set bp = '' if lang == 'zh' else '/' + lang %}
+<div class="container">
+  <nav class="breadcrumb" aria-label="{{ ui.breadcrumb_aria_label }}">
+    <a href="{{ bp }}/">{{ ui.nav_home }}</a>
+    <span>/</span>
+    <span class="breadcrumb-current">{{ type_name | type_label(lang) }}</span>
+  </nav>
+
+  <header class="types-header">
+    <div class="entry-type-badge">{{ type_name | type_label(lang) }}</div>
+    <p class="types-count">{{ ui.entries_of_type.format(count=entries | length) }}</p>
+  </header>
+
+  <div class="entry-grid">
+    {% for entry in entries %}
+    <a class="entry-card" href="{{ bp }}/{{ entry.url }}">
+      <span class="entry-type">{{ entry.type | type_label(lang) }}</span>
+      <h3>{{ entry.name }}</h3>
+      <p>{{ entry.summary | plain_summary(120) }}</p>
+      <span class="entry-meta">{{ entry.domains | map('domain_label', lang) | reject('equalto', '') | join(', ') }}</span>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

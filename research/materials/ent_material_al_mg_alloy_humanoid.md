@@ -10,7 +10,7 @@ names:
 summary:
   en: A structural lightweighting material system combining high-strength aluminum alloys and magnesium alloys, widely used
     in humanoid robot frames, joints, and shells to reduce weight while maintaining rigidity.
-  zh: '## 概述 一种将高强度铝合金与镁合金结合的轻量化结构材料体系，广泛用于人形机器人框架、关节和外壳，在保持刚度的同时减轻重量。'
+  zh: 概述 一种将高强度铝合金与镁合金结合的轻量化结构材料体系，广泛用于人形机器人框架、关节和外壳，在保持刚度的同时减轻重量。
   ko: 고강도 알루미늄 합금과 마그네슘 합금을 결합한 구조 경량화 재료 시스템으로, 휴로이드 로봇의 프레임, 관절, 외피에 무게를 줄이면서 강성을 유지하기 위해 널리 사용됨.
 domains:
 - 01_raw_materials
@@ -55,7 +55,7 @@ theoretical_depth:
 
 ## 核心内容
 ### 人形机器人轻量化结构用铝镁合金的定义与定位
-人形机器人轻量化结构用铝镁合金属于 **material** 类型。 所属领域包括：01_raw_materials, 02_components。 价值链层级：upstream。 一种将高强度铝合金与镁合金结合的轻量化结构材料体系，广泛用于人形机器人框架、关节和外壳，在保持刚度的同时减轻重量。 英文名称为 *Aluminum-Magnesium Alloy for Humanoid Robot Lightweight Structure*。 韩文名称为 *휴로이드 로봇 경량 구조용 알루미늄-마그네슘 합금*。
+人形机器人轻量化结构用铝镁合金属于 **材料** 类型。 所属领域包括：原材料, 零部件。 价值链层级：上游。 一种将高强度铝合金与镁合金结合的轻量化结构材料体系，广泛用于人形机器人框架、关节和外壳，在保持刚度的同时减轻重量。 英文名称为 *Aluminum-Magnesium Alloy for Humanoid Robot Lightweight Structure*。 韩文名称为 *휴로이드 로봇 경량 구조용 알루미늄-마그네슘 합금*。
 
 ### 人形机器人轻量化结构用铝镁合金的关键维度
 理解人形机器人轻量化结构用铝镁合金需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -77,7 +77,7 @@ theoretical_depth:
 - humanoid_robot
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键material之一，人形机器人轻量化结构用铝镁合金在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键材料之一，人形机器人轻量化结构用铝镁合金在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Inside a Robot's Bones and Skin: How Advanced Materials Enable Stronger and Lighter Robots](https://www.lft-g.com/blog/inside-a-robot-s-bones-and-skin-how-advanced-materials-enable-stronger-and-lighter-robots_b282)

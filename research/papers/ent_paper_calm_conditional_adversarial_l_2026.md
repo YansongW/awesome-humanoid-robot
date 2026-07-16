@@ -9,7 +9,7 @@ names:
   ko: 'CALM: Conditional Adversarial Latent Models for Directable Virtual Characters'
 summary:
   en: 'CALM: Conditional Adversarial Latent Models for Directory Virtual Characters is a paper on skill sets for humanoid
-    robots.  Conditional adversarial latent variable model: controllable virtual characters.'
+    robots. Conditional adversarial latent variable model: controllable virtual characters.'
   zh: 'CALM: Conditional Adversarial Latent Models for Directable Virtual Characters is a paper on 技能组合 for humanoid robotics.
     条件对抗潜变量模型：可控虚拟角色.'
   ko: 'CALM: Conditional Adversarial Latent Models for Directable Virtual Characters is a paper on 技能组合 for humanoid robotics.

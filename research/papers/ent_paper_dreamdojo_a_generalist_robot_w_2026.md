@@ -10,13 +10,13 @@ names:
 summary:
   en: 'DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos is a knowledge node related to paper in the
     humanoid robot value chain.'
-  zh: 'Being able to simulate the outcomes of actions in varied environments will revolutionize the development of generalist
+  zh: Being able to simulate the outcomes of actions in varied environments will revolutionize the development of generalist
     agents at scale. However, modeling these world dynamics, especially for dexterous robotics tasks, poses significant challenges
     due to limited data coverage and scarce action labels. As an endeavor towards this end, we introduce DreamDojo, a foundation
     world model that learns diverse interactions and dexterous controls from 44k hours of egocentric human videos. Our data
     mixture represents the largest video dataset to date for world model pretraining, spanning a wide range of daily scenarios
     with diverse objects and skills. To address the scarcity of action labels, we introduce continuous latent actions as unified
-    proxy actions, enhancing interaction knowledge transfer from '
+    proxy actions, enhancing interaction knowledge transfer from
   ko: 'DreamDojo: A Generalist Robot World Model from Large-Scale Human Videos is a knowledge node related to paper in the
     humanoid robot value chain.'
 domains:

@@ -54,7 +54,7 @@ theoretical_depth:
 
 
 ## 概述
-Unitree Dex3-1 灵巧手是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
+Unitree Dex3-1 灵巧手是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## 宇树科技 / Unitree Robotics

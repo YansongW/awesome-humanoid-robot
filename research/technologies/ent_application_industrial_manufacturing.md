@@ -10,7 +10,7 @@ names:
 summary:
   en: The application of humanoid robots to tasks such as assembly, machine tending, inspection, and material handling in
     factories.
-  zh: '## 概述 工业制造是人形机器人领域的重要application_scenario。以下内容整理自项目 Wiki，供深入查阅。'
+  zh: 概述 工业制造是人形机器人领域的重要application_scenario。以下内容整理自项目 Wiki，供深入查阅。
   ko: 휴로봇을 공장의 조립·기계 관리·검사·자재 취급 등에 적용하는 분야.
 domains:
 - 11_applications_markets
@@ -39,7 +39,7 @@ sources:
 ---
 
 ## 概述
-工业制造是人形机器人领域的重要application_scenario。以下内容整理自项目 Wiki，供深入查阅。
+工业制造是人形机器人领域的重要应用场景。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 人形机器人计算、电源与热管理子系统的供应链高度全球化，同时受到半导体制造、电池材料和热界面材料等上游环节制约。

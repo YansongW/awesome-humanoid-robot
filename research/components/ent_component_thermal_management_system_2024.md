@@ -10,8 +10,7 @@ names:
 summary:
   en: Heatsinks, heat pipes, fans, and liquid cooling used to keep compute, power electronics, and actuators within safe operating
     temperatures.
-  zh: '核心内容 ### 热管理系统的定义与定位 热管理系统属于 **component** 类型。 所属领域包括：02_components, 06_design_engineering。 价值链层级：midstream, upstream。
-    使计算、电力电子和执行器保持在安全工作温度范围内的散热器、热管、风扇和液冷。 英文名称为 *Thermal Management System*。 韩文名称为 *Thermal Management System*。'
+  zh: 使计算、电力电子和执行器保持在安全工作温度范围内的散热器、热管、风扇和液冷。
   ko: 컴퓨팅, 전력 전자 및 액추에이터를 안전한 작동 온도 범위 내로 유지하는 히트싱크, 히트 파이프, 팬 및 액체 냉각.
 domains:
 - 02_components
@@ -50,7 +49,7 @@ sources:
 
 ## 核心内容
 ### 热管理系统的定义与定位
-热管理系统属于 **component** 类型。 所属领域包括：02_components, 06_design_engineering。 价值链层级：midstream, upstream。 使计算、电力电子和执行器保持在安全工作温度范围内的散热器、热管、风扇和液冷。 英文名称为 *Thermal Management System*。 韩文名称为 *Thermal Management System*。
+热管理系统属于 **零部件** 类型。 所属领域包括：零部件, 设计工程。 价值链层级：中游, upstream。 使计算、电力电子和执行器保持在安全工作温度范围内的散热器、热管、风扇和液冷。 英文名称为 *Thermal Management System*。 韩文名称为 *Thermal Management System*。
 
 ### 热管理系统的工作原理与技术架构
 热管理系统的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -73,7 +72,7 @@ sources:
 - thermal
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component之一，热管理系统在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件之一，热管理系统在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Thermal Management System](https://en.wikipedia.org/wiki/Thermal_management_in_electronics)

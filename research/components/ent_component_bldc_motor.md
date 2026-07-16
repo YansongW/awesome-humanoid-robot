@@ -10,7 +10,7 @@ names:
 summary:
   en: An electric motor driven by electronic commutation rather than mechanical brushes, offering high efficiency, long lifetime,
     and high power density; widely used as the prime mover in robotic joints and humanoid actuators.
-  zh: 核心内容 **无刷直流电机**（BLDC）与 PMSM 结构相似，但反电动势波形不同：BLDC 设计为梯形波，配合简单的六步换相（每 60° 电角度切换一次导通相）；PMSM 反电动势为正弦波，配合 FOC 可获得更小转矩脉动、更高效率。
+  zh: 无刷直流电机（BLDC）与 PMSM 结构相似，但反电动势波形不同：BLDC 设计为梯形波，配合简单的六步换相（每 60° 电角度切换一次导通相）；PMSM 反电动势为正弦波，配合 FOC 可获得更小转矩脉动、更高效率。
   ko: 기계적 브러시가 아닌 전자적 정류로 구동되는 전동기로, 높은 효율, 긴 수명, 높은 전력 밀도를 제공하며 로봇 관절 및 휴머노이드 액추에이터의 주 동력원으로 널리 사용됨.
 domains:
 - 02_components
@@ -45,7 +45,7 @@ theoretical_depth:
 ---
 
 ## 概述
-无刷直流电机是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
+无刷直流电机是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 **无刷直流电机**（BLDC）与 PMSM 结构相似，但反电动势波形不同：BLDC 设计为梯形波，配合简单的六步换相（每 60° 电角度切换一次导通相）；PMSM 反电动势为正弦波，配合 FOC 可获得更小转矩脉动、更高效率。

@@ -10,7 +10,7 @@ names:
 summary:
   en: Japanese precision drive subsidiary of Nidec Corporation, manufacturer of FLEXWAVE strain-wave gear reducers and motion
     products targeted at humanoid robots.
-  zh: '## 概述 日本电产株式会社旗下精密传动子公司，生产面向人形机器人的 FLEXWAVE 应变波齿轮减速器及运动控制产品。'
+  zh: 概述 日本电产株式会社旗下精密传动子公司，生产面向人形机器人的 FLEXWAVE 应变波齿轮减速器及运动控制产品。
   ko: Nidec Corporation의 일본 정밀 드라이브 자회사로, 휴이노이드 로봇용 FLEXWAVE 스트레인 웨이브 기어 감속기 및 모션 제품을 생산함.
 domains:
 - 02_components
@@ -69,7 +69,7 @@ theoretical_depth:
 
 ## 核心内容
 ### 尼得科传动技术的定义与定位
-尼得科传动技术属于 **component_manufacturer** 类型。 所属领域包括：02_components。 价值链层级：upstream。 日本电产株式会社旗下精密传动子公司，生产面向人形机器人的 FLEXWAVE 应变波齿轮减速器及运动控制产品。 英文名称为 *Nidec Drive Technology*。 韩文名称为 *니덱 드라이브 테크놀로지*。
+尼得科传动技术属于 **零部件制造商** 类型。 所属领域包括：零部件。 价值链层级：上游。 日本电产株式会社旗下精密传动子公司，生产面向人形机器人的 FLEXWAVE 应变波齿轮减速器及运动控制产品。 英文名称为 *Nidec Drive Technology*。 韩文名称为 *니덱 드라이브 테크놀로지*。
 
 ### 尼得科传动技术的核心业务与产品
 尼得科传动技术在人形机器人产业链中占据特定位置，其产品或技术能力与下游整机厂商形成供应或合作关系。
@@ -91,7 +91,7 @@ theoretical_depth:
 - japan
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component_manufacturer之一，尼得科传动技术在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件制造商之一，尼得科传动技术在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Nidec — Highly Developed Humanoid Robots](https://www.nidec-dtc.com/humanoid-robots/)

@@ -10,8 +10,7 @@ names:
 summary:
   en: A differentiable operator that converts a vector of real-valued scores into a probability distribution, emphasizing
     the largest values while keeping all probabilities positive and summing to one.
-  zh: '核心内容 ### Softmax 函数的定义与定位 Softmax 函数属于 **operator** 类型，英文名称为 *Softmax Function*。 一种可微算子，将实值分数向量转换为概率分布，突出最大值，同时保持所有概率为正且和为
-    1。'
+  zh: 一种可微算子，将实值分数向量转换为概率分布，突出最大值，同时保持所有概率为正且和为 1。
   ko: 실수 값 점수 벡터를 확률 분포로 변환하여 가장 큰 값을 강조하면서도 모든 확률이 양수이고 합이 1이 되도록 하는 미분 가능한 연산자이다.
 domains:
 - 00_foundations
@@ -49,7 +48,7 @@ sources:
 
 ## 核心内容
 ### Softmax 函数的定义与定位
-Softmax 函数属于 **operator** 类型，英文名称为 *Softmax Function*。
+Softmax 函数属于 **运营商** 类型，英文名称为 *Softmax Function*。
 一种可微算子，将实值分数向量转换为概率分布，突出最大值，同时保持所有概率为正且和为 1。
 
 ### Softmax 函数的关键信息

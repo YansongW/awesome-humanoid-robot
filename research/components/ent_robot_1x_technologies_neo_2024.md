@@ -9,8 +9,7 @@ names:
   ko: 1X Technologies NEO
 summary:
   en: Humanoid robot using soft, biomimetic pneumatic muscle actuation for safe human interaction.
-  zh: '核心内容 ### 1X Technologies NEO的定义与定位 1X Technologies NEO属于 **robot_system** 类型。 所属领域包括：06_design_engineering, 11_applications_markets。
-    价值链层级：midstream, validation_markets。 采用仿生气动肌肉执行器的人形机器人，强调安全人机交互。 英文名称为 *1X Technologies NEO*。 韩文名称为 *1X Technologies NEO*。'
+  zh: 采用仿生气动肌肉执行器的人形机器人，强调安全人机交互。
   ko: 안전한 인간 상호작용을 위한 생체 모방 공압 근육 액추에이터를 사용하는 휨로봇.
 domains:
 - 06_design_engineering
@@ -49,7 +48,7 @@ sources:
 
 ## 核心内容
 ### 1X Technologies NEO的定义与定位
-1X Technologies NEO属于 **robot_system** 类型。 所属领域包括：06_design_engineering, 11_applications_markets。 价值链层级：midstream, validation_markets。 采用仿生气动肌肉执行器的人形机器人，强调安全人机交互。 英文名称为 *1X Technologies NEO*。 韩文名称为 *1X Technologies NEO*。
+1X Technologies NEO属于 **机器人系统** 类型。 所属领域包括：设计工程, 应用与市场。 价值链层级：中游, validation_markets。 采用仿生气动肌肉执行器的人形机器人，强调安全人机交互。 英文名称为 *1X Technologies NEO*。 韩文名称为 *1X Technologies NEO*。
 
 ### 1X Technologies NEO的关键维度
 理解1X Technologies NEO需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -70,7 +69,7 @@ sources:
 - soft_robotics
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键robot_system之一，1X Technologies NEO在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键机器人系统之一，1X Technologies NEO在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [1X Technologies NEO](https://www.1x.tech/)

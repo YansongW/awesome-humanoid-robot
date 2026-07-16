@@ -9,9 +9,7 @@ names:
   ko: URDF 로봇 설명 형식
 summary:
   en: XML-based format describing robot links, joints, inertial properties, and geometry for simulation and control.
-  zh: '核心内容 ### URDF 机器人描述格式的定义与定位 URDF 机器人描述格式属于 **technology** 类型。 所属领域包括：08_software_middleware, 06_design_engineering。
-    价值链层级：intelligence, midstream。 用于仿真和控制的描述机器人连杆、关节、惯性和几何的XML格式。 英文名称为 *URDF Robot Description Format*。 韩文名称为 *URDF 로봇 설명
-    형식*。'
+  zh: 用于仿真和控制的描述机器人连杆、关节、惯性和几何的XML格式。
   ko: 시뮬레이션 및 제어를 위한 로봇 링크, 관절, 관성 및 기하를 설명하는 XML 기반 형식.
 domains:
 - 08_software_middleware
@@ -50,7 +48,7 @@ sources:
 
 ## 核心内容
 ### URDF 机器人描述格式的定义与定位
-URDF 机器人描述格式属于 **technology** 类型。 所属领域包括：08_software_middleware, 06_design_engineering。 价值链层级：intelligence, midstream。 用于仿真和控制的描述机器人连杆、关节、惯性和几何的XML格式。 英文名称为 *URDF Robot Description Format*。 韩文名称为 *URDF 로봇 설명 형식*。
+URDF 机器人描述格式属于 **技术** 类型。 所属领域包括：软件中间件, 设计工程。 价值链层级：智能层, midstream。 用于仿真和控制的描述机器人连杆、关节、惯性和几何的XML格式。 英文名称为 *URDF Robot Description Format*。 韩文名称为 *URDF 로봇 설명 형식*。
 
 ### URDF 机器人描述格式的工作原理与技术架构
 URDF 机器人描述格式的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -73,7 +71,7 @@ URDF 机器人描述格式已广泛应用于人形机器人的原型验证、学
 - urdf
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键technology之一，URDF 机器人描述格式在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键技术之一，URDF 机器人描述格式在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [URDF Robot Description Format](https://wiki.ros.org/urdf)

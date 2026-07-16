@@ -9,8 +9,7 @@ names:
   ko: Joint Calibration Procedure
 summary:
   en: Post-assembly procedure to determine absolute zero positions, encoder offsets, and direction signs for each actuator.
-  zh: '核心内容 ### 关节标定流程的定义与定位 关节标定流程属于 **method** 类型。 所属领域包括：04_assembly_integration_testing, 06_design_engineering。 价值链层级：midstream。
-    装配后确定每个执行器绝对零位、编码器偏置和方向标志的流程。 英文名称为 *Joint Calibration Procedure*。 韩文名称为 *Joint Calibration Procedure*。'
+  zh: 装配后确定每个执行器绝对零位、编码器偏置和方向标志的流程。
   ko: 조립 후 각 액추에이터의 절대 원점, 인코더 오프셋 및 방향 부호를 결정하는 절차.
 domains:
 - 04_assembly_integration_testing
@@ -48,7 +47,7 @@ sources:
 
 ## 核心内容
 ### 关节标定流程的定义与定位
-关节标定流程属于 **method** 类型。 所属领域包括：04_assembly_integration_testing, 06_design_engineering。 价值链层级：midstream。 装配后确定每个执行器绝对零位、编码器偏置和方向标志的流程。 英文名称为 *Joint Calibration Procedure*。 韩文名称为 *Joint Calibration Procedure*。
+关节标定流程属于 **方法** 类型。 所属领域包括：组装集成测试, 设计工程。 价值链层级：中游。 装配后确定每个执行器绝对零位、编码器偏置和方向标志的流程。 英文名称为 *Joint Calibration Procedure*。 韩文名称为 *Joint Calibration Procedure*。
 
 ### 关节标定流程的数学与原理基础
 关节标定流程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -72,7 +71,7 @@ sources:
 - method
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，关节标定流程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，关节标定流程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Joint Calibration Procedure](https://en.wikipedia.org/wiki/Robot_calibration)

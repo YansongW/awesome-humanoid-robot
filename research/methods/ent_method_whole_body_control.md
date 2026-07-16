@@ -10,8 +10,7 @@ names:
 summary:
   en: A control framework that coordinates all joints and contacts of a humanoid to achieve multiple tasks such as balance,
     gaze, and manipulation.
-  zh: '核心内容 ### 全身控制（WBC）的定义与定位 全身控制（WBC）属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。
-    英文名称为 *Whole-Body Control (WBC)*。 韩文名称为 *전신 제어(WBC)*。'
+  zh: 协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。
   ko: 휴로봇의 모든 관절과 접촉점을 조율하여 균형·시선·조작 등 다중 작업을 동시에 수행하는 제어 프레임워크.
 domains:
 - 07_ai_models_algorithms
@@ -45,7 +44,7 @@ sources:
 
 ## 核心内容
 ### 全身控制（WBC）的定义与定位
-全身控制（WBC）属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。 英文名称为 *Whole-Body Control (WBC)*。 韩文名称为 *전신 제어(WBC)*。
+全身控制（WBC）属于 **方法** 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 协调人形机器人所有关节与接触点，以同时实现平衡、注视、操作等多任务的统一控制框架。 英文名称为 *Whole-Body Control (WBC)*。 韩文名称为 *전신 제어(WBC)*。
 
 ### 全身控制（WBC）的数学与原理基础
 全身控制（WBC）建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -67,7 +66,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，全身控制（WBC）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，全身控制（WBC）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

@@ -10,8 +10,8 @@ names:
 summary:
   en: A bottom-up reliability method that identifies potential failure modes, their causes and effects, and prioritizes actions
     to mitigate risk.
-  zh: '## 概述 8.6.6 可靠性工程与失效模式分析相关内容如下。 ## 核心内容 #### 8.6.6 可靠性工程与失效模式分析 人形机器人在长周期运行中面临机械磨损、电子老化、软件缺陷与环境应力等多重失效风险。**可靠性工程（reliability
-    engineering）**通过定量方法预测、分配并改进系统可靠性，是降低全生命周期成本与保障安全运行的关键[90][91][95]。'
+  zh: '概述 8.6.6 可靠性工程与失效模式分析相关内容如下。 ## 核心内容 #### 8.6.6 可靠性工程与失效模式分析 人形机器人在长周期运行中面临机械磨损、电子老化、软件缺陷与环境应力等多重失效风险。可靠性工程（reliability
+    engineering）通过定量方法预测、分配并改进系统可靠性，是降低全生命周期成本与保障安全运行的关键[90][91][95]。'
   ko: 잠재적 고장 모드·원인·영향을 식별하고 위험 완화 조치의 우선순위를 정하는 상향식 신뢰성 방법.
 domains:
 - 05_mass_production

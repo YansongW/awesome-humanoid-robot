@@ -10,7 +10,7 @@ names:
 summary:
   en: The systematic gap between metrics optimized for staged demonstrations and those required for reliable, certifiable,
     mass-producible products.
-  zh: 核心内容 与 ASIMO 和早期 Atlas 不同，2025–2026 年的新浪潮强调**真实场景中的长期部署和量产可行性**：
+  zh: 与 ASIMO 和早期 Atlas 不同，2025–2026 年的新浪潮强调真实场景中的长期部署和量产可行性：
   ko: 데모를 위한 지표와 대량생산·인증 가능한 제품이 요구하는 지표 사이의 체계적 간극.
 domains:
 - 11_applications_markets
@@ -40,7 +40,7 @@ sources:
 ---
 
 ## 概述
-演示指标与产品指标的鸿沟是人形机器人领域的重要concept。以下内容整理自项目 Wiki，供深入查阅。
+演示指标与产品指标的鸿沟是人形机器人领域的重要概念。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 与 ASIMO 和早期 Atlas 不同，2025–2026 年的新浪潮强调**真实场景中的长期部署和量产可行性**：

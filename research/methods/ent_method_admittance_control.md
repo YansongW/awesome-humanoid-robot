@@ -10,7 +10,7 @@ names:
 summary:
   en: A control approach that converts measured external forces into desired position or velocity trajectories, complementary
     to impedance control.
-  zh: '## 概述 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性相关内容如下。 ## 核心内容 #### 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性 把机器人末端抽象为一个质量-弹簧-阻尼单元，其动力学方程可由牛顿第二定律直接写出：'
+  zh: '概述 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性相关内容如下。 ## 核心内容 #### 阻抗控制的物理基础：从质点-弹簧-阻尼到端口特性 把机器人末端抽象为一个质量-弹簧-阻尼单元，其动力学方程可由牛顿第二定律直接写出：'
   ko: 측정된 외력을 원하는 위치·속도 궤적으로 변환하는 제어 방식으로, 임피던스 제어와 상호 보완적.
 domains:
 - 07_ai_models_algorithms

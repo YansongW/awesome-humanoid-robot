@@ -10,7 +10,7 @@ names:
 summary:
   en: A rigid-body dynamics formalism for robots with an unactuated or underactuated base, such as bipeds, where the base
     pose is part of the generalized coordinates.
-  zh: 核心内容 人形机器人不同于固定基座的工业机械臂，其基座（躯干）可在空间中自由移动。因此需要用**浮动基（floating base）**坐标描述系统位形：
+  zh: 人形机器人不同于固定基座的工业机械臂，其基座（躯干）可在空间中自由移动。因此需要用浮动基（floating base）坐标描述系统位形：
   ko: 이족 로봇처럼 비구동·저구동 기반을 가진 로봇을 위해 기반 자세를 일반화 좌표에 포함시키는 강체 동역학 공식화.
 domains:
 - 06_design_engineering

@@ -8,51 +8,51 @@ names:
   zh: Effects of Robotic Touch on Older Users During Walking Guidance by a Humanoid Robot
   ko: Effects of Robotic Touch on Older Users During Walking Guidance by a Humanoid Robot
 summary:
-  en: "arXiv:2607.09323v1 Announce Type: new \nAbstract: The shortage of healthcare staff is a challenge in geriatric care.\
-    \ To address this, robots can be integrated into care settings to provide assistance and emotional support. A promising\
-    \ application is walking guidance, particularly benefiting older adults as navigation skills deteriorate with aging. As\
-    \ walking guidance involves direct contact, the aim of this study is to understand how older adults perceive and respond\
-    \ to different touch modes during guided walking. 24 older adults (68 - 88 yrs.) walked four times a ten-meter trajectory\
-    \ guided by the robot TIAGo Pro in four contact conditions: no physical contact (NC); physical contact through holding\
-    \ the robot's wrist with the hand (HH); physical interaction through linking arms with the robot (LA); and physical contact\
-    \ through resting the forearm on the robots forearm (FC). A multimodal assessment approach included electrocardiogram,\
-    \ electrodermal activity, contact force, distance to robot, and questionnaires. Physiological results reveal a slight\
-    \ increase in stress levels during robot interaction. Behavioural and subjective measures, however, show overall acceptance\
-    \ of robotic touch. The two conditions corresponding to larger interaction forces (HH and FC) were associated with lower\
-    \ relative distances between participant and robot, indicating a higher trust and confidence. Questionnaire responses\
-    \ supported these findings, evidencing greater perceived safety, trust and comfort in these conditions. This study provides\
-    \ insights for the design of robotic walking guidance assistance, indicating that gentle, stable touch is preferred by\
-    \ older adults in comparison to contactless interaction."
-  zh: "arXiv:2607.09323v1 Announce Type: new \nAbstract: The shortage of healthcare staff is a challenge in geriatric care.\
-    \ To address this, robots can be integrated into care settings to provide assistance and emotional support. A promising\
-    \ application is walking guidance, particularly benefiting older adults as navigation skills deteriorate with aging. As\
-    \ walking guidance involves direct contact, the aim of this study is to understand how older adults perceive and respond\
-    \ to different touch modes during guided walking. 24 older adults (68 - 88 yrs.) walked four times a ten-meter trajectory\
-    \ guided by the robot TIAGo Pro in four contact conditions: no physical contact (NC); physical contact through holding\
-    \ the robot's wrist with the hand (HH); physical interaction through linking arms with the robot (LA); and physical contact\
-    \ through resting the forearm on the robots forearm (FC). A multimodal assessment approach included electrocardiogram,\
-    \ electrodermal activity, contact force, distance to robot, and questionnaires. Physiological results reveal a slight\
-    \ increase in stress levels during robot interaction. Behavioural and subjective measures, however, show overall acceptance\
-    \ of robotic touch. The two conditions corresponding to larger interaction forces (HH and FC) were associated with lower\
-    \ relative distances between participant and robot, indicating a higher trust and confidence. Questionnaire responses\
-    \ supported these findings, evidencing greater perceived safety, trust and comfort in these conditions. This study provides\
-    \ insights for the design of robotic walking guidance assistance, indicating that gentle, stable touch is preferred by\
-    \ older adults in comparison to contactless interaction."
-  ko: "arXiv:2607.09323v1 Announce Type: new \nAbstract: The shortage of healthcare staff is a challenge in geriatric care.\
-    \ To address this, robots can be integrated into care settings to provide assistance and emotional support. A promising\
-    \ application is walking guidance, particularly benefiting older adults as navigation skills deteriorate with aging. As\
-    \ walking guidance involves direct contact, the aim of this study is to understand how older adults perceive and respond\
-    \ to different touch modes during guided walking. 24 older adults (68 - 88 yrs.) walked four times a ten-meter trajectory\
-    \ guided by the robot TIAGo Pro in four contact conditions: no physical contact (NC); physical contact through holding\
-    \ the robot's wrist with the hand (HH); physical interaction through linking arms with the robot (LA); and physical contact\
-    \ through resting the forearm on the robots forearm (FC). A multimodal assessment approach included electrocardiogram,\
-    \ electrodermal activity, contact force, distance to robot, and questionnaires. Physiological results reveal a slight\
-    \ increase in stress levels during robot interaction. Behavioural and subjective measures, however, show overall acceptance\
-    \ of robotic touch. The two conditions corresponding to larger interaction forces (HH and FC) were associated with lower\
-    \ relative distances between participant and robot, indicating a higher trust and confidence. Questionnaire responses\
-    \ supported these findings, evidencing greater perceived safety, trust and comfort in these conditions. This study provides\
-    \ insights for the design of robotic walking guidance assistance, indicating that gentle, stable touch is preferred by\
-    \ older adults in comparison to contactless interaction."
+  en: 'arXiv:2607.09323v1 Announce Type: new Abstract: The shortage of healthcare staff is a challenge in geriatric care.
+    To address this, robots can be integrated into care settings to provide assistance and emotional support. A promising
+    application is walking guidance, particularly benefiting older adults as navigation skills deteriorate with aging. As
+    walking guidance involves direct contact, the aim of this study is to understand how older adults perceive and respond
+    to different touch modes during guided walking. 24 older adults (68 - 88 yrs.) walked four times a ten-meter trajectory
+    guided by the robot TIAGo Pro in four contact conditions: no physical contact (NC); physical contact through holding the
+    robot''s wrist with the hand (HH); physical interaction through linking arms with the robot (LA); and physical contact
+    through resting the forearm on the robots forearm (FC). A multimodal assessment approach included electrocardiogram, electrodermal
+    activity, contact force, distance to robot, and questionnaires. Physiological results reveal a slight increase in stress
+    levels during robot interaction. Behavioural and subjective measures, however, show overall acceptance of robotic touch.
+    The two conditions corresponding to larger interaction forces (HH and FC) were associated with lower relative distances
+    between participant and robot, indicating a higher trust and confidence. Questionnaire responses supported these findings,
+    evidencing greater perceived safety, trust and comfort in these conditions. This study provides insights for the design
+    of robotic walking guidance assistance, indicating that gentle, stable touch is preferred by older adults in comparison
+    to contactless interaction.'
+  zh: 'arXiv:2607.09323v1 Announce Type: new Abstract: The shortage of healthcare staff is a challenge in geriatric care.
+    To address this, robots can be integrated into care settings to provide assistance and emotional support. A promising
+    application is walking guidance, particularly benefiting older adults as navigation skills deteriorate with aging. As
+    walking guidance involves direct contact, the aim of this study is to understand how older adults perceive and respond
+    to different touch modes during guided walking. 24 older adults (68 - 88 yrs.) walked four times a ten-meter trajectory
+    guided by the robot TIAGo Pro in four contact conditions: no physical contact (NC); physical contact through holding the
+    robot''s wrist with the hand (HH); physical interaction through linking arms with the robot (LA); and physical contact
+    through resting the forearm on the robots forearm (FC). A multimodal assessment approach included electrocardiogram, electrodermal
+    activity, contact force, distance to robot, and questionnaires. Physiological results reveal a slight increase in stress
+    levels during robot interaction. Behavioural and subjective measures, however, show overall acceptance of robotic touch.
+    The two conditions corresponding to larger interaction forces (HH and FC) were associated with lower relative distances
+    between participant and robot, indicating a higher trust and confidence. Questionnaire responses supported these findings,
+    evidencing greater perceived safety, trust and comfort in these conditions. This study provides insights for the design
+    of robotic walking guidance assistance, indicating that gentle, stable touch is preferred by older adults in comparison
+    to contactless interaction.'
+  ko: 'arXiv:2607.09323v1 Announce Type: new Abstract: The shortage of healthcare staff is a challenge in geriatric care.
+    To address this, robots can be integrated into care settings to provide assistance and emotional support. A promising
+    application is walking guidance, particularly benefiting older adults as navigation skills deteriorate with aging. As
+    walking guidance involves direct contact, the aim of this study is to understand how older adults perceive and respond
+    to different touch modes during guided walking. 24 older adults (68 - 88 yrs.) walked four times a ten-meter trajectory
+    guided by the robot TIAGo Pro in four contact conditions: no physical contact (NC); physical contact through holding the
+    robot''s wrist with the hand (HH); physical interaction through linking arms with the robot (LA); and physical contact
+    through resting the forearm on the robots forearm (FC). A multimodal assessment approach included electrocardiogram, electrodermal
+    activity, contact force, distance to robot, and questionnaires. Physiological results reveal a slight increase in stress
+    levels during robot interaction. Behavioural and subjective measures, however, show overall acceptance of robotic touch.
+    The two conditions corresponding to larger interaction forces (HH and FC) were associated with lower relative distances
+    between participant and robot, indicating a higher trust and confidence. Questionnaire responses supported these findings,
+    evidencing greater perceived safety, trust and comfort in these conditions. This study provides insights for the design
+    of robotic walking guidance assistance, indicating that gentle, stable touch is preferred by older adults in comparison
+    to contactless interaction.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

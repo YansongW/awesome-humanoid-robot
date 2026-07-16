@@ -10,7 +10,7 @@ names:
 summary:
   en: A large-scale aggregated robot-learning dataset combining demonstrations from diverse real-world robot platforms and
     institutions, widely used for cross-embodiment VLA pretraining.
-  zh: '## 概述 一个大规模聚合机器人学习数据集，整合来自多种真实机器人平台和机构的演示数据，广泛用于跨具身 VLA 预训练。'
+  zh: 概述 一个大规模聚合机器人学习数据集，整合来自多种真实机器人平台和机构的演示数据，广泛用于跨具身 VLA 预训练。
   ko: 다양한 실제 로봇 플랫폼과 기관의 데모를 결합한 대규모 로봇 학습 데이터셋으로, cross-embodiment VLA 사전 학습에 널리 사용됨.
 domains:
 - 09_data_datasets
@@ -62,7 +62,7 @@ theoretical_depth:
 
 ## 核心内容
 ### Open X-Embodiment 数据集的定义与定位
-Open X-Embodiment 数据集属于 **dataset** 类型，英文名称为 *Open X-Embodiment Dataset*。
+Open X-Embodiment 数据集属于 **数据集** 类型，英文名称为 *Open X-Embodiment Dataset*。
 一个大规模聚合机器人学习数据集，整合来自多种真实机器人平台和机构的演示数据，广泛用于跨具身 VLA 预训练。
 
 ### Open X-Embodiment 数据集的关键信息

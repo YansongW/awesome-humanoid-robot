@@ -10,7 +10,8 @@ names:
 summary:
   en: The set of mandatory or voluntary certifications required to sell robots in specific regions, such as UL for North America,
     CE for Europe, and FCC for electromagnetic compatibility.
-  zh: 人形机器人进入各区域市场所需的强制或自愿性认证汇总，涵盖 ISO 13482、ISO/TS 15066、ISO 13849-1、IEC 61508、IEC 62368-1、UL 1740、FCC Part 15、CE 标志、CR 认证与 CCC 的制定机构、适用范围与核心关注点。
+  zh: 人形机器人进入各区域市场所需的强制或自愿性认证汇总，涵盖 ISO 13482、ISO/TS 15066、ISO 13849-1、IEC 61508、IEC 62368-1、UL 1740、FCC Part 15、CE 标志、CR 认证与
+    CCC 的制定机构、适用范围与核心关注点。
   ko: 특정 지역에서 로봇을 판매하기 위해 필요한 강제 또는 자발적 인증; 북미 UL, 유럽 CE, 전자기 적합성 FCC 등.
 domains:
 - 12_policy_regulation_ethics
@@ -40,7 +41,7 @@ sources:
 
 
 ## 概述
-区域准入认证是人形机器人领域的重要standard。以下内容整理自项目 Wiki，供深入查阅。
+区域准入认证是人形机器人领域的重要标准。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 | 标准/认证 | 制定机构 | 适用范围 | 核心关注点 |

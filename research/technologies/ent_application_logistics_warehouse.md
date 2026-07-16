@@ -9,8 +9,7 @@ names:
   ko: 물류 및 창고 자동화
 summary:
   en: The use of humanoid robots for picking, sorting, packing, and moving goods in logistics centers and warehouses.
-  zh: '核心内容 ### 物流仓储的定义与定位 物流仓储属于 **application_scenario** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。
-    英文名称为 *Logistics and Warehouse Automation*。 韩文名称为 *물류 및 창고 자동화*。'
+  zh: 在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。
   ko: 물류 센터와 창고에서 휴로봇을 이용한 피킹·분류·포장·운반 적용.
 domains:
 - 11_applications_markets
@@ -44,7 +43,7 @@ sources:
 
 ## 核心内容
 ### 物流仓储的定义与定位
-物流仓储属于 **application_scenario** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。 英文名称为 *Logistics and Warehouse Automation*。 韩文名称为 *물류 및 창고 자동화*。
+物流仓储属于 **应用场景** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 在物流中心与仓库中利用人形机器人进行拣选、分拣、包装与搬运。 英文名称为 *Logistics and Warehouse Automation*。 韩文名称为 *물류 및 창고 자동화*。
 
 ### 物流仓储的场景特征与核心价值
 物流仓储代表人形机器人潜在落地的重要方向，其需求特点、价值主张与商业模式是评估市场前景的关键。
@@ -63,7 +62,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键application_scenario之一，物流仓储在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键应用场景之一，物流仓储在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

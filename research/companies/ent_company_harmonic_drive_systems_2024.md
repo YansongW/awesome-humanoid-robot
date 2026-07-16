@@ -9,7 +9,7 @@ names:
   ko: Harmonic Drive Systems
 summary:
   en: Leading Japanese manufacturer of harmonic/strain-wave gearboxes for robot joints.
-  zh: '## 概述 哈默纳科是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。'
+  zh: 概述 哈默纳科是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
   ko: 로봇 관절용 하모닉/스트레인 웨이브 기어박스의 선도적인 일본 제조업체.
 domains:
 - 02_components
@@ -44,7 +44,7 @@ sources:
 ---
 
 ## 概述
-哈默纳科是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
+哈默纳科是人形机器人领域的重要零部件_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## Harmonic Drive Systems / Harmonic Drive Systems

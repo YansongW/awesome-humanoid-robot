@@ -9,7 +9,7 @@ names:
   ko: 가정 서비스
 summary:
   en: The use of humanoid robots for domestic chores, security, entertainment, and eldercare within residential environments.
-  zh: '## 概述 家庭服务是人形机器人领域的重要application_scenario。以下内容整理自项目 Wiki，供深入查阅。'
+  zh: 概述 家庭服务是人形机器人领域的重要application_scenario。以下内容整理自项目 Wiki，供深入查阅。
   ko: 주거 환경에서 가사·보안·오락·노인 돌봄을 위해 휴로봇을 사용하는 적용.
 domains:
 - 11_applications_markets
@@ -38,7 +38,7 @@ sources:
 ---
 
 ## 概述
-家庭服务是人形机器人领域的重要application_scenario。以下内容整理自项目 Wiki，供深入查阅。
+家庭服务是人形机器人领域的重要应用场景。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 Walker 系列面向家庭与商用服务场景，强调人机交互、安全与双臂操作能力。其躯干与头部设计注重外观亲和性，手臂自由度较多，手部可更换夹爪与灵巧手。与工厂物流机器人不同，服务场景要求机器人在有限空间内与人近距离互动，因此 Walker 的肩臂尺寸更接近人体比例，末端速度受限以满足协作安全标准；头部集成交互屏幕与表情灯带，可通过视觉与语音反馈建立用户信任。其手部采用可更换设计，可在二指夹爪与多指灵巧手之间切换，以兼顾简单递送与精细操作任务。

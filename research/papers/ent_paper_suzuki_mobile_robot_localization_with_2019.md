@@ -10,11 +10,11 @@ names:
 summary:
   en: This paper proposes a particle-filter-based GNSS localization method that detects and excludes non-line-of-sight multipath
     signals by analyzing pseudorange residuals, and validates the approach through real-world urban-canyon experiments.
-  zh: 'This paper proposes a novel positioning technique suitable for use in mobile robots in urban environments in which
-    large global navigation satellite system (GNSS) positioning errors occur because of multipath signals. During GNSS positioning,
+  zh: This paper proposes a novel positioning technique suitable for use in mobile robots in urban environments in which large
+    global navigation satellite system (GNSS) positioning errors occur because of multipath signals. During GNSS positioning,
     the GNSS satellites that are obstructed by buildings emit reflection and diffraction signals, which are called non-line-of-sight
     (NLOS) multipath signals. These multipath signals cause major positioning errors. The key concept considered in this paper
-    is the estimation of a user''s position using the likelihood of the position hypotheses computed from the '
+    is the estimation of a user's position using the likelihood of the position hypotheses computed from the
   ko: 본 논문은 유사거리 잔차를 분석하여 비시각 다중경로 신호를 검출하고 제외하는 입자 필터 기반 GNSS 위치 추정 방법을 제안하고 실제 도심 환경에서 검증하였다.
 domains:
 - 07_ai_models_algorithms

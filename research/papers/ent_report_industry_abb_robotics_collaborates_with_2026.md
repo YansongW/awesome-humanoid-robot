@@ -8,14 +8,14 @@ names:
   zh: ABB Robotics collaborates with Roche to bring physical AI to laboratories
   ko: ABB Robotics collaborates with Roche to bring physical AI to laboratories
 summary:
-  en: "•\tAgreement lays the foundation for a new era of digitally connected labs enabled by intelligent robotics to provide\
-    \ significant efficiencies in laboratory workflows\r\n•\tFirst applications under collaboration will support pathology\
-    \ slide handling and autonomous connectivity in Core Lab intralogistics \r\n•\tRange of ABB Robotics’ technologies deployed,\
-    \ including autonomous mobile manipulation and fixed articulating robots"
-  zh: "•\tAgreement lays the foundation for a new era of digitally connected labs enabled by intelligent robotics to provide\
-    \ significant efficiencies in laboratory workflows\r\n•\tFirst applications under collaboration will support pathology\
-    \ slide handling and autonomous connectivity in Core Lab intralogistics \r\n•\tRange of ABB Robotics’ technologies deployed,\
-    \ including autonomous mobile manipulation and fixed articulating robots"
+  en: • Agreement lays the foundation for a new era of digitally connected labs enabled by intelligent robotics to provide
+    significant efficiencies in laboratory workflows • First applications under collaboration will support pathology slide
+    handling and autonomous connectivity in Core Lab intralogistics • Range of ABB Robotics’ technologies deployed, including
+    autonomous mobile manipulation and fixed articulating robots
+  zh: • Agreement lays the foundation for a new era of digitally connected labs enabled by intelligent robotics to provide
+    significant efficiencies in laboratory workflows • First applications under collaboration will support pathology slide
+    handling and autonomous connectivity in Core Lab intralogistics • Range of ABB Robotics’ technologies deployed, including
+    autonomous mobile manipulation and fixed articulating robots
   ko: ABB Robotics collaborates with Roche to bring physical AI to laboratories
 domains:
 - 11_applications_markets

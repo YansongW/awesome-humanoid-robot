@@ -9,8 +9,7 @@ names:
   ko: Diffusion Policy
 summary:
   en: Visuomotor policy represented as a conditional denoising diffusion process, enabling multimodal action distributions.
-  zh: '核心内容 ### 扩散策略的定义与定位 扩散策略属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。
-    英文名称为 *Diffusion Policy*。 韩文名称为 *Diffusion Policy*。'
+  zh: 以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。
   ko: 조건적 노이즈 제거 확산 프로세스로 표현된 시각욱동 정책, 다중 모드 동작 분포 가능.
 domains:
 - 07_ai_models_algorithms
@@ -47,7 +46,7 @@ sources:
 
 ## 核心内容
 ### 扩散策略的定义与定位
-扩散策略属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。 英文名称为 *Diffusion Policy*。 韩文名称为 *Diffusion Policy*。
+扩散策略属于 **方法** 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 以条件去噪扩散过程表示的视觉运动策略，可实现多模态动作分布。 英文名称为 *Diffusion Policy*。 韩文名称为 *Diffusion Policy*。
 
 ### 扩散策略的数学与原理基础
 扩散策略建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -71,7 +70,7 @@ sources:
 - visuomotor
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，扩散策略在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，扩散策略在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Diffusion Policy](https://diffusion-policy.cs.columbia.edu/)

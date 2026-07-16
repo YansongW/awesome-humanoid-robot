@@ -10,8 +10,7 @@ names:
 summary:
   en: A partial differential equation expressing local conservation of a quantity by equating its rate of change to the negative
     divergence of its flux.
-  zh: '核心内容 ### 连续性方程的定义与定位 连续性方程属于 **equation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种偏微分方程，通过将某物理量的变化率等于其通量散度的负值来表达局部守恒。
-    英文名称为 *Continuity equation*。 韩文名称为 *연속 방정식*。'
+  zh: 一种偏微分方程，通过将某物理量的变化率等于其通量散度的负值来表达局部守恒。
   ko: 어떤 물리량의 변화율을 그 선속의 발산의 음수와 같게 하여 국소 보존을 표현하는 편미분 방정식.
 domains:
 - 00_foundations
@@ -66,7 +65,7 @@ related_entities:
 
 ## 核心内容
 ### 连续性方程的定义与定位
-连续性方程属于 **equation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种偏微分方程，通过将某物理量的变化率等于其通量散度的负值来表达局部守恒。 英文名称为 *Continuity equation*。 韩文名称为 *연속 방정식*。
+连续性方程属于 **方程** 类型。 所属领域包括：基础学科。 价值链层级：基础层。 一种偏微分方程，通过将某物理量的变化率等于其通量散度的负值来表达局部守恒。 英文名称为 *Continuity equation*。 韩文名称为 *연속 방정식*。
 
 ### 连续性方程的数学与原理基础
 连续性方程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -90,7 +89,7 @@ related_entities:
 - probability
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键equation之一，连续性方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方程之一，连续性方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [L. C. Evans, Partial Differential Equations, 2nd ed., American Mathematical Society, 2010](https://doi.org/10.1090/gsm/019)

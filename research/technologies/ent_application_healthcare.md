@@ -10,8 +10,7 @@ names:
 summary:
   en: The deployment of humanoid robots in hospitals, eldercare, and rehabilitation settings for assistance, companionship,
     and therapy support.
-  zh: '核心内容 ### 医疗健康的定义与定位 医疗健康属于 **application_scenario** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 在医院、养老与康复场景中部署人形机器人提供辅助、陪伴与治疗支持。
-    英文名称为 *Healthcare Assistance*。 韩文名称为 *의료 지원*。'
+  zh: 在医院、养老与康复场景中部署人形机器人提供辅助、陪伴与治疗支持。
   ko: 병원·노인 돌봄·재활 환경에서 보조·동반·치료 지원을 위해 휴로봇을 배치하는 적용.
 domains:
 - 11_applications_markets
@@ -45,7 +44,7 @@ sources:
 
 ## 核心内容
 ### 医疗健康的定义与定位
-医疗健康属于 **application_scenario** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 在医院、养老与康复场景中部署人形机器人提供辅助、陪伴与治疗支持。 英文名称为 *Healthcare Assistance*。 韩文名称为 *의료 지원*。
+医疗健康属于 **应用场景** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 在医院、养老与康复场景中部署人形机器人提供辅助、陪伴与治疗支持。 英文名称为 *Healthcare Assistance*。 韩文名称为 *의료 지원*。
 
 ### 医疗健康的场景特征与核心价值
 医疗健康代表人形机器人潜在落地的重要方向，其需求特点、价值主张与商业模式是评估市场前景的关键。
@@ -64,7 +63,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键application_scenario之一，医疗健康在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键应用场景之一，医疗健康在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

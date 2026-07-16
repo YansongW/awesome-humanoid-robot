@@ -10,11 +10,11 @@ names:
 summary:
   en: A 2022 review paper that presents the ground-up architectural redesign of ROS 2 around DDS middleware and documents
     its real-world adoption through case studies across land, sea, air, space, and fleet robotics.
-  zh: 'The next chapter of the robotics revolution is well underway with the deployment of robots for a broad range of commercial
+  zh: The next chapter of the robotics revolution is well underway with the deployment of robots for a broad range of commercial
     use-cases. Even in a myriad of applications and environments, there exists a common vocabulary of components that robots
     share - the need for a modular, scalable, and reliable architecture; sensing; planning; mobility; and autonomy. The Robot
     Operating System (ROS) was an integral part of the last chapter, demonstrably expediting robotics research with freely-available
-    components and a modular framework. However, ROS 1 was not designed with many necessary production-grade '
+    components and a modular framework. However, ROS 1 was not designed with many necessary production-grade
   ko: 2022년 리뷰 논문으로, DDS 미들웨어 중심의 ROS 2 전면 아키텍처 재설계를 제시하고 육상·해상·공중·우주·fleet 로보틱스 사례 연구를 통해 실제 도입 상황을 기록함.
 domains:
 - 08_software_middleware

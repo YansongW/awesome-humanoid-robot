@@ -48,7 +48,7 @@ The Mobile Robot Company has won the IFOY Industrial Truck of the Year Award 202
 
 ## 核心内容
 ### Danish robotics startup enters the industrial truck market already crowned a winner的定义与定位
-Danish robotics startup enters the industrial truck market already crowned a winner属于 **company** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 The Mobile Robot Company has won the IFOY Industrial Truck of the Year Award 2026 for a self-driving pallet jack designed to keep warehouse operators in control while automating repetitive transport work. 英文名称为 *Danish robotics startup enters the industrial truck market already crowned a winner*。 韩文名称为 *Danish robotics startup enters the industrial truck market already crowned a winner*。
+Danish robotics startup enters the industrial truck market already crowned a winner属于 **公司** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 The Mobile Robot Company has won the IFOY Industrial Truck of the Year Award 2026 for a self-driving pallet jack designed to keep warehouse operators in control while automating repetitive transport work. 英文名称为 *Danish robotics startup enters the industrial truck market already crowned a winner*。 韩文名称为 *Danish robotics startup enters the industrial truck market already crowned a winner*。
 
 ### Danish robotics startup enters the industrial truck market already crowned a winner的核心业务与产品
 Danish robotics startup enters the industrial truck market already crowned a winner在人形机器人产业链中占据特定位置，其产品或技术能力与下游整机厂商形成供应或合作关系。
@@ -69,7 +69,7 @@ Danish robotics startup enters the industrial truck market already crowned a win
 - startup
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键company之一，Danish robotics startup enters the industrial truck market already crowned a winner在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键公司之一，Danish robotics startup enters the industrial truck market already crowned a winner在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Danish robotics startup enters the industrial truck market already crowned a winner](http://www.RoboticsTomorrow.com/news/2026/06/29/danish-robotics-startup-enters-the-industrial-truck-market-already-crowned-a-winner/26784)

@@ -10,11 +10,11 @@ names:
 summary:
   en: Extends model-agnostic meta-learning (MAML) to imitation learning, enabling a robot to acquire new vision-based manipulation
     skills from a single demonstration via one or a few gradient updates.
-  zh: 'In order for a robot to be a generalist that can perform a wide range of jobs, it must be able to acquire a wide variety
+  zh: In order for a robot to be a generalist that can perform a wide range of jobs, it must be able to acquire a wide variety
     of skills quickly and efficiently in complex unstructured environments. High-capacity models such as deep neural networks
     can enable a robot to represent complex skills, but learning each skill from scratch then becomes infeasible. In this
     work, we present a meta-imitation learning method that enables a robot to learn how to learn more efficiently, allowing
-    it to acquire new skills from just a single demonstration. Unlike prior methods for one-shot imitation, our method can '
+    it to acquire new skills from just a single demonstration. Unlike prior methods for one-shot imitation, our method can
   ko: 모델 무관 메타러닝(MAML)을 모방 학습으로 확장하여, 로봇이 단 하나의 시연을 통해 한 번 또는 소수의 그래디언트 업데이트로 새로운 비전 기반 조작 기술을 습득할 수 있게 함.
 domains:
 - 07_ai_models_algorithms

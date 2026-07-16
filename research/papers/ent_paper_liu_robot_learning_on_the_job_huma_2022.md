@@ -11,11 +11,11 @@ summary:
   en: This paper introduces Sirius, a human-in-the-loop framework in which a partially autonomous robot handles reliable decisions
     while a human monitors and teleoperates interventions, then improves policies via weighted behavioral cloning on re-weighted
     deployment data.
-  zh: 'With the rapid growth of computing powers and recent advances in deep learning, we have witnessed impressive demonstrations
+  zh: With the rapid growth of computing powers and recent advances in deep learning, we have witnessed impressive demonstrations
     of novel robot capabilities in research settings. Nonetheless, these learning systems exhibit brittle generalization and
     require excessive training data for practical tasks. To harness the capabilities of state-of-the-art robot learning models
     while embracing their imperfections, we present Sirius, a principled framework for humans and robots to collaborate through
-    a division of work. In this framework, partially autonomous robots are tasked with handling a major portion '
+    a division of work. In this framework, partially autonomous robots are tasked with handling a major portion
   ko: 본 논문은 부분 자율 로봇이 안정적인 의사결정을 수행하고 인간이 모니터링하며 어려운 상황에서 텔레오퍼레이션으로 개입한 후, 재가중된 배포 데이터에 대한 가중 행동 복제를 통해 정책을 지속적으로 개선하는 Sirius
     프레임워크를 제안한다.
 domains:

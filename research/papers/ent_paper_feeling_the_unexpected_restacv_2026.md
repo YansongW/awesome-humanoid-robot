@@ -8,42 +8,42 @@ names:
   zh: 'Feeling the Unexpected: ResTacVLA for Contact-Rich Manipulation via Residual Tactile Representation'
   ko: 'Feeling the Unexpected: ResTacVLA for Contact-Rich Manipulation via Residual Tactile Representation'
 summary:
-  en: "arXiv:2607.03387v1 Announce Type: new \nAbstract: Tactile perception is indispensable for contact-rich manipulation,\
-    \ yet integrating it into Vision-Language-Action (VLA) models often induces modality collapse, where high-bandwidth visual\
-    \ features overshadow sparse tactile cues. Inspired by Predictive Coding, a neural mechanism where the brain attenuates\
-    \ predictable inputs to prioritize surprising stimuli, we propose ResTacVLA. Rather than treating tactile data as raw\
-    \ input, we reformulate it as a Residual Tactile Representation capturing the discrepancy between visual priors and physical\
-    \ sensations. By filtering out visually predictable dynamics, this formulation transforms sparse tactile signals into\
-    \ dense, high-value information gain, thereby inherently resolving the bandwidth mismatch. These residuals are discretized\
-    \ through a Vector Quantized (VQ) bottleneck into Latent Contact Primitives that capture critical events missed by vision.\
-    \ Analogous to the neural surprise signal, we leverage the uncertainty of the visual prior to adaptively gate tactile\
-    \ integration, prioritizing residuals specifically during visually unreliable phases to explicitly prevent visual dominance.\
-    \ Experimental results show that ResTacVLA consistently outperforms all baselines on a diverse set of contact-rich manipulation\
-    \ tasks, while remaining robust to unexpected dynamic disturbances. Project page: https://awilekong.github.io/ResTacVLA-Website/"
-  zh: "arXiv:2607.03387v1 Announce Type: new \nAbstract: Tactile perception is indispensable for contact-rich manipulation,\
-    \ yet integrating it into Vision-Language-Action (VLA) models often induces modality collapse, where high-bandwidth visual\
-    \ features overshadow sparse tactile cues. Inspired by Predictive Coding, a neural mechanism where the brain attenuates\
-    \ predictable inputs to prioritize surprising stimuli, we propose ResTacVLA. Rather than treating tactile data as raw\
-    \ input, we reformulate it as a Residual Tactile Representation capturing the discrepancy between visual priors and physical\
-    \ sensations. By filtering out visually predictable dynamics, this formulation transforms sparse tactile signals into\
-    \ dense, high-value information gain, thereby inherently resolving the bandwidth mismatch. These residuals are discretized\
-    \ through a Vector Quantized (VQ) bottleneck into Latent Contact Primitives that capture critical events missed by vision.\
-    \ Analogous to the neural surprise signal, we leverage the uncertainty of the visual prior to adaptively gate tactile\
-    \ integration, prioritizing residuals specifically during visually unreliable phases to explicitly prevent visual dominance.\
-    \ Experimental results show that ResTacVLA consistently outperforms all baselines on a diverse set of contact-rich manipulation\
-    \ tasks, while remaining robust to unexpected dynamic disturbances. Project page: https://awilekong.github.io/ResTacVLA-Website/"
-  ko: "arXiv:2607.03387v1 Announce Type: new \nAbstract: Tactile perception is indispensable for contact-rich manipulation,\
-    \ yet integrating it into Vision-Language-Action (VLA) models often induces modality collapse, where high-bandwidth visual\
-    \ features overshadow sparse tactile cues. Inspired by Predictive Coding, a neural mechanism where the brain attenuates\
-    \ predictable inputs to prioritize surprising stimuli, we propose ResTacVLA. Rather than treating tactile data as raw\
-    \ input, we reformulate it as a Residual Tactile Representation capturing the discrepancy between visual priors and physical\
-    \ sensations. By filtering out visually predictable dynamics, this formulation transforms sparse tactile signals into\
-    \ dense, high-value information gain, thereby inherently resolving the bandwidth mismatch. These residuals are discretized\
-    \ through a Vector Quantized (VQ) bottleneck into Latent Contact Primitives that capture critical events missed by vision.\
-    \ Analogous to the neural surprise signal, we leverage the uncertainty of the visual prior to adaptively gate tactile\
-    \ integration, prioritizing residuals specifically during visually unreliable phases to explicitly prevent visual dominance.\
-    \ Experimental results show that ResTacVLA consistently outperforms all baselines on a diverse set of contact-rich manipulation\
-    \ tasks, while remaining robust to unexpected dynamic disturbances. Project page: https://awilekong.github.io/ResTacVLA-Website/"
+  en: 'arXiv:2607.03387v1 Announce Type: new Abstract: Tactile perception is indispensable for contact-rich manipulation,
+    yet integrating it into Vision-Language-Action (VLA) models often induces modality collapse, where high-bandwidth visual
+    features overshadow sparse tactile cues. Inspired by Predictive Coding, a neural mechanism where the brain attenuates
+    predictable inputs to prioritize surprising stimuli, we propose ResTacVLA. Rather than treating tactile data as raw input,
+    we reformulate it as a Residual Tactile Representation capturing the discrepancy between visual priors and physical sensations.
+    By filtering out visually predictable dynamics, this formulation transforms sparse tactile signals into dense, high-value
+    information gain, thereby inherently resolving the bandwidth mismatch. These residuals are discretized through a Vector
+    Quantized (VQ) bottleneck into Latent Contact Primitives that capture critical events missed by vision. Analogous to the
+    neural surprise signal, we leverage the uncertainty of the visual prior to adaptively gate tactile integration, prioritizing
+    residuals specifically during visually unreliable phases to explicitly prevent visual dominance. Experimental results
+    show that ResTacVLA consistently outperforms all baselines on a diverse set of contact-rich manipulation tasks, while
+    remaining robust to unexpected dynamic disturbances. Project page: https://awilekong.github.io/ResTacVLA-Website/'
+  zh: 'arXiv:2607.03387v1 Announce Type: new Abstract: Tactile perception is indispensable for contact-rich manipulation,
+    yet integrating it into Vision-Language-Action (VLA) models often induces modality collapse, where high-bandwidth visual
+    features overshadow sparse tactile cues. Inspired by Predictive Coding, a neural mechanism where the brain attenuates
+    predictable inputs to prioritize surprising stimuli, we propose ResTacVLA. Rather than treating tactile data as raw input,
+    we reformulate it as a Residual Tactile Representation capturing the discrepancy between visual priors and physical sensations.
+    By filtering out visually predictable dynamics, this formulation transforms sparse tactile signals into dense, high-value
+    information gain, thereby inherently resolving the bandwidth mismatch. These residuals are discretized through a Vector
+    Quantized (VQ) bottleneck into Latent Contact Primitives that capture critical events missed by vision. Analogous to the
+    neural surprise signal, we leverage the uncertainty of the visual prior to adaptively gate tactile integration, prioritizing
+    residuals specifically during visually unreliable phases to explicitly prevent visual dominance. Experimental results
+    show that ResTacVLA consistently outperforms all baselines on a diverse set of contact-rich manipulation tasks, while
+    remaining robust to unexpected dynamic disturbances. Project page: https://awilekong.github.io/ResTacVLA-Website/'
+  ko: 'arXiv:2607.03387v1 Announce Type: new Abstract: Tactile perception is indispensable for contact-rich manipulation,
+    yet integrating it into Vision-Language-Action (VLA) models often induces modality collapse, where high-bandwidth visual
+    features overshadow sparse tactile cues. Inspired by Predictive Coding, a neural mechanism where the brain attenuates
+    predictable inputs to prioritize surprising stimuli, we propose ResTacVLA. Rather than treating tactile data as raw input,
+    we reformulate it as a Residual Tactile Representation capturing the discrepancy between visual priors and physical sensations.
+    By filtering out visually predictable dynamics, this formulation transforms sparse tactile signals into dense, high-value
+    information gain, thereby inherently resolving the bandwidth mismatch. These residuals are discretized through a Vector
+    Quantized (VQ) bottleneck into Latent Contact Primitives that capture critical events missed by vision. Analogous to the
+    neural surprise signal, we leverage the uncertainty of the visual prior to adaptively gate tactile integration, prioritizing
+    residuals specifically during visually unreliable phases to explicitly prevent visual dominance. Experimental results
+    show that ResTacVLA consistently outperforms all baselines on a diverse set of contact-rich manipulation tasks, while
+    remaining robust to unexpected dynamic disturbances. Project page: https://awilekong.github.io/ResTacVLA-Website/'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

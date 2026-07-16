@@ -9,7 +9,7 @@ names:
   ko: EtherCAT
 summary:
   en: High-performance industrial Ethernet field bus for deterministic joint control.
-  zh: 核心内容 EtherCAT 是一种基于标准以太网帧的工业现场总线，由 Beckhoff 提出并由 EtherCAT Technology Group 维护。其最大特点是“processing on the fly”：从站在帧经过时立即读写数据，无需完整接收帧再转发。
+  zh: EtherCAT 是一种基于标准以太网帧的工业现场总线，由 Beckhoff 提出并由 EtherCAT Technology Group 维护。其最大特点是“processing on the fly”：从站在帧经过时立即读写数据，无需完整接收帧再转发。
   ko: 결정론적 관절 제어를 위한 고성능 산업용 이더넷 필드 버스.
 domains:
 - 08_software_middleware
@@ -44,7 +44,7 @@ sources:
 ---
 
 ## 概述
-EtherCAT是人形机器人领域的重要technology。以下内容整理自项目 Wiki，供深入查阅。
+EtherCAT是人形机器人领域的重要技术。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 EtherCAT 是一种基于标准以太网帧的工业现场总线，由 Beckhoff 提出并由 EtherCAT Technology Group 维护。其最大特点是“processing on the fly”：从站在帧经过时立即读写数据，无需完整接收帧再转发。

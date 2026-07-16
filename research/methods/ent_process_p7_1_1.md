@@ -9,7 +9,7 @@ names:
   ko: 仿真平台选型与导入
 summary:
   en: “Simulation platform selection report”, URDF/SDF import success, basic standing simulation through
-  zh: 核心内容 **方法 / 工具**：Isaac Sim / Gazebo / MuJoCo / RaiSim / Bullet 对比
+  zh: 方法 / 工具：Isaac Sim / Gazebo / MuJoCo / RaiSim / Bullet 对比
   ko: 《仿真平台选型报告》、URDF/SDF 导入成功、基础站立仿真通过
 domains:
 - 08_software_middleware

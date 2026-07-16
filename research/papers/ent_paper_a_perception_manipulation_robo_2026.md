@@ -8,30 +8,30 @@ names:
   zh: A Perception-Manipulation Robotics System for Food Cutting
   ko: A Perception-Manipulation Robotics System for Food Cutting
 summary:
-  en: "arXiv:2607.04367v1 Announce Type: new \nAbstract: In the development of cooking robots, mastering the task of cutting\
-    \ is crucial. A significant challenge lies in the diverse properties of food, which necessitate distinct cutting policies\
-    \ and even different knives for optimal processing. This paper presents a perception-manipulation framework for food-cutting\
-    \ tasks. Our system features a knife selection module that utilizes force data from a preliminary fixed trial cut to select\
-    \ the appropriate knife for the given food. This is followed by an adaptive cutting phase using reinforcement learning\
-    \ (RL) to balance cutting speed and energy efficiency. In our experiments, the knife selection module achieved 100% successful\
-    \ rate on unseen food, and we compared the performances of fixed policy, RL policy, with human operators. Our method not\
-    \ only achieves high performance but also demonstrates comparable results to those of human participants."
-  zh: "arXiv:2607.04367v1 Announce Type: new \nAbstract: In the development of cooking robots, mastering the task of cutting\
-    \ is crucial. A significant challenge lies in the diverse properties of food, which necessitate distinct cutting policies\
-    \ and even different knives for optimal processing. This paper presents a perception-manipulation framework for food-cutting\
-    \ tasks. Our system features a knife selection module that utilizes force data from a preliminary fixed trial cut to select\
-    \ the appropriate knife for the given food. This is followed by an adaptive cutting phase using reinforcement learning\
-    \ (RL) to balance cutting speed and energy efficiency. In our experiments, the knife selection module achieved 100% successful\
-    \ rate on unseen food, and we compared the performances of fixed policy, RL policy, with human operators. Our method not\
-    \ only achieves high performance but also demonstrates comparable results to those of human participants."
-  ko: "arXiv:2607.04367v1 Announce Type: new \nAbstract: In the development of cooking robots, mastering the task of cutting\
-    \ is crucial. A significant challenge lies in the diverse properties of food, which necessitate distinct cutting policies\
-    \ and even different knives for optimal processing. This paper presents a perception-manipulation framework for food-cutting\
-    \ tasks. Our system features a knife selection module that utilizes force data from a preliminary fixed trial cut to select\
-    \ the appropriate knife for the given food. This is followed by an adaptive cutting phase using reinforcement learning\
-    \ (RL) to balance cutting speed and energy efficiency. In our experiments, the knife selection module achieved 100% successful\
-    \ rate on unseen food, and we compared the performances of fixed policy, RL policy, with human operators. Our method not\
-    \ only achieves high performance but also demonstrates comparable results to those of human participants."
+  en: 'arXiv:2607.04367v1 Announce Type: new Abstract: In the development of cooking robots, mastering the task of cutting
+    is crucial. A significant challenge lies in the diverse properties of food, which necessitate distinct cutting policies
+    and even different knives for optimal processing. This paper presents a perception-manipulation framework for food-cutting
+    tasks. Our system features a knife selection module that utilizes force data from a preliminary fixed trial cut to select
+    the appropriate knife for the given food. This is followed by an adaptive cutting phase using reinforcement learning (RL)
+    to balance cutting speed and energy efficiency. In our experiments, the knife selection module achieved 100% successful
+    rate on unseen food, and we compared the performances of fixed policy, RL policy, with human operators. Our method not
+    only achieves high performance but also demonstrates comparable results to those of human participants.'
+  zh: 'arXiv:2607.04367v1 Announce Type: new Abstract: In the development of cooking robots, mastering the task of cutting
+    is crucial. A significant challenge lies in the diverse properties of food, which necessitate distinct cutting policies
+    and even different knives for optimal processing. This paper presents a perception-manipulation framework for food-cutting
+    tasks. Our system features a knife selection module that utilizes force data from a preliminary fixed trial cut to select
+    the appropriate knife for the given food. This is followed by an adaptive cutting phase using reinforcement learning (RL)
+    to balance cutting speed and energy efficiency. In our experiments, the knife selection module achieved 100% successful
+    rate on unseen food, and we compared the performances of fixed policy, RL policy, with human operators. Our method not
+    only achieves high performance but also demonstrates comparable results to those of human participants.'
+  ko: 'arXiv:2607.04367v1 Announce Type: new Abstract: In the development of cooking robots, mastering the task of cutting
+    is crucial. A significant challenge lies in the diverse properties of food, which necessitate distinct cutting policies
+    and even different knives for optimal processing. This paper presents a perception-manipulation framework for food-cutting
+    tasks. Our system features a knife selection module that utilizes force data from a preliminary fixed trial cut to select
+    the appropriate knife for the given food. This is followed by an adaptive cutting phase using reinforcement learning (RL)
+    to balance cutting speed and energy efficiency. In our experiments, the knife selection module achieved 100% successful
+    rate on unseen food, and we compared the performances of fixed policy, RL policy, with human operators. Our method not
+    only achieves high performance but also demonstrates comparable results to those of human participants.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

@@ -10,8 +10,7 @@ names:
 summary:
   en: Actuator producing rotational motion, typically composed of frameless torque motor, harmonic reducer, encoder and torque
     sensor.
-  zh: '核心内容 ### 旋转执行器的定义与定位 旋转执行器属于 **component** 类型。 所属领域包括：02_components。 价值链层级：upstream。 产生旋转运动的执行器，通常由无框力矩电机、谐波减速器、编码器和力矩传感器组成。
-    英文名称为 *Rotary Actuator*。 韩文名称为 *Rotary Actuator*。'
+  zh: 产生旋转运动的执行器，通常由无框力矩电机、谐波减速器、编码器和力矩传感器组成。
   ko: 회전 운 동을 생성하는 액추에이터, 일반적으로 프레임리스 토크 모터, 하모닉 감속기, 인코더 및 토크 센서로 구성.
 domains:
 - 02_components
@@ -48,7 +47,7 @@ sources:
 
 ## 核心内容
 ### 旋转执行器的定义与定位
-旋转执行器属于 **component** 类型。 所属领域包括：02_components。 价值链层级：upstream。 产生旋转运动的执行器，通常由无框力矩电机、谐波减速器、编码器和力矩传感器组成。 英文名称为 *Rotary Actuator*。 韩文名称为 *Rotary Actuator*。
+旋转执行器属于 **零部件** 类型。 所属领域包括：零部件。 价值链层级：上游。 产生旋转运动的执行器，通常由无框力矩电机、谐波减速器、编码器和力矩传感器组成。 英文名称为 *Rotary Actuator*。 韩文名称为 *Rotary Actuator*。
 
 ### 旋转执行器的工作原理与技术架构
 旋转执行器的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -71,7 +70,7 @@ sources:
 - torque_motor
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component之一，旋转执行器在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件之一，旋转执行器在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Rotary Actuator](https://en.wikipedia.org/wiki/Actuator)

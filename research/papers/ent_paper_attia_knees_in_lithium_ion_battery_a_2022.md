@@ -10,11 +10,11 @@ names:
 summary:
   en: A 2022 review that defines capacity-fade 'knees' in lithium-ion batteries, classifies six degradation pathways and three
     internal-state trajectory types, and examines sensitivities and prediction challenges.
-  zh: 'Lithium-ion batteries can last many years but sometimes exhibit rapid, nonlinear degradation that severely limits battery
+  zh: Lithium-ion batteries can last many years but sometimes exhibit rapid, nonlinear degradation that severely limits battery
     lifetime. In this work, we review prior work on "knees" in lithium-ion battery aging trajectories. We first review definitions
     for knees and three classes of "internal state trajectories" (termed snowball, hidden, and threshold trajectories) that
     can cause a knee. We then discuss six knee "pathways", including lithium plating, electrode saturation, resistance growth,
-    electrolyte and additive depletion, percolation-limited connectivity, and mechanical deformation -- some of '
+    electrolyte and additive depletion, percolation-limited connectivity, and mechanical deformation -- some of
   ko: 2022년 리뷰로, 리튬 이온 배터리의 용량 감소 '무릎'을 정의하고 6가지 열화 경로와 3가지 내부 상태 궤적 유형을 분류하며 민감도와 예측 과제를 검토한다.
 domains:
 - 02_components

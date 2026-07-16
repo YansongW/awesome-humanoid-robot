@@ -11,7 +11,7 @@ summary:
   en: A 2021 research statement by Tobias Fischer presenting bio-inspired computer vision algorithms for humanoid robots,
     including markerless perspective-taking for iCub, the RT-GENE gaze dataset, RT-BENE blink dataset, and Patch-NetVLAD for
     visual place recognition.
-  zh: Tobias Fischer 于 2021 年发表的研究声明，提出了面向人形机器人的生物启发式计算机视觉算法，包括 iCub 的无标记视角采择、RT-GENE  gaze 数据集、RT-BENE 眨眼数据集以及用于视觉地点识别的 Patch-NetVLAD。
+  zh: Tobias Fischer 于 2021 年发表的研究声明，提出了面向人形机器人的生物启发式计算机视觉算法，包括 iCub 的无标记视角采择、RT-GENE gaze 数据集、RT-BENE 眨眼数据集以及用于视觉地点识别的 Patch-NetVLAD。
   ko: Tobias Fischer가 2021년에 발표한 연구 진술로, iCub의 마커 없는 시점 취득, RT-GENE 시선 데이터셋, RT-BENE 눈 깜빡임 데이터셋, 시각적 장소 인식을 위한 Patch-NetVLAD
     등 인간형 로봇을 위한 생체 모방 컴퓨터 비전 알고리즘을 소개한다.
 domains:

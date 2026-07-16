@@ -9,8 +9,7 @@ names:
   ko: Power Distribution System
 summary:
   en: DC-DC converters, busbars, fuses, and contactors that route battery power to compute, actuators, and sensors.
-  zh: '核心内容 ### 配电系统的定义与定位 配电系统属于 **component** 类型。 所属领域包括：02_components, 06_design_engineering。 价值链层级：midstream, upstream。
-    将电池电能分配给计算、执行器和传感器的DC-DC变换器、母线、保险丝和接触器。 英文名称为 *Power Distribution System*。 韩文名称为 *Power Distribution System*。'
+  zh: 将电池电能分配给计算、执行器和传感器的DC-DC变换器、母线、保险丝和接触器。
   ko: 배터리 전력을 컴퓨팅, 액추에이터 및 센서로 라우팅하는 DC-DC 컨버터, 버스바, 퓨즈 및 콘택터.
 domains:
 - 02_components
@@ -49,7 +48,7 @@ sources:
 
 ## 核心内容
 ### 配电系统的定义与定位
-配电系统属于 **component** 类型。 所属领域包括：02_components, 06_design_engineering。 价值链层级：midstream, upstream。 将电池电能分配给计算、执行器和传感器的DC-DC变换器、母线、保险丝和接触器。 英文名称为 *Power Distribution System*。 韩文名称为 *Power Distribution System*。
+配电系统属于 **零部件** 类型。 所属领域包括：零部件, 设计工程。 价值链层级：中游, upstream。 将电池电能分配给计算、执行器和传感器的DC-DC变换器、母线、保险丝和接触器。 英文名称为 *Power Distribution System*。 韩文名称为 *Power Distribution System*。
 
 ### 配电系统的工作原理与技术架构
 配电系统的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -72,7 +71,7 @@ sources:
 - power
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component之一，配电系统在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件之一，配电系统在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Power Distribution System](https://en.wikipedia.org/wiki/Power_distribution_unit)

@@ -10,8 +10,7 @@ names:
 summary:
   en: A fundamental calculus rule that gives the derivative of a composition of functions as the product of the derivatives
     of the composed functions.
-  zh: '核心内容 ### 链式法则的定义与定位 链式法则属于 **theorem** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一个基本微积分法则，给出复合函数导数等于各组成函数导数的乘积。
-    英文名称为 *Chain rule*。 韩文名称为 *연쇄 법칙*。'
+  zh: 一个基本微积分法则，给出复合函数导数等于各组成函数导数的乘积。
   ko: 함수의 합성에 대한 도함수를 구성 함수들의 도함수 곱으로 주는 기본 미적분 법칙.
 domains:
 - 00_foundations
@@ -54,7 +53,7 @@ related_entities:
 
 ## 核心内容
 ### 链式法则的定义与定位
-链式法则属于 **theorem** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一个基本微积分法则，给出复合函数导数等于各组成函数导数的乘积。 英文名称为 *Chain rule*。 韩文名称为 *연쇄 법칙*。
+链式法则属于 **定理** 类型。 所属领域包括：基础学科。 价值链层级：基础层。 一个基本微积分法则，给出复合函数导数等于各组成函数导数的乘积。 英文名称为 *Chain rule*。 韩文名称为 *연쇄 법칙*。
 
 ### 链式法则的数学与原理基础
 链式法则建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -78,7 +77,7 @@ related_entities:
 - composition
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键theorem之一，链式法则在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键定理之一，链式法则在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [W. Rudin, Principles of Mathematical Analysis, 3rd ed., McGraw-Hill, 1976](https://doi.org/10.2307/2683801)

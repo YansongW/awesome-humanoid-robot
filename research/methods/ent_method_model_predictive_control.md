@@ -10,8 +10,7 @@ names:
 summary:
   en: An optimization-based control method that repeatedly solves a finite-horizon optimal control problem using a predictive
     model and applies only the first control action.
-  zh: '核心内容 ### 模型预测控制（MPC）的定义与定位 模型预测控制（MPC）属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。
-    英文名称为 *Model Predictive Control (MPC)*。 韩文名称为 *모델 예측 제어(MPC)*。'
+  zh: 基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。
   ko: 예측 모델을 사용하여 유한 수평 최적 제어 문제를 반복적으로 풀고 첫 번째 제어 입력만 적용하는 최적화 기반 제어 방법.
 domains:
 - 07_ai_models_algorithms
@@ -74,7 +73,7 @@ related_entities:
 
 ## 核心内容
 ### 模型预测控制（MPC）的定义与定位
-模型预测控制（MPC）属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。 英文名称为 *Model Predictive Control (MPC)*。 韩文名称为 *모델 예측 제어(MPC)*。
+模型预测控制（MPC）属于 **方法** 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 基于预测模型反复求解有限时域最优控制问题并仅执行首步控制量的优化控制方法。 英文名称为 *Model Predictive Control (MPC)*。 韩文名称为 *모델 예측 제어(MPC)*。
 
 ### 模型预测控制（MPC）的数学与原理基础
 模型预测控制（MPC）建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -100,7 +99,7 @@ related_entities:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，模型预测控制（MPC）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，模型预测控制（MPC）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [F. Borrelli, A. Bemporad, and M. Morari, Predictive Control for Linear and Hybrid Systems, Cambridge, 2017](https://doi.org/10.1017/9781139061799)

@@ -10,8 +10,7 @@ names:
 summary:
   en: The learned backward Markov chain in Denoising Diffusion Probabilistic Models that gradually transforms Gaussian noise
     into data-like samples.
-  zh: '核心内容 ### DDPM 逆过程的定义与定位 DDPM 逆过程属于 **algorithm** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 去噪扩散概率模型（DDPM）中学习的反向马尔可夫链，逐步将高斯噪声转化为类数据样本。
-    英文名称为 *DDPM reverse process*。 韩文名称为 *DDPM 역 과정*。'
+  zh: 去噪扩散概率模型（DDPM）中学习的反向马尔可夫链，逐步将高斯噪声转化为类数据样本。
   ko: 디노이징 확산 확률 모델(DDPM)에서 학습된 역방향 마르코프 체인으로, 점진적으로 가우시안 노이즈를 데이터와 유사한 샘플로 변환합니다.
 domains:
 - 00_foundations
@@ -68,7 +67,7 @@ related_entities:
 
 ## 核心内容
 ### DDPM 逆过程的定义与定位
-DDPM 逆过程属于 **algorithm** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 去噪扩散概率模型（DDPM）中学习的反向马尔可夫链，逐步将高斯噪声转化为类数据样本。 英文名称为 *DDPM reverse process*。 韩文名称为 *DDPM 역 과정*。
+DDPM 逆过程属于 **算法** 类型。 所属领域包括：基础学科。 价值链层级：基础层。 去噪扩散概率模型（DDPM）中学习的反向马尔可夫链，逐步将高斯噪声转化为类数据样本。 英文名称为 *DDPM reverse process*。 韩文名称为 *DDPM 역 과정*。
 
 ### DDPM 逆过程的数学与原理基础
 DDPM 逆过程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -92,7 +91,7 @@ DDPM 逆过程可应用于人形机器人的运动规划、控制优化、状态
 - score_estimation
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键algorithm之一，DDPM 逆过程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键算法之一，DDPM 逆过程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [J. Ho, A. Jain, and P. Abbeel, 'Denoising Diffusion Probabilistic Models', NeurIPS, 2020](https://proceedings.neurips.cc/paper/2020/hash/4c5bcfec8584af0d967f1ab10179ca4b-Abstract.html)

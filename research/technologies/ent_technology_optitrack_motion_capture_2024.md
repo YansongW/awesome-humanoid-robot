@@ -9,7 +9,7 @@ names:
   ko: OptiTrack 모션 캡처
 summary:
   en: Optical marker-based motion-capture system for high-precision 3-D body tracking and robot retargeting.
-  zh: '## 概述 OptiTrack 动作捕捉是人形机器人领域的重要technology。以下内容整理自项目 Wiki，供深入查阅。'
+  zh: 概述 OptiTrack 动作捕捉是人形机器人领域的重要technology。以下内容整理自项目 Wiki，供深入查阅。
   ko: 고정밀 3차원 신체 추적 및 로봇 리타게팅을 위한 광학 마커 기반 모션 캡처 시스템.
 domains:
 - 09_data_datasets
@@ -42,7 +42,7 @@ sources:
 ---
 
 ## 概述
-OptiTrack 动作捕捉是人形机器人领域的重要technology。以下内容整理自项目 Wiki，供深入查阅。
+OptiTrack 动作捕捉是人形机器人领域的重要技术。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## OptiTrack 运动捕捉系统 / OptiTrack Motion Capture System

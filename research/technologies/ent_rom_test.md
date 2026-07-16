@@ -10,8 +10,7 @@ names:
 summary:
   en: A benchmark that measures the reachable joint angles of a robot hand or limb, used to evaluate workspace coverage and
     joint flexibility.
-  zh: '核心内容 ### 活动范围测试的定义与定位 活动范围测试属于 **benchmark** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets,
-    midstream。 一种测量机器人手或肢体可达关节角度的基准，用于评估工作空间覆盖范围和关节灵活性。 英文名称为 *Range of Motion Test*。 韩文名称为 *가동 범위 테스트*。'
+  zh: 一种测量机器人手或肢体可达关节角度的基准，用于评估工作空间覆盖范围和关节灵活性。
   ko: 로봇 손이나 사지의 도달 가능한 관절 각도를 측정하여 작업 공간 커버리지와 관절 유연성을 평가하는 벤치마크입니다.
 domains:
 - 10_evaluation_benchmarks
@@ -51,7 +50,7 @@ theoretical_depth:
 
 ## 核心内容
 ### 活动范围测试的定义与定位
-活动范围测试属于 **benchmark** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets, midstream。 一种测量机器人手或肢体可达关节角度的基准，用于评估工作空间覆盖范围和关节灵活性。 英文名称为 *Range of Motion Test*。 韩文名称为 *가동 범위 테스트*。
+活动范围测试属于 **评测基准** 类型。 所属领域包括：评测基准, 设计工程。 价值链层级：验证与市场层, midstream。 一种测量机器人手或肢体可达关节角度的基准，用于评估工作空间覆盖范围和关节灵活性。 英文名称为 *Range of Motion Test*。 韩文名称为 *가동 범위 테스트*。
 
 ### 活动范围测试的任务设置与数据构成
 活动范围测试通过标准化的任务或数据格式，为不同方法提供可比较的评估基础。理解其覆盖范围与标注方式，有助于正确解读实验结果。
@@ -73,7 +72,7 @@ theoretical_depth:
 - dexterous_hand
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键benchmark之一，活动范围测试在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键评测基准之一，活动范围测试在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)

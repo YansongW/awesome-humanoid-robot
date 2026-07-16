@@ -10,8 +10,7 @@ names:
 summary:
   en: A motor-control method that transforms three-phase currents into a rotating dq reference frame to enable independent
     control of torque and flux, similar to a DC machine.
-  zh: '核心内容 ### 磁场定向控制（FOC）的定义与定位 磁场定向控制（FOC）属于 **method** 类型。 所属领域包括：02_components。 价值链层级：midstream。 将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。
-    英文名称为 *Field-Oriented Control (FOC)*。 韩文名称为 *자장 지향 제어(FOC)*。'
+  zh: 将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。
   ko: 삼상 전류를 회전하는 dq 좌표계로 변환하여 토크와 자속을 독립 제어하는 모터 제어 방식.
 domains:
 - 02_components
@@ -45,7 +44,7 @@ sources:
 
 ## 核心内容
 ### 磁场定向控制（FOC）的定义与定位
-磁场定向控制（FOC）属于 **method** 类型。 所属领域包括：02_components。 价值链层级：midstream。 将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。 英文名称为 *Field-Oriented Control (FOC)*。 韩文名称为 *자장 지향 제어(FOC)*。
+磁场定向控制（FOC）属于 **方法** 类型。 所属领域包括：零部件。 价值链层级：中游。 将三相电流变换到旋转的dq坐标系，分别控制转矩与磁通，使交流电机获得类似直流电机的调速性能。 英文名称为 *Field-Oriented Control (FOC)*。 韩文名称为 *자장 지향 제어(FOC)*。
 
 ### 磁场定向控制（FOC）的数学与原理基础
 磁场定向控制（FOC）建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -67,7 +66,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，磁场定向控制（FOC）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，磁场定向控制（FOC）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

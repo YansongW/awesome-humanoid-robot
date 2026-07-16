@@ -10,8 +10,7 @@ names:
 summary:
   en: A whole-body control method that stacks multiple tasks by priority and solves them as a cascade of quadratic programs,
     ensuring higher-priority tasks are fulfilled before lower-priority ones.
-  zh: '核心内容 ### 分层二次规划全身控制的定义与定位 分层二次规划全身控制属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 06_design_engineering。 价值链层级：intelligence,
-    midstream。 一种按优先级堆叠多个任务并通过级联二次规划求解的全身控制方法，确保高优先级任务优先满足。 英文名称为 *Hierarchical QP Whole-Body Control*。 韩文名称为 *계층적 QP 전신 제어*。'
+  zh: 一种按优先级堆叠多个任务并通过级联二次规划求解的全身控制方法，确保高优先级任务优先满足。
   ko: 여러 작업을 우선순위에 따라 쌓아 올리고 연속된 이차 계획법으로 풀어 높은 우선순위 작업을 먼저 만족시키는 전신 제어 방법이다.
 domains:
 - 07_ai_models_algorithms
@@ -63,7 +62,7 @@ related_entities:
 
 ## 核心内容
 ### 分层二次规划全身控制的定义与定位
-分层二次规划全身控制属于 **method** 类型。 所属领域包括：07_ai_models_algorithms, 06_design_engineering。 价值链层级：intelligence, midstream。 一种按优先级堆叠多个任务并通过级联二次规划求解的全身控制方法，确保高优先级任务优先满足。 英文名称为 *Hierarchical QP Whole-Body Control*。 韩文名称为 *계층적 QP 전신 제어*。
+分层二次规划全身控制属于 **方法** 类型。 所属领域包括：AI 模型与算法, 设计工程。 价值链层级：智能层, midstream。 一种按优先级堆叠多个任务并通过级联二次规划求解的全身控制方法，确保高优先级任务优先满足。 英文名称为 *Hierarchical QP Whole-Body Control*。 韩文名称为 *계층적 QP 전신 제어*。
 
 ### 分层二次规划全身控制的数学与原理基础
 分层二次规划全身控制建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -87,7 +86,7 @@ related_entities:
 - humanoid_robot
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，分层二次规划全身控制在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，分层二次规划全身控制在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Hierarchical QP whole-body control: from theory to practice](https://arxiv.org/abs/1910.13329)

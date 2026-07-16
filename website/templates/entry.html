@@ -14,11 +14,12 @@
   <nav class="breadcrumb" aria-label="{{ ui.breadcrumb_aria_label }}">
     <a href="{{ bp }}/">{{ ui.nav_home }}</a>
     <span>/</span>
-    <a href="{{ bp }}/search/?q={{ entry.type | urlencode }}">{{ entry.type | type_label(lang) }}</a>
+    <a href="{{ bp }}/types/{{ entry.type }}/">{{ entry.type | type_label(lang) }}</a>
     <span>/</span>
     <span class="breadcrumb-current">{{ entry.name }}</span>
   </nav>
 
+  <div class="content-with-toc">
   <article class="entry-page">
     <header class="entry-header">
       <div class="entry-type-badge">{{ entry.type | type_label(lang) }}</div>
@@ -65,6 +66,10 @@
       </div>
     </header>
 
+    {% if entry.body_fallback and ui.untranslated_notice %}
+    <p class="untranslated-notice">{{ ui.untranslated_notice }}</p>
+    {% endif %}
+
     {% if entry.summary %}
     <section class="entry-summary">
       <h2>{{ ui.summary }}</h2>
@@ -97,8 +102,10 @@
           <li>
             {% if src is string %}
             <a href="{{ src }}" target="_blank" rel="noopener">{{ src }}</a>
-            {% else %}
+            {% elif src.url %}
             <a href="{{ src.url }}" target="_blank" rel="noopener">{{ src.title or src.url }}</a>
+            {% else %}
+            <span>{{ src.title or ui.sources }}</span>
             {% endif %}
           </li>
           {% endfor %}
@@ -157,12 +164,12 @@
         <div class="relations-column">
           <h3>{{ ui.outgoing }}</h3>
           <ul class="relation-list">
-            {% for rel in outgoing %}
+            {% for item in outgoing %}
             <li>
-              <span class="rel-pill">{{ rel.type }}</span>
+              <span class="rel-pill">{{ item.rel.type | rel_type_label(lang) }}</span>
               <span class="rel-arrow">→</span>
-              <a href="{{ bp }}/entry/{{ rel.target_id }}/">{{ rel.target_name }}</a>
-              {% if rel.description %}<span class="rel-desc">{{ rel.description }}</span>{% endif %}
+              <a href="{{ bp }}/entry/{{ item.rel.target_id }}/">{{ item.rel.target_name }}</a>
+              {% if item.description %}<span class="rel-desc">{{ item.description }}</span>{% endif %}
             </li>
             {% endfor %}
           </ul>
@@ -172,12 +179,12 @@
         <div class="relations-column">
           <h3>{{ ui.incoming }}</h3>
           <ul class="relation-list">
-            {% for rel in incoming %}
+            {% for item in incoming %}
             <li>
-              <a href="{{ bp }}/entry/{{ rel.source_id }}/">{{ rel.source_name }}</a>
+              <a href="{{ bp }}/entry/{{ item.rel.source_id }}/">{{ item.rel.source_name }}</a>
               <span class="rel-arrow">→</span>
-              <span class="rel-pill">{{ rel.type }}</span>
-              {% if rel.description %}<span class="rel-desc">{{ rel.description }}</span>{% endif %}
+              <span class="rel-pill">{{ item.rel.type | rel_type_label(lang) }}</span>
+              {% if item.description %}<span class="rel-desc">{{ item.description }}</span>{% endif %}
             </li>
             {% endfor %}
           </ul>
@@ -185,13 +192,13 @@
         {% endif %}
       </div>
     </section>
-    {% endif %}
 
     <section class="entry-graph">
       <h2>{{ ui.subgraph }}</h2>
       <div id="entry-graph" class="cy-graph" data-center-id="{{ entry.id }}"></div>
       <p class="graph-hint">{{ ui.graph_hint }}</p>
     </section>
+    {% endif %}
 
     {% if related %}
     <section class="entry-related">
@@ -208,6 +215,16 @@
     </section>
     {% endif %}
   </article>
+
+  {% if entry.toc_html %}
+  <aside class="page-toc" aria-label="{{ ui.toc_title }}">
+    <details open>
+      <summary>{{ ui.toc_title }}</summary>
+      <nav class="toc-nav">{{ entry.toc_html | safe }}</nav>
+    </details>
+  </aside>
+  {% endif %}
+  </div>
 </div>
 {% endblock %}
 

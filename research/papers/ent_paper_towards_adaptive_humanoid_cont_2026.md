@@ -10,13 +10,13 @@ names:
 summary:
   en: Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning is a knowledge node related
     to paper in the humanoid robot value chain.
-  zh: 'Humanoid robots are promising to learn a diverse set of human-like locomotion behaviors, including standing up, walking,
+  zh: Humanoid robots are promising to learn a diverse set of human-like locomotion behaviors, including standing up, walking,
     running, and jumping. However, existing methods predominantly require training independent policies for each skill, yielding
     behavior-specific controllers that exhibit limited generalization and brittle performance when deployed on irregular terrains
     and in diverse situations. To address this challenge, we propose Adaptive Humanoid Control (AHC) that adopts a two-stage
     framework to learn an adaptive humanoid locomotion controller across different skills and terrains. Specifically, we first
     train several primary locomotion policies and perform a multi-behavior distillation process to obtain a basic multi-behavior
-    controller, facilitating adaptive behavior switching based '
+    controller, facilitating adaptive behavior switching based
   ko: Towards Adaptive Humanoid Control via Multi-Behavior Distillation and Reinforced Fine-Tuning is a knowledge node related
     to paper in the humanoid robot value chain.
 domains:

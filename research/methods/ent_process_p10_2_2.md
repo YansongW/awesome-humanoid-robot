@@ -9,7 +9,7 @@ names:
   ko: 步态规划与地形适应
 summary:
   en: Data on level-ground, sloped, and obstacle-crossing walking, as well as speed and energy consumption, meet the PRD requirements.
-  zh: 核心内容 **方法 / 工具**：ZMP preview、Raibert heuristic、基于优化的步态、RL/IL
+  zh: 方法 / 工具：ZMP preview、Raibert heuristic、基于优化的步态、RL/IL
   ko: 平地/斜坡/障碍行走数据、速度/能耗满足 PRD
 domains:
 - 07_ai_models_algorithms

@@ -9,7 +9,7 @@ names:
   ko: 테슬라 옵티머스
 summary:
   en: Tesla's general-purpose humanoid robot program, with stated goals of factory deployment and high-volume manufacturing.
-  zh: '## 概述 Tesla Optimus是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。'
+  zh: 概述 Tesla Optimus是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
   ko: 테슬라의 범용 휴인oid 로봇 프로그램으로, 공장 배치와 대량 생산을 목표로 합니다.
 domains:
 - 05_mass_production
@@ -52,7 +52,7 @@ theoretical_depth:
 ---
 
 ## 概述
-Tesla Optimus是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
+Tesla Optimus是人形机器人领域的重要机器人系统。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## Tesla Optimus Gen 3 / 特斯拉 Optimus Gen 3

@@ -8,7 +8,7 @@ names:
   zh: 对抗技能嵌入：大规模运动控制
   ko: 'ASE: Adversarial Skill Embeddings for Large-Scale Motion Control'
 summary:
-  en: 'ASE: Adversarial Skill Embeddings for Large-Scale Motion Control is a paper on skill sets for humanoid robotics.  Adversarial
+  en: 'ASE: Adversarial Skill Embeddings for Large-Scale Motion Control is a paper on skill sets for humanoid robotics. Adversarial
     skill embedding: large-scale motor control.'
   zh: 'ASE: Adversarial Skill Embeddings for Large-Scale Motion Control is a paper on 技能组合 for humanoid robotics. 对抗技能嵌入：大规模运动控制.'
   ko: 'ASE: Adversarial Skill Embeddings for Large-Scale Motion Control is a paper on 技能组合 for humanoid robotics. 对抗技能嵌入：大规模运动控制.'

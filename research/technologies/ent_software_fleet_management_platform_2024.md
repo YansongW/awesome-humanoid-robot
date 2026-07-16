@@ -9,8 +9,7 @@ names:
   ko: Fleet Management Platform
 summary:
   en: Cloud platform for task orchestration, charging, health monitoring, and analytics across multiple deployed humanoids.
-  zh: '核心内容 ### 机群管理平台的定义与定位 机群管理平台属于 **software_platform** 类型。 所属领域包括：08_software_middleware, 11_applications_markets。 价值链层级：intelligence,
-    validation_markets。 跨多台已部署人形机器人进行任务编排、充电、健康监控和分析的云平台。 英文名称为 *Fleet Management Platform*。 韩文名称为 *Fleet Management Platform*。'
+  zh: 跨多台已部署人形机器人进行任务编排、充电、健康监控和分析的云平台。
   ko: 여러 대의 배포된 휨로봇에 걸쳐 작업 오케스트레이션, 충전, 건강 모니터링 및 분석을 위한 클라우드 플랫폼.
 domains:
 - 08_software_middleware
@@ -49,7 +48,7 @@ sources:
 
 ## 核心内容
 ### 机群管理平台的定义与定位
-机群管理平台属于 **software_platform** 类型。 所属领域包括：08_software_middleware, 11_applications_markets。 价值链层级：intelligence, validation_markets。 跨多台已部署人形机器人进行任务编排、充电、健康监控和分析的云平台。 英文名称为 *Fleet Management Platform*。 韩文名称为 *Fleet Management Platform*。
+机群管理平台属于 **软件平台** 类型。 所属领域包括：软件中间件, 应用与市场。 价值链层级：智能层, validation_markets。 跨多台已部署人形机器人进行任务编排、充电、健康监控和分析的云平台。 英文名称为 *Fleet Management Platform*。 韩文名称为 *Fleet Management Platform*。
 
 ### 机群管理平台的工作原理与技术架构
 机群管理平台的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -72,7 +71,7 @@ sources:
 - software_platform
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键software_platform之一，机群管理平台在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键软件平台之一，机群管理平台在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Fleet Management Platform](https://en.wikipedia.org/wiki/Fleet_management)

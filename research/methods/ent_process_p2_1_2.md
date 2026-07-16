@@ -9,7 +9,7 @@ names:
   ko: A 面 3D 建模与可视化
 summary:
   en: High-precision A-side, renderings, CMF scheme, and key viewpoints passed the review
-  zh: 核心内容 **方法 / 工具**：Alias / Rhino / Blender / Cinema 4D、KeyShot 渲染
+  zh: 方法 / 工具：Alias / Rhino / Blender / Cinema 4D、KeyShot 渲染
   ko: 高精度 A 面、渲染图、CMF 方案、关键视角评审通过
 domains:
 - 06_design_engineering

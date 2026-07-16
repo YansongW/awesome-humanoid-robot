@@ -8,42 +8,42 @@ names:
   zh: Combined Constrained Sampling and Reinforcement Learning for Robotic Manipulation
   ko: Combined Constrained Sampling and Reinforcement Learning for Robotic Manipulation
 summary:
-  en: "arXiv:2602.08557v2 Announce Type: replace \nAbstract: Training non-prehensile manipulation policies in contact-rich\
-    \ settings is a core challenge in robotics. While Reinforcement Learning (RL) has demonstrated its strength in such settings,\
-    \ it may struggle to sufficiently explore and discover complex manipulation strategies. To address this, we combine two\
-    \ basic ideas: First, designing appropriate reset strategies (the start state distribution of episodes) has shown promise\
-    \ in improving RL exploration and effectiveness. Second, while model-based approaches to finding trajectories through\
-    \ manipulation are hard, recent work showed that model-based approaches to sampling states on constrained manifolds can\
-    \ be highly efficient. Based on these observations, we propose a novel state sampler that boosts the performance of goal-conditioned\
-    \ RL in complex contact-rich manipulation tasks. Our sampler explicitly takes into account the structure of contact in\
-    \ order to provide a rich covering of diverse contact modes. By combining constrained sampling resets with projected interpolation\
-    \ and curriculum learning, our novel approach outperforms RL without constrained sampling and alternative reset methods,\
-    \ and effectively trains universal, non-prehensile, and dynamic manipulation policies in contact-rich settings. See https://www.user.tu-berlin.de/mtoussai/26-CSRL/\
-    \ for supplementary material."
-  zh: "arXiv:2602.08557v2 Announce Type: replace \nAbstract: Training non-prehensile manipulation policies in contact-rich\
-    \ settings is a core challenge in robotics. While Reinforcement Learning (RL) has demonstrated its strength in such settings,\
-    \ it may struggle to sufficiently explore and discover complex manipulation strategies. To address this, we combine two\
-    \ basic ideas: First, designing appropriate reset strategies (the start state distribution of episodes) has shown promise\
-    \ in improving RL exploration and effectiveness. Second, while model-based approaches to finding trajectories through\
-    \ manipulation are hard, recent work showed that model-based approaches to sampling states on constrained manifolds can\
-    \ be highly efficient. Based on these observations, we propose a novel state sampler that boosts the performance of goal-conditioned\
-    \ RL in complex contact-rich manipulation tasks. Our sampler explicitly takes into account the structure of contact in\
-    \ order to provide a rich covering of diverse contact modes. By combining constrained sampling resets with projected interpolation\
-    \ and curriculum learning, our novel approach outperforms RL without constrained sampling and alternative reset methods,\
-    \ and effectively trains universal, non-prehensile, and dynamic manipulation policies in contact-rich settings. See https://www.user.tu-berlin.de/mtoussai/26-CSRL/\
-    \ for supplementary material."
-  ko: "arXiv:2602.08557v2 Announce Type: replace \nAbstract: Training non-prehensile manipulation policies in contact-rich\
-    \ settings is a core challenge in robotics. While Reinforcement Learning (RL) has demonstrated its strength in such settings,\
-    \ it may struggle to sufficiently explore and discover complex manipulation strategies. To address this, we combine two\
-    \ basic ideas: First, designing appropriate reset strategies (the start state distribution of episodes) has shown promise\
-    \ in improving RL exploration and effectiveness. Second, while model-based approaches to finding trajectories through\
-    \ manipulation are hard, recent work showed that model-based approaches to sampling states on constrained manifolds can\
-    \ be highly efficient. Based on these observations, we propose a novel state sampler that boosts the performance of goal-conditioned\
-    \ RL in complex contact-rich manipulation tasks. Our sampler explicitly takes into account the structure of contact in\
-    \ order to provide a rich covering of diverse contact modes. By combining constrained sampling resets with projected interpolation\
-    \ and curriculum learning, our novel approach outperforms RL without constrained sampling and alternative reset methods,\
-    \ and effectively trains universal, non-prehensile, and dynamic manipulation policies in contact-rich settings. See https://www.user.tu-berlin.de/mtoussai/26-CSRL/\
-    \ for supplementary material."
+  en: 'arXiv:2602.08557v2 Announce Type: replace Abstract: Training non-prehensile manipulation policies in contact-rich settings
+    is a core challenge in robotics. While Reinforcement Learning (RL) has demonstrated its strength in such settings, it
+    may struggle to sufficiently explore and discover complex manipulation strategies. To address this, we combine two basic
+    ideas: First, designing appropriate reset strategies (the start state distribution of episodes) has shown promise in improving
+    RL exploration and effectiveness. Second, while model-based approaches to finding trajectories through manipulation are
+    hard, recent work showed that model-based approaches to sampling states on constrained manifolds can be highly efficient.
+    Based on these observations, we propose a novel state sampler that boosts the performance of goal-conditioned RL in complex
+    contact-rich manipulation tasks. Our sampler explicitly takes into account the structure of contact in order to provide
+    a rich covering of diverse contact modes. By combining constrained sampling resets with projected interpolation and curriculum
+    learning, our novel approach outperforms RL without constrained sampling and alternative reset methods, and effectively
+    trains universal, non-prehensile, and dynamic manipulation policies in contact-rich settings. See https://www.user.tu-berlin.de/mtoussai/26-CSRL/
+    for supplementary material.'
+  zh: 'arXiv:2602.08557v2 Announce Type: replace Abstract: Training non-prehensile manipulation policies in contact-rich settings
+    is a core challenge in robotics. While Reinforcement Learning (RL) has demonstrated its strength in such settings, it
+    may struggle to sufficiently explore and discover complex manipulation strategies. To address this, we combine two basic
+    ideas: First, designing appropriate reset strategies (the start state distribution of episodes) has shown promise in improving
+    RL exploration and effectiveness. Second, while model-based approaches to finding trajectories through manipulation are
+    hard, recent work showed that model-based approaches to sampling states on constrained manifolds can be highly efficient.
+    Based on these observations, we propose a novel state sampler that boosts the performance of goal-conditioned RL in complex
+    contact-rich manipulation tasks. Our sampler explicitly takes into account the structure of contact in order to provide
+    a rich covering of diverse contact modes. By combining constrained sampling resets with projected interpolation and curriculum
+    learning, our novel approach outperforms RL without constrained sampling and alternative reset methods, and effectively
+    trains universal, non-prehensile, and dynamic manipulation policies in contact-rich settings. See https://www.user.tu-berlin.de/mtoussai/26-CSRL/
+    for supplementary material.'
+  ko: 'arXiv:2602.08557v2 Announce Type: replace Abstract: Training non-prehensile manipulation policies in contact-rich settings
+    is a core challenge in robotics. While Reinforcement Learning (RL) has demonstrated its strength in such settings, it
+    may struggle to sufficiently explore and discover complex manipulation strategies. To address this, we combine two basic
+    ideas: First, designing appropriate reset strategies (the start state distribution of episodes) has shown promise in improving
+    RL exploration and effectiveness. Second, while model-based approaches to finding trajectories through manipulation are
+    hard, recent work showed that model-based approaches to sampling states on constrained manifolds can be highly efficient.
+    Based on these observations, we propose a novel state sampler that boosts the performance of goal-conditioned RL in complex
+    contact-rich manipulation tasks. Our sampler explicitly takes into account the structure of contact in order to provide
+    a rich covering of diverse contact modes. By combining constrained sampling resets with projected interpolation and curriculum
+    learning, our novel approach outperforms RL without constrained sampling and alternative reset methods, and effectively
+    trains universal, non-prehensile, and dynamic manipulation policies in contact-rich settings. See https://www.user.tu-berlin.de/mtoussai/26-CSRL/
+    for supplementary material.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

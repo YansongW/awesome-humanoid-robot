@@ -9,9 +9,9 @@ names:
   ko: 스케일드 닷프로덕트 셀프 어텐션
 summary:
   en: The core equation of the Transformer that computes a weighted sum of values based on query-key compatibility.
-  zh: '> **生活实例**：你在读一句话时，每个字都会“回头看”整句话，并根据相关性决定把注意力放在哪些字上。例如“我把苹果吃了”中，“吃”更关注“苹果”而不是“我”。Self-attention 就是让模型自动学习这种“谁该看谁”的权重机制。缩放因子
-    $1/\sqrt{d_k}$ 相当于防止大家太兴奋：如果 Query 和 Key 的维度很高，点积会容易变得极大，导致 softmax 变成“非黑即白”，模型就学不到微妙的注意力分布。 > > **自然语言逻辑**：把输入序列分别投影成
-    Query、Key、Value 三组向量；Query 和 Key 做点积得到相似度；用 softmax 归一化得到注意力权重；权重乘以 Value 得到输出。$QK^\top/\sqrt{d_k}$ 这一步同时完成了“匹配”和“缩放”，让训练更稳定。'
+  zh: '> 生活实例：你在读一句话时，每个字都会“回头看”整句话，并根据相关性决定把注意力放在哪些字上。例如“我把苹果吃了”中，“吃”更关注“苹果”而不是“我”。Self-attention 就是让模型自动学习这种“谁该看谁”的权重机制。缩放因子
+    $1/\sqrt{d_k}$ 相当于防止大家太兴奋：如果 Query 和 Key 的维度很高，点积会容易变得极大，导致 softmax 变成“非黑即白”，模型就学不到微妙的注意力分布。 > > 自然语言逻辑：把输入序列分别投影成 Query、Key、Value
+    三组向量；Query 和 Key 做点积得到相似度；用 softmax 归一化得到注意力权重；权重乘以 Value 得到输出。$QK^\top/\sqrt{d_k}$ 这一步同时完成了“匹配”和“缩放”，让训练更稳定。'
   ko: Transformer의 핵심 방정식으로, Query와 Key의 유사도에 따라 Value를 가중합합니다.
 domains:
 - 00_foundations

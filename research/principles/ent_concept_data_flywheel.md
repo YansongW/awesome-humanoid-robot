@@ -10,8 +10,7 @@ names:
 summary:
   en: A self-reinforcing cycle in which deployed robots generate data that improves AI models, which improves robot performance
     and generates even more data.
-  zh: '核心内容 ### 数据飞轮的定义与定位 数据飞轮属于 **concept** 类型。 所属领域包括：11_applications_markets, 12_policy_regulation_ethics。 价值链层级：validation_markets。
-    部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。 英文名称为 *Data Flywheel*。 韩文名称为 *데이터 플라이휠*。'
+  zh: 部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。
   ko: 배포된 로봇이 데이터를 생성하고, 데이터가 AI 모델을 개선하며, 모델이 로봇 성능을 높여 더 많은 데이터를 생성하는 자기 강화 순환.
 domains:
 - 11_applications_markets
@@ -46,7 +45,7 @@ sources:
 
 ## 核心内容
 ### 数据飞轮的定义与定位
-数据飞轮属于 **concept** 类型。 所属领域包括：11_applications_markets, 12_policy_regulation_ethics。 价值链层级：validation_markets。 部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。 英文名称为 *Data Flywheel*。 韩文名称为 *데이터 플라이휠*。
+数据飞轮属于 **概念** 类型。 所属领域包括：应用与市场, 政策法规伦理。 价值链层级：验证与市场层。 部署机器人产生数据、数据改进AI模型、模型提升机器人性能并产生更多数据的自我增强循环。 英文名称为 *Data Flywheel*。 韩文名称为 *데이터 플라이휠*。
 
 ### 数据飞轮的关键维度
 理解数据飞轮需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -65,7 +64,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键concept之一，数据飞轮在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键概念之一，数据飞轮在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

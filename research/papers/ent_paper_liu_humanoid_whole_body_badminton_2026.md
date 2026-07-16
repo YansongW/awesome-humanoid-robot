@@ -10,11 +10,11 @@ names:
 summary:
   en: A unified whole-body reinforcement-learning controller enables a 21-DoF humanoid to play badminton in simulation and
     on hardware, achieving 21-hit rallies in simulation and outgoing shuttle speeds up to 19.1 m/s in real-world tests.
-  zh: 'Humanoid robots have demonstrated strong capabilities for interacting with static scenes across locomotion and manipulation,
+  zh: Humanoid robots have demonstrated strong capabilities for interacting with static scenes across locomotion and manipulation,
     yet dynamic real-world interactions remain challenging. As a step toward fast-moving object interactions, we present a
     reinforcement-learning training pipeline that yields a unified whole-body controller for humanoid badminton, coordinating
     footwork and striking without motion priors or expert demonstrations. Training follows a three-stage curriculum (footwork
-    acquisition, precision-guided swing generation, and task-focused refinement) so legs and arms jointly serve the '
+    acquisition, precision-guided swing generation, and task-focused refinement) so legs and arms jointly serve the
   ko: 통합된 전신 강화학습 제어기를 통해 21자유도 휴머노이드가 시뮬레이션 및 실제 환경에서 배드민턴을 칠 수 있으며, 시뮬레이션에서는 21회 연속 랠리를, 실제 테스트에서는 초당 최대 19.1m의 셔틀콕 속도를
     달성했다.
 domains:

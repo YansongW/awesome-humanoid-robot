@@ -8,57 +8,54 @@ names:
   zh: Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials
   ko: Impedance-Guided Programmable Transmission of Localized Deformation in Modular Soft Metamaterials
 summary:
-  en: "arXiv:2607.08966v1 Announce Type: cross \nAbstract: Soft metamaterials provide a promising platform for robotics, biomedical\
-    \ devices, and flexible electronics. The localized mechanical responses by nonuniform excitation are ubiquitous in soft\
-    \ materials, yet their controlled transmission across assemblies remains largely overlooked in metamaterial design, which\
-    \ critically constrains nontrivial functionalities with end-to-end and long-range deformation transmission. Here, we introduce\
-    \ an impedance-guided design framework that enables programmable transmission of localized deformation in modular soft\
-    \ metamaterials, achieving behaviors unattainable by intuitive design. By establishing a nonlinear model considering position-dependent\
-    \ interactions and integrating the concept of mechanical impedance within metamaterials, we regulate assembly-level transmission\
-    \ solely through unit-cell topology optimization. The resulting framework enables effective synthesis of module families,\
-    \ allowing both homogeneous and heterogeneous assemblies to be custom-built with markedly enhanced transmission characteristics.\
-    \ Leveraging the highly combinatorial and extensible design space, we physically realize diverse on-demand displacement\
-    \ manipulation architectures, including obstacle-bypassing modular soft-metamaterial assemblies, defect-tolerant soft\
-    \ gripping, and embodied signal processing. Beyond deformation programming, the reconfigurability and reassemblability\
-    \ of these soft modules can embed electric logic signals, enabling energy-efficient and low-latency information processing\
-    \ through compliant-switch-controlled mechanical LED displays and wearable finger-motion-sensing controllers. Our method\
-    \ provides fundamental insights into localized deformation transmission in modular soft metamaterials and establishes\
-    \ a scalable route toward embodied-intelligence material systems, particularly for soft-metamaterial-centric actuation,\
-    \ sensing, and collective computing."
-  zh: "arXiv:2607.08966v1 Announce Type: cross \nAbstract: Soft metamaterials provide a promising platform for robotics, biomedical\
-    \ devices, and flexible electronics. The localized mechanical responses by nonuniform excitation are ubiquitous in soft\
-    \ materials, yet their controlled transmission across assemblies remains largely overlooked in metamaterial design, which\
-    \ critically constrains nontrivial functionalities with end-to-end and long-range deformation transmission. Here, we introduce\
-    \ an impedance-guided design framework that enables programmable transmission of localized deformation in modular soft\
-    \ metamaterials, achieving behaviors unattainable by intuitive design. By establishing a nonlinear model considering position-dependent\
-    \ interactions and integrating the concept of mechanical impedance within metamaterials, we regulate assembly-level transmission\
-    \ solely through unit-cell topology optimization. The resulting framework enables effective synthesis of module families,\
-    \ allowing both homogeneous and heterogeneous assemblies to be custom-built with markedly enhanced transmission characteristics.\
-    \ Leveraging the highly combinatorial and extensible design space, we physically realize diverse on-demand displacement\
-    \ manipulation architectures, including obstacle-bypassing modular soft-metamaterial assemblies, defect-tolerant soft\
-    \ gripping, and embodied signal processing. Beyond deformation programming, the reconfigurability and reassemblability\
-    \ of these soft modules can embed electric logic signals, enabling energy-efficient and low-latency information processing\
-    \ through compliant-switch-controlled mechanical LED displays and wearable finger-motion-sensing controllers. Our method\
-    \ provides fundamental insights into localized deformation transmission in modular soft metamaterials and establishes\
-    \ a scalable route toward embodied-intelligence material systems, particularly for soft-metamaterial-centric actuation,\
-    \ sensing, and collective computing."
-  ko: "arXiv:2607.08966v1 Announce Type: cross \nAbstract: Soft metamaterials provide a promising platform for robotics, biomedical\
-    \ devices, and flexible electronics. The localized mechanical responses by nonuniform excitation are ubiquitous in soft\
-    \ materials, yet their controlled transmission across assemblies remains largely overlooked in metamaterial design, which\
-    \ critically constrains nontrivial functionalities with end-to-end and long-range deformation transmission. Here, we introduce\
-    \ an impedance-guided design framework that enables programmable transmission of localized deformation in modular soft\
-    \ metamaterials, achieving behaviors unattainable by intuitive design. By establishing a nonlinear model considering position-dependent\
-    \ interactions and integrating the concept of mechanical impedance within metamaterials, we regulate assembly-level transmission\
-    \ solely through unit-cell topology optimization. The resulting framework enables effective synthesis of module families,\
-    \ allowing both homogeneous and heterogeneous assemblies to be custom-built with markedly enhanced transmission characteristics.\
-    \ Leveraging the highly combinatorial and extensible design space, we physically realize diverse on-demand displacement\
-    \ manipulation architectures, including obstacle-bypassing modular soft-metamaterial assemblies, defect-tolerant soft\
-    \ gripping, and embodied signal processing. Beyond deformation programming, the reconfigurability and reassemblability\
-    \ of these soft modules can embed electric logic signals, enabling energy-efficient and low-latency information processing\
-    \ through compliant-switch-controlled mechanical LED displays and wearable finger-motion-sensing controllers. Our method\
-    \ provides fundamental insights into localized deformation transmission in modular soft metamaterials and establishes\
-    \ a scalable route toward embodied-intelligence material systems, particularly for soft-metamaterial-centric actuation,\
-    \ sensing, and collective computing."
+  en: 'arXiv:2607.08966v1 Announce Type: cross Abstract: Soft metamaterials provide a promising platform for robotics, biomedical
+    devices, and flexible electronics. The localized mechanical responses by nonuniform excitation are ubiquitous in soft
+    materials, yet their controlled transmission across assemblies remains largely overlooked in metamaterial design, which
+    critically constrains nontrivial functionalities with end-to-end and long-range deformation transmission. Here, we introduce
+    an impedance-guided design framework that enables programmable transmission of localized deformation in modular soft metamaterials,
+    achieving behaviors unattainable by intuitive design. By establishing a nonlinear model considering position-dependent
+    interactions and integrating the concept of mechanical impedance within metamaterials, we regulate assembly-level transmission
+    solely through unit-cell topology optimization. The resulting framework enables effective synthesis of module families,
+    allowing both homogeneous and heterogeneous assemblies to be custom-built with markedly enhanced transmission characteristics.
+    Leveraging the highly combinatorial and extensible design space, we physically realize diverse on-demand displacement
+    manipulation architectures, including obstacle-bypassing modular soft-metamaterial assemblies, defect-tolerant soft gripping,
+    and embodied signal processing. Beyond deformation programming, the reconfigurability and reassemblability of these soft
+    modules can embed electric logic signals, enabling energy-efficient and low-latency information processing through compliant-switch-controlled
+    mechanical LED displays and wearable finger-motion-sensing controllers. Our method provides fundamental insights into
+    localized deformation transmission in modular soft metamaterials and establishes a scalable route toward embodied-intelligence
+    material systems, particularly for soft-metamaterial-centric actuation, sensing, and collective computing.'
+  zh: 'arXiv:2607.08966v1 Announce Type: cross Abstract: Soft metamaterials provide a promising platform for robotics, biomedical
+    devices, and flexible electronics. The localized mechanical responses by nonuniform excitation are ubiquitous in soft
+    materials, yet their controlled transmission across assemblies remains largely overlooked in metamaterial design, which
+    critically constrains nontrivial functionalities with end-to-end and long-range deformation transmission. Here, we introduce
+    an impedance-guided design framework that enables programmable transmission of localized deformation in modular soft metamaterials,
+    achieving behaviors unattainable by intuitive design. By establishing a nonlinear model considering position-dependent
+    interactions and integrating the concept of mechanical impedance within metamaterials, we regulate assembly-level transmission
+    solely through unit-cell topology optimization. The resulting framework enables effective synthesis of module families,
+    allowing both homogeneous and heterogeneous assemblies to be custom-built with markedly enhanced transmission characteristics.
+    Leveraging the highly combinatorial and extensible design space, we physically realize diverse on-demand displacement
+    manipulation architectures, including obstacle-bypassing modular soft-metamaterial assemblies, defect-tolerant soft gripping,
+    and embodied signal processing. Beyond deformation programming, the reconfigurability and reassemblability of these soft
+    modules can embed electric logic signals, enabling energy-efficient and low-latency information processing through compliant-switch-controlled
+    mechanical LED displays and wearable finger-motion-sensing controllers. Our method provides fundamental insights into
+    localized deformation transmission in modular soft metamaterials and establishes a scalable route toward embodied-intelligence
+    material systems, particularly for soft-metamaterial-centric actuation, sensing, and collective computing.'
+  ko: 'arXiv:2607.08966v1 Announce Type: cross Abstract: Soft metamaterials provide a promising platform for robotics, biomedical
+    devices, and flexible electronics. The localized mechanical responses by nonuniform excitation are ubiquitous in soft
+    materials, yet their controlled transmission across assemblies remains largely overlooked in metamaterial design, which
+    critically constrains nontrivial functionalities with end-to-end and long-range deformation transmission. Here, we introduce
+    an impedance-guided design framework that enables programmable transmission of localized deformation in modular soft metamaterials,
+    achieving behaviors unattainable by intuitive design. By establishing a nonlinear model considering position-dependent
+    interactions and integrating the concept of mechanical impedance within metamaterials, we regulate assembly-level transmission
+    solely through unit-cell topology optimization. The resulting framework enables effective synthesis of module families,
+    allowing both homogeneous and heterogeneous assemblies to be custom-built with markedly enhanced transmission characteristics.
+    Leveraging the highly combinatorial and extensible design space, we physically realize diverse on-demand displacement
+    manipulation architectures, including obstacle-bypassing modular soft-metamaterial assemblies, defect-tolerant soft gripping,
+    and embodied signal processing. Beyond deformation programming, the reconfigurability and reassemblability of these soft
+    modules can embed electric logic signals, enabling energy-efficient and low-latency information processing through compliant-switch-controlled
+    mechanical LED displays and wearable finger-motion-sensing controllers. Our method provides fundamental insights into
+    localized deformation transmission in modular soft metamaterials and establishes a scalable route toward embodied-intelligence
+    material systems, particularly for soft-metamaterial-centric actuation, sensing, and collective computing.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

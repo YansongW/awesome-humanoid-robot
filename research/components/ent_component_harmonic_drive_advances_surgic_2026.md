@@ -51,7 +51,7 @@ Harmonic Drive's launch of the LPA 20 integrated servo actuator strengthens the 
 
 ## 核心内容
 ### Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component的定义与定位
-Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component属于 **component** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 Harmonic Drive's launch of the LPA 20 integrated servo actuator strengthens the company's position as a top supplier of surgical robotic motion control components, delivering precision and a compact design to address critical challenges for original equipment manufacturers (OEMs). 英文名称为 *Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component*。 韩文名称为 *Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component*。
+Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component属于 **零部件** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 Harmonic Drive's launch of the LPA 20 integrated servo actuator strengthens the company's position as a top supplier of surgical robotic motion control components, delivering precision and a compact design to address critical challenges for original equipment manufacturers (OEMs). 英文名称为 *Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component*。 韩文名称为 *Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component*。
 
 ### Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component的工作原理与技术架构
 Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -74,7 +74,7 @@ Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact 
 - robotics
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component之一，Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件之一，Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component](http://www.RoboticsTomorrow.com/news/2026/07/06/harmonic-drive-advances-surgical-robotics-supply-with-innovative-lpa-20-compact-actuator-control-component/26804)

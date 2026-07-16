@@ -10,11 +10,11 @@ names:
 summary:
   en: This chapter proposes a redesign methodology to construct robust predefined-time controllers for perturbed chains of
     integrators using uniformly bounded time-varying gains, and analyzes conditions for uniform Lyapunov stability.
-  zh: 'Recently, there has been a great deal of attention in a class of controllers based on time-varying gains, called prescribed-time
-    controllers, that steer the system''s state to the origin in the desired time, a priori set by the user, regardless of
+  zh: Recently, there has been a great deal of attention in a class of controllers based on time-varying gains, called prescribed-time
+    controllers, that steer the system's state to the origin in the desired time, a priori set by the user, regardless of
     the initial condition. Furthermore, such a class of controllers has been shown to maintain a prescribed-time convergence
     in the presence of disturbances even if the disturbance bound is unknown. However, such properties require a time-varying
-    gain that becomes singular at the terminal time, which limits its application to scenarios under quantization '
+    gain that becomes singular at the terminal time, which limits its application to scenarios under quantization
   ko: 본 장에서는 일정하게 유계인 시변 이득을 사용하여 외란이 있는 적분기 체인을 위한 강인한 사전 정의 시간 제어기를 구성하는 재설계 방법론을 제안하고, 균일 리아푸노프 안정성 조건을 분석한다.
 domains:
 - 07_ai_models_algorithms

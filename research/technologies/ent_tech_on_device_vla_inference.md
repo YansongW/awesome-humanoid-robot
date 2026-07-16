@@ -10,7 +10,7 @@ names:
 summary:
   en: The practice of running Vision-Language-Action models directly on robot-embedded edge compute rather than offloading
     to edge or cloud servers, driven by latency, connectivity, and privacy constraints.
-  zh: '## 概述 将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。'
+  zh: 概述 将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。
   ko: 지연 시간, 연결성 및 프라이버시 제약을 해결하기 위해 VLA 모델을 엣지 또는 클라우드 서버가 아닌 로봇 임베디드 엣지 컴퓨팅에서 직접 실행하는 기술 방식.
 domains:
 - 07_ai_models_algorithms
@@ -70,7 +70,7 @@ related_entities:
 
 ## 核心内容
 ### 端侧 VLA 推理的定义与定位
-端侧 VLA 推理属于 **technology** 类型。 所属领域包括：07_ai_models_algorithms, 08_software_middleware, 02_components。 价值链层级：intelligence。 将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。 英文名称为 *On-Device VLA Inference*。 韩文名称为 *온디바이스 VLA 추론*。
+端侧 VLA 推理属于 **技术** 类型。 所属领域包括：AI 模型与算法, 软件中间件, 零部件。 价值链层级：智能层。 将视觉-语言-动作模型直接部署在机器人内置边缘计算设备上，而非卸载到边缘或云端服务器，以满足延迟、连接性和隐私约束。 英文名称为 *On-Device VLA Inference*。 韩文名称为 *온디바이스 VLA 추론*。
 
 ### 端侧 VLA 推理的工作原理与技术架构
 端侧 VLA 推理的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -94,7 +94,7 @@ related_entities:
 - humanoid
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键technology之一，端侧 VLA 推理在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键技术之一，端侧 VLA 推理在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [How Fast Can I Run My VLA? Demystifying VLA Inference Performance with VLA-Perf](https://arxiv.org/abs/2602.18397)

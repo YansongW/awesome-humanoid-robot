@@ -9,8 +9,7 @@ names:
   ko: Kollmorgen Corporation
 summary:
   en: US supplier of motion systems including frameless torque motors and servo drives for robot joints.
-  zh: '核心内容 ### 科尔摩根的定义与定位 科尔摩根属于 **component_manufacturer** 类型。 所属领域包括：02_components, 03_manufacturing_processes。 价值链层级：upstream。
-    提供机器人关节用无框力矩电机和伺服驱动等运动系统的美国供应商。 英文名称为 *Kollmorgen Corporation*。 韩文名称为 *Kollmorgen Corporation*。'
+  zh: 提供机器人关节用无框力矩电机和伺服驱动等运动系统的美国供应商。
   ko: 로봇 관절용 프레임리스 토크 모터 및 서보 드라이브를 포함한 모션 시스템 미국 공급업체.
 domains:
 - 02_components
@@ -49,7 +48,7 @@ sources:
 
 ## 核心内容
 ### 科尔摩根的定义与定位
-科尔摩根属于 **component_manufacturer** 类型。 所属领域包括：02_components, 03_manufacturing_processes。 价值链层级：upstream。 提供机器人关节用无框力矩电机和伺服驱动等运动系统的美国供应商。 英文名称为 *Kollmorgen Corporation*。 韩文名称为 *Kollmorgen Corporation*。
+科尔摩根属于 **零部件制造商** 类型。 所属领域包括：零部件, 制造工艺。 价值链层级：上游。 提供机器人关节用无框力矩电机和伺服驱动等运动系统的美国供应商。 英文名称为 *Kollmorgen Corporation*。 韩文名称为 *Kollmorgen Corporation*。
 
 ### 科尔摩根的核心业务与产品
 科尔摩根在人形机器人产业链中占据特定位置，其产品或技术能力与下游整机厂商形成供应或合作关系。
@@ -71,7 +70,7 @@ sources:
 - usa
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component_manufacturer之一，科尔摩根在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件制造商之一，科尔摩根在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Kollmorgen Corporation](https://www.kollmorgen.com/)

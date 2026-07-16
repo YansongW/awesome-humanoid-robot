@@ -9,8 +9,7 @@ names:
   ko: Genesis 생성형 물리 엔진
 summary:
   en: Emerging generative universal physics engine for robotics and beyond.
-  zh: '核心内容 ### Genesis 生成式物理引擎的定义与定位 Genesis 生成式物理引擎属于 **software_platform** 类型。 所属领域包括：08_software_middleware, 07_ai_models_algorithms。
-    价值链层级：intelligence。 面向机器人等领域的新兴生成式通用物理引擎。 英文名称为 *Genesis Generative Physics Engine*。 韩文名称为 *Genesis 생성형 물리 엔진*。'
+  zh: 面向机器人等领域的新兴生成式通用物理引擎。
   ko: 로보틱스 등을 위한 신흥 생성형 범용 물리 엔진.
 domains:
 - 08_software_middleware
@@ -48,7 +47,7 @@ sources:
 
 ## 核心内容
 ### Genesis 生成式物理引擎的定义与定位
-Genesis 生成式物理引擎属于 **software_platform** 类型。 所属领域包括：08_software_middleware, 07_ai_models_algorithms。 价值链层级：intelligence。 面向机器人等领域的新兴生成式通用物理引擎。 英文名称为 *Genesis Generative Physics Engine*。 韩文名称为 *Genesis 생성형 물리 엔진*。
+Genesis 生成式物理引擎属于 **软件平台** 类型。 所属领域包括：软件中间件, AI 模型与算法。 价值链层级：智能层。 面向机器人等领域的新兴生成式通用物理引擎。 英文名称为 *Genesis Generative Physics Engine*。 韩文名称为 *Genesis 생성형 물리 엔진*。
 
 ### Genesis 生成式物理引擎的工作原理与技术架构
 Genesis 生成式物理引擎的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -71,7 +70,7 @@ Genesis 生成式物理引擎已广泛应用于人形机器人的原型验证、
 - software_platform
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键software_platform之一，Genesis 生成式物理引擎在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键软件平台之一，Genesis 生成式物理引擎在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Genesis Generative Physics Engine](https://genesis-world.readthedocs.io/)

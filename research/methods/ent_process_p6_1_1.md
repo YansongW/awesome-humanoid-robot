@@ -9,7 +9,7 @@ names:
   ko: URDF/SDF 文件生成
 summary:
   en: It loads correctly in RViz/Gazebo/Isaac Sim with no parsing errors
-  zh: 核心内容 **方法 / 工具**：ROS URDF、Xacro、SolidWorks/NX → URDF 插件、惯性参数校核
+  zh: 方法 / 工具：ROS URDF、Xacro、SolidWorks/NX → URDF 插件、惯性参数校核
   ko: 可在 RViz/Gazebo/Isaac Sim 中正确加载、无解析错误
 domains:
 - 06_design_engineering

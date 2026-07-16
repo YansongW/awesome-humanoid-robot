@@ -49,7 +49,7 @@ The ADAR One sensor is now suitable for SIL2 and PL d applications and is certif
 
 ## 核心内容
 ### Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultrasonic sensor for human-robot collaboration的定义与定位
-Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultrasonic sensor for human-robot collaboration属于 **component** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 The ADAR One sensor is now suitable for SIL2 and PL d applications and is certified to fulfil all requirements of the European machine directive as a sensor for the safe detection of humans and objects. 英文名称为 *Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultrasonic sensor for human-robot collaboration*。 韩文名称为 *Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultrasonic sensor for human-robot collaboration*。
+Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultrasonic sensor for human-robot collaboration属于 **零部件** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 The ADAR One sensor is now suitable for SIL2 and PL d applications and is certified to fulfil all requirements of the European machine directive as a sensor for the safe detection of humans and objects. 英文名称为 *Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultrasonic sensor for human-robot collaboration*。 韩文名称为 *Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultrasonic sensor for human-robot collaboration*。
 
 ### Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultrasonic sensor for human-robot collaboration的工作原理与技术架构
 Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultrasonic sensor for human-robot collaboration的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -73,7 +73,7 @@ Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultraso
 - sensor
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component之一，Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultrasonic sensor for human-robot collaboration在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件之一，Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultrasonic sensor for human-robot collaboration在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Robot safety is now 3D: Sonair unveils world's first safety-certified 3D ultrasonic sensor for human-robot collaboration](http://www.RoboticsTomorrow.com/news/2026/06/30/robot-safety-is-now-3d-sonair-unveils-worlds-first-safety-certified-3d-ultrasonic-sensor-for-human-robot-collaboration/26791)

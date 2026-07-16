@@ -10,9 +10,7 @@ names:
 summary:
   en: A sensing module that measures voltage, current, and power consumption at the main controller board level, enabling
     system-level energy monitoring and model validation.
-  zh: '核心内容 ### 主板功率传感器的定义与定位 主板功率传感器属于 **component** 类型。 所属领域包括：02_components, 06_design_engineering, 10_evaluation_benchmarks。
-    价值链层级：upstream, midstream, validation_markets。 一种在主板控制器层面测量电压、电流和功耗的传感模块，用于系统级能耗监测和模型验证。 英文名称为 *Main-Board Power Sensor*。
-    韩文名称为 *메인보드 전력 센서*。'
+  zh: 一种在主板控制器层面测量电压、电流和功耗的传感模块，用于系统级能耗监测和模型验证。
   ko: 메인 컨트롤러 보드 수준에서 전압, 전류, 전력 소비를 측정하여 시스템 수준의 에너지 모니터링 및 모델 검증을 가능하게 하는 센싱 모듈.
 domains:
 - 02_components
@@ -55,7 +53,7 @@ theoretical_depth:
 
 ## 核心内容
 ### 主板功率传感器的定义与定位
-主板功率传感器属于 **component** 类型。 所属领域包括：02_components, 06_design_engineering, 10_evaluation_benchmarks。 价值链层级：upstream, midstream, validation_markets。 一种在主板控制器层面测量电压、电流和功耗的传感模块，用于系统级能耗监测和模型验证。 英文名称为 *Main-Board Power Sensor*。 韩文名称为 *메인보드 전력 센서*。
+主板功率传感器属于 **零部件** 类型。 所属领域包括：零部件, 设计工程, 评测基准。 价值链层级：上游, midstream, validation_markets。 一种在主板控制器层面测量电压、电流和功耗的传感模块，用于系统级能耗监测和模型验证。 英文名称为 *Main-Board Power Sensor*。 韩文名称为 *메인보드 전력 센서*。
 
 ### 主板功率传感器的工作原理与技术架构
 主板功率传感器的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -79,7 +77,7 @@ theoretical_depth:
 - telemetry
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component之一，主板功率传感器在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件之一，主板功率传感器在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Identification of a Physics-Based Electrical Power Consumption Model for the Unitree G1 Humanoid Arm](https://arxiv.org/abs/2606.15915)

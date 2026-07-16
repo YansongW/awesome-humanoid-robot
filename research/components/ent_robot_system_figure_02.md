@@ -10,7 +10,7 @@ names:
 summary:
   en: Humanoid robot developed by Figure AI for logistics and manufacturing, featuring onboard vision-language models and
     16-degree-of-freedom hands.
-  zh: '## 概述 Figure 02是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。'
+  zh: 概述 Figure 02是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
   ko: Figure AI가 물류 및 제조업용으로 개발한 휴인oid 로봇으로, 온보드 비전-언어 모델과 16자유도 손을 갖추고 있습니다.
 domains:
 - 06_design_engineering
@@ -52,7 +52,7 @@ theoretical_depth:
 ---
 
 ## 概述
-Figure 02是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
+Figure 02是人形机器人领域的重要机器人系统。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## Figure 02

@@ -23,7 +23,8 @@
       }
     });
 
-    // Trigger Mermaid rendering manually so we can be sure the containers exist.
+    // Trigger Mermaid rendering lazily: only render diagrams as they approach
+    // the viewport, so chapters with 100+ diagrams don't freeze on load.
     if (typeof mermaid !== 'undefined') {
       try {
         mermaid.initialize({
@@ -31,9 +32,27 @@
           theme: 'default',
           securityLevel: 'loose',
         });
-        mermaid.run({ querySelector: '.mermaid' }).catch(function (err) {
-          console.error('Mermaid render failed:', err);
-        });
+        var diagrams = Array.from(document.querySelectorAll('.mermaid'));
+        var renderOne = function (el) {
+          if (el.dataset.mermaidDone) return;
+          el.dataset.mermaidDone = '1';
+          mermaid.run({ nodes: [el] }).catch(function (err) {
+            console.error('Mermaid render failed:', err);
+          });
+        };
+        if ('IntersectionObserver' in window && diagrams.length > 10) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                io.unobserve(entry.target);
+                renderOne(entry.target);
+              }
+            });
+          }, { rootMargin: '300px 0px' });
+          diagrams.forEach(function (el) { io.observe(el); });
+        } else {
+          diagrams.forEach(renderOne);
+        }
       } catch (err) {
         console.error('Mermaid initialization failed:', err);
       }

@@ -57,7 +57,7 @@ theoretical_depth:
 
 
 ## 概述
-Unitree G1 人形机器人是人形机器人领域的重要robot_system。以下内容整理自项目 Wiki，供深入查阅。
+Unitree G1 人形机器人是人形机器人领域的重要机器人系统。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## 宇树 G1 / Unitree G1

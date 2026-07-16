@@ -51,7 +51,7 @@ InDro Cortex is a powerful compute and sensor integrator that can be mounted on 
 
 ## 核心内容
 ### NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION的定义与定位
-NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION属于 **component** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 InDro Cortex is a powerful compute and sensor integrator that can be mounted on any robotic platform. It can transmit data over 5G networks with imperceptible lag and receive instructions from a remote operator. Measuring 11cm x 14cm x 10cm, and weighing a mere 679 grams, Cortex is platform-agnostic and can be used with virtually any robotic framework. 英文名称为 *NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION*。 韩文名称为 *NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION*。
+NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION属于 **零部件** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 InDro Cortex is a powerful compute and sensor integrator that can be mounted on any robotic platform. It can transmit data over 5G networks with imperceptible lag and receive instructions from a remote operator. Measuring 11cm x 14cm x 10cm, and weighing a mere 679 grams, Cortex is platform-agnostic and can be used with virtually any robotic framework. 英文名称为 *NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION*。 韩文名称为 *NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION*。
 
 ### NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION的工作原理与技术架构
 NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -74,7 +74,7 @@ NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION已广泛
 - sensor
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component之一，NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件之一，NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [NEW INDRO CORTEX, CONTROLLER SIMPLIFY ROBOTIC INTEGRATION AND OPERATION](http://www.RoboticsTomorrow.com/news/2026/06/30/new-indro-cortex-controller-simplify-robotic-integration-and-operation/26794)

@@ -10,8 +10,7 @@ names:
 summary:
   en: A statistical principle that chooses model parameters to maximize the probability of observing the training data, forming
     the basis of cross-entropy and next-token prediction losses.
-  zh: '核心内容 ### 最大似然估计的定义与定位 最大似然估计属于 **principle** 类型。 所属领域包括：00_foundations, 07_ai_models_algorithms。 价值链层级：foundations,
-    intelligence。 一种统计原理，选择使训练数据出现概率最大的模型参数，是交叉熵和下一个 token 预测损失的基础。 英文名称为 *Maximum Likelihood Estimation*。 韩文名称为 *최대우도추정*。'
+  zh: 一种统计原理，选择使训练数据出现概率最大的模型参数，是交叉熵和下一个 token 预测损失的基础。
   ko: 훈련 데이터가 관측될 확률을 최대화하는 모델 매개변수를 선택하는 통계적 원리로, 교차 엔트로피와 다음 토큰 예측 손실의 기초가 된다.
 domains:
 - 00_foundations
@@ -56,7 +55,7 @@ related_entities:
 
 ## 核心内容
 ### 最大似然估计的定义与定位
-最大似然估计属于 **principle** 类型。 所属领域包括：00_foundations, 07_ai_models_algorithms。 价值链层级：foundations, intelligence。 一种统计原理，选择使训练数据出现概率最大的模型参数，是交叉熵和下一个 token 预测损失的基础。 英文名称为 *Maximum Likelihood Estimation*。 韩文名称为 *최대우도추정*。
+最大似然估计属于 **原理** 类型。 所属领域包括：基础学科, AI 模型与算法。 价值链层级：基础层, intelligence。 一种统计原理，选择使训练数据出现概率最大的模型参数，是交叉熵和下一个 token 预测损失的基础。 英文名称为 *Maximum Likelihood Estimation*。 韩文名称为 *최대우도추정*。
 
 ### 最大似然估计的数学与原理基础
 最大似然估计建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -80,7 +79,7 @@ related_entities:
 - vla
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键principle之一，最大似然估计在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键原理之一，最大似然估计在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Bishop, Pattern Recognition and Machine Learning](https://www.microsoft.com/en-us/research/publication/pattern-recognition-machine-learning/)

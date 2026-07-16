@@ -10,8 +10,7 @@ names:
 summary:
   en: A standardized classification system for human and robot hand grasps, used to evaluate grasp diversity and coverage
     in dexterous manipulation research.
-  zh: '核心内容 ### GRASP抓取分类法的定义与定位 GRASP抓取分类法属于 **standard** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets,
-    midstream。 一种用于人类和机器人手部抓取的标准化分类系统，用于评估灵巧操作研究中的抓取多样性和覆盖范围。 英文名称为 *GRASP Taxonomy*。 韩文名称为 *GRASP 분류법*。'
+  zh: 一种用于人类和机器人手部抓取的标准化分类系统，用于评估灵巧操作研究中的抓取多样性和覆盖范围。
   ko: 인간 및 로봇 손의 그립을 분류하는 표준화된 체계로, 능숙한 조작 연구에서 그립 다양성과 커버리지를 평가하는 데 사용됩니다.
 domains:
 - 10_evaluation_benchmarks
@@ -50,7 +49,7 @@ theoretical_depth:
 
 ## 核心内容
 ### GRASP抓取分类法的定义与定位
-GRASP抓取分类法属于 **standard** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets, midstream。 一种用于人类和机器人手部抓取的标准化分类系统，用于评估灵巧操作研究中的抓取多样性和覆盖范围。 英文名称为 *GRASP Taxonomy*。 韩文名称为 *GRASP 분류법*。
+GRASP抓取分类法属于 **标准** 类型。 所属领域包括：评测基准, 设计工程。 价值链层级：验证与市场层, midstream。 一种用于人类和机器人手部抓取的标准化分类系统，用于评估灵巧操作研究中的抓取多样性和覆盖范围。 英文名称为 *GRASP Taxonomy*。 韩文名称为 *GRASP 분류법*。
 
 ### GRASP抓取分类法的关键维度
 理解GRASP抓取分类法需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -71,7 +70,7 @@ GRASP抓取分类法属于 **standard** 类型。 所属领域包括：10_evalua
 - hand
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键standard之一，GRASP抓取分类法在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键标准之一，GRASP抓取分类法在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)

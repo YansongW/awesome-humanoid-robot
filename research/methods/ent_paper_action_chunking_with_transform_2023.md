@@ -9,8 +9,7 @@ names:
   ko: Action Chunking with Transformers
 summary:
   en: Transformer-based policy that predicts action chunks to reduce compounding errors in imitation learning.
-  zh: '核心内容 ### 基于Transformer的动作分块的定义与定位 基于Transformer的动作分块属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。
-    基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。 英文名称为 *Action Chunking with Transformers*。 韩文名称为 *Action Chunking with Transformers*。'
+  zh: 基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。
   ko: 모방 학습에서 누적 오류를 줄이기 위해 동작 청크를 예측하는 Transformer 기반 정책.
 domains:
 - 07_ai_models_algorithms
@@ -47,7 +46,7 @@ sources:
 
 ## 核心内容
 ### 基于Transformer的动作分块的定义与定位
-基于Transformer的动作分块属于 **method** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。 英文名称为 *Action Chunking with Transformers*。 韩文名称为 *Action Chunking with Transformers*。
+基于Transformer的动作分块属于 **方法** 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 基于Transformer的策略，预测动作块以减少模仿学习中的复合误差。 英文名称为 *Action Chunking with Transformers*。 韩文名称为 *Action Chunking with Transformers*。
 
 ### 基于Transformer的动作分块的数学与原理基础
 基于Transformer的动作分块建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -71,7 +70,7 @@ sources:
 - transformer
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，基于Transformer的动作分块在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，基于Transformer的动作分块在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Action Chunking with Transformers](https://arxiv.org/abs/2304.13705)

@@ -10,8 +10,7 @@ names:
 summary:
   en: A family of optimization algorithms that solve constrained problems by following a smooth central path strictly inside
     the feasible region via barrier or penalty functions.
-  zh: '核心内容 ### 内点法的定义与定位 内点法属于 **algorithm** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一类优化算法，通过障碍或惩罚函数在可行域内部沿光滑中心路径求解约束优化问题。
-    英文名称为 *Interior-point method*。 韩文名称为 *내점법*。'
+  zh: 一类优化算法，通过障碍或惩罚函数在可行域内部沿光滑中心路径求解约束优化问题。
   ko: 장벽 또는 페널티 함수를 통해 실행 가능 영역 내에서 매끄러운 중심 경로를 따라 제약 최적화 문제를 푸는 최적화 알고리즘 집합.
 domains:
 - 00_foundations
@@ -62,7 +61,7 @@ related_entities:
 
 ## 核心内容
 ### 内点法的定义与定位
-内点法属于 **algorithm** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一类优化算法，通过障碍或惩罚函数在可行域内部沿光滑中心路径求解约束优化问题。 英文名称为 *Interior-point method*。 韩文名称为 *내점법*。
+内点法属于 **算法** 类型。 所属领域包括：基础学科。 价值链层级：基础层。 一类优化算法，通过障碍或惩罚函数在可行域内部沿光滑中心路径求解约束优化问题。 英文名称为 *Interior-point method*。 韩文名称为 *내점법*。
 
 ### 内点法的数学与原理基础
 内点法建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -86,7 +85,7 @@ related_entities:
 - central_path
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键algorithm之一，内点法在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键算法之一，内点法在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [J. Nocedal and S. J. Wright, Numerical Optimization, 2nd ed., Springer, 2006](https://doi.org/10.1007/978-0-387-40065-5)

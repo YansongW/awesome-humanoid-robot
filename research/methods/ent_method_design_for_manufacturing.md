@@ -10,8 +10,7 @@ names:
 summary:
   en: An engineering practice of designing parts and assemblies so that they are easy, repeatable, and cost-effective to manufacture
     at scale.
-  zh: '核心内容 ### 可制造性设计（DFM）的定义与定位 可制造性设计（DFM）属于 **method** 类型。 所属领域包括：03_manufacturing_processes。 价值链层级：upstream。 使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。
-    英文名称为 *Design for Manufacturing (DFM)*。 韩文名称为 *제조 용이성 설계(DFM)*。'
+  zh: 使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。
   ko: 부품과 조립체를 쉽고 재현 가능하며 비용 효율적으로 대량 생산할 수 있도록 설계하는 공학 방법론.
 domains:
 - 03_manufacturing_processes
@@ -45,7 +44,7 @@ sources:
 
 ## 核心内容
 ### 可制造性设计（DFM）的定义与定位
-可制造性设计（DFM）属于 **method** 类型。 所属领域包括：03_manufacturing_processes。 价值链层级：upstream。 使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。 英文名称为 *Design for Manufacturing (DFM)*。 韩文名称为 *제조 용이성 설계(DFM)*。
+可制造性设计（DFM）属于 **方法** 类型。 所属领域包括：制造工艺。 价值链层级：上游。 使零部件与总成易于、可重复且经济地实现规模化制造的工程设计方法。 英文名称为 *Design for Manufacturing (DFM)*。 韩文名称为 *제조 용이성 설계(DFM)*。
 
 ### 可制造性设计（DFM）的数学与原理基础
 可制造性设计（DFM）建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -67,7 +66,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，可制造性设计（DFM）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，可制造性设计（DFM）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

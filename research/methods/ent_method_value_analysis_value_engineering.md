@@ -10,8 +10,7 @@ names:
 summary:
   en: A structured methodology to improve product value by either reducing cost while preserving function or enhancing function
     at acceptable cost.
-  zh: '核心内容 ### 价值分析/价值工程（VA/VE）的定义与定位 价值分析/价值工程（VA/VE）属于 **method** 类型。 所属领域包括：05_mass_production。 价值链层级：midstream。 在保持功能的前提下降低成本，或在可接受成本下提升功能，以提升产品价值的结构化方法。
-    英文名称为 *Value Analysis / Value Engineering (VA/VE)*。 韩文名称为 *가치 분석/가치 공학(VA/VE)*。'
+  zh: 在保持功能的前提下降低成本，或在可接受成本下提升功能，以提升产品价值的结构化方法。
   ko: 기능을 유지하면서 비용을 줄이거나, 수용 가능한 비용 내에서 기능을 향상시켜 제품 가치를 높이는 구조화된 방법론.
 domains:
 - 05_mass_production
@@ -45,7 +44,7 @@ sources:
 
 ## 核心内容
 ### 价值分析/价值工程（VA/VE）的定义与定位
-价值分析/价值工程（VA/VE）属于 **method** 类型。 所属领域包括：05_mass_production。 价值链层级：midstream。 在保持功能的前提下降低成本，或在可接受成本下提升功能，以提升产品价值的结构化方法。 英文名称为 *Value Analysis / Value Engineering (VA/VE)*。 韩文名称为 *가치 분석/가치 공학(VA/VE)*。
+价值分析/价值工程（VA/VE）属于 **方法** 类型。 所属领域包括：量产制造。 价值链层级：中游。 在保持功能的前提下降低成本，或在可接受成本下提升功能，以提升产品价值的结构化方法。 英文名称为 *Value Analysis / Value Engineering (VA/VE)*。 韩文名称为 *가치 분석/가치 공학(VA/VE)*。
 
 ### 价值分析/价值工程（VA/VE）的数学与原理基础
 价值分析/价值工程（VA/VE）建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -67,7 +66,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键method之一，价值分析/价值工程（VA/VE）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方法之一，价值分析/价值工程（VA/VE）在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

@@ -8,12 +8,12 @@ names:
   zh: ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous forklift
   ko: ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous forklift
 summary:
-  en: "-The new Flexley Stack F712 extends ABB Robotics’ AI-powered Visual SLAM technology to autonomous forklifts, enabling\
-    \ pallet transport and high-density storage.\r\n-Customers can now deploy mixed fleets of Visual SLAM-powered tugs, movers\
-    \ and forklifts on a common navigation, fleet management and software platform.\r\n-Powered by ABB Robotics"
-  zh: "-The new Flexley Stack F712 extends ABB Robotics’ AI-powered Visual SLAM technology to autonomous forklifts, enabling\
-    \ pallet transport and high-density storage.\r\n-Customers can now deploy mixed fleets of Visual SLAM-powered tugs, movers\
-    \ and forklifts on a common navigation, fleet management and software platform.\r\n-Powered by ABB Robotics"
+  en: -The new Flexley Stack F712 extends ABB Robotics’ AI-powered Visual SLAM technology to autonomous forklifts, enabling
+    pallet transport and high-density storage. -Customers can now deploy mixed fleets of Visual SLAM-powered tugs, movers
+    and forklifts on a common navigation, fleet management and software platform. -Powered by ABB Robotics
+  zh: -The new Flexley Stack F712 extends ABB Robotics’ AI-powered Visual SLAM technology to autonomous forklifts, enabling
+    pallet transport and high-density storage. -Customers can now deploy mixed fleets of Visual SLAM-powered tugs, movers
+    and forklifts on a common navigation, fleet management and software platform. -Powered by ABB Robotics
   ko: ABB Robotics completes its AI-powered Visual SLAM AMR portfolio with new autonomous forklift
 domains:
 - 11_applications_markets

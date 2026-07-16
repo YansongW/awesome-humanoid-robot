@@ -10,8 +10,7 @@ names:
 summary:
   en: A set of coupled force and torque balance equations that describe the motion of a rigid body or articulated multibody
     system.
-  zh: '核心内容 ### 牛顿-欧拉方程的定义与定位 牛顿-欧拉方程属于 **equation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。
-    英文名称为 *Newton-Euler equations*。 韩文名称为 *뉴턴-오일러 방정식*。'
+  zh: 描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。
   ko: 강철 또는 관절 연결 다물체 시스템의 운전을 기술하는 결합된 힘 및 토크 평형 방정식 집합.
 domains:
 - 00_foundations
@@ -55,7 +54,7 @@ related_entities:
 
 ## 核心内容
 ### 牛顿-欧拉方程的定义与定位
-牛顿-欧拉方程属于 **equation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。 英文名称为 *Newton-Euler equations*。 韩文名称为 *뉴턴-오일러 방정식*。
+牛顿-欧拉方程属于 **方程** 类型。 所属领域包括：基础学科。 价值链层级：基础层。 描述刚体或铰接多体系统运动的一组耦合的力平衡与力矩平衡方程。 英文名称为 *Newton-Euler equations*。 韩文名称为 *뉴턴-오일러 방정식*。
 
 ### 牛顿-欧拉方程的数学与原理基础
 牛顿-欧拉方程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -79,7 +78,7 @@ related_entities:
 - equations_of_motion
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键equation之一，牛顿-欧拉方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方程之一，牛顿-欧拉方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [R. Featherstone, Rigid Body Dynamics Algorithms, Springer, 2014](https://doi.org/10.1007/978-1-4899-7560-7)

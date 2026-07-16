@@ -8,54 +8,54 @@ names:
   zh: Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots
   ko: Unified Structural-Hydrodynamic Modeling of Underwater Underactuated Mechanisms and Soft Robots
 summary:
-  en: "arXiv:2603.07939v2 Announce Type: replace \nAbstract: Underwater robots are widely deployed for ocean exploration and\
-    \ manipulation. Underactuated mechanisms are advantageous in aquatic environments because reducing actuator count lowers\
-    \ motor-leakage risk while introducing inherent mechanical compliance. However, accurate modeling of underwater underactuated\
-    \ and soft robotic systems remains challenging, as it requires identifying high-dimensional structural and hydrodynamic\
-    \ parameters. In this work, we propose a trajectory-driven global optimization framework for unified structural-hydrodynamic\
-    \ modeling of underwater multibody systems. Inspired by the Covariance Matrix Adaptation Evolution Strategy (CMA-ES),\
-    \ the proposed approach simultaneously identifies coupled elastic, damping, and distributed hydrodynamic parameters through\
-    \ trajectory-level matching between simulated and experimental motion. This enables high-fidelity reproduction of underactuated\
-    \ mechanisms and compliant soft robotic systems in underwater environments, using as little as a single video recording.\
-    \ We first validate the framework on a link-by-link underactuated multibody mechanism, demonstrating accurate identification\
-    \ of distributed hydrodynamic coefficients, with normalized end-effector position error below 5% across multiple trajectories,\
-    \ initial conditions, and both active-passive and fully passive configurations. The modeling strategy is further validated\
-    \ on an asymmetric octopus-inspired soft arm, confirming its effectiveness for compliant soft robotic systems. Finally,\
-    \ eight identified arms are assembled into a swimming octopus robot, where the unified parameter set enables realistic\
-    \ whole-body behavior without additional retuning. These results demonstrate the scalability and transferability of the\
-    \ proposed structural-hydrodynamic modeling framework across underwater underactuated and soft robotic systems."
-  zh: "arXiv:2603.07939v2 Announce Type: replace \nAbstract: Underwater robots are widely deployed for ocean exploration and\
-    \ manipulation. Underactuated mechanisms are advantageous in aquatic environments because reducing actuator count lowers\
-    \ motor-leakage risk while introducing inherent mechanical compliance. However, accurate modeling of underwater underactuated\
-    \ and soft robotic systems remains challenging, as it requires identifying high-dimensional structural and hydrodynamic\
-    \ parameters. In this work, we propose a trajectory-driven global optimization framework for unified structural-hydrodynamic\
-    \ modeling of underwater multibody systems. Inspired by the Covariance Matrix Adaptation Evolution Strategy (CMA-ES),\
-    \ the proposed approach simultaneously identifies coupled elastic, damping, and distributed hydrodynamic parameters through\
-    \ trajectory-level matching between simulated and experimental motion. This enables high-fidelity reproduction of underactuated\
-    \ mechanisms and compliant soft robotic systems in underwater environments, using as little as a single video recording.\
-    \ We first validate the framework on a link-by-link underactuated multibody mechanism, demonstrating accurate identification\
-    \ of distributed hydrodynamic coefficients, with normalized end-effector position error below 5% across multiple trajectories,\
-    \ initial conditions, and both active-passive and fully passive configurations. The modeling strategy is further validated\
-    \ on an asymmetric octopus-inspired soft arm, confirming its effectiveness for compliant soft robotic systems. Finally,\
-    \ eight identified arms are assembled into a swimming octopus robot, where the unified parameter set enables realistic\
-    \ whole-body behavior without additional retuning. These results demonstrate the scalability and transferability of the\
-    \ proposed structural-hydrodynamic modeling framework across underwater underactuated and soft robotic systems."
-  ko: "arXiv:2603.07939v2 Announce Type: replace \nAbstract: Underwater robots are widely deployed for ocean exploration and\
-    \ manipulation. Underactuated mechanisms are advantageous in aquatic environments because reducing actuator count lowers\
-    \ motor-leakage risk while introducing inherent mechanical compliance. However, accurate modeling of underwater underactuated\
-    \ and soft robotic systems remains challenging, as it requires identifying high-dimensional structural and hydrodynamic\
-    \ parameters. In this work, we propose a trajectory-driven global optimization framework for unified structural-hydrodynamic\
-    \ modeling of underwater multibody systems. Inspired by the Covariance Matrix Adaptation Evolution Strategy (CMA-ES),\
-    \ the proposed approach simultaneously identifies coupled elastic, damping, and distributed hydrodynamic parameters through\
-    \ trajectory-level matching between simulated and experimental motion. This enables high-fidelity reproduction of underactuated\
-    \ mechanisms and compliant soft robotic systems in underwater environments, using as little as a single video recording.\
-    \ We first validate the framework on a link-by-link underactuated multibody mechanism, demonstrating accurate identification\
-    \ of distributed hydrodynamic coefficients, with normalized end-effector position error below 5% across multiple trajectories,\
-    \ initial conditions, and both active-passive and fully passive configurations. The modeling strategy is further validated\
-    \ on an asymmetric octopus-inspired soft arm, confirming its effectiveness for compliant soft robotic systems. Finally,\
-    \ eight identified arms are assembled into a swimming octopus robot, where the unified parameter set enables realistic\
-    \ whole-body behavior without additional retuning. These results demonstrate the scalability and transferability of the\
-    \ proposed structural-hydrodynamic modeling framework across underwater underactuated and soft robotic systems."
+  en: 'arXiv:2603.07939v2 Announce Type: replace Abstract: Underwater robots are widely deployed for ocean exploration and
+    manipulation. Underactuated mechanisms are advantageous in aquatic environments because reducing actuator count lowers
+    motor-leakage risk while introducing inherent mechanical compliance. However, accurate modeling of underwater underactuated
+    and soft robotic systems remains challenging, as it requires identifying high-dimensional structural and hydrodynamic
+    parameters. In this work, we propose a trajectory-driven global optimization framework for unified structural-hydrodynamic
+    modeling of underwater multibody systems. Inspired by the Covariance Matrix Adaptation Evolution Strategy (CMA-ES), the
+    proposed approach simultaneously identifies coupled elastic, damping, and distributed hydrodynamic parameters through
+    trajectory-level matching between simulated and experimental motion. This enables high-fidelity reproduction of underactuated
+    mechanisms and compliant soft robotic systems in underwater environments, using as little as a single video recording.
+    We first validate the framework on a link-by-link underactuated multibody mechanism, demonstrating accurate identification
+    of distributed hydrodynamic coefficients, with normalized end-effector position error below 5% across multiple trajectories,
+    initial conditions, and both active-passive and fully passive configurations. The modeling strategy is further validated
+    on an asymmetric octopus-inspired soft arm, confirming its effectiveness for compliant soft robotic systems. Finally,
+    eight identified arms are assembled into a swimming octopus robot, where the unified parameter set enables realistic whole-body
+    behavior without additional retuning. These results demonstrate the scalability and transferability of the proposed structural-hydrodynamic
+    modeling framework across underwater underactuated and soft robotic systems.'
+  zh: 'arXiv:2603.07939v2 Announce Type: replace Abstract: Underwater robots are widely deployed for ocean exploration and
+    manipulation. Underactuated mechanisms are advantageous in aquatic environments because reducing actuator count lowers
+    motor-leakage risk while introducing inherent mechanical compliance. However, accurate modeling of underwater underactuated
+    and soft robotic systems remains challenging, as it requires identifying high-dimensional structural and hydrodynamic
+    parameters. In this work, we propose a trajectory-driven global optimization framework for unified structural-hydrodynamic
+    modeling of underwater multibody systems. Inspired by the Covariance Matrix Adaptation Evolution Strategy (CMA-ES), the
+    proposed approach simultaneously identifies coupled elastic, damping, and distributed hydrodynamic parameters through
+    trajectory-level matching between simulated and experimental motion. This enables high-fidelity reproduction of underactuated
+    mechanisms and compliant soft robotic systems in underwater environments, using as little as a single video recording.
+    We first validate the framework on a link-by-link underactuated multibody mechanism, demonstrating accurate identification
+    of distributed hydrodynamic coefficients, with normalized end-effector position error below 5% across multiple trajectories,
+    initial conditions, and both active-passive and fully passive configurations. The modeling strategy is further validated
+    on an asymmetric octopus-inspired soft arm, confirming its effectiveness for compliant soft robotic systems. Finally,
+    eight identified arms are assembled into a swimming octopus robot, where the unified parameter set enables realistic whole-body
+    behavior without additional retuning. These results demonstrate the scalability and transferability of the proposed structural-hydrodynamic
+    modeling framework across underwater underactuated and soft robotic systems.'
+  ko: 'arXiv:2603.07939v2 Announce Type: replace Abstract: Underwater robots are widely deployed for ocean exploration and
+    manipulation. Underactuated mechanisms are advantageous in aquatic environments because reducing actuator count lowers
+    motor-leakage risk while introducing inherent mechanical compliance. However, accurate modeling of underwater underactuated
+    and soft robotic systems remains challenging, as it requires identifying high-dimensional structural and hydrodynamic
+    parameters. In this work, we propose a trajectory-driven global optimization framework for unified structural-hydrodynamic
+    modeling of underwater multibody systems. Inspired by the Covariance Matrix Adaptation Evolution Strategy (CMA-ES), the
+    proposed approach simultaneously identifies coupled elastic, damping, and distributed hydrodynamic parameters through
+    trajectory-level matching between simulated and experimental motion. This enables high-fidelity reproduction of underactuated
+    mechanisms and compliant soft robotic systems in underwater environments, using as little as a single video recording.
+    We first validate the framework on a link-by-link underactuated multibody mechanism, demonstrating accurate identification
+    of distributed hydrodynamic coefficients, with normalized end-effector position error below 5% across multiple trajectories,
+    initial conditions, and both active-passive and fully passive configurations. The modeling strategy is further validated
+    on an asymmetric octopus-inspired soft arm, confirming its effectiveness for compliant soft robotic systems. Finally,
+    eight identified arms are assembled into a swimming octopus robot, where the unified parameter set enables realistic whole-body
+    behavior without additional retuning. These results demonstrate the scalability and transferability of the proposed structural-hydrodynamic
+    modeling framework across underwater underactuated and soft robotic systems.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

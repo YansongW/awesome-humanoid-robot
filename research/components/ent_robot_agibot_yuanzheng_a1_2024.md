@@ -9,8 +9,7 @@ names:
   ko: AgiBot Yuanzheng A1
 summary:
   en: Chinese humanoid robot using harmonic integrated joints and planetary-reducer joint motors.
-  zh: '核心内容 ### 智元远征 A1的定义与定位 智元远征 A1属于 **robot_system** 类型。 所属领域包括：06_design_engineering, 02_components。 价值链层级：midstream,
-    upstream。 国产人形机器人，采用谐波一体关节和带行星减速器的关节电机。 英文名称为 *AgiBot Yuanzheng A1*。 韩文名称为 *AgiBot Yuanzheng A1*。'
+  zh: 国产人形机器人，采用谐波一体关节和带行星减速器的关节电机。
   ko: 하모닉 통합 관절 및 행성 감속기 관절 모터를 사용하는 중국 휨로봇.
 domains:
 - 06_design_engineering
@@ -49,7 +48,7 @@ sources:
 
 ## 核心内容
 ### 智元远征 A1的定义与定位
-智元远征 A1属于 **robot_system** 类型。 所属领域包括：06_design_engineering, 02_components。 价值链层级：midstream, upstream。 国产人形机器人，采用谐波一体关节和带行星减速器的关节电机。 英文名称为 *AgiBot Yuanzheng A1*。 韩文名称为 *AgiBot Yuanzheng A1*。
+智元远征 A1属于 **机器人系统** 类型。 所属领域包括：设计工程, 零部件。 价值链层级：中游, upstream。 国产人形机器人，采用谐波一体关节和带行星减速器的关节电机。 英文名称为 *AgiBot Yuanzheng A1*。 韩文名称为 *AgiBot Yuanzheng A1*。
 
 ### 智元远征 A1的关键维度
 理解智元远征 A1需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -70,7 +69,7 @@ sources:
 - robot_system
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键robot_system之一，智元远征 A1在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键机器人系统之一，智元远征 A1在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [AgiBot Yuanzheng A1](https://www.agibot.com/)

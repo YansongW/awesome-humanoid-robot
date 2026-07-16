@@ -47,7 +47,7 @@ Live demonstrations at Automate 2026 showcase the integration, featuring Vention
 
 ## 核心内容
 ### Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells的定义与定位
-Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells属于 **technology** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 Live demonstrations at Automate 2026 showcase the integration, featuring Vention's Rapid Operator AI, powered by NVIDIA Isaac open robotics platform, and advanced welding applications enabled by Universal Robots' UR12e and UR20 cobot models. 英文名称为 *Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells*。 韩文名称为 *Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells*。
+Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells属于 **技术** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 Live demonstrations at Automate 2026 showcase the integration, featuring Vention's Rapid Operator AI, powered by NVIDIA Isaac open robotics platform, and advanced welding applications enabled by Universal Robots' UR12e and UR20 cobot models. 英文名称为 *Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells*。 韩文名称为 *Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells*。
 
 ### Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells的工作原理与技术架构
 Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -69,7 +69,7 @@ Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Opti
 - technology
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键technology之一，Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键技术之一，Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Vention and Teradyne Robotics Collaborate on Digital Twin Creation Platform Optimized for UR Robotic Cells](http://www.RoboticsTomorrow.com/news/2026/06/22/vention-and-teradyne-robotics-collaborate-on-digital-twin-creation-platform-optimized-for-ur-robotic-cells/26755)

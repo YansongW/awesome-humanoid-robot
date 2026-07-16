@@ -10,10 +10,10 @@ names:
 summary:
   en: A high-load, high-precision linear motion mechanism that converts rotary motion to linear motion via threaded rollers,
     often used in humanoid linear actuators.
-  zh: 核心内容 - **Tesla Optimus**：据 Tesla AI Day 2022 与后续公开信息，Optimus 躯干采用 28 个执行器（14 个旋转 + 14 个线性），旋转关节使用无框力矩电机 + 谐波减速器，线性关节使用无框力矩电机
-    + 行星滚柱丝杠；灵巧手从 Gen 2 的 11 DoF 升级到 Gen 3 的 22 DoF，采用腱驱动与微型执行器[14]。 - **Boston Dynamics Atlas**：早期 Atlas 采用液压执行器以获得极大爆发力；2024
-    年发布的全电动 Atlas 改用电动执行器，强调力量、敏捷与平衡恢复能力[15]。 - **Agility Robotics Digit**：Digit 腿部采用串联弹性执行器（SEA），强调行走能效与人机安全；上肢自由度较少，面向物流搬运场景[16]。
-    - **Figure AI Figure 02**：采用全电动执行器，目标是人形机器人在仓储与制造中的通用操作，公开信息强调端到端 AI 与灵巧手集成[17]。
+  zh: '- Tesla Optimus：据 Tesla AI Day 2022 与后续公开信息，Optimus 躯干采用 28 个执行器（14 个旋转 + 14 个线性），旋转关节使用无框力矩电机 + 谐波减速器，线性关节使用无框力矩电机
+    + 行星滚柱丝杠；灵巧手从 Gen 2 的 11 DoF 升级到 Gen 3 的 22 DoF，采用腱驱动与微型执行器[14]。 - Boston Dynamics Atlas：早期 Atlas 采用液压执行器以获得极大爆发力；2024
+    年发布的全电动 Atlas 改用电动执行器，强调力量、敏捷与平衡恢复能力[15]。 - Agility Robotics Digit：Digit 腿部采用串联弹性执行器（SEA），强调行走能效与人机安全；上肢自由度较少，面向物流搬运场景[16]。
+    - Figure AI Figure 02：采用全电动执行器，目标是人形机器人在仓储与制造中的通用操作，公开信息强调端到端 AI 与灵巧手集成[17]。'
   ko: 스레드 롤러를 통해 회전욕동을 직선욕동으로 변환하는 고하중·고정밀 직선 기구로 휴로봇 선형 액추에이터에 사용됨.
 domains:
 - 02_components

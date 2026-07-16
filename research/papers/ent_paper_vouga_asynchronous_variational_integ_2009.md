@@ -15,7 +15,7 @@ summary:
     that this remarkable property is due to their geometric nature: they preserve a discrete multisymplectic form. Previous
     proofs of AVIs'' multisymplecticity assume that the potentials are of an elastic type, i.e., specified by volume integration
     over the material domain, an assumption violated by interaction-type potentials, such as penalty forces used to model
-    mechanical contact. We extend the proof of AVI multisymplecticity, showing that AVIs remain multisymplectic under '
+    mechanical contact. We extend the proof of AVI multisymplecticity, showing that AVIs remain multisymplectic under'
   ko: 비동기 변분 적분기(AVI)를 페널티 접촉력과 같은 상호작용 포텐셜로 확장하고, 완화된 가정 하에서 다중심플렉틱성을 증명하며, 비동기 접촉 역학(ACM) 프레임워크를 통해 얇은 구-판 충격에서 장기 에너지 안정성을
     검증한다.
 domains:

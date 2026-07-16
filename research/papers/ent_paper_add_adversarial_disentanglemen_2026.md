@@ -8,7 +8,7 @@ names:
   zh: 对抗解耦与蒸馏
   ko: 'ADD: Adversarial Disentanglement and Distillation'
 summary:
-  en: 'ADD: Adversarial Disentanglement and Distillation is a paper on style learning for humanoid robotics.  Combating decoupling
+  en: 'ADD: Adversarial Disentanglement and Distillation is a paper on style learning for humanoid robotics. Combating decoupling
     and distillation.'
   zh: 'ADD: Adversarial Disentanglement and Distillation is a paper on 风格学习 for humanoid robotics. 对抗解耦与蒸馏.'
   ko: 'ADD: Adversarial Disentanglement and Distillation is a paper on 风格学习 for humanoid robotics. 对抗解耦与蒸馏.'

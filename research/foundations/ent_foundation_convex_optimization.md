@@ -10,8 +10,7 @@ names:
 summary:
   en: The mathematical discipline of minimizing convex functions over convex sets, guaranteeing that any local optimum is
     also global.
-  zh: '核心内容 ### 凸优化的定义与定位 凸优化属于 **foundation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 在凸集上最小化凸函数的数学学科，保证任何局部最优也是全局最优。
-    英文名称为 *Convex Optimization*。 韩文名称为 *볼록 최적화*。'
+  zh: 在凸集上最小化凸函数的数学学科，保证任何局部最优也是全局最优。
   ko: 볼록 집합 위에서 볼록 함수를 최소화하는 수학 분야로, 모든 국소 최적해가 전역 최적해임을 보장한다.
 domains:
 - 00_foundations
@@ -47,7 +46,7 @@ sources:
 
 ## 核心内容
 ### 凸优化的定义与定位
-凸优化属于 **foundation** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 在凸集上最小化凸函数的数学学科，保证任何局部最优也是全局最优。 英文名称为 *Convex Optimization*。 韩文名称为 *볼록 최적화*。
+凸优化属于 **基础学科** 类型。 所属领域包括：基础学科。 价值链层级：基础层。 在凸集上最小化凸函数的数学学科，保证任何局部最优也是全局最优。 英文名称为 *Convex Optimization*。 韩文名称为 *볼록 최적화*。
 
 ### 凸优化的数学与原理基础
 凸优化建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -71,7 +70,7 @@ sources:
 - humanoid_control
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键foundation之一，凸优化在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键基础学科之一，凸优化在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Boyd and Vandenberghe, Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/)

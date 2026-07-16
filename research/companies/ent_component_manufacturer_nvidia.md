@@ -10,7 +10,7 @@ names:
 summary:
   en: American semiconductor and software company supplying GPUs, edge AI compute modules, simulation platforms, and robot-learning
     tools used in humanoid development.
-  zh: '## 概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。'
+  zh: 概述 英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
   ko: GPU, 엣지 AI 컴퓨팅 모듈, 시뮬레이션 플랫폼 및 로봇 학습 도구를 공급하는 미국 반도체 및 소프트웨어 기업입니다.
 domains:
 - 02_components
@@ -54,7 +54,7 @@ theoretical_depth:
 ---
 
 ## 概述
-英伟达是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
+英伟达是人形机器人领域的重要零部件_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## NVIDIA（英伟达） / NVIDIA Corporation

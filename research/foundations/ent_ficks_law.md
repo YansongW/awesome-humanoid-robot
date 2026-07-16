@@ -10,8 +10,7 @@ names:
 summary:
   en: A constitutive principle stating that the diffusive flux of a species is proportional to the negative gradient of its
     concentration.
-  zh: '核心内容 ### 菲克定律的定义与定位 菲克定律属于 **principle** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种本构原理，指出物质的扩散通量与其浓度梯度的负值成正比。
-    英文名称为 *Fick''s law*。 韩文名称为 *픽의 법칙*。'
+  zh: 一种本构原理，指出物质的扩散通量与其浓度梯度的负值成正比。
   ko: 종의 확산 선속이 농도 기울기의 음수에 비례한다는 구성 원리.
 domains:
 - 00_foundations
@@ -54,7 +53,7 @@ related_entities:
 
 ## 核心内容
 ### 菲克定律的定义与定位
-菲克定律属于 **principle** 类型。 所属领域包括：00_foundations。 价值链层级：foundations。 一种本构原理，指出物质的扩散通量与其浓度梯度的负值成正比。 英文名称为 *Fick's law*。 韩文名称为 *픽의 법칙*。
+菲克定律属于 **原理** 类型。 所属领域包括：基础学科。 价值链层级：基础层。 一种本构原理，指出物质的扩散通量与其浓度梯度的负值成正比。 英文名称为 *Fick's law*。 韩文名称为 *픽의 법칙*。
 
 ### 菲克定律的数学与原理基础
 菲克定律建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -78,7 +77,7 @@ related_entities:
 - flux
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键principle之一，菲克定律在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键原理之一，菲克定律在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [J. Crank, The Mathematics of Diffusion, 2nd ed., Oxford University Press, 1975](https://doi.org/10.1093/oso/9780198534112.001.0001)

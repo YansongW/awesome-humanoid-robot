@@ -9,7 +9,7 @@ names:
   ko: 'ZeroWBC: Learning Natural Visuomotor Humanoid Control from Egocentric Video'
 summary:
   en: 'ZeroWBC: Learning Natural Visuomotor Humanoid Control from Egocentric Video is a paper on Loco-Manipulation for humanoid
-    robotics.  ZeroWBC: Learn humanoid visual-touch motion control for zero remote control directly from human first-person
+    robotics. ZeroWBC: Learn humanoid visual-touch motion control for zero remote control directly from human first-person
     videos.'
   zh: 'ZeroWBC: Learning Natural Visuomotor Humanoid Control from Egocentric Video is a paper on Loco-Manipulation for humanoid
     robotics. ZeroWBC：直接从人类第一人称视频中学出零遥操作的人形视触运动控制.'

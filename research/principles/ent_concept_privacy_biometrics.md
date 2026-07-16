@@ -10,8 +10,7 @@ names:
 summary:
   en: The governance of personal data and biometric information collected by robots, including face recognition, voiceprints,
     and gait data.
-  zh: '核心内容 ### 隐私与生物识别的定义与定位 隐私与生物识别属于 **concept** 类型。 所属领域包括：12_policy_regulation_ethics。 价值链层级：validation_markets。 机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。
-    英文名称为 *Privacy and Biometrics*。 韩文名称为 *프라이버시 및 생체 인식*。'
+  zh: 机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。
   ko: 로봇이 수집하는 얼굴·음성·보행 등 개인정보와 생체 인식 데이터의 거버넌스.
 domains:
 - 12_policy_regulation_ethics
@@ -45,7 +44,7 @@ sources:
 
 ## 核心内容
 ### 隐私与生物识别的定义与定位
-隐私与生物识别属于 **concept** 类型。 所属领域包括：12_policy_regulation_ethics。 价值链层级：validation_markets。 机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。 英文名称为 *Privacy and Biometrics*。 韩文名称为 *프라이버시 및 생체 인식*。
+隐私与生物识别属于 **概念** 类型。 所属领域包括：政策法规伦理。 价值链层级：验证与市场层。 机器人采集的个人信息与生物识别数据（如人脸、声纹、步态）的治理。 英文名称为 *Privacy and Biometrics*。 韩文名称为 *프라이버시 및 생체 인식*。
 
 ### 隐私与生物识别的关键维度
 理解隐私与生物识别需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -64,7 +63,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键concept之一，隐私与生物识别在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键概念之一，隐私与生物识别在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

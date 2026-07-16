@@ -10,8 +10,7 @@ names:
 summary:
   en: A linear circuit operator that partitions a total voltage across a series of resistances in proportion to their resistance
     values.
-  zh: '核心内容 ### 分压器的定义与定位 分压器属于 **operator** 类型。 所属领域包括：00_foundations, 06_design_engineering。 价值链层级：foundations, midstream。
-    一种线性电路算子，按电阻值比例将总电压分配到串联电阻上。 英文名称为 *Voltage Divider*。 韩文名称为 *전압 분배기*。'
+  zh: 一种线性电路算子，按电阻值比例将总电压分配到串联电阻上。
   ko: 저항값에 비례하여 직렬 저항에 총 전압을 분배하는 선형 회로 연산자이다.
 domains:
 - 00_foundations
@@ -49,7 +48,7 @@ sources:
 
 ## 核心内容
 ### 分压器的定义与定位
-分压器属于 **operator** 类型。 所属领域包括：00_foundations, 06_design_engineering。 价值链层级：foundations, midstream。 一种线性电路算子，按电阻值比例将总电压分配到串联电阻上。 英文名称为 *Voltage Divider*。 韩文名称为 *전압 분배기*。
+分压器属于 **运营商** 类型。 所属领域包括：基础学科, 设计工程。 价值链层级：基础层, midstream。 一种线性电路算子，按电阻值比例将总电压分配到串联电阻上。 英文名称为 *Voltage Divider*。 韩文名称为 *전압 분배기*。
 
 ### 分压器的关键维度
 理解分压器需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -70,7 +69,7 @@ sources:
 - humanoid_robot
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键operator之一，分压器在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键运营商之一，分压器在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Dorf & Svoboda, Introduction to Electric Circuits, 9th ed.](https://www.wiley.com/en-us/Introduction+to+Electric+Circuits%2C+9th+Edition-p-9781118931897)

@@ -9,7 +9,7 @@ names:
   ko: 'SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual RL'
 summary:
   en: 'SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residential RL is a paper on Loco-Manipulation
-    for humanoid robotics.  SteadyTray: Using residual reinforcement learning to teach a humanoid robot to walk steadily while
+    for humanoid robotics. SteadyTray: Using residual reinforcement learning to teach a humanoid robot to walk steadily while
     holding a tray.'
   zh: 'SteadyTray: Learning Object Balancing Tasks in Humanoid Tray Transport via Residual RL is a paper on Loco-Manipulation
     for humanoid robotics. SteadyTray：用残差强化学习教人形机器人端着托盘稳稳走路.'

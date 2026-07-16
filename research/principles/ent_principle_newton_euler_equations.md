@@ -10,8 +10,7 @@ names:
 summary:
   en: The coupled translational and rotational equations that describe how forces and torques produce linear and angular accelerations
     of a rigid body.
-  zh: '核心内容 ### 牛顿-欧拉运动方程的定义与定位 牛顿-欧拉运动方程属于 **principle** 类型。 所属领域包括：00_foundations, 06_design_engineering。 价值链层级：foundations,
-    midstream。 描述力和力矩如何产生刚体平动和转动加速度的耦合平移与旋转方程。 英文名称为 *Newton-Euler Equations of Motion*。 韩文名称为 *뉴턴-오일러 운동 방정식*。'
+  zh: 描述力和力矩如何产生刚体平动和转动加速度的耦合平移与旋转方程。
   ko: 힘과 토크가 강체의 직선 및 각 가속도를 어떻게 생성하는지 기술하는 결합된 평행이동 및 회전 방정식이다.
 domains:
 - 00_foundations
@@ -56,7 +55,7 @@ related_entities:
 
 ## 核心内容
 ### 牛顿-欧拉运动方程的定义与定位
-牛顿-欧拉运动方程属于 **principle** 类型。 所属领域包括：00_foundations, 06_design_engineering。 价值链层级：foundations, midstream。 描述力和力矩如何产生刚体平动和转动加速度的耦合平移与旋转方程。 英文名称为 *Newton-Euler Equations of Motion*。 韩文名称为 *뉴턴-오일러 운동 방정식*。
+牛顿-欧拉运动方程属于 **原理** 类型。 所属领域包括：基础学科, 设计工程。 价值链层级：基础层, midstream。 描述力和力矩如何产生刚体平动和转动加速度的耦合平移与旋转方程。 英文名称为 *Newton-Euler Equations of Motion*。 韩文名称为 *뉴턴-오일러 운동 방정식*。
 
 ### 牛顿-欧拉运动方程的数学与原理基础
 牛顿-欧拉运动方程建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -80,7 +79,7 @@ related_entities:
 - humanoid_control
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键principle之一，牛顿-欧拉运动方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键原理之一，牛顿-欧拉运动方程在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Featherstone, Rigid Body Dynamics Algorithms](https://www.springer.com/gp/book/9780387743141)

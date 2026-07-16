@@ -55,7 +55,7 @@ Leveraging its deep expertise in and broad product portfolio of robotics and AI 
 
 ## 核心内容
 ### Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale的定义与定位
-Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale属于 **component** 类型。 所属领域包括：11_applications_markets。 价值链层级：validation_markets。 Leveraging its deep expertise in and broad product portfolio of robotics and AI vision, Orbbec is one of the few industry providers that combines advanced multi-sensor calibration and synchronization technologies, a full-stack vision product portfolio, and global-scale manufacturing and delivery capabilities. 英文名称为 *Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale*。 韩文名称为 *Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale*。
+Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale属于 **零部件** 类型。 所属领域包括：应用与市场。 价值链层级：验证与市场层。 Leveraging its deep expertise in and broad product portfolio of robotics and AI vision, Orbbec is one of the few industry providers that combines advanced multi-sensor calibration and synchronization technologies, a full-stack vision product portfolio, and global-scale manufacturing and delivery capabilities. 英文名称为 *Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale*。 韩文名称为 *Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale*。
 
 ### Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale的工作原理与技术架构
 Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -78,7 +78,7 @@ Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Ca
 - sensor
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component之一，Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件之一，Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Orbbec Unveils Robot-Free Data Collection Hardware Platform to Help Customers Capture Real-World Demonstrations for Physical AI at Scale](http://www.RoboticsTomorrow.com/news/2026/07/07/orbbec-unveils-robot-free-data-collection-hardware-platform-to-help-customers-capture-real-world-demonstrations-for-physical-ai-at-scale/26808)

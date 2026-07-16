@@ -8,42 +8,42 @@ names:
   zh: Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning
   ko: Manifold-constrained Hamilton-Jacobi Reachability Learning for Decentralized Multi-Agent Motion Planning
 summary:
-  en: "arXiv:2511.03591v2 Announce Type: replace \nAbstract: Safe multi-agent motion planning (MAMP) under task-induced constraints\
-    \ is a critical challenge in robotics. Many real-world scenarios require robots to navigate dynamic environments while\
-    \ adhering to manifold constraints imposed by tasks. For example, service robots must carry cups upright while avoiding\
-    \ collisions with humans or other robots. Despite recent advances in decentralized MAMP for high-dimensional systems,\
-    \ incorporating manifold constraints remains difficult. To address this, we propose a manifold-constrained Hamilton-Jacobi\
-    \ reachability (HJR) learning framework for decentralized MAMP. Our method solves HJR problems under manifold constraints\
-    \ to capture task-aware safety conditions, which are then integrated into a decentralized trajectory optimization planner.\
-    \ This enables robots to generate motion plans that are both safe and task-feasible without requiring assumptions about\
-    \ other agents' policies. Our approach generalizes across diverse manifold-constrained tasks and scales effectively to\
-    \ high-dimensional multi-agent manipulation problems. Experiments show that our method outperforms existing constrained\
-    \ motion planners and operates at speeds suitable for real-world applications. Video demonstrations are available at https://youtu.be/RYcEHMnPTH8\
-    \ ."
-  zh: "arXiv:2511.03591v2 Announce Type: replace \nAbstract: Safe multi-agent motion planning (MAMP) under task-induced constraints\
-    \ is a critical challenge in robotics. Many real-world scenarios require robots to navigate dynamic environments while\
-    \ adhering to manifold constraints imposed by tasks. For example, service robots must carry cups upright while avoiding\
-    \ collisions with humans or other robots. Despite recent advances in decentralized MAMP for high-dimensional systems,\
-    \ incorporating manifold constraints remains difficult. To address this, we propose a manifold-constrained Hamilton-Jacobi\
-    \ reachability (HJR) learning framework for decentralized MAMP. Our method solves HJR problems under manifold constraints\
-    \ to capture task-aware safety conditions, which are then integrated into a decentralized trajectory optimization planner.\
-    \ This enables robots to generate motion plans that are both safe and task-feasible without requiring assumptions about\
-    \ other agents' policies. Our approach generalizes across diverse manifold-constrained tasks and scales effectively to\
-    \ high-dimensional multi-agent manipulation problems. Experiments show that our method outperforms existing constrained\
-    \ motion planners and operates at speeds suitable for real-world applications. Video demonstrations are available at https://youtu.be/RYcEHMnPTH8\
-    \ ."
-  ko: "arXiv:2511.03591v2 Announce Type: replace \nAbstract: Safe multi-agent motion planning (MAMP) under task-induced constraints\
-    \ is a critical challenge in robotics. Many real-world scenarios require robots to navigate dynamic environments while\
-    \ adhering to manifold constraints imposed by tasks. For example, service robots must carry cups upright while avoiding\
-    \ collisions with humans or other robots. Despite recent advances in decentralized MAMP for high-dimensional systems,\
-    \ incorporating manifold constraints remains difficult. To address this, we propose a manifold-constrained Hamilton-Jacobi\
-    \ reachability (HJR) learning framework for decentralized MAMP. Our method solves HJR problems under manifold constraints\
-    \ to capture task-aware safety conditions, which are then integrated into a decentralized trajectory optimization planner.\
-    \ This enables robots to generate motion plans that are both safe and task-feasible without requiring assumptions about\
-    \ other agents' policies. Our approach generalizes across diverse manifold-constrained tasks and scales effectively to\
-    \ high-dimensional multi-agent manipulation problems. Experiments show that our method outperforms existing constrained\
-    \ motion planners and operates at speeds suitable for real-world applications. Video demonstrations are available at https://youtu.be/RYcEHMnPTH8\
-    \ ."
+  en: 'arXiv:2511.03591v2 Announce Type: replace Abstract: Safe multi-agent motion planning (MAMP) under task-induced constraints
+    is a critical challenge in robotics. Many real-world scenarios require robots to navigate dynamic environments while adhering
+    to manifold constraints imposed by tasks. For example, service robots must carry cups upright while avoiding collisions
+    with humans or other robots. Despite recent advances in decentralized MAMP for high-dimensional systems, incorporating
+    manifold constraints remains difficult. To address this, we propose a manifold-constrained Hamilton-Jacobi reachability
+    (HJR) learning framework for decentralized MAMP. Our method solves HJR problems under manifold constraints to capture
+    task-aware safety conditions, which are then integrated into a decentralized trajectory optimization planner. This enables
+    robots to generate motion plans that are both safe and task-feasible without requiring assumptions about other agents''
+    policies. Our approach generalizes across diverse manifold-constrained tasks and scales effectively to high-dimensional
+    multi-agent manipulation problems. Experiments show that our method outperforms existing constrained motion planners and
+    operates at speeds suitable for real-world applications. Video demonstrations are available at https://youtu.be/RYcEHMnPTH8
+    .'
+  zh: 'arXiv:2511.03591v2 Announce Type: replace Abstract: Safe multi-agent motion planning (MAMP) under task-induced constraints
+    is a critical challenge in robotics. Many real-world scenarios require robots to navigate dynamic environments while adhering
+    to manifold constraints imposed by tasks. For example, service robots must carry cups upright while avoiding collisions
+    with humans or other robots. Despite recent advances in decentralized MAMP for high-dimensional systems, incorporating
+    manifold constraints remains difficult. To address this, we propose a manifold-constrained Hamilton-Jacobi reachability
+    (HJR) learning framework for decentralized MAMP. Our method solves HJR problems under manifold constraints to capture
+    task-aware safety conditions, which are then integrated into a decentralized trajectory optimization planner. This enables
+    robots to generate motion plans that are both safe and task-feasible without requiring assumptions about other agents''
+    policies. Our approach generalizes across diverse manifold-constrained tasks and scales effectively to high-dimensional
+    multi-agent manipulation problems. Experiments show that our method outperforms existing constrained motion planners and
+    operates at speeds suitable for real-world applications. Video demonstrations are available at https://youtu.be/RYcEHMnPTH8
+    .'
+  ko: 'arXiv:2511.03591v2 Announce Type: replace Abstract: Safe multi-agent motion planning (MAMP) under task-induced constraints
+    is a critical challenge in robotics. Many real-world scenarios require robots to navigate dynamic environments while adhering
+    to manifold constraints imposed by tasks. For example, service robots must carry cups upright while avoiding collisions
+    with humans or other robots. Despite recent advances in decentralized MAMP for high-dimensional systems, incorporating
+    manifold constraints remains difficult. To address this, we propose a manifold-constrained Hamilton-Jacobi reachability
+    (HJR) learning framework for decentralized MAMP. Our method solves HJR problems under manifold constraints to capture
+    task-aware safety conditions, which are then integrated into a decentralized trajectory optimization planner. This enables
+    robots to generate motion plans that are both safe and task-feasible without requiring assumptions about other agents''
+    policies. Our approach generalizes across diverse manifold-constrained tasks and scales effectively to high-dimensional
+    multi-agent manipulation problems. Experiments show that our method outperforms existing constrained motion planners and
+    operates at speeds suitable for real-world applications. Video demonstrations are available at https://youtu.be/RYcEHMnPTH8
+    .'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

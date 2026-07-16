@@ -9,7 +9,7 @@ names:
   ko: 法规、标准与安全需求映射
 summary:
   en: Regulatory requirements matrix, compliance roadmap, security objective level (SIL/PL)
-  zh: 核心内容 **方法 / 工具**：ISO 10218-1/2、ISO/TS 15066、IEC 61508、IEC 62368、CE/FCC/UL 差距分析
+  zh: 方法 / 工具：ISO 10218-1/2、ISO/TS 15066、IEC 61508、IEC 62368、CE/FCC/UL 差距分析
   ko: 法规需求矩阵、合规路线图、安全目标等级（SIL/PL）
 domains:
 - 06_design_engineering

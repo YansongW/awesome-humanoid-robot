@@ -8,39 +8,39 @@ names:
   zh: Strouhal-Aware Model Predictive Control for Efficient Multi-Fin Flapping Locomotion
   ko: Strouhal-Aware Model Predictive Control for Efficient Multi-Fin Flapping Locomotion
 summary:
-  en: "arXiv:2607.03216v1 Announce Type: new \nAbstract: Efficient flapping propulsion hinges on operating within a narrow\
-    \ Strouhal number window, a principle nature has converged upon for maximum thrust-to-power ratio. We translate this bioinspired\
-    \ empirical rule into real-time control, demonstrating it on an autonomous underwater vehicle driven by four soft fins.\
-    \ The proposed Strouhal-aware Model Predictive Control (MPC) enhances a quasi-steady hydrodynamic model with an explicit\
-    \ penalty for Strouhal deviation, solving the resulting nonconvex problem via a two-stage sampling and gradient optimization\
-    \ that runs onboard at 25 Hz. Pool and field trials show that the controller keeps each fin within the optimal Strouhal\
-    \ corridor (0.25-0.35) while precisely tracking commanded forces. This results in a mean reduction in mechanical power\
-    \ of 8.8\\% to 32\\% throughout the cruising range of 0.1 to 0.3 m/s. The proposed method also allows for a velocity of\
-    \ 0.4 m/s, which is unattainable for a baseline of the conventional inverse model. The results confirm that embedding\
-    \ first-principle flow physics into an MPC objective yields tangible endurance gains without sacrificing agility, offering\
-    \ a generic pathway to energy-aware locomotion in next-generation multifin robots."
-  zh: "arXiv:2607.03216v1 Announce Type: new \nAbstract: Efficient flapping propulsion hinges on operating within a narrow\
-    \ Strouhal number window, a principle nature has converged upon for maximum thrust-to-power ratio. We translate this bioinspired\
-    \ empirical rule into real-time control, demonstrating it on an autonomous underwater vehicle driven by four soft fins.\
-    \ The proposed Strouhal-aware Model Predictive Control (MPC) enhances a quasi-steady hydrodynamic model with an explicit\
-    \ penalty for Strouhal deviation, solving the resulting nonconvex problem via a two-stage sampling and gradient optimization\
-    \ that runs onboard at 25 Hz. Pool and field trials show that the controller keeps each fin within the optimal Strouhal\
-    \ corridor (0.25-0.35) while precisely tracking commanded forces. This results in a mean reduction in mechanical power\
-    \ of 8.8\\% to 32\\% throughout the cruising range of 0.1 to 0.3 m/s. The proposed method also allows for a velocity of\
-    \ 0.4 m/s, which is unattainable for a baseline of the conventional inverse model. The results confirm that embedding\
-    \ first-principle flow physics into an MPC objective yields tangible endurance gains without sacrificing agility, offering\
-    \ a generic pathway to energy-aware locomotion in next-generation multifin robots."
-  ko: "arXiv:2607.03216v1 Announce Type: new \nAbstract: Efficient flapping propulsion hinges on operating within a narrow\
-    \ Strouhal number window, a principle nature has converged upon for maximum thrust-to-power ratio. We translate this bioinspired\
-    \ empirical rule into real-time control, demonstrating it on an autonomous underwater vehicle driven by four soft fins.\
-    \ The proposed Strouhal-aware Model Predictive Control (MPC) enhances a quasi-steady hydrodynamic model with an explicit\
-    \ penalty for Strouhal deviation, solving the resulting nonconvex problem via a two-stage sampling and gradient optimization\
-    \ that runs onboard at 25 Hz. Pool and field trials show that the controller keeps each fin within the optimal Strouhal\
-    \ corridor (0.25-0.35) while precisely tracking commanded forces. This results in a mean reduction in mechanical power\
-    \ of 8.8\\% to 32\\% throughout the cruising range of 0.1 to 0.3 m/s. The proposed method also allows for a velocity of\
-    \ 0.4 m/s, which is unattainable for a baseline of the conventional inverse model. The results confirm that embedding\
-    \ first-principle flow physics into an MPC objective yields tangible endurance gains without sacrificing agility, offering\
-    \ a generic pathway to energy-aware locomotion in next-generation multifin robots."
+  en: 'arXiv:2607.03216v1 Announce Type: new Abstract: Efficient flapping propulsion hinges on operating within a narrow Strouhal
+    number window, a principle nature has converged upon for maximum thrust-to-power ratio. We translate this bioinspired
+    empirical rule into real-time control, demonstrating it on an autonomous underwater vehicle driven by four soft fins.
+    The proposed Strouhal-aware Model Predictive Control (MPC) enhances a quasi-steady hydrodynamic model with an explicit
+    penalty for Strouhal deviation, solving the resulting nonconvex problem via a two-stage sampling and gradient optimization
+    that runs onboard at 25 Hz. Pool and field trials show that the controller keeps each fin within the optimal Strouhal
+    corridor (0.25-0.35) while precisely tracking commanded forces. This results in a mean reduction in mechanical power of
+    8.8\% to 32\% throughout the cruising range of 0.1 to 0.3 m/s. The proposed method also allows for a velocity of 0.4 m/s,
+    which is unattainable for a baseline of the conventional inverse model. The results confirm that embedding first-principle
+    flow physics into an MPC objective yields tangible endurance gains without sacrificing agility, offering a generic pathway
+    to energy-aware locomotion in next-generation multifin robots.'
+  zh: 'arXiv:2607.03216v1 Announce Type: new Abstract: Efficient flapping propulsion hinges on operating within a narrow Strouhal
+    number window, a principle nature has converged upon for maximum thrust-to-power ratio. We translate this bioinspired
+    empirical rule into real-time control, demonstrating it on an autonomous underwater vehicle driven by four soft fins.
+    The proposed Strouhal-aware Model Predictive Control (MPC) enhances a quasi-steady hydrodynamic model with an explicit
+    penalty for Strouhal deviation, solving the resulting nonconvex problem via a two-stage sampling and gradient optimization
+    that runs onboard at 25 Hz. Pool and field trials show that the controller keeps each fin within the optimal Strouhal
+    corridor (0.25-0.35) while precisely tracking commanded forces. This results in a mean reduction in mechanical power of
+    8.8\% to 32\% throughout the cruising range of 0.1 to 0.3 m/s. The proposed method also allows for a velocity of 0.4 m/s,
+    which is unattainable for a baseline of the conventional inverse model. The results confirm that embedding first-principle
+    flow physics into an MPC objective yields tangible endurance gains without sacrificing agility, offering a generic pathway
+    to energy-aware locomotion in next-generation multifin robots.'
+  ko: 'arXiv:2607.03216v1 Announce Type: new Abstract: Efficient flapping propulsion hinges on operating within a narrow Strouhal
+    number window, a principle nature has converged upon for maximum thrust-to-power ratio. We translate this bioinspired
+    empirical rule into real-time control, demonstrating it on an autonomous underwater vehicle driven by four soft fins.
+    The proposed Strouhal-aware Model Predictive Control (MPC) enhances a quasi-steady hydrodynamic model with an explicit
+    penalty for Strouhal deviation, solving the resulting nonconvex problem via a two-stage sampling and gradient optimization
+    that runs onboard at 25 Hz. Pool and field trials show that the controller keeps each fin within the optimal Strouhal
+    corridor (0.25-0.35) while precisely tracking commanded forces. This results in a mean reduction in mechanical power of
+    8.8\% to 32\% throughout the cruising range of 0.1 to 0.3 m/s. The proposed method also allows for a velocity of 0.4 m/s,
+    which is unattainable for a baseline of the conventional inverse model. The results confirm that embedding first-principle
+    flow physics into an MPC objective yields tangible endurance gains without sacrificing agility, offering a generic pathway
+    to energy-aware locomotion in next-generation multifin robots.'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

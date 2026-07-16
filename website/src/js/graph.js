@@ -634,10 +634,16 @@
       const graphSearchResults = document.getElementById('graph-search-results');
       if (graphSearch) {
         let searchData = { entries: [] };
-        fetch(basePath + '/data/search-index.json')
-          .then(r => r.json())
-          .then(d => { searchData = d; })
-          .catch(() => {});
+        // Lightweight names-only index (falls back to the full search index).
+        fetch(basePath + '/data/names.json')
+          .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+          .then(d => { searchData = { entries: d }; })
+          .catch(() => {
+            fetch(basePath + '/data/search-index.json')
+              .then(r => r.json())
+              .then(d => { searchData = d; })
+              .catch(() => {});
+          });
 
         let graphSearchTimer = null;
         graphSearch.addEventListener('input', () => {

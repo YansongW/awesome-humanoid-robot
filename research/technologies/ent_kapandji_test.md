@@ -10,8 +10,7 @@ names:
 summary:
   en: A clinical test of thumb opposability and digital dexterity, adapted in robotics to evaluate thumb range of motion and
     opposition quality in dexterous robot hands.
-  zh: '核心内容 ### Kapandji测试的定义与定位 Kapandji测试属于 **benchmark** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets,
-    midstream。 一种临床拇指对掌能力和手指灵活性测试，在机器人学中被改编用于评估灵巧机器人手的拇指活动范围和对掌质量。 英文名称为 *Kapandji Test*。 韩文名称为 *Kapandji 테스트*。'
+  zh: 一种临床拇指对掌能力和手指灵活性测试，在机器人学中被改编用于评估灵巧机器人手的拇指活动范围和对掌质量。
   ko: 임상적으로 엄지 대립 능력과 손가락 재주를 측정하는 테스트로, 로봇공학에서 능숙한 로봇 손의 엄지 가동 범위와 대립 품질을 평가하기 위해 채택되었습니다.
 domains:
 - 10_evaluation_benchmarks
@@ -51,7 +50,7 @@ theoretical_depth:
 
 ## 核心内容
 ### Kapandji测试的定义与定位
-Kapandji测试属于 **benchmark** 类型。 所属领域包括：10_evaluation_benchmarks, 06_design_engineering。 价值链层级：validation_markets, midstream。 一种临床拇指对掌能力和手指灵活性测试，在机器人学中被改编用于评估灵巧机器人手的拇指活动范围和对掌质量。 英文名称为 *Kapandji Test*。 韩文名称为 *Kapandji 테스트*。
+Kapandji测试属于 **评测基准** 类型。 所属领域包括：评测基准, 设计工程。 价值链层级：验证与市场层, midstream。 一种临床拇指对掌能力和手指灵活性测试，在机器人学中被改编用于评估灵巧机器人手的拇指活动范围和对掌质量。 英文名称为 *Kapandji Test*。 韩文名称为 *Kapandji 테스트*。
 
 ### Kapandji测试的任务设置与数据构成
 Kapandji测试通过标准化的任务或数据格式，为不同方法提供可比较的评估基础。理解其覆盖范围与标注方式，有助于正确解读实验结果。
@@ -73,7 +72,7 @@ Kapandji测试为学术界与工业界提供了统一的比较基准，推动了
 - dexterous_hand
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键benchmark之一，Kapandji测试在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键评测基准之一，Kapandji测试在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)

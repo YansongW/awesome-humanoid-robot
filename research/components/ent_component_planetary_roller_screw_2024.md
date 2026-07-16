@@ -9,7 +9,7 @@ names:
   ko: Planetary Roller Screw
 summary:
   en: High-efficiency linear transmission component converting rotary motion to linear motion, used in robot linear joints.
-  zh: 核心内容 人形机器人的线性关节（如 Optimus 躯干与腿部的部分直线驱动器）常采用滚珠丝杠或行星滚柱丝杠把电机旋转运动转换为直线推力。其基本运动学关系为：螺距（lead）$l$ 表示丝杠旋转一周螺母前进的距离，因此螺母线位移
+  zh: 人形机器人的线性关节（如 Optimus 躯干与腿部的部分直线驱动器）常采用滚珠丝杠或行星滚柱丝杠把电机旋转运动转换为直线推力。其基本运动学关系为：螺距（lead）$l$ 表示丝杠旋转一周螺母前进的距离，因此螺母线位移
   ko: 회전 운 동을 선형 운 동으로 변환하는 고효율 선형 변환 부품, 로봇 선형 관절에 사용.
 domains:
 - 02_components
@@ -42,7 +42,7 @@ sources:
 ---
 
 ## 概述
-行星滚柱丝杠是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
+行星滚柱丝杠是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 人形机器人的线性关节（如 Optimus 躯干与腿部的部分直线驱动器）常采用滚珠丝杠或行星滚柱丝杠把电机旋转运动转换为直线推力。其基本运动学关系为：螺距（lead）$l$ 表示丝杠旋转一周螺母前进的距离，因此螺母线位移

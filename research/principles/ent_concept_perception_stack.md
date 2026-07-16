@@ -10,8 +10,7 @@ names:
 summary:
   en: The software subsystem that processes sensor data to estimate states, detect objects, and build environmental representations
     for decision-making.
-  zh: '核心内容 ### 感知栈的定义与定位 感知栈属于 **concept** 类型。 所属领域包括：08_software_middleware, 07_ai_models_algorithms。 价值链层级：intelligence。
-    处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。 英文名称为 *Perception Stack*。 韩文名称为 *인식 스택*。'
+  zh: 处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。
   ko: 센서 데이터를 처리하여 상태를 추정·물체를 검출·환경 표현을 구축하고 의사결정에 입력을 제공하는 소프트웨어 하위 시스템.
 domains:
 - 08_software_middleware
@@ -46,7 +45,7 @@ sources:
 
 ## 核心内容
 ### 感知栈的定义与定位
-感知栈属于 **concept** 类型。 所属领域包括：08_software_middleware, 07_ai_models_algorithms。 价值链层级：intelligence。 处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。 英文名称为 *Perception Stack*。 韩文名称为 *인식 스택*。
+感知栈属于 **概念** 类型。 所属领域包括：软件中间件, AI 模型与算法。 价值链层级：智能层。 处理传感器数据以估计状态、检测物体并构建环境表示，为决策提供输入的软件子系统。 英文名称为 *Perception Stack*。 韩文名称为 *인식 스택*。
 
 ### 感知栈的关键维度
 理解感知栈需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -65,7 +64,7 @@ sources:
 - wiki_gap
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键concept之一，感知栈在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键概念之一，感知栈在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - Wiki extraction

@@ -10,9 +10,7 @@ names:
 summary:
   en: A family of high-precision data gloves for hand tracking, motion capture, and robot teleoperation, using electromagnetic,
     quantum, or inertial tracking technologies.
-  zh: '核心内容 ### MANUS Metagloves 数据手套的定义与定位 MANUS Metagloves 数据手套属于 **component** 类型。 所属领域包括：02_components, 11_applications_markets。
-    价值链层级：upstream, validation_markets。 一系列用于手部追踪、动作捕捉和机器人遥操作的高精度数据手套，采用电磁、量子或惯性追踪技术。 英文名称为 *MANUS Metagloves*。 韩文名称为 *MANUS
-    Metagloves*。'
+  zh: 一系列用于手部追踪、动作捕捉和机器人遥操作的高精度数据手套，采用电磁、量子或惯性追踪技术。
   ko: 전자기, 양자 또는 관성 추적 기술을 사용하여 손 추적, 모션 캡처 및 로봇 원격 조작을 위한 고정밀 데이터 글로브 제품군.
 domains:
 - 02_components
@@ -59,7 +57,7 @@ theoretical_depth:
 
 ## 核心内容
 ### MANUS Metagloves 数据手套的定义与定位
-MANUS Metagloves 数据手套属于 **component** 类型。 所属领域包括：02_components, 11_applications_markets。 价值链层级：upstream, validation_markets。 一系列用于手部追踪、动作捕捉和机器人遥操作的高精度数据手套，采用电磁、量子或惯性追踪技术。 英文名称为 *MANUS Metagloves*。 韩文名称为 *MANUS Metagloves*。
+MANUS Metagloves 数据手套属于 **零部件** 类型。 所属领域包括：零部件, 应用与市场。 价值链层级：上游, validation_markets。 一系列用于手部追踪、动作捕捉和机器人遥操作的高精度数据手套，采用电磁、量子或惯性追踪技术。 英文名称为 *MANUS Metagloves*。 韩文名称为 *MANUS Metagloves*。
 
 ### MANUS Metagloves 数据手套的工作原理与技术架构
 MANUS Metagloves 数据手套的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -83,7 +81,7 @@ MANUS Metagloves 数据手套已广泛应用于人形机器人的原型验证、
 - haptic_feedback
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键component之一，MANUS Metagloves 数据手套在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键零部件之一，MANUS Metagloves 数据手套在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [MANUS Official Website](https://www.manus-meta.com/)

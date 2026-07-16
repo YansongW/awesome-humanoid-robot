@@ -10,11 +10,11 @@ names:
 summary:
   en: Proposes a temporal-logic-based hierarchical representation that lets NAO humanoid robots adapt soccer behaviors and
     goals to perceived semantic characteristics of unstructured environments, compiled into FOND planning.
-  zh: 'Robots playing soccer often rely on hard-coded behaviors that struggle to generalize when the game environment change.
-    In this paper, we propose a temporal logic based approach that allows robots'' behaviors and goals to adapt to the semantics
+  zh: Robots playing soccer often rely on hard-coded behaviors that struggle to generalize when the game environment change.
+    In this paper, we propose a temporal logic based approach that allows robots' behaviors and goals to adapt to the semantics
     of the environment. In particular, we present a hierarchical representation of soccer in which the robot selects the level
     of operation based on the perceived semantic characteristics of the environment, thus modifying dynamically the set of
-    rules and goals to apply. The proposed approach enables the robot to operate in unstructured environments, just as '
+    rules and goals to apply. The proposed approach enables the robot to operate in unstructured environments, just as
   ko: 시계열 논리 기반 계층적 표현을 제안하여 NAO 휴머노이드 로봇이 비구조화 환경의 의미적 특성을 인식하여 축구 행동과 목표를 동적으로 조정하고 FOND 계획으로 컴파일할 수 있게 한다.
 domains:
 - 07_ai_models_algorithms

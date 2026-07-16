@@ -10,13 +10,13 @@ names:
 summary:
   en: 'PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged Contrastive Representations is a knowledge
     node related to paper in the humanoid robot value chain.'
-  zh: 'Achieving efficient and robust whole-body control (WBC) is essential for enabling humanoid robots to perform complex
+  zh: Achieving efficient and robust whole-body control (WBC) is essential for enabling humanoid robots to perform complex
     tasks in dynamic environments. Despite the success of reinforcement learning (RL) in this domain, its sample inefficiency
     remains a significant challenge due to the intricate dynamics and partial observability of humanoid robots. To address
     this limitation, we propose PvP, a Proprioceptive-Privileged contrastive learning framework that leverages the intrinsic
     complementarity between proprioceptive and privileged states. PvP learns compact and task-relevant latent representations
     without requiring hand-crafted data augmentations, enabling faster and more stable policy learning. To support systematic
-    evaluation, we develop SRL4Humanoid, the first unified and modular framework '
+    evaluation, we develop SRL4Humanoid, the first unified and modular framework
   ko: 'PvP: Data-Efficient Humanoid Robot Learning with Proprioceptive-Privileged Contrastive Representations is a knowledge
     node related to paper in the humanoid robot value chain.'
 domains:

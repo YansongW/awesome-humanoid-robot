@@ -10,8 +10,7 @@ names:
 summary:
   en: The QP objective that penalizes the weighted squared difference between desired and predicted task accelerations plus
     a regularization term on generalized accelerations.
-  zh: '核心内容 ### 加权任务误差目标函数的定义与定位 加权任务误差目标函数属于 **equation** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 惩罚期望任务加速度与预测任务加速度之间加权平方差，并对广义加速度添加正则项的
-    QP 目标。 英文名称为 *Weighted Task-Error Objective*。 韩文名称为 *가중 작업 오차 목적 함수*。'
+  zh: 惩罚期望任务加速度与预测任务加速度之间加权平方差，并对广义加速度添加正则项的 QP 目标。
   ko: 원하는 작업 가속도와 예측 작업 가속도 간의 가중 제곱 차이를 벌점으로 부여하고 일반화 가속도에 정규화 항을 추가한 QP 목적 함수이다.
 domains:
 - 07_ai_models_algorithms
@@ -54,7 +53,7 @@ related_entities:
 
 ## 核心内容
 ### 加权任务误差目标函数的定义与定位
-加权任务误差目标函数属于 **equation** 类型。 所属领域包括：07_ai_models_algorithms。 价值链层级：intelligence。 惩罚期望任务加速度与预测任务加速度之间加权平方差，并对广义加速度添加正则项的 QP 目标。 英文名称为 *Weighted Task-Error Objective*。 韩文名称为 *가중 작업 오차 목적 함수*。
+加权任务误差目标函数属于 **方程** 类型。 所属领域包括：AI 模型与算法。 价值链层级：智能层。 惩罚期望任务加速度与预测任务加速度之间加权平方差，并对广义加速度添加正则项的 QP 目标。 英文名称为 *Weighted Task-Error Objective*。 韩文名称为 *가중 작업 오차 목적 함수*。
 
 ### 加权任务误差目标函数的数学与原理基础
 加权任务误差目标函数建立在相关数学理论与物理规律之上。理解其前提假设、约束条件与推导过程，是正确应用该方法的前提。
@@ -78,7 +77,7 @@ related_entities:
 - humanoid_control
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键equation之一，加权任务误差目标函数在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键方程之一，加权任务误差目标函数在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Hierarchical QP whole-body control: from theory to practice](https://arxiv.org/abs/1910.13329)

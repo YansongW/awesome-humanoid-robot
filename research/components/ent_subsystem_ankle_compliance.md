@@ -10,7 +10,7 @@ names:
 summary:
   en: A mechanical or control-based compliance design at the ankle that improves shock absorption, terrain adaptation, and
     energy efficiency during walking.
-  zh: 核心内容 人形机器人在人机共融环境中无法避免与人或物体发生意外接触。**碰撞检测（collision detection）**与**柔顺控制（compliance control）**是降低碰撞伤害的两道防线：前者尽早发现异常接触，后者在接触发生后减小接触力[36][73]。
+  zh: 人形机器人在人机共融环境中无法避免与人或物体发生意外接触。碰撞检测（collision detection）与柔顺控制（compliance control）是降低碰撞伤害的两道防线：前者尽早发现异常接触，后者在接触发生后减小接触力[36][73]。
   ko: 보행 시 충격 흡수·지형 적응·에너지 효율을 높이기 위해 발목에 적용되는 기계적 또는 제어 기반 순응 설계.
 domains:
 - 06_design_engineering
@@ -39,7 +39,7 @@ sources:
 ---
 
 ## 概述
-脚踝柔顺机构是人形机器人领域的重要component。以下内容整理自项目 Wiki，供深入查阅。
+脚踝柔顺机构是人形机器人领域的重要零部件。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 人形机器人在人机共融环境中无法避免与人或物体发生意外接触。**碰撞检测（collision detection）**与**柔顺控制（compliance control）**是降低碰撞伤害的两道防线：前者尽早发现异常接触，后者在接触发生后减小接触力[36][73]。

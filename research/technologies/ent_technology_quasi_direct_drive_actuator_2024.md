@@ -9,8 +9,7 @@ names:
   ko: Quasi Direct Drive Actuator
 summary:
   en: Actuator design using low-ratio gears with high-torque motors to achieve high bandwidth and force transparency.
-  zh: '核心内容 ### 准直驱执行器的定义与定位 准直驱执行器属于 **technology** 类型。 所属领域包括：07_ai_models_algorithms, 02_components。 价值链层级：intelligence,
-    upstream。 采用低减速比齿轮和高扭矩电机，实现高带宽和力透明度的执行器设计。 英文名称为 *Quasi Direct Drive Actuator*。 韩文名称为 *Quasi Direct Drive Actuator*。'
+  zh: 采用低减速比齿轮和高扭矩电机，实现高带宽和力透明度的执行器设计。
   ko: 저감속비 기어와 고토크 모터를 사용하여 높은 대역폭과 힘 투명성을 달성하는 액추에이터 설계.
 domains:
 - 07_ai_models_algorithms
@@ -50,7 +49,7 @@ sources:
 
 ## 核心内容
 ### 准直驱执行器的定义与定位
-准直驱执行器属于 **technology** 类型。 所属领域包括：07_ai_models_algorithms, 02_components。 价值链层级：intelligence, upstream。 采用低减速比齿轮和高扭矩电机，实现高带宽和力透明度的执行器设计。 英文名称为 *Quasi Direct Drive Actuator*。 韩文名称为 *Quasi Direct Drive Actuator*。
+准直驱执行器属于 **技术** 类型。 所属领域包括：AI 模型与算法, 零部件。 价值链层级：智能层, upstream。 采用低减速比齿轮和高扭矩电机，实现高带宽和力透明度的执行器设计。 英文名称为 *Quasi Direct Drive Actuator*。 韩文名称为 *Quasi Direct Drive Actuator*。
 
 ### 准直驱执行器的工作原理与技术架构
 准直驱执行器的核心机制决定了其在人形机器人系统中的性能边界。理解其内部结构、信号流与控制接口，有助于进行系统集成与优化。
@@ -74,7 +73,7 @@ sources:
 - technology
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键technology之一，准直驱执行器在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键技术之一，准直驱执行器在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Quasi Direct Drive Actuator](https://en.wikipedia.org/wiki/Direct_drive_mechanism)

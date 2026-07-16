@@ -10,7 +10,7 @@ names:
 summary:
   en: An April 2025 primer from Bank of America Institute that breaks down humanoid robot architecture, key components, BOM
     cost trajectory, and adoption stages through 2060.
-  zh: '> **生活实例**：它就像给投资者写的《人形机器人入门手册》——拆解了机器人由哪些“器官”组成、每台成本大概多少、未来几十年可能怎么普及。'
+  zh: '> 生活实例：它就像给投资者写的《人形机器人入门手册》——拆解了机器人由哪些“器官”组成、每台成本大概多少、未来几十年可能怎么普及。'
   ko: 2025년 4월 Bank of America Institute가 발표한 휴이노이드 로봇 입문서로, 휴이노이드 로봇 아키텍처, 핵심 부품, BOM 비용 궤적 및 2060년까지의 도입 단계를 분석함.
 domains:
 - 05_mass_production

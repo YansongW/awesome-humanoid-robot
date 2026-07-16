@@ -46,7 +46,7 @@ sources:
 
 
 ## 概述
-纳博特斯克是人形机器人领域的重要component_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
+纳博特斯克是人形机器人领域的重要零部件_manufacturer。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 ## Nabtesco（纳博特斯克） / Nabtesco

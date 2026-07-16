@@ -8,36 +8,36 @@ names:
   zh: 'OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies'
   ko: 'OmniTacTune: Policy-Agnostic Real-World RL for Tactile Residual Adaptation of Visual Policies'
 summary:
-  en: "arXiv:2607.03723v1 Announce Type: new \nAbstract: Visual policies learned from human videos, teleoperation, and robot\
-    \ demonstrations offer scalable motion priors, but often fail in contact-rich manipulation, where success significantly\
-    \ depends on local force and contact geometry. Tactile sensing provides these complementary signals, yet tactile data\
-    \ remain costly to collect and hard to generalize across sensors, robots, and tasks. We introduce OmniTacTune, a policy-agnostic\
-    \ real-world RL pipeline that adapts tactile feedback to pretrained visual policies through residual correction. OmniTacTune\
-    \ uses a two-stage design: it first bootstraps tactile-aware learning from autonomous base-policy rollouts, then learns\
-    \ a lightweight tactile residual policy through online interaction. Extensive experiments show that OmniTacTune generalizes\
-    \ across diverse contact-rich tasks, visual base policies, and tactile representations. Across four real-world contact-rich\
-    \ tasks, it improves visual base policies from 5-40% success to 85-100% within 40-80 minutes, demonstrating an efficient\
-    \ path for adapting tactile feedback to scalable visual robot policies. Project page: https://colinyu1.github.io/omnitactune-site/"
-  zh: "arXiv:2607.03723v1 Announce Type: new \nAbstract: Visual policies learned from human videos, teleoperation, and robot\
-    \ demonstrations offer scalable motion priors, but often fail in contact-rich manipulation, where success significantly\
-    \ depends on local force and contact geometry. Tactile sensing provides these complementary signals, yet tactile data\
-    \ remain costly to collect and hard to generalize across sensors, robots, and tasks. We introduce OmniTacTune, a policy-agnostic\
-    \ real-world RL pipeline that adapts tactile feedback to pretrained visual policies through residual correction. OmniTacTune\
-    \ uses a two-stage design: it first bootstraps tactile-aware learning from autonomous base-policy rollouts, then learns\
-    \ a lightweight tactile residual policy through online interaction. Extensive experiments show that OmniTacTune generalizes\
-    \ across diverse contact-rich tasks, visual base policies, and tactile representations. Across four real-world contact-rich\
-    \ tasks, it improves visual base policies from 5-40% success to 85-100% within 40-80 minutes, demonstrating an efficient\
-    \ path for adapting tactile feedback to scalable visual robot policies. Project page: https://colinyu1.github.io/omnitactune-site/"
-  ko: "arXiv:2607.03723v1 Announce Type: new \nAbstract: Visual policies learned from human videos, teleoperation, and robot\
-    \ demonstrations offer scalable motion priors, but often fail in contact-rich manipulation, where success significantly\
-    \ depends on local force and contact geometry. Tactile sensing provides these complementary signals, yet tactile data\
-    \ remain costly to collect and hard to generalize across sensors, robots, and tasks. We introduce OmniTacTune, a policy-agnostic\
-    \ real-world RL pipeline that adapts tactile feedback to pretrained visual policies through residual correction. OmniTacTune\
-    \ uses a two-stage design: it first bootstraps tactile-aware learning from autonomous base-policy rollouts, then learns\
-    \ a lightweight tactile residual policy through online interaction. Extensive experiments show that OmniTacTune generalizes\
-    \ across diverse contact-rich tasks, visual base policies, and tactile representations. Across four real-world contact-rich\
-    \ tasks, it improves visual base policies from 5-40% success to 85-100% within 40-80 minutes, demonstrating an efficient\
-    \ path for adapting tactile feedback to scalable visual robot policies. Project page: https://colinyu1.github.io/omnitactune-site/"
+  en: 'arXiv:2607.03723v1 Announce Type: new Abstract: Visual policies learned from human videos, teleoperation, and robot
+    demonstrations offer scalable motion priors, but often fail in contact-rich manipulation, where success significantly
+    depends on local force and contact geometry. Tactile sensing provides these complementary signals, yet tactile data remain
+    costly to collect and hard to generalize across sensors, robots, and tasks. We introduce OmniTacTune, a policy-agnostic
+    real-world RL pipeline that adapts tactile feedback to pretrained visual policies through residual correction. OmniTacTune
+    uses a two-stage design: it first bootstraps tactile-aware learning from autonomous base-policy rollouts, then learns
+    a lightweight tactile residual policy through online interaction. Extensive experiments show that OmniTacTune generalizes
+    across diverse contact-rich tasks, visual base policies, and tactile representations. Across four real-world contact-rich
+    tasks, it improves visual base policies from 5-40% success to 85-100% within 40-80 minutes, demonstrating an efficient
+    path for adapting tactile feedback to scalable visual robot policies. Project page: https://colinyu1.github.io/omnitactune-site/'
+  zh: 'arXiv:2607.03723v1 Announce Type: new Abstract: Visual policies learned from human videos, teleoperation, and robot
+    demonstrations offer scalable motion priors, but often fail in contact-rich manipulation, where success significantly
+    depends on local force and contact geometry. Tactile sensing provides these complementary signals, yet tactile data remain
+    costly to collect and hard to generalize across sensors, robots, and tasks. We introduce OmniTacTune, a policy-agnostic
+    real-world RL pipeline that adapts tactile feedback to pretrained visual policies through residual correction. OmniTacTune
+    uses a two-stage design: it first bootstraps tactile-aware learning from autonomous base-policy rollouts, then learns
+    a lightweight tactile residual policy through online interaction. Extensive experiments show that OmniTacTune generalizes
+    across diverse contact-rich tasks, visual base policies, and tactile representations. Across four real-world contact-rich
+    tasks, it improves visual base policies from 5-40% success to 85-100% within 40-80 minutes, demonstrating an efficient
+    path for adapting tactile feedback to scalable visual robot policies. Project page: https://colinyu1.github.io/omnitactune-site/'
+  ko: 'arXiv:2607.03723v1 Announce Type: new Abstract: Visual policies learned from human videos, teleoperation, and robot
+    demonstrations offer scalable motion priors, but often fail in contact-rich manipulation, where success significantly
+    depends on local force and contact geometry. Tactile sensing provides these complementary signals, yet tactile data remain
+    costly to collect and hard to generalize across sensors, robots, and tasks. We introduce OmniTacTune, a policy-agnostic
+    real-world RL pipeline that adapts tactile feedback to pretrained visual policies through residual correction. OmniTacTune
+    uses a two-stage design: it first bootstraps tactile-aware learning from autonomous base-policy rollouts, then learns
+    a lightweight tactile residual policy through online interaction. Extensive experiments show that OmniTacTune generalizes
+    across diverse contact-rich tasks, visual base policies, and tactile representations. Across four real-world contact-rich
+    tasks, it improves visual base policies from 5-40% success to 85-100% within 40-80 minutes, demonstrating an efficient
+    path for adapting tactile feedback to scalable visual robot policies. Project page: https://colinyu1.github.io/omnitactune-site/'
 domains:
 - 07_ai_models_algorithms
 - 08_software_middleware

@@ -10,8 +10,8 @@ names:
 summary:
   en: A control strategy that simultaneously regulates force along constrained directions and position along free directions
     in contact tasks.
-  zh: 核心内容 在许多任务中，某些方向需要控制位置，而另一些方向需要控制力。例如，沿桌面推动物体时，水平方向控制位置，垂直方向控制接触力。**混合力/位置控制（hybrid force/position control）**通过选择矩阵
-    \(\boldsymbol{\Sigma}\) 把任务空间分解为位置控制子空间与力控制子空间：
+  zh: 在许多任务中，某些方向需要控制位置，而另一些方向需要控制力。例如，沿桌面推动物体时，水平方向控制位置，垂直方向控制接触力。混合力/位置控制（hybrid force/position control）通过选择矩阵 \(\boldsymbol{\Sigma}\)
+    把任务空间分解为位置控制子空间与力控制子空间：
   ko: 접촉 작업에서 제약 방향으로는 힘을, 자유 방향으로는 위치를 동시에 제어하는 전략.
 domains:
 - 07_ai_models_algorithms
@@ -40,7 +40,7 @@ sources:
 ---
 
 ## 概述
-力位混合控制是人形机器人领域的重要method。以下内容整理自项目 Wiki，供深入查阅。
+力位混合控制是人形机器人领域的重要方法。以下内容整理自项目 Wiki，供深入查阅。
 
 ## 核心内容
 在许多任务中，某些方向需要控制位置，而另一些方向需要控制力。例如，沿桌面推动物体时，水平方向控制位置，垂直方向控制接触力。**混合力/位置控制（hybrid force/position control）**通过选择矩阵 \(\boldsymbol{\Sigma}\) 把任务空间分解为位置控制子空间与力控制子空间：

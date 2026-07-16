@@ -10,8 +10,7 @@ names:
 summary:
   en: A high-performance rare-earth permanent magnet widely used in servo motors, electric vehicle motors, and high-precision
     actuators.
-  zh: '核心内容 ### 钕铁硼磁体的定义与定位 钕铁硼磁体属于 **material** 类型。 所属领域包括：01_raw_materials。 价值链层级：upstream。 一种高性能稀土永磁体，广泛用于伺服电机、电动汽车电机和高精度执行器。
-    英文名称为 *Neodymium-Iron-Boron Magnet*。 韩文名称为 *네오디뮴 철 붕자석*。'
+  zh: 一种高性能稀土永磁体，广泛用于伺服电机、电动汽车电机和高精度执行器。
   ko: 서보 모터, 전기차 모터 및 고정밀 액추에이터에 널리 사용되는 고성능 희토류 영구자석입니다.
 domains:
 - 01_raw_materials
@@ -54,7 +53,7 @@ theoretical_depth:
 
 ## 核心内容
 ### 钕铁硼磁体的定义与定位
-钕铁硼磁体属于 **material** 类型。 所属领域包括：01_raw_materials。 价值链层级：upstream。 一种高性能稀土永磁体，广泛用于伺服电机、电动汽车电机和高精度执行器。 英文名称为 *Neodymium-Iron-Boron Magnet*。 韩文名称为 *네오디뮴 철 붕자석*。
+钕铁硼磁体属于 **材料** 类型。 所属领域包括：原材料。 价值链层级：上游。 一种高性能稀土永磁体，广泛用于伺服电机、电动汽车电机和高精度执行器。 英文名称为 *Neodymium-Iron-Boron Magnet*。 韩文名称为 *네오디뮴 철 붕자석*。
 
 ### 钕铁硼磁体的关键维度
 理解钕铁硼磁体需要从定义、边界条件、相关实体以及典型应用场景等多个维度展开，以形成系统性的认知。
@@ -74,7 +73,7 @@ theoretical_depth:
 - actuator
 
 ### 在人形机器人系统中的作用
-作为人形机器人产业链中的关键material之一，钕铁硼磁体在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
+作为人形机器人产业链中的关键材料之一，钕铁硼磁体在系统设计、性能优化和产业化应用中扮演着重要角色。它与感知、决策、执行、能源、结构与验证等多个子系统相互耦合，共同决定了整机性能。相关研究与应用正在持续推进，以进一步提升其在实际场景中的可靠性、效率和经济性。
 
 ## 参考
 - [Rare Earth Magnets in Robotics and EV Motors](https://example.com/rare-earth-robotics-report)
