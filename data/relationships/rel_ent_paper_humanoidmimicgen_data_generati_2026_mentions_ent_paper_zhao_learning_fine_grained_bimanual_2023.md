@@ -1,0 +1,38 @@
+---
+$id: rel_ent_paper_humanoidmimicgen_data_generati_2026_mentions_ent_paper_zhao_learning_fine_grained_bimanual_2023
+$schema: ../schema/v1/relationship_schema.json
+$version: 1
+type: mentions
+source:
+  id: ent_paper_humanoidmimicgen_data_generati_2026
+  name:
+    en: 'HumanoidMimicGen: Data Generation for Loco-Manipulation via Whole-Body Planning'
+    zh: HumanoidMimicGen｜通过全身规划进行移动操作的数据生成
+target:
+  id: ent_paper_zhao_learning_fine_grained_bimanual_2023
+  name:
+    en: Learning Fine-Grained Bimanual Manipulation with Low-Cost Hardware
+    zh: ACT
+domains:
+  source_domain: 07_ai_models_algorithms
+  target_domain: 07_ai_models_algorithms
+description:
+  en: 'HumanoidMimicGen: Data Generation for Loco-Manipulation via Whole-Body Planning mentions Learning Fine-Grained Bimanual
+    Manipulation with Low-Cost Hardware.'
+  zh: HumanoidMimicGen｜通过全身规划进行移动操作的数据生成提及ACT。
+verification:
+  status: unverified
+  reviewed_by: ai
+  reviewed_at: '2026-07-16'
+  confidence: low
+  notes: 'Mined by build_latent_relationships.py rule p5b_acronym. Evidence: HumanoidMimicGen primarily addresses data closure:
+    acquiring human and robot states using camera images/multi-view observations, ontology states and joint sequences, and
+    teleoperation/exoskeleton data, which are then converted into trainable and reusable whole-body trajectories/action sequences
+    thro'
+sources:
+- id: src_001
+  type: other
+  title: KG body of ent_paper_humanoidmimicgen_data_generati_2026
+  url: https://kg.rounds-tech.com/entry/ent_paper_humanoidmimicgen_data_generati_2026/
+  accessed_at: '2026-07-16'
+---

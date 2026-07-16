@@ -1,0 +1,34 @@
+---
+$id: rel_ent_paper_chan_angle_constrained_formation_co_2020_discusses_ent_method_gait_planning
+$schema: ../schema/v1/relationship_schema.json
+$version: 1
+type: discusses
+source:
+  id: ent_paper_chan_angle_constrained_formation_co_2020
+  name:
+    en: Angle-Constrained Formation Control for Circular Mobile Robots
+    zh: 圆形移动机器人的角度约束编队控制
+target:
+  id: ent_method_gait_planning
+  name:
+    en: Gait Planning
+    zh: 步态规划
+domains:
+  source_domain: 07_ai_models_algorithms
+  target_domain: 07_ai_models_algorithms
+description:
+  en: Angle-Constrained Formation Control for Circular Mobile Robots discusses Gait Planning.
+  zh: 圆形移动机器人的角度约束编队控制discusses步态规划。
+verification:
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-07-16'
+  confidence: medium
+  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 论文涉及圆形移动机器人的编队控制，与步态规划概念相关'
+sources:
+- id: src_001
+  type: other
+  title: KG body of ent_paper_chan_angle_constrained_formation_co_2020
+  url: https://kg.rounds-tech.com/entry/ent_paper_chan_angle_constrained_formation_co_2020/
+  accessed_at: '2026-07-16'
+---

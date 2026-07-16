@@ -1,0 +1,36 @@
+---
+$id: rel_ent_paper_chen_aispo_enhancing_depth_reliabil_2026_uses_ent_method_diffusion_policy
+$schema: ../schema/v1/relationship_schema.json
+$version: 1
+type: uses
+source:
+  id: ent_paper_chen_aispo_enhancing_depth_reliabil_2026
+  name:
+    en: 'AISPO: Enhancing Depth Reliability for Robotic Manipulation of Non-Lambertian Objects via Affine-Invariant Shape
+      Prior'
+    zh: AISPO：基于仿射不变形状先验的非朗伯物体机器人操作深度可靠性增强
+target:
+  id: ent_method_diffusion_policy
+  name:
+    en: Diffusion Policy
+    zh: 扩散策略
+domains:
+  source_domain: 07_ai_models_algorithms
+  target_domain: 07_ai_models_algorithms
+description:
+  en: 'AISPO: Enhancing Depth Reliability for Robotic Manipulation of Non-Lambertian Objects via Affine-Invariant Shape Prior
+    uses Diffusion Policy.'
+  zh: AISPO：基于仿射不变形状先验的非朗伯物体机器人操作深度可靠性增强使用扩散策略。
+verification:
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-07-16'
+  confidence: medium
+  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: AISPO框架可能使用扩散策略进行深度补全'
+sources:
+- id: src_001
+  type: other
+  title: KG body of ent_paper_chen_aispo_enhancing_depth_reliabil_2026
+  url: https://kg.rounds-tech.com/entry/ent_paper_chen_aispo_enhancing_depth_reliabil_2026/
+  accessed_at: '2026-07-16'
+---

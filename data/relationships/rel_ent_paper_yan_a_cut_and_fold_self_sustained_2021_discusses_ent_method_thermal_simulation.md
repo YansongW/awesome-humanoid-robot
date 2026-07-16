@@ -1,0 +1,35 @@
+---
+$id: rel_ent_paper_yan_a_cut_and_fold_self_sustained_2021_discusses_ent_method_thermal_simulation
+$schema: ../schema/v1/relationship_schema.json
+$version: 1
+type: discusses
+source:
+  id: ent_paper_yan_a_cut_and_fold_self_sustained_2021
+  name:
+    en: A cut-and-fold self-sustained compliant oscillator for autonomous actuation of origami-inspired robots
+    zh: 用于折纸启发式机器人自主驱动的切割折叠自持续柔顺振荡器
+target:
+  id: ent_method_thermal_simulation
+  name:
+    en: Thermal Simulation
+    zh: 热仿真
+domains:
+  source_domain: 02_components
+  target_domain: 02_components
+description:
+  en: A cut-and-fold self-sustained compliant oscillator for autonomous actuation of origami-inspired robots discusses Thermal
+    Simulation.
+  zh: 用于折纸启发式机器人自主驱动的切割折叠自持续柔顺振荡器discusses热仿真。
+verification:
+  status: partially_verified
+  reviewed_by: ai
+  reviewed_at: '2026-07-16'
+  confidence: medium
+  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 该论文讨论了热模拟在致动器设计中的应用。'
+sources:
+- id: src_001
+  type: other
+  title: KG body of ent_paper_yan_a_cut_and_fold_self_sustained_2021
+  url: https://kg.rounds-tech.com/entry/ent_paper_yan_a_cut_and_fold_self_sustained_2021/
+  accessed_at: '2026-07-16'
+---

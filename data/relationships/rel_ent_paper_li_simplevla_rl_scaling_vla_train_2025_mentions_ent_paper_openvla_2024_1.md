@@ -1,0 +1,35 @@
+---
+$id: rel_ent_paper_li_simplevla_rl_scaling_vla_train_2025_mentions_ent_paper_openvla_2024_1
+$schema: ../schema/v1/relationship_schema.json
+$version: 1
+type: mentions
+source:
+  id: ent_paper_li_simplevla_rl_scaling_vla_train_2025
+  name:
+    en: 'SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning'
+    zh: SimpleVLA-RL
+target:
+  id: ent_paper_openvla_2024_1
+  name:
+    en: OpenVLA
+    zh: OpenVLA
+domains:
+  source_domain: 07_ai_models_algorithms
+  target_domain: 07_ai_models_algorithms
+description:
+  en: 'SimpleVLA-RL: Scaling VLA Training via Reinforcement Learning mentions OpenVLA.'
+  zh: SimpleVLA-RL提及OpenVLA。
+verification:
+  status: unverified
+  reviewed_by: ai
+  reviewed_at: '2026-07-16'
+  confidence: low
+  notes: 'Mined by build_latent_relationships.py rule p5b_acronym. Evidence: When applied to OpenVLA-OFT, SimpleVLA-RL achieves
+    SoTA performance on LIBERO and even outperforms $π_0$ on RoboTwin 1.'
+sources:
+- id: src_001
+  type: other
+  title: KG body of ent_paper_li_simplevla_rl_scaling_vla_train_2025
+  url: https://kg.rounds-tech.com/entry/ent_paper_li_simplevla_rl_scaling_vla_train_2025/
+  accessed_at: '2026-07-16'
+---

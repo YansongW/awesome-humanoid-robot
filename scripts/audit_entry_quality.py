@@ -219,12 +219,16 @@ def load_relationships() -> list[dict[str, Any]]:
     return rels
 
 
-def audit_relationships(rels: list[dict[str, Any]], entity_ids: set[str]) -> dict[str, Any]:
+def audit_relationships(rels: list[dict[str, Any]], entity_ids: set[str],
+                        entity_types: dict[str, str] | None = None) -> dict[str, Any]:
     dangling: list[dict[str, str]] = []
     missing_desc: list[dict[str, str]] = []
     bad_type: list[dict[str, str]] = []
     duplicates: list[dict[str, str]] = []
+    missing_confidence: list[str] = []
+    missing_sources: list[str] = []
     seen: set[tuple[str, str, str]] = set()
+    degree: Counter = Counter()
 
     for r in rels:
         fm = r["fm"]
@@ -232,25 +236,51 @@ def audit_relationships(rels: list[dict[str, Any]], entity_ids: set[str]) -> dic
         source_id = (fm.get("source") or {}).get("id", "")
         target_id = (fm.get("target") or {}).get("id", "")
         desc = fm.get("description", {}) or {}
+        verification = fm.get("verification", {}) or {}
 
         if source_id not in entity_ids or target_id not in entity_ids:
             dangling.append({"path": str(r["path"]), "source": source_id, "target": target_id})
+        else:
+            degree[source_id] += 1
+            degree[target_id] += 1
         if not desc.get("zh") and not desc.get("en") and not desc.get("ko"):
             missing_desc.append({"path": str(r["path"]), "source": source_id, "target": target_id})
         if not rel_type:
             bad_type.append({"path": str(r["path"]), "source": source_id, "target": target_id})
+        if not verification.get("confidence"):
+            missing_confidence.append(str(r["path"]))
+        if not fm.get("sources"):
+            missing_sources.append(str(r["path"]))
 
         key = (source_id, rel_type, target_id)
         if key in seen:
             duplicates.append({"source": source_id, "target": target_id, "type": rel_type})
         seen.add(key)
 
+    zero_degree = sorted(entity_ids - set(degree))
+    zero_by_type: Counter = Counter()
+    if entity_types:
+        for eid in zero_degree:
+            zero_by_type[entity_types.get(eid, "unknown")] += 1
+
+    total_entities = len(entity_ids)
     return {
         "total": len(rels),
         "dangling": dangling,
         "missing_description": missing_desc,
         "missing_type": bad_type,
         "duplicates": duplicates,
+        "missing_confidence": missing_confidence,
+        "missing_sources": missing_sources,
+        "connectivity": {
+            "total_entities": total_entities,
+            "total_edges": len(rels),
+            "avg_degree": round(sum(degree.values()) / total_entities, 2) if total_entities else 0,
+            "zero_degree_count": len(zero_degree),
+            "zero_degree_ratio": round(len(zero_degree) / total_entities, 4) if total_entities else 0,
+            "zero_degree_by_type": dict(zero_by_type.most_common()),
+            "zero_degree_ids": zero_degree,
+        },
     }
 
 
@@ -272,6 +302,7 @@ def main(argv: list[str] | None = None) -> int:
     entries: list[dict[str, Any]] = []
     parse_errors: list[str] = []
     entity_ids: set[str] = set()
+    entity_types: dict[str, str] = {}
 
     for path in sorted(RESEARCH_DIR.rglob("*.md")):
         try:
@@ -282,11 +313,13 @@ def main(argv: list[str] | None = None) -> int:
         if entry is None:
             parse_errors.append(f"{path}: no frontmatter")
             continue
-        entity_ids.add(entry["fm"].get("$id", ""))
+        eid = entry["fm"].get("$id", "")
+        entity_ids.add(eid)
+        entity_types[eid] = entry["fm"].get("type", "unknown")
         entries.append(audit_entry(entry))
 
     rels = load_relationships()
-    rel_audit = audit_relationships(rels, entity_ids)
+    rel_audit = audit_relationships(rels, entity_ids, entity_types)
 
     severity_counts = Counter(e["severity"] for e in entries)
     type_counts = Counter(e["type"] for e in entries)
@@ -335,11 +368,21 @@ def main(argv: list[str] | None = None) -> int:
             lines.append(f"- **{issue}**: {count}")
 
         lines.extend(["", "## Relationships", ""])
+        conn = rel_audit["connectivity"]
         lines.append(f"- Total: {rel_audit['total']}")
         lines.append(f"- Dangling: {len(rel_audit['dangling'])}")
         lines.append(f"- Missing description: {len(rel_audit['missing_description'])}")
         lines.append(f"- Missing type: {len(rel_audit['missing_type'])}")
-        lines.append(f"- Duplicates: {len(rel_audit['duplicates'])}\n")
+        lines.append(f"- Duplicates: {len(rel_audit['duplicates'])}")
+        lines.append(f"- Missing verification.confidence: {len(rel_audit['missing_confidence'])}")
+        lines.append(f"- Missing sources: {len(rel_audit['missing_sources'])}")
+        lines.append(f"- Avg degree: {conn['avg_degree']}")
+        lines.append(f"- Zero-degree entities: {conn['zero_degree_count']} "
+                     f"({conn['zero_degree_ratio']:.1%})\n")
+        lines.append("### Zero-degree by type\n")
+        for t, c in conn["zero_degree_by_type"].items():
+            lines.append(f"- {t}: {c}")
+        lines.append("")
 
         lines.extend(["## Critical Entries (Sample)", ""])
         for e in critical_entries[:50]:
