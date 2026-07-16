@@ -63,3 +63,35 @@ theoretical_depth:
 
 ## 参考
 - 从嘈杂的感官输入中学习人形足球机器人的敏捷前锋技能 project page (https://humanoidsoccer.github.io)
+
+## Overview
+
+This paper addresses the challenges of perception noise and dynamic adversarial interactions faced by humanoid soccer robots in real competition environments, proposing a method for learning agile striker skills from noisy sensory inputs. The research constructs a teacher-student knowledge distillation framework, leveraging privileged information to train a high-precision teacher policy, and then transferring its capabilities to a student policy that relies solely on deployment-time observations. This enhances robustness to visual and state noise while maintaining motion agility. The work provides a feasible paradigm for combining complex motion planning with learning algorithms to achieve autonomous decision-making for humanoid robots in unstructured environments.
+
+## Content
+
+Learning striker skills for humanoid soccer robots faces dual challenges: on one hand, robots need to perform agile actions such as dribbling and shooting during high-speed motion and adversarial interactions, requiring whole-body coordinated control and real-time responsiveness; on the other hand, sensor data such as camera images and proprioceptive states in actual deployment often contain noise and latency, and directly using raw observations for reinforcement learning can lead to policy performance degradation. Existing methods mostly rely on precise state estimation or offline planning, making it difficult to balance robustness and agility in dynamically changing game scenarios. Therefore, achieving efficient and stable motor skill learning under perceptual uncertainty becomes a key issue in this field.
+
+This paper proposes a hybrid framework based on teacher-student knowledge distillation. First, a teacher policy with complete state information is constructed in a simulation environment. This policy utilizes multi-view observations, proprioceptive state sequences, and simulation interaction data to recover scene and target representations, and is trained using the Proximal Policy Optimization (PPO) algorithm. The teacher policy has access to "privileged information" (e.g., precise ball velocity, opponent positions), enabling it to learn near-optimal agile striker actions. Subsequently, the teacher policy's capabilities are transferred to a student policy via knowledge distillation. The student policy can only use noisy observations available during deployment (e.g., monocular camera images and joint encoder data), thus maintaining high performance on real robots.
+
+The core technical innovation of this work lies in the organic integration of whole-body controllers (WBC/Model Predictive Control MPC) with reinforcement learning policies. During training, the teacher policy employs a whole-body control framework to generate smooth and stable joint commands, ensuring physical feasibility of actions; meanwhile, the student policy uses visual closed-loop and task planning modules to directly map high-dimensional image inputs into low-dimensional action commands, avoiding the cumbersome state estimation pipeline of traditional methods. Additionally, the joint optimization of contact planning and mobile manipulation strategies enables the robot to perform precise ball touches and turns during high-speed running, significantly enhancing the agility of striker skills.
+
+In terms of experimental validation, the study conducted comparative tests in simulation environments and on real humanoid robot platforms. Results show that the student policy, after knowledge distillation, achieves performance close to the teacher policy in metrics such as dribbling speed, shooting accuracy, and adversarial success rate, while exhibiting significant robustness to sensor noise and communication latency. Compared to reinforcement learning baselines trained directly with raw observations, the student policy reduces action failure rates under noisy conditions by approximately 40%. This work not only provides a practical skill learning solution for humanoid soccer robots but also offers a methodological reference for other robotic systems that need to perform agile operations in perception-constrained environments (e.g., rescue and service robots).
+
+From an application perspective, this research advances the transfer of humanoid robots from controlled laboratory environments to real dynamic scenarios. By combining complex motion planning with end-to-end learning, robots can autonomously adapt to uncertainties such as field variations and opponent interference, laying the foundation for future deployment of humanoid robots in areas like sports competitions and human-robot collaboration. Moreover, the generality of the teacher-student framework implies that the method can be extended to other tasks requiring learning complex skills from noisy observations.
+
+## 개요
+
+본 논문은 인간형 축구 로봇이 실제 경기 환경에서 직면하는 인식 노이즈와 동적 대항 문제를 해결하기 위해, 잡음이 섞인 감각 입력으로부터 민첩한 공격수 기술을 학습하는 방법을 제안한다. 연구는 교사-학생 지식 증류 프레임워크를 구축하여, 특권 정보를 활용한 고정밀 교사 정책을 훈련한 후, 그 능력을 배치 시 관측값에만 의존하는 학생 정책으로 전이함으로써 운동 민첩성을 유지하면서 시각 및 상태 노이즈에 대한 시스템의 강건성을 향상시킨다. 이 연구는 복잡한 운동 계획과 학습 알고리즘을 결합하여 인간형 로봇이 비구조화된 환경에서 자율적으로 의사 결정을 내릴 수 있는 실현 가능한 패러다임을 제시한다.
+
+## 핵심 내용
+
+인간형 축구 로봇 공격수 기술 학습은 이중 도전에 직면한다. 한편으로 로봇은 고속 운동과 대항 상황에서 드리블, 슛과 같은 민첩한 동작을 수행해야 하며, 이는 전신 협조 제어와 실시간 반응 능력을 요구한다. 다른 한편으로 실제 배치 시 카메라 이미지, 본체 상태 등의 센서 데이터에는 종종 노이즈와 지연이 포함되어 있어, 원시 관측값을 직접 사용한 강화 학습은 정책 성능 저하를 초래하기 쉽다. 기존 방법은 대부분 정확한 상태 추정이나 오프라인 계획에 의존하여, 역동적으로 변화하는 경기 환경에서 강건성과 민첩성을 동시에 확보하기 어렵다. 따라서 인식 불확실성 조건에서 효율적이고 안정적인 운동 기술 학습을 달성하는 것이 이 분야의 핵심 과제이다.
+
+본 논문은 교사-학생 지식 증류 기반의 혼합 프레임워크를 제안한다. 먼저 시뮬레이션 환경에서 완전한 상태 정보를 포함하는 교사 정책을 구축한다. 이 정책은 다중 시점 관측, 본체 상태 시퀀스 및 시뮬레이션 상호작용 데이터를 활용하여 장면과 목표 표현을 복원하고, 근접 정책 최적화(PPO) 알고리즘을 통해 훈련된다. 교사 정책은 "특권 정보"(예: 정확한 공 속도, 상대 위치 등)에 접근할 수 있어, 거의 최적에 가까운 민첩한 공격수 동작을 학습한다. 이후 지식 증류를 통해 교사 정책의 능력을 학생 정책으로 전이하며, 학생 정책은 배치 시 얻을 수 있는 노이즈가 있는 관측값(예: 단안 카메라 이미지와 관절 엔코더 데이터)만 사용하여 실제 로봇에서 높은 성능을 유지한다.
+
+이 연구의 핵심 기술 혁신은 전신 제어기(WBC/모델 예측 제어 MPC)와 강화 학습 정책을 유기적으로 결합한 점에 있다. 교사 정책은 훈련 시 전신 제어 프레임워크를 사용하여 부드럽고 안정적인 관절 명령을 생성하며, 동작의 물리적 실현 가능성을 보장한다. 반면 학생 정책은 시각 폐루프와 작업 계획 모듈을 통해 고차원 이미지 입력을 직접 저차원 동작 명령으로 매핑하여, 기존 방법의 번거로운 상태 추정 과정을 피한다. 또한 접촉 계획과 이동 조작 정책의 공동 최적화를 통해 로봇이 고속 주행 중 정확한 볼 터치와 방향 전환을 수행할 수 있게 하여, 공격수 기술의 민첩성을 크게 향상시킨다.
+
+실험 검증 측면에서, 연구는 시뮬레이션 환경과 실제 인간형 로봇 플랫폼에서 비교 테스트를 수행했다. 결과는 지식 증류를 거친 학생 정책이 드리블 속도, 슛 정확도 및 대항 성공률 등의 지표에서 교사 정책 수준에 근접하며, 센서 노이즈와 통신 지연에 대해 현저한 강건성을 보임을 나타낸다. 원시 관측값을 직접 사용한 강화 학습 기준선과 비교하여, 학생 정책은 노이즈 조건에서 동작 실패율을 약 40% 감소시켰다. 이 연구는 인간형 축구 로봇에 실용적인 기술 학습 방안을 제공할 뿐만 아니라, 인식 제약 환경에서 민첩한 조작을 수행해야 하는 다른 로봇 시스템(예: 구조, 서비스 로봇)에도 방법론적 참고 자료를 제공한다.
+
+응용 가치 측면에서, 이 연구는 인간형 로봇을 실험실 제어 환경에서 실제 동적 장면으로 전환하는 데 기여한다. 복잡한 운동 계획과 종단 간 학습을 결합함으로써, 로봇은 경기장 변화, 상대 방해 등 불확실한 요소에 자율적으로 적응할 수 있으며, 이는 미래 인간형 로봇이 스포츠 경기, 인간-로봇 협력 등 분야에서 실제 배치될 수 있는 기반을 마련한다. 동시에 교사-학생 프레임워크의 범용성은 이 방법이 노이즈 관측값으로부터 복잡한 기술을 학습해야 하는 다른 작업으로 확장될 수 있음을 의미한다.

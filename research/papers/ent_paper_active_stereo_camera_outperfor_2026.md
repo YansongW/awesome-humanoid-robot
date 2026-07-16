@@ -1,5 +1,4 @@
 ---
-
 $id: ent_paper_active_stereo_camera_outperfor_2026
 $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
@@ -68,3 +67,8 @@ theoretical_depth:
 ## 参考
 - http://github.com/kuehnrobin/
 
+## Overview
+In ACT imitation learning for humanoid manipulation, active stereo cameras outperform multi-sensor setups. Camera images/multi-view observations, proprioceptive states and joint sequences, contact force/tactile signals are converted into trackable body targets. Through ACT/behavior cloning imitation learning, MM-DiT/Transformer action head training, or combined whole-body strategies, the final output is action chunks/tokens. The key is to compress demonstration trajectories into a supervised action prediction problem, and then reduce temporal jitter through action chunks or closed-loop execution.
+
+## Content
+In ACT imitation learning for humanoid manipulation, active stereo cameras outperform multi-sensor setups. Camera images/multi-view observations, proprioceptive states and joint sequences, contact force/tactile signals are converted into trackable body targets. Through ACT/behavior cloning imitation learning, MM-DiT/Transformer action head training, or combined whole-body strategies, the final output is action chunks/tokens. The key is to compress demonstration trajectories into a supervised action prediction problem, and then reduce temporal jitter through action chunks or closed-loop execution.

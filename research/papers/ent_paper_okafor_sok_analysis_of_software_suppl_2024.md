@@ -62,3 +62,14 @@ This paper systematizes knowledge about secure software supply chain patterns. I
 ## 参考
 - http://arxiv.org/abs/2406.10109v1
 
+## Overview
+This paper systematizes knowledge about secure software supply chain patterns. It identifies four stages of a software supply chain attack and proposes three security properties crucial for a secured supply chain: transparency, validity, and separation. The paper describes current security approaches and maps them to the proposed security properties, including research ideas and case studies of supply chains in practice. It discusses the strengths and weaknesses of current approaches relative to known attacks and details the various security frameworks put out to ensure the security of the software supply chain. Finally, the paper highlights potential gaps in actor and operation-centered supply chain security techniques.
+
+## Content
+This paper systematizes knowledge about secure software supply chain patterns. It identifies four stages of a software supply chain attack and proposes three security properties crucial for a secured supply chain: transparency, validity, and separation. The paper describes current security approaches and maps them to the proposed security properties, including research ideas and case studies of supply chains in practice. It discusses the strengths and weaknesses of current approaches relative to known attacks and details the various security frameworks put out to ensure the security of the software supply chain. Finally, the paper highlights potential gaps in actor and operation-centered supply chain security techniques.
+
+## 개요
+본 논문은 안전한 소프트웨어 공급망 패턴에 대한 지식을 체계화합니다. 소프트웨어 공급망 공격의 네 가지 단계를 식별하고, 안전한 공급망에 중요한 세 가지 보안 속성(투명성, 유효성, 분리)을 제안합니다. 현재의 보안 접근 방식을 설명하고 이를 제안된 보안 속성에 매핑하며, 연구 아이디어와 실제 공급망 사례 연구를 포함합니다. 알려진 공격과 관련된 현재 접근 방식의 강점과 약점을 논의하고, 소프트웨어 공급망의 보안을 보장하기 위해 제시된 다양한 보안 프레임워크를 상세히 설명합니다. 마지막으로, 행위자 및 운영 중심의 공급망 보안 기술에서 잠재적인 격차를 강조합니다.
+
+## 핵심 내용
+본 논문은 안전한 소프트웨어 공급망 패턴에 대한 지식을 체계화합니다. 소프트웨어 공급망 공격의 네 가지 단계를 식별하고, 안전한 공급망에 중요한 세 가지 보안 속성(투명성, 유효성, 분리)을 제안합니다. 현재의 보안 접근 방식을 설명하고 이를 제안된 보안 속성에 매핑하며, 연구 아이디어와 실제 공급망 사례 연구를 포함합니다. 알려진 공격과 관련된 현재 접근 방식의 강점과 약점을 논의하고, 소프트웨어 공급망의 보안을 보장하기 위해 제시된 다양한 보안 프레임워크를 상세히 설명합니다. 마지막으로, 행위자 및 운영 중심의 공급망 보안 기술에서 잠재적인 격차를 강조합니다.

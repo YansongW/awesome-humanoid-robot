@@ -59,3 +59,14 @@ Tensegrity structures are lightweight, can undergo large deformations, and have 
 ## 参考
 - http://arxiv.org/abs/2101.11772v1
 
+## Overview
+Tensegrity structures are lightweight, can undergo large deformations, and have outstanding robustness capabilities. These unique properties inspired roboticists to investigate their use. However, the morphological design, control, assembly, and actuation of tensegrity robots are still difficult tasks. Moreover, the stiffness of tensegrity robots is still an underestimated design parameter. In this article, we propose to use easy to assemble, actuated tensegrity modules and body-brain co-evolution to design soft tensegrity modular robots. Moreover, we prove the importance of tensegrity robots stiffness showing how the evolution suggests a different morphology, control, and locomotion strategy according to the modules stiffness.
+
+## Content
+Tensegrity structures are lightweight, can undergo large deformations, and have outstanding robustness capabilities. These unique properties inspired roboticists to investigate their use. However, the morphological design, control, assembly, and actuation of tensegrity robots are still difficult tasks. Moreover, the stiffness of tensegrity robots is still an underestimated design parameter. In this article, we propose to use easy to assemble, actuated tensegrity modules and body-brain co-evolution to design soft tensegrity modular robots. Moreover, we prove the importance of tensegrity robots stiffness showing how the evolution suggests a different morphology, control, and locomotion strategy according to the modules stiffness.
+
+## 개요
+텐세그리티 구조는 가볍고, 큰 변형이 가능하며, 뛰어난 견고성을 지닙니다. 이러한 독특한 특성은 로봇 공학자들이 그 활용을 연구하도록 영감을 주었습니다. 그러나 텐세그리티 로봇의 형태 설계, 제어, 조립 및 구동은 여전히 어려운 과제입니다. 또한, 텐세그리티 로봇의 강성은 여전히 과소평가된 설계 매개변수입니다. 본 논문에서는 조립이 용이하고 구동 가능한 텐세그리티 모듈과 신체-뇌 공진화를 사용하여 소프트 텐세그리티 모듈형 로봇을 설계하는 방법을 제안합니다. 더 나아가, 모듈의 강성에 따라 진화가 어떻게 다른 형태, 제어 및 이동 전략을 제시하는지 보여줌으로써 텐세그리티 로봇 강성의 중요성을 입증합니다.
+
+## 핵심 내용
+텐세그리티 구조는 가볍고, 큰 변형이 가능하며, 뛰어난 견고성을 지닙니다. 이러한 독특한 특성은 로봇 공학자들이 그 활용을 연구하도록 영감을 주었습니다. 그러나 텐세그리티 로봇의 형태 설계, 제어, 조립 및 구동은 여전히 어려운 과제입니다. 또한, 텐세그리티 로봇의 강성은 여전히 과소평가된 설계 매개변수입니다. 본 논문에서는 조립이 용이하고 구동 가능한 텐세그리티 모듈과 신체-뇌 공진화를 사용하여 소프트 텐세그리티 모듈형 로봇을 설계하는 방법을 제안합니다. 더 나아가, 모듈의 강성에 따라 진화가 어떻게 다른 형태, 제어 및 이동 전략을 제시하는지 보여줌으로써 텐세그리티 로봇 강성의 중요성을 입증합니다.

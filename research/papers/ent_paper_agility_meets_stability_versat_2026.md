@@ -69,3 +69,39 @@ theoretical_depth:
 ## 参考
 
 - Agility Meets Stability project page (https://opendrivelab.com/AMS/)
+
+## Overview
+
+This study proposes a whole-body control framework for humanoid robots named "Agility Meets Stability," aimed at addressing the core challenge of balancing agile motion execution with extreme posture stability in existing methods. Its main contribution lies in, for the first time, unifying heterogeneous data sources (including human video motion capture, simulation interaction data, and proprioceptive state sequences) into trackable body targets. Through a hybrid reward mechanism and dynamic sampling strategy, it simultaneously constrains motion tracking accuracy and extreme balance capability within the same policy network. This work provides a new technical pathway for constructing a humanoid robot motion control system with the potential of a Behavioral Foundation Model.
+
+## Content
+
+**Research Background and Problem**  
+Whole-body control of humanoid robots has long faced two major challenges: first, how to learn agile and natural motions (e.g., jumping, turning) from human demonstrations, and second, how to maintain stability under extreme postures (e.g., single-leg standing, disturbance recovery) during complex task execution. Traditional methods often separate motion tracking and balance control, leading to performance degradation when switching between tasks. Additionally, existing datasets are mostly limited to a single modality (e.g., pure simulation data or pure motion capture data), making it difficult to cover the diverse needs of real-world scenarios. This study directly targets the coupling problem of "agility" and "stability," proposing a unified solution through heterogeneous data fusion and a hybrid reward mechanism.
+
+**Method or Model Framework**  
+The core of this framework is a unified policy network, whose input layer fuses proprioceptive states, joint sequences, human video/motion capture trajectories, and simulation interaction data. These heterogeneous data are first converted into standardized body targets (e.g., center of mass trajectory, foot landing points) and then processed through a hierarchical training architecture: the low-level layer uses expert policies to learn local motion primitives, while the high-level layer coordinates global motion through a combined whole-body policy. During training, a dynamic sampling mechanism adaptively adjusts data proportions based on task difficulty, ensuring that agile motion capture samples and synthetic balance samples maintain balanced contributions to policy updates.
+
+**Key Technical Innovations**  
+The innovations of this study are mainly reflected in three aspects: First, it proposes a paradigm of "joint training with heterogeneous motion capture and synthetic balance data," enabling the same policy network to extract motion priors from human agile motions and learn recovery strategies from simulation balance samples. Second, it designs a hybrid reward function, where motion tracking rewards (based on joint angle errors and end-effector trajectory deviations) and extreme balance rewards (based on center of mass projection and foot force distribution) are dynamically adjusted through adaptive weights, preventing a single objective from dominating training. Third, it introduces a dynamic sampling strategy, emphasizing balance samples in early training to establish a stability foundation, and gradually increasing agile samples in later stages to enhance motion diversity, thereby achieving progressive learning from "stability" to "agility."
+
+**Experiments/Validation and Application Value**  
+Although the paper does not disclose specific experimental data, it can be inferred from its technical framework that this method has significant application value in both simulation environments and real robot platforms. In simulation scenarios, the framework supports robots in performing agile motions such as high-speed running, sudden stops and turns, and single-leg jumps, while maintaining robust recovery from sudden disturbances. In real robot deployment, the heterogeneous data fusion strategy reduces the cost of motion capture data collection, enabling robots to quickly generalize to new tasks with a small number of human demonstrations. This work provides key technical support for humanoid robots in scenarios requiring dynamic balance and complex motion coordination, such as service, rescue, and industrial applications, and also lays a data and algorithmic foundation for the subsequent construction of large-scale behavioral foundation models.
+
+## 개요
+
+본 연구는 "Agility Meets Stability"라는 인간형 로봇 전신 제어 프레임워크를 제안하며, 기존 방법이 민첩한 동작 실행과 극단적인 자세 균형 사이의 핵심 모순을 해결하기 어려운 문제를 다룹니다. 주요 기여는 이종 데이터 소스(인간 비디오 모션 캡처, 시뮬레이션 상호작용 데이터, 본체 상태 시퀀스 포함)를 추적 가능한 신체 목표로 통합하고, 혼합 보상 메커니즘과 동적 샘플링 전략을 통해 동일한 정책 네트워크에서 동작 추적 정밀도와 극단적 균형 능력을 동시에 제약하는 데 있습니다. 이 연구는 행동 기반 모델(Behavioral Foundation Model)의 잠재력을 가진 인간형 로봇 운동 제어 시스템을 구축하기 위한 새로운 기술 경로를 제공합니다.
+
+## 핵심 내용
+
+**연구 배경 및 문제**  
+인간형 로봇의 전신 제어는 오랫동안 두 가지 주요 도전에 직면해 왔습니다. 첫째는 인간 시연에서 민첩하고 자연스러운 동작(예: 점프, 회전)을 학습하는 방법이고, 둘째는 복잡한 작업을 수행할 때 극단적인 자세에서의 안정성(예: 한 발 서기, 외란 회복)을 유지하는 방법입니다. 전통적인 방법은 동작 추적과 균형 제어를 분리하여 처리함으로써 작업 전환 시 성능 저하를 초래합니다. 또한, 기존 데이터셋은 대부분 단일 모드(예: 순수 시뮬레이션 데이터 또는 순수 모션 캡처 데이터)에 국한되어 실제 시나리오의 다양성 요구를 충족하기 어렵습니다. 본 연구는 바로 이러한 "민첩성"과 "안정성"의 결합 문제를 해결하기 위해 이종 데이터 융합과 혼합 보상 메커니즘을 활용하여 통합적으로 해결하고자 합니다.
+
+**방법 또는 모델 프레임워크**  
+이 프레임워크의 핵심은 통합 정책 네트워크로, 입력층은 본체 상태, 관절 시퀀스, 인간 비디오/모션 캡처 궤적, 시뮬레이션 상호작용 데이터를 융합합니다. 이러한 이종 데이터는 먼저 표준화된 신체 목표(예: 질량 중심 궤적, 발 끝 착지점)로 변환된 후, 계층적 훈련 구조를 통해 처리됩니다. 하위 계층은 전문가 정책을 사용하여 로컬 동작 프리미티브를 학습하고, 상위 계층은 전신 정책을 조합하여 전역 운동을 조정합니다. 훈련 과정에서 동적 샘플링 메커니즘은 작업 난이도에 따라 데이터 비율을 적응적으로 조정하여 민첩한 모션 캡처 샘플과 합성 균형 샘플이 정책 업데이트에서 균형 잡힌 기여를 유지하도록 보장합니다.
+
+**핵심 기술 혁신**  
+본 연구의 혁신은 주로 세 가지 측면에서 나타납니다. 첫째, "이종 모션 캡처와 합성 균형 데이터 공동 훈련" 패러다임을 제안하여 동일한 정책 네트워크가 인간의 민첩한 동작에서 운동 사전을 추출하는 동시에 시뮬레이션 균형 샘플에서 회복 전략을 학습할 수 있도록 합니다. 둘째, 혼합 보상 함수를 설계하여 동작 추적 보상(관절 각도 오차 및 말단 궤적 편차 기반)과 극단적 균형 보상(질량 중심 투영 및 발바닥 힘 분포 기반)이 적응적 가중치를 통해 동적으로 조절되어 단일 목표가 훈련을 지배하는 것을 방지합니다. 셋째, 동적 샘플링 전략을 도입하여 훈련 초기에는 균형 샘플에 중점을 두어 안정성 기반을 구축하고, 후기에는 점차 민첩 샘플을 증가시켜 동작 다양성을 향상시킴으로써 "안정"에서 "민첩"으로의 점진적 학습을 실현합니다.
+
+**실험/검증 및 응용 가치**  
+논문이 구체적인 실험 데이터를 공개하지는 않았지만, 기술 프레임워크를 통해 이 방법이 시뮬레이션 환경과 실제 로봇 플랫폼 모두에서 상당한 응용 가치를 가질 것으로 추론할 수 있습니다. 시뮬레이션 시나리오에서 이 프레임워크는 로봇이 고속 달리기, 급정지 회전, 한 발 점프 등의 민첩한 동작을 수행하면서 갑작스러운 외란에 대한 강건한 회복 능력을 유지하도록 지원합니다. 실제 로봇 배치에서 이종 데이터 융합 전략은 모션 캡처 데이터 수집 비용을 낮추어 로봇이 소량의 인간 시연을 통해 새로운 작업으로 빠르게 일반화할 수 있게 합니다. 이 연구는 서비스, 구조, 산업 등 동적 균형과 복잡한 동작 협력이 필요한 분야에서 인간형 로봇을 위한 핵심 기술 지원을 제공하며, 향후 대규모 행동 기반 모델 구축을 위한 데이터 및 알고리즘 기반을 마련합니다.

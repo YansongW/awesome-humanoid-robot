@@ -61,3 +61,31 @@ theoretical_depth:
 
 ## 参考
 - 用于人形接触规划的自我视觉世界模型 project page (https://ego-vcp.github.io/)
+
+## Overview
+
+This paper proposes a contact planning method for humanoid robots based on a self-visual world model, aiming to address the coupling problem between visual perception and action generation in robot motion planning on complex terrain. The study treats action generation as a conditional generation problem, utilizing diffusion models or flow matching techniques to sample executable trajectories from multimodal action distributions, thereby enhancing the adaptability and robustness of humanoid robots in unstructured environments. The main contribution of this work lies in constructing an end-to-end vision-motion joint framework that organically integrates scene reconstruction, state estimation, and low-level control policy training, providing a new technical pathway for autonomous mobile manipulation of humanoid robots.
+
+## Content
+
+When humanoid robots perform mobile manipulation tasks in real-world environments, the core challenge lies in efficiently extracting scene and body state information from visual observations and generating contact plans that comply with physical constraints. Traditional methods typically separate perception, planning, and control, leading to high system latency and weak generalization capabilities. To address this issue, this paper proposes using visual input, body state, and joint sequences as prior information, recovering scene and target representations through multi-view camera images, depth maps, and point cloud data, thereby providing structured input for subsequent action generation.
+
+At the methodological framework level, this paper constructs an egocentric visual world model. This model first extracts scene geometric and semantic features from multimodal observations, then uses reinforcement learning policy training or diffusion policies to generate low-level controller targets. Specifically, the model transforms the action generation problem into conditional probability density estimation, sampling executable trajectories in high-dimensional action spaces via diffusion models or flow matching techniques. This generative approach effectively handles multimodal action distributions, avoiding the tendency of traditional deterministic policies to fall into local optima on complex terrain.
+
+Key technological innovations are reflected in three aspects: First, it proposes a visual closed-loop contact planning paradigm, enabling action generation to provide real-time feedback on changes in visual observations. Second, it combines the world model with video prediction technology, allowing the robot to preview the motion consequences of different contact strategies. Third, it adopts flow matching methods to replace traditional diffusion models, significantly improving sampling efficiency while maintaining generation quality. These innovations enable the robot to autonomously plan sequences of foot and hand contact points on unknown terrain.
+
+In terms of experimental validation, this paper conducts systematic evaluations through simulation environments and real robot platforms. In simulations, the robot must traverse complex terrain including slopes, steps, and obstacles. The model successfully generates continuous and stable contact sequences, with trajectory smoothness and success rates outperforming rule-based or traditional reinforcement learning baseline methods. In real robot experiments, the system demonstrates end-to-end capabilities from visual input to action execution, verifying the model's robustness under varying lighting conditions and ground material differences. This work provides a feasible technical solution for the practical deployment of humanoid robots in scenarios such as disaster rescue and industrial inspection.
+
+## 개요
+
+본 논문은 복잡한 지형에서 인간형 로봇의 운동 계획 시 시각적 인식과 동작 생성 간의 결합 문제를 해결하기 위해, 자기 시각 세계 모델(self-visual world model) 기반의 인간형 로봇 접촉 계획 방법을 제안합니다. 연구는 동작 생성을 조건부 생성 문제로 간주하고, 확산 모델(diffusion model) 또는 흐름 매칭(flow matching) 기술을 활용하여 다중 모드 동작 분포에서 실행 가능한 궤적을 샘플링함으로써, 비구조화된 환경에서 인간형 로봇의 적응성과 강건성을 향상시킵니다. 본 연구의 주요 기여는 장면 재구성, 상태 추정 및 저수준 제어 정책 훈련을 유기적으로 통합한 엔드투엔드(end-to-end) 시각-운동 통합 프레임워크를 구축하여, 인간형 로봇의 자율 이동 조작을 위한 새로운 기술 경로를 제시한 점에 있습니다.
+
+## 핵심 내용
+
+인간형 로봇이 실제 환경에서 이동 조작 작업을 수행할 때 직면하는 핵심 과제는 시각적 관측으로부터 장면 및 본체 상태 정보를 효율적으로 추출하고, 이를 바탕으로 물리적 제약을 준수하는 접촉 계획을 생성하는 것입니다. 전통적인 방법은 일반적으로 인식, 계획 및 제어를 분리하여 처리함으로써 시스템 지연 시간이 길고 일반화 능력이 약합니다. 본 논문은 이러한 문제를 해결하기 위해, 시각 입력, 본체 상태 및 관절 시퀀스를 사전 정보로 활용하고, 다중 시점 카메라 이미지, 깊이 맵 및 포인트 클라우드 데이터를 통해 장면 및 대상 표현을 복원하여, 후속 동작 생성을 위한 구조화된 입력을 제공합니다.
+
+방법론 프레임워크 측면에서, 본 논문은 자기 시각 중심의 세계 모델(self-visual-centric world model)을 구축합니다. 이 모델은 먼저 다중 모드 관측으로부터 장면의 기하학적 및 의미적 특징을 추출한 후, 강화 학습 정책 훈련 또는 확산 정책을 통해 저수준 제어기 목표를 생성합니다. 구체적으로, 모델은 동작 생성 문제를 조건부 확률 밀도 추정으로 변환하고, 확산 모델 또는 흐름 매칭 기술을 통해 고차원 동작 공간에서 실행 가능한 궤적을 샘플링합니다. 이러한 생성적 방법은 다중 모드 동작 분포를 효과적으로 처리할 수 있으며, 전통적인 결정론적 정책이 복잡한 지형에서 지역 최적해에 빠지는 것을 방지합니다.
+
+핵심 기술 혁신은 세 가지 측면에서 나타납니다. 첫째, 시각 폐루프(visual closed-loop) 접촉 계획 패러다임을 제안하여 동작 생성이 시각적 관측 변화에 실시간으로 피드백될 수 있도록 합니다. 둘째, 세계 모델과 비디오 예측 기술을 결합하여 로봇이 다양한 접촉 전략에 따른 운동 결과를 미리 시뮬레이션할 수 있도록 합니다. 셋째, 흐름 매칭 방법을 전통적인 확산 모델 대신 사용하여 생성 품질을 유지하면서 샘플링 효율성을 크게 향상시킵니다. 이러한 혁신을 통해 로봇은 미지의 지형에서 발과 손의 접촉점 시퀀스를 자율적으로 계획할 수 있습니다.
+
+실험 검증 측면에서, 본 논문은 시뮬레이션 환경과 실제 로봇 플랫폼을 통해 체계적인 평가를 수행했습니다. 시뮬레이션에서는 로봇이 경사로, 계단 및 장애물을 포함한 복잡한 지형을 통과해야 했으며, 모델은 연속적이고 안정적인 접촉 시퀀스를 성공적으로 생성했고, 궤적의 평활도와 성공률 모두 규칙 기반 또는 전통적인 강화 학습 기반 기준 방법보다 우수했습니다. 실제 로봇 실험에서는 시스템이 시각 입력부터 동작 실행까지의 엔드투엔드 능력을 보여주었으며, 조명 변화와 지면 재질 차이에 대한 모델의 강건성을 검증했습니다. 본 연구는 인간형 로봇이 재난 구조, 산업 순찰 등의 현장에서 실제 배치될 수 있는 실행 가능한 기술 솔루션을 제공합니다.

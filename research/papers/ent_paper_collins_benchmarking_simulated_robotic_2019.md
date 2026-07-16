@@ -60,3 +60,14 @@ We present a benchmark to facilitate simulated manipulation; an attempt to overc
 ## 参考
 - http://arxiv.org/abs/1911.01557v2
 
+## Overview
+We present a benchmark to facilitate simulated manipulation; an attempt to overcome the obstacles of physical benchmarks through the distribution of a real world, ground truth dataset. Users are given various simulated manipulation tasks with assigned protocols having the objective of replicating the real world results of a recorded dataset. The benchmark comprises of a range of metrics used to characterise the successes of submitted environments whilst providing insight into their deficiencies. We apply our benchmark to two simulation environments, PyBullet and V-Rep, and publish the results. All materials required to benchmark an environment, including protocols and the dataset, can be found at the benchmarks' website https://research.csiro.au/robotics/manipulation-benchmark/.
+
+## Content
+We present a benchmark to facilitate simulated manipulation; an attempt to overcome the obstacles of physical benchmarks through the distribution of a real world, ground truth dataset. Users are given various simulated manipulation tasks with assigned protocols having the objective of replicating the real world results of a recorded dataset. The benchmark comprises of a range of metrics used to characterise the successes of submitted environments whilst providing insight into their deficiencies. We apply our benchmark to two simulation environments, PyBullet and V-Rep, and publish the results. All materials required to benchmark an environment, including protocols and the dataset, can be found at the benchmarks' website https://research.csiro.au/robotics/manipulation-benchmark/.
+
+## 개요
+우리는 시뮬레이션 조작을 촉진하기 위한 벤치마크를 제시합니다. 이는 실제 세계의 실측 데이터셋을 배포함으로써 물리적 벤치마크의 장애물을 극복하려는 시도입니다. 사용자에게는 기록된 데이터셋의 실제 세계 결과를 재현하는 것을 목표로 하는 할당된 프로토콜과 함께 다양한 시뮬레이션 조작 작업이 제공됩니다. 이 벤치마크는 제출된 환경의 성공을 특성화하고 그 결함에 대한 통찰력을 제공하는 데 사용되는 다양한 지표로 구성됩니다. 우리는 이 벤치마크를 PyBullet과 V-Rep이라는 두 가지 시뮬레이션 환경에 적용하고 결과를 게시합니다. 프로토콜과 데이터셋을 포함하여 환경을 벤치마킹하는 데 필요한 모든 자료는 벤치마크 웹사이트 https://research.csiro.au/robotics/manipulation-benchmark/에서 확인할 수 있습니다.
+
+## 핵심 내용
+우리는 시뮬레이션 조작을 촉진하기 위한 벤치마크를 제시합니다. 이는 실제 세계의 실측 데이터셋을 배포함으로써 물리적 벤치마크의 장애물을 극복하려는 시도입니다. 사용자에게는 기록된 데이터셋의 실제 세계 결과를 재현하는 것을 목표로 하는 할당된 프로토콜과 함께 다양한 시뮬레이션 조작 작업이 제공됩니다. 이 벤치마크는 제출된 환경의 성공을 특성화하고 그 결함에 대한 통찰력을 제공하는 데 사용되는 다양한 지표로 구성됩니다. 우리는 이 벤치마크를 PyBullet과 V-Rep이라는 두 가지 시뮬레이션 환경에 적용하고 결과를 게시합니다. 프로토콜과 데이터셋을 포함하여 환경을 벤치마킹하는 데 필요한 모든 자료는 벤치마크 웹사이트 https://research.csiro.au/robotics/manipulation-benchmark/에서 확인할 수 있습니다.

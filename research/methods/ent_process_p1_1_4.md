@@ -86,5 +86,90 @@ theoretical_depth:
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
 
+## Overview
+**Phase/Work Package**: Requirements Definition and System Concept (Concept / Pre-A)
 
+## Content
+**Methods/Tools**: Anthropometric database, reachability analysis, startle response experiment, HMI prototype
 
+**Design Rationale**: The height, field of view, sound, and motion of human-robot coexistence scenarios must be acceptable.
+
+**Key Constraints**: Cultural differences, user group diversity, psychological safety
+
+**Completion Criteria/Deliverables**: Human factors requirements report, key interaction posture envelope, HMI principles
+
+**Level-3 Subtasks and Level-4 Key Actions:**
+
+- P1.1.4.1 Input Review and Target Quantification
+  - Organize upstream inputs, reference standards, and resources required for "Human Factors Engineering and Interaction Requirements," convert completion criteria into quantifiable acceptance indicators, and define the owner and milestones.
+    - List all upstream inputs and confirm versions
+    - Convert acceptance criteria into quantifiable KPIs
+    - Establish task owners, timelines, and risk register
+
+- P1.1.4.2 Solution/Method Design
+  - Develop implementation methods or candidate solutions for "Human Factors Engineering and Interaction Requirements," using "anthropometric database, reachability analysis, startle response experiment, HMI prototype" for validation, and clarify technical roadmap and resource requirements.
+    - Generate at least two candidate solutions
+    - Establish an evaluation matrix and assign quantitative scores
+    - Organize a review and freeze the solution
+
+- P1.1.4.3 Implementation/Prototype/Sample Fabrication
+  - Execute the implementation of "Human Factors Engineering and Interaction Requirements" according to the design solution, produce prototypes, samples, or complete key steps, and record process data.
+    - Build models/prototypes and record key parameters
+    - Perform simulation or prototype validation
+    - Document anomalies and deviations
+
+- P1.1.4.4 Verification and Issue Closure
+  - Verify the output of "Human Factors Engineering and Interaction Requirements," check whether completion criteria are met, record issues, and track until closure.
+    - Develop test/review plans and pass criteria
+    - Execute tests and record raw data
+    - Output issue list and improvement measures
+
+- P1.1.4.5 Documentation and Downstream Delivery
+  - Output the final report/drawing/specification for "Human Factors Engineering and Interaction Requirements," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+    - Write documents according to templates and cite raw data
+    - Complete internal review and version control
+    - Release and notify downstream dependents
+
+## 개요
+**소속 단계/작업 패키지**: 요구 정의 및 시스템 방안 (Concept / Pre-A)
+
+## 핵심 내용
+**방법 / 도구**: 인체 측정 데이터베이스, 도달 영역 분석, 놀람 반응 실험, HMI 프로토타입
+
+**설계 사고 논리**: 로봇과 인간이 공존하는 장면의 높이, 시야, 소리, 동작이 반드시 수용 가능해야 함
+
+**핵심 제약 조건**: 문화적 차이, 사용자 그룹 다양성, 심리적 안전
+
+**완료 기준 / 산출물**: 인간공학 요구 보고서, 핵심 상호작용 자세 포락선, HMI 원칙
+
+**3단계 하위 작업 및 4단계 핵심 조치:**
+
+- P1.1.4.1 입력 정리 및 목표 정량화
+  - 「인간공학 및 상호작용 요구」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+    - 모든 상위 입력 목록을 나열하고 버전 확인
+    - 검수 기준을 정량화 가능한 KPI로 변환
+    - 작업 Owner, 시간 노드 및 위험 등록부 구축
+
+- P1.1.4.2 방안/방법 설계
+  - 「인간공학 및 상호작용 요구」에 대해 실행 방법 또는 후보 방안을 수립하고, 「인체 측정 데이터베이스, 도달 영역 분석, 놀람 반응 실험, HMI 프로토타입」을 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 함.
+    - 2개 이상의 후보 방안 도출
+    - 평가 매트릭스 구축 및 정량적 점수 부여
+    - 검토 조직 및 방안 확정
+
+- P1.1.4.3 실행/프로토타입/시제품 제작
+  - 설계 방안에 따라 「인간공학 및 상호작용 요구」의 실행 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+    - 모델/시제품 구축 및 핵심 파라미터 기록
+    - 시뮬레이션 또는 프로토타입 검증 실행
+    - 이상 및 편차 기록
+
+- P1.1.4.4 검증 및 문제 종결
+  - 「인간공학 및 상호작용 요구」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결까지 추적함.
+    - 테스트/검토 계획 및 통과 기준 수립
+    - 테스트 실행 및 원시 데이터 기록
+    - 문제 목록 및 개선 조치 출력
+
+- P1.1.4.5 문서 출력 및 하위 전달
+  - 「인간공학 및 상호작용 요구」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료함.
+    - 템플릿에 따라 문서 작성 및 원시 데이터 인용
+    - 내부 검토 및 버전 관리 완료
+    - 게시 및 하위 의존 부서에 통보

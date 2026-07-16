@@ -60,3 +60,31 @@ sources:
 ## 参考
 
 - LIFT: Towards Bridging the Gap between Large-Scale Pretraining and Efficient Finetuning for Humanoid Control ()
+
+## Overview
+
+The sim-to-real transfer of humanoid robots faces two major challenges: the insufficient generalization of large-scale simulation pre-training strategies in real-world environments, and the typically large amount of real data required during the fine-tuning phase, leading to excessively long deployment cycles. The LIFT framework proposed in this paper aims to bridge this gap by combining large-batch Soft Actor-Critic (SAC) pre-training with a physics-prior-based world model for fine-tuning, significantly reducing the cost of transferring from simulation to the real world. The core contribution of this work is compressing the sim-to-real fine-tuning time for humanoid robots to approximately 1 hour, providing an efficient and feasible solution for the practical deployment of highly dynamic bipedal locomotion control.
+
+## Content
+
+(a) Research Background and Problem: Motion control of humanoid robots is extremely challenging due to their high degrees of freedom, nonlinearity, and instability. Deep reinforcement learning has achieved significant progress in simulation environments, but directly deploying simulation policies to real robots often fails due to the "sim-to-real gap" (including dynamics differences, sensor noise, and latency). Existing sim-to-real methods, such as domain randomization or system identification, either require extensive manual parameter tuning or incur high fine-tuning costs, making it difficult to complete within hours. Therefore, how to leverage large-scale pre-training to obtain a robust initial policy and efficiently fine-tune it with minimal real data has become a critical issue to be addressed in this field.
+
+(b) Method or Model Framework: The LIFT framework adopts a two-stage training paradigm. The first stage is large-scale simulation pre-training, which uses a large-batch SAC algorithm to train a basic locomotion policy in diverse simulation environments. The maximum entropy property of SAC facilitates the exploration of a wider range of motion patterns, while large-batch updates enhance training stability and sample efficiency. The second stage is efficient real-world fine-tuning, which introduces a physics-prior-based world model. This world model is not learned from scratch but incorporates prior knowledge such as rigid body dynamics and contact models, enabling accurate prediction of system dynamics with extremely limited real interaction data and guiding online or offline policy fine-tuning.
+
+(c) Key Technical Innovations: The core innovation of LIFT lies in the introduction of the "physics-prior world model." Unlike purely data-driven world models, this model uses known physical laws (e.g., Newton-Euler equations) as inductive biases, significantly reducing its reliance on large amounts of real data. This allows the fine-tuning phase to complete policy adaptation with only about 1 hour of robot operation data. Additionally, large-batch SAC pre-training ensures that the initial policy possesses sufficient robustness and exploration capability, avoiding dangerous behaviors caused by policy degradation at the start of fine-tuning, thereby enhancing the safety of real-world deployment.
+
+(d) Experiments/Validation and Application Value: Although the abstract does not provide specific experimental data, based on the research paradigm, it can be inferred that LIFT was likely validated on standard humanoid robot platforms (e.g., Unitree H1 or Digit). Experiments should cover the baseline performance of the simulation pre-training policy, the real-world success rate after fine-tuning, and the time cost of fine-tuning. Compared to traditional methods such as domain randomization and domain adaptation, LIFT should demonstrate significant advantages in fine-tuning efficiency. Its application value lies in reducing sim-to-real from days or weeks to 1 hour, enabling humanoid robots to quickly adapt to different terrains, loads, or dynamic environments, thereby greatly advancing the practical deployment of bipedal robots in scenarios such as logistics, inspection, and home services.
+
+## 개요
+
+휴머노이드 로봇의 sim-to-real 전환은 두 가지 주요 도전 과제에 직면합니다: 대규모 시뮬레이션 사전 훈련 전략의 실제 환경에서의 일반화 능력 부족, 그리고 미세 조정 단계에서 일반적으로 많은 양의 실제 데이터가 필요하여 배포 주기가 길어지는 문제입니다. 본 논문에서 제안하는 LIFT 프레임워크는 이러한 격차를 해소하기 위해, 대량 배치 Soft Actor-Critic(SAC) 사전 훈련과 물리적 사전 지식 기반의 세계 모델 미세 조정을 결합하여 시뮬레이션에서 실제 환경으로의 전환 비용을 크게 줄입니다. 이 연구의 핵심 기여는 휴머노이드 로봇의 sim-to-real 미세 조정 시간을 약 1시간으로 단축하여, 고동적 이족 보행 운동 제어의 실제 배포에 효율적이고 실현 가능한 솔루션을 제공하는 데 있습니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 휴머노이드 로봇의 운동 제어는 높은 자유도, 비선형성 및 불안정성으로 인해 매우 도전적입니다. 심층 강화 학습은 시뮬레이션 환경에서 상당한 진전을 이루었지만, 시뮬레이션 전략을 실제 로봇에 직접 배포하는 경우 종종 "시뮬레이션-실제 격차"(동역학 차이, 센서 노이즈 및 지연 시간 등 포함)로 인해 실패합니다. 기존의 sim-to-real 방법(예: 도메인 무작위화 또는 시스템 식별)은 많은 수동 매개변수 조정이 필요하거나 미세 조정 비용이 높아 몇 시간 내에 완료하기 어렵습니다. 따라서 대규모 사전 훈련을 통해 강건한 초기 전략을 확보하고, 극소량의 실제 데이터로 효율적으로 미세 조정하는 방법이 이 분야에서 해결해야 할 핵심 과제가 되었습니다.
+
+(b) 방법 또는 모델 프레임워크: LIFT 프레임워크는 2단계 훈련 패러다임을 채택합니다. 첫 번째 단계는 대규모 시뮬레이션 사전 훈련으로, 대량 배치(batch) SAC 알고리즘을 사용하여 다양한 시뮬레이션 환경에서 기본 운동 전략을 훈련합니다. SAC의 최대 엔트로피 특성은 더 넓은 운동 패턴을 탐색하는 데 도움이 되며, 대량 배치 업데이트는 훈련 안정성과 샘플 효율성을 향상시킵니다. 두 번째 단계는 효율적인 실제 세계 미세 조정으로, 물리적 사전 지식 기반의 세계 모델을 도입합니다. 이 세계 모델은 처음부터 학습하는 것이 아니라, 강체 동역학, 접촉 모델 등의 사전 지식을 내장하여 극소량의 실제 상호작용 데이터로도 시스템 동역학을 정확하게 예측하고, 전략의 온라인 또는 오프라인 미세 조정을 안내합니다.
+
+(c) 핵심 기술 혁신: LIFT의 핵심 혁신은 "물리적 사전 지식 세계 모델"의 도입에 있습니다. 순수 데이터 기반 세계 모델과 달리, 이 모델은 알려진 물리 법칙(예: 뉴턴-오일러 방정식)을 귀납적 편향으로 활용하여 많은 실제 데이터에 대한 의존도를 크게 줄입니다. 이를 통해 미세 조정 단계에서 약 1시간의 로봇 작동 데이터만으로 전략 적응이 가능합니다. 또한 대량 배치 SAC 사전 훈련은 초기 전략이 충분한 강건성과 탐색 능력을 갖추도록 보장하여, 미세 조정 초기 단계에서 전략 저하로 인한 위험한 행동을 방지함으로써 실제 배포의 안전성을 향상시킵니다.
+
+(d) 실험/검증 및 응용 가치: 초록은 구체적인 실험 데이터를 제공하지 않지만, 연구 패러다임을 기반으로 LIFT가 표준 휴머노이드 로봇 플랫폼(예: Unitree H1 또는 Digit)에서 검증되었을 가능성이 높습니다. 실험은 시뮬레이션 사전 훈련 전략의 기준 성능, 미세 조정 후 실제 세계 성공률 및 미세 조정 시간 비용을 포함해야 합니다. 도메인 무작위화, 도메인 적응 등의 전통적인 방법과 비교하여 LIFT는 미세 조정 효율성에서 상당한 이점을 가져야 합니다. 그 응용 가치는 sim-to-real을 며칠 또는 몇 주에서 1시간으로 단축하여, 휴머노이드 로봇이 다양한 지형, 부하 또는 동적 환경에 빠르게 적응할 수 있게 하여, 물류, 순찰 및 가사 서비스 등의 시나리오에서 이족 보행 로봇의 실용화를 크게 촉진하는 데 있습니다.

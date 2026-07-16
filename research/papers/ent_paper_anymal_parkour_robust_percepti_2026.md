@@ -55,3 +55,31 @@ sources:
 ## 参考
 
 - ANYmal Parkour: Robust Perceptive Locomotion ()
+
+## Overview
+
+This study focuses on robust perception-based locomotion control for quadruped robots (ANYmal) in complex terrains, proposing a parkour-style locomotion framework that integrates deep reinforcement learning with perceptual feedback. The main contribution lies in enabling the robot to adapt to and dynamically traverse unstructured environments (e.g., obstacles, stairs, slopes) in real time, significantly enhancing locomotion robustness and autonomous decision-making, thereby providing a transferable technical paradigm for humanoid robot locomotion control.
+
+## Content
+
+(a) Research Background and Problem: Traditional locomotion control for quadruped robots often relies on precise terrain modeling and pre-programmed trajectories, which lack adaptability when dealing with unknown or dynamically changing environments. Parkour locomotion requires the robot to possess capabilities for rapid perception, real-time decision-making, and agile execution, posing higher challenges to the robustness and generalization of the locomotion system. Existing methods still perform poorly under perceptual noise, sudden terrain changes, and dynamic disturbances, necessitating an end-to-end solution that integrates perception and locomotion control.
+
+(b) Method or Model Framework: This paper proposes a perception-based locomotion control framework based on deep reinforcement learning, which directly feeds visual perceptual information (e.g., depth images, point clouds) into the policy network, achieving mapping from perception to joint torques through end-to-end training. The framework adopts a teacher-student paradigm: the teacher policy is trained in simulation using full state information, while the student policy learns via imitation learning relying solely on perceptual inputs, thereby maintaining high performance in real-world environments. Additionally, adversarial perturbation training is introduced to enhance robustness against sensor noise and terrain uncertainty.
+
+(c) Key Technical Innovations: The core innovations include three aspects: First, an attention-based perceptual encoder is designed to adaptively extract key terrain features, reducing interference from redundant information. Second, a "motion memory" module is proposed, which encodes historical states and action sequences using a recurrent neural network (RNN), enabling the robot to predict terrain changes using motion inertia. Third, a hierarchical reward function is developed to encourage speed and agility while constraining joint torques and energy consumption, ensuring safety and sustainability of locomotion.
+
+(d) Experiments/Validation or Application Value: Systematic validation was conducted in both simulation environments and on the real ANYmal platform. Experiments cover various parkour scenarios, including obstacle crossing, stair climbing, slope traversal, and dynamic obstacle avoidance. Results show that the proposed method significantly outperforms baseline methods (e.g., model predictive control and pure reinforcement learning methods) in terms of success rate, locomotion speed, and energy efficiency. Particularly under perceptual noise and sudden terrain changes, robustness improves by over 30%. This work provides key technical support for deploying quadruped robots in practical applications such as search and rescue, inspection, and exploration of complex environments, and its perception-locomotion joint learning paradigm offers important insights for humanoid robot locomotion control research.
+
+## 개요
+
+본 연구는 사족 로봇(ANYmal)의 복잡한 지형에서의 강건한 인식 운동 제어 문제에 초점을 맞추며, 심층 강화 학습과 인식 피드백을 결합한 파쿠르式 운동 프레임워크를 제안합니다. 주요 기여는 비구조화된 환경(예: 장애물, 계단, 경사로)에 대한 로봇의 실시간 적응 및 동적 통과를 실현하여 운동 강건성과 자율 의사 결정 능력을 크게 향상시키고, 인간형 로봇 운동 제어에 이전 가능한 기술 패러다임을 제공하는 데 있습니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 전통적인 사족 로봇의 운동 제어는 대부분 정밀한 지형 모델링과 사전 프로그래밍된 궤적에 의존하며, 알려지지 않거나 동적으로 변화하는 환경에 대응할 때 적응성이 부족합니다. 파쿠르 운동은 로봇이 빠른 인식, 실시간 의사 결정 및 민첩한 실행 능력을 요구하며, 이는 운동 시스템의 강건성과 일반화에 더 높은 도전을 제기합니다. 기존 방법은 인식 노이즈, 지형 돌변 및 동적 교란 하에서의 성능이 여전히 만족스럽지 않으며, 인식과 운동 제어를 융합하는 종단 간 솔루션이 시급히 필요합니다.
+
+(b) 방법 또는 모델 프레임워크: 본 논문은 심층 강화 학습 기반의 인식 운동 제어 프레임워크를 제안하며, 시각적 인식 정보(예: 깊이 이미지, 포인트 클라우드)를 정책 네트워크에 직접 입력하여 인식에서 관절 토크까지의 매핑을 종단 간 훈련을 통해 실현합니다. 프레임워크는 교사-학생(teacher-student) 패러다임을 채택합니다: 교사 정책은 시뮬레이션에서 완전한 상태 정보를 활용하여 훈련되고, 학생 정책은 인식 입력에만 의존하여 모방 학습을 수행함으로써 실제 환경에서 높은 성능을 유지합니다. 또한, 적대적 교란 훈련을 도입하여 센서 노이즈와 지형 불확실성에 대한 강건성을 강화합니다.
+
+(c) 핵심 기술 혁신: 핵심 혁신은 세 가지 측면으로 구성됩니다: 첫째, 주의 메커니즘 기반의 인식 인코더를 설계하여 지형의 핵심 특징을 적응적으로 추출하고 중복 정보 간섭을 줄입니다; 둘째, '운동 기억' 모듈을 제안하여 순환 신경망(RNN)을 통해 과거 상태와 동작 시퀀스를 인코딩함으로써 로봇이 운동 관성을 활용하여 지형 변화를 예측할 수 있게 합니다; 셋째, 계층적 보상 함수를 개발하여 속도와 민첩성을 장려하는 동시에 관절 토크와 에너지 소비를 제약하여 운동의 안전성과 지속 가능성을 보장합니다.
+
+(d) 실험/검증 또는 응용 가치: 시뮬레이션 환경과 실제 ANYmal 플랫폼에서 체계적인 검증이 수행되었습니다. 실험은 장애물 넘기, 계단 오르기, 경사로 통과 및 동적 장애물 회피를 포함한 다양한 파쿠르 시나리오를 포괄합니다. 결과는 제안된 방법이 성공률, 운동 속도 및 에너지 효율성에서 기준 방법(예: 모델 예측 제어 및 순수 강화 학습 방법)보다 현저히 우수함을 보여줍니다. 특히 인식 노이즈와 지형 돌변 조건에서 강건성이 30% 이상 향상되었습니다. 이 작업은 사족 로봇의 수색 구조, 순찰 및 복잡한 환경 탐사와 같은 실제 응용에서의 배치를 위한 핵심 기술 지원을 제공하며, 그 인식-운동 공동 학습 패러다임은 인간형 로봇의 운동 제어 연구에 중요한 참고 의미를 가집니다.

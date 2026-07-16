@@ -60,3 +60,14 @@ We study the problem of sequential task assignment and collision-free routing fo
 ## 参考
 - http://arxiv.org/abs/2006.08845v1
 
+## Overview
+We study the problem of sequential task assignment and collision-free routing for large teams of robots in applications with inter-task precedence constraints (e.g., task $A$ and task $B$ must both be completed before task $C$ may begin). Such problems commonly occur in assembly planning for robotic manufacturing applications, in which sub-assemblies must be completed before they can be combined to form the final product. We propose a hierarchical algorithm for computing makespan-optimal solutions to the problem. The algorithm is evaluated on a set of randomly generated problem instances where robots must transport objects between stations in a "factory" grid world environment. In addition, we demonstrate in high-fidelity simulation that the output of our algorithm can be used to generate collision-free trajectories for non-holonomic differential-drive robots.
+
+## Content
+We study the problem of sequential task assignment and collision-free routing for large teams of robots in applications with inter-task precedence constraints (e.g., task $A$ and task $B$ must both be completed before task $C$ may begin). Such problems commonly occur in assembly planning for robotic manufacturing applications, in which sub-assemblies must be completed before they can be combined to form the final product. We propose a hierarchical algorithm for computing makespan-optimal solutions to the problem. The algorithm is evaluated on a set of randomly generated problem instances where robots must transport objects between stations in a "factory" grid world environment. In addition, we demonstrate in high-fidelity simulation that the output of our algorithm can be used to generate collision-free trajectories for non-holonomic differential-drive robots.
+
+## 개요
+본 연구는 작업 간 선행 제약 조건(예: 작업 $A$와 작업 $B$가 모두 완료되어야 작업 $C$를 시작할 수 있음)이 있는 대규모 로봇 팀의 순차적 작업 할당 및 충돌 없는 경로 탐색 문제를 다룹니다. 이러한 문제는 로봇 제조 응용 분야의 조립 계획에서 흔히 발생하며, 하위 조립체가 완료된 후에야 최종 제품으로 결합될 수 있습니다. 우리는 이 문제에 대한 메이크스팬 최적 해를 계산하기 위한 계층적 알고리즘을 제안합니다. 이 알고리즘은 로봇이 "공장" 격자 세계 환경에서 스테이션 간에 물체를 운반해야 하는 무작위로 생성된 문제 인스턴스 세트에서 평가됩니다. 또한, 고정밀 시뮬레이션을 통해 우리 알고리즘의 출력이 비홀로노믹 차동 구동 로봇의 충돌 없는 궤적을 생성하는 데 사용될 수 있음을 입증합니다.
+
+## 핵심 내용
+본 연구는 작업 간 선행 제약 조건(예: 작업 $A$와 작업 $B$가 모두 완료되어야 작업 $C$를 시작할 수 있음)이 있는 대규모 로봇 팀의 순차적 작업 할당 및 충돌 없는 경로 탐색 문제를 다룹니다. 이러한 문제는 로봇 제조 응용 분야의 조립 계획에서 흔히 발생하며, 하위 조립체가 완료된 후에야 최종 제품으로 결합될 수 있습니다. 우리는 이 문제에 대한 메이크스팬 최적 해를 계산하기 위한 계층적 알고리즘을 제안합니다. 이 알고리즘은 로봇이 "공장" 격자 세계 환경에서 스테이션 간에 물체를 운반해야 하는 무작위로 생성된 문제 인스턴스 세트에서 평가됩니다. 또한, 고정밀 시뮬레이션을 통해 우리 알고리즘의 출력이 비홀로노믹 차동 구동 로봇의 충돌 없는 궤적을 생성하는 데 사용될 수 있음을 입증합니다.

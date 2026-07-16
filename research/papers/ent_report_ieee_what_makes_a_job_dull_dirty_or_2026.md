@@ -261,3 +261,15 @@ Research from the RAI Institute redefines undesirable work for robotics A classi
 
 ## 参考
 - https://spectrum.ieee.org/dull-dirty-dangerous-robots
+
+## Overview
+Research from the RAI Institute redefines undesirable work for robotics. A classic example of a DDD job is one of “repetitive physical labor on a steaming hot factory floor involving heavy machinery that threatens life and limb.” But determining which human activities fit into these categories is not as straightforward as it seems.
+
+## Content
+Research from the RAI Institute redefines undesirable work for robotics. A classic example of a DDD job is one of “repetitive physical labor on a steaming hot factory floor involving heavy machinery that threatens life and limb.” But determining which human activities fit into these categories is not as straightforward as it seems. What exactly is a “dull” task, and who makes that assumption? Is “dirty” work just about needing to wash your hands afterwards, or is there also an aspect of social stigma? What data can we rely on to classify jobs as “dangerous?” Our recent work (which was not dull at all) tackles these questions and proposes a framework to help roboticists understand the job context for our technology.
+
+## 개요
+RAI 연구소의 연구는 로봇 공학에서 바람직하지 않은 작업을 재정의합니다. DDD 작업의 전형적인 예는 "생명과 신체를 위협하는 중장비가 있는 뜨겁고 습한 공장 바닥에서의 반복적인 육체 노동"입니다. 그러나 어떤 인간 활동이 이러한 범주에 속하는지 결정하는 것은 보이는 것처럼 간단하지 않습니다.
+
+## 핵심 내용
+RAI 연구소의 연구는 로봇 공학에서 바람직하지 않은 작업을 재정의합니다. DDD 작업의 전형적인 예는 "생명과 신체를 위협하는 중장비가 있는 뜨겁고 습한 공장 바닥에서의 반복적인 육체 노동"입니다. 그러나 어떤 인간 활동이 이러한 범주에 속하는지 결정하는 것은 보이는 것처럼 간단하지 않습니다. 정확히 "지루한" 작업이란 무엇이며, 누가 그 가정을 하는가? "더러운" 작업은 단순히 나중에 손을 씻어야 하는 것에 관한 것인가, 아니면 사회적 낙인이라는 측면도 있는가? 작업을 "위험한" 것으로 분류하기 위해 어떤 데이터에 의존할 수 있는가? 우리의 최근 연구(전혀 지루하지 않았던)는 이러한 질문을 다루며, 로봇 공학자들이 우리 기술의 작업 맥락을 이해할 수 있도록 돕는 프레임워크를 제안합니다.

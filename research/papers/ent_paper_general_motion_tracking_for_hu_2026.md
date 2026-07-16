@@ -56,3 +56,31 @@ sources:
 
 ## 参考
 - General Motion Tracking for Humanoid Whole-Body Control ()
+
+## Overview
+
+This paper focuses on the general motion tracking problem in whole-body motion control of humanoid robots, aiming to address the challenge of balancing flexibility and robustness in traditional control methods when dealing with complex manipulation and locomotion tasks. The study proposes a whole-body coordinated motion tracking framework, treating Loco-Manipulation as a core application scenario. By integrating motion planning and control strategies, it enhances the task execution capability of humanoid robots in dynamic environments. This work provides a new technical pathway for building a more general and stable whole-body control system for humanoid robots.
+
+## Content
+
+Humanoid robots have inherent advantages in complex environments due to their human-like morphology, but whole-body coordinated control has always been a core challenge in robotics. Traditional control methods often treat locomotion and manipulation separately, leading to slow system response and poor stability when tasks such as walking while grasping or carrying need to be performed simultaneously. Particularly in unstructured environments, robots must track whole-body motion trajectories in real time and cope with uncertainties such as uneven ground and external disturbances. Therefore, designing a general motion tracking method to achieve coordinated control of all joints has become a key issue in advancing the practical application of humanoid robots.
+
+To address this problem, this paper proposes a control framework based on whole-body motion tracking. The framework is built on a whole-body dynamics model, unifying motion planning and control problems into an optimization problem. By solving joint torque commands online, it achieves precise tracking of desired motion trajectories. The framework integrates kinematic and dynamic constraints, including joint limits, foot contact forces, and balance conditions, thereby ensuring the physical feasibility of the robot when performing loco-manipulation tasks. Additionally, the method supports switching between various task modes, such as stationary manipulation and walking grasping, demonstrating strong generality.
+
+In terms of technical innovation, the core contribution of this paper lies in proposing an architecture that deeply integrates motion tracking with whole-body control. Unlike traditional methods based on inverse kinematics or model predictive control, this framework simultaneously considers motion smoothness, energy efficiency, and disturbance rejection during optimization. Specifically, to address the common "hand-foot coordination" issue in loco-manipulation tasks, a hierarchical optimization strategy is designed, which decouples upper-body manipulation tasks from lower-body locomotion tasks before solving them jointly, thereby improving control accuracy while ensuring real-time performance. Furthermore, an adaptive weight adjustment mechanism is introduced, allowing the system to dynamically prioritize sub-objectives based on the task phase.
+
+In terms of experimental validation, this paper conducts multiple tests in both simulation environments and on physical humanoid robot platforms. Typical tasks include: the robot walking on uneven ground while simultaneously grasping and placing objects, and maintaining balance and continuing operations when subjected to external pushes. Experimental results show that the proposed method outperforms traditional whole-body control baselines in metrics such as motion tracking error, task completion time, and disturbance rejection capability. These results not only validate the effectiveness of the framework but also demonstrate its robustness in complex dynamic scenarios. From an application perspective, this work provides key technical support for the practical deployment of humanoid robots in fields such as home services, industrial assembly, and disaster rescue, particularly in scenarios requiring both mobility and fine manipulation.
+
+## 개요
+
+본 논문은 휴머노이드 로봇의 전신 운동 제어에서 보편적인 운동 추적 문제에 초점을 맞추며, 기존 제어 방법이 복잡한 조작 및 이동 작업에서 유연성과 강건성을 동시에 확보하기 어려운 과제를 해결하는 것을 목표로 한다. 연구는 전신 협응을 위한 운동 추적 프레임워크를 제안하며, 이동 조작(Loco-Manipulation)을 핵심 응용 시나리오로 간주하고, 운동 계획과 제어 전략을 통합하여 동적 환경에서 휴머노이드 로봇의 작업 수행 능력을 향상시킨다. 이 연구는 보다 범용적이고 안정적인 휴머노이드 로봇 전신 제어 체계를 구축하기 위한 새로운 기술적 경로를 제공한다.
+
+## 핵심 내용
+
+휴머노이드 로봇은 인간과 유사한 형태 덕분에 복잡한 환경에서 자연스러운 장점을 가지지만, 전신 협조 제어는 로봇공학 분야의 핵심 난제로 남아 있다. 기존 제어 방법은 종종 이동과 조작을 분리하여 처리하므로, 보행과 파지, 운반 등의 작업을 동시에 수행해야 할 때 시스템 응답이 느리고 안정성이 떨어진다. 특히 비구조화된 환경에서는 로봇이 전신 운동 궤적을 실시간으로 추적하고, 불균일한 지면이나 외부 힘 간섭과 같은 불확실성 요소에 대응해야 한다. 따라서 전신 관절의 협조 제어를 실현하는 보편적인 운동 추적 방법을 설계하는 것이 휴머노이드 로봇의 실용화를 추진하는 핵심 과제가 된다.
+
+이러한 문제에 대응하여, 본 논문은 전신 운동 추적 기반의 제어 프레임워크를 제안한다. 이 프레임워크는 전신 동역학 모델을 기반으로 하여, 운동 계획과 제어 문제를 최적화 문제로 통합 모델링하고, 관절 토크 명령을 온라인으로 풀어 기대 운동 궤적을 정밀하게 추적한다. 프레임워크 내부에는 관절 한계, 발바닥 접촉력, 균형 조건 등 운동학 및 동역학적 제약 조건이 통합되어, 로봇이 이동 조작 작업을 수행할 때 물리적 실현 가능성을 보장한다. 또한, 이 방법은 정지 상태 조작, 보행 중 파지 등 다양한 작업 모드 전환을 지원하여 높은 범용성을 나타낸다.
+
+기술 혁신 측면에서, 본 논문의 핵심 기여는 운동 추적과 전신 제어를 심층적으로 융합한 아키텍처를 제안한 데 있다. 기존의 역기구학 또는 모델 예측 제어 기반 방법과 달리, 이 프레임워크는 최적화 과정에서 운동의 평활성, 에너지 효율 및 외란 저항 능력을 동시에 고려한다. 특히, 이동 조작 작업에서 흔히 발생하는 '손-발 협조' 문제를 해결하기 위해, 상체 조작 작업과 하체 이동 작업을 분리한 후 통합적으로 해결하는 계층적 최적화 전략을 설계하여, 실시간성을 보장하면서 제어 정밀도를 향상시킨다. 또한, 작업 단계에 따라 각 하위 목표의 우선순위를 동적으로 조정할 수 있는 적응형 가중치 조절 메커니즘을 도입한다.
+
+실험 검증 측면에서, 본 논문은 시뮬레이션 환경과 실제 휴머노이드 로봇 플랫폼에서 여러 테스트를 수행했다. 대표적인 작업으로는 로봇이 불균일한 지면에서 보행하면서 물체를 파지하고 배치하는 작업, 외부 힘에 밀렸을 때 균형을 유지하며 작업을 계속 수행하는 작업 등이 포함된다. 실험 결과는 제안된 방법이 운동 추적 오차, 작업 완료 시간 및 외란 저항 능력 등의 지표에서 기존 전신 제어 기준 방법보다 우수함을 보여준다. 이러한 결과는 프레임워크의 유효성을 검증할 뿐만 아니라, 복잡한 동적 시나리오에서의 강건성을 입증한다. 응용 가치 측면에서, 이 연구는 휴머노이드 로봇이 가사 서비스, 산업 조립, 재난 구조 등 분야에서 실제로 배치되는 데 핵심 기술적 지원을 제공하며, 특히 이동과 정밀 조작을 동시에 요구하는 시나리오에 적합하다.

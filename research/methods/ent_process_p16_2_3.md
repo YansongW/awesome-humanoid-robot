@@ -86,5 +86,90 @@ theoretical_depth:
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
 
+## Overview
+**Phase/Work Package**: Pilot & Production Ramp
 
+## Content
+**Method/Tool**: 8D, CAPA, Supplier Quality Improvement
 
+**Design Thinking Logic**: Quickly close quality issues to prevent them from flowing downstream
+
+**Key Constraints**: Response time, root cause analysis capability
+
+**Completion Criteria/Deliverables**: 8D report, improvement verification, defect rate reduction
+
+**Level 3 Sub-tasks and Level 4 Key Actions:**
+
+- P16.2.3.1 Input Review and Target Quantification
+  - Organize the upstream inputs, reference standards, and resources required for "Incoming and Process Anomaly Handling," convert completion criteria into quantifiable acceptance indicators, and define the owner and milestones.
+    - List all upstream input items and confirm versions
+    - Convert acceptance criteria into quantifiable KPIs
+    - Establish task owners, timelines, and risk register
+
+- P16.2.3.2 Solution/Method Design
+  - Develop implementation methods or candidate solutions for "Incoming and Process Anomaly Handling," use "8D, CAPA, Supplier Quality Improvement" for validation, and clarify the technical approach and resource requirements.
+    - Generate at least 2 candidate solutions
+    - Establish an evaluation matrix and assign quantitative scores
+    - Organize a review and freeze the solution
+
+- P16.2.3.3 Implementation/Prototype/Sample Production
+  - Execute the implementation work for "Incoming and Process Anomaly Handling" according to the design plan, produce prototypes, samples, or complete key steps, and record process data.
+    - Build models/prototypes and record key parameters
+    - Perform simulations or prototype validation
+    - Document anomalies and deviations
+
+- P16.2.3.4 Verification and Issue Closure
+  - Verify the output of "Incoming and Process Anomaly Handling," check whether it meets the completion criteria, record issues, and track them until closure.
+    - Develop test/review plans and pass criteria
+    - Execute tests and record raw data
+    - Output issue list and improvement actions
+
+- P16.2.3.5 Documentation Output and Downstream Delivery
+  - Output the final report/drawings/specifications for "Incoming and Process Anomaly Handling," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+    - Write documents according to templates and reference raw data
+    - Complete internal review and version control
+    - Publish and notify downstream dependents
+
+## 개요
+**소속 단계/작업 패키지**: 소량 시험 생산 및 양산 준비 (Pilot & Production Ramp)
+
+## 핵심 내용
+**방법/도구**: 8D, CAPA, 공급업체 품질 개선
+
+**설계 사고 논리**: 품질 문제를 신속하게 종결하여 하류로 유입되는 것을 방지
+
+**핵심 제약 조건**: 대응 시간, 근본 원인 분석 능력
+
+**완료 기준/산출물**: 8D 보고서, 개선 검증, 불량률 감소
+
+**3단계 하위 작업 및 4단계 핵심 조치:**
+
+- P16.2.3.1 입력 정리 및 목표 정량화
+  - 「입고 및 공정 이상 처리」에 필요한 상류 입력, 참조 기준 및 자원을 정리하고, 완료 기준을 정량화된 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 한다.
+    - 모든 상류 입력 목록을 나열하고 버전을 확인
+    - 검수 기준을 정량화된 KPI로 변환
+    - 작업 담당자, 시간 노드 및 위험 등록부를 수립
+
+- P16.2.3.2 방안/방법 설계
+  - 「입고 및 공정 이상 처리」에 대한 실행 방법 또는 후보 방안을 수립하고, 「8D, CAPA, 공급업체 품질 개선」을 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 한다.
+    - 2개 이상의 후보 방안을 마련
+    - 평가 매트릭스를 수립하고 정량적으로 점수화
+    - 검토를 조직하고 방안을 확정
+
+- P16.2.3.3 구현/프로토타입/시제품 제작
+  - 설계 방안에 따라 「입고 및 공정 이상 처리」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 공정 데이터를 기록한다.
+    - 모델/시제품을 구축하고 핵심 파라미터를 기록
+    - 시뮬레이션 또는 프로토타입 검증을 실행
+    - 이상 및 편차를 기록
+
+- P16.2.3.4 검증 및 문제 종결
+  - 「입고 및 공정 이상 처리」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결까지 추적한다.
+    - 테스트/검토 계획 및 통과 기준을 수립
+    - 테스트를 실행하고 원시 데이터를 기록
+    - 문제 목록 및 개선 조치를 출력
+
+- P16.2.3.5 문서 출력 및 하류 인계
+  - 「입고 및 공정 이상 처리」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하류 단계로의 공식 인계를 완료한다.
+    - 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+    - 내부 검토 및 버전 관리를 완료
+    - 게시하고 하류 의존 부서에 통지

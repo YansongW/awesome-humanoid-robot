@@ -62,3 +62,31 @@ theoretical_depth:
 ## 参考
 
 - Hold project page (https://lecar-lab.github.io/SoFTA/)
+
+## Overview
+
+This paper proposes a humanoid robot learning framework called "Hold," designed to address the coupling challenge between whole-body motion and end-effector stability control when robots perform fine manipulation tasks. The research motivation stems from the temporal jitter and motion incoherence issues present in existing methods when combining dynamic walking with dexterous manipulation. The main contribution lies in transforming complex humanoid robot demonstration trajectories into a supervised action prediction problem. By employing behavioral cloning and action chunking techniques, it achieves end-to-end generation from visual observations to whole-body trajectories and end-effector goals, significantly improving motion smoothness and task execution success rates.
+
+## Content
+
+Humanoid robots require both stable locomotion and dexterous end-effector manipulation in scenarios such as household service and precision assembly. However, existing motion control methods often decouple walking and manipulation, leading to insufficient positioning accuracy of end-effectors (e.g., wrists and hands) in dynamic environments and temporal jitter in whole-body action sequences. This issue is particularly prominent in tasks requiring "gentle" manipulation (e.g., holding a beverage cup), where even minor motion incoherence can cause object tipping or task failure. Therefore, achieving whole-body coordinated control while ensuring stable tracking of the end-effector has become a key bottleneck for the practical application of humanoid robots.
+
+To address these issues, the proposed Hold framework adopts an end-to-end solution based on imitation learning. Its core workflow is as follows: First, using camera images or multi-view observation data, a visual perception module recovers the scene, target objects, or motion representations. Subsequently, employing ACT (Action Chunking with Transformers) or Behavioral Cloning methods, the whole-body trajectories, end-effector/wrist-hand goals, and low-level controller goals from human demonstrations are modeled as a supervised learning problem. The key design here is to "compress" continuous action sequences into a predictable framework, thereby avoiding the cumulative errors typical of traditional frame-by-frame prediction methods.
+
+In terms of technical innovation, the Hold framework introduces action chunking and closed-loop execution strategies. Action chunking predicts a continuous sequence of actions as a whole rather than frame by frame, effectively reducing temporal jitter caused by single-step prediction deviations. Meanwhile, the closed-loop execution mechanism allows the system to fine-tune actions based on real-time sensor feedback during operation, further enhancing the stability and robustness of the end-effector. Additionally, the framework specifically emphasizes the generation of "gentle" motion patterns, optimizing trajectory smoothness and force control constraints to maintain a stable end-effector posture during walking.
+
+Regarding experimental validation, the Hold framework was evaluated across various humanoid robot manipulation tasks, including walking while holding objects, mobile grasping, and fine placement. Results show that, compared to baseline methods, the system employing action chunking and closed-loop execution achieves significant improvements in end-effector position error, motion smoothness, and task success rates. Particularly in scenarios requiring high-precision wrist-hand control, the Hold framework effectively suppresses end-effector jitter caused by gait transitions, demonstrating its practical value in "gentle" humanoid motion control. This work provides a feasible technical pathway for humanoid robots to transition from laboratory environments to real-world applications such as household service and medical assistance.
+
+## 개요
+
+본 논문에서는 인간형 로봇이 정밀 조작 작업을 수행할 때 전신 운동과 말단 실행기 안정 제어의 결합 문제를 해결하기 위해 "Hold"라는 인간형 로봇 학습 프레임워크를 제안한다. 연구 동기는 기존 방법이 동적 보행과 기민한 조작을 결합할 때 발생하는 시간적 지터(jitter)와 동작 불연속성 문제에서 비롯되었다. 주요 기여는 복잡한 인간형 로봇 시연 궤적을 지도 가능한 동작 예측 문제로 변환하고, 행동 복제(Behavioral Cloning) 및 동작 청킹(Action Chunk) 기술을 통해 시각 관측에서 전신 궤적과 말단 실행기 목표까지의 종단 간 생성을 실현하여, 운동 평활성과 작업 실행 성공률을 크게 향상시킨 점이다.
+
+## 핵심 내용
+
+인간형 로봇은 가사 서비스, 정밀 조립 등의 환경에서 안정적인 이동 능력과 기민한 말단 조작 능력을 동시에 갖추어야 한다. 그러나 기존 운동 제어 방법은 종종 보행과 조작을 분리하여 설계함으로써, 동적 환경에서 말단 실행기(예: 손목-손)의 위치 정밀도가 부족하고 전신 동작 시퀀스에 시간적 지터가 발생하기 쉽다. 이 문제는 "온화한" 조작(예: 음료 컵 들기)이 필요한 작업에서 특히 두드러지는데, 미세한 동작 불연속성이라도 물체 전복이나 작업 실패로 이어질 수 있기 때문이다. 따라서 전신 협조 제어를 구현하고 말단 실행기의 안정적인 추적을 보장하는 것이 인간형 로봇의 실용화를 위한 핵심 병목이 된다.
+
+이러한 문제를 해결하기 위해 본 논문에서 제안하는 Hold 프레임워크는 모방 학습 기반의 종단 간 솔루션을 채택한다. 핵심 프로세스는 다음과 같다. 먼저, 카메라 이미지 또는 다중 시점 관측 데이터를 통해 시각 인식 모듈을 활용하여 장면, 목표 물체 또는 운동 표현을 복원한다. 이후 ACT(Action Chunking with Transformers) 또는 행동 복제(Behavioral Cloning) 방법을 사용하여 인간 시연의 전신 궤적, 말단 실행기/손목-손 목표 및 하위 제어기 목표를 지도 학습 문제로 모델링한다. 이 설계의 핵심은 연속적인 동작 시퀀스를 예측 가능한 프레임워크로 "압축"하여, 기존 방법에서 프레임별 예측으로 인해 누적되는 오차를 방지하는 데 있다.
+
+기술 혁신 측면에서 Hold 프레임워크는 동작 청킹(Action Chunk)과 폐루프 실행 전략을 도입한다. 동작 청킹은 연속적인 동작 시퀀스를 프레임별로 생성하는 대신 하나의 전체로 예측하여, 단일 단계 예측 편차로 인한 시간적 지터를 효과적으로 줄인다. 동시에 폐루프 실행 메커니즘은 시스템이 실행 중 실시간 센서 피드백에 따라 동작을 미세 조정할 수 있게 하여, 말단 실행기의 안정성과 강건성을 더욱 향상시킨다. 또한 프레임워크는 궤적 평활도와 힘 제어 제약 조건을 최적화하여 "온화한" 운동 패턴 생성을 특히 강조함으로써, 로봇이 보행 중에도 말단 실행기의 안정적인 자세를 유지할 수 있게 한다.
+
+실험 검증 측면에서 Hold 프레임워크는 물체를 들고 걷기, 이동 중 잡기, 정밀 배치 등 다양한 인간형 로봇 조작 작업에서 평가되었다. 결과는 기준 방법과 비교하여 동작 청킹과 폐루프 실행을 적용한 시스템이 말단 실행기 위치 오차, 운동 평활도 및 작업 성공률에서 모두 유의미한 향상을 보였음을 나타낸다. 특히 고정밀 손목-손 제어가 필요한 시나리오에서 Hold 프레임워크는 보행 전환으로 인한 말단 지터를 효과적으로 억제하여, "온화한" 인간형 운동 제어에서의 실용적 가치를 입증했다. 이 연구는 인간형 로봇이 실험실 환경에서 가사 서비스, 의료 보조 등 실제 응용 분야로 나아갈 수 있는 실현 가능한 기술 경로를 제공한다.

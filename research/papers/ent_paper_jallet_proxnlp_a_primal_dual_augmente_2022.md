@@ -62,3 +62,14 @@ Mathematical optimization is the workhorse behind several aspects of modern robo
 ## 参考
 - http://arxiv.org/abs/2210.02109v1
 
+## Overview
+Mathematical optimization is the workhorse behind several aspects of modern robotics and control. In these applications, the focus is on constrained optimization, and the ability to work on manifolds (such as the classical matrix Lie groups), along with a specific requirement for robustness and speed. In recent years, augmented Lagrangian methods have seen a resurgence due to their robustness and flexibility, their connections to (inexact) proximal-point methods, and their interoperability with Newton or semismooth Newton methods. In the sequel, we present primal-dual augmented Lagrangian method for inequality-constrained problems on manifolds, which we introduced in our recent work, as well as an efficient C++ implementation suitable for use in robotics applications and beyond.
+
+## Content
+Mathematical optimization is the workhorse behind several aspects of modern robotics and control. In these applications, the focus is on constrained optimization, and the ability to work on manifolds (such as the classical matrix Lie groups), along with a specific requirement for robustness and speed. In recent years, augmented Lagrangian methods have seen a resurgence due to their robustness and flexibility, their connections to (inexact) proximal-point methods, and their interoperability with Newton or semismooth Newton methods. In the sequel, we present primal-dual augmented Lagrangian method for inequality-constrained problems on manifolds, which we introduced in our recent work, as well as an efficient C++ implementation suitable for use in robotics applications and beyond.
+
+## 개요
+수학적 최적화는 현대 로봇공학 및 제어의 여러 측면을 뒷받침하는 핵심 도구입니다. 이러한 응용 분야에서는 제약 조건이 있는 최적화, 다양체(예: 고전적인 행렬 리 군)에서 작업할 수 있는 능력, 그리고 견고성과 속도에 대한 특정 요구 사항이 중점적으로 다루어집니다. 최근 몇 년간, 증강 라그랑주 방법은 그 견고성과 유연성, (부정확한) 근접점 방법과의 연결성, 그리고 뉴턴 방법 또는 반평활 뉴턴 방법과의 상호 운용성 덕분에 다시 주목받고 있습니다. 이어서, 우리는 최근 연구에서 소개한 다양체 상의 부등식 제약 문제를 위한 원시-쌍대 증강 라그랑주 방법과 로봇공학 응용 및 그 이상에 적합한 효율적인 C++ 구현을 제시합니다.
+
+## 핵심 내용
+수학적 최적화는 현대 로봇공학 및 제어의 여러 측면을 뒷받침하는 핵심 도구입니다. 이러한 응용 분야에서는 제약 조건이 있는 최적화, 다양체(예: 고전적인 행렬 리 군)에서 작업할 수 있는 능력, 그리고 견고성과 속도에 대한 특정 요구 사항이 중점적으로 다루어집니다. 최근 몇 년간, 증강 라그랑주 방법은 그 견고성과 유연성, (부정확한) 근접점 방법과의 연결성, 그리고 뉴턴 방법 또는 반평활 뉴턴 방법과의 상호 운용성 덕분에 다시 주목받고 있습니다. 이어서, 우리는 최근 연구에서 소개한 다양체 상의 부등식 제약 문제를 위한 원시-쌍대 증강 라그랑주 방법과 로봇공학 응용 및 그 이상에 적합한 효율적인 C++ 구현을 제시합니다.

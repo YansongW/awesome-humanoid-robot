@@ -90,4 +90,64 @@ related_entities:
 ## 参考
 - [J. Nocedal and S. J. Wright, Numerical Optimization, 2nd ed., Springer, 2006](https://doi.org/10.1007/978-0-387-40065-5)
 
+## Overview
+A class of optimization algorithms that solve constrained optimization problems by using barrier or penalty functions to follow a smooth central path within the feasible region.
 
+## Content
+### Definition and Positioning of Interior-Point Methods
+Interior-point methods belong to the **algorithm** category. Their fields include: basic disciplines. Value chain level: foundational layer. A class of optimization algorithms that solve constrained optimization problems by using barrier or penalty functions to follow a smooth central path within the feasible region. The English name is *Interior-point method*. The Korean name is *내점법*.
+
+### Mathematical and Theoretical Foundations of Interior-Point Methods
+Interior-point methods are built upon relevant mathematical theories and physical laws. Understanding their underlying assumptions, constraints, and derivation process is a prerequisite for correctly applying this method.
+Specifically, attention should be paid to the input space, output space, objective function, and convergence or stability guarantees.
+In humanoid robots, which are high-dimensional, underactuated, and strongly coupled systems, interior-point methods typically need to balance real-time performance, accuracy, and robustness.
+
+### Algorithm Steps and Implementation Key Points
+When implementing interior-point methods in practice, it is necessary to specify initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Choosing appropriate numerical methods, linear algebra solvers, and parallel computing strategies can significantly improve computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable operation of the algorithm on real platforms.
+
+### Typical Applications and Limitations
+Interior-point methods can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, their computational complexity, dependence on model accuracy, and online adaptability remain key issues to address in practical deployment.
+
+### Related Tags
+- optimization
+- constrained_optimization
+- interior_point
+- barrier_method
+- central_path
+
+### Role in Humanoid Robot Systems
+As one of the key algorithms in the humanoid robot industry chain, interior-point methods play an important role in system design, performance optimization, and industrial application. They interact with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall robot performance. Related research and applications are continuously advancing to further improve their reliability, efficiency, and cost-effectiveness in real-world scenarios.
+
+## 개요
+장애 함수 또는 벌칙 함수를 통해 실행 가능 영역 내부에서 매끄러운 중심 경로를 따라 제약 최적화 문제를 해결하는 최적화 알고리즘의 한 종류.
+
+## 핵심 내용
+### 내점법의 정의와 위치
+내점법은 **알고리즘** 유형에 속합니다. 관련 분야는 기초 학문을 포함합니다. 가치 사슬 계층은 기초 계층입니다. 장애 함수 또는 벌칙 함수를 통해 실행 가능 영역 내부에서 매끄러운 중심 경로를 따라 제약 최적화 문제를 해결하는 최적화 알고리즘의 한 종류입니다. 영문 명칭은 *Interior-point method*입니다. 한글 명칭은 *내점법*입니다.
+
+### 내점법의 수학적 및 원리적 기초
+내점법은 관련 수학 이론과 물리 법칙에 기반을 둡니다. 그 전제 가정, 제약 조건 및 유도 과정을 이해하는 것이 이 방법을 올바르게 적용하기 위한 전제입니다.
+구체적으로는 입력 공간, 출력 공간, 목적 함수 및 수렴성 또는 안정성 보장에 주목해야 합니다.
+인간형 로봇과 같은 고차원, 저구동, 강결합 시스템에서 내점법은 일반적으로 실시간성, 정밀도 및 강건성 사이에서 균형을 맞춰야 합니다.
+
+### 알고리즘 단계와 구현 요점
+내점법을 실제로 구현할 때는 초기화 조건, 반복 규칙, 중단 기준 및 매개변수 최적화 전략을 명확히 해야 합니다.
+수치적 방법, 선형 대수 솔버 및 병렬 계산 전략을 합리적으로 선택하면 계산 효율성과 안정성을 크게 향상시킬 수 있습니다.
+동시에 모델 오차, 센서 노이즈 및 액추에이터 포화와 같은 공학적 제약을 충분히 고려하여 알고리즘이 실제 플랫폼에서 안정적으로 작동하도록 해야 합니다.
+
+### 대표적 응용과 한계
+내점법은 인간형 로봇의 운동 계획, 제어 최적화, 상태 추정 및 학습 알고리즘 등 여러 단계에 적용될 수 있습니다.
+그러나 계산 복잡성, 모델 정밀도에 대한 의존성 및 온라인 적응 능력은 실제 배치에서 중점적으로 해결해야 할 문제입니다.
+
+### 관련 태그
+- optimization
+- constrained_optimization
+- interior_point
+- barrier_method
+- central_path
+
+### 인간형 로봇 시스템에서의 역할
+인간형 로봇 산업 체인에서 핵심 알고리즘 중 하나로서 내점법은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.

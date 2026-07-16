@@ -54,3 +54,14 @@ Teaming up with ELP, a specialist for technical equipment for defusing service, 
 ## 参考
 - http://www.RoboticsTomorrow.com/news/2026/06/26/roboverse-reply-impresses-at-elrob-2026-with-intelligent-robotic-systems-for-critical-missions/26779
 
+## Overview
+Teaming up with ELP, a specialist for technical equipment for defusing service, the company demonstrated outstanding performance alongside a field of international participants from June 15 to 19, proving that its autonomous solutions operate reliably under real-world conditions.
+
+## Content
+Teaming up with ELP, a specialist for technical equipment for defusing service, the company demonstrated outstanding performance alongside a field of international participants from June 15 to 19, proving that its autonomous solutions operate reliably under real-world conditions.
+
+## 개요
+ELP(폭발물 처리 기술 장비 전문 기업)와 협력하여, 이 회사는 6월 15일부터 19일까지 국제 참가자들과 함께 뛰어난 성과를 입증하며 자율 솔루션이 실제 조건에서 안정적으로 작동함을 증명했습니다.
+
+## 핵심 내용
+ELP(폭발물 처리 기술 장비 전문 기업)와 협력하여, 이 회사는 6월 15일부터 19일까지 국제 참가자들과 함께 뛰어난 성과를 입증하며 자율 솔루션이 실제 조건에서 안정적으로 작동함을 증명했습니다.

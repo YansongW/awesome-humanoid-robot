@@ -86,5 +86,90 @@ theoretical_depth:
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
 
+## Overview
+**Phase/Work Package**: Structural FEA
 
+## Content
+**Method/Tool**: Statics, dynamic impact, drop, typical motion reaction forces, fatigue load spectrum
 
+**Design Logic**: The most severe operating condition determines the structural design; includes single-leg support, fall impact, and maximum payload grasping
+
+**Key Constraints**: Load transfer path, safety factor, test verification
+
+**Completion Criteria/Deliverable**: Load Case Table: load magnitude, direction, point of application, occurrence probability
+
+**Level-3 Subtasks and Level-4 Key Actions:**
+
+- P8.1.1.1 Input Review and Target Quantification
+  - Organize upstream inputs, reference standards, and resources required for "Load Case Definition"; convert completion criteria into quantifiable acceptance indicators; and define the Owner and milestones.
+    - List all upstream inputs and confirm versions
+    - Convert acceptance criteria into quantifiable KPIs
+    - Establish task Owner, timeline, and risk register
+
+- P8.1.1.2 Approach/Method Design
+  - Develop implementation methods or candidate solutions for "Load Case Definition"; demonstrate using "statics, dynamic impact, drop, typical motion reaction forces, fatigue load spectrum"; clarify technical approach and resource requirements.
+    - Generate at least 2 candidate solutions
+    - Establish an evaluation matrix with quantitative scoring
+    - Organize review and freeze the solution
+
+- P8.1.1.3 Implementation/Prototype/Sample Fabrication
+  - Execute the implementation of "Load Case Definition" according to the design solution; fabricate prototypes, samples, or complete key steps; record process data.
+    - Build models/prototypes and record key parameters
+    - Perform simulation or prototype verification
+    - Record anomalies and deviations
+
+- P8.1.1.4 Verification and Issue Closure
+  - Verify the output of "Load Case Definition"; check whether completion criteria are met; record issues and track until closure.
+    - Develop test/review plan and pass criteria
+    - Execute tests and record raw data
+    - Output issue list and improvement measures
+
+- P8.1.1.5 Documentation and Downstream Delivery
+  - Output the final report/drawing/specification for "Load Case Definition"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+    - Write documentation per template and reference raw data
+    - Complete internal review and version control
+    - Release and notify downstream dependents
+
+## 개요
+**소속 단계/작업 패키지**: 구조 강도 시뮬레이션 및 반복 (Structural FEA)
+
+## 핵심 내용
+**방법 / 도구**: 정역학, 동적 충격, 낙하, 대표 운동 반력, 피로 하중 스펙트럼
+
+**설계 사고 논리**: 가장 가혹한 운전 조건이 구조 설계를 결정함; 단일 지지, 낙하 충격, 최대 부하 파지를 포함
+
+**핵심 제약 조건**: 하중 전달 경로, 안전 계수, 테스트 검증
+
+**완료 기준 / 산출물**: 《하중 조건표》: 하중 크기, 방향, 작용점, 발생 확률
+
+**3단계 하위 작업 및 4단계 핵심 조치:**
+
+- P8.1.1.1 입력 정리 및 목표 정량화
+  - 「하중 조건 정의」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+    - 모든 상위 입력 목록을 작성하고 버전 확인
+    - 검수 기준을 정량화 가능한 KPI로 변환
+    - 작업 Owner, 시간 노드 및 위험 등록부 구축
+
+- P8.1.1.2 방안/방법 설계
+  - 「하중 조건 정의」에 대한 실행 방법 또는 후보 방안을 수립하고, 「정역학, 동적 충격, 낙하, 대표 운동 반력, 피로 하중 스펙트럼」을 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 함.
+    - 2개 이상의 후보 방안 도출
+    - 평가 매트릭스를 구축하고 정량적 점수 부여
+    - 검토를 조직하고 방안 확정
+
+- P8.1.1.3 구현/프로토타입/시제품 제작
+  - 설계 방안에 따라 「하중 조건 정의」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록.
+    - 모델/시제품을 구축하고 핵심 매개변수 기록
+    - 시뮬레이션 또는 프로토타입 검증 실행
+    - 이상 및 편차 기록
+
+- P8.1.1.4 검증 및 문제 종결
+  - 「하중 조건 정의」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결까지 추적.
+    - 테스트/검토 계획 및 통과 기준 수립
+    - 테스트를 실행하고 원시 데이터 기록
+    - 문제 목록 및 개선 조치 출력
+
+- P8.1.1.5 문서 출력 및 하위 전달
+  - 「하중 조건 정의」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료.
+    - 템플릿에 따라 문서를 작성하고 원시 데이터 인용
+    - 내부 검토 및 버전 관리 완료
+    - 게시 및 하위 의존 부서에 통지

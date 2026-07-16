@@ -119,3 +119,19 @@ Robustness evaluation is critical for humanoid deployment in unstructured human 
 - [LIBERO-Plus: In-depth Robustness Analysis of Vision-Language-Action Models](https://arxiv.org/abs/2510.13626)
 - [LIBERO-Plus GitHub Repository](https://github.com/sylvestf/LIBERO-plus)
 
+## 개요
+시각-언어-행동 모델을 위한 강건성 벤치마크로, LIBERO에서 확장되어 10,030개의 작업을 포함하며, 카메라 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈 및 물체 배치의 7가지 교란 차원을 다룹니다.
+
+## 핵심 내용
+### LIBERO-Plus의 정의와 위치
+LIBERO-Plus는 **평가 벤치마크** 유형에 속하며, 영문 명칭은 *LIBERO-Plus*입니다.
+시각-언어-행동 모델을 위한 강건성 벤치마크로, LIBERO에서 확장되어 10,030개의 작업을 포함하며, 카메라 시점, 로봇 초기 상태, 언어, 조명, 배경, 노이즈 및 물체 배치의 7가지 교란 차원을 다룹니다.
+
+### LIBERO-Plus의 주요 정보
+다음은 LIBERO-Plus에 대한 상세 설명을 중·영문 독자를 위해 정리한 내용입니다.
+
+## 초록
+
+> **생활 속 예시**: 이는 자율주행 자동차의 극한 기후 도로 테스트와 같습니다. 맑은 날뿐만 아니라 비, 안개, 어둠, 눈부심, 혼잡 및 다양한 도로 표시 아래에서 반복적으로 테스트해야 시스템의 취약점을 발견할 수 있습니다.
+
+> **자연어 논리**: LIBERO-Plus는 시각-언어-행동 모델의 강건성을 위한 벤치마크로, 카메라 시점, 로봇 초기 상태, 언어 명령, 조명, 배경, 노이즈 및 물체 배치의 7가지 차원에서 작업을 체계적으로 교란합니다. 이는 VLA 모델이 실제 환경 변화에 얼마나 취약한지를 밝혀내며, 일반화 능력 개선을 위한 근거를 제공합니다.

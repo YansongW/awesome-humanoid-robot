@@ -58,3 +58,14 @@ In imitation learning, robots are supposed to learn from demonstrations of the d
 ## 参考
 - http://arxiv.org/abs/2603.02783v1
 
+## Overview
+In imitation learning, robots are supposed to learn from demonstrations of the desired behavior. Most of the work in imitation learning for swarm robotics provides the demonstrations as rollouts of an existing policy. In this work, we provide a framework based on generative adversarial imitation learning that aims to learn collective behaviors from human demonstrations. Our framework is evaluated across six different missions, learning both from manual demonstrations and demonstrations derived from a PPO-trained policy. Results show that the imitation learning process is able to learn qualitatively meaningful behaviors that perform similarly well as the provided demonstrations. Additionally, we deploy the learned policies on a swarm of TurtleBot 4 robots in real-robot experiments. The exhibited behaviors preserved their visually recognizable character and their performance is comparable to the one achieved in simulation.
+
+## Content
+In imitation learning, robots are supposed to learn from demonstrations of the desired behavior. Most of the work in imitation learning for swarm robotics provides the demonstrations as rollouts of an existing policy. In this work, we provide a framework based on generative adversarial imitation learning that aims to learn collective behaviors from human demonstrations. Our framework is evaluated across six different missions, learning both from manual demonstrations and demonstrations derived from a PPO-trained policy. Results show that the imitation learning process is able to learn qualitatively meaningful behaviors that perform similarly well as the provided demonstrations. Additionally, we deploy the learned policies on a swarm of TurtleBot 4 robots in real-robot experiments. The exhibited behaviors preserved their visually recognizable character and their performance is comparable to the one achieved in simulation.
+
+## 개요
+모방 학습에서 로봇은 원하는 행동의 시연을 통해 학습해야 합니다. 군집 로봇 공학을 위한 모방 학습 연구의 대부분은 기존 정책의 롤아웃 형태로 시연을 제공합니다. 본 연구에서는 인간의 시연으로부터 집단 행동을 학습하는 것을 목표로 하는 생성적 적대적 모방 학습 기반 프레임워크를 제시합니다. 이 프레임워크는 수동 시연과 PPO 훈련 정책에서 파생된 시연 모두를 학습하며, 여섯 가지 다양한 임무에 걸쳐 평가되었습니다. 결과는 모방 학습 과정이 제공된 시연과 유사한 성능을 보이는 질적으로 의미 있는 행동을 학습할 수 있음을 보여줍니다. 또한, 학습된 정책을 실제 로봇 실험에서 TurtleBot 4 로봇 군집에 배포했습니다. 나타난 행동은 시각적으로 인식 가능한 특성을 유지했으며, 성능은 시뮬레이션에서 달성된 것과 비슷했습니다.
+
+## 핵심 내용
+모방 학습에서 로봇은 원하는 행동의 시연을 통해 학습해야 합니다. 군집 로봇 공학을 위한 모방 학습 연구의 대부분은 기존 정책의 롤아웃 형태로 시연을 제공합니다. 본 연구에서는 인간의 시연으로부터 집단 행동을 학습하는 것을 목표로 하는 생성적 적대적 모방 학습 기반 프레임워크를 제시합니다. 이 프레임워크는 수동 시연과 PPO 훈련 정책에서 파생된 시연 모두를 학습하며, 여섯 가지 다양한 임무에 걸쳐 평가되었습니다. 결과는 모방 학습 과정이 제공된 시연과 유사한 성능을 보이는 질적으로 의미 있는 행동을 학습할 수 있음을 보여줍니다. 또한, 학습된 정책을 실제 로봇 실험에서 TurtleBot 4 로봇 군집에 배포했습니다. 나타난 행동은 시각적으로 인식 가능한 특성을 유지했으며, 성능은 시뮬레이션에서 달성된 것과 비슷했습니다.

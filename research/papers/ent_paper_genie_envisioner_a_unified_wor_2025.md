@@ -64,3 +64,35 @@ Genie Envisioner 提出了一种面向机器人操作的统一世界基础平台
 ## 参考
 
 - Genie Envisioner project page (https://genie-envisioner.github.io)
+
+## Overview
+
+Genie Envisioner proposes a unified world foundation platform for robotic manipulation, aiming to address the heterogeneity between multimodal perception and action generation in current robotic manipulation tasks. By encoding language instructions, visual observations, proprioceptive states, and joint sequences into a unified multimodal representation, this platform reframes action generation as a conditional generation problem, enabling more generalizable trajectory sampling in complex manipulation tasks. Its primary contribution lies in integrating multiple paradigms such as behavior cloning, diffusion policy, and world model prediction, providing a unified framework for building general-purpose robotic manipulation agents.
+
+## Content
+
+In recent years, the core challenge in robotic manipulation has been how to effectively align high-dimensional perceptual information (e.g., vision, language) with low-level control signals (e.g., joint sequences). Traditional methods often treat perception and control separately, leading to significant performance degradation when models generalize across different scenes and objects. Genie Envisioner is proposed to address this bottleneck, aiming to establish a unified platform capable of simultaneously handling multimodal inputs and multimodal action distributions, thereby overcoming the limitations of existing manipulation models in task diversity.
+
+The core framework of this platform is based on a three-stage design of "encoding-prediction-sampling." First, language instructions, multi-view camera images, proprioceptive states, and joint sequences are encoded into a shared multimodal representation space. This process relies on a cross-modal alignment mechanism to ensure that information from different modalities is fused at both semantic and geometric levels. Subsequently, the platform introduces ACT (Action Chunking with Transformers) and diffusion policy/flow matching techniques, modeling action generation as a conditional generation problem: given the current scene representation, the model learns to sample executable trajectories from a multimodal action distribution. Finally, a world model/video prediction module is used to evaluate the physical plausibility of generated trajectories and predict future scene representations, forming a closed-loop feedback.
+
+The core of the key technological innovation lies in introducing diffusion policy and flow matching into the action generation process for robotic manipulation. Unlike traditional deterministic action prediction, diffusion policy allows the model to sample diverse trajectories through an iterative denoising process within the action distribution, thereby adapting to the inherent stochasticity and multiple solutions in manipulation tasks. Meanwhile, flow matching further improves sampling efficiency, enabling the model to achieve real-time inference while maintaining generation quality. Additionally, the platform uses the world model as a prior constraint, verifying the long-term consistency of action sequences through video prediction, significantly reducing cumulative errors.
+
+In terms of experimental validation, Genie Envisioner has been evaluated on various robotic manipulation benchmark tasks, covering typical scenarios such as grasping, stacking, and assembly. Results show that the platform outperforms traditional end-to-end imitation learning baselines in cross-object generalization and task success rates, especially when dealing with unseen object shapes and layouts, where the diverse sampling capability of diffusion policy brings significant robustness improvements. Furthermore, the introduction of the world model allows the model to make forward-looking adjustments for long-horizon operations, reducing failure cases caused by dynamic environmental changes.
+
+From an application perspective, Genie Envisioner provides a scalable infrastructure for developing general-purpose robotic manipulation agents. Its unified multimodal representation and conditional generation framework are not only applicable to single-arm manipulation but can also be extended to more complex scenarios such as dual-arm coordination and mobile manipulation. In the future, this platform is expected to integrate with large-scale pre-trained language-vision models, further advancing robots from task-specific execution to general task understanding.
+
+## 개요
+
+Genie Envisioner는 로봇 조작을 위한 통합 세계 기반 플랫폼을 제안하며, 현재 로봇 조작에서 다중 모달 인식과 동작 생성 간의 이질성 문제를 해결하는 것을 목표로 합니다. 이 플랫폼은 언어 명령, 시각적 관측, 본체 상태 및 관절 시퀀스를 다중 모달 표현으로 통합 인코딩하여 동작 생성을 조건부 생성 문제로 재구성함으로써 복잡한 조작 작업에서 더 높은 일반화 능력을 가진 궤적 샘플링을 가능하게 합니다. 주요 기여는 행동 복제, 확산 정책 및 세계 모델 예측과 같은 다양한 패러다임을 융합하여 범용 로봇 조작 에이전트 구축을 위한 통합 프레임워크를 제공하는 데 있습니다.
+
+## 핵심 내용
+
+최근 로봇 조작 분야의 핵심 과제는 고차원 인식 정보(예: 시각, 언어)와 저수준 제어 신호(예: 관절 시퀀스)를 효과적으로 정렬하는 방법입니다. 전통적인 방법은 일반적으로 인식과 제어를 분리하여 처리하므로, 모델이 장면이나 물체를 넘어 일반화할 때 성능이 현저히 저하됩니다. Genie Envisioner는 이러한 병목 현상을 해결하기 위해 제안되었으며, 다중 모달 입력과 다중 모달 동작 분포를 동시에 처리할 수 있는 통합 플랫폼을 구축하여 기존 조작 모델의 작업 다양성 한계를 극복하려고 합니다.
+
+이 플랫폼의 핵심 프레임워크는 "인코딩-예측-샘플링"의 3단계 설계를 기반으로 합니다. 먼저, 언어 명령, 다중 시점 카메라 이미지, 본체 상태 및 관절 시퀀스가 공유된 다중 모달 표현 공간으로 인코딩되며, 이 과정은 교차 모달 정렬 메커니즘에 의존하여 서로 다른 모달의 정보가 의미론적 및 기하학적 수준에서 융합되도록 합니다. 그런 다음, 플랫폼은 ACT(행동 복제 모방 학습)와 확산 정책/흐름 매칭 기술을 도입하여 동작 생성을 조건부 생성 문제로 모델링합니다. 즉, 현재 장면 표현이 주어지면 모델은 다중 모달 동작 분포에서 실행 가능한 궤적을 샘플링하는 방법을 학습합니다. 마지막으로, 세계 모델/비디오 예측 모듈은 생성된 궤적의 물리적 타당성을 평가하고 미래 장면 표현을 예측하여 폐쇄 루프 피드백을 형성합니다.
+
+핵심 기술 혁신은 확산 정책과 흐름 매칭을 로봇 조작의 동작 생성 프로세스에 도입한 데 있습니다. 전통적인 결정론적 동작 예측과 달리, 확산 정책은 모델이 반복적 잡음 제거 과정을 통해 동작 분포에서 다양한 궤적을 샘플링할 수 있게 하여 조작 작업에 내재된 무작위성과 다중 해결 가능성에 적응합니다. 동시에, 흐름 매칭 방법은 샘플링 효율성을 더욱 향상시켜 모델이 생성 품질을 유지하면서 실시간 추론을 가능하게 합니다. 또한, 플랫폼은 세계 모델을 사전 제약 조건으로 사용하여 비디오 예측을 통해 동작 시퀀스의 장기적 일관성을 검증함으로써 누적 오류를 크게 줄입니다.
+
+실험 검증 측면에서, Genie Envisioner는 잡기, 쌓기, 조립 등 다양한 로봇 조작 벤치마크 작업에서 평가되었습니다. 결과는 이 플랫폼이 전통적인 종단 간 모방 학습 기준선보다 물체 간 일반화와 작업 성공률에서 우수함을 보여주었으며, 특히 보지 못한 물체 모양과 배치에 직면했을 때 확산 정책의 다양한 샘플링 능력이 현저한 견고성 향상을 가져왔습니다. 동시에, 세계 모델의 도입으로 모델이 장시간 조작에 대해 선제적 조정을 수행할 수 있게 되어 환경 동적 변화로 인한 실패 사례가 감소했습니다.
+
+응용 가치 측면에서, Genie Envisioner는 범용 로봇 조작 에이전트 개발을 위한 확장 가능한 기본 아키텍처를 제공합니다. 통합된 다중 모달 표현과 조건부 생성 프레임워크는 단일 로봇 팔 조작뿐만 아니라 이중 팔 협력, 이동 조작 등 더 복잡한 시나리오로 확장될 수 있습니다. 미래에는 이 플랫폼이 대규모 사전 훈련된 언어-시각 모델과 결합되어 로봇이 특정 작업 실행에서 일반 작업 이해로 진화하는 것을 더욱 촉진할 것으로 기대됩니다.

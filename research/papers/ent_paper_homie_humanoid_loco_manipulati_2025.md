@@ -64,3 +64,31 @@ HOMIE的模型框架以同构外骨骼驾驶舱为物理接口，操作者通过
 
 ## 参考
 - HOMIE project page (https://homietele.github.io/)
+
+## Overview
+
+The whole-body loco-manipulation of humanoid robots faces the challenge of a broken data loop: there is a lack of a trainable and reusable connection mechanism between high-level task planning and low-level motion control. HOMIE (Homologous Isomorphic Exoskeleton) proposes a homologous isomorphic exoskeleton cockpit solution that integrates teleoperation data, simulation interaction data, and body state. Through a unified training and deployment pipeline of PPO/RL policies and whole-body controllers (WBC/MPC), it achieves end-to-end mapping from human operation to robot whole-body trajectories. This work aims to reduce the discontinuities in skill transfer for humanoid robots and provide a scalable intelligent framework for loco-manipulation.
+
+## Content
+
+The loco-manipulation of humanoid robots in unstructured environments has long been plagued by the semantic gap between "high-level intentions" and "low-level actions." Traditional methods typically separate task planning, motion planning, and low-level control, resulting in strategies that are difficult to reuse and have limited generalization capabilities. Addressing this core issue, HOMIE proposes to unify human operation data collected via teleoperation exoskeletons, interaction data from simulation environments, and robot body states with joint sequences into a closed data loop, thereby constructing a trainable pathway from human demonstration to whole-body robot actions.
+
+The model framework of HOMIE uses a homologous isomorphic exoskeleton cockpit as the physical interface. The operator wears an exoskeleton that matches the kinematic structure of the robot, enabling real-time mapping of upper limb and whole-body actions. The system simultaneously collects body states (e.g., joint angles, torques) and operator commands, while leveraging simulation environments to generate diverse terrain and scene representations. These multi-source data are fed into a unified PPO/RL training pipeline, which outputs whole-body trajectories and action sequences. A key innovation is embedding the whole-body controller (WBC) and model predictive control (MPC) into the same training and deployment pipeline, allowing high-level strategies (e.g., navigation goals) to be directly translated into low-level controller objectives, eliminating the interface gap between strategy and controller in traditional architectures.
+
+At the technological innovation level, HOMIE achieves three breakthroughs: First, it introduces the concept of "homologous mapping," where the exoskeleton and robot share the same kinematic topology, reducing cognitive load during teleoperation. Second, it constructs a closed data loop, enabling simulation data and real teleoperation data to complement each other in PPO training, enhancing the robustness of strategies to unseen terrains. Third, it treats WBC/MPC as trainable modules rather than fixed solvers, allowing the strategy to adaptively adjust whole-body coordination during training. This design enables the robot to simultaneously perform tasks such as grasping and carrying while walking, without explicitly separating locomotion and manipulation phases.
+
+In terms of experimental validation, HOMIE was tested on loco-manipulation tasks in both simulation environments and real robot platforms, including object grasping during dynamic terrain walking and whole-body obstacle avoidance in confined spaces. Results show that strategies optimized through the unified training pipeline achieve significantly higher task success rates compared to baseline methods with staged training, and the teleoperation latency of the exoskeleton cockpit remains within an acceptable range. In terms of application value, this framework can serve scenarios requiring remote whole-body control, such as disaster rescue and industrial inspection, providing a data-efficient and strategy-transferable solution for the practical deployment of humanoid robots.
+
+## 개요
+
+휴머노이드 로봇의 전신 이동 조작(loco-manipulation)은 데이터 폐쇄 루프(data closed-loop)의 단절이라는 과제에 직면해 있습니다: 상위 수준의 작업 계획과 하위 수준의 운동 제어 사이에 훈련 가능하고 재사용 가능한 연결 메커니즘이 부족합니다. HOMIE(Homologous Isomorphic Exoskeleton)는 동형 외골격 조종석(homologous isomorphic exoskeleton cockpit) 방식을 제안하여 원격 조작 데이터, 시뮬레이션 상호작용 데이터 및 본체 상태를 융합하고, PPO/RL 정책과 전신 제어기(WBC/MPC)의 통합 훈련 및 배포 체인을 통해 인간 조작에서 로봇 전신 궤적으로의 종단 간 매핑을 구현합니다. 이 연구는 휴머노이드 로봇의 기술 이전에서 발생하는 단절 지점을 줄이고, 이동 조작을 위한 확장 가능한 지능형 프레임워크를 제공하는 것을 목표로 합니다.
+
+## 핵심 내용
+
+휴머노이드 로봇의 비정형 환경에서의 이동 조작은 오랫동안 "상위 수준 의도-하위 수준 동작" 간의 의미적 격차(semantic gap)에 시달려 왔습니다. 전통적인 방법은 일반적으로 작업 계획, 운동 계획 및 하위 수준 제어를 분리하여 정책의 재사용이 어렵고 일반화 능력이 제한적입니다. HOMIE는 이 핵심 문제를 해결하기 위해 원격 조작 외골격으로 수집된 인간 조작 데이터, 시뮬레이션 환경의 상호작용 데이터, 로봇 본체 상태 및 관절 시퀀스를 데이터 폐쇄 루프에 통합하여 인간 시연에서 로봇 전신 동작으로 이어지는 훈련 가능한 경로를 구축합니다.
+
+HOMIE의 모델 프레임워크는 동형 외골격 조종석을 물리적 인터페이스로 사용하며, 조작자는 로봇의 운동학 구조와 일치하는 외골격을 착용하여 상지 및 전신 동작을 실시간으로 매핑합니다. 시스템은 본체 상태(예: 관절 각도, 토크)와 조작자 명령을 동시에 수집하고, 시뮬레이션 환경을 활용하여 다양한 지형 및 장면 표현을 생성합니다. 이러한 다중 소스 데이터는 통합된 PPO/RL 훈련 파이프라인에 입력되어 전신 궤적 및 동작 시퀀스를 출력합니다. 핵심 혁신은 전신 제어기(WBC)와 모델 예측 제어(MPC)를 동일한 훈련 및 배포 체인에 내장하여 상위 수준 정책(예: 탐색 목표)이 하위 수준 제어기 목표로 직접 변환될 수 있도록 하여, 기존 아키텍처에서 정책과 제어기 간의 인터페이스 단절을 제거한 점입니다.
+
+기술 혁신 측면에서 HOMIE는 세 가지 주요 돌파구를 달성했습니다: 첫째, "동형 매핑(homologous isomorphic mapping)" 개념을 제안하여 외골격과 로봇이 운동학적 위상을 공유함으로써 원격 조작 중 인지 부하를 줄입니다; 둘째, 데이터 폐쇄 루프를 구축하여 시뮬레이션 데이터와 실제 원격 조작 데이터가 PPO 훈련에서 상호 보완되어 보지 못한 지형에 대한 정책의 강건성을 향상시킵니다; 셋째, WBC/MPC를 고정된 솔버가 아닌 훈련 가능한 모듈로 사용하여 정책이 훈련 과정에서 전신 조정 전략을 적응적으로 조정할 수 있도록 합니다. 이러한 설계 덕분에 로봇은 걷는 동시에 물체 잡기, 운반 등의 작업을 수행할 수 있으며, 이동과 조작 단계를 명시적으로 분리할 필요가 없습니다.
+
+실험 검증 측면에서 HOMIE는 시뮬레이션 환경과 실제 로봇 플랫폼에서 이동 조작 작업 테스트를 수행했으며, 여기에는 동적 지형 보행 중 물체 잡기, 좁은 공간에서의 전신 장애물 회피 조작 등이 포함됩니다. 결과에 따르면 통합 훈련 체인을 통해 최적화된 정책은 단계별 훈련 기준 방법보다 작업 성공률이 현저히 높았으며, 외골격 조종석의 원격 조작 지연 시간은 허용 가능한 범위 내로 유지되었습니다. 응용 가치 측면에서 이 프레임워크는 재난 구조, 산업 순찰 등 원격 전신 조작이 필요한 시나리오에 활용될 수 있으며, 휴머노이드 로봇의 실용화를 위한 데이터 효율적이고 정책 이전이 가능한 솔루션을 제공합니다.

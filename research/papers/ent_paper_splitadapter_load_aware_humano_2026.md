@@ -62,3 +62,31 @@ theoretical_depth:
 ## 参考
 
 - SplitAdapter project page (https://splitadapter.github.io/)
+
+## Overview
+
+Humanoid robots face challenges in whole-body coordinated control when performing mobile manipulation tasks, due to load variations and environmental interactions. Existing methods typically treat whole-body control as a single optimization problem, making it difficult to simultaneously balance manipulation precision and motion stability. SplitAdapter proposes a factorized adaptation framework that converts simulation interaction data into trackable body targets, achieving load-aware whole-body trajectory planning through a conditional generation paradigm. This work offers a new approach to bridging the gap between simulation training and real-world deployment, holding significant methodological value in the field of humanoid robot whole-body control.
+
+## Content
+
+Mobile manipulation (loco-manipulation) in humanoid robots requires simultaneous coordination of upper-limb operations and lower-limb movements, while load variations significantly alter the robot's dynamic characteristics, making it difficult for traditional whole-body controllers (WBC) or model predictive control (MPC) to adapt in real time. Existing methods often rely on precise dynamic models or large amounts of real-world data, but simulation-to-real (Sim-to-Real) transfer still faces challenges of model mismatch and insufficient generalization. The core motivation of SplitAdapter is to address load-aware whole-body control by transforming action generation into a conditional generation task, avoiding explicit dependence on a complete dynamic model.
+
+The method proposes a "Factorized Adaptation" framework, which decomposes whole-body control into two key steps: first, extracting trackable body targets from simulation interaction data, which encode ideal motion patterns under load variations; second, using reinforcement learning (PPO/RL) or diffusion policy combined with flow matching techniques to sample executable whole-body trajectories from multimodal action distributions. This design allows the high-level policy to focus on task-level decision-making, while the low-level controller handles trajectory tracking and stability maintenance.
+
+The core of the key technical innovation lies in treating action generation as a conditional generation problem. Unlike directly optimizing whole-body trajectories, SplitAdapter learns the conditional probability of action distributions through diffusion models or flow matching networks, enabling the model to sample robust whole-body action sequences from multimodal distributions based on current load states and task objectives. This generative approach naturally handles multimodal actions, such as selecting different gait and upper-limb posture combinations when carrying heavy loads, thereby enhancing adaptability to load variations. Additionally, the framework supports directly transferring policies trained in simulation to real robots, using body targets as intermediate representations to reduce the difficulty of Sim-to-Real transfer.
+
+In terms of experimental validation, SplitAdapter was tested on mobile manipulation tasks in both simulation environments and real humanoid robot platforms, including scenarios such as load carrying and dynamic balance recovery. Results show that, under large load variations, the method significantly reduces peak joint torques and body sway amplitude compared to traditional WBC/MPC baselines, while maintaining high task success rates. Its application value is reflected in two aspects: on one hand, it provides a feasible control solution for industrial scenarios such as heavy object handling and warehouse logistics; on the other hand, the factorized adaptation framework can be extended to other robot platforms requiring whole-body coordination, such as quadruped robots or exoskeleton systems.
+
+## 개요
+
+휴머노이드 로봇이 이동 조작 작업을 수행할 때, 부하 변화와 환경 상호작용으로 인한 전신 조정 제어 문제에 직면합니다. 기존 방법은 일반적으로 전신 제어를 단일 최적화 문제로 간주하여 조작 정밀도와 운동 안정성을 동시에 고려하기 어렵습니다. SplitAdapter는 시뮬레이션 상호작용 데이터를 추적 가능한 신체 목표로 변환하고, 조건부 생성 패러다임을 통해 부하 인식 전신 궤적 계획을 구현하는 분할 적응 프레임워크를 제안합니다. 이 연구는 시뮬레이션 훈련과 실제 배포 간의 격차를 해소하는 새로운 접근 방식을 제공하며, 휴머노이드 로봇 전신 제어 분야에서 중요한 방법론적 가치를 지닙니다.
+
+## 핵심 내용
+
+휴머노이드 로봇의 이동 조작(loco-manipulation)은 상지 조작과 하지 운동을 동시에 조정해야 하며, 부하 변화는 로봇의 동역학 특성을 크게 변화시켜 기존의 전신 제어기(WBC)나 모델 예측 제어(MPC)가 실시간으로 적응하기 어렵게 만듭니다. 기존 방법은 일반적으로 정밀한 동역학 모델이나 대량의 실제 데이터에 의존하지만, 시뮬레이션에서 실제로의 전이(Sim-to-Real)는 여전히 모델 불일치와 일반화 능력 부족이라는 도전에 직면합니다. SplitAdapter의 핵심 동기는 부하 인식 하의 전신 제어 문제를 해결하는 데 있으며, 동작 생성을 조건부 생성 작업으로 변환하여 완전한 동역학 모델에 대한 명시적 의존을 피합니다.
+
+이 방법은 "분할 적응"(Factorized Adaptation) 프레임워크를 제안하여 전신 제어를 두 가지 핵심 단계로 분해합니다. 첫째, 시뮬레이션 상호작용 데이터에서 추적 가능한 신체 목표(trackable body targets)를 추출하며, 이 목표는 부하 변화 하의 이상적인 운동 패턴을 인코딩합니다. 둘째, 강화 학습(PPO/RL) 또는 확산 정책(diffusion policy)과 흐름 매칭(flow matching) 기술을 활용하여 다중 모드 동작 분포에서 실행 가능한 전신 궤적을 샘플링합니다. 이러한 설계는 상위 정책이 작업 수준의 의사 결정에 집중할 수 있게 하고, 하위 제어기는 궤적 추적과 안정성 유지를 담당합니다.
+
+기술 혁신의 핵심은 동작 생성을 조건부 생성 문제로 간주하는 데 있습니다. 전신 궤적을 직접 최적화하는 것과 달리, SplitAdapter는 확산 모델 또는 흐름 매칭 네트워크를 통해 동작 분포의 조건부 확률을 학습하여, 모델이 현재 부하 상태와 작업 목표에 따라 다중 모드 분포에서 강건한 전신 동작 시퀀스를 샘플링할 수 있게 합니다. 이러한 생성적 방법은 본질적으로 다중 모드 동작을 처리할 수 있는 능력을 가지며, 예를 들어 무거운 물체를 운반할 때 로봇은 다양한 보행 패턴과 상지 자세 조합을 선택하여 부하 변화에 대한 적응성을 향상시킬 수 있습니다. 또한, 프레임워크는 시뮬레이션에서 훈련된 정책을 실제 로봇으로 직접 전이할 수 있도록 지원하며, 신체 목표를 중간 표현으로 사용하여 Sim-to-Real 전이의 난이도를 낮춥니다.
+
+실험 검증 측면에서, SplitAdapter는 시뮬레이션 환경과 실제 휴머노이드 로봇 플랫폼에서 이동 조작 작업(부하 운반, 동적 균형 회복 등)을 테스트했습니다. 결과는 이 방법이 부하 변화 범위가 큰 상황에서 기존 WBC/MPC 기준선에 비해 관절 토크 피크와 신체 흔들림 진폭을 크게 줄이면서도 높은 작업 성공률을 유지함을 보여줍니다. 그 응용 가치는 다음과 같습니다. 한편으로는 산업 현장의 중량물 운반, 창고 물류 등의 작업에 실행 가능한 제어 솔루션을 제공합니다. 다른 한편으로는 분할 적응 프레임워크가 전신 조정이 필요한 다른 로봇 플랫폼(예: 사족 로봇 또는 외골격 시스템)으로 확장될 수 있습니다.

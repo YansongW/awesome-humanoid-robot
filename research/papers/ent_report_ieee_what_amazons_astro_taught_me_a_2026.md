@@ -305,3 +305,15 @@ Character is the difference between a machine people tolerate and a product peop
 
 ## 参考
 - https://spectrum.ieee.org/amazon-astro-robot-sound
+
+## Overview
+Character is the difference between a machine people tolerate and a product people trust. Astro used cameras and other sensors to map and navigate your home and workplace, and could proactively patrol, check up on loved ones, and transport small items using its built-in cargo bin.
+
+## Content
+Character is the difference between a machine people tolerate and a product people trust. Astro used cameras and other sensors to map and navigate your home and workplace, and could proactively patrol, check up on loved ones, and transport small items using its built-in cargo bin. While there was a well-defined feature set and form factor, initially there was no character direction. In fact, even before Astro had a name, there were two main questions—was it simply Alexa on wheels, or was it a robot with its own character? The Astro team was divided. One option was to focus on Alexa, and treat the mobile robot simply as an added utility. Along with the majority of the UX team, I argued for Astro to not focus on Alexa. Our belief was that a thing that moves through your home and turns toward you with intent can never be just an appliance. People would ascribe character to it whether we wanted them to or not, and so the only question was whether we shaped that character or let it happen by accident.
+
+## 개요
+캐릭터는 사람들이 참는 기계와 신뢰하는 제품의 차이입니다. Astro는 카메라와 기타 센서를 사용하여 집과 직장을 매핑하고 탐색하며, 능동적으로 순찰하고 가족을 확인하며, 내장 화물칸을 이용해 작은 물건을 운반할 수 있었습니다.
+
+## 핵심 내용
+캐릭터는 사람들이 참는 기계와 신뢰하는 제품의 차이입니다. Astro는 카메라와 기타 센서를 사용하여 집과 직장을 매핑하고 탐색하며, 능동적으로 순찰하고 가족을 확인하며, 내장 화물칸을 이용해 작은 물건을 운반할 수 있었습니다. 명확히 정의된 기능 세트와 폼 팩터가 있었지만, 처음에는 캐릭터 방향성이 없었습니다. 사실, Astro라는 이름이 생기기 전에도 두 가지 주요 질문이 있었습니다. 즉, 단순히 바퀴 달린 Alexa인지, 아니면 고유한 캐릭터를 가진 로봇인지였습니다. Astro 팀은 의견이 나뉘었습니다. 한 가지 옵션은 Alexa에 집중하고 모바일 로봇을 단순한 추가 유틸리티로 취급하는 것이었습니다. UX 팀의 대다수와 함께 저는 Astro가 Alexa에 집중하지 않아야 한다고 주장했습니다. 우리의 믿음은 집 안을 움직이며 의도를 가지고 당신을 향해 돌아서는 물체는 결코 단순한 가전제품이 될 수 없다는 것이었습니다. 사람들은 우리가 원하든 원하지 않든 그것에 캐릭터를 부여할 것이며, 따라서 유일한 질문은 우리가 그 캐릭터를 형성할 것인지, 아니면 우연히 발생하도록 내버려 둘 것인지였습니다.

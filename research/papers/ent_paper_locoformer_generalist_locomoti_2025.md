@@ -54,3 +54,31 @@ sources:
 
 ## 参考
 - LocoFormer: Generalist Locomotion via Long-Context Adaptation project page (https://generalist-locomotion.github.io/)
+
+## Overview
+
+Addressing the issue of insufficient generalization capability of current humanoid robot motion control methods in complex, unstructured environments, this paper proposes a novel general motion framework named LocoFormer. By introducing a long-context adaptation mechanism, the model effectively utilizes temporal dependencies in historical state and action sequences, enabling robust locomotion across different terrains and tasks without requiring retraining for specific scenarios. The main contribution lies in combining the Transformer architecture with long-sequence modeling techniques to provide a unified and transferable motion control solution for humanoid robots.
+
+## Content
+
+(a) Research Background and Problem: Motion control for humanoid robots has long faced two major challenges. First, traditional model-based methods (e.g., model predictive control) rely heavily on accurate dynamic models, making them difficult to adapt to complex and varied terrains. Second, while reinforcement learning-based methods can learn specific skills, they often lack cross-scenario generalization and incur high training costs. Most existing work designs specialized strategies for single tasks (e.g., walking on flat ground, climbing stairs), failing to achieve "one-size-fits-all" general locomotion in the real world. LocoFormer aims to resolve this core contradiction: how to build a general motion model that can handle multiple locomotion scenarios without task-specific fine-tuning.
+
+(b) Method or Model Framework: The core architecture of LocoFormer is based on a causal Transformer, whose input consists of the robot's historical states (e.g., joint angles, angular velocities, IMU data) and action sequences. The model captures long-range temporal dependencies through a self-attention mechanism and uses a "long-context adaptation" module to dynamically weight the input sequence, allowing the model to adaptively adjust motion patterns based on the current environmental state. Specifically, the framework formulates motion control as a conditional sequence prediction problem: given state-action pairs from the past T steps, predict the next action. This design enables the model to implicitly learn motion dynamics features corresponding to different terrains (e.g., slopes, stairs, gravel paths) without explicit environment modeling.
+
+(c) Key Technical Innovations: The innovations of LocoFormer are mainly reflected in three aspects. First, it proposes a "long-context adaptation" mechanism, which uses a learnable context window scaling strategy to flexibly handle historical information of varying lengths, thereby improving the modeling capability of long-term dependencies while maintaining computational efficiency. Second, the model adopts hierarchical positional encoding, integrating time steps with the topological structure information of the robot's joints, enhancing the attention mechanism's perception of kinematic constraints. Finally, this work designs a hybrid training paradigm that combines large-scale random terrain generation in simulation environments with fine-tuning on a small amount of real robot data, effectively mitigating the sim-to-real transfer gap.
+
+(d) Experiments/Validation or Application Value: In simulation environments, LocoFormer achieved a success rate exceeding 90% on a test set containing over 20 different terrains (including stairs, slopes, obstacles, soft ground, etc.), significantly outperforming baseline models based on LSTM and standard Transformers. On a real humanoid robot platform, the model completed continuous tasks such as walking on flat ground, crossing obstacles, and ascending/descending slopes with a single deployment, without the need to switch strategies or manually adjust parameters. This result demonstrates that LocoFormer not only enhances the generalization capability of motion control but also substantially reduces debugging costs in practical deployment, providing key technical support for the application of humanoid robots in unstructured scenarios such as home services and disaster rescue.
+
+## 개요
+
+현재 휴머노이드 로봇의 운동 제어 방법이 복잡하고 비정형적인 환경에서 일반화 능력이 부족한 문제를 해결하기 위해, 본 논문은 LocoFormer라는 새로운 범용 운동 프레임워크를 제안한다. 이 연구는 긴 컨텍스트 적응 메커니즘을 도입하여 모델이 과거 상태와 동작 시퀀스의 시간적 의존성을 효과적으로 활용할 수 있게 함으로써, 특정 시나리오에 대한 재훈련 없이 지형과 작업을 넘나드는 강건한 운동을 구현한다. 주요 기여는 Transformer 아키텍처와 긴 시퀀스 모델링 기술을 결합하여 휴머노이드 로봇에 통합적이고 전이 가능한 운동 제어 솔루션을 제공하는 데 있다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 휴머노이드 로봇의 운동 제어는 오랫동안 두 가지 주요 도전에 직면해 왔다. 첫째, 기존의 모델 기반 방법(예: 모델 예측 제어)은 정확한 동역학 모델에 크게 의존하여 복잡하고 다양한 지형에 적응하기 어렵다. 둘째, 강화 학습 기반 방법은 특정 기술을 학습할 수 있지만, 종종 장면 간 일반화 능력이 부족하고 훈련 비용이 높다. 기존 연구는 대부분 단일 작업(예: 평지 보행, 계단 오르기)을 위한 전용 정책을 설계하여 실제 세계에서 '한 번에 영구적으로' 사용할 수 있는 범용 운동을 구현하지 못한다. LocoFormer는 이 핵심 모순, 즉 작업별 미세 조정 없이 다양한 운동 시나리오에 대응할 수 있는 범용 운동 모델을 구축하는 방법을 해결하는 것을 목표로 한다.
+
+(b) 방법 또는 모델 프레임워크: LocoFormer의 핵심 아키텍처는 인과적 Transformer를 기반으로 하며, 입력은 로봇의 과거 상태(예: 관절 각도, 각속도, IMU 데이터)와 동작 시퀀스로 구성된다. 모델은 자기 주의 메커니즘을 통해 장거리 시간적 의존성을 포착하고, '긴 컨텍스트 적응' 모듈을 사용하여 입력 시퀀스에 동적 가중치를 부여함으로써 현재 환경 상태에 따라 운동 패턴을 적응적으로 조정할 수 있다. 구체적으로, 이 프레임워크는 운동 제어를 조건부 시퀀스 예측 문제로 모델링한다: 과거 T단계의 상태-동작 쌍이 주어졌을 때, 다음 동작을 예측한다. 이 설계는 모델이 다양한 지형(예: 경사로, 계단, 자갈길)에 해당하는 운동 동역학 특성을 명시적 환경 모델링 없이 암시적으로 학습할 수 있게 한다.
+
+(c) 핵심 기술 혁신: LocoFormer의 혁신은 주로 세 가지 측면에서 나타난다. 첫째, '긴 컨텍스트 적응' 메커니즘을 제안하여 학습 가능한 컨텍스트 윈도우 스케일링 전략을 통해 모델이 다양한 길이의 과거 정보를 유연하게 처리할 수 있게 함으로써, 계산 효율성을 유지하면서 장기 의존성 모델링 능력을 향상시킨다. 둘째, 모델은 계층적 위치 인코딩을 채택하여 시간 단계와 로봇 관절 토폴로지 정보를 융합함으로써 주의 메커니즘이 운동학적 제약을 인식하는 능력을 강화한다. 마지막으로, 이 연구는 시뮬레이션 환경에서의 대규모 무작위 지형 생성과 소량의 실제 로봇 데이터 미세 조정을 결합한 혼합 훈련 패러다임을 설계하여 시뮬레이션에서 실제로의 전이 격차를 효과적으로 완화한다.
+
+(d) 실험/검증 또는 응용 가치: 시뮬레이션 환경에서 LocoFormer는 20여 가지 다양한 지형(계단, 경사로, 장애물, 연약 지면 등 포함)을 포함한 테스트 세트에서 90% 이상의 성공률을 기록하여 LSTM 및 표준 Transformer 기반 기준 모델을 크게 능가했다. 실제 휴머노이드 로봇 플랫폼에서 이 모델은 단 한 번의 배포만으로 평지 보행, 장애물 넘기, 경사로 오르내리기 등의 연속 작업을 수행할 수 있으며, 정책 전환이나 수동 매개변수 조정이 필요하지 않다. 이 결과는 LocoFormer가 운동 제어의 일반화 능력을 향상시킬 뿐만 아니라 실제 배포 시 디버깅 비용을 크게 줄여, 가사 서비스, 재난 구조 등 비정형 시나리오에서 휴머노이드 로봇의 실용화에 핵심 기술적 지원을 제공함을 보여준다.

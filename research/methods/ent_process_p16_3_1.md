@@ -86,5 +86,90 @@ theoretical_depth:
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
 
+## Overview
+**Phase/Work Package**: Pilot & Production Ramp
 
+## Content
+**Method/Tool**: 10–50 unit pilot run, issue tracking, ECN, first article inspection
 
+**Design Thinking Logic**: Validate the full chain of supply chain, assembly, testing, and software
+
+**Key Constraints**: Time, resources, prototype cost
+
+**Completion Criteria/Deliverables**: Pilot run summary report, first pass yield, issue closure rate
+
+**Level-3 Sub-tasks and Level-4 Key Actions:**
+
+- P16.3.1.1 Input Review and Target Quantification
+  - Organize upstream inputs, reference standards, and resources required for the "Pilot Run", convert completion criteria into quantifiable acceptance indicators, and define owners and milestones.
+    - List all upstream inputs and confirm versions
+    - Convert acceptance criteria into quantifiable KPIs
+    - Establish task owners, timelines, and risk register
+
+- P16.3.1.2 Solution/Method Design
+  - Develop implementation methods or candidate solutions for the "Pilot Run", using "10–50 unit pilot run, issue tracking, ECN, first article inspection" for validation, and clarify technical routes and resource requirements.
+    - Generate at least 2 candidate solutions
+    - Establish an evaluation matrix with quantitative scoring
+    - Organize review and freeze the solution
+
+- P16.3.1.3 Implementation/Prototype/Sample Fabrication
+  - Execute the "Pilot Run" implementation according to the design plan, produce prototypes, samples, or complete key steps, and record process data.
+    - Build models/prototypes and record key parameters
+    - Perform simulations or prototype validation
+    - Record anomalies and deviations
+
+- P16.3.1.4 Verification and Issue Closure
+  - Verify the output of the "Pilot Run", check if completion criteria are met, record issues, and track until closure.
+    - Develop test/review plans and pass criteria
+    - Execute tests and record raw data
+    - Output issue list and improvement actions
+
+- P16.3.1.5 Documentation Output and Downstream Delivery
+  - Output the final report/drawings/specifications for the "Pilot Run", update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+    - Write documents per template and reference raw data
+    - Complete internal review and version control
+    - Release and notify downstream dependents
+
+## 개요
+**소속 단계/작업 패키지**: 소량 시험 생산 및 양산 준비 (Pilot & Production Ramp)
+
+## 핵심 내용
+**방법/도구**: 10–50대 시험 생산, 문제 추적, ECN, 첫품 검사
+
+**설계 사고 논리**: 공급망, 조립, 테스트, 소프트웨어 전 체인 검증
+
+**핵심 제약 조건**: 시간, 자원, 시제품 비용
+
+**완료 기준/산출물**: 시험 생산 요약 보고서, 직통률, 문제 종결률
+
+**3단계 하위 작업 및 4단계 핵심 조치:**
+
+- P16.3.1.1 입력 정리 및 목표 정량화
+  - 「소량 시험 생산(Pilot Run)」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 한다.
+    - 모든 상위 입력 목록을 나열하고 버전 확인
+    - 검수 기준을 정량화 가능한 KPI로 전환
+    - 작업 Owner, 시간 노드 및 위험 등록부 구축
+
+- P16.3.1.2 방안/방법 설계
+  - 「소량 시험 생산(Pilot Run)」에 대한 실행 방법 또는 후보 방안을 수립하고, 「10–50대 시험 생산, 문제 추적, ECN, 첫품 검사」를 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 한다.
+    - 2개 이상의 후보 방안 도출
+    - 평가 매트릭스 구축 및 정량적 점수 부여
+    - 검토 조직 및 방안 확정
+
+- P16.3.1.3 구현/프로토타입/시제품 제작
+  - 설계 방안에 따라 「소량 시험 생산(Pilot Run)」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록한다.
+    - 모델/시제품 구축 및 핵심 파라미터 기록
+    - 시뮬레이션 또는 프로토타입 검증 실행
+    - 이상 및 편차 기록
+
+- P16.3.1.4 검증 및 문제 종결
+  - 「소량 시험 생산(Pilot Run)」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결까지 추적한다.
+    - 테스트/검토 계획 및 통과 기준 수립
+    - 테스트 실행 및 원시 데이터 기록
+    - 문제 목록 및 개선 조치 출력
+
+- P16.3.1.5 문서 출력 및 하위 전달
+  - 「소량 시험 생산(Pilot Run)」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료한다.
+    - 템플릿에 따라 문서 작성 및 원시 데이터 인용
+    - 내부 검토 및 버전 관리 완료
+    - 게시 및 하위 의존 부서에 통지

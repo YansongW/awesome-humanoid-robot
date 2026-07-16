@@ -75,4 +75,58 @@ sources:
 ## 参考
 - [Bill of Materials](https://en.wikipedia.org/wiki/Bill_of_materials)
 
+## Overview
+A structured list of all parts, subassemblies, and raw materials required to build a humanoid robot.
 
+## Content
+### Definition and Positioning of Bill of Materials
+The Bill of Materials belongs to the **Concept** type. Its related fields include: Manufacturing Process, Design Engineering. Value chain level: Midstream, Upstream. A structured list of all parts, subassemblies, and raw materials required to build a humanoid robot. Its English name is *Bill of Materials*. Its Korean name is *Bill of Materials*.
+
+### Key Dimensions of Bill of Materials
+Understanding the Bill of Materials requires exploration from multiple dimensions, including definition, boundary conditions, related entities, and typical application scenarios, to form a systematic understanding.
+This entity serves as a bridge connecting fundamental theory and engineering practice in the humanoid robot knowledge graph.
+
+### Practical Significance
+In the context of humanoid robot industrialization, the Bill of Materials holds reference value for technical research, product development, investment decisions, and ecosystem building.
+Accurately grasping its connotation and denotation helps avoid conceptual confusion and promotes interdisciplinary collaboration.
+
+### Research and Development Directions
+As humanoid robot technology continues to evolve, the theories and practices related to the Bill of Materials will also be continuously updated, requiring ongoing tracking and review.
+
+### Related Tags
+- bom
+- concept
+- cost
+- manufacturing
+- supply_chain
+
+### Role in the Humanoid Robot System
+As one of the key concepts in the humanoid robot industry chain, the Bill of Materials plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, execution, energy, structure, and verification, collectively determining the overall performance of the robot. Related research and applications are being continuously advanced to further improve its reliability, efficiency, and cost-effectiveness in practical scenarios.
+
+## 개요
+휴머노이드 로봇을 제작하는 데 필요한 모든 부품, 하위 조립체 및 원자재의 구조화된 목록.
+
+## 핵심 내용
+### BOM의 정의와 위치
+BOM은 **개념** 유형에 속합니다. 관련 분야는 제조 공정, 설계 엔지니어링입니다. 가치 사슬 단계: 중류, 상류. 휴머노이드 로봇을 제작하는 데 필요한 모든 부품, 하위 조립체 및 원자재의 구조화된 목록입니다. 영어 명칭은 *Bill of Materials*입니다. 한국어 명칭은 *Bill of Materials*입니다.
+
+### BOM의 주요 차원
+BOM을 이해하려면 정의, 경계 조건, 관련 개체 및 일반적인 적용 시나리오 등 여러 차원에서 접근하여 체계적인 인식을 형성해야 합니다.
+이 개체는 휴머노이드 로봇 지식 그래프에서 기초 이론과 엔지니어링 실무를 연결하는 가교 역할을 합니다.
+
+### 실무적 의의
+휴머노이드 로봇 산업화의 맥락에서 BOM은 기술 연구, 제품 개발, 투자 결정 및 생태계 구축에 참고 가치를 제공합니다.
+그 내포와 외연을 정확히 파악하면 개념 혼동을 방지하고 학제 간 협력을 촉진하는 데 도움이 됩니다.
+
+### 연구 및 발전 방향
+휴머노이드 로봇 기술이 지속적으로 발전함에 따라 BOM 관련 이론과 실무도 계속 업데이트되므로 추적 및 검토가 필요합니다.
+
+### 관련 태그
+- bom
+- concept
+- cost
+- manufacturing
+- supply_chain
+
+### 휴머노이드 로봇 시스템에서의 역할
+휴머노이드 로봇 산업 체인에서 핵심 개념 중 하나인 BOM은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.

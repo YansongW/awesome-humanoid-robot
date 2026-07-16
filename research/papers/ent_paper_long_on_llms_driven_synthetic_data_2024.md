@@ -58,4 +58,14 @@ Within the evolving landscape of deep learning, the dilemma of data quantity and
 ## 参考
 - http://arxiv.org/abs/2406.15126v1
 
+## Overview
+Within the evolving landscape of deep learning, the dilemma of data quantity and quality has been a long-standing problem. The recent advent of Large Language Models (LLMs) offers a data-centric solution to alleviate the limitations of real-world data with synthetic data generation. However, current investigations into this field lack a unified framework and mostly stay on the surface. Therefore, this paper provides an organization of relevant studies based on a generic workflow of synthetic data generation. By doing so, we highlight the gaps within existing research and outline prospective avenues for future study. This work aims to shepherd the academic and industrial communities towards deeper, more methodical inquiries into the capabilities and applications of LLMs-driven synthetic data generation.
 
+## Content
+Within the evolving landscape of deep learning, the dilemma of data quantity and quality has been a long-standing problem. The recent advent of Large Language Models (LLMs) offers a data-centric solution to alleviate the limitations of real-world data with synthetic data generation. However, current investigations into this field lack a unified framework and mostly stay on the surface. Therefore, this paper provides an organization of relevant studies based on a generic workflow of synthetic data generation. By doing so, we highlight the gaps within existing research and outline prospective avenues for future study. This work aims to shepherd the academic and industrial communities towards deeper, more methodical inquiries into the capabilities and applications of LLMs-driven synthetic data generation.
+
+## 개요
+딥러닝 환경이 진화함에 따라 데이터의 양과 질에 관한 딜레마는 오랜 문제로 남아 있습니다. 최근 대규모 언어 모델(LLM)의 등장은 합성 데이터 생성을 통해 실제 데이터의 한계를 완화하는 데이터 중심 솔루션을 제공합니다. 그러나 이 분야에 대한 현재 연구는 통일된 프레임워크가 부족하고 대부분 표면적인 수준에 머물러 있습니다. 따라서 본 논문은 합성 데이터 생성의 일반적인 워크플로우를 기반으로 관련 연구를 체계화합니다. 이를 통해 기존 연구의 공백을 강조하고 향후 연구를 위한 잠재적 방향을 제시합니다. 이 작업은 학계와 산업계가 LLM 기반 합성 데이터 생성의 역량과 응용에 대해 더 깊고 체계적인 탐구를 하도록 이끄는 것을 목표로 합니다.
+
+## 핵심 내용
+딥러닝 환경이 진화함에 따라 데이터의 양과 질에 관한 딜레마는 오랜 문제로 남아 있습니다. 최근 대규모 언어 모델(LLM)의 등장은 합성 데이터 생성을 통해 실제 데이터의 한계를 완화하는 데이터 중심 솔루션을 제공합니다. 그러나 이 분야에 대한 현재 연구는 통일된 프레임워크가 부족하고 대부분 표면적인 수준에 머물러 있습니다. 따라서 본 논문은 합성 데이터 생성의 일반적인 워크플로우를 기반으로 관련 연구를 체계화합니다. 이를 통해 기존 연구의 공백을 강조하고 향후 연구를 위한 잠재적 방향을 제시합니다. 이 작업은 학계와 산업계가 LLM 기반 합성 데이터 생성의 역량과 응용에 대해 더 깊고 체계적인 탐구를 하도록 이끄는 것을 목표로 합니다.

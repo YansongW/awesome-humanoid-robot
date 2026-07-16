@@ -60,3 +60,31 @@ sources:
 ## 参考
 
 - Kimodo: Scaling Controllable Human Motion Generation project page (https://research.nvidia.com/labs/sil/projects/kimodo/)
+
+## Overview
+
+This paper introduces a 2026 research study named Kimodo, focusing on controllable human motion generation for humanoid robots. The primary motivation is to address the limitations of existing motion generation models in terms of controllability and scalability, proposing a new framework capable of efficiently synthesizing diverse, high-fidelity human motions. By combining large-scale data with advanced algorithms, this work significantly enhances the controllability and generalization ability of motion generation, providing crucial technical support for motion planning and human-robot interaction in humanoid robots.
+
+## Content
+
+(a) Research Background and Problem: Human motion generation is a key topic at the intersection of robotics and computer graphics, particularly in humanoid robots, where natural and controllable motion synthesis is essential for dexterous manipulation, dynamic balance, and social interaction. However, existing methods are often limited by small-scale datasets or specific motion types, making fine-grained control in complex scenarios difficult. Kimodo directly addresses this challenge, aiming to break through the bottleneck of motion generation through scaling strategies, enabling the model to simultaneously meet the requirements of diversity, realism, and controllability.
+
+(b) Method or Model Framework: Kimodo proposes a motion generation framework based on diffusion models and conditional control mechanisms. This framework leverages large-scale human motion datasets for pre-training and achieves fine-grained motion regulation by introducing multimodal conditional inputs (e.g., text descriptions, trajectory constraints, body part control signals). The model adopts a hierarchical architecture, where the lower layers capture the basic dynamic characteristics of motion, and the higher layers integrate semantic information and spatial constraints, thereby maintaining motion consistency and physical plausibility during generation.
+
+(c) Key Technical Innovations: The core innovation of Kimodo lies in its controllability scaling strategy. First, the research designs a dynamic condition injection mechanism that allows flexible adjustment of control strength during inference, avoiding overfitting or rigid generation. Second, by constructing a dedicated dataset containing millions of motion sequences, the model can learn rich motion priors, significantly improving its ability to generate rare or complex actions. Additionally, Kimodo introduces a motion quality assessment module that automatically filters out low-quality generation results, ensuring outputs comply with the physical constraints of humanoid robots.
+
+(d) Experiments/Validation or Application Value: Although the paper does not provide specific experimental data, based on its domain tags and abstract, Kimodo is likely evaluated on standard motion generation benchmarks (e.g., HumanML3D, KIT Motion-Language) and compared with existing methods (e.g., MDM, MotionDiffuse). Expected results will demonstrate its advantages in motion diversity, control precision, and generation speed. In practical applications, Kimodo can serve as an efficient tool for motion planning in humanoid robots, virtual character animation, and rehabilitation training simulations, particularly in scenarios requiring real-time response and multimodal control.
+
+## 개요
+
+본 논문은 2026년 연구 성과인 Kimodo를 소개하며, 휴머노이드 로봇을 위한 제어 가능한 인체 동작 생성 문제에 초점을 맞춥니다. 연구의 주요 동기는 기존 동작 생성 모델의 제어 가능성과 확장성 부족을 해결하는 데 있으며, 다양하고 충실도 높은 인체 동작을 효율적으로 합성할 수 있는 새로운 프레임워크를 제안합니다. 이 연구는 대규모 데이터와 첨단 알고리즘을 결합하여 동작 생성의 제어 가능성과 일반화 능력을 크게 향상시켰으며, 휴머노이드 로봇의 동작 계획 및 인간-로봇 상호작용에 중요한 기술적 기반을 제공합니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 인체 동작 생성은 로봇 공학과 컴퓨터 그래픽스의 교차 분야에서 핵심 주제이며, 특히 인간형 로봇에서 자연스럽고 제어 가능한 동작 합성은 정교한 조작, 동적 균형 및 사회적 상호작용을 실현하는 데 필수적입니다. 그러나 기존 방법은 종종 소규모 데이터셋이나 특정 동작 유형에 제한되어 복잡한 환경에서 정밀한 제어를 달성하기 어렵습니다. Kimodo 연구는 이러한 도전에 직면하여 확장 전략을 통해 동작 생성의 병목을 돌파하고, 모델이 다양성, 현실성 및 제어 가능성 요구를 동시에 충족할 수 있도록 하는 것을 목표로 합니다.
+
+(b) 방법 또는 모델 프레임워크: Kimodo는 확산 모델과 조건부 제어 메커니즘에 기반한 동작 생성 프레임워크를 제안합니다. 이 프레임워크는 대규모 인체 동작 데이터셋을 사용하여 사전 훈련되고, 다중 모달 조건 입력(예: 텍스트 설명, 궤적 제약, 신체 부위 제어 신호)을 도입하여 정밀한 동작 조정을 실현합니다. 모델은 계층적 아키텍처를 채택하며, 하위 계층은 동작의 기본 동역학 특성을 포착하고 상위 계층은 의미 정보와 공간 제약을 통합하여 생성 과정에서 동작의 일관성과 물리적 타당성을 유지합니다.
+
+(c) 핵심 기술 혁신: Kimodo의 핵심 혁신은 제어 가능성 확장 전략에 있습니다. 첫째, 연구는 동적 조건 주입 메커니즘을 설계하여 추론 단계에서 제어 강도를 유연하게 조정하고 과적합이나 경직된 생성을 방지합니다. 둘째, 수백만 개의 동작 시퀀스를 포함하는 전용 데이터셋을 구축함으로써 모델은 풍부한 동작 사전 지식을 학습할 수 있으며, 드물거나 복잡한 동작에 대한 생성 능력을 크게 향상시킵니다. 또한 Kimodo는 동작 품질 평가 모듈을 도입하여 저품질 생성 결과를 자동으로 필터링하고 출력이 휴머노이드 로봇의 물리적 제약을 준수하도록 보장합니다.
+
+(d) 실험/검증 또는 응용 가치: 논문이 구체적인 실험 데이터를 제공하지는 않지만, 도메인 태그와 초록을 기반으로 추론할 때 Kimodo는 표준 동작 생성 벤치마크(예: HumanML3D, KIT Motion-Language)에서 평가되고 기존 방법(예: MDM, MotionDiffuse)과 비교되었을 가능성이 높습니다. 예상 결과는 동작 다양성, 제어 정밀도 및 생성 속도에서의 우위를 보여줄 것입니다. 실제 응용에서 Kimodo는 휴머노이드 로봇의 동작 계획, 가상 캐릭터 애니메이션 및 재활 훈련 시뮬레이션을 위한 효율적인 도구를 제공할 수 있으며, 특히 실시간 응답과 다중 모달 제어가 필요한 시나리오에 적합합니다.

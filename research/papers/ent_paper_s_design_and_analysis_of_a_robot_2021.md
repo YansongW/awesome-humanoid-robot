@@ -56,4 +56,14 @@ Legged robots are being used to explore rough terrains as they are capable of tr
 ## 参考
 - http://arxiv.org/abs/2107.12614v1
 
+## Overview
+Legged robots are being used to explore rough terrains as they are capable of traversing gaps and obstacles. In this paper, a new mechanism is designed to replicate a robotic lizard using integrated five-bar mechanisms. There are two five-bar mechanisms from which two more are formed by connecting the links in a particular order. The legs are attached to the links of the five-bar mechanism such that, when the mechanism is actuated, they move the robot forward. Position analysis using the vector loop approach has been done for the mechanism. A prototype has been built and controlled using servo motors to verify the robotic lizard mechanism.
 
+## Content
+Legged robots are being used to explore rough terrains as they are capable of traversing gaps and obstacles. In this paper, a new mechanism is designed to replicate a robotic lizard using integrated five-bar mechanisms. There are two five-bar mechanisms from which two more are formed by connecting the links in a particular order. The legs are attached to the links of the five-bar mechanism such that, when the mechanism is actuated, they move the robot forward. Position analysis using the vector loop approach has been done for the mechanism. A prototype has been built and controlled using servo motors to verify the robotic lizard mechanism.
+
+## 개요
+다리형 로봇은 틈새와 장애물을 통과할 수 있어 거친 지형 탐사에 사용되고 있습니다. 본 논문에서는 통합된 5절 링크 메커니즘을 활용하여 도마뱀 로봇을 재현하는 새로운 메커니즘을 설계했습니다. 두 개의 5절 링크 메커니즘이 있으며, 특정 순서로 링크를 연결하여 추가로 두 개의 메커니즘이 형성됩니다. 다리는 5절 링크 메커니즘의 링크에 부착되어, 메커니즘이 작동될 때 로봇을 앞으로 움직이게 합니다. 벡터 루프 방식을 이용한 위치 해석이 메커니즘에 대해 수행되었습니다. 프로토타입이 제작되었으며, 서보 모터를 사용하여 제어함으로써 도마뱀 로봇 메커니즘을 검증했습니다.
+
+## 핵심 내용
+다리형 로봇은 틈새와 장애물을 통과할 수 있어 거친 지형 탐사에 사용되고 있습니다. 본 논문에서는 통합된 5절 링크 메커니즘을 활용하여 도마뱀 로봇을 재현하는 새로운 메커니즘을 설계했습니다. 두 개의 5절 링크 메커니즘이 있으며, 특정 순서로 링크를 연결하여 추가로 두 개의 메커니즘이 형성됩니다. 다리는 5절 링크 메커니즘의 링크에 부착되어, 메커니즘이 작동될 때 로봇을 앞으로 움직이게 합니다. 벡터 루프 방식을 이용한 위치 해석이 메커니즘에 대해 수행되었습니다. 프로토타입이 제작되었으며, 서보 모터를 사용하여 제어함으로써 도마뱀 로봇 메커니즘을 검증했습니다.

@@ -113,4 +113,114 @@ $$
 ## 参考
 - [Vaswani et al., Attention Is All You Need, NeurIPS 2017](https://arxiv.org/abs/1706.03762)
 
+## Overview
+# Scaled Dot-Product Self-Attention Equation
 
+## Content
+## Abstract
+
+> **Life example**: When reading a sentence, each word "looks back" at the entire sentence and decides which words to focus on based on relevance. For instance, in "I ate the apple," the word "ate" pays more attention to "apple" than to "I." Self-attention allows the model to automatically learn this "who should look at whom" weighting mechanism. The scaling factor $1/\sqrt{d_k}$ prevents over-excitation: if Query and Key have high dimensions, the dot product can become extremely large, causing softmax to become "all-or-nothing," and the model fails to learn subtle attention distributions.
+>
+> **Natural language logic**: Project the input sequence into three sets of vectors: Query, Key, and Value; compute similarity via dot product between Query and Key; normalize with softmax to obtain attention weights; multiply weights by Value to get the output. The step $QK^\top/\sqrt{d_k}$ simultaneously accomplishes "matching" and "scaling," making training more stable.
+
+## Formal Definition
+
+Given the input representation matrix $X \in \mathbb{R}^{n \times d_{\text{model}}}$ and learnable projection matrices $W_Q, W_K, W_V$, compute:
+
+$$
+Q = X W_Q, \quad K = X W_K, \quad V = X W_V,
+$$
+
+$$
+\text{Attention}(Q, K, V) = \operatorname{softmax}\!\left( \frac{Q K^\top}{\sqrt{d_k}} \right) V.
+$$
+
+Where:
+
+- $n$: sequence length
+- $d_k$: dimension of Query/Key
+- $d_v$: dimension of Value (typically $d_v = d_k$)
+- $\operatorname{softmax}(z_i) = \frac{e^{z_i}}{\sum_j e^{z_j}}$
+
+Multi-head attention executes the above process in parallel across $h$ different subspaces and concatenates the results:
+
+$$
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots, \text{head}_h) W^O,
+$$
+
+where $\text{head}_i = \text{Attention}(Q W_i^Q, K W_i^K, V W_i^V)$.
+
+## Key Symbols and Intuitive Correspondence
+
+| Symbol | Name | Intuitive Meaning |
+|--------|------|-------------------|
+| $Q$ | Query | "The question I am asking" |
+| $K$ | Key | "The label each position can answer" |
+| $V$ | Value | "The actual information each position carries" |
+| $QK^\top$ | Dot product similarity | "Degree of match between question and label" |
+| $1/\sqrt{d_k}$ | Scaling factor | Prevents high-dimensional dot products from saturating softmax |
+| $\operatorname{softmax}$ | Normalized exponential | Converts match scores into "probabilistic" attention weights |
+
+## Relationships with Other Knowledge Points
+
+- `uses` → Matrix multiplication, softmax operator
+- `has_prerequisite` → Linear algebra
+- `has_prerequisite` → Probability / measure theory
+- `instantiates` → Transformer architecture
+- `builds_on` → VLA foundation models (GR00T N1, OpenVLA, π0, etc.)
+
+## 개요
+# 스케일링된 점곱 자기 주의(Scaled Dot-Product Self-Attention) 방정식
+
+## 핵심 내용
+## 추상
+
+> **생활 속 예시**: 문장을 읽을 때, 각 단어는 전체 문장을 "되돌아보며" 관련성에 따라 어느 단어에 주의를 기울일지 결정합니다. 예를 들어 "나는 사과를 먹었다"에서 "먹었다"는 "나"보다 "사과"에 더 주목합니다. Self-attention은 모델이 이러한 "누가 누구를 봐야 하는지"에 대한 가중치 메커니즘을 자동으로 학습하게 합니다. 스케일링 인자 $1/\sqrt{d_k}$는 너무 과도해지는 것을 방지합니다. Query와 Key의 차원이 높으면 점곱이 쉽게 매우 커져서 softmax가 "흑백 논리"가 되어 모델이 미묘한 주의 분포를 학습하지 못하게 됩니다.
+>
+> **자연어 논리**: 입력 시퀀스를 각각 Query, Key, Value 세 개의 벡터 그룹으로 투영합니다. Query와 Key의 점곱으로 유사도를 구하고, softmax로 정규화하여 주의 가중치를 얻습니다. 가중치에 Value를 곱하여 출력을 얻습니다. $QK^\top/\sqrt{d_k}$ 단계는 "매칭"과 "스케일링"을 동시에 수행하여 훈련을 더 안정적으로 만듭니다.
+
+## 형식적 정의
+
+입력 표현 행렬 $X \in \mathbb{R}^{n \times d_{\text{model}}}$과 학습 가능한 투영 행렬 $W_Q, W_K, W_V$가 주어졌을 때, 다음과 같이 계산합니다:
+
+$$
+Q = X W_Q, \quad K = X W_K, \quad V = X W_V,
+$$
+
+$$
+\text{Attention}(Q, K, V) = \operatorname{softmax}\!\left( \frac{Q K^\top}{\sqrt{d_k}} \right) V.
+$$
+
+여기서:
+
+- $n$: 시퀀스 길이
+- $d_k$: Query/Key의 차원
+- $d_v$: Value의 차원 (보통 $d_v = d_k$)
+- $\operatorname{softmax}(z_i) = \frac{e^{z_i}}{\sum_j e^{z_j}}$
+
+Multi-head attention은 위 과정을 $h$개의 서로 다른 부분 공간에서 병렬로 수행하고 연결합니다:
+
+$$
+\text{MultiHead}(Q, K, V) = \text{Concat}(\text{head}_1, \dots, \text{head}_h) W^O,
+$$
+
+여기서 $\text{head}_i = \text{Attention}(Q W_i^Q, K W_i^K, V W_i^V)$입니다.
+
+## 주요 기호와 직관적 대응
+
+| 기호 | 이름 | 직관적 의미 |
+|------|------|----------|
+| $Q$ | Query | "내가 지금 묻는 질문" |
+| $K$ | Key | "각 위치가 답할 수 있는 질문 레이블" |
+| $V$ | Value | "각 위치가 실제로 가진 정보" |
+| $QK^\top$ | 점곱 유사도 | "질문과 레이블의 일치 정도" |
+| $1/\sqrt{d_k}$ | 스케일링 인자 | 고차원 점곱이 너무 커져 softmax가 포화되는 것을 방지 |
+| $\operatorname{softmax}$ | 정규화 지수 함수 | 일치도를 "확률화된" 주의 가중치로 변환 |
+
+## 다른 지식 포인트와의 관계
+
+- `uses` → 행렬 곱셈, softmax 연산자
+- `has_prerequisite` → 선형대수학
+- `has_prerequisite` → 확률/측도론
+- `instantiates` → Transformer 아키텍처
+- `builds_on` → VLA 기반 모델 (GR00T N1, OpenVLA, π0 등)

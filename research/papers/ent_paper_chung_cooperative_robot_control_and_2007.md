@@ -62,3 +62,14 @@ Concurrent synchronization is a regime where diverse groups of fully synchronize
 ## 参考
 - http://arxiv.org/abs/0711.1709v4
 
+## Overview
+Concurrent synchronization is a regime where diverse groups of fully synchronized dynamic systems stably coexist. We study global exponential synchronization and concurrent synchronization in the context of Lagrangian systems control. In a network constructed by adding diffusive couplings to robot manipulators or mobile robots, a decentralized tracking control law globally exponentially synchronizes an arbitrary number of robots, and represents a generalization of the average consensus problem. Exact nonlinear stability guarantees and synchronization conditions are derived by contraction analysis. The proposed decentralized strategy is further extended to adaptive synchronization and partial-state coupling.
+
+## Content
+Concurrent synchronization is a regime where diverse groups of fully synchronized dynamic systems stably coexist. We study global exponential synchronization and concurrent synchronization in the context of Lagrangian systems control. In a network constructed by adding diffusive couplings to robot manipulators or mobile robots, a decentralized tracking control law globally exponentially synchronizes an arbitrary number of robots, and represents a generalization of the average consensus problem. Exact nonlinear stability guarantees and synchronization conditions are derived by contraction analysis. The proposed decentralized strategy is further extended to adaptive synchronization and partial-state coupling.
+
+## 개요
+동시 동기화(Concurrent synchronization)는 완전히 동기화된 다양한 동적 시스템 그룹이 안정적으로 공존하는 체제입니다. 본 연구에서는 라그랑지안 시스템 제어의 맥락에서 전역 지수 동기화와 동시 동기화를 다룹니다. 로봇 매니퓰레이터나 이동 로봇에 확산 결합을 추가하여 구성된 네트워크에서, 분산 추적 제어 법칙은 임의의 수의 로봇을 전역적으로 지수적으로 동기화시키며, 이는 평균 합의 문제의 일반화를 나타냅니다. 정확한 비선형 안정성 보장과 동기화 조건은 수축 분석(contraction analysis)을 통해 도출됩니다. 제안된 분산 전략은 적응형 동기화 및 부분 상태 결합으로 추가 확장됩니다.
+
+## 핵심 내용
+동시 동기화(Concurrent synchronization)는 완전히 동기화된 다양한 동적 시스템 그룹이 안정적으로 공존하는 체제입니다. 본 연구에서는 라그랑지안 시스템 제어의 맥락에서 전역 지수 동기화와 동시 동기화를 다룹니다. 로봇 매니퓰레이터나 이동 로봇에 확산 결합을 추가하여 구성된 네트워크에서, 분산 추적 제어 법칙은 임의의 수의 로봇을 전역적으로 지수적으로 동기화시키며, 이는 평균 합의 문제의 일반화를 나타냅니다. 정확한 비선형 안정성 보장과 동기화 조건은 수축 분석(contraction analysis)을 통해 도출됩니다. 제안된 분산 전략은 적응형 동기화 및 부분 상태 결합으로 추가 확장됩니다.

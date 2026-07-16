@@ -57,3 +57,14 @@ This paper investigates the economic feasibility of replacing human labor with r
 ## 参考
 - http://arxiv.org/abs/2509.10152v1
 
+## Overview
+This paper investigates the economic feasibility of replacing human labor with robotics and automation in Qatar's manufacturing and service sectors. By analyzing labor costs, productivity gains, and implementation expenses, the study assesses the potential financial impact and return on investment of robotic integration. Results indicate the sectors where automation is economically viable and identify challenges related to workforce adaptation, policy, and infrastructure. These insights provide guidance for policymakers and industry stakeholders considering automation strategies in Qatar.
+
+## Content
+This paper investigates the economic feasibility of replacing human labor with robotics and automation in Qatar's manufacturing and service sectors. By analyzing labor costs, productivity gains, and implementation expenses, the study assesses the potential financial impact and return on investment of robotic integration. Results indicate the sectors where automation is economically viable and identify challenges related to workforce adaptation, policy, and infrastructure. These insights provide guidance for policymakers and industry stakeholders considering automation strategies in Qatar.
+
+## 개요
+본 논문은 카타르의 제조업 및 서비스 부문에서 인간 노동을 로봇 및 자동화로 대체하는 것의 경제적 타당성을 조사합니다. 인건비, 생산성 향상, 도입 비용을 분석함으로써, 로봇 통합의 잠재적 재정적 영향과 투자 수익률을 평가합니다. 결과는 자동화가 경제적으로 실현 가능한 부문을 제시하며, 인력 적응, 정책, 인프라와 관련된 과제를 식별합니다. 이러한 통찰은 카타르에서 자동화 전략을 고려하는 정책 입안자 및 산업 이해관계자에게 지침을 제공합니다.
+
+## 핵심 내용
+본 논문은 카타르의 제조업 및 서비스 부문에서 인간 노동을 로봇 및 자동화로 대체하는 것의 경제적 타당성을 조사합니다. 인건비, 생산성 향상, 도입 비용을 분석함으로써, 로봇 통합의 잠재적 재정적 영향과 투자 수익률을 평가합니다. 결과는 자동화가 경제적으로 실현 가능한 부문을 제시하며, 인력 적응, 정책, 인프라와 관련된 과제를 식별합니다. 이러한 통찰은 카타르에서 자동화 전략을 고려하는 정책 입안자 및 산업 이해관계자에게 지침을 제공합니다.

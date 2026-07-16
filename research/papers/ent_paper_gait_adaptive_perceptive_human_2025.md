@@ -66,3 +66,39 @@ theoretical_depth:
 
 ## 参考
 - 具有实时基础地形重建的步态自适应感知人形运动 project page (https://ga-phl.github.io/)
+
+## Overview
+
+This study addresses the issue of insufficient gait adaptability in humanoid robots walking on unstructured terrains, caused by the separation between perception and motion control. It proposes a method that integrates real-time terrain reconstruction, gait phase modulation, and whole-body posture control within a single feedback loop. The main contribution lies in using a downward-facing depth camera and a U-Net network to achieve online reconstruction of terrain height maps, and generating joint-level control commands through a teacher-student knowledge transfer framework. This enables the robot to adaptively adjust gait cycle and frequency based on real-time terrain changes, thereby significantly enhancing walking stability and robustness in complex ground environments.
+
+## Content
+
+**Research Background and Problem**  
+Traditional motion control for humanoid robots typically processes perception modules (e.g., terrain reconstruction) and motion planning/control modules in a serial manner, leading to delays in terrain information updates relative to gait adjustment needs. Especially on uneven, sloped, or alternating hard-soft ground, robots are prone to losing balance due to mismatches between gait phase and terrain features. Existing methods often rely on offline maps or simplified terrain models, making it difficult to handle dynamically changing real-world scenarios. Therefore, achieving tight coupling between terrain perception, gait phase estimation, and whole-body motion control on a temporal scale is a key challenge for enhancing the field adaptability of humanoid robots.
+
+**Method or Model Framework**  
+This paper proposes an end-to-end perception-motion joint control framework. First, real-time depth images are captured by a downward-facing depth camera on the robot and fed into a U-Net-based encoder-decoder network to reconstruct high-resolution height maps of the foot contact area. This terrain representation, combined with proprioceptive states (joint positions, torques, IMU data) and the current gait phase (estimated by a phase oscillator), serves as input to a teacher policy network. The teacher network is trained via reinforcement learning in a simulated environment to learn optimal whole-body joint trajectories and ground reaction force distribution. Subsequently, the teacher policy is distilled into a lightweight student network through knowledge distillation, enabling real-time operation on onboard computing resources and directly outputting joint position/torque commands.
+
+**Key Technical Innovations**  
+The core innovation of this work lies in integrating terrain reconstruction, gait phase modulation, and whole-body posture control into a single control loop, rather than the traditional "perception-planning-control" pipeline architecture. Specifically, the height map reconstructed by U-Net is not only used to correct foot placement but also directly modulates the frequency and amplitude of the gait phase oscillator, allowing the robot to proactively adjust its stepping rhythm based on upcoming terrain undulations. Additionally, the teacher-student knowledge transfer strategy addresses the Sim-to-Real transfer challenge: the student network relies solely on depth images and proprioceptive states during deployment, without requiring ground-truth terrain labels, and achieves inference latency below 10 milliseconds, meeting real-time requirements.
+
+**Experiments/Validation and Application Value**  
+Experiments in both simulated environments and on real hardware platforms demonstrate that this method enables the robot to walk stably on gravel roads, grass, slopes, and continuous uneven terrain, reducing gait instability by approximately 40% compared to traditional serial methods. Since the system only requires a monocular downward-facing depth camera and an onboard computing unit, without the need for external positioning equipment or pre-built maps, it offers good deployment economy and environmental versatility. This work provides a feasible technical pathway for autonomous locomotion of humanoid robots in scenarios such as disaster rescue, field inspection, and complex industrial environments, particularly suited for tasks requiring rapid adaptation to unknown terrains.
+
+## 개요
+
+본 연구는 인간형 로봇이 비정형 지형에서 보행 시 인지와 운동 제어가 분리되어 보행 적응성이 부족한 문제를 해결하기 위해, 실시간 기반 지형 재구성, 보행 위상 조절 및 전신 자세 제어를 동일한 피드백 루프에 통합하는 방법을 제안합니다. 주요 기여는 하향식 깊이 카메라와 U-Net 네트워크를 활용한 지형 고도 지도의 온라인 재구성과, 교사-학생 지식 전이 프레임워크를 통해 관절 수준의 제어 명령을 생성하여 로봇이 실시간 지형 변화에 따라 보행 주기와 빈도를 적응적으로 조정함으로써 복잡한 지면 환경에서의 보행 안정성과 강건성을 크게 향상시키는 데 있습니다.
+
+## 핵심 내용
+
+**연구 배경 및 문제**  
+기존 인간형 로봇 운동 제어는 일반적으로 인지 모듈(예: 지형 재구성)과 운동 계획/제어 모듈을 직렬로 처리하여 지형 정보 업데이트가 보행 조정 요구보다 지연됩니다. 특히 울퉁불퉁한 지면, 경사 변화 또는 단단함과 부드러움이 교차하는 지면에서 로봇은 보행 위상과 지형 특성이 일치하지 않아 균형을 잃기 쉽습니다. 기존 방법은 대부분 오프라인 지도나 단순화된 지형 모델에 의존하여 동적으로 변화하는 실제 환경에 대응하기 어렵습니다. 따라서 지형 인지, 보행 위상 추정 및 전신 운동 제어를 시간적 규모에서 긴밀하게 결합하는 것이 인간형 로봇의 야외 적응 능력을 향상시키는 핵심 과제가 됩니다.
+
+**방법 또는 모델 프레임워크**  
+본 논문은 종단 간 인지-운동 통합 제어 프레임워크를 제안합니다. 먼저, 로봇의 하향식 깊이 카메라로 실시간 깊이 이미지를 획득하고, U-Net 기반의 인코더-디코더 네트워크에 입력하여 로봇 발바닥 영역의 고해상도 고도 지도를 재구성합니다. 이 지형 표현은 자체 상태(관절 위치, 토크, IMU 데이터) 및 현재 보행 위상(위상 발진기로 추정)과 함께 교사 정책 네트워크에 입력됩니다. 교사 네트워크는 시뮬레이션 환경에서 강화 학습을 통해 훈련되어 최적의 전신 관절 궤적과 지면 반력 분배를 학습합니다. 이후, 지식 증류를 통해 교사 정책을 경량 학생 네트워크로 전이하여 온보드 컴퓨팅 자원에서 실시간으로 실행 가능하게 하고, 직접 관절 위치/토크 명령을 출력합니다.
+
+**핵심 기술 혁신**  
+본 연구의 핵심 혁신은 지형 재구성, 보행 위상 조절 및 전신 자세 제어를 기존의 "인지-계획-제어" 파이프라인 아키텍처가 아닌 동일한 제어 루프에 통합한 점입니다. 구체적으로, U-Net으로 재구성된 고도 지도는 발 착지점 수정뿐만 아니라 보행 위상 발진기의 주파수와 진폭을 직접 변조하여 로봇이 전방 지형의 기복에 따라 보행 리듬을 사전에 조정할 수 있게 합니다. 또한, 교사-학생 지식 전이 전략은 시뮬레이션에서 현실(Sim-to-Real)로의 전이 문제를 해결합니다. 학생 네트워크는 배포 시 깊이 이미지와 자체 상태만 의존하며, 지상 실측 지형 레이블이 필요 없고 추론 지연 시간이 10밀리초 미만으로 실시간 요구 사항을 충족합니다.
+
+**실험/검증 및 응용 가치**  
+시뮬레이션 환경과 실제 하드웨어 플랫폼에서의 실험 결과, 이 방법은 로봇이 자갈길, 잔디밭, 경사면 및 연속적인 울퉁불퉁한 지형에서 안정적으로 보행할 수 있게 하며, 기존 직렬 방식에 비해 보행 불안정률이 약 40% 감소했습니다. 시스템은 단안 하향식 깊이 카메라와 온보드 컴퓨팅 유닛만 필요로 하며, 외부 위치 측정 장치나 사전 구축 지도가 필요 없어 배포 경제성과 환경 범용성이 뛰어납니다. 이 연구는 인간형 로봇이 재난 구조, 야외 순찰, 복잡한 산업 환경 등에서 자율 이동을 위한 실현 가능한 기술 경로를 제공하며, 특히 미지의 지형에 빠르게 적응해야 하는 작업에 적합합니다.

@@ -66,3 +66,14 @@ Over the past few years, a number of successful humanoid platforms have been dev
 ## 参考
 - http://arxiv.org/abs/1809.11051v1
 
+## Overview
+Over the past few years, a number of successful humanoid platforms have been developed, including the Nao and the DARwIn-OP, both of which are used by many research groups for the investigation of bipedal walking, full-body motions, and human-robot interaction. The NimbRo-OP is an open humanoid platform under development by team NimbRo of the University of Bonn. Significantly larger than the two aforementioned humanoids, this platform has the potential to interact with a more human-scale environment. This paper describes a software framework for the NimbRo-OP that is based on the Robot Operating System (ROS) middleware. The software provides functionality for hardware abstraction, visual perception, and behavior generation, and has been used to implement basic soccer skills. These were demonstrated at RoboCup 2013, as part of the winning team of the Humanoid League competition.
+
+## Content
+Over the past few years, a number of successful humanoid platforms have been developed, including the Nao and the DARwIn-OP, both of which are used by many research groups for the investigation of bipedal walking, full-body motions, and human-robot interaction. The NimbRo-OP is an open humanoid platform under development by team NimbRo of the University of Bonn. Significantly larger than the two aforementioned humanoids, this platform has the potential to interact with a more human-scale environment. This paper describes a software framework for the NimbRo-OP that is based on the Robot Operating System (ROS) middleware. The software provides functionality for hardware abstraction, visual perception, and behavior generation, and has been used to implement basic soccer skills. These were demonstrated at RoboCup 2013, as part of the winning team of the Humanoid League competition.
+
+## 개요
+지난 몇 년 동안 Nao와 DARwIn-OP를 포함한 여러 성공적인 휴머노이드 플랫폼이 개발되었으며, 이 두 플랫폼은 많은 연구 그룹에서 이족 보행, 전신 동작 및 인간-로봇 상호작용 연구에 사용되고 있습니다. NimbRo-OP는 본 대학의 NimbRo 팀이 개발 중인 오픈 휴머노이드 플랫폼입니다. 앞서 언급한 두 휴머노이드보다 훨씬 큰 이 플랫폼은 보다 인간적인 규모의 환경과 상호작용할 수 있는 잠재력을 가지고 있습니다. 본 논문은 Robot Operating System (ROS) 미들웨어를 기반으로 한 NimbRo-OP용 소프트웨어 프레임워크를 설명합니다. 이 소프트웨어는 하드웨어 추상화, 시각적 인식 및 행동 생성을 위한 기능을 제공하며, 기본적인 축구 기술을 구현하는 데 사용되었습니다. 이러한 기술은 RoboCup 2013에서 휴머노이드 리그 우승 팀의 일환으로 시연되었습니다.
+
+## 핵심 내용
+지난 몇 년 동안 Nao와 DARwIn-OP를 포함한 여러 성공적인 휴머노이드 플랫폼이 개발되었으며, 이 두 플랫폼은 많은 연구 그룹에서 이족 보행, 전신 동작 및 인간-로봇 상호작용 연구에 사용되고 있습니다. NimbRo-OP는 본 대학의 NimbRo 팀이 개발 중인 오픈 휴머노이드 플랫폼입니다. 앞서 언급한 두 휴머노이드보다 훨씬 큰 이 플랫폼은 보다 인간적인 규모의 환경과 상호작용할 수 있는 잠재력을 가지고 있습니다. 본 논문은 Robot Operating System (ROS) 미들웨어를 기반으로 한 NimbRo-OP용 소프트웨어 프레임워크를 설명합니다. 이 소프트웨어는 하드웨어 추상화, 시각적 인식 및 행동 생성을 위한 기능을 제공하며, 기본적인 축구 기술을 구현하는 데 사용되었습니다. 이러한 기술은 RoboCup 2013에서 휴머노이드 리그 우승 팀의 일환으로 시연되었습니다.

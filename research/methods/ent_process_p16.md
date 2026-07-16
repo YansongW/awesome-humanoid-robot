@@ -543,5 +543,474 @@ theoretical_depth:
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
 
+## Overview
+Pilot & Production Ramp is the 16th stage in the full-process development of humanoid robot products, expanded into several Level-3 sub-tasks in WBS V3.
+## Content
+This stage covers complete engineering actions such as input review, solution design, implementation/prototyping, verification closure, and documentation delivery. It is a key node to ensure downstream dependents receive qualified inputs.
 
+## Key Sub-tasks and Technical Content
+#### Design for Manufacturing
 
+##### DFM/DFA Review
+- **Methods / Tools**: Design for Manufacturing/Assembly analysis, assembly time estimation
+- **Design Thinking Logic**: Convert 3D printing/CNC prototypes into mass production processes such as die casting, injection molding, and sheet metal
+- **Key Constraints**: Mold cost, yield rate, cycle time
+- **Completion Criteria / Deliverables**: DFM/DFA report, engineering change list, cost impact assessment
+**Level-3 Sub-tasks:**
+- **P16.1.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "DFM/DFA Review," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, time nodes, and risk register
+- **P16.1.1.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "DFM/DFA Review," use "Design for Manufacturing/Assembly analysis, assembly time estimation" for validation, and clarify the technical roadmap and resource requirements.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and perform quantitative scoring
+3. Organize a review and freeze the solution
+- **P16.1.1.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation work for "DFM/DFA Review" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P16.1.1.4 Test Execution and Result Analysis**: Execute "DFM/DFA Review" tests according to acceptance criteria, calculate pass rate/error/deviation, conduct root cause analysis, and form an improvement list.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P16.1.1.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "DFM/DFA Review," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents according to templates and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+##### Mold and Tooling Design
+- **Methods / Tools**: Die casting mold, injection mold, stamping die, fixture, jig, gauge
+- **Design Thinking Logic**: Ensure batch consistency and assembly precision
+- **Key Constraints**: Mold lead time, cost, modification difficulty
+- **Completion Criteria / Deliverables**: Mold/tooling drawings, FAI plan, acceptance criteria
+**Level-3 Sub-tasks:**
+- **P16.1.2.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Mold and Tooling Design," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, time nodes, and risk register
+- **P16.1.2.2 Concept and Detailed Design**: Complete concept design, detailed design, and interface definition for "Mold and Tooling Design," use "Die casting mold, injection mold, stamping die, fixture, jig, gauge" to verify feasibility, and output drawings/algorithms/logical frameworks.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and perform quantitative scoring
+3. Organize a review and freeze the solution
+- **P16.1.2.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation work for "Mold and Tooling Design" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P16.1.2.4 Verification and Issue Closure**: Verify the output of "Mold and Tooling Design," check if it meets completion criteria, record issues, and track them to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P16.1.2.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Mold and Tooling Design," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents according to templates and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+##### Assembly Line Planning and SOP
+- **Methods / Tools**: Station design, tooling fixtures, standard work, cycle time balancing
+- **Design Thinking Logic**: Transition from single-unit manual assembly to small-batch production line
+- **Key Constraints**: Cycle time, personnel training, floor space
+- **Completion Criteria / Deliverables**: Assembly flow chart, tooling list, SOP, cycle time calculation
+**Level-3 Sub-tasks:**
+- **P16.1.3.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Assembly Line Planning and SOP," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, time nodes, and risk register
+- **P16.1.3.2 Algorithm/Control Solution Design**: Based on "Station design, tooling fixtures, standard work, cycle time balancing," establish a mathematical model or algorithm framework, form candidate solutions, evaluate stability, real-time performance, and scalability, and freeze the implementation path.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and perform quantitative scoring
+3. Organize a review and freeze the solution
+- **P16.1.3.3 Algorithm Implementation and Simulation Verification**: Implement the algorithm for "Assembly Line Planning and SOP" in a simulation environment or with offline data, verifying functional correctness, real-time performance, and robustness.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P16.1.3.4 Algorithm Tuning and Performance Verification**: Perform parameter tuning and boundary testing on the "Assembly Line Planning and SOP" algorithm, verifying whether performance under typical/extreme conditions meets indicators.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P16.1.3.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Assembly Line Planning and SOP," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents according to templates and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+#### Supply Chain and Quality Management
+
+##### Supplier Selection and Audit
+- **Methods / Tools**: Supplier audit, sample approval, IQC, second supplier development
+- **Design Thinking Logic**: Key components (motors, reducers, batteries, computing boards) require multiple backups
+- **Key Constraints**: Delivery lead time, quality consistency, price
+- **Completion Criteria / Deliverables**: Supplier list, sample test report, approved supplier list
+**Level-3 Sub-tasks:**
+- **P16.2.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Supplier Selection and Audit," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, time nodes, and risk register
+- **P16.2.1.2 Candidate Solution Establishment and Evaluation**: Establish a candidate solution library for "Supplier Selection and Audit," use "Supplier audit, sample approval, IQC, second supplier development" for quantitative evaluation, consider cost, performance, supply chain, and maintainability to determine the final solution.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and perform quantitative scoring
+3. Organize a review and freeze the solution
+- **P16.2.1.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation work for "Supplier Selection and Audit" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P16.2.1.4 Verification and Issue Closure**: Verify the output of "Supplier Selection and Audit," check if it meets completion criteria, record issues, and track them to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P16.2.1.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Supplier Selection and Audit," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents according to templates and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+##### Quality Control System Establishment
+- **Methods / Tools**: SPC, FAI, incoming inspection, in-process inspection, outgoing inspection, MSA
+- **Design Thinking Logic**: Establish monitoring of key dimensions and performance to prevent batch defects
+- **Key Constraints**: AQL standards, inspection capability, personnel training
+- **Completion Criteria / Deliverables**: Quality plan, inspection specification, SPC control chart
+**Level-3 Sub-tasks:**
+- **P16.2.2.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Quality Control System Establishment," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, time nodes, and risk register
+- **P16.2.2.2 Algorithm/Control Solution Design**: Based on "SPC, FAI, incoming inspection, in-process inspection, outgoing inspection, MSA," establish a mathematical model or algorithm framework, form candidate solutions, evaluate stability, real-time performance, and scalability, and freeze the implementation path.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and perform quantitative scoring
+3. Organize a review and freeze the solution
+- **P16.2.2.3 Algorithm Implementation and Simulation Verification**: Implement the algorithm for "Quality Control System Establishment" in a simulation environment or with offline data, verifying functional correctness, real-time performance, and robustness.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P16.2.2.4 Algorithm Tuning and Performance Verification**: Perform parameter tuning and boundary testing on the "Quality Control System Establishment" algorithm, verifying whether performance under typical/extreme conditions meets indicators.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P16.2.2.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Quality Control System Establishment," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents according to templates and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+##### Incoming and Process Anomaly Handling
+- **Methods / Tools**: 8D, CAPA, supplier quality improvement
+- **Design Thinking Logic**: Quickly close quality issues to prevent them from flowing downstream
+- **Key Constraints**: Response time, root cause analysis capability
+- **Completion Criteria / Deliverables**: 8D report, improvement verification, defect rate reduction
+**Level-3 Sub-tasks:**
+- **P16.2.3.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Incoming and Process Anomaly Handling," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, time nodes, and risk register
+- **P16.2.3.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "Incoming and Process Anomaly Handling," use "8D, CAPA, supplier quality improvement" for validation, and clarify the technical roadmap and resource requirements.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and perform quantitative scoring
+3. Organize a review and freeze the solution
+- **P16.2.3.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation work for "Incoming and Process Anomaly Handling" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P16.2.3.4 Verification and Issue Closure**: Verify the output of "Incoming and Process Anomaly Handling," check if it meets completion criteria, record issues, and track them to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P16.2.3.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Incoming and Process Anomaly Handling," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents according to templates and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+#### Pilot Run and Production Ramp
+
+##### Small-Batch Pilot Run
+- **Methods / Tools**: 10–50 unit pilot run, issue tracking, ECN, first article inspection
+- **Design Thinking Logic**: Verify the entire chain of supply chain, assembly, testing, and software
+- **Key Constraints**: Time, resources, prototype cost
+- **Completion Criteria / Deliverables**: Pilot run summary report, first pass yield, issue closure rate
+**Level-3 Sub-tasks:**
+- **P16.3.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Small-Batch Pilot Run," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, time nodes, and risk register
+- **P16.3.1.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "Small-Batch Pilot Run," use "10–50 unit pilot run, issue tracking, ECN, first article inspection" for validation, and clarify the technical roadmap and resource requirements.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and perform quantitative scoring
+3. Organize a review and freeze the solution
+- **P16.3.1.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation work for "Small-Batch Pilot Run" according to the design solution, create prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P16.3.1.4 Verification and Issue Closure**: Verify the output of "Small-Batch Pilot Run," check if it meets completion criteria, record issues, and track them to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P16.3.1.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Small-Batch Pilot Run," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents according to templates and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+## 개요
+소량 시제품 생산 및 양산 준비(Pilot & Production Ramp)는 휴머노이드 로봇 제품 개발 전 과정 중 16번째 단계로, WBS V3에서 여러 3레벨 하위 작업으로 전개됩니다.
+## 핵심 내용
+이 단계는 입력 정리,方案 설계, 구현/프로토타입, 검증 폐쇄 및 문서 인도 등 완전한 엔지니어링 작업을 포함하며, 하위 의존 부서가 적격한 입력을 확보할 수 있도록 하는 핵심 노드입니다.
+
+## 주요 하위 작업 및 기술 내용
+#### 제조 가능성 설계
+
+##### DFM/DFA 검토
+- **방법 / 도구**: 설계 제조 가능성/조립 가능성 분석, 조립 공수 추정
+- **설계 사고 논리**: 3D 프린팅/CNC 프로토타입을 다이캐스팅, 사출 성형, 판금 등 양산 공정으로 전환
+- **핵심 제약 조건**: 금형 비용, 수율, 택트 타임
+- **완료 기준 / 산출물**: DFM/DFA 보고서, 엔지니어링 변경 목록, 비용 영향 평가
+**3레벨 하위 작업:**
+- **P16.1.1.1 입력 정리 및 목표 정량화**: 「DFM/DFA 검토」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 전환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P16.1.1.2方案/방법 설계**: 「DFM/DFA 검토」에 대한 구현 방법 또는 후보方案을 수립하고, 「설계 제조 가능성/조립 가능성 분석, 조립 공수 추정」을 사용하여论证하며, 기술 경로와 자원 요구 사항을 명확히 합니다.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보方案 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및方案 확정
+- **P16.1.1.3 구현/프로토타입/시제품 제작**: 설계方案에 따라 「DFM/DFA 검토」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 핵심 작업:**
+1. 모델/시제품 구축 및 핵심 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 실행
+3. 이상 및 편차 기록
+- **P16.1.1.4 테스트 실행 및 결과 분석**: 검수 기준에 따라 「DFM/DFA 검토」 테스트를 실행하고, 통과율/오차/편차를 통계하며, 근본 원인 분석을 수행하고 개선 목록을 작성합니다.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 실행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P16.1.1.5 문서 출력 및 하위 인도**: 「DFM/DFA 검토」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### 금형 및 지그 설계
+- **방법 / 도구**: 다이캐스팅 금형, 사출 금형, 프레스 금형, 지그,治具, 검사 지그
+- **설계 사고 논리**: 배치 일관성 및 조립 정밀도 보장
+- **핵심 제약 조건**: 금형周期, 비용, 수정 난이도
+- **완료 기준 / 산출물**: 금형/지그 도면, FAI 계획, 검수 기준
+**3레벨 하위 작업:**
+- **P16.1.2.1 입력 정리 및 목표 정량화**: 「금형 및 지그 설계」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 전환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P16.1.2.2 개념 및 상세 설계**: 「금형 및 지그 설계」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「다이캐스팅 금형, 사출 금형, 프레스 금형, 지그,治具, 검사 지그」를 사용하여 타당성을 검증하며, 도면/알고리즘/논리 프레임워크를 출력합니다.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보方案 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및方案 확정
+- **P16.1.2.3 구현/프로토타입/시제품 제작**: 설계方案에 따라 「금형 및 지그 설계」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 핵심 작업:**
+1. 모델/시제품 구축 및 핵심 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 실행
+3. 이상 및 편차 기록
+- **P16.1.2.4 검증 및 문제 폐쇄**: 「금형 및 지그 설계」 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적합니다.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 실행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P16.1.2.5 문서 출력 및 하위 인도**: 「금형 및 지그 설계」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### 조립 라인 계획 및 SOP
+- **방법 / 도구**: 공정 설계, 지그治具, 표준 작업, 택트 타임 밸런싱
+- **설계 사고 논리**: 단일 수동 조립에서 소량 라인 생산으로 전환
+- **핵심 제약 조건**: 택트 타임, 인력 교육, 공간
+- **완료 기준 / 산출물**: 조립 흐름도, 지그 목록, SOP, 택트 타임 산출
+**3레벨 하위 작업:**
+- **P16.1.3.1 입력 정리 및 목표 정량화**: 「조립 라인 계획 및 SOP」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 전환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P16.1.3.2 알고리즘/제어方案 설계**: 「공정 설계, 지그治具, 표준 작업, 택트 타임 밸런싱」을 기반으로 수학적 모델 또는 알고리즘 프레임워크를 구축하고, 후보方案을 도출하며, 안정성, 실시간성 및 확장성을 평가하고 구현 경로를 확정합니다.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보方案 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및方案 확정
+- **P16.1.3.3 알고리즘 구현 및 시뮬레이션 검증**: 「조립 라인 계획 및 SOP」의 알고리즘을 시뮬레이션 환경 또는 오프라인 데이터에서 구현하고, 기능 정확성, 실시간성 및 견고성을 검증합니다.
+**4레벨 핵심 작업:**
+1. 모델/시제품 구축 및 핵심 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 실행
+3. 이상 및 편차 기록
+- **P16.1.3.4 알고리즘 튜닝 및 성능 검증**: 「조립 라인 계획 및 SOP」 알고리즘의 파라미터 최적화 및 경계 테스트를 수행하고, 일반/극한 조건에서의 성능이 지표를 충족하는지 검증합니다.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 실행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P16.1.3.5 문서 출력 및 하위 인도**: 「조립 라인 계획 및 SOP」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+#### 공급망 및 품질 관리
+
+##### 공급업체 선정 및 심사
+- **방법 / 도구**: 공급업체 심사, 샘플 승인, IQC, 2차 공급업체 개발
+- **설계 사고 논리**: 핵심 부품(모터, 감속기, 배터리, 컴퓨팅 보드)은 다중 공급처 확보 필요
+- **핵심 제약 조건**: 납기, 품질 일관성, 가격
+- **완료 기준 / 산출물**: 공급업체 목록, 샘플 테스트 보고서, 적격 공급업체 명단
+**3레벨 하위 작업:**
+- **P16.2.1.1 입력 정리 및 목표 정량화**: 「공급업체 선정 및 심사」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 전환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P16.2.1.2 후보方案 수립 및 평가**: 「공급업체 선정 및 심사」에 대한 후보方案 라이브러리를 구축하고, 「공급업체 심사, 샘플 승인, IQC, 2차 공급업체 개발」을 사용하여 정량적 평가를 수행하며, 비용, 성능, 공급망, 유지보수성을 고려하여 최종方案을 결정합니다.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보方案 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및方案 확정
+- **P16.2.1.3 구현/프로토타입/시제품 제작**: 설계方案에 따라 「공급업체 선정 및 심사」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 핵심 작업:**
+1. 모델/시제품 구축 및 핵심 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 실행
+3. 이상 및 편차 기록
+- **P16.2.1.4 검증 및 문제 폐쇄**: 「공급업체 선정 및 심사」 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적합니다.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 실행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P16.2.1.5 문서 출력 및 하위 인도**: 「공급업체 선정 및 심사」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### 품질 관리 체계 구축
+- **방법 / 도구**: SPC, FAI, 입고 검사, 공정 검사, 출하 검사, MSA
+- **설계 사고 논리**: 핵심 치수 및 성능 모니터링 구축, 배치 불량 방지
+- **핵심 제약 조건**: AQL 기준, 검사 능력, 인력 교육
+- **완료 기준 / 산출물**: 품질 계획, 검사 규격, SPC 관리도
+**3레벨 하위 작업:**
+- **P16.2.2.1 입력 정리 및 목표 정량화**: 「품질 관리 체계 구축」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 전환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P16.2.2.2 알고리즘/제어方案 설계**: 「SPC, FAI, 입고 검사, 공정 검사, 출하 검사, MSA」를 기반으로 수학적 모델 또는 알고리즘 프레임워크를 구축하고, 후보方案을 도출하며, 안정성, 실시간성 및 확장성을 평가하고 구현 경로를 확정합니다.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보方案 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및方案 확정
+- **P16.2.2.3 알고리즘 구현 및 시뮬레이션 검증**: 「품질 관리 체계 구축」의 알고리즘을 시뮬레이션 환경 또는 오프라인 데이터에서 구현하고, 기능 정확성, 실시간성 및 견고성을 검증합니다.
+**4레벨 핵심 작업:**
+1. 모델/시제품 구축 및 핵심 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 실행
+3. 이상 및 편차 기록
+- **P16.2.2.4 알고리즘 튜닝 및 성능 검증**: 「품질 관리 체계 구축」 알고리즘의 파라미터 최적화 및 경계 테스트를 수행하고, 일반/극한 조건에서의 성능이 지표를 충족하는지 검증합니다.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 실행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P16.2.2.5 문서 출력 및 하위 인도**: 「품질 관리 체계 구축」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### 입고 및 공정 이상 처리
+- **방법 / 도구**: 8D, CAPA, 공급업체 품질 개선
+- **설계 사고 논리**: 품질 문제 신속 폐쇄, 하위 단계 유입 방지
+- **핵심 제약 조건**: 대응 시간, 근본 원인 분석 능력
+- **완료 기준 / 산출물**: 8D 보고서, 개선 검증, 불량률 감소
+**3레벨 하위 작업:**
+- **P16.2.3.1 입력 정리 및 목표 정량화**: 「입고 및 공정 이상 처리」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 전환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P16.2.3.2方案/방법 설계**: 「입고 및 공정 이상 처리」에 대한 구현 방법 또는 후보方案을 수립하고, 「8D, CAPA, 공급업체 품질 개선」을 사용하여论证하며, 기술 경로와 자원 요구 사항을 명확히 합니다.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보方案 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및方案 확정
+- **P16.2.3.3 구현/프로토타입/시제품 제작**: 설계方案에 따라 「입고 및 공정 이상 처리」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 핵심 작업:**
+1. 모델/시제품 구축 및 핵심 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 실행
+3. 이상 및 편차 기록
+- **P16.2.3.4 검증 및 문제 폐쇄**: 「입고 및 공정 이상 처리」 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적합니다.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 실행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P16.2.3.5 문서 출력 및 하위 인도**: 「입고 및 공정 이상 처리」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+#### 시제품 생산 및 양산 램프업
+
+##### 소량 시제품 생산(Pilot Run)
+- **방법 / 도구**: 10–50대 시제품 생산, 문제 추적, ECN, 첫품 검사
+- **설계 사고 논리**: 공급망, 조립, 테스트, 소프트웨어 전체 링크 검증
+- **핵심 제약 조건**: 시간, 자원, 시제품 비용
+- **완료 기준 / 산출물**: 시제품 생산 요약 보고서, 직통율, 문제 폐쇄율
+**3레벨 하위 작업:**
+- **P16.3.1.1 입력 정리 및 목표 정량화**: 「소량 시제품 생산(Pilot Run)」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화 가능한 검수 지표로 전환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 전환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P16.3.1.2方案/방법 설계**: 「소량 시제품 생산(Pilot Run)」에 대한 구현 방법 또는 후보方案을 수립하고, 「10–50대 시제품 생산, 문제 추적, ECN, 첫품 검사」를 사용하여论证하며, 기술 경로와 자원 요구 사항을 명확히 합니다.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보方案 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및方案 확정
+- **P16.3.1.3 구현/프로토타입/시제품 제작**: 설계方案에 따라 「소량 시제품 생산(Pilot Run)」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 핵심 작업:**
+1. 모델/시제품 구축 및 핵심 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 실행
+3. 이상 및 편차 기록
+- **P16.3.1.4 검증 및 문제 폐쇄**: 「소량 시제품 생산(Pilot Run)」 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종료까지 추적합니다.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 실행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P16.3.1.5 문서 출력 및 하위 인도**: 「소량 시제품 생산(Pilot Run)」 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구 사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지

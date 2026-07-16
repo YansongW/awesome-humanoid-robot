@@ -70,3 +70,39 @@ FRoM-W1 的技术创新体现在三个层面。首先，提出“可跟踪身体
 ## 参考
 
 - FRoM-W1 project page (https://openmoss.github.io/FRoM-W1)
+
+## Overview
+
+FRoM-W1 proposes a unified framework for general-purpose humanoid whole-body control, aiming to address the mapping challenge between language instructions and complex body movements. By integrating reinforcement learning, behavior cloning, and semantic planning with Vision-Language Models (VLMs), this research transforms language instructions, proprioceptive states, and simulation interaction data into trackable body targets, subsequently outputting whole-body trajectories and low-level controller commands. Its primary contribution lies in compressing demonstration trajectories into a supervised action prediction problem, and effectively reducing temporal jitter through action chunking and closed-loop execution strategies, providing a feasible technical pathway for natural language-driven whole-body coordinated control of humanoid robots.
+
+## Content
+
+(a) Research Background and Problem  
+Humanoid robot whole-body control has long faced two major challenges: first, how to convert high-level language instructions into low-level joint motion sequences, and second, how to maintain whole-body coordination and dynamic balance in multi-task scenarios. Existing methods are mostly limited to single control strategies, such as pure Reinforcement Learning (RL) relying on extensive simulation interactions, Behavior Cloning (BC) constrained by demonstration data quality, and Vision-Language Models (VLMs) capable of semantic planning but unable to directly generate fine-grained motion commands. Addressing this gap, FRoM-W1 proposes a hybrid strategy framework aimed at unifying language understanding, motion planning, and low-level control to achieve an end-to-end closed loop from "understanding instructions" to "whole-body execution."
+
+(b) Method or Model Framework  
+The overall architecture of FRoM-W1 comprises three core modules: the semantic planning layer, the policy training layer, and the low-level controller. The semantic planning layer uses a VLM to parse language instructions into executable routing targets or subtask sequences; the policy training layer integrates PPO reinforcement learning with ACT behavior cloning to learn whole-body trajectory generation in a simulation environment; the low-level controller is responsible for mapping trajectories into joint torque or position commands. A key design is compressing continuous motion trajectories from demonstration data into discrete action prediction problems, using action chunking to segment long sequences into parallel-processable sub-blocks, thereby improving training efficiency and execution stability.
+
+(c) Key Technical Innovations  
+The technical innovations of FRoM-W1 are reflected in three aspects. First, it introduces the concept of "trackable body targets," uniformly encoding language instructions, proprioceptive states, and simulation data into intermediate representations to reduce the heterogeneity of multimodal inputs. Second, it adopts a hybrid training strategy, allowing PPO, ACT, and VLM to co-optimize within a shared framework, avoiding the limitations of a single strategy. Finally, through a closed-loop execution mechanism, real-time state feedback is incorporated at each control step, combined with action chunking to reduce temporal jitter, enabling the system to maintain motion smoothness and balance robustness in dynamic environments. These designs collectively form a scalable prototype of a "behavior foundation model."
+
+(d) Experiment/Validation or Application Value  
+Although the abstract does not disclose specific experimental data, the validation path can be inferred from the framework design: in a simulation environment, FRoM-W1 should handle various language instructions (e.g., "walk forward and raise your right arm," "squat down and turn around") and demonstrate advantages over pure RL, pure BC, and VLM planning baselines in metrics such as task success rate, trajectory smoothness, and balance maintenance time. In practical applications, this framework is expected to lower the programming threshold for humanoid robots, enabling non-expert users to control robots through natural language for complex whole-body actions like carrying objects or inspection. Furthermore, its modular design facilitates transfer to different hardware platforms, providing key technical support for humanoid robots transitioning from laboratories to general service scenarios.
+
+## 개요
+
+FRoM-W1은 언어 명령과 복잡한 신체 움직임 간의 매핑 문제를 해결하기 위해 설계된 범용 휴머노이드 전신 제어를 위한 통합 프레임워크를 제안합니다. 이 연구는 강화 학습, 행동 복제 및 시각 언어 모델(VLM) 의미 계획을 융합하여 언어 명령, 본체 상태 및 시뮬레이션 상호작용 데이터를 추적 가능한 신체 목표로 변환하고, 이를 통해 전신 궤적과 하위 수준 제어기 명령을 출력합니다. 주요 기여는 시연 궤적을 감독 가능한 동작 예측 문제로 압축하고, 동작 청크(action chunk)와 폐쇄 루프 실행 전략을 통해 시간적 지터를 효과적으로 줄여 휴머노이드 로봇이 자연어로 구동되는 전신 협조 제어를 실현할 수 있는 실용적인 기술 경로를 제공하는 데 있습니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제  
+휴머노이드 로봇의 전신 제어는 오랫동안 두 가지 주요 과제에 직면해 왔습니다. 첫째는 고수준 언어 명령을 저수준 관절 운동 시퀀스로 변환하는 방법이고, 둘째는 다중 작업 시나리오에서 전신 협조와 동적 균형을 유지하는 방법입니다. 기존 방법은 대부분 단일 제어 전략에 국한되어 있습니다. 순수 강화 학습(RL)은 많은 시뮬레이션 상호작용에 의존하고, 행동 복제(BC)는 시연 데이터 품질에 제한을 받으며, 시각 언어 모델(VLM)은 의미 계획을 수행할 수 있지만 정밀한 운동 명령을 직접 생성하기는 어렵습니다. FRoM-W1은 이러한 격차를 해결하기 위해 언어 이해, 운동 계획 및 하위 수준 제어를 통합하여 "명령 이해"에서 "전신 실행"까지의 종단 간 폐쇄 루프를 실현하는 혼합 전략 프레임워크를 제안합니다.
+
+(b) 방법 또는 모델 프레임워크  
+FRoM-W1의 전체 아키텍처는 의미 계획 계층, 정책 훈련 계층 및 하위 수준 제어기의 세 가지 핵심 모듈로 구성됩니다. 의미 계획 계층은 VLM을 사용하여 언어 명령을 실행 가능한 경로 목표 또는 하위 작업 시퀀스로 분석합니다. 정책 훈련 계층은 PPO 강화 학습과 ACT 행동 복제를 융합하여 시뮬레이션 환경에서 전신 궤적 생성을 학습합니다. 하위 수준 제어기는 궤적을 관절 토크 또는 위치 명령으로 매핑하는 역할을 합니다. 핵심 설계는 시연 데이터의 연속 운동 궤적을 이산적인 동작 예측 문제로 압축하고, 동작 청크 기술을 통해 긴 시퀀스를 병렬 처리 가능한 하위 블록으로 분할하여 훈련 효율성과 실행 안정성을 향상시키는 데 있습니다.
+
+(c) 핵심 기술 혁신  
+FRoM-W1의 기술 혁신은 세 가지 수준에서 나타납니다. 첫째, "추적 가능한 신체 목표" 개념을 제안하여 언어 명령, 본체 상태 및 시뮬레이션 데이터를 통합적으로 중간 표현으로 인코딩하여 다중 모드 입력의 이질성을 줄입니다. 둘째, 혼합 훈련 전략을 채택하여 PPO, ACT 및 VLM이 공유 프레임워크에서 협력적으로 최적화되도록 하여 단일 전략의 한계를 피합니다. 마지막으로, 폐쇄 루프 실행 메커니즘을 통해 각 제어 단계에서 실시간 상태 피드백을 도입하고, 동작 청크를 결합하여 시간적 지터를 줄여 시스템이 동적 환경에서도 운동의 부드러움과 균형 견고성을 유지할 수 있도록 합니다. 이러한 설계는 확장 가능한 "행동 기반 모델"의 초기 형태를 공동으로 구성합니다.
+
+(d) 실험/검증 또는 응용 가치  
+초록에 구체적인 실험 데이터가 공개되지 않았지만, 프레임워크 설계로부터 검증 경로를 추론할 수 있습니다. 시뮬레이션 환경에서 FRoM-W1은 다양한 언어 명령(예: "앞으로 걸어가며 오른팔 들기", "쪼그려 앉은 후 돌아서기")을 처리할 수 있어야 하며, 순수 RL, 순수 BC 및 VLM 계획 기준선과 비교하여 작업 성공률, 궤적 부드러움 및 균형 유지 시간 등의 지표에서 우위를 보여줄 것입니다. 실제 응용에서 이 프레임워크는 휴머노이드 로봇의 프로그래밍 장벽을 낮추어 비전문 사용자가 자연어를 통해 로봇을 조작하여 운반, 순찰 등 복잡한 전신 동작을 수행할 수 있게 할 것으로 기대됩니다. 또한, 모듈식 설계는 다양한 하드웨어 플랫폼으로의 이전을 용이하게 하여 휴머노이드 로봇이 실험실에서 범용 서비스 시나리오로 나아가는 데 핵심 기술 지원을 제공합니다.

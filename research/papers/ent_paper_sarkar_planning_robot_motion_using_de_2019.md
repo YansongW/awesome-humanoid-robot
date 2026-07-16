@@ -60,3 +60,14 @@ In this paper, we introduce a novel framework that can learn to make visual pred
 ## 参考
 - http://arxiv.org/abs/1906.10182v1
 
+## Overview
+In this paper, we introduce a novel framework that can learn to make visual predictions about the motion of a robotic agent from raw video frames. Our proposed motion prediction network (PROM-Net) can learn in a completely unsupervised manner and efficiently predict up to 10 frames in the future. Moreover, unlike any other motion prediction models, it is lightweight and once trained it can be easily implemented on mobile platforms that have very limited computing capabilities. We have created a new robotic data set comprising LEGO Mindstorms moving along various trajectories in three different environments under different lighting conditions for testing and training the network. Finally, we introduce a framework that would use the predicted frames from the network as an input to a model predictive controller for motion planning in unknown dynamic environments with moving obstacles.
+
+## Content
+In this paper, we introduce a novel framework that can learn to make visual predictions about the motion of a robotic agent from raw video frames. Our proposed motion prediction network (PROM-Net) can learn in a completely unsupervised manner and efficiently predict up to 10 frames in the future. Moreover, unlike any other motion prediction models, it is lightweight and once trained it can be easily implemented on mobile platforms that have very limited computing capabilities. We have created a new robotic data set comprising LEGO Mindstorms moving along various trajectories in three different environments under different lighting conditions for testing and training the network. Finally, we introduce a framework that would use the predicted frames from the network as an input to a model predictive controller for motion planning in unknown dynamic environments with moving obstacles.
+
+## 개요
+본 논문에서는 로봇 에이전트의 움직임에 대한 시각적 예측을 원시 비디오 프레임으로부터 학습할 수 있는 새로운 프레임워크를 소개합니다. 제안된 움직임 예측 네트워크(PROM-Net)는 완전히 비지도 방식으로 학습할 수 있으며, 최대 10프레임까지 효율적으로 예측할 수 있습니다. 또한 다른 움직임 예측 모델과 달리 경량화되어 있어, 학습 후에는 컴퓨팅 성능이 매우 제한된 모바일 플랫폼에서도 쉽게 구현할 수 있습니다. 우리는 네트워크의 테스트 및 학습을 위해 세 가지 다른 환경에서 다양한 조명 조건 하에 다양한 궤적으로 움직이는 LEGO Mindstorms로 구성된 새로운 로봇 데이터 세트를 생성했습니다. 마지막으로, 네트워크에서 예측된 프레임을 입력으로 사용하여 움직이는 장애물이 있는 알려지지 않은 동적 환경에서 모션 플래닝을 위한 모델 예측 제어기로 활용하는 프레임워크를 소개합니다.
+
+## 핵심 내용
+본 논문에서는 로봇 에이전트의 움직임에 대한 시각적 예측을 원시 비디오 프레임으로부터 학습할 수 있는 새로운 프레임워크를 소개합니다. 제안된 움직임 예측 네트워크(PROM-Net)는 완전히 비지도 방식으로 학습할 수 있으며, 최대 10프레임까지 효율적으로 예측할 수 있습니다. 또한 다른 움직임 예측 모델과 달리 경량화되어 있어, 학습 후에는 컴퓨팅 성능이 매우 제한된 모바일 플랫폼에서도 쉽게 구현할 수 있습니다. 우리는 네트워크의 테스트 및 학습을 위해 세 가지 다른 환경에서 다양한 조명 조건 하에 다양한 궤적으로 움직이는 LEGO Mindstorms로 구성된 새로운 로봇 데이터 세트를 생성했습니다. 마지막으로, 네트워크에서 예측된 프레임을 입력으로 사용하여 움직이는 장애물이 있는 알려지지 않은 동적 환경에서 모션 플래닝을 위한 모델 예측 제어기로 활용하는 프레임워크를 소개합니다.

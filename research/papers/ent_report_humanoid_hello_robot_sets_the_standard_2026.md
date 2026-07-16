@@ -271,3 +271,15 @@ Forget legs or hands—Stretch 4 is a useful robot that can actually work in hom
 
 ## 参考
 - https://spectrum.ieee.org/stretch-4-home-robot
+
+## Overview
+Forget legs or hands—Stretch 4 is a useful robot that can actually work in homes. And the rampant popularity of videos showing humanoid robots doing household tasks in improbably clean kitchens and unrealistically tidy bedrooms suggests that we’re not the only ones interested in a robot that can do our chores.
+
+## Content
+Forget legs or hands—Stretch 4 is a useful robot that can actually work in homes. And the rampant popularity of videos showing humanoid robots doing household tasks in improbably clean kitchens and unrealistically tidy bedrooms suggests that we’re not the only ones interested in a robot that can do our chores. But for all kinds of reasons, legged humanoids are not yet ready for industrial or commercial applications at scale, and home applications (if people even want them), I would argue, are even farther away. Even so, ludicrously well-funded humanoid robotics companies are now ramping production while explicitly promising that their robots will be doing ‘housework.’ So what about that robot butler dream, then? All you have to do is forget about legs, arms, hands, faces, and focus on what really matters: mobility and manipulation. This is what Hello Robot’s Stretch robot is unapologetically all about, and the newest version being announced today, Stretch 4, is closer than ever to a robot that could safely do practical work in the home at an accessible cost.
+
+## 개요
+다리나 손은 잊어라—Stretch 4는 실제로 가정에서 일할 수 있는 유용한 로봇이다. 그리고 인간형 로봇이 비현실적으로 깨끗한 주방과 지나치게 정돈된 침실에서 가사일을 하는 영상이 널리 유행하는 것은, 우리만 집안일을 해줄 로봇에 관심이 있는 것이 아님을 시사한다.
+
+## 핵심 내용
+다리나 손은 잊어라—Stretch 4는 실제로 가정에서 일할 수 있는 유용한 로봇이다. 그리고 인간형 로봇이 비현실적으로 깨끗한 주방과 지나치게 정돈된 침실에서 가사일을 하는 영상이 널리 유행하는 것은, 우리만 집안일을 해줄 로봇에 관심이 있는 것이 아님을 시사한다. 그러나 여러 이유로 인해, 다리가 있는 인간형 로봇은 아직 대규모 산업 또는 상업용 응용에 준비되지 않았으며, 가정용 응용(사람들이 원한다고 해도)은 훨씬 더 먼 미래의 일이라고 나는 주장한다. 그럼에도 불구하고, 엄청난 자금을 지원받는 인간형 로봇 회사들은 이제 로봇이 '가사일'을 할 것이라고 명시적으로 약속하면서 생산을 늘리고 있다. 그렇다면 로봇 집사 꿈은 어떻게 되는 걸까? 여러분이 해야 할 일은 다리, 팔, 손, 얼굴을 잊고 진정으로 중요한 것, 즉 이동성과 조작 능력에 집중하는 것이다. 이것이 바로 Hello Robot의 Stretch 로봇이 주저함 없이 추구하는 바이며, 오늘 발표되는 최신 버전인 Stretch 4는 저렴한 비용으로 가정에서 안전하게 실용적인 작업을 수행할 수 있는 로봇에 그 어느 때보다 가까워졌다.

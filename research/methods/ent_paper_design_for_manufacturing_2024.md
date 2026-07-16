@@ -80,4 +80,66 @@ sources:
 ## 参考
 - [Design for Manufacturing](https://en.wikipedia.org/wiki/Design_for_manufacturing)
 
+## Overview
+Design practices for components and assemblies aimed at reducing production costs, improving yield, and simplifying assembly for humanoid robots.
 
+## Content
+### Definition and Positioning of Design for Manufacturing
+Design for Manufacturing belongs to the **method** category. Its domains include: manufacturing processes, design engineering. Value chain level: midstream, upstream. It involves design practices for components and assemblies to reduce production costs, improve yield, and simplify assembly for humanoid robots. The English term is *Design for Manufacturing*. The Korean term is *Design for Manufacturing*.
+
+### Mathematical and Theoretical Foundations of Design for Manufacturing
+Design for Manufacturing is built upon relevant mathematical theories and physical laws. Understanding its underlying assumptions, constraints, and derivation processes is a prerequisite for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and convergence or stability guarantees.
+In the high-dimensional, underactuated, and strongly coupled system of humanoid robots, Design for Manufacturing typically requires a balance between real-time performance, precision, and robustness.
+
+### Algorithm Steps and Implementation Key Points
+When implementing Design for Manufacturing in practice, it is necessary to clarify initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Choosing appropriate numerical methods, linear algebra solvers, and parallel computing strategies can significantly enhance computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable algorithm operation on real platforms.
+
+### Typical Applications and Limitations
+Design for Manufacturing can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, reliance on model accuracy, and online adaptation capabilities remain key issues to address in practical deployment.
+
+### Related Tags
+- cost
+- design
+- dfm
+- manufacturing
+- method
+- yield
+
+### Role in Humanoid Robot Systems
+As one of the key methods in the humanoid robot industry chain, Design for Manufacturing plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall machine performance. Related research and applications are continuously advancing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.
+
+## 개요
+휴머노이드 로봇의 생산 비용 절감, 수율 향상, 조립 간소화를 위한 부품 및 총체 설계 실무.
+
+## 핵심 내용
+### 제조 지향 설계의 정의와 위치
+제조 지향 설계는 **방법** 유형에 속한다. 해당 분야는 제조 공정, 설계 공학을 포함한다. 가치 사슬 계층은 중류, 상류에 해당한다. 휴머노이드 로봇의 생산 비용 절감, 수율 향상, 조립 간소화를 위한 부품 및 총체 설계 실무이다. 영문 명칭은 *Design for Manufacturing*이다. 한문 명칭은 *Design for Manufacturing*이다.
+
+### 제조 지향 설계의 수학적 및 원리적 기초
+제조 지향 설계는 관련 수학 이론과 물리 법칙에 기반한다. 그 전제 가정, 제약 조건 및 도출 과정을 이해하는 것이 해당 방법을 올바르게 적용하기 위한 전제 조건이다.
+구체적으로는 입력 공간, 출력 공간, 목적 함수 및 수렴성 또는 안정성 보장에 주목해야 한다.
+휴머노이드 로봇이라는 고차원, 저구동, 강결합 시스템에서 제조 지향 설계는 일반적으로 실시간성, 정밀도 및 강건성 사이의 균형을 유지해야 한다.
+
+### 알고리즘 단계와 구현 요점
+제조 지향 설계를 실제로 구현할 때는 초기화 조건, 반복 규칙, 중단 기준 및 매개변수 최적화 전략을 명확히 해야 한다.
+수치적 방법, 선형 대수 솔버 및 병렬 계산 전략을 합리적으로 선택하면 계산 효율성과 안정성을 크게 향상시킬 수 있다.
+동시에 모델 오차, 센서 노이즈 및 액추에이터 포화와 같은 공학적 제약을 충분히 고려하여 알고리즘이 실제 플랫폼에서 안정적으로 작동하도록 보장해야 한다.
+
+### 대표적 응용과 한계
+제조 지향 설계는 휴머노이드 로봇의 운동 계획, 제어 최적화, 상태 추정 및 학습 알고리즘 등 여러 단계에 적용될 수 있다.
+그러나 계산 복잡성, 모델 정밀도에 대한 의존성 및 온라인 적응 능력은 실제 배치에서 중점적으로 해결해야 할 문제이다.
+
+### 관련 태그
+- cost
+- design
+- dfm
+- manufacturing
+- method
+- yield
+
+### 휴머노이드 로봇 시스템에서의 역할
+휴머노이드 로봇 산업 체인에서 핵심 방법 중 하나로서 제조 지향 설계는 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 한다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정한다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있다.

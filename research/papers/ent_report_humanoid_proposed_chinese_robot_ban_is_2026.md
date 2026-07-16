@@ -198,3 +198,15 @@ The catch: American robot makers still need Chinese-made components Tech Soverei
 
 ## 参考
 - https://spectrum.ieee.org/chinese-robots-us-ban
+
+## Overview
+The catch: American robot makers still need Chinese-made components Tech Sovereignty Move Share
+
+## Content
+The catch: American robot makers still need Chinese-made components Tech Sovereignty Move Share Tech Sovereignty Move The catch: American robot makers still need Chinese-made components Photo-illustration: IEEE Spectrum. Source images: Getty Images government use of Chinese ground robots including humanoids, dogs, and crawlers. The proposal came just a few days after the Federal Communications Commission (FCC) tightened its rules for new foreign-made routers. The two changes are part of a much broader decoupling of sensitive U.S. tech from China, which include semiconductors, port cranes, logistics data, telecom cellular base stations and network hardware, security cameras, passenger vehicles, and, in December 2025, uncrewed aircraft systems (UAS) including those sold by DJI. “I see the robots and the routers as being the latest in a long line of growing tech security concerns in the U.S. vis-à-vis Chinese technology,” says sociologist Kyle Chan of the Brookings Institute in Washington, D.C, who testified on 16 April 2026 before the Congressional Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party.
+
+## 개요
+The catch: American robot makers still need Chinese-made components Tech Sovereignty Move Share
+
+## 핵심 내용
+The catch: American robot makers still need Chinese-made components Tech Sovereignty Move Share Tech Sovereignty Move The catch: American robot makers still need Chinese-made components Photo-illustration: IEEE Spectrum. Source images: Getty Images government use of Chinese ground robots including humanoids, dogs, and crawlers. The proposal came just a few days after the Federal Communications Commission ( FCC ) tightened its rules for new foreign-made routers . The two changes are part of a much broader decoupling of sensitive U.S. tech from China , which include semiconductors , port cranes , logistics data , telecom cellular base stations and network hardware , security cameras , passenger vehicles , and, in December 2025, uncrewed aircraft systems (UAS) including those sold by DJI . “I see the robots and the routers as being the latest in a long line of growing tech security concerns in the U.S. vis-à-vis Chinese technology,” says sociologist Kyle Chan of the Brookings Institute in Washington, D.C, who testified on 16 April 2026 before the Congressional Select Committee on the Strategic Competition Between the United States and the Chinese Communist Party .

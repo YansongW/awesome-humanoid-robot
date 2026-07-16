@@ -58,3 +58,14 @@ In this letter, we investigate the formation control problem of mobile robots mo
 ## 参考
 - http://arxiv.org/abs/2005.04694v1
 
+## Overview
+In this letter, we investigate the formation control problem of mobile robots moving in the plane where, instead of assuming robots to be simple points, each robot is assumed to have the form of a disk with equal radius. Based on interior angle measurements of the neighboring robots' disk, which can be obtained from low-cost vision sensors, we propose a gradient-based distributed control law and show the exponential convergence property of the associated error system. By construction, the proposed control law has the appealing property of ensuring collision avoidance between neighboring robots. We also present simulation results for a team of four circular mobile robots forming a rectangular shape.
+
+## Content
+In this letter, we investigate the formation control problem of mobile robots moving in the plane where, instead of assuming robots to be simple points, each robot is assumed to have the form of a disk with equal radius. Based on interior angle measurements of the neighboring robots' disk, which can be obtained from low-cost vision sensors, we propose a gradient-based distributed control law and show the exponential convergence property of the associated error system. By construction, the proposed control law has the appealing property of ensuring collision avoidance between neighboring robots. We also present simulation results for a team of four circular mobile robots forming a rectangular shape.
+
+## 개요
+본 논문에서는 평면상에서 이동하는 모바일 로봇의 포메이션 제어 문제를 연구하며, 로봇을 단순한 점으로 가정하는 대신 각 로봇이 동일한 반지름을 가진 원반 형태를 갖는다고 가정한다. 저비용 비전 센서로부터 얻을 수 있는 이웃 로봇 원반의 내각 측정값을 기반으로, 기울기 기반 분산 제어 법칙을 제안하고 관련 오차 시스템의 지수 수렴 특성을 보인다. 제안된 제어 법칙은 구성상 이웃 로봇 간 충돌 회피를 보장하는 장점을 가진다. 또한 직사각형 형태를 형성하는 4개의 원형 모바일 로봇 팀에 대한 시뮬레이션 결과를 제시한다.
+
+## 핵심 내용
+본 논문에서는 평면상에서 이동하는 모바일 로봇의 포메이션 제어 문제를 연구하며, 로봇을 단순한 점으로 가정하는 대신 각 로봇이 동일한 반지름을 가진 원반 형태를 갖는다고 가정한다. 저비용 비전 센서로부터 얻을 수 있는 이웃 로봇 원반의 내각 측정값을 기반으로, 기울기 기반 분산 제어 법칙을 제안하고 관련 오차 시스템의 지수 수렴 특성을 보인다. 제안된 제어 법칙은 구성상 이웃 로봇 간 충돌 회피를 보장하는 장점을 가진다. 또한 직사각형 형태를 형성하는 4개의 원형 모바일 로봇 팀에 대한 시뮬레이션 결과를 제시한다.

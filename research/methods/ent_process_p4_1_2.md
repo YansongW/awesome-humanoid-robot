@@ -86,5 +86,90 @@ theoretical_depth:
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
 
+## Overview
+**Phase/Work Package**: Actuator & Drive System Design (Actuator & Drive)
 
+## Content
+**Method/Tool**: QDD, Harmonic Drive, Planetary + Frameless Motor, Direct Drive Comparison Table
 
+**Design Thinking Logic**: High-dynamic joints (hip/ankle) tend toward QDD; high-torque small-volume joints (shoulder/wrist) tend toward harmonic drive
+
+**Key Constraints**: Backdrivability transparency, stiffness, backlash, efficiency, noise
+
+**Completion Criteria/Deliverable**: "Actuator Topology Decision Matrix": selection per joint, rationale, backup plan
+
+**Level-3 Subtasks and Level-4 Key Actions:**
+
+- P4.1.2.1 Input Review and Target Quantification
+  - Organize upstream inputs, reference standards, and resources required for "Actuator Topology Selection", convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+    - List all upstream inputs and confirm versions
+    - Convert acceptance criteria into quantifiable KPIs
+    - Establish task Owner, timeline, and risk register
+
+- P4.1.2.2 Candidate Scheme Establishment and Evaluation
+  - Establish a candidate scheme library for "Actuator Topology Selection", use the "QDD, Harmonic Drive, Planetary + Frameless Motor, Direct Drive Comparison Table" for quantitative evaluation, and determine the final scheme after considering cost, performance, supply chain, and maintainability.
+    - Form at least 2 candidate schemes
+    - Establish an evaluation matrix and perform quantitative scoring
+    - Organize review and freeze the scheme
+
+- P4.1.2.3 Implementation/Prototype/Sample Fabrication
+  - Execute the implementation work of "Actuator Topology Selection" according to the design scheme, fabricate prototypes, samples, or complete key steps, and record process data.
+    - Build models/prototypes and record key parameters
+    - Perform simulation or prototype verification
+    - Record anomalies and deviations
+
+- P4.1.2.4 Verification and Issue Closure
+  - Verify the output of "Actuator Topology Selection", check whether it meets completion criteria, record issues, and track until closure.
+    - Develop test/review plan and pass criteria
+    - Execute tests and record raw data
+    - Output issue list and improvement measures
+
+- P4.1.2.5 Documentation Output and Downstream Delivery
+  - Output the final report/drawing/specification for "Actuator Topology Selection", update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+    - Write documents per template and reference raw data
+    - Complete internal review and version control
+    - Publish and notify downstream dependents
+
+## 개요
+**소속 단계/작업 패키지**: 관절 모듈 및 구동 시스템 설계 (Actuator & Drive)
+
+## 핵심 내용
+**방법 / 도구**: QDD, 하모닉 감속, 유성+프레임리스 모터, 직접 구동 비교표
+
+**설계 사고 논리**: 고동적 관절(엉덩이/발목)은 QDD 선호; 고토크 소형(어깨/손목)은 하모닉 선호
+
+**핵심 제약 조건**: 역구동 투명성, 강성, 백래시, 효율, 소음
+
+**완료 기준 / 산출물**: 《액추에이터 토폴로지 결정 매트릭스》: 각 관절 선정, 이유, 백업 방안
+
+**3단계 하위 작업 및 4단계 핵심 조치:**
+
+- P4.1.2.1 입력 정리 및 목표 정량화
+  - 「액추에이터 토폴로지 선택」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화된 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+    - 모든 상위 입력 목록을 작성하고 버전 확인
+    - 검수 기준을 정량화된 KPI로 변환
+    - 작업 Owner, 시간 노드 및 위험 등록부 구축
+
+- P4.1.2.2 후보 방안 수립 및 평가
+  - 「액추에이터 토폴로지 선택」을 위한 후보 방안 라이브러리를 구축하고, 「QDD, 하모닉 감속, 유성+프레임리스 모터, 직접 구동 비교표」를 사용하여 정량 평가를 수행하며, 비용, 성능, 공급망, 유지보수성을 고려하여 최종 방안을 결정합니다.
+    - 2개 이상의 후보 방안 도출
+    - 평가 매트릭스 구축 및 정량 점수화
+    - 검토 조직 및 방안 확정
+
+- P4.1.2.3 구현/프로토타입/시제품 제작
+  - 설계 방안에 따라 「액추에이터 토폴로지 선택」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+    - 모델/시제품 구축 및 핵심 파라미터 기록
+    - 시뮬레이션 또는 프로토타입 검증 수행
+    - 이상 및 편차 기록
+
+- P4.1.2.4 검증 및 문제 종결
+  - 「액추에이터 토폴로지 선택」 출력물을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결까지 추적합니다.
+    - 테스트/검토 계획 및 통과 기준 수립
+    - 테스트 수행 및 원시 데이터 기록
+    - 문제 목록 및 개선 조치 출력
+
+- P4.1.2.5 문서 출력 및 하위 전달
+  - 「액추에이터 토폴로지 선택」 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료합니다.
+    - 템플릿에 따라 문서 작성 및 원시 데이터 인용
+    - 내부 검토 및 버전 관리 완료
+    - 게시 및 하위 의존 부서에 통지

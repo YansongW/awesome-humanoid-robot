@@ -60,4 +60,14 @@ The partition of graphs into "nice" subgraphs is a central algorithmic problem w
 ## 参考
 - http://arxiv.org/abs/1402.2589v3
 
+## Overview
+The partition of graphs into "nice" subgraphs is a central algorithmic problem with strong ties to matching theory. We study the partitioning of undirected graphs into same-size stars, a problem known to be NP-complete even for the case of stars on three vertices. We perform a thorough computational complexity study of the problem on subclasses of perfect graphs and identify several polynomial-time solvable cases, for example, on interval graphs and bipartite permutation graphs, and also NP-complete cases, for example, on grid graphs and chordal graphs.
 
+## Content
+The partition of graphs into "nice" subgraphs is a central algorithmic problem with strong ties to matching theory. We study the partitioning of undirected graphs into same-size stars, a problem known to be NP-complete even for the case of stars on three vertices. We perform a thorough computational complexity study of the problem on subclasses of perfect graphs and identify several polynomial-time solvable cases, for example, on interval graphs and bipartite permutation graphs, and also NP-complete cases, for example, on grid graphs and chordal graphs.
+
+## 개요
+그래프를 "좋은" 부분 그래프로 분할하는 것은 매칭 이론과 강한 연관성을 가진 중심적인 알고리즘 문제입니다. 우리는 무방향 그래프를 동일한 크기의 별 모양으로 분할하는 문제를 연구하며, 이 문제는 세 개의 꼭짓점을 가진 별의 경우에도 NP-완전인 것으로 알려져 있습니다. 우리는 완전 그래프의 부분 클래스에 대해 이 문제의 계산 복잡성을 철저히 연구하고, 예를 들어 구간 그래프와 이분 순열 그래프에서 다항 시간에 해결 가능한 여러 경우와, 예를 들어 격자 그래프와 현 그래프에서 NP-완전인 경우를 식별합니다.
+
+## 핵심 내용
+그래프를 "좋은" 부분 그래프로 분할하는 것은 매칭 이론과 강한 연관성을 가진 중심적인 알고리즘 문제입니다. 우리는 무방향 그래프를 동일한 크기의 별 모양으로 분할하는 문제를 연구하며, 이 문제는 세 개의 꼭짓점을 가진 별의 경우에도 NP-완전인 것으로 알려져 있습니다. 우리는 완전 그래프의 부분 클래스에 대해 이 문제의 계산 복잡성을 철저히 연구하고, 예를 들어 구간 그래프와 이분 순열 그래프에서 다항 시간에 해결 가능한 여러 경우와, 예를 들어 격자 그래프와 현 그래프에서 NP-완전인 경우를 식별합니다.

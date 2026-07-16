@@ -60,3 +60,14 @@ A software architecture defines the blueprints of a large computational system, 
 ## 参考
 - http://arxiv.org/abs/2206.03233v2
 
+## Overview
+A software architecture defines the blueprints of a large computational system, and is thus a crucial part of the design and development effort. This task has been explored extensively in the context of mobile robots, resulting in a plethora of reference designs and implementations. As the software architecture defines the framework in which all components are implemented, it is naturally a very important aspect of a mobile robot system. In this chapter, we overview the requirements that the particular problem domain (a mobile robot system) imposes on the software framework. We discuss some of the current design solutions, provide a historical perspective on common frameworks, and outline directions for future development.
+
+## Content
+A software architecture defines the blueprints of a large computational system, and is thus a crucial part of the design and development effort. This task has been explored extensively in the context of mobile robots, resulting in a plethora of reference designs and implementations. As the software architecture defines the framework in which all components are implemented, it is naturally a very important aspect of a mobile robot system. In this chapter, we overview the requirements that the particular problem domain (a mobile robot system) imposes on the software framework. We discuss some of the current design solutions, provide a historical perspective on common frameworks, and outline directions for future development.
+
+## 개요
+소프트웨어 아키텍처는 대규모 컴퓨팅 시스템의 청사진을 정의하므로 설계 및 개발 노력의 중요한 부분입니다. 이 작업은 모바일 로봇의 맥락에서 광범위하게 탐구되어 수많은 참조 설계와 구현을 낳았습니다. 소프트웨어 아키텍처는 모든 구성 요소가 구현되는 프레임워크를 정의하므로, 당연히 모바일 로봇 시스템의 매우 중요한 측면입니다. 이 장에서는 특정 문제 영역(모바일 로봇 시스템)이 소프트웨어 프레임워크에 부과하는 요구 사항을 개괄적으로 살펴봅니다. 현재의 몇 가지 설계 솔루션을 논의하고, 일반적인 프레임워크에 대한 역사적 관점을 제공하며, 향후 개발 방향을 제시합니다.
+
+## 핵심 내용
+소프트웨어 아키텍처는 대규모 컴퓨팅 시스템의 청사진을 정의하므로 설계 및 개발 노력의 중요한 부분입니다. 이 작업은 모바일 로봇의 맥락에서 광범위하게 탐구되어 수많은 참조 설계와 구현을 낳았습니다. 소프트웨어 아키텍처는 모든 구성 요소가 구현되는 프레임워크를 정의하므로, 당연히 모바일 로봇 시스템의 매우 중요한 측면입니다. 이 장에서는 특정 문제 영역(모바일 로봇 시스템)이 소프트웨어 프레임워크에 부과하는 요구 사항을 개괄적으로 살펴봅니다. 현재의 몇 가지 설계 솔루션을 논의하고, 일반적인 프레임워크에 대한 역사적 관점을 제공하며, 향후 개발 방향을 제시합니다.

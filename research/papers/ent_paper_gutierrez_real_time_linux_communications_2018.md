@@ -60,3 +60,14 @@ As robotics systems become more distributed, the communications between differen
 ## 参考
 - http://arxiv.org/abs/1808.10821v1
 
+## Overview
+As robotics systems become more distributed, the communications between different robot modules play a key role for the reliability of the overall robot control. In this paper, we present a study of the Linux communication stack meant for real-time robotic applications. We evaluate the real-time performance of UDP based communications in Linux on multi-core embedded devices as test platforms. We prove that, under an appropriate configuration, the Linux kernel greatly enhances the determinism of communications using the UDP protocol. Furthermore, we demonstrate that concurrent traffic disrupts the bounded latencies and propose a solution by separating the real-time application and the corresponding interrupt in a CPU.
+
+## Content
+As robotics systems become more distributed, the communications between different robot modules play a key role for the reliability of the overall robot control. In this paper, we present a study of the Linux communication stack meant for real-time robotic applications. We evaluate the real-time performance of UDP based communications in Linux on multi-core embedded devices as test platforms. We prove that, under an appropriate configuration, the Linux kernel greatly enhances the determinism of communications using the UDP protocol. Furthermore, we demonstrate that concurrent traffic disrupts the bounded latencies and propose a solution by separating the real-time application and the corresponding interrupt in a CPU.
+
+## 개요
+로봇 시스템이 점점 더 분산화됨에 따라, 다양한 로봇 모듈 간의 통신은 전체 로봇 제어의 신뢰성에 핵심적인 역할을 합니다. 본 논문에서는 실시간 로봇 애플리케이션을 위한 Linux 통신 스택에 대한 연구를 제시합니다. 멀티코어 임베디드 장치를 테스트 플랫폼으로 사용하여 Linux에서 UDP 기반 통신의 실시간 성능을 평가합니다. 적절한 구성 하에서 Linux 커널이 UDP 프로토콜을 사용하는 통신의 결정성을 크게 향상시킨다는 것을 입증합니다. 또한, 동시 트래픽이 제한된 지연 시간을 방해한다는 것을 보여주고, CPU에서 실시간 애플리케이션과 해당 인터럽트를 분리하는 솔루션을 제안합니다.
+
+## 핵심 내용
+로봇 시스템이 점점 더 분산화됨에 따라, 다양한 로봇 모듈 간의 통신은 전체 로봇 제어의 신뢰성에 핵심적인 역할을 합니다. 본 논문에서는 실시간 로봇 애플리케이션을 위한 Linux 통신 스택에 대한 연구를 제시합니다. 멀티코어 임베디드 장치를 테스트 플랫폼으로 사용하여 Linux에서 UDP 기반 통신의 실시간 성능을 평가합니다. 적절한 구성 하에서 Linux 커널이 UDP 프로토콜을 사용하는 통신의 결정성을 크게 향상시킨다는 것을 입증합니다. 또한, 동시 트래픽이 제한된 지연 시간을 방해한다는 것을 보여주고, CPU에서 실시간 애플리케이션과 해당 인터럽트를 분리하는 솔루션을 제안합니다.

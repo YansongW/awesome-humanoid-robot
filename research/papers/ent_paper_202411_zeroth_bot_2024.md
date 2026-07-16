@@ -61,3 +61,34 @@ sources:
 ## 参考
 - 2024.11, Zeroth Bot project page (https://github.com/zeroth-robotics/zeroth-bot)
 
+## Overview
+
+This article introduces the Zeroth Bot project released in 2024, whose core contribution lies in proposing a set of open-source hardware designs for humanoid robots. This work aims to lower the hardware barrier to humanoid robot development by providing replicable mechanical structures and electronic system designs, offering a foundational platform for both academia and industry to explore the field of humanoid robotics. The design of Zeroth Bot focuses on the integration and optimization of key components, reflecting a research motivation that moves from concept validation toward practical hardware implementation.
+
+## Content
+
+Humanoid robots, due to their complex motion control and structural design requirements, have long faced issues such as high hardware costs and opaque designs. Existing research primarily focuses on algorithms and software, while the openness and accessibility of hardware platforms are insufficient, limiting the research community's in-depth exploration of core components like body structures and drive systems. Zeroth Bot is specifically designed to address this context, aiming to bridge the gap between theoretical design and physical implementation, providing researchers with a customizable and reproducible hardware benchmark.
+
+At the methodological level, Zeroth Bot adopts a modular design philosophy, dividing the robot body into independent units such as the head, torso, upper limbs, and lower limbs. Each unit includes detailed mechanical drawings, parts lists, and assembly instructions, and utilizes standardized drive and sensing components to reduce manufacturing and maintenance complexity. On the electronic system side, the project provides a main control board and power management solution, supporting common real-time control frameworks to facilitate integration with higher-level motion planning algorithms.
+
+The core of the key technological innovation lies in balancing joint actuation with structural lightweighting. In its design, Zeroth Bot prioritizes the combination of high-power-density motors and harmonic drives to achieve sufficient torque output within a limited volume. At the same time, through topology optimization and material selection, the overall weight is reduced while maintaining structural stiffness. Additionally, the project releases complete CAD models and BOM tables, allowing researchers to directly make local improvements or functional extensions based on the existing design.
+
+In terms of experimental validation, the Zeroth Bot project has preliminarily verified the feasibility of the hardware design by building a prototype and completing basic walking and posture maintenance tests. Although the project has not disclosed detailed performance metrics such as maximum walking speed or load capacity, its open-source nature allows community members to replicate it and conduct comparative experiments. This open validation model helps accumulate cross-team experimental data, driving iterative optimization of humanoid robot hardware design.
+
+From an application perspective, Zeroth Bot provides a low-cost hardware entry point for education, scientific research, and early product prototype development. University laboratories can use this platform for teaching and research in areas such as motion control and human-robot interaction; startups can quickly evaluate the actual effects of different configurations and drive schemes. The open-source hardware philosophy advocated by the project is expected to promote a paradigm shift in the humanoid robot field from closed development to collaborative sharing.
+
+## 개요
+
+본 문서는 2024년에 발표된 Zeroth Bot 프로젝트를 소개하며, 핵심 기여는 휴머노이드 로봇을 위한 오픈소스 하드웨어 설계 방안을 제시한 데 있습니다. 이 작업은 재현 가능한 기계 구조와 전자 시스템 설계를 제공함으로써 휴머노이드 로봇 개발의 하드웨어 진입 장벽을 낮추고, 학계와 산업계가 인간형 로봇 분야를 탐구할 수 있는 기반 플랫폼을 마련하는 것을 목표로 합니다. Zeroth Bot의 설계는 핵심 구성 요소의 통합과 최적화에 초점을 맞추며, 개념 검증에서 실용적인 하드웨어로 나아가려는 연구 동기를 반영합니다.
+
+## 핵심 내용
+
+휴머노이드 로봇은 복잡한 운동 제어와 구조 설계 요구로 인해 오랫동안 하드웨어 비용이 높고 설계가 불투명한 문제에 직면해 왔습니다. 기존 연구는 주로 알고리즘과 소프트웨어 측면에 집중되어 있으며, 하드웨어 플랫폼의 개방성과 접근성이 부족하여 연구 커뮤니티가 본체 구조, 구동 시스템 등 핵심 구성 요소를 심층적으로 탐구하는 데 제한이 있었습니다. Zeroth Bot은 이러한 배경에서 이론 설계와 물리적 구현 사이의 간극을 메우고, 연구자들이 맞춤 설정 및 재현 가능한 하드웨어 기준을 제공할 수 있도록 설계되었습니다.
+
+방법론 측면에서 Zeroth Bot은 모듈식 설계 개념을 채택하여 로봇 본체를 머리, 몸통, 상지, 하지 등의 독립적인 유닛으로 나눕니다. 각 유닛에는 상세한 기계 도면, 부품 목록 및 조립 설명서가 포함되며, 표준화된 구동 및 센서 요소를 사용하여 제조 및 유지보수 복잡성을 낮춥니다. 전자 시스템 측면에서는 프로젝트가 메인 제어 보드와 전원 관리 방안을 제공하며, 일반적인 실시간 제어 프레임워크를 지원하여 상위 수준의 운동 계획 알고리즘과 쉽게 연동할 수 있도록 합니다.
+
+기술 혁신의 핵심은 관절 구동과 구조 경량화 간의 균형에 있습니다. Zeroth Bot은 설계에서 고출력 밀도 모터와 하모닉 드라이브 조합을 우선적으로 선택하여 제한된 부피 내에서 충분한 토크 출력을 구현합니다. 동시에 위상 최적화와 재료 선택을 통해 구조 강성을 유지하면서 전체 중량을 줄입니다. 또한 프로젝트는 완전한 CAD 모델과 BOM 표를 공개하여 연구자들이 기존 설계를 기반으로 부분적인 개선이나 기능 확장을 직접 수행할 수 있도록 합니다.
+
+실험 검증 측면에서 Zeroth Bot 프로젝트는 프로토타입을 제작하고 기본적인 보행 및 자세 유지 테스트를 완료하여 하드웨어 설계의 타당성을 초기 단계에서 검증했습니다. 프로젝트가 최대 보행 속도나 부하 용량과 같은 상세한 성능 지표를 공개하지는 않았지만, 오픈소스 특성 덕분에 커뮤니티 구성원이 직접 재현하고 비교 실험을 수행할 수 있습니다. 이러한 개방형 검증 모델은 팀 간 실험 데이터를 축적하고 휴머노이드 로봇 하드웨어 설계의 반복적 최적화를 촉진하는 데 도움이 됩니다.
+
+응용 가치 측면에서 Zeroth Bot은 교육, 연구 및 초기 제품 프로토타입 개발을 위한 저비용 하드웨어 진입점을 제공합니다. 대학 연구실은 이 플랫폼을 기반으로 운동 제어, 인간-로봇 상호작용 등의 방향으로 교육 및 연구 과제를 수행할 수 있으며, 스타트업은 다양한 구성과 구동 방식의 실제 효과를 신속하게 평가할 수 있습니다. 프로젝트가 주창하는 오픈소스 하드웨어 개념은 휴머노이드 로봇 분야가 폐쇄적 개발에서 협력적 공유로 패러다임 전환을 이루는 데 기여할 것으로 기대됩니다.

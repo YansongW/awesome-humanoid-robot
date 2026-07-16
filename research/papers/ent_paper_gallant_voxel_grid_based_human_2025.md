@@ -66,3 +66,39 @@ Gallant 在真实硬件平台上进行了部署验证，配备了完整的传感
 
 ## 参考
 - Gallant project page (https://gallantloco.github.io/)
+
+## Overview
+
+Gallant proposes a humanoid robot locomotion and local navigation framework based on a voxel grid, aimed at addressing stable walking and goal-reaching in three-dimensional constrained terrains (such as stairs, slopes, and narrow passages). The main contribution of this research lies in integrating scene perception, motion representation learning, and low-level control into a unified training-deployment pipeline, thereby bridging the semantic gap between high-level navigation goals and low-level joint actions, and enhancing the robot's adaptability in real-world complex environments.
+
+## Content
+
+(a) Research Background and Problem  
+Humanoid robot motion control in unstructured environments has long faced two major challenges: first, how to efficiently extract three-dimensional structural information about terrain and obstacles from visual sensors; second, how to map high-level navigation commands (e.g., "reach a specified location") into continuous joint torque or position commands. Existing methods often separate perception, planning, and control, leading to information loss and delays between modules, making it difficult to handle dynamic or narrow three-dimensional terrains. To address this, Gallant proposes using a voxel grid as a unified spatial representation, coupling scene reconstruction, motion planning, and low-level control within the same framework.
+
+(b) Method or Model Framework  
+Gallant's pipeline consists of three core stages: First, using camera images, multi-view observations, proprioceptive states, and joint sequences, combined with depth maps, point clouds, or height maps, it recovers a three-dimensional voxel representation of the scene, target, or motion. Subsequently, a policy network generates semantic and geometric features of the terrain/scene based on this voxel representation and outputs action commands for navigation or goal-reaching. Finally, a control module converts the high-level commands output by the policy network into low-level joint control signals to achieve stable robot motion. The key design lies in the policy network and control module sharing the training process rather than being optimized independently, ensuring end-to-end gradient propagation and behavioral consistency.
+
+(c) Key Technical Innovations  
+The core innovation of Gallant is placing the policy network and control module within the same training/deployment pipeline. Traditional methods typically train a high-level planner first and then design a low-level controller separately, with the interface between them often relying on handcrafted rules or simplified assumptions. Through joint training, Gallant enables the policy network to directly perceive the response characteristics of the control module, thereby generating action sequences that better align with robot dynamics and terrain constraints. Additionally, the voxel grid as an intermediate representation naturally supports occlusion reasoning and multi-scale terrain modeling in three-dimensional space, enhancing the system's generalization ability to complex terrains.
+
+(d) Experiments/Validation or Application Value  
+Gallant has been validated through deployment on real hardware platforms, equipped with a complete sensor suite (including depth cameras, IMUs, and joint encoders). Experimental scenarios cover typical three-dimensional constrained terrains such as stairs, slopes, gravel surfaces, and narrow corridors. Results show that Gallant achieves stable cross-terrain walking and local navigation, outperforming staged methods in terms of goal-reaching success rate and motion smoothness. This framework provides a feasible technical pathway for humanoid robots in scenarios requiring adaptation to complex terrains, such as home services, disaster rescue, and industrial inspection.
+
+## 개요
+
+Gallant는 복셀 그리드(Voxel Grid) 기반의 휴머노이드 로봇 운동 및 국부 항법 프레임워크를 제안하여, 계단, 경사로, 좁은 통로와 같은 3차원 제약 지형에서의 안정적인 보행과 목표 도달 문제를 해결하고자 한다. 이 연구의 주요 기여는 장면 인식, 운동 표현 학습 및 하위 수준 제어를 동일한 훈련-배포 체인으로 통합함으로써, 상위 수준 항법 목표와 하위 수준 관절 동작 간의 의미적 격차를 해소하고 실제 복잡한 환경에서 로봇의 적응 능력을 향상시키는 데 있다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제  
+휴머노이드 로봇의 비구조화 환경에서의 운동 제어는 오랫동안 두 가지 주요 과제에 직면해 왔다. 첫째는 시각 센서로부터 지형과 장애물의 3차원 구조 정보를 효율적으로 추출하는 방법이고, 둘째는 상위 수준 항법 명령(예: "지정된 위치에 도달")을 연속적인 관절 토크 또는 위치 명령으로 매핑하는 방법이다. 기존 방법은 종종 인식, 계획 및 제어를 분리하여 모듈 간 정보 손실과 지연을 초래하며, 동적이거나 좁은 3차원 지형에 대응하기 어렵다. Gallant는 이 문제를 해결하기 위해 복셀 그리드를 통일된 공간 표현으로 사용하여 장면 재구성, 운동 계획 및 하위 수준 제어를 동일한 프레임워크 내에서 결합한다.
+
+(b) 방법 또는 모델 프레임워크  
+Gallant의 프로세스는 세 가지 핵심 단계로 구성된다. 먼저, 카메라 이미지, 다중 시점 관측, 자체 상태 및 관절 시퀀스를 깊이 맵, 포인트 클라우드 또는 높이 맵과 결합하여 장면, 목표 또는 운동의 3차원 복셀 표현을 복원한다. 그런 다음, 정책 네트워크는 이 복셀 표현을 기반으로 지형/장면의 의미적 및 기하학적 특징을 생성하고, 항법 또는 목표 도달을 위한 동작 명령을 출력한다. 마지막으로, 제어 모듈은 정책 네트워크가 출력한 상위 수준 명령을 하위 수준 관절 제어 신호로 변환하여 로봇의 안정적인 운동을 구현한다. 핵심 설계는 정책 네트워크와 제어 모듈이 독립적으로 최적화되지 않고 훈련 과정을 공유하여 종단 간 그래디언트 전파와 행동 일관성을 보장한다는 점이다.
+
+(c) 핵심 기술 혁신  
+Gallant의 핵심 혁신은 정책 네트워크와 제어 모듈을 동일한 훈련/배포 체인에 배치하는 데 있다. 기존 방법은 일반적으로 먼저 상위 수준 계획기를 훈련한 다음 하위 수준 제어기를 별도로 설계하며, 두 모듈 간의 인터페이스는 종종 수동 규칙이나 단순화된 가정에 의존한다. Gallant는 공동 훈련을 통해 정책 네트워크가 제어 모듈의 응답 특성을 직접 인식할 수 있도록 하여, 로봇 동역학 및 지형 제약에 더 적합한 동작 시퀀스를 생성한다. 또한, 복셀 그리드는 중간 표현으로서 3차원 공간에서의 폐색 추론과 다중 스케일 지형 모델링을 자연스럽게 지원하여, 복잡한 지형에 대한 시스템의 일반화 능력을 강화한다.
+
+(d) 실험/검증 또는 응용 가치  
+Gallant는 실제 하드웨어 플랫폼에서 배포 검증을 수행했으며, 완전한 센서 제품군(깊이 카메라, IMU 및 관절 엔코더 포함)을 갖추고 있다. 실험 시나리오는 계단, 경사로, 자갈길 및 좁은 복도와 같은 전형적인 3차원 제약 지형을 포함한다. 결과는 Gallant가 안정적인 지형 간 보행 및 국부 항법을 구현할 수 있으며, 목표 도달 성공률과 운동 부드러움에서 단계별 방법보다 우수함을 보여준다. 이 프레임워크는 가정 서비스, 재난 구조 및 산업 검사와 같이 복잡한 지형에 적응해야 하는 시나리오에서 휴머노이드 로봇을 위한 실현 가능한 기술 경로를 제공한다.

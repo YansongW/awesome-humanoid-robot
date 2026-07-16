@@ -73,4 +73,8 @@ The report frames NdFeB magnets as a strategic choke point for scaling humanoid 
 ## 参考
 - https://oceanwall.com/wp-content/uploads/2025/10/Robotics-Market-and-Rare-Earth-Magnet-Supply-Chain_.pdf
 
+## 개요
 
+> **생활 사례**: 이는 전기차 산업을 경고하는 보고서와 같습니다——고효율 모터를 만드는 데 필요한 희토류 재료가 소수 국가에 크게 의존한다면, 공급망 중단은 완성차 생산에 큰 위험을 초래할 수 있습니다.
+
+> **자연어 논리**: 이 Oceanwall 2025년 7월 연구 브리핑은 첨단 로봇, 특히 휴머노이드 로봇이 네오디뮴-철-붕소 영구 자석에 의존하며, 중국의 희토류 정제 지배력이 지정학적 공급망 위험을 초래한다고 지적합니다. 이는 휴머노이드 로봇의 상류에 있는 영구 자석 재료를 대량 생산의 핵심 병목 현상으로 간주하며, 산업 체인에 재료 출처와 대체 방안에 주의를 기울일 것을 촉구합니다.

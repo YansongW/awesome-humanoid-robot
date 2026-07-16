@@ -60,4 +60,14 @@ Definition: The terms "robotics in snow and ice" refers to robotic systems being
 ## 参考
 - http://arxiv.org/abs/2208.05095v1
 
+## Overview
+Definition: The terms "robotics in snow and ice" refer to robotic systems being studied, developed, and used in areas where water can be found in its solid state. This specialized branch of field robotics investigates the impact of extreme conditions related to cold environments on autonomous vehicles.
 
+## Content
+Definition: The terms "robotics in snow and ice" refer to robotic systems being studied, developed, and used in areas where water can be found in its solid state. This specialized branch of field robotics investigates the impact of extreme conditions related to cold environments on autonomous vehicles.
+
+## 개요
+정의: "눈과 얼음 속 로봇 공학"이란 물이 고체 상태로 존재하는 지역에서 연구, 개발 및 사용되는 로봇 시스템을 의미합니다. 이 전문적인 현장 로봇 공학 분야는 추운 환경과 관련된 극한 조건이 자율 주행 차량에 미치는 영향을 조사합니다.
+
+## 핵심 내용
+정의: "눈과 얼음 속 로봇 공학"이란 물이 고체 상태로 존재하는 지역에서 연구, 개발 및 사용되는 로봇 시스템을 의미합니다. 이 전문적인 현장 로봇 공학 분야는 추운 환경과 관련된 극한 조건이 자율 주행 차량에 미치는 영향을 조사합니다.

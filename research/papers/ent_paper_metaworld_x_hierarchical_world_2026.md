@@ -62,3 +62,35 @@ theoretical_depth:
 
 ## 参考
 - MetaWorld-X project page (https://syt2004.github.io/metaworldX/)
+
+## Overview
+
+To address the coupling challenge of perception and decision-making faced by humanoid robots when performing loco-manipulation tasks in complex environments, this paper proposes the MetaWorld-X framework. By introducing a Vision-Language Model (VLM) as a high-level coordinator, it achieves hierarchical world modeling and skill routing. The core contribution of this work lies in unifying language instructions, multimodal observations, and proprioceptive states into a routable representation, and leveraging reinforcement learning, motion priors, and VLM-based semantic planning collaboratively to accomplish terrain perception and action sequence generation without explicit environment modeling. MetaWorld-X provides a scalable paradigm for the general manipulation capabilities of humanoid robots, significantly enhancing the flexibility of task decomposition and execution composition.
+
+## Content
+
+In the field of humanoid robotics, loco-manipulation requires the robot to simultaneously coordinate whole-body motion and end-effector actions. Traditional methods often rely on handcrafted motion primitives or precise environment models, making it difficult to handle dynamic changes in unstructured scenes. Existing work typically separates perception, planning, and control, leading to low efficiency when generalizing across tasks. To address this bottleneck, MetaWorld-X proposes decoupling world modeling from skill execution, dynamically selecting low-level expert policies through a high-level semantic planner, thereby enhancing task adaptability while maintaining motion robustness.
+
+The core architecture of this framework is divided into three layers: the multimodal encoding layer, the skill routing layer, and the policy execution layer. First, language instructions, multi-view camera images, proprioceptive states, and joint sequences are jointly encoded into a unified multimodal representation, leveraging a pre-trained Vision-Language Model (VLM) to extract semantic features and spatial relationships. Subsequently, the high-level module decomposes the original task into a series of routable skills or expert policies, such as "crossing obstacles" or "grasping objects," and predicts the optimal routing path based on VLM semantic planning and terrain scene representations. Finally, the low-level layer combines PPO/RL policy training with AMP motion priors to generate smooth and physically constrained joint action sequences.
+
+The core of the key technological innovation lies in the "VLM-coordinated expert routing mechanism." Unlike traditional end-to-end methods that directly map perception to actions, MetaWorld-X allows the VLM to dynamically select and combine pre-trained expert modules based on current observations and historical context. This design not only reduces the search space for policy learning but also enables the system to quickly adapt to new tasks by replacing or adding expert modules. Additionally, the framework introduces a terrain/scene representation prediction module, enabling the robot to implicitly reason about environmental attributes such as ground material and obstacle distribution before execution, thereby improving the robustness of motion planning.
+
+In terms of experimental validation, MetaWorld-X was evaluated on various humanoid loco-manipulation tasks, including obstacle-crossing walking, dynamic grasping, and multi-step object transportation. Results show that, compared to pure RL baselines and fixed skill library approaches, the framework achieves significant improvements in both task success rate and execution efficiency. Particularly in high-difficulty scenarios, the VLM's semantic routing capability effectively avoids local optimal traps, while the AMP motion prior ensures smooth and natural actions. Furthermore, the modular design of the framework offers good scalability, allowing future integration of more perception modalities or expert policies to handle more complex industrial and service scenarios.
+
+From an application perspective, MetaWorld-X provides key technical support for deploying humanoid robots in areas such as warehouse logistics, home services, and disaster rescue. Its hierarchical architecture enables non-expert users to control robots for complex operations through natural language instructions, lowering the barrier to human-robot interaction. Meanwhile, the approach advocated by this work—"VLM as a world model coordinator"—offers a new paradigm reference for future research on general-purpose robotic agents.
+
+## 개요
+
+휴머노이드 로봇이 복잡한 환경에서 이동 조작 작업을 수행할 때 직면하는 인식과 의사 결정의 결합 문제를 해결하기 위해, 본 논문은 MetaWorld-X 프레임워크를 제안합니다. 이는 시각-언어 모델(VLM)을 고수준 조정자로 도입하여 계층적 세계 모델링과 스킬 라우팅을 구현합니다. 이 연구의 핵심 기여는 언어 명령, 다중 모달 관측, 본체 상태를 라우팅 가능한 표현으로 통합 인코딩하고, 강화 학습, 운동 사전 지식, VLM 의미 계획을 협력적으로 구동하여 명시적 환경 모델링 없이 지형 인식과 동작 시퀀스 생성을 가능하게 하는 데 있습니다. MetaWorld-X는 휴머노이드 로봇의 일반적 조작 능력을 위한 확장 가능한 패러다임을 제공하며, 작업 분해와 실행 조합의 유연성을 크게 향상시킵니다.
+
+## 핵심 내용
+
+휴머노이드 로봇 분야에서 이동 조작(loco-manipulation)은 로봇이 전신 운동과 말단 실행을 동시에 조정해야 하며, 기존 방법은 일반적으로 수동 설계된 운동 기본 요소나 정확한 환경 모델에 의존하여 비구조적 환경의 동적 변화에 대응하기 어렵습니다. 기존 연구는 종종 인식, 계획, 제어를 분리 처리하여 시스템이 교차 작업 일반화 시 효율성이 낮습니다. MetaWorld-X는 이러한 병목 현상을 해결하기 위해 세계 모델링과 스킬 실행을 분리하고, 고수준 의미 계획기를 통해 동적으로 저수준 전문가 전략을 선택하여 운동 견고성을 유지하면서 작업 적응성을 강화합니다.
+
+이 프레임워크의 핵심 아키텍처는 세 가지 계층으로 구성됩니다: 다중 모달 인코딩 계층, 스킬 라우팅 계층, 전략 실행 계층. 먼저, 언어 명령, 다중 시점 카메라 이미지, 본체 상태, 관절 시퀀스가 통합된 다중 모달 표현으로 결합 인코딩되며, 이 과정에서 사전 훈련된 시각-언어 모델(VLM)을 활용하여 의미 특징과 공간 관계를 추출합니다. 그다음, 고수준 모듈이 원시 작업을 "장애물 넘기", "물체 잡기" 등과 같은 라우팅 가능한 스킬 또는 전문가 전략으로 분해하고, VLM의 의미 계획과 지형 장면 표현을 기반으로 현재 최적의 라우팅 경로를 예측합니다. 마지막으로, 저수준에서는 PPO/RL 전략 훈련과 AMP 운동 사전 지식을 결합하여 부드럽고 물리적 제약을 준수하는 관절 동작 시퀀스를 생성합니다.
+
+핵심 기술 혁신은 "VLM 조정 전문가 라우팅 메커니즘"에 있습니다. 기존 종단 간 방법이 인식과 동작을 직접 매핑하는 것과 달리, MetaWorld-X는 VLM이 현재 관측과 과거 컨텍스트에 따라 사전 훈련된 전문가 모듈을 동적으로 선택하고 조합할 수 있도록 합니다. 이러한 설계는 전략 학습의 탐색 공간을 줄일 뿐만 아니라, 시스템이 전문가 모듈을 교체하거나 추가하여 새로운 작업에 빠르게 적응할 수 있게 합니다. 또한, 프레임워크에 도입된 지형/장면 표현 예측 모듈은 로봇이 실행 전에 지면 재질, 장애물 분포 등 환경 속성을 암시적으로 추론할 수 있게 하여 운동 계획의 견고성을 향상시킵니다.
+
+실험 검증 측면에서 MetaWorld-X는 장애물 넘어 걷기, 동적 물체 잡기, 다단계 물체 운반 등 다양한 휴머노이드 이동 조작 작업에서 평가되었습니다. 결과는 순수 RL 기준 방법과 고정 스킬 라이브러리 방식에 비해, 이 프레임워크가 작업 성공률과 실행 효율성에서 모두 유의미한 향상을 보였습니다. 특히 고난도 시나리오에서 VLM의 의미 라우팅 능력은 지역 최적 함정을 효과적으로 피했으며, AMP 운동 사전 지식은 동작의 부드러움과 자연스러움을 보장했습니다. 또한, 프레임워크의 모듈식 설계는 우수한 확장성을 제공하여, 향후 더 복잡한 산업 및 서비스 시나리오에 대응하기 위해 더 많은 인식 모달리티나 전문가 전략을 통합할 수 있습니다.
+
+응용 가치 측면에서 MetaWorld-X는 창고 물류, 가사 서비스, 재난 구조 등 분야에서 휴머노이드 로봇 배치를 위한 핵심 기술 지원을 제공합니다. 그 계층적 아키텍처는 비전문가 사용자도 자연어 명령을 통해 로봇이 복잡한 작업을 수행하도록 제어할 수 있게 하여 인간-로봇 상호작용의 장벽을 낮춥니다. 동시에, 이 연구가 제안하는 "VLM을 세계 모델 조정자로 활용"하는 접근 방식은 향후 범용 로봇 지능체 연구에 새로운 패러다임 참조를 제공합니다.

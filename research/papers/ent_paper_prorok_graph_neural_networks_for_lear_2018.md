@@ -56,3 +56,14 @@ This paper shows how Graph Neural Networks can be used for learning distributed 
 ## 参考
 - http://arxiv.org/abs/1805.03737v2
 
+## Overview
+This paper shows how Graph Neural Networks can be used for learning distributed coordination mechanisms in connected teams of robots. We capture the relational aspect of robot coordination by modeling the robot team as a graph, where each robot is a node, and edges represent communication links. During training, robots learn how to pass messages and update internal states, so that a target behavior is reached. As a proxy for more complex problems, this short paper considers the problem where each robot must locally estimate the algebraic connectivity of the team's network topology.
+
+## Content
+This paper shows how Graph Neural Networks can be used for learning distributed coordination mechanisms in connected teams of robots. We capture the relational aspect of robot coordination by modeling the robot team as a graph, where each robot is a node, and edges represent communication links. During training, robots learn how to pass messages and update internal states, so that a target behavior is reached. As a proxy for more complex problems, this short paper considers the problem where each robot must locally estimate the algebraic connectivity of the team's network topology.
+
+## 개요
+본 논문은 그래프 신경망(Graph Neural Networks)을 활용하여 연결된 로봇 팀에서 분산 조정 메커니즘을 학습하는 방법을 보여줍니다. 로봇 팀을 그래프로 모델링하여 로봇 조정의 관계적 측면을 포착하며, 각 로봇은 노드(node)로, 엣지(edge)는 통신 링크를 나타냅니다. 훈련 중 로봇은 메시지를 전달하고 내부 상태를 업데이트하는 방법을 학습하여 목표 행동에 도달합니다. 더 복잡한 문제의 대리(proxy)로서, 이 짧은 논문은 각 로봇이 팀 네트워크 토폴로지의 대수적 연결성(algebraic connectivity)을 국소적으로 추정해야 하는 문제를 고려합니다.
+
+## 핵심 내용
+본 논문은 그래프 신경망(Graph Neural Networks)을 활용하여 연결된 로봇 팀에서 분산 조정 메커니즘을 학습하는 방법을 보여줍니다. 로봇 팀을 그래프로 모델링하여 로봇 조정의 관계적 측면을 포착하며, 각 로봇은 노드(node)로, 엣지(edge)는 통신 링크를 나타냅니다. 훈련 중 로봇은 메시지를 전달하고 내부 상태를 업데이트하는 방법을 학습하여 목표 행동에 도달합니다. 더 복잡한 문제의 대리(proxy)로서, 이 짧은 논문은 각 로봇이 팀 네트워크 토폴로지의 대수적 연결성(algebraic connectivity)을 국소적으로 추정해야 하는 문제를 고려합니다.

@@ -68,3 +68,35 @@ theoretical_depth:
 ## 参考
 
 - 人形机器人富有表现力的全身控制 project page (https://expressive-humanoid.github.io)
+
+## Overview
+
+This paper proposes an expressive whole-body control framework for humanoid robots, aiming to address the challenge of achieving human-like motion and pose imitation in complex dynamic environments. By integrating heterogeneous motion capture data, simulation interaction information, and proprioceptive states, the research transforms demonstration trajectories into a supervised action prediction problem. It utilizes strategies such as reinforcement learning (PPO/RL) and behavior cloning (ACT) to train a unified whole-body control policy. The main contribution of this work lies in constructing a conversion pipeline from multi-source data to trackable body targets, and effectively suppressing temporal jitter through action chunking and closed-loop execution mechanisms, thereby enhancing the expressiveness and stability of the robot's whole-body motion.
+
+## Content
+
+The core challenge of whole-body control for humanoid robots lies in how to coordinate high-degree-of-freedom joint systems to simultaneously meet multiple objectives such as balance maintenance, motion tracking, and expressive expression. Existing methods often focus on single tasks (e.g., walking or grasping) and struggle to achieve smooth and expressive whole-body motion in dynamic scenarios. Additionally, during the mapping from human demonstrations to robot execution, data heterogeneity (e.g., differences in video, motion capture, and simulation data formats) and temporal jitter severely limit the generalization ability and execution smoothness of imitation learning. This paper systematically explores a solution to unify multi-source data into trackable body targets to address these bottlenecks.
+
+The proposed framework first converts proprioceptive states, joint sequences, human video/motion capture trajectories, and simulation interaction data into standardized "trackable body targets." This conversion process relies on the fusion of heterogeneous dynamic capture and synthetic balance data, providing consistent and rich input representations for subsequent policy training. On this basis, the framework supports multiple policy training paradigms, including PPO-based reinforcement learning, ACT-based behavior cloning imitation learning, and a combination of both for whole-body policies, ultimately outputting complete whole-body trajectories/action sequences and low-level controller targets.
+
+The key technical innovation of this method lies in compressing demonstration trajectories into a supervised action prediction problem. Traditional imitation learning often suffers from policy divergence due to high-dimensional action spaces and long-term dependencies. In contrast, this paper uses action chunking technology to segment continuous action sequences into independently predictable chunks, combined with a closed-loop execution mechanism to correct prediction deviations in real time. This design not only reduces the impact of temporal jitter on motion smoothness but also enhances the policy's robustness to unseen initial states, enabling the robot to more naturally reproduce subtle pose variations in human demonstrations.
+
+In terms of experimental validation, although the abstract does not provide specific numerical results, combined with the domain labels (design engineering and artificial intelligence algorithms), it can be inferred that the framework likely underwent cross-task evaluations on both simulation environments and physical humanoid robot platforms. Typical validation scenarios may include dynamic balance walking, whole-body motion tracking (e.g., dance or gymnastics movements), and generalization tests under multi-modal data fusion. By comparing the performance of pure RL policies, pure behavior cloning policies, and combined policies, the research is expected to demonstrate the effectiveness of action chunking and closed-loop execution in reducing tracking errors and improving motion smoothness.
+
+The application value of this work lies in endowing humanoid robots with motion expressiveness closer to that of humans, enabling more natural human-robot interaction in scenarios such as service, entertainment, and rehabilitation training. By transforming the whole-body control problem into a supervised prediction framework, this method reduces the reliance on large-scale high-quality demonstration data for policy training while maintaining the efficiency of real-time execution. Furthermore, its modular design allows flexible integration of demonstration data from different sources, providing a feasible technical pathway for building a general-purpose whole-body control foundation model.
+
+## 개요
+
+본 논문은 인간형 로봇을 위한 표현력 있는 전신 제어 프레임워크를 제안하며, 로봇이 복잡한 동적 환경에서 인간과 유사한 움직임과 자세 모방을 실현할 때 직면하는 어려움을 해결하는 것을 목표로 합니다. 연구는 이종 모션 캡처 데이터, 시뮬레이션 상호작용 정보 및 자체 상태를 융합하여 시연 궤적을 지도 가능한 동작 예측 문제로 변환하고, 강화 학습(PPO/RL) 및 행동 복제(ACT)와 같은 전략을 활용하여 통합된 전신 제어 정책을 훈련합니다. 이 연구의 주요 기여는 다중 소스 데이터를 추적 가능한 신체 목표로 변환하는 파이프라인을 구축하고, 동작 청킹과 폐쇄 루프 실행 메커니즘을 통해 시간적 지터를 효과적으로 억제하여 로봇 전신 움직임의 표현력과 안정성을 향상시킨 점에 있습니다.
+
+## 핵심 내용
+
+인간형 로봇의 전신 제어에서 핵심 과제는 고자유도 관절 시스템을 조정하여 균형 유지, 움직임 추적 및 표현력 발현이라는 다중 목표를 동시에 충족하는 방법입니다. 기존 방법은 종종 단일 작업(예: 보행 또는 파지)에 초점을 맞추어 동적 환경에서 유연하고 표현력 있는 전신 움직임을 구현하기 어렵습니다. 또한, 인간 시연에서 로봇 실행으로의 매핑 과정에서 데이터 이질성(예: 비디오, 모션 캡처, 시뮬레이션 데이터 형식 차이)과 시간적 지터 문제는 모방 학습의 일반화 능력과 실행의 부드러움을 심각하게 저해합니다. 본 논문은 이러한 병목 현상을 해결하기 위해 다중 소스 데이터를 추적 가능한 신체 목표로 통합하는 체계적인 방안을 탐구합니다.
+
+연구에서 제안하는 프레임워크는 먼저 자체 상태, 관절 시퀀스, 인간 비디오/모션 캡처 궤적 및 시뮬레이션 상호작용 데이터를 표준화된 "추적 가능한 신체 목표"로 변환합니다. 이 변환 과정은 이종 동적 캡처와 합성 균형 데이터의 융합에 의존하며, 이후 정책 훈련에 일관되고 풍부한 입력 표현을 제공합니다. 이를 바탕으로 프레임워크는 PPO 기반 강화 학습, ACT 기반 행동 복제 모방 학습, 그리고 이 둘의 조합 전신 정책을 포함한 다양한 정책 훈련 패러다임을 지원하며, 최종적으로 완전한 전신 궤적/동작 시퀀스와 하위 수준 제어기 목표를 출력합니다.
+
+이 방법의 핵심 기술 혁신은 시연 궤적을 지도 가능한 동작 예측 문제로 압축하는 데 있습니다. 전통적인 모방 학습은 고차원 동작 공간과 장기 시간 의존성으로 인해 정책이 발산하는 경우가 많지만, 본 논문은 동작 청킹 기술을 통해 연속적인 동작 시퀀스를 독립적으로 예측 가능한 청크로 분할하고, 폐쇄 루프 실행 메커니즘을 결합하여 실시간으로 예측 편차를 수정합니다. 이러한 설계는 시간적 지터가 움직임의 부드러움에 미치는 영향을 줄일 뿐만 아니라, 보지 못한 초기 상태에 대한 정책의 강건성을 향상시켜 로봇이 인간 시연의 미세한 자세 변화를 더 자연스럽게 재현할 수 있게 합니다.
+
+실험 검증 측면에서, 초록은 구체적인 수치를 제공하지 않지만, 분야 태그(설계 공학 및 인공지능 알고리즘)를 고려할 때 이 프레임워크는 시뮬레이션 환경과 실제 인간형 로봇 플랫폼에서 교차 작업 평가를 수행했을 가능성이 높습니다. 대표적인 검증 시나리오에는 동적 균형 보행, 전신 움직임 추적(예: 춤 또는 체조 동작) 및 다중 모드 데이터 융합 하의 일반화 테스트가 포함될 수 있습니다. 순수 RL 정책, 순수 행동 복제 정책 및 조합 정책의 성능을 비교함으로써, 연구는 동작 청킹과 폐쇄 루프 실행이 추적 오류를 줄이고 움직임의 부드러움을 향상시키는 효과를 입증할 것으로 기대됩니다.
+
+이 연구의 응용 가치는 인간형 로봇에 인간에 더 가까운 움직임 표현력을 부여하여 서비스, 엔터테인먼트, 재활 훈련 등 시나리오에서 인간과 더 자연스럽게 상호작용할 수 있게 하는 데 있습니다. 전신 제어 문제를 지도 가능한 예측 프레임워크로 변환함으로써, 이 방법은 대규모 고품질 시연 데이터에 대한 정책 훈련의 의존도를 낮추면서도 실시간 실행의 효율성을 유지합니다. 또한, 모듈식 설계는 다양한 출처의 시연 데이터를 유연하게 통합할 수 있어, 범용 전신 제어 기초 모델을 구축하기 위한 실행 가능한 기술 경로를 제공합니다.

@@ -62,3 +62,14 @@ An effective human-robot collaborative process results in the reduction of the o
 ## 参考
 - http://arxiv.org/abs/2403.05306v1
 
+## Overview
+An effective human-robot collaborative process results in the reduction of the operator's workload, promoting a more efficient, productive, safer and less error-prone working environment. However, the implementation of collaborative robots in industry is still challenging. In this work, we compare manual and robot-assisted assembly processes to evaluate the effectiveness of collaborative robots while featuring different modes of operation (coexistence, cooperation and collaboration). Results indicate an improvement in ergonomic conditions and ease of execution without substantially compromising assembly time. Furthermore, the robot is intuitive to use and guides the user on the proper sequencing of the process.
+
+## Content
+An effective human-robot collaborative process results in the reduction of the operator's workload, promoting a more efficient, productive, safer and less error-prone working environment. However, the implementation of collaborative robots in industry is still challenging. In this work, we compare manual and robot-assisted assembly processes to evaluate the effectiveness of collaborative robots while featuring different modes of operation (coexistence, cooperation and collaboration). Results indicate an improvement in ergonomic conditions and ease of execution without substantially compromising assembly time. Furthermore, the robot is intuitive to use and guides the user on the proper sequencing of the process.
+
+## 개요
+효과적인 인간-로봇 협업 과정은 작업자의 업무 부담을 줄여주며, 보다 효율적이고 생산적이며 안전하고 오류 가능성이 낮은 작업 환경을 조성합니다. 그러나 산업 현장에서 협업 로봇의 도입은 여전히 어려운 과제로 남아 있습니다. 본 연구에서는 수동 조립 공정과 로봇 지원 조립 공정을 비교하여, 다양한 작동 모드(공존, 협력, 협업)에서 협업 로봇의 효과를 평가합니다. 결과는 조립 시간을 크게 희생하지 않으면서도 인체공학적 조건과 작업 용이성이 개선됨을 보여줍니다. 또한, 로봇은 직관적으로 사용할 수 있으며 사용자에게 적절한 공정 순서를 안내합니다.
+
+## 핵심 내용
+효과적인 인간-로봇 협업 과정은 작업자의 업무 부담을 줄여주며, 보다 효율적이고 생산적이며 안전하고 오류 가능성이 낮은 작업 환경을 조성합니다. 그러나 산업 현장에서 협업 로봇의 도입은 여전히 어려운 과제로 남아 있습니다. 본 연구에서는 수동 조립 공정과 로봇 지원 조립 공정을 비교하여, 다양한 작동 모드(공존, 협력, 협업)에서 협업 로봇의 효과를 평가합니다. 결과는 조립 시간을 크게 희생하지 않으면서도 인체공학적 조건과 작업 용이성이 개선됨을 보여줍니다. 또한, 로봇은 직관적으로 사용할 수 있으며 사용자에게 적절한 공정 순서를 안내합니다.

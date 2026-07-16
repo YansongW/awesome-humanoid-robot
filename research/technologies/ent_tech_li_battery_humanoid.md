@@ -125,4 +125,112 @@ E=C \cdot V_{\text{nom}},
 - [Humanoid robots and lithium-ion batteries: Long-term commitment or short-term convenience?](https://interactanalysis.com/insight/humanoid-robots-and-lithium-ion-batteries/)
 - 项目 Wiki：kg/entities/ent_component_lithium_battery.md
 
+## Overview
+The lithium-ion battery system for humanoid robots is a crucial technology in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.
 
+## Content
+## Lithium-ion Battery
+
+### Overview
+
+Lithium-ion batteries are a type of rechargeable battery that operates by the intercalation/deintercalation of lithium ions between the positive and negative electrodes during charging and discharging. They are characterized by high energy density, low self-discharge, and no memory effect. This entry uses the Panasonic NCR18650B cylindrical NCA cell as an example to provide key parameters commonly used in robot battery pack design.
+
+### Working Principle / Technical Architecture
+
+The battery consists of a positive electrode (LiNiCoAlO₂), a graphite negative electrode, a separator, and an electrolyte. During discharge, lithium ions migrate from the negative electrode through the electrolyte to the positive electrode, while electrons perform work through the external circuit; the charging process is the reverse. The energy stored in the cell and its mass/volume energy density are given by:
+\[
+E=C \cdot V_{\text{nom}},
+\]
+\[
+\rho_e=\frac{E}{m}\quad\text{or}\quad\rho_v=\frac{E}{V},
+\]
+where \(C\) is the capacity (Ah), \(V_{\text{nom}}\) is the nominal voltage, \(m\) is the mass, and \(V\) is the volume.
+
+### Key Parameter Table
+
+| Specification | Value (Panasonic NCR18650B Example) | Notes/Source |
+|---------------|-------------------------------------|--------------|
+| Chemistry | Lithium-ion (NCA) | DNK Power |
+| Nominal Voltage | 3.6 V | DNK Power |
+| Rated Capacity | 3200 mAh; Typical 3350 mAh | DNK Power |
+| Charging Voltage | 4.20 ± 0.03 V | DNK Power |
+| Discharge Cut-off Voltage | 2.5 V | DNK Power |
+| Maximum Continuous Discharge Current | 4.875 A | DNK Power |
+| Energy Density | 676 Wh/L (volumetric) / 243 Wh/kg (gravimetric) | DNK Power |
+| Internal Resistance | ≤100 mΩ | DNK Power |
+| Dimensions | Φ18.25 mm × 65.10 mm | DNK Power |
+| Weight | ≤47.5 g | DNK Power |
+| Cycle Life | Approximately 1000 cycles | Industry data |
+| Operating Temperature | Charging 0–40 °C; Discharging -20–60 °C | DNK Power |
+
+### Application Scenarios
+
+- Humanoid robot torso/backpack battery packs
+- Power sources for mobile robots and unmanned vehicles
+- Power tools and portable devices
+- Energy storage systems
+
+### Supply Chain Relationships
+
+Lithium-ion batteries are produced by cell manufacturers such as Panasonic, CATL, Samsung SDI, and LG Energy Solution. They are then integrated with BMS by battery module/PACK manufacturers before being supplied to robot OEMs. In the knowledge graph, `ent_component_lithium_battery` serves as a fundamental component of the energy subsystem and is referenced by various mobile robot products through `uses` relationships.
+
+### Sources and Verification
+
+- [Panasonic NCR18650B Datasheet (DNK Power)](https://www.dnkpower.com/ncr18650b/)
+- [Panasonic NCR18650B Specifications](https://makerselectronics.com/product/panasonic-ncr18650b-3-6v-15a-3350mah/)
+- [Battery University - Lithium-ion Overview](https://batteryuniversity.com/article/bu-205-types-of-lithium-ion)
+
+## 개요
+휴머노이드 로봇 리튬이온 배터리 시스템은 휴머노이드 로봇 분야의 중요한 기술입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.
+
+## 핵심 내용
+## 리튬이온 배터리 / Lithium-ion Battery
+
+### 개요
+
+리튬이온 배터리는 리튬 이온이 양극과 음극 사이에서 삽입/탈리되며 충·방전이 이루어지는 충전식 배터리로, 높은 에너지 밀도, 낮은 자가 방전, 메모리 효과가 없는 특징을 가집니다. 본 항목에서는 Panasonic NCR18650B 원통형 NCA 셀을 예시로 들어 로봇 배터리 팩 설계에 자주 사용되는 주요 파라미터를 제시합니다.
+
+### 작동 원리 / 기술 아키텍처
+
+배터리는 양극(LiNiCoAlO₂), 흑연 음극, 분리막 및 전해질로 구성됩니다. 방전 시 리튬 이온은 음극에서 전해질을 통해 양극으로 이동하고, 전자는 외부 회로를 통해 일을 합니다. 충전 과정은 반대입니다. 셀에 저장된 에너지와 질량/부피 에너지 밀도는 다음과 같습니다.
+\[
+E=C \cdot V_{\text{nom}},
+\]
+\[
+\rho_e=\frac{E}{m}\quad\text{또는}\quad\rho_v=\frac{E}{V},
+\]
+여기서 \(C\)는 용량(Ah), \(V_{\text{nom}}\)은 공칭 전압, \(m\)은 질량, \(V\)는 부피입니다.
+
+### 주요 파라미터 표
+
+| 사양 항목 | 값 (Panasonic NCR18650B 기준) | 비고/출처 |
+|-----------|-------------------------------|-----------|
+| 화학 시스템 | 리튬이온 (NCA) | DNK Power |
+| 공칭 전압 | 3.6 V | DNK Power |
+| 정격 용량 | 3200 mAh; 일반 3350 mAh | DNK Power |
+| 충전 전압 | 4.20 ± 0.03 V | DNK Power |
+| 방전 종료 전압 | 2.5 V | DNK Power |
+| 최대 연속 방전 전류 | 4.875 A | DNK Power |
+| 에너지 밀도 | 676 Wh/L (부피) / 243 Wh/kg | DNK Power |
+| 내부 저항 | ≤100 mΩ | DNK Power |
+| 크기 | Φ18.25 mm × 65.10 mm | DNK Power |
+| 무게 | ≤47.5 g | DNK Power |
+| 수명 주기 | 약 1000회 | 업계 자료 |
+| 작동 온도 | 충전 0–40 °C; 방전 -20–60 °C | DNK Power |
+
+### 적용 분야
+
+- 휴머노이드 로봇 동체/백팩 배터리 팩
+- 이동 로봇 및 무인 차량 동력원
+- 전동 공구 및 휴대용 장치
+- 에너지 저장 시스템
+
+### 공급망 관계
+
+리튬이온 배터리는 파나소닉, CATL, 삼성 SDI, LG에너지솔루션 등 셀 제조사에서 생산되며, 배터리 모듈/PACK 업체에서 BMS를 통합한 후 로봇 완성체 제조사에 공급됩니다. 지식 그래프에서 `ent_component_lithium_battery`는 에너지 서브시스템의 기본 부품으로, 다양한 이동 로봇 제품이 `uses` 관계를 통해 참조합니다.
+
+### 출처 및 검증
+
+- [Panasonic NCR18650B Datasheet (DNK Power)](https://www.dnkpower.com/ncr18650b/)
+- [Panasonic NCR18650B Specifications](https://makerselectronics.com/product/panasonic-ncr18650b-3-6v-15a-3350mah/)
+- [Battery University - Lithium-ion Overview](https://batteryuniversity.com/article/bu-205-types-of-lithium-ion)

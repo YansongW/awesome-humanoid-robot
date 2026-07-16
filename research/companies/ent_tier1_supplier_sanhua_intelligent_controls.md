@@ -171,4 +171,204 @@ theoretical_depth:
 - [Tesla Optimus Supply Chain: Who Makes the Parts?](https://optimusk.blog/blog/tesla-optimus-suppliers/)
 - 项目 Wiki：appendix-d/companies/company_sanhua.md
 
+## Overview
+Sanhua Intelligent Controls is a key Tier 1 supplier in the humanoid robotics sector. The following content is compiled from the project Wiki for in-depth reference.
 
+## Content
+## Sanhua Intelligent Controls
+
+> This entry belongs to [Appendix D Enterprise/Product Wiki](../../appendix-d.md).
+> Data updated: 2026-07-01. All parameters are based on official public information; missing items are marked as "Not disclosed."
+
+---
+
+### Company Information Card
+
+| Item | Content |
+|------|---------|
+| **Chinese Name** | 三花智控 |
+| **English Name** | Sanhua Intelligent Controls |
+| **Headquarters** | Shaoxing, Zhejiang Province, China |
+| **Founded** | 1994 |
+| **Website** | [https://www.sanhuaglobal.com](https://www.sanhuaglobal.com) |
+| **Supply Chain Role** | Thermal management, microchannel heat exchangers, electronic expansion valves, robotic electromechanical actuators |
+| **Company Type** | Listed company (SZ: 002050), global leader in refrigeration and thermal management control components |
+| **Parent/Group** | Sanhua Holding Group Co., Ltd. |
+| **Data Sources** | Sanhua Intelligent Controls official website, annual reports, investor relations announcements, public research reports |
+
+### Company Profile
+
+Sanhua Intelligent Controls is a global leader in refrigeration and air conditioning control components and new energy vehicle thermal management. Leveraging its precision valve, pump, and actuator technologies, it extends into robotic thermal management and electromechanical actuators.
+
+The company's core products include electronic expansion valves, four-way valves, solenoid valves, microchannel heat exchangers, electronic water pumps, oil coolers, and integrated thermal management modules for new energy vehicles. With deep expertise in fluid control, precision electromagnetic drives, and thermal management, Sanhua is actively developing rotary/linear actuators, servo motors, and thermal management components for humanoid robots, collaborating with several leading robotics companies.
+
+### Product Lines
+
+| Product Line | Positioning | Representative Products | Application Areas |
+|--------------|-------------|-------------------------|-------------------|
+| Refrigeration & AC Control Components | Valves and heat exchangers | Electronic expansion valves, four-way valves, microchannel heat exchangers | Residential/commercial AC, cold chain |
+| New Energy Vehicle Thermal Management | Integrated vehicle thermal management | Electronic water pumps, Chiller, integrated modules | New energy vehicles |
+| Robotic Actuators & Thermal Management | Humanoid robot electromechanical actuators, joint thermal management | Rotary/linear actuators, thermal management valves | Humanoid robots, industrial robots |
+
+### Representative Products
+
+#### Sanhua Thermal Management Components / Electronic Expansion Valves
+
+> Sanhua Thermal Management Components / Electronic Expansion Valves: Please visit [official website](https://www.sanhuaglobal.com) for details.
+
+| Specification | Value | Remarks/Source |
+|---------------|-------|----------------|
+| Product Form | Electronic expansion valves, solenoid valves, electronic water pumps, Chiller, heat exchangers | Sanhua official website |
+| Control Accuracy | High-precision flow/pressure regulation | Sanhua public data |
+| Operating Pressure | 0–4.5 MPa depending on model | Product manual |
+| Medium | R134a, R1234yf, coolant, etc. | Sanhua data |
+| Dimensions | Valve body diameter approx. 20–60 mm (depending on model) | Public specifications |
+| Weight | Tens to hundreds of grams | Public specifications |
+| Lifespan | >100,000 cycles (typical models) | Sanhua public data |
+| Price | Not disclosed | - |
+
+**Technical Highlights**: Global market share leader in electronic expansion valves, precision fluid control capability, expandable to robotic thermal management and actuator cooling.
+
+**Application Scenarios**: New energy vehicle thermal management, energy storage temperature control, data center liquid cooling, robotic joint thermal management.
+
+#### Sanhua Robotic Electromechanical Actuators
+
+> Sanhua Robotic Electromechanical Actuators: Please visit [official website](https://www.sanhuaglobal.com) for details.
+
+| Specification | Value | Remarks/Source |
+|---------------|-------|----------------|
+| Product Form | Rotary actuators, linear actuators (ball screw/push rod) | Investor relations announcements |
+| Drive Method | Servo motor + reducer/ball screw | Industry analysis |
+| Torque/Thrust | 10–200 N·m / hundreds to thousands of N depending on solution | Not disclosed |
+| Control Method | Brushless motor + encoder + driver | Not disclosed |
+| Cooling Method | Optional liquid/air cooling | Not disclosed |
+| Dimensions | Customized per customer solution | Not disclosed |
+| Weight | Varies by specification | Not disclosed |
+| Price | Not disclosed | - |
+
+**Technical Highlights**: Leveraging electromagnetic drive, fluid control, and precision manufacturing capabilities to develop highly integrated robotic actuators; collaborating with multiple leading humanoid robot companies.
+
+**Application Scenarios**: Humanoid robot joints, industrial robots, collaborative robots.
+
+### Supply Chain Position
+
+- **Upstream Key Components/Materials**: Copper, aluminum, rare earth permanent magnets, electronic components, precision machining equipment, sealing materials.
+- **Downstream Customers/Applications**: Tesla, BYD, Midea, Gree, and other automotive and home appliance companies; humanoid robot OEMs.
+- **Main Competitors/Peers**: Dun'an Environment, Yinlun Co.; in robotic actuators, peers include Tuopu Group, Leaderdrive.
+
+### Knowledge Graph Nodes and Relationships
+
+- Company Entity: `ent_company_sanhua`
+- Product Entities: `ent_product_sanhua_thermal`, `ent_product_sanhua_actuator`
+- Key Relationships:
+  - `ent_company_sanhua` -- `manufactures` --> `ent_product_sanhua_thermal`
+  - `ent_company_sanhua` -- `manufactures` --> `ent_product_sanhua_actuator`
+  - `ent_product_sanhua_thermal` -- `uses` --> `ent_component_electronic_expansion_valve`
+  - `ent_product_sanhua_actuator` -- `uses` --> `ent_component_servo_motor`
+
+### References
+
+1. [Official Website](https://www.sanhuaglobal.com)
+2. [Sanhua Intelligent Controls Official Website](https://www.sanhuaglobal.com)
+3. Sanhua Intelligent Controls 2024 Annual Report and Investor Communication Minutes
+
+## 개요
+삼화지공은 휴머노이드 로봇 분야의 중요한 Tier 1 공급업체입니다. 아래 내용은 프로젝트 Wiki에서 정리한 내용으로, 심층 참고용으로 제공됩니다.
+
+## 핵심 내용
+## 삼화지공 / Sanhua Intelligent Controls
+
+> 이 항목은 [부록 D 기업/제품 Wiki](../../appendix-d.md)에 속합니다.
+> 데이터 업데이트 일자: 2026-07-01. 모든 매개변수는 공식 공개 자료를 기준으로 하며, 누락된 항목은 "미공개"로 표시합니다.
+
+---
+
+### 회사 정보 카드
+
+| 항목 | 내용 |
+|------|------|
+| **중문명** | 삼화지공 |
+| **영문명** | Sanhua Intelligent Controls |
+| **본사** | 중국 저장성 사오싱시 |
+| **설립일** | 1994년 |
+| **공식 사이트** | [https://www.sanhuaglobal.com](https://www.sanhuaglobal.com) |
+| **공급망 단계** | 열관리, 마이크로채널 열교환기, 전자식 팽창밸브, 로봇 전기기계식 액추에이터 |
+| **기업 속성** | 상장사 (SZ: 002050), 글로벌 냉동 및 열관리 제어 부품 선두 기업 |
+| **모회사/소속 그룹** | 삼화홀딩그룹유한공사 |
+| **데이터 출처** | 삼화지공 공식 사이트, 연례 보고서, 투자자 관계 공시, 공개 연구 보고서 |
+
+### 회사 소개
+
+삼화지공은 글로벌 냉동 공조 제어 부품 및 신에너지 차량 열관리 선두 기업으로, 정밀 밸브 부품, 펌프 및 액추에이터 기술을 바탕으로 로봇 열관리 및 전기기계식 액추에이터 분야로 확장하고 있습니다.
+
+회사의 핵심 제품으로는 전자식 팽창밸브, 사방밸브, 전자기밸브, 마이크로채널 열교환기, 전자식 워터 펌프, 오일 쿨러 및 신에너지 차량 열관리 통합 모듈이 있습니다. 삼화는 유체 제어, 정밀 전자기 구동 및 열관리 분야에서 깊은 기술력을 축적하고 있으며, 휴머노이드 로봇의 회전/직선 액추에이터, 서보 모터 및 열관리 부품을 적극적으로 개발하여 여러 선두 로봇 기업과 협력 관계를 구축하고 있습니다.
+
+### 제품 라인
+
+| 제품 라인 | 포지셔닝 | 대표 제품 | 응용 분야 |
+|--------|------|----------|----------|
+| 냉동 공조 제어 부품 | 밸브 부품 및 열교환기 | 전자식 팽창밸브, 사방밸브, 마이크로채널 열교환기 | 가정용/상업용 에어컨, 콜드체인 |
+| 신에너지 차량 열관리 | 차량 열관리 통합 | 전자식 워터 펌프, 칠러, 통합 모듈 | 신에너지 차량 |
+| 로봇 액추에이터 및 열관리 | 휴머노이드 로봇 전기기계식 액추에이터, 관절 열관리 | 회전/직선 액추에이터, 열관리 밸브 부품 | 휴머노이드 로봇, 산업용 로봇 |
+
+### 대표 제품
+
+#### 삼화 열관리 부품 / 전자식 팽창밸브
+
+> 삼화 열관리 부품 / 전자식 팽창밸브: [공식 자료](https://www.sanhuaglobal.com)를 방문하여 확인하세요.
+
+| 사양 항목 | 수치 | 비고/출처 |
+|--------|------|-----------|
+| 제품 형태 | 전자식 팽창밸브, 전자기밸브, 전자식 워터 펌프, 칠러, 열교환기 | 삼화 공식 사이트 |
+| 제어 정밀도 | 고정밀 유량/압력 조절 | 삼화 공개 자료 |
+| 작동 압력 | 모델에 따라 0–4.5 MPa | 제품 매뉴얼 |
+| 매체 | R134a, R1234yf, 냉각수 등 | 삼화 자료 |
+| 크기 | 밸브 본체 직경 약 20–60 mm (모델에 따라 다름) | 공개 사양 |
+| 무게 | 수십 그램에서 수백 그램 | 공개 사양 |
+| 수명 | >10만 회 (대표 모델) | 삼화 공개 자료 |
+| 가격 | 미공개 | - |
+
+**기술적 특징**: 글로벌 시장 점유율 선두의 전자식 팽창밸브, 정밀 유체 제어 능력, 로봇 열관리 및 액추에이터 냉각으로 확장 가능.
+
+**응용 분야**: 신에너지 차량 열관리, 에너지 저장 온도 제어, 데이터 센터 액체 냉각, 로봇 관절 열관리.
+
+#### 삼화 로봇 전기기계식 액추에이터
+
+> 삼화 로봇 전기기계식 액추에이터: [공식 자료](https://www.sanhuaglobal.com)를 방문하여 확인하세요.
+
+| 사양 항목 | 수치 | 비고/출처 |
+|--------|------|-----------|
+| 제품 형태 | 회전 액추에이터, 직선 액추에이터 (볼스크류/푸시로드) | 투자자 관계 공시 |
+| 구동 방식 | 서보 모터 + 감속기/볼스크류 | 업계 분석 |
+| 토크/추력 | 구성에 따라 10–200 N·m / 수백에서 수천 N | 미공개 |
+| 제어 방식 | 브러시리스 모터 + 엔코더 + 드라이버 | 미공개 |
+| 냉각 방식 | 액체 냉각/공랭식 선택 가능 | 미공개 |
+| 크기 | 고객 구성에 따라 맞춤 제작 | 미공개 |
+| 무게 | 사양에 따라 다름 | 미공개 |
+| 가격 | 미공개 | - |
+
+**기술적 특징**: 전자기 구동, 유체 제어 및 정밀 제조 능력을 기반으로 고집적 로봇 액추에이터 개발; 여러 선두 휴머노이드 로봇 기업과 협력.
+
+**응용 분야**: 휴머노이드 로봇 관절, 산업용 로봇, 협동 로봇.
+
+### 공급망 위치
+
+- **상류 핵심 부품/소재**: 구리, 알루미늄, 희토류 영구자석, 전자 부품, 정밀 가공 장비, 밀봉 재료.
+- **하류 고객/응용 분야**: 테슬라, BYD, 미디어, 그리 등 자동차 및 가전 기업; 휴머노이드 로봇 완성체 제조사.
+- **주요 경쟁사/벤치마크**: 둔안환징, 인룬주펀; 로봇 액추에이터 분야에서 톄푸지퇀, 뤼더셰보와 경쟁.
+
+### 지식 그래프 노드 및 관계
+
+- 회사 엔티티: `ent_company_sanhua`
+- 제품 엔티티: `ent_product_sanhua_thermal`, `ent_product_sanhua_actuator`
+- 주요 관계:
+  - `ent_company_sanhua` -- `manufactures` --> `ent_product_sanhua_thermal`
+  - `ent_company_sanhua` -- `manufactures` --> `ent_product_sanhua_actuator`
+  - `ent_product_sanhua_thermal` -- `uses` --> `ent_component_electronic_expansion_valve`
+  - `ent_product_sanhua_actuator` -- `uses` --> `ent_component_servo_motor`
+
+### 참고 자료
+
+1. [공식 사이트](https://www.sanhuaglobal.com)
+2. [삼화지공 공식 사이트](https://www.sanhuaglobal.com)
+3. 삼화지공 2024년 연례 보고서 및 투자자 소통 회의록

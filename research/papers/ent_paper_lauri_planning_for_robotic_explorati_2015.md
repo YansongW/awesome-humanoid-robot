@@ -57,3 +57,14 @@ We address the problem of controlling a mobile robot to explore a partially know
 ## 参考
 - http://arxiv.org/abs/1502.02474v2
 
+## Overview
+We address the problem of controlling a mobile robot to explore a partially known environment. The robot's objective is the maximization of the amount of information collected about the environment. We formulate the problem as a partially observable Markov decision process (POMDP) with an information-theoretic objective function, and solve it applying forward simulation algorithms with an open-loop approximation. We present a new sample-based approximation for mutual information useful in mobile robotics. The approximation can be seamlessly integrated with forward simulation planning algorithms. We investigate the usefulness of POMDP based planning for exploration, and to alleviate some of its weaknesses propose a combination with frontier based exploration. Experimental results in simulated and real environments show that, depending on the environment, applying POMDP based planning for exploration can improve performance over frontier exploration.
+
+## Content
+We address the problem of controlling a mobile robot to explore a partially known environment. The robot's objective is the maximization of the amount of information collected about the environment. We formulate the problem as a partially observable Markov decision process (POMDP) with an information-theoretic objective function, and solve it applying forward simulation algorithms with an open-loop approximation. We present a new sample-based approximation for mutual information useful in mobile robotics. The approximation can be seamlessly integrated with forward simulation planning algorithms. We investigate the usefulness of POMDP based planning for exploration, and to alleviate some of its weaknesses propose a combination with frontier based exploration. Experimental results in simulated and real environments show that, depending on the environment, applying POMDP based planning for exploration can improve performance over frontier exploration.
+
+## 개요
+본 연구는 부분적으로 알려진 환경을 탐사하는 이동 로봇의 제어 문제를 다룹니다. 로봇의 목표는 환경에 대해 수집되는 정보의 양을 최대화하는 것입니다. 이 문제를 정보 이론적 목적 함수를 가진 부분 관찰 마르코프 결정 과정(POMDP)으로 정식화하고, 개방 루프 근사를 적용한 순방향 시뮬레이션 알고리즘을 통해 해결합니다. 이동 로봇 공학에 유용한 상호 정보에 대한 새로운 샘플 기반 근사법을 제시합니다. 이 근사법은 순방향 시뮬레이션 계획 알고리즘과 원활하게 통합될 수 있습니다. 탐사를 위한 POMDP 기반 계획의 유용성을 조사하고, 그 약점을 완화하기 위해 프론티어 기반 탐사와의 결합을 제안합니다. 시뮬레이션 및 실제 환경에서의 실험 결과, 환경에 따라 POMDP 기반 탐사 계획이 프론티어 탐사보다 성능을 향상시킬 수 있음을 보여줍니다.
+
+## 핵심 내용
+본 연구는 부분적으로 알려진 환경을 탐사하는 이동 로봇의 제어 문제를 다룹니다. 로봇의 목표는 환경에 대해 수집되는 정보의 양을 최대화하는 것입니다. 이 문제를 정보 이론적 목적 함수를 가진 부분 관찰 마르코프 결정 과정(POMDP)으로 정식화하고, 개방 루프 근사를 적용한 순방향 시뮬레이션 알고리즘을 통해 해결합니다. 이동 로봇 공학에 유용한 상호 정보에 대한 새로운 샘플 기반 근사법을 제시합니다. 이 근사법은 순방향 시뮬레이션 계획 알고리즘과 원활하게 통합될 수 있습니다. 탐사를 위한 POMDP 기반 계획의 유용성을 조사하고, 그 약점을 완화하기 위해 프론티어 기반 탐사와의 결합을 제안합니다. 시뮬레이션 및 실제 환경에서의 실험 결과, 환경에 따라 POMDP 기반 탐사 계획이 프론티어 탐사보다 성능을 향상시킬 수 있음을 보여줍니다.

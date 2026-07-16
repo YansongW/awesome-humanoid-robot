@@ -63,4 +63,14 @@ In this article, we present an overview of the use of service-oriented architect
 ## 参考
 - http://arxiv.org/abs/1901.08173v2
 
+## Overview
+In this article, we present an overview of the use of service-oriented architecture and Web services in developing robotics applications and software integrated with the Internet and the Cloud. This is a recent trend that emerged since 2010 from the concept of cloud robotics, which leverages the use of cloud infrastructures for robotics applications following a service-oriented architecture approach. In particular, we distinguish two main categories: (\textit{i.}) virtualization of robotics systems and (\textit{ii.}) computation offloading from robots to cloud-based services. We discuss the main approaches proposed in the literature to design robotics systems through the Web and their integration to the cloud through a service-oriented computing framework.
 
+## Content
+In this article, we present an overview of the use of service-oriented architecture and Web services in developing robotics applications and software integrated with the Internet and the Cloud. This is a recent trend that emerged since 2010 from the concept of cloud robotics, which leverages the use of cloud infrastructures for robotics applications following a service-oriented architecture approach. In particular, we distinguish two main categories: (\textit{i.}) virtualization of robotics systems and (\textit{ii.}) computation offloading from robots to cloud-based services. We discuss the main approaches proposed in the literature to design robotics systems through the Web and their integration to the cloud through a service-oriented computing framework.
+
+## 개요
+본 논문에서는 서비스 지향 아키텍처와 웹 서비스를 활용하여 인터넷 및 클라우드와 통합된 로봇 애플리케이션 및 소프트웨어를 개발하는 방법에 대한 개요를 제시합니다. 이는 2010년 이후 클라우드 로보틱스 개념에서 등장한 최근 트렌드로, 서비스 지향 아키텍처 접근 방식을 따라 로봇 애플리케이션에 클라우드 인프라를 활용하는 것입니다. 특히, 우리는 두 가지 주요 범주를 구분합니다: (\textit{i.}) 로봇 시스템의 가상화와 (\textit{ii.}) 로봇에서 클라우드 기반 서비스로의 연산 오프로딩입니다. 또한, 웹을 통해 로봇 시스템을 설계하고 서비스 지향 컴퓨팅 프레임워크를 통해 클라우드에 통합하기 위해 문헌에서 제안된 주요 접근 방식을 논의합니다.
+
+## 핵심 내용
+본 논문에서는 서비스 지향 아키텍처와 웹 서비스를 활용하여 인터넷 및 클라우드와 통합된 로봇 애플리케이션 및 소프트웨어를 개발하는 방법에 대한 개요를 제시합니다. 이는 2010년 이후 클라우드 로보틱스 개념에서 등장한 최근 트렌드로, 서비스 지향 아키텍처 접근 방식을 따라 로봇 애플리케이션에 클라우드 인프라를 활용하는 것입니다. 특히, 우리는 두 가지 주요 범주를 구분합니다: (\textit{i.}) 로봇 시스템의 가상화와 (\textit{ii.}) 로봇에서 클라우드 기반 서비스로의 연산 오프로딩입니다. 또한, 웹을 통해 로봇 시스템을 설계하고 서비스 지향 컴퓨팅 프레임워크를 통해 클라우드에 통합하기 위해 문헌에서 제안된 주요 접근 방식을 논의합니다.

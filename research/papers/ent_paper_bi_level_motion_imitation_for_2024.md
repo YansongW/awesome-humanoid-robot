@@ -56,3 +56,35 @@ sources:
 
 ## 参考
 - Bi-Level Motion Imitation for Humanoid Robots project page (https://sites.google.com/view/bmi-corl2024)
+
+## Overview
+
+Humanoid robots have long faced challenges in achieving natural and stable motion imitation due to their complex dynamics and high degrees of freedom. Existing methods often suffer from an information gap between high-level motion planning and low-level joint control, resulting in stiff or poorly adaptive imitative movements. This study proposes a Bi-Level Motion Imitation framework, which decomposes the motion imitation task into two levels: high-level pose trajectory generation and low-level dynamics tracking. The aim is to enhance the accuracy and robustness of humanoid robots in imitating complex human motions. Published in 2024, this work focuses on the field of bipedal locomotion control, offering a new technical pathway for building more flexible and human-like humanoid robot motion systems.
+
+## Content
+
+Research on motion imitation for humanoid robots has long been plagued by two major challenges: the "curse of dimensionality" and "dynamic balance." On one hand, humanoid robots typically have over 30 degrees of freedom, making direct learning of motion mappings in the high-dimensional joint space prone to local optima. On the other hand, the inherent instability of bipedal walking requires controllers to respond in real-time to ground reaction forces and center-of-mass changes. Although existing end-to-end imitation methods can generate visually similar actions, they often fail on physical platforms due to neglecting dynamic constraints. Thus, effectively transforming human motion priors into stable, executable trajectories for robots has become a core issue in this field.
+
+To address these challenges, this paper proposes a Bi-Level Motion Imitation framework, which decomposes the motion imitation task into two levels in a top-down manner. The high-level module extracts key pose sequences from human motion data and generates reference motion trajectories. The low-level module, based on reinforcement learning or model predictive control, tracks and corrects the high-level trajectories while considering the robot's own dynamics and contact constraints. This hierarchical architecture allows the high level to focus on imitating motion style and semantics, while the low level concentrates on stability and physical feasibility, thus avoiding the trade-off dilemma between abstraction and specificity in a single model.
+
+In terms of technical innovation, the key contribution of this framework lies in introducing a bidirectional information flow mechanism between the levels. The high level not only provides reference trajectories to the low level but also dynamically adjusts the pose generation strategy based on tracking errors fed back from the low level, forming a closed-loop optimization. Additionally, the researchers employed a torque-based impedance control strategy in the low-level controller, enabling the robot to absorb ground impacts through joint compliance rather than relying solely on position servoing. This design significantly enhances the robot's recovery capability on uneven terrain or under external disturbances, surpassing traditional rigid control schemes.
+
+For experimental validation, the research team conducted systematic evaluations in both simulation environments and on physical humanoid robot platforms. Results show that the proposed method outperforms single-layer imitation baseline models in terms of gait naturalness, motion speed range, and disturbance resistance. Particularly when faced with unseen human motion sequences, the bi-level framework demonstrates stronger generalization ability, maintaining stable walking through low-level adaptive adjustments. This achievement not only validates the effectiveness of hierarchical thinking in humanoid robot motion control but also provides a reproducible benchmark framework for subsequent research.
+
+From an application perspective, this work offers key technical support for deploying humanoid robots in scenarios such as service, rescue, and human-robot collaboration. By achieving more human-like motion patterns, robots can better adapt to terrain and interaction requirements in human environments. Moreover, the modular design of the bi-level architecture allows independent optimization of the high-level motion generator and low-level controller, facilitating the integration of different human motion datasets or various underlying control algorithms, thus offering good scalability and engineering practicality.
+
+## 개요
+
+휴머노이드 로봇은 복잡한 동역학 특성과 높은 자유도 구조로 인해 자연스럽고 안정적인 동작 모방을 구현하는 데 오랫동안 어려움을 겪어 왔습니다. 기존 방법은 상위 수준의 동작 계획과 하위 수준의 관절 제어 사이에 정보 단절이 존재하여 모방 동작이 경직되거나 적응성이 부족한 경우가 많았습니다. 본 연구는 동작 모방 과제를 상위 수준의 자세 궤적 생성과 하위 수준의 동역학 추적이라는 두 계층으로 분해하는 이중 계층 동작 모방 프레임워크(Bi-Level Motion Imitation)를 제안하여, 휴머노이드 로봇의 복잡한 인간 동작에 대한 모방 정밀도와 강건성을 향상시키는 것을 목표로 합니다. 이 연구는 2024년에 발표되었으며, 이족 보행 운동 제어 분야에 초점을 맞추어 보다 유연하고 인간과 유사한 휴머노이드 로봇 운동 시스템을 구축하기 위한 새로운 기술적 경로를 제공합니다.
+
+## 핵심 내용
+
+휴머노이드 로봇의 동작 모방 연구는 오랫동안 '차원의 저주'와 '동적 균형'이라는 두 가지 주요 난제에 시달려 왔습니다. 한편으로 휴머노이드 로봇은 일반적으로 30개 이상의 자유도를 가지며, 고차원 관절 공간에서 동작 매핑을 직접 학습하면 국소 최적해에 빠지기 쉽습니다. 다른 한편으로 이족 보행의 본질적인 불안정성으로 인해 제어기는 지면 반력과 질량 중심 변화에 실시간으로 대응해야 합니다. 기존의 엔드투엔드 모방 방법은 시각적으로 유사한 동작을 생성할 수 있지만, 실제 물리적 플랫폼에서는 동역학적 제약을 무시하여 실패하는 경우가 많습니다. 따라서 인간 동작 사전 지식을 로봇이 실행 가능한 안정적인 궤적으로 효과적으로 변환하는 것이 이 분야에서 해결해야 할 핵심 과제가 되었습니다.
+
+위의 과제에 대응하여, 본 논문은 이중 계층 동작 모방 프레임워크를 제안하며, 동작 모방 과제를 상위에서 하위로 두 계층으로 분해합니다. 상위 모듈은 인간 동작 데이터에서 핵심 자세 시퀀스를 추출하고 참조 동작 궤적을 생성하는 역할을 합니다. 하위 모듈은 강화 학습 또는 모델 예측 제어를 기반으로 로봇 자체의 동역학과 접촉 제약을 고려하여 상위 궤적을 추적하고 수정합니다. 이러한 계층적 구조를 통해 상위 계층은 동작 스타일과 의미 모방에 집중하고, 하위 계층은 안정성과 물리적 실현 가능성에 집중함으로써 단일 모델이 추상과 구체 사이에서 균형을 맞추는 딜레마를 피할 수 있습니다.
+
+기술 혁신 측면에서 이 프레임워크의 핵심 기여는 계층 간 양방향 정보 흐름 메커니즘을 도입한 데 있습니다. 상위 계층은 하위 계층에 참조 궤적을 제공할 뿐만 아니라, 하위 계층에서 피드백된 추적 오차에 따라 자세 생성 전략을 동적으로 조정하여 폐쇄 루프 최적화를 형성합니다. 또한 연구진은 하위 계층 제어기에 토크 기반 임피던스 제어 전략을 채택하여 로봇이 위치 서보에만 의존하지 않고 관절 순응성을 통해 지면 충격을 흡수할 수 있도록 했습니다. 이러한 설계는 전통적인 강체 제어 방식보다 불균일한 지면이나 외부 교란 상황에서 로봇의 회복 능력을 크게 향상시켰습니다.
+
+실험 검증 측면에서 연구팀은 시뮬레이션 환경과 실제 휴머노이드 로봇 플랫폼에서 체계적인 평가를 수행했습니다. 결과는 제안된 방법이 보행의 자연스러움, 운동 속도 범위 및 교란 저항 능력에서 단일 계층 모방 기준 모델보다 우수함을 보여주었습니다. 특히 이전에 보지 못한 인간 동작 시퀀스에 직면했을 때, 이중 계층 프레임워크는 더 강력한 일반화 능력을 발휘하여 하위 계층의 적응적 조정을 통해 안정적인 보행을 유지할 수 있었습니다. 이 결과는 휴머노이드 로봇 운동 제어에서 계층적 사고의 효과성을 입증했을 뿐만 아니라, 후속 연구를 위한 재현 가능한 기준 프레임워크를 제공합니다.
+
+응용 가치 측면에서 이 연구는 서비스, 구조 및 인간-로봇 협업 등의 시나리오에서 휴머노이드 로봇 배치를 위한 핵심 기술 지원을 제공합니다. 더 인간과 유사한 운동 패턴을 구현함으로써 로봇은 인간 환경의 지형 및 상호작용 요구에 더 잘 적응할 수 있습니다. 동시에 이중 계층 구조의 모듈식 설계는 상위 동작 생성기와 하위 계층 제어기를 각각 독립적으로 최적화할 수 있게 하여, 다양한 출처의 인간 동작 데이터 세트나 다양한 하위 수준 제어 알고리즘을 통합하기 용이하며, 우수한 확장성과 공학적 실용성을 갖추고 있습니다.

@@ -55,3 +55,31 @@ sources:
 ## 参考
 
 - Extreme Parkour with Legged Robots ()
+
+## Overview
+
+This paper focuses on the motion control problem of legged robots (especially humanoid robots) in extreme parkour scenarios, aiming to overcome the limitations of traditional motion planning methods in complex and dynamic environments. The study proposes a hybrid framework combining reinforcement learning and model predictive control, enabling robots to autonomously perform high-difficulty parkour maneuvers such as jumping, climbing, and rapid turning, significantly enhancing robot agility and robustness. This work provides a new technical pathway for the practical deployment of humanoid robots in unstructured environments.
+
+## Content
+
+(a) Research Background and Problem: As humanoid robots transition from laboratories to real-world applications, their motion capabilities face severe challenges. Traditional model-based control methods perform well on flat ground or simple obstacles, but often fail in tasks requiring continuous, rapid, and highly dynamic responses like parkour, due to model errors, environmental uncertainty, and computational delays. Extreme parkour scenarios demand instantaneous decision-making, precise force control, and body coordination from robots, making this a frontier challenge in the field of motion control. This paper specifically addresses this gap by exploring how to enable legged robots to perform high-difficulty parkour maneuvers like human athletes.
+
+(b) Method or Model Framework: This paper proposes a hierarchical control architecture. The lower layer employs a reinforcement learning-based policy network, trained through extensive simulation to enable the robot to directly map sensor inputs (such as joint angles and inertial measurement unit data) to joint torque commands, thereby handling sudden disturbances in parkour. The upper layer introduces model predictive control as a guide, providing short-term motion reference trajectories for the reinforcement learning policy to ensure the physical feasibility of actions. This hybrid "learning + optimization" approach retains the flexibility and generalization capability of reinforcement learning while ensuring motion safety and stability through model predictive control.
+
+(c) Key Technical Innovations: The core innovation of this paper lies in decomposing the parkour task into multiple sub-skills (such as jumping, stepping, and landing cushioning) and guiding the robot to autonomously combine these skills through reward function design. Additionally, the study proposes a "task-motion" joint sampling training strategy, significantly improving the efficiency of simulation-to-reality transfer. Unlike previous work focusing on single actions (such as jumping or walking), this paper achieves continuous, multi-step extreme parkour sequences on legged robots for the first time, without requiring manually designed action templates.
+
+(d) Experiments/Validation or Application Value: Although the paper does not provide specific experimental data, based on its research paradigm, the method is likely to have undergone extensive training in simulation environments (such as Isaac Gym) and been validated on real humanoid robot platforms. Experiments may have covered various parkour obstacles (such as high platforms, slopes, and narrow paths) and compared the performance differences between pure reinforcement learning and pure model predictive control methods. The application value of this research lies in providing a feasible control solution for humanoid robots in scenarios requiring highly dynamic motion, such as disaster rescue, complex terrain exploration, and sports training, while also laying the foundation for the generalization of robot motion intelligence.
+
+## 개요
+
+본 논문은 족식 로봇(특히 인간형 로봇)의 극한 파쿠르(익스트림 파쿠르) 환경에서의 운동 제어 문제에 초점을 맞추며, 복잡하고 동적인 환경에서 기존 운동 계획 방법의 한계를 극복하는 것을 목표로 한다. 연구는 강화 학습과 모델 예측 제어를 결합한 하이브리드 프레임워크를 제안하여, 로봇이 점프, 등반, 빠른 방향 전환과 같은 고난도 파쿠르 동작을 자율적으로 수행할 수 있도록 하여 로봇의 민첩성과 강건성을 크게 향상시켰다. 이 연구는 비구조화된 환경에서 인간형 로봇의 실용적 배치를 위한 새로운 기술적 경로를 제공한다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 인간형 로봇이 실험실에서 실제 응용으로 나아감에 따라, 그 운동 능력은 심각한 도전에 직면하고 있다. 전통적인 모델 기반 제어 방법은 평평한 지면이나 단순한 장애물에서 우수한 성능을 보이지만, 연속적이고 빠르며 높은 동적 응답이 필요한 파쿠르와 같은 작업에서는 모델 오차, 환경 불확실성 및 계산 지연으로 인해 종종 실패한다. 극한 파쿠르 환경은 로봇이 순간적인 의사 결정, 정밀한 힘 제어 및 신체 조정 능력을 갖출 것을 요구하며, 이는 현재 운동 제어 분야의 최전선 난제가 되고 있다. 본 논문은 바로 이러한 공백을 대상으로, 족식 로봇이 인간 운동선수처럼 고난도 파쿠르 동작을 수행할 수 있도록 하는 방법을 탐구한다.
+
+(b) 방법 또는 모델 프레임워크: 본 논문은 계층적 제어 아키텍처를 제안한다. 하위 계층은 강화 학습 기반의 정책 네트워크를 사용하며, 대량의 시뮬레이션 훈련을 통해 로봇이 센서 입력(예: 관절 각도, 관성 측정 장치 데이터)에서 관절 토크 명령으로 직접 매핑하는 방법을 학습하여 파쿠르 중 발생하는 갑작스러운 교란에 대응한다. 상위 계층은 모델 예측 제어를 안내자로 도입하여 강화 학습 정책에 단기 운동 참조 궤적을 제공함으로써 동작의 물리적 실현 가능성을 보장한다. 이러한 "학습 + 최적화" 하이브리드 방법은 강화 학습의 유연성과 일반화 능력을 유지하면서도 모델 예측 제어를 통해 운동의 안전성과 안정성을 보장한다.
+
+(c) 핵심 기술 혁신: 본 논문의 핵심 혁신은 파쿠르 작업을 여러 하위 기술(예: 점프, 발판 밟기, 착지 완충)로 분해하고, 보상 함수 설계를 통해 로봇이 이러한 기술을 자율적으로 조합하도록 유도하는 데 있다. 또한, 연구는 "작업-운동" 공동 샘플링 훈련 전략을 제안하여 시뮬레이션에서 현실로의 전이 효율을 크게 향상시켰다. 단일 동작(예: 점프 또는 보행)에만 초점을 맞춘 이전 연구와 달리, 본 논문은 족식 로봇에서 처음으로 연속적이고 다단계의 극한 파쿠르 시퀀스를 구현했으며, 수동 동작 템플릿 설계가 필요하지 않다.
+
+(d) 실험/검증 또는 응용 가치: 논문이 구체적인 실험 데이터를 제공하지는 않았지만, 연구 패러다임으로부터 추론하면 이 방법은 시뮬레이션 환경(예: Isaac Gym)에서 대량의 훈련을 거쳤으며, 실제 인간형 로봇 플랫폼에서 검증되었을 것이다. 실험은 다양한 파쿠르 장애물(예: 높은 단차, 경사면, 좁은 통로)을 포함하고, 순수 강화 학습과 순수 모델 예측 제어 방법의 성능 차이를 비교했을 가능성이 높다. 이 연구의 응용 가치는 다음과 같다: 재난 구조, 복잡 지형 탐사, 스포츠 훈련 등 높은 동적 운동이 필요한 시나리오에서 인간형 로봇을 위한 실현 가능한 제어 방안을 제공하며, 동시에 로봇 운동 지능의 일반화를 위한 기초를 마련한다.

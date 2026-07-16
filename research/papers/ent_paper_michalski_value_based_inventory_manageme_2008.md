@@ -56,3 +56,14 @@ The basic financial purpose of a firm is to maximize its value. An inventory man
 ## 参考
 - http://arxiv.org/abs/1301.3826v1
 
+## Overview
+The basic financial purpose of a firm is to maximize its value. An inventory management system should also contribute to realization of this basic aim. Many current asset management models currently found in financial management literature were constructed with the assumption of book profit maximization as basic aim. However these models could lack what relates to another aim, i.e., maximization of enterprise value. This article presents a modified value-based inventory management model.
+
+## Content
+The basic financial purpose of a firm is to maximize its value. An inventory management system should also contribute to realization of this basic aim. Many current asset management models currently found in financial management literature were constructed with the assumption of book profit maximization as basic aim. However these models could lack what relates to another aim, i.e., maximization of enterprise value. This article presents a modified value-based inventory management model.
+
+## 개요
+기업의 기본적인 재무 목표는 가치를 극대화하는 것입니다. 재고 관리 시스템 또한 이러한 기본 목표의 실현에 기여해야 합니다. 현재 재무 관리 문헌에서 발견되는 많은 유동 자산 관리 모델은 장부 이익 극대화를 기본 목표로 가정하여 구축되었습니다. 그러나 이러한 모델은 기업 가치 극대화라는 또 다른 목표와 관련된 부분이 부족할 수 있습니다. 본 논문은 수정된 가치 기반 재고 관리 모델을 제시합니다.
+
+## 핵심 내용
+기업의 기본적인 재무 목표는 가치를 극대화하는 것입니다. 재고 관리 시스템 또한 이러한 기본 목표의 실현에 기여해야 합니다. 현재 재무 관리 문헌에서 발견되는 많은 유동 자산 관리 모델은 장부 이익 극대화를 기본 목표로 가정하여 구축되었습니다. 그러나 이러한 모델은 기업 가치 극대화라는 또 다른 목표와 관련된 부분이 부족할 수 있습니다. 본 논문은 수정된 가치 기반 재고 관리 모델을 제시합니다.

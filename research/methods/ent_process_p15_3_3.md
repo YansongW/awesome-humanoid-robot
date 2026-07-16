@@ -86,5 +86,90 @@ theoretical_depth:
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
 
+## Overview
+**Phase/Work Package**: System Integration & Verification and Validation (Integration & V&V)
 
+## Content
+**Method/Tool**: CE/FCC/UL pre-testing, technical documentation preparation, third-party organization coordination
 
+**Design Thinking Logic**: Formal certification cycles are long, requiring advance preparation
+
+**Key Constraints**: Certification costs, rectification cycles
+
+**Completion Criteria/Deliverables**: Pre-test reports, technical documentation checklist, certification plan
+
+**Three-Level Subtasks and Four-Level Key Actions:**
+
+- P15.3.3.1 Input Review and Target Quantification
+  - Organize upstream inputs, reference standards, and resources required for "Certification Preparation and Pre-Audit," convert completion criteria into quantifiable acceptance indicators, and define the owner and milestones.
+    - List all upstream input items and confirm versions
+    - Convert acceptance criteria into quantifiable KPIs
+    - Establish task owners, timelines, and risk registers
+
+- P15.3.3.2 Solution/Method Design
+  - Develop implementation methods or candidate solutions for "Certification Preparation and Pre-Audit," using "CE/FCC/UL pre-testing, technical documentation preparation, third-party organization coordination" for validation, and clarify technical routes and resource requirements.
+    - Generate at least two candidate solutions
+    - Establish an evaluation matrix and assign quantitative scores
+    - Organize reviews and freeze the solution
+
+- P15.3.3.3 Implementation/Prototype/Sample Production
+  - Execute the implementation of "Certification Preparation and Pre-Audit" according to the design plan, produce prototypes, samples, or complete key steps, and record process data.
+    - Build models/prototypes and record key parameters
+    - Perform simulations or prototype validation
+    - Record anomalies and deviations
+
+- P15.3.3.4 Verification and Issue Closure
+  - Verify the outputs of "Certification Preparation and Pre-Audit," check whether completion criteria are met, record issues, and track them until closure.
+    - Develop test/review plans and pass criteria
+    - Execute tests and record raw data
+    - Output issue lists and improvement measures
+
+- P15.3.3.5 Documentation Output and Downstream Delivery
+  - Output final reports/drawings/specifications for "Certification Preparation and Pre-Audit," update ICD/BOM/SOP/requirements traceability chains, and complete formal delivery to downstream stages.
+    - Write documents according to templates and reference raw data
+    - Complete internal reviews and version control
+    - Release and notify downstream dependent parties
+
+## 개요
+**소속 단계/작업 패키지**: 완제품 통합 및 검증 테스트 (Integration & V&V)
+
+## 핵심 내용
+**방법 / 도구**: CE/FCC/UL 사전 테스트, 기술 문서 준비, 제3자 기관 연계
+
+**설계 사고 논리**: 정식 인증 주기가 길어 사전 준비 필요
+
+**핵심 제약 조건**: 인증 비용, 개선 주기
+
+**완료 기준 / 산출물**: 사전 테스트 보고서, 기술 문서 목록, 인증 계획
+
+**3단계 하위 작업 및 4단계 핵심 조치:**
+
+- P15.3.3.1 입력 정리 및 목표 정량화
+  - 「인증 준비 및 사전 검토」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화된 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 한다.
+    - 모든 상위 입력 목록을 나열하고 버전 확인
+    - 검수 기준을 정량화된 KPI로 변환
+    - 작업 담당자, 시간 노드 및 위험 등록부 구축
+
+- P15.3.3.2 방안/방법 설계
+  - 「인증 준비 및 사전 검토」에 대한 구현 방법 또는 후보 방안을 수립하고, 「CE/FCC/UL 사전 테스트, 기술 문서 준비, 제3자 기관 연계」를 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 한다.
+    - 2개 이상의 후보 방안 도출
+    - 평가 매트릭스 구축 및 정량적 점수화
+    - 검토 조직 및 방안 확정
+
+- P15.3.3.3 구현/프로토타입/시제품 제작
+  - 설계 방안에 따라 「인증 준비 및 사전 검토」의 구현 작업을 수행하고, 프로토타입 또는 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록한다.
+    - 모델/시제품 구축 및 핵심 파라미터 기록
+    - 시뮬레이션 또는 프로토타입 검증 실행
+    - 이상 및 편차 기록
+
+- P15.3.3.4 검증 및 문제 폐쇄
+  - 「인증 준비 및 사전 검토」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결까지 추적한다.
+    - 테스트/검토 계획 및 통과 기준 수립
+    - 테스트 실행 및 원시 데이터 기록
+    - 문제 목록 및 개선 조치 출력
+
+- P15.3.3.5 문서 출력 및 하위 전달
+  - 「인증 준비 및 사전 검토」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료한다.
+    - 템플릿에 따라 문서 작성 및 원시 데이터 인용
+    - 내부 검토 및 버전 관리 완료
+    - 게시 및 하위 의존 부서에 통지

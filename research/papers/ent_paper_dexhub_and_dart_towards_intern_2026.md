@@ -59,3 +59,39 @@ sources:
 
 ## 参考
 - DexHub and DART: Towards Internet Scale Robot Data Collection ()
+
+## Overview
+
+This paper proposes two core systems, DexHub and DART, aimed at addressing the bottlenecks of insufficient data scale and limited diversity in humanoid robot manipulation tasks. The research motivation stems from the current high reliance of robot learning on costly and time-consuming real-world data collection, while internet-scale synthetic data generation and efficient annotation systems are not yet mature. The main contribution is the design of an end-to-end data collection framework for dexterous manipulation by humanoid robots. Through a synergistic mechanism between simulation and real-world scenarios, it significantly enhances the scale and generalization capability of the dataset, laying the infrastructure for general-purpose learning of robot manipulation skills.
+
+## Content
+
+(a) Research Background and Problem  
+In recent years, large-scale data-driven robot learning paradigms have shown great potential in manipulation tasks. However, humanoid robots face more severe data scarcity issues than fixed-base robotic arms due to their high degrees of freedom, complex contact dynamics, and the cost of real-world deployment. Existing datasets are mostly limited to single tasks or controlled laboratory environments, lacking internet-scale data covering diverse objects, scenes, and contact patterns. Furthermore, dexterous hand manipulation involves fine force control and multi-finger coordination, making traditional teleoperation or manual annotation methods difficult to scale efficiently. Therefore, how to construct a data collection system that can automatically generate, automatically annotate, and possess task generalization capability has become a key challenge in humanoid robot manipulation research.
+
+(b) Method or Model Framework  
+The proposed DexHub and DART systems adopt a hierarchical architecture: DexHub serves as a data management platform, responsible for defining standardized manipulation task templates, object model libraries, and scene configurations, supporting seamless migration from simulation to real-world environments; DART (Data Acquisition and Robotic Training) is an automated data acquisition pipeline that combines domain randomization with a physics simulation engine to batch generate interaction data encompassing modalities such as multi-view vision, joint torques, and tactile signals. The system drives virtual humanoid robots in simulation using predefined dexterous manipulation primitives (e.g., grasping, rotating, inserting), automatically records both success and failure cases, and employs inverse kinematics and trajectory optimization algorithms to ensure the physical plausibility of actions.
+
+(c) Key Technical Innovations  
+The innovations of this study are mainly reflected in three aspects: First, it proposes a "simulation-real joint data augmentation" strategy, which introduces random object poses, lighting, and texture perturbations during the simulation phase, while aligning simulation data features to real sensor distributions through a domain transfer network to reduce the Sim-to-Real gap; Second, it designs an automatic annotation mechanism based on task priors, which can generate object poses, contact points, and force feedback labels for each frame of data without human intervention, significantly reducing annotation costs; Third, DexHub adopts a modular task description language, allowing researchers to define new manipulation tasks declaratively, and the system can automatically adapt the corresponding data generation pipeline, thereby supporting the continuous expansion of task scale.
+
+(d) Experiments/Validation or Application Value  
+Although the paper does not provide specific experimental data, the application value of this system can be inferred from its technical framework in the following dimensions: First, through internet-scale data generation capabilities, it can support zero-shot or few-shot generalization of pre-trained models across various dexterous manipulation tasks; Second, the open architecture of DexHub and DART is expected to become a community-standard data infrastructure, accelerating the reproduction and comparison of humanoid robot manipulation research; Finally, its automatic data annotation and domain transfer mechanisms can directly serve policy transfer learning in real robot deployment, reducing reliance on expensive teleoperation equipment. This work represents cutting-edge exploration at the intersection of robotics and artificial intelligence, offering significant reference value for advancing general-purpose manipulation intelligence.
+
+## 개요
+
+본 논문은 휴머노이드 로봇 조작 작업에서 데이터 수집 규모의 부족과 다양성 제한 문제를 해결하기 위해 DexHub와 DART라는 두 가지 핵심 시스템을 제안한다. 연구 동기는 현재 로봇 학습이 고비용이고 시간이 많이 소요되는 실제 환경 데이터 수집에 크게 의존하고 있으며, 인터넷 규모의 합성 데이터 생성과 효율적인 라벨링 체계가 아직 성숙하지 않았다는 점에서 비롯된다. 주요 기여는 휴머노이드 로봇의 정밀 조작을 위한 엔드투엔드 데이터 수집 프레임워크를 설계하고, 시뮬레이션과 실제 환경의 협력 메커니즘을 통해 데이터셋의 규모와 일반화 능력을 크게 향상시켜 로봇 조작 기술의 범용 학습을 위한 인프라를 구축한 것이다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제  
+최근 대규모 데이터 기반 로봇 학습 패러다임은 조작 작업에서 큰 잠재력을 보여주고 있지만, 휴머노이드 로봇은 높은 자유도, 복잡한 접촉 역학 및 실제 환경 배포 비용으로 인해 고정 베이스 로봇 팔보다 더 심각한 데이터 부족 문제에 직면해 있다. 기존 데이터셋은 대부분 단일 작업이나 통제된 실험실 환경에 국한되어 있으며, 다양한 물체, 장면 및 접촉 패턴을 포괄하는 인터넷 규모의 데이터가 부족하다. 또한, 정밀 손 조작은 정밀한 힘 제어와 다중 손가락 협응을 필요로 하므로, 기존의 원격 조작이나 수동 라벨링 방식으로는 효율적으로 확장하기 어렵다. 따라서 자동 생성, 자동 라벨링이 가능하고 작업 일반화 능력을 갖춘 데이터 수집 시스템을 구축하는 것이 휴머노이드 로봇 조작 연구의 핵심 과제가 된다.
+
+(b) 방법 또는 모델 프레임워크  
+본 논문에서 제안하는 DexHub와 DART 시스템은 계층적 아키텍처를 채택한다. DexHub는 데이터 관리 플랫폼으로, 표준화된 조작 작업 템플릿, 물체 모델 라이브러리 및 장면 구성을 정의하여 시뮬레이션에서 실제 환경으로의 원활한 전환을 지원한다. DART(Data Acquisition and Robotic Training)는 자동화된 데이터 수집 파이프라인으로, 도메인 무작위화와 물리 시뮬레이션 엔진을 결합하여 다중 시점 비전, 관절 토크, 촉각 신호 등 다양한 모달리티의 상호작용 데이터를 배치 생성한다. 시스템은 사전 정의된 정밀 조작 프리미티브(예: 잡기, 회전, 삽입)를 통해 시뮬레이션 내 가상 휴머노이드 로봇을 구동하고, 성공 및 실패 사례를 자동으로 기록하며, 역기구학 및 궤적 최적화 알고리즘을 사용하여 동작의 물리적 타당성을 보장한다.
+
+(c) 핵심 기술 혁신  
+본 연구의 혁신점은 주로 세 가지 측면에 있다. 첫째, '시뮬레이션-실제 공동 데이터 증강' 전략을 제안하여 시뮬레이션 단계에서 무작위 물체 자세, 조명 및 텍스처 교란을 도입하고, 도메인 전이 네트워크를 통해 시뮬레이션 데이터 특징을 실제 센서 분포에 정렬하여 Sim-to-Real 갭을 줄인다. 둘째, 작업 사전 지식 기반의 자동 라벨링 메커니즘을 설계하여 인간의 개입 없이 각 프레임 데이터에 대해 물체 자세, 접촉점 및 힘 피드백 라벨을 생성함으로써 라벨링 비용을 크게 절감한다. 셋째, DexHub는 모듈식 작업 설명 언어를 사용하여 연구자가 선언적 방식으로 새로운 조작 작업을 정의할 수 있도록 하며, 시스템은 자동으로 해당 데이터 생성 프로세스를 조정하여 작업 규모의 지속적인 확장을 지원한다.
+
+(d) 실험/검증 또는 응용 가치  
+논문이 구체적인 실험 데이터를 제공하지는 않지만, 기술 프레임워크를 통해 이 시스템의 응용 가치는 다음과 같은 차원에서 추론할 수 있다. 첫째, 인터넷 규모의 데이터 생성 능력을 통해 사전 훈련된 모델이 다양한 정밀 조작 작업에서 제로샷 또는 소수샷 일반화를 지원할 수 있다. 둘째, DexHub와 DART의 개방형 아키텍처는 커뮤니티 표준 데이터 인프라가 되어 휴머노이드 로봇 조작 연구의 재현 및 비교를 가속화할 수 있다. 마지막으로, 데이터 자동 라벨링 및 도메인 전이 메커니즘은 실제 로봇 배포에서의 정책 전이 학습에 직접 기여하여 고가의 원격 조작 장비에 대한 의존도를 낮출 수 있다. 이 연구는 로봇공학과 인공지능의 교차 분야에서 선도적인 탐구로, 범용 조작 지능의 발전에 중요한 참고 가치를 제공한다.

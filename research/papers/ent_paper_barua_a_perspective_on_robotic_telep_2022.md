@@ -63,3 +63,14 @@ Telepresence and teleoperation robotics have attracted a great amount of attenti
 ## 参考
 - http://arxiv.org/abs/2203.02959v1
 
+## Overview
+Telepresence and teleoperation robotics have attracted a great amount of attention in the last 10 years. With the Artificial Intelligence (AI) revolution already being started, we can see a wide range of robotic applications being realized. Intelligent robotic systems are being deployed both in industrial and domestic environments. Telepresence is the idea of being present in a remote location virtually or via robotic avatars. Similarly, the idea of operating a robot from a remote location for various tasks is called teleoperation. These technologies find significant application in health care, education, surveillance, disaster recovery, and corporate/government sectors. But question still remains about their maturity, security and safety levels. We also need to think about enhancing the user experience and trust in such technologies going into the next generation of computing.
+
+## Content
+Telepresence and teleoperation robotics have attracted a great amount of attention in the last 10 years. With the Artificial Intelligence (AI) revolution already being started, we can see a wide range of robotic applications being realized. Intelligent robotic systems are being deployed both in industrial and domestic environments. Telepresence is the idea of being present in a remote location virtually or via robotic avatars. Similarly, the idea of operating a robot from a remote location for various tasks is called teleoperation. These technologies find significant application in health care, education, surveillance, disaster recovery, and corporate/government sectors. But question still remains about their maturity, security and safety levels. We also need to think about enhancing the user experience and trust in such technologies going into the next generation of computing.
+
+## 개요
+텔레프레즌스 및 원격 조작 로봇 공학은 지난 10년간 큰 주목을 받아왔습니다. 이미 시작된 인공지능(AI) 혁명과 함께 다양한 로봇 응용 분야가 실현되고 있음을 목격할 수 있습니다. 지능형 로봇 시스템은 산업 현장과 가정 환경 모두에 배치되고 있습니다. 텔레프레즌스는 가상으로 또는 로봇 아바타를 통해 원격지에 존재하는 개념입니다. 마찬가지로, 다양한 작업을 위해 원격지에서 로봇을 조작하는 개념을 원격 조작이라고 합니다. 이러한 기술은 의료, 교육, 감시, 재난 복구, 기업 및 정부 부문에서 중요한 응용 분야를 찾고 있습니다. 그러나 여전히 성숙도, 보안 및 안전 수준에 대한 의문이 남아 있습니다. 또한 차세대 컴퓨팅 환경으로 나아가면서 이러한 기술에 대한 사용자 경험과 신뢰를 향상시키는 방안을 고려해야 합니다.
+
+## 핵심 내용
+텔레프레즌스 및 원격 조작 로봇 공학은 지난 10년간 큰 주목을 받아왔습니다. 이미 시작된 인공지능(AI) 혁명과 함께 다양한 로봇 응용 분야가 실현되고 있음을 목격할 수 있습니다. 지능형 로봇 시스템은 산업 현장과 가정 환경 모두에 배치되고 있습니다. 텔레프레즌스는 가상으로 또는 로봇 아바타를 통해 원격지에 존재하는 개념입니다. 마찬가지로, 다양한 작업을 위해 원격지에서 로봇을 조작하는 개념을 원격 조작이라고 합니다. 이러한 기술은 의료, 교육, 감시, 재난 복구, 기업 및 정부 부문에서 중요한 응용 분야를 찾고 있습니다. 그러나 여전히 성숙도, 보안 및 안전 수준에 대한 의문이 남아 있습니다. 또한 차세대 컴퓨팅 환경으로 나아가면서 이러한 기술에 대한 사용자 경험과 신뢰를 향상시키는 방안을 고려해야 합니다.

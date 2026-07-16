@@ -62,3 +62,31 @@ HDMI 的方法框架分为三个层次：感知层、策略层与执行层。在
 ## 参考
 
 - HDMI project page (https://hdmi-humanoid.github.io)
+
+## Overview
+
+Whole-body control of humanoid robots in complex interaction scenarios has long been a core challenge in robotics. Traditional methods rely on precise physical modeling and handcrafted control strategies, which struggle to adapt to dynamic, unstructured real-world environments. The HDMI framework proposed in this paper innovatively learns interactive whole-body control strategies from human videos and motion capture data. By decomposing complex tasks into routable hierarchical skills and expert strategies, it achieves efficient mapping from visual perception to whole-body motion generation. This approach significantly reduces reliance on manual annotation and physical simulation, providing a scalable general control paradigm for humanoid robots in scenarios such as human-robot collaboration and object manipulation.
+
+## Content
+
+The core challenge in whole-body control of humanoid robots lies in how to extract scene, target, and motion representations from high-dimensional visual input in real time and convert them into coordinated whole-body joint sequences. Traditional methods typically employ model-based inverse kinematics (IK) or pre-programmed motion libraries, but they suffer from limited generalization when encountering new objects or interaction patterns. The key motivation behind HDMI research is to break this bottleneck by leveraging the rich motion priors embedded in large-scale human videos, enabling robots to mimic the whole-body coordination capabilities of humans in complex interactions without requiring task-specific control logic.
+
+The methodological framework of HDMI is structured into three layers: the perception layer, the policy layer, and the execution layer. In the perception layer, the system recovers scene geometry, interaction targets, and human motion representations from camera images, multi-view observations, proprioceptive states, and human video/motion capture trajectories. This process integrates visual feature extraction with motion sequence analysis, enabling simultaneous processing of static environmental information and dynamic human poses. The policy layer is the core innovation of HDMI, decomposing complex whole-body control tasks into a series of routable skills or expert strategies, each corresponding to a specific motion primitive (e.g., grasping, walking, turning). A high-level module dynamically selects and combines these skills based on current task requirements and perceptual input, forming a complete execution plan.
+
+In terms of technical innovation, the key to HDMI lies in its hierarchical skill routing mechanism. Unlike traditional end-to-end neural networks that directly output joint angles, this method explicitly decomposes the task structure, allowing each skill module to be learned independently from human data and flexibly combined through a high-level routing module. This design not only improves training efficiency but also enhances system interpretability and scalability—when encountering a new task, only the corresponding skill module needs to be added, without retraining the entire model. Additionally, HDMI employs motion retargeting technology to map human kinematics onto the humanoid robot's body structure, addressing control challenges arising from differences in degrees of freedom between humans and robots.
+
+In terms of experimental validation, HDMI demonstrates its effectiveness across various interaction tasks, including object transportation, tool manipulation, and human-robot collaboration scenarios. By learning from publicly available human video datasets and motion capture data, the system generates smooth whole-body motion sequences and achieves high task success rates in simulated environments. Compared to baseline methods (e.g., pure IK approaches or single-task reinforcement learning), HDMI shows significant advantages in task generalization, motion naturalness, and training data efficiency. The practical value of this framework lies in providing a feasible pathway from human demonstration to autonomous control for humanoid robots, particularly suited for scenarios requiring rapid deployment of new tasks, such as home services, industrial collaboration, and rehabilitation assistance.
+
+## 개요
+
+휴머노이드 로봇의 복잡한 상호작용 환경에서의 전신 제어는 로봇공학 분야의 핵심 과제로, 기존 방법은 정밀한 물리 모델링과 수동 설계된 제어 전략에 의존하여 동적이고 비정형적인 실제 환경에 적응하기 어렵습니다. 본 논문에서 제안하는 HDMI 프레임워크는 인간 비디오와 모션 캡처 데이터로부터 상호작용형 전신 제어 전략을 혁신적으로 학습하며, 복잡한 작업을 라우팅 가능한 계층적 스킬과 전문가 전략으로 분해함으로써 시각 인식에서 전신 동작 생성까지의 효율적인 매핑을 실현합니다. 이 방법은 수동 레이블링과 물리 시뮬레이션에 대한 의존도를 현저히 낮출 뿐만 아니라, 인간-로봇 협업, 물체 조작 등의 시나리오에서 휴머노이드 로봇에 확장 가능한 범용 제어 패러다임을 제공합니다.
+
+## 핵심 내용
+
+휴머노이드 로봇 전신 제어의 핵심 문제는 고차원 시각 입력으로부터 장면, 목표 및 운동 표현을 실시간으로 추출하고 이를 조정된 전신 관절 시퀀스로 변환하는 방법에 있습니다. 기존 방법은 일반적으로 모델 기반 역기구학(IK) 또는 사전 프로그래밍된 동작 라이브러리를 사용하지만, 새로운 물체나 상호작용 패턴에 직면했을 때 일반화 능력이 부족합니다. HDMI 연구의 주요 동기는 이러한 병목 현상을 극복하고, 대규모 인간 비디오에 포함된 풍부한 운동 사전 지식을 활용하여 로봇이 복잡한 상호작용에서 인간의 전신 조정 능력을 모방할 수 있도록 하되, 각 작업마다 별도로 제어 로직을 설계할 필요가 없도록 하는 데 있습니다.
+
+HDMI의 방법 프레임워크는 세 가지 계층으로 구성됩니다: 인식 계층, 정책 계층 및 실행 계층입니다. 인식 계층에서 시스템은 카메라 이미지, 다중 시점 관측, 자체 상태 및 인간 비디오/모션 캡처 궤적으로부터 장면 기하학, 상호작용 목표 및 인간 운동 표현을 복원합니다. 이 과정은 시각 특징 추출과 운동 시퀀스 분석을 통합하여 정적 환경 정보와 동적 인간 자세를 동시에 처리할 수 있습니다. 정책 계층은 HDMI의 핵심 혁신으로, 복잡한 전신 제어 작업을 일련의 라우팅 가능한 스킬(routable skills) 또는 전문가 전략(expert strategies)으로 분해하며, 각 스킬은 특정 운동 기본 요소(예: 잡기, 걷기, 돌기)에 해당합니다. 상위 모듈은 현재 작업 요구 사항과 인식 입력에 따라 이러한 스킬을 동적으로 선택하고 조합하여 완전한 실행 계획을 형성합니다.
+
+기술 혁신 측면에서 HDMI의 핵심은 계층적 스킬 라우팅 메커니즘에 있습니다. 기존의 종단간 신경망이 직접 관절 각도를 출력하는 것과 달리, 이 방법은 작업 구조를 명시적으로 분해함으로써 각 스킬 모듈이 인간 데이터로부터 개별적으로 학습될 수 있도록 하고, 상위 라우팅 모듈을 통해 유연한 조합을 실현합니다. 이러한 설계는 훈련 효율성을 높일 뿐만 아니라 시스템의 해석 가능성과 확장성을 강화합니다. 새로운 작업에 직면했을 때, 전체 모델을 재훈련할 필요 없이 해당 스킬 모듈만 추가하면 됩니다. 또한 HDMI는 동작 리타겟팅(motion retargeting) 기술을 사용하여 인간 운동학을 휴머노이드 로봇 본체 구조에 매핑함으로써 인간과 로봇의 운동 자유도 차이로 인한 제어 문제를 해결합니다.
+
+실험 검증 측면에서 HDMI는 물체 운반, 도구 조작 및 인간-로봇 협업 시나리오를 포함한 다양한 상호작용 작업에서 그 효과성을 입증했습니다. 공개된 인간 비디오 데이터셋과 모션 캡처 데이터로부터 학습함으로써 시스템은 부드러운 전신 동작 시퀀스를 생성하고 시뮬레이션 환경에서 높은 성공률로 작업을 완료할 수 있습니다. 기준 방법(예: 순수 IK 방법 또는 단일 작업 강화 학습)과 비교하여 HDMI는 작업 일반화, 동작 자연스러움 및 훈련 데이터 효율성에서 현저한 우위를 보입니다. 이 프레임워크의 실제 응용 가치는 휴머노이드 로봇에 인간 시연에서 자율 제어까지의 실행 가능한 경로를 제공하며, 특히 가사 서비스, 산업 협업 및 재활 보조와 같이 새로운 작업을 신속히 배포해야 하는 시나리오에 적합합니다.

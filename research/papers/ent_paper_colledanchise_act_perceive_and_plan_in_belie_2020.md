@@ -55,3 +55,14 @@ In this paper, we outline an interleaved acting and planning technique to rapidl
 ## 参考
 - http://arxiv.org/abs/2002.08124v3
 
+## Overview
+In this paper, we outline an interleaved acting and planning technique to rapidly reduce the uncertainty of the estimated robot's pose by perceiving relevant information from the environment, such as recognizing an object or asking someone for a direction. Generally, existing localization approaches rely on low-level geometric features such as points, lines, and planes. While these approaches provide the desired accuracy, they may require time to converge, especially with incorrect initial guesses. In our approach, a task planner computes a sequence of action and perception tasks to actively obtain relevant information from the robot's perception system. We validate our approach in large state spaces to demonstrate how it scales, and in real environments to show the applicability of our method on real robots. We prove that our approach is sound, probabilistically complete, and tractable in practical cases.
+
+## Content
+In this paper, we outline an interleaved acting and planning technique to rapidly reduce the uncertainty of the estimated robot's pose by perceiving relevant information from the environment, such as recognizing an object or asking someone for a direction. Generally, existing localization approaches rely on low-level geometric features such as points, lines, and planes. While these approaches provide the desired accuracy, they may require time to converge, especially with incorrect initial guesses. In our approach, a task planner computes a sequence of action and perception tasks to actively obtain relevant information from the robot's perception system. We validate our approach in large state spaces to demonstrate how it scales, and in real environments to show the applicability of our method on real robots. We prove that our approach is sound, probabilistically complete, and tractable in practical cases.
+
+## 개요
+본 논문에서는 환경으로부터 관련 정보를 인식(예: 객체 인식 또는 방향 문의)하여 추정된 로봇 포즈의 불확실성을 신속히 줄이기 위한 교차 실행 및 계획 기법을 개괄합니다. 일반적으로 기존 위치 추정 접근법은 점, 선, 평면과 같은 저수준 기하학적 특징에 의존합니다. 이러한 접근법은 원하는 정확도를 제공하지만, 특히 초기 추정이 부정확할 경우 수렴에 시간이 소요될 수 있습니다. 본 접근법에서는 작업 계획기가 일련의 행동 및 인식 작업을 계산하여 로봇의 인식 시스템으로부터 관련 정보를 능동적으로 획득합니다. 우리는 대규모 상태 공간에서 접근법의 확장성을 검증하고, 실제 환경에서 실제 로봇에 대한 방법의 적용 가능성을 입증합니다. 또한 본 접근법이 건전하고, 확률적으로 완전하며, 실제 사례에서 다루기 쉬움을 증명합니다.
+
+## 핵심 내용
+본 논문에서는 환경으로부터 관련 정보를 인식(예: 객체 인식 또는 방향 문의)하여 추정된 로봇 포즈의 불확실성을 신속히 줄이기 위한 교차 실행 및 계획 기법을 개괄합니다. 일반적으로 기존 위치 추정 접근법은 점, 선, 평면과 같은 저수준 기하학적 특징에 의존합니다. 이러한 접근법은 원하는 정확도를 제공하지만, 특히 초기 추정이 부정확할 경우 수렴에 시간이 소요될 수 있습니다. 본 접근법에서는 작업 계획기가 일련의 행동 및 인식 작업을 계산하여 로봇의 인식 시스템으로부터 관련 정보를 능동적으로 획득합니다. 우리는 대규모 상태 공간에서 접근법의 확장성을 검증하고, 실제 환경에서 실제 로봇에 대한 방법의 적용 가능성을 입증합니다. 또한 본 접근법이 건전하고, 확률적으로 완전하며, 실제 사례에서 다루기 쉬움을 증명합니다.

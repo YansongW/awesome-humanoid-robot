@@ -67,3 +67,47 @@ sources:
 ## 参考
 
 - Spatial relationship preserving character motion adaptation project page (https://dl.acm.org/doi/abs/10.1145/1833349.1778770?casa_token=j3esx-hx0GAAAAAA:OvRU6YYrNo2ZP9IyXGVDryWJqHmvU-oVhnzog8RFKKySQJjganzaAmHff6CQ4a0qzfJZu-J6Buf4Ug)
+
+## Overview
+
+This paper introduces a research work published in 2010 in the field of computer graphics and animation, with the core objective of addressing the motion adaptation problem in physics-based character animation for humanoid robots. The study proposes a novel spatial relationship preservation method, aiming to adaptively transfer pre-captured or designed character motion data to humanoid robot models with different morphologies or sizes while retaining key spatial interaction features. Its main contribution lies in establishing a motion retargeting framework that effectively maintains the spatial constraints between the character and its environment (e.g., ground, obstacles) in the original motion, thereby generating physically plausible and visually natural robot motions.
+
+## Content
+
+### Research Background and Problem
+
+In the interdisciplinary field of robotics and computer animation, enabling humanoid robots of varying morphologies to perform complex and natural motions is a fundamental challenge. Traditional motion retargeting methods primarily focus on preserving temporal characteristics of motion (e.g., rhythm, phase) or joint angle similarities, but often overlook the crucial spatial relationships between the character and its environment during motion. For example, in a "stepping over an obstacle" action, the core lies not only in the leg joint trajectories but also in the relative distances and angles between the foot, the top of the obstacle, and the ground. When transferring such motion to a robot with different leg lengths or torso heights, simply scaling or mapping joint angles can easily lead to penetration, floating, or collision with the environment, compromising the physical feasibility and semantic authenticity of the motion. Therefore, systematically preserving these spatial relationships during motion adaptation becomes a key issue to be addressed in this field.
+
+### Method or Model Framework
+
+This study proposes a motion adaptation framework based on spatial relationship preservation, with the core idea of transforming the motion retargeting problem into a constrained optimization problem. Specifically, the method first automatically extracts a set of key spatial relationship features from the motion sequence of the source character (e.g., a standard human model). These features are defined as the relative positions and direction vectors between body parts of the character (e.g., hands, feet, hips) and specific reference points or planes in the environment. Subsequently, when generating motion for the target humanoid robot, the algorithm constructs an optimization objective function that penalizes joint angle deviations while heavily penalizing violations of the aforementioned spatial relationship features. By solving this optimization problem, the system can generate a new sequence of joint angles that makes the robot's motion physically executable (satisfying joint limits and dynamic constraints) while maximally preserving key spatial semantics from the original motion, such as "foot height above the ground" and "distance between the hand and the target point."
+
+### Key Technical Innovations
+
+The technical innovation of this work is primarily reflected in the explicit modeling and optimization embedding of the concept of "spatial relationships." Unlike early inverse kinematics (IK)-based frame-by-frame adjustment methods, this study treats spatial relationships as global constraints throughout the optimization of the entire motion sequence, thereby avoiding motion discontinuities or jitter that may result from frame-by-frame adjustments. Furthermore, the method is not limited to simple distance preservation but can handle more complex spatial relationships, such as "the hand always remains above the tabletop" or "the foot trajectory must maintain a specific angle with the ground." This abstraction and preservation of spatial interaction semantics enable motion adaptation to go beyond mere geometric mapping and achieve the transfer of motion intent. Additionally, the framework possesses a certain degree of generality, allowing it to adapt to humanoid robot models with different degrees of freedom and topological structures, providing new insights for subsequent research in physics-based character animation and robot motion planning.
+
+### Experiments/Validation or Application Value
+
+Although this work was published in 2010, its ideas still hold significant reference value for current humanoid robot motion generation. By incorporating spatial constraints from the source motion as part of the optimization objective, the method can effectively address motion distortion caused by changes in robot size (e.g., transferring from an adult model to a child-sized robot) or morphological differences (e.g., varying leg length ratios). In practical applications, this technique can significantly reduce the manual effort required to adjust motion data for different robot platforms, accelerating the pipeline from motion capture data to robot execution commands. For example, in virtual reality interaction or teleoperation scenarios, an operator's actions can be captured in real-time and adapted to robots of different sizes while ensuring physical plausibility in their interaction with the environment. This study lays a theoretical foundation for subsequent motion retargeting methods incorporating deep learning, demonstrating the central role of explicit spatial constraints in preserving motion semantics.
+
+## 개요
+
+본 논문은 2010년 컴퓨터 그래픽스 및 애니메이션 분야에서 발표된 연구로, 인간형 로봇의 물리 기반 캐릭터 애니메이션에서 동작 적응 문제를 해결하는 데 중점을 둡니다. 이 연구는 사전에 캡처되거나 설계된 캐릭터 동작 데이터를 핵심적인 공간 상호작용 특징을 유지하면서 형태나 크기가 다른 인간형 로봇 모델에 적응적으로 전이하는 새로운 공간 관계 유지 방법을 제안합니다. 주요 기여는 원래 동작에서 캐릭터와 주변 환경(예: 지면, 장애물) 간의 공간적 제약을 효과적으로 유지하여 물리적으로 타당하고 시각적으로 자연스러운 로봇 동작을 생성하는 동작 재표적화 프레임워크를 구축한 데 있습니다.
+
+## 핵심 내용
+
+### 연구 배경 및 문제
+
+로봇 공학과 컴퓨터 애니메이션의 교차 분야에서 다양한 형태의 인간형 로봇이 복잡하고 자연스러운 동작을 수행하도록 하는 것은 근본적인 도전 과제입니다. 전통적인 동작 재표적화 방법은 주로 동작의 시간적 특성(예: 리듬, 위상)이나 관절 각도의 유사성을 유지하는 데 중점을 두었지만, 동작 중 캐릭터와 환경 간의 중요한 공간 관계는 종종 간과했습니다. 예를 들어, "장애물 넘기" 동작의 핵심은 다리 관절의 궤적뿐만 아니라 발과 장애물 상단 및 지면 사이의 상대적 거리와 각도에 있습니다. 이러한 동작을 다리 길이나 몸통 높이가 다른 로봇에 전이할 때 단순히 관절 각도를 스케일링하거나 매핑하면 로봇이 환경과 충돌, 공중에 뜨거나 부딪히는 현상이 발생하기 쉬워 동작의 물리적 실행 가능성과 의미적 진정성이 손상됩니다. 따라서 동작 적응 과정에서 이러한 공간 관계를 체계적으로 유지하는 방법이 이 분야에서 해결해야 할 핵심 문제가 되었습니다.
+
+### 방법 또는 모델 프레임워크
+
+이 연구는 공간 관계 유지를 기반으로 한 동작 적응 프레임워크를 제안하며, 핵심 아이디어는 동작 재표적화 문제를 제약 조건이 있는 최적화 문제로 변환하는 것입니다. 구체적으로, 이 방법은 먼저 소스 캐릭터(예: 표준 인체 모델)의 동작 시퀀스에서 핵심 공간 관계 특징 세트를 자동으로 추출합니다. 이러한 특징은 캐릭터 신체 부위(예: 손, 발, 엉덩이)와 환경 내 특정 기준점 또는 평면 사이의 상대적 위치 및 방향 벡터로 정의됩니다. 그런 다음 대상 인간형 로봇의 동작을 생성할 때 알고리즘은 관절 각도 편차를 페널티로 주면서 위 공간 관계 특징의 손상을 중점적으로 페널티로 주는 최적화 목적 함수를 구축합니다. 이 최적화 문제를 해결함으로써 시스템은 로봇의 동작이 물리적으로 실행 가능(관절 제한, 동역학 제약 충족)하면서도 원래 동작의 "발의 지면 이격 높이", "손과 목표 지점 간 거리"와 같은 핵심 공간 의미를 최대한 유지하는 새로운 관절 각도 시퀀스를 생성할 수 있습니다.
+
+### 핵심 기술 혁신
+
+본 연구의 기술 혁신은 "공간 관계" 개념의 명시적 모델링과 최적화 내장에 있습니다. 초기 역운동학(IK) 기반의 프레임별 조정 방법과 달리, 이 연구는 공간 관계를 전체 동작 시퀀스 최적화 과정에 걸친 전역 제약 조건으로 사용하여 프레임별 조정으로 인한 동작 불연속성이나 떨림을 방지합니다. 또한 이 방법은 단순한 거리 유지에 국한되지 않고 "손이 항상 책상 위에 유지" 또는 "발 궤적이 지면과 특정 각도를 유지"와 같은 더 복잡한 공간 관계를 처리할 수 있습니다. 이러한 공간 상호작용 의미의 추상화와 유지는 동작 적응을 단순한 기하학적 매핑이 아닌 동작 의도의 전이로 만듭니다. 동시에 이 프레임워크는 어느 정도의 범용성을 가지며, 다양한 자유도와 위상 구조를 가진 인간형 로봇 모델에 적응할 수 있어 이후 물리 기반 캐릭터 애니메이션 및 로봇 동작 계획 연구에 새로운 방향을 제시합니다.
+
+### 실험/검증 또는 응용 가치
+
+이 연구는 2010년에 발표되었지만, 그 아이디어는 현재 인간형 로봇 동작 생성에 여전히 중요한 참고 가치를 제공합니다. 소스 동작의 공간 제약을 최적화 목표의 일부로 포함함으로써 이 방법은 로봇 크기 변화(예: 성인 모델에서 어린이 크기 로봇으로 전이)나 형태 차이(예: 다른 다리 길이 비율)로 인한 동작 왜곡을 효과적으로 처리할 수 있습니다. 실제 응용에서 이러한 기술은 다양한 로봇 플랫폼에 대해 동작 데이터를 수동으로 조정하는 작업량을 크게 줄이고, 모션 캡처 데이터에서 로봇 실행 명령으로의 변환 프로세스를 가속화할 수 있습니다. 예를 들어, 가상 현실 상호작용이나 원격 조작 시나리오에서 조작자의 동작을 실시간으로 캡처하여 다양한 크기의 로봇에 적응시키면서 환경과의 상호작용의 물리적 타당성을 보장할 수 있습니다. 이 연구는 이후 딥러닝을 결합한 동작 재표적화 방법의 이론적 기초를 마련했으며, 명시적 공간 제약이 동작 의미 유지에서 핵심적인 역할을 한다는 것을 입증했습니다.

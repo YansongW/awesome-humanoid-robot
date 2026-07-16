@@ -57,3 +57,14 @@ My overarching research goal is to provide robots with perceptional abilities th
 ## 参考
 - http://arxiv.org/abs/2109.00097v1
 
+## Overview
+My overarching research goal is to provide robots with perceptional abilities that allow interactions with humans in a human-like manner. To develop these perceptional abilities, I believe that it is useful to study the principles of the human visual system. I use these principles to develop new computer vision algorithms and validate their effectiveness in intelligent robotic systems. I am enthusiastic about this approach as it offers the dual benefit of uncovering principles inherent in the human visual system, as well as applying these principles to its artificial counterpart. Fig. 1 contains a depiction of my research.
+
+## Content
+My overarching research goal is to provide robots with perceptional abilities that allow interactions with humans in a human-like manner. To develop these perceptional abilities, I believe that it is useful to study the principles of the human visual system. I use these principles to develop new computer vision algorithms and validate their effectiveness in intelligent robotic systems. I am enthusiastic about this approach as it offers the dual benefit of uncovering principles inherent in the human visual system, as well as applying these principles to its artificial counterpart. Fig. 1 contains a depiction of my research.
+
+## 개요
+저의 전반적인 연구 목표는 로봇이 인간과 유사한 방식으로 상호작용할 수 있는 지각 능력을 제공하는 것입니다. 이러한 지각 능력을 개발하기 위해 인간 시각 시스템의 원리를 연구하는 것이 유용하다고 생각합니다. 저는 이러한 원리를 활용하여 새로운 컴퓨터 비전 알고리즘을 개발하고, 이를 지능형 로봇 시스템에서 효과성을 검증합니다. 이 접근 방식은 인간 시각 시스템에 내재된 원리를 발견함과 동시에 이를 인공 시각 시스템에 적용하는 이중적 이점을 제공하기 때문에 열정을 가지고 있습니다. 그림 1은 제 연구를 묘사하고 있습니다.
+
+## 핵심 내용
+저의 전반적인 연구 목표는 로봇이 인간과 유사한 방식으로 상호작용할 수 있는 지각 능력을 제공하는 것입니다. 이러한 지각 능력을 개발하기 위해 인간 시각 시스템의 원리를 연구하는 것이 유용하다고 생각합니다. 저는 이러한 원리를 활용하여 새로운 컴퓨터 비전 알고리즘을 개발하고, 이를 지능형 로봇 시스템에서 효과성을 검증합니다. 이 접근 방식은 인간 시각 시스템에 내재된 원리를 발견함과 동시에 이를 인공 시각 시스템에 적용하는 이중적 이점을 제공하기 때문에 열정을 가지고 있습니다. 그림 1은 제 연구를 묘사하고 있습니다.

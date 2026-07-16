@@ -69,3 +69,39 @@ DemoHLM 的突出创新在于对“时序抖动”问题的系统性处理。传
 
 ## 参考
 - DemoHLM project page (https://beingbeyond.github.io/DemoHLM/)
+
+## Overview
+
+DemoHLM proposes a general mobile manipulation framework for humanoid robots, aiming to address the core challenge of transitioning from a single human demonstration to generalizable skill learning. This research focuses on constructing a data closed loop, transforming demonstration trajectories into a supervised action prediction problem by integrating multi-view visual observations, proprioceptive states, joint sequences, and human operation data collected via teleoperation or exoskeletons. Its main contribution lies in leveraging behavior cloning (ACT), whole-body controllers (WBC/MPC), and closed-loop error correction mechanisms to convert raw operation data into trainable and reusable joint commands and trajectories, while significantly reducing temporal jitter during execution, thereby enhancing the generalization capability of humanoid robots in complex scenarios.
+
+## Content
+
+**Research Background and Problem**  
+Mobile manipulation (Loco-Manipulation) for humanoid robots has long been constrained by two key bottlenecks: first, the high cost and difficulty of scaling high-quality demonstration data acquisition; second, the lack of robustness to scene variations and task deviations in trajectories extracted from a single demonstration. Existing methods often rely on large-scale simulation data or intensive teleoperation, making it challenging to achieve a leap from "one-shot demonstration" to "general execution" in real-world environments. DemoHLM directly confronts this contradiction by integrating data collection, imitation learning, and whole-body control into a closed-loop system, thereby addressing the fundamental conflict between sparse demonstration data and the need for operational generalization.
+
+**Method or Model Framework**  
+The core of this framework is a three-stage pipeline: first, action data from human operators using teleoperation or exoskeletons is collected through synchronized recording of multi-view camera observations, proprioceptive states, and joint sequences; second, using ACT (Action Chunking Transformer) or behavior cloning methods, continuous demonstration trajectories are compressed into a supervised action prediction problem, where the model learns a mapping from current observations to future action sequences; finally, a whole-body controller (WBC) or model predictive control (MPC) converts the predicted actions into low-level joint position or torque commands, with a closed-loop error correction mechanism introduced to compensate for execution deviations. This design enables efficient transformation of raw teleoperation data into reusable training samples.
+
+**Key Technical Innovations**  
+A prominent innovation of DemoHLM lies in its systematic handling of the "temporal jitter" problem. Traditional behavior cloning methods often suffer from action divergence due to accumulated errors in long-horizon operations, but this work mitigates this through two complementary strategies: first, the "Action Chunk" technique, which predicts action sequences over multiple time steps at once rather than frame-by-frame, smoothing trajectory transitions; second, a closed-loop execution strategy that adjusts predictions in real-time based on current visual feedback after each step, forming a perception-action closed loop. Additionally, the framework supports online human intervention for error correction, allowing operators to intervene during training or deployment to rectify abnormal states, further enhancing system robustness and safety.
+
+**Experiments/Validation and Application Value**  
+Although the paper does not provide specific numerical experimental data, its design paradigm suggests that DemoHLM is suitable for scenarios requiring rapid deployment with scarce demonstration samples, such as mobile manipulation tasks in home services, industrial assembly, or disaster rescue. By transforming a single demonstration into a generalizable control policy, this framework has the potential to significantly lower the deployment threshold for humanoid robots, enabling non-expert users to teach robots new tasks with minimal demonstrations. Its "data closed-loop" concept also provides an extensible foundational architecture for future research, particularly in the interdisciplinary field combining visual perception and whole-body coordinated control, offering valuable reference value.
+
+## 개요
+
+DemoHLM은 휴머노이드 로봇을 위한 범용 이동 조작 프레임워크를 제안하며, 단일 인간 시연에서 일반화 가능한 기술 학습으로의 핵심 난제 해결을 목표로 합니다. 이 연구는 데이터 폐쇄 루프 구축에 초점을 맞추며, 다중 시점 시각 관측, 본체 상태 및 관절 시퀀스, 원격 조작 또는 외골격 장치를 통해 수집된 인간 조작 데이터를 통합하여 시연 궤적을 감독 가능한 행동 예측 문제로 변환합니다. 주요 기여는 행동 클로닝(ACT), 전신 제어기(WBC/MPC) 및 폐쇄 루프 오류 수정 메커니즘을 활용하여 원시 조작 데이터를 훈련 가능하고 재사용 가능한 관절 명령 및 궤적으로 변환하고, 실행 중 시간적 지터를 크게 줄여 복잡한 환경에서 휴머노이드 로봇의 조작 일반화 능력을 향상시키는 데 있습니다.
+
+## 핵심 내용
+
+**연구 배경 및 문제**  
+휴머노이드 로봇의 이동 조작(Loco-Manipulation)은 오랫동안 두 가지 주요 병목 현상에 제한되어 왔습니다. 첫째는 고품질 시연 데이터 획득 비용이 높고 확장이 어렵다는 점이며, 둘째는 단일 시연에서 추출된 궤적이 종종 환경 변화 및 작업 편차에 대한 견고성이 부족하다는 점입니다. 기존 방법은 대규모 시뮬레이션 데이터나 집중적인 원격 조작에 의존하는 경우가 많아 실제 환경에서 "한 번의 시연"에서 "범용 실행"으로의 도약을 실현하기 어렵습니다. DemoHLM은 이러한 모순에 직면하여 데이터 수집, 모방 학습 및 전신 제어를 하나의 폐쇄 루프 시스템으로 통합함으로써 시연 데이터의 희소성과 조작 일반화 요구 사이의 근본적인 갈등을 해결합니다.
+
+**방법 또는 모델 프레임워크**  
+이 프레임워크의 핵심은 3단계 파이프라인입니다. 첫째, 카메라 다중 시점 관측, 본체 상태 및 관절 시퀀스의 동기 기록을 통해 원격 조작 또는 외골격 장치에서 인간 조작자의 동작 데이터를 수집합니다. 둘째, ACT(Action Chunking Transformer) 또는 행동 클로닝 방법을 사용하여 연속적인 시연 궤적을 감독 가능한 행동 예측 문제로 압축합니다. 즉, 모델이 현재 관측에서 미래 행동 시퀀스로의 매핑을 학습합니다. 마지막으로, 전신 제어기(WBC) 또는 모델 예측 제어(MPC)를 통해 예측된 행동을 저수준 관절 위치 또는 토크 명령으로 변환하고, 폐쇄 루프 오류 수정 메커니즘을 도입하여 실행 편차를 수정합니다. 이 설계는 원시 원격 조작 데이터를 효율적으로 재사용 가능한 훈련 샘플로 변환할 수 있게 합니다.
+
+**핵심 기술 혁신**  
+DemoHLM의 두드러진 혁신은 "시간적 지터" 문제에 대한 체계적인 처리에 있습니다. 전통적인 행동 클로닝 방법은 장기 조작에서 누적 오류로 인해 동작 발산을 초래하는 경우가 많지만, 이 연구는 두 가지 상호 보완 전략을 통해 이를 억제합니다. 첫째는 "행동 청크"(Action Chunk) 기술로, 프레임별 출력 대신 여러 시간 단계의 행동 시퀀스를 한 번에 예측하여 궤적 전환을 부드럽게 합니다. 둘째는 폐쇄 루프 실행 전략으로, 각 단계 실행 후 현재 시각 피드백에 따라 예측을 재조정하여 인식-행동의 실시간 폐쇄 루프를 형성합니다. 또한, 프레임워크는 인간 개입을 통한 온라인 오류 수정을 지원하여 훈련 또는 배포 단계에서 조작자가 비정상 상태를 수정하도록 허용함으로써 시스템의 견고성과 안전성을 더욱 향상시킵니다.
+
+**실험/검증 및 응용 가치**  
+논문이 구체적인 수치 실험 데이터를 제공하지는 않지만, 설계 패러다임에서 DemoHLM은 빠른 배포가 필요하고 시연 샘플이 부족한 시나리오, 예를 들어 가사 서비스, 산업 조립 또는 재난 구조에서의 이동 조작 작업에 적합하다고 추론할 수 있습니다. 단일 시연을 일반화 가능한 제어 전략으로 변환함으로써 이 프레임워크는 휴머노이드 로봇의 배포 장벽을 크게 낮추어 비전문 사용자도 소수의 시연을 통해 로봇에게 새로운 작업을 가르칠 수 있게 할 것으로 기대됩니다. "데이터 폐쇄 루프" 개념은 후속 연구에 확장 가능한 기본 아키텍처를 제공하며, 특히 시각 인식과 전신 조정 제어를 결합하는 교차 분야에서 중요한 참고 가치를 가집니다.

@@ -70,4 +70,56 @@ ISO 13482 个人护理机器人安全属于 **标准** 类型。 所属领域包
 ## 参考
 - [ISO 13482 Personal Care Robot Safety](https://www.iso.org/standard/53820.html)
 
+## Overview
+Includes safety requirements for personal care robots, including service humanoid robots.
 
+## Content
+### Definition and Positioning of ISO 13482 Personal Care Robot Safety
+ISO 13482 Personal Care Robot Safety belongs to the **standard** type. Its domains include policy, regulations, and ethics. The value chain level is verification and market level. It covers safety requirements for personal care robots, including service humanoid robots. The English name is *ISO 13482 Personal Care Robot Safety*. The Korean name is *ISO 13482 개인 돌봄 로봇 안전*.
+
+### Key Dimensions of ISO 13482 Personal Care Robot Safety
+Understanding ISO 13482 Personal Care Robot Safety requires a multi-dimensional approach, including definitions, boundary conditions, related entities, and typical application scenarios, to form a systematic understanding.
+This entity serves as a bridge connecting foundational theory and engineering practice in the humanoid robot knowledge graph.
+
+### Practical Significance
+In the context of humanoid robot industrialization, ISO 13482 Personal Care Robot Safety holds reference value for technical research, product development, investment decisions, and ecosystem construction.
+Accurately grasping its connotation and extension helps avoid conceptual confusion and promotes interdisciplinary collaboration.
+
+### Research and Development Directions
+As humanoid robot technology continues to evolve, the theories and practices related to ISO 13482 Personal Care Robot Safety will also be continuously updated, requiring ongoing tracking and review.
+
+### Related Tags
+- iso
+- personal_care_robot
+- safety
+- standard
+
+### Role in the Humanoid Robot System
+As one of the key standards in the humanoid robot industry chain, ISO 13482 Personal Care Robot Safety plays an important role in system design, performance optimization, and industrial application. It couples with multiple subsystems such as perception, decision-making, execution, energy, structure, and verification, collectively determining overall machine performance. Related research and application are being continuously advanced to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.
+
+## 개요
+서비스 휴머노이드 로봇을 포함한 개인 돌봄 로봇의 안전 요구사항.
+
+## 핵심 내용
+### ISO 13482 개인 돌봄 로봇 안전의 정의와 위치
+ISO 13482 개인 돌봄 로봇 안전은 **표준** 유형에 속합니다. 해당 분야는 정책·법규·윤리를 포함합니다. 가치 사슬 계층은 검증 및 시장 계층입니다. 서비스 휴머노이드 로봇을 포함한 개인 돌봄 로봇의 안전 요구사항을 다룹니다. 영문 명칭은 *ISO 13482 Personal Care Robot Safety*입니다. 한글 명칭은 *ISO 13482 개인 돌봄 로봇 안전*입니다.
+
+### ISO 13482 개인 돌봄 로봇 안전의 핵심 차원
+ISO 13482 개인 돌봄 로봇 안전을 이해하려면 정의, 경계 조건, 관련 주체 및 대표적인 적용 시나리오 등 여러 차원에서 접근하여 체계적인 인식을 형성해야 합니다.
+이 개체는 휴머노이드 로봇 지식 그래프에서 기초 이론과 공학 실무를 연결하는 가교 역할을 합니다.
+
+### 실천적 의의
+휴머노이드 로봇 산업화 배경에서 ISO 13482 개인 돌봄 로봇 안전은 기술 연구, 제품 개발, 투자 결정 및 생태계 구축에 참고 가치를 제공합니다.
+그 내포와 외연을 정확히 파악하면 개념 혼동을 방지하고 학제 간 협력을 촉진하는 데 도움이 됩니다.
+
+### 연구 및 발전 방향
+휴머노이드 로봇 기술이 지속적으로 발전함에 따라 ISO 13482 개인 돌봄 로봇 안전의 관련 이론과 실무도 계속 업데이트되므로 지속적인 추적과 검토가 필요합니다.
+
+### 관련 태그
+- iso
+- personal_care_robot
+- safety
+- standard
+
+### 휴머노이드 로봇 시스템에서의 역할
+휴머노이드 로봇 산업 체인 내 핵심 표준 중 하나로서 ISO 13482 개인 돌봄 로봇 안전은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.

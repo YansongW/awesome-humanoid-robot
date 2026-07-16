@@ -63,3 +63,14 @@ This study presents a benchmark for evaluating action-constrained reinforcement 
 ## 参考
 - http://arxiv.org/abs/2304.08743v2
 
+## Overview
+This study presents a benchmark for evaluating action-constrained reinforcement learning (RL) algorithms. In action-constrained RL, each action taken by the learning system must comply with certain constraints. These constraints are crucial for ensuring the feasibility and safety of actions in real-world systems. We evaluate existing algorithms and their novel variants across multiple robotics control environments, encompassing multiple action constraint types. Our evaluation provides the first in-depth perspective of the field, revealing surprising insights, including the effectiveness of a straightforward baseline approach. The benchmark problems and associated code utilized in our experiments are made available online at github.com/omron-sinicx/action-constrained-RL-benchmark for further research and development.
+
+## Content
+This study presents a benchmark for evaluating action-constrained reinforcement learning (RL) algorithms. In action-constrained RL, each action taken by the learning system must comply with certain constraints. These constraints are crucial for ensuring the feasibility and safety of actions in real-world systems. We evaluate existing algorithms and their novel variants across multiple robotics control environments, encompassing multiple action constraint types. Our evaluation provides the first in-depth perspective of the field, revealing surprising insights, including the effectiveness of a straightforward baseline approach. The benchmark problems and associated code utilized in our experiments are made available online at github.com/omron-sinicx/action-constrained-RL-benchmark for further research and development.
+
+## 개요
+본 연구는 행동 제약 강화 학습(RL) 알고리즘을 평가하기 위한 벤치마크를 제시합니다. 행동 제약 RL에서 학습 시스템이 수행하는 각 행동은 특정 제약 조건을 준수해야 합니다. 이러한 제약 조건은 실제 시스템에서 행동의 실행 가능성과 안전성을 보장하는 데 중요합니다. 우리는 여러 로봇 제어 환경에서 다양한 행동 제약 유형을 포함하여 기존 알고리즘과 그 새로운 변형을 평가합니다. 본 평가는 해당 분야에 대한 최초의 심층적 관점을 제공하며, 간단한 기준 접근법의 효과성을 포함한 놀라운 통찰력을 드러냅니다. 실험에 사용된 벤치마크 문제와 관련 코드는 추가 연구 및 개발을 위해 github.com/omron-sinicx/action-constrained-RL-benchmark에서 온라인으로 제공됩니다.
+
+## 핵심 내용
+본 연구는 행동 제약 강화 학습(RL) 알고리즘을 평가하기 위한 벤치마크를 제시합니다. 행동 제약 RL에서 학습 시스템이 수행하는 각 행동은 특정 제약 조건을 준수해야 합니다. 이러한 제약 조건은 실제 시스템에서 행동의 실행 가능성과 안전성을 보장하는 데 중요합니다. 우리는 여러 로봇 제어 환경에서 다양한 행동 제약 유형을 포함하여 기존 알고리즘과 그 새로운 변형을 평가합니다. 본 평가는 해당 분야에 대한 최초의 심층적 관점을 제공하며, 간단한 기준 접근법의 효과성을 포함한 놀라운 통찰력을 드러냅니다. 실험에 사용된 벤치마크 문제와 관련 코드는 추가 연구 및 개발을 위해 github.com/omron-sinicx/action-constrained-RL-benchmark에서 온라인으로 제공됩니다.

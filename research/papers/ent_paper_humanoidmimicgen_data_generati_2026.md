@@ -71,3 +71,47 @@ HumanoidMimicGen 的技术创新体现在三个方面：第一，提出“数据
 ## 参考
 
 - HumanoidMimicGen project page (https://humanoidmimicgen.github.io/)
+
+## Overview
+
+When humanoid robots perform mobile manipulation tasks (such as carrying and assembling) in complex environments, they face core bottlenecks of high data acquisition costs and poor action generalization. Existing methods mostly rely on teleoperation or pre-programming, making it difficult to achieve large-scale, diverse training data generation. HumanoidMimicGen proposes a whole-body planning-based framework for mobile manipulation data generation, which transforms human manipulation data into trainable whole-body trajectories by fusing multi-view visual observations, proprioceptive states, and joint sequences. The main contribution of this work lies in constructing a complete closed loop from data collection to policy learning, and leveraging the modular combination of hierarchical skills and expert policies to significantly enhance data reusability and task generalization.
+
+## Content
+
+### Research Background and Problem
+
+Whole-body loco-manipulation for humanoid robots requires simultaneous coordination of leg movements and arm operations, imposing extremely high demands on motion planning and perception fusion. Traditional methods rely on handcrafted motion primitives or precise dynamic models, making them difficult to adapt to unstructured environments. In recent years, imitation learning-based methods have made progress in fixed scenarios but face two major challenges: first, the high cost of acquiring high-quality teleoperation data, which struggles to cover diverse task variants; second, existing data generation methods typically separate movement and manipulation, ignoring the coupling effects of whole-body coordination. HumanoidMimicGen addresses this "data closed-loop" problem by proposing an end-to-end data transformation scheme from human demonstrations to executable robot policies.
+
+### Method or Model Framework
+
+The core pipeline of this framework is divided into three levels: first, human manipulation data is collected through multi-view camera images, proprioceptive sensors, and exoskeleton devices, obtaining raw observations containing scene semantics and joint states; second, using behavior cloning algorithms such as ACT (Action Chunking with Transformers), the raw data is encoded into segmented whole-body action sequences; finally, a hierarchical skill library and expert policy module are introduced to decompose complex tasks into routable sub-skills (e.g., "grasp", "walk", "place"), which are dynamically selected and combined by a high-level decision module. This architecture allows the system to retain the delicacy of human manipulation through imitation learning while adapting to unseen tasks via skill reuse.
+
+### Key Technical Innovations
+
+The technical innovations of HumanoidMimicGen are reflected in three aspects: first, it proposes the concept of a "data closed loop," integrating teleoperation, visual perception, and imitation learning into a unified data flow, solving the state mapping and action alignment problem from humans to robots; second, it designs a whole-body planning-based trajectory generation mechanism that ensures spatiotemporal consistency between movement and manipulation actions by optimizing constraints in joint space and task space; third, it introduces a hierarchical skill routing strategy, enabling the high-level module to dynamically invoke low-level skills based on scene understanding results (e.g., target object positions, obstacle distributions), thereby adapting to task variants without retraining. This modular design significantly reduces the repetitive cost of data collection.
+
+### Experiments/Validation and Application Value
+
+Although the paper does not disclose specific experimental data, the application value can be inferred from the framework design: in scenarios requiring frequent mobile manipulation, such as warehouse logistics and home services, HumanoidMimicGen can significantly reduce the number of human demonstrations—by reusing the existing skill library, only a small amount of new scene data is needed to generate adapted trajectories. Additionally, the framework's compatibility with visual perception modules (e.g., scene understanding, object detection) allows it to directly leverage existing visual foundation models for environment modeling. In the future, this work is expected to promote the transfer of humanoid robots from fixed laboratory tasks to open-world mobile manipulation, and provide a reusable technical pathway for the data generation paradigm of embodied intelligence.
+
+## 개요
+
+휴머노이드 로봇이 복잡한 환경에서 이동 조작 작업(예: 운반, 조립)을 수행할 때, 데이터 획득 비용이 높고 동작 일반화 성능이 낮다는 핵심 병목에 직면합니다. 기존 방법은 대부분 원격 조작이나 사전 프로그래밍에 의존하여 대규모의 다양한 훈련 데이터 생성을 실현하기 어렵습니다. HumanoidMimicGen은 전신 계획 기반의 이동 조작 데이터 생성 프레임워크를 제안하며, 다중 시점 시각 관측, 본체 상태 및 관절 시퀀스를 융합하여 인간 조작 데이터를 훈련 가능한 전신 궤적으로 변환합니다. 이 연구의 주요 기여는 데이터 수집부터 정책 학습까지의 완전한 폐루프를 구축하고, 계층적 스킬과 전문가 정책의 모듈식 조합을 활용하여 데이터 재사용성과 작업 일반화 능력을 크게 향상시킨 점에 있습니다.
+
+## 핵심 내용
+
+### 연구 배경 및 문제
+
+휴머노이드 로봇의 전신 이동 조작(loco-manipulation)은 다리 움직임과 팔 조작을 동시에 조정해야 하며, 운동 계획과 인식 융합에 매우 높은 요구 사항을 제기합니다. 전통적인 방법은 수동으로 설계된 운동 기본 요소나 정확한 동역학 모델에 의존하여 비구조화된 환경에 적응하기 어렵습니다. 최근 모방 학습 기반 방법은 고정된 장면에서 진전을 이루었지만, 두 가지 주요 도전에 직면합니다: 첫째, 고품질 원격 조작 데이터 획득 비용이 높고 다양한 작업 변형을 포괄하기 어렵습니다; 둘째, 기존 데이터 생성 방법은 일반적으로 이동과 조작을 분리하여 처리하며 전신 조정의 결합 효과를 무시합니다. HumanoidMimicGen은 이러한 "데이터 폐루프" 문제를 해결하기 위해 인간 시연에서 로봇 실행 가능 정책으로의 종단간 데이터 변환 방안을 제안합니다.
+
+### 방법 또는 모델 프레임워크
+
+이 프레임워크의 핵심 프로세스는 세 가지 계층으로 나뉩니다: 첫째, 다중 시점 카메라 이미지, 본체 센서 및 외골격 장치를 통해 인간 조작 데이터를 수집하여 장면 의미와 관절 상태를 포함한 원시 관측값을 획득합니다; 둘째, ACT(Action Chunking with Transformers)와 같은 행동 복제 알고리즘을 사용하여 원시 데이터를 분할된 전신 동작 시퀀스로 인코딩합니다; 마지막으로, 계층적 스킬 라이브러리와 전문가 정책 모듈을 도입하여 복잡한 작업을 라우팅 가능한 하위 스킬(예: "잡기", "걷기", "놓기")로 분해하고, 상위 계층 결정 모듈을 통해 동적으로 선택 및 조합합니다. 이러한 아키텍처는 시스템이 모방 학습을 통해 인간 조작의 정밀도를 유지하면서도 스킬 재사용을 통해 보지 못한 작업에 대응할 수 있게 합니다.
+
+### 핵심 기술 혁신
+
+HumanoidMimicGen의 기술 혁신은 세 가지 측면에서 나타납니다: 첫째, "데이터 폐루프" 개념을 제안하여 원격 조작, 시각 인식 및 모방 학습을 통합된 데이터 흐름으로 결합함으로써 인간에서 로봇으로의 상태 매핑과 동작 정렬 문제를 해결합니다; 둘째, 전신 계획 기반의 궤적 생성 메커니즘을 설계하여 관절 공간과 작업 공간의 제약 조건을 최적화함으로써 이동과 조작 동작의 시공간적 일관성을 보장합니다; 셋째, 계층적 스킬 라우팅 전략을 도입하여 상위 계층 모듈이 장면 이해 결과(예: 목표 물체 위치, 장애물 분포)에 따라 하위 스킬을 동적으로 호출할 수 있게 함으로써 재훈련 없이 작업 변형에 적응할 수 있게 합니다. 이러한 모듈식 설계는 데이터 수집의 반복 비용을 크게 줄입니다.
+
+### 실험/검증 및 응용 가치
+
+논문이 구체적인 실험 데이터를 공개하지는 않았지만, 프레임워크 설계로부터 그 응용 가치를 추론할 수 있습니다: 창고 물류, 가사 서비스 등 빈번한 이동 조작이 필요한 장면에서 HumanoidMimicGen은 기존 스킬 라이브러리를 재사용함으로써 소량의 새로운 장면 데이터만으로 적응형 궤적을 생성할 수 있어 인간 시연 횟수를 크게 줄일 수 있습니다. 또한, 이 프레임워크는 시각 인식 모듈(예: 장면 이해, 목표 탐지)과의 호환성을 통해 기존 시각 기반 모델을 직접 활용하여 환경 모델링을 수행할 수 있습니다. 미래에는 이 연구가 휴머노이드 로봇을 실험실의 고정 작업에서 개방형 세계의 이동 조작으로 전환하는 데 기여하고, 구현 지능의 데이터 생성 패러다임에 재사용 가능한 기술 경로를 제공할 것으로 기대됩니다.

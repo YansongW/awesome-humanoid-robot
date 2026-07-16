@@ -57,3 +57,14 @@ Given a heterogeneous group of robots executing a complex task represented in Li
 ## 参考
 - http://arxiv.org/abs/2204.05423v3
 
+## Overview
+Given a heterogeneous group of robots executing a complex task represented in Linear Temporal Logic, and a new set of tasks for the group, we define the task update problem and propose a framework for automatically updating individual robot tasks given their respective existing tasks and capabilities. Our heuristic, token-based, conflict resolution task allocation algorithm generates a near-optimal assignment for the new task. We demonstrate the scalability of our approach through simulations of multi-robot tasks.
+
+## Content
+Given a heterogeneous group of robots executing a complex task represented in Linear Temporal Logic, and a new set of tasks for the group, we define the task update problem and propose a framework for automatically updating individual robot tasks given their respective existing tasks and capabilities. Our heuristic, token-based, conflict resolution task allocation algorithm generates a near-optimal assignment for the new task. We demonstrate the scalability of our approach through simulations of multi-robot tasks.
+
+## 개요
+선형 시간 논리(Linear Temporal Logic)로 표현된 복잡한 작업을 수행하는 이기종 로봇 그룹과 그룹에 대한 새로운 작업 집합이 주어졌을 때, 작업 업데이트 문제를 정의하고 각 로봇의 기존 작업 및 능력을 고려하여 개별 로봇 작업을 자동으로 업데이트하는 프레임워크를 제안합니다. 우리의 휴리스틱 기반 토큰 기반 충돌 해결 작업 할당 알고리즘은 새로운 작업에 대해 거의 최적에 가까운 할당을 생성합니다. 다중 로봇 작업 시뮬레이션을 통해 접근 방식의 확장성을 입증합니다.
+
+## 핵심 내용
+선형 시간 논리(Linear Temporal Logic)로 표현된 복잡한 작업을 수행하는 이기종 로봇 그룹과 그룹에 대한 새로운 작업 집합이 주어졌을 때, 작업 업데이트 문제를 정의하고 각 로봇의 기존 작업 및 능력을 고려하여 개별 로봇 작업을 자동으로 업데이트하는 프레임워크를 제안합니다. 우리의 휴리스틱 기반 토큰 기반 충돌 해결 작업 할당 알고리즘은 새로운 작업에 대해 거의 최적에 가까운 할당을 생성합니다. 다중 로봇 작업 시뮬레이션을 통해 접근 방식의 확장성을 입증합니다.

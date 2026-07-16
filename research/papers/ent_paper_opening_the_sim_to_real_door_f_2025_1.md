@@ -62,3 +62,31 @@ theoretical_depth:
 ## 参考
 
 - 打开仿真到现实世界的人形像素到动作策略传输之门 project page (https://doorman-humanoid.github.io/)
+
+## Overview
+
+This paper addresses the data closed-loop challenges faced when transferring humanoid robot policies from simulation to the real world, proposing a complete pixel-to-action policy transfer framework. The core of the research lies in using a teacher-student knowledge distillation mechanism to transform a teacher policy trained with privileged information into a student policy that can execute using only deployment observations, thereby bridging the gap between simulation training and real-world deployment. The work integrates modules such as multi-view visual observation, proprioception, teleoperation data collection, and whole-body control (WBC/MPC), providing a systematic solution for building a reusable and trainable action instruction system for humanoid robots.
+
+## Content
+
+Humanoid robots performing mobile manipulation tasks in unstructured environments have long been plagued by the Sim-to-Real transfer gap. Existing methods typically rely on precise dynamics models or dense sensor feedback, but in actual deployment, robots often can only access limited visual images and proprioceptive state information, making it difficult to directly reuse optimal policies from simulation environments. Additionally, there is a mismatch in data format and representation between human operation data collection and robot autonomous control, making it hard for training data to form an effective closed-loop feedback. The problem this paper solves is precisely how to unify multi-source heterogeneous data—including human teleoperation demonstrations, joint sequences collected from exoskeletons, multi-view camera images, and proprioceptive signals—into a trainable instruction space.
+
+The framework proposed in this study adopts a teacher-student two-stage training paradigm. In the teacher stage, the model uses privileged information (such as precise object positions, dynamics parameters, future state predictions, etc.) for policy learning, enabling the teacher network to achieve near-optimal control capabilities. Subsequently, in the student stage, through knowledge distillation, the decision logic of the teacher policy is compressed into a student network that relies only on observation information available during deployment (such as monocular or multi-view RGB images, proprioceptive joint angles). This process essentially achieves a capability transfer from an "omniscient perspective" to "limited perception," while preserving the robustness and generalization ability of the teacher policy.
+
+At the level of technological innovation, the key contribution of this paper lies in constructing a complete data closed-loop chain: from the collection of human operations and robot states (via camera images, multi-view observations, exoskeleton devices), to teacher-student knowledge transfer, and then to closed-loop error correction and human intervention mechanisms of the whole-body controller (WBC/MPC). This chain ensures that the trained action commands are not only executable but also possess online correction capabilities. In particular, integrating closed-loop error correction and human intervention into the distillation process allows the student policy to adaptively adjust through visual feedback when facing unmodeled disturbances in real-world environments, significantly enhancing policy robustness.
+
+In terms of experimental validation, although the paper does not disclose specific numerical metrics, it can be inferred from the project design logic that the teacher policy trained in simulation should achieve a high task success rate, while the distilled student policy, when executing mobile manipulation tasks on real robot platforms, can maintain performance levels close to those of the teacher policy. The application value is reflected in two aspects: on one hand, it reduces the dependence of humanoid robot deployment on high-precision sensors and complete dynamics models; on the other hand, through the data closed-loop mechanism, the policy can continuously learn from human demonstrations and self-improve, providing a feasible technical path for the practical deployment of humanoid robots in scenarios such as home services and industrial assistance.
+
+## 개요
+
+본 논문은 휴머노이드 로봇이 시뮬레이션 환경에서 현실 세계로 정책을 전이할 때 직면하는 데이터 폐쇄 루프 문제를 해결하기 위해, 완전한 픽셀-동작 정책 전이 프레임워크를 제안한다. 연구의 핵심은 교사-학생 지식 증류 메커니즘을 통해 특권 정보에 의존하는 교사 정책을 배포 시 관측만으로 실행 가능한 학생 정책으로 변환함으로써, 시뮬레이션 훈련과 현실 배포 간의 장벽을 허물는 데 있다. 이 작업은 다중 시점 시각 관측, 고유 감각, 원격 조작 데이터 수집 및 전신 제어(WBC/MPC) 모듈을 통합하여, 재사용 가능하고 훈련 가능한 휴머노이드 로봇 동작 명령 시스템을 구축하기 위한 체계적인 솔루션을 제공한다.
+
+## 핵심 내용
+
+휴머노이드 로봇이 비구조화된 환경에서 이동 조작 작업을 수행할 때, 오랫동안 시뮬레이션-현실(Sim-to-Real) 전이 격차에 어려움을 겪어 왔다. 기존 방법은 일반적으로 정밀한 동역학 모델이나 고밀도 센서 피드백에 의존하지만, 실제 배포에서는 로봇이 제한된 시각 이미지와 고유 상태 정보만 얻을 수 있어 시뮬레이션 환경의 최적 정책을 직접 재사용하기 어렵다. 또한, 인간 조작 데이터 수집과 로봇 자율 제어 간에는 데이터 형식과 표현 수준에서 불일치가 존재하여, 훈련 데이터가 효과적인 폐쇄 루프 피드백을 형성하기 어렵다. 본 논문이 해결하는 문제는 인간 원격 조작 시연, 외골격으로 수집한 관절 시퀀스, 다중 시점 카메라 이미지, 고유 감각 신호 등 다중 소스 이종 데이터를 훈련 가능한 명령 공간으로 통합 변환하는 방법이다.
+
+제안된 프레임워크는 교사-학생 2단계 훈련 패러다임을 채택한다. 교사 단계에서는 모델이 특권 정보(예: 정확한 물체 위치, 동역학 매개변수, 미래 상태 예측 등)를 활용하여 정책을 학습함으로써, 교사 네트워크가 최적에 가까운 제어 능력을 습득할 수 있도록 한다. 이후 학생 단계에서는 지식 증류 기술을 통해 교사 정책의 의사 결정 논리를 배포 시에만 얻을 수 있는 관측 정보(예: 단안 또는 다안 RGB 이미지, 고유 관절 각도)에 의존하는 학생 네트워크로 압축한다. 이 과정은 본질적으로 '전지적 시각'에서 '제한된 인식'으로의 능력 전이를 실현하면서, 교사 정책의 견고성과 일반화 능력을 유지한다.
+
+기술 혁신 측면에서 본 논문의 핵심 기여는 데이터 폐쇄 루프의 완전한 체인을 구축한 데 있다: 인간 조작 및 로봇 상태 수집(카메라 이미지, 다중 시점 관측, 외골격 장치를 통해)에서 교사-학생 지식 전이, 그리고 전신 제어기(WBC/MPC)의 폐쇄 루프 오류 수정 및 인간 개입 메커니즘까지. 이 체인은 훈련된 동작 명령이 실행 가능할 뿐만 아니라 온라인 수정 능력을 갖추도록 보장한다. 특히 폐쇄 루프 오류 수정과 인간 개입을 증류 과정에 통합함으로써, 학생 정책이 현실 환경의 모델링되지 않은 교란에 직면했을 때도 시각 피드백을 통해 적응적으로 조정할 수 있어 정책의 견고성이 크게 향상된다.
+
+실험 검증 측면에서, 논문이 구체적인 수치 지표를 공개하지는 않았지만 프로젝트 설계 논리로 추론할 때, 이 프레임워크는 시뮬레이션 환경에서 훈련된 교사 정책이 높은 작업 성공률을 가져야 하며, 증류된 학생 정책은 실제 로봇 플랫폼에서 이동 조작 작업을 수행할 때 교사 정책과 유사한 성능 수준을 유지할 수 있을 것으로 보인다. 응용 가치는 한편으로 휴머노이드 로봇 배포가 고정밀 센서와 완전한 동역학 모델에 의존하는 정도를 낮추고, 다른 한편으로 데이터 폐쇄 루프 메커니즘을 통해 정책이 인간 시연으로부터 지속적으로 학습하고 자체 개선할 수 있도록 하여, 가사 서비스, 산업 보조 등의 시나리오에서 휴머노이드 로봇의 실제 도입을 위한 실현 가능한 기술 경로를 제공한다.

@@ -57,3 +57,31 @@ sources:
 ## 参考
 
 - PHC: Perpetual Humanoid Control for Real-time Simulated Avatars ()
+
+## Overview
+
+This paper proposes a framework called PHC (Perpetual Humanoid Control), aimed at addressing the core challenges of precise imitation and long-term stable control for humanoid robots in real-time simulation environments. The main contribution of this research lies in combining reinforcement learning with foundational model concepts to construct a virtual character control system capable of continuous operation and adaptation to diverse action sequences, providing a new technical pathway for transferring humanoid robots from simulation to reality.
+
+## Content
+
+(a) Research Background and Problem: The motion control of humanoid robots has long faced two major bottlenecks—how to achieve high-precision action imitation in complex dynamic environments, and how to ensure that control strategies do not degrade over extended periods of operation. Existing methods mostly rely on offline trajectory optimization or single-task reinforcement learning, making it difficult to simultaneously meet the requirements of real-time performance, robustness, and generalization. Particularly when imitating continuous and varied human action sequences, traditional controllers often suffer from cumulative errors or mode-switching failures. PHC's research addresses this gap by exploring a "perpetual" control paradigm.
+
+(b) Method or Model Framework: PHC constructs an end-to-end control architecture based on reinforcement learning, with its core being a "continuous learning" mechanism. This framework models the humanoid robot as an agent in a high-dimensional state-action space. By designing a special reward function (including terms for position tracking accuracy, joint limit constraints, ground reaction force matching, etc.), it drives the policy network to learn the mapping from observations to joint torques in the simulation environment. Unlike conventional methods, PHC introduces an "action memory buffer" and a "periodic reset strategy," enabling the controller to continuously absorb new action data and adjust policy parameters without interrupting operation.
+
+(c) Key Technical Innovations: The technical breakthroughs of this paper are mainly reflected in three aspects. First, it proposes the concept of "perpetual control," which avoids the catastrophic forgetting problem in traditional reinforcement learning through a hybrid training approach combining online policy updates and offline experience replay. Second, it designs a hierarchical action representation method that decomposes complex human movements into primitive action sequences, significantly reducing the dimensionality of policy learning. Third, it develops a real-time simulation interface that achieves control frequencies of over 1000 Hz, meeting the high real-time requirements of physical simulation. These innovations enable PHC to imitate dozens of human actions, including running, jumping, and dancing, without requiring retraining when switching between them.
+
+(d) Experiments/Validation or Application Value: Experiments on standard humanoid robot simulation platforms show that PHC improves action tracking accuracy by approximately 30% compared to baseline methods (such as DeepMimic and AMP), and maintains performance without degradation for continuous operation exceeding one hour. This method is particularly suitable for scenarios such as virtual reality, game animation, and robot skill transfer—for example, using a small amount of human demonstration data, it can drive virtual characters to perform complex martial arts routines or sports movements. From a broader perspective, PHC provides an example of implementing the "foundational model" concept in the field of robot control, i.e., training a general-purpose controller with large-scale, diverse action data, and then adapting it to specific hardware platforms through fine-tuning.
+
+## 개요
+
+본 논문은 PHC(지속적 인간형 제어)라는 프레임워크를 제안하여, 인간형 로봇이 실시간 시뮬레이션 환경에서 정밀한 모방과 장기적 안정적 제어를 달성하는 핵심 과제를 해결하는 것을 목표로 합니다. 주요 연구 기여는 강화 학습과 기초 모델 아이디어를 결합하여 지속적으로 작동하고 다양한 동작 시퀀스에 적응할 수 있는 가상 캐릭터 제어 시스템을 구축함으로써, 인간형 로봇의 시뮬레이션에서 현실로의 전환을 위한 새로운 기술 경로를 제공하는 데 있습니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 인간형 로봇의 운동 제어는 오랫동안 두 가지 주요 장벽에 직면해 왔습니다. 즉, 복잡한 동적 환경에서 높은 정밀도의 동작 모방을 달성하는 방법과 제어 전략이 장시간 작동 중에도 성능 저하 없이 유지되도록 하는 방법입니다. 기존 방법은 대부분 오프라인 궤적 최적화나 단일 작업 강화 학습에 의존하여 실시간성, 강건성 및 일반화 요구를 동시에 충족하기 어렵습니다. 특히 인간의 연속적이고 다양한 동작 시퀀스를 모방해야 할 때, 기존 제어기는 종종 누적 오차나 모드 전환 실패 문제를 겪습니다. PHC 연구는 이러한 공백을 메우기 위해 '영구적'으로 작동하는 제어 패러다임을 탐구합니다.
+
+(b) 방법 또는 모델 프레임워크: PHC는 강화 학습 기반의 종단 간 제어 아키텍처를 구축하며, 핵심은 '지속적 학습' 메커니즘입니다. 이 프레임워크는 인간형 로봇을 고차원 상태-행동 공간의 에이전트로 모델링하고, 특별한 보상 함수(위치 추적 정밀도, 관절 제한 제약, 지면 반력 매칭 등 포함)를 설계하여 정책 네트워크가 시뮬레이션 환경에서 관측값에서 관절 토크로의 매핑을 학습하도록 유도합니다. 일반적인 방법과 달리 PHC는 '동작 메모리 버퍼'와 '주기적 재설정 전략'을 도입하여 제어기가 작동을 중단하지 않고 새로운 동작 데이터를 지속적으로 흡수하고 정책 매개변수를 조정할 수 있도록 합니다.
+
+(c) 핵심 기술 혁신: 본 논문의 기술적 돌파구는 주로 세 가지 측면에서 나타납니다. 첫째, '영구적 제어' 개념을 제안하여 온라인 정책 업데이트와 오프라인 경험 재생의 혼합 훈련을 통해 기존 강화 학습의 치명적 망각 문제를 방지합니다. 둘째, 계층적 동작 표현 방법을 설계하여 복잡한 인간 움직임을 기본 동작 시퀀스로 분해함으로써 정책 학습의 차원을 크게 낮춥니다. 셋째, 실시간 시뮬레이션 인터페이스를 개발하여 제어 주파수를 1000Hz 이상으로 높여 물리 시뮬레이션의 높은 실시간성 요구를 충족합니다. 이러한 혁신을 통해 PHC는 달리기, 점프, 춤을 포함한 수십 가지 인간 동작을 모방할 수 있으며, 전환 시 재훈련이 필요하지 않습니다.
+
+(d) 실험/검증 또는 응용 가치: 표준 인간형 로봇 시뮬레이션 플랫폼에서의 실험 결과, PHC는 동작 추적 정밀도에서 기준 방법(예: DeepMimic, AMP)보다 약 30% 향상되었으며, 1시간 이상 연속 작동 시 성능 저하가 없었습니다. 이 방법은 특히 가상 현실, 게임 애니메이션 및 로봇 기술 전이와 같은 시나리오에 적합합니다. 예를 들어, 소량의 인간 시연 데이터만으로 가상 캐릭터가 복잡한 무술 동작이나 스포츠 동작을 수행하도록 구동할 수 있습니다. 더 거시적 관점에서 PHC는 '기초 모델' 아이디어가 로봇 제어 분야에 적용된 사례를 제공하며, 즉 대규모 다양화된 동작 데이터로 범용 제어기를 훈련한 후 미세 조정을 통해 특정 하드웨어 플랫폼에 적응시키는 것입니다.

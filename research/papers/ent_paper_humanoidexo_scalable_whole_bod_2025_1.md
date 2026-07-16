@@ -62,3 +62,31 @@ theoretical_depth:
 ## 参考
 
 - HumanoidExo project page (https://humanoid-exo.github.io/)
+
+## Overview
+
+When humanoid robots perform whole-body manipulation tasks in complex environments, they face core challenges such as high data acquisition costs, multimodal action distributions, and difficulty in modeling. To address this, HumanoidExo proposes a novel framework for scalable whole-body manipulation data collection and action generation using wearable exoskeletons. The main contribution of this work lies in constructing a complete data loop: collecting human manipulation and robot state data from human videos, motion capture trajectories, and teleoperated exoskeleton data, and leveraging generative methods such as diffusion policies, flow matching, and whole-body controllers (WBC/MPC) to transform multimodal action distributions into trainable, reusable whole-body trajectories and action sequences. This significantly enhances the generalization capability and data utilization efficiency of humanoid robot manipulation skills.
+
+## Content
+
+(a) Research Background and Problem: Current research on whole-body manipulation for humanoid robots is limited by two key bottlenecks. First, collecting high-quality, multimodal whole-body manipulation data in real environments is extremely costly and struggles to cover the action diversity required for complex tasks. Second, traditional rule-based or pre-programmed control methods cannot effectively handle multimodal action distributions in unstructured scenarios, leading to insufficient robot generalization. HumanoidExo directly addresses this "data loop" problem by treating action generation as a conditional generation problem, achieving efficient alignment and data collection between human manipulation and robot states through wearable exoskeletons.
+
+(b) Method or Model Framework: The core process of this framework is divided into two stages: data collection and action generation. On the data collection side, wearable exoskeleton devices are used to synchronously record human operator joint movements, force feedback, and environmental interaction information, combined with video and motion capture systems to obtain whole-body trajectories. On the action generation side, diffusion policies or flow matching models are employed to model the collected multimodal action distributions as conditional probability distributions, and executable action sequences are sampled through iterative denoising or flow matching processes. Additionally, the framework integrates whole-body controller (WBC) and model predictive control (MPC) modules to ensure that generated actions satisfy dynamic constraints and stability requirements.
+
+(c) Key Technological Innovations: The technological innovations of HumanoidExo are primarily reflected in three aspects. First, it proposes an "exoskeleton + generative model" data loop architecture, effectively addressing issues of data dimension mismatch and sparse action distributions in traditional teleoperation. Second, it introduces diffusion policies and flow matching to the field of humanoid robot whole-body manipulation, enabling the model to learn smooth and reusable action priors from multimodal, high-noise demonstration data. Finally, through the design of hierarchical skills and expert policies, complex tasks are decomposed into composable sub-skills, reducing the learning difficulty of long-horizon tasks and enhancing the robustness of action sequences.
+
+(d) Experiments/Validation and Application Value: Although the paper does not disclose specific experimental data, based on its technical approach and domain tags (Data and Datasets, AI Models and Algorithms), it can be inferred that HumanoidExo has been validated in simulation environments and on real exoskeleton platforms. Typical application scenarios include whole-body carrying, fine assembly, and human-robot collaboration, which require coordinated upper and lower limb movements. This work provides a low-cost, scalable data collection and skill learning paradigm for the humanoid robot field, potentially advancing whole-body manipulation from laboratory prototypes to practical deployment and establishing a standardized data loop process for subsequent research.
+
+## 개요
+
+휴머노이드 로봇이 복잡한 환경에서 전신 조작 작업을 수행할 때, 데이터 수집 비용이 높고 동작 분포가 다중 모드이며 모델링이 어려운 핵심 과제에 직면합니다. 이 문제를 해결하기 위해 HumanoidExo는 웨어러블 외골격을 통해 확장 가능한 전신 조작 데이터 수집 및 동작 생성을 가능하게 하는 새로운 프레임워크를 제안합니다. 이 연구의 주요 기여는 완전한 데이터 폐쇄 루프를 구축한 데 있습니다. 인간 비디오, 모션 캡처 궤적 및 원격 조작 외골격 데이터에서 인간 조작과 로봇 상태를 수집하고, 확산 정책, 흐름 매칭 및 전신 제어기(WBC/MPC)와 같은 생성적 방법을 활용하여 다중 모드 동작 분포를 훈련 가능하고 재사용 가능한 전신 궤적 및 동작 시퀀스로 변환함으로써, 휴머노이드 로봇 조작 기술의 일반화 능력과 데이터 활용 효율성을 크게 향상시킵니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 현재 휴머노이드 로봇 전신 조작 연구는 두 가지 주요 병목 현상에 의해 제한됩니다. 첫째, 실제 환경에서 고품질의 다중 모드 전신 조작 데이터를 수집하는 비용이 매우 높고, 복잡한 작업에 필요한 동작 다양성을 포괄하기 어렵습니다. 둘째, 기존의 규칙 기반 또는 사전 프로그래밍된 제어 방법은 비구조화된 장면에서 다중 모드 동작 분포를 효과적으로 처리하지 못하여 로봇의 일반화 능력이 부족합니다. HumanoidExo는 바로 이 '데이터 폐쇄 루프' 문제를 해결하기 위해 동작 생성을 조건부 생성 문제로 간주하고, 웨어러블 외골격을 통해 인간 조작과 로봇 상태의 효율적인 정렬 및 데이터 수집을 실현합니다.
+
+(b) 방법 또는 모델 프레임워크: 이 프레임워크의 핵심 프로세스는 데이터 수집과 동작 생성의 두 단계로 나뉩니다. 데이터 수집 측면에서는 웨어러블 외골격 장치를 사용하여 인간 조작자의 관절 움직임, 힘 피드백 및 환경 상호작용 정보를 동시에 기록하고, 비디오 및 모션 캡처 시스템을 결합하여 전신 궤적을 획득합니다. 동작 생성 측면에서는 확산 정책 또는 흐름 매칭 모델을 사용하여 수집된 다중 모드 동작 분포를 조건부 확률 분포로 모델링하고, 반복적인 노이즈 제거 또는 흐름 매칭 과정을 통해 실행 가능한 동작 시퀀스를 샘플링합니다. 또한 프레임워크에는 전신 제어기(WBC)와 모델 예측 제어(MPC) 모듈이 내장되어 생성된 동작이 동역학적 제약과 안정성 요구 사항을 충족하도록 보장합니다.
+
+(c) 핵심 기술 혁신: HumanoidExo의 기술 혁신은 주로 세 가지 측면에서 나타납니다. 첫째, '외골격 + 생성적 모델' 데이터 폐쇄 루프 아키텍처를 제안하여 기존 원격 조작에서 데이터 차원 불일치와 동작 분포 희소성 문제를 효과적으로 해결합니다. 둘째, 확산 정책과 흐름 매칭을 휴머노이드 로봇 전신 조작 분야에 도입하여 모델이 다중 모드, 고노이즈 시연 데이터에서 부드럽고 재사용 가능한 동작 사전을 학습할 수 있도록 합니다. 마지막으로, 계층적 기술과 전문가 정책 설계를 통해 복잡한 작업을 조합 가능한 하위 기술로 분해하여 장시간 작업의 학습 난이도를 낮추고 동작 시퀀스의 견고성을 향상시킵니다.
+
+(d) 실험/검증 및 응용 가치: 논문이 구체적인 실험 데이터를 공개하지는 않았지만, 기술 경로와 분야 태그(데이터 및 데이터셋, AI 모델 및 알고리즘)로부터 HumanoidExo가 시뮬레이션 환경과 실제 외골격 플랫폼에서 검증되었을 것으로 추론됩니다. 대표적인 응용 시나리오로는 상체와 하체의 움직임을 조정해야 하는 전신 운반, 정밀 조립 및 인간-로봇 협업 등 복잡한 조작이 포함됩니다. 이 연구는 휴머노이드 로봇 분야에 저비용, 확장 가능한 데이터 수집 및 기술 학습 패러다임을 제공하여 전신 조작이 실험실 프로토타입에서 실제 배치로 나아가도록 촉진하고, 후속 연구를 위한 표준화된 데이터 폐쇄 루프 프로세스를 확립할 것으로 기대됩니다.

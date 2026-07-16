@@ -66,3 +66,31 @@ DemoHLM 的关键技术创新体现在两个层面。其一，它通过将示范
 ## 参考
 
 - DemoHLM project page (https://beingbeyond.github.io/DemoHLM/)
+
+## Overview
+
+DemoHLM proposes a general mobile manipulation framework for humanoid robots, aiming to address the closed-loop data problem from single human demonstration to generalizable skill learning. By integrating multi-view visual observations, proprioceptive states, and joint sequences, combined with teleoperation or exoskeleton data collection, this research transforms human manipulation behaviors into trainable and reusable robot control commands. Its core contribution lies in converting demonstration trajectories into a supervised action prediction problem, and leveraging action chunking with closed-loop execution strategies to effectively reduce temporal jitter, thereby enhancing the robustness and generalization capability of robot skill learning.
+
+## Content
+
+One of the core challenges in humanoid robot loco-manipulation is efficiently acquiring high-quality, generalizable training data. Traditional methods often rely on extensive manual annotation or pre-programmed demonstrations, which are not only costly but also difficult to adapt to complex, dynamic real-world environments. Addressing this "data closed-loop" problem, DemoHLM proposes a complete solution spanning data collection, processing, model training, and deployment, aiming to achieve rapid transfer and generalization of robot skills using single or few human demonstrations.
+
+At the methodological level, DemoHLM constructs a multimodal data collection and processing pipeline. First, visual information of the environment and robot body is obtained through camera images or multi-view observations, while proprioceptive states (e.g., joint angles, torques) and joint sequences are recorded. These data are collected via teleoperation devices or exoskeleton systems to ensure precise alignment between human operations and robot states. Subsequently, the system employs imitation learning algorithms such as Behavioral Cloning and ACT (Action Chunking with Transformers) to convert collected demonstration trajectories into a supervised learning problem. Specifically, the model takes current observations as input and predicts future action sequences rather than single actions, effectively mitigating temporal uncertainty.
+
+The key technical innovations of DemoHLM are reflected in two aspects. First, by "compressing" demonstration trajectories into a supervised action prediction problem, the model can learn generalizable policies from limited demonstrations without relying on large-scale datasets. Second, to address temporal jitter during execution, DemoHLM introduces action chunking and closed-loop execution strategies. Action chunking allows the model to predict actions over multiple time steps at once, reducing instability caused by high-frequency decision-making; closed-loop execution combines whole-body controllers (WBC/MPC) with human intervention to correct execution deviations in real time, ensuring smooth and safe actions.
+
+In terms of experimental validation and application value, DemoHLM has been deployed on real hardware platforms equipped with a complete sensor suite. Experimental results show that the framework can learn generalizable mobile manipulation skills—such as grasping, transporting, and placing objects—from a single human demonstration, maintaining high success rates across different scenarios and object configurations. Its end-to-end "from demonstration to deployment" pipeline significantly lowers the barrier to skill learning for humanoid robots, providing a feasible technical pathway for practical applications in domains such as home service and industrial assistance.
+
+## 개요
+
+DemoHLM은 인간형 로봇을 위한 범용 이동 조작 프레임워크를 제안하며, 단일 인간 시연에서 일반화 가능한 기술 학습으로 이어지는 폐쇄 루프 데이터 문제를 해결하는 것을 목표로 합니다. 이 연구는 다중 시점 시각 관측, 본체 상태 및 관절 시퀀스를 통합하고, 원격 조작 또는 외골격 데이터 수집을 결합하여 인간의 조작 행동을 훈련 가능하고 재사용 가능한 로봇 제어 명령으로 변환합니다. 핵심 기여는 시연 궤적을 지도 학습 기반의 동작 예측 문제로 전환하고, 동작 청크(action chunk)와 폐쇄 루프 실행 전략을 활용하여 시간적 지터를 효과적으로 줄임으로써 로봇 기술 학습의 견고성과 일반화 능력을 향상시키는 데 있습니다.
+
+## 핵심 내용
+
+인간형 로봇의 이동 조작(loco-manipulation)이 직면한 핵심 과제 중 하나는 고품질이면서 일반화 가능한 훈련 데이터를 효율적으로 확보하는 것입니다. 전통적인 방법은 대량의 수동 레이블링이나 사전 프로그래밍된 시연에 의존하는 경우가 많아 비용이 높을 뿐만 아니라 복잡하고 동적인 실제 환경에 적응하기 어렵습니다. DemoHLM은 이러한 '데이터 폐쇄 루프' 문제를 해결하기 위해 데이터 수집, 처리부터 모델 훈련 및 배포까지의 완전한 솔루션을 제안하며, 단일 또는 소수의 인간 시연을 통해 로봇 기술의 빠른 전이와 일반화를 가능하게 합니다.
+
+방법론 측면에서 DemoHLM은 다중 모달 데이터 수집 및 처리 파이프라인을 구축합니다. 먼저, 카메라 이미지 또는 다중 시점 관측을 통해 환경과 로봇 본체의 시각 정보를 획득하고, 동시에 본체 상태(관절 각도, 토크 등)와 관절 시퀀스를 기록합니다. 이러한 데이터는 원격 조작 장치 또는 외골격 시스템을 통해 수집되어 인간의 조작과 로봇 상태 간의 정밀한 정렬을 보장합니다. 이후 시스템은 행동 복제(Behavioral Cloning) 및 ACT(Action Chunking with Transformers)와 같은 모방 학습 알고리즘을 사용하여 수집된 시연 궤적을 훈련 가능한 지도 학습 문제로 변환합니다. 구체적으로, 모델은 현재 관측을 입력으로 받아 단일 동작이 아닌 미래의 동작 시퀀스를 예측함으로써 시간적 불확실성을 효과적으로 완화합니다.
+
+DemoHLM의 핵심 기술 혁신은 두 가지 측면에서 나타납니다. 첫째, 시연 궤적을 지도 학습 기반의 동작 예측 문제로 '압축'함으로써 모델이 대규모 데이터셋에 의존하지 않고 제한된 시연에서 일반화 능력을 갖춘 정책을 학습할 수 있도록 합니다. 둘째, 실행 과정에서 발생하는 시간적 지터 문제를 해결하기 위해 DemoHLM은 동작 청크(action chunk)와 폐쇄 루프 실행 전략을 도입합니다. 동작 청크는 모델이 한 번에 여러 시간 단계의 동작을 예측할 수 있게 하여 고빈도 의사 결정으로 인한 불안정성을 줄이고, 폐쇄 루프 실행은 전신 제어기(WBC/MPC)와 인간의 개입을 결합하여 실행 편차를 실시간으로 보정함으로써 동작의 부드러움과 안전성을 보장합니다.
+
+실험 검증 및 응용 가치 측면에서 DemoHLM은 실제 하드웨어 플랫폼에 배포되었으며, 완전한 센서 제품군(sensor suite)을 갖추고 있습니다. 실험 결과는 이 프레임워크가 단일 인간 시연에서 잡기, 운반 및 물체 배치와 같은 일반화 가능한 이동 조작 기술을 학습할 수 있으며, 다양한 시나리오와 물체 구성에서 높은 성공률을 유지함을 보여줍니다. '시연에서 배포까지'의 종단 간 프로세스는 인간형 로봇 기술 학습의 진입 장벽을 크게 낮추며, 가사 서비스, 산업 보조 등 분야의 실제 응용을 위한 실행 가능한 기술 경로를 제공합니다.

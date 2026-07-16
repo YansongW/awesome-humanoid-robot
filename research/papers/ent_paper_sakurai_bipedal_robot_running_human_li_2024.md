@@ -57,3 +57,14 @@ We have been developing human-sized biped robots based on passive dynamic mechan
 ## 参考
 - http://arxiv.org/abs/2303.00910v3
 
+## Overview
+We have been developing human-sized biped robots based on passive dynamic mechanisms. In human locomotion, the muscles activate at the same rate relative to the gait cycle during running. To achieve adaptive running for robots, such characteristics should be reproduced to yield the desired effect. In this study, we designed a central pattern generator (CPG) involving fast and slow adaptation to achieve human-like running using a simple spring-mass model and our developed bipedal robot, which is equipped with actuators that imitate the human musculoskeletal system. Our results demonstrate that the CPG-based controller with fast and slow adaptations, and an adjustable actuator control timing can reproduce human-like running. The results suggest that the CPG contributes to the adjustment of the muscle activation timing in human running.
+
+## Content
+We have been developing human-sized biped robots based on passive dynamic mechanisms. In human locomotion, the muscles activate at the same rate relative to the gait cycle during running. To achieve adaptive running for robots, such characteristics should be reproduced to yield the desired effect. In this study, we designed a central pattern generator (CPG) involving fast and slow adaptation to achieve human-like running using a simple spring-mass model and our developed bipedal robot, which is equipped with actuators that imitate the human musculoskeletal system. Our results demonstrate that the CPG-based controller with fast and slow adaptations, and an adjustable actuator control timing can reproduce human-like running. The results suggest that the CPG contributes to the adjustment of the muscle activation timing in human running.
+
+## 개요
+우리는 수동적 동역학 메커니즘을 기반으로 한 인간 크기의 이족 보행 로봇을 개발해 왔습니다. 인간의 보행에서 근육은 달리기 중 보행 주기에 대해 동일한 비율로 활성화됩니다. 로봇의 적응형 달리기를 구현하기 위해서는 이러한 특성을 재현하여 원하는 효과를 얻어야 합니다. 본 연구에서는 단순한 스프링-질량 모델과 인간의 근골격계를 모방한 액추에이터를 장착한 자체 개발 이족 보행 로봇을 사용하여 인간과 유사한 달리기를 구현하기 위해 빠른 적응과 느린 적응을 포함하는 중추 패턴 생성기(CPG)를 설계했습니다. 실험 결과, 빠른 적응과 느린 적응, 그리고 조정 가능한 액추에이터 제어 타이밍을 갖춘 CPG 기반 제어기가 인간과 유사한 달리기를 재현할 수 있음을 보여주었습니다. 이러한 결과는 CPG가 인간 달리기에서 근육 활성화 타이밍 조정에 기여함을 시사합니다.
+
+## 핵심 내용
+우리는 수동적 동역학 메커니즘을 기반으로 한 인간 크기의 이족 보행 로봇을 개발해 왔습니다. 인간의 보행에서 근육은 달리기 중 보행 주기에 대해 동일한 비율로 활성화됩니다. 로봇의 적응형 달리기를 구현하기 위해서는 이러한 특성을 재현하여 원하는 효과를 얻어야 합니다. 본 연구에서는 단순한 스프링-질량 모델과 인간의 근골격계를 모방한 액추에이터를 장착한 자체 개발 이족 보행 로봇을 사용하여 인간과 유사한 달리기를 구현하기 위해 빠른 적응과 느린 적응을 포함하는 중추 패턴 생성기(CPG)를 설계했습니다. 실험 결과, 빠른 적응과 느린 적응, 그리고 조정 가능한 액추에이터 제어 타이밍을 갖춘 CPG 기반 제어기가 인간과 유사한 달리기를 재현할 수 있음을 보여주었습니다. 이러한 결과는 CPG가 인간 달리기에서 근육 활성화 타이밍 조정에 기여함을 시사합니다.

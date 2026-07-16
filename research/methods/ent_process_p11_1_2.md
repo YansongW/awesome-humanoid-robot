@@ -86,5 +86,90 @@ theoretical_depth:
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
 
+## Overview
+**Phase/Work Package**: Dexterous Hand Selection/Design and Integration (Dexterous Hand)
 
+## Content
+**Methods/Tools**: Tendon-driven, micro-motor direct drive, linkage transmission, hydraulic/pneumatic comparison
 
+**Design Logic**: Tendon-driven is compact but complex; direct drive is easy to maintain but bulky; underactuation reduces cost
+
+**Key Constraints**: Reliability, maintainability, backlash, force control accuracy
+
+**Completion Criteria/Deliverables**: Drive scheme decision report, transmission chain drawings
+
+**Level 3 Sub-tasks and Level 4 Key Actions:**
+
+- P11.1.2.1 Input Review and Target Quantification
+  - Organize upstream inputs, reference standards, and resources required for the "Drive and Transmission Scheme," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+    - List all upstream inputs and confirm versions
+    - Convert acceptance criteria into quantifiable KPIs
+    - Establish task Owner, timeline, and risk register
+
+- P11.1.2.2 Scheme/Method Design
+  - Develop implementation methods or candidate schemes for the "Drive and Transmission Scheme," conduct argumentation using "Tendon-driven, micro-motor direct drive, linkage transmission, hydraulic/pneumatic comparison," and clarify the technical route and resource requirements.
+    - Generate at least 2 candidate schemes
+    - Establish an evaluation matrix and perform quantitative scoring
+    - Organize a review and freeze the scheme
+
+- P11.1.2.3 Implementation/Prototype/Sample Fabrication
+  - Execute the implementation of the "Drive and Transmission Scheme" according to the design, produce prototypes, samples, or complete key steps, and record process data.
+    - Build models/prototypes and record key parameters
+    - Perform simulation or prototype verification
+    - Record anomalies and deviations
+
+- P11.1.2.4 Verification and Issue Closure
+  - Verify the output of the "Drive and Transmission Scheme," check whether it meets the completion criteria, record issues, and track them until closure.
+    - Develop test/review plans and pass criteria
+    - Execute tests and record raw data
+    - Output issue list and improvement measures
+
+- P11.1.2.5 Documentation Output and Downstream Delivery
+  - Output the final report/drawings/specifications for the "Drive and Transmission Scheme," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+    - Write documents according to templates and reference raw data
+    - Complete internal review and version control
+    - Publish and notify downstream dependents
+
+## 개요
+**소속 단계/작업 패키지**: 다기능 손 선정/설계 및 통합 (Dexterous Hand)
+
+## 핵심 내용
+**방법 / 도구**: 텐더 구동, 초소형 모터 직접 구동, 링크 구동, 유압/공압 비교
+
+**설계 사고 논리**: 텐더는 부피가 작지만 복잡함; 직접 구동은 유지보수가 쉽지만 부피가 큼; 언더액추에이션은 비용 절감
+
+**핵심 제약 조건**: 신뢰성, 유지보수성, 백래시, 힘 제어 정밀도
+
+**완료 기준 / 산출물**: 구동 방식 결정 보고서, 동력 전달 체인 도면
+
+**3단계 하위 작업과 4단계 핵심 동작:**
+
+- P11.1.2.1 입력 정리 및 목표 정량화
+  - 「구동 및 전달 방식」에 필요한 상위 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화된 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 함.
+    - 모든 상위 입력 목록을 작성하고 버전 확인
+    - 검수 기준을 정량화된 KPI로 변환
+    - 작업 담당자, 시간 노드 및 위험 등록부 수립
+
+- P11.1.2.2 방식/방법 설계
+  - 「구동 및 전달 방식」에 대한 구현 방법 또는 후보 방안을 수립하고, 「텐더 구동, 초소형 모터 직접 구동, 링크 구동, 유압/공압 비교」를 통해 논증하며, 기술 경로와 자원 요구 사항을 명확히 함.
+    - 2개 이상의 후보 방안 도출
+    - 평가 매트릭스 구축 및 정량적 점수화
+    - 검토 조직 및 방안 확정
+
+- P11.1.2.3 구현/프로토타입/시제품 제작
+  - 설계 방안에 따라 「구동 및 전달 방식」의 구현 작업을 수행하고, 프로토타입 또는 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+    - 모델/시제품 구축 및 핵심 파라미터 기록
+    - 시뮬레이션 또는 프로토타입 검증 수행
+    - 이상 및 편차 기록
+
+- P11.1.2.4 검증 및 문제 해결
+  - 「구동 및 전달 방식」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료 시까지 추적함.
+    - 테스트/검토 계획 및 통과 기준 수립
+    - 테스트 수행 및 원시 데이터 기록
+    - 문제 목록 및 개선 조치 출력
+
+- P11.1.2.5 문서 출력 및 하위 전달
+  - 「구동 및 전달 방식」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료함.
+    - 템플릿에 따라 문서 작성 및 원시 데이터 인용
+    - 내부 검토 및 버전 관리 완료
+    - 게시 및 하위 의존 부서에 통보

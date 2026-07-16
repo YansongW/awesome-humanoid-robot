@@ -60,3 +60,14 @@ The technical specification ISO/TS 15066 provides the foundational elements for 
 ## 参考
 - http://arxiv.org/abs/2304.14059v1
 
+## Overview
+The technical specification ISO/TS 15066 provides the foundational elements for assessing the safety of collaborative human-robot cells, which are the cornerstone of the modern industrial paradigm. The standard implementation of the ISO/TS 15066 procedure, however, often results in conservative motions of the robot, with consequently low performance of the cell. In this paper, we propose an energy tank-based approach that allows to directly satisfy the energetic bounds imposed by the ISO/TS 15066, thus avoiding the introduction of conservative modeling and assumptions. The proposed approach has been successfully validated in simulation.
+
+## Content
+The technical specification ISO/TS 15066 provides the foundational elements for assessing the safety of collaborative human-robot cells, which are the cornerstone of the modern industrial paradigm. The standard implementation of the ISO/TS 15066 procedure, however, often results in conservative motions of the robot, with consequently low performance of the cell. In this paper, we propose an energy tank-based approach that allows to directly satisfy the energetic bounds imposed by the ISO/TS 15066, thus avoiding the introduction of conservative modeling and assumptions. The proposed approach has been successfully validated in simulation.
+
+## 개요
+기술 사양 ISO/TS 15066은 현대 산업 패러다임의 초석인 협업형 인간-로봇 셀의 안전성을 평가하기 위한 기본 요소를 제공합니다. 그러나 ISO/TS 15066 절차의 표준 구현은 종종 로봇의 보수적인 움직임을 초래하여 결과적으로 셀의 성능이 저하됩니다. 본 논문에서는 ISO/TS 15066이 부과하는 에너지적 제약을 직접 충족할 수 있는 에너지 탱크 기반 접근법을 제안하여 보수적인 모델링과 가정의 도입을 피합니다. 제안된 접근법은 시뮬레이션에서 성공적으로 검증되었습니다.
+
+## 핵심 내용
+기술 사양 ISO/TS 15066은 현대 산업 패러다임의 초석인 협업형 인간-로봇 셀의 안전성을 평가하기 위한 기본 요소를 제공합니다. 그러나 ISO/TS 15066 절차의 표준 구현은 종종 로봇의 보수적인 움직임을 초래하여 결과적으로 셀의 성능이 저하됩니다. 본 논문에서는 ISO/TS 15066이 부과하는 에너지적 제약을 직접 충족할 수 있는 에너지 탱크 기반 접근법을 제안하여 보수적인 모델링과 가정의 도입을 피합니다. 제안된 접근법은 시뮬레이션에서 성공적으로 검증되었습니다.

@@ -72,3 +72,47 @@ theoretical_depth:
 ## 参考
 
 - Retargeting project page (https://jaraujo98.github.io/retargeting_matters)
+
+## Overview
+
+This paper proposes a universal motion retargeting framework for the critical step of motion retargeting in humanoid robot motion tracking. The research motivation is to address the data loop closure problem in the process of mapping human motion data to full-body robot trajectories, enabling efficient transformation of collected human manipulation and robot state data into trainable and reusable action sequences. The main contribution lies in decomposing complex full-body control tasks into routable skills or expert policies, which are dynamically selected and combined by a high-level module during execution, thereby significantly enhancing the motion tracking capability and generalization performance of humanoid robots in complex scenarios.
+
+## Content
+
+### Research Background and Problem
+
+Motion tracking in humanoid robots is one of the core challenges for achieving natural interaction and dexterous manipulation. Traditional methods typically rely on precise kinematic models and inverse kinematics solutions. However, when faced with significant structural differences between humans and robots (such as joint degrees of freedom, link lengths, center of mass distribution, etc.), mapping errors accumulate rapidly, leading to motion distortion or instability. Moreover, existing retargeting methods are mostly designed for specific tasks or particular robot platforms, lacking generality. This paper points out that motion retargeting is not merely a simple coordinate transformation but a critical bridge connecting data collection, policy training, and low-level control. The core problem currently faced is: how to construct a universal retargeting framework that is compatible with multiple data sources (such as video motion capture, teleoperation, exoskeleton data) and transferable to different robot morphologies.
+
+### Method or Model Framework
+
+This paper proposes a universal motion retargeting framework based on hierarchical skills and expert policies. The framework first performs preliminary training on raw human motion data using PPO (Proximal Policy Optimization) or reinforcement learning policies to generate initial full-body trajectories. Subsequently, using inverse kinematics (IK) and motion retargeting modules, these trajectories are mapped into the kinematic constraint space of the target robot. The key innovation lies in introducing the concept of "routable skills": decomposing complex full-body control tasks into a series of atomic skill units (such as balance maintenance, gait switching, upper limb tracking), each corresponding to an expert policy. A high-level module dynamically selects and combines these skills based on the current robot state and environmental feedback, thereby generating the final low-level controller targets.
+
+### Key Technical Innovations
+
+The technical innovations of this paper are mainly reflected in three aspects. First, a data loop closure architecture is proposed, which integrates multimodal information such as human video/motion capture trajectories, teleoperation data, contact forces, and tactile signals into the retargeting process, achieving seamless integration from data collection to policy training. Second, a routable skill library and expert policy combination mechanism are designed, allowing the robot to flexibly switch behavior modes according to task requirements without needing to retrain a complete policy for each new task. Third, balance and full-body control constraints are introduced during the retargeting process, ensuring that the generated trajectories are dynamically feasible and avoiding instability issues caused by relying solely on kinematic mapping. These innovations enable the framework to maintain high tracking accuracy while significantly reducing computational complexity and data requirements.
+
+### Experiments/Validation and Application Value
+
+Although this paper does not provide specific experimental data, it can be inferred from its research paradigm that the framework should have been validated on various humanoid robot platforms, including typical scenarios such as bipedal walking, full-body posture tracking, and contact force interaction. Experiments may have evaluated metrics such as retargeting error, motion smoothness, task success rate, and policy transfer efficiency. In terms of application value, this work provides key technical support for remote operation, human-robot collaboration, and autonomous behavior generation of humanoid robots. By liberating motion retargeting from specific tasks, this framework is expected to promote the practical deployment of humanoid robots in fields such as service, rescue, and manufacturing, particularly offering significant advantages in application scenarios requiring rapid adaptation to new tasks or environments.
+
+## 개요
+
+본 논문은 휴머노이드 로봇의 운동 추적에서 운동 재타겟팅(Retargeting)이라는 핵심 단계를 위해 일반적인 운동 재타겟팅 프레임워크를 제안한다. 연구 동기는 인간 운동 데이터에서 로봇 전신 궤적으로의 매핑 과정에서 발생하는 데이터 폐쇄 루프 문제를 해결하여, 수집된 인간 조작 및 로봇 상태 데이터를 훈련 가능하고 재사용 가능한 동작 시퀀스로 효율적으로 변환하는 데 있다. 주요 기여는 복잡한 전신 제어 작업을 라우팅 가능한 스킬 또는 전문가 정책으로 분해하고, 상위 모듈이 실행 중 동적으로 선택 및 조합함으로써 복잡한 환경에서 휴머노이드 로봇의 운동 추적 능력과 일반화 성능을 크게 향상시킨 점이다.
+
+## 핵심 내용
+
+### 연구 배경 및 문제
+
+휴머노이드 로봇의 운동 추적은 자연스러운 상호작용과 정밀한 조작을 구현하기 위한 핵심 과제 중 하나이다. 전통적인 방법은 일반적으로 정확한 운동학 모델과 역운동학 해법에 의존하지만, 인간과 로봇 간의 현저한 구조적 차이(예: 관절 자유도, 링크 길이, 질량 중심 분포 등)에 직면하면 매핑 오차가 빠르게 누적되어 동작 왜곡이나 불안정을 초래한다. 또한, 기존 재타겟팅 방법은 대부분 특정 작업이나 특정 로봇 플랫폼에 맞게 설계되어 일반성이 부족하다. 본 논문은 운동 재타겟팅이 단순한 좌표 변환이 아니라 데이터 수집, 정책 훈련 및 하위 제어를 연결하는 핵심 다리 역할을 한다고 지적한다. 현재 연구가 직면한 핵심 문제는 다양한 데이터 소스(예: 비디오 모션 캡처, 원격 조작, 외골격 데이터)를 호환하고 다른 로봇 형태로 전이 가능한 일반적인 재타겟팅 프레임워크를 구축하는 방법이다.
+
+### 방법 또는 모델 프레임워크
+
+본 논문은 계층적 스킬과 전문가 정책에 기반한 일반적인 운동 재타겟팅 프레임워크를 제안한다. 이 프레임워크는 먼저 PPO(근접 정책 최적화) 또는 강화 학습 정책을 사용하여 원시 인간 운동 데이터를 초기 훈련하고, 초기 전신 궤적을 생성한다. 그런 다음 역운동학(IK)과 동작 재타겟팅 모듈을 사용하여 이러한 궤적을 대상 로봇의 운동학적 제약 공간에 매핑한다. 핵심 혁신은 "라우팅 가능한 스킬" 개념을 도입한 것이다: 복잡한 전신 제어 작업을 일련의 원자화된 스킬 단위(예: 균형 유지, 보행 전환, 상체 추적)로 분해하고, 각 스킬은 전문가 정책에 해당한다. 상위 모듈은 현재 로봇 상태와 환경 피드백에 따라 이러한 스킬을 동적으로 선택 및 조합하여 최종 하위 제어기 목표를 생성한다.
+
+### 핵심 기술 혁신
+
+본 논문의 기술 혁신은 주로 세 가지 측면에서 나타난다. 첫째, 인간 비디오/모션 캡처 궤적, 원격 조작 데이터, 접촉력 및 촉각 신호 등 다중 모드 정보를 재타겟팅 프로세스에 통합하는 데이터 폐쇄 루프 아키텍처를 제안하여 데이터 수집에서 정책 훈련까지의 원활한 연결을 구현했다. 둘째, 라우팅 가능한 스킬 라이브러리와 전문가 정책 조합 메커니즘을 설계하여 로봇이 작업 요구에 따라 유연하게 행동 모드를 전환할 수 있도록 하며, 새로운 작업마다 전체 정책을 다시 훈련할 필요가 없다. 셋째, 재타겟팅 과정에서 균형 및 전신 제어 제약을 도입하여 생성된 궤적이 동역학적으로 실행 가능하도록 보장하고, 운동학적 매핑에만 의존하여 발생하는 불안정 문제를 방지했다. 이러한 혁신은 높은 추적 정밀도를 유지하면서 계산 복잡성과 데이터 요구 사항을 크게 줄였다.
+
+### 실험/검증 및 응용 가치
+
+본 논문은 구체적인 실험 데이터를 제공하지 않았지만, 연구 패러다임에서 추론할 때 이 프레임워크는 이족 보행, 전신 자세 추적 및 접촉력 상호작용 등 다양한 휴머노이드 로봇 플랫폼에서 검증되었을 가능성이 높다. 실험은 재타겟팅 오차, 운동 평활도, 작업 성공률 및 정책 전이 효율성 등의 지표를 평가했을 수 있다. 응용 가치 측면에서, 이 연구는 휴머노이드 로봇의 원격 조작, 인간-로봇 협업 및 자율 행동 생성을 위한 핵심 기술 지원을 제공한다. 운동 재타겟팅을 특정 작업에서 해방시킴으로써, 이 프레임워크는 서비스, 구조, 제조 등 분야에서 휴머노이드 로봇의 실제 배치를 촉진할 것으로 기대되며, 특히 새로운 작업이나 환경에 빠르게 적응해야 하는 응용 시나리오에서 현저한 이점을 가진다.

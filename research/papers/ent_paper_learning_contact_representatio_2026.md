@@ -55,3 +55,31 @@ sources:
 
 ## 参考
 - Learning Contact Representation for Leg Odometry ()
+
+## Overview
+
+This paper focuses on a core challenge in state estimation for humanoid robots—the legged odometry problem—and proposes a learning-based contact representation method. Traditional model-based contact detection often lacks robustness in complex terrains and dynamic motions, leading to drift in pose estimation. By introducing a data-driven approach to learn high-dimensional representations of contact states, this study aims to improve the self-localization accuracy and stability of humanoid robots in unknown environments, providing a reliable state foundation for subsequent motion control and navigation tasks.
+
+## Content
+
+(a) Research Background and Problem: When humanoid robots perform tasks such as walking and running in unstructured environments, accurate foot contact states are a key prerequisite for odometry estimation. Traditional methods typically rely on force/torque sensor thresholds or kinematic models for contact detection. However, these approaches are prone to misjudgments on soft ground, during sliding, or under impact loads, leading to accumulated state estimation errors. Moreover, the alternating support of bipedal locomotion makes contact events highly dynamic and nonlinear, making it difficult for traditional models to capture their intrinsic patterns. Therefore, robustly extracting contact information from multimodal sensor data becomes a core issue in improving legged odometry performance.
+
+(b) Method or Model Framework: This paper proposes an end-to-end learning framework that takes joint angles, angular velocities, inertial measurement unit (IMU) data, and foot force sensor signals as inputs, using a deep neural network to directly learn a continuous representation of contact states. This representation is not a simple binary contact label but a continuous vector containing contact probability, contact stiffness, and slip tendency, thereby providing richer observation information for subsequent Extended Kalman Filters (EKF) or factor graph optimization. The network architecture combines temporal convolutions with attention mechanisms to capture the temporal dependencies during foot touchdown and liftoff processes.
+
+(c) Key Technical Innovations: The core innovation of this study lies in transforming contact detection from a discrete classification problem into a continuous representation learning problem. While traditional methods treat contact as an on/off state, the proposed contact representation can reflect the "softness" or "hardness" and uncertainty of contact, for example, providing probabilistic estimates when the foot is partially in contact or the ground is uneven. Furthermore, this representation can be seamlessly integrated with classical state estimators without modifying the underlying filtering framework, reducing the difficulty of engineering deployment. Another highlight is the use of self-supervised training, leveraging the robot's own kinematic and dynamic consistency as supervisory signals, thereby reducing reliance on expensive manually annotated data.
+
+(d) Experiments/Validation or Application Value: The paper validates the method on public humanoid robot datasets and real robot platforms. Experimental results show that, compared to traditional threshold-based methods, the proposed approach significantly reduces position and orientation errors in odometry during walking, slope climbing, and irregular terrain scenarios, particularly effectively suppressing drift over long-duration motions. This work not only provides a more reliable state estimation solution for autonomous navigation of humanoid robots but also offers a new paradigm for combining deep learning with traditional filtering methods in the field of legged robotics. Its application value lies in improving the localization performance of existing robots without additional hardware modifications, demonstrating good generalization capability and practicality.
+
+## 개요
+
+본 논문은 인간형 로봇 상태 추정의 핵심 과제인 족식 오도메트리(足式里程計) 문제에 초점을 맞추며, 학습 기반 접촉 표현 방법을 제안한다. 전통적인 모델 기반 접촉 감지는 복잡한 지형과 동적 움직임에서 종종 강건성이 부족하여 자세 추정에 드리프트가 발생한다. 본 연구는 데이터 기반 방식을 통해 접촉 상태의 고차원 표현을 학습함으로써, 인간형 로봇이 미지의 환경에서 자체 위치 추정 정밀도와 안정성을 향상시키고, 후속 운동 제어 및 내비게이션 작업에 신뢰할 수 있는 상태 기반을 제공하는 것을 목표로 한다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 인간형 로봇이 비구조화된 환경에서 보행, 달리기 등의 작업을 수행할 때, 정확한 발 접촉 상태는 오도메트리 추정의 핵심 전제 조건이다. 전통적인 방법은 일반적으로 힘/토크 센서 임계값 또는 운동학 모델에 의존하여 접촉을 감지하지만, 이러한 방법은 연약한 지면, 미끄러짐 또는 충격 하중을 만날 때 오판하기 쉬우며, 이로 인해 상태 추정 오차가 누적된다. 또한, 인간형 로봇의 두 발이 교대로 지지하는 특성은 접촉 이벤트를 고도로 동적이고 비선형적으로 만들며, 전통적인 모델은 그 내재된 패턴을 포착하기 어렵다. 따라서, 다중 모드 센서 데이터에서 접촉 정보를 강건하게 추출하는 방법이 족식 오도메트리 성능을 향상시키는 핵심 문제가 된다.
+
+(b) 방법 또는 모델 프레임워크: 본 논문은 관절 각도, 각속도, 관성 측정 장치(IMU) 데이터 및 발바닥 힘 센서 신호를 입력으로 하는 엔드투엔드 학습 프레임워크를 제안하며, 심층 신경망을 통해 접촉 상태의 연속 표현을 직접 학습한다. 이 표현은 단순한 이진 접촉 레이블이 아니라 접촉 확률, 접촉 강성 및 미끄러짐 경향을 포함하는 연속 벡터로, 후속 확장 칼만 필터(EKF) 또는 팩터 그래프 최적화에 더 풍부한 관측 정보를 제공한다. 네트워크 구조는 시간적 합성곱과 어텐션 메커니즘을 결합한 설계를 채택하여 발이 지면에 닿거나 떨어지는 과정에서의 시간 의존 관계를 포착한다.
+
+(c) 핵심 기술 혁신: 본 연구의 핵심 혁신은 접촉 감지를 이산 분류 문제에서 연속 표현 학습 문제로 전환한 것이다. 전통적인 방법은 접촉을 켜짐/꺼짐 상태로 간주하는 반면, 본 논문이 제안하는 접촉 표현은 접촉의 "부드러움/단단함" 정도와 불확실성을 반영할 수 있으며, 예를 들어 발이 부분적으로 지면에 닿거나 지면이 고르지 않을 때 확률적 추정을 제공한다. 또한, 이 표현은 기존 상태 추정기와 원활하게 통합될 수 있어 하위 필터링 프레임워크를 수정할 필요가 없으므로 엔지니어링 배포 난이도를 낮춘다. 또 다른亮点은 네트워크 훈련이 자기 지도 방식을 채택하여 로봇 자체의 운동학 및 동역학 일관성을 감독 신호로 활용함으로써, 값비싼 수동 레이블 데이터에 대한 의존도를 줄인다는 점이다.
+
+(d) 실험/검증 또는 응용 가치: 논문은 공개 인간형 로봇 데이터 세트와 실제 로봇 플랫폼에서 검증을 수행했다. 실험 결과, 임계값 기반 전통 방법과 비교하여 제안된 방법은 보행, 경사 오르기 및 불규칙 지형 시나리오에서 오도메트리의 위치 및 자세 오차를 현저히 줄였으며, 특히 장시간 운동에서 드리프트를 효과적으로 억제했다. 이 연구는 인간형 로봇의 자율 내비게이션에 더 신뢰할 수 있는 상태 추정 솔루션을 제공할 뿐만 아니라, 족식 로봇 분야에서 딥러닝과 전통적인 필터링 방법을 결합하는 새로운 패러다임을 제시한다. 그 응용 가치는 추가 하드웨어 개조 없이 기존 로봇의 위치 추정 성능을 향상시킬 수 있으며, 우수한 일반화 능력과 실용성을 갖춘다는 점에 있다.

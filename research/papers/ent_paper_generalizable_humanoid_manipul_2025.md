@@ -1,5 +1,4 @@
 ---
-
 $id: ent_paper_generalizable_humanoid_manipul_2025
 $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
@@ -67,3 +66,8 @@ theoretical_depth:
 ## 参考
 - https://humanoid-manipulation.github.io
 
+## Overview
+Universal Humanoid Operation Using 3D Diffusion Policy primarily addresses the data loop: using camera images/multi-view observations, teleoperation/exoskeleton data, depth/point cloud/elevation maps to collect human operations and robot states, then converting them into trainable, reusable executable action commands through ACT/behavior cloning imitation learning, diffusion policy/flow matching, hierarchical skills/expert policies. The key point is to treat action generation as a conditional generation problem, using diffusion or flow matching to sample executable trajectories from multimodal action distributions.
+
+## Content
+Universal Humanoid Operation Using 3D Diffusion Policy primarily addresses the data loop: using camera images/multi-view observations, teleoperation/exoskeleton data, depth/point cloud/elevation maps to collect human operations and robot states, then converting them into trainable, reusable executable action commands through ACT/behavior cloning imitation learning, diffusion policy/flow matching, hierarchical skills/expert policies. The key point is to treat action generation as a conditional generation problem, using diffusion or flow matching to sample executable trajectories from multimodal action distributions.

@@ -59,3 +59,39 @@ sources:
 ## 参考
 
 - Learning Quadrupedal Locomotion over Challenging Terrain ()
+
+## Overview
+
+This study focuses on the motion control problem of quadruped robots in complex terrains, proposing a learning-based motion generation method aimed at enhancing the robot's adaptability and robustness in unstructured environments. Recognized as a high-impact selected paper, its core contribution lies in integrating deep reinforcement learning with terrain perception mechanisms, enabling quadruped robots to autonomously handle challenging scenarios such as rugged terrain, slopes, and obstacles. This provides an important technical foundation and paradigm reference for motion control research in the field of humanoid robots.
+
+## Content
+
+(a) Research Background and Problem  
+Quadruped robots have broad application prospects in scenarios such as industrial inspection, disaster rescue, and military reconnaissance, but their practical deployment still faces severe challenges. Traditional model-based control methods perform well on flat terrain, but their motion stability and adaptability significantly decline when encountering complex terrains like gravel, steep slopes, or slippery surfaces. Although existing learning-based methods can achieve some generalization through simulation training, they often fail in real environments due to insufficient terrain perception or overfitting of policies. Therefore, designing a learning framework that simultaneously balances motion robustness and terrain adaptability has become a core issue in this field.
+
+(b) Method or Model Framework  
+The paper proposes an end-to-end motion control framework based on deep reinforcement learning, with a core architecture comprising three parts: a terrain perception encoder, a policy network, and a value network. The terrain perception encoder processes point cloud data from depth cameras or LiDAR to generate terrain feature vectors. The policy network takes the robot's body state (e.g., joint angles, angular velocities, body posture) and terrain features as inputs, directly outputting target torque or position commands for each joint. The training process employs the Proximal Policy Optimization algorithm and introduces a randomized terrain generator in the simulation environment to cover diverse scenarios from flat ground to extremely rugged terrain.
+
+(c) Key Technical Innovations  
+The innovations of this study are mainly reflected in three aspects. First, an adaptive terrain representation method is proposed, using a learnable encoder to compress high-dimensional terrain observations into low-dimensional latent variables, enabling the policy network to implicitly understand terrain geometry. Second, a curriculum learning-based training strategy is designed, where the robot first learns basic gaits on simple terrain and then gradually increases terrain difficulty, avoiding convergence failures caused by overly difficult tasks in the early training stages. Third, domain randomization techniques are introduced, randomizing physical parameters such as robot mass, friction coefficients, and joint damping in simulation, significantly enhancing the zero-shot generalization ability of the policy when transferred to real robots.
+
+(d) Experiments/Validation or Application Value  
+The paper systematically evaluates the proposed method on various simulated terrains, including gravel piles, stairs, inclined slopes, and random obstacles. Experimental results show that the method significantly outperforms baseline methods based on model predictive control in metrics such as success rate, motion energy consumption, and body stability. Moreover, on extreme terrains not included in training (e.g., snow-covered roads and muddy ground), the robot still maintains a success rate of over 85%, verifying the strong generalization of the policy. This work not only provides an effective solution for autonomous motion control of quadruped robots but also allows its terrain perception and curriculum learning mechanisms to be directly transferred to gait planning for bipedal humanoid robots, holding significant engineering application value.
+
+## 개요
+
+본 연구는 사족 보행 로봇의 복잡한 지형에서의 운동 제어 문제에 초점을 맞추며, 비구조화된 환경에서 로봇의 적응 능력과 강건성을 향상시키기 위한 학습 기반 운동 생성 방법을 제안합니다. 해당 연구는 영향력이 높은 엄선 논문으로 선정되었으며, 핵심 기여는 심층 강화 학습과 지형 인식 메커니즘을 결합하여 사족 보행 로봇이 험준한 도로, 경사면 및 장애물과 같은 도전적인 환경에 자율적으로 대응할 수 있도록 한 점입니다. 이는 휴머노이드 로봇 분야의 운동 제어 연구에 중요한 기술적 기반과 패러다임 참고 자료를 제공합니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제  
+사족 보행 로봇은 산업 순찰, 재난 구조 및 군사 정찰 등 다양한 분야에서 광범위한 응용 가능성을 지니고 있지만, 실제 배치에는 여전히 심각한 도전 과제가 존재합니다. 전통적인 모델 기반 제어 방법은 평탄한 지형에서 우수한 성능을 보이지만, 자갈, 급경사 또는 미끄러운 노면과 같은 복잡한 지형에 직면하면 운동 안정성과 적응성이 현저히 저하됩니다. 기존의 학습 기반 방법은 시뮬레이션 훈련을 통해 일정 수준의 일반화 능력을 얻을 수 있지만, 실제 환경에서는 지형 인식 부족이나 정책 과적합으로 인해 종종 실패합니다. 따라서 운동 강건성과 지형 적응성을 동시에 고려할 수 있는 학습 프레임워크를 설계하는 것이 해당 분야에서 해결해야 할 핵심 문제로 대두되었습니다.
+
+(b) 방법 또는 모델 프레임워크  
+논문은 심층 강화 학습 기반의 종단 간 운동 제어 프레임워크를 제안하며, 핵심 아키텍처는 지형 인식 인코더, 정책 네트워크 및 가치 네트워크의 세 부분으로 구성됩니다. 지형 인식 인코더는 깊이 카메라 또는 라이다의 포인트 클라우드 데이터를 처리하여 지형 특징 벡터를 생성합니다. 정책 네트워크는 로봇의 본체 상태(관절 각도, 각속도, 기체 자세 등)와 지형 특징을 입력으로 받아 각 관절의 목표 토크 또는 위치 명령을 직접 출력합니다. 훈련 과정은 근접 정책 최적화 알고리즘을 사용하며, 시뮬레이션 환경에 무작위 지형 생성기를 도입하여 평탄한 지면부터 극도로 험준한 지형까지 다양한 시나리오를 포함합니다.
+
+(c) 핵심 기술 혁신  
+본 연구의 혁신점은 주로 세 가지 측면에서 나타납니다. 첫째, 적응형 지형 표현 방법을 제안하여 학습 가능한 인코더를 통해 고차원 지형 관측 데이터를 저차원 잠재 변수로 압축함으로써 정책 네트워크가 지형의 기하학적 구조를 암묵적으로 이해할 수 있도록 합니다. 둘째, 커리큘럼 학습 기반의 훈련 전략을 설계하여 로봇이 먼저 단순한 지형에서 기본 보행을 학습한 후 점차 지형 난이도를 높임으로써 훈련 초기에 과도한 작업 난이도로 인한 수렴 실패를 방지합니다. 셋째, 도메인 무작위화 기술을 도입하여 시뮬레이션에서 로봇 질량, 마찰 계수 및 관절 감쇠와 같은 물리적 매개변수를 무작위화함으로써 실제 로봇으로의 정책 전이에 대한 제로샷 일반화 능력을 크게 향상시킵니다.
+
+(d) 실험/검증 또는 응용 가치  
+논문은 다양한 시뮬레이션 지형(자갈 더미, 계단, 경사면 및 무작위 장애물 포함)에서 체계적인 평가를 수행했습니다. 실험 결과, 제안된 방법은 성공률, 운동 에너지 소비 및 기체 안정성 지표에서 모델 예측 제어 기반의 기준 방법보다 현저히 우수한 성능을 보였습니다. 또한 훈련에 포함되지 않은 극한 지형(예: 눈 덮인 노면 및 진흙 지면)에서도 로봇은 85% 이상의 성공률을 유지하여 정책의 강력한 일반화 능력을 입증했습니다. 이 연구는 사족 보행 로봇의 자율 운동 제어를 위한 효과적인 솔루션을 제공할 뿐만 아니라, 지형 인식 및 커리큘럼 학습 메커니즘은 이족 보행 휴머노이드 로봇의 보행 계획에 직접 전이될 수 있어 중요한 공학적 응용 가치를 지닙니다.

@@ -71,4 +71,60 @@ sources:
 ## 参考
 - Wiki extraction
 
+## Overview
+A grasping condition where contact forces can balance any arbitrary external wrench applied to an object without altering the contact configuration.
 
+## Content
+### Definition and Positioning of Force Closure
+Force closure belongs to the **principle** type. Its domain includes: AI models and algorithms. Value chain level: Intelligence layer. It refers to a grasping condition where contact forces can balance any arbitrary external wrench applied to an object without altering the contact configuration. The English term is *Force Closure*. The Korean term is *힘 폐쇄*.
+
+### Mathematical and Theoretical Foundations of Force Closure
+Force closure is built upon relevant mathematical theories and physical laws. Understanding its underlying assumptions, constraints, and derivation process is a prerequisite for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and convergence or stability guarantees.
+In humanoid robots—a high-dimensional, underactuated, and strongly coupled system—force closure typically requires a balance between real-time performance, precision, and robustness.
+
+### Algorithm Steps and Implementation Considerations
+When implementing force closure in practice, it is necessary to define initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Appropriate selection of numerical methods, linear algebra solvers, and parallel computing strategies can significantly improve computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation must be fully considered to ensure reliable algorithm operation on real platforms.
+
+### Typical Applications and Limitations
+Force closure can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, dependence on model accuracy, and online adaptability remain key challenges in practical deployment.
+
+### Related Tags
+- principle
+- chapter_16
+- wiki_gap
+
+### Role in Humanoid Robot Systems
+As one of the key principles in the humanoid robot industry chain, force closure plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall robot performance. Related research and applications are continuously advancing to further improve its reliability, efficiency, and cost-effectiveness in real-world scenarios.
+
+## 개요
+접촉 구성을 변경하지 않는 조건에서, 접촉력이 물체의 임의의 외력 나선을 평형시킬 수 있는 파지 조건.
+
+## 핵심 내용
+### 힘 폐쇄의 정의와 위치
+힘 폐쇄는 **원리** 유형에 속합니다. 관련 분야는 AI 모델 및 알고리즘입니다. 가치 사슬 계층: 지능 계층. 접촉 구성을 변경하지 않는 조건에서, 접촉력이 물체의 임의의 외력 나선을 평형시킬 수 있는 파지 조건. 영문 명칭은 *Force Closure*입니다. 한글 명칭은 *힘 폐쇄*입니다.
+
+### 힘 폐쇄의 수학적 및 원리적 기초
+힘 폐쇄는 관련 수학 이론과 물리 법칙에 기반합니다. 그 전제 가정, 제약 조건 및 유도 과정을 이해하는 것이 해당 방법을 올바르게 적용하기 위한 전제입니다.
+구체적으로는 입력 공간, 출력 공간, 목적 함수 및 수렴성 또는 안정성 보장에 주목해야 합니다.
+인간형 로봇이라는 고차원, 저구동, 강결합 시스템에서 힘 폐쇄는 일반적으로 실시간성, 정밀도 및 강건성 사이에서 균형을 이루어야 합니다.
+
+### 알고리즘 단계 및 구현 요점
+힘 폐쇄를 실제로 구현할 때는 초기화 조건, 반복 규칙, 중단 기준 및 매개변수 최적화 전략을 명확히 해야 합니다.
+수치 방법, 선형대수 해석기 및 병렬 계산 전략을 합리적으로 선택하면 계산 효율성과 안정성을 크게 향상시킬 수 있습니다.
+동시에 모델 오차, 센서 노이즈 및 액추에이터 포화와 같은 공학적 제약을 충분히 고려하여 알고리즘이 실제 플랫폼에서 안정적으로 작동하도록 보장해야 합니다.
+
+### 전형적인 응용 및 한계
+힘 폐쇄는 인간형 로봇의 운동 계획, 제어 최적화, 상태 추정 및 학습 알고리즘 등 여러 단계에 적용될 수 있습니다.
+그러나 계산 복잡성, 모델 정밀도에 대한 의존성 및 온라인 적응 능력은 실제 배치에서 중점적으로 해결해야 할 문제입니다.
+
+### 관련 태그
+- principle
+- chapter_16
+- wiki_gap
+
+### 인간형 로봇 시스템에서의 역할
+인간형 로봇 산업 체인에서 핵심 원리 중 하나로서, 힘 폐쇄는 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.

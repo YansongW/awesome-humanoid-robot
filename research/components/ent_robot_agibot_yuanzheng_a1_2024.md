@@ -74,4 +74,58 @@ sources:
 ## 参考
 - [AgiBot Yuanzheng A1](https://www.agibot.com/)
 
+## Overview
+A domestically produced humanoid robot, utilizing harmonic integrated joints and joint motors with planetary gear reducers.
 
+## Content
+### Definition and Positioning of AgiBot Yuanzheng A1
+AgiBot Yuanzheng A1 belongs to the **robot system** category. Its domains include: design engineering, components. Value chain level: midstream, upstream. A domestically produced humanoid robot, employing harmonic integrated joints and joint motors with planetary gear reducers. Its English name is *AgiBot Yuanzheng A1*. Its Korean name is *AgiBot Yuanzheng A1*.
+
+### Key Dimensions of AgiBot Yuanzheng A1
+Understanding AgiBot Yuanzheng A1 requires a multi-dimensional approach, including its definition, boundary conditions, related entities, and typical application scenarios, to form a systematic understanding.
+This entity serves as a bridge connecting foundational theory and engineering practice within the humanoid robot knowledge graph.
+
+### Practical Significance
+In the context of humanoid robot industrialization, AgiBot Yuanzheng A1 holds reference value for technical research, product development, investment decisions, and ecosystem construction.
+Accurately grasping its connotation and extension helps avoid conceptual confusion and promotes interdisciplinary collaboration.
+
+### Research and Development Directions
+As humanoid robot technology continues to evolve, the related theory and practice of AgiBot Yuanzheng A1 will also be continuously updated, requiring ongoing tracking and review.
+
+### Related Tags
+- agibot
+- harmonic_joint
+- humanoid
+- planetary_gear
+- robot_system
+
+### Role in the Humanoid Robot System
+As one of the key robot systems in the humanoid robot industry chain, AgiBot Yuanzheng A1 plays an important role in system design, performance optimization, and industrial application. It couples with multiple subsystems such as perception, decision-making, execution, energy, structure, and verification, collectively determining the overall machine performance. Related research and applications are continuously advancing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.
+
+## 개요
+국산 휴머노이드 로봇으로, 하모닉 일체형 관절과 유성 감속기가 장착된 관절 모터를 채택했습니다.
+
+## 핵심 내용
+### AgiBot Yuanzheng A1의 정의와 포지셔닝
+AgiBot Yuanzheng A1은 **로봇 시스템** 유형에 속합니다. 관련 분야는 설계 공학, 부품을 포함합니다. 가치 사슬 단계는 중류, 상류입니다. 국산 휴머노이드 로봇으로, 하모닉 일체형 관절과 유성 감속기가 장착된 관절 모터를 사용합니다. 영문 명칭은 *AgiBot Yuanzheng A1*입니다. 한글 명칭은 *AgiBot Yuanzheng A1*입니다.
+
+### AgiBot Yuanzheng A1의 핵심 차원
+AgiBot Yuanzheng A1을 이해하려면 정의, 경계 조건, 관련 개체 및 대표적인 응용 시나리오 등 여러 차원에서 접근하여 체계적인 인식을 형성해야 합니다.
+이 개체는 휴머노이드 로봇 지식 그래프에서 기초 이론과 엔지니어링 실무를 연결하는 가교 역할을 합니다.
+
+### 실천적 의의
+휴머노이드 로봇 산업화의 맥락에서 AgiBot Yuanzheng A1은 기술 연구, 제품 개발, 투자 결정 및 생태계 구축에 참고 가치를 제공합니다.
+그 내포와 외연을 정확히 파악하면 개념 혼동을 방지하고 학제 간 협력을 촉진하는 데 도움이 됩니다.
+
+### 연구 및 발전 방향
+휴머노이드 로봇 기술이 지속적으로 진화함에 따라 AgiBot Yuanzheng A1의 관련 이론과 실무도 계속 업데이트되므로, 지속적인 추적과 검토가 필요합니다.
+
+### 관련 태그
+- agibot
+- harmonic_joint
+- humanoid
+- planetary_gear
+- robot_system
+
+### 휴머노이드 로봇 시스템에서의 역할
+휴머노이드 로봇 산업 체인에서 핵심 로봇 시스템 중 하나로서, AgiBot Yuanzheng A1은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.

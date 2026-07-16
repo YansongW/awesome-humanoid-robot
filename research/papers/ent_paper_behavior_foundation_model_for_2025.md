@@ -63,3 +63,31 @@ theoretical_depth:
 
 ## 参考
 - 人形机器人行为基础模型 project page (https://bfm4humanoid.github.io)
+
+## Overview
+
+This paper proposes a Behavior Foundation Model (BFM) for humanoid robots, aiming to address the data closed-loop problem in robot skill learning. The main contribution of this research lies in constructing a complete framework from data collection to policy deployment. By integrating multi-source data such as proprioceptive states, teleoperation, exoskeletons, and simulation interactions, and leveraging generative methods like teacher-student knowledge distillation and diffusion policies, traditional whole-body controllers (WBC/MPC) are transformed into trainable and reusable trajectory and action sequences. This work provides a unified model-based solution for tasks such as balance, locomotion, and motion tracking of humanoid robots in complex dynamic environments.
+
+## Content
+
+Due to their high degrees of freedom and complex dynamic characteristics, humanoid robots have long faced two core challenges: first, how to efficiently acquire high-quality motion data covering diverse scenarios, and second, how to effectively combine traditional model-based control methods (such as whole-body controllers WBC and model predictive control MPC) with data-driven learning paradigms. Existing methods often rely on handcrafted control laws or large-scale simulation training, but struggle to achieve generalization and real-time deployment in the real world. This paper specifically addresses the broken closed-loop of "data acquisition - model training - actual deployment," aiming to construct a behavior foundation model capable of uniformly handling multiple motor skills.
+
+At the methodological framework level, this paper proposes a phased data processing and policy learning pipeline. First, mapping data between human operation intentions and robot states is collected through three approaches: recording proprioceptive states and joint sequences, teleoperation/exoskeleton systems, and simulation interactions. Subsequently, using a teacher-student knowledge transfer architecture, the teacher policy is trained with privileged information (such as complete states and future trajectories) to master optimal whole-body motion planning capabilities. Then, through diffusion policies or flow matching techniques, the knowledge of the teacher policy is distilled into a student policy that relies only on observable information during deployment (such as local sensor data). This process transforms traditional WBC/MPC outputs into end-to-end trainable whole-body trajectories and low-level controller targets.
+
+Key technological innovations are reflected in three aspects. First, the construction of a data closed-loop breaks down barriers between simulation and real environments, making the transfer from human demonstrations to autonomous robot execution smoother. Second, the teacher-student distillation strategy effectively addresses the problem of incomplete information during deployment, allowing the student policy to replicate teacher-level control performance without relying on global states. Third, the introduction of generative models such as diffusion policies and flow matching makes action sequence generation more diverse and robust, capable of handling uncertainties in motion tracking. Together, these technologies form a scalable behavior foundation model framework.
+
+In terms of experimental validation and application value, although the paper does not disclose specific numerical results, it can be inferred from its technical approach that the model has significant advantages in core tasks such as balance, locomotion, and motion tracking. By converting the outputs of whole-body controllers into trainable sequences, BFM can adapt to different humanoid robot platforms and support continuous skill learning from static balance to dynamic walking. Furthermore, the modular design of this framework makes it easy to integrate into existing robot software stacks, providing foundational model-level support for the autonomous behavior generation of future humanoid robots in scenarios such as service, industry, and exploration.
+
+## 개요
+
+본 논문은 인간형 로봇을 위한 행동 기반 모델(Behavior Foundation Model, BFM)을 제안하며, 로봇 스킬 학습에서의 데이터 폐쇄 루프 문제를 해결하는 것을 목표로 한다. 주요 기여는 데이터 수집부터 정책 배포까지의 완전한 프레임워크를 구축한 데 있다. 자체 상태, 원격 조작, 외골격 및 시뮬레이션 상호작용 등 다중 소스 데이터를 통합하고, 교사-학생 지식 증류 및 확산 정책과 같은 생성적 방법을 활용하여 기존의 전신 제어기(WBC/MPC)를 훈련 가능하고 재사용 가능한 궤적 및 동작 시퀀스로 변환한다. 이 연구는 복잡한 동적 환경에서 인간형 로봇의 균형, 보행 및 운동 추적과 같은 작업에 통합된 모델 기반 솔루션을 제공한다.
+
+## 핵심 내용
+
+인간형 로봇은 높은 자유도와 복잡한 동역학 특성으로 인해 오랫동안 두 가지 핵심 과제에 직면해 왔다. 첫째는 다양한 시나리오를 포괄하는 고품질 운동 데이터를 효율적으로 획득하는 방법이고, 둘째는 기존의 모델 기반 제어 방법(예: 전신 제어기 WBC 및 모델 예측 제어 MPC)을 데이터 기반 학습 패러다임과 효과적으로 결합하는 방법이다. 기존 방법은 수동으로 설계된 제어 법칙이나 대규모 시뮬레이션 훈련에 의존하는 경우가 많지만, 실제 세계에서의 일반화와 실시간 배포는 어렵다. 본 논문은 이러한 '데이터 획득-모델 훈련-실제 배포'의 폐쇄 루프 단절 문제를 해결하기 위해, 여러 운동 스킬을 통합적으로 처리할 수 있는 행동 기반 모델을 구축하는 데 초점을 맞춘다.
+
+방법론 프레임워크 측면에서, 본 논문은 단계별 데이터 처리 및 정책 학습 파이프라인을 제안한다. 먼저, 자체 상태 및 관절 시퀀스 기록, 원격 조작/외골격 시스템, 시뮬레이션 상호작용의 세 가지 경로를 통해 인간의 조작 의도와 로봇 상태 간의 매핑 데이터를 수집한다. 그 다음, 교사-학생 지식 전이 아키텍처를 활용하여 특권 정보(예: 완전한 상태, 미래 궤적)로 교사 정책을 훈련시켜 최적의 전신 운동 계획 능력을 습득하게 한다. 이후 확산 정책 또는 흐름 매칭 기술을 통해 교사 정책의 지식을 배포 시 관찰 가능한 정보(예: 로컬 센서 데이터)에만 의존하는 학생 정책으로 증류한다. 이 과정은 기존의 WBC/MPC 출력을 종단 간 훈련 가능한 전신 궤적 및 하위 수준 제어기 목표로 변환한다.
+
+핵심 기술 혁신은 세 가지 측면에서 나타난다. 첫째, 데이터 폐쇄 루프 구축은 시뮬레이션과 실제 환경 간의 장벽을 허물어, 인간 시연에서 로봇 자율 실행으로의 전환을 더욱 원활하게 만든다. 둘째, 교사-학생 증류 전략은 배포 시 정보 불완전 문제를 효과적으로 해결하여, 학생 정책이 전역 상태에 의존하지 않고도 교사 수준의 제어 성능을 재현할 수 있게 한다. 셋째, 확산 정책 및 흐름 매칭과 같은 생성적 모델을 도입하여 동작 시퀀스 생성의 다양성과 강건성을 높여, 운동 추적에서의 불확실성에 대응할 수 있다. 이러한 기술들은 확장 가능한 행동 기반 모델 프레임워크를 함께 구성한다.
+
+실험 검증 및 응용 가치 측면에서, 논문이 구체적인 수치 결과를 공개하지는 않았지만, 기술 경로를 통해 균형, 보행 및 운동 추적과 같은 핵심 작업에서 이 모델이 상당한 이점을 가질 것으로 추론할 수 있다. 전신 제어기의 출력을 훈련 가능한 시퀀스로 변환함으로써, BFM은 다양한 형태의 인간형 로봇 플랫폼에 적응할 수 있으며, 정적 균형에서 동적 보행까지의 연속적인 스킬 학습을 지원한다. 또한, 이 프레임워크의 모듈식 설계는 기존 로봇 소프트웨어 스택에 쉽게 통합될 수 있어, 향후 인간형 로봇이 서비스, 산업 및 탐사와 같은 시나리오에서 자율 행동을 생성하는 데 기반 모델 수준의 지원을 제공한다.

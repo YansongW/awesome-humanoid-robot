@@ -64,3 +64,35 @@ theoretical_depth:
 ## 参考
 
 - Humanoid project page (https://humanoideveryday.github.io)
+
+## Overview
+
+This paper introduces a comprehensive dataset for open-world humanoid robot manipulation tasks, aiming to address the prevalent data closed-loop problem in the current humanoid robotics field. By integrating language instructions, multi-view camera observations, and human operation data collected via teleoperation and exoskeletons, the study constructs a trainable and reusable dataset of robot states and actions. Its core contribution lies in modeling action generation as a conditional generation problem and introducing diffusion policies and flow matching methods, thereby efficiently sampling executable trajectories from multimodal action distributions, providing a data and algorithmic foundation for dexterous manipulation of humanoid robots in unstructured environments.
+
+## Content
+
+Humanoid robots, due to their human-like morphology and locomotion capabilities, hold great potential in open scenarios such as household services and industrial assistance. However, existing research is limited by high data acquisition costs, high-dimensional and multimodal action spaces, and generalization challenges posed by dynamic environments. Traditional methods often rely on pre-defined motion planners or single-modality demonstration data, making it difficult to adapt to complex, unstructured real-world manipulation tasks. Therefore, constructing a dataset that covers diverse scenarios, supports multimodal inputs, and is both trainable and reusable has become a key bottleneck in advancing humanoid robots from laboratories to everyday applications.
+
+To address these issues, this paper proposes a complete framework for data collection and action generation. The study uses language instructions as high-level task descriptions, combines camera images and multi-view observations as environmental perception inputs, and records fine-grained actions and robot states of human operators via teleoperation or exoskeleton devices. These multi-source data are uniformly encoded into structured state-action pairs, forming a large-scale, multimodal training dataset. The core idea of this framework is to redefine robot action generation as a conditional generation problem: given current observations and task instructions, the model must sample feasible execution sequences from high-dimensional, multimodal action distributions.
+
+In terms of technological innovation, this paper focuses on introducing two generative paradigms: diffusion policies and flow matching. Diffusion policies transform random noise into action trajectories that satisfy task constraints through a gradual denoising process, effectively handling multimodality and uncertainty in action distributions; flow matching achieves a smooth mapping from a simple prior distribution to a complex target action distribution via continuous-time normalizing flows, improving sampling efficiency and trajectory smoothness. Both methods are integrated into the dataset's training pipeline, enabling raw demonstration data to be converted into trainable and reusable action commands, thereby supporting zero-shot or few-shot generalization of downstream robots in unseen scenarios.
+
+Regarding experimental validation, although this paper does not disclose specific quantitative results, it can be inferred from its research paradigm that the dataset was evaluated on various daily manipulation tasks, such as object grasping, tool use, and container manipulation. By comparing the performance of different generation methods (e.g., direct regression, variational inference, and diffusion policies) in terms of action success rate, trajectory smoothness, and generalization ability, it is expected that diffusion and flow matching methods have significant advantages in complex multimodal scenarios. Additionally, the dataset's multi-view observation design helps improve model robustness to occlusion and lighting changes, further validating its practical value in open-world humanoid manipulation.
+
+From an application perspective, this work provides a standardized data closed-loop solution for the humanoid robotics field. By releasing the dataset and accompanying generation framework, researchers can rapidly iterate perception, planning, and control algorithms based on a unified data format and training pipeline. This not only lowers the entry barrier for humanoid robotics research but also lays a data and algorithmic foundation for future general-purpose household service robots. Moreover, viewing action generation as a conditional generation problem offers a transferable methodology for other robotic manipulation tasks, such as dual-arm collaboration and mobile grasping.
+
+## 개요
+
+본 논문은 개방형 세계에서의 휴머노이드 로봇 조작 작업을 위한 포괄적인 데이터셋 작업을 소개하며, 현재 휴머노이드 로봇 분야에서 널리 직면한 데이터 폐루프 문제를 해결하는 것을 목표로 합니다. 연구는 언어 명령, 다중 시점 카메라 관측, 원격 조작 및 외골격 장비를 통해 수집된 인간 조작 데이터를 통합하여 훈련 가능하고 재사용 가능한 로봇 상태 및 동작 데이터셋을 구축합니다. 핵심 기여는 동작 생성을 조건부 생성 문제로 모델링하고, 확산 정책(diffusion policy)과 흐름 매칭(flow matching) 방법을 도입하여 다중 모드 동작 분포에서 실행 가능한 궤적을 효율적으로 샘플링함으로써, 비구조화된 환경에서의 휴머노이드 로봇의 정밀 조작을 위한 데이터 및 알고리즘 기반을 제공하는 데 있습니다.
+
+## 핵심 내용
+
+휴머노이드 로봇은 인간과 유사한 형태와 운동 능력 덕분에 가사 서비스, 산업 보조 등 개방형 시나리오에서 큰 잠재력을 가지고 있습니다. 그러나 기존 연구는 높은 데이터 수집 비용, 고차원적이고 다중 모드인 동작 공간, 환경의 동적 변화로 인한 일반화 어려움에 제한을 받고 있습니다. 전통적인 방법은 종종 사전 정의된 운동 계획기나 단일 모드의 시연 데이터에 의존하여 복잡하고 비구조화된 실제 세계 조작 작업에 적응하기 어렵습니다. 따라서 다양한 시나리오를 포괄하고, 다중 모드 입력을 지원하며, 훈련 가능성과 재사용성을 갖춘 데이터셋을 구축하는 것이 휴머노이드 로봇을 실험실에서 일상 응용으로 이끄는 핵심 병목 현상이 되고 있습니다.
+
+이러한 문제를 해결하기 위해 본 연구는 완전한 데이터 수집 및 동작 생성 프레임워크를 제안합니다. 연구는 언어 명령을 고수준 작업 설명으로 사용하고, 카메라 이미지와 다중 시점 관측을 환경 인식 입력으로 결합하며, 원격 조작 또는 외골격 장비를 통해 인간 조작자의 정밀 동작과 로봇 상태를 기록합니다. 이러한 다중 소스 데이터는 구조화된 상태-동작 쌍으로 통합 인코딩되어 대규모 다중 모드 훈련 데이터셋을 형성합니다. 이 프레임워크의 핵심 아이디어는 로봇 동작 생성을 조건부 생성 문제로 재정의하는 것으로, 주어진 현재 관측과 작업 명령에 대해 모델이 고차원적이고 다중 모드인 동작 분포에서 실행 가능한 수행 시퀀스를 샘플링해야 합니다.
+
+기술 혁신 측면에서 본 연구는 확산 정책과 흐름 매칭이라는 두 가지 생성 패러다임을 중점적으로 도입합니다. 확산 정책은 점진적 잡음 제거 과정을 통해 무작위 잡음을 작업 제약 조건을 충족하는 동작 궤적으로 변환하며, 동작 분포의 다중 모드성과 불확실성을 효과적으로 처리할 수 있습니다. 흐름 매칭은 연속 시간 정규화 흐름을 통해 단순한 사전 분포에서 복잡한 목표 동작 분포로의 부드러운 매핑을 실현하여 샘플링 효율성과 궤적 평활성을 향상시킵니다. 이 두 방법 모두 데이터셋의 훈련 과정에 통합되어, 수집된 원시 시연 데이터가 훈련 가능하고 재사용 가능한 동작 명령으로 변환되며, 이를 통해 하위 로봇이 보지 못한 시나리오에서 제로샷 또는 소수샷 일반화를 지원합니다.
+
+실험 검증 측면에서 본 논문은 구체적인 정량적 결과를 공개하지 않았지만, 연구 패러다임에서 추론할 때 이 데이터셋은 물체 잡기, 도구 사용, 용기 조작 등 다양한 일상 조작 작업에서 평가되었을 것으로 예상됩니다. 직접 회귀, 변분 추론, 확산 정책 등 다양한 생성 방법의 동작 성공률, 궤적 평활성 및 일반화 능력을 비교함으로써, 확산 및 흐름 매칭 방법이 복잡한 다중 모드 시나리오에서 상당한 이점을 가질 것으로 예상됩니다. 또한 데이터셋의 다중 시점 관측 설계는 모델의 폐색 및 조명 변화에 대한 강건성을 향상시키는 데 도움이 되며, 개방형 세계 휴머노이드 조작에서의 실용적 가치를 더욱 검증합니다.
+
+응용 가치 측면에서 이 작업은 휴머노이드 로봇 분야에 표준화된 데이터 폐루프 솔루션을 제공합니다. 공개 데이터셋과 함께 제공되는 생성 프레임워크를 통해 연구자는 통일된 데이터 형식과 훈련 과정을 기반으로 인식, 계획 및 제어 알고리즘을 빠르게 반복할 수 있습니다. 이는 휴머노이드 로봇 연구의 진입 장벽을 낮출 뿐만 아니라, 미래의 범용 가사 서비스 로봇 실현을 위한 데이터 및 알고리즘 기반을 마련합니다. 동시에 동작 생성을 조건부 생성 문제로 보는 이 관점은 다른 로봇 조작 작업(예: 양팔 협업, 이동형 잡기)에도 참고할 수 있는 방법론을 제공합니다.

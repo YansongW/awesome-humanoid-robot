@@ -58,3 +58,14 @@ In this paper, we propose a novel task, Manipulation Question Answering (MQA), w
 ## 参考
 - http://arxiv.org/abs/2003.04641v4
 
+## Overview
+In this paper, we propose a novel task, Manipulation Question Answering (MQA), where the robot performs manipulation actions to change the environment in order to answer a given question. To solve this problem, a framework consisting of a QA module and a manipulation module is proposed. For the QA module, we adopt the method for the Visual Question Answering (VQA) task. For the manipulation module, a Deep Q Network (DQN) model is designed to generate manipulation actions for the robot to interact with the environment. We consider the situation where the robot continuously manipulating objects inside a bin until the answer to the question is found. Besides, a novel dataset that contains a variety of object models, scenarios and corresponding question-answer pairs is established in a simulation environment. Extensive experiments have been conducted to validate the effectiveness of the proposed framework.
+
+## Content
+In this paper, we propose a novel task, Manipulation Question Answering (MQA), where the robot performs manipulation actions to change the environment in order to answer a given question. To solve this problem, a framework consisting of a QA module and a manipulation module is proposed. For the QA module, we adopt the method for the Visual Question Answering (VQA) task. For the manipulation module, a Deep Q Network (DQN) model is designed to generate manipulation actions for the robot to interact with the environment. We consider the situation where the robot continuously manipulating objects inside a bin until the answer to the question is found. Besides, a novel dataset that contains a variety of object models, scenarios and corresponding question-answer pairs is established in a simulation environment. Extensive experiments have been conducted to validate the effectiveness of the proposed framework.
+
+## 개요
+본 논문에서는 로봇이 주어진 질문에 답하기 위해 환경을 변화시키는 조작 행동을 수행하는 새로운 과제인 조작 질문 응답(MQA)을 제안합니다. 이 문제를 해결하기 위해 QA 모듈과 조작 모듈로 구성된 프레임워크를 제안합니다. QA 모듈의 경우 시각 질문 응답(VQA) 과제의 방법을 채택합니다. 조작 모듈의 경우 로봇이 환경과 상호작용할 수 있도록 조작 행동을 생성하는 Deep Q Network(DQN) 모델을 설계합니다. 로봇이 질문에 대한 답을 찾을 때까지 빈 내부의 물체를 지속적으로 조작하는 상황을 고려합니다. 또한 다양한 물체 모델, 시나리오 및 해당 질문-응답 쌍을 포함하는 새로운 데이터셋을 시뮬레이션 환경에서 구축했습니다. 제안된 프레임워크의 효과를 검증하기 위해 광범위한 실험을 수행했습니다.
+
+## 핵심 내용
+본 논문에서는 로봇이 주어진 질문에 답하기 위해 환경을 변화시키는 조작 행동을 수행하는 새로운 과제인 조작 질문 응답(MQA)을 제안합니다. 이 문제를 해결하기 위해 QA 모듈과 조작 모듈로 구성된 프레임워크를 제안합니다. QA 모듈의 경우 시각 질문 응답(VQA) 과제의 방법을 채택합니다. 조작 모듈의 경우 로봇이 환경과 상호작용할 수 있도록 조작 행동을 생성하는 Deep Q Network(DQN) 모델을 설계합니다. 로봇이 질문에 대한 답을 찾을 때까지 빈 내부의 물체를 지속적으로 조작하는 상황을 고려합니다. 또한 다양한 물체 모델, 시나리오 및 해당 질문-응답 쌍을 포함하는 새로운 데이터셋을 시뮬레이션 환경에서 구축했습니다. 제안된 프레임워크의 효과를 검증하기 위해 광범위한 실험을 수행했습니다.

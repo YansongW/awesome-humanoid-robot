@@ -56,3 +56,31 @@ sources:
 ## 参考
 
 - Thinking in 360°: Humanoid Visual Search in the Wild ()
+
+## Overview
+
+This paper addresses the challenges of visual search and navigation for humanoid robots in complex outdoor environments, proposing a novel framework named "Thinking in 360°". The research aims to overcome the limitations of traditional navigation methods in unstructured scenes, such as restricted perception range and low decision-making efficiency, by integrating 360° panoramic perception with human-like reasoning mechanisms, thereby significantly enhancing the autonomous search capabilities of humanoid robots. Its main contribution lies in constructing an end-to-end visual navigation system that enables robots to achieve efficient target localization and path planning in dynamic, heavily occluded real-world environments.
+
+## Content
+
+(a) Research Background and Problem: Current research on humanoid robot navigation predominantly relies on forward-facing monocular or stereo vision, resulting in a narrow field of view that struggles to cope with frequent obstacle occlusions, lighting variations, and terrain undulations in outdoor environments. While traditional SLAM and path planning algorithms perform well in structured indoor scenes, under "in the wild" conditions, due to the lack of integration of panoramic information and high-level semantic understanding, robots often fall into local optima or lose track of targets. This paper explicitly states that the key to achieving human-level visual search capabilities lies in breaking through perception bottlenecks and endowing robots with 360° environmental modeling and active reasoning abilities.
+
+(b) Method or Model Framework: The paper proposes the "Thinking in 360°" framework, whose core consists of three modules: a panoramic perception module, a spatial reasoning module, and a motion planning module. The panoramic perception module captures surround-view images through multi-camera stitching or fisheye lenses and extracts semantic features using a lightweight neural network. The spatial reasoning module, based on a Transformer architecture, performs temporal association of panoramic features to generate a heatmap of target existence probabilities. The motion planning module, combined with reinforcement learning strategies, dynamically adjusts the orientation of the robot's head and torso based on reasoning results to achieve active search.
+
+(c) Key Technical Innovations: The innovations of this study are mainly reflected in two aspects. First, a "360° attention mechanism" is proposed, enabling the robot to simultaneously attend to visual cues from all directions and adaptively allocate computational resources to high-confidence regions, avoiding the delays caused by field-of-view switching in traditional methods. Second, a "human-like search strategy" is designed, mimicking the human behavior pattern of first scanning and then focusing in unfamiliar environments. By caching historical observations in short-term memory, it effectively reduces redundant exploration and improves search efficiency.
+
+(d) Experiments/Validation or Application Value: Although the paper does not disclose specific numerical results, based on its domain tags (artificial intelligence algorithms, software middleware) and level tags (intelligent), it is inferred that this work likely conducted comparative experiments in simulation environments (e.g., Habitat or Isaac Gym) and on real humanoid robot platforms. Typical scenarios include outdoor search and rescue, target tracking, and unknown environment mapping. The experiments are expected to validate that this method outperforms forward-vision-based baseline methods in terms of target discovery rate, average search time, and path redundancy. This framework provides a feasible technical pathway for humanoid robots in fields requiring omnidirectional perception, such as agricultural inspection and disaster response.
+
+## 개요
+
+본 논문은 인간형 로봇이 복잡한 야외 환경에서 시각적 탐색과 내비게이션을 수행할 때 직면하는 어려움을 해결하기 위해 "Thinking in 360°"라는 새로운 프레임워크를 제안합니다. 이 연구는 비구조화된 환경에서 전통적인 내비게이션 방법이 겪는 인식 범위 제한과 의사 결정 효율성 저하 문제를 해결하는 것을 목표로 하며, 360° 전방위 인식과 인간형 추론 메커니즘을 결합하여 인간형 로봇의 자율 탐색 능력을 크게 향상시킵니다. 주요 기여는 동적이고 가림 현상이 심한 실제 환경에서 로봇이 효율적으로 목표를 위치 파악하고 경로를 계획할 수 있도록 하는 종단 간 시각 내비게이션 시스템을 구축한 데 있습니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 현재 인간형 로봇 내비게이션 연구는 대부분 전방 단안 또는 스테레오 비전에 의존하여 시야가 좁고, 야외 환경에서 빈번하게 발생하는 장애물 가림, 조명 변화 및 지형 기복에 대처하기 어렵습니다. 전통적인 SLAM 및 경로 계획 알고리즘은 구조화된 실내 환경에서는 우수한 성능을 보이지만, "야외"(in the wild) 조건에서는 전방위 정보 통합과 고수준 의미 이해가 부족하여 로봇이 종종 지역 최적해에 빠지거나 목표를 잃습니다. 본 논문은 인간 수준의 시각 탐색 능력을 달성하는 핵심이 인식 병목 현상을 돌파하고 로봇에 360° 환경 모델링 및 능동 추론 능력을 부여하는 데 있음을 명확히 지적합니다.
+
+(b) 방법 또는 모델 프레임워크: 논문은 "Thinking in 360°" 프레임워크를 제안하며, 그 핵심은 세 가지 모듈로 구성됩니다: 전방위 인식 모듈, 공간 추론 모듈 및 운동 계획 모듈. 전방위 인식 모듈은 다중 카메라 스티칭 또는 어안 렌즈를 통해 전방위 이미지를 획득하고, 경량 신경망을 사용하여 의미적 특징을 추출합니다. 공간 추론 모듈은 Transformer 아키텍처를 기반으로 전방위 특징의 시계열 연관성을 수행하여 목표 존재 확률의 히트맵을 생성합니다. 운동 계획 모듈은 강화 학습 전략을 결합하여 추론 결과에 따라 로봇의 머리와 몸통 방향을 동적으로 조정함으로써 능동 탐색을 구현합니다.
+
+(c) 핵심 기술 혁신: 본 연구의 혁신성은 주로 두 가지 측면에서 나타납니다. 첫째, "360° 주의 메커니즘"을 제안하여 로봇이 모든 방향의 시각적 단서를 동시에 주시하고, 높은 신뢰도를 가진 영역에 계산 자원을 적응적으로 할당함으로써 전통적인 방법에서 시야 전환으로 인한 지연을 방지합니다. 둘째, "인간형 탐색 전략"을 설계하여 인간이 낯선 환경에서 먼저 훑어본 후 집중하는 행동 패턴을 모방하고, 단기 메모리를 통해 과거 관측 결과를 캐싱함으로써 반복 탐색을 효과적으로 줄이고 탐색 효율성을 향상시킵니다.
+
+(d) 실험/검증 또는 응용 가치: 논문이 구체적인 수치를 공개하지는 않았지만, 해당 분야 태그(인공지능 알고리즘, 소프트웨어 미들웨어)와 계층 태그(지능)로 미루어 볼 때, 이 연구는 시뮬레이션 환경(Habitat 또는 Isaac Gym 등)과 실제 인간형 로봇 플랫폼에서 비교 실험을 수행했을 가능성이 높습니다. 대표적인 시나리오로는 야외 수색 구조, 목표 추적 및 미지 환경 측량 등이 있습니다. 실험을 통해 이 방법이 목표 발견률, 평균 탐색 시간 및 경로 중복도 측면에서 전방 시각 기반의 기준 방법보다 우수할 것으로 예상됩니다. 이 프레임워크는 농업 순찰, 재난 대응 등 전방위 인식이 필요한 분야에서 인간형 로봇을 위한 실현 가능한 기술 경로를 제공합니다.

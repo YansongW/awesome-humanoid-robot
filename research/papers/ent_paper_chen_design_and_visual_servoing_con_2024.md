@@ -59,3 +59,14 @@ Traditional rigid endoscopes have challenges in flexibly treating tumors located
 ## 参考
 - http://arxiv.org/abs/2402.09679v2
 
+## Overview
+Traditional rigid endoscopes face challenges in flexibly treating tumors located deep in the brain, and their low operability and fixed viewing angles limit their development. This study introduces a novel dual-segment flexible robotic endoscope, MicroNeuro, designed to perform biopsies with dexterous surgical manipulation deep in the brain. Considering the uncertainty of the control model, an image-based visual servoing with online robot Jacobian estimation has been implemented to enhance motion accuracy. Furthermore, the application of model predictive control with constraints significantly bolsters the flexible robot's ability to adaptively track moving objects and resist external interference. Experimental results underscore that the proposed control system enhances motion stability and precision. Phantom testing substantiates its considerable potential for deployment in neurosurgery.
+
+## Content
+Traditional rigid endoscopes face challenges in flexibly treating tumors located deep in the brain, and their low operability and fixed viewing angles limit their development. This study introduces a novel dual-segment flexible robotic endoscope, MicroNeuro, designed to perform biopsies with dexterous surgical manipulation deep in the brain. Considering the uncertainty of the control model, an image-based visual servoing with online robot Jacobian estimation has been implemented to enhance motion accuracy. Furthermore, the application of model predictive control with constraints significantly bolsters the flexible robot's ability to adaptively track moving objects and resist external interference. Experimental results underscore that the proposed control system enhances motion stability and precision. Phantom testing substantiates its considerable potential for deployment in neurosurgery.
+
+## 개요
+전통적인 강성 내시경은 뇌 깊숙이 위치한 종양을 유연하게 치료하는 데 어려움이 있으며, 낮은 조작성과 고정된 시야각이 발전을 제한합니다. 본 연구는 뇌 심부에서 정밀한 수술 조작을 통해 생검을 수행하도록 설계된 새로운 이중 분절 유연 로봇 내시경 MicroNeuro를 소개합니다. 제어 모델의 불확실성을 고려하여 온라인 로봇 야코비안 추정을 통한 이미지 기반 시각 서보잉을 구현하여 움직임 정확도를 향상시켰습니다. 또한, 제약 조건이 있는 모델 예측 제어를 적용함으로써 유연 로봇의 이동 물체 적응 추적 및 외부 간섭 저항 능력을 크게 강화했습니다. 실험 결과는 제안된 제어 시스템이 움직임 안정성과 정밀도를 향상시킴을 입증합니다. 팬텀 테스트는 신경외과에서의 적용 가능성이 상당함을 확인시켜 줍니다.
+
+## 핵심 내용
+전통적인 강성 내시경은 뇌 깊숙이 위치한 종양을 유연하게 치료하는 데 어려움이 있으며, 낮은 조작성과 고정된 시야각이 발전을 제한합니다. 본 연구는 뇌 심부에서 정밀한 수술 조작을 통해 생검을 수행하도록 설계된 새로운 이중 분절 유연 로봇 내시경 MicroNeuro를 소개합니다. 제어 모델의 불확실성을 고려하여 온라인 로봇 야코비안 추정을 통한 이미지 기반 시각 서보잉을 구현하여 움직임 정확도를 향상시켰습니다. 또한, 제약 조건이 있는 모델 예측 제어를 적용함으로써 유연 로봇의 이동 물체 적응 추적 및 외부 간섭 저항 능력을 크게 강화했습니다. 실험 결과는 제안된 제어 시스템이 움직임 안정성과 정밀도를 향상시킴을 입증합니다. 팬텀 테스트는 신경외과에서의 적용 가능성이 상당함을 확인시켜 줍니다.

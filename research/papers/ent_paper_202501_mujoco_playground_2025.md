@@ -59,3 +59,35 @@ MuJoCo Playground以MuJoCo物理引擎为核心，构建了一个模块化的仿
 
 ## 参考
 - 2025.01, MuJoCo Playground project page (https://playground.mujoco.org/)
+
+## Overview
+
+This paper introduces a humanoid robot simulation benchmark published in 2025—MuJoCo Playground. This research aims to provide a standardized and reproducible simulation evaluation platform for increasingly complex humanoid robot motion control and intelligent decision-making algorithms. Its main contribution lies in constructing a benchmark test suite based on the MuJoCo physics engine, encompassing diverse task scenarios and performance metrics, thereby filling the gap in a unified simulation evaluation framework in this field and providing essential infrastructure for algorithm comparison and iteration.
+
+## Content
+
+In recent years, with the rapid advancement of humanoid robot hardware technology, research on core algorithms such as motion control, whole-body coordination, and autonomous navigation has become increasingly active. However, due to the lack of a unified simulation environment and standardized evaluation metrics, results from different studies are difficult to compare directly, severely hindering knowledge accumulation and algorithm transfer within the field. Existing simulation platforms are either designed for specific tasks or lack support for complex terrains and dynamic interaction scenarios, making it difficult to fully reflect the performance of humanoid robots in the real world. Therefore, constructing a simulation benchmark that covers multiple tasks, multiple scenarios, and is easily extensible has become an urgent need.
+
+MuJoCo Playground uses the MuJoCo physics engine as its core to build a modular simulation framework. This framework not only provides high-fidelity physical simulation capabilities but also integrates multiple humanoid robot models (e.g., bipedal, wheeled hybrid) and a rich set of environmental assets. The research team divides benchmark tasks into three categories: basic locomotion (e.g., walking, running, jumping), manipulation skills (e.g., grasping, carrying), and advanced interactions (e.g., climbing stairs, traversing obstacles), each containing multiple difficulty levels. Additionally, the framework supports user-defined tasks and robot models, offering good extensibility.
+
+In terms of technical innovation, this work addresses two key issues: first, the standardized configuration of the simulation environment, including unified robot initial states, sensor noise models, and physical parameter settings, ensuring fair comparisons of different algorithms under the same conditions; second, the design of a multi-dimensional evaluation metric system, covering motion efficiency (e.g., energy consumption, gait symmetry), task completion rate, robustness (e.g., disturbance resistance), and computational cost. These metrics not only reflect the comprehensive performance of algorithms but also provide clear directions for subsequent optimization.
+
+To validate the effectiveness of the benchmark, the research team systematically evaluated various mainstream control algorithms (including methods based on model predictive control, reinforcement learning, and imitation learning) using MuJoCo Playground. Experimental results show significant differences in algorithm performance across various tasks. For example, reinforcement learning methods excel in complex terrain adaptation tasks but lack stability in fine manipulation tasks, while model-based methods have advantages in interpretability and sample efficiency. These comparative results clearly reveal the strengths and limitations of existing algorithms, providing empirical evidence for researchers to select or improve algorithms.
+
+From an application perspective, MuJoCo Playground offers researchers in the humanoid robot field a low-barrier, high-fidelity experimental platform. It can accelerate algorithm prototype validation and iteration while promoting collaboration and result reproducibility among different teams. Furthermore, the openness and extensibility of this benchmark make it a potential standard tool for future humanoid robot competitions, course instruction, and industrial application pre-research, thereby driving the entire field toward more efficient and reliable development.
+
+## 개요
+
+본 논문은 2025년에 발표된 휴머노이드 로봇 시뮬레이션 벤치마크 연구인 MuJoCo Playground를 소개합니다. 이 연구는 점점 더 복잡해지는 휴머노이드 로봇의 운동 제어 및 지능적 의사 결정 알고리즘을 위해 표준화되고 재현 가능한 시뮬레이션 평가 플랫폼을 제공하는 것을 목표로 합니다. 주요 기여는 MuJoCo 물리 엔진을 기반으로 다양한 작업 시나리오와 성능 지표를 포함하는 벤치마크 테스트 세트를 구축하여, 해당 분야의 통합된 시뮬레이션 평가 프레임워크 부재를 해소하고 알고리즘 비교 및 반복을 위한 중요한 인프라를 제공한 점에 있습니다.
+
+## 핵심 내용
+
+최근 휴머노이드 로봇 하드웨어 기술의 급속한 발전에 따라 운동 제어, 전신 협조, 자율 주행 등 핵심 알고리즘 연구가 활발히 진행되고 있습니다. 그러나 통일된 시뮬레이션 환경과 표준화된 평가 지표가 부족하여 서로 다른 연구 간의 결과를 직접 비교하기 어렵고, 이는 분야 내 지식 축적과 알고리즘 전이를 심각하게 제약하고 있습니다. 기존 시뮬레이션 플랫폼은 특정 작업에 맞춰 설계되었거나 복잡한 지형 및 동적 상호작용 시나리오에 대한 지원이 부족하여 휴머노이드 로봇의 실제 세계 성능을 종합적으로 반영하기 어렵습니다. 따라서 다중 작업, 다중 시나리오를 포괄하고 확장이 용이한 시뮬레이션 벤치마크 구축이 시급한 과제로 대두되었습니다.
+
+MuJoCo Playground는 MuJoCo 물리 엔진을 핵심으로 모듈식 시뮬레이션 프레임워크를 구축했습니다. 이 프레임워크는 고충실도 물리 시뮬레이션 기능을 제공할 뿐만 아니라 다양한 휴머노이드 로봇 모델(예: 이족 보행형, 바퀴 혼합형 등)과 풍부한 환경 자산을 통합합니다. 연구팀은 벤치마크 작업을 기본 운동(예: 걷기, 달리기, 점프), 조작 기술(예: 잡기, 운반), 고급 상호작용(예: 계단 오르내리기, 장애물 통과)의 세 가지 주요 범주로 나누었으며, 각 범주는 여러 난이도 수준을 포함합니다. 또한 프레임워크는 사용자 정의 작업 및 로봇 모델을 지원하여 우수한 확장성을 제공합니다.
+
+기술 혁신 측면에서 이 연구는 두 가지 핵심 문제를 해결하는 데 중점을 두었습니다. 첫째, 시뮬레이션 환경의 표준화된 구성으로, 통일된 로봇 초기 상태, 센서 노이즈 모델 및 물리 매개변수 설정을 포함하여 서로 다른 알고리즘이 동일한 조건에서 공정하게 비교되도록 보장합니다. 둘째, 운동 효율성(예: 에너지 소비, 보행 대칭성), 작업 완료율, 강건성(예: 외란 저항 능력) 및 계산 비용을 포괄하는 다차원 평가 지표 시스템을 설계했습니다. 이러한 지표는 알고리즘의 종합적인 성능을 반영할 뿐만 아니라 후속 최적화를 위한 명확한 방향을 제시합니다.
+
+벤치마크의 유효성을 검증하기 위해 연구팀은 MuJoCo Playground를 기반으로 다양한 주류 제어 알고리즘(모델 예측 제어, 강화 학습 및 모방 학습 기반 방법 포함)을 체계적으로 평가했습니다. 실험 결과, 서로 다른 알고리즘은 다양한 작업에서 현저한 차이를 보였습니다. 예를 들어, 강화 학습 방법은 복잡한 지형 적응 작업에서 뛰어난 성능을 보였지만 정밀 조작 작업에서는 안정성이 부족했으며, 모델 기반 방법은 설명 가능성과 샘플 효율성에서 장점을 나타냈습니다. 이러한 비교 결과는 기존 알고리즘의 장점과 한계를 명확히 드러내며, 연구자가 알고리즘을 선택하거나 개선하는 데 실증적 근거를 제공합니다.
+
+응용 가치 측면에서 MuJoCo Playground는 휴머노이드 로봇 분야 연구자에게 낮은 진입 장벽과 높은 충실도를 갖춘 실험 플랫폼을 제공합니다. 이는 알고리즘 프로토타입 검증과 반복을 가속화할 뿐만 아니라 서로 다른 팀 간의 협업과 결과 재현을 촉진할 수 있습니다. 또한 이 벤치마크의 개방성과 확장성은 향후 휴머노이드 로봇 경진대회, 교육 과정 및 산업 응용 예비 연구의 표준 도구가 되어 해당 분야를 더 효율적이고 신뢰할 수 있는 방향으로 발전시키는 데 기여할 것으로 기대됩니다.

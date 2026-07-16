@@ -123,4 +123,162 @@ flowchart TD
 - Wiki extraction
 - 项目 Wiki：chapter-08.md#8.7.5 功能安全与 SIL/PL
 
+## Overview
+IEC 61508 is an important standard in the field of humanoid robotics. The following content is compiled from the project Wiki for in-depth reference.
 
+## Content
+Humanoid robots operate in human-robot collaborative environments, and their safety-related control systems must meet **functional safety** requirements: when a fault occurs, the system must still be able to bring the robot to a safe state. Functional safety levels are typically quantified using **IEC 61508's SIL (Safety Integrity Level)** or **ISO 13849's PL (Performance Level)** [37][38].
+
+!!! note "Term Explanation: Functional Safety, SIL, PL, Safety Integrity, Fail-Safe"
+    - **Functional safety**: The ability of a safety function to be correctly executed even under fault conditions.
+    - **SIL (Safety Integrity Level)**: Safety integrity levels defined by IEC 61508, ranging from SIL1 to SIL4.
+    - **PL (Performance Level)**: Safety performance levels defined by ISO 13849, ranging from PL a to PL e.
+    - **Safety integrity**: The probability of a safety function being performed as required.
+    - **Fail-safe**: A design philosophy where the system enters a safe state upon failure.
+
+ISO 13849 primarily applies to safety-related control systems for machinery, and its PL levels correspond to the probability of dangerous failure per hour $PFH_d$:
+
+| PL | $PFH_d$ (per hour) | Typical Application |
+|---|---|---|
+| PL a | $5 \times 10^{-5} \sim <10^{-4}$ | Low risk |
+| PL b | $3 \times 10^{-5} \sim <5 \times 10^{-5}$ | General risk |
+| PL c | $2 \times 10^{-6} \sim <3 \times 10^{-5}$ | Medium risk |
+| PL d | $1 \times 10^{-6} \sim <2 \times 10^{-6}$ | Higher risk |
+| PL e | $\sim 1 \times 10^{-6}$ | High risk |
+
+IEC 61508's SIL primarily targets electrical/electronic/programmable electronic systems, with SIL1–SIL4 corresponding to different risk reduction factors. For complex electromechanical systems like humanoid robots, SIL2/PL d is typically a high requirement, while SIL3/PL e is used for critical functions involving frequent and close human interaction.
+
+!!! note "Term Explanation: PFH_d, Dangerous Failure Probability, Risk Reduction Factor, Safety-Related Control System"
+    - **PFH_d**: Probability of Dangerous Failure per Hour.
+    - **Dangerous failure probability**: The probability of a failure that leads to the loss of a safety function.
+    - **Risk reduction factor**: The ratio of baseline risk to the residual risk after implementing safety functions.
+    - **Safety-related control system**: A collection of control components that execute safety functions.
+
+The process for determining PL in ISO 13849 is called the **risk graph** method. Designers assess risk from three dimensions:
+
+1. **Severity of injury (S)**: S1 (slight, usually reversible) or S2 (severe, irreversible).
+2. **Frequency and duration of exposure to hazard (F)**: F1 (rare or short) or F2 (frequent or long).
+3. **Possibility of avoiding hazard (P)**: P1 (possible) or P2 (almost impossible).
+
+Based on the combination of S, F, and P, the risk graph recommends a PL level. For example, S2+F2+P2 typically requires PL e.
+
+!!! note "Term Explanation: Risk Graph, Severity of Injury, Frequency of Exposure, Possibility of Avoidance"
+    - **Risk graph**: A graphical method for determining PL based on severity of injury, frequency of exposure, and possibility of avoidance.
+    - **Severity of injury**: The severity of harm caused by an accident.
+    - **Frequency of exposure**: How often personnel are exposed to a hazard.
+    - **Possibility of avoidance**: Whether personnel can avoid the hazard in time.
+
+Core technologies for achieving high SIL/PL include:
+
+- **Redundancy**: Duplicate configuration of critical sensors, actuators, or channels, e.g., dual encoders, dual-channel emergency stop.
+- **Diagnostic Coverage (DC)**: The proportion of dangerous failures that the system can detect, categorized as none, low, medium, or high.
+- **Mean Time To dangerous Failure (MTTFd)**: The average time a subsystem operates without a dangerous failure, used to calculate the overall PFH_d.
+- **Common Cause Failure (CCF) control**: Reducing the probability of simultaneous failure in multiple channels through electrical isolation, diverse design, and physical separation.
+
+!!! note "Term Explanation: Redundancy, Diagnostic Coverage, MTTFd, Common Cause Failure"
+    - **Redundancy**: A method to improve reliability through duplicate configuration.
+    - **Diagnostic Coverage (DC)**: The proportion of total dangerous failures that can be diagnosed.
+    - **MTTFd (Mean Time To dangerous Failure)**: The average time to a dangerous failure.
+    - **Common Cause Failure (CCF)**: A phenomenon where multiple independent channels fail simultaneously due to the same cause.
+
+IEC 62061 is an application standard of IEC 61508 in the field of machinery safety, commonly used in the design of robot safety control systems. It adopts SIL levels and combines ISO 13849's PFH_d calculation method to assess system safety integrity. In practical projects, safety functions for humanoid robots (e.g., safe stop, speed monitoring, collision detection) must simultaneously meet applicable machinery safety standards and functional safety standards.
+
+```mermaid
+flowchart TD
+    A["Risk Assessment"] --> B["Severity of Injury S"]
+    A --> C["Frequency of Exposure F"]
+    A --> D["Possibility of Avoidance P"]
+    B --> E["Risk Graph"]
+    C --> E
+    D --> E
+    E --> F["Determine Target PL/SIL"]
+    F --> G["Design Redundancy & Diagnostics"]
+    G --> H["Calculate PFH_d / SIL"]
+    H --> I["Verification & Validation"]
+```
+
+!!! note "Term Explanation: IEC 62061, Safety Function, Verification & Validation, Residual Risk"
+    - **IEC 62061**: Standard for safety-related electrical control systems for machinery.
+    - **Safety function**: A function designed to protect personnel, e.g., safe stop.
+    - **Verification & validation**: Checking whether the design meets requirements and confirming it satisfies real needs.
+    - **Residual risk**: The risk that remains after safety measures have been implemented.
+
+## 개요
+IEC 61508은 휴머노이드 로봇 분야의 중요한 표준입니다. 다음 내용은 프로젝트 Wiki에서 정리한 것으로, 심층 참고용입니다.
+
+## 핵심 내용
+휴머노이드 로봇이 인간-로봇 공존 환경에서 작동할 때, 안전 관련 제어 시스템은 **기능 안전(functional safety)** 요구사항을 충족해야 합니다: 고장이 발생하더라도 시스템이 로봇을 안전 상태로 전환할 수 있어야 합니다. 기능 안전 등급은 일반적으로 **IEC 61508의 SIL(Safety Integrity Level)** 또는 **ISO 13849의 PL(Performance Level)** 로 정량화됩니다[37][38].
+
+!!! note "용어 설명: 기능 안전, SIL, PL, 안전 무결성, 페일 세이프"
+    - **기능 안전(functional safety)**: 고장 상황에서도 안전 기능이 올바르게 실행될 수 있는 능력.
+    - **SIL(Safety Integrity Level)**: IEC 61508에서 정의한 안전 무결성 등급으로, SIL1부터 SIL4까지 있음.
+    - **PL(Performance Level)**: ISO 13849에서 정의한 안전 성능 등급으로, PL a부터 PL e까지 있음.
+    - **안전 무결성(safety integrity)**: 안전 기능이 요구대로 실행될 확률.
+    - **페일 세이프(fail-safe)**: 고장 후 안전 상태로 진입하는 설계 개념.
+
+ISO 13849는 주로 기계 안전 관련 제어 시스템에 적용되며, PL 등급은 시간당 위험 고장 확률 $PFH_d$(Probability of Dangerous Failure per Hour)에 대응됩니다:
+
+| PL | $PFH_d$ (시간당) | 일반적 적용 |
+|---|---|---|
+| PL a | $5 \times 10^{-5} \sim <10^{-4}$ | 저위험 |
+| PL b | $3 \times 10^{-5} \sim <5 \times 10^{-5}$ | 일반 위험 |
+| PL c | $2 \times 10^{-6} \sim <3 \times 10^{-5}$ | 중간 위험 |
+| PL d | $1 \times 10^{-6} \sim <2 \times 10^{-6}$ | 높은 위험 |
+| PL e | $\sim 1 \times 10^{-6}$ | 고위험 |
+
+IEC 61508의 SIL은 주로 전기/전자/프로그래밍 가능 전자 시스템을 대상으로 하며, SIL1–SIL4는 서로 다른 위험 감소 계수에 대응됩니다. 휴머노이드 로봇과 같은 복잡한 전기-기계 시스템의 경우, 일반적으로 SIL2/PL d가 높은 요구사항이며, SIL3/PL e는 인간과 빈번하고 밀접하게 상호작용하는 핵심 기능에 사용됩니다.
+
+!!! note "용어 설명: PFH_d, 위험 고장 확률, 위험 감소 계수, 안전 관련 제어 시스템"
+    - **PFH_d**: 시간당 위험 고장 확률(Probability of Dangerous Failure per Hour).
+    - **위험 고장 확률(dangerous failure probability)**: 안전 기능 상실을 초래하는 고장 확률.
+    - **위험 감소 계수(risk reduction factor)**: 기준 위험과 안전 기능 적용 후 잔여 위험의 비율.
+    - **안전 관련 제어 시스템(safety-related control system)**: 안전 기능을 실행하는 제어 부품 집합.
+
+ISO 13849에서 PL을 결정하는 과정을 **위험 그래프(risk graph)** 방법이라고 합니다. 설계자는 세 가지 차원에서 위험을 평가합니다:
+
+1. **상해 심각도(S)**: S1(경미, 일반적으로 회복 가능) 또는 S2(심각, 비가역적).
+2. **위험 노출 빈도 및 시간(F)**: F1(드물거나 짧음) 또는 F2(빈번하거나 김).
+3. **위험 회피 가능성(P)**: P1(가능) 또는 P2(거의 불가능).
+
+S, F, P의 조합에 따라 위험 그래프는 권장 PL 등급을 제시합니다. 예를 들어, S2+F2+P2는 일반적으로 PL e를 요구합니다.
+
+!!! note "용어 설명: 위험 그래프, 상해 심각도, 노출 빈도, 회피 가능성"
+    - **위험 그래프(risk graph)**: 상해 심각도, 노출 빈도 및 회피 가능성에 따라 PL을 결정하는 그래픽 방법.
+    - **상해 심각도(severity)**: 사고로 인한 상해의 심각한 정도.
+    - **노출 빈도(frequency of exposure)**: 사람이 위험에 노출되는 빈도.
+    - **회피 가능성(possibility of avoidance)**: 사람이 위험을 적시에 회피할 수 있는지 여부.
+
+높은 SIL/PL을 달성하기 위한 핵심 기술은 다음과 같습니다:
+
+- **이중화(redundancy)**: 핵심 센서, 액추에이터 또는 채널을 중복 구성, 예: 이중 엔코더, 이중 채널 비상 정지.
+- **진단 커버리지(Diagnostic Coverage, DC)**: 시스템이 감지할 수 있는 위험 고장 비율로, none, low, medium, high의 네 단계로 구분.
+- **평균 위험 고장 간격 시간(MTTFd)**: 서브시스템이 평균적으로 위험 고장 없이 작동하는 시간으로, 전체 PFH_d 계산에 사용.
+- **공통 원인 고장(Common Cause Failure, CCF) 제어**: 전기적 절연, 다양화 설계, 물리적 격리를 통해 다중 채널 동시 고장 확률을 낮춤.
+
+!!! note "용어 설명: 이중화, 진단 커버리지, MTTFd, 공통 원인 고장"
+    - **이중화(redundancy)**: 중복 구성을 통해 신뢰성을 높이는 방법.
+    - **진단 커버리지(DC)**: 진단 가능한 위험 고장이 전체 위험 고장에서 차지하는 비율.
+    - **MTTFd(Mean Time To dangerous Failure)**: 평균 위험 고장 간격 시간.
+    - **공통 원인 고장(CCF)**: 동일한 원인으로 여러 독립 채널이 동시에 고장나는 현상.
+
+IEC 62061은 기계 안전 분야에서 IEC 61508의 응용 표준으로, 로봇 안전 제어 시스템 설계에 자주 사용됩니다. 이 표준은 SIL 등급을 사용하며, ISO 13849의 PFH_d 계산 방법을 결합하여 시스템 안전 무결성을 평가합니다. 실제 프로젝트에서 휴머노이드 로봇의 안전 기능(예: 안전 정지, 속도 모니터링, 충돌 감지)은 적용 가능한 기계 안전 표준과 기능 안전 표준을 동시에 충족해야 합니다.
+
+```mermaid
+flowchart TD
+    A["위험 평가"] --> B["상해 심각도 S"]
+    A --> C["노출 빈도 F"]
+    A --> D["회피 가능성 P"]
+    B --> E["위험 그래프"]
+    C --> E
+    D --> E
+    E --> F["목표 PL/SIL 결정"]
+    F --> G["이중화 및 진단 설계"]
+    G --> H["PFH_d / SIL 계산"]
+    H --> I["검증 및 확인"]
+```
+
+!!! note "용어 설명: IEC 62061, 안전 기능, 검증 및 확인, 잔여 위험"
+    - **IEC 62061**: 기계 안전 제어 시스템과 관련된 전기 제어 시스템 표준.
+    - **안전 기능(safety function)**: 사람을 보호하기 위해 설계된 기능, 예: 안전 정지.
+    - **검증 및 확인(verification & validation)**: 설계가 요구사항을 충족하는지 확인하고 실제 요구를 충족하는지 확인하는 과정.
+    - **잔여 위험(residual risk)**: 안전 조치를 취한 후에도 여전히 존재하는 위험.

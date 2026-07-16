@@ -52,3 +52,14 @@ Booth #237138 in the north building will focus on abrasive machining, sawing and
 ## 参考
 - http://www.RoboticsTomorrow.com/news/2026/07/02/productive-robotics-equips-manufacturers-with-zero-programming-end-to-end-automation-at-imts/26799
 
+## Overview
+Booth #237138 in the north building will focus on abrasive machining, sawing and finishing with a special emphasis on gear production. Unlike conventional cobots, Productive Robotics’ 7-axis OB7 collaborative robots feature zero programming in a plug-and-play configuration.
+
+## Content
+Booth #237138 in the north building will focus on abrasive machining, sawing and finishing with a special emphasis on gear production. Unlike conventional cobots, Productive Robotics’ 7-axis OB7 collaborative robots feature zero programming in a plug-and-play configuration.
+
+## 개요
+북관의 부스 #237138은 연삭 가공, 톱질 및 마무리 작업에 중점을 두며, 특히 기어 생산에 특별한 강조를 둡니다. 기존의 협동 로봇과 달리, Productive Robotics의 7축 OB7 협동 로봇은 플러그 앤 플레이 구성에서 제로 프로그래밍을 특징으로 합니다.
+
+## 핵심 내용
+북관의 부스 #237138은 연삭 가공, 톱질 및 마무리 작업에 중점을 두며, 특히 기어 생산에 특별한 강조를 둡니다. 기존의 협동 로봇과 달리, Productive Robotics의 7축 OB7 협동 로봇은 플러그 앤 플레이 구성에서 제로 프로그래밍을 특징으로 합니다.

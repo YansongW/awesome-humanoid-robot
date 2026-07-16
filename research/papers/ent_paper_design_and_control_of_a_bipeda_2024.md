@@ -57,3 +57,31 @@ sources:
 ## 参考
 
 - Design and Control of a Bipedal Robotic Character project page (https://youtu.be/7_LW7u-nk6Q?si=DTpHYW_fCOST26tR)
+
+## Overview
+
+This study focuses on the hardware design and motion control of bipedal humanoid robots, proposing a complete system architecture aimed at enhancing walking stability and motion expressiveness in complex environments. By integrating innovative mechanical structure design with control algorithms, this work provides a new technical pathway for constructing more practical bipedal robot characters. Its main contribution lies in the close coupling of hardware design and control strategies, bridging the gap from theory to engineering practice.
+
+## Content
+
+(a) Research Background and Problem: As the core form of humanoid robots, walking and balance control of bipedal robots have long been classic challenges in robotics. Existing research mostly focuses on optimizing single control algorithms or specific hardware modules, lacking systematic consideration of the synergistic effects between hardware design and control strategies. Particularly in application scenarios requiring anthropomorphic motion expressiveness, such as entertainment, service, and education, traditional methods often struggle to balance motion stability and naturalness. This paper addresses this gap by proposing a bipedal robot design framework that starts from the hardware level and is oriented toward control requirements.
+
+(b) Method or Model Framework: The study proposes an integrated design approach that unifies the mechanical structures of the robot's legs, torso, and joints as the physical foundation of the control system for optimization. Specifically, the authors first determine the degree-of-freedom configuration and actuation methods of key joints based on human kinematic data. Subsequently, lightweight materials and high-torque actuators are introduced in the hardware design phase to reduce motion inertia and improve response speed. The control layer adopts a hierarchical architecture, where the low-level layer handles joint-level torque and position control, while the high-level layer uses model predictive control (MPC) algorithms for whole-body motion planning and balance adjustment.
+
+(c) Key Technical Innovations: The core innovation of this work lies in the engineering implementation of the "hardware-control co-design" concept. On one hand, elastic elements and damping systems are cleverly integrated into the mechanical structure, allowing the robot to passively absorb impact energy when subjected to external disturbances, thereby reducing the computational burden of active control. On the other hand, the control algorithm incorporates a real-time identification module for hardware dynamic characteristics, enabling the system to adaptively adjust control parameters in response to joint wear or load changes. This deep coupling strategy between software and hardware significantly enhances the robot's walking robustness on unstructured terrain.
+
+(d) Experiments/Validation or Application Value: Although the paper does not disclose detailed quantitative experimental data, the project demonstration video shows that the bipedal robot can perform basic actions such as stable walking, turning, and simple posture transitions, with a high degree of motion smoothness and anthropomorphism. This achievement holds significant reference value for advancing the practical deployment of humanoid robots in fields such as home services and human-robot interaction. Additionally, the modular nature of the design framework facilitates subsequent researchers in making customized improvements for specific tasks, such as adding upper limb manipulation capabilities or adapting to different terrain environments.
+
+## 개요
+
+본 연구는 이족 보행 휴머노이드 로봇의 하드웨어 설계와 운동 제어 문제에 초점을 맞추어, 복잡한 환경에서 로봇의 보행 안정성과 동작 표현력을 향상시키기 위한 완전한 시스템 아키텍처를 제안한다. 이 연구는 혁신적인 기계 구조 설계와 제어 알고리즘의 융합을 통해, 보다 실용적인 이족 보행 로봇 캐릭터를 구축하기 위한 새로운 기술 경로를 제공한다. 주요 기여는 하드웨어 설계와 제어 전략을 긴밀하게 결합하여 이론에서 공학 실천으로의 도약을 실현한 데 있다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 이족 보행 로봇은 휴머노이드 로봇의 핵심 형태로서, 그 보행 및 균형 제어는 로봇 공학 분야의 고전적인 난제로 남아 있다. 기존 연구는 주로 단일 제어 알고리즘 또는 특정 하드웨어 모듈의 최적화에 집중되어 있으며, 하드웨어 설계와 제어 전략 간의 협력적 상호작용에 대한 체계적인 고려가 부족하다. 특히 로봇이 인간과 유사한 동작 표현력을 필요로 하는 응용 시나리오(예: 엔터테인먼트, 서비스, 교육 분야)에서 전통적인 방법은 운동 안정성과 동작 자연스러움을 동시에 충족시키기 어려운 경우가 많다. 본 논문은 이러한 공백을 대상으로, 하드웨어 기반에서 출발하여 제어 요구에 맞춘 이족 보행 로봇 설계 프레임워크를 제안한다.
+
+(b) 방법 또는 모델 프레임워크: 연구는 통합 설계 방법을 제안하여, 로봇의 다리, 몸통 및 관절의 기계 구조를 제어 시스템의 물리적 기반으로서 통합적으로 최적화한다. 구체적으로, 저자는 먼저 인체 운동학 데이터를 기반으로 주요 관절의 자유도 구성과 구동 방식을 결정한다. 그 후, 하드웨어 설계 단계에서 경량 재료와 고토크 액추에이터를 도입하여 운동 관성을 줄이고 응답 속도를 향상시킨다. 제어 측면에서는 계층적 아키텍처를 채택하여, 하위 계층은 관절 수준의 토크 및 위치 제어를 담당하고, 상위 계층은 모델 예측 제어(MPC) 알고리즘을 통해 전신 운동 계획 및 균형 조정을 구현한다.
+
+(c) 핵심 기술 혁신: 본 연구의 핵심 혁신은 "하드웨어-제어 협력 설계" 개념의 공학적 구현에 있다. 한편으로, 기계 구조 내의 탄성 요소와 댐핑 시스템이 교묘하게 통합되어, 로봇이 외부 교란을 받을 때 수동적으로 충격 에너지를 흡수함으로써 능동 제어의 계산 부담을 줄인다. 다른 한편으로, 제어 알고리즘에는 하드웨어 동적 특성에 대한 실시간 식별 모듈이 내장되어, 시스템이 관절 마모나 부하 변화에 대응하여 제어 파라미터를 적응적으로 조정할 수 있게 한다. 이러한 소프트웨어-하드웨어의 깊은 결합 전략은 비구조적 지면에서 로봇의 보행 강건성을 현저히 향상시킨다.
+
+(d) 실험/검증 또는 응용 가치: 논문이 상세한 정량적 실험 데이터를 공개하지는 않았지만, 프로젝트 시연 비디오에서 이족 보행 로봇이 안정적인 보행, 방향 전환 및 간단한 자세 변환과 같은 기본 동작을 수행할 수 있으며, 동작의 유연성과 인간 유사성 수준이 높은 것을 확인할 수 있다. 이 성과는 휴머노이드 로봇을 가정 서비스, 인간-로봇 상호작용 등 분야에서 실제 배치하는 데 중요한 참고 가치를 제공한다. 또한, 이 설계 프레임워크의 모듈식 특성은 후속 연구자들이 특정 작업에 맞춰 맞춤형 개선(예: 상지 조작 능력 추가 또는 다양한 지형 환경 적응)을 용이하게 한다.

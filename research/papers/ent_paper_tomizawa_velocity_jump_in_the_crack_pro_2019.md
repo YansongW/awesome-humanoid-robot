@@ -60,4 +60,14 @@ It has long been known for elastomers that the velocity of crack propagation jum
 ## 参考
 - http://arxiv.org/abs/1904.03250v1
 
+## Overview
+It has long been known for elastomers that the velocity of crack propagation jumps as a function of strain. On the other hand, such a jump has not been reported in the literature for polymers which do not exhibit a rubbery plateau in the storage-modulus plot. Here, we report observation of jumps in crack propagation for semi-crystalline polymer sheets without the rubbery plateau, as a result of pulling the sheets at a constant speed. We discuss the advantages of this crack-propagation test under constant-speed stretching and provide physical interpretation of the velocity jump observed for non-elastomer sheets on the basis of a recently proposed theory for the velocity jump in crack propagation.
 
+## Content
+It has long been known for elastomers that the velocity of crack propagation jumps as a function of strain. On the other hand, such a jump has not been reported in the literature for polymers which do not exhibit a rubbery plateau in the storage-modulus plot. Here, we report observation of jumps in crack propagation for semi-crystalline polymer sheets without the rubbery plateau, as a result of pulling the sheets at a constant speed. We discuss the advantages of this crack-propagation test under constant-speed stretching and provide physical interpretation of the velocity jump observed for non-elastomer sheets on the basis of a recently proposed theory for the velocity jump in crack propagation.
+
+## 개요
+탄성체의 경우 균열 전파 속도가 변형률의 함수로서 점프하는 현상은 오랫동안 알려져 왔습니다. 반면, 저장 탄성률 그래프에서 고무와 같은 평탄 영역을 나타내지 않는 고분자의 경우 이러한 점프가 문헌에서 보고된 바 없습니다. 본 연구에서는 고무 평탄 영역이 없는 반결정성 고분자 시트를 일정 속도로 당겼을 때 균열 전파에서 점프 현상이 관찰됨을 보고합니다. 우리는 일정 속도 인장 하에서의 이 균열 전파 시험의 장점을 논의하고, 최근 제안된 균열 전파 속도 점프 이론을 바탕으로 비탄성체 시트에서 관찰된 속도 점프에 대한 물리적 해석을 제공합니다.
+
+## 핵심 내용
+탄성체의 경우 균열 전파 속도가 변형률의 함수로서 점프하는 현상은 오랫동안 알려져 왔습니다. 반면, 저장 탄성률 그래프에서 고무와 같은 평탄 영역을 나타내지 않는 고분자의 경우 이러한 점프가 문헌에서 보고된 바 없습니다. 본 연구에서는 고무 평탄 영역이 없는 반결정성 고분자 시트를 일정 속도로 당겼을 때 균열 전파에서 점프 현상이 관찰됨을 보고합니다. 우리는 일정 속도 인장 하에서의 이 균열 전파 시험의 장점을 논의하고, 최근 제안된 균열 전파 속도 점프 이론을 바탕으로 비탄성체 시트에서 관찰된 속도 점프에 대한 물리적 해석을 제공합니다.

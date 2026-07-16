@@ -58,3 +58,35 @@ sources:
 
 ## 参考
 - Integrated linkage-driven dexterous anthropomorphic robotic hand project page (https://www.nature.com/articles/s41467-021-27261-0)
+
+## Overview
+
+This study addresses the contradiction between the complexity of the drive system and the dexterity of the hand in humanoid robot manipulation tasks. It proposes a hardware design for a humanoid dexterous hand based on an integrated linkage drive. Through innovative mechanical structure integration, this work aims to achieve highly biomimetic and reliable hand motion control, providing a new hardware platform for fine manipulation tasks of humanoid robots in complex environments. Its main contribution lies in proposing an integrated design method that highly integrates the drive and transmission mechanisms, effectively reducing the hand's volume while improving motion precision and load capacity.
+
+## Content
+
+In the field of robotics, the design of humanoid dexterous hands has long faced two major challenges: how to integrate enough degrees of freedom within a small space to achieve human-like dexterity, and how to ensure the drive system has sufficient force output and response speed. Traditional approaches often use cable-driven or externally mounted motor-driven systems, which, while enabling multiple degrees of freedom, suffer from issues such as low transmission efficiency, loose structure, and difficult maintenance. To address these bottlenecks, this study proposes a novel drive architecture centered on an integrated linkage mechanism, aiming to reconstruct the force transmission path and kinematic characteristics of the dexterous hand at the hardware level.
+
+The hand design adopts a fully integrated linkage drive scheme, compactly housing micro motors, reducers, and linkage mechanisms within the palm and finger phalanges. The flexion/extension and lateral movement of each finger are achieved by independent linkage-slider mechanisms. By optimizing linkage lengths and joint angles, the fingers maintain a highly biomimetic range of motion while possessing substantial gripping force and impact resistance. The palm integrates a special linkage mechanism for thumb opposition, ensuring the thumb can perform various grasping postures similar to those of a human.
+
+In terms of key technologies, the innovation of this design is mainly reflected in three aspects: first, it proposes a coupling motion decoupling method based on spatial linkages, allowing independent control of each finger joint's movement without mutual interference; second, it develops high-stiffness, low-friction micro joint bearings and linkage connectors, significantly reducing energy loss during transmission; third, through finite element analysis and topology optimization, it achieves a lightweight design of the hand structure, keeping the overall weight close to that of a human hand while ensuring structural strength.
+
+In the experimental validation section, the study conducted multiple performance tests on the dexterous hand, including single-finger force output tests, multi-finger coordinated grasping experiments, and manipulation demonstrations of typical daily objects. Results show that the hand can stably grasp objects of various shapes and materials, from eggs and keys to tools, with a maximum gripping force reaching tens of Newtons. Finger movement speed and response delay meet real-time control requirements. Additionally, long-duration continuous operation tests verified that the linkage drive system offers higher durability and repeat positioning accuracy compared to traditional cable-driven systems.
+
+From an application perspective, this integrated linkage-driven dexterous hand provides a feasible hardware foundation for the practical deployment of humanoid robots in scenarios such as home service, medical assistance, and precision assembly. Its compact structural design allows the hand to be directly integrated into existing humanoid robot arms without significant modifications to the control system. Furthermore, this design approach offers important engineering references for the future development of humanoid robot hands toward higher degrees of freedom and greater load capacity.
+
+## 개요
+
+본 연구는 휴머노이드 로봇의 정밀 조작에서 구동 시스템의 복잡성과 손의 기민성 간의 모순을 해결하기 위해, 통합 링크 구동 방식의 인간형 로봇 핸드 하드웨어 설계 방안을 제안합니다. 혁신적인 기계 구조 통합을 통해, 본 연구는 높은 생체 모방성과 신뢰성을 갖춘 손 동작 제어를 실현하고, 휴머노이드 로봇이 복잡한 환경에서 정밀 조작 작업을 수행할 수 있는 새로운 하드웨어 플랫폼을 제공하는 것을 목표로 합니다. 주요 기여는 구동 및 전동 기구를 고도로 통합한 일체형 설계 방법을 제안하여, 손의 부피를 효과적으로 줄이고 운동 정밀도와 하중 능력을 향상시킨 점에 있습니다.
+
+## 핵심 내용
+
+로봇 공학 분야에서 인간형 로봇 핸드의 설계는 오랫동안 두 가지 주요 과제에 직면해 왔습니다. 첫째는 작은 공간에 충분한 자유도를 통합하여 인간과 유사한 기민성을 구현하는 것이고, 둘째는 구동 시스템이 충분한 힘 출력과 응답 속도를 갖추도록 보장하는 것입니다. 기존 방식은 주로 와이어 구동 또는 외부 모터 구동을 사용하여 다자유도를 실현할 수 있지만, 전동 효율이 낮고 구조가 느슨하며 유지보수가 어려운 문제가 있습니다. 본 연구는 이러한 한계를 극복하기 위해 통합 링크 기구를 핵심으로 하는 새로운 구동 아키텍처를 제안하여, 하드웨어 수준에서 기민한 손의 힘 전달 경로와 운동학적 특성을 재구성하고자 합니다.
+
+본 핸드 설계는 완전 통합 링크 구동 방식을 채택하여, 초소형 모터, 감속기 및 링크 기구를 손바닥과 손가락 마디 내부에 컴팩트하게 내장합니다. 각 손가락의 굽힘/폄 및 측면 움직임은 독립적인 링크-슬라이더 기구에 의해 구현되며, 링크 길이와 관절 각도를 최적화하여 손가락이 높은 생체 모방 운동 범위를 유지하면서도 큰 파지력과 충격 저항력을 갖추도록 합니다. 손바닥 부분에는 엄지의 대립 운동을 위한 특수 링크 기구가 통합되어, 엄지가 인간과 유사한 다양한 파지 자세를 수행할 수 있도록 보장합니다.
+
+핵심 기술 측면에서 본 설계의 혁신은 주로 세 가지 측면에서 나타납니다. 첫째, 공간 링크 기반의 결합 운동 분리 방법을 제안하여 손가락 각 관절의 움직임이 서로 간섭 없이 독립적으로 제어될 수 있도록 합니다. 둘째, 고강성, 저마찰의 초소형 관절 베어링과 링크 연결 부품을 개발하여 전동 과정에서의 에너지 손실을 크게 줄였습니다. 셋째, 유한 요소 해석과 위상 최적화를 통해 핸드 구조의 경량화 설계를 실현하여, 구조 강도를 보장하면서 전체 무게를 인간 손에 가까운 수준으로 제어했습니다.
+
+실험 검증 부분에서는 본 연구가 기민한 손에 대해 단일 손가락 힘 출력 테스트, 다중 손가락 협력 파지 실험 및 일반적인 일상 물체 조작 시연 등 여러 성능 테스트를 수행했습니다. 결과에 따르면, 이 핸드는 계란, 열쇠, 도구 등 다양한 형태와 재질의 물체를 안정적으로 파지할 수 있으며, 최대 파지력은 수십 뉴턴에 달하고 손가락 운동 속도와 응답 지연 시간은 실시간 제어 요구 사항을 충족합니다. 또한 장시간 연속 작동 테스트를 통해 링크 구동 시스템이 기존 와이어 구동에 비해 더 높은 내구성과 반복 위치 정밀도를 가짐을 확인했습니다.
+
+응용 가치 측면에서, 이 통합 링크 구동 기민한 손은 휴머노이드 로봇이 가사 서비스, 의료 보조, 정밀 조립 등 시나리오에서 실제 배치될 수 있는 실현 가능한 하드웨어 기반을 제공합니다. 컴팩트한 구조 설계 덕분에 이 핸드는 제어 시스템을 크게 수정할 필요 없이 기존 휴머노이드 로봇 팔에 직접 통합될 수 있습니다. 동시에, 이 설계 접근 방식은 미래의 인간형 로봇 손이 더 높은 자유도와 더 강한 하중 능력 방향으로 발전하는 데 중요한 공학적 참고 자료를 제공합니다.

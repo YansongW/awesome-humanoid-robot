@@ -53,3 +53,14 @@ In this paper, we investigate consensus control of fractional-order multi-agent 
 ## 参考
 - http://arxiv.org/abs/2004.00860v1
 
+## Overview
+In this paper, we investigate consensus control of fractional-order multi-agent systems with order in (0,1) via sampled-data control. A new scheme to design distributed controllers with rigorous analysis is presented by utilizing the unique properties of fractional-order calculus, namely hereditary and infinite memory. It is established that global boundedness of all closed-loop signals is ensured and asymptotic consensus is realized. Simulation studies are conducted to illustrate the effectiveness of the proposed control method and verify the obtained results.
+
+## Content
+In this paper, we investigate consensus control of fractional-order multi-agent systems with order in (0,1) via sampled-data control. A new scheme to design distributed controllers with rigorous analysis is presented by utilizing the unique properties of fractional-order calculus, namely hereditary and infinite memory. It is established that global boundedness of all closed-loop signals is ensured and asymptotic consensus is realized. Simulation studies are conducted to illustrate the effectiveness of the proposed control method and verify the obtained results.
+
+## 개요
+본 논문에서는 샘플링 데이터 제어를 통해 차수가 (0,1)인 분수차 다중 에이전트 시스템의 합의 제어를 연구합니다. 분수차 미적분학의 고유한 특성, 즉 유전성과 무한 메모리를 활용하여 엄격한 분석을 통해 분산 제어기를 설계하는 새로운 방식을 제시합니다. 모든 폐루프 신호의 전역적 유계성이 보장되고 점근적 합의가 실현됨을 입증합니다. 제안된 제어 방법의 효과성을 입증하고 얻어진 결과를 검증하기 위해 시뮬레이션 연구를 수행합니다.
+
+## 핵심 내용
+본 논문에서는 샘플링 데이터 제어를 통해 차수가 (0,1)인 분수차 다중 에이전트 시스템의 합의 제어를 연구합니다. 분수차 미적분학의 고유한 특성, 즉 유전성과 무한 메모리를 활용하여 엄격한 분석을 통해 분산 제어기를 설계하는 새로운 방식을 제시합니다. 모든 폐루프 신호의 전역적 유계성이 보장되고 점근적 합의가 실현됨을 입증합니다. 제안된 제어 방법의 효과성을 입증하고 얻어진 결과를 검증하기 위해 시뮬레이션 연구를 수행합니다.

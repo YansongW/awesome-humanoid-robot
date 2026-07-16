@@ -69,4 +69,54 @@ sources:
 ## 参考
 - Wiki extraction
 
+## Overview
+A software subsystem that processes sensor data to estimate states, detect objects, and build environmental representations, providing input for decision-making.
 
+## Content
+### Definition and Positioning of the Perception Stack
+The perception stack belongs to the **concept** type. Its domains include: software middleware, AI models and algorithms. Value chain level: intelligence layer. A software subsystem that processes sensor data to estimate states, detect objects, and build environmental representations, providing input for decision-making. Its English name is *Perception Stack*. Its Korean name is *인식 스택*.
+
+### Key Dimensions of the Perception Stack
+Understanding the perception stack requires a systematic approach from multiple dimensions, including definition, boundary conditions, related entities, and typical application scenarios.
+This entity serves as a bridge connecting fundamental theory and engineering practice in the humanoid robot knowledge graph.
+
+### Practical Significance
+In the context of humanoid robot industrialization, the perception stack holds reference value for technical research, product development, investment decisions, and ecosystem building.
+Accurately grasping its connotation and extension helps avoid conceptual confusion and promotes interdisciplinary collaboration.
+
+### Research and Development Directions
+As humanoid robot technology continues to evolve, the theories and practices related to the perception stack will also be continuously updated, requiring ongoing tracking and review.
+
+### Related Tags
+- concept
+- chapter_24
+- wiki_gap
+
+### Role in the Humanoid Robot System
+As one of the key concepts in the humanoid robot industry chain, the perception stack plays an important role in system design, performance optimization, and industrial application. It is coupled with multiple subsystems such as perception, decision-making, execution, energy, structure, and verification, collectively determining overall machine performance. Related research and applications are being continuously advanced to further improve its reliability, efficiency, and cost-effectiveness in real-world scenarios.
+
+## 개요
+센서 데이터를 처리하여 상태를 추정하고, 객체를 감지하며, 환경 표현을 구축하여 의사 결정에 입력을 제공하는 소프트웨어 서브시스템.
+
+## 핵심 내용
+### 인식 스택의 정의와 위치
+인식 스택은 **개념** 유형에 속한다. 소속 분야는 소프트웨어 미들웨어, AI 모델 및 알고리즘을 포함한다. 가치 사슬 계층: 지능 계층. 센서 데이터를 처리하여 상태를 추정하고, 객체를 감지하며, 환경 표현을 구축하여 의사 결정에 입력을 제공하는 소프트웨어 서브시스템. 영문 명칭은 *Perception Stack*이다. 한글 명칭은 *인식 스택*이다.
+
+### 인식 스택의 주요 차원
+인식 스택을 이해하려면 정의, 경계 조건, 관련 개체 및 대표적인 응용 시나리오 등 여러 차원에서 접근하여 체계적인 인식을 형성해야 한다.
+이 개체는 휴머노이드 로봇 지식 그래프에서 기초 이론과 공학 실천을 연결하는 가교 역할을 한다.
+
+### 실천적 의의
+휴머노이드 로봇 산업화의 맥락에서 인식 스택은 기술 연구, 제품 개발, 투자 결정 및 생태계 구축에 참고 가치를 제공한다.
+그 내포와 외연을 정확히 파악하면 개념 혼동을 방지하고 학제 간 협력을 촉진하는 데 도움이 된다.
+
+### 연구 및 발전 방향
+휴머노이드 로봇 기술이 지속적으로 진화함에 따라 인식 스택의 관련 이론과 실천도 계속 업데이트되므로, 추적과 검토를 유지해야 한다.
+
+### 관련 태그
+- concept
+- chapter_24
+- wiki_gap
+
+### 휴머노이드 로봇 시스템에서의 역할
+휴머노이드 로봇 산업 체인에서 핵심 개념 중 하나로서, 인식 스택은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 한다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 서브시스템과 상호 결합되어 전체 기계 성능을 결정한다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있다.

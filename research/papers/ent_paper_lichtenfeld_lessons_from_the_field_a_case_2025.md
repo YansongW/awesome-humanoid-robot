@@ -62,3 +62,14 @@ Incidents in chemical plants can pose a high level of risk and harsh environment
 ## 参考
 - http://arxiv.org/abs/2606.23246v1
 
+## Overview
+Incidents in chemical plants can pose a high level of risk and harsh environments for first responders. Contamination and explosion hazards can deny human access to the affected infrastructure, underscoring the need for capable robot systems. This field report documents the successful deployment of a robotic task force to neutralize an explosive gas hazard at a chemical plant after a fire incident. An Unmanned Ground Vehicle (UGV) with a custom manipulation tool opened a critical valve under hazardous conditions, averting the threat of a large-scale explosion. We provide insights into robot deployment and use the mission results to highlight both the importance of rescue robotics and limitations of using research platforms in real emergency deployments, such as communication constraints and the need for enhanced operator-assistance functions.
+
+## Content
+Incidents in chemical plants can pose a high level of risk and harsh environments for first responders. Contamination and explosion hazards can deny human access to the affected infrastructure, underscoring the need for capable robot systems. This field report documents the successful deployment of a robotic task force to neutralize an explosive gas hazard at a chemical plant after a fire incident. An Unmanned Ground Vehicle (UGV) with a custom manipulation tool opened a critical valve under hazardous conditions, averting the threat of a large-scale explosion. We provide insights into robot deployment and use the mission results to highlight both the importance of rescue robotics and limitations of using research platforms in real emergency deployments, such as communication constraints and the need for enhanced operator-assistance functions.
+
+## 개요
+화학 공장에서 발생하는 사고는 초동 대응자에게 높은 수준의 위험과 가혹한 환경을 초래할 수 있습니다. 오염 및 폭발 위험으로 인해 인간이 영향을 받은 인프라에 접근하지 못할 수 있으며, 이는 유능한 로봇 시스템의 필요성을 강조합니다. 본 현장 보고서는 화재 사고 이후 화학 공장에서 폭발성 가스 위험을 제거하기 위해 로봇 태스크 포스를 성공적으로 배치한 사례를 기록합니다. 맞춤형 조작 도구를 장착한 무인 지상 차량(UGV)이 위험한 조건에서 중요한 밸브를 열어 대규모 폭발 위협을 방지했습니다. 우리는 로봇 배치에 대한 통찰력을 제공하고, 임무 결과를 활용하여 구조 로봇 공학의 중요성과 통신 제약 및 향상된 운영자 지원 기능의 필요성과 같은 실제 긴급 배치에서 연구 플랫폼 사용의 한계를 강조합니다.
+
+## 핵심 내용
+화학 공장에서 발생하는 사고는 초동 대응자에게 높은 수준의 위험과 가혹한 환경을 초래할 수 있습니다. 오염 및 폭발 위험으로 인해 인간이 영향을 받은 인프라에 접근하지 못할 수 있으며, 이는 유능한 로봇 시스템의 필요성을 강조합니다. 본 현장 보고서는 화재 사고 이후 화학 공장에서 폭발성 가스 위험을 제거하기 위해 로봇 태스크 포스를 성공적으로 배치한 사례를 기록합니다. 맞춤형 조작 도구를 장착한 무인 지상 차량(UGV)이 위험한 조건에서 중요한 밸브를 열어 대규모 폭발 위협을 방지했습니다. 우리는 로봇 배치에 대한 통찰력을 제공하고, 임무 결과를 활용하여 구조 로봇 공학의 중요성과 통신 제약 및 향상된 운영자 지원 기능의 필요성과 같은 실제 긴급 배치에서 연구 플랫폼 사용의 한계를 강조합니다.

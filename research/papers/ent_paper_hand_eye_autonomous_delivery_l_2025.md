@@ -63,3 +63,31 @@ theoretical_depth:
 ## 参考
 
 - 手眼自主配送 project page (https://tml.stanford.edu/HEAD/)
+
+## Overview
+
+This paper proposes a "hand-eye autonomous delivery" framework for humanoid robots, aiming to solve the end-to-end task execution problem from visual perception to whole-body coordinated motion. The research motivation lies in the difficulty of existing methods in effectively bridging high-level task planning and low-level motion control in complex dynamic environments, especially in scenarios requiring the coordination of navigation, walking, and reaching/grasping actions. The main contribution is a hierarchical skill composition architecture, which decomposes tasks into routable expert policies and utilizes a high-level module for online selection and composition, thereby achieving autonomous generation from visual input to whole-body control objectives. This provides a feasible technical pathway for the application of humanoid robots in real-world delivery scenarios.
+
+## Content
+
+(a) Research Background and Problem: When humanoid robots perform autonomous delivery tasks in environments such as homes, warehouses, or public services, they face a full-chain challenge from environmental perception to physical interaction. Traditional methods typically treat navigation, walking, and manipulation as independent modules, lacking a unified model for visual feedback and whole-body motion control. Furthermore, humanoid robots possess high degrees of freedom and nonlinear dynamics, making the mapping from high-level task instructions to low-level joint torques extremely complex. Existing work often relies on precise environmental models or predefined trajectory libraries, making it difficult to adapt to dynamic changes in unstructured environments. Addressing this core problem, this paper proposes a solution that deeply integrates visual perception, motion planning, and whole-body control.
+
+(b) Method or Model Framework: The framework proposed in this paper is centered on hierarchical control, comprising three key levels. First, scene, object, and motion representations are recovered from camera images, multi-view observations, proprioceptive states, and joint sequences, while demonstration motion information is extracted using human videos or motion capture trajectories. Second, a training dataset covering multiple motion patterns is constructed through heterogeneous motion capture and synthetic data balancing techniques. Finally, a Whole-Body Controller (WBC) and Model Predictive Control (MPC) are employed to generate low-level control objectives, including navigation goals and reaching goals, thereby converting high-level task instructions into executable joint motion sequences.
+
+(c) Key Technical Innovations: The core innovation of this paper lies in decomposing complex tasks into routable skills or expert policies and introducing a high-level module to dynamically select and compose these policies during execution. This design allows the system to flexibly switch between different motion patterns based on the current environmental state and task requirements, such as transitioning from walking to reaching/grasping, or from obstacle avoidance to target approach. Additionally, the introduction of a visual closed-loop mechanism ensures that the system continuously perceives environmental changes during motion, enabling real-time responses to target positions and obstacles. This hierarchical routing mechanism effectively enhances the system's robustness and generalization capability.
+
+(d) Experiment/Validation or Application Value: Although this paper does not disclose specific experimental data, based on its technical approach and domain tags (e.g., validation market and application), it can be reasonably inferred that the framework has been validated in simulation environments or on real robot platforms. Experiments likely cover various delivery scenarios, such as indoor corridor navigation, desktop object grasping, and in-motion handover. In terms of application value, this work provides key technical support for the practical deployment of humanoid robots in fields such as logistics delivery, home services, and medical assistance. In particular, by achieving end-to-end autonomous execution from perception to action through visual closed-loop and hierarchical control, it is expected to significantly reduce reliance on human intervention and pre-programming.
+
+## 개요
+
+본 논문은 인간형 로봇을 위한 '손-눈 자율 배송' 프레임워크를 제안하며, 시각 인식부터 전신 협응 운동까지의 엔드투엔드 작업 실행 문제를 해결하는 것을 목표로 한다. 연구 동기는 기존 방법이 복잡한 동적 환경에서 고수준 작업 계획과 저수준 운동 제어를 효과적으로 연결하기 어렵다는 점, 특히 내비게이션, 보행 및 손을 뻗어 잡는 동작이 협력해야 하는 시나리오에서 그러하다. 주요 기여는 계층적 스킬 조합 아키텍처를 제안하여 작업을 라우팅 가능한 전문가 정책으로 분해하고, 고수준 모듈을 통해 온라인 선택 및 조합을 수행함으로써 시각 입력에서 전신 제어 목표까지의 자율 생성을 실현하여, 인간형 로봇이 실제 배송 시나리오에서 적용될 수 있는 실현 가능한 기술 경로를 제공한 점이다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 인간형 로봇이 가정, 창고 또는 공공 서비스 등 시나리오에서 자율 배송 작업을 수행할 때, 환경 인식부터 물리적 상호작용까지의 전 과정에서 도전에 직면한다. 전통적인 방법은 일반적으로 내비게이션, 보행 및 조작을 독립적인 모듈로 간주하며, 시각 피드백과 전신 운동 제어의 통합 모델링이 부족하다. 또한, 인간형 로봇은 높은 자유도와 비선형 동역학 특성을 가지므로, 고수준 작업 명령에서 저수준 관절 토크로의 매핑이 매우 복잡하다. 기존 연구는 종종 정밀한 환경 모델이나 사전 정의된 궤적 라이브러리에 의존하여, 비구조화된 환경의 동적 변화에 적응하기 어렵다. 본 논문은 이 핵심 문제를 해결하기 위해 시각 인식, 운동 계획 및 전신 제어를 깊이 통합한 솔루션을 제안한다.
+
+(b) 방법 또는 모델 프레임워크: 본 논문이 제안하는 프레임워크는 계층적 제어를 핵심으로 하며, 세 가지 주요 계층을 포함한다. 첫째, 카메라 이미지, 다중 시점 관측, 본체 상태 및 관절 시퀀스로부터 장면, 목표 및 운동 표현을 복원하고, 동시에 인간 비디오나 모션 캡처 궤적을 활용하여 시범 운동 정보를 추출한다. 둘째, 이종 모션 캡처 및 합성 데이터 균형 기술을 통해 다양한 운동 패턴을 포괄하는 훈련 데이터셋을 구축한다. 마지막으로, 전신 제어기(WBC)와 모델 예측 제어(MPC)를 사용하여 내비게이션 목표 및 도달 목표를 포함한 저수준 제어 목표를 생성함으로써, 고수준 작업 명령을 실행 가능한 관절 운동 시퀀스로 변환한다.
+
+(c) 핵심 기술 혁신: 본 논문의 핵심 혁신은 복잡한 작업을 라우팅 가능한 스킬 또는 전문가 정책으로 분해하고, 고수준 모듈이 실행 과정에서 이러한 정책을 동적으로 선택 및 조합하도록 도입한 점이다. 이 설계는 시스템이 현재 환경 상태와 작업 요구에 따라 보행에서 손을 뻗어 잡기로 전환하거나, 장애물 회피에서 목표 접근으로 전환하는 등 다양한 운동 모드를 유연하게 전환할 수 있게 한다. 또한, 시각 폐쇄 루프 메커니즘의 도입은 시스템이 운동 과정에서 지속적으로 환경 변화를 인식하여 목표 위치와 장애물에 실시간으로 대응할 수 있도록 보장한다. 이러한 계층적 라우팅 메커니즘은 시스템의 견고성과 일반화 능력을 효과적으로 향상시킨다.
+
+(d) 실험/검증 또는 응용 가치: 본 논문이 구체적인 실험 데이터를 공개하지는 않았지만, 기술 경로와 분야 태그(예: 시장 및 응용 검증)에 기반하여, 이 프레임워크가 시뮬레이션 환경이나 실제 로봇 플랫폼에서 검증되었을 것으로 합리적으로 추론할 수 있다. 실험은 실내 복도 내비게이션, 테이블 위 물체 잡기 및 이동 중 전달 등 다양한 배송 시나리오를 포함할 수 있다. 응용 가치 측면에서, 이 연구는 인간형 로봇이 물류 배송, 가사 서비스 및 의료 지원 등 분야에서 실제로 배치되는 데 핵심 기술 지원을 제공하며, 특히 시각 폐쇄 루프와 계층적 제어를 통해 인식에서 동작까지의 엔드투엔드 자율 실행을 실현하여, 인간의 개입과 사전 프로그래밍에 대한 의존도를 크게 줄일 것으로 기대된다.

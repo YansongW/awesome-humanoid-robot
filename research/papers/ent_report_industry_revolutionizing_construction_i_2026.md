@@ -63,3 +63,18 @@ sources:
 ## 参考
 - http://www.RoboticsTomorrow.com/news/2026/07/09/revolutionizing-construction-introducing-the-worlds-first-fleet-capable-downward-drilling-robot-now-commercially-available-to-accelerate-data-center-construction/26823
 
+## Overview
+- The downward drilling robot delivers up to 10x faster drilling speeds than traditional methods and has reduced construction timelines by 190 weeks across 26 major projects.
+- The robot debuted in the market to overwhelming acclaim from construction professionals and leading media outlets, including Fast Company, which praised the robot.
+
+## Content
+- The downward drilling robot delivers up to 10x faster drilling speeds than traditional methods and has reduced construction timelines by 190 weeks across 26 major projects.
+- The robot debuted in the market to overwhelming acclaim from construction professionals and leading media outlets, including Fast Company, which praised the robot.
+
+## 개요
+- 하향 굴착 로봇은 기존 방식보다 최대 10배 빠른 굴착 속도를 제공하며, 26개 주요 프로젝트에서 공사 기간을 총 190주 단축했습니다.
+- 이 로봇은 시장에 출시되자마자 건설 전문가들과 Fast Company를 포함한 주요 언론 매체로부터 압도적인 찬사를 받았습니다.
+
+## 핵심 내용
+- 하향 굴착 로봇은 기존 방식보다 최대 10배 빠른 굴착 속도를 제공하며, 26개 주요 프로젝트에서 공사 기간을 총 190주 단축했습니다.
+- 이 로봇은 시장에 출시되자마자 건설 전문가들과 Fast Company를 포함한 주요 언론 매체로부터 압도적인 찬사를 받았습니다.

@@ -83,4 +83,60 @@ theoretical_depth:
 - [Inside a Robot's Bones and Skin: How Advanced Materials Enable Stronger and Lighter Robots](https://www.lft-g.com/blog/inside-a-robot-s-bones-and-skin-how-advanced-materials-enable-stronger-and-lighter-robots_b282)
 - [Metal Materials for Humanoid Robots: Applications and Market Outlook of Aluminum](https://www.aluminiumchina.com/en-gb/news-center/industry-news/2025/4/5.html)
 
+## Overview
+A lightweight structural material system that combines high-strength aluminum alloys with magnesium alloys, widely used in humanoid robot frames, joints, and casings to reduce weight while maintaining stiffness.
 
+## Content
+### Definition and Positioning of Aluminum-Magnesium Alloy for Lightweight Humanoid Robot Structures
+Aluminum-magnesium alloy for lightweight humanoid robot structures belongs to the **material** type. Its domains include: raw materials, components. Value chain level: upstream. A lightweight structural material system that combines high-strength aluminum alloys with magnesium alloys, widely used in humanoid robot frames, joints, and casings to reduce weight while maintaining stiffness. The English name is *Aluminum-Magnesium Alloy for Humanoid Robot Lightweight Structure*. The Korean name is *휴로이드 로봇 경량 구조용 알루미늄-마그네슘 합금*.
+
+### Key Dimensions of Aluminum-Magnesium Alloy for Lightweight Humanoid Robot Structures
+Understanding aluminum-magnesium alloy for lightweight humanoid robot structures requires exploration from multiple dimensions, including definition, boundary conditions, related entities, and typical application scenarios, to form a systematic understanding.
+This entity serves as a bridge connecting fundamental theory and engineering practice in the humanoid robot knowledge graph.
+
+### Practical Significance
+In the context of humanoid robot industrialization, aluminum-magnesium alloy for lightweight humanoid robot structures holds reference value for technical research, product development, investment decisions, and ecosystem construction.
+Accurately grasping its connotation and extension helps avoid conceptual confusion and promotes interdisciplinary collaboration.
+
+### Research and Development Directions
+As humanoid robot technology continues to evolve, the related theory and practice of aluminum-magnesium alloy for lightweight humanoid robot structures will also be continuously updated, requiring ongoing tracking and review.
+
+### Related Tags
+- aluminum
+- magnesium
+- lightweight
+- alloy
+- structure
+- humanoid_robot
+
+### Role in the Humanoid Robot System
+As one of the key materials in the humanoid robot industry chain, aluminum-magnesium alloy for lightweight humanoid robot structures plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining the overall machine performance. Related research and applications are being continuously advanced to further improve its reliability, efficiency, and cost-effectiveness in practical scenarios.
+
+## 개요
+고강도 알루미늄 합금과 마그네슘 합금을 결합한 경량 구조 재료 시스템으로, 인간형 로봇의 프레임, 관절 및 외장재에 널리 사용되며 강성을 유지하면서 무게를 줄입니다.
+
+## 핵심 내용
+### 인간형 로봇 경량 구조용 알루미늄-마그네슘 합금의 정의와 위치
+인간형 로봇 경량 구조용 알루미늄-마그네슘 합금은 **재료** 유형에 속합니다. 관련 분야는 원자재, 부품을 포함합니다. 가치 사슬 계층은 상류입니다. 고강도 알루미늄 합금과 마그네슘 합금을 결합한 경량 구조 재료 시스템으로, 인간형 로봇의 프레임, 관절 및 외장재에 널리 사용되며 강성을 유지하면서 무게를 줄입니다. 영어 명칭은 *Aluminum-Magnesium Alloy for Humanoid Robot Lightweight Structure*입니다. 한국어 명칭은 *휴로이드 로봇 경량 구조용 알루미늄-마그네슘 합금*입니다.
+
+### 인간형 로봇 경량 구조용 알루미늄-마그네슘 합금의 핵심 차원
+인간형 로봇 경량 구조용 알루미늄-마그네슘 합금을 이해하려면 정의, 경계 조건, 관련 개체 및 대표적인 응용 시나리오 등 여러 차원에서 접근하여 체계적인 인식을 형성해야 합니다.
+이 개체는 인간형 로봇 지식 그래프에서 기초 이론과 공학 실무를 연결하는 다리 역할을 합니다.
+
+### 실무적 의의
+인간형 로봇 산업화의 맥락에서 인간형 로봇 경량 구조용 알루미늄-마그네슘 합금은 기술 연구, 제품 개발, 투자 결정 및 생태계 구축에 참고 가치를 제공합니다.
+그 내포와 외연을 정확히 파악하면 개념 혼동을 방지하고 학제 간 협력을 촉진하는 데 도움이 됩니다.
+
+### 연구 및 발전 방향
+인간형 로봇 기술이 지속적으로 발전함에 따라 인간형 로봇 경량 구조용 알루미늄-마그네슘 합금의 관련 이론과 실무도 계속 업데이트되므로 지속적인 추적과 검토가 필요합니다.
+
+### 관련 태그
+- aluminum
+- magnesium
+- lightweight
+- alloy
+- structure
+- humanoid_robot
+
+### 인간형 로봇 시스템에서의 역할
+인간형 로봇 산업 체인 내 핵심 재료 중 하나로서 인간형 로봇 경량 구조용 알루미늄-마그네슘 합금은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.

@@ -378,6 +378,474 @@ theoretical_depth:
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
 
+## Overview
+Electronics & Power is the 13th stage in the full-process development of humanoid robots, expanded into several Level-3 sub-tasks in WBS V3.
+## Content
+This stage covers complete engineering actions including input review, solution design, implementation/prototyping, verification closure, and documentation delivery, serving as a critical node to ensure downstream dependencies receive qualified inputs.
 
+## Key Sub-tasks and Technical Content
+#### Computing and Communication Hardware
 
+##### Computing Platform Architecture and Selection
+- **Methods/Tools**: Jetson / Intel NUC / Custom carrier board / FPGA / MCU distribution
+- **Design Logic**: GPU for AI tasks, MCU/FPGA for real-time control, independent safety monitoring
+- **Key Constraints**: Power consumption, heat dissipation, weight, real-time performance, functional safety
+- **Completion Criteria/Deliverables**: Computing architecture diagram, compute/power budget per node, safety partitioning
+**Level-3 Sub-tasks:**
+- **P13.1.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Computing Platform Architecture and Selection," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P13.1.1.2 Candidate Solution Development and Evaluation**: Build a candidate solution library for "Computing Platform Architecture and Selection," perform quantitative evaluation using "Jetson / Intel NUC / Custom carrier board / FPGA / MCU distribution," and finalize the solution considering cost, performance, supply chain, and maintainability.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and score quantitatively
+3. Organize review and freeze the solution
+- **P13.1.1.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "Computing Platform Architecture and Selection" according to the design plan, produce prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P13.1.1.4 Verification and Issue Closure**: Verify the output of "Computing Platform Architecture and Selection," check if completion criteria are met, record issues, and track until closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P13.1.1.5 Documentation Output and Downstream Delivery**: Output final reports/drawings/specifications for "Computing Platform Architecture and Selection," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
 
+##### Custom/Off-the-Shelf PCB Design
+- **Methods/Tools**: Carrier board, joint driver board, sensor interface board, safety monitoring board
+- **Design Logic**: Consolidate computing, communication, power, and safety functions into reliable hardware
+- **Key Constraints**: EMC, SI/PI, thermal, space, manufacturability
+- **Completion Criteria/Deliverables**: Schematic, PCB, BOM, DFM report
+**Level-3 Sub-tasks:**
+- **P13.1.2.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Custom/Off-the-Shelf PCB Design," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P13.1.2.2 Concept and Detailed Design**: Complete concept design, detailed design, and interface definition for "Custom/Off-the-Shelf PCB Design," verify feasibility using "Carrier board, joint driver board, sensor interface board, safety monitoring board," and output drawings/algorithms/logic frameworks.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and score quantitatively
+3. Organize review and freeze the solution
+- **P13.1.2.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "Custom/Off-the-Shelf PCB Design" according to the design plan, produce prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P13.1.2.4 Verification and Issue Closure**: Verify the output of "Custom/Off-the-Shelf PCB Design," check if completion criteria are met, record issues, and track until closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P13.1.2.5 Documentation Output and Downstream Delivery**: Output final reports/drawings/specifications for "Custom/Off-the-Shelf PCB Design," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+##### Communication Network and Synchronization
+- **Methods/Tools**: CAN-FD, EtherCAT, Ethernet, TSN, PTP time synchronization
+- **Design Logic**: Joint control requires high real-time performance; vision/AI requires high bandwidth; critical signal redundancy
+- **Key Constraints**: Cable count, EMC, cost, scalability
+- **Completion Criteria/Deliverables**: Communication topology diagram, protocol allocation, bandwidth/latency budget, synchronization accuracy
+**Level-3 Sub-tasks:**
+- **P13.1.3.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Communication Network and Synchronization," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P13.1.3.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "Communication Network and Synchronization," demonstrate using "CAN-FD, EtherCAT, Ethernet, TSN, PTP time synchronization," and clarify technical route and resource requirements.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and score quantitatively
+3. Organize review and freeze the solution
+- **P13.1.3.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "Communication Network and Synchronization" according to the design plan, produce prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P13.1.3.4 Verification and Issue Closure**: Verify the output of "Communication Network and Synchronization," check if completion criteria are met, record issues, and track until closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P13.1.3.5 Documentation Output and Downstream Delivery**: Output final reports/drawings/specifications for "Communication Network and Synchronization," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+#### Power and Energy
+
+##### Battery Pack Design and BMS
+- **Methods/Tools**: Lithium battery selection, module design, SOC/SOH estimation, fast charging strategy, thermal runaway protection
+- **Design Logic**: Balance between range and weight; BMS requires overcharge/overdischarge/overtemperature protection
+- **Key Constraints**: Safety certification, thermal runaway, cycle life, cost
+- **Completion Criteria/Deliverables**: Battery pack solution, BMS specifications, range estimation, safety testing
+**Level-3 Sub-tasks:**
+- **P13.2.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Battery Pack Design and BMS," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P13.2.1.2 Concept and Detailed Design**: Complete concept design, detailed design, and interface definition for "Battery Pack Design and BMS," verify feasibility using "Lithium battery selection, module design, SOC/SOH estimation, fast charging strategy, thermal runaway protection," and output drawings/algorithms/logic frameworks.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and score quantitatively
+3. Organize review and freeze the solution
+- **P13.2.1.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "Battery Pack Design and BMS" according to the design plan, produce prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P13.2.1.4 Verification and Issue Closure**: Verify the output of "Battery Pack Design and BMS," check if completion criteria are met, record issues, and track until closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P13.2.1.5 Documentation Output and Downstream Delivery**: Output final reports/drawings/specifications for "Battery Pack Design and BMS," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+##### Power Distribution and DC-DC
+- **Methods/Tools**: Bus voltage selection, DC-DC modules, filtering, OR-ing, redundancy
+- **Design Logic**: Isolate motor bus from logic power; safe power-off during faults
+- **Key Constraints**: Voltage drop, efficiency, EMI, safety standards
+- **Completion Criteria/Deliverables**: Power distribution diagram, DC-DC selection, efficiency/thermal testing
+**Level-3 Sub-tasks:**
+- **P13.2.2.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Power Distribution and DC-DC," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P13.2.2.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "Power Distribution and DC-DC," demonstrate using "Bus voltage selection, DC-DC modules, filtering, OR-ing, redundancy," and clarify technical route and resource requirements.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and score quantitatively
+3. Organize review and freeze the solution
+- **P13.2.2.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "Power Distribution and DC-DC" according to the design plan, produce prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P13.2.2.4 Verification and Issue Closure**: Verify the output of "Power Distribution and DC-DC," check if completion criteria are met, record issues, and track until closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P13.2.2.5 Documentation Output and Downstream Delivery**: Output final reports/drawings/specifications for "Power Distribution and DC-DC," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+##### Charging and Energy Management
+- **Methods/Tools**: Charging pile/dock, wireless charging, charging protocol, energy recovery
+- **Design Logic**: Charging experience affects usability; must be compatible with target scenarios
+- **Key Constraints**: Safety, standards, cost, space
+- **Completion Criteria/Deliverables**: Charging solution, charging time, BMS communication protocol
+**Level-3 Sub-tasks:**
+- **P13.2.3.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Charging and Energy Management," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P13.2.3.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "Charging and Energy Management," demonstrate using "Charging pile/dock, wireless charging, charging protocol, energy recovery," and clarify technical route and resource requirements.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and score quantitatively
+3. Organize review and freeze the solution
+- **P13.2.3.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "Charging and Energy Management" according to the design plan, produce prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P13.2.3.4 Verification and Issue Closure**: Verify the output of "Charging and Energy Management," check if completion criteria are met, record issues, and track until closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P13.2.3.5 Documentation Output and Downstream Delivery**: Output final reports/drawings/specifications for "Charging and Energy Management," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+#### Safety and EMC
+
+##### Hardware Emergency Stop and Safety Chain
+- **Methods/Tools**: Hardware emergency stop, watchdog, fuse, safety PLC/relay, dual-channel
+- **Design Logic**: Any software failure can be cut off by hardware; comply with functional safety
+- **Key Constraints**: Response time, reliability, false triggering
+- **Completion Criteria/Deliverables**: Safety system schematic, FMEA, emergency stop response time < target
+**Level-3 Sub-tasks:**
+- **P13.3.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Hardware Emergency Stop and Safety Chain," convert completion criteria into quantifiable acceptance indicators, and define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P13.3.1.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "Hardware Emergency Stop and Safety Chain," demonstrate using "Hardware emergency stop, watchdog, fuse, safety PLC/relay, dual-channel," and clarify technical route and resource requirements.
+**Level-4 Key Actions:**
+1. Form at least 2 candidate solutions
+2. Establish an evaluation matrix and score quantitatively
+3. Organize review and freeze the solution
+- **P13.3.1.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "Hardware Emergency Stop and Safety Chain" according to the design plan, produce prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P13.3.1.4 Verification and Issue Closure**: Verify the output of "Hardware Emergency Stop and Safety Chain," check if completion criteria are met, record issues, and track until closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P13.3.1.5 Documentation Output and Downstream Delivery**: Output final reports/drawings/specifications for "Hardware Emergency Stop and Safety Chain," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+## 개요
+전자 전기 및 에너지 시스템(Electronics & Power)은 휴머노이드 로봇 제품 개발 전 과정 중 13번째 단계이며, WBS V3에서 여러 3레벨 하위 작업으로 전개됩니다.
+## 핵심 내용
+이 단계는 입력 정리, 설계, 구현/프로토타입, 검증 폐쇄 및 문서 전달 등 완전한 엔지니어링 작업을 포함하며, 하위 의존 부서가 적격한 입력을 확보할 수 있도록 하는 핵심 지점입니다.
+
+## 주요 하위 작업 및 기술 내용
+#### 컴퓨팅 및 통신 하드웨어
+
+##### 컴퓨팅 플랫폼 아키텍처 및 선정
+- **방법 / 도구**: Jetson / Intel NUC / 자체 개발 캐리어 보드 / FPGA / MCU 분포
+- **설계 사고 논리**: AI 작업은 GPU, 실시간 제어는 MCU/FPGA, 안전 모니터링은 독립적으로
+- **핵심 제약 조건**: 전력 소모, 방열, 무게, 실시간성, 기능 안전
+- **완료 기준 / 산출물**: 컴퓨팅 아키텍처 다이어그램, 각 노드의 연산 능력/전력 소모 예산, 안전 분할
+**3레벨 하위 작업:**
+- **P13.1.1.1 입력 정리 및 목표 정량화**: 「컴퓨팅 플랫폼 아키텍처 및 선정」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 동작:**
+1. 모든 상위 입력 목록을 나열하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P13.1.1.2 후보 설계 수립 및 평가**: 「컴퓨팅 플랫폼 아키텍처 및 선정」에 대한 후보 설계 라이브러리를 구축하고, 「Jetson / Intel NUC / 자체 개발 캐리어 보드 / FPGA / MCU 분포」를 사용하여 정량적 평가를 수행하며, 비용, 성능, 공급망, 유지보수성을 고려하여 최종 설계를 결정합니다.
+**4레벨 핵심 동작:**
+1. 2개 이상의 후보 설계를 구성
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 설계를 확정
+- **P13.1.1.3 구현/프로토타입/시제품 제작**: 설계에 따라 「컴퓨팅 플랫폼 아키텍처 및 선정」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 핵심 동작:**
+1. 모델/시제품을 구축하고 핵심 매개변수를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 실행
+3. 이상 및 편차를 기록
+- **P13.1.1.4 검증 및 문제 폐쇄**: 「컴퓨팅 플랫폼 아키텍처 및 선정」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료될 때까지 추적합니다.
+**4레벨 핵심 동작:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 실행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P13.1.1.5 문서 출력 및 하위 전달**: 「컴퓨팅 플랫폼 아키텍처 및 선정」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료합니다.
+**4레벨 핵심 동작:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지
+
+##### 자체 개발/외주 PCB 설계
+- **방법 / 도구**: 캐리어 보드, 관절 구동 보드, 센서 인터페이스 보드, 안전 모니터링 보드
+- **설계 사고 논리**: 컴퓨팅, 통신, 전원, 안전 기능을 신뢰할 수 있는 하드웨어에 고정
+- **핵심 제약 조건**: EMC, SI/PI, 열, 공간, 제조 가능성
+- **완료 기준 / 산출물**: 회로도, PCB, BOM, DFM 보고서
+**3레벨 하위 작업:**
+- **P13.1.2.1 입력 정리 및 목표 정량화**: 「자체 개발/외주 PCB 설계」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 동작:**
+1. 모든 상위 입력 목록을 나열하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P13.1.2.2 개념 및 상세 설계**: 「자체 개발/외주 PCB 설계」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「캐리어 보드, 관절 구동 보드, 센서 인터페이스 보드, 안전 모니터링 보드」를 사용하여 타당성을 검증하며, 도면/알고리즘/논리 프레임워크를 출력합니다.
+**4레벨 핵심 동작:**
+1. 2개 이상의 후보 설계를 구성
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 설계를 확정
+- **P13.1.2.3 구현/프로토타입/시제품 제작**: 설계에 따라 「자체 개발/외주 PCB 설계」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 핵심 동작:**
+1. 모델/시제품을 구축하고 핵심 매개변수를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 실행
+3. 이상 및 편차를 기록
+- **P13.1.2.4 검증 및 문제 폐쇄**: 「자체 개발/외주 PCB 설계」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료될 때까지 추적합니다.
+**4레벨 핵심 동작:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 실행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P13.1.2.5 문서 출력 및 하위 전달**: 「자체 개발/외주 PCB 설계」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료합니다.
+**4레벨 핵심 동작:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지
+
+##### 통신 네트워크 및 동기화
+- **방법 / 도구**: CAN-FD, EtherCAT, Ethernet, TSN, PTP 시간 동기화
+- **설계 사고 논리**: 관절 제어는 높은 실시간성 필요, 비전/AI는 높은 대역폭 필요; 핵심 신호 이중화
+- **핵심 제약 조건**: 케이블 수량, EMC, 비용, 확장성
+- **완료 기준 / 산출물**: 통신 토폴로지 다이어그램, 프로토콜 할당, 대역폭/지연 예산, 동기화 정밀도
+**3레벨 하위 작업:**
+- **P13.1.3.1 입력 정리 및 목표 정량화**: 「통신 네트워크 및 동기화」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 동작:**
+1. 모든 상위 입력 목록을 나열하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P13.1.3.2 설계/방법 설계**: 「통신 네트워크 및 동기화」에 대한 구현 방법 또는 후보 설계를 수립하고, 「CAN-FD, EtherCAT, Ethernet, TSN, PTP 시간 동기화」를 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 합니다.
+**4레벨 핵심 동작:**
+1. 2개 이상의 후보 설계를 구성
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 설계를 확정
+- **P13.1.3.3 구현/프로토타입/시제품 제작**: 설계에 따라 「통신 네트워크 및 동기화」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 핵심 동작:**
+1. 모델/시제품을 구축하고 핵심 매개변수를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 실행
+3. 이상 및 편차를 기록
+- **P13.1.3.4 검증 및 문제 폐쇄**: 「통신 네트워크 및 동기화」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료될 때까지 추적합니다.
+**4레벨 핵심 동작:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 실행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P13.1.3.5 문서 출력 및 하위 전달**: 「통신 네트워크 및 동기화」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료합니다.
+**4레벨 핵심 동작:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지
+
+#### 전원 및 에너지
+
+##### 배터리 팩 설계 및 BMS
+- **방법 / 도구**: 리튬 배터리 선정, 모듈 설계, SOC/SOH 추정, 급속 충전 전략, 열 폭주 방지
+- **설계 사고 논리**: 주행 거리와 무게 균형; BMS는 과충전/과방전/과온 보호 필요
+- **핵심 제약 조건**: 안전 인증, 열 폭주, 사이클 수명, 비용
+- **완료 기준 / 산출물**: 배터리 팩 설계, BMS 사양, 주행 거리 추정, 안전 테스트
+**3레벨 하위 작업:**
+- **P13.2.1.1 입력 정리 및 목표 정량화**: 「배터리 팩 설계 및 BMS」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 동작:**
+1. 모든 상위 입력 목록을 나열하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P13.2.1.2 개념 및 상세 설계**: 「배터리 팩 설계 및 BMS」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「리튬 배터리 선정, 모듈 설계, SOC/SOH 추정, 급속 충전 전략, 열 폭주 방지」를 사용하여 타당성을 검증하며, 도면/알고리즘/논리 프레임워크를 출력합니다.
+**4레벨 핵심 동작:**
+1. 2개 이상의 후보 설계를 구성
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 설계를 확정
+- **P13.2.1.3 구현/프로토타입/시제품 제작**: 설계에 따라 「배터리 팩 설계 및 BMS」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 핵심 동작:**
+1. 모델/시제품을 구축하고 핵심 매개변수를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 실행
+3. 이상 및 편차를 기록
+- **P13.2.1.4 검증 및 문제 폐쇄**: 「배터리 팩 설계 및 BMS」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료될 때까지 추적합니다.
+**4레벨 핵심 동작:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 실행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P13.2.1.5 문서 출력 및 하위 전달**: 「배터리 팩 설계 및 BMS」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료합니다.
+**4레벨 핵심 동작:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지
+
+##### 전원 분배 및 DC-DC
+- **방법 / 도구**: 모선 전압 선택, DC-DC 모듈, 필터링, OR-ing, 이중화
+- **설계 사고 논리**: 모터 모선과 로직 전원 분리; 고장 시 안전 전원 차단
+- **핵심 제약 조건**: 전압 강하, 효율, EMI, 안전 표준
+- **완료 기준 / 산출물**: 전원 분배 다이어그램, DC-DC 선정, 효율/열 테스트
+**3레벨 하위 작업:**
+- **P13.2.2.1 입력 정리 및 목표 정량화**: 「전원 분배 및 DC-DC」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 동작:**
+1. 모든 상위 입력 목록을 나열하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P13.2.2.2 설계/방법 설계**: 「전원 분배 및 DC-DC」에 대한 구현 방법 또는 후보 설계를 수립하고, 「모선 전압 선택, DC-DC 모듈, 필터링, OR-ing, 이중화」를 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 합니다.
+**4레벨 핵심 동작:**
+1. 2개 이상의 후보 설계를 구성
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 설계를 확정
+- **P13.2.2.3 구현/프로토타입/시제품 제작**: 설계에 따라 「전원 분배 및 DC-DC」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 핵심 동작:**
+1. 모델/시제품을 구축하고 핵심 매개변수를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 실행
+3. 이상 및 편차를 기록
+- **P13.2.2.4 검증 및 문제 폐쇄**: 「전원 분배 및 DC-DC」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료될 때까지 추적합니다.
+**4레벨 핵심 동작:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 실행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P13.2.2.5 문서 출력 및 하위 전달**: 「전원 분배 및 DC-DC」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료합니다.
+**4레벨 핵심 동작:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지
+
+##### 충전 및 에너지 관리
+- **방법 / 도구**: 충전기/스테이션, 무선 충전, 충전 프로토콜, 에너지 회수
+- **설계 사고 논리**: 충전 경험은 사용성에 영향; 대상 시나리오와 호환 필요
+- **핵심 제약 조건**: 안전, 표준, 비용, 공간
+- **완료 기준 / 산출물**: 충전 설계, 충전 시간, BMS 통신 프로토콜
+**3레벨 하위 작업:**
+- **P13.2.3.1 입력 정리 및 목표 정량화**: 「충전 및 에너지 관리」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 동작:**
+1. 모든 상위 입력 목록을 나열하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P13.2.3.2 설계/방법 설계**: 「충전 및 에너지 관리」에 대한 구현 방법 또는 후보 설계를 수립하고, 「충전기/스테이션, 무선 충전, 충전 프로토콜, 에너지 회수」를 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 합니다.
+**4레벨 핵심 동작:**
+1. 2개 이상의 후보 설계를 구성
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 설계를 확정
+- **P13.2.3.3 구현/프로토타입/시제품 제작**: 설계에 따라 「충전 및 에너지 관리」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 핵심 동작:**
+1. 모델/시제품을 구축하고 핵심 매개변수를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 실행
+3. 이상 및 편차를 기록
+- **P13.2.3.4 검증 및 문제 폐쇄**: 「충전 및 에너지 관리」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료될 때까지 추적합니다.
+**4레벨 핵심 동작:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 실행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P13.2.3.5 문서 출력 및 하위 전달**: 「충전 및 에너지 관리」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료합니다.
+**4레벨 핵심 동작:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지
+
+#### 안전 및 EMC
+
+##### 하드웨어 비상 정지 및 안전 체인
+- **방법 / 도구**: 하드웨어 비상 정지, 워치독, 퓨즈, 안전 PLC/릴레이, 이중 채널
+- **설계 사고 논리**: 모든 소프트웨어 오류에도 하드웨어를 통해 동력 차단 가능; 기능 안전 준수
+- **핵심 제약 조건**: 응답 시간, 신뢰성, 오작동
+- **완료 기준 / 산출물**: 안전 시스템 회로도, FMEA, 비상 정지 응답 시간 < 목표
+**3레벨 하위 작업:**
+- **P13.3.1.1 입력 정리 및 목표 정량화**: 「하드웨어 비상 정지 및 안전 체인」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 핵심 동작:**
+1. 모든 상위 입력 목록을 나열하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P13.3.1.2 설계/방법 설계**: 「하드웨어 비상 정지 및 안전 체인」에 대한 구현 방법 또는 후보 설계를 수립하고, 「하드웨어 비상 정지, 워치독, 퓨즈, 안전 PLC/릴레이, 이중 채널」을 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 합니다.
+**4레벨 핵심 동작:**
+1. 2개 이상의 후보 설계를 구성
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 설계를 확정
+- **P13.3.1.3 구현/프로토타입/시제품 제작**: 설계에 따라 「하드웨어 비상 정지 및 안전 체인」의 구현 작업을 실행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 핵심 동작:**
+1. 모델/시제품을 구축하고 핵심 매개변수를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 실행
+3. 이상 및 편차를 기록
+- **P13.3.1.4 검증 및 문제 폐쇄**: 「하드웨어 비상 정지 및 안전 체인」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료될 때까지 추적합니다.
+**4레벨 핵심 동작:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 실행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P13.3.1.5 문서 출력 및 하위 전달**: 「하드웨어 비상 정지 및 안전 체인」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 전달을 완료합니다.
+**4레벨 핵심 동작:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지

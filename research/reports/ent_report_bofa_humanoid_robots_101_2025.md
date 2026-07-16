@@ -90,4 +90,8 @@ The BOM and shipment figures are analyst estimates, not audited financials. The 
 ## 参考
 - https://institute.bankofamerica.com/content/dam/transformation/humanoid-robots.pdf
 
+## 개요
 
+> **생활 속 예시**: 마치 투자자들을 위해 쓴 《휴머노이드 로봇 입문 매뉴얼》과 같습니다. 로봇이 어떤 '장기'로 구성되어 있는지, 대당 비용이 대략 얼마인지, 향후 수십 년 동안 어떻게 보급될 수 있는지를 분석합니다.
+
+> **자연어 논리**: 2025년 4월에 발표된 미국 은행 연구소 보고서는 휴머노이드 로봇의 아키텍처, 핵심 부품, 재료비 추이, 그리고 2060년까지의 응용 단계를 체계적으로 소개합니다. 이는 휴머노이드 로봇 시장 전망, 공급망 기회 및 규모화 경로를 이해하기 위한 투자자 관점의 거시적 참고 자료를 제공합니다.

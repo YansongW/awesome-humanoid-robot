@@ -68,3 +68,14 @@ This presentation highlights recent efforts at the Johns Hopkins Applied Physics
 ## 参考
 - https://events.bizzabo.com/867156
 
+## Overview
+This presentation highlights recent efforts at the Johns Hopkins Applied Physics Laboratory to advance agentic AI for collaborative robotic teams. It begins by framing the core challenges of enabling autonomy, coordination, and adaptability across heterogeneous systems, then introduces a scalable architecture designed to support agentic behaviors in multi-robot environments. The talk concludes with key challenges encountered and practical lessons learned from ongoing research and development.
+
+## Content
+This presentation highlights recent efforts at the Johns Hopkins Applied Physics Laboratory to advance agentic AI for collaborative robotic teams. It begins by framing the core challenges of enabling autonomy, coordination, and adaptability across heterogeneous systems, then introduces a scalable architecture designed to support agentic behaviors in multi-robot environments. The talk concludes with key challenges encountered and practical lessons learned from ongoing research and development.
+
+## 개요
+이 프레젠테이션은 존스홉킨스 응용물리연구소(Johns Hopkins Applied Physics Laboratory)에서 협업 로봇 팀을 위한 에이전틱 AI(agentic AI)를 발전시키기 위한 최근 노력을 조명합니다. 먼저 이기종 시스템 전반에서 자율성, 조정 및 적응성을 가능하게 하는 핵심 과제를 설명한 후, 다중 로봇 환경에서 에이전틱 행동을 지원하도록 설계된 확장 가능한 아키텍처를 소개합니다. 발표는 진행 중인 연구 및 개발에서 직면한 주요 과제와 얻은 실용적인 교훈으로 마무리됩니다.
+
+## 핵심 내용
+이 프레젠테이션은 존스홉킨스 응용물리연구소(Johns Hopkins Applied Physics Laboratory)에서 협업 로봇 팀을 위한 에이전틱 AI(agentic AI)를 발전시키기 위한 최근 노력을 조명합니다. 먼저 이기종 시스템 전반에서 자율성, 조정 및 적응성을 가능하게 하는 핵심 과제를 설명한 후, 다중 로봇 환경에서 에이전틱 행동을 지원하도록 설계된 확장 가능한 아키텍처를 소개합니다. 발표는 진행 중인 연구 및 개발에서 직면한 주요 과제와 얻은 실용적인 교훈으로 마무리됩니다.

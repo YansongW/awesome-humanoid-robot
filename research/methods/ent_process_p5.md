@@ -346,6 +346,476 @@ theoretical_depth:
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
 
+## Overview
+Mechanical Structure is the 5th phase in the full-process development of humanoid robot products, expanded into several Level-3 sub-tasks in WBS V3.
 
+This phase covers complete engineering actions including input review, conceptual design, implementation/prototyping, verification closure, and documentation delivery. It is a critical milestone to ensure downstream dependencies receive qualified inputs.
 
+## Content
+### Key Sub-tasks and Technical Content
+#### Detailed Structural Design
 
+##### Central Skeleton and Limb Link Design
+- **Methods / Tools**: SolidWorks / NX / CATIA, topology optimization, size optimization
+- **Design Rationale**: The central skeleton carries the torso load and transmits it to the legs; limb links require high stiffness and low weight
+- **Key Constraints**: Stiffness, strength, weight, assembly accessibility
+- **Completion Criteria / Deliverables**: 3D structural model, critical cross-section design, preliminary BOM
+**Level-3 Sub-tasks:**
+- **P5.1.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Central Skeleton and Limb Link Design," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P5.1.1.2 Conceptual and Detailed Design**: Complete the conceptual design, detailed design, and interface definition for "Central Skeleton and Limb Link Design," verify feasibility using "SolidWorks / NX / CATIA, topology optimization, size optimization," and output drawings/algorithms/logical frameworks.
+**Level-4 Key Actions:**
+1. Generate no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize a review and freeze the solution
+- **P5.1.1.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation work for "Central Skeleton and Limb Link Design" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P5.1.1.4 Verification and Issue Closure**: Verify the outputs of "Central Skeleton and Limb Link Design," check if completion criteria are met, record issues, and track them to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plans and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P5.1.1.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Central Skeleton and Limb Link Design," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+##### Joint Mounting Interface and Housing Design
+- **Methods / Tools**: Interface tolerance analysis, locating pin/flange design, sealing design
+- **Design Rationale**: Joints and structures require precise coaxial alignment, repeatable assembly/disassembly, and dust/water resistance
+- **Key Constraints**: Machining precision, sealing level, maintenance space
+- **Completion Criteria / Deliverables**: Joint interface drawings, housing 3D model, sealing solution
+**Level-3 Sub-tasks:**
+- **P5.1.2.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Joint Mounting Interface and Housing Design," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P5.1.2.2 Conceptual and Detailed Design**: Complete the conceptual design, detailed design, and interface definition for "Joint Mounting Interface and Housing Design," verify feasibility using "interface tolerance analysis, locating pin/flange design, sealing design," and output drawings/algorithms/logical frameworks.
+**Level-4 Key Actions:**
+1. Generate no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize a review and freeze the solution
+- **P5.1.2.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation work for "Joint Mounting Interface and Housing Design" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P5.1.2.4 Verification and Issue Closure**: Verify the outputs of "Joint Mounting Interface and Housing Design," check if completion criteria are met, record issues, and track them to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plans and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P5.1.2.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Joint Mounting Interface and Housing Design," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+##### Exterior Cover and Seam Design
+- **Methods / Tools**: Class-A surface seams, snap-fit/screw concealment, removable panels
+- **Design Rationale**: Covers must balance aesthetics, heat dissipation, maintenance access, and drop protection
+- **Key Constraints**: Frozen ID, mold/printing process, assembly sequence
+- **Completion Criteria / Deliverables**: Cover 3D model, seam solution, maintenance access layout
+**Level-3 Sub-tasks:**
+- **P5.1.3.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Exterior Cover and Seam Design," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P5.1.3.2 Conceptual and Detailed Design**: Complete the conceptual design, detailed design, and interface definition for "Exterior Cover and Seam Design," verify feasibility using "Class-A surface seams, snap-fit/screw concealment, removable panels," and output drawings/algorithms/logical frameworks.
+**Level-4 Key Actions:**
+1. Generate no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize a review and freeze the solution
+- **P5.1.3.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation work for "Exterior Cover and Seam Design" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P5.1.3.4 Verification and Issue Closure**: Verify the outputs of "Exterior Cover and Seam Design," check if completion criteria are met, record issues, and track them to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plans and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P5.1.3.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Exterior Cover and Seam Design," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+#### Materials and Processes
+
+##### Structural Material Selection
+- **Methods / Tools**: Comparison of aluminum alloys 7075/6061, carbon fiber, titanium alloy, engineering plastics
+- **Design Rationale**: High-load links use aluminum alloy/CNC; housings/brackets use SLS/MJF 3D printing or injection molding
+- **Key Constraints**: Strength, stiffness, density, cost, batch manufacturing feasibility
+- **Completion Criteria / Deliverables**: "Material Selection Table": material, process, and rationale for each component
+**Level-3 Sub-tasks:**
+- **P5.2.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Structural Material Selection," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P5.2.1.2 Candidate Solution Establishment and Evaluation**: Build a candidate solution library for "Structural Material Selection," perform quantitative evaluation using "comparison of aluminum alloys 7075/6061, carbon fiber, titanium alloy, engineering plastics," and determine the final solution considering cost, performance, supply chain, and maintainability.
+**Level-4 Key Actions:**
+1. Generate no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize a review and freeze the solution
+- **P5.2.1.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation work for "Structural Material Selection" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P5.2.1.4 Verification and Issue Closure**: Verify the outputs of "Structural Material Selection," check if completion criteria are met, record issues, and track them to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plans and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P5.2.1.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Structural Material Selection," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+##### Design for Additive Manufacturing (DfAM)
+- **Methods / Tools**: SLS/MJF/SLA design guidelines, support optimization, lattice structures
+- **Design Rationale**: Many structural parts in the prototype phase use 3D printing and require optimization for the printing process
+- **Key Constraints**: Printed material strength, interlayer bonding, dimensional accuracy, surface quality
+- **Completion Criteria / Deliverables**: DfAM checklist, 3D printed part drawings, printing parameters
+**Level-3 Sub-tasks:**
+- **P5.2.2.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Design for Additive Manufacturing (DfAM)," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P5.2.2.2 Conceptual and Detailed Design**: Complete the conceptual design, detailed design, and interface definition for "Design for Additive Manufacturing (DfAM)," verify feasibility using "SLS/MJF/SLA design guidelines, support optimization, lattice structures," and output drawings/algorithms/logical frameworks.
+**Level-4 Key Actions:**
+1. Generate no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize a review and freeze the solution
+- **P5.2.2.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation work for "Design for Additive Manufacturing (DfAM)" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P5.2.2.4 Verification and Issue Closure**: Verify the outputs of "Design for Additive Manufacturing (DfAM)," check if completion criteria are met, record issues, and track them to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plans and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P5.2.2.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Design for Additive Manufacturing (DfAM)," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+##### Mass Production Process Assessment
+- **Methods / Tools**: Comparison of die casting, injection molding, sheet metal, CNC, composite molding processes
+- **Design Rationale**: After prototype verification, 3D printed parts need to be converted to mass-producible processes
+- **Key Constraints**: Mold cost, minimum order quantity, yield rate, cycle time
+- **Completion Criteria / Deliverables**: Mass production process roadmap, key part process selection
+**Level-3 Sub-tasks:**
+- **P5.2.3.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Mass Production Process Assessment," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P5.2.3.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "Mass Production Process Assessment," conduct feasibility studies using "comparison of die casting, injection molding, sheet metal, CNC, composite molding processes," and clarify the technical roadmap and resource requirements.
+**Level-4 Key Actions:**
+1. Generate no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize a review and freeze the solution
+- **P5.2.3.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation work for "Mass Production Process Assessment" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P5.2.3.4 Verification and Issue Closure**: Verify the outputs of "Mass Production Process Assessment," check if completion criteria are met, record issues, and track them to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plans and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P5.2.3.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Mass Production Process Assessment," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+#### Wiring, Maintenance, and Assembly
+
+##### Cable and Hose Routing Design
+- **Methods / Tools**: 3D harness routing, bend radius verification, fixing point design
+- **Design Rationale**: Power/signal/cooling lines must not pull or wear during joint movement; reserve maintenance length
+- **Key Constraints**: Bending fatigue life, EMC shielding, heat dissipation, replaceability
+- **Completion Criteria / Deliverables**: "Wiring Design Specification": cable type, fixing points, bend radius, routing path
+**Level-3 Sub-tasks:**
+- **P5.3.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Cable and Hose Routing Design," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P5.3.1.2 Conceptual and Detailed Design**: Complete the conceptual design, detailed design, and interface definition for "Cable and Hose Routing Design," verify feasibility using "3D harness routing, bend radius verification, fixing point design," and output drawings/algorithms/logical frameworks.
+**Level-4 Key Actions:**
+1. Generate no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize a review and freeze the solution
+- **P5.3.1.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation work for "Cable and Hose Routing Design" according to the design solution, fabricate prototypes, samples, or complete key steps, and record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P5.3.1.4 Verification and Issue Closure**: Verify the outputs of "Cable and Hose Routing Design," check if completion criteria are met, record issues, and track them to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plans and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P5.3.1.5 Documentation Output and Downstream Delivery**: Output the final report/drawings/specifications for "Cable and Hose Routing Design," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+## 개요
+본체 구조 공학과 프로토타입(Mechanical Structure)은 휴머노이드 로봇 제품 개발 전 과정 중 5번째 단계이며, WBS V3에서 여러 3레벨 하위 작업으로 전개됩니다.
+
+이 단계는 입력 검토, 설계, 구현/프로토타입, 검증 폐쇄 및 문서 인도 등 완전한 엔지니어링 작업을 포함하며, 하위 의존 부서가 적격한 입력을 확보할 수 있도록 하는 핵심 마일스톤입니다.
+
+## 핵심 내용
+
+#### 상세 구조 설계
+
+##### 중앙 골격 및 사지 링크 설계
+- **방법 / 도구**: SolidWorks / NX / CATIA, 위상 최적화, 치수 최적화
+- **설계 사고 논리**: 중앙 골격은 동체 하중을 지지하고 다리로 전달하며, 사지 링크는 높은 강성과 낮은 중량이 요구됨
+- **핵심 제약 조건**: 강성, 강도, 중량, 조립 접근성
+- **완료 기준 / 산출물**: 3D 구조 모델, 주요 단면 설계, BOM 초안
+**3레벨 하위 작업:**
+- **P5.1.1.1 입력 검토 및 목표 정량화**: 「중앙 골격 및 사지 링크 설계」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P5.1.1.2 개념 및 상세 설계**: 「중앙 골격 및 사지 링크 설계」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「SolidWorks / NX / CATIA, 위상 최적화, 치수 최적화」를 사용하여 타당성을 검증하며, 도면/알고리즘/로직 프레임워크를 출력함.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보 방안을 마련
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P5.1.1.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「중앙 골격 및 사지 링크 설계」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 핵심 작업:**
+1. 모델/시제품을 구축하고 핵심 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 수행
+3. 이상 및 편차를 기록
+- **P5.1.1.4 검증 및 문제 폐쇄**: 「중앙 골격 및 사지 링크 설계」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 수행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P5.1.1.5 문서 출력 및 하위 인도**: 「중앙 골격 및 사지 링크 설계」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지
+
+##### 관절 장착 인터페이스 및 하우징 설계
+- **방법 / 도구**: 인터페이스 공차 분석, 위치 결정 핀/플랜지 설계, 밀봉 설계
+- **설계 사고 논리**: 관절과 구조 사이에는 정밀한 동축성, 반복적인 분해/조립이 가능해야 하며, 방진 및 방수가 필요함
+- **핵심 제약 조건**: 가공 정밀도, 밀봉 등급, 유지보수 공간
+- **완료 기준 / 산출물**: 관절 인터페이스 도면, 하우징 3D, 밀봉 방안
+**3레벨 하위 작업:**
+- **P5.1.2.1 입력 검토 및 목표 정량화**: 「관절 장착 인터페이스 및 하우징 설계」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P5.1.2.2 개념 및 상세 설계**: 「관절 장착 인터페이스 및 하우징 설계」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「인터페이스 공차 분석, 위치 결정 핀/플랜지 설계, 밀봉 설계」를 사용하여 타당성을 검증하며, 도면/알고리즘/로직 프레임워크를 출력함.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보 방안을 마련
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P5.1.2.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「관절 장착 인터페이스 및 하우징 설계」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 핵심 작업:**
+1. 모델/시제품을 구축하고 핵심 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 수행
+3. 이상 및 편차를 기록
+- **P5.1.2.4 검증 및 문제 폐쇄**: 「관절 장착 인터페이스 및 하우징 설계」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 수행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P5.1.2.5 문서 출력 및 하위 인도**: 「관절 장착 인터페이스 및 하우징 설계」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지
+
+##### 외관 커버 및 분할선 설계
+- **방법 / 도구**: A면 분할선, 스냅/나사 은폐, 분리형 패널
+- **설계 사고 논리**: 커버는 외관, 방열, 유지보수 개구부, 낙하 보호를 모두 고려해야 함
+- **핵심 제약 조건**: ID 확정, 금형/프린팅 공정, 조립 순서
+- **완료 기준 / 산출물**: 커버 3D, 분할선 방안, 유지보수 개구부 배치
+**3레벨 하위 작업:**
+- **P5.1.3.1 입력 검토 및 목표 정량화**: 「외관 커버 및 분할선 설계」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P5.1.3.2 개념 및 상세 설계**: 「외관 커버 및 분할선 설계」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「A면 분할선, 스냅/나사 은폐, 분리형 패널」을 사용하여 타당성을 검증하며, 도면/알고리즘/로직 프레임워크를 출력함.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보 방안을 마련
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P5.1.3.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「외관 커버 및 분할선 설계」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 핵심 작업:**
+1. 모델/시제품을 구축하고 핵심 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 수행
+3. 이상 및 편차를 기록
+- **P5.1.3.4 검증 및 문제 폐쇄**: 「외관 커버 및 분할선 설계」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 수행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P5.1.3.5 문서 출력 및 하위 인도**: 「외관 커버 및 분할선 설계」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지
+
+#### 재료 및 공정
+
+##### 구조 재료 선정
+- **방법 / 도구**: 알루미늄 합금 7075/6061, 탄소 섬유, 티타늄 합금, 엔지니어링 플라스틱 비교
+- **설계 사고 논리**: 고하중 링크는 알루미늄 합금/CNC를 사용하고, 외부 케이스/브래킷은 SLS/MJF 3D 프린팅 또는 사출 성형을 사용함
+- **핵심 제약 조건**: 강도, 강성, 밀도, 비용, 양산 가능성
+- **완료 기준 / 산출물**: 《재료 선정표》: 각 부품의 재료, 공정, 이유
+**3레벨 하위 작업:**
+- **P5.2.1.1 입력 검토 및 목표 정량화**: 「구조 재료 선정」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P5.2.1.2 후보 방안 수립 및 평가**: 「구조 재료 선정」을 위한 후보 방안 라이브러리를 구축하고, 「알루미늄 합금 7075/6061, 탄소 섬유, 티타늄 합금, 엔지니어링 플라스틱 비교」를 사용하여 정량적으로 평가하며, 비용, 성능, 공급망, 유지보수성을 고려하여 최종 방안을 결정함.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보 방안을 마련
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P5.2.1.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「구조 재료 선정」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 핵심 작업:**
+1. 모델/시제품을 구축하고 핵심 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 수행
+3. 이상 및 편차를 기록
+- **P5.2.1.4 검증 및 문제 폐쇄**: 「구조 재료 선정」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 수행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P5.2.1.5 문서 출력 및 하위 인도**: 「구조 재료 선정」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지
+
+##### 적층 제조를 위한 설계 (DfAM)
+- **방법 / 도구**: SLS/MJF/SLA 설계 규격, 지지대 최적화, 격자 구조
+- **설계 사고 논리**: 프로토타입 단계에서 많은 구조 부품이 3D 프린팅을 사용하므로, 프린팅 공정에 맞게 최적화해야 함
+- **핵심 제약 조건**: 프린팅 재료 강도, 층간 결합, 치수 정밀도, 표면 품질
+- **완료 기준 / 산출물**: DfAM 체크리스트, 3D 프린팅 부품 도면, 프린팅 파라미터
+**3레벨 하위 작업:**
+- **P5.2.2.1 입력 검토 및 목표 정량화**: 「적층 제조를 위한 설계 (DfAM)」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P5.2.2.2 개념 및 상세 설계**: 「적층 제조를 위한 설계 (DfAM)」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「SLS/MJF/SLA 설계 규격, 지지대 최적화, 격자 구조」를 사용하여 타당성을 검증하며, 도면/알고리즘/로직 프레임워크를 출력함.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보 방안을 마련
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P5.2.2.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「적층 제조를 위한 설계 (DfAM)」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 핵심 작업:**
+1. 모델/시제품을 구축하고 핵심 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 수행
+3. 이상 및 편차를 기록
+- **P5.2.2.4 검증 및 문제 폐쇄**: 「적층 제조를 위한 설계 (DfAM)」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 수행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P5.2.2.5 문서 출력 및 하위 인도**: 「적층 제조를 위한 설계 (DfAM)」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지
+
+##### 양산 공정 평가
+- **방법 / 도구**: 다이캐스팅, 사출 성형, 판금, CNC, 복합재 성형 공정 비교
+- **설계 사고 논리**: 프로토타입 검증 후 3D 프린팅 부품을 양산 가능한 공정으로 전환해야 함
+- **핵심 제약 조건**: 금형 비용, 최소 주문량, 수율, 사이클 타임
+- **완료 기준 / 산출물**: 양산 공정 로드맵, 핵심 부품 공정 선택
+**3레벨 하위 작업:**
+- **P5.2.3.1 입력 검토 및 목표 정량화**: 「양산 공정 평가」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P5.2.3.2 방안/방법 설계**: 「양산 공정 평가」를 위한 구현 방법 또는 후보 방안을 수립하고, 「다이캐스팅, 사출 성형, 판금, CNC, 복합재 성형 공정 비교」를 사용하여 논증하며, 기술 로드맵과 리소스 요구 사항을 명확히 함.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보 방안을 마련
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P5.2.3.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「양산 공정 평가」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 핵심 작업:**
+1. 모델/시제품을 구축하고 핵심 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 수행
+3. 이상 및 편차를 기록
+- **P5.2.3.4 검증 및 문제 폐쇄**: 「양산 공정 평가」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 수행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P5.2.3.5 문서 출력 및 하위 인도**: 「양산 공정 평가」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지
+
+#### 배선, 유지보수 및 조립
+
+##### 케이블 및 배관 배선 설계
+- **방법 / 도구**: 3D 와이어 하네스 배선, 굽힘 반경 검토, 고정점 설계
+- **설계 사고 논리**: 동력/신호/냉각 배관이 관절 운동 시 당겨지거나 마모되지 않도록 하고, 유지보수 여유 길이를 확보함
+- **핵심 제약 조건**: 굽힘 수명, EMC 차폐, 방열, 교체 가능성
+- **완료 기준 / 산출물**: 《배선 설계 규격》: 케이블 모델, 고정점, 굽힘 반경, 경로
+**3레벨 하위 작업:**
+- **P5.3.1.1 입력 검토 및 목표 정량화**: 「케이블 및 배관 배선 설계」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 핵심 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P5.3.1.2 개념 및 상세 설계**: 「케이블 및 배관 배선 설계」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「3D 와이어 하네스 배선, 굽힘 반경 검토, 고정점 설계」를 사용하여 타당성을 검증하며, 도면/알고리즘/로직 프레임워크를 출력함.
+**4레벨 핵심 작업:**
+1. 2개 이상의 후보 방안을 마련
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P5.3.1.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「케이블 및 배관 배선 설계」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 핵심 작업:**
+1. 모델/시제품을 구축하고 핵심 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증을 수행
+3. 이상 및 편차를 기록
+- **P5.3.1.4 검증 및 문제 폐쇄**: 「케이블 및 배관 배선 설계」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종결될 때까지 추적함.
+**4레벨 핵심 작업:**
+1. 테스트/검토 계획 및 통과 기준을 수립
+2. 테스트를 수행하고 원시 데이터를 기록
+3. 문제 목록 및 개선 조치를 출력
+- **P5.3.1.5 문서 출력 및 하위 인도**: 「케이블 및 배관 배선 설계」의 최종 보고서/도면/사양을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 핵심 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터를 인용
+2. 내부 검토 및 버전 관리를 완료
+3. 게시하고 하위 의존 부서에 통지

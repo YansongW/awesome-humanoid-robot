@@ -64,3 +64,35 @@ theoretical_depth:
 ## 参考
 
 - 用于人形策略学习的对抗性运动和运动模仿 project page (https://almi-humanoid.github.io)
+
+## Overview
+
+This study focuses on the data closed-loop problem in humanoid robot policy learning, proposing a framework that integrates adversarial motion generation and motion imitation, aiming to overcome the reliance of traditional methods on high-quality human demonstration data. The main contribution lies in modeling action generation as a conditional generation problem, using diffusion policies and flow matching techniques to sample executable trajectories from multimodal action distributions, and integrating whole-body controllers (WBC/MPC) to achieve end-to-end transformation from proprioceptive states and teleoperation data to joint-level commands, thereby enhancing the robustness and generalization of humanoid robot motion in complex environments.
+
+## Content
+
+The policy learning of humanoid robots has long faced the "data closed-loop" dilemma: on one hand, there is a modality gap between human operation data collected via teleoperation, exoskeletons, or simulation and the robot's proprioceptive states; on the other hand, traditional methods rely on handcrafted motion priors or single demonstration data, making it difficult to cover multimodal action distributions in real-world scenarios. Existing work often separates action generation from low-level control, leading to motion incoherence or insufficient adaptability when policies are transferred to new environments. Therefore, how to construct a closed-loop system from data collection to reusable policies and achieve robust motion under adversarial conditions has become a core challenge in this field.
+
+To address these issues, this paper proposes a joint learning framework for adversarial motion and motion imitation. The core idea is to treat action generation as a conditional generation problem, using diffusion policies or flow matching models to model multimodal action distributions. Specifically, the system first collects human operation and robot states through proprioceptive states and joint sequences, teleoperation/exoskeleton data, and simulation interaction data, then uniformly transforms these heterogeneous data into trainable and reusable joint position/torque commands, whole-body trajectories/action sequences, and low-level controller targets. This process bridges high-level planning and low-level execution through whole-body controllers (WBC) and model predictive control (MPC), thereby breaking the barrier between data collection and policy learning.
+
+In terms of technological innovation, the key point of this work lies in introducing an adversarial motion generation mechanism. Unlike traditional motion imitation that relies solely on positive demonstrations, adversarial training forces the policy to learn more robust motion primitives by generating adversarial samples (e.g., perturbed external forces, terrain changes, or target shifts). Meanwhile, the introduction of diffusion policies allows the model to sample from multimodal action distributions, avoiding the mode collapse problem caused by single Gaussian assumptions. Flow matching techniques further improve sampling efficiency and trajectory smoothness, ensuring that the generated whole-body action sequences satisfy physical constraints in both joint space and task space.
+
+In terms of experimental validation, the framework was systematically evaluated on simulation environments and real humanoid robot platforms. In simulations, the robustness of the policy was tested by setting adversarial disturbances (e.g., random pushes, irregular terrain), and results showed that the jointly trained policy significantly outperformed baseline methods (e.g., pure imitation learning or single-modal generative models) in success rate and motion smoothness. On real robots, using teleoperation data and proprioceptive state closed-loop, composite tasks such as dynamic walking, obstacle avoidance, and object manipulation were achieved, verifying the feasibility of a complete closed-loop from data collection to policy deployment. Additionally, the modular design of the framework makes it easily extendable to humanoid robots of different configurations, offering strong engineering application value.
+
+From an application perspective, this work provides key technical support for the autonomous operation of humanoid robots in unstructured environments. By combining adversarial motion and motion imitation, the policy can not only replicate human demonstration actions but also autonomously adjust motion patterns under unknown disturbances, which is particularly important for scenarios requiring high robustness, such as disaster rescue and home services. At the same time, the establishment of a data closed-loop reduces reliance on manual annotation or expensive demonstration data, laying the foundation for large-scale policy training and cross-task transfer.
+
+## 개요
+
+본 연구는 휴머노이드 로봇의 정책 학습에서 데이터 폐루프 문제에 초점을 맞추며, 적대적 운동 생성과 운동 모방을 융합한 프레임워크를 제안하여 기존 방법이 고품질 인간 시연 데이터에 의존하는 한계를 극복하고자 한다. 주요 기여는 동작 생성을 조건부 생성 문제로 모델링하고, 확산 정책과 흐름 정합 기술을 활용하여 다중 모드 동작 분포에서 실행 가능한 궤적을 샘플링하며, 전신 제어기(WBC/MPC)를 통합하여 본체 상태, 원격 조작 데이터에서 관절 수준 명령까지의 종단 간 변환을 실현함으로써 휴머노이드 로봇의 복잡한 환경에서의 운동 강건성과 일반화 능력을 향상시키는 데 있다.
+
+## 핵심 내용
+
+휴머노이드 로봇의 정책 학습은 오랫동안 '데이터 폐루프' 딜레마에 직면해 있다. 한편으로는 원격 조작, 외골격 또는 시뮬레이션을 통해 수집된 인간 조작 데이터와 로봇 본체 상태 사이에 모달리티 격차가 존재한다. 다른 한편으로는 기존 방법이 수작업으로 설계된 운동 사전 지식이나 단일 시연 데이터에 의존하여 실제 환경의 다중 모드 동작 분포를 포괄하기 어렵다. 기존 연구는 종종 동작 생성과 하위 수준 제어를 분리하여, 정책이 새로운 환경으로 전이될 때 운동 불연속성이나 적응성 부족을 초래한다. 따라서 데이터 수집부터 재사용 가능한 정책까지의 폐루프 시스템을 구축하고 적대적 조건에서 강건한 운동을 실현하는 것이 이 분야의 핵심 과제가 된다.
+
+위 문제에 대응하여, 본 논문은 적대적 운동과 운동 모방의 공동 학습 프레임워크를 제안한다. 핵심 아이디어는 동작 생성을 조건부 생성 문제로 간주하고, 확산 정책 또는 흐름 정합 모델을 사용하여 다중 모드 동작 분포를 모델링하는 것이다. 구체적으로, 시스템은 먼저 본체 상태와 관절 시퀀스, 원격 조작/외골격 데이터, 시뮬레이션 상호작용 데이터를 통해 인간 조작과 로봇 상태를 수집한 후, 이러한 이종 데이터를 훈련 가능하고 재사용 가능한 관절 위치/토크 명령, 전신 궤적/동작 시퀀스 및 하위 수준 제어기 목표로 통일적으로 변환한다. 이 과정은 전신 제어기(WBC)와 모델 예측 제어(MPC)를 통해 상위 계획과 하위 실행을 연결함으로써 데이터 수집과 정책 학습 사이의 장벽을 허문다.
+
+기술 혁신 측면에서, 본 연구의 핵심은 적대적 운동 생성 메커니즘을 도입한 데 있다. 기존 운동 모방이 긍정적 시연에만 의존하는 것과 달리, 적대적 훈련은 적대적 샘플(예: 외란 힘, 지형 변화 또는 목표 오프셋)을 생성하여 정책이 더 강건한 운동 기본 요소를 학습하도록 강제한다. 동시에 확산 정책의 도입으로 모델이 다중 모드 동작 분포에서 샘플링할 수 있게 되어 단일 가우시안 가정으로 인한 모드 붕괴 문제를 피할 수 있다. 흐름 정합 기술은 샘플링 효율성과 궤적 평활성을 더욱 향상시켜 생성된 전신 동작 시퀀스가 관절 공간과 작업 공간 모두에서 물리적 제약을 충족하도록 한다.
+
+실험 검증 측면에서, 이 프레임워크는 시뮬레이션 환경과 실제 휴머노이드 로봇 플랫폼에서 체계적으로 평가되었다. 시뮬레이션에서는 적대적 간섭(예: 무작위 추력, 불규칙 지형)을 설정하여 정책의 강건성을 테스트한 결과, 공동 훈련된 정책이 성공률과 운동 평활성에서 기준 방법(예: 순수 모방 학습 또는 단일 모드 생성 모델)보다 현저히 우수함을 보였다. 실제 로봇에서는 원격 조작 데이터와 본체 상태 폐루프를 활용하여 동적 보행, 장애물 회피 및 물체 조작과 같은 복합 작업을 구현함으로써 데이터 수집부터 정책 배포까지의 완전한 폐루프 실현 가능성을 검증했다. 또한, 이 프레임워크의 모듈식 설계는 다양한 구성의 휴머노이드 로봇으로 쉽게 확장 가능하여 높은 공학적 응용 가치를 지닌다.
+
+응용 가치 측면에서, 본 연구는 비구조화 환경에서 휴머노이드 로봇의 자율 작업을 위한 핵심 기술 지원을 제공한다. 적대적 운동과 운동 모방의 결합을 통해 정책은 인간 시연 동작을 재현할 수 있을 뿐만 아니라, 알려지지 않은 외란 하에서도 자율적으로 운동 패턴을 조정할 수 있어, 재난 구조, 가사 서비스 등 높은 강건성이 요구되는 시나리오에서 특히 중요하다. 동시에 데이터 폐루프의 구축은 수작업 레이블링이나 고가의 시연 데이터에 대한 의존도를 낮추어, 대규모 정책 훈련과 교차 작업 전이를 위한 기반을 마련한다.

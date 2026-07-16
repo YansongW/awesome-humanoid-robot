@@ -62,3 +62,31 @@ theoretical_depth:
 ## 参考
 
 - 打开仿真到现实世界的人形像素到动作策略传输之门 project page (https://doorman-humanoid.github.io/)
+
+## Overview
+
+This paper addresses the data closed-loop challenges faced when deploying humanoid robots from simulation environments to the real world, proposing a complete pixel-to-action policy transfer framework. The core of the research lies in transforming a whole-body control policy trained with privileged information into a lightweight student policy that relies only on deployment observations, through a teacher-student knowledge distillation mechanism, thereby bridging the gap between simulation training and real robot execution. This work provides a systematic technical pathway for enhancing the generalization capability and operational robustness of humanoid robots in complex scenarios.
+
+## Content
+
+The autonomous operation of humanoid robots in unstructured environments has long been hindered by two core bottlenecks: first, the high cost of acquiring high-quality training data, where teleoperation and exoskeleton collection can provide human demonstrations but struggle to cover diverse task scenarios; second, the significant performance degradation of vision-motion policies trained in simulation when transferred to real robots, due to sensor noise, dynamics discrepancies, and incomplete observations. Existing methods often rely on complex system identification or domain randomization but fail to fundamentally address the policy's dependence on privileged information.
+
+The framework proposed in this paper takes "data closed-loop" as its design core. First, by synchronously collecting multi-view camera images, proprioceptive states, and joint sequences, a full dataset containing human operation demonstrations and robot states is constructed. Based on this, a teacher-student knowledge transfer paradigm is adopted: the teacher policy has access to complete privileged information during training (e.g., precise physical parameters, global states, future trajectories), thereby learning optimal whole-body action sequences and low-level controller targets; the student policy is restricted to using only observations available during deployment (e.g., monocular images and proprioception), replicating the teacher policy's behavioral capabilities through distillation learning.
+
+The core of the key technological innovations lies in two points: first, a reusable whole-body trajectory representation method is designed, which uniformly encodes teleoperation/exoskeleton data, whole-body controller (WBC), and model predictive control (MPC) outputs into trainable trajectory sequences, incorporating closed-loop error correction mechanisms and human intervention signals to ensure data quality and policy safety; second, a hierarchical distillation strategy is proposed, which not only transfers action outputs but also implicitly conveys the teacher policy's ability to fuse multimodal observations and adapt to dynamic environments, thereby significantly reducing the risk of domain drift in the student policy during real deployment.
+
+In terms of experimental validation, the framework trains and evaluates the teacher policy in simulation, followed by zero-shot transfer tests on a real humanoid robot platform. Through ablation experiments comparing with and without distillation, different observation modality combinations, and whether closed-loop error correction is introduced, the proposed method demonstrates significant advantages in operation success rate, trajectory smoothness, and anti-interference capability. The application value is reflected in the framework's adaptability to various humanoid robot hardware platforms, supporting unified modeling of both fine-grained upper-body operations and whole-body mobile operations, providing a reproducible technical solution for the practical deployment of humanoid robots in scenarios such as home services and industrial assembly.
+
+## 개요
+
+본 논문은 휴머노이드 로봇이 시뮬레이션 환경에서 실제 환경으로 배포될 때 직면하는 데이터 폐쇄 루프 문제를 해결하기 위해, 완전한 픽셀-동작 정책 전이 프레임워크를 제안한다. 연구의 핵심은 교사-학생 지식 증류 메커니즘을 통해 특권 정보를 기반으로 훈련된 전신 제어 정책을 배포 시 관측만을 활용하는 경량화된 학생 정책으로 변환함으로써, 시뮬레이션 훈련과 실제 로봇 실행 간의 장벽을 허물는 데 있다. 이 작업은 복잡한 환경에서 휴머노이드 로봇의 일반화 능력과 조작 견고성을 향상시키기 위한 체계적인 기술 경로를 제공한다.
+
+## 핵심 내용
+
+비구조화된 환경에서 휴머노이드 로봇의 자율 조작은 오랫동안 두 가지 핵심 병목 현상에 직면해 왔다. 첫째, 고품질 훈련 데이터를 획득하는 비용이 매우 높아, 원격 조작이나 외골격 수집을 통해 인간의 시연을 제공할 수 있지만 다양한 작업 시나리오를 포괄하기 어렵다. 둘째, 시뮬레이션 환경에서 훈련된 시각-운동 정책을 실제 로봇으로 전이할 때, 센서 노이즈, 동역학 차이 및 관측 불완전성으로 인해 성능이 급격히 저하된다. 기존 방법은 종종 복잡한 시스템 식별이나 도메인 무작위화에 의존하지만, 특권 정보에 대한 정책의 의존성을 근본적으로 해결하지는 못한다.
+
+본 논문에서 제안하는 프레임워크는 "데이터 폐쇄 루프"를 설계의 주축으로 삼는다. 먼저, 다중 시점 카메라 이미지, 본체 상태 및 관절 시퀀스를 동기적으로 수집하여 인간의 조작 시연과 로봇 상태를 포함한 전체 데이터셋을 구축한다. 이를 바탕으로 교사-학생 지식 전이 패러다임을 채택한다. 교사 정책은 훈련 단계에서 완전한 특권 정보(예: 정확한 물리적 매개변수, 전역 상태, 미래 궤적)에 접근할 수 있어 최적의 전신 동작 시퀀스와 저수준 제어기 목표를 학습한다. 반면, 학생 정책은 배포 시 얻을 수 있는 관측 데이터(예: 단안 이미지와 본체 인식)만 사용하도록 제한되며, 증류 학습을 통해 교사 정책의 행동 능력을 재현한다.
+
+핵심 기술 혁신은 두 가지에 있다. 첫째, 재사용 가능한 전신 궤적 표현 방법을 설계하여 원격 조작/외골격 데이터, 전신 제어기(WBC) 및 모델 예측 제어(MPC)의 출력을 훈련 가능한 궤적 시퀀스로 통합 인코딩하고, 폐쇄 루프 오류 수정 메커니즘과 인간 개입 신호를 도입하여 데이터 품질과 정책 안전성을 보장한다. 둘째, 계층적 증류 전략을 제안하여 동작 출력뿐만 아니라 다중 모드 관측 융합 능력과 동적 환경 적응 전략에 대한 교사 정책의 능력을 암시적으로 전달함으로써, 실제 배포에서 학생 정책의 도메인 드리프트 위험을 크게 줄인다.
+
+실험 검증 측면에서, 이 프레임워크는 시뮬레이션 환경에서 교사 정책을 훈련하고 평가한 후, 실제 휴머노이드 로봇 플랫폼에서 제로샷 전이 테스트를 수행한다. 증류 유무, 다양한 관측 모드 조합 및 폐쇄 루프 오류 수정 도입 여부를 비교하는 절제 실험을 통해, 제안된 방법이 조작 성공률, 궤적 평활도 및 외란 저항 능력에서 현저한 우위를 보임을 확인한다. 응용 가치는 다음과 같다. 이 프레임워크는 다양한 휴머노이드 로봇 하드웨어 플랫폼에 적응 가능하며, 상반신 정밀 조작과 전신 이동 조작의 통합 모델링을 지원하여, 가사 서비스, 산업 조립 등 시나리오에서 휴머노이드 로봇의 실용적 배포를 위한 재현 가능한 기술 솔루션을 제공한다.

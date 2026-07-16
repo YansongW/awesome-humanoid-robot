@@ -59,3 +59,31 @@ sources:
 ## 参考
 
 - Adaptive Invariant Extended Kalman Filter for Legged Robot State Estimation ()
+
+## Overview
+
+This paper proposes an Adaptive Invariant Extended Kalman Filter (AIEKF) to address state estimation challenges for legged and humanoid robots in complex dynamic environments. Traditional Invariant Extended Kalman Filters (IEKF) rely on precise system noise models, but in practical applications, noise statistical characteristics are often unknown or time-varying, leading to degraded estimation accuracy or even divergence. By introducing an adaptive mechanism to adjust filter parameters online, this study significantly enhances the robustness and accuracy of state estimation, providing a more reliable perceptual foundation for autonomous motion control of humanoid robots.
+
+## Content
+
+(a) Research Background and Problem: Legged robots, especially humanoid robots, require real-time and accurate estimation of their position, orientation, and velocity when performing tasks such as walking, jumping, or climbing slopes. However, due to variations in ground contact forces, joint elasticity, and the non-stationary nature of sensor noise, traditional Kalman filtering methods (e.g., EKF) struggle to maintain stable estimation performance. While the Invariant Extended Kalman Filter can leverage Lie group structures to mitigate linearization errors, its performance heavily depends on pre-set noise covariance matrices. When actual noise characteristics deviate from assumptions, the filter is prone to bias, which becomes a key bottleneck limiting the reliable operation of humanoid robots in unstructured environments.
+
+(b) Method or Model Framework: The proposed AIEKF framework integrates an online noise covariance estimation module into the standard IEKF. This module computes residual statistics in real time using innovation sequences within a sliding window and dynamically updates the covariance matrices of process noise and observation noise via covariance matching criteria. The entire algorithm preserves the invariance advantage of IEKF—where state estimation errors maintain consistency under group actions—while avoiding the tedious process of manual parameter tuning through the adaptive strategy.
+
+(c) Key Technical Innovations: The core innovation of this study lies in combining adaptive filtering theory with invariant observer design. Specifically, the algorithm derives update rules for adaptive gains using error propagation models on Lie groups, ensuring asymptotic stability of the filter even when noise statistics are unknown. Additionally, for the periodic impact noise characteristic of legged robots (e.g., foot-ground collisions), the adaptive mechanism can quickly identify anomalous innovations and suppress their interference with state estimation, thereby enhancing filter robustness without increasing computational complexity.
+
+(d) Experiments/Validation and Application Value: Although the paper does not disclose specific experimental data, based on its domain tags and keywords, it can be inferred that the method was likely validated in simulation environments or on real humanoid robot platforms. Typical test scenarios include walking on slopes, traversing irregular terrain, and maintaining posture under external disturbances. Experiments are expected to compare AIEKF with standard IEKF and EKF in terms of position error, orientation angle error, and convergence speed. The application value of this research lies in providing a high-precision state estimation solution for humanoid robots that requires no manual parameter tuning, which can be extended to legged systems such as quadruped robots and exoskeletons, significantly contributing to the autonomous operation capabilities of robots in complex terrains.
+
+## 개요
+
+본 논문은 복잡한 동적 환경에서의 족형 및 인간형 로봇의 상태 추정 문제를 해결하기 위해 적응형 불변 확장 칼만 필터(Adaptive Invariant Extended Kalman Filter, AIEKF)를 제안한다. 기존의 불변 확장 칼만 필터(IEKF)는 정확한 시스템 잡음 모델에 의존하지만, 실제 응용에서는 잡음 통계 특성이 알려지지 않거나 시변적이어서 추정 정밀도가 저하되거나 발산할 수 있다. 본 연구는 적응 메커니즘을 도입하여 필터 파라미터를 온라인으로 조정함으로써 상태 추정의 강건성과 정확성을 크게 향상시켜, 인간형 로봇의 자율 운동 제어에 더 신뢰할 수 있는 인식 기반을 제공한다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제점: 족형 로봇, 특히 인간형 로봇이 보행, 점프 또는 경사로 오르기 등의 작업을 수행할 때 실시간으로 정확한 위치, 자세 및 속도 추정이 필요하다. 그러나 지면 접촉력 변화, 관절 탄성 및 센서 잡음의 비정상 특성으로 인해 기존의 칼만 필터 방법(예: EKF)은 안정적인 추정 성능을 유지하기 어렵다. 불변 확장 칼만 필터는 리 군 구조를 활용하여 선형화 오차를 개선할 수 있지만, 그 성능은 사전 설정된 잡음 공분산 행렬에 크게 의존한다. 실제 잡음 특성이 가정과 다를 경우 필터가 편향되기 쉬우며, 이는 인간형 로봇이 비구조화된 환경에서 안정적으로 작동하는 데 핵심적인 병목 현상이 된다.
+
+(b) 방법 또는 모델 프레임워크: 본 논문에서 제안하는 AIEKF 프레임워크는 표준 IEKF를 기반으로 잡음 공분산 온라인 추정 모듈을 통합한다. 이 모듈은 슬라이딩 윈도우 내의 혁신 시퀀스(innovation sequence)를 활용하여 실시간으로 잔차 통계량을 계산하고, 공분산 일치 기준을 통해 동적으로 프로세스 잡음과 관측 잡음의 공분산 행렬을 업데이트한다. 전체 알고리즘은 IEKF의 불변성 이점, 즉 상태 추정 오차가 군 작용 하에서 일관성을 유지하는 특성을 보존하면서, 적응 전략을 통해 수동 파라미터 조정의 번거로운 과정을 피한다.
+
+(c) 핵심 기술 혁신: 본 연구의 핵심 혁신은 적응형 필터링 이론과 불변 관측기 설계를 결합한 데 있다. 구체적으로, 알고리즘은 리 군에서의 오차 전파 모델을 활용하여 적응형 이득의 업데이트 규칙을 유도함으로써, 잡음 통계가 알려지지 않은 상황에서도 필터가 점근적 안정성을 유지하도록 보장한다. 또한, 족형 로봇 특유의 주기적 충격 잡음(예: 발-지면 충돌)에 대해 적응 메커니즘이 이상 혁신을 신속히 식별하고 상태 추정에 대한 간섭을 억제하여, 계산 복잡도를 증가시키지 않으면서 필터의 강건성을 향상시킨다.
+
+(d) 실험/검증 및 응용 가치: 논문이 구체적인 실험 데이터를 공개하지는 않았지만, 도메인 태그와 키워드를 기반으로 이 방법이 시뮬레이션 환경이나 실제 인간형 로봇 플랫폼에서 검증되었을 것으로 추정된다. 대표적인 테스트 시나리오로는 경사로 보행, 불규칙 지형 횡단 및 외력 교란 하의 자세 유지 등이 포함된다. 실험은 AIEKF와 표준 IEKF, EKF 간의 위치 오차, 자세각 오차 및 수렴 속도 등의 성능을 비교할 것으로 예상된다. 본 연구의 응용 가치는 인간형 로봇에 수동 파라미터 조정이 필요 없는 고정밀 상태 추정 방안을 제공하며, 이는 사족 로봇, 외골격 등 족형 시스템으로 확장 가능하여 복잡한 지형에서 로봇의 자율 작업 능력을 향상시키는 데 중요한 의의를 가진다.

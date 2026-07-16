@@ -161,4 +161,66 @@ theoretical_depth:
 - [IDTechEx Humanoid Robots 2025-2035](https://www.idtechex.com/en/research-report/humanoid-robots/1093)
 - 项目 Wiki：appendix-d/companies/company_unitree.md
 
+## 개요
+우슈 테크놀로지는 휴머노이드 로봇 분야의 중요한 완제품 제조사입니다. 다음 내용은 프로젝트 Wiki에서 정리한 것으로, 심층 참고용으로 제공됩니다.
 
+## 핵심 내용
+## 우슈 테크놀로지 / Unitree Robotics
+
+> 이 항목은 [부록 D 기업/제품 Wiki](../../appendix-d.md)에 속합니다.
+> 데이터 업데이트 일자: 2026-07-01. 모든 매개변수는 공식 공개 자료를 기준으로 하며, 누락된 항목은 "미공개"로 표시합니다.
+
+---
+
+### 회사 정보 카드
+
+| 항목 | 내용 |
+|------|------|
+| **중문명** | 우슈 테크놀로지 |
+| **영문명** | Unitree Robotics |
+| **본사** | 중국 항저우 |
+| **설립 연도** | 2016년 |
+| **공식 사이트** | [https://www.unitree.com](https://www.unitree.com) |
+| **공급망 단계** | 완제품 OEM / 사족+휴머노이드 로봇, 자체 개발 관절 모터 |
+| **기업 속성** | 유니콘, 사족 로봇 글로벌 판매량 선두 |
+| **모회사/소속 그룹** | 없음 |
+| **데이터 출처** | Unitree 공식 사이트, IT之家, Robozaps, 제3자 제품 데이터베이스 |
+
+### 회사 소개
+
+우슈 테크놀로지는 높은 가성비의 사족 로봇(로봇 개)으로 시장에 진입했으며, 2023년 첫 번째 풀사이즈 휴머노이드 로봇 H1을 발표하고, 2024년에는 소형 휴머노이드 G1을 출시했습니다.
+
+회사는 핵심 부품의 수직 통합을 고수하며, 자체 개발한 M107 영구자석 동기 모터, 드라이버 및 완제품 운동 제어 알고리즘을 보유하고 있으며, ROS2 호환 생태계와 공격적인 가격 책정 전략을 통해 연구 기관과 개발자 커뮤니티에서 가장 많은 출하량을 기록한 휴머노이드 플랫폼 중 하나가 되었습니다.
+
+### 제품 라인
+
+| 제품 라인 | 포지셔닝 | 대표 제품 | 응용 분야 |
+|--------|------|----------|----------|
+| 풀사이즈 휴머노이드 | 고동적 운동, 연구 프로토타입 | H1 / H1-2 | 연구 교육, AI 구현 지능 연구 |
+| 소형 휴머노이드 | 저비용 개발 플랫폼 | G1 / G1-Comp | 교육, 개발자, 경공업 |
+| 사족 로봇 | 순찰, 운송, 연구 | Go2 / B2 / B2-W | 전력 순찰, 긴급 구조, 연구 |
+
+### 대표 제품
+
+### 공급망 위치
+
+- **상류 핵심 부품/재료**: 자체 개발 M107 모터 및 드라이버, 외부 구매 감속기, 베어링, 배터리, 시각 센서 ([제4장 액추에이터](../../../chapters/chapter-04.md) 참조).
+- **하류 고객/응용 시나리오**: 대학, 연구 기관, 개발자, 물류 및 보안 고객.
+- **주요 경쟁사/대상**: 유비테크 Walker, Fourier GR-1, Tesla Optimus.
+
+### 지식 그래프 노드 및 관계
+
+- 회사 엔티티: `ent_company_unitree`
+- 제품 엔티티: `ent_product_unitree_h1`, `ent_product_unitree_g1`
+- 주요 관계:
+  - `ent_company_unitree` -- `manufactures` --> `ent_product_unitree_h1`
+  - `ent_company_unitree` -- `manufactures` --> `ent_product_unitree_g1`
+  - `ent_product_unitree_h1` -- `uses` --> `ent_component_unitree_m107_motor`
+
+### 참고 자료
+
+1. [Unitree 공식 사이트](https://www.unitree.com)
+2. [Robozaps – Unitree H1 Review](https://blog.robozaps.com/b/unitree-h1-review)
+3. [Humanoid.Guide – Unitree G1](https://humanoid.guide/product/g1/)
+4. [IT之家 – Unitree 휴머노이드 로봇 보도](https://www.ithome.com)
+5. [부록 D.4 주요 제품 Wiki](../index-products.md)

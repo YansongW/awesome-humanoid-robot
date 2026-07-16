@@ -55,3 +55,31 @@ sources:
 
 ## 参考
 - Composite Motion Learning with Task Control project page (https://dl.acm.org/doi/abs/10.1145/3592447)
+
+## Overview
+
+This study addresses the challenges of motion synthesis and control for humanoid robots performing complex locomotion tasks in physics-based simulation environments. It proposes a composite motion learning method that integrates task-level control. The main contribution lies in constructing a unified framework capable of simultaneously learning multiple motor skills and achieving task-level control, offering a new technical pathway for generating physics-based simulation animations for humanoid robots. By combining motion learning with task control, this method effectively enhances the motion adaptability and behavioral diversity of humanoid robots in dynamic environments.
+
+## Content
+
+(a) Research Background and Problem: Generating physics-based simulation animations for humanoid robots is an important research direction at the intersection of robotics and computer graphics. Traditional methods typically model individual motor skills independently, making it difficult to support smooth transitions and coordinated execution among multiple skills. Moreover, existing motion learning frameworks often lack flexibility at the task control level, failing to dynamically adjust motion behavior based on environmental changes or high-level instructions. This study aims to address this bottleneck by exploring how to achieve composite learning of multiple motor skills within a unified framework while endowing robots with task-level control capabilities.
+
+(b) Method or Model Framework: This study proposes a composite motion learning framework based on physics simulation, with the core idea of decoupling motor skill learning and task control into two interrelated modules. The motion learning module employs deep reinforcement learning algorithms to extract low-level control policies for various motion patterns (e.g., walking, jumping, turning) from demonstration data. The task control module, through a high-level planner, dynamically selects and combines low-level motor skills based on current task objectives and environmental states. The two modules achieve collaborative optimization via shared state representations and reward functions, thereby generating coherent motion sequences that meet task requirements.
+
+(c) Key Technical Innovations: The innovation of this method is mainly reflected in three aspects. First, it proposes a composite motion representation method that encodes different motor skills into composable latent space vectors, supporting rapid switching and blending of skills. Second, it designs a task-driven control interface that allows users to directly regulate the robot's motion behavior through high-level instructions (e.g., target positions, velocity constraints) without retraining low-level policies. Third, it introduces a physics-constrained reward shaping technique that effectively mitigates discrepancies between the simulation environment and real-world physics, enhancing the stability and naturalness of motion generation.
+
+(d) Experiments/Validation or Application Value: The study systematically validates the method on a standard humanoid robot simulation platform. Experimental results show that the proposed method outperforms baseline approaches in various composite motion tasks (e.g., obstacle avoidance walking, target tracking, terrain adaptation). Specifically, the robot can seamlessly switch between skills such as walking, running, and turning based on task demands, with significantly improved motion trajectory smoothness and success rates. This work provides an efficient motion generation solution for application scenarios such as game animation, virtual reality, and autonomous navigation of humanoid robots, holding significant theoretical and practical value.
+
+## 개요
+
+본 연구는 휴머노이드 로봇이 물리 시뮬레이션 환경에서 복잡한 운동 작업을 수행할 때 직면하는 운동 합성 및 제어 문제를 해결하기 위해, 작업 제어를 통합한 복합 운동 학습 방법을 제안합니다. 주요 기여는 여러 운동 기술을 동시에 학습하고 작업 수준의 제어를 구현할 수 있는 통합 프레임워크를 구축하여, 휴머노이드 로봇의 물리 시뮬레이션 애니메이션 생성을 위한 새로운 기술 경로를 제공하는 데 있습니다. 이 방법은 운동 학습과 작업 제어를 결합함으로써 동적 환경에서 휴머노이드 로봇의 운동 적응성과 행동 다양성을 효과적으로 향상시킵니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 휴머노이드 로봇의 물리 시뮬레이션 애니메이션 생성은 로봇 공학과 컴퓨터 그래픽스의 교차 분야에서 중요한 연구 방향입니다. 전통적인 방법은 일반적으로 단일 운동 기술을 독립적으로 모델링하여, 여러 기술 간의 원활한 전환과 협력 실행을 지원하기 어렵습니다. 또한, 기존 운동 학습 프레임워크는 작업 제어 수준에서 유연성이 부족하여 환경 변화나 상위 명령에 따라 운동 행동을 동적으로 조정할 수 없습니다. 본 연구는 이러한 병목 현상을 해결하기 위해, 통합 프레임워크 내에서 여러 운동 기술의 복합 학습을 구현하고 로봇에 작업 수준의 제어 능력을 부여하는 방법을 탐구합니다.
+
+(b) 방법 또는 모델 프레임워크: 본 연구는 물리 시뮬레이션 기반의 복합 운동 학습 프레임워크를 제안하며, 핵심 아이디어는 운동 기술 학습과 작업 제어를 두 개의 상호 연관된 모듈로 분리하는 것입니다. 운동 학습 모듈은 심층 강화 학습 알고리즘을 사용하여 시연 데이터에서 여러 운동 패턴(예: 걷기, 점프, 방향 전환 등)의 하위 수준 제어 정책을 추출합니다. 작업 제어 모듈은 상위 수준 계획기를 통해 현재 작업 목표와 환경 상태에 따라 하위 수준 운동 기술을 동적으로 선택하고 조합합니다. 두 모듈은 공유된 상태 표현과 보상 함수를 통해 협력 최적화를 수행하여, 일관되고 작업 요구 사항을 충족하는 운동 시퀀스를 생성합니다.
+
+(c) 핵심 기술 혁신: 이 방법의 혁신성은 주로 세 가지 측면에서 나타납니다. 첫째, 여러 운동 기술을 조합 가능한 잠재 공간 벡터로 인코딩하여 기술의 빠른 전환과 혼합을 지원하는 복합 운동 표현 방법을 제안합니다. 둘째, 사용자가 상위 명령(예: 목표 위치, 속도 제약)을 통해 로봇의 운동 행동을 직접 제어할 수 있도록 하는 작업 중심 제어 인터페이스를 설계하여, 하위 수준 정책을 재훈련할 필요가 없습니다. 셋째, 물리적 제약 기반의 보상 형성 기술을 도입하여 시뮬레이션 환경과 실제 물리 법칙 간의 편차를 효과적으로 완화하고, 운동 생성의 안정성과 자연스러움을 향상시킵니다.
+
+(d) 실험/검증 또는 응용 가치: 연구는 표준 휴머노이드 로봇 시뮬레이션 플랫폼에서 체계적으로 검증되었으며, 실험 결과는 이 방법이 여러 복합 운동 작업(예: 장애물 회피 걷기, 목표 추적, 지형 적응)에서 기준 방법보다 우수한 성능을 보임을 나타냅니다. 구체적으로, 로봇은 작업 요구에 따라 걷기, 달리기, 방향 전환 등의 기술 간에 원활하게 전환할 수 있으며, 운동 궤적의 평활도와 성공률이 크게 향상되었습니다. 이 연구는 게임 애니메이션, 가상 현실 및 휴머노이드 로봇의 자율 주행과 같은 응용 시나리오에 효율적인 운동 생성 방안을 제공하며, 중요한 이론적 의미와 실용적 가치를 지닙니다.

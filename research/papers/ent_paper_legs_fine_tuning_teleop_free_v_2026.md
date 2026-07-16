@@ -62,3 +62,31 @@ theoretical_depth:
 ## 参考
 
 - LEGS project page (https://legsvla.github.io/)
+
+## Overview
+
+Humanoid robots performing mobile manipulation tasks in complex environments face challenges in the deep integration of perception, planning, and control. Existing methods often rely on teleoperation to collect demonstration data, which is costly and difficult to generalize. LEGS proposes a framework for fine-tuning Vision-Language-Action (VLA) models without teleoperation. It encodes language instructions, multi-view observations, and proprioceptive states into multimodal representations, leverages a world model to provide predictable physical priors, and finally uses an action head to convert semantic goals into continuous control signals. This work is the first to combine Gaussian Splatting scene representation with VLA models, offering a new paradigm for zero-teleoperation, highly generalizable mobile manipulation for humanoid robots.
+
+## Content
+
+**Research Background and Problem**: Humanoid robot loco-manipulation requires the robot to simultaneously coordinate whole-body motion and end-effector operations. Traditional methods rely on teleoperation to collect large amounts of expert demonstration data, which is costly and difficult to adapt to new scenarios. Meanwhile, existing VLA models are mostly designed for desktop robotic arms and lack the ability to model whole-body dynamics and terrain interaction. LEGS aims to address two core issues: how to obtain effective training data without relying on teleoperation, and how to enable VLA models to understand and predict the consequences of physical interactions (e.g., terrain changes, object movements).
+
+**Method or Model Framework**: LEGS constructs an end-to-end multimodal learning framework, with a core process divided into three steps. First, language instructions, multi-view camera images, proprioceptive states (joint angles, IMU data), and joint sequences are encoded into a unified multimodal representation. Second, ACT (Action Chunking with Transformers) behavior cloning and a VLA multimodal action model are used for imitation learning, while a world model/video prediction module is introduced to implicitly model terrain, scenes, and object dynamics. Finally, low-level controller targets (e.g., joint torques, foot trajectories) are predicted, and a Gaussian Splatting scene representation enables differentiable visual-physical joint optimization.
+
+**Key Technical Innovations**: The technical contributions of LEGS are mainly in three aspects. First, it proposes a "zero-teleoperation fine-tuning" strategy, leveraging the continuous differentiability of Gaussian Splatting scenes to allow the robot to generate training data through self-exploration in simulation without manual teleoperation. Second, it innovatively uses the world model as a provider of physical priors: the video prediction module not only predicts future frames but also implicitly encodes physical constraints such as terrain traversability and object manipulability, enabling the action head to convert semantic goals like "pick up the cup" into continuous control that conforms to dynamic laws. Third, it adopts Gaussian Splatting as the scene representation. Compared to traditional NeRF or mesh representations, its explicit geometric and radiance field structure is more conducive to collision detection and interaction planning for robots.
+
+**Experiments/Validation and Application Value**: Although the paper does not provide specific experimental data, based on its method design, it can be inferred that LEGS is suitable for complex scenarios requiring whole-body coordination, such as humanoid robots carrying objects on rugged terrain or completing assembly tasks in confined spaces. Its core value lies in: significantly reducing data collection costs by eliminating the reliance on teleoperation; enhancing the generalization ability of VLA models in unseen scenarios through physical priors provided by the world model; and the Gaussian Splatting scene representation offering a differentiable visual-motion joint optimization space for robots. This work provides key technical support for deploying humanoid robots in unstructured environments such as home services and disaster rescue.
+
+## 개요
+
+휴머노이드 로봇이 복잡한 환경에서 이동 조작 작업을 수행하려면 인식, 계획 및 제어의 심층적인 융합이 필요합니다. 기존 방법은 대부분 원격 조작(Teleop)을 통해 시연 데이터를 수집하는 데 의존하며, 비용이 높고 일반화가 어렵습니다. LEGS는 원격 조작 없이 시각-언어-동작(VLA) 모델을 미세 조정할 수 있는 프레임워크를 제안합니다. 언어 명령, 다중 시점 관측 및 본체 상태를 다중 모드 표현으로 인코딩하고, 세계 모델을 활용하여 예측 가능한 물리적 사전 정보를 제공하며, 최종적으로 동작 헤드가 의미론적 목표를 연속 제어 신호로 변환합니다. 이 연구는 가우시안 스플래팅(Gaussian Splatting) 장면 표현과 VLA 모델을 최초로 결합하여, 휴머노이드 로봇이 원격 조작 없이도 높은 일반화 능력을 갖춘 이동 조작을 수행할 수 있는 새로운 패러다임을 제시합니다.
+
+## 핵심 내용
+
+**연구 배경 및 문제점**: 휴머노이드 로봇의 이동 조작(Loco-manipulation)은 로봇이 전신 운동과 말단 효과기 조작을 동시에 조정해야 합니다. 기존 방법은 원격 조작을 통해 대량의 전문가 시연 데이터를 수집하는 데 의존하며, 비용이 높고 새로운 환경에 적응하기 어렵습니다. 또한, 기존 VLA 모델은 대부분 데스크탑 로봇 팔을 대상으로 하며, 전신 역학 및 지형 상호작용에 대한 모델링 능력이 부족합니다. LEGS는 두 가지 핵심 문제를 해결하는 것을 목표로 합니다: 원격 조작에 의존하지 않고 효과적인 훈련 데이터를 획득하는 방법, 그리고 VLA 모델이 물리적 상호작용의 결과(예: 지형 변화, 물체 움직임)를 이해하고 예측하도록 하는 방법입니다.
+
+**방법 또는 모델 프레임워크**: LEGS는 종단 간 다중 모드 학습 프레임워크를 구축하며, 핵심 프로세스는 세 단계로 나뉩니다. 첫째, 언어 명령, 다중 시점 카메라 이미지, 본체 상태(관절 각도, IMU 데이터) 및 관절 시퀀스를 통합된 다중 모드 표현으로 인코딩합니다. 둘째, ACT(Action Chunking with Transformers) 행동 복제와 VLA 다중 모드 동작 모델을 사용하여 모방 학습을 수행하고, 동시에 세계 모델/비디오 예측 모듈을 도입하여 지형, 장면 및 물체 동역학을 암시적으로 모델링합니다. 마지막으로, 하위 수준 제어기 목표(예: 관절 토크, 발끝 궤적)를 예측하고, 가우시안 스플래팅 장면 표현을 통해 미분 가능한 시각-물리 결합 최적화를 구현합니다.
+
+**핵심 기술 혁신**: LEGS의 기술적 기여는 주로 세 가지 측면에서 나타납니다. 첫째, "원격 조작 없는 미세 조정" 전략을 제안하여, 가우시안 스플래팅 장면의 연속적 미분 가능 특성을 활용하여 로봇이 시뮬레이션에서 자체 탐색을 통해 훈련 데이터를 생성할 수 있도록 하여 수동 원격 조작이 필요 없게 합니다. 둘째, 세계 모델을 물리적 사전 정보 제공자로 혁신적으로 도입합니다: 비디오 예측 모듈은 미래 프레임을 예측할 뿐만 아니라, 지형 통행 가능성, 물체 조작 가능성 등의 물리적 제약을 암시적으로 인코딩하여 동작 헤드가 "컵 집기"와 같은 의미론적 목표를 역학 법칙에 부합하는 연속 제어로 변환할 수 있도록 합니다. 셋째, 장면 표현으로 가우시안 스플래팅을 채택하여, 기존 NeRF 또는 메쉬 표현과 비교하여 명시적 기하학 및 방사장 구조가 로봇의 충돌 감지 및 상호작용 계획에 더 유리합니다.
+
+**실험/검증 및 응용 가치**: 논문에서 구체적인 실험 데이터를 제공하지는 않았지만, 방법 설계에 기반하여 LEGS는 전신 조정이 필요한 복잡한 환경, 예를 들어 휴머노이드 로봇이 험준한 지형에서 물체를 운반하거나 좁은 공간에서 조립 작업을 수행하는 등의 시나리오에 적합하다고 추론할 수 있습니다. 핵심 가치는 다음과 같습니다: 원격 조작에 대한 의존성을 제거하여 데이터 수집 비용을 대폭 절감하고, 세계 모델이 제공하는 물리적 사전 정보를 통해 미지의 환경에서 VLA 모델의 일반화 능력을 향상시키며, 가우시안 스플래팅 장면 표현은 로봇에게 미분 가능한 시각-운동 결합 최적화 공간을 제공합니다. 이 연구는 휴머노이드 로봇이 가정 서비스, 재난 구조 등 비구조화된 환경에 배치되는 데 중요한 기술적 지원을 제공합니다.

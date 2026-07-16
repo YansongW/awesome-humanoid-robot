@@ -77,4 +77,66 @@ sources:
 ## 参考
 - Wiki extraction
 
+## Overview
+## 6.9 Frontier Trends
 
+## Content
+The fields of humanoid robot computing, power supply, and thermal management are undergoing rapid evolution, with major trends including:
+
+1. **Specialized NPUs and Heterogeneous Computing**. Dedicated accelerators for Transformers, diffusion models, and robot policies (e.g., NVIDIA Blackwell, Qualcomm Hexagon NPU, Apple Neural Engine) continue to improve energy efficiency. Future robot main controllers will adopt heterogeneous SoCs integrating CPU + GPU + NPU + ISP + DSP.
+
+2. **Compute-in-Memory and Near-Memory Computing**. To alleviate the memory wall, technologies such as HBM, CXL, processing-in-memory (PIM/CIM), and near-memory computing are penetrating from HPC to edge computing.
+
+3. **Solid-State Batteries and High-Energy-Density Cells**. Solid-state batteries are expected to increase gravimetric energy density to over 400 Wh/kg, significantly extending robot endurance, though cost, cycle life, and manufacturing processes remain challenges.
+
+4. **SiC/GaN Power Electronics**. Wide-bandgap semiconductors improve the efficiency of motor drives and power conversion, reducing thermal losses and enabling more compact and longer-lasting humanoid robots.
+
+5. **Liquid Cooling and Phase-Change Heat Dissipation**. As platforms like Jetson Thor see power consumption rise to the 75–120 W level, traditional air cooling and vapor chambers may prove insufficient. Liquid cooling, phase-change materials, and microchannel heat dissipation will become high-end solutions.
+
+6. **Edge-Cloud Collaboration and Model Compression**. Deploying large models on robot edge devices requires techniques such as quantization, pruning, distillation, and neural architecture search (NAS), while training, map updates, and long-term memory are handled via the cloud.
+
+7. **Integration of Functional Safety and Cybersecurity**. As robots enter homes and factories, computing platforms must simultaneously meet functional safety (ISO 13849, IEC 61508) and cybersecurity (IEC 62443) requirements.
+
+8. **Humanoid Robot-Specific SoCs**. Trends such as the NVIDIA Jetson Thor and Tesla Dojo/FSD suggest the emergence of dedicated SoCs for humanoid robot perception-planning-control integrated workloads. These would integrate multi-camera ISPs, high-performance NPUs, functional safety MCUs, and high-speed network interfaces, meeting head/torso computing needs with a single chip.
+
+9. **Digital Twins and Online Thermal-Electrical-Control Co-Optimization**. By collecting real-time power consumption, temperature, and posture data from each robot node, a thermal-electrical-control joint strategy can be trained in a digital twin, enabling predictive thermal management and adaptive power allocation.
+
+10. **Sustainable Computing and Green Robotics**. As the number of large models and robots grows, lifecycle energy consumption and carbon emissions attract attention. Future designs will place greater emphasis on energy efficiency optimization, renewable energy charging, battery cascade utilization, and recyclable materials.
+
+!!! note "Terminology Explanation: Digital Twin, Predictive Maintenance, Adaptive Power Allocation, Cybersecurity"
+    - **Digital twin**: A high-fidelity mapping model of a physical entity in digital space.
+    - **Predictive maintenance**: Maintenance performed before a fault occurs, based on condition monitoring and model predictions.
+    - **Adaptive power allocation**: Dynamically adjusting the power budget of each module according to task requirements and thermal status.
+    - **Cybersecurity**: Measures to protect systems from cyberattacks and data breaches.
+
+## 개요
+## 6.9 최신 동향
+
+## 핵심 내용
+휴머노이드 로봇의 컴퓨팅, 전원 및 열 관리 분야는 빠르게 진화하고 있으며, 주요 동향은 다음과 같습니다.
+
+1. **전용 NPU 및 이기종 컴퓨팅**. Transformer, 확산 모델 및 로봇 정책을 위한 전용 가속기(예: NVIDIA Blackwell, Qualcomm Hexagon NPU, Apple Neural Engine)의 에너지 효율이 지속적으로 향상되고 있습니다. 미래 로봇 메인 컨트롤러는 CPU + GPU + NPU + ISP + DSP로 구성된 이기종 SoC를 채택할 것입니다.
+
+2. **메모리 내 컴퓨팅 및 근접 메모리 컴퓨팅**. 메모리 병목 현상을 완화하기 위해 HBM, CXL, 메모리 내 컴퓨팅(PIM/CIM) 및 근접 메모리 컴퓨팅 기술이 HPC에서 엣지 컴퓨팅으로 확산되고 있습니다.
+
+3. **고체 배터리 및 고에너지 밀도 셀**. 고체 배터리는 질량 에너지 밀도를 400 Wh/kg 이상으로 높여 로봇의 작동 시간을 크게 연장할 수 있지만, 비용, 수명 주기 및 제조 공정은 여전히 과제로 남아 있습니다.
+
+4. **SiC/GaN 전력 전자 장치**. 와이드 밴드갭 반도체는 모터 구동 및 전원 변환 효율을 높이고 열 손실을 줄여 휴머노이드 로봇을 더욱 컴팩트하고 오래 지속되도록 만듭니다.
+
+5. **액체 냉각 및 상변화 방열**. Jetson Thor와 같은 플랫폼의 전력 소비가 75–120W 수준으로 증가함에 따라 기존의 공랭식 및 베이퍼 챔버로는 부족할 수 있으며, 액체 냉각, 상변화 재료, 마이크로채널 방열이 고급 솔루션으로 부상할 것입니다.
+
+6. **엣지-클라우드 협업 및 모델 압축**. 대규모 모델을 로봇 엣지에 배포하려면 양자화, 가지치기, 증류 및 신경 아키텍처 검색(NAS)과 같은 기술이 필요하며, 동시에 클라우드를 통해 훈련, 지도 업데이트 및 장기 기억을 수행합니다.
+
+7. **기능 안전과 정보 보안의 통합**. 로봇이 가정과 공장에 진입함에 따라 컴퓨팅 플랫폼은 기능 안전(ISO 13849, IEC 61508)과 사이버 보안(IEC 62443) 요구 사항을 동시에 충족해야 합니다.
+
+8. **휴머노이드 로봇 전용 SoC**. NVIDIA Jetson Thor, Tesla Dojo/FSD와 같은 추세는 미래에 휴머노이드 로봇의 인식-계획-제어 통합 워크로드를 위한 전용 SoC가 등장하여, 다중 카메라 ISP, 고성능 NPU, 기능 안전 MCU 및 고속 네트워크 인터페이스를 통합하여 단일 칩으로 머리/몸통 컴퓨팅 요구를 충족할 수 있음을 시사합니다.
+
+9. **디지털 트윈 및 온라인 열-전기-제어 공동 최적화**. 로봇의 각 노드에서 전력 소비, 온도 및 자세 데이터를 실시간으로 수집하여 디지털 트윈에서 열-전기-제어 통합 전략을 훈련함으로써 예측 열 관리 및 적응형 전력 분배를 구현합니다.
+
+10. **지속 가능한 컴퓨팅 및 그린 로봇**. 대규모 모델과 로봇의 수가 증가함에 따라 전체 수명 주기 에너지 소비와 탄소 배출에 대한 관심이 높아지고 있습니다. 미래 설계는 에너지 효율 최적화, 재생 가능 에너지 충전, 배터리 계단식 사용 및 재활용 가능한 재료 사용에 더 중점을 둘 것입니다.
+
+!!! note "용어 설명: 디지털 트윈, 예측 유지보수, 적응형 전력 분배, 정보 보안"
+    - **디지털 트윈(digital twin)**: 물리적 개체를 디지털 공간에 고충실도로 매핑한 모델입니다.
+    - **예측 유지보수(predictive maintenance)**: 상태 모니터링 및 모델 예측을 기반으로 고장 발생 전에 유지보수를 수행하는 것입니다.
+    - **적응형 전력 분배(adaptive power allocation)**: 작업 요구 사항과 열 상태에 따라 각 모듈의 전력 예산을 동적으로 조정하는 것입니다.
+    - **정보 보안(cybersecurity)**: 시스템을 사이버 공격 및 데이터 유출로부터 보호하는 조치입니다.

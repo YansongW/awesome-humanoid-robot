@@ -77,4 +77,70 @@ flowchart TD
 - Wiki extraction
 - 项目 Wiki：chapter-06.md#6.4.3 实时操作系统：Linux PREEMPT_RT, Xenomai, QNX, Zephyr
 
+## Overview
+QNX is an important software platform in the field of humanoid robots. The following content is compiled from the project Wiki for in-depth reference.
 
+## Content
+General-purpose operating systems (such as standard Linux) are not designed for hard real-time. Real-time operating systems (RTOS) meet microsecond-level timing requirements through kernel preemption, priority scheduling, and deterministic interrupt response.
+
+!!! note "Terminology explanation: Real-time operating system, preemption, priority, interrupt latency, scheduler"
+    - **Real-time operating system (RTOS)**: An operating system capable of meeting deterministic time constraints.
+    - **Preemption**: A high-priority task can interrupt a low-priority task and execute immediately.
+    - **Priority**: An attribute that determines the order in which tasks are executed.
+    - **Interrupt latency**: The time from when an interrupt occurs to when the interrupt service routine begins execution.
+    - **Scheduler**: A kernel component that decides which task runs at which moment.
+
+**Linux PREEMPT_RT**. By applying real-time patches to mainline Linux, most code in the kernel becomes preemptible, and interrupts can be threaded. It retains the rich ecosystem of Linux while providing scheduling latency in the tens of microseconds, making it a common choice for robot main controllers.
+
+**Xenomai**. Provides a dual-kernel real-time extension on Linux, where real-time tasks run on the Cobalt real-time kernel and non-real-time tasks run on the Linux kernel. Xenomai's scheduling latency can be as low as microseconds, but configuration and maintenance are more complex.
+
+**QNX**. A microkernel real-time operating system owned by BlackBerry, widely used in automotive, medical, and industrial fields. Its microkernel architecture implements file systems, network stacks, etc., as user-space services, with the kernel retaining only minimal functionality, offering high reliability and security.
+
+**Zephyr**. An open-source RTOS hosted by the Linux Foundation, designed for resource-constrained embedded devices, supporting multiple architectures, and commonly used in sensor nodes and motor controllers.
+
+!!! note "Terminology explanation: Microkernel, dual-kernel real-time, interrupt threading, scheduling latency"
+    - **Microkernel**: Only the most basic services (processes, memory, IPC) are retained in kernel space, while other services run in user space.
+    - **Dual-kernel real-time**: An architecture where an independent real-time kernel runs alongside a general-purpose OS.
+    - **Interrupt threading**: Running interrupt handlers as kernel threads, which can be preempted by higher-priority real-time tasks.
+    - **Scheduling latency**: The time from when a task becomes runnable to when it actually starts execution.
+
+```mermaid
+flowchart TD
+    A["Application Tasks"] --> B["Real-time Kernel Scheduler"]
+    B --> C["Preemptible Kernel"]
+    C --> D["Hardware Interrupts"]
+    E["Linux Services"] -.->|"Non-real-time"| C
+
+## 개요
+QNX는 휴머노이드 로봇 분야의 중요한 소프트웨어 플랫폼입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층적인 참고를 위해 제공됩니다.
+
+## 핵심 내용
+범용 운영체제(예: 표준 Linux)는 하드 리얼타임을 위해 설계되지 않았습니다. 실시간 운영체제(RTOS)는 커널 선점, 우선순위 스케줄링 및 결정적 인터럽트 응답을 통해 마이크로초 단위의 타이밍 요구 사항을 충족합니다.
+
+!!! note "용어 설명: 실시간 운영체제, 선점, 우선순위, 인터럽트 지연, 스케줄러"
+    - **실시간 운영체제(RTOS)**: 결정적 시간 제약을 충족할 수 있는 운영체제.
+    - **선점(preemption)**: 높은 우선순위의 태스크가 낮은 우선순위의 태스크를 중단하고 즉시 실행될 수 있는 것.
+    - **우선순위(priority)**: 태스크 실행 순서를 결정하는 속성.
+    - **인터럽트 지연(interrupt latency)**: 인터럽트 발생부터 인터럽트 서비스 루틴 진입까지의 시간.
+    - **스케줄러(scheduler)**: 어떤 태스크가 언제 실행될지 결정하는 커널 구성 요소.
+
+**Linux PREEMPT_RT**. 메인라인 Linux에 실시간 패치를 적용하여 커널 내 대부분의 코드를 선점 가능하게 하고, 인터럽트도 스레드화합니다. Linux의 풍부한 생태계를 유지하면서 수십 마이크로초의 스케줄링 지연을 제공하여 로봇 메인 컨트롤러의 일반적인 선택입니다.
+
+**Xenomai**. Linux 위에 듀얼 커널 실시간 확장을 제공하며, 실시간 태스크는 Cobalt 실시간 커널에서 실행되고, 비실시간 태스크는 Linux 커널에서 실행됩니다. Xenomai의 스케줄링 지연은 마이크로초 수준까지 낮출 수 있지만, 구성 및 유지보수가 복잡합니다.
+
+**QNX**. BlackBerry가 소유한 마이크로커널 실시간 운영체제로, 자동차, 의료 및 산업 분야에서 널리 사용됩니다. 마이크로커널 아키텍처는 파일 시스템, 네트워크 스택 등을 사용자 공간 서비스로 두고, 커널은 최소 기능만 유지하여 높은 신뢰성과 보안성을 제공합니다.
+
+**Zephyr**. Linux Foundation이 호스팅하는 오픈 소스 RTOS로, 리소스가 제한된 임베디드 장치를 대상으로 하며, 다양한 아키텍처를 지원하고 센서 노드 및 모터 컨트롤러에 자주 사용됩니다.
+
+!!! note "용어 설명: 마이크로커널, 듀얼 커널 실시간, 인터럽트 스레드화, 스케줄링 지연"
+    - **마이크로커널(microkernel)**: 커널 공간에 가장 기본적인 서비스(프로세스, 메모리, IPC)만 유지하고, 다른 서비스는 사용자 공간에서 실행.
+    - **듀얼 커널 실시간(dual-kernel real-time)**: 범용 OS 옆에 독립적인 실시간 커널을 실행하는 아키텍처.
+    - **인터럽트 스레드화(interrupt threading)**: 인터럽트 핸들러를 커널 스레드로 실행하여 더 높은 우선순위의 실시간 태스크에 의해 선점될 수 있도록 함.
+    - **스케줄링 지연(scheduling latency)**: 태스크가 실행 가능 상태가 된 시점부터 실제 실행이 시작될 때까지의 시간.
+
+```mermaid
+flowchart TD
+    A["애플리케이션 태스크"] --> B["실시간 커널 스케줄러"]
+    B --> C["선점 가능 커널"]
+    C --> D["하드웨어 인터럽트"]
+    E["Linux 서비스"] -.->|"비실시간"| C

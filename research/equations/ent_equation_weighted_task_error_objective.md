@@ -82,4 +82,64 @@ related_entities:
 ## 参考
 - [Hierarchical QP whole-body control: from theory to practice](https://arxiv.org/abs/1910.13329)
 
+## Overview
+A QP objective that penalizes the weighted squared difference between the desired task acceleration and the predicted task acceleration, while adding a regularization term on generalized acceleration.
 
+## Content
+### Definition and Positioning of the Weighted Task-Error Objective Function
+The weighted task-error objective function belongs to the **equation** type. Its domain includes: AI models and algorithms. Value chain level: intelligence layer. It penalizes the weighted squared difference between the desired task acceleration and the predicted task acceleration, with a regularization term on generalized acceleration. The English name is *Weighted Task-Error Objective*. The Korean name is *가중 작업 오차 목적 함수*.
+
+### Mathematical and Theoretical Foundations of the Weighted Task-Error Objective Function
+The weighted task-error objective function is built upon relevant mathematical theories and physical laws. Understanding its underlying assumptions, constraints, and derivation process is a prerequisite for correctly applying this method.
+Specifically, attention must be paid to its input space, output space, objective function, and guarantees of convergence or stability.
+In humanoid robots—a high-dimensional, underactuated, and strongly coupled system—the weighted task-error objective function typically needs to balance real-time performance, accuracy, and robustness.
+
+### Algorithm Steps and Implementation Key Points
+When implementing the weighted task-error objective function in practice, it is necessary to specify initialization conditions, iteration rules, stopping criteria, and parameter tuning strategies.
+Choosing appropriate numerical methods, linear algebra solvers, and parallel computing strategies can significantly improve computational efficiency and stability.
+At the same time, engineering constraints such as model errors, sensor noise, and actuator saturation should be fully considered to ensure reliable algorithm operation on real platforms.
+
+### Typical Applications and Limitations
+The weighted task-error objective function can be applied to various aspects of humanoid robots, including motion planning, control optimization, state estimation, and learning algorithms.
+However, its computational complexity, dependence on model accuracy, and online adaptability remain key issues to address in practical deployment.
+
+### Related Tags
+- qp_objective
+- task_error
+- weighted_norm
+- regularization
+- humanoid_control
+
+### Role in Humanoid Robot Systems
+As one of the key equations in the humanoid robot industry chain, the weighted task-error objective function plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, actuation, energy, structure, and verification, collectively determining overall system performance. Related research and applications are continuously advancing to further improve its reliability, efficiency, and cost-effectiveness in real-world scenarios.
+
+## 개요
+기대 작업 가속도와 예측 작업 가속도 간의 가중 제곱 오차를 패널티로 부여하고, 일반화 가속도에 정규화 항을 추가한 QP 목적 함수.
+
+## 핵심 내용
+### 가중 작업 오차 목적 함수의 정의와 위치
+가중 작업 오차 목적 함수는 **방정식** 유형에 속합니다. 관련 분야는 AI 모델 및 알고리즘입니다. 가치 사슬 계층: 지능 계층. 기대 작업 가속도와 예측 작업 가속도 간의 가중 제곱 오차를 패널티로 부여하고, 일반화 가속도에 정규화 항을 추가한 QP 목적 함수입니다. 영어 명칭은 *Weighted Task-Error Objective*입니다. 한국어 명칭은 *가중 작업 오차 목적 함수*입니다.
+
+### 가중 작업 오차 목적 함수의 수학적 및 원리적 기초
+가중 작업 오차 목적 함수는 관련 수학 이론과 물리 법칙에 기반합니다. 그 전제 가정, 제약 조건 및 유도 과정을 이해하는 것이 이 방법을 올바르게 적용하기 위한 전제입니다.
+구체적으로는 입력 공간, 출력 공간, 목적 함수, 그리고 수렴성 또는 안정성 보장에 주목해야 합니다.
+인간형 로봇이라는 고차원, 저구동, 강결합 시스템에서 가중 작업 오차 목적 함수는 일반적으로 실시간성, 정밀도 및 강건성 간의 균형을 유지해야 합니다.
+
+### 알고리즘 단계와 구현 핵심
+가중 작업 오차 목적 함수를 실제로 구현할 때는 초기화 조건, 반복 규칙, 중단 기준 및 매개변수 최적화 전략을 명확히 해야 합니다.
+수치 방법, 선형 대수 솔버 및 병렬 계산 전략을 합리적으로 선택하면 계산 효율성과 안정성을 크게 향상시킬 수 있습니다.
+동시에 모델 오차, 센서 노이즈 및 액추에이터 포화와 같은 엔지니어링 제약을 충분히 고려하여 알고리즘이 실제 플랫폼에서 안정적으로 작동하도록 보장해야 합니다.
+
+### 대표적 응용과 한계
+가중 작업 오차 목적 함수는 인간형 로봇의 운동 계획, 제어 최적화, 상태 추정 및 학습 알고리즘 등 여러 단계에 적용될 수 있습니다.
+그러나 계산 복잡성, 모델 정밀도에 대한 의존성 및 온라인 적응 능력은 실제 배치에서 중점적으로 해결해야 할 문제입니다.
+
+### 관련 태그
+- qp_objective
+- task_error
+- weighted_norm
+- regularization
+- humanoid_control
+
+### 인간형 로봇 시스템에서의 역할
+인간형 로봇 산업 체인에서 핵심 방정식 중 하나로서, 가중 작업 오차 목적 함수는 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.

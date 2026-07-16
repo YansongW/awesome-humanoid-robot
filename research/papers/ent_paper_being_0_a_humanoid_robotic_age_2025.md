@@ -62,3 +62,31 @@ theoretical_depth:
 ## 参考
 
 - Being-0 project page (https://beingbeyond.github.io/Being-0)
+
+## Overview
+
+The autonomous operation of humanoid robots in complex unstructured environments has long been plagued by the semantic gap between perception and action, as well as insufficient task generalization capabilities. To address this, this paper proposes the Being-0 agent system, which achieves end-to-end mapping from natural language instructions to executable action commands by integrating a Vision-Language Model (VLM) with a modular skill architecture. Its core contribution lies in decomposing complex tasks into routable atomic skills and dynamically combining these skills using a high-level semantic planning module, thereby adapting to new scenarios and objectives without the need for retraining.
+
+## Content
+
+(a) Research Background and Problem: Existing humanoid robot systems often rely on predefined perception-control pipelines. When faced with language instructions, they typically lack deep semantic understanding of the scene and struggle to decompose abstract tasks (e.g., "hand the apple on the table to the user") into executable sequences of sub-actions. Furthermore, traditional methods exhibit rigidity in skill transfer and composition; once the environment or objective changes, the entire system often requires redesign or fine-tuning. Being-0 aims to solve these problems by introducing a Vision-Language Model as the core for semantic understanding and task planning, and by constructing a modular skill library, enabling the robot to flexibly handle diverse operational requirements.
+
+(b) Method or Model Framework: The overall framework of Being-0 is divided into a perception representation layer, a semantic planning layer, and a skill execution layer. First, the system extracts a unified representation of the scene, objects, and motion states from language instructions and monocular or multi-view camera images. Subsequently, the Vision-Language Model (VLM) performs semantic planning and routing based on these representations, decomposing high-level tasks into a series of routable sub-tasks. Finally, a hierarchical skill library and expert policies dynamically select and combine atomic actions according to the routing results, generating specific joint-space or end-effector control commands. This framework emphasizes a closed loop of "planning-routing-execution," ensuring coherence between semantic understanding and physical actions.
+
+(c) Key Technical Innovations: The core innovation of Being-0 lies in the "routable skill" mechanism. Traditional methods typically treat skills as fixed modules, whereas Being-0 allows the high-level module to dynamically select and combine skills during execution based on real-time perceptual feedback, thereby supporting zero-shot task generalization. Additionally, the system replaces traditional rule-based task planners with the semantic reasoning capabilities of the VLM, enabling the robot to understand implicit spatial relationships and operational constraints (e.g., "handle with care"). Another innovation is the fusion strategy for multi-view observations, which recovers geometric and semantic information of the scene from different camera perspectives, enhancing robustness under occlusion or varying lighting conditions.
+
+(d) Experiments/Validation and Application Value: Although the paper does not provide specific experimental data, it can be inferred from the framework design that Being-0 is suitable for typical humanoid robot tasks such as mobile manipulation, object grasping, and human-robot collaboration. Its modular architecture is particularly well-suited for deployment in scenarios requiring frequent task switching, such as home services and warehouse logistics. By combining the semantic understanding of the VLM with the execution efficiency of hierarchical skills, Being-0 is expected to reduce the programming complexity of deploying humanoid robots in real-world environments and improve the accuracy of responses to user natural language instructions. This work also provides a general paradigm of "perception-planning-skill" decoupling for subsequent research.
+
+## 개요
+
+휴머노이드 로봇이 복잡한 비정형 환경에서 자율적으로 작업을 수행하는 것은 오랫동안 인식과 동작 사이의 의미적 간극 및 작업 일반화 능력 부족으로 인해 어려움을 겪어 왔습니다. 이에 본 논문에서는 시각-언어 모델(VLM)과 모듈형 스킬 아키텍처를 융합하여 자연어 명령어에서 실행 가능한 동작 명령어로의 종단 간 매핑을 실현하는 Being-0 에이전트 시스템을 제안합니다. 핵심 기여는 복잡한 작업을 라우팅 가능한 원자 스킬로 분해하고, 상위 수준의 의미 계획 모듈을 통해 이러한 스킬을 동적으로 조합함으로써 재학습 없이 새로운 장면과 목표에 적응할 수 있도록 한 점에 있습니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제점: 기존의 휴머노이드 로봇 시스템은 대부분 사전 정의된 인식-제어 파이프라인에 의존하며, 언어 명령어를 처리할 때 장면 의미에 대한 깊은 이해가 부족하고 추상적인 작업(예: "테이블 위의 사과를 사용자에게 건네줘")을 실행 가능한 하위 동작 시퀀스로 분해하기 어렵습니다. 또한 전통적인 방법은 스킬 전이 및 조합 측면에서 경직성을 보여, 환경이나 목표가 변경되면 전체 시스템을 재설계하거나 미세 조정해야 하는 경우가 많습니다. Being-0은 시각-언어 모델을 의미 이해 및 작업 계획의 핵심으로 도입하고 모듈형 스킬 라이브러리를 구축함으로써 로봇이 다양한 조작 요구에 유연하게 대응할 수 있도록 하는 것을 목표로 합니다.
+
+(b) 방법 또는 모델 프레임워크: Being-0의 전체 프레임워크는 인식 표현 계층, 의미 계획 계층 및 스킬 실행 계층으로 구성됩니다. 먼저 시스템은 언어 명령어, 단안 또는 다중 시점 카메라 이미지에서 장면, 목표 및 운동 상태의 통합 표현을 추출합니다. 이후 시각-언어 모델(VLM)이 이러한 표현을 기반으로 의미 계획 및 라우팅을 수행하여 상위 수준의 작업을 일련의 라우팅 가능한 하위 작업으로 분해합니다. 마지막으로 계층적 스킬 라이브러리와 전문가 정책이 라우팅 결과에 따라 원자 동작을 동적으로 선택 및 조합하여 구체적인 관절 공간 또는 말단 효과기 제어 명령어를 생성합니다. 이 프레임워크는 "계획-라우팅-실행"의 폐쇄 루프를 강조하여 의미 이해와 물리적 동작 간의 일관성을 보장합니다.
+
+(c) 핵심 기술 혁신: Being-0의 핵심 혁신은 "라우팅 가능한 스킬" 메커니즘에 있습니다. 전통적인 방법은 스킬을 고정된 모듈로 간주하는 반면, Being-0은 상위 모듈이 실행 과정에서 실시간 인식 피드백에 따라 스킬을 동적으로 선택 및 조합할 수 있도록 하여 제로샷 작업 일반화를 지원합니다. 또한 시스템은 VLM의 의미 추론 능력을 활용하여 기존의 규칙 기반 작업 계획기를 대체함으로써 로봇이 암시적인 공간 관계와 조작 제약 조건(예: "조심히 다루기")을 이해할 수 있게 합니다. 또 다른 혁신점은 다중 시점 관측 융합 전략으로, 서로 다른 카메라 시점에서 장면의 기하학적 및 의미 정보를 복원하여 폐색이나 조명 변화 조건에서의 강건성을 향상시킵니다.
+
+(d) 실험/검증 및 응용 가치: 논문에서 구체적인 실험 데이터를 제공하지는 않았지만, 프레임워크 설계로부터 Being-0이 이동 조작, 물체 파지, 인간-로봇 협업 등 전형적인 휴머노이드 로봇 작업에 적용 가능함을 추론할 수 있습니다. 모듈형 아키텍처는 특히 가사 서비스, 창고 물류 등 작업 유형을 자주 전환해야 하는 환경에 적합합니다. VLM의 의미 이해와 계층적 스킬의 실행 효율성을 결합함으로써 Being-0은 실제 환경에서 휴머노이드 로봇을 배포할 때 프로그래밍 복잡성을 줄이고 사용자의 자연어 명령어에 대한 응답 정확도를 향상시킬 것으로 기대됩니다. 이 연구는 또한 후속 연구를 위한 "인식-계획-스킬" 분리의 일반적인 패러다임을 제공합니다.

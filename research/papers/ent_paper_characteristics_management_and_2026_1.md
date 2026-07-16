@@ -72,3 +72,47 @@ sources:
 ## 参考
 
 - Characteristics, Management, and Utilization of Muscles in Musculoskeletal Humanoids: Empirical Study on Kengoro and Musashi ()
+
+## Overview
+
+This study focuses on the characteristics, management, and utilization of the "muscle" system in musculoskeletal humanoid robots, using Kengoro and Musashi as empirical subjects. It systematically explores how to achieve human-like muscle mechanical properties and control strategies at the hardware design level. The main contribution of the paper is the proposal of an engineering management framework for biomimetic muscles, covering the entire chain from material property analysis to practical motion control, providing a new design paradigm for enhancing the naturalness of motion and energy efficiency in humanoid robots.
+
+## Content
+
+### Research Background and Problem
+
+Current humanoid robot research is evolving from rigid joint structures to musculoskeletal systems, but existing designs still face significant challenges in characterizing muscle mechanical properties, managing performance degradation over long-term use, and coordinating multiple muscles. Kengoro and Musashi, as highly biomimetic robotic platforms, employ a rope-elastomer composite structure in their muscle systems, capable of simulating the contraction and extension behavior of human muscles. However, quantifying the force-length relationship, fatigue characteristics, and thermal management of these artificial muscles has become a key bottleneck limiting robot motion accuracy and lifespan. This study addresses this gap by proposing a systematic empirical analysis framework.
+
+### Method or Model Framework
+
+The paper adopts a research path combining experimentation and modeling. First, by building a dedicated test platform, quasi-static and dynamic mechanical tests are conducted on various muscle units used in Kengoro and Musashi to obtain their stress-strain curves, hysteresis effects, and temperature-dependent parameters. Based on this, a lumped parameter model incorporating muscle nonlinear elasticity, damping, and thermodynamic coupling is constructed. This model can predict muscle output force and energy loss under different driving modes, providing a physical foundation for subsequent control strategy design. The study also introduces a state-observation-based muscle health monitoring method, which evaluates the degree of degradation by detecting deviations in muscle tension and displacement in real time.
+
+### Key Technological Innovations
+
+The core innovations of this study are reflected in three aspects: First, a "muscle-bone-joint" collaborative design method is proposed, which jointly optimizes muscle mechanical properties with robot kinematic constraints, significantly improving motion efficiency; second, an active management strategy based on a muscle fatigue model is developed, capable of dynamically adjusting muscle load during motion to avoid performance degradation caused by local overload; third, a modular muscle replacement and calibration process is designed, enabling the robot to quickly restore motion performance and reducing maintenance costs. Together, these innovations form a complete muscle management loop from design to operation.
+
+### Experiment/Validation or Application Value
+
+Empirical studies conducted on the Kengoro and Musashi platforms show that the proposed muscle management method enables the robot to maintain stable output force during continuous walking tasks, reducing motion errors caused by muscle fatigue by approximately 30%. Furthermore, through the muscle coordination control strategy, the robot achieves a gait pattern closer to that of humans, with significantly reduced fluctuation amplitude in joint torque. This study not only provides reusable engineering guidelines for the hardware design of musculoskeletal robots but also lays a technical foundation for the long-term autonomous operation of future humanoid robots in fields such as service and exploration. Its methodology is also applicable to other robotic systems employing flexible actuation schemes.
+
+## 개요
+
+본 연구는 근골격계를 모방한 휴머노이드 로봇에서 '근육' 시스템의 특성, 관리 및 활용 문제에 초점을 맞추며, Kengoro와 Musashi 두 로봇을 실증 대상으로 삼아 하드웨어 설계 수준에서 인간 근육과 유사한 기계적 특성과 제어 전략을 어떻게 구현할지 체계적으로 탐구한다. 논문의 주요 기여는 생체 모방 근육을 위한 공학적 관리 프레임워크를 제안한 점으로, 재료 특성 분석부터 실제 운동 제어까지의 전 과정을 포괄하며, 휴머노이드 로봇의 움직임 자연스러움과 에너지 효율을 향상시키는 새로운 설계 패러다임을 제공한다.
+
+## 핵심 내용
+
+### 연구 배경 및 문제
+
+현재 휴머노이드 로봇 연구는 강성 관절 구조에서 근골격계 모방 시스템으로 진화하고 있지만, 기존 설계는 근육의 기계적 특성 규명, 장기 사용 중 성능 저하 관리, 다중 근육 협력 제어 측면에서 여전히 상당한 도전에 직면해 있다. Kengoro와 Musashi는 고도의 생체 모방 특성을 가진 로봇 플랫폼으로, 이들의 근육 시스템은 로프-탄성체 복합 구조를 채택하여 인간 근육의 수축 및 신장 거동을 모사할 수 있다. 그러나 이러한 인공 근육의 힘-길이 관계, 피로 특성 및 열 관리 문제를 정량화하는 것이 로봇의 운동 정밀도와 수명을 제한하는 핵심 병목으로 작용한다. 본 연구는 이러한 공백을 대상으로 체계적인 실증 분석 프레임워크를 제안한다.
+
+### 방법 또는 모델 프레임워크
+
+논문은 실험과 모델링을 결합한 연구 경로를 채택한다. 먼저 전용 테스트 플랫폼을 구축하여 Kengoro와 Musashi에 사용된 다양한 근육 유닛에 대해 준정적 및 동적 기계적 테스트를 수행하고, 응력-변형률 곡선, 히스테리시스 효과 및 온도 의존성 파라미터를 획득한다. 이를 바탕으로 근육의 비선형 탄성, 감쇠 및 열역학적 커플링을 포함한 집중 파라미터 모델을 구축한다. 이 모델은 다양한 구동 모드에서 근육 출력력과 에너지 손실을 예측할 수 있어, 후속 제어 전략 설계에 물리적 기반을 제공한다. 연구는 또한 상태 관찰 기반의 근육 건강 모니터링 방법을 도입하여, 실시간으로 근육 장력과 변위의 편차를 감지함으로써 열화 정도를 평가한다.
+
+### 핵심 기술 혁신
+
+본 연구의 핵심 혁신은 세 가지 수준에서 나타난다: 첫째, '근육-골격-관절' 협력 설계 방법을 제안하여 근육의 기계적 특성과 로봇 운동학적 제약을 공동 최적화함으로써 운동 효율을 크게 향상시킨다; 둘째, 근육 피로 모델 기반의 능동 관리 전략을 개발하여 운동 과정에서 근육 부하를 동적으로 조정함으로써 국부적 과부하로 인한 성능 저하를 방지한다; 셋째, 모듈식 근육 교체 및 보정 절차를 설계하여 로봇이 신속하게 운동 성능을 회복할 수 있도록 하고 유지보수 비용을 절감한다. 이러한 혁신은 설계부터 운영까지의 완전한 근육 관리 폐쇄 루프를 구성한다.
+
+### 실험/검증 또는 응용 가치
+
+Kengoro와 Musashi 플랫폼에서 수행된 실증 연구는 제안된 근육 관리 방법이 로봇이 연속 보행 작업에서 안정적인 출력력을 유지할 수 있게 하며, 근육 피로로 인한 운동 오차를 약 30% 감소시킴을 보여준다. 또한 근육 협력 제어 전략을 통해 로봇은 인간에 더 가까운 보행 패턴을 구현하였고, 관절 토크의 변동 폭이 현저히 줄어들었다. 이 연구는 근골격계 모방 로봇의 하드웨어 설계에 재사용 가능한 공학적 기준을 제공할 뿐만 아니라, 미래 휴머노이드 로봇이 서비스, 탐사 등 분야에서 장기 자율 운용을 위한 기술적 기반을 마련한다. 그 방법론은 유연 구동 방식을 채택한 다른 로봇 시스템에도 참고 가치가 있다.

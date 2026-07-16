@@ -54,3 +54,14 @@ Building upon the success of LingBot-Depth, which pioneered the Masked Depth Mod
 ## 参考
 - http://www.RoboticsTomorrow.com/news/2026/07/07/robbyant-unveils-lingbot-depth-20-and-lingbot-vision-to-redefine-robotic-spatial-perception/26812
 
+## Overview
+Building upon the success of LingBot-Depth, which pioneered the Masked Depth Modeling (MDM) technique to resolve depth sensing challenges for transparent and reflective surfaces, LingBot-Depth 2.0 represents a massive scale-up in training data and performance.
+
+## Content
+Building upon the success of LingBot-Depth, which pioneered the Masked Depth Modeling (MDM) technique to resolve depth sensing challenges for transparent and reflective surfaces, LingBot-Depth 2.0 represents a massive scale-up in training data and performance.
+
+## 개요
+투명 및 반사 표면의 깊이 감지 문제를 해결하기 위해 Masked Depth Modeling(MDM) 기술을 개척한 LingBot-Depth의 성공을 바탕으로, LingBot-Depth 2.0은 훈련 데이터와 성능에서 대규모 확장을 구현했습니다.
+
+## 핵심 내용
+투명 및 반사 표면의 깊이 감지 문제를 해결하기 위해 Masked Depth Modeling(MDM) 기술을 개척한 LingBot-Depth의 성공을 바탕으로, LingBot-Depth 2.0은 훈련 데이터와 성능에서 대규모 확장을 구현했습니다.

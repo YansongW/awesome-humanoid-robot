@@ -58,3 +58,14 @@ Humanoid robot teleoperation allows humans to integrate their cognitive capabili
 ## 参考
 - http://arxiv.org/abs/1909.10080v1
 
+## Overview
+Humanoid robot teleoperation allows humans to integrate their cognitive capabilities with the apparatus to perform tasks that need high strength, manoeuvrability and dexterity. This paper presents a framework for teleoperation of humanoid robots using a novel approach for motion retargeting through inverse kinematics over the robot model. The proposed method enhances scalability for retargeting, i.e., it allows teleoperating different robots by different human users with minimal changes to the proposed system. Our framework enables an intuitive and natural interaction between the human operator and the humanoid robot at the configuration space level. We validate our approach by demonstrating whole-body retargeting with multiple robot models. Furthermore, we present experimental validation through teleoperation experiments using two state-of-the-art whole-body controllers for humanoid robots.
+
+## Content
+Humanoid robot teleoperation allows humans to integrate their cognitive capabilities with the apparatus to perform tasks that need high strength, manoeuvrability and dexterity. This paper presents a framework for teleoperation of humanoid robots using a novel approach for motion retargeting through inverse kinematics over the robot model. The proposed method enhances scalability for retargeting, i.e., it allows teleoperating different robots by different human users with minimal changes to the proposed system. Our framework enables an intuitive and natural interaction between the human operator and the humanoid robot at the configuration space level. We validate our approach by demonstrating whole-body retargeting with multiple robot models. Furthermore, we present experimental validation through teleoperation experiments using two state-of-the-art whole-body controllers for humanoid robots.
+
+## 개요
+휴머노이드 로봇 원격 조작은 인간이 자신의 인지 능력을 장치와 통합하여 높은 힘, 기동성 및 손재주가 필요한 작업을 수행할 수 있게 합니다. 본 논문은 로봇 모델에 대한 역기구학을 통한 모션 리타겟팅의 새로운 접근 방식을 사용하는 휴머노이드 로봇 원격 조작 프레임워크를 제시합니다. 제안된 방법은 리타겟팅의 확장성을 향상시켜, 즉 제안된 시스템에 최소한의 변경만으로 다양한 인간 사용자가 서로 다른 로봇을 원격 조작할 수 있도록 합니다. 우리의 프레임워크는 구성 공간 수준에서 인간 조작자와 휴머노이드 로봇 간의 직관적이고 자연스러운 상호 작용을 가능하게 합니다. 우리는 여러 로봇 모델을 사용한 전신 리타겟팅을 시연함으로써 접근 방식을 검증합니다. 또한, 휴머노이드 로봇을 위한 두 가지 최첨단 전신 제어기를 사용한 원격 조작 실험을 통해 실험적 검증을 제시합니다.
+
+## 핵심 내용
+휴머노이드 로봇 원격 조작은 인간이 자신의 인지 능력을 장치와 통합하여 높은 힘, 기동성 및 손재주가 필요한 작업을 수행할 수 있게 합니다. 본 논문은 로봇 모델에 대한 역기구학을 통한 모션 리타겟팅의 새로운 접근 방식을 사용하는 휴머노이드 로봇 원격 조작 프레임워크를 제시합니다. 제안된 방법은 리타겟팅의 확장성을 향상시켜, 즉 제안된 시스템에 최소한의 변경만으로 다양한 인간 사용자가 서로 다른 로봇을 원격 조작할 수 있도록 합니다. 우리의 프레임워크는 구성 공간 수준에서 인간 조작자와 휴머노이드 로봇 간의 직관적이고 자연스러운 상호 작용을 가능하게 합니다. 우리는 여러 로봇 모델을 사용한 전신 리타겟팅을 시연함으로써 접근 방식을 검증합니다. 또한, 휴머노이드 로봇을 위한 두 가지 최첨단 전신 제어기를 사용한 원격 조작 실험을 통해 실험적 검증을 제시합니다.

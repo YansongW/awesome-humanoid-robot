@@ -62,3 +62,31 @@ theoretical_depth:
 
 ## 参考
 - 手眼自主配送 project page (https://tml.stanford.edu/HEAD/)
+
+## Overview
+
+This paper proposes a "hand-eye autonomous delivery" task framework for humanoid robots, aiming to address the full-process autonomy from perception to execution. The primary motivation of the research is that when humanoid robots perform tasks such as navigation, locomotion, and grasping delivery in complex environments, they need to integrate multimodal perception, whole-body control, and hierarchical decision-making. The core contribution of this work lies in decomposing the task into routable skills or expert policies, which are dynamically selected and combined by a high-level module, thereby achieving end-to-end autonomous delivery behavior in real-world scenarios.
+
+## Content
+
+(a) Research Background and Problem: Current research on humanoid robots has made significant progress in individual skills (e.g., walking, grasping), but integrating them into a complete autonomous task chain still faces challenges. Particularly in delivery scenarios, robots need to simultaneously handle sub-tasks such as environmental perception, target recognition, path planning, whole-body coordinated motion, and end-effector reaching. Existing methods often rely on predefined fixed workflows or human intervention, lacking adaptability to dynamic scenes. To address this issue, this paper proposes a framework that decomposes tasks into routable skill units and combines them online through a high-level module, enhancing system robustness and generalization.
+
+(b) Method or Model Framework: This work first recovers scene, target, or motion representations from camera images, multi-view observations, proprioceptive states and joint sequences, as well as human videos or motion capture trajectories. Subsequently, using heterogeneous motion capture data and synthetic balance data, combined with a whole-body controller (WBC) and model predictive control (MPC), it generates low-level controller targets, terrain and scene representations, as well as navigation and reaching goals. The entire framework adopts a hierarchical architecture: the low-level layer consists of a series of expert policies (e.g., walking, turning, reaching), while the high-level module dynamically selects and combines these skills based on the current task state and perceptual input, forming a complete execution sequence.
+
+(c) Key Technical Innovations: The core innovation of this paper lies in decomposing complex tasks into routable skills or expert policies and introducing a high-level module for online selection and combination. This design allows the robot to flexibly adjust its behavior during execution according to environmental changes, without retraining the entire model. Additionally, by balancing heterogeneous motion capture data with synthetic data, the system can effectively utilize limited human demonstration data, improving the efficiency and generalization of skill learning. The combination of WBC and MPC ensures the stability and real-time performance of low-level motion control.
+
+(d) Experiment/Validation or Application Value: Although the paper does not provide specific experimental data, it can be inferred from keywords such as deployment, hardware_platform, and real_world that the framework has been validated on real humanoid robot platforms. In terms of application value, this work offers a feasible technical pathway for autonomous operation of humanoid robots in scenarios such as home services, logistics delivery, and medical assistance. Its hierarchical routable architecture also lays a foundation for the construction and reuse of future robot skill libraries, holding significant engineering and theoretical implications.
+
+## 개요
+
+본 논문은 인간형 로봇을 위한 '손-눈 자율 배송' 작업 프레임워크를 제안하며, 인식부터 실행까지의 전 과정 자율성 문제를 해결하는 것을 목표로 한다. 연구의 주요 동기는 인간형 로봇이 복잡한 환경에서 내비게이션, 운동, 파지 및 전달 작업을 수행할 때 다중 모달 인식, 전신 제어 및 계층적 의사 결정을 통합해야 한다는 점에 있다. 이 연구의 핵심 기여는 작업을 라우팅 가능한 스킬 또는 전문가 정책으로 분해하고, 상위 모듈을 통해 동적으로 선택 및 조합함으로써 실제 환경에서 종단 간 자율 배송 행동을 구현하는 데 있다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 현재 인간형 로봇 연구는 단일 스킬(예: 걷기, 파지)에서 상당한 진전을 이루었지만, 이를 완전한 자율 작업 체인으로 통합하는 것은 여전히 도전 과제로 남아 있다. 특히 배송 시나리오에서 로봇은 환경 인식, 목표 식별, 경로 계획, 전신 조정 운동 및 말단 효과기 도달 등의 하위 작업을 동시에 처리해야 한다. 기존 방법은 종종 사전 정의된 고정 절차나 인간의 개입에 의존하며, 동적 환경에 대한 적응 능력이 부족하다. 본 논문은 이 문제를 해결하기 위해 작업을 라우팅 가능한 스킬 단위로 분해하고 상위 모듈을 통해 온라인으로 조합하는 프레임워크를 제안하여 시스템의 견고성과 일반화 능력을 향상시킨다.
+
+(b) 방법 또는 모델 프레임워크: 이 연구는 먼저 카메라 이미지, 다중 시점 관측, 본체 상태 및 관절 시퀀스, 그리고 인간 비디오 또는 모션 캡처 궤적으로부터 장면, 목표 또는 운동 표현을 복원한다. 이후 이종 모션 캡처 데이터와 합성 균형 데이터를 활용하여 전신 제어기(WBC) 및 모델 예측 제어(MPC)와 결합하여 저수준 제어기 목표, 지형 및 장면 표현, 그리고 내비게이션 및 도달 목표를 생성한다. 전체 프레임워크는 계층적 아키텍처를 채택한다: 하위 계층은 일련의 전문가 정책(예: 걷기, 회전, 손 뻗기)으로 구성되고, 상위 모듈은 현재 작업 상태와 인식 입력에 따라 이러한 스킬을 동적으로 선택 및 조합하여 완전한 실행 시퀀스를 형성한다.
+
+(c) 핵심 기술 혁신: 본 논문의 핵심 혁신은 복잡한 작업을 라우팅 가능한 스킬 또는 전문가 정책으로 분해하고, 상위 모듈을 도입하여 온라인 선택 및 조합을 수행하는 데 있다. 이 설계는 로봇이 실행 과정에서 환경 변화에 따라 유연하게 행동을 조정할 수 있게 하며, 전체 모델을 재훈련할 필요가 없다. 또한 이종 모션 캡처 데이터와 합성 데이터의 균형을 통해 시스템은 제한된 인간 시연 데이터를 효과적으로 활용하여 스킬 학습의 효율성과 일반화 능력을 향상시킬 수 있다. 전신 제어기와 MPC의 결합은 저수준 운동 제어의 안정성과 실시간성을 보장한다.
+
+(d) 실험/검증 또는 응용 가치: 논문이 구체적인 실험 데이터를 제공하지는 않았지만, 배포(deployment), 하드웨어 플랫폼(hardware_platform) 및 실제 세계(real_world) 키워드로부터 이 프레임워크가 실제 인간형 로봇 플랫폼에서 검증되었음을 추론할 수 있다. 응용 가치 측면에서 이 연구는 가사 서비스, 물류 배송, 의료 지원 등의 시나리오에서 인간형 로봇의 자율 작업을 위한 실현 가능한 기술 경로를 제공한다. 계층적 라우팅 가능 아키텍처는 미래 로봇 스킬 라이브러리의 구축과 재사용을 위한 기반을 마련하며, 중요한 공학적 및 이론적 의의를 가진다.

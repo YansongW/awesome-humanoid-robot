@@ -54,3 +54,14 @@ Experience the future of the sentient enterprise as InOrbit.AI orchestrates a gr
 ## 参考
 - http://www.RoboticsTomorrow.com/news/2026/06/22/inorbitai-demonstrates-the-future-of-multi-vendor-robot-orchestration-and-physical-ai-at-automate-2026/26757
 
+## Overview
+Experience the future of the sentient enterprise as InOrbit.AI orchestrates a groundbreaking multi-vendor robotics demonstration at Automate 2026. Discover how seamless interoperability and Physical AI are transforming islands of automation into a unified, resilient operational ecosystem.
+
+## Content
+Experience the future of the sentient enterprise as InOrbit.AI orchestrates a groundbreaking multi-vendor robotics demonstration at Automate 2026. Discover how seamless interoperability and Physical AI are transforming islands of automation into a unified, resilient operational ecosystem.
+
+## 개요
+InOrbit.AI가 Automate 2026에서 획기적인 다중 공급업체 로봇 시연을 주도하는 센티언트 엔터프라이즈의 미래를 경험하세요. 원활한 상호운용성과 물리적 AI가 자동화의 섬들을 통합되고 회복력 있는 운영 생태계로 어떻게 변화시키는지 알아보세요.
+
+## 핵심 내용
+InOrbit.AI가 Automate 2026에서 획기적인 다중 공급업체 로봇 시연을 주도하는 센티언트 엔터프라이즈의 미래를 경험하세요. 원활한 상호운용성과 물리적 AI가 자동화의 섬들을 통합되고 회복력 있는 운영 생태계로 어떻게 변화시키는지 알아보세요.

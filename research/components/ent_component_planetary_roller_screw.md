@@ -62,4 +62,38 @@ sources:
 ## 参考
 - Wiki extraction
 
+## Overview
+### 4.6.4 Case Studies: Optimus, Atlas, Digit, Figure
 
+## Content
+- **Tesla Optimus**: According to Tesla AI Day 2022 and subsequent public information, Optimus uses 28 actuators in its torso (14 rotary + 14 linear). The rotary joints employ frameless torque motors + harmonic reducers, while the linear joints use frameless torque motors + planetary roller screws. The dexterous hand has been upgraded from 11 DoF in Gen 2 to 22 DoF in Gen 3, utilizing tendon-driven actuation and micro actuators[14].
+- **Boston Dynamics Atlas**: Early Atlas used hydraulic actuators to achieve extreme explosive power. The fully electric Atlas released in 2024 switched to electric actuators, emphasizing strength, agility, and balance recovery capabilities[15].
+- **Agility Robotics Digit**: Digit's legs use series elastic actuators (SEA), emphasizing walking energy efficiency and human safety. Its upper body has fewer degrees of freedom, targeting logistics and material handling scenarios[16].
+- **Figure AI Figure 02**: Adopts fully electric actuators, aiming for general-purpose humanoid robot operations in warehousing and manufacturing. Public information highlights end-to-end AI integration with dexterous hands[17].
+
+!!! note "Terminology Explanation: Planetary Roller Screw, Hydraulic Actuator, Dexterous Hand, Tendon-Driven Hand, Humanoid Robot Platform"
+    - **Planetary roller screw**: A high-efficiency precision linear transmission mechanism composed of a screw, rollers, and a nut, offering significantly higher load capacity and lifespan than ball screws.
+    - **Hydraulic actuator**: An actuator that uses high-pressure oil to push a piston to generate force, offering extremely high power density but with complex system requirements.
+    - **Dexterous hand**: A multi-degree-of-freedom, multi-contact anthropomorphic hand capable of grasping and fine manipulation.
+    - **Tendon-driven hand**: A hand where motors are placed in the forearm or palm, driving finger joints via tendons to reduce finger inertia.
+    - **Humanoid robot platform**: A complete robotic system for research and commercial applications, such as Atlas, Digit, Optimus, Figure, etc.
+
+---
+
+## 개요
+### 4.6.4 사례: Optimus, Atlas, Digit, Figure
+
+## 핵심 내용
+- **Tesla Optimus**: Tesla AI Day 2022 및 이후 공개 정보에 따르면, Optimus의 동체는 28개의 액추에이터(14개 회전 + 14개 선형)를 사용하며, 회전 관절은 프레임리스 토크 모터 + 고조파 감속기를, 선형 관절은 프레임리스 토크 모터 + 행성 롤러 스크류를 사용합니다. 다섯 손가락 로봇 핸드는 Gen 2의 11 DoF에서 Gen 3의 22 DoF로 업그레이드되었으며, 텐던 구동과 마이크로 액추에이터를 채택했습니다[14].
+- **Boston Dynamics Atlas**: 초기 Atlas는 유압 액추에이터를 사용하여 뛰어난 폭발력을 얻었습니다. 2024년에 발표된 완전 전기식 Atlas는 전동 액추에이터로 전환하여 힘, 민첩성 및 균형 회복 능력을 강조합니다[15].
+- **Agility Robotics Digit**: Digit의 다리는 직렬 탄성 액추에이터(SEA)를 사용하여 보행 에너지 효율과 인간-로봇 안전을 강조합니다. 상체 자유도는 상대적으로 적으며, 물류 운반 시나리오를 대상으로 합니다[16].
+- **Figure AI Figure 02**: 완전 전동 액추에이터를 채택하며, 목표는 창고 및 제조 분야에서 인간형 로봇의 범용 작업입니다. 공개 정보는 엔드투엔드 AI와 다섯 손가락 로봇 핸드 통합을 강조합니다[17].
+
+!!! note "용어 설명: 행성 롤러 스크류, 유압 액추에이터, 다섯 손가락 로봇 핸드, 텐던 구동 핸드, 인간형 로봇 플랫폼"
+    - **행성 롤러 스크류(planetary roller screw)**: 스크류, 롤러 및 너트로 구성된 고효율 정밀 직선 운동 기구로, 볼 스크류보다 훨씬 높은 하중 지지력과 수명을 제공합니다.
+    - **유압 액추에이터(hydraulic actuator)**: 고압 오일을 사용하여 피스톤에 힘을 생성하는 액추에이터로, 출력 밀도가 매우 높지만 시스템이 복잡합니다.
+    - **다섯 손가락 로봇 핸드(dexterous hand)**: 다중 자유도와 다중 접점을 가진 인간형 손으로, 파지 및 정밀 조작을 수행할 수 있습니다.
+    - **텐던 구동 핸드(tendon-driven hand)**: 모터가 팔뚝이나 손바닥에 배치되고, 텐던을 통해 손가락 관절을 구동하여 손가락 관성을 줄입니다.
+    - **인간형 로봇 플랫폼(humanoid robot platform)**: 연구 및 상업 응용을 위한 완전한 로봇 시스템으로, Atlas, Digit, Optimus, Figure 등이 있습니다.
+
+---

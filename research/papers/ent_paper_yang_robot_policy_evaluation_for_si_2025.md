@@ -66,3 +66,14 @@ Current vision-based robotics simulation benchmarks have significantly advanced 
 ## 参考
 - http://arxiv.org/abs/2508.11117v1
 
+## Overview
+Current vision-based robotics simulation benchmarks have significantly advanced robotic manipulation research. However, robotics is fundamentally a real-world problem, and evaluation for real-world applications has lagged behind in evaluating generalist policies. In this paper, we discuss challenges and desiderata in designing benchmarks for generalist robotic manipulation policies for the goal of sim-to-real policy transfer. We propose 1) utilizing high visual-fidelity simulation for improved sim-to-real transfer, 2) evaluating policies by systematically increasing task complexity and scenario perturbation to assess robustness, and 3) quantifying performance alignment between real-world performance and its simulation counterparts.
+
+## Content
+Current vision-based robotics simulation benchmarks have significantly advanced robotic manipulation research. However, robotics is fundamentally a real-world problem, and evaluation for real-world applications has lagged behind in evaluating generalist policies. In this paper, we discuss challenges and desiderata in designing benchmarks for generalist robotic manipulation policies for the goal of sim-to-real policy transfer. We propose 1) utilizing high visual-fidelity simulation for improved sim-to-real transfer, 2) evaluating policies by systematically increasing task complexity and scenario perturbation to assess robustness, and 3) quantifying performance alignment between real-world performance and its simulation counterparts.
+
+## 개요
+현재 비전 기반 로봇공학 시뮬레이션 벤치마크는 로봇 조작 연구를 크게 발전시켰습니다. 그러나 로봇공학은 근본적으로 실제 세계의 문제이며, 실제 응용 분야에서의 평가는 일반화 정책(generalist policies) 평가에 뒤처져 있습니다. 본 논문에서는 시뮬레이션-실제 정책 전이(sim-to-real policy transfer)를 목표로 하는 일반화 로봇 조작 정책을 위한 벤치마크 설계 시 직면하는 과제와 요구사항을 논의합니다. 우리는 1) 시뮬레이션-실제 전이 향상을 위한 높은 시각적 충실도 시뮬레이션 활용, 2) 작업 복잡성과 시나리오 교란을 체계적으로 증가시켜 정책의 강건성을 평가, 3) 실제 성능과 시뮬레이션 성능 간의 일치도 정량화를 제안합니다.
+
+## 핵심 내용
+현재 비전 기반 로봇공학 시뮬레이션 벤치마크는 로봇 조작 연구를 크게 발전시켰습니다. 그러나 로봇공학은 근본적으로 실제 세계의 문제이며, 실제 응용 분야에서의 평가는 일반화 정책 평가에 뒤처져 있습니다. 본 논문에서는 시뮬레이션-실제 정책 전이를 목표로 하는 일반화 로봇 조작 정책을 위한 벤치마크 설계 시 직면하는 과제와 요구사항을 논의합니다. 우리는 1) 시뮬레이션-실제 전이 향상을 위한 높은 시각적 충실도 시뮬레이션 활용, 2) 작업 복잡성과 시나리오 교란을 체계적으로 증가시켜 정책의 강건성 평가, 3) 실제 성능과 시뮬레이션 성능 간의 일치도 정량화를 제안합니다.

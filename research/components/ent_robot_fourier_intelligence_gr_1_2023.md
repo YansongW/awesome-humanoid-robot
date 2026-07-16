@@ -148,4 +148,66 @@ sources:
 - [Fourier Intelligence GR-1](https://www.fourierintelligence.com/)
 - 项目 Wiki：appendix-d/companies/company_fourier.md
 
+## 개요
+Fourier Intelligence GR-1은 휴머노이드 로봇 분야의 중요한 로봇 시스템입니다. 다음 내용은 프로젝트 Wiki에서 정리한 것으로, 심층 참고용으로 제공됩니다.
 
+## 핵심 내용
+## Fourier Intelligence
+
+> 본 항목은 [부록 D 기업/제품 Wiki](../../appendix-d.md)에 속합니다.
+> 데이터 업데이트 일자: 2026-07-01. 모든 매개변수는 공식 공개 자료를 기준으로 하며, 누락된 항목은 "미공개"로 표시합니다.
+
+---
+
+### 기업 정보 카드
+
+| 항목 | 내용 |
+|------|------|
+| **중문명** | 傅利叶智能 |
+| **영문명** | Fourier Intelligence |
+| **본사** | 중국 상하이 |
+| **설립 연도** | 2015년 |
+| **공식 사이트** | [https://www.fftai.cn](https://www.fftai.cn) |
+| **공급망 단계** | 완제품 OEM / 재활 로봇 + 범용 휴머노이드 로봇 |
+| **기업 속성** | 재활 로봇 선두 기업이 범용 로봇으로 확장 |
+| **모회사/소속 그룹** | 없음 |
+| **데이터 출처** | Fourier 공식 사이트, IT之家, 증권시보, 동맥망 |
+
+### 기업 소개
+
+Fourier Intelligence는 외골격 및 재활 로봇에서 시작하여 점차 범용 휴머노이드 로봇 분야로 진출하며, "로봇 기술로 생활에 힘을 실어준다"는 비전을 제시했습니다.
+
+2023년 GR-1을 출시하여 국내 최초로 양산 및 납품을 실현한 이족 보행 휴머노이드 로봇 중 하나로 꼽혔습니다. 2025년에는 GR-3를 출시하여 상호작용 및 동반형 Care-bot으로 자리매김하고, 부드러운 외피와 전감각 상호작용 시스템을 강조했습니다.
+
+### 제품 라인
+
+| 제품 라인 | 포지셔닝 | 대표 제품 | 응용 분야 |
+|--------|------|----------|----------|
+| 범용 휴머노이드 | 연구, 안내, 산업 협력 | GR-1 / GR-2 | 연구 교육, 전시 안내, 재활 |
+| 동반 휴머노이드 | 건강 관리, 동반, 상호작용 | GR-3 | 요양, 의료, 가정 |
+| 재활 로봇 | 사지 재활 훈련 | ExoMotus / AnkleMotus 등 | 병원, 재활 센터 |
+
+### 대표 제품
+
+### 공급망 위치
+
+- **상류 핵심 부품/소재**: 자체 개발 FSA 통합 액추에이터, 외부 조달 모터, 감속기, 센서, 연질 외피 재료.
+- **하류 고객/응용 시나리오**: 병원, 재활 센터, 연구 기관, 요양 기관.
+- **주요 경쟁사/비교 대상**: UBTECH Walker, Tesla Optimus, 일본 Cyberdyne.
+
+### 지식 그래프 노드 및 관계
+
+- 기업 엔티티: `ent_company_fourier`
+- 제품 엔티티: `ent_product_fourier_gr1`, `ent_product_fourier_gr3`
+- 주요 관계:
+  - `ent_company_fourier` -- `manufactures` --> `ent_product_fourier_gr1`
+  - `ent_company_fourier` -- `manufactures` --> `ent_product_fourier_gr3`
+  - `ent_product_fourier_gr1` -- `uses` --> `ent_component_fourier_fsa_actuator`
+
+### 참고 자료
+
+1. [Fourier Intelligence 공식 사이트](https://www.fftai.cn)
+2. [Fourier GR-1 제품 페이지](https://www.fftai.cn/products-gr1)
+3. [IT之家 – Fourier GR-3 출시](https://www.ithome.com/0/810/472.htm) (유사 보도)
+4. [증권시보 / 과학창업판 일보 – GR-3 보도](https://www.msn.cn/zh-cn/...)
+5. [부록 D.4 주요 제품 Wiki](../index-products.md)

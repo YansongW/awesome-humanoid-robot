@@ -63,3 +63,31 @@ theoretical_depth:
 
 ## 参考
 - 通过触摸梦学习多样化人形操作 project page (https://humanoid-touch-dream.github.io/)
+
+## Overview
+
+This paper proposes a framework called "Touch Dreaming" to address the data closed-loop problem in humanoid robot manipulation skill learning. The primary motivation of this research is that traditional methods rely heavily on large amounts of real teleoperation data, which is difficult to acquire efficiently and generalize to diverse manipulation tasks. The core contribution of this work is to model action generation as a conditional generation problem, using diffusion models or flow matching to sample executable trajectories from multimodal action distributions. By combining multi-view visual observations, proprioceptive states, and joint sequences, it achieves trainable and reusable end-effector and wrist-hand target control.
+
+## Content
+
+(a) Research Background and Problem: Dexterous manipulation by humanoid robots in unstructured environments has long been hindered by the bottleneck of data acquisition. Existing methods typically rely on teleoperation or exoskeletons to collect human demonstration data. However, such data is not only costly but also often limited to specific tasks and scenarios, resulting in insufficient policy generalization. Furthermore, robot manipulation involves high-dimensional continuous action spaces and multimodal perceptual inputs. Learning robust and transferable manipulation policies from limited demonstrations is a core challenge in the current field. This paper directly addresses this "data closed-loop" problem by exploring how to leverage generative models for efficient sampling and generalization within action distributions.
+
+(b) Method or Model Framework: The proposed "Touch Dreaming" framework treats manipulation learning as a conditional generation process. Specifically, the system takes camera images, multi-view observations, robot proprioceptive states, and joint sequences as conditional inputs. Using diffusion policy or stream matching techniques, it progressively denoises in the action space to generate executable trajectory segments (action chunks/tokens). The model architecture employs a Multimodal Diffusion Transformer (MM-DiT) or a standard Transformer as the action head, mapping the generated trajectories to end-effector or wrist-hand targets, thereby achieving end-to-end control of robot manipulation.
+
+(c) Key Technical Innovations: The technical innovations of this work are primarily reflected in three aspects. First, it transforms the action generation problem into conditional generative modeling, leveraging the probabilistic sampling characteristics of diffusion models to effectively handle uncertainty in multimodal action distributions, enabling the policy to adapt to multiple feasible manipulation modes. Second, it introduces the concept of "Touch Dreaming," which implicitly learns the association between tactile and visual information, simulating tactile feedback during the generation process to enhance manipulation precision and robustness. Finally, the framework supports the reuse of action chunks/tokens, allowing trained end-effector targets to be transferred to different tasks, significantly reducing the cost of data collection and retraining.
+
+(d) Experiments/Validation and Application Value: Although this paper does not provide specific experimental data, it can be inferred from its technical approach that the framework is applicable to typical humanoid robot tasks such as mobile manipulation, scene understanding, and vision-guided control. By sampling from multimodal action distributions, the policy is expected to demonstrate strong generalization capabilities in scenarios like grasping, assembly, and object rearrangement. Its application value lies in providing a feasible generative pathway for humanoid robot skill learning in data-scarce environments, particularly suitable for real-world deployment scenarios requiring frequent task switching or adaptation to new environments.
+
+## 개요
+
+본 논문은 휴머노이드 로봇의 조작 기술 학습에서의 데이터 폐루프 문제를 해결하기 위해 "터치 드리밍(Touch Dreaming)"이라는 프레임워크를 제안한다. 이 연구의 주요 동기는 전통적인 방법이 대량의 실제 원격 조작 데이터에 의존하며, 이를 효율적으로 획득하고 다양한 조작 작업에 일반화하기 어렵다는 점에 있다. 본 논문의 핵심 기여는 동작 생성을 조건부 생성 문제로 모델링하고, 확산 모델 또는 플로우 매칭(flow matching)을 활용하여 다중 모드 동작 분포에서 실행 가능한 궤적을 샘플링하며, 다중 시각 관측, 본체 상태 및 관절 시퀀스를 결합하여 훈련 가능하고 재사용 가능한 엔드 이펙터 및 손목-손 목표 제어를 구현하는 것이다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 비구조화된 환경에서 휴머노이드 로봇의 정밀 조작은 오랫동안 데이터 획득의 병목 현상에 시달려 왔다. 기존 방법은 일반적으로 원격 조작이나 외골격을 사용하여 인간 시연 데이터를 수집하지만, 이러한 데이터는 비용이 높을 뿐만 아니라 특정 작업과 시나리오에 국한되어 정책의 일반화 능력이 부족하다. 또한 로봇 조작은 고차원 연속 동작 공간과 다중 모드 지각 입력을 포함하므로, 제한된 시연 데이터로부터 강건하고 전이 가능한 조작 정책을 학습하는 것이 현재 분야의 핵심 과제이다. 본 논문은 이러한 "데이터 폐루프" 문제를 해결하기 위해 생성 모델을 활용하여 동작 분포에서 효율적인 샘플링과 일반화를 달성하는 방법을 탐구한다.
+
+(b) 방법 또는 모델 프레임워크: 본 논문에서 제안하는 "터치 드리밍" 프레임워크는 조작 학습을 조건부 생성 과정으로 간주한다. 구체적으로, 시스템은 카메라 이미지, 다중 시각 관측, 로봇 본체 상태 및 관절 시퀀스를 조건 입력으로 사용하며, 확산 정책(diffusion policy) 또는 스트림 매칭(stream matching) 기술을 통해 동작 공간에서 점진적으로 노이즈를 제거하여 실행 가능한 궤적 조각(action chunk/token)을 생성한다. 모델 아키텍처는 다중 모드 확산 Transformer(MM-DiT) 또는 표준 Transformer를 동작 헤드로 사용하여 생성된 궤적을 엔드 이펙터 또는 손목-손 목표에 매핑함으로써 로봇 조작의 종단간 제어를 구현한다.
+
+(c) 핵심 기술 혁신: 본 연구의 기술 혁신은 주로 세 가지 측면에서 나타난다. 첫째, 동작 생성 문제를 조건부 생성 모델링으로 변환하고, 확산 모델의 확률적 샘플링 특성을 활용하여 다중 모드 동작 분포의 불확실성을 효과적으로 처리함으로써 정책이 다양한 실행 가능한 조작 방식을 수용할 수 있도록 한다. 둘째, "터치 드리밍" 개념을 도입하여 촉각과 시각의 연관성을 암시적으로 학습함으로써 생성 과정에서 촉각 피드백을 시뮬레이션하여 조작 정밀도와 강건성을 향상시킨다. 마지막으로, 프레임워크는 동작 chunk/token의 재사용을 지원하여 훈련된 엔드 이펙터 목표를 다른 작업으로 전이할 수 있게 하여 데이터 수집 및 재훈련 비용을 크게 절감한다.
+
+(d) 실험/검증 및 응용 가치: 본 논문은 구체적인 실험 데이터를 제공하지 않지만, 기술적 접근 방식으로 미루어 볼 때 이 프레임워크는 이동 조작, 장면 이해 및 시각 유도 제어와 같은 전형적인 휴머노이드 로봇 작업에 적합하다. 다중 모드 동작 분포에서 샘플링함으로써 정책은 파지, 조립, 물체 재배치 등의 시나리오에서 강력한 일반화 능력을 보일 것으로 예상된다. 그 응용 가치는 데이터가 부족한 환경에서 휴머노이드 로봇 기술 학습을 위한 실행 가능한 생성적 경로를 제공하며, 특히 작업을 자주 전환하거나 새로운 환경에 적응해야 하는 실제 배포 시나리오에 적합하다.

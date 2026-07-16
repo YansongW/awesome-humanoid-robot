@@ -61,3 +61,31 @@ theoretical_depth:
 
 ## 参考
 - 通过带有多模态基础模型的具体行动链推理的人形智能体用于零样本移动操作 project page (https://ego-vcp.github.io/)
+
+## Overview
+
+This paper proposes an embodied intelligence framework for zero-shot mobile manipulation tasks in humanoid robots. Its core innovation lies in combining multimodal foundation models with concrete action chain reasoning to address autonomous contact planning in complex scenarios. The research starts from visual perception, utilizing camera images, multi-view observations, and depth information to recover scene and object representations. By leveraging diffusion policies and flow matching methods, it samples executable trajectories within highly multimodal action distributions, thereby achieving mobile manipulation capabilities that generalize to novel environments and objects without pre-training. This work provides a new technical pathway for enhancing the autonomous decision-making and execution abilities of humanoid robots in unstructured environments.
+
+## Content
+
+Mobile manipulation for humanoid robots in real-world scenarios faces two core challenges: first, accurately understanding scene structure and target object states from high-dimensional, noisy visual observations; second, efficiently generating stable and feasible contact sequences within continuous and multimodal action spaces. Existing methods often rely on predefined skill libraries or handcrafted reward functions in reinforcement learning, making it difficult to adapt to unknown objects and terrains under zero-shot conditions. To address this, the paper redefines action generation as a conditional generation problem, bypassing the explicit modeling bottleneck in traditional planning and providing robots with a more flexible behavior generation mechanism.
+
+The research framework follows the main line of "visual perception - scene representation - action generation." First, the system jointly recovers scene geometry and semantic information from monocular or multi-view camera images, proprioceptive states and joint sequences, depth maps/point clouds/height maps, forming a unified representation of the environment. Subsequently, pre-trained multimodal foundation models are used to reason about target objects and manipulation intentions, generating high-level task plans. Finally, through diffusion policies or flow matching models, low-level controller targets and terrain representations are sampled in a latent space guided by world models or video prediction networks, outputting executable joint trajectories and contact point sequences.
+
+Key technical innovations are reflected in three aspects. First, action generation is treated as a conditional generation problem, using the denoising process of diffusion models to gradually refine trajectories in continuous action spaces, effectively handling ambiguity in multimodal action distributions. Second, flow matching methods are introduced to replace traditional diffusion processes, significantly improving sampling efficiency while maintaining generation quality, enabling real-time control. Third, by integrating world models and video prediction, the system can implicitly reason about action consequences, thereby considering dynamic stability in contact planning and avoiding falls or collisions caused by blind execution.
+
+In terms of experimental validation, the research evaluates the framework on various mobile manipulation tasks, including desktop object grasping, ground clutter cleaning, and coordinated walking and manipulation on complex terrains. Results show that the proposed framework successfully completes unseen object and scene tasks under zero-shot conditions, with success rates and trajectory smoothness outperforming rule-based or traditional reinforcement learning baselines. Furthermore, ablation experiments confirm the critical role of multimodal foundation models in scene understanding and the advantage of diffusion policies over deterministic policies in handling multimodal action distributions. This work provides a feasible technical solution for deploying humanoid robots in unstructured environments such as home services and disaster rescue.
+
+## 개요
+
+본 논문은 휴머노이드 로봇의 제로샷 이동 조작 작업을 위한 임베디드 인텔리전스 프레임워크를 제안하며, 핵심 혁신은 다중 모달 기초 모델과 구체적인 행동 체인 추론을 결합하여 복잡한 환경에서의 자율 접촉 계획 문제를 해결하는 데 있다. 연구는 시각적 인식에서 출발하여 카메라 이미지, 다중 시점 관측 및 깊이 정보를 활용해 장면과 대상의 표현을 복원하고, 확산 전략과 흐름 매칭 방법을 통해 고도로 다중 모달인 동작 분포에서 실행 가능한 궤적을 샘플링함으로써 사전 학습 없이 새로운 환경과 물체로 일반화할 수 있는 이동 조작 능력을 구현한다. 이 연구는 비구조적 환경에서 휴머노이드 로봇의 자율 의사 결정 및 실행 능력을 향상시키기 위한 새로운 기술적 경로를 제공한다.
+
+## 핵심 내용
+
+휴머노이드 로봇이 실제 환경에서 이동 조작을 수행할 때 두 가지 핵심 과제에 직면한다: 첫째, 고차원적이고 잡음이 많은 시각적 관측에서 장면 구조와 대상 물체의 상태를 정확히 이해하는 방법; 둘째, 연속적이고 다중 모달인 동작 공간에서 안정적이고 실행 가능한 접촉 시퀀스를 효율적으로 생성하는 방법이다. 기존 방법은 대부분 사전 정의된 스킬 라이브러리나 강화 학습의 수동 보상 함수에 의존하여 제로샷 조건에서 알려지지 않은 물체와 지형에 적응하기 어렵다. 본 논문은 이 문제를 해결하기 위해 동작 생성을 조건부 생성 문제로 재정의함으로써 전통적인 계획의 명시적 모델링 병목을 우회하고 로봇에 더 유연한 행동 생성 메커니즘을 제공한다.
+
+연구 프레임워크는 "시각적 인식-장면 표현-동작 생성"을 주축으로 한다. 먼저, 시스템은 단안 또는 다중 시점 카메라 이미지, 본체 상태와 관절 시퀀스, 깊이 맵/포인트 클라우드/고도 맵에서 장면의 기하학적 및 의미 정보를 공동으로 복원하여 환경의 통일된 표현을 형성한다. 그런 다음, 사전 학습된 다중 모달 기초 모델을 사용하여 대상 물체와 조작 의도를 추론하고 상위 수준의 작업 계획을 생성한다. 마지막으로, 확산 전략 또는 흐름 매칭 모델을 통해 세계 모델이나 비디오 예측 네트워크가 안내하는 잠재 공간에서 하위 수준 제어기 목표와 지형 표현을 샘플링하여 실행 가능한 관절 궤적과 접촉점 시퀀스를 출력한다.
+
+핵심 기술 혁신은 세 가지 측면에서 나타난다. 첫째, 동작 생성을 조건부 생성 문제로 간주하고 확산 모델의 잡음 제거 과정을 통해 연속 동작 공간에서 궤적을 점진적으로 정제하여 다중 모달 동작 분포의 모호성을 효과적으로 처리한다. 둘째, 전통적인 확산 과정을 대체하는 흐름 매칭 방법을 도입하여 생성 품질을 유지하면서 샘플링 효율성을 크게 향상시켜 실시간 제어를 가능하게 한다. 셋째, 세계 모델과 비디오 예측을 결합하여 시스템이 동작 결과를 암시적으로 추론할 수 있게 함으로써 접촉 계획에서 동적 안정성을 고려하고 무분별한 실행으로 인한 넘어짐이나 충돌을 방지한다.
+
+실험 검증 측면에서, 연구는 다양한 이동 조작 작업(예: 테이블 위 물체 잡기, 바닥 잡동사니 청소, 복잡한 지형에서의 보행과 조작 협력)에 대해 평가를 수행했다. 결과는 제안된 프레임워크가 제로샷 조건에서 보지 못한 물체와 장면 작업을 성공적으로 완료할 수 있으며, 성공률과 궤적 평활도에서 규칙 기반 또는 전통적인 강화 학습 기준 방법보다 우수함을 보여준다. 또한, 소거 실험을 통해 다중 모달 기초 모델이 장면 이해에서 핵심적인 역할을 하며, 확산 전략이 결정론적 전략보다 다중 모달 동작 분포를 처리할 때 장점이 있음을 확인했다. 이 연구는 가사 서비스, 재난 구조 등 비구조적 환경에서 휴머노이드 로봇의 실제 배치를 위한 실행 가능한 기술 솔루션을 제공한다.

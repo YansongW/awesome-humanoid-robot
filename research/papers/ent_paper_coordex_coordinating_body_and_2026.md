@@ -63,3 +63,31 @@ CoorDex 的模型框架以条件生成模型为核心，将本体状态（如关
 ## 参考
 
 - CoorDex project page (https://skevinci.github.io/coordex/)
+
+## Overview
+
+CoorDex proposes a whole-body continuous dexterous manipulation framework for humanoid robots, aiming to address the coordination between body and hand movements in complex tasks. This research models action generation as a conditional generation problem, sampling executable trajectories from multimodal action distributions using diffusion models or flow matching methods, thereby achieving end-to-end mapping from proprioceptive states, joint sequences, and tactile signals to whole-body trajectories, low-level control targets, and terrain representations. Its main contribution lies in constructing a unified framework that coordinates body and hand prior knowledge, providing a scalable solution for dexterous mobile manipulation tasks.
+
+## Content
+
+Whole-body loco-manipulation for humanoid robots faces a core challenge: how to simultaneously coordinate the stability of lower-limb walking and the fine manipulation of upper limbs. Traditional methods often separate body control from hand manipulation, making it difficult to achieve continuous and dexterous coordinated behavior in dynamic environments. While existing reinforcement learning approaches can generate whole-body policies, they frequently suffer from low training efficiency and poor policy generalization when dealing with high-dimensional action spaces and multimodal sensory inputs. CoorDex addresses this bottleneck by shifting action generation from deterministic mapping to conditional generation modeling, thereby enhancing policy robustness and diversity while maintaining real-time performance.
+
+The model framework of CoorDex centers on conditional generation models, encoding proprioceptive states (such as joint angles, contact forces, and tactile signals) into trackable body targets, and then sampling feasible trajectories from action distributions via diffusion policies or flow matching methods. Specifically, the framework supports multiple training paradigms: PPO/RL policy training for optimizing low-level control targets, diffusion policies and flow matching for generating continuous action sequences, and MM-DiT (Multimodal Diffusion Transformer) or Transformer action heads for processing high-dimensional spatiotemporal features. This modular design allows the system to flexibly combine whole-body policies to adapt to different task requirements.
+
+In terms of technical innovation, the key to CoorDex lies in its "prior coordination" mechanism. Rather than simply superimposing body and hand control, it uses a shared conditional generation space to enable body motion priors (e.g., gait patterns) and hand manipulation priors (e.g., grasping postures) to mutually constrain and guide each other during action sampling. For example, when the hand needs to perform fine manipulation, the diffusion model automatically adjusts the lower-limb support strategy to maintain balance; conversely, when the body needs to cross an obstacle, the hand action actively adapts to the new center of mass distribution. This bidirectional coordination significantly enhances the continuity and naturalness of movements.
+
+In experimental validation, CoorDex demonstrates its effectiveness across various typical mobile manipulation tasks, including dynamic grasping, door opening while moving, and object transportation under terrain adaptation. Compared to baseline methods (such as separated whole-body control or pure RL policies), CoorDex shows significant advantages in task success rate, action smoothness, and disturbance resistance. Moreover, due to its conditional generation framework, the system can adapt online to environmental changes (e.g., uneven ground or moving target objects) without retraining the policy. This characteristic gives it high deployment potential on real humanoid robot platforms, especially suitable for service and industrial scenarios requiring continuous and dexterous interaction.
+
+## 개요
+
+CoorDex는 인간형 로봇을 위한 전신 연속 정밀 조작 프레임워크를 제안하며, 복잡한 작업에서 신체와 손 동작의 조정 문제를 해결하는 것을 목표로 합니다. 이 연구는 동작 생성을 조건부 생성 문제로 모델링하고, 확산 모델 또는 흐름 매칭 방법을 통해 다중 모드 동작 분포에서 실행 가능한 궤적을 샘플링함으로써, 자체 상태, 관절 시퀀스 및 촉각 신호로부터 전신 궤적, 저수준 제어 목표 및 지형 표현까지의 종단 간 매핑을 구현합니다. 주요 기여는 신체와 손의 사전 지식을 통합적으로 조정하는 프레임워크를 구축하여, 정밀 이동 조작 작업에 확장 가능한 솔루션을 제공하는 데 있습니다.
+
+## 핵심 내용
+
+인간형 로봇의 전신 이동 조작(loco-manipulation)은 하지의 보행 안정성과 상지의 정밀 조작을 동시에 조정해야 하는 핵심 과제에 직면합니다. 전통적인 방법은 종종 신체 제어와 손 조작을 분리하여 처리하므로, 동적 환경에서 연속적이고 정밀한 협력 행동을 구현하기 어렵습니다. 기존 강화 학습 방법은 전신 정책을 생성할 수 있지만, 고차원 동작 공간과 다중 모드 인식 입력을 처리할 때 훈련 효율이 낮고 정책 일반화 성능이 떨어지는 문제를 자주 겪습니다. CoorDex는 이러한 병목 현상을 해결하기 위해 동작 생성을 결정론적 매핑에서 조건부 생성 모델링으로 전환하여, 실시간성을 유지하면서 정책의 견고성과 다양성을 강화합니다.
+
+CoorDex의 모델 프레임워크는 조건부 생성 모델을 핵심으로 하여, 자체 상태(예: 관절 각도, 접촉력, 촉각 신호)를 추적 가능한 신체 목표로 인코딩한 후, 확산 정책 또는 흐름 매칭 방법을 통해 동작 분포에서 실행 가능한 궤적을 샘플링합니다. 구체적으로, 프레임워크는 여러 훈련 패러다임을 지원합니다: PPO/RL 정책 훈련은 저수준 제어 목표 최적화에 사용되고, 확산 정책과 흐름 매칭은 연속 동작 시퀀스 생성에 사용되며, MM-DiT(다중 모드 확산 트랜스포머) 또는 트랜스포머 동작 헤드는 고차원 시공간 특징을 처리합니다. 이러한 모듈식 설계는 시스템이 다양한 작업 요구에 맞춰 전신 정책을 유연하게 조합할 수 있게 합니다.
+
+기술 혁신 측면에서 CoorDex의 핵심은 "사전 조정" 메커니즘에 있습니다. 이는 단순히 신체와 손 제어를 중첩하는 것이 아니라, 공유된 조건부 생성 공간을 통해 신체 운동 사전(예: 보행 패턴)과 손 조작 사전(예: 파지 자세)이 동작 샘플링 과정에서 서로 제약하고 유도하도록 합니다. 예를 들어, 손이 정밀 조작을 수행해야 할 때 확산 모델은 자동으로 하지의 지지 전략을 조정하여 균형을 유지하고, 반대로 신체가 장애물을 넘어야 할 때 손 동작은 새로운 무게 중심 분포에 능동적으로 적응합니다. 이러한 양방향 조정은 동작의 연속성과 자연스러움을 크게 향상시킵니다.
+
+실험 검증 측면에서 CoorDex는 동적 파지, 이동 중 문 열기, 지형 적응 하의 물체 운반 등 다양한 대표적인 이동 조작 작업에서 효과성을 입증했습니다. 기준 방법(예: 분리형 전신 제어 또는 순수 RL 정책)과 비교하여 CoorDex는 작업 성공률, 동작 부드러움 및 외란 저항 능력에서 현저한 우위를 보였습니다. 또한 조건부 생성 프레임워크를 채택함으로써 시스템은 정책을 재훈련할 필요 없이 환경 변화(예: 불균일한 지면 또는 목표 물체 이동)에 온라인으로 적응할 수 있습니다. 이 특성은 실제 인간형 로봇 플랫폼에서 높은 배치 가능성을 제공하며, 특히 연속적이고 정밀한 상호작용이 필요한 서비스 및 산업 현장에 적합합니다.

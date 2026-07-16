@@ -64,4 +64,42 @@ sources:
 - Wiki extraction
 - 项目 Wiki：chapter-01.md#1.13.2 主要国际与区域标准概览
 
+## Overview
+Regional access certification is an important standard in the field of humanoid robots. The following content is compiled from the project Wiki for in-depth reference.
 
+## Content
+| Standard/Certification | Issuing Body | Scope | Core Focus |
+|----------|---------|---------|-----------|
+| ISO 13482:2014 | ISO | Personal care robots | Mechanical safety, speed/force limits, contact safety |
+| ISO/TS 15066:2016 | ISO | Collaborative robots | Maximum allowable pressure/force, safety functions |
+| ISO 13849-1:2023 | ISO | Safety-related parts of control systems | Reliability of safety-related parts of control systems |
+| IEC 61508:2010 | IEC | General functional safety standard | SIL levels, safety lifecycle |
+| IEC 62368-1:2018 | IEC | Safety of information technology equipment | Electrical safety, fire, energy hazards |
+| UL 1740 | UL | Industrial robot safety | Robot system safety assessment |
+| FCC Part 15 | FCC | Radio frequency devices in the US | Electromagnetic compatibility and radio frequency interference |
+| CE Marking | European Union | EU market access | Compliance with relevant directives (Machinery Directive, Low Voltage Directive, etc.) |
+| CR Certification | China Robot Alliance / Certification and Accreditation Administration | China robot market access | Safety, EMC, performance, reliability |
+| CCC | General Administration of Quality Supervision, Inspection and Quarantine of China | Compulsory product certification | Electrical safety, etc. |
+
+!!! note "Term Explanation: CE Marking and CCC Certification"
+    CE Marking is a declaration of conformity for products entering the EU market, indicating that the product meets the essential requirements of relevant EU directives. CCC (China Compulsory Certification) is China's compulsory product certification system; products involving personal safety, animal and plant life and health, and environmental protection must obtain CCC certification before being sold.
+
+## 개요
+지역 접근 인증은 휴머노이드 로봇 분야의 중요한 표준입니다. 아래 내용은 프로젝트 Wiki에서 정리한 것으로, 심층 참고용으로 제공됩니다.
+
+## 핵심 내용
+| 표준/인증 | 제정 기관 | 적용 범위 | 핵심 관심 사항 |
+|----------|---------|---------|-----------|
+| ISO 13482:2014 | ISO | 개인 케어 로봇 | 기계적 안전, 속도/힘 제한, 접촉 안전 |
+| ISO/TS 15066:2016 | ISO | 협동 로봇 | 최대 허용 압력/힘, 안전 기능 |
+| ISO 13849-1:2023 | ISO | 기계 안전 제어 시스템 | 제어 시스템 안전 관련 부품 신뢰성 |
+| IEC 61508:2010 | IEC | 기능 안전 일반 표준 | SIL 등급, 안전 수명 주기 |
+| IEC 62368-1:2018 | IEC | 정보 기술 장비 안전 | 전기 안전, 화재, 에너지 위험 |
+| UL 1740 | UL | 산업용 로봇 안전 | 로봇 시스템 안전 평가 |
+| FCC Part 15 | FCC | 미국 무선 장비 | 전자기 적합성 및 무선 주파수 간섭 |
+| CE 마크 | 유럽 연합 | EU 시장 접근 | 관련 지침 준수 (기계 지침, 저전압 지침 등) |
+| CR 인증 | 중국 로봇 연맹/인증감독위원회 | 중국 로봇 시장 접근 | 안전, EMC, 성능, 신뢰성 |
+| CCC | 중국 품질감독검사검역총국 | 강제 제품 인증 | 전기 안전 등 |
+
+!!! note "용어 설명: CE 마크와 CCC 인증"
+    CE 마크는 제품이 EU 시장에 진입하기 위한 적합성 선언 마크로, 제품이 EU 관련 지침의 기본 요구 사항을 충족함을 나타냅니다. CCC(China Compulsory Certification)는 중국 강제 제품 인증으로, 인체 안전, 동식물 생명 건강 및 환경 보호와 관련된 제품은 CCC 인증을 받아야 판매가 가능합니다.

@@ -200,3 +200,15 @@ An ISO standard revision is neglecting user input A lot has happened since the l
 
 ## 参考
 - https://spectrum.ieee.org/domestic-humanoid-robot-safety-standards
+
+## Overview
+An ISO standard revision is neglecting user input. A lot has happened since the last revision, both on the technology side and with researchers’ understanding of safety for humans collaborating with domestic robots.
+
+## Content
+An ISO standard revision is neglecting user input. A lot has happened since the last revision, both on the technology side and with researchers’ understanding of safety for humans collaborating with domestic robots. The proposed ISO update addresses hazard identification, risk assessment, and different use scenarios. It does not, however, set limits, propose testing methods, or have enforcement mechanisms that might address the complexities of human-robot collaboration. And that is a problem, argues technology policy researcher Jae-Seong Lee of the Electronics and Telecommunications Research Institute in Daejeon, South Korea. Why is the next revision of ISO 13482 a big deal? Jae-Seong Lee: The standard is moving into final approval at a moment when domestic humanoid robot makers are shifting from lab prototypes to products aimed at real homes, real caregivers, and real families. That matters because the standard does more than specify geometry and impact limits. It helps define what counts as acceptable robot behavior in the messy world of everyday life.
+
+## 개요
+ISO 표준 개정이 사용자 의견을 무시하고 있다. 지난 개정 이후 기술 측면과 연구자들의 가정용 로봇과 협력하는 인간의 안전에 대한 이해 모두에서 많은 변화가 있었다.
+
+## 핵심 내용
+ISO 표준 개정이 사용자 의견을 무시하고 있다. 지난 개정 이후 기술 측면과 연구자들의 가정용 로봇과 협력하는 인간의 안전에 대한 이해 모두에서 많은 변화가 있었다. 제안된 ISO 업데이트는 위험 식별, 위험 평가 및 다양한 사용 시나리오를 다루고 있다. 그러나 인간-로봇 협력의 복잡성을 해결할 수 있는 한계 설정, 테스트 방법 제안, 또는 집행 메커니즘을 포함하지 않는다. 그리고 이것이 문제라고 한국 대전에 위치한 전자통신연구원의 기술 정책 연구자 이재성은 주장한다. 왜 ISO 13482의 다음 개정이 중요한가? 이재성: 이 표준은 가정용 휴머노이드 로봇 제조사들이 실험실 프로토타입에서 실제 가정, 실제 돌봄 제공자, 실제 가족을 대상으로 한 제품으로 전환하는 시점에 최종 승인 단계로 나아가고 있다. 이는 표준이 단순히 기하학적 구조와 충격 한계를 명시하는 것 이상을 수행하기 때문에 중요하다. 이는 일상생활의 혼란스러운 세계에서 허용 가능한 로봇 행동이 무엇인지 정의하는 데 도움을 준다.

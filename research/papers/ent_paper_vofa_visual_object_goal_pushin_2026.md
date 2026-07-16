@@ -67,3 +67,39 @@ VOFA的技术突破体现在三个层面：其一，提出“条件生成+力自
 ## 参考
 
 - VOFA: Visual Object Goal Pushing with Force-Adaptive Control for Humanoids ()
+
+## Overview
+
+When humanoid robots perform object pushing tasks, they face the coupling challenge of visual perception and whole-body coordinated control. Existing methods often struggle to generate stable and transferable trajectories within complex multimodal action spaces. The VOFA framework proposed in this paper transforms the visual object pushing problem into a conditional generation problem, sampling executable trajectories from multimodal action distributions via diffusion policy or flow matching, and integrating force-adaptive control to achieve whole-body coordination. The core contribution of this work lies in constructing an end-to-end generation pipeline from visual observation to whole-body trajectory, significantly enhancing the operational robustness and generalization capability of humanoid robots in unstructured environments.
+
+## Content
+
+**(a) Research Background and Problem**  
+Object manipulation tasks for humanoid robots have long been plagued by two major bottlenecks: first, the semantic gap between visual perception and motion control, where traditional methods require manually designed intermediate representations; second, the contradiction between the high dimensionality of whole-body motion planning and real-time requirements, especially when pushing heavy or slippery objects, where pure position control can lead to instability. Although existing hierarchical control schemes can decouple vision and motion, they struggle to handle multimodal action distributions (e.g., equivalent trajectories under different contact forces) and lack adaptive adjustment capabilities for force interaction. VOFA addresses this pain point by redefining action generation as a conditional probability modeling problem, aiming to capture the multimodal solution space using generative models.
+
+**(b) Method or Model Framework**  
+The VOFA framework comprises three data streams: camera images and multi-view observations, body state and joint sequences, and simulation interaction data, all of which are uniformly encoded as trackable body targets. In the generation phase, the system employs diffusion policy or flow matching as the core generator, mapping conditional inputs (e.g., target object pose, current joint angles) to whole-body trajectory distributions, and sampling executable action sequences through iterative denoising. Subsequently, the whole-body controller (WBC/MPC) performs dynamic corrections on the sampled trajectories, outputting low-level control targets and navigation arrival commands, forming a closed loop of "perception-generation-control."
+
+**(c) Key Technical Innovations**  
+The technical breakthroughs of VOFA are reflected in three aspects: First, it proposes a hybrid paradigm of "conditional generation + force adaptation," where the diffusion policy handles the multimodal correlation between vision and motion, while the force-adaptive control layer compensates for contact uncertainty through impedance adjustment. Second, it designs a hierarchical skill training mechanism that decomposes complex pushing tasks into sub-skills of "visual localization, force-controlled approach, and whole-body pushing," achieving cross-scenario transfer through expert policy distillation. Third, it introduces flow matching to replace traditional diffusion models, reducing the number of sampling steps by an order of magnitude while maintaining generation quality, meeting the real-time requirements of robot control.
+
+**(d) Experiments/Validation and Application Value**  
+Experiments on simulation environments and physical humanoid robot platforms demonstrate that VOFA outperforms baseline methods (e.g., pure MPC or behavior cloning) in terms of object pushing success rate, trajectory smoothness, and force control accuracy. Particularly when the target object's material, friction coefficient, or initial pose deviates, the force-adaptive module actively adjusts contact forces to prevent object slippage or robot tipping. The generality of this framework allows it to be extended to scenarios such as mobile manipulation and fine-grained upper-body manipulation, providing a feasible technical pathway for the dexterous manipulation of next-generation service-oriented humanoid robots.
+
+## 개요
+
+휴머노이드 로봇이 물체 밀기 작업을 수행할 때 시각적 인식과 전신 협조 제어의 결합 문제에 직면하며, 기존 방법은 복잡한 다중 모드 동작 공간에서 안정적이고 전이 가능한 궤적을 생성하기 어렵습니다. 본 논문에서 제안하는 VOFA 프레임워크는 시각적 목표 밀기 문제를 조건부 생성 문제로 변환하고, 확산 전략 또는 흐름 매칭을 통해 다중 모드 동작 분포에서 실행 가능한 궤적을 샘플링하며, 힘 적응 제어를 융합하여 전신 협조를 실현합니다. 이 연구의 핵심 기여는 시각적 관찰에서 전신 궤적으로 이어지는 종단간 생성 파이프라인을 구축하여 비구조화된 환경에서 휴머노이드 로봇의 조작 견고성과 일반화 능력을 크게 향상시킨 점입니다.
+
+## 핵심 내용
+
+**（a）연구 배경 및 문제**  
+휴머노이드 로봇의 물체 조작 작업은 오랫동안 두 가지 병목 현상에 시달려 왔습니다. 첫째는 시각적 인식과 운동 제어 간의 의미적 격차로, 기존 방법은 수동으로 중간 표현을 설계해야 합니다. 둘째는 전신 운동 계획의 고차원성과 실시간성 간의 모순으로, 특히 큰 질량이나 미끄러지기 쉬운 물체를 밀 때 순수 위치 제어는 불안정을 초래하기 쉽습니다. 기존의 계층적 제어 방식은 시각과 운동을 분리할 수 있지만, 다중 모드 동작 분포(예: 다른 접촉력 하의 등가 궤적)를 처리하기 어렵고 힘 상호작용에 대한 적응 조절 능력이 부족합니다. VOFA는 바로 이러한 문제점을 해결하기 위해 동작 생성을 조건부 확률 모델링 문제로 재정의하며, 생성 모델을 활용하여 다중 모드 해 공간을 포착하는 것을 목표로 합니다.
+
+**（b）방법 또는 모델 프레임워크**  
+VOFA 프레임워크는 세 가지 데이터 흐름을 포함합니다: 카메라 이미지와 다중 시점 관찰, 본체 상태와 관절 시퀀스, 시뮬레이션 상호작용 데이터로, 이들은 모두 추적 가능한 신체 목표(trackable body targets)로 통합 인코딩됩니다. 생성 단계에서 시스템은 확산 전략 또는 흐름 매칭(flow matching)을 핵심 생성기로 사용하여 조건 입력(예: 목표 물체 자세, 현재 관절 각도)을 전신 궤적 분포에 매핑하고, 반복적 잡음 제거를 통해 실행 가능한 동작 시퀀스를 샘플링합니다. 이후 전신 제어기(WBC/MPC)가 샘플링된 궤적에 대해 동역학적 보정을 수행하고, 저수준 제어 목표와 내비게이션 도달 명령을 출력하여 "인식-생성-제어" 폐루프를 형성합니다.
+
+**（c）핵심 기술 혁신**  
+VOFA의 기술적 돌파구는 세 가지 수준에서 나타납니다. 첫째, "조건부 생성 + 힘 적응"의 혼합 패러다임을 제안하여 확산 전략이 시각과 운동의 다중 모드 연관성을 처리하고, 힘 적응 제어 계층이 임피던스 조절을 통해 접촉 불확실성을 보상합니다. 둘째, 계층적 기술 훈련 메커니즘을 설계하여 복잡한 밀기 작업을 "시각적 위치 파악 - 힘 제어 접근 - 전신 밀기" 하위 기술로 분해하고, 전문가 전략 증류를 통해 교차 시나리오 전이를 실현합니다. 셋째, 기존 확산 모델을 대체하는 흐름 매칭을 도입하여 생성 품질을 유지하면서 샘플링 단계를 한 자릿수 줄여 로봇 제어의 실시간 요구 사항을 충족합니다.
+
+**（d）실험/검증 및 응용 가치**  
+시뮬레이션 환경과 실제 휴머노이드 로봇 플랫폼에서의 실험은 VOFA가 물체 밀기 성공률, 궤적 평활도 및 힘 제어 정밀도에서 기준 방법(예: 순수 MPC 또는 행동 복제)보다 우수함을 보여줍니다. 특히 목표 물체의 재질, 마찰 계수 또는 초기 자세가 변할 때 힘 적응 모듈이 접촉력을 능동적으로 조절하여 물체 미끄러짐이나 로봇 전도를 방지합니다. 이 프레임워크의 일반성은 이동 조작, 상반신 정밀 조작 등 다양한 시나리오로 확장 가능하며, 차세대 서비스형 휴머노이드 로봇의 정교한 조작을 위한 실현 가능한 기술 경로를 제공합니다.

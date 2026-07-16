@@ -63,3 +63,31 @@ theoretical_depth:
 ## 参考
 
 - 学习人对人的实时全身远程操作。 project page (https://robot-tv.github.io/)
+
+## Overview
+
+This paper introduces an immersive active visual feedback teleoperation system called Open-TeleVision, aimed at addressing a key bottleneck in the data loop of humanoid robots: how to efficiently and intuitively collect multimodal correspondence data between human operations and robot states. By integrating multi-view camera observations, proprioceptive states, and joint sequences, combined with exoskeleton teleoperation methods, the system provides high-quality training data for subsequent imitation learning and action generation. Its main contribution lies in modeling action generation as a conditional generation problem, using diffusion strategies or flow matching methods to sample executable trajectories from multimodal action distributions, thereby enhancing the generalization capability of whole-body control and end-effector manipulation.
+
+## Content
+
+(a) Research Background and Problem: One of the core challenges in the current humanoid robot field is how to build an efficient data loop to support end-to-end learning from human demonstrations to autonomous robot execution. Traditional teleoperation systems are often limited by low-dimensional control signals or lack immersive feedback, making it difficult for collected data to reflect dynamic interactions and multimodal uncertainty in real operations. Additionally, the mapping relationship between human operations and robot states is complex, involving multiple levels such as joint positions, torque commands, whole-body trajectories, and end-effector targets, urgently requiring a unified framework for collection and modeling.
+
+(b) Method or Model Framework: Open-TeleVision proposes a complete system architecture comprising three core modules: the data collection layer, the representation learning layer, and the action generation layer. In the data collection layer, the system uses multi-view cameras and proprioceptive sensors to capture visual and motion information from human operators while recording robot joint sequences and end-effector states. The representation learning layer employs ACT (Action Chunking with Transformers) and behavior cloning methods to map raw observations into a latent action space. The action generation layer, based on MM-DiT (Multi-Modal Diffusion Transformer) or Transformer action heads, transforms the conditional generation problem into a diffusion or flow matching process, sampling executable trajectories from continuous action distributions.
+
+(c) Key Technical Innovations: The technical innovations of this work are mainly reflected in three aspects. First, it proposes an "immersive active visual feedback" mechanism, allowing operators to perceive the robot's first-person perspective in real time through head-mounted display devices, thereby enhancing the intuitiveness and precision of remote operation. Second, it introduces diffusion strategies and flow matching into the field of whole-body teleoperation, effectively handling non-convexity and high dimensionality in multimodal action distributions and avoiding mode collapse issues of deterministic strategies in complex tasks. Third, it designs a unified representation for joint position/torque commands and end-effector targets, enabling trained policies to be reused across tasks and scenarios, reducing the transfer cost from simulation to real-world deployment.
+
+(d) Experiments/Validation and Application Value: Although the paper does not provide specific experimental data, it can be inferred from its technical framework and domain tags (components, design engineering) that the system has been deployed and validated on real-world hardware platforms. Its application value is reflected in two aspects: on one hand, it provides a low-latency, high-fidelity interaction paradigm for remote operation, suitable for hazardous environment tasks or fine manipulation tasks; on the other hand, through the construction of a data loop, it offers a reusable training foundation for subsequent imitation learning and policy generalization. Combined with keywords such as "real_world" and "sensor_suite," the system is expected to have broad potential in scenarios like industrial assembly and home services.
+
+## 개요
+
+본 논문에서는 휴머노이드 로봇의 데이터 폐쇄 루프에서 핵심 병목 현상인 인간 조작과 로봇 상태 간의 다중 모드 대응 데이터를 효율적이고 직관적으로 수집하는 방법을 해결하기 위해 Open-TeleVision이라는 몰입형 능동 시각 피드백 원격 조작 시스템을 제안합니다. 이 시스템은 다중 시점 카메라 관측, 본체 상태 및 관절 시퀀스를 융합하고 외골격 원격 조작 수단을 결합하여 후속 모방 학습 및 동작 생성을 위한 고품질 훈련 데이터를 제공합니다. 주요 기여는 동작 생성을 조건부 생성 문제로 모델링하고, 확산 전략 또는 흐름 매칭 방법을 사용하여 다중 모드 동작 분포에서 실행 가능한 궤적을 샘플링함으로써 로봇의 전신 제어 및 말단 효과기 조작의 일반화 능력을 향상시키는 데 있습니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 현재 휴머노이드 로봇 분야의 핵심 과제 중 하나는 인간 시연에서 로봇 자율 실행까지의 종단 간 학습을 지원하는 효율적인 데이터 폐쇄 루프를 구축하는 방법입니다. 기존 원격 조작 시스템은 종종 저차원 제어 신호에 제한되거나 몰입형 피드백이 부족하여 수집된 데이터가 실제 조작에서의 동적 상호 작용과 다중 모드 불확실성을 반영하기 어렵습니다. 또한 인간 조작과 로봇 상태 간의 매핑 관계는 관절 위치, 토크 명령, 전신 궤적 및 말단 효과기 목표 등 여러 계층을 포함하여 복잡하며, 이를 통합적으로 수집하고 모델링할 수 있는 프레임워크가 시급히 필요합니다.
+
+(b) 방법 또는 모델 프레임워크: Open-TeleVision은 데이터 수집 계층, 표현 학습 계층 및 동작 생성 계층의 세 가지 핵심 모듈로 구성된 완전한 시스템 아키텍처를 제안합니다. 데이터 수집 계층에서는 다중 시점 카메라와 본체 센서를 사용하여 인간 조작자의 시각 및 운동 정보를 획득하고, 동시에 로봇의 관절 시퀀스와 말단 효과기 상태를 기록합니다. 표현 학습 계층은 ACT(Action Chunking with Transformers)와 행동 복제 방법을 사용하여 원시 관측을 잠재 동작 공간에 매핑합니다. 동작 생성 계층은 MM-DiT(Multi-Modal Diffusion Transformer) 또는 Transformer 동작 헤드를 기반으로 조건부 생성 문제를 확산 또는 흐름 매칭 과정으로 변환하여 연속 동작 분포에서 실행 가능한 궤적을 샘플링합니다.
+
+(c) 핵심 기술 혁신: 본 연구의 기술 혁신은 주로 세 가지 측면에서 나타납니다. 첫째, "몰입형 능동 시각 피드백" 메커니즘을 제안하여 조작자가 헤드 마운트 디스플레이 장치를 통해 로봇의 1인칭 시점을 실시간으로 인식할 수 있게 함으로써 원격 조작의 직관성과 정밀도를 향상시킵니다. 둘째, 확산 전략과 흐름 매칭을 전신 원격 조작 분야에 도입하여 다중 모드 동작 분포의 비볼록성과 고차원성을 효과적으로 처리하고, 복잡한 작업에서 전통적인 결정론적 전략의 모드 붕괴 문제를 방지합니다. 셋째, 통합된 관절 위치/토크 명령과 말단 효과기 목표 표현을 설계하여 훈련된 전략이 작업 및 시나리오 간에 재사용될 수 있도록 하여 시뮬레이션에서 실제 환경으로의 배포 비용을 절감합니다.
+
+(d) 실험/검증 및 응용 가치: 논문에서 구체적인 실험 데이터를 제공하지는 않았지만, 기술 프레임워크와 분야 태그(부품, 설계 공학)로부터 이 시스템이 실제 하드웨어 플랫폼에서 배포 및 검증되었음을 추론할 수 있습니다. 응용 가치는 다음과 같습니다. 한편으로는 원격 조작에 저지연, 고충실도의 상호 작용 패러다임을 제공하여 위험 환경 작업이나 정밀 조작 작업에 적합합니다. 다른 한편으로는 데이터 폐쇄 루프 구축을 통해 후속 모방 학습 및 전략 일반화를 위한 재사용 가능한 훈련 기반을 제공합니다. "real_world" 및 "sensor_suite" 키워드와 결합하여 이 시스템이 산업 조립, 가사 서비스 등 다양한 시나리오에서 광범위한 잠재력을 가질 것으로 예상됩니다.

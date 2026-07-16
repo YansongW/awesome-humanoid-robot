@@ -61,3 +61,14 @@ This paper proposes a technique for automatic gain tuning of a momentum based ba
 ## 参考
 - http://arxiv.org/abs/1610.02849v3
 
+## Overview
+This paper proposes a technique for automatic gain tuning of a momentum based balancing controller for humanoid robots. The controller ensures the stabilization of the centroidal dynamics and the associated zero dynamics. Then, the closed-loop, constrained joint space dynamics is linearized and the controller's gains are chosen so as to obtain desired properties of the linearized system. Symmetry and positive definiteness constraints of gain matrices are enforced by proposing a tracker for symmetric positive definite matrices. Simulation results are carried out on the humanoid robot iCub.
+
+## Content
+This paper proposes a technique for automatic gain tuning of a momentum based balancing controller for humanoid robots. The controller ensures the stabilization of the centroidal dynamics and the associated zero dynamics. Then, the closed-loop, constrained joint space dynamics is linearized and the controller's gains are chosen so as to obtain desired properties of the linearized system. Symmetry and positive definiteness constraints of gain matrices are enforced by proposing a tracker for symmetric positive definite matrices. Simulation results are carried out on the humanoid robot iCub.
+
+## 개요
+본 논문은 휴머노이드 로봇의 모멘텀 기반 균형 제어기를 위한 자동 이득 조정 기법을 제안합니다. 제어기는 중심 동역학(centroidal dynamics) 및 관련 영점 동역학(zero dynamics)의 안정화를 보장합니다. 그런 다음 폐루프 구속 조인트 공간 동역학을 선형화하고, 선형화된 시스템의 원하는 특성을 얻기 위해 제어기의 이득을 선택합니다. 대칭 및 양의 정부호 제약 조건을 갖는 이득 행렬은 대칭 양의 정부호 행렬 추적기를 제안하여 적용됩니다. 시뮬레이션 결과는 휴머노이드 로봇 iCub에서 수행되었습니다.
+
+## 핵심 내용
+본 논문은 휴머노이드 로봇의 모멘텀 기반 균형 제어기를 위한 자동 이득 조정 기법을 제안합니다. 제어기는 중심 동역학 및 관련 영점 동역학의 안정화를 보장합니다. 그런 다음 폐루프 구속 조인트 공간 동역학을 선형화하고, 선형화된 시스템의 원하는 특성을 얻기 위해 제어기의 이득을 선택합니다. 대칭 및 양의 정부호 제약 조건을 갖는 이득 행렬은 대칭 양의 정부호 행렬 추적기를 제안하여 적용됩니다. 시뮬레이션 결과는 휴머노이드 로봇 iCub에서 수행되었습니다.

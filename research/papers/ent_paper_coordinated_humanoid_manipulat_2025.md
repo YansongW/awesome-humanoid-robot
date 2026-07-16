@@ -65,3 +65,39 @@ theoretical_depth:
 
 ## 参考
 - 具有选择策略的协调人形操作 project page (https://choice-policy.github.io)
+
+## Overview
+
+This study focuses on the data closed-loop problem in humanoid robot manipulation tasks, proposing a framework that transforms multimodal observations and human demonstration data into trainable and reusable action commands. Its core contribution lies in modeling action generation as a conditional generation problem, utilizing diffusion policies or flow matching methods to sample executable trajectories from multimodal action distributions, thereby enhancing the coordination and generalization capabilities of robot manipulation. This work provides a unified technical pathway for downstream tasks such as mobile manipulation, scene understanding, and vision-guided control.
+
+## Content
+
+(a) Research Background and Problem  
+Humanoid robot coordinated manipulation in unstructured environments faces two major challenges: first, how to efficiently collect and utilize human demonstration data; second, how to generate robust action sequences from high-dimensional, multimodal observations (e.g., camera images, exoskeleton states). Existing methods often rely on predefined action primitives or single-modality imitation learning, making it difficult to handle the multimodal nature of action distributions in real-world scenarios (e.g., the same goal can be achieved via different grasping paths). This study explicitly identifies the key bottleneck in the "data closed-loop"—namely, the need to simultaneously address observation noise, action redundancy, and real-time constraints during the transformation from human operations to executable robot commands.
+
+(b) Method or Model Framework  
+The paper proposes an action learning framework centered on conditional generative models. Specifically, the system first collects human operation data via teleoperation or exoskeleton devices, while recording multi-view camera images and robot proprioceptive states. Subsequently, ACT (Action Chunking with Transformers) or behavior cloning methods are used to preprocess the data, discretizing continuous action sequences into trainable "action chunks." On this basis, diffusion policies or flow matching models are introduced, treating action generation as a stepwise denoising process from a noise distribution to the target action distribution. This framework explicitly models multimodal action distributions, enabling the robot to dynamically sample the most suitable execution trajectory based on current observations during inference.
+
+(c) Key Technical Innovations  
+The technical highlight of this work lies in introducing diffusion models and flow matching to the field of humanoid robot manipulation, overcoming the limitations of traditional imitation learning in action diversity. Unlike deterministic policies, diffusion policies preserve the multimodal characteristics of action distributions through iterative denoising, allowing the robot to generate multiple feasible manipulation plans for the same scenario. Additionally, flow matching methods further improve sampling efficiency through continuous-time normalizing flows, making real-time control feasible. Another innovation is the completeness of the data closed-loop—the entire pipeline from collection, training to deployment is based on the same observation space, avoiding cross-modal information loss.
+
+(d) Experiments/Validation and Application Value  
+Although the paper does not disclose specific experimental data, it can be inferred from its technical approach that this method has significant advantages in mobile manipulation tasks. For example, in scenarios requiring simultaneous coordination of dual arms and a mobile base (e.g., opening doors, carrying objects), the framework based on diffusion policies naturally integrates visual perception and motion planning. In practical applications, this technology can reduce reliance on precise dynamic models, enabling robots to generalize to new objects or layouts with only a small amount of human demonstration. Its potential value includes adaptive grasping in home services, flexible assembly in industrial scenarios, and remote operation in hazardous environments.
+
+## 개요
+
+본 연구는 휴머노이드 로봇의 조작 작업에서 데이터 폐루프 문제에 초점을 맞추며, 다중 모달 관측과 인간 시연 데이터를 훈련 가능하고 재사용 가능한 동작 명령으로 변환하는 프레임워크를 제안합니다. 핵심 기여는 동작 생성을 조건부 생성 문제로 모델링하고, 확산 정책 또는 흐름 매칭 방법을 활용하여 다중 모달 동작 분포에서 실행 가능한 궤적을 샘플링함으로써 로봇 조작의 조정 능력과 일반화 능력을 향상시키는 데 있습니다. 이 연구는 이동 조작, 장면 이해, 시각 유도 제어와 같은 하위 작업에 통합된 기술 경로를 제공합니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제  
+휴머노이드 로봇이 비구조화된 환경에서 조정 작업을 수행할 때 두 가지 주요 과제에 직면합니다. 첫째는 인간 시연 데이터를 효율적으로 수집하고 활용하는 방법이며, 둘째는 고차원적이고 다중 모달인 관측(예: 카메라 이미지, 외골격 상태)에서 강건한 동작 시퀀스를 생성하는 방법입니다. 기존 방법은 종종 사전 정의된 동작 기본 요소나 단일 모달의 모방 학습에 의존하여 실제 장면에서 동작 분포의 다중 모달 특성(예: 동일한 목표를 다른 경로로 잡을 수 있음)을 처리하기 어렵습니다. 본 연구는 "데이터 폐루프"의 핵심 병목 현상, 즉 인간 조작에서 로봇 실행 가능 명령으로의 변환 과정에서 관측 잡음, 동작 중복성 및 실시간 제약 조건을 동시에 처리해야 함을 명확히 지적합니다.
+
+(b) 방법 또는 모델 프레임워크  
+논문은 조건부 생성 모델을 핵심으로 하는 동작 학습 프레임워크를 제안합니다. 구체적으로, 시스템은 먼저 원격 조작 또는 외골격 장치를 통해 인간 조작 데이터를 수집하고, 동시에 다중 시점 카메라 이미지와 로봇 자체 상태를 기록합니다. 그런 다음 ACT(Action Chunking with Transformers) 또는 행동 복제 방법을 사용하여 데이터를 전처리하고, 연속적인 동작 시퀀스를 훈련 가능한 "동작 청크"로 이산화합니다. 이를 바탕으로 확산 정책 또는 흐름 매칭 모델을 도입하여 동작 생성을 잡음 분포에서 목표 동작 분포로의 점진적 잡음 제거 과정으로 간주합니다. 이 프레임워크는 다중 모달 동작 분포를 명시적으로 모델링할 수 있어, 로봇이 추론 단계에서 현재 관측에 따라 가장 적합한 실행 궤적을 동적으로 샘플링할 수 있습니다.
+
+(c) 핵심 기술 혁신  
+본 연구의 기술적 하이라이트는 확산 모델과 흐름 매칭을 휴머노이드 로봇 조작 분야에 도입하여 전통적인 모방 학습의 동작 다양성 한계를 해결한 점입니다. 결정론적 정책과 달리, 확산 정책은 반복적 잡음 제거를 통해 동작 분포의 다중 모드 특성을 유지하여 로봇이 동일한 장면에 대해 여러 실행 가능한 조작 방안을 생성할 수 있도록 합니다. 또한, 흐름 매칭 방법은 연속 시간 정규화 흐름을 통해 샘플링 효율성을 더욱 향상시켜 실시간 제어를 가능하게 합니다. 또 다른 혁신점은 데이터 폐루프의 완전성입니다. 수집, 훈련에서 배포까지의 전체 과정이 동일한 관측 공간을 기반으로 하여, 교차 모달 정보 손실을 방지합니다.
+
+(d) 실험/검증 및 응용 가치  
+논문이 구체적인 실험 데이터를 공개하지는 않았지만, 기술 경로를 통해 이 방법이 이동 조작 작업에서 뚜렷한 이점을 가질 것으로 추론할 수 있습니다. 예를 들어, 양팔과 이동 베이스를 동시에 조정해야 하는 장면(예: 문 열기, 물체 운반)에서 확산 정책 기반 프레임워크는 시각적 인식과 운동 계획을 자연스럽게 통합할 수 있습니다. 실제 응용에서 이 기술은 정밀한 동역학 모델에 대한 의존도를 낮추어, 로봇이 소량의 인간 시연만으로 새로운 물체나 새로운 배치에 일반화할 수 있게 합니다. 잠재적 가치는 가정 서비스에서의 적응형 잡기, 산업 현장에서의 유연한 조립, 위험 환경에서의 원격 조작 등을 포함합니다.

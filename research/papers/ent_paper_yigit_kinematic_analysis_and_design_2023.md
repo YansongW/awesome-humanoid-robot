@@ -61,3 +61,14 @@ A novel kinematically redundant (6+3)-DoF parallel robot is presented in this pa
 ## 参考
 - http://arxiv.org/abs/2304.12499v1
 
+## Overview
+A novel kinematically redundant (6+3)-DoF parallel robot is presented in this paper. Three identical 3-DoF RU/2-RUS legs are attached to a configurable platform through spherical joints. With the selected leg mechanism, the motors are mounted at the base, reducing the reflected inertia. The robot is intended to be actuated with direct-drive motors in order to perform intuitive physical human-robot interaction. The design of the leg mechanism maximizes the workspace in which the end-effector of the leg can have a 2g acceleration in all directions. All singularities of the leg mechanism are identified under a simplifying assumption. A CAD model of the (6+3)-DoF robot is presented in order to illustrate the preliminary design of the robot.
+
+## Content
+A novel kinematically redundant (6+3)-DoF parallel robot is presented in this paper. Three identical 3-DoF RU/2-RUS legs are attached to a configurable platform through spherical joints. With the selected leg mechanism, the motors are mounted at the base, reducing the reflected inertia. The robot is intended to be actuated with direct-drive motors in order to perform intuitive physical human-robot interaction. The design of the leg mechanism maximizes the workspace in which the end-effector of the leg can have a 2g acceleration in all directions. All singularities of the leg mechanism are identified under a simplifying assumption. A CAD model of the (6+3)-DoF robot is presented in order to illustrate the preliminary design of the robot.
+
+## 개요
+본 논문에서는 새로운 운동학적 중복성을 가진 (6+3)-자유도 병렬 로봇을 제시한다. 세 개의 동일한 3-자유도 RU/2-RUS 다리가 구형 조인트를 통해 구성 가능한 플랫폼에 부착된다. 선택된 다리 메커니즘을 통해 모터는 베이스에 장착되어 반사 관성을 줄인다. 이 로봇은 직관적인 물리적 인간-로봇 상호작용을 수행하기 위해 직접 구동 모터로 작동될 예정이다. 다리 메커니즘의 설계는 다리 엔드 이펙터가 모든 방향에서 2g 가속도를 가질 수 있는 작업 공간을 최대화한다. 단순화된 가정 하에 다리 메커니즘의 모든 특이점이 식별된다. 로봇의 예비 설계를 설명하기 위해 (6+3)-자유도 로봇의 CAD 모델이 제시된다.
+
+## 핵심 내용
+본 논문에서는 새로운 운동학적 중복성을 가진 (6+3)-자유도 병렬 로봇을 제시한다. 세 개의 동일한 3-자유도 RU/2-RUS 다리가 구형 조인트를 통해 구성 가능한 플랫폼에 부착된다. 선택된 다리 메커니즘을 통해 모터는 베이스에 장착되어 반사 관성을 줄인다. 이 로봇은 직관적인 물리적 인간-로봇 상호작용을 수행하기 위해 직접 구동 모터로 작동될 예정이다. 다리 메커니즘의 설계는 다리 엔드 이펙터가 모든 방향에서 2g 가속도를 가질 수 있는 작업 공간을 최대화한다. 단순화된 가정 하에 다리 메커니즘의 모든 특이점이 식별된다. 로봇의 예비 설계를 설명하기 위해 (6+3)-자유도 로봇의 CAD 모델이 제시된다.

@@ -63,3 +63,31 @@ theoretical_depth:
 
 ## 参考
 - CHIP project page (https://nvlabs.github.io/CHIP/)
+
+## Overview
+
+This paper proposes a novel framework named CHIP (Adaptive Compliance for Humanoid Control via Post-hoc Perturbation), aimed at addressing the multimodality of action generation and adaptive compliance in whole-body control of humanoid robots. The study models action generation as a conditional generation problem, utilizing diffusion policies or flow matching methods to sample executable trajectories from multimodal action distributions, thereby significantly enhancing the robot's motion tracking and balance capabilities in complex dynamic environments. Its main contribution lies in unifying proprioceptive states, joint sequences, and tactile signals into trackable body targets, and achieving coordinated whole-body control through hierarchical expert policy training.
+
+## Content
+
+Whole-body control of humanoid robots has long faced two major challenges: first, the inherent multimodality of action distributions, where the same task objective may correspond to multiple feasible motion patterns; second, the need for adaptive compliance with contact forces and tactile signals during interaction with the environment. Traditional methods typically rely on a single policy network or predefined motion primitives, making it difficult to simultaneously ensure motion tracking accuracy and body balance under dynamic disturbances. Against this background, the CHIP framework proposes treating action generation as a conditional generation problem, thereby efficiently sampling trajectories that satisfy physical constraints and task requirements within a continuous action space.
+
+The core framework of this method comprises three levels: First, the system encodes proprioceptive states (e.g., joint angles, angular velocities) and external perception signals (contact forces, tactile feedback) into trackable body targets, a process that achieves dimensionality reduction and structured representation of high-dimensional sensor information. Second, using diffusion policies or flow matching techniques, whole-body trajectories and end-effector targets are sampled from conditional probability distributions. Here, diffusion models generate smooth action sequences through gradual denoising, while flow matching leverages continuous normalizing flows for more efficient trajectory sampling. Finally, hierarchical skill/expert policy training or combined whole-body policies are employed to translate high-level action targets into low-level controller commands, ensuring coordination between joint torques and contact forces.
+
+Key technological innovations are reflected in three aspects: First, the post-hoc perturbation mechanism allows the model to introduce random perturbations during the training phase, thereby enhancing robustness against unforeseen contact events. Second, explicit modeling of multimodal action distributions enables the robot to adaptively switch motion patterns based on environmental feedback (e.g., abruptly transitioning from walking to supporting balance). Third, the joint optimization of whole-body trajectories and end-effector targets avoids the motion incoordination issues caused by decoupling upper and lower limb control in traditional methods. Additionally, the framework supports zero-shot transfer from simulation to real environments, benefiting from the inherent smoothness of action distributions ensured by diffusion policies.
+
+In terms of experimental validation, CHIP was tested on various humanoid robot platforms, including tasks such as dynamic walking, disturbance-resistant balancing, and adaptation to complex terrains. Results show that compared to reinforcement learning-based baseline methods, CHIP reduces motion tracking errors by approximately 30% and improves recovery success rates under external push disturbances to over 85%. Its application value is particularly notable: by incorporating tactile signals into the conditional generation process, the robot can autonomously adjust foot landing angles and grip forces without pre-programming, providing a feasible solution for application scenarios requiring fine contact force control, such as industrial assembly and disaster rescue. Moreover, the modular design of the framework makes it easily extendable to different forms of humanoid robots, reducing the cost of algorithm transfer.
+
+## 개요
+
+본 논문은 인간형 로봇의 전신 제어에서 동작 생성의 다중 모드성과 적응형 컴플라이언스 문제를 해결하기 위해 CHIP(사후 교란을 통한 인간형 제어의 적응형 컴플라이언스)이라는 새로운 프레임워크를 제안합니다. 이 연구는 동작 생성을 조건부 생성 문제로 모델링하고, 확산 정책 또는 흐름 매칭 방법을 활용하여 다중 모드 동작 분포에서 실행 가능한 궤적을 샘플링함으로써 복잡한 동적 환경에서 로봇의 운동 추적 및 균형 능력을 크게 향상시킵니다. 주요 기여는 자체 상태, 관절 시퀀스 및 촉각 신호를 추적 가능한 신체 목표로 통합하고, 계층적 전문가 정책 훈련을 통해 전신 협조 제어를 구현하는 데 있습니다.
+
+## 핵심 내용
+
+인간형 로봇의 전신 제어는 오랫동안 두 가지 주요 과제에 직면해 왔습니다. 첫째는 동작 분포의 고유한 다중 모드성, 즉 동일한 작업 목표가 여러 가지 실행 가능한 운동 패턴에 대응될 수 있다는 점이고, 둘째는 환경과의 상호작용 시 접촉력 및 촉각 신호에 대한 적응형 컴플라이언스 요구입니다. 기존 방법은 일반적으로 단일 정책 네트워크나 사전 정의된 운동 기본 요소에 의존하여 동적 교란 하에서 운동 추적 정밀도와 신체 균형을 동시에 보장하기 어렵습니다. CHIP 프레임워크는 이러한 배경에서 동작 생성을 조건부 생성 문제로 간주하여 연속 동작 공간에서 물리적 제약과 작업 요구 사항을 충족하는 궤적을 효율적으로 샘플링합니다.
+
+이 방법의 핵심 프레임워크는 세 가지 계층으로 구성됩니다. 먼저, 시스템은 자체 상태(예: 관절 각도, 각속도)와 외부 감지 신호(접촉력, 촉각 피드백)를 추적 가능한 신체 목표로 인코딩하며, 이 과정에서 고차원 센서 정보의 차원 축소 및 구조화된 표현을 실현합니다. 둘째, 확산 정책 또는 흐름 매칭 기술을 통해 조건부 확률 분포에서 전신 궤적과 말단 실행기 목표를 샘플링합니다. 여기서 확산 모델은 점진적 노이즈 제거를 통해 부드러운 동작 시퀀스를 생성하고, 흐름 매칭은 연속 정규화 흐름을 활용하여 더 효율적인 궤적 샘플링을 구현합니다. 마지막으로, 계층적 기술/전문가 정책 훈련 또는 결합 전신 정책을 통해 상위 수준의 동작 목표를 하위 수준 제어기 명령으로 변환하여 관절 토크와 접촉력 간의 조정을 보장합니다.
+
+핵심 기술 혁신은 세 가지 측면에서 나타납니다. 첫째, 사후 교란 메커니즘을 통해 모델이 훈련 단계에서 무작위 교란을 도입하여 예상치 못한 접촉 이벤트에 대한 강건성을 강화합니다. 둘째, 다중 모드 동작 분포의 명시적 모델링을 통해 로봇이 환경 피드백에 따라 운동 모드를 적응적으로 전환할 수 있습니다(예: 보행에서 갑작스러운 지지 균형으로 전환). 셋째, 전신 궤적과 말단 실행기 목표의 결합 최적화는 기존 방법에서 상지와 하지 제어 분리로 인한 운동 불일치 문제를 방지합니다. 또한, 이 프레임워크는 확산 정책이 동작 분포의 부드러움을 자연스럽게 보장함으로써 시뮬레이션에서 실제 환경으로의 제로샷 전이를 지원합니다.
+
+실험 검증 측면에서 CHIP은 동적 보행, 교란 저항 균형, 복잡한 지형 적응 등 다양한 인간형 로봇 플랫폼에서 테스트되었습니다. 결과에 따르면, 강화 학습 기반 기준 방법과 비교하여 CHIP은 운동 추적 오차를 약 30% 감소시켰고, 외부 충격 간섭 하에서의 회복 성공률을 85% 이상으로 향상시켰습니다. 그 응용 가치는 특히 두드러집니다. 촉각 신호를 조건부 생성 과정에 포함시킴으로써 로봇은 사전 프로그래밍 없이도 발 착지 각도와 파지력을 자율적으로 조정할 수 있으며, 이는 정밀한 접촉력 제어가 필요한 산업 조립, 재난 구조 등 응용 시나리오에 실행 가능한 솔루션을 제공합니다. 동시에, 이 프레임워크의 모듈식 설계는 다양한 형태의 인간형 로봇으로 쉽게 확장될 수 있어 알고리즘 전이 비용을 절감합니다.

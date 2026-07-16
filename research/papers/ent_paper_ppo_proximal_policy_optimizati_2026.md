@@ -55,3 +55,31 @@ sources:
 
 ## 参考
 - PPO: Proximal Policy Optimization ()
+
+## Overview
+
+This paper focuses on fundamental reinforcement learning algorithms in the field of humanoid robotics, systematically elaborating on the core principles and design motivations of Proximal Policy Optimization (PPO). As a policy gradient method designed for high-dimensional continuous control tasks, PPO introduces a clipping mechanism to limit the step size of policy updates, significantly improving sample efficiency while ensuring training stability. This research provides an important algorithmic foundation for subsequent motion control, balance maintenance, and complex task learning in humanoid robots.
+
+## Content
+
+(a) Research Background and Problem: Humanoid robots pose significant challenges to reinforcement learning algorithms due to their high degrees of freedom, nonlinear dynamics, and complex interactions with the environment. Traditional policy gradient methods such as REINFORCE or A3C can handle continuous action spaces but often suffer from policy collapse due to excessively large update steps or require complex trust region constraint computations. PPO was proposed to address this core contradiction—how to achieve stable and efficient training with low computational overhead while ensuring monotonic policy improvement.
+
+(b) Method or Model Framework: PPO is an on-policy reinforcement learning algorithm based on the Actor-Critic architecture. Its core idea is to approximate the policy gradient through a surrogate objective function and use a clipping term to constrain the ratio of the new policy to the old policy within the range [1-ε, 1+ε]. This design avoids the need for second-order optimization requiring explicit KL divergence computation, as in TRPO, achieving the effect of trust region constraints using only first-order gradients. The algorithm also supports importance sampling and multiple mini-batch updates, thereby balancing data utilization and training stability.
+
+(c) Key Technical Innovations: The main innovations of PPO are reflected in three aspects. First, the design of the clipped objective function automatically limits policy updates within a safe range, eliminating the need for complex conjugate gradient computations. Second, the introduction of an adaptive KL penalty coefficient mechanism as an alternative further enhances the algorithm's robustness. Third, the use of Generalized Advantage Estimation (GAE) and advantage function normalization effectively reduces variance in high-dimensional state spaces. Together, these techniques form a simple yet efficient algorithmic framework, particularly suitable for scenarios requiring precise torque control, such as humanoid robots.
+
+(d) Experiments/Validation or Application Value: Although the original paper primarily validated PPO on standard continuous control benchmarks such as MuJoCo, its application value in the field of humanoid robotics has been widely recognized. Subsequent research has shown that PPO can successfully train humanoid robots to perform complex tasks such as walking, running, jumping, and object manipulation. Its insensitivity to hyperparameters during training allows researchers to focus more on reward function design and simulation environment construction rather than algorithm tuning. Currently, PPO has become one of the most commonly used baseline algorithms in humanoid robot motion control research, with numerous improved versions tailored to specific hardware platforms.
+
+## 개요
+
+본 논문은 휴머노이드 로봇 분야의 기초 강화학습 알고리즘에 초점을 맞추어, 근접 정책 최적화(Proximal Policy Optimization, PPO)의 핵심 원리와 설계 동기를 체계적으로 설명한다. 고차원 연속 제어 작업을 위한 정책 그래디언트 방법으로서, PPO는 클리핑 메커니즘을 도입하여 정책 업데이트의 보폭을 제한함으로써 훈련 안정성을 보장하는 동시에 샘플 효율성을 크게 향상시킨다. 이 연구는 이후 휴머노이드 로봇의 운동 제어, 균형 유지 및 복잡한 작업 학습에 중요한 알고리즘 기반을 제공한다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 휴머노이드 로봇은 높은 자유도, 비선형 동역학 특성 및 환경과의 상호작용 복잡성으로 인해 강화학습 알고리즘에 심각한 도전을 제기한다. REINFORCE나 A3C와 같은 전통적인 정책 그래디언트 방법은 연속 행동 공간을 처리할 수 있지만, 업데이트 보폭이 너무 커서 정책 붕괴를 초래하거나 복잡한 신뢰 영역 제약 계산이 필요하다. PPO의 제안은 이러한 핵심 모순을 해결하기 위한 것이다——정책의 단조로운 개선을 보장하면서 낮은 계산 비용으로 안정적이고 효율적인 훈련을 달성하는 방법.
+
+(b) 방법 또는 모델 프레임워크: PPO는 Actor-Critic 아키텍처 기반의 on-policy 강화학습 알고리즘에 속한다. 핵심 아이디어는 대체 목적 함수(surrogate objective)를 통해 정책 그래디언트를 근사화하고, 클리핑 항(clipping)을 사용하여 새 정책과 이전 정책의 비율을 [1-ε, 1+ε] 범위 내로 제한하는 것이다. 이 설계는 TRPO처럼 KL 발산의 2차 최적화를 명시적으로 계산할 필요 없이, 1차 그래디언트만으로 신뢰 영역 제약 효과를 구현한다. 알고리즘은 중요도 샘플링과 다중 라운드 미니배치 업데이트를 동시에 지원하여 데이터 활용도와 훈련 안정성 사이의 균형을 유지한다.
+
+(c) 핵심 기술 혁신: PPO의 주요 혁신은 세 가지 측면에서 나타난다. 첫째, 클리핑된 목적 함수의 설계로 정책 업데이트가 자동으로 안전 범위 내에 제한되어 복잡한 켤레 그래디언트 계산이 필요 없다. 둘째, 적응형 KL 페널티 계수 메커니즘을 대안으로 도입하여 알고리즘의 견고성을 더욱 강화한다. 셋째, 일반화된 이점 추정(GAE)과 이점 함수 정규화 기술을 사용하여 고차원 상태 공간에서의 분산을 효과적으로 줄인다. 이러한 기술들은 함께 간단하면서도 효율적인 알고리즘 프레임워크를 구성하며, 특히 정밀한 토크 제어가 필요한 휴머노이드 로봇과 같은 시나리오에 적합하다.
+
+(d) 실험/검증 또는 응용 가치: 원본 논문은 주로 MuJoCo와 같은 표준 연속 제어 벤치마크를 기반으로 검증되었지만, 휴머노이드 로봇 분야에서의 응용 가치는 널리 인정받고 있다. 후속 연구에 따르면, PPO는 휴머노이드 로봇이 걷기, 달리기, 점프 및 물체 조작과 같은 복잡한 작업을 성공적으로 수행하도록 훈련할 수 있다. 훈련 과정이 하이퍼파라미터에 민감하지 않은 특성 덕분에 연구자들은 알고리즘 튜닝보다는 보상 함수 설계와 시뮬레이션 환경 구축에 더 집중할 수 있다. 현재 PPO는 휴머노이드 로봇 운동 제어 연구에서 가장 일반적으로 사용되는 기준 알고리즘 중 하나가 되었으며, 특정 하드웨어 플랫폼에 맞춘 다양한 개선 버전이 파생되었다.

@@ -107,5 +107,19 @@ Humanoid robots in home and service settings must interpret implicit, multimodal
 - [RoboOmni: Proactive Robot Manipulation in Omni-modal Context](https://arxiv.org/abs/2510.23763)
 - [OmniAction Dataset on Hugging Face](https://huggingface.co/datasets/fnlp/OmniAction)
 
+## 개요
+능동적 로봇 조작을 위한 대규모 멀티모달 데이터셋으로, 14만 1천 개의 클립, 112가지 스킬, 748개의 객체를 포함하며, 시각, 음성, 환경 소리 컨텍스트를 융합합니다.
 
+## 핵심 내용
+### OmniAction 데이터셋의 정의와 위치
+OmniAction 데이터셋은 **데이터셋** 유형에 속하며, 영문 명칭은 *OmniAction Dataset*입니다.
+능동적 로봇 조작을 위한 대규모 멀티모달 데이터셋으로, 14만 1천 개의 클립, 112가지 스킬, 748개의 객체를 포함하며, 시각, 음성, 환경 소리 컨텍스트를 융합합니다.
 
+### OmniAction 데이터셋의 주요 정보
+다음은 OmniAction 데이터셋에 대한 상세 설명을 중·영문 독자를 위해 정리한 내용입니다.
+
+## 초록
+
+> **생활 예시**: 마치 대규모 가정 생활 다큐멘터리 모음집과 같습니다. 화면뿐만 아니라 대화, 어조, 환경음도 포함되어 있어 로봇이 다양한 상황에서 사람이 실제로 무엇을 원하는지 이해하도록 돕습니다.
+
+> **자연어 논리**: OmniAction은 대규모 멀티모달 로봇 조작 데이터셋으로, 14만 1천 개의 클립, 112가지 스킬, 748개의 객체를 포함하며, 시각, 음성, 환경 소리 컨텍스트를 융합합니다. 이는 능동적 로봇 정책을 훈련하는 데 사용되어, 휴머노이드 로봇이 명시적 텍스트 명령에만 의존하지 않고 멀티모달 단서로부터 암묵적인 인간 의도를 추론할 수 있도록 합니다.

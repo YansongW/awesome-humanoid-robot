@@ -61,3 +61,14 @@ Socially Assistive Robots navigate highly sensible environments, which place hig
 ## 参考
 - http://arxiv.org/abs/2303.05219v1
 
+## Overview
+Socially Assistive Robots navigate highly sensitive environments, which place high demands on safety and communication with users. The reasoning behind an SAR's actions must be transparent at any time to earn users' trust and acceptance. Although different communication modalities have been extensively studied, there is a lack of long-term studies investigating changes in users' communication needs over time. Considering two decades of research in Human-Robot Communication, we formulate the need to design dynamic robot personalities to unveil the full potential of SARs.
+
+## Content
+Socially Assistive Robots navigate highly sensitive environments, which place high demands on safety and communication with users. The reasoning behind an SAR's actions must be transparent at any time to earn users' trust and acceptance. Although different communication modalities have been extensively studied, there is a lack of long-term studies investigating changes in users' communication needs over time. Considering two decades of research in Human-Robot Communication, we formulate the need to design dynamic robot personalities to unveil the full potential of SARs.
+
+## 개요
+사회적 보조 로봇(Socially Assistive Robots)은 매우 민감한 환경에서 작동하며, 이는 사용자와의 안전 및 의사소통에 높은 요구를 부과합니다. SAR의 행동 뒤에 있는 추론은 사용자의 신뢰와 수용을 얻기 위해 항상 투명해야 합니다. 다양한 의사소통 방식이 광범위하게 연구되었지만, 시간이 지남에 따라 사용자의 의사소통 요구 변화를 조사한 장기 연구는 부족합니다. 인간-로봇 의사소통(Human-Robot Communication)에 대한 20년간의 연구를 고려하여, 우리는 SAR의 완전한 잠재력을 발휘하기 위해 동적 로봇 성격을 설계할 필요성을 공식화합니다.
+
+## 핵심 내용
+사회적 보조 로봇은 매우 민감한 환경에서 작동하며, 이는 사용자와의 안전 및 의사소통에 높은 요구를 부과합니다. SAR의 행동 뒤에 있는 추론은 사용자의 신뢰와 수용을 얻기 위해 항상 투명해야 합니다. 다양한 의사소통 방식이 광범위하게 연구되었지만, 시간이 지남에 따라 사용자의 의사소통 요구 변화를 조사한 장기 연구는 부족합니다. 인간-로봇 의사소통에 대한 20년간의 연구를 고려하여, 우리는 SAR의 완전한 잠재력을 발휘하기 위해 동적 로봇 성격을 설계할 필요성을 공식화합니다.

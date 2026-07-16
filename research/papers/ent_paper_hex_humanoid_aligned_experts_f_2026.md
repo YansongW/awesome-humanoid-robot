@@ -62,3 +62,31 @@ theoretical_depth:
 ## 参考
 
 - HEX project page (https://hex-humanoid.github.io/)
+
+## Overview
+
+This paper proposes a cross-embodiment whole-body manipulation framework named HEX (Humanoid-Aligned Experts), aimed at addressing the key challenge of achieving coordinated whole-body manipulation in humanoid robots with different body configurations. The main contribution of this research lies in combining the semantic understanding capabilities of Vision-Language Models (VLM) with reinforcement learning (PPO/RL) policy training and VLA multimodal action models, constructing a multi-level architecture that can directly generate whole-body trajectories and low-level control targets from language planning. By preserving the semantic priors of VLM and introducing robot state encoding and action heads, HEX overcomes the limitations of traditional methods that only operate at high-level language planning, achieving seamless integration from semantic understanding to physical execution.
+
+## Content
+
+(a) Research Background and Problem: Current whole-body manipulation of humanoid robots faces two major challenges: first, kinematic and dynamic differences between different robot bodies (e.g., wheeled vs. bipedal, different joint configurations) make control strategies difficult to transfer; second, there is a significant semantic gap between high-level semantic planning (e.g., "grasp a cup") and low-level motion execution (e.g., torso tilt, arm extension, hand grasping). Existing methods either rely on hand-designed motion primitives with limited generalization ability, or only use VLM for task decomposition without outputting precise joint-level action sequences. Against this background, HEX aims to construct a cross-embodiment, end-to-end whole-body manipulation interface.
+
+(b) Method or Model Framework: The core pipeline of HEX is divided into three levels. First, the robot body state (e.g., joint angles, end-effector poses) and joint sequences are encoded into a unified multimodal representation, enabling the model to perceive the current physical state and motion history. Second, the PPO/RL policy training module is used to learn basic motion skills, while the VLA multimodal action model maps visual, linguistic, and body state information into continuous control signals in the action space. Finally, the VLM acts as a high-level semantic planner, generating global motion routing based on task instructions and scene understanding, and predicting whole-body trajectories and action sequences, which are output to the low-level controller for execution.
+
+(c) Key Technical Innovations: The main innovation of HEX lies in the "humanoid alignment" mechanism—by mapping the kinematic features of different bodies into a humanoid reference space, policies trained on one robot can be zero-shot transferred to other configurations. Additionally, the model introduces a robot state encoder and action head alongside the VLM's semantic head, ensuring that the VLM not only understands "what to do" but can also output joint-level instructions on "how to do it." This design avoids the execution ambiguity caused by pure language planning while retaining the VLM's scene understanding and common-sense reasoning capabilities.
+
+(d) Experiments/Validation and Application Value: Although the paper does not provide specific experimental data, it can be inferred from its technical approach that HEX is applicable to typical scenarios such as mobile manipulation (e.g., wheeled chassis combined with upper-body operation), upper-body control (e.g., dual-arm coordinated grasping), and whole-body control (e.g., bending to pick up objects while standing on two feet). By combining RL-trained low-level skills with VLM semantic routing, HEX is expected to significantly reduce policy transfer costs and improve manipulation robustness and task generalization in humanoid robot applications requiring cross-embodiment deployment, such as warehouse logistics and home services.
+
+## 개요
+
+본 논문은 HEX(Humanoid-Aligned Experts)라는 교차 실체 전신 조작 프레임워크를 제안하며, 인간형 로봇이 다양한 본체 구성에서 전신 협력 조작의 핵심 난제를 해결하는 것을 목표로 한다. 연구의 주요 기여는 시각-언어 모델(VLM)의 의미 이해 능력과 강화 학습(PPO/RL) 정책 훈련, VLA 다중 모드 동작 모델을 결합하여 언어 계획에서 직접 전신 궤적과 하위 제어 목표를 생성하는 다층 구조를 구축한 점에 있다. VLM의 의미 사전 지식을 유지하고 로봇 상태 인코딩과 동작 헤드를 도입함으로써, HEX는 전통적인 방법이 고수준 언어 계획에만 머무르는 한계를 극복하고 의미 이해에서 물리적 실행까지의 원활한 연결을 실현한다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 현재 인간형 로봇의 전신 조작은 두 가지 주요 도전에 직면한다. 첫째, 서로 다른 로봇 본체(예: 바퀴형과 이족형, 다양한 관절 구성) 간의 운동학 및 동역학 차이로 인해 제어 정책을 이전하기 어렵다. 둘째, 고수준 의미 계획(예: "물컵 잡기")과 저수준 운동 실행(예: 몸통 기울이기, 팔 뻗기, 손으로 잡기) 사이에 큰 의미적 격차가 존재한다. 기존 방법은 수동으로 설계된 운동 원시 동작에 의존하여 일반화 능력이 부족하거나, VLM을 작업 분해에만 활용하여 정밀한 관절 수준 동작 시퀀스를 출력하지 못한다. HEX는 이러한 배경에서 교차 본체, 종단 간 전신 조작 인터페이스를 구축하고자 한다.
+
+(b) 방법 또는 모델 프레임워크: HEX의 핵심 프로세스는 세 가지 계층으로 나뉜다. 첫째, 로봇 본체 상태(예: 관절 각도, 말단 실행기 자세)와 관절 시퀀스를 통합된 다중 모드 표현으로 인코딩하여 모델이 현재 물리적 상태와 운동 이력을 인식할 수 있도록 한다. 둘째, PPO/RL 정책 훈련 모듈을 사용하여 기본 운동 기술을 학습하고, 동시에 VLA 다중 모드 동작 모델을 도입하여 시각, 언어 및 본체 상태를 동작 공간의 연속 제어 신호로 매핑한다. 마지막으로, VLM은 고수준 의미 계획기로서 작업 명령과 장면 이해에 따라 전역 운동 경로를 생성하고, 전신 궤적과 동작 시퀀스를 예측하여 저수준 제어기로 출력한다.
+
+(c) 핵심 기술 혁신: HEX의 주요 혁신은 "인간형 정렬" 메커니즘에 있다. 이는 서로 다른 본체의 운동학적 특징을 인간형 참조 공간에 매핑하여, 한 로봇에서 훈련된 정책을 다른 구성으로 제로샷 전이할 수 있게 한다. 또한, 모델은 VLM의 의미 헤드 외에 로봇 상태 인코더와 동작 헤드를 추가하여, VLM이 "무엇을 할지"뿐만 아니라 "어떻게 할지"에 대한 관절 수준 명령을 출력할 수 있도록 보장한다. 이러한 설계는 순수 언어 계획으로 인한 실행 모호성을 방지하면서도 VLM의 장면 이해와 상식 추론 능력을 유지한다.
+
+(d) 실험/검증 및 응용 가치: 논문이 구체적인 실험 데이터를 제공하지는 않았지만, 기술 경로를 통해 HEX가 이동 조작(예: 바퀴형 섀시와 상체 조작 결합), 상체 제어(예: 양팔 협력 잡기), 전신 제어(예: 이족 자세에서 허리 숙여 물건 집기) 등 전형적인 시나리오에 적용될 수 있음을 추론할 수 있다. RL로 훈련된 저수준 기술과 VLM의 의미 경로를 결합함으로써, HEX는 창고 물류, 가사 서비스 등 교차 본체 배치가 필요한 인간형 로봇 응용에서 정책 전이 비용을 크게 줄이고, 조작 견고성과 작업 일반화 능력을 향상시킬 것으로 기대된다.

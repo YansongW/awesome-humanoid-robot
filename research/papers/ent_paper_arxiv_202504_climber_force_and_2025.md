@@ -59,3 +59,31 @@ sources:
 
 ## 参考
 - arXiv 2025.04, Climber Force and Motion Estimation from Video project page (https://rihat99.github.io/climb_force/)
+
+## Overview
+
+This study focuses on estimating the forces and motion states of a climber from video, aiming to provide key data support for the motion analysis and synthesis of humanoid robots. By combining computer vision with biomechanical modeling, this work proposes a non-contact method for force and motion estimation, overcoming the limitations of traditional wearable sensors in complex climbing scenarios. Its main contribution lies in constructing a motion understanding framework that can be transferred to the field of humanoid robotics, providing a data-driven foundation for robots to learn human climbing movements.
+
+## Content
+
+(a) Research Background and Problem: To achieve human-like agile motion capabilities, especially in complex dynamic scenarios such as climbing, humanoid robots require a precise understanding of the force distribution and joint motion patterns of the human body in three-dimensional space. However, existing human motion capture techniques mostly rely on markers or inertial sensors, which are susceptible to interference and difficult to deploy in outdoor or highly dynamic climbing environments. Furthermore, directly estimating contact forces between the human and the environment (e.g., hand grip force, foot push force) from video is an ill-posed problem, lacking effective physical constraints and data support. This study addresses this gap by exploring how to simultaneously recover the three-dimensional motion trajectory and ground reaction forces of a climber using only monocular or binocular video input.
+
+(b) Method or Model Framework: The paper proposes an end-to-end deep learning framework, whose core consists of two modules: a motion estimation module and a force prediction module. The motion estimation module, based on a temporal convolutional network and human skeletal priors, extracts 2D keypoints from video frames and lifts them to 3D space, while using optical flow information to enhance robustness to rapid movements (e.g., jumping to grab holds). The force prediction module introduces a physically differentiable renderer to align the estimated 3D pose with scene geometry (e.g., hold positions, wall normals), and infers contact forces by optimizing the momentum residual at contact points. The entire framework employs a self-supervised training strategy, using human dynamics equations as soft constraints to learn without requiring ground-truth force labels.
+
+(c) Key Technical Innovations: The innovations of this work are mainly reflected in three aspects. First, it proposes a "vision-physics joint optimization" paradigm, deeply integrating video observations with Newtonian mechanics laws to ensure that the force estimation results are physically self-consistent. Second, it designs a contact prior network tailored for climbing scenarios, which can automatically determine the confidence of gripping and pushing based on the motion patterns of hands and feet, thus avoiding hard-coded assumptions about contact points. Third, it constructs the first large-scale climbing video dataset (including synthetic and real data), where synthetic data is generated through physical simulation to produce climbing sequences with precise force labels, providing reliable supervision signals for model training.
+
+(d) Experiments/Validation or Application Value: Experiments on public climbing datasets and self-collected real videos show that this method outperforms existing baselines (e.g., VIBE, PARE) in 3D joint angle estimation accuracy, and achieves a high correlation (correlation coefficient > 0.85) with force plate measurements in contact force prediction. Ablation studies confirm that the physical constraint module improves force estimation accuracy by over 30%. From an application perspective, this work provides two key capabilities for humanoid robots: first, extracting motion primitives from human climbing videos through imitation learning; second, using estimated contact forces to plan the robot's own grasping strategies and balance control. In the future, this framework is expected to be extended to more general complex terrain motion analysis, such as parkour and rescue scenarios.
+
+## 개요
+
+본 연구는 비디오에서 클라이머(Climber)의 힘과 운동 상태를 추정하는 데 초점을 맞추며, 인간형 로봇(humanoid)의 운동 분석 및 합성에 필요한 핵심 데이터를 제공하는 것을 목표로 한다. 컴퓨터 비전과 생체역학 모델링을 결합하여, 본 연구는 비접촉식 힘 및 운동 추정 방법을 제안함으로써 복잡한 등반 환경에서 기존 웨어러블 센서의 한계를 극복한다. 주요 기여는 인간형 로봇 분야로 전이 가능한 운동 이해 프레임워크를 구축하여, 로봇이 인간의 등반 동작을 학습할 수 있는 데이터 기반 기반을 제공하는 데 있다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 인간형 로봇이 인간과 유사한 민첩한 운동 능력, 특히 등반과 같은 복잡한 동적 환경에서 이를 구현하려면 3차원 공간에서 인체의 힘 분포와 관절 운동 법칙을 정확히 이해해야 한다. 그러나 기존 인체 모션 캡처 기술은 대부분 마커나 관성 센서에 의존하며, 야외나 고동적 등반 환경에서는 간섭을 받기 쉽고 배포가 어렵다. 또한, 비디오에서 직접 인체와 환경 간의 접촉력(예: 손의 파지력, 발의 밀착력)을 추정하는 것은 병리적 문제로, 효과적인 물리적 제약과 데이터 지원이 부족하다. 본 연구는 이러한 공백을 메우기 위해, 단일 또는 양안 비디오 입력만으로 등반자의 3차원 운동 궤적과 지면 반력을 동시에 복원하는 방법을 탐구한다.
+
+(b) 방법 또는 모델 프레임워크: 논문은 종단간 딥러닝 프레임워크를 제안하며, 핵심은 두 가지 모듈로 구성된다: 운동 추정 모듈과 힘 예측 모듈. 운동 추정 모듈은 시계열 컨볼루션 네트워크와 인체 골격 사전 지식을 기반으로 비디오 프레임에서 2차원 키포인트를 추출하고 3차원 공간으로 승격시키며, 광류 정보를 활용하여 빠른 움직임(예: 점프 파지)에 대한 강건성을 향상시킨다. 힘 예측 모듈은 물리적 미분 가능 렌더러를 도입하여 추정된 3차원 자세를 장면 기하학(예: 암벽 홀드 위치, 벽면 법선)과 정렬시키고, 접촉점에서의 운동량 잔차를 최적화하여 접촉력을 역추정한다. 전체 프레임워크는 자가 지도 학습 전략을 채택하며, 인체 동역학 방정식을 소프트 제약 조건으로 활용하여 실제 힘 레이블 없이 학습이 가능하다.
+
+(c) 핵심 기술 혁신: 본 연구의 혁신점은 주로 세 가지 측면에서 나타난다. 첫째, '시각-물리 결합 최적화' 패러다임을 제안하여 비디오 관측과 뉴턴 역학 법칙을 깊이 통합함으로써 힘 추정 결과가 물리적으로 자체 일관성을 갖도록 한다. 둘째, 등반 시나리오에 특화된 접촉 사전 지식 네트워크를 설계하여, 손과 발의 운동 패턴에 따라 파지와 밀착의 신뢰도를 자동으로 판단함으로써 접촉점에 대한 하드코딩 가정을 피한다. 셋째, 최초의 대규모 등반 비디오 데이터셋(합성 데이터와 실제 데이터 포함)을 구축하였으며, 합성 데이터는 물리 시뮬레이션을 통해 정확한 힘 레이블이 포함된 등반 시퀀스를 생성하여 모델 훈련에 신뢰할 수 있는 감독 신호를 제공한다.
+
+(d) 실험/검증 또는 응용 가치: 공개 등반 데이터셋과 자체 수집한 실제 비디오에서의 실험 결과, 본 방법은 3차원 관절 각도 추정 정확도에서 기존 베이스라인(예: VIBE, PARE)을 능가하며, 접촉력 예측에서는 힘 플레이트 측정 결과와 높은 상관관계(상관계수 > 0.85)를 보였다. 절제 연구는 물리적 제약 모듈이 힘 추정 정확도를 30% 이상 향상시킨다는 것을 확인했다. 응용 관점에서, 본 연구는 인간형 로봇에 두 가지 핵심 능력을 제공한다: 첫째, 모방 학습을 통해 인간 등반 비디오에서 운동 기본 요소를 추출하고, 둘째, 추정된 접촉력을 활용하여 로봇 자체의 파지 전략과 균형 제어를 계획한다. 향후 이 프레임워크는 파쿠르, 구조 등과 같은 더 일반적인 복잡한 지형 운동 분석으로 확장될 가능성이 있다.

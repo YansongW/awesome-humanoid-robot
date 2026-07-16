@@ -64,3 +64,39 @@ Gato 的核心创新在于其“通用性”设计：首先，模型不依赖任
 
 ## 参考
 - Gato source (https://openreview.net/forum?id=pCj2sLNoJq)
+
+## Overview
+
+Gato is a general-purpose vision-language-action model proposed by DeepMind in 2022, designed to unify multiple robotic manipulation tasks through a single neural network architecture. The primary motivation of this research is to overcome the limitations of traditional robotic policy models, which are typically designed for specific tasks or scenarios, and to explore a "generalist agent" paradigm capable of generalizing across tasks and environments. Gato's core contribution lies in achieving end-to-end joint training of visual perception, natural language understanding, and action generation for the first time in the field of robotic manipulation, while also validating the feasibility of large-scale pre-training in robotic policy learning.
+
+## Content
+
+**Research Background and Problem**  
+Traditional robotic manipulation policies are usually designed specifically for single tasks (e.g., grasping, stacking, or opening doors), resulting in weak generalization capabilities and difficulty in reusing them for new scenarios. With the success of multimodal learning and large-scale pre-training in computer vision and natural language processing, researchers have begun exploring the introduction of similar paradigms into robotics. However, unifying three heterogeneous modalities—vision, language, and action—into a trainable network that exhibits generality across diverse manipulation tasks remains an open challenge. Gato was proposed in this context, aiming to build a generalist agent capable of handling a wide range of robotic manipulation tasks.
+
+**Method or Model Framework**  
+Gato employs a Transformer as its backbone network, encoding visual images, natural language instructions, and robot proprioceptive states (e.g., joint angles, end-effector poses) into serialized token representations. Specifically, images are processed by a visual encoder (e.g., ResNet) to extract features, which are then mapped to visual tokens; language instructions are converted into language tokens via a text tokenizer; and action commands are discretized into action tokens. All tokens are concatenated and fed into a Transformer for autoregressive modeling, ultimately outputting the next action prediction. This framework is essentially a sequence-to-sequence generative model capable of handling perception, reasoning, and decision-making in a unified manner.
+
+**Key Technical Innovations**  
+Gato's core innovation lies in its "generality" design: first, the model does not rely on task-specific reward functions or environmental dynamics models but instead learns behavioral patterns directly from offline datasets; second, by discretizing the action space and incorporating it into sequence modeling, Gato can handle both continuous control and discrete decision-making tasks; finally, during training, the model mixes heterogeneous data from various robotic platforms (e.g., single-arm, dual-arm, mobile manipulation platforms) and achieves cross-task transfer through task-agnostic tokenization strategies. This design enables Gato to exhibit some degree of zero-shot generalization on unseen tasks without fine-tuning.
+
+**Experiments/Validation and Application Value**  
+In the paper published at ICLR 2022, Gato was trained and evaluated on a dataset containing over 600 different robotic manipulation tasks, covering typical operations such as grasping, placing, pushing, pulling, and assembly. Experimental results show that Gato achieves performance comparable to or approaching that of specially trained policy models on most tasks, particularly excelling in tasks requiring joint vision-language understanding (e.g., "put the red block into the blue cup"). Additionally, Gato demonstrates deployment potential on real robotic platforms, enabling a single model to control robots of different morphologies to perform various manipulations. This work lays the foundation for the development of subsequent vision-language-action (VLA) models and advances generalist robotic policies from theory to practice.
+
+## 개요
+
+Gato는 DeepMind가 2022년에 제안한 범용형 시각-언어-행동 모델로, 단일 신경망 아키텍처를 통해 다양한 로봇 조작 작업을 통합적으로 처리하는 것을 목표로 한다. 이 연구의 주요 동기는 기존 로봇 정책 모델이 특정 작업이나 시나리오에만 국한된 한계를 극복하고, 작업과 환경을 넘나들며 일반화할 수 있는 '범용 에이전트' 패러다임을 탐구하는 데 있다. Gato의 핵심 기여는 로봇 조작 분야에서 시각 인식, 자연어 이해 및 행동 생성을 종단 간(end-to-end)으로 결합한 최초의 훈련을 구현하고, 대규모 사전 훈련이 로봇 정책 학습에서의 실현 가능성을 검증한 점이다.
+
+## 핵심 내용
+
+**연구 배경 및 문제**  
+기존 로봇 조작 정책은 일반적으로 단일 작업(예: 잡기, 쌓기, 문 열기)에 특화되어 설계되어 모델의 일반화 능력이 약하고, 새로운 시나리오에 재사용하기 어렵다. 컴퓨터 비전과 자연어 처리 분야에서 다중 모달 학습과 대규모 사전 훈련이 성공을 거두면서, 연구자들은 유사한 패러다임을 로봇 공학에 도입하는 방안을 모색하기 시작했다. 그러나 시각, 언어, 행동이라는 세 가지 이질적 모달리티를 하나의 훈련 가능한 네트워크로 통합하고, 다양한 조작 작업에서 범용성을 발휘하도록 하는 것은 여전히 해결되지 않은 과제였다. Gato는 이러한 배경에서 제안되었으며, 다양한 로봇 조작 작업을 처리할 수 있는 범용 에이전트를 구축하는 것을 목표로 한다.
+
+**방법 또는 모델 프레임워크**  
+Gato는 Transformer를 백본 네트워크로 사용하여 시각 이미지, 자연어 명령 및 로봇 본체 상태(예: 관절 각도, 엔드 이펙터 자세)를 시퀀스화된 토큰 표현으로 통합 인코딩한다. 구체적으로, 이미지는 시각 인코더(예: ResNet)를 통해 특징을 추출한 후 시각 토큰으로 매핑되고, 언어 명령은 텍스트 토크나이저를 통해 언어 토큰으로 변환되며, 행동 명령은 이산화되어 행동 토큰으로 변환된다. 모든 토큰은 결합된 후 Transformer에 입력되어 자기회귀 모델링(self-regressive modeling)을 수행하고, 최종적으로 다음 시점의 행동 예측을 출력한다. 이 프레임워크는 본질적으로 시퀀스-투-시퀀스 생성 모델로, 인식, 추론 및 의사 결정을 통합된 방식으로 처리할 수 있다.
+
+**핵심 기술 혁신**  
+Gato의 핵심 혁신은 '범용성' 설계에 있다. 첫째, 모델은 작업별 보상 함수나 환경 동역학 모델에 의존하지 않고 오프라인 데이터셋에서 직접 행동 패턴을 학습한다. 둘째, 행동 공간을 이산화하여 시퀀스 모델링에 포함시킴으로써 Gato는 연속 제어와 이산 의사 결정 작업을 동시에 처리할 수 있다. 마지막으로, 모델은 훈련 시 여러 로봇 플랫폼(예: 단일 암, 이중 암, 이동 조작 플랫폼)의 이질적 데이터를 혼합하고, 작업에 무관한 토큰화 전략을 통해 작업 간 전이를 구현한다. 이러한 설계 덕분에 Gato는 미세 조정 없이도 보지 못한 작업에서 일정 수준의 제로샷 일반화 능력을 발휘할 수 있다.
+
+**실험/검증 및 응용 가치**  
+ICLR 2022에 발표된 논문에서 Gato는 600여 가지의 다양한 로봇 조작 작업을 포함하는 데이터셋에서 훈련 및 평가되었으며, 잡기, 놓기, 밀기, 당기기, 조립 등 전형적인 조작 작업을 포괄한다. 실험 결과, Gato는 대부분의 작업에서 특화된 정책 모델과 동등하거나 유사한 성능을 달성했으며, 특히 시각-언어 결합 이해가 필요한 작업(예: '빨간 블록을 파란 컵에 넣기')에서 현저한 우위를 보였다. 또한 Gato는 실제 로봇 플랫폼에서의 배치 가능성을 입증하여, 단일 모델로 다양한 형태의 로봇을 제어해 여러 작업을 수행할 수 있음을 보여주었다. 이 연구는 이후 시각-언어-행동 모델(VLA)의 발전을 위한 기초를 마련했으며, 범용 로봇 정책을 이론에서 실천으로 이끄는 계기가 되었다.

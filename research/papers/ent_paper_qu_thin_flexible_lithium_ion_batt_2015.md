@@ -58,3 +58,14 @@ A flexible, light weight and high conductivity current collector is the key elem
 ## 参考
 - http://arxiv.org/abs/1511.03949v1
 
+## Overview
+A flexible, lightweight, and highly conductive current collector is a key element for fabricating high-performance flexible lithium-ion batteries. Here, we report a thin, lightweight, and flexible lithium-ion battery that utilizes graphite paper enhanced with nano-sized metallic layers as the current collector, LiFePO₄ and Li₄Ti₅O₁₂ as the cathode and anode materials, and a PE membrane soaked in LiPF₆ as the separator. By employing thin and flexible graphite paper as the substrate for the current collector instead of rigid and heavy metal foil, we demonstrate an ultra-thin lithium-ion battery (total thickness including encapsulation layers less than 250 μm) that is also lightweight and highly flexible.
+
+## Content
+A flexible, lightweight, and highly conductive current collector is a key element for fabricating high-performance flexible lithium-ion batteries. Here, we report a thin, lightweight, and flexible lithium-ion battery that utilizes graphite paper enhanced with nano-sized metallic layers as the current collector, LiFePO₄ and Li₄Ti₅O₁₂ as the cathode and anode materials, and a PE membrane soaked in LiPF₆ as the separator. By employing thin and flexible graphite paper as the substrate for the current collector instead of rigid and heavy metal foil, we demonstrate an ultra-thin lithium-ion battery (total thickness including encapsulation layers less than 250 μm) that is also lightweight and highly flexible.
+
+## 개요
+유연하고 가벼우며 높은 전도성을 가진 집전체는 고성능 플렉시블 리튬 이온 배터리 제조의 핵심 요소입니다. 본 연구에서는 나노 크기의 금속층으로 강화된 흑연 종이를 집전체로, LiFePO4와 Li4Ti5O12를 각각 양극 및 음극 재료로, LiPF6에 함침된 PE 분리막을 사용한 얇고 가벼우며 유연한 리튬 이온 배터리를 보고합니다. 기존의 단단하고 무거운 금속 호일 대신 얇고 유연한 흑연 종이를 집전체 기판으로 사용함으로써, 전체 두께(캡슐화 층 포함)가 250μm 미만인 초박형이면서도 가볍고 유연성이 뛰어난 리튬 이온 배터리를 구현할 수 있었습니다.
+
+## 핵심 내용
+유연하고 가벼우며 높은 전도성을 가진 집전체는 고성능 플렉시블 리튬 이온 배터리 제조의 핵심 요소입니다. 본 연구에서는 나노 크기의 금속층으로 강화된 흑연 종이를 집전체로, LiFePO4와 Li4Ti5O12를 각각 양극 및 음극 재료로, LiPF6에 함침된 PE 분리막을 사용한 얇고 가벼우며 유연한 리튬 이온 배터리를 보고합니다. 기존의 단단하고 무거운 금속 호일 대신 얇고 유연한 흑연 종이를 집전체 기판으로 사용함으로써, 전체 두께(캡슐화 층 포함)가 250μm 미만인 초박형이면서도 가볍고 유연성이 뛰어난 리튬 이온 배터리를 구현할 수 있었습니다.

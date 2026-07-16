@@ -386,3 +386,15 @@ Familiar Machines & Magic wants its robot to help you live your best life Angle 
 
 ## 参考
 - https://spectrum.ieee.org/familiar-machines-and-magic
+
+## Overview
+Familiar Machines & Magic wants its robot to help you live your best life. Angle almost immediately founded a stealthy new “physical AI” company called Familiar Machines & Magic (FM&M), which in short order managed to attract a combination of exceptionally talented robotics folks, including Morgan Pope from Disney Research, which got us very curious.
+
+## Content
+Familiar Machines & Magic wants its robot to help you live your best life. Angle almost immediately founded a stealthy new “physical AI” company called Familiar Machines & Magic (FM&M), which in short order managed to attract a combination of exceptionally talented robotics folks, including Morgan Pope from Disney Research, which got us very curious. Today, Familiar Machines & Magic is announcing its first robot, a “physically embodied AI system designed to perceive, adapt, and interact with people in ways that feel natural and consistent,” the press release says. This robot is not a toy, and it’s not specifically for kids. Rather, it’s for adults to purchase for themselves and their families. It will get to know you, seek you out for attention, and actively help you positively pursue an idealized routine in your life.
+
+## 개요
+Familiar Machines & Magic은 로봇이 당신의 최고의 삶을 살 수 있도록 돕고자 합니다. Angle은 거의 즉시 '물리적 AI' 스타트업인 Familiar Machines & Magic(FM&M)을 설립했으며, 단기간에 Disney Research의 Morgan Pope를 포함한 뛰어난 로봇공학 인재들을 끌어모아 큰 관심을 받았습니다.
+
+## 핵심 내용
+Familiar Machines & Magic은 로봇이 당신의 최고의 삶을 살 수 있도록 돕고자 합니다. Angle은 거의 즉시 '물리적 AI' 스타트업인 Familiar Machines & Magic(FM&M)을 설립했으며, 단기간에 Disney Research의 Morgan Pope를 포함한 뛰어난 로봇공학 인재들을 끌어모아 큰 관심을 받았습니다. 오늘, Familiar Machines & Magic은 첫 번째 로봇을 발표했습니다. 보도자료에 따르면 이 로봇은 "자연스럽고 일관된 방식으로 사람을 인식하고 적응하며 상호작용하도록 설계된 물리적 구현 AI 시스템"입니다. 이 로봇은 장난감이 아니며, 어린이 전용 제품도 아닙니다. 오히려 성인이 자신과 가족을 위해 구매하는 제품입니다. 이 로봇은 당신을 알아가고, 관심을 끌기 위해 찾아오며, 당신이 이상적인 일상을 적극적으로 추구할 수 있도록 도와줍니다.

@@ -67,3 +67,14 @@ Sim-to-real reinforcement learning (RL) for humanoid robots with high-gear ratio
 ## 参考
 - http://arxiv.org/abs/2504.00614v2
 
+## Overview
+Sim-to-real reinforcement learning (RL) for humanoid robots with high-gear ratio actuators remains challenging due to complex actuator dynamics and the absence of torque sensors. To address this, we propose a novel RL framework leveraging foot-mounted inertial measurement units (IMUs). Instead of pursuing detailed actuator modeling and system identification, we utilize foot-mounted IMU measurements to enhance rapid stabilization capabilities over challenging terrains. Additionally, we propose symmetric data augmentation dedicated to the proposed observation space and random network distillation to enhance bipedal locomotion learning over rough terrain. We validate our approach through hardware experiments on a miniature-sized humanoid EVAL-03 over a variety of environments. The experimental results demonstrate that our method improves rapid stabilization capabilities over non-rigid surfaces and sudden environmental transitions.
+
+## Content
+Sim-to-real reinforcement learning (RL) for humanoid robots with high-gear ratio actuators remains challenging due to complex actuator dynamics and the absence of torque sensors. To address this, we propose a novel RL framework leveraging foot-mounted inertial measurement units (IMUs). Instead of pursuing detailed actuator modeling and system identification, we utilize foot-mounted IMU measurements to enhance rapid stabilization capabilities over challenging terrains. Additionally, we propose symmetric data augmentation dedicated to the proposed observation space and random network distillation to enhance bipedal locomotion learning over rough terrain. We validate our approach through hardware experiments on a miniature-sized humanoid EVAL-03 over a variety of environments. The experimental results demonstrate that our method improves rapid stabilization capabilities over non-rigid surfaces and sudden environmental transitions.
+
+## 개요
+고기어비 액추에이터를 사용하는 휴머노이드 로봇을 위한 Sim-to-real 강화 학습(RL)은 복잡한 액추에이터 동역학과 토크 센서 부재로 인해 여전히 어려운 과제입니다. 이를 해결하기 위해, 우리는 발 장착 관성 측정 장치(IMU)를 활용하는 새로운 RL 프레임워크를 제안합니다. 상세한 액추에이터 모델링과 시스템 식별을 추구하는 대신, 발 장착 IMU 측정값을 활용하여 까다로운 지형에서의 빠른 안정화 능력을 향상시킵니다. 또한, 제안된 관찰 공간에 특화된 대칭 데이터 증강과 무작위 네트워크 증류를 제안하여 거친 지형에서의 이족 보행 학습을 강화합니다. 우리는 소형 휴머노이드 EVAL-03을 다양한 환경에서 하드웨어 실험을 통해 접근 방식을 검증합니다. 실험 결과는 우리의 방법이 비강체 표면과 급격한 환경 전환에서 빠른 안정화 능력을 향상시킴을 보여줍니다.
+
+## 핵심 내용
+고기어비 액추에이터를 사용하는 휴머노이드 로봇을 위한 Sim-to-real 강화 학습(RL)은 복잡한 액추에이터 동역학과 토크 센서 부재로 인해 여전히 어려운 과제입니다. 이를 해결하기 위해, 우리는 발 장착 관성 측정 장치(IMU)를 활용하는 새로운 RL 프레임워크를 제안합니다. 상세한 액추에이터 모델링과 시스템 식별을 추구하는 대신, 발 장착 IMU 측정값을 활용하여 까다로운 지형에서의 빠른 안정화 능력을 향상시킵니다. 또한, 제안된 관찰 공간에 특화된 대칭 데이터 증강과 무작위 네트워크 증류를 제안하여 거친 지형에서의 이족 보행 학습을 강화합니다. 우리는 소형 휴머노이드 EVAL-03을 다양한 환경에서 하드웨어 실험을 통해 접근 방식을 검증합니다. 실험 결과는 우리의 방법이 비강체 표면과 급격한 환경 전환에서 빠른 안정화 능력을 향상시킴을 보여줍니다.

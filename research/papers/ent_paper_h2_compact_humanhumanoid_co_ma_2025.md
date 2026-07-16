@@ -64,3 +64,31 @@ H2-COMPACT 提出了一种面向人机协同操作的自适应接触轨迹策略
 ## 参考
 
 - H2-COMPACT project page (https://h2compact.github.io/h2compact/)
+
+## Overview
+
+H2-COMPACT proposes an adaptive contact trajectory strategy framework for human-robot collaborative manipulation, aiming to address motion generation and adaptability challenges when humanoid robots physically collaborate with humans in complex dynamic environments. The study models action generation as a conditional generation problem, leveraging diffusion models and flow matching techniques to sample executable trajectories from multimodal action distributions, thereby achieving efficient coordination at the perception, planning, and control levels. Its main contribution lies in constructing an end-to-end framework from visual perception to whole-body motion generation, significantly enhancing the interaction robustness and flexibility of humanoid robots in unstructured scenarios.
+
+## Content
+
+(a) Research Background and Problem: When humanoid robots collaborate with humans in household, manufacturing, and service scenarios, they face core challenges such as perception uncertainty, action multimodality, and real-time adaptability. Traditional methods typically rely on predefined motion primitives or explicit contact models, which struggle to cope with the randomness of human behavior and environmental changes. H2-COMPACT focuses on recovering scene and object representations from multi-view visual observations, body states, and joint sequences, and on this basis, generating whole-body motion trajectories that satisfy physical constraints and collaborative intentions, with particular attention to the key bottleneck of adaptive contact point adjustment.
+
+(b) Method or Model Framework: The framework adopts a hierarchical architecture, where the lower-level visual perception module extracts scene, object, and motion representations from camera images and multi-view observations, while the upper-level uses diffusion policies or flow matching models to treat action generation as a conditional generation problem. Specifically, the system first learns the prior of action distributions from simulation interaction data and real observations, then samples joint position/torque commands, whole-body trajectories, and terrain representations from multimodal distributions based on the current scene state and human intention conditions. This generative approach avoids the reliance of explicit planners on precise models, enhancing adaptability in dynamic environments.
+
+(c) Key Technical Innovations: The core innovation of H2-COMPACT lies in introducing diffusion models and flow matching techniques into the field of human-robot collaborative manipulation, achieving efficient sampling of multimodal action distributions. Unlike traditional reinforcement learning or optimal control methods, this framework does not require predefined reward functions or system dynamics models, but directly outputs executable trajectories through a conditional generation paradigm. Additionally, the design of hierarchical skills/expert policies decouples high-level task planning from low-level motion control, ensuring both task abstraction and motion precision. The end-to-end integration of the scene understanding module and motion generation module further reduces latency and error accumulation from perception to action.
+
+(d) Experiment/Validation or Application Value: Although the abstract does not provide specific experimental data, it can be inferred from the framework design that H2-COMPACT is suitable for scenarios requiring real-time human-robot physical interaction, such as collaborative object handling, assembly assistance, and rehabilitation training. Its diffusion model-based generation strategy is expected to be validated in simulation environments and on real robot platforms, demonstrating advantages in action diversity, contact stability, and human intention matching compared to traditional trajectory optimization and imitation learning methods. This research provides a scalable perception-motion coordination paradigm for humanoid robots transitioning from laboratories to practical applications, particularly suitable for human-robot collaboration tasks in unstructured environments.
+
+## 개요
+
+H2-COMPACT는 인간-로봇 협업 조작을 위한 적응형 접촉 궤적 전략 프레임워크를 제안하며, 복잡한 동적 환경에서 인간과 물리적 협업을 수행하는 휴머노이드 로봇의 동작 생성 및 적응성 문제를 해결하는 것을 목표로 합니다. 본 연구는 동작 생성을 조건부 생성 문제로 모델링하고, 확산 모델과 흐름 정합 기술을 활용하여 다중 모드 동작 분포에서 실행 가능한 궤적을 샘플링함으로써 인식, 계획 및 제어 수준에서 효율적인 협업을 실현합니다. 주요 기여는 시각 인식에서 전신 동작 생성까지의 엔드-투-엔드 프레임워크를 구축하여 비정형 환경에서 휴머노이드 로봇의 상호작용 견고성과 유연성을 크게 향상시킨 점에 있습니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 휴머노이드 로봇이 가정, 제조 및 서비스 환경에서 인간과 협업 조작을 수행할 때, 인식 불확실성, 동작의 다중 모드성 및 실시간 적응성과 같은 핵심 과제에 직면합니다. 기존 방법은 일반적으로 사전 정의된 동작 기본 요소나 명시적 접촉 모델에 의존하여 인간 행동의 무작위성과 환경 변화에 대응하기 어렵습니다. H2-COMPACT는 다중 시점 시각 관측, 본체 상태 및 관절 시퀀스에서 장면과 목표 표현을 복원하고, 이를 기반으로 물리적 제약 및 협업 의도를 충족하는 전신 동작 궤적을 생성하는 데 초점을 맞추며, 특히 접촉점의 적응적 조정이라는 핵심 병목 현상에 주목합니다.
+
+(b) 방법 또는 모델 프레임워크: 본 프레임워크는 계층적 아키텍처를 채택하며, 하위 계층은 시각 인식 모듈을 통해 카메라 이미지와 다중 시점 관측에서 장면, 목표 및 동작 표현을 추출하고, 상위 계층은 확산 전략 또는 흐름 정합 모델을 사용하여 동작 생성을 조건부 생성 문제로 간주합니다. 구체적으로, 시스템은 먼저 시뮬레이션 상호작용 데이터와 실제 관측에서 동작 분포의 사전 정보를 학습한 후, 현재 장면 상태와 인간 의도 조건에 따라 다중 모드 분포에서 관절 위치/토크 명령, 전신 궤적 및 지형 표현을 샘플링합니다. 이러한 생성적 접근 방식은 명시적 계획기가 정확한 모델에 의존해야 하는 필요성을 피하고, 동적 환경에서의 적응성을 향상시킵니다.
+
+(c) 핵심 기술 혁신: H2-COMPACT의 핵심 혁신은 확산 모델과 흐름 정합 기술을 인간-로봇 협업 조작 분야에 도입하여 다중 모드 동작 분포의 효율적인 샘플링을 실현한 점입니다. 기존 강화 학습이나 최적 제어 방법과 달리, 본 프레임워크는 사전 정의된 보상 함수나 시스템 동역학 모델을 요구하지 않고 조건부 생성 패러다임을 통해 직접 실행 가능한 궤적을 출력합니다. 또한, 계층적 스킬/전문가 전략 설계를 통해 상위 수준의 작업 계획과 하위 수준의 운동 제어를 분리하여 작업의 추상성을 보장하면서도 동작의 정밀도를 유지합니다. 장면 이해 모듈과 동작 생성 모듈의 엔드-투-엔드 통합은 인식에서 동작까지의 지연과 오류 누적을 더욱 줄입니다.
+
+(d) 실험/검증 또는 응용 가치: 초록이 구체적인 실험 데이터를 제공하지는 않지만, 프레임워크 설계로부터 H2-COMPACT가 협업 운반, 조립 보조 및 재활 훈련과 같은 실시간 인간-로봇 물리적 상호작용이 필요한 시나리오에 적합함을 추론할 수 있습니다. 확산 모델 기반의 생성 전략은 시뮬레이션 환경과 실제 로봇 플랫폼에서 검증될 것으로 예상되며, 기존 궤적 최적화 및 모방 학습 방법과의 비교를 통해 동작 다양성, 접촉 안정성 및 인간 의도 매칭 측면에서의 장점을 보여줄 것입니다. 본 연구는 휴머노이드 로봇이 실험실에서 실제 응용으로 나아갈 수 있도록 확장 가능한 인식-동작 협업 패러다임을 제공하며, 특히 비정형 환경에서의 인간-로봇 협업 작업에 적합합니다.

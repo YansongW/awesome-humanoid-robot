@@ -60,3 +60,31 @@ theoretical_depth:
 
 ## 参考
 - LangWBC project page (https://LangWBC.github.io)
+
+## Overview
+
+When humanoid robots perform diverse tasks in complex environments, they need to simultaneously coordinate full-body motion with high-level semantic instructions. Existing methods often separate language understanding from motion control, making it difficult to achieve end-to-end semantic-to-action mapping. LangWBC proposes a language-guided full-body control framework for humanoid robots, which directly translates natural language instructions into full-body motion trajectories through end-to-end learning. The main contribution of this work lies in constructing a unified learning paradigm from language representation to motion generation, and leveraging a teacher-student knowledge distillation strategy to maintain high performance even under deployment-only observation conditions.
+
+## Content
+
+Full-body control of humanoid robots has long faced two major challenges: first, how to convert high-level abstract instructions like natural language into low-level joint motion sequences, and second, how to achieve complex task objectives while ensuring motion stability. Traditional methods typically separate the language understanding module from the motion planning module, leading to attenuation of semantic information during transmission and difficulty in handling dynamic changes in unstructured environments. To address this, LangWBC proposes an end-to-end language-driven full-body control framework aimed at bridging the gap between semantic understanding and motion execution.
+
+The core architecture of this framework is based on a teacher-student knowledge transfer paradigm. First, the teacher policy is trained using privileged information (e.g., complete environmental states, object attributes) via the PPO reinforcement learning algorithm from simulation interaction data, learning optimal full-body motion strategies. The teacher policy can recover scene, goal, or motion representations from language instructions, proprioceptive states, and joint sequences, generating high-quality full-body trajectories and action sequences. Subsequently, the student policy relies only on observation information available during deployment (e.g., proprioception and local vision), imitating the teacher policy's behavior through diffusion policy or flow matching techniques, thereby achieving knowledge distillation.
+
+In terms of technical innovation, the key to LangWBC lies in directly injecting language instructions as conditional signals into the motion generation process. Specifically, the model first encodes natural language instructions using a pre-trained language model, fusing them with proprioceptive states, joint sequences, and other information to form a unified task representation. Then, a generation model based on diffusion policy, conditioned on this representation, progressively denoises to generate continuous full-body motion trajectories. This design allows the model to flexibly handle diverse language instructions while maintaining the smoothness and physical plausibility of motion generation. Additionally, the introduction of flow matching techniques further enhances the diversity and robustness of the generated trajectories.
+
+In terms of experimental validation, LangWBC was evaluated in various simulation environments, covering typical humanoid robot tasks such as object manipulation, navigation, and posture adjustment. Results show that the student policy, after teacher-student distillation, achieves task success rates close to those of the teacher policy under deployment-only observation conditions, with motion generation smoothness and stability superior to traditional modular methods. The framework also demonstrates good generalization ability, handling unseen combinations of language instructions and environmental changes. From an application perspective, LangWBC provides a feasible technical pathway for natural language interaction control of humanoid robots in scenarios such as home services and industrial assistance, lowering the barrier to robot programming and enhancing the intuitiveness of human-robot collaboration.
+
+## 개요
+
+휴머노이드 로봇이 복잡한 환경에서 다양한 작업을 수행할 때, 전신 운동과 고수준 의미 명령을 동시에 조정해야 합니다. 기존 방법은 언어 이해와 운동 제어를 분리하는 경우가 많아, 종단 간 의미-동작 매핑을 달성하기 어렵습니다. LangWBC는 언어 기반 휴머노이드 전신 제어 프레임워크를 제안하며, 종단 간 학습을 통해 자연어 명령을 직접 전신 운동 궤적으로 변환합니다. 이 연구의 주요 기여는 언어 표현에서 운동 생성까지의 통합 학습 패러다임을 구축하고, 교사-학생 지식 증류 전략을 활용하여 배포 시 관측만으로도 모델이 높은 성능을 유지할 수 있도록 한 점입니다.
+
+## 핵심 내용
+
+휴머노이드 로봇의 전신 제어는 오랫동안 두 가지 주요 도전에 직면해 왔습니다. 첫째는 자연어와 같은 고수준 추상 명령을 저수준 관절 운동 시퀀스로 변환하는 방법, 둘째는 운동 안정성을 보장하면서 복잡한 작업 목표를 달성하는 방법입니다. 전통적인 방법은 일반적으로 언어 이해 모듈과 운동 계획 모듈을 분리하여, 의미 정보가 전달 과정에서 감쇠되고 비구조적 환경의 동적 변화를 처리하기 어렵습니다. LangWBC는 이 문제를 해결하기 위해 종단 간 언어 기반 전신 제어 프레임워크를 제안하며, 의미 이해와 운동 실행 간의 격차를 해소하는 것을 목표로 합니다.
+
+이 프레임워크의 핵심 아키텍처는 교사-학생 지식 전이 패러다임에 기반합니다. 먼저, 교사 정책은 특권 정보(예: 완전한 환경 상태, 객체 속성 등)를 활용하여 훈련되며, PPO 강화 학습 알고리즘을 통해 시뮬레이션 상호작용 데이터에서 최적의 전신 운동 정책을 학습합니다. 교사 정책은 언어 명령, 자체 상태 및 관절 시퀀스로부터 장면, 목표 또는 운동 표현을 복원하고, 고품질의 전신 궤적과 동작 시퀀스를 생성합니다. 이후, 학생 정책은 배포 시 얻을 수 있는 관측 정보(예: 자체 감각 및 국소 시각)만을 사용하여, 확산 정책 또는 흐름 매칭 기술을 통해 교사 정책의 행동을 모방 학습함으로써 지식 증류를 수행합니다.
+
+기술 혁신 측면에서 LangWBC의 핵심은 언어 명령을 조건 신호로 직접 운동 생성 과정에 주입하는 데 있습니다. 구체적으로, 모델은 먼저 사전 훈련된 언어 모델을 사용하여 자연어 명령을 인코딩하고, 이를 자체 상태, 관절 시퀀스 등과 융합하여 통합된 작업 표현을 형성합니다. 이후, 확산 정책 기반의 생성 모델은 이 표현을 조건으로 하여 점진적으로 노이즈를 제거하며 연속적인 전신 운동 궤적을 생성합니다. 이러한 설계는 모델이 다양한 언어 명령을 유연하게 처리할 수 있도록 하면서, 운동 생성의 부드러움과 물리적 타당성을 유지합니다. 또한, 흐름 매칭 기술의 도입은 생성된 궤적의 다양성과 견고성을 더욱 향상시킵니다.
+
+실험 검증 측면에서 LangWBC는 다양한 시뮬레이션 환경에서 평가되었으며, 객체 조작, 내비게이션, 자세 조정 등 전형적인 휴머노이드 로봇 작업을 포함합니다. 결과는 교사-학생 증류 후의 학생 정책이 배포 시 관측만으로도 교사 정책과 유사한 작업 성공률을 달성할 수 있으며, 운동 생성의 부드러움과 안정성이 전통적인 모듈식 방법보다 우수함을 보여줍니다. 이 프레임워크는 또한 보지 못한 언어 명령 조합과 환경 변화를 처리할 수 있는 우수한 일반화 능력을 입증했습니다. 응용 가치 측면에서 LangWBC는 가사 서비스, 산업 지원 등 시나리오에서 휴머노이드 로봇의 자연어 상호작용 제어를 위한 실현 가능한 기술 경로를 제공하며, 로봇 프로그래밍의 장벽을 낮추고 인간-로봇 협업의 직관성을 향상시킵니다.

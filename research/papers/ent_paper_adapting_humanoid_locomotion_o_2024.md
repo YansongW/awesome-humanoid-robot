@@ -57,3 +57,31 @@ sources:
 
 ## 参考
 - Adapting Humanoid Locomotion over Challenging Terrain via Two-Phase Training project page (https://sites.google.com/view/adapting-humanoid-locomotion/two-phase-training)
+
+## Overview
+
+This study addresses the challenges of adaptability and stability faced by humanoid robots when walking on complex terrains (such as slopes, gravel roads, and stairs). It proposes a motion control method based on a two-stage training framework. By combining reinforcement learning with domain randomization techniques, this method significantly enhances the walking robustness of humanoid robots in unstructured environments. Its main contribution lies in designing an efficient two-stage training strategy that enables the robot to smoothly transfer from simulation to the real world and achieve real-time terrain adaptation.
+
+## Content
+
+(a) Research Background and Problem: Bipedal motion control of humanoid robots has always been a core challenge in robotics. Especially when dealing with rugged, uneven, or dynamically changing terrains, traditional model-based control methods often fail due to modeling errors or computational complexity. Although existing reinforcement learning methods have made progress on flat ground, on complex terrains, due to the large state space, difficulty in reward function design, and the "Sim-to-Real" gap between simulation and real environments, robots often suffer from gait instability, falls, or inability to autonomously adjust stride length. Therefore, how to design a training framework that can both efficiently learn from simulation data and ensure generalization ability in real environments has become a key issue to be addressed.
+
+(b) Method or Model Framework: This paper proposes a two-stage training framework. The first stage involves large-scale reinforcement learning pre-training in a simulation environment, using domain randomization techniques (including terrain geometric parameters, friction coefficients, center of mass offsets, etc.) to enhance the robustness of the policy. The second stage introduces a small amount of real-world data or high-fidelity simulation data to fine-tune the pre-trained policy, adapting it to the dynamic characteristics of specific real-world scenarios. This framework is based on the Proximal Policy Optimization (PPO) algorithm and uses a Recurrent Neural Network (RNN) as the policy network to process temporal motion information.
+
+(c) Key Technical Innovations: The core innovation of this study lies in the design of the two-stage training strategy. Unlike traditional end-to-end reinforcement learning, the first stage forces the policy to learn general motion primitives through large-scale randomization, rather than overfitting to specific terrains; the second stage achieves rapid adaptation with a small amount of target domain data, avoiding the high cost of training from scratch. Additionally, the paper proposes an adaptive reward function that encourages forward speed while penalizing excessive joint torque and body tilt to maintain a natural gait, thus balancing robustness and energy consumption.
+
+(d) Experiments/Validation or Application Value: Experiments are validated in simulation environments (e.g., Isaac Gym) and on real humanoid robot platforms. Results show that the robot trained with the two-stage framework can achieve stable walking on gravel roads, slopes, and stairs without explicit programming, with a success rate approximately 30% higher than that of single-stage training methods. This approach not only reduces the cost of parameter tuning in real environments but also provides a feasible technical pathway for the practical deployment of humanoid robots in complex scenarios such as disaster rescue and field exploration. The project page provides video demonstrations and open-source code for community reproduction and improvement.
+
+## 개요
+
+본 연구는 인간형 로봇이 경사로, 자갈길, 계단 등 복잡한 지형에서 보행 시 직면하는 적응성과 안정성 문제를 해결하기 위해, 2단계 훈련 프레임워크 기반의 운동 제어 방법을 제안한다. 이 방법은 강화 학습과 도메인 무작위화 기술을 결합하여 비정형 환경에서 인간형 로봇의 보행 강건성을 크게 향상시킨다. 주요 기여는 효율적인 2단계 훈련 전략을 설계하여 로봇이 시뮬레이션 환경에서 실제 세계로 원활하게 전이되고 실시간 지형 적응을 가능하게 한 점이다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 인간형 로봇의 이족 보행 제어는 로봇 공학 분야의 핵심 난제로, 특히 험준하거나 불균일하거나 동적으로 변화하는 지형에서 전통적인 모델 기반 제어 방법은 모델링 오류나 계산 복잡성으로 인해 종종 실패한다. 기존 강화 학습 방법은 평평한 지면에서 진전을 이루었지만, 복잡한 지형에서는 상태 공간이 방대하고 보상 함수 설계가 어려우며 시뮬레이션과 실제 환경 간의 'Sim-to-Real' 격차로 인해 로봇이 보행 불안정, 넘어짐, 또는 보폭을 자율적으로 조정하지 못하는 문제가 자주 발생한다. 따라서 시뮬레이션 데이터를 효율적으로 활용하여 학습하면서도 실제 환경에서 일반화 능력을 보장할 수 있는 훈련 프레임워크를 설계하는 것이 시급히 해결해야 할 핵심 과제이다.
+
+(b) 방법 또는 모델 프레임워크: 본 논문은 2단계 훈련 프레임워크를 제안한다. 첫 번째 단계에서는 시뮬레이션 환경에서 대규모 강화 학습 사전 훈련을 수행하며, 도메인 무작위화 기술(지형 기하학적 매개변수, 마찰 계수, 질량 중심 이동 등 포함)을 사용하여 정책의 강건성을 강화한다. 두 번째 단계에서는 소량의 실제 세계 데이터 또는 고충실도 시뮬레이션 데이터를 도입하여 사전 훈련된 정책을 미세 조정함으로써 특정 실제 시나리오의 동역학적 특성에 적응시킨다. 이 프레임워크는 근접 정책 최적화(PPO) 알고리즘을 기반으로 하며, 순환 신경망(RNN)을 정책 네트워크로 사용하여 시계열 운동 정보를 처리한다.
+
+(c) 핵심 기술 혁신: 본 연구의 핵심 혁신은 2단계 훈련 전략의 설계에 있다. 전통적인 종단간 강화 학습과 달리, 첫 번째 단계에서는 대규모 무작위화를 통해 정책이 특정 지형에 과적합되지 않고 일반적인 운동 기본 요소를 학습하도록 강제한다. 두 번째 단계에서는 소량의 목표 도메인 데이터를 통해 빠른 적응을 가능하게 하여 처음부터 훈련하는 높은 비용을 피한다. 또한, 본 논문은 적응형 보상 함수를 제안하여 전진 속도를 장려하는 동시에 관절 토크 과다와 몸체 기울기를 페널티함으로써 자연스러운 보행을 유지하며, 강건성과 에너지 소비 간의 균형을 달성한다.
+
+(d) 실험/검증 또는 응용 가치: 실험은 시뮬레이션 환경(예: Isaac Gym)과 실제 인간형 로봇 플랫폼에서 검증되었다. 결과에 따르면, 2단계 훈련을 거친 로봇은 명시적으로 프로그래밍되지 않은 자갈길, 경사로 및 계단 지형에서 안정적인 보행을 달성할 수 있었으며, 성공률이 단일 단계 훈련 방법보다 약 30% 향상되었다. 이 방법은 실제 환경에서의 매개변수 조정 비용을 줄일 뿐만 아니라, 재난 구조, 야외 탐사 등 복잡한 시나리오에서 인간형 로봇의 실제 배치를 위한 실현 가능한 기술 경로를 제공한다. 프로젝트 페이지에는 비디오 데모와 오픈 소스 코드가 제공되어 커뮤니티의 재현 및 개선을 용이하게 한다.

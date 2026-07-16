@@ -246,6 +246,413 @@ theoretical_depth:
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
 
+## Overview
+Industrial Design / A-Surface Engineering (ID / A-Surface) is the second stage in the full-process development of humanoid robot products, expanded into several Level-3 sub-tasks in WBS V3.
+## Content
+This stage covers complete engineering actions such as input review, concept design, implementation/prototyping, verification closure, and documentation delivery, serving as a critical node to ensure downstream dependencies receive qualified inputs.
 
+## Key Sub-Tasks and Technical Content
+#### Styling and Brand Definition
 
+##### Design Language and Brand DNA
+- **Methods / Tools**: Mood boards, form trend research, brand symbol extraction
+- **Design Thinking Logic**: Appearance is an important carrier of product differentiation, while also serving functionality
+- **Key Constraints**: Internal mechanism space, heat dissipation openings, maintenance openings, CMF cost
+- **Completion Criteria / Deliverables**: Design language guide, 3 styling directions
+**Level-3 Sub-Tasks:**
+- **P2.1.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Design Language and Brand DNA"; convert completion criteria into quantifiable acceptance indicators; clarify Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P2.1.1.2 Concept and Detailed Design**: Complete concept design, detailed design, and interface definition for "Design Language and Brand DNA"; verify feasibility using "mood boards, form trend research, brand symbol extraction"; output drawings/algorithms/logical frameworks.
+**Level-4 Key Actions:**
+1. Develop no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize review and freeze the solution
+- **P2.1.1.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "Design Language and Brand DNA" according to the design plan; fabricate prototypes, samples, or complete key steps; record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P2.1.1.4 Verification and Issue Closure**: Verify the output of "Design Language and Brand DNA" against completion criteria; record issues and track to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P2.1.1.5 Documentation Output and Downstream Delivery**: Output final report/drawings/specifications for "Design Language and Brand DNA"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
 
+##### Class-A Surface 3D Modeling and Visualization
+- **Methods / Tools**: Alias / Rhino / Blender / Cinema 4D, KeyShot rendering
+- **Design Thinking Logic**: Fully verify proportions, posture, and visual center of gravity before appearance freeze
+- **Key Constraints**: Surface manufacturability, painting/film coating processes, optical sensor windows
+- **Completion Criteria / Deliverables**: High-precision Class-A surface, renderings, CMF scheme, key perspective review approval
+**Level-3 Sub-Tasks:**
+- **P2.1.2.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Class-A Surface 3D Modeling and Visualization"; convert completion criteria into quantifiable acceptance indicators; clarify Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P2.1.2.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "Class-A Surface 3D Modeling and Visualization"; demonstrate using "Alias / Rhino / Blender / Cinema 4D, KeyShot rendering"; clarify technical route and resource requirements.
+**Level-4 Key Actions:**
+1. Develop no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize review and freeze the solution
+- **P2.1.2.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "Class-A Surface 3D Modeling and Visualization" according to the design plan; fabricate prototypes, samples, or complete key steps; record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P2.1.2.4 Verification and Issue Closure**: Verify the output of "Class-A Surface 3D Modeling and Visualization" against completion criteria; record issues and track to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P2.1.2.5 Documentation Output and Downstream Delivery**: Output final report/drawings/specifications for "Class-A Surface 3D Modeling and Visualization"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+##### Appearance Mockup and Scale Model
+- **Methods / Tools**: SLA/SLS 3D printing, foam CNC, painting, film coating
+- **Design Thinking Logic**: 1:1 physical model to verify visual proportions, assembly space, and human-robot interaction
+- **Key Constraints**: Mockup materials differ from production materials; limited strength
+- **Completion Criteria / Deliverables**: 1:1 appearance mockup, review minutes, issue list
+**Level-3 Sub-Tasks:**
+- **P2.1.3.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Appearance Mockup and Scale Model"; convert completion criteria into quantifiable acceptance indicators; clarify Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P2.1.3.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "Appearance Mockup and Scale Model"; demonstrate using "SLA/SLS 3D printing, foam CNC, painting, film coating"; clarify technical route and resource requirements.
+**Level-4 Key Actions:**
+1. Develop no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize review and freeze the solution
+- **P2.1.3.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "Appearance Mockup and Scale Model" according to the design plan; fabricate prototypes, samples, or complete key steps; record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P2.1.3.4 Verification and Issue Closure**: Verify the output of "Appearance Mockup and Scale Model" against completion criteria; record issues and track to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P2.1.3.5 Documentation Output and Downstream Delivery**: Output final report/drawings/specifications for "Appearance Mockup and Scale Model"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+#### Ergonomics and Interaction Design
+
+##### Human Body Dimensions and Reachability Analysis
+- **Methods / Tools**: Anthropometric databases, CATIA / Jack / RAMSIS, reachability cloud maps
+- **Design Thinking Logic**: Verify the robot's ability to achieve required operation heights, field of view, and obstacle avoidance for target scenarios
+- **Key Constraints**: Joint range of motion not yet determined; margin must be reserved
+- **Completion Criteria / Deliverables**: Reachability report, key operation postures, interference check
+**Level-3 Sub-Tasks:**
+- **P2.2.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Human Body Dimensions and Reachability Analysis"; convert completion criteria into quantifiable acceptance indicators; clarify Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P2.2.1.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "Human Body Dimensions and Reachability Analysis"; demonstrate using "anthropometric databases, CATIA / Jack / RAMSIS, reachability cloud maps"; clarify technical route and resource requirements.
+**Level-4 Key Actions:**
+1. Develop no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize review and freeze the solution
+- **P2.2.1.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "Human Body Dimensions and Reachability Analysis" according to the design plan; fabricate prototypes, samples, or complete key steps; record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P2.2.1.4 Verification and Issue Closure**: Verify the output of "Human Body Dimensions and Reachability Analysis" against completion criteria; record issues and track to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P2.2.1.5 Documentation Output and Downstream Delivery**: Output final report/drawings/specifications for "Human Body Dimensions and Reachability Analysis"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+##### Human-Machine Interaction (HMI) Design
+- **Methods / Tools**: User journey maps, voice/gesture/touchscreen/light language prototypes, usability testing
+- **Design Thinking Logic**: Lower user adoption barriers, build trust and predictability
+- **Key Constraints**: Multimodal consistency, response latency, false triggers
+- **Completion Criteria / Deliverables**: HMI specification, interaction prototype, usability test report
+**Level-3 Sub-Tasks:**
+- **P2.2.2.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Human-Machine Interaction (HMI) Design"; convert completion criteria into quantifiable acceptance indicators; clarify Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P2.2.2.2 Concept and Detailed Design**: Complete concept design, detailed design, and interface definition for "Human-Machine Interaction (HMI) Design"; verify feasibility using "user journey maps, voice/gesture/touchscreen/light language prototypes, usability testing"; output drawings/algorithms/logical frameworks.
+**Level-4 Key Actions:**
+1. Develop no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize review and freeze the solution
+- **P2.2.2.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "Human-Machine Interaction (HMI) Design" according to the design plan; fabricate prototypes, samples, or complete key steps; record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P2.2.2.4 Verification and Issue Closure**: Verify the output of "Human-Machine Interaction (HMI) Design" against completion criteria; record issues and track to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P2.2.2.5 Documentation Output and Downstream Delivery**: Output final report/drawings/specifications for "Human-Machine Interaction (HMI) Design"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+##### ID-Structure Interface Freeze
+- **Methods / Tools**: GD&T, mounting point layout, joint review of parting lines/disassembly schemes
+- **Design Thinking Logic**: Interfaces between appearance surfaces and internal skeleton must be determined before detailed design
+- **Key Constraints**: High cost of subsequent modifications, long mold cycle
+- **Completion Criteria / Deliverables**: "ID-Structure Interface Specification", mounting point drawing, sealing level definition
+**Level-3 Sub-Tasks:**
+- **P2.2.3.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "ID-Structure Interface Freeze"; convert completion criteria into quantifiable acceptance indicators; clarify Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P2.2.3.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "ID-Structure Interface Freeze"; demonstrate using "GD&T, mounting point layout, joint review of parting lines/disassembly schemes"; clarify technical route and resource requirements.
+**Level-4 Key Actions:**
+1. Develop no fewer than 2 candidate solutions
+2. Establish an evaluation matrix and assign quantitative scores
+3. Organize review and freeze the solution
+- **P2.2.3.3 Implementation/Prototype/Sample Fabrication**: Execute implementation work for "ID-Structure Interface Freeze" according to the design plan; fabricate prototypes, samples, or complete key steps; record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Perform simulation or prototype verification
+3. Record anomalies and deviations
+- **P2.2.3.4 Verification and Issue Closure**: Verify the output of "ID-Structure Interface Freeze" against completion criteria; record issues and track to closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P2.2.3.5 Documentation Output and Downstream Delivery**: Output final report/drawings/specifications for "ID-Structure Interface Freeze"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and cite raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependencies
+
+## Completion Criteria
+All Level-3 sub-tasks in this stage have passed acceptance review; key deliverables are version-controlled and formally delivered to downstream dependencies.
+
+## 개요
+산업 디자인 및 외관 엔지니어링(ID / A-Surface)은 휴머노이드 로봇 제품 개발 전 과정 중 두 번째 단계로, WBS V3에서 여러 3레벨 하위 작업으로 전개됩니다.
+
+## 핵심 내용
+이 단계는 입력 정리, 설계 방안, 구현/프로토타입, 검증 폐쇄 및 문서 인도 등 완전한 엔지니어링 활동을 포함하며, 하위 의존 부서가 적격한 입력을 확보할 수 있도록 하는 핵심 단계입니다.
+
+## 주요 하위 작업 및 기술 내용
+#### 디자인 및 브랜드 정의
+
+##### 디자인 언어 및 브랜드 DNA
+- **방법 / 도구**: 무드보드, 형태 트렌드 연구, 브랜드 심볼 추출
+- **디자인 사고 논리**: 외관은 제품 차별화의 중요한 수단이며, 동시에 기능을 지원해야 함
+- **주요 제약 조건**: 내부 기구 공간, 방열 개구부, 유지보수 개구부, CMF 비용
+- **완료 기준 / 산출물**: 디자인 언어 가이드, 3가지 디자인 방향
+**3레벨 하위 작업:**
+- **P2.1.1.1 입력 정리 및 목표 정량화**: 「디자인 언어 및 브랜드 DNA」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 주요 활동:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P2.1.1.2 개념 및 상세 설계**: 「디자인 언어 및 브랜드 DNA」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「무드보드, 형태 트렌드 연구, 브랜드 심볼 추출」을 사용하여 타당성을 검증하며, 도면/알고리즘/논리 프레임워크를 출력함.
+**4레벨 주요 활동:**
+1. 최소 2개의 후보 방안 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및 방안 확정
+- **P2.1.1.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「디자인 언어 및 브랜드 DNA」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 주요 활동:**
+1. 모델/시제품 구축 및 주요 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P2.1.1.4 검증 및 문제 폐쇄**: 「디자인 언어 및 브랜드 DNA」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료 시까지 추적함.
+**4레벨 주요 활동:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 수행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P2.1.1.5 문서 출력 및 하위 인도**: 「디자인 언어 및 브랜드 DNA」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 주요 활동:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### A면 3D 모델링 및 시각화
+- **방법 / 도구**: Alias / Rhino / Blender / Cinema 4D, KeyShot 렌더링
+- **디자인 사고 논리**: 외관 확정 전에 비율, 자세, 시각적 중심을 충분히 검증
+- **주요 제약 조건**: 곡면 제조 가능성, 도장/필름 공정, 광학 센서 창
+- **완료 기준 / 산출물**: 고정밀 A면, 렌더링 이미지, CMF 방안, 주요 시점 검토 통과
+**3레벨 하위 작업:**
+- **P2.1.2.1 입력 정리 및 목표 정량화**: 「A면 3D 모델링 및 시각화」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 주요 활동:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P2.1.2.2 방안/방법 설계**: 「A면 3D 모델링 및 시각화」에 대한 구현 방법 또는 후보 방안을 수립하고, 「Alias / Rhino / Blender / Cinema 4D, KeyShot 렌더링」을 사용하여 논증하며, 기술 경로와 리소스 요구사항을 명확히 함.
+**4레벨 주요 활동:**
+1. 최소 2개의 후보 방안 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및 방안 확정
+- **P2.1.2.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「A면 3D 모델링 및 시각화」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 주요 활동:**
+1. 모델/시제품 구축 및 주요 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P2.1.2.4 검증 및 문제 폐쇄**: 「A면 3D 모델링 및 시각화」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료 시까지 추적함.
+**4레벨 주요 활동:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 수행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P2.1.2.5 문서 출력 및 하위 인도**: 「A면 3D 모델링 및 시각화」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 주요 활동:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### 외관 핸드메이드 및 축소 모형
+- **방법 / 도구**: SLA/SLS 3D 프린팅, 폼 CNC, 도장, 필름
+- **디자인 사고 논리**: 1:1 물리적 모형으로 시각적 비율, 조립 공간, 인간-로봇 상호작용 검증
+- **주요 제약 조건**: 핸드메이드 재료는 양산 재료와 다르며, 강도가 제한적임
+- **완료 기준 / 산출물**: 1:1 외관 핸드메이드, 검토 회의록, 문제 목록
+**3레벨 하위 작업:**
+- **P2.1.3.1 입력 정리 및 목표 정량화**: 「외관 핸드메이드 및 축소 모형」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 주요 활동:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P2.1.3.2 방안/방법 설계**: 「외관 핸드메이드 및 축소 모형」에 대한 구현 방법 또는 후보 방안을 수립하고, 「SLA/SLS 3D 프린팅, 폼 CNC, 도장, 필름」을 사용하여 논증하며, 기술 경로와 리소스 요구사항을 명확히 함.
+**4레벨 주요 활동:**
+1. 최소 2개의 후보 방안 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및 방안 확정
+- **P2.1.3.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「외관 핸드메이드 및 축소 모형」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 주요 활동:**
+1. 모델/시제품 구축 및 주요 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P2.1.3.4 검증 및 문제 폐쇄**: 「외관 핸드메이드 및 축소 모형」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료 시까지 추적함.
+**4레벨 주요 활동:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 수행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P2.1.3.5 문서 출력 및 하위 인도**: 「외관 핸드메이드 및 축소 모형」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 주요 활동:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+#### 인간공학 및 상호작용 설계
+
+##### 인체 치수 및 도달 범위 분석
+- **방법 / 도구**: 인체 측정 데이터베이스, CATIA / Jack / RAMSIS, 도달 범위 클라우드 맵
+- **디자인 사고 논리**: 로봇이 목표 시나리오에 필요한 작업 높이, 시야 및 장애물 회피를 수행할 수 있는지 검증
+- **주요 제약 조건**: 관절 운동 범위 미확정, 여유분 확보 필요
+- **완료 기준 / 산출물**: 도달 범위 보고서, 주요 작업 자세, 간섭 검사
+**3레벨 하위 작업:**
+- **P2.2.1.1 입력 정리 및 목표 정량화**: 「인체 치수 및 도달 범위 분석」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 주요 활동:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P2.2.1.2 방안/방법 설계**: 「인체 치수 및 도달 범위 분석」에 대한 구현 방법 또는 후보 방안을 수립하고, 「인체 측정 데이터베이스, CATIA / Jack / RAMSIS, 도달 범위 클라우드 맵」을 사용하여 논증하며, 기술 경로와 리소스 요구사항을 명확히 함.
+**4레벨 주요 활동:**
+1. 최소 2개의 후보 방안 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및 방안 확정
+- **P2.2.1.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「인체 치수 및 도달 범위 분석」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 주요 활동:**
+1. 모델/시제품 구축 및 주요 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P2.2.1.4 검증 및 문제 폐쇄**: 「인체 치수 및 도달 범위 분석」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료 시까지 추적함.
+**4레벨 주요 활동:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 수행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P2.2.1.5 문서 출력 및 하위 인도**: 「인체 치수 및 도달 범위 분석」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 주요 활동:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### 인간-로봇 상호작용(HMI) 설계
+- **방법 / 도구**: 사용자 여정 맵, 음성/제스처/터치스크린/라이트 신호 프로토타입, 사용성 테스트
+- **디자인 사고 논리**: 사용자 사용 장벽을 낮추고, 신뢰와 예측 가능성 구축
+- **주요 제약 조건**: 다중 모드 일관성, 응답 지연, 오작동
+- **완료 기준 / 산출물**: HMI 규격, 상호작용 프로토타입, 사용성 테스트 보고서
+**3레벨 하위 작업:**
+- **P2.2.2.1 입력 정리 및 목표 정량화**: 「인간-로봇 상호작용(HMI) 설계」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 주요 활동:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P2.2.2.2 개념 및 상세 설계**: 「인간-로봇 상호작용(HMI) 설계」의 개념 설계, 상세 설계 및 인터페이스 정의를 완료하고, 「사용자 여정 맵, 음성/제스처/터치스크린/라이트 신호 프로토타입, 사용성 테스트」를 사용하여 타당성을 검증하며, 도면/알고리즘/논리 프레임워크를 출력함.
+**4레벨 주요 활동:**
+1. 최소 2개의 후보 방안 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및 방안 확정
+- **P2.2.2.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「인간-로봇 상호작용(HMI) 설계」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 주요 활동:**
+1. 모델/시제품 구축 및 주요 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P2.2.2.4 검증 및 문제 폐쇄**: 「인간-로봇 상호작용(HMI) 설계」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료 시까지 추적함.
+**4레벨 주요 활동:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 수행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P2.2.2.5 문서 출력 및 하위 인도**: 「인간-로봇 상호작용(HMI) 설계」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 주요 활동:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### ID-구조 인터페이스 확정
+- **방법 / 도구**: GD&T, 장착점 배치, 분할선/분해 방안 공동 검토
+- **디자인 사고 논리**: 외관면과 내부 골격의 인터페이스는 상세 설계 전에 결정되어야 함
+- **주요 제약 조건**: 이후 수정 비용이 높고, 금형 주기가 길어짐
+- **완료 기준 / 산출물**: 《ID-구조 인터페이스 규격》, 장착점 도면, 밀봉 등급 정의
+**3레벨 하위 작업:**
+- **P2.2.3.1 입력 정리 및 목표 정량화**: 「ID-구조 인터페이스 확정」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 함.
+**4레벨 주요 활동:**
+1. 모든 상위 입력 목록을 작성하고 버전 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부 구축
+- **P2.2.3.2 방안/방법 설계**: 「ID-구조 인터페이스 확정」에 대한 구현 방법 또는 후보 방안을 수립하고, 「GD&T, 장착점 배치, 분할선/분해 방안 공동 검토」를 사용하여 논증하며, 기술 경로와 리소스 요구사항을 명확히 함.
+**4레벨 주요 활동:**
+1. 최소 2개의 후보 방안 도출
+2. 평가 매트릭스 구축 및 정량적 점수 부여
+3. 검토 조직 및 방안 확정
+- **P2.2.3.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「ID-구조 인터페이스 확정」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록함.
+**4레벨 주요 활동:**
+1. 모델/시제품 구축 및 주요 파라미터 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P2.2.3.4 검증 및 문제 폐쇄**: 「ID-구조 인터페이스 확정」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료 시까지 추적함.
+**4레벨 주요 활동:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트 수행 및 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P2.2.3.5 문서 출력 및 하위 인도**: 「ID-구조 인터페이스 확정」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료함.
+**4레벨 주요 활동:**
+1. 템플릿에 따라 문서 작성 및 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+## 완료 기준
+본 단계의 모든 3레벨 하위 작업이 검수 검토를 통과하고, 주요 산출물의 버전이 관리되어 하위 의존 부서에 공식적으로 인도됩니다.

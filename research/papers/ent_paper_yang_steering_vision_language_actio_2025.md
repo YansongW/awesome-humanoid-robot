@@ -62,3 +62,14 @@ We study a novel language model architecture that is capable of scaling test-tim
 ## 参考
 - http://arxiv.org/abs/2502.05171v2
 
+## Overview
+We study a novel language model architecture that is capable of scaling test-time computation by implicitly reasoning in latent space. Our model works by iterating a recurrent block, thereby unrolling to arbitrary depth at test-time. This stands in contrast to mainstream reasoning models that scale up compute by producing more tokens. Unlike approaches based on chain-of-thought, our approach does not require any specialized training data, can work with small context windows, and can capture types of reasoning that are not easily represented in words. We scale a proof-of-concept model to 3.5 billion parameters and 800 billion tokens. We show that the resulting model can improve its performance on reasoning benchmarks, sometimes dramatically, up to a computation load equivalent to 50 billion parameters.
+
+## Content
+We study a novel language model architecture that is capable of scaling test-time computation by implicitly reasoning in latent space. Our model works by iterating a recurrent block, thereby unrolling to arbitrary depth at test-time. This stands in contrast to mainstream reasoning models that scale up compute by producing more tokens. Unlike approaches based on chain-of-thought, our approach does not require any specialized training data, can work with small context windows, and can capture types of reasoning that are not easily represented in words. We scale a proof-of-concept model to 3.5 billion parameters and 800 billion tokens. We show that the resulting model can improve its performance on reasoning benchmarks, sometimes dramatically, up to a computation load equivalent to 50 billion parameters.
+
+## 개요
+우리는 잠재 공간에서 암시적으로 추론함으로써 테스트 시 계산을 확장할 수 있는 새로운 언어 모델 아키텍처를 연구합니다. 우리의 모델은 순환 블록을 반복하여 테스트 시 임의의 깊이로 전개됩니다. 이는 더 많은 토큰을 생성하여 계산을 확장하는 주류 추론 모델과 대조됩니다. 사고 사슬 기반 접근 방식과 달리, 우리의 접근 방식은 특수한 훈련 데이터가 필요하지 않으며, 작은 컨텍스트 윈도우로도 작동할 수 있고, 단어로 쉽게 표현되지 않는 유형의 추론을 포착할 수 있습니다. 우리는 개념 증명 모델을 35억 개의 매개변수와 8000억 개의 토큰으로 확장합니다. 그 결과 모델이 추론 벤치마크에서 성능을 향상시킬 수 있음을 보여주며, 때로는 500억 개의 매개변수에 해당하는 계산 부하까지 극적으로 향상됩니다.
+
+## 핵심 내용
+우리는 잠재 공간에서 암시적으로 추론함으로써 테스트 시 계산을 확장할 수 있는 새로운 언어 모델 아키텍처를 연구합니다. 우리의 모델은 순환 블록을 반복하여 테스트 시 임의의 깊이로 전개됩니다. 이는 더 많은 토큰을 생성하여 계산을 확장하는 주류 추론 모델과 대조됩니다. 사고 사슬 기반 접근 방식과 달리, 우리의 접근 방식은 특수한 훈련 데이터가 필요하지 않으며, 작은 컨텍스트 윈도우로도 작동할 수 있고, 단어로 쉽게 표현되지 않는 유형의 추론을 포착할 수 있습니다. 우리는 개념 증명 모델을 35억 개의 매개변수와 8000억 개의 토큰으로 확장합니다. 그 결과 모델이 추론 벤치마크에서 성능을 향상시킬 수 있음을 보여주며, 때로는 500억 개의 매개변수에 해당하는 계산 부하까지 극적으로 향상됩니다.

@@ -59,3 +59,35 @@ sources:
 
 ## 参考
 - ProtoMotions3: An Open-source Framework for Humanoid Simulation and Control ()
+
+## Overview
+
+Humanoid robots, due to their complex dynamic characteristics and high-degree-of-freedom motion control requirements, impose extremely high demands on simulation platforms. Existing open-source frameworks often suffer from issues such as inconsistent interfaces and poor scalability in motion generation, physics simulation, and controller integration. ProtoMotions3 aims to fill this gap by building a modular, high-performance open-source framework that provides researchers with full-chain support from motion planning to physics simulation, thereby accelerating the development and validation of humanoid robot control algorithms.
+
+## Content
+
+Research on motion control for humanoid robots has long faced two major bottlenecks: first, motion generation algorithms in high-dimensional state spaces are difficult to iterate safely on real hardware; second, the fragmentation of interfaces between different simulators and controllers leads to high algorithm migration costs. While existing platforms such as MuJoCo or Isaac Gym provide basic simulation capabilities, they lack motion libraries and controller templates tailored to the specific needs of humanoid robots. ProtoMotions3 addresses this situation by striving to build a unified, reusable open-source ecosystem, lowering the entry barrier for researchers.
+
+The core design philosophy of this framework is modularity and scalability. ProtoMotions3 decouples motion generation, physics simulation, controllers, and perception modules, allowing users to freely combine different components. For example, users can perform policy learning based on built-in motion libraries (such as walking, jumping, balance recovery) or integrate custom reinforcement learning or model predictive control algorithms. The framework's underlying layer interacts with mainstream simulators (e.g., MuJoCo, Isaac Gym) through standardized interfaces, abstracting away differences in underlying implementations.
+
+In terms of technological innovation, ProtoMotions3 introduces a lightweight yet functionally complete motion representation layer. This layer not only supports extracting reference motions from motion capture data or offline optimized trajectories but also provides motion retargeting and time alignment tools, enabling humanoid robots of different morphologies to reuse the same motion library. Additionally, the framework includes multiple controller templates, including stable controllers based on whole-body control (WBC) and policy networks based on reinforcement learning, and offers integration interfaces with ROS 2 for ease of hardware deployment.
+
+Regarding experimental validation, although specific data is not detailed in the metadata, based on the framework's design goals, its effectiveness is typically evaluated through standard motion control benchmark tasks (e.g., stable walking, disturbance-resistant balancing, traversing complex terrain). Researchers can use ProtoMotions3 to rapidly iterate control strategies in simulation environments and directly transfer them to real robot platforms to verify sim-to-real transfer capabilities. The open-source nature of the framework also means the community can continuously contribute new motion libraries and controllers, fostering a positive ecosystem.
+
+From an application value perspective, ProtoMotions3 not only serves academic research but also provides a low-cost validation tool for industrial humanoid robot prototype development. By unifying simulation and control interfaces, this framework is expected to shorten the cycle from algorithm design to physical deployment, promoting the practical implementation of humanoid robots in fields such as service and manufacturing. Its modular architecture also facilitates teaching demonstrations in educational settings, helping students intuitively understand the core principles of motion control and simulation.
+
+## 개요
+
+휴머노이드 로봇은 복잡한 동역학 특성과 높은 자유도를 가진 운동 제어 요구로 인해 시뮬레이션 플랫폼에 매우 높은 요구 사항을 제시합니다. 기존 오픈소스 프레임워크는 운동 생성, 물리 시뮬레이션 및 제어기 통합 측면에서 인터페이스 불일치, 확장성 부족 등의 문제가 자주 발생합니다. ProtoMotions3는 이러한 공백을 메우기 위해 모듈화되고 고성능인 오픈소스 프레임워크를 구축하여 연구자들에게 운동 계획부터 물리 시뮬레이션까지의 전체 체인 지원을 제공함으로써 휴머노이드 로봇 제어 알고리즘의 개발과 검증을 가속화하는 것을 목표로 합니다.
+
+## 핵심 내용
+
+휴머노이드 로봇의 운동 제어 연구는 오랫동안 두 가지 주요 병목 현상에 직면해 있습니다. 첫째, 고차원 상태 공간에서의 운동 생성 알고리즘을 실제 하드웨어에서 안전하게 반복하기 어렵다는 점이고, 둘째, 서로 다른 시뮬레이터와 제어기 간의 인터페이스 파편화가 심각하여 알고리즘 이전 비용이 높다는 점입니다. MuJoCo나 Isaac Gym과 같은 기존 플랫폼은 기본적인 시뮬레이션 기능을 제공하지만, 휴머노이드 로봇의 특정 요구 사항에 맞춘 운동 라이브러리와 제어기 템플릿이 부족합니다. ProtoMotions3는 이러한 현실에 대응하여 통일되고 재사용 가능한 오픈소스 생태계를 구축하고 연구자의 진입 장벽을 낮추는 데 주력합니다.
+
+이 프레임워크의 핵심 설계 철학은 모듈화와 확장성입니다. ProtoMotions3는 운동 생성, 물리 시뮬레이션, 제어기 및 인식 모듈을 분리하여 사용자가 다양한 구성 요소를 자유롭게 조합할 수 있도록 합니다. 예를 들어, 사용자는 내장된 운동 라이브러리(예: 보행, 점프, 균형 회복)를 기반으로 정책 학습을 수행하거나, 사용자 정의 강화 학습 또는 모델 예측 제어 알고리즘을 연결할 수 있습니다. 프레임워크의 하위 계층은 표준화된 인터페이스를 통해 주요 시뮬레이터(예: MuJoCo, Isaac Gym)와 상호 작용하여 하위 구현 차이를 숨깁니다.
+
+기술 혁신 측면에서 ProtoMotions3는 경량이지만 기능이 완벽한 운동 표현 계층을 제안합니다. 이 계층은 모션 캡처 데이터나 오프라인 최적화 궤적에서 참조 운동을 추출하는 것을 지원할 뿐만 아니라, 운동 리타겟팅 및 시간 정렬 도구를 제공하여 다양한 형태의 휴머노이드 로봇이 동일한 운동 라이브러리를 재사용할 수 있도록 합니다. 또한, 프레임워크에는 전신 제어(WBC) 기반 안정화 제어기와 강화 학습 기반 정책 네트워크를 포함한 다양한 제어기 템플릿이 내장되어 있으며, ROS 2와의 통합 인터페이스를 제공하여 하드웨어 배포를 용이하게 합니다.
+
+실험 검증 측면에서는 메타데이터에 구체적인 데이터가 상세히 기술되어 있지 않지만, 프레임워크 설계 목표를 기반으로 그 효과는 일반적으로 표준 운동 제어 벤치마크 작업(예: 안정적인 보행, 외란 저항 균형, 복잡한 지형 통과)을 통해 평가된다고 추론할 수 있습니다. 연구자들은 ProtoMotions3를 사용하여 시뮬레이션 환경에서 제어 정책을 빠르게 반복하고, 이를 실제 로봇 플랫폼에 직접 이전하여 sim-to-real 이전 능력을 검증할 수 있습니다. 이 프레임워크의 오픈소스 특성은 커뮤니티가 지속적으로 새로운 운동 라이브러리와 제어기를 기여하여 건전한 생태계를 형성할 수 있음을 의미합니다.
+
+응용 가치 측면에서 ProtoMotions3는 학술 연구에 기여할 뿐만 아니라, 산업계의 휴머노이드 로봇 프로토타입 개발에 저비용 검증 도구를 제공합니다. 시뮬레이션과 제어의 인터페이스를 통일함으로써, 이 프레임워크는 알고리즘 설계부터 실제 배포까지의 주기를 단축하고, 휴머노이드 로봇의 서비스, 제조 등 분야에서의 실제 적용을 촉진할 것으로 기대됩니다. 또한, 모듈화된 아키텍처는 교육 현장의 교수 시연에 적합하여 학생들이 운동 제어와 시뮬레이션의 핵심 원리를 직관적으로 이해할 수 있도록 돕습니다.

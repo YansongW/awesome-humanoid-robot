@@ -62,3 +62,14 @@ In this paper, we present a touch technology to achieve tactile interactivity fo
 ## 参考
 - http://arxiv.org/abs/2503.02280v1
 
+## Overview
+In this paper, we present a touch technology to achieve tactile interactivity for human-robot interaction (HRI) in soft robotics. By combining a capacitive touch sensor with an online solid mechanics simulation provided by the SOFA framework, contact detection is achieved for arbitrary shapes. Furthermore, the implementation of the capacitive touch technology presented here is selectively sensitive to human touch (conductive objects), while it is largely unaffected by the deformations created by the pneumatic actuation of our soft robot. Multi-touch interactions are also possible. We evaluated our approach with an organic soft robotics sculpture that was created by a visual artist. In particular, we evaluate that the touch localization capabilities are robust under the deformation of the device. We discuss the potential this approach has for the arts and entertainment as well as other domains.
+
+## Content
+In this paper, we present a touch technology to achieve tactile interactivity for human-robot interaction (HRI) in soft robotics. By combining a capacitive touch sensor with an online solid mechanics simulation provided by the SOFA framework, contact detection is achieved for arbitrary shapes. Furthermore, the implementation of the capacitive touch technology presented here is selectively sensitive to human touch (conductive objects), while it is largely unaffected by the deformations created by the pneumatic actuation of our soft robot. Multi-touch interactions are also possible. We evaluated our approach with an organic soft robotics sculpture that was created by a visual artist. In particular, we evaluate that the touch localization capabilities are robust under the deformation of the device. We discuss the potential this approach has for the arts and entertainment as well as other domains.
+
+## 개요
+본 논문에서는 소프트 로보틱스에서 인간-로봇 상호작용(HRI)을 위한 촉각 인터랙티비티를 구현하는 터치 기술을 제시합니다. 정전식 터치 센서와 SOFA 프레임워크가 제공하는 온라인 고체 역학 시뮬레이션을 결합하여 임의의 형상에 대한 접촉 감지를 달성합니다. 또한, 여기서 제시된 정전식 터치 기술의 구현은 인간의 터치(전도성 물체)에 선택적으로 민감하게 반응하는 동시에, 소프트 로봇의 공압 작동으로 인한 변형에는 거의 영향을 받지 않습니다. 멀티 터치 상호작용도 가능합니다. 우리는 시각 예술가가 제작한 유기적 소프트 로보틱스 조형물을 통해 접근 방식을 평가했습니다. 특히, 장치의 변형 하에서 터치 위치 파악 기능이 견고함을 평가합니다. 이 접근 방식이 예술 및 엔터테인먼트뿐만 아니라 다른 분야에서 가질 잠재력에 대해 논의합니다.
+
+## 핵심 내용
+본 논문에서는 소프트 로보틱스에서 인간-로봇 상호작용(HRI)을 위한 촉각 인터랙티비티를 구현하는 터치 기술을 제시합니다. 정전식 터치 센서와 SOFA 프레임워크가 제공하는 온라인 고체 역학 시뮬레이션을 결합하여 임의의 형상에 대한 접촉 감지를 달성합니다. 또한, 여기서 제시된 정전식 터치 기술의 구현은 인간의 터치(전도성 물체)에 선택적으로 민감하게 반응하는 동시에, 소프트 로봇의 공압 작동으로 인한 변형에는 거의 영향을 받지 않습니다. 멀티 터치 상호작용도 가능합니다. 우리는 시각 예술가가 제작한 유기적 소프트 로보틱스 조형물을 통해 접근 방식을 평가했습니다. 특히, 장치의 변형 하에서 터치 위치 파악 기능이 견고함을 평가합니다. 이 접근 방식이 예술 및 엔터테인먼트뿐만 아니라 다른 분야에서 가질 잠재력에 대해 논의합니다.

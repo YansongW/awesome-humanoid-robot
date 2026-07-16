@@ -68,4 +68,54 @@ sources:
 ## 参考
 - Wiki extraction
 
+## Overview
+Deploying humanoid robots in hospitals, elderly care, and rehabilitation settings to provide assistance, companionship, and therapeutic support.
 
+## Content
+### Definition and Positioning of Healthcare Assistance
+Healthcare Assistance belongs to the **application scenario** type. Its domains include: Applications and Markets. Value chain level: Validation and Market layer. Deploying humanoid robots in hospitals, elderly care, and rehabilitation settings to provide assistance, companionship, and therapeutic support. The English name is *Healthcare Assistance*. The Korean name is *의료 지원*.
+
+### Scenario Characteristics and Core Value of Healthcare Assistance
+Healthcare Assistance represents a key direction for the potential deployment of humanoid robots. Its demand characteristics, value proposition, and business model are critical for assessing market prospects.
+In this scenario, the bipedal locomotion and bimanual manipulation capabilities of humanoid robots may offer unique efficiency or experience advantages.
+
+### Deployment Challenges and Development Trends
+Large-scale deployment of humanoid robots in this scenario still faces multiple challenges, including cost, reliability, safety, regulations, and user acceptance, requiring coordinated advancement in technology and business.
+As hardware costs decline and AI capabilities improve, the market penetration rate in this scenario is expected to gradually increase.
+
+### Key Success Factors
+Successful deployment requires comprehensive consideration of task suitability, human-robot collaboration, maintenance systems, data accumulation, and business model design, avoiding a sole focus on technological advancement while neglecting economic viability.
+
+### Related Tags
+- application
+- chapter_27
+- wiki_gap
+
+### Role in the Humanoid Robot System
+As one of the key application scenarios in the humanoid robot industry chain, Healthcare Assistance plays a significant role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, execution, energy, structure, and validation, collectively determining overall robot performance. Related research and applications are continuously advancing to further improve its reliability, efficiency, and economic viability in real-world scenarios.
+
+## 개요
+병원, 요양 및 재활 현장에서 휴머노이드 로봇을 배치하여 보조, 동행 및 치료 지원을 제공합니다.
+
+## 핵심 내용
+### 의료 건강의 정의와 위치
+의료 건강은 **응용 시나리오** 유형에 속합니다. 소속 분야는 응용 및 시장입니다. 가치 사슬 계층: 검증 및 시장 계층. 병원, 요양 및 재활 현장에서 휴머노이드 로봇을 배치하여 보조, 동행 및 치료 지원을 제공합니다. 영문 명칭은 *Healthcare Assistance*입니다. 한글 명칭은 *의료 지원*입니다.
+
+### 의료 건강의 시나리오 특징과 핵심 가치
+의료 건강은 휴머노이드 로봇의 잠재적 실현 가능한 중요한 방향을 대표하며, 그 수요 특성, 가치 제안 및 비즈니스 모델은 시장 전망을 평가하는 핵심 요소입니다.
+해당 시나리오에서 휴머노이드 로봇의 이족 이동과 양손 조작 능력은 독특한 효율성 또는 경험적 이점을 제공할 수 있습니다.
+
+### 실현 과제와 발전 추세
+해당 시나리오에서 휴머노이드 로봇을 대규모로 배치하는 것은 여전히 비용, 신뢰성, 안전성, 규제 및 사용자 수용도 등 여러 과제에 직면해 있으며, 기술과 비즈니스의 협력적 추진이 필요합니다.
+하드웨어 비용 하락과 인공지능 능력 향상에 따라, 해당 시나리오의 시장 침투율은 점차 높아질 것으로 예상됩니다.
+
+### 핵심 성공 요인
+성공적인 실현을 위해서는 작업 적합성, 인간-로봇 협업, 유지보수 체계, 데이터 축적 및 비즈니스 모델 설계를 종합적으로 고려해야 하며, 단순히 기술의 첨단성을 추구하고 경제성을 간과해서는 안 됩니다.
+
+### 관련 태그
+- application
+- chapter_27
+- wiki_gap
+
+### 휴머노이드 로봇 시스템에서의 역할
+휴머노이드 로봇 산업 체인에서 중요한 응용 시나리오 중 하나로서, 의료 건강은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 지속적으로 추진되고 있으며, 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 노력하고 있습니다.

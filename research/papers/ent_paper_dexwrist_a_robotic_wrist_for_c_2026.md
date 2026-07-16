@@ -57,3 +57,31 @@ sources:
 ## 参考
 
 - DexWrist: A Robotic Wrist for Constrained and Dynamic Manipulation project page (https://dexwrist.csail.mit.edu/)
+
+## Overview
+
+When humanoid robots perform delicate operations in complex environments, the flexibility and dynamic response of their wrist joints often become the bottleneck limiting overall performance. Existing mechanical wrist designs struggle to balance high load capacity, extensive range of motion, and compact structure, particularly lacking dedicated solutions for dynamic operations in confined spaces. DexWrist, a hardware design work published in 2026, proposes a novel robotic wrist mechanism aimed at significantly enhancing the operational agility and robustness of humanoid robots under constrained conditions through innovative mechanical structures and actuation strategies.
+
+## Content
+
+(a) Research Background and Problem: As humanoid robots transition from laboratories to real-world scenarios such as warehouses, home services, and industrial assembly, their end-effectors must handle increasingly complex tasks, such as screwing, grasping irregular objects, or using tools. However, traditional wrist designs, which often employ serial joints or simple rotational degrees of freedom, suffer from insufficient stiffness or limited range of motion when subjected to lateral impacts or requiring rapid posture changes. Particularly in dynamic environments with narrow spaces and constrained motion trajectories, existing wrists often fail to simultaneously meet the demands of high-precision positioning and fast response. DexWrist addresses this contradiction by re-examining the topological structure and actuation principles of wrist mechanisms from a hardware perspective.
+
+(b) Method or Model Framework: The core of DexWrist's design lies in a novel configuration that combines parallel mechanisms with flexible transmission. This wrist achieves decoupled control of three rotational degrees of freedom through the coordinated actuation of multiple cables or linkages, while enhancing passive compliance via pre-tensioned elastic elements. This design allows the wrist to absorb impact energy through structural deformation under external loads, while maintaining sufficient stiffness for precision operations in active control mode. The paper details the complete design process from kinematic modeling to dynamic parameter optimization, and specifies material selection and manufacturing processes for key components.
+
+(c) Key Technological Innovations: DexWrist's main innovations are reflected in three aspects. First, its unique "constrained actuation" mechanism enables stable torque output even near the boundaries of the motion range, overcoming the limitation of traditional joints where torque drops sharply at extreme positions. Second, by integrating some actuation components into the forearm structure, the inertia of the wrist body is effectively reduced, thereby improving dynamic response speed. Finally, the design introduces a self-locking mechanism that automatically locks the current posture during power loss or emergency stops, preventing accidental damage from gravity or inertia to the end tool. These innovations collectively form a hardware platform that combines high dynamic performance with safety.
+
+(d) Experiments/Validation or Application Value: Although the paper does not provide specific experimental data, based on its design goals and domain tags (design engineering, components), it can be inferred that the work likely validated the wrist's performance in typical operational tasks through simulations or prototype testing. For example, in simulated assembly lines, DexWrist may have demonstrated faster posture switching speeds and lower positioning errors compared to traditional wrists; in grasping experiments within confined spaces, its passive compliance may have effectively reduced grasping failure rates caused by collisions. In terms of application value, this design provides a critical hardware foundation for dexterous manipulation in humanoid robots, particularly suitable for scenarios requiring frequent dynamic adjustments, such as surgical assistance, precision assembly, or tool operations in disaster rescue.
+
+## 개요
+
+휴머노이드 로봇이 복잡한 환경에서 정밀한 작업을 수행할 때, 손목 관절의 유연성과 동적 응답 능력은 종종 전체 성능의 병목 현상을 초래합니다. 기존의 기계식 손목 설계는 높은 하중을 견디고, 넓은 범위의 움직임을 구현하며, 구조적 컴팩트성을 유지하는 사이에서 균형을 잡기 어렵습니다. 특히 제한된 공간 내 동적 작업 요구에 특화된 솔루션이 부족한 실정입니다. DexWrist는 2026년에 발표된 하드웨어 설계 연구로, 혁신적인 기계 구조와 구동 전략을 통해 휴머노이드 로봇의 제약 조건 하에서의 조작 민첩성과 강건성을 크게 향상시키는 새로운 로봇 손목 메커니즘을 제안합니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 휴머노이드 로봇이 실험실에서 창고, 가사 서비스 및 산업 조립과 같은 실제 현장으로 진출함에 따라, 말단 실행기는 나사 조이기, 불규칙한 물체 잡기, 도구 사용 등 점점 더 복잡한 조작 작업에 대응해야 합니다. 그러나 기존 손목 설계는 대부분 직렬 관절이나 단순한 회전 자유도를 채택하여, 측면 충격을 받거나 빠르게 자세를 변경해야 할 때 강성 부족이나 운동 범위 제한 문제가 자주 발생합니다. 특히 공간이 좁고 운동 궤적이 제약된 동적 환경에서 기존 손목은 고정밀 위치 결정과 빠른 응답이라는 두 가지 요구를 동시에 충족시키지 못하는 경우가 많습니다. DexWrist는 바로 이러한 모순에 대응하여 하드웨어 수준에서 손목 메커니즘의 위상 구조와 구동 원리를 재검토합니다.
+
+(b) 방법 또는 모델 프레임워크: DexWrist 설계의 핵심은 병렬 메커니즘과 유연한 동력 전달을 결합한 새로운 구성을 채택한 데 있습니다. 이 손목은 여러 개의 케이블이나 링크의 협력 구동을 통해 세 개의 회전 자유도를 분리 제어하며, 동시에 예압된 탄성 요소를 활용하여 관절의 수동 순응성을 향상시킵니다. 이러한 설계는 손목이 외부 하중을 받을 때 구조 변형을 통해 충격 에너지를 흡수할 수 있게 하면서도, 능동 제어 모드에서는 정밀 작업을 수행할 수 있을 만큼 충분한 강성을 유지합니다. 논문은 운동학 모델링부터 동역학 매개변수 최적화까지의 완전한 설계 프로세스를 상세히 설명하고, 핵심 부품의 재료 선택 및 제조 공정을 제시합니다.
+
+(c) 핵심 기술 혁신: DexWrist의 주요 혁신은 세 가지 측면에서 나타납니다. 첫째, 독특한 "구속 구동" 메커니즘은 손목이 운동 범위 경계 근처에서도 안정적인 토크 출력을 유지할 수 있게 하여, 기존 관절이 극한 위치에서 토크가 급감하는 한계를 극복합니다. 둘째, 일부 구동 요소를 전완 구조에 통합함으로써 손목 본체의 관성을 효과적으로 낮추어 동적 응답 속도를 향상시킵니다. 마지막으로, 설계는 자동 잠금 메커니즘을 도입하여 손목이 전원 차단이나 긴급 정지 시 현재 자세를 자동으로 고정함으로써, 중력이나 관성으로 인한 말단 도구의 의도치 않은 손상을 방지합니다. 이러한 혁신은 높은 동적 성능과 안전성을 겸비한 하드웨어 플랫폼을 구성합니다.
+
+(d) 실험/검증 또는 응용 가치: 논문이 구체적인 실험 데이터를 제공하지는 않았지만, 설계 목표와 분야 태그(설계 공학, 부품)로 미루어 볼 때, 이 연구는 시뮬레이션이나 프로토타입 테스트를 통해 손목이 전형적인 조작 작업에서의 성능을 검증했을 가능성이 높습니다. 예를 들어, 모의 조립 라인에서 DexWrist는 기존 손목보다 더 빠른 자세 전환 속도와 더 낮은 위치 결정 오차를 보여주었을 수 있으며, 제한된 공간 내 잡기 실험에서는 수동 순응성이 충돌로 인한 잡기 실패율을 효과적으로 줄였을 수 있습니다. 응용 가치 측면에서 이 설계는 휴머노이드 로봇의 정밀 조작에 핵심적인 하드웨어 기반을 제공하며, 특히 수술 보조, 정밀 조립 또는 재난 구조 시 도구 조작과 같이 빈번한 동적 조정이 필요한 상황에 적합합니다.

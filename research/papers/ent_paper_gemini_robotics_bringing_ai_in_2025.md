@@ -65,3 +65,35 @@ theoretical_depth:
 
 ## 参考
 - Gemini Robotics project page (https://deepmind.google/discover/blog/gemini-robotics-brings-ai-into-the-physical-world/)
+
+## Overview
+
+This paper introduces the Gemini Robotics system proposed by Google DeepMind, which aims to directly transfer the semantic understanding capabilities of large vision-language models (VLMs) to physical robot manipulation tasks. The main contribution of this research lies in proposing a novel model architecture that, by adding robot state encoding and action prediction heads on top of a pre-trained VLM, achieves seamless integration from language planning to physical execution, thereby overcoming the limitation of traditional methods that remain at high-level language planning without generating fine-grained motion trajectories.
+
+## Content
+
+In recent years, research in robot manipulation has gradually shifted from rule-based planning to data-driven end-to-end learning, where vision-language models (VLMs) have demonstrated strong capabilities in semantic understanding and task reasoning. However, existing methods often use VLMs only for high-level task decomposition and language planning, while delegating low-level motion control to independent policy networks, resulting in a gap between semantic understanding and physical execution. The core problem addressed by Gemini Robotics is precisely how to bridge this gap, enabling the VLM not only to "understand" tasks but also to directly "execute" actions.
+
+To achieve this goal, Gemini Robotics proposes a multi-stage framework for representation transformation and action generation. First, the system encodes natural language instructions and monocular or multi-view camera images into a unified multimodal representation. Then, using generative methods such as ACT (Action Chunking with Transformers) behavioral cloning imitation learning, diffusion policies, or flow matching, the visual-language representation is further mapped to whole-body trajectories or action sequences. Finally, the model outputs continuous motion commands in the form of action chunks or discrete action tokens, directly driving the robot to execute.
+
+The key technical breakthrough of this work lies in the modification of the pre-trained VLM. Rather than training a robot-specific model from scratch, Gemini Robotics retains the powerful semantic understanding capabilities of the original VLM while adding a robot state encoder and action prediction head. This design allows the model to understand complex instructions such as "place the red cube into the blue cup" while outputting precise end-effector poses and joint angle sequences, thereby avoiding the semantic loss caused by the separation of language planning and motion control in traditional methods.
+
+In terms of experimental validation, Gemini Robotics was evaluated on a variety of general manipulation tasks, including tabletop grasping, object rearrangement, and tool use. Results show that the model performs excellently in both zero-shot generalization and few-shot adaptation scenarios, handling unseen objects, layouts, and instruction combinations. Furthermore, by retaining the semantic reasoning capability of the VLM, the system can make reasonable motion plans even for tasks requiring common-sense reasoning (e.g., "avoid fragile objects"), demonstrating generalization potential beyond pure imitation learning.
+
+From an application perspective, Gemini Robotics provides a scalable intelligent foundation for humanoid robots and general-purpose manipulation platforms. Its core idea—upgrading large models from a "language brain" to a "physical brain"—has the potential to drive robots from executing pre-programmed routines toward autonomous operation in open worlds. This work also points to future research directions: how to further integrate world models to improve the physical plausibility of action predictions, and how to compress model size for edge deployment while maintaining real-time performance.
+
+## 개요
+
+본 논문은 Google DeepMind가 제안한 Gemini Robotics 시스템을 소개하며, 대규모 시각-언어 모델(VLM)의 의미 이해 능력을 물리적 로봇 조작 작업에 직접 이전하는 것을 목표로 한다. 이 연구의 주요 기여는 사전 훈련된 VLM에 로봇 상태 인코딩과 동작 예측 헤드를 추가하여 언어 계획에서 물리적 실행까지 원활하게 연결하는 새로운 모델 아키텍처를 제안한 점에 있다. 이를 통해 기존 방법이 고수준 언어 계획에 머물러 정밀한 운동 궤적을 생성하지 못하는 한계를 극복한다.
+
+## 핵심 내용
+
+최근 로봇 조작 분야의 연구는 규칙 기반 계획에서 데이터 기반 엔드투엔드 학습으로 전환되고 있으며, 시각-언어 모델(VLM)은 의미 이해와 작업 추론에서 뛰어난 능력을 보여주고 있다. 그러나 기존 방법은 VLM을 고수준 작업 분해와 언어 계획에만 사용하고, 저수준 운동 제어는 별도의 정책 네트워크에 맡겨 의미 이해와 물리적 실행 사이에 간극이 존재한다. Gemini Robotics의 핵심 문제는 바로 이 간극을 메워 VLM이 작업을 '이해'할 뿐만 아니라 동작을 직접 '실행'할 수 있도록 하는 것이다.
+
+이 목표를 달성하기 위해 Gemini Robotics는 다단계 표현 변환 및 동작 생성 프레임워크를 제안한다. 먼저 시스템은 자연어 명령, 단안 또는 다중 시점 카메라 이미지를 통합된 다중 모드 표현으로 인코딩한다. 이후 ACT(Action Chunking with Transformers) 행동 복제 모방 학습, 확산 정책 또는 흐름 매칭과 같은 생성적 방법을 사용하여 시각-언어 표현을 전신 궤적 또는 동작 시퀀스로 추가 매핑한다. 최종적으로 모델은 동작 청크(action chunk) 또는 이산 동작 토큰 형태의 연속 운동 명령을 출력하여 로봇을 직접 구동한다.
+
+이 작업의 핵심 기술적 돌파구는 사전 훈련된 VLM을 개조하는 방식에 있다. Gemini Robotics는 로봇 전용 모델을 처음부터 훈련하는 대신, 기존 VLM의 강력한 의미 이해 능력을 유지하면서 로봇 상태 인코더와 동작 예측 헤드를 새로 추가했다. 이러한 설계 덕분에 모델은 '빨간색 블록을 파란색 컵에 넣어'와 같은 복잡한 명령을 이해하면서도 정확한 엔드 이펙터 자세와 관절 각도 시퀀스를 출력할 수 있어, 기존 방법에서 언어 계획과 운동 제어가 분리되어 발생하는 의미 손실 문제를 방지한다.
+
+실험 검증 측면에서 Gemini Robotics는 테이블 위 집기, 물체 재배치, 도구 사용 등 다양한 일반 조작 작업에서 평가되었다. 결과는 이 모델이 제로샷 일반화와 퓨샷 적응 시나리오에서 모두 뛰어난 성능을 보이며, 본 적 없는 물체, 배치 및 명령 조합을 처리할 수 있음을 보여준다. 또한 VLM의 의미 추론 능력을 유지함으로써, 시스템은 상식 추론이 필요한 작업(예: '깨지기 쉬운 물체 피하기')에서도 합리적인 운동 계획을 수립하여 단순 모방 학습을 넘어서는 일반화 잠재력을 입증했다.
+
+응용 가치 측면에서 Gemini Robotics는 휴머노이드 로봇 및 범용 조작 플랫폼을 위한 확장 가능한 지능형 기반을 제공한다. 그 핵심 아이디어인 대규모 모델을 '언어 두뇌'에서 '물리적 두뇌'로 업그레이드하는 것은 로봇이 사전 설정된 프로그램 실행에서 개방형 세계 자율 조작으로 진화하도록 촉진할 것으로 기대된다. 이 작업은 동시에 후속 연구 방향을 제시한다: 세계 모델을 추가로 통합하여 동작 예측의 물리적 타당성을 높이는 방법, 그리고 실시간성을 유지하면서 모델 크기를 압축하여 엣지 배포에 적합하게 만드는 방법 등이다.

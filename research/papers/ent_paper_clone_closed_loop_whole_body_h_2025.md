@@ -63,3 +63,31 @@ theoretical_depth:
 
 ## 参考
 - CLONE project page (https://humanoid-clone.github.io/)
+
+## Overview
+
+Humanoid robots face core challenges of data sparsity and insufficient generalization in autonomous operation during long-duration complex tasks. Existing teleoperation solutions mostly rely on open-loop control, making it difficult to handle state drift and environmental disturbances during execution. CLONE proposes a closed-loop whole-body teleoperation framework that integrates teleoperation/exoskeleton-collected data with real-time robot states to construct trainable and reusable whole-body trajectories and action sequences. Its core innovation lies in decomposing long-duration tasks into routable hierarchical skills or expert policies, and using high-level modules to dynamically select and combine them during execution, thereby achieving efficient whole-body control and motion tracking while ensuring data closure.
+
+## Content
+
+**Research Background and Problem**: Whole-body control of humanoid robots involves complex coupled issues such as balance maintenance, motion tracking, and multi-joint coordination. Especially in long-duration tasks, a single open-loop strategy struggles to handle cumulative errors and sudden disturbances. Existing methods mostly rely on pre-programmed trajectories or reinforcement learning, but face bottlenecks such as high data collection costs, poor generalization, and difficulty in transferring to real hardware. The core motivation of CLONE is to build a closed-loop data system that transforms human operation data collected via teleoperation into reusable control strategies for robots, while reducing reliance on perfect demonstration data through closed-loop error correction mechanisms.
+
+**Method or Model Framework**: CLONE adopts a hierarchical architecture that decomposes long-duration tasks into several routable skills or expert policies. At the low level, human operation signals and robot state data are collected via teleoperation/exoskeleton devices, forming a training set containing whole-body trajectories and low-level controller targets. At the middle level, a behavioral foundation model encodes and generalizes skills, enabling the robot to learn robust motion patterns from limited demonstrations. At the high level, modules dynamically select and combine low-level skills based on task context and real-time feedback, achieving task-level planning and execution.
+
+**Key Technical Innovations**: The core innovation of CLONE lies in its closed-loop data flow design. Traditional teleoperation typically only records human operation commands, whereas CLONE synchronously collects robot states (e.g., joint angles, torques, IMU data) and human operations, forming complete "state-action-feedback" triplets. This design allows the system to detect state deviations during execution and correct trajectories through human intervention or automatic error correction mechanisms, thereby generating high-quality, reusable training data. Additionally, the hierarchical skill routing mechanism enables the system to decompose complex tasks into composable atomic skills (e.g., walking, grasping, balance recovery), significantly enhancing the modularity and transferability of policies.
+
+**Experiments/Validation and Application Value**: CLONE has been validated on tasks such as whole-body control, motion tracking, and balance maintenance. Experiments show that the framework effectively handles cumulative errors and disturbances in long-duration tasks. Through closed-loop error correction, the system achieves higher success rates and robustness in complex terrain walking and object manipulation scenarios. Its application value is twofold: first, it provides a low-cost, high-data-quality collection paradigm for data-driven humanoid robot control; second, through the construction of a hierarchical skill library, it lays the foundation for developing future general-purpose humanoid robot operating systems. This work lies at the intersection of design engineering and AI models, at the mid-level intelligence layer, emphasizing closed-loop optimization from data to control strategies.
+
+## 개요
+
+휴머노이드 로봇의 장시간 복잡 작업에서의 자율 조작은 데이터 희소성과 일반화 능력 부족이라는 핵심 과제에 직면해 있습니다. 기존 원격 조작 방식은 대부분 개루프 제어에 의존하여 실행 중 상태 드리프트와 환경 교란에 대응하기 어렵습니다. CLONE은 폐루프 전신 원격 조작 프레임워크를 제안하여, 원격 조작/외골격 수집 데이터와 로봇 실시간 상태를 융합함으로써 훈련 가능하고 재사용 가능한 전신 궤적 및 동작 시퀀스를 구축합니다. 핵심 혁신은 장시간 작업을 라우팅 가능한 계층적 스킬 또는 전문가 전략으로 분해하고, 상위 모듈이 실행 중 동적으로 선택 및 조합하여 데이터 폐루프를 보장하면서 효율적인 전신 제어와 운동 추적을 실현하는 데 있습니다.
+
+## 핵심 내용
+
+**연구 배경 및 문제**: 휴머노이드 로봇의 전신 제어는 균형 유지, 운동 추적, 다관절 협조 등 복잡한 결합 문제를 포함하며, 특히 장시간 작업에서 단일 개루프 전략은 누적 오차와 돌발 교란에 대응하기 어렵습니다. 기존 방법은 대부분 사전 프로그래밍된 궤적이나 강화 학습에 의존하지만, 데이터 수집 비용이 높고 일반화 성능이 낮으며 실제 하드웨어로의 이전이 어려운 한계에 직면합니다. CLONE의 핵심 동기는 폐루프 데이터 시스템을 구축하여 원격 조작으로 수집된 인간 조작 데이터를 로봇이 재사용 가능한 제어 전략으로 변환하고, 폐루프 오류 수정 메커니즘을 통해 완벽한 시연 데이터에 대한 의존도를 낮추는 것입니다.
+
+**방법 또는 모델 프레임워크**: CLONE은 계층적 아키텍처를 채택하여 장시간 작업을 여러 라우팅 가능한 스킬 또는 전문가 전략으로 분해합니다. 하위 계층은 원격 조작/외골격 장치를 통해 인간 조작 신호와 로봇 상태 데이터를 수집하여 전신 궤적과 하위 제어기 목표를 포함한 훈련 세트를 형성합니다. 중간 계층은 행동 기반 모델(behavioral foundation model)을 사용하여 스킬을 인코딩하고 일반화함으로써 로봇이 제한된 시연에서 강건한 운동 패턴을 학습할 수 있게 합니다. 상위 계층은 작업 컨텍스트와 실시간 피드백에 따라 하위 스킬을 동적으로 선택 및 조합하여 작업 수준의 계획과 실행을 구현합니다.
+
+**핵심 기술 혁신**: CLONE의 핵심 혁신은 폐루프 데이터 흐름 설계에 있습니다. 기존 원격 조작은 일반적으로 인간 조작 명령만 기록하는 반면, CLONE은 로봇 상태(관절 각도, 토크, IMU 데이터 등)와 인간 조작을 동시에 수집하여 완전한 '상태-동작-피드백' 삼중항을 형성합니다. 이 설계는 시스템이 실행 중 상태 편차를 감지하고, 인간 개입 또는 자동 오류 수정 메커니즘을 통해 궤적을 보정함으로써 고품질의 재사용 가능한 훈련 데이터를 생성할 수 있게 합니다. 또한 계층적 스킬 라우팅 메커니즘은 시스템이 복잡한 작업을 조합 가능한 원자 스킬(예: 걷기, 잡기, 균형 회복)로 분해하여 전략의 모듈성과 이전 가능성을 크게 향상시킵니다.
+
+**실험/검증 및 응용 가치**: CLONE은 전신 제어, 운동 추적, 균형 유지 등의 작업에서 검증되었으며, 실험 결과 이 프레임워크가 장시간 작업에서의 누적 오차와 교란에 효과적으로 대응할 수 있음을 보여줍니다. 폐루프 오류 수정을 통해 시스템은 복잡한 지형 보행 및 물체 조작 시나리오에서 더 높은 성공률과 강건성을 달성했습니다. 응용 가치는 두 가지 측면에서 나타납니다. 첫째, 데이터 기반 휴머노이드 로봇 제어를 위한 저비용 고품질 데이터 수집 패러다임을 제공합니다. 둘째, 계층적 스킬 라이브러리 구축을 통해 미래 범용 휴머노이드 로봇 운영 체제 개발의 기반을 마련합니다. 이 연구는 설계 공학과 인공지능 모델의 교차 영역에 속하며, 중간 지능 계층에 위치하여 데이터에서 제어 전략으로의 폐루프 최적화를 강조합니다.

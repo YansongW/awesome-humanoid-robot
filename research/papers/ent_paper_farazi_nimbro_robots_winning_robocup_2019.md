@@ -64,3 +64,14 @@ Over the past few years, the Humanoid League rules have changed towards more rea
 ## 参考
 - http://arxiv.org/abs/1909.02385v1
 
+## Overview
+Over the past few years, the Humanoid League rules have changed towards more realistic and challenging game environments, which encourage teams to advance their robot soccer performances. In this paper, we present the software and hardware designs that led our team NimbRo to win the competitions in the AdultSize league -- including the soccer tournament, the drop-in games, and the technical challenges at RoboCup 2018 in Montreal. Altogether, this resulted in NimbRo winning the Best Humanoid Award. In particular, we describe our deep-learning approaches for visual perception and our new fully 3D printed robot NimbRo-OP2X.
+
+## Content
+Over the past few years, the Humanoid League rules have changed towards more realistic and challenging game environments, which encourage teams to advance their robot soccer performances. In this paper, we present the software and hardware designs that led our team NimbRo to win the competitions in the AdultSize league -- including the soccer tournament, the drop-in games, and the technical challenges at RoboCup 2018 in Montreal. Altogether, this resulted in NimbRo winning the Best Humanoid Award. In particular, we describe our deep-learning approaches for visual perception and our new fully 3D printed robot NimbRo-OP2X.
+
+## 개요
+지난 몇 년간 휴머노이드 리그 규칙은 더욱 현실적이고 도전적인 게임 환경으로 변화해 왔으며, 이는 팀들이 로봇 축구 성능을 향상시키도록 장려하고 있습니다. 본 논문에서는 저희 팀 NimbRo가 몬트리올에서 열린 RoboCup 2018의 AdultSize 리그에서 축구 토너먼트, 드롭인 게임, 기술 챌린지를 포함한 대회에서 우승할 수 있도록 한 소프트웨어 및 하드웨어 설계를 소개합니다. 이 모든 결과로 NimbRo는 최우수 휴머노이드 상을 수상했습니다. 특히, 시각 인식을 위한 딥러닝 접근 방식과 새로운 완전 3D 프린팅 로봇 NimbRo-OP2X에 대해 설명합니다.
+
+## 핵심 내용
+지난 몇 년간 휴머노이드 리그 규칙은 더욱 현실적이고 도전적인 게임 환경으로 변화해 왔으며, 이는 팀들이 로봇 축구 성능을 향상시키도록 장려하고 있습니다. 본 논문에서는 저희 팀 NimbRo가 몬트리올에서 열린 RoboCup 2018의 AdultSize 리그에서 축구 토너먼트, 드롭인 게임, 기술 챌린지를 포함한 대회에서 우승할 수 있도록 한 소프트웨어 및 하드웨어 설계를 소개합니다. 이 모든 결과로 NimbRo는 최우수 휴머노이드 상을 수상했습니다. 특히, 시각 인식을 위한 딥러닝 접근 방식과 새로운 완전 3D 프린팅 로봇 NimbRo-OP2X에 대해 설명합니다.

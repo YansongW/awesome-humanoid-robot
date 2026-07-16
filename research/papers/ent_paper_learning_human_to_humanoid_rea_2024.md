@@ -66,3 +66,39 @@ theoretical_depth:
 
 ## 参考
 - 学习人对人的实时全身远程操作 project page (https://human2humanoid.com)
+
+## Overview
+
+This study focuses on the data closed-loop problem in full-body teleoperation of humanoid robots, proposing a method that integrates inverse kinematics (IK) and motion retargeting into a unified pipeline for training and deployment. Its core contribution lies in constructing trainable and reusable full-body trajectories and low-level controller targets by leveraging camera images, multi-view observations, proprioceptive states, and human motion capture data, thereby effectively bridging the gap between high-level task intentions and low-level motion execution. This work provides a new technical pathway for enhancing real-time full-body control of humanoid robots in complex dynamic environments.
+
+## Content
+
+(a) Research Background and Problem  
+Humanoid robots, due to their human-like morphology, have inherent advantages in complex environments, but full-body coordinated control remains a core challenge in robotics. Existing methods typically separate high-level task planning from low-level motion control, leading to significant information gaps in the transformation from human demonstrations to robot execution. Particularly in real-time teleoperation scenarios, how to efficiently and accurately map human operators' motion intentions to the robot's full-body joint space while maintaining dynamic balance and motion tracking accuracy remains an unresolved issue. This study addresses this key bottleneck in the data closed-loop—namely, the disconnection between IK and motion retargeting and the training-deployment pipeline—by proposing a systematic solution.
+
+(b) Method or Model Framework  
+This work constructs an end-to-end full-body teleoperation framework, with the core idea of integrating IK and motion retargeting as integral components of the training and deployment process. Specifically, the system first collects human operator motion data and robot state information, including joint sequences and full-body trajectories, via multi-view cameras and proprioceptive sensors. Then, it uses IK algorithms to convert high-level task goals (e.g., end-effector positions) into joint space commands, while adapting human motion patterns to the robot's morphological constraints through motion retargeting. This process is not independent of model training but is synchronized with the optimization of a behavioral foundation model, ensuring coherence between high-level semantics and low-level control.
+
+(c) Key Technical Innovations  
+The innovations of this study are mainly reflected in two aspects: First, it proposes a data closed-loop architecture that embeds IK and motion retargeting into a unified training and deployment pipeline, eliminating the error accumulation and latency issues caused by module separation in traditional methods. Second, by integrating human video/motion capture trajectories with robot proprioceptive states, the system can automatically generate reusable full-body action sequences, which directly serve as target inputs for low-level controllers (e.g., balance and motion tracking modules). This design allows the model to maintain full-body coordination in real-time teleoperation while adapting to kinematic differences across various robot platforms, significantly enhancing generalization capabilities.
+
+(d) Experiments/Validation and Application Value  
+Although the abstract does not provide specific experimental data, based on the domain tags (design engineering and artificial intelligence algorithms) and keywords (balance, motion tracking, full-body control), it can be inferred that this research was likely validated in simulation environments and on real humanoid robot platforms. Typical application scenarios include remote operations in hazardous environments, human-robot collaboration, and locomotion over complex terrain. By incorporating IK and motion retargeting into the training process, the system is expected to surpass traditional cascaded methods in terms of real-time performance, robustness, and motion naturalness, providing key technical support for transitioning humanoid robots from laboratories to practical applications.
+
+## 개요
+
+본 연구는 휴머노이드 로봇의 전신 원격 조작에서 데이터 폐루프 문제에 초점을 맞추며, 역기구학(IK)과 동작 리타겟팅을 훈련 및 배포의 통합 체인에 통합하는 방법을 제안합니다. 핵심 기여는 카메라 이미지, 다중 시점 관측, 본체 상태 및 인간 동작 캡처 데이터를 활용하여 훈련 가능하고 재사용 가능한 전신 궤적과 하위 수준 제어기 목표를 구축함으로써, 상위 수준 작업 의도와 하위 수준 운동 실행 간의 단절을 효과적으로 해소하는 데 있습니다. 이 연구는 복잡한 동적 환경에서 휴머노이드 로봇의 실시간 전신 제어 능력을 향상시키기 위한 새로운 기술적 경로를 제공합니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제  
+휴머노이드 로봇은 인간과 유사한 형태 덕분에 복잡한 환경에서 자연스러운 이점을 가지지만, 전신 협조 제어는 여전히 로봇 공학 분야의 핵심 과제입니다. 기존 방법은 일반적으로 상위 수준 작업 계획과 하위 수준 운동 제어를 분리하여, 인간 시연에서 로봇 실행으로의 변환 과정에서 상당한 정보 단절을 초래합니다. 특히 실시간 원격 조작 시나리오에서 인간 조작자의 운동 의도를 효율적이고 정확하게 로봇의 전신 관절 공간에 매핑하면서 동적 균형과 운동 추적 정밀도를 유지하는 방법은 여전히 완전히 해결되지 않은 문제입니다. 본 연구는 이러한 데이터 폐루프의 핵심 병목, 즉 IK와 동작 리타겟팅 단계와 훈련 및 배포 체인의 분리에 대한 체계적인 해결책을 제시합니다.
+
+(b) 방법 또는 모델 프레임워크  
+이 연구는 IK와 동작 리타겟팅을 훈련 및 배포 프로세스의 유기적 구성 요소로 통합하는 엔드투엔드 전신 원격 조작 프레임워크를 구축합니다. 구체적으로, 시스템은 먼저 다중 시점 카메라와 본체 센서를 통해 인간 조작자의 동작 데이터와 로봇 상태 정보(관절 시퀀스 및 전신 궤적 포함)를 수집합니다. 그런 다음 IK 알고리즘을 사용하여 상위 수준 작업 목표(예: 엔드 이펙터 위치)를 관절 공간 명령으로 변환하고, 동시에 동작 리타겟팅 기술을 통해 인간 동작 패턴을 로봇 형태학적 제약 조건에 적응시킵니다. 이 과정은 모델 훈련과 독립적이지 않으며, 행동 기반 모델(behavioral foundation model)의 최적화와 동시에 진행되어 상위 수준 의미와 하위 수준 제어의 일관성을 보장합니다.
+
+(c) 핵심 기술 혁신  
+본 연구의 혁신점은 주로 두 가지 측면에서 나타납니다. 첫째, IK와 동작 리타겟팅을 통합된 훈련 및 배포 체인에 내장하는 데이터 폐루프 아키텍처를 제안하여, 기존 방법에서 모듈 분리로 인한 오류 누적 및 지연 문제를 제거합니다. 둘째, 인간 비디오/동작 캡처 궤적과 로봇 본체 상태를 통합함으로써, 시스템은 자동으로 재사용 가능한 전신 동작 시퀀스를 생성하고 이를 하위 수준 제어기(예: 균형 및 운동 추적 모듈)의 목표 입력으로 직접 사용할 수 있습니다. 이러한 설계는 모델이 실시간 원격 조작에서 전신 협조성을 유지하면서도 다양한 로봇 플랫폼의 운동학적 차이에 적응할 수 있게 하여, 일반화 능력을 크게 향상시킵니다.
+
+(d) 실험/검증 및 응용 가치  
+초록이 구체적인 실험 데이터를 제공하지는 않지만, 분야 태그(설계 공학 및 인공지능 알고리즘)와 키워드(균형, 운동 추적, 전신 제어)를 통해 이 연구가 시뮬레이션 환경과 실제 휴머노이드 로봇 플랫폼에서 검증되었을 가능성이 높습니다. 대표적인 응용 시나리오로는 위험 환경 원격 작업, 인간-로봇 협업 및 복잡한 지형 이동이 포함됩니다. IK와 동작 리타겟팅을 훈련 프로세스에 통합함으로써, 시스템은 실시간성, 견고성 및 동작 자연스러움에서 기존의 계단식 방법을 능가할 것으로 예상되며, 휴머노이드 로봇이 실험실에서 실제 응용으로 나아가는 데 중요한 기술적 지원을 제공합니다.

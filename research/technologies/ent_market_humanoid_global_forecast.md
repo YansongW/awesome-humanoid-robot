@@ -68,4 +68,54 @@ sources:
 ## 参考
 - Wiki extraction
 
+## Overview
+Forecast of market size, growth rate, regional adoption, and segmented demand for humanoid robots over the coming years.
 
+## Content
+### Definition and Positioning of the Global Humanoid Robot Market Forecast
+The global humanoid robot market forecast falls under the **market segmentation** category. Its domain includes applications and markets. The value chain level is validation and market layer. It forecasts market size, growth rate, regional adoption, and segmented demand for humanoid robots over the coming years. The English name is *Global Humanoid Robot Market Forecast*. The Korean name is *글로벌 휴로봇 시장 전망*.
+
+### Scenario Characteristics and Core Value of the Global Humanoid Robot Market Forecast
+The global humanoid robot market forecast represents a key direction for the potential deployment of humanoid robots. Its demand characteristics, value proposition, and business model are critical for assessing market prospects.
+In this scenario, the bipedal locomotion and bimanual manipulation capabilities of humanoid robots may offer unique efficiency or experience advantages.
+
+### Deployment Challenges and Development Trends
+Large-scale deployment of humanoid robots in this scenario still faces multiple challenges, including cost, reliability, safety, regulations, and user acceptance, requiring coordinated advancement in technology and business.
+As hardware costs decline and AI capabilities improve, the market penetration rate in this scenario is expected to gradually increase.
+
+### Key Success Factors
+Successful deployment requires comprehensive consideration of task suitability, human-robot collaboration, maintenance systems, data accumulation, and business model design, avoiding a sole focus on technological advancement while neglecting economic viability.
+
+### Related Tags
+- market
+- chapter_28
+- wiki_gap
+
+### Role in the Humanoid Robot System
+As one of the key market segments in the humanoid robot industry chain, the global humanoid robot market forecast plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, execution, energy, structure, and validation, collectively determining overall system performance. Related research and applications are continuously advancing to further improve its reliability, efficiency, and economic viability in real-world scenarios.
+
+## 개요
+휴머노이드 로봇의 향후 수년간 시장 규모, 성장률, 지역별 채택 및 세분화된 수요에 대한 예측.
+
+## 핵심 내용
+### 휴머노이드 로봇 글로벌 시장 예측의 정의와 위치
+휴머노이드 로봇 글로벌 시장 예측은 **시장 세분화** 유형에 속합니다. 관련 분야는 응용 및 시장입니다. 가치 사슬 계층은 검증 및 시장 계층입니다. 휴머노이드 로봇의 향후 수년간 시장 규모, 성장률, 지역별 채택 및 세분화된 수요에 대한 예측입니다. 영어 명칭은 *Global Humanoid Robot Market Forecast*입니다. 한국어 명칭은 *글로벌 휴머노이드 로봇 시장 전망*입니다.
+
+### 휴머노이드 로봇 글로벌 시장 예측의 시나리오 특성과 핵심 가치
+휴머노이드 로봇 글로벌 시장 예측은 휴머노이드 로봇의 잠재적 실현 가능한 중요한 방향을 대표하며, 그 수요 특성, 가치 제안 및 비즈니스 모델은 시장 전망을 평가하는 핵심 요소입니다.
+이 시나리오에서 휴머노이드 로봇의 이족 보행 및 양손 조작 능력은 독특한 효율성 또는 경험적 이점을 제공할 수 있습니다.
+
+### 실현 과제와 발전 추세
+이 시나리오에서 휴머노이드 로봇을 대규모로 배치하는 것은 비용, 신뢰성, 안전성, 규제 및 사용자 수용도 등 여러 과제에 직면하며, 기술과 비즈니스의 협력적 추진이 필요합니다.
+하드웨어 비용 하락과 인공지능 능력 향상에 따라, 이 시나리오의 시장 침투율은 점차 증가할 것으로 예상됩니다.
+
+### 핵심 성공 요인
+성공적인 실현을 위해서는 작업 적합성, 인간-로봇 협업, 유지보수 체계, 데이터 축적 및 비즈니스 모델 설계를 종합적으로 고려해야 하며, 기술의 첨단성만 추구하고 경제성을 간과해서는 안 됩니다.
+
+### 관련 태그
+- market
+- chapter_28
+- wiki_gap
+
+### 휴머노이드 로봇 시스템에서의 역할
+휴머노이드 로봇 산업 체인에서 중요한 시장 세분화 중 하나로서, 휴머노이드 로봇 글로벌 시장 예측은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 지속적으로 추진되어 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키고 있습니다.

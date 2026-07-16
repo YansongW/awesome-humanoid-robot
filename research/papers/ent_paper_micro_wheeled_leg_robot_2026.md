@@ -59,3 +59,30 @@ sources:
 
 - Micro-Wheeled_leg-Robot project page (https://github.com/MuShibo/Micro-Wheeled_leg-Robot)
 
+## Overview
+
+This document, "Micro-Wheeled_leg_Robot," focuses on the hardware design of a miniature wheel-leg hybrid system for humanoid robots. It aims to address key issues in traditional humanoid robots, such as slow movement speed, high energy consumption, and limited terrain adaptability, by combining the efficiency of wheeled locomotion with the obstacle-crossing capability of legged structures. The research proposes an innovative integrated micro wheel-leg mechanical architecture, offering a new hardware implementation path for autonomous movement of humanoid robots in confined spaces and complex ground environments.
+
+## Content
+
+(a) Research Background and Problem: Current humanoid robots predominantly use either pure legged or pure wheeled motion solutions. While the former offers excellent obstacle-crossing and terrain adaptability, it suffers from slow movement speed, complex control, and low energy efficiency. The latter provides high speed and low energy consumption on flat surfaces but struggles with unstructured terrains like stairs and gravel. Miniaturized scenarios (e.g., confined spaces in home service or disaster rescue) impose stricter requirements on robot size, weight, and motion flexibility, necessitating a novel hardware design that balances efficiency and traversability.
+
+(b) Method or Model Framework: This study proposes a hardware architecture for a micro wheel-leg hybrid robot (Micro-Wheeled_leg_Robot). The design integrates miniature drive wheels at the ends of the legs, enabling the robot to glide quickly on flat ground in wheeled mode and smoothly transition between wheeled and gait modes through active adjustment of leg joints. The overall structure uses lightweight materials and compact transmission mechanisms to meet miniaturization needs, with reserved interfaces for sensors and controllers to facilitate subsequent deployment of motion control algorithms.
+
+(c) Key Technological Innovation: The core innovation of this work lies in the design concept of wheel-leg integrated joints, where drive wheels are directly embedded into the leg ends rather than using separate wheel modules, thereby reducing additional degrees of freedom and structural redundancy. Additionally, by optimizing leg kinematic parameters and hub motor layout, power transmission and posture stability are achieved in extremely small spaces, providing a feasible hardware foundation for humanoid robot movement in micro-environments such as desktops and pipes.
+
+(d) Experiment/Validation or Application Value: Although the document does not provide specific experimental data, based on its hardware design orientation and the 2026 research timeline, it is inferred that the feasibility of wheel-leg switching may have been validated through simulations or prototype models. Its potential application value lies in fields such as home service robots, micro-exploration robots, and educational research platforms, particularly in scenarios requiring both movement speed and terrain adaptability. This design approach also offers a reference paradigm for future research on modularization and miniaturization of humanoid robot hardware.
+
+## 개요
+
+본 문헌《Micro-Wheeled_leg-Robot》는 휴머노이드 로봇을 위한 초소형 바퀴-다리 복합 하드웨어 설계에 초점을 맞추며, 바퀴 이동의 효율성과 다리 구조의 장애물 극복 능력을 융합하여 기존 휴머노이드 로봇의 느린 이동 속도, 높은 에너지 소비 및 제한된 지형 적응 능력과 같은 핵심 문제를 해결하는 것을 목표로 합니다. 본 연구는 혁신적인 초소형 바퀴-다리 일체형 기계 아키텍처를 제안하여, 제한된 공간과 복잡한 지면 환경에서 휴머노이드 로봇의 자율 이동을 위한 새로운 하드웨어 구현 경로를 제공합니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제점: 현재 휴머노이드 로봇은 주로 순수 다리형 또는 순수 바퀴형 운동 방식을 채택합니다. 전자는 우수한 장애물 극복 및 지형 적응 능력을 갖추지만 이동 속도가 느리고 제어가 복잡하며 에너지 효율이 낮습니다. 후자는 평탄한 노면에서 고속 및 저에너지 소비의 장점을 가지나 계단, 자갈 등 비구조화된 지형을 대처하기 어렵습니다. 초소형 시나리오(예: 가사 서비스, 재난 구조 중 좁은 공간)는 로봇의 부피, 무게 및 운동 유연성에 대해 더 엄격한 요구를 제기하며, 효율성과 통과성을 모두 고려한 새로운 하드웨어 설계 방안이 시급히 필요합니다.
+
+(b) 방법 또는 모델 프레임워크: 본 연구는 초소형 바퀴-다리 복합 로봇(Micro-Wheeled_leg-Robot)의 하드웨어 아키텍처를 제안합니다. 이 설계는 다리 말단에 초소형 구동 바퀴를 통합하여 로봇이 바퀴 모드로 평탄한 지면에서 빠르게 활주할 수 있을 뿐만 아니라, 다리 관절의 능동적 조정을 통해 바퀴 모드와 보행 모드 간의 원활한 전환을 가능하게 합니다. 전체 구조는 경량 소재와 컴팩트한 동력 전달 기구를 채택하여 초소형 요구에 적응하며, 센서 및 컨트롤러 인터페이스를预留하여 후속 운동 제어 알고리즘의 배치를 용이하게 합니다.
+
+(c) 핵심 기술 혁신: 본 작업의 핵심 혁신은 바퀴-다리 일체형 관절의 설계 개념에 있으며, 독립적인 바퀴 모듈 대신 구동 바퀴를 다리 말단에 직접 내장하여 추가 자유도와 구조적 중복을 줄였습니다. 또한, 다리 운동학 파라미터와 허브 모터 배치를 최적화하여 극소 공간 내에서의 동력 전달 및 자세 안정성을 실현하였으며, 휴머노이드 로봇이 책상, 파이프 등 초소형 환경에서 이동할 수 있는 실현 가능한 하드웨어 기반을 제공합니다.
+
+(d) 실험/검증 또는 응용 가치: 문헌이 구체적인 실험 데이터를 제공하지는 않았지만, 하드웨어 설계 방향과 2026년 연구 시점으로 미루어 볼 때, 본 작업은 시뮬레이션이나 프로토타입을 통해 바퀴-다리 전환의 실현 가능성을 이미 검증했을 가능성이 있습니다. 잠재적 응용 가치는 가사 서비스 로봇, 초소형 탐사 로봇 및 교육 연구 플랫폼 등 분야에서 나타나며, 특히 이동 속도와 지형 적응성을 동시에 고려해야 하는 시나리오에 적합합니다. 이 설계 사고는 후속 휴머노이드 로봇 하드웨어의 모듈화 및 초소형화 연구에 참조 패러다임을 제공합니다.

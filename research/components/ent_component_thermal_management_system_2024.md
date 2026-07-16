@@ -77,4 +77,62 @@ sources:
 ## 参考
 - [Thermal Management System](https://en.wikipedia.org/wiki/Thermal_management_in_electronics)
 
+## Overview
+Heatsinks, heat pipes, fans, and liquid cooling that keep computing, power electronics, and actuators within safe operating temperature ranges.
 
+## Content
+### Definition and Positioning of Thermal Management Systems
+Thermal management systems fall under the **component** type. Their domain includes: components, design engineering. Value chain level: midstream, upstream. Heatsinks, heat pipes, fans, and liquid cooling that keep computing, power electronics, and actuators within safe operating temperature ranges. The English name is *Thermal Management System*. The Korean name is *Thermal Management System*.
+
+### Working Principle and Technical Architecture of Thermal Management Systems
+The core mechanism of a thermal management system determines its performance boundaries within a humanoid robot system. Understanding its internal structure, signal flow, and control interfaces aids in system integration and optimization.
+During selection and integration, attention must be paid to compatibility with controllers, communication buses, power systems, and mechanical structures.
+
+### Key Parameters and Selection Criteria
+In engineering practice, selecting a thermal management system requires comprehensive consideration of performance indicators, reliability, cost, supply chain maturity, and compatibility with the overall system.
+Key parameters typically include precision, bandwidth, torque, power consumption, weight, interface protocols, and environmental adaptability.
+For different application scenarios, trade-offs between performance and cost may be necessary, with appropriate redundancy and safety margins reserved.
+
+### Typical Applications and Development Trends
+Thermal management systems have been widely used in prototype validation, academic research, and early commercial products of humanoid robots.
+In the future, as the industry chain matures, their integration level, intelligence, and cost-effectiveness are expected to continue improving.
+
+### Related Tags
+- actuator
+- component
+- compute
+- cooling
+- thermal
+
+### Role in Humanoid Robot Systems
+As one of the key components in the humanoid robot industry chain, the thermal management system plays a significant role in system design, performance optimization, and industrial application. It couples with multiple subsystems such as perception, decision-making, actuation, energy, structure, and validation, collectively determining overall machine performance. Related research and applications are ongoing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.
+
+## 개요
+컴퓨팅, 전력 전자 및 액추에이터를 안전한 작동 온도 범위 내로 유지하는 방열판, 히트파이프, 팬 및 액체 냉각.
+
+## 핵심 내용
+### 열 관리 시스템의 정의와 위치
+열 관리 시스템은 **부품** 유형에 속합니다. 해당 분야는 부품, 설계 엔지니어링을 포함합니다. 가치 사슬 단계: 중류, 업스트림. 컴퓨팅, 전력 전자 및 액추에이터를 안전한 작동 온도 범위 내로 유지하는 방열판, 히트파이프, 팬 및 액체 냉각. 영문 명칭은 *Thermal Management System*입니다. 한글 명칭은 *Thermal Management System*입니다.
+
+### 열 관리 시스템의 작동 원리와 기술 아키텍처
+열 관리 시스템의 핵심 메커니즘은 휴머노이드 로봇 시스템에서의 성능 경계를 결정합니다. 내부 구조, 신호 흐름 및 제어 인터페이스를 이해하면 시스템 통합 및 최적화에 도움이 됩니다.
+선정 및 통합 과정에서는 컨트롤러, 통신 버스, 전원 시스템 및 기계 구조와의 호환성을 고려해야 합니다.
+
+### 주요 파라미터와 선정 포인트
+공학 실무에서 열 관리 시스템을 선택할 때는 성능 지표, 신뢰성, 비용, 공급망 성숙도 및 전체 시스템과의 호환성을 종합적으로 고려해야 합니다.
+주요 파라미터에는 일반적으로 정밀도, 대역폭, 토크, 소비 전력, 무게, 인터페이스 프로토콜 및 환경 적응성 등이 포함됩니다.
+다양한 응용 시나리오에 따라 성능과 비용 간의 균형을 맞추고 적절한 여유와 안전 마진을 확보해야 할 수 있습니다.
+
+### 대표적인 응용과 발전 동향
+열 관리 시스템은 휴머노이드 로봇의 프로토타입 검증, 학술 연구 및 초기 상용 제품에 이미 널리 적용되고 있습니다.
+향후 산업 체인이 성숙해짐에 따라 집적도, 지능화 수준 및 비용 효율성이 지속적으로 향상될 것으로 기대됩니다.
+
+### 관련 태그
+- actuator
+- component
+- compute
+- cooling
+- thermal
+
+### 휴머노이드 로봇 시스템에서의 역할
+휴머노이드 로봇 산업 체인의 핵심 부품 중 하나로서 열 관리 시스템은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.

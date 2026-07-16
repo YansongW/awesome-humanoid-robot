@@ -68,4 +68,54 @@ sources:
 ## 参考
 - Wiki extraction
 
+## Overview
+A software subsystem that transforms perception results and task objectives into planning, strategies, and behavioral decisions.
 
+## Content
+### Definition and Positioning of the Decision Stack
+The decision stack belongs to the **concept** type. Its domains include: software middleware, AI models and algorithms. Value chain level: intelligence layer. A software subsystem that converts perception results and task objectives into planning, strategies, and behavioral decisions. Its English name is *Decision Stack*. Its Korean name is *의사결정 스택*.
+
+### Key Dimensions of the Decision Stack
+Understanding the decision stack requires exploration from multiple dimensions, including definition, boundary conditions, related entities, and typical application scenarios, to form a systematic cognition.
+This entity serves as a bridge connecting foundational theory and engineering practice in the humanoid robot knowledge graph.
+
+### Practical Significance
+In the context of humanoid robot industrialization, the decision stack holds reference value for technical research, product development, investment decisions, and ecosystem construction.
+Accurately grasping its connotation and extension helps avoid conceptual confusion and promotes interdisciplinary collaboration.
+
+### Research and Development Directions
+As humanoid robot technology continues to evolve, the theory and practice related to the decision stack will also be updated, requiring ongoing tracking and review.
+
+### Related Tags
+- concept
+- chapter_24
+- wiki_gap
+
+### Role in the Humanoid Robot System
+As one of the key concepts in the humanoid robot industry chain, the decision stack plays an important role in system design, performance optimization, and industrial application. It couples with multiple subsystems such as perception, decision-making, execution, energy, structure, and verification, collectively determining overall machine performance. Related research and applications are continuously advancing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.
+
+## 개요
+인식 결과와 작업 목표를 계획, 전략 및 행동 결정으로 변환하는 소프트웨어 서브시스템.
+
+## 핵심 내용
+### 의사결정 스택의 정의와 위치
+의사결정 스택은 **개념** 유형에 속합니다. 관련 분야는 소프트웨어 미들웨어, AI 모델 및 알고리즘을 포함합니다. 가치 사슬 계층: 지능 계층. 인식 결과와 작업 목표를 계획, 전략 및 행동 결정으로 변환하는 소프트웨어 서브시스템입니다. 영문 명칭은 *Decision Stack*입니다. 한글 명칭은 *의사결정 스택*입니다.
+
+### 의사결정 스택의 핵심 차원
+의사결정 스택을 이해하려면 정의, 경계 조건, 관련 개체 및 대표적인 응용 시나리오 등 여러 차원에서 접근하여 체계적인 인식을 형성해야 합니다.
+이 개체는 휴머노이드 로봇 지식 그래프에서 기초 이론과 공학 실무를 연결하는 다리 역할을 합니다.
+
+### 실무적 의의
+휴머노이드 로봇 산업화의 맥락에서 의사결정 스택은 기술 연구, 제품 개발, 투자 결정 및 생태계 구축에 참고 가치를 제공합니다.
+그 내포와 외연을 정확히 파악하면 개념 혼동을 방지하고 학제 간 협력을 촉진하는 데 도움이 됩니다.
+
+### 연구 및 발전 방향
+휴머노이드 로봇 기술이 지속적으로 발전함에 따라 의사결정 스택의 관련 이론과 실무도 계속 업데이트되므로, 추적 및 검토를 유지해야 합니다.
+
+### 관련 태그
+- concept
+- chapter_24
+- wiki_gap
+
+### 휴머노이드 로봇 시스템에서의 역할
+휴머노이드 로봇 산업 체인의 핵심 개념 중 하나로서 의사결정 스택은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 결정, 실행, 에너지, 구조 및 검증 등 여러 서브시스템과 상호 결합되어 전체 기계 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.

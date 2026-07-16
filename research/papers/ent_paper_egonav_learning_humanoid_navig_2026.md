@@ -60,3 +60,31 @@ sources:
 ## 参考
 
 - EgoNav: Learning Humanoid Navigation from Human Data ()
+
+## Overview
+
+This paper proposes a humanoid robot navigation method called EgoNav, aiming to address the core issue that traditional navigation strategies rely heavily on large amounts of robot-specific data and struggle to generalize across different morphologies. The main contribution of this research is that, using only 5 hours of human walking data, it learns an embodiment-agnostic diffusion navigation prior and achieves zero-shot transfer to a Unitree G1 real robot, completing long-duration autonomous walking tasks. By abstracting human walking experience into navigation knowledge independent of specific robot configurations, this method significantly reduces the data acquisition cost and deployment threshold for humanoid robot navigation systems.
+
+## Content
+
+(a) Research Background and Problem: Autonomous navigation for humanoid robots has long faced two major challenges: first, the high cost of collecting robot-specific data, and the difficulty of reusing strategies across different robot models due to differences in kinematic parameters; second, traditional navigation methods often rely on precise environmental maps or dense sensor inputs, resulting in insufficient robustness in dynamic scenarios. Existing work mostly focuses on reinforcement learning-based end-to-end control, but the training process requires extensive robot interaction data, and generalization to new morphologies typically necessitates retraining. Therefore, leveraging rich human walking experience to construct a navigation prior decoupled from specific robot configurations becomes key to breaking through the data bottleneck.
+
+(b) Method or Model Framework: The core framework of EgoNav consists of three parts: first, first-person perspective data (totaling 5 hours) is collected via a head-mounted camera during human walking, recording natural navigation behaviors such as gait cycles, head orientation, and obstacle avoidance trajectories; second, a diffusion model-based navigation prior learning module is designed, which encodes human walking sequences into trajectory distributions in a latent space and generates general navigation instructions through a denoising process; finally, during deployment, this prior is directly mapped to the motion control interface of the Unitree G1 robot via a lightweight adaptation layer, requiring no fine-tuning.
+
+(c) Key Technical Innovations: The innovation of this research lies primarily in the "embodiment-agnostic" design. Unlike previous methods that use human data as auxiliary supervision signals, EgoNav learns the underlying probability distribution of navigation decisions through the diffusion model, rather than mappings of specific joint angles. This endows the learned prior with inherent cross-morphology transferability—whether the robot is bipedal, wheeled, or quadrupedal, as long as its sensor layout has a certain correspondence with the human perspective, the prior can be directly invoked. Additionally, the 5-hour data volume is far lower than the hundreds of hours of robot data required by similar methods, demonstrating extremely high data efficiency.
+
+(d) Experiments/Validation or Application Value: In real-robot experiments, EgoNav achieved zero-shot long-duration autonomous walking on the Unitree G1 robot, with test scenarios including corridors, open halls, and environments with dynamic obstacles. The robot generates real-time obstacle avoidance and path planning instructions based on first-person visual input, continuously walking for over 30 minutes without human intervention. This result validates the effectiveness of human walking priors in robot navigation and provides a feasible solution for low-cost, high-generalization deployment of humanoid robots. In the future, this method can be further extended to multi-robot collaboration or complex terrain navigation scenarios.
+
+## 개요
+
+본 논문에서는 EgoNav라는 휴머노이드 로봇 내비게이션 방법을 제안하며, 기존 내비게이션 전략이 대량의 로봇 본체 데이터에 의존하고 형태 간 일반화가 어려운 핵심 문제를 해결하는 것을 목표로 합니다. 연구의 주요 기여는 단 5시간의 인간 보행 데이터만으로 형태에 구애받지 않는 확산 내비게이션 사전 지식을 학습하고, Unitree G1 실제 로봇에 제로샷 전이하여 장시간 자율 보행 작업을 완료할 수 있다는 점입니다. 이 방법은 인간의 보행 경험을 로봇의 특정 구성과 무관한 내비게이션 지식으로 추상화함으로써, 휴머노이드 로봇 내비게이션 시스템의 데이터 획득 비용과 배포 장벽을 크게 낮춥니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 휴머노이드 로봇의 자율 내비게이션은 오랫동안 두 가지 주요 도전에 직면해 왔습니다. 첫째, 로봇 본체 데이터 수집 비용이 높고, 운동학적 매개변수 차이로 인해 다른 모델의 로봇 간 전략 재사용이 어렵습니다. 둘째, 전통적인 내비게이션 방법은 종종 정밀한 환경 지도나 고밀도 센서 입력에 의존하여 동적 환경에서 견고성이 부족합니다. 기존 연구는 주로 강화 학습 기반의 종단간 제어에 집중되어 있지만, 훈련 과정에 많은 로봇 상호작용 데이터가 필요하고 새로운 형태로 일반화할 때 재훈련이 필요한 경우가 많습니다. 따라서 인간의 풍부한 보행 경험을 활용하여 로봇의 특정 구성과 분리된 내비게이션 사전 지식을 구축하는 것이 데이터 병목 현상을 돌파하는 핵심이 됩니다.
+
+(b) 방법 또는 모델 프레임워크: EgoNav의 핵심 프레임워크는 세 부분으로 구성됩니다. 첫째, 머리 장착 카메라를 통해 인간 보행 시의 1인칭 시점 데이터(총 5시간)를 수집하여 보행 주기, 머리 방향, 장애물 회피 궤적 등 자연스러운 내비게이션 행동을 기록합니다. 둘째, 확산 모델 기반의 내비게이션 사전 학습 모듈을 설계하여 인간 보행 시퀀스를 잠재 공간의 궤적 분포로 인코딩하고, 노이즈 제거 과정을 통해 일반적인 내비게이션 명령을 생성합니다. 마지막으로, 배포 단계에서 이 사전 지식은 경량 어댑터 레이어를 통해 Unitree G1 로봇의 운동 제어 인터페이스에 직접 매핑되며, 미세 조정이 필요하지 않습니다.
+
+(c) 핵심 기술 혁신: 본 연구의 혁신점은 주로 "형태 무관성" 설계에 있습니다. 인간 데이터를 보조 감독 신호로 사용했던 기존 방법과 달리, EgoNav는 확산 모델을 통해 특정 관절 각도의 매핑이 아닌 내비게이션 결정의 하위 확률 분포를 학습합니다. 이로 인해 학습된 사전 지식은 본질적으로 형태 간 전이 능력을 갖추게 됩니다. 로봇이 이족, 바퀴형, 사족이든 센서 배치가 인간 시점과 일정한 대응 관계만 있으면 직접 호출할 수 있습니다. 또한 5시간의 데이터 양은 유사 방법에 필요한 수백 시간의 로봇 데이터보다 훨씬 적어 높은 데이터 효율성을 보여줍니다.
+
+(d) 실험/검증 또는 응용 가치: 실제 로봇 실험에서 EgoNav는 Unitree G1 로봇에서 제로샷 장시간 자율 보행을 구현했으며, 테스트 환경은 복도, 개방형 홀, 동적 장애물이 있는 환경을 포함합니다. 로봇은 1인칭 시각 입력을 기반으로 실시간 장애물 회피 및 경로 계획 명령을 생성하며, 인간의 개입 없이 30분 이상 연속 보행이 가능합니다. 이 결과는 인간 보행 사전 지식이 로봇 내비게이션에서 효과적임을 입증하며, 저비용, 높은 일반화 가능성을 가진 휴머노이드 로봇 배포를 위한 실현 가능한 솔루션을 제공합니다. 향후 이 방법은 다중 로봇 협업이나 복잡한 지형 내비게이션 시나리오로 확장될 수 있습니다.

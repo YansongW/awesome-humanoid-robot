@@ -68,3 +68,47 @@ theoretical_depth:
 ## 参考
 
 - 从语言到运动 project page (https://gentlefress.github.io/roboghost-proj/)
+
+## Overview
+
+This paper proposes a retargeting-free motion generation framework for humanoid robots, aiming to address the semantic gap and motion mapping challenges between natural language instructions and full-body action execution. The study redefines action generation as a multimodal conditional generation problem, directly sampling executable trajectories from complex motion distributions using diffusion models or flow matching methods, thereby bypassing the cumbersome motion retargeting steps in traditional pipelines. Its main contribution lies in constructing an end-to-end motion latent variable guidance mechanism that achieves seamless alignment between language, vision, and motion data, providing a new technical pathway for more natural and flexible human-robot interaction with humanoid robots.
+
+## Content
+
+### Research Background and Problem
+
+Current motion control for humanoid robots typically relies on precise motion retargeting processes, which extract motion parameters from human demonstration data and map them to the robot's configuration space. This process not only requires complex inverse kinematics solutions but is also prone to motion distortion or execution failure due to kinematic differences between humans and robots. Meanwhile, natural language instructions, as an intuitive form of human-robot interaction, exhibit a significant representation gap between their semantic abstraction and the robot's low-level motion commands. Existing methods often treat language understanding and motion generation separately, lacking a unified generative framework to directly model the mapping from high-level semantics to low-level joint commands. Therefore, achieving end-to-end generation from language to full-body motion without relying on explicit retargeting has become a critical problem to be solved in the field of humanoid robotics.
+
+### Method or Model Framework
+
+The framework proposed in this paper treats action generation as a conditional generation problem, with the core idea of using diffusion models or flow matching algorithms to sample from multimodal action distributions. Specifically, the system first extracts task-relevant semantic representations from various input modalities: for language instructions, semantic vectors are encoded via a pre-trained language model; for visual observations (e.g., camera images, multi-view videos), a visual encoder recovers scene geometry and target positions; for human motion data (e.g., videos or motion capture trajectories), motion latent variables are extracted as prior distributions. Subsequently, these multimodal conditions are fed into an action head based on an MM-DiT or Transformer architecture, which generates full-body joint trajectories or action sequences through a stepwise denoising diffusion process. The entire pipeline requires no explicit inverse kinematics solutions or motion retargeting, directly outputting executable robot commands via the conditional generation model.
+
+### Key Technical Innovations
+
+The core innovation of this study lies in the "motion latent variable guidance" mechanism, which fuses high-level semantic instructions with motion priors into a unified latent space representation, enabling the diffusion model to maintain motion naturalness while satisfying task constraints. Compared to traditional methods, this framework offers three significant advantages: First, the retargeting-free design eliminates error accumulation caused by kinematic differences between humans and robots, improving the physical feasibility of generated motions. Second, the multimodal condition fusion strategy allows the system to flexibly handle different combinations of language, vision, and motion data, enhancing generalization in complex environments. Third, the sampling approach based on diffusion or flow matching can generate diverse motion trajectories, avoiding the tendency of deterministic models to fall into local optima. Additionally, the introduction of the MM-DiT architecture effectively handles heterogeneity across different modalities, enabling efficient cross-modal feature interaction.
+
+### Experiments/Validation and Application Value
+
+Although the paper does not provide specific quantitative experimental results, its methodological design suggests broad application potential in scenarios such as language instruction following, scene interaction tasks, and motion imitation learning for humanoid robots. For example, in a home service scenario, a robot can directly generate a full-body motion sequence—including arm extension, torso adjustment, and gait switching—based on the language instruction "put the cup on the table," without requiring manually predefined motion templates. In industrial collaboration scenarios, the system can combine visual observations with language descriptions to generate obstacle-avoidance motions in real time that adapt to dynamic environments. The application value of this research lies in significantly reducing the complexity of programming humanoid robots, enabling non-expert users to drive robots to complete complex tasks through natural language, thereby promoting the deployment of humanoid robots in fields such as service, healthcare, and education.
+
+## 개요
+
+본 논문은 인간형 로봇을 위한 리타겟팅 없는 동작 생성 프레임워크를 제안하며, 자연어 명령어에서 전신 동작 실행까지의 의미적 격차와 동작 매핑 문제를 해결하는 것을 목표로 한다. 이 연구는 동작 생성을 다중 모달 조건 하의 생성 문제로 재정의하고, 확산 모델 또는 흐름 매칭 방법을 통해 복잡한 동작 분포에서 직접 실행 가능한 궤적을 샘플링함으로써 기존 프로세스의 번거로운 동작 리타겟팅 단계를 피한다. 주요 기여는 종단 간 동작 잠재 변수 유도 메커니즘을 구축하여 언어, 시각 및 동작 데이터 간의 원활한 정렬을 실현하고, 인간형 로봇이 더 자연스럽고 유연한 인간-로봇 상호작용을 구현할 수 있는 새로운 기술 경로를 제공하는 데 있다.
+
+## 핵심 내용
+
+### 연구 배경 및 문제
+
+현재 인간형 로봇의 동작 제어는 일반적으로 정밀한 동작 리타겟팅 과정, 즉 인간 시연 데이터에서 동작 매개변수를 추출하여 로봇의 구성 공간에 매핑하는 과정에 의존한다. 이 과정은 복잡한 역기구학 해석이 필요할 뿐만 아니라, 인간과 로봇의 운동학적 차이로 인해 동작 왜곡이나 실행 실패가 발생하기 쉽다. 동시에 자연어 명령어는 직관적인 인간-로봇 상호작용 방식으로서, 그 의미적 추상성과 로봇의 저수준 동작 명령어 사이에 현저한 표현 격차가 존재한다. 기존 방법은 종종 언어 이해와 동작 생성을 분리하여 처리하며, 고수준 의미에서 저수준 관절 명령어로의 매핑을 직접 모델링하는 통합된 생성 프레임워크가 부족하다. 따라서 명시적 리타겟팅 없이 언어에서 전신 동작으로의 종단 간 생성을 실현하는 것이 인간형 로봇 분야에서 해결해야 할 핵심 문제로 대두된다.
+
+### 방법 또는 모델 프레임워크
+
+본 논문이 제안하는 프레임워크는 동작 생성을 조건부 생성 문제로 간주하며, 핵심 아이디어는 확산 모델 또는 흐름 매칭 알고리즘을 사용하여 다중 모달 동작 분포에서 샘플링하는 것이다. 구체적으로, 시스템은 먼저 다양한 입력 모달에서 작업 관련 의미 표현을 추출한다. 언어 명령어의 경우 사전 학습된 언어 모델을 통해 의미 벡터로 인코딩하고, 시각 관측(예: 카메라 이미지, 다중 시점 비디오)의 경우 시각 인코더를 사용하여 장면 기하학과 목표 위치를 복원하며, 인간 동작 데이터(예: 비디오 또는 모션 캡처 궤적)의 경우 동작 잠재 변수를 사전 분포로 추출한다. 그런 다음 이러한 다중 모달 조건은 MM-DiT 또는 Transformer 아키텍처 기반의 동작 헤드에 주입되며, 이 동작 헤드는 확산 과정을 통해 점진적으로 노이즈를 제거하는 방식으로 전신 관절 궤적 또는 동작 시퀀스를 생성한다. 전체 프로세스는 명시적 역기구학 해석이나 동작 리타겟팅이 필요 없으며, 조건부 생성 모델을 통해 직접 로봇이 실행 가능한 명령어를 출력한다.
+
+### 핵심 기술 혁신
+
+본 연구의 핵심 혁신은 "동작 잠재 변수 유도" 메커니즘에 있으며, 이 메커니즘은 고수준 의미 명령어와 동작 사전을 통합된 잠재 공간 표현으로 융합하여 확산 모델이 동작의 자연스러움을 유지하면서 작업 제약을 충족할 수 있도록 한다. 기존 방법과 비교하여 이 프레임워크는 세 가지 뚜렷한 장점을 가진다. 첫째, 리타겟팅 없는 설계는 인간과 로봇의 운동학적 차이로 인한 오차 누적을 제거하여 생성된 동작의 물리적 실행 가능성을 향상시킨다. 둘째, 다중 모달 조건 융합 전략은 시스템이 언어, 시각 및 동작 데이터의 다양한 조합을 유연하게 처리할 수 있게 하여 복잡한 환경에서의 일반화 능력을 강화한다. 셋째, 확산 또는 흐름 매칭 기반의 샘플링 방식은 다양한 동작 궤적을 생성할 수 있어 결정론적 모델이 지역 최적해에 빠지기 쉬운 문제를 피한다. 또한 MM-DiT 아키텍처의 도입은 서로 다른 모달 간의 이질성을 효과적으로 처리하여 교차 모달 특징의 효율적인 상호작용을 실현한다.
+
+### 실험/검증 및 응용 가치
+
+논문이 구체적인 정량적 실험 결과를 제공하지는 않았지만, 방법론적 설계로부터 이 프레임워크가 인간형 로봇의 언어 명령어 따르기, 장면 상호작용 작업 및 동작 모방 학습 등의 시나리오에서 광범위한 응용 잠재력을 가질 것임을 추론할 수 있다. 예를 들어, 가정 서비스 시나리오에서 로봇은 "컵을 테이블 위에 놓아라"라는 언어 명령어에 따라 팔 뻗기, 몸통 조정 및 보행 전환을 포함한 전신 동작 시퀀스를 직접 생성할 수 있으며, 수동으로 동작 템플릿을 미리 설정할 필요가 없다. 산업 협업 시나리오에서 시스템은 시각 관측과 언어 설명을 결합하여 동적 환경에 적응하는 장애물 회피 동작을 실시간으로 생성할 수 있다. 이 연구의 응용 가치는 인간형 로봇 프로그래밍의 복잡성을 크게 줄여, 비전문 사용자도 자연어를 통해 로봇을 구동하여 복잡한 작업을 수행할 수 있게 함으로써, 인간형 로봇의 서비스, 의료, 교육 등 분야에서의 실용화를 촉진하는 데 있다.

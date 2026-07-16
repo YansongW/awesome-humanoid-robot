@@ -378,6 +378,474 @@ theoretical_depth:
 ## 参考
 - 《全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）》
 
+## Overview
+Motion Control algorithm development and validation is the 10th phase in the full humanoid robot product development workflow, expanded into several Level-3 sub-tasks in WBS V3.
+## Content
+This phase covers the complete engineering actions including input review, solution design, implementation/prototyping, validation closure, and documentation delivery. It is a key milestone to ensure downstream dependents receive qualified inputs.
 
+## Key Sub-tasks and Technical Content
+#### State Estimation and Perception Fusion
 
+##### IMU and Joint Encoder Fusion
+- **Methods / Tools**: EKF/UKF/Madgwick, Zero Velocity Update, Joint Kinematic Integration
+- **Design Rationale**: Real-time estimation of centroid position, velocity, and attitude; fundamental for balance control
+- **Key Constraints**: Sensor latency, covariance tuning, foot slippage
+- **Completion Criteria / Deliverables**: State estimator, measured trajectory error < target, standing drift controllable
+**Level-3 Sub-tasks:**
+- **P10.1.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "IMU and Joint Encoder Fusion"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P10.1.1.2 Solution/Method Design**: Develop implementation methods or candidate solutions for "IMU and Joint Encoder Fusion"; demonstrate using "EKF/UKF/Madgwick, Zero Velocity Update, Joint Kinematic Integration"; clarify technical roadmap and resource requirements.
+**Level-4 Key Actions:**
+1. Generate no less than 2 candidate solutions
+2. Establish an evaluation matrix with quantitative scoring
+3. Organize review and freeze the solution
+- **P10.1.1.3 Implementation/Prototype/Sample Fabrication**: Execute the implementation of "IMU and Joint Encoder Fusion" according to the design solution; create prototypes, samples, or complete key steps; record process data.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Execute simulation or prototype validation
+3. Record anomalies and deviations
+- **P10.1.1.4 Validation and Issue Closure**: Validate the output of "IMU and Joint Encoder Fusion"; check if completion criteria are met; record issues and track until closure.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P10.1.1.5 Documentation Output and Downstream Delivery**: Output final report/drawing/specification for "IMU and Joint Encoder Fusion"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
 
+##### Contact State Estimation
+- **Methods / Tools**: Foot force/torque, acceleration jerk detection, probabilistic contact detection
+- **Design Rationale**: Accurate foot-ground contact detection is critical for gait transitions and balance control
+- **Key Constraints**: Noise, sensor location, ground stiffness
+- **Completion Criteria / Deliverables**: Contact detection accuracy > 98%, false positive rate < 2%
+**Level-3 Sub-tasks:**
+- **P10.1.2.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Contact State Estimation"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P10.1.2.2 Algorithm/Control Solution Design**: Build mathematical models or algorithm frameworks based on "foot force/torque, acceleration jerk detection, probabilistic contact detection"; form candidate solutions; evaluate stability, real-time performance, and scalability; freeze the implementation path.
+**Level-4 Key Actions:**
+1. Generate no less than 2 candidate solutions
+2. Establish an evaluation matrix with quantitative scoring
+3. Organize review and freeze the solution
+- **P10.1.2.3 Algorithm Implementation and Simulation Validation**: Implement the "Contact State Estimation" algorithm in a simulation environment or with offline data; verify functional correctness, real-time performance, and robustness.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Execute simulation or prototype validation
+3. Record anomalies and deviations
+- **P10.1.2.4 Algorithm Tuning and Performance Validation**: Perform parameter tuning and boundary testing for the "Contact State Estimation" algorithm; verify performance under typical/extreme conditions meets indicators.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P10.1.2.5 Documentation Output and Downstream Delivery**: Output final report/drawing/specification for "Contact State Estimation"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+##### External Force/Disturbance Estimation
+- **Methods / Tools**: Momentum observer, generalized momentum, Kalman filter
+- **Design Rationale**: Estimate external push/pull forces for robust balance and fall prediction
+- **Key Constraints**: Model error, latency
+- **Completion Criteria / Deliverables**: External force estimation response < 100 ms, steady-state error < target
+**Level-3 Sub-tasks:**
+- **P10.1.3.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "External Force/Disturbance Estimation"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P10.1.3.2 Algorithm/Control Solution Design**: Build mathematical models or algorithm frameworks based on "momentum observer, generalized momentum, Kalman filter"; form candidate solutions; evaluate stability, real-time performance, and scalability; freeze the implementation path.
+**Level-4 Key Actions:**
+1. Generate no less than 2 candidate solutions
+2. Establish an evaluation matrix with quantitative scoring
+3. Organize review and freeze the solution
+- **P10.1.3.3 Algorithm Implementation and Simulation Validation**: Implement the "External Force/Disturbance Estimation" algorithm in a simulation environment or with offline data; verify functional correctness, real-time performance, and robustness.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Execute simulation or prototype validation
+3. Record anomalies and deviations
+- **P10.1.3.4 Algorithm Tuning and Performance Validation**: Perform parameter tuning and boundary testing for the "External Force/Disturbance Estimation" algorithm; verify performance under typical/extreme conditions meets indicators.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P10.1.3.5 Documentation Output and Downstream Delivery**: Output final report/drawing/specification for "External Force/Disturbance Estimation"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+#### Balance, Gait, and WBC
+
+##### Standing and Disturbance Rejection Balance Control
+- **Methods / Tools**: LQR, MPC, ZMP/Capture Point, angular momentum control
+- **Design Rationale**: Bipedal standing and disturbance rejection are core safety functions; MPC can handle constraints uniformly
+- **Key Constraints**: Real-time solving frequency ≥ 100 Hz, joint limits
+- **Completion Criteria / Deliverables**: Real-world video of standing disturbance rejection, recovery capability meets indicators
+**Level-3 Sub-tasks:**
+- **P10.2.1.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Standing and Disturbance Rejection Balance Control"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P10.2.1.2 Algorithm/Control Solution Design**: Build mathematical models or algorithm frameworks based on "LQR, MPC, ZMP/Capture Point, angular momentum control"; form candidate solutions; evaluate stability, real-time performance, and scalability; freeze the implementation path.
+**Level-4 Key Actions:**
+1. Generate no less than 2 candidate solutions
+2. Establish an evaluation matrix with quantitative scoring
+3. Organize review and freeze the solution
+- **P10.2.1.3 Algorithm Implementation and Simulation Validation**: Implement the "Standing and Disturbance Rejection Balance Control" algorithm in a simulation environment or with offline data; verify functional correctness, real-time performance, and robustness.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Execute simulation or prototype validation
+3. Record anomalies and deviations
+- **P10.2.1.4 Algorithm Tuning and Performance Validation**: Perform parameter tuning and boundary testing for the "Standing and Disturbance Rejection Balance Control" algorithm; verify performance under typical/extreme conditions meets indicators.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P10.2.1.5 Documentation Output and Downstream Delivery**: Output final report/drawing/specification for "Standing and Disturbance Rejection Balance Control"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+##### Gait Planning and Terrain Adaptation
+- **Methods / Tools**: ZMP preview, Raibert heuristic, optimization-based gait, RL/IL
+- **Design Rationale**: From periodic walking to unstructured terrain; prioritize stability then efficiency
+- **Key Constraints**: Joint velocity/torque limits, energy consumption
+- **Completion Criteria / Deliverables**: Walking data on flat/sloped/obstacle terrain, speed/energy consumption meet PRD
+**Level-3 Sub-tasks:**
+- **P10.2.2.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Gait Planning and Terrain Adaptation"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P10.2.2.2 Algorithm/Control Solution Design**: Build mathematical models or algorithm frameworks based on "ZMP preview, Raibert heuristic, optimization-based gait, RL/IL"; form candidate solutions; evaluate stability, real-time performance, and scalability; freeze the implementation path.
+**Level-4 Key Actions:**
+1. Generate no less than 2 candidate solutions
+2. Establish an evaluation matrix with quantitative scoring
+3. Organize review and freeze the solution
+- **P10.2.2.3 Algorithm Implementation and Simulation Validation**: Implement the "Gait Planning and Terrain Adaptation" algorithm in a simulation environment or with offline data; verify functional correctness, real-time performance, and robustness.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Execute simulation or prototype validation
+3. Record anomalies and deviations
+- **P10.2.2.4 Algorithm Tuning and Performance Validation**: Perform parameter tuning and boundary testing for the "Gait Planning and Terrain Adaptation" algorithm; verify performance under typical/extreme conditions meets indicators.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P10.2.2.5 Documentation Output and Downstream Delivery**: Output final report/drawing/specification for "Gait Planning and Terrain Adaptation"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+##### Whole-Body Control (WBC)
+- **Methods / Tools**: QP-based WBC, task prioritization, contact force optimization, null-space projection
+- **Design Rationale**: Coordinate lower limb balance, torso posture, and upper limb manipulation; satisfy friction cone constraints
+- **Key Constraints**: Computational real-time performance, task conflicts, friction cone
+- **Completion Criteria / Deliverables**: WBC controller, multi-task coordination demonstration, solving time < 1 ms
+**Level-3 Sub-tasks:**
+- **P10.2.3.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Whole-Body Control (WBC)"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P10.2.3.2 Algorithm/Control Solution Design**: Build mathematical models or algorithm frameworks based on "QP-based WBC, task prioritization, contact force optimization, null-space projection"; form candidate solutions; evaluate stability, real-time performance, and scalability; freeze the implementation path.
+**Level-4 Key Actions:**
+1. Generate no less than 2 candidate solutions
+2. Establish an evaluation matrix with quantitative scoring
+3. Organize review and freeze the solution
+- **P10.2.3.3 Algorithm Implementation and Simulation Validation**: Implement the "Whole-Body Control (WBC)" algorithm in a simulation environment or with offline data; verify functional correctness, real-time performance, and robustness.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Execute simulation or prototype validation
+3. Record anomalies and deviations
+- **P10.2.3.4 Algorithm Tuning and Performance Validation**: Perform parameter tuning and boundary testing for the "Whole-Body Control (WBC)" algorithm; verify performance under typical/extreme conditions meets indicators.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P10.2.3.5 Documentation Output and Downstream Delivery**: Output final report/drawing/specification for "Whole-Body Control (WBC)"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+##### Compliance / Impedance Control
+- **Methods / Tools**: Joint impedance, Cartesian impedance, force-position hybrid control, admittance control
+- **Design Rationale**: Achieve safe interaction with the environment/humans, reduce collision impact
+- **Key Constraints**: Stability, bandwidth, force sensor noise
+- **Completion Criteria / Deliverables**: Compliant contact experimental data, collision force < safety threshold
+**Level-3 Sub-tasks:**
+- **P10.2.4.1 Input Review and Target Quantification**: Organize upstream inputs, reference standards, and resources required for "Compliance / Impedance Control"; convert completion criteria into quantifiable acceptance indicators; define Owner and milestones.
+**Level-4 Key Actions:**
+1. List all upstream input items and confirm versions
+2. Convert acceptance criteria into quantifiable KPIs
+3. Establish task Owner, timeline, and risk register
+- **P10.2.4.2 Algorithm/Control Solution Design**: Build mathematical models or algorithm frameworks based on "joint impedance, Cartesian impedance, force-position hybrid control, admittance control"; form candidate solutions; evaluate stability, real-time performance, and scalability; freeze the implementation path.
+**Level-4 Key Actions:**
+1. Generate no less than 2 candidate solutions
+2. Establish an evaluation matrix with quantitative scoring
+3. Organize review and freeze the solution
+- **P10.2.4.3 Algorithm Implementation and Simulation Validation**: Implement the "Compliance / Impedance Control" algorithm in a simulation environment or with offline data; verify functional correctness, real-time performance, and robustness.
+**Level-4 Key Actions:**
+1. Build models/prototypes and record key parameters
+2. Execute simulation or prototype validation
+3. Record anomalies and deviations
+- **P10.2.4.4 Algorithm Tuning and Performance Validation**: Perform parameter tuning and boundary testing for the "Compliance / Impedance Control" algorithm; verify performance under typical/extreme conditions meets indicators.
+**Level-4 Key Actions:**
+1. Develop test/review plan and pass criteria
+2. Execute tests and record raw data
+3. Output issue list and improvement measures
+- **P10.2.4.5 Documentation Output and Downstream Delivery**: Output final report/drawing/specification for "Compliance / Impedance Control"; update ICD/BOM/SOP/requirements traceability chain; complete formal delivery to downstream stages.
+**Level-4 Key Actions:**
+1. Write documents per template and reference raw data
+2. Complete internal review and version control
+3. Release and notify downstream dependents
+
+#### Sim-to-Real and Testing
+
+## 개요
+운동 제어 알고리즘 개발 및 검증(Motion Control)은 휴머노이드 로봇 제품 개발 전 과정 중 10번째 단계이며, WBS V3에서 여러 3레벨 하위 작업으로 전개됩니다.
+## 핵심 내용
+이 단계는 입력 정리, 설계, 구현/프로토타입, 검증 폐쇄 및 문서 인도 등 완전한 엔지니어링 작업을 포함하며, 하위 의존 부서가 적격한 입력을 확보하는 중요한 마일스톤입니다.
+
+## 주요 하위 작업 및 기술 내용
+#### 상태 추정 및 센서 융합
+
+##### IMU와 관절 엔코더 융합
+- **방법 / 도구**: EKF/UKF/Madgwick, 제로 속도 보정, 관절 운동학 적분
+- **설계 사고 논리**: 질량 중심 위치, 속도, 자세를 실시간으로 추정하며, 균형 제어의 기초
+- **주요 제약 조건**: 센서 지연, 공분산 파라미터 튜닝, 발바닥 미끄러짐
+- **완료 기준 / 산출물**: 상태 추정기, 실측 궤적 오류 < 목표, 정지 시 드리프트 제어 가능
+**3레벨 하위 작업:**
+- **P10.1.1.1 입력 정리 및 목표 정량화**: 「IMU와 관절 엔코더 융합」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 주요 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P10.1.1.2 설계/방법 설계**: 「IMU와 관절 엔코더 융합」에 대한 구현 방법 또는 후보 방안을 수립하고, 「EKF/UKF/Madgwick, 제로 속도 보정, 관절 운동학 적분」을 사용하여 논증하며, 기술 경로와 리소스 요구 사항을 명확히 합니다.
+**4레벨 주요 작업:**
+1. 2개 이상의 후보 방안 도출
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P10.1.1.3 구현/프로토타입/시제품 제작**: 설계 방안에 따라 「IMU와 관절 엔코더 융합」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 주요 단계를 완료하며, 과정 데이터를 기록합니다.
+**4레벨 주요 작업:**
+1. 모델/시제품을 구축하고 주요 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P10.1.1.4 검증 및 문제 폐쇄**: 「IMU와 관절 엔코더 융합」의 출력을 검증하여 완료 기준 충족 여부를 확인하고, 문제를 기록하여 종료될 때까지 추적합니다.
+**4레벨 주요 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트를 수행하고 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P10.1.1.5 문서 출력 및 하위 인도**: 「IMU와 관절 엔코더 융합」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 주요 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### 접촉 상태 추정
+- **방법 / 도구**: 발바닥 힘/토크, 가속도 급변 감지, 확률적 접촉 감지
+- **설계 사고 논리**: 발바닥이 지면에 닿았는지 정확히 판단하는 것은 보행 전환과 균형 제어의 핵심
+- **주요 제약 조건**: 노이즈, 센서 위치, 지면 경도
+- **완료 기준 / 산출물**: 접촉 감지 정확도 > 98%, 오발생률 < 2%
+**3레벨 하위 작업:**
+- **P10.1.2.1 입력 정리 및 목표 정량화**: 「접촉 상태 추정」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 주요 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P10.1.2.2 알고리즘/제어 방안 설계**: 「발바닥 힘/토크, 가속도 급변 감지, 확률적 접촉 감지」를 기반으로 수학적 모델 또는 알고리즘 프레임워크를 구축하고, 후보 방안을 도출하며, 안정성, 실시간성 및 확장성을 평가하고 구현 경로를 확정합니다.
+**4레벨 주요 작업:**
+1. 2개 이상의 후보 방안 도출
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P10.1.2.3 알고리즘 구현 및 시뮬레이션 검증**: 「접촉 상태 추정」의 알고리즘을 시뮬레이션 환경 또는 오프라인 데이터에서 구현하고, 기능 정확성, 실시간성 및 견고성을 검증합니다.
+**4레벨 주요 작업:**
+1. 모델/시제품을 구축하고 주요 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P10.1.2.4 알고리즘 파라미터 튜닝 및 성능 검증**: 「접촉 상태 추정」 알고리즘의 파라미터를 최적화하고 경계 테스트를 수행하여, 일반/극한 조건에서의 성능이 지표를 충족하는지 검증합니다.
+**4레벨 주요 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트를 수행하고 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P10.1.2.5 문서 출력 및 하위 인도**: 「접촉 상태 추정」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 주요 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### 외력/외란 추정
+- **방법 / 도구**: 운동량 관측기, 일반화 운동량, 칼만 필터
+- **설계 사고 논리**: 외부 밀기/당기기 힘을 추정하여 강건한 균형 및 낙상 예측에 사용
+- **주요 제약 조건**: 모델 오류, 지연
+- **완료 기준 / 산출물**: 외력 추정 응답 < 100 ms, 정상 상태 오류 < 목표
+**3레벨 하위 작업:**
+- **P10.1.3.1 입력 정리 및 목표 정량화**: 「외력/외란 추정」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 주요 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P10.1.3.2 알고리즘/제어 방안 설계**: 「운동량 관측기, 일반화 운동량, 칼만 필터」를 기반으로 수학적 모델 또는 알고리즘 프레임워크를 구축하고, 후보 방안을 도출하며, 안정성, 실시간성 및 확장성을 평가하고 구현 경로를 확정합니다.
+**4레벨 주요 작업:**
+1. 2개 이상의 후보 방안 도출
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P10.1.3.3 알고리즘 구현 및 시뮬레이션 검증**: 「외력/외란 추정」의 알고리즘을 시뮬레이션 환경 또는 오프라인 데이터에서 구현하고, 기능 정확성, 실시간성 및 견고성을 검증합니다.
+**4레벨 주요 작업:**
+1. 모델/시제품을 구축하고 주요 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P10.1.3.4 알고리즘 파라미터 튜닝 및 성능 검증**: 「외력/외란 추정」 알고리즘의 파라미터를 최적화하고 경계 테스트를 수행하여, 일반/극한 조건에서의 성능이 지표를 충족하는지 검증합니다.
+**4레벨 주요 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트를 수행하고 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P10.1.3.5 문서 출력 및 하위 인도**: 「외력/외란 추정」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 주요 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+#### 균형, 보행 및 WBC
+
+##### 정지 및 외란 대응 균형 제어
+- **방법 / 도구**: LQR, MPC, ZMP/Capture Point, 각운동량 제어
+- **설계 사고 논리**: 이족 정지 및 외란 대응은 핵심 안전 기능이며, MPC는 제약 조건을 통합 처리 가능
+- **주요 제약 조건**: 실시간 해결 주파수 ≥ 100 Hz, 관절 한계
+- **완료 기준 / 산출물**: 정지 외란 대응 실물 비디오, 회복 능력이 지표 충족
+**3레벨 하위 작업:**
+- **P10.2.1.1 입력 정리 및 목표 정량화**: 「정지 및 외란 대응 균형 제어」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 주요 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P10.2.1.2 알고리즘/제어 방안 설계**: 「LQR, MPC, ZMP/Capture Point, 각운동량 제어」를 기반으로 수학적 모델 또는 알고리즘 프레임워크를 구축하고, 후보 방안을 도출하며, 안정성, 실시간성 및 확장성을 평가하고 구현 경로를 확정합니다.
+**4레벨 주요 작업:**
+1. 2개 이상의 후보 방안 도출
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P10.2.1.3 알고리즘 구현 및 시뮬레이션 검증**: 「정지 및 외란 대응 균형 제어」의 알고리즘을 시뮬레이션 환경 또는 오프라인 데이터에서 구현하고, 기능 정확성, 실시간성 및 견고성을 검증합니다.
+**4레벨 주요 작업:**
+1. 모델/시제품을 구축하고 주요 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P10.2.1.4 알고리즘 파라미터 튜닝 및 성능 검증**: 「정지 및 외란 대응 균형 제어」 알고리즘의 파라미터를 최적화하고 경계 테스트를 수행하여, 일반/극한 조건에서의 성능이 지표를 충족하는지 검증합니다.
+**4레벨 주요 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트를 수행하고 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P10.2.1.5 문서 출력 및 하위 인도**: 「정지 및 외란 대응 균형 제어」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 주요 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### 보행 계획 및 지형 적응
+- **방법 / 도구**: ZMP preview, Raibert heuristic, 최적화 기반 보행, RL/IL
+- **설계 사고 논리**: 주기적 보행에서 비정형 지형까지, 먼저 안정화 후 효율성
+- **주요 제약 조건**: 관절 속도/토크 제한, 에너지 소비
+- **완료 기준 / 산출물**: 평지/경사/장애물 보행 데이터, 속도/에너지 소비가 PRD 충족
+**3레벨 하위 작업:**
+- **P10.2.2.1 입력 정리 및 목표 정량화**: 「보행 계획 및 지형 적응」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 주요 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P10.2.2.2 알고리즘/제어 방안 설계**: 「ZMP preview, Raibert heuristic, 최적화 기반 보행, RL/IL」을 기반으로 수학적 모델 또는 알고리즘 프레임워크를 구축하고, 후보 방안을 도출하며, 안정성, 실시간성 및 확장성을 평가하고 구현 경로를 확정합니다.
+**4레벨 주요 작업:**
+1. 2개 이상의 후보 방안 도출
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P10.2.2.3 알고리즘 구현 및 시뮬레이션 검증**: 「보행 계획 및 지형 적응」의 알고리즘을 시뮬레이션 환경 또는 오프라인 데이터에서 구현하고, 기능 정확성, 실시간성 및 견고성을 검증합니다.
+**4레벨 주요 작업:**
+1. 모델/시제품을 구축하고 주요 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P10.2.2.4 알고리즘 파라미터 튜닝 및 성능 검증**: 「보행 계획 및 지형 적응」 알고리즘의 파라미터를 최적화하고 경계 테스트를 수행하여, 일반/극한 조건에서의 성능이 지표를 충족하는지 검증합니다.
+**4레벨 주요 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트를 수행하고 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P10.2.2.5 문서 출력 및 하위 인도**: 「보행 계획 및 지형 적응」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 주요 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### 전신 제어 WBC
+- **방법 / 도구**: QP 기반 WBC, 작업 우선순위, 접촉력 최적화, 영공간 투영
+- **설계 사고 논리**: 하체 균형, 몸통 자세, 상체 조작을 조정하며, 마찰 원뿔 제약 조건 충족
+- **주요 제약 조건**: 계산 실시간성, 작업 충돌, 마찰 원뿔
+- **완료 기준 / 산출물**: WBC 제어기, 다중 작업 조정 데모, 해결 시간 < 1 ms
+**3레벨 하위 작업:**
+- **P10.2.3.1 입력 정리 및 목표 정량화**: 「전신 제어 WBC」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 주요 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P10.2.3.2 알고리즘/제어 방안 설계**: 「QP 기반 WBC, 작업 우선순위, 접촉력 최적화, 영공간 투영」을 기반으로 수학적 모델 또는 알고리즘 프레임워크를 구축하고, 후보 방안을 도출하며, 안정성, 실시간성 및 확장성을 평가하고 구현 경로를 확정합니다.
+**4레벨 주요 작업:**
+1. 2개 이상의 후보 방안 도출
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P10.2.3.3 알고리즘 구현 및 시뮬레이션 검증**: 「전신 제어 WBC」의 알고리즘을 시뮬레이션 환경 또는 오프라인 데이터에서 구현하고, 기능 정확성, 실시간성 및 견고성을 검증합니다.
+**4레벨 주요 작업:**
+1. 모델/시제품을 구축하고 주요 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P10.2.3.4 알고리즘 파라미터 튜닝 및 성능 검증**: 「전신 제어 WBC」 알고리즘의 파라미터를 최적화하고 경계 테스트를 수행하여, 일반/극한 조건에서의 성능이 지표를 충족하는지 검증합니다.
+**4레벨 주요 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트를 수행하고 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P10.2.3.5 문서 출력 및 하위 인도**: 「전신 제어 WBC」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 주요 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+##### 순응/임피던스 제어
+- **방법 / 도구**: 관절 임피던스, 데카르트 임피던스, 힘-위치 혼합 제어, 어드미턴스 제어
+- **설계 사고 논리**: 환경/사람과의 안전한 상호작용을 구현하고 충돌 충격을 감소
+- **주요 제약 조건**: 안정성, 대역폭, 힘 센서 노이즈
+- **완료 기준 / 산출물**: 순응 접촉 실험 데이터, 충돌 힘 < 안전 임계값
+**3레벨 하위 작업:**
+- **P10.2.4.1 입력 정리 및 목표 정량화**: 「순응/임피던스 제어」에 필요한 상위 입력, 참조 표준 및 리소스를 정리하고, 완료 기준을 정량화 가능한 검수 지표로 변환하며, Owner와 마일스톤을 명확히 합니다.
+**4레벨 주요 작업:**
+1. 모든 상위 입력 목록을 작성하고 버전을 확인
+2. 검수 기준을 정량화 가능한 KPI로 변환
+3. 작업 Owner, 시간 노드 및 위험 등록부를 구축
+- **P10.2.4.2 알고리즘/제어 방안 설계**: 「관절 임피던스, 데카르트 임피던스, 힘-위치 혼합 제어, 어드미턴스 제어」를 기반으로 수학적 모델 또는 알고리즘 프레임워크를 구축하고, 후보 방안을 도출하며, 안정성, 실시간성 및 확장성을 평가하고 구현 경로를 확정합니다.
+**4레벨 주요 작업:**
+1. 2개 이상의 후보 방안 도출
+2. 평가 매트릭스를 구축하고 정량적으로 점수화
+3. 검토를 조직하고 방안을 확정
+- **P10.2.4.3 알고리즘 구현 및 시뮬레이션 검증**: 「순응/임피던스 제어」의 알고리즘을 시뮬레이션 환경 또는 오프라인 데이터에서 구현하고, 기능 정확성, 실시간성 및 견고성을 검증합니다.
+**4레벨 주요 작업:**
+1. 모델/시제품을 구축하고 주요 파라미터를 기록
+2. 시뮬레이션 또는 프로토타입 검증 수행
+3. 이상 및 편차 기록
+- **P10.2.4.4 알고리즘 파라미터 튜닝 및 성능 검증**: 「순응/임피던스 제어」 알고리즘의 파라미터를 최적화하고 경계 테스트를 수행하여, 일반/극한 조건에서의 성능이 지표를 충족하는지 검증합니다.
+**4레벨 주요 작업:**
+1. 테스트/검토 계획 및 통과 기준 수립
+2. 테스트를 수행하고 원시 데이터 기록
+3. 문제 목록 및 개선 조치 출력
+- **P10.2.4.5 문서 출력 및 하위 인도**: 「순응/임피던스 제어」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하위 단계로의 공식 인도를 완료합니다.
+**4레벨 주요 작업:**
+1. 템플릿에 따라 문서를 작성하고 원시 데이터 인용
+2. 내부 검토 및 버전 관리 완료
+3. 게시 및 하위 의존 부서에 통지
+
+#### Sim-to-Real 및 테스트

@@ -60,3 +60,31 @@ sources:
 ## 参考
 
 - X2-N: A Transformable Wheel-legged Humanoid Robot with Dual-mode Locomotion and Manipulation ()
+
+## Overview
+
+The mobility and manipulation capabilities of humanoid robots in unstructured environments have always been a core challenge in hardware design. Existing wheeled or legged robots often struggle to balance speed and terrain adaptability. This paper proposes X2-N, a deformable wheel-legged hybrid humanoid robot that achieves dual-mode locomotion and manipulation through innovative mechanical structure design, aiming to enhance the robot's mobility and task execution capabilities in complex scenarios. This research provides a new design approach for humanoid robot hardware platforms that combine efficient mobility with dexterous manipulation.
+
+## Content
+
+(a) Research Background and Problem: Traditional humanoid robots typically adopt bipedal walking or wheeled locomotion. While the former can adapt to complex terrains, it suffers from low speed and high energy consumption, whereas the latter is limited to flat surfaces. A key challenge in current hardware design is integrating the high-speed mobility of wheels with the obstacle-crossing ability of legs on a single platform, while retaining the upper limb manipulation functions of humanoid robots. The research on X2-N addresses this contradiction by exploring the engineering implementation of deformable mechanisms in wheel-leg switching.
+
+(b) Method or Model Framework: X2-N adopts a modular deformable design, with its core being a wheel-leg integrated structure that enables mechanical transition between wheeled rolling and legged gaits. The robot body includes a torso, two arms, and deformable lower limbs. The lower limb joints are equipped with driving wheels, and mode switching is achieved through locking and release mechanisms. The control system automatically selects the motion mode based on environmental perception information and utilizes coordinated arm movements for grasping and carrying during manipulation tasks.
+
+(c) Key Technological Innovations: The main innovations of this paper are reflected in three aspects: first, a compact wheel-leg switching mechanism that allows rapid transition between two motion modes without additional disassembly; second, kinematic and dynamic optimization for both modes, ensuring high-speed stability in wheeled mode and terrain adaptability in legged mode; third, deep coupling of manipulation capabilities with motion modes, enabling the robot to perform fine manipulation tasks in different postures, thereby expanding the application scenarios of humanoid robots.
+
+(d) Experiments/Validation or Application Value: Although the abstract does not provide specific experimental data, based on the typical paradigm of hardware design papers, X2-N likely validates the reliability of wheel-leg switching, motion speed and energy consumption comparisons, and success rates of typical manipulation tasks through physical prototypes. This design is suitable for environments such as warehouse logistics, disaster rescue, and home services that require both mobility efficiency and complex manipulation, providing a feasible hardware foundation for humanoid robots to transition from laboratories to practical applications.
+
+## 개요
+
+휴머노이드 로봇의 비정형 환경에서의 이동 및 조작 능력은 항상 하드웨어 설계의 핵심 과제였습니다. 기존의 바퀴형 또는 다리형 로봇은 속도와 지형 적응성 사이에서 균형을 맞추기 어려운 경우가 많습니다. 본 논문에서는 혁신적인 기계 구조 설계를 통해 이중 모드 이동 및 조작을 구현하는 변형 가능한 바퀴-다리 하이브리드 휴머노이드 로봇 X2-N을 제안하며, 복잡한 환경에서 로봇의 기동성과 작업 수행 능력을 향상시키는 것을 목표로 합니다. 이 연구는 효율적인 이동과 민첩한 조작을 겸비한 휴머노이드 로봇 하드웨어 플랫폼에 새로운 설계 방향을 제시합니다.
+
+## 핵심 내용
+
+(a) 연구 배경 및 문제: 기존 휴머노이드 로봇은 주로 이족 보행 또는 바퀴형 이동 방식을 채택합니다. 전자는 복잡한 지형에 적응할 수 있지만 속도가 느리고 에너지 소비가 높으며, 후자는 평탄한 노면에 제한됩니다. 단일 플랫폼에서 바퀴의 고속 이동과 다리의 장애물 극복 능력을 융합하면서도 휴머노이드 로봇의 상체 조작 기능을 유지하는 것은 현재 하드웨어 설계 분야의 핵심 난제입니다. X2-N의 연구는 바로 이러한 모순에 대응하여 바퀴-다리 전환에서 변형 가능한 메커니즘의 공학적 구현을 탐구합니다.
+
+(b) 방법 또는 모델 프레임워크: X2-N은 모듈식 변형 가능 설계를 채택하며, 그 핵심은 바퀴-다리 일체형 구조로, 바퀴 구름과 다리 보행 사이에서 기계적 전환이 가능합니다. 로봇 본체는 몸통, 양팔 및 변형 가능한 하체로 구성되며, 하체 관절에는 구동 바퀴가 장착되어 있고, 잠금 및 해제 메커니즘을 통해 모드 전환이 이루어집니다. 제어 시스템은 환경 인식 정보에 따라 자동으로 이동 모드를 선택하며, 조작 작업에서는 양팔을 협력하여 파지 및 운반을 수행합니다.
+
+(c) 핵심 기술 혁신: 본 논문의 주요 혁신은 세 가지 측면에서 나타납니다. 첫째, 컴팩트한 바퀴-다리 전환 메커니즘으로, 별도의 분해 없이 두 이동 모드 사이를 빠르게 전환할 수 있습니다. 둘째, 이중 모드에서의 운동학 및 동역학 최적화로, 바퀴 모드에서의 고속 안정성과 다리 모드에서의 지형 적응성을 보장합니다. 셋째, 조작 능력과 이동 모드를 깊이 결합하여 로봇이 다양한 자세에서도 정밀한 조작 작업을 수행할 수 있도록 하여 휴머노이드 로봇의 응용 시나리오를 확장합니다.
+
+(d) 실험/검증 또는 응용 가치: 초록에서는 구체적인 실험 데이터를 제공하지 않았지만, 하드웨어 설계 논문의 전형적인 패러다임에 기반하여 X2-N은 실제 프로토타입을 통해 바퀴-다리 전환의 신뢰성, 이동 속도 및 에너지 소비 비교, 그리고 전형적인 조작 작업의 성공률을 검증했을 가능성이 높습니다. 이 설계는 물류 창고, 재난 구조 및 가사 서비스 등 이동 효율성과 복잡한 조작을 모두 고려해야 하는 환경에 적합하며, 휴머노이드 로봇이 실험실에서 실제 응용으로 나아갈 수 있는 실현 가능한 하드웨어 기반을 제공합니다.

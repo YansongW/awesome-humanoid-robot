@@ -86,5 +86,90 @@ theoretical_depth:
 ## 参考
 - 全尺寸双足人形机器人产品开发全流程报告（V3 / 三四级任务展开版）
 
+## Overview
+**Phase/Work Package**: Structural FEA
 
+## Content
+**Method/Tool**: Contact nonlinearity, geometric nonlinearity, buckling analysis
 
+**Design Thinking Logic**: Thin-walled structures may buckle under impact; large deformation requires consideration of geometric nonlinearity
+
+**Key Constraints**: Convergence difficulty, computational cost
+
+**Completion Criteria/Deliverables**: Buckling modes, stress/strain under large deformation
+
+**Level-3 Subtasks and Level-4 Key Actions:**
+
+- P8.1.3.1 Input Review and Target Quantification
+  - Organize upstream inputs, reference standards, and resources required for "Nonlinear Analysis and Stability," convert completion criteria into quantifiable acceptance indicators, and define the Owner and milestones.
+    - List all upstream inputs and confirm versions
+    - Convert acceptance criteria into quantifiable KPIs
+    - Establish task Owner, milestones, and risk register
+
+- P8.1.3.2 Approach/Method Design
+  - Develop implementation methods or candidate solutions for "Nonlinear Analysis and Stability," demonstrate using "contact nonlinearity, geometric nonlinearity, buckling analysis," and clarify the technical roadmap and resource requirements.
+    - Formulate at least 2 candidate solutions
+    - Establish an evaluation matrix and assign quantitative scores
+    - Organize review and freeze the solution
+
+- P8.1.3.3 Implementation/Prototype/Sample Fabrication
+  - Execute the implementation of "Nonlinear Analysis and Stability" according to the design plan, fabricate prototypes, samples, or complete key steps, and record process data.
+    - Build models/prototypes and record key parameters
+    - Perform simulations or prototype validation
+    - Document anomalies and deviations
+
+- P8.1.3.4 Verification and Issue Closure
+  - Verify the output of "Nonlinear Analysis and Stability," check whether it meets the completion criteria, record issues, and track them until closure.
+    - Develop test/review plans and pass criteria
+    - Execute tests and record raw data
+    - Output issue list and improvement measures
+
+- P8.1.3.5 Documentation and Downstream Delivery
+  - Output the final report/drawings/specifications for "Nonlinear Analysis and Stability," update ICD/BOM/SOP/requirements traceability chain, and complete formal delivery to downstream stages.
+    - Write documents according to templates and reference raw data
+    - Complete internal review and version control
+    - Release and notify downstream dependents
+
+## 개요
+**소속 단계/작업 패키지**: 구조 강도 시뮬레이션 및 반복 (Structural FEA)
+
+## 핵심 내용
+**방법 / 도구**: 접촉 비선형, 기하 비선형, 좌굴 해석
+
+**설계 사고 논리**: 박벽 구조는 충격 하에서 좌굴이 발생할 수 있음; 대변형은 기하 비선형을 고려해야 함
+
+**핵심 제약 조건**: 수렴 난이도, 계산 비용
+
+**완료 기준 / 산출물**: 좌굴 모드, 대변형 하의 응력/변형률
+
+**3단계 하위 작업과 4단계 핵심 조치:**
+
+- P8.1.3.1 입력 정리 및 목표 정량화
+  - 「비선형 해석 및 안정성」에 필요한 상류 입력, 참조 표준 및 자원을 정리하고, 완료 기준을 정량화된 검수 지표로 변환하며, 담당자와 마일스톤을 명확히 함.
+    - 모든 상류 입력 목록을 나열하고 버전 확인
+    - 검수 기준을 정량화된 KPI로 변환
+    - 작업 담당자, 시간 노드 및 위험 등록부 구축
+
+- P8.1.3.2 방안/방법 설계
+  - 「비선형 해석 및 안정성」에 대한 구현 방법 또는 후보 방안을 수립하고, 「접촉 비선형, 기하 비선형, 좌굴 해석」을 사용하여 논증하며, 기술 경로와 자원 요구 사항을 명확히 함.
+    - 2개 이상의 후보 방안 도출
+    - 평가 매트릭스 구축 및 정량적 점수화
+    - 검토 조직 및 방안 확정
+
+- P8.1.3.3 구현/프로토타입/시제품 제작
+  - 설계 방안에 따라 「비선형 해석 및 안정성」의 구현 작업을 수행하고, 프로토타입, 시제품을 제작하거나 핵심 단계를 완료하며, 과정 데이터를 기록함.
+    - 모델/시제품 구축 및 핵심 파라미터 기록
+    - 시뮬레이션 또는 프로토타입 검증 수행
+    - 이상 및 편차 기록
+
+- P8.1.3.4 검증 및 문제 종결
+  - 「비선형 해석 및 안정성」의 출력을 검증하고, 완료 기준 충족 여부를 확인하며, 문제를 기록하고 종결될 때까지 추적함.
+    - 테스트/검토 계획 및 통과 기준 수립
+    - 테스트 수행 및 원시 데이터 기록
+    - 문제 목록 및 개선 조치 출력
+
+- P8.1.3.5 문서 출력 및 하류 인도
+  - 「비선형 해석 및 안정성」의 최종 보고서/도면/규격을 출력하고, ICD/BOM/SOP/요구사항 추적 체인을 업데이트하며, 하류 단계로의 공식 인도를 완료함.
+    - 템플릿에 따라 문서 작성 및 원시 데이터 인용
+    - 내부 검토 및 버전 관리 완료
+    - 게시 및 하류 의존 부서 통지

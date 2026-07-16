@@ -61,3 +61,14 @@ Motor is the most widely used production equipment in industrial field. In order
 ## 参考
 - http://arxiv.org/abs/1806.09998v1
 
+## Overview
+Motors are the most widely used production equipment in the industrial field. To enable real-time condition monitoring and multi-fault pre-diagnosis of three-phase motors, this paper presents a design of a three-phase motor condition monitoring and fault diagnosis system based on LabVIEW. The system collects multi-dimensional vibration acceleration, rotational speed, temperature, current, and voltage signals of the motor in real time and at high speed using NI cDAQ acquisition equipment. At the same time, models of motor healthy and faulty states are established. The order analysis algorithm is employed for advanced data analysis, enabling the diagnosis and classification of different fault types. The system features multi-channel acquisition, display, analysis, and storage. Combined with current cloud transmission technology, data is backed up to the cloud for use by other terminals.
+
+## Content
+Motors are the most widely used production equipment in the industrial field. To enable real-time condition monitoring and multi-fault pre-diagnosis of three-phase motors, this paper presents a design of a three-phase motor condition monitoring and fault diagnosis system based on LabVIEW. The system collects multi-dimensional vibration acceleration, rotational speed, temperature, current, and voltage signals of the motor in real time and at high speed using NI cDAQ acquisition equipment. At the same time, models of motor healthy and faulty states are established. The order analysis algorithm is employed for advanced data analysis, enabling the diagnosis and classification of different fault types. The system features multi-channel acquisition, display, analysis, and storage. Combined with current cloud transmission technology, data is backed up to the cloud for use by other terminals.
+
+## 개요
+모터는 산업 현장에서 가장 널리 사용되는 생산 장비입니다. 3상 모터의 실시간 상태 모니터링 및 다중 고장 사전 진단을 실현하기 위해, 본 논문은 LabVIEW 기반의 3상 모터 상태 모니터링 및 고장 진단 시스템 설계를 제시합니다. NI cDAQ 수집 장비를 사용하여 모터의 다차원 진동 가속도, 회전 속도, 온도, 전류 및 전압 신호를 실시간 고속으로 수집합니다. 동시에 모터의 건강 상태 및 고장 상태 모델을 구축합니다. 오더 분석 알고리즘을 사용하여 데이터를 고급 수준에서 분석하고, 다양한 고장 유형의 진단 및 분류를 실현합니다. 시스템은 다채널 수집, 표시, 분석 및 저장 기능을 갖추고 있습니다. 현재의 클라우드 전송 기술과 결합하여 데이터를 클라우드에 백업하여 다른 단말기에서 사용할 수 있도록 합니다.
+
+## 핵심 내용
+모터는 산업 현장에서 가장 널리 사용되는 생산 장비입니다. 3상 모터의 실시간 상태 모니터링 및 다중 고장 사전 진단을 실현하기 위해, 본 논문은 LabVIEW 기반의 3상 모터 상태 모니터링 및 고장 진단 시스템 설계를 제시합니다. NI cDAQ 수집 장비를 사용하여 모터의 다차원 진동 가속도, 회전 속도, 온도, 전류 및 전압 신호를 실시간 고속으로 수집합니다. 동시에 모터의 건강 상태 및 고장 상태 모델을 구축합니다. 오더 분석 알고리즘을 사용하여 데이터를 고급 수준에서 분석하고, 다양한 고장 유형의 진단 및 분류를 실현합니다. 시스템은 다채널 수집, 표시, 분석 및 저장 기능을 갖추고 있습니다. 현재의 클라우드 전송 기술과 결합하여 데이터를 클라우드에 백업하여 다른 단말기에서 사용할 수 있도록 합니다.

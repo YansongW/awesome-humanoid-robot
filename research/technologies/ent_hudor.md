@@ -76,4 +76,57 @@ HuDOR为学术界与工业界提供了统一的比较基准，推动了相关算
 ## 参考
 - [RUKA: Rethinking the Design of Humanoid Hands with Learning](https://arxiv.org/abs/2504.13165)
 
+## Overview
+A human-to-robot demonstration dataset or teleoperation framework for collecting human hand motion data to train imitation learning policies for dexterous robotic hands.
 
+## Content
+### Definition and Positioning of HuDOR
+HuDOR belongs to the **dataset** category. Its domains include: Data and Datasets, AI Models and Algorithms. Value chain level: Intelligence layer. It is a human-to-robot demonstration dataset or teleoperation framework for collecting human hand motion data to train imitation learning policies for dexterous robotic hands. The English name is *HuDOR*. The Korean name is *HuDOR*.
+
+### Task Setup and Data Composition of HuDOR
+HuDOR provides a comparable evaluation basis for different methods through standardized tasks or data formats. Understanding its coverage and annotation methods helps in correctly interpreting experimental results.
+The diversity, authenticity, and scalability of data or tasks are important dimensions for measuring its value.
+
+### Usage Methods and Evaluation Metrics
+When using this dataset, attention should be paid to baseline methods, evaluation protocols, sources of error, and reproducibility of results to avoid one-sided or misleading conclusions.
+Additionally, it is necessary to consider the training-test set split, out-of-distribution generalization capability, and the sim-to-real transfer gap.
+
+### Typical Results and Research Value
+HuDOR provides a unified comparison benchmark for academia and industry, driving the rapid development of related algorithms.
+By analyzing leaderboard results and failure cases, the strengths and weaknesses of current methods can be identified, guiding future research directions.
+
+### Related Tags
+- hudor
+- teleoperation
+- imitation_learning
+- dataset
+- dexterous_manipulation
+
+### Role in Humanoid Robot Systems
+As one of the key datasets in the humanoid robot industry chain, HuDOR plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, execution, energy, structure, and verification, collectively determining overall system performance. Related research and applications are continuously advancing to further improve its reliability, efficiency, and cost-effectiveness in real-world scenarios.
+
+## 개요
+사람 손 동작 데이터를 수집하여 정교한 로봇 손의 모방 학습 정책을 훈련시키기 위한 인간-로봇 시연 데이터셋 또는 원격 조작 프레임워크.
+
+## 핵심 내용
+### HuDOR의 정의와 위치
+HuDOR는 **데이터셋** 유형에 속함. 관련 분야는 데이터 및 데이터셋, AI 모델 및 알고리즘을 포함. 가치 사슬 계층: 지능 계층. 사람 손 동작 데이터를 수집하여 정교한 로봇 손의 모방 학습 정책을 훈련시키기 위한 인간-로봇 시연 데이터셋 또는 원격 조작 프레임워크. 영문 명칭은 *HuDOR*. 한글 명칭은 *HuDOR*.
+
+### HuDOR의 작업 설정과 데이터 구성
+HuDOR는 표준화된 작업 또는 데이터 형식을 통해 다양한 방법에 비교 가능한 평가 기준을 제공함. 그 적용 범위와 주석 방식을 이해하면 실험 결과를 올바르게 해석하는 데 도움이 됨. 데이터 또는 작업의 다양성, 현실성 및 확장 가능성은 그 가치를 측정하는 중요한 차원임.
+
+### 사용 방법과 평가 지표
+이 데이터셋을 사용할 때는 기준 방법, 평가 프로토콜, 오류 원인 및 결과의 재현 가능성에 주의하여 편향되거나 오해를 불러일으키는 결론을 피해야 함. 동시에 훈련 세트와 테스트 세트의 분할, 분포 외 일반화 능력 및 시뮬레이션에서 실제로의 전환 격차에 주의해야 함.
+
+### 대표적인 결과와 연구 가치
+HuDOR는 학계와 산업계에 통일된 비교 기준을 제공하여 관련 알고리즘의 빠른 발전을 촉진함. 순위표 결과와 실패 사례를 분석하면 현재 방법의 장점과 단점을 식별하고 후속 연구 방향을 안내할 수 있음.
+
+### 관련 태그
+- hudor
+- teleoperation
+- imitation_learning
+- dataset
+- dexterous_manipulation
+
+### 휴머노이드 로봇 시스템에서의 역할
+휴머노이드 로봇 산업 체인에서 핵심 데이터셋 중 하나로서 HuDOR는 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 함. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계 성능을 결정함. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있음.

@@ -67,3 +67,47 @@ sources:
 ## 参考
 
 - Contact-Aided Invariant Extended Kalman Filtering for Legged Robot State Estimation ()
+
+## Overview
+
+This paper focuses on the state estimation problem for legged robots (including humanoid robots) and proposes a contact-aided Invariant Extended Kalman Filter (InEKF) method. The research motivation is to address the degradation in estimation accuracy of traditional state estimation methods when legged robots move on complex terrain, caused by strong model nonlinearity, high sensor noise, and insufficient utilization of ground contact information. The main contribution lies in combining contact constraints with invariant extended Kalman filter theory to construct a robust state estimation framework that effectively fuses proprioception and contact information, thereby improving the accuracy of pose and velocity estimation during dynamic walking or standing.
+
+## Content
+
+### Research Background and Problem
+
+When legged robots perform tasks in unstructured environments, accurate state estimation (e.g., position, orientation, velocity) is fundamental for stable control and autonomous navigation. However, due to the highly nonlinear and discontinuous nature of legged robot motion (e.g., foot support switching, sudden ground reaction forces), traditional filtering methods based on inertial measurement units (IMUs) and kinematic models (e.g., standard extended Kalman filter) are prone to divergence due to accumulated linearization errors. Furthermore, contact events unique to legged robots (e.g., foot touchdown) contain rich motion constraint information, but existing methods often treat them as noise or only use them to reset integration drift, failing to fully exploit their geometric and dynamic value. Therefore, how to integrate contact information into the state estimation framework in a structured manner becomes a key challenge for improving estimation robustness.
+
+### Method or Model Framework
+
+The core of the proposed Contact-Aided InEKF method lies in modeling the robot state using Lie group theory, representing state variables such as pose and velocity as elements on a matrix Lie group. Unlike traditional EKF, which linearizes in Euclidean space, InEKF defines the error state on the group manifold, making the linearization error invariant to the system state, thereby significantly improving convergence characteristics under large-scale motion. On this basis, the method treats the contact between the robot's foot and the ground as a "virtual measurement," establishing a constraint equation with zero velocity at the contact point to transform contact events into an observation model in the filter update. Specifically, when foot touchdown is detected, the system uses forward kinematics to compute the motion of the robot's center of mass relative to the contact point and injects it as an observation into the InEKF framework, thereby correcting drift caused by IMU integration.
+
+### Key Technical Innovations
+
+The innovations of this study are reflected in three aspects. First, at the filtering theory level, the invariant extended Kalman filter is extended from traditional inertial navigation scenarios to the legged robot domain, proving that under contact-aided conditions, the error dynamics of the filter still satisfy group invariance, thus ensuring global stability of the estimation. Second, at the contact modeling level, an observation model based on the zero-velocity assumption at the contact point is proposed. This model does not rely on ground friction or prior terrain knowledge and can be implemented using only kinematic chains and IMU data, offering good generality. Third, at the algorithm implementation level, a trigger mechanism for contact events and a multi-contact fusion strategy are designed to handle different contact states such as single-foot support, double-foot support, and even multi-foot support, avoiding filter divergence caused by incorrect contact detection.
+
+### Experiment/Validation and Application Value
+
+Although the paper abstract does not provide specific experimental data, based on the domain tags (artificial intelligence algorithms and software middleware) and level tags (intelligence layer), it can be inferred that the method was validated in simulation environments or on real humanoid robot platforms. Typical experimental scenarios may include robot walking on slopes, climbing stairs, and maintaining standing balance under external disturbances. Compared with standard EKF and pure IMU integration methods, Contact-Aided InEKF is expected to show significant advantages in attitude angle estimation accuracy, position drift suppression, and state continuity before and after contact events. This research has direct application value for improving the motion stability of humanoid robots on complex terrain, and its algorithmic framework can also be extended to legged mobile platforms such as quadruped robots and exoskeletons, providing reliable state inputs for subsequent autonomous navigation and whole-body motion control.
+
+## 개요
+
+본 논문은 족식 로봇(인간형 로봇 포함)의 상태 추정 문제에 초점을 맞추어, 접촉 보조 기반의 불변 확장 칼만 필터(Invariant Extended Kalman Filter, InEKF) 방법을 제안한다. 연구 동기는 전통적인 상태 추정 방법이 족식 로봇의 복잡한 지형 운동 시, 모델의 비선형성 강함, 센서 노이즈 큼, 지면 접촉 정보 활용 부족으로 인해 발생하는 추정 정밀도 저하 문제를 해결하는 데 있다. 주요 기여는 접촉 제약과 불변성 확장 칼만 필터 이론을 결합하여, 자체 감지와 접촉 정보를 효과적으로 융합할 수 있는 강건한 상태 추정 프레임워크를 구축함으로써, 로봇의 동적 보행 또는 정지 상태에서의 자세와 속도 추정 정확도를 향상시킨 점이다.
+
+## 핵심 내용
+
+### 연구 배경 및 문제
+
+족식 로봇이 비구조화된 환경에서 작업을 수행할 때, 정확한 상태 추정(예: 위치, 자세, 속도)은 안정적인 제어와 자율 주행의 기초이다. 그러나 족식 로봇의 운동은 높은 비선형성과 비연속성(예: 지지 발 전환, 지면 반력 급변)을 가지므로, 전통적인 관성 측정 장치(IMU)와 운동학 모델 기반의 필터링 방법(예: 표준 확장 칼만 필터)은 선형화 오차 누적으로 인해 발산하기 쉽다. 또한, 족식 로봇 특유의 접촉 이벤트(예: 발바닥 지면 접촉)는 풍부한 운동 제약 정보를 포함하지만, 기존 방법은 이를 종종 노이즈로 처리하거나 적분 드리프트 리셋에만 사용하여, 그 기하학적 및 동역학적 가치를 충분히 활용하지 못했다. 따라서 접촉 정보를 구조화된 방식으로 상태 추정 프레임워크에 통합하는 것이 추정 강건성 향상의 핵심 과제가 된다.
+
+### 방법 또는 모델 프레임워크
+
+본 논문에서 제안하는 Contact-Aided InEKF 방법의 핵심은 리 군(Lie Group) 이론을 이용하여 로봇 상태를 모델링하고, 자세와 속도 등의 상태량을 행렬 리 군 위의 요소로 표현하는 데 있다. 전통적인 EKF가 유클리드 공간에서 선형화를 수행하는 것과 달리, InEKF는 군 다양체 위에서 오차 상태를 정의하여 선형화 오차가 시스템 상태에 대해 불변성을 가지도록 하여, 광범위한 운동에서의 수렴 특성을 크게 개선한다. 이를 바탕으로, 이 방법은 로봇 발끝과 지면의 접촉을 일종의 "가상 측정"으로 간주하고, 접촉점 속도가 0이라는 제약 방정식을 설정하여 접촉 이벤트를 필터 업데이트의 관측 모델로 변환한다. 구체적으로, 발끝이 지면에 닿는 것이 감지되면, 시스템은 정방향 운동학을 이용하여 로봇 질량 중심의 접촉점에 대한 상대 운동을 계산하고, 이를 관측량으로 InEKF 프레임워크에 주입하여 IMU 적분으로 인한 드리프트를 보정한다.
+
+### 핵심 기술 혁신
+
+본 연구의 혁신점은 세 가지 측면에서 나타난다. 첫째, 필터 이론 측면에서 불변 확장 칼만 필터를 전통적인 관성 항법 시나리오에서 족식 로봇 분야로 확장하여, 접촉 보조 조건에서 필터의 오차 동역학이 여전히 군 불변성을 만족함을 증명함으로써 추정의 전역 안정성을 보장한다. 둘째, 접촉 모델링 측면에서 접촉점 속도가 0이라는 가정에 기반한 관측 모델을 제안한다. 이 모델은 지면 마찰력이나 지형 사전 지식에 의존하지 않고, 운동학 체인과 IMU 데이터만으로 구현 가능하여 범용성이 뛰어나다. 셋째, 알고리즘 구현 측면에서 접촉 이벤트 트리거 메커니즘과 다중 접촉점 융합 전략을 설계하여, 단일 발 지지, 두 발 지지, 다중 발 지지 등 다양한 접촉 상태를 처리할 수 있으며, 접촉 오판으로 인한 필터 발산을 방지한다.
+
+### 실험/검증 및 응용 가치
+
+논문 초록이 구체적인 실험 데이터를 제공하지는 않지만, 분야 태그(인공지능 알고리즘 및 소프트웨어 미들웨어)와 계층 태그(지능 계층)를 기반으로 이 방법이 시뮬레이션 환경 또는 실제 인간형 로봇 플랫폼에서 검증되었음을 추론할 수 있다. 대표적인 실험 시나리오는 로봇의 경사로 보행, 계단 오르기, 외력 교란 하의 정지 균형 등을 포함할 수 있다. 표준 EKF 및 순수 IMU 적분 방법과 비교하여, Contact-Aided InEKF는 자세각 추정 정밀도, 위치 드리프트 억제, 접촉 이벤트 전후의 상태 연속성에서 현저한 우위를 보일 것으로 예상된다. 이 연구는 복잡한 지형에서 인간형 로봇의 운동 안정성을 향상시키는 데 직접적인 응용 가치가 있으며, 그 알고리즘 프레임워크는 사족 로봇, 외골격 등 족식 이동 플랫폼으로 확장 가능하여, 이후의 자율 주행 및 전신 운동 제어에 신뢰할 수 있는 상태 입력을 제공한다.

@@ -100,4 +100,64 @@ related_entities:
 - [How Fast Can I Run My VLA? Demystifying VLA Inference Performance with VLA-Perf](https://arxiv.org/abs/2602.18397)
 - [Building Generalist Humanoid Capabilities with NVIDIA Isaac GR00T N1.6 Using a Sim-to-Real Workflow](https://developer.nvidia.com/blog/building-generalist-humanoid-capabilities-with-nvidia-isaac-gr00t-n1-6-using-a-sim-to-real-workflow/)
 
+## Overview
+Deploying vision-language-action models directly on the robot's built-in edge computing devices, rather than offloading to edge or cloud servers, to meet latency, connectivity, and privacy constraints.
 
+## Content
+### Definition and Positioning of On-Device VLA Inference
+On-device VLA inference belongs to the **technology** category. Its domains include: AI models and algorithms, software middleware, and components. Value chain level: intelligence layer. It involves deploying vision-language-action models directly on the robot's built-in edge computing devices, rather than offloading to edge or cloud servers, to meet latency, connectivity, and privacy constraints. The English term is *On-Device VLA Inference*. The Korean term is *온디바이스 VLA 추론*.
+
+### Working Principle and Technical Architecture of On-Device VLA Inference
+The core mechanism of on-device VLA inference defines the performance boundaries of humanoid robot systems. Understanding its internal structure, signal flow, and control interfaces facilitates system integration and optimization.
+During selection and integration, attention must be paid to its compatibility with controllers, communication buses, power systems, and mechanical structures.
+
+### Key Parameters and Selection Considerations
+In engineering practice, selecting on-device VLA inference requires comprehensive consideration of performance metrics, reliability, cost, supply chain maturity, and compatibility with the overall system.
+Key parameters typically include precision, bandwidth, torque, power consumption, weight, interface protocols, and environmental adaptability.
+For different application scenarios, trade-offs between performance and cost may be necessary, with appropriate redundancy and safety margins reserved.
+
+### Typical Applications and Development Trends
+On-device VLA inference has been widely applied in prototype validation, academic research, and early commercial products of humanoid robots.
+As the industry chain matures, its integration level, intelligence, and cost-effectiveness are expected to continue improving.
+
+### Related Tags
+- vla
+- on_device_inference
+- edge_compute
+- latency
+- real_time_control
+- humanoid
+
+### Role in Humanoid Robot Systems
+As one of the key technologies in the humanoid robot industry chain, on-device VLA inference plays an important role in system design, performance optimization, and industrial application. It interacts with multiple subsystems such as perception, decision-making, execution, energy, structure, and validation, collectively determining overall system performance. Related research and applications are continuously advancing to further enhance its reliability, efficiency, and cost-effectiveness in real-world scenarios.
+
+## 개요
+시각-언어-동작 모델을 엣지나 클라우드 서버에 오프로딩하지 않고, 로봇 내장 엣지 컴퓨팅 장치에 직접 배포하여 지연 시간, 연결성 및 개인정보 보호 제약을 충족합니다.
+
+## 핵심 내용
+### 온디바이스 VLA 추론의 정의와 위치
+온디바이스 VLA 추론은 **기술** 유형에 속합니다. 관련 분야는 AI 모델 및 알고리즘, 소프트웨어 미들웨어, 부품입니다. 가치 사슬 계층: 지능 계층. 시각-언어-동작 모델을 엣지나 클라우드 서버에 오프로딩하지 않고, 로봇 내장 엣지 컴퓨팅 장치에 직접 배포하여 지연 시간, 연결성 및 개인정보 보호 제약을 충족합니다. 영문 명칭은 *On-Device VLA Inference*입니다. 한문 명칭은 *온디바이스 VLA 추론*입니다.
+
+### 온디바이스 VLA 추론의 작동 원리와 기술 아키텍처
+온디바이스 VLA 추론의 핵심 메커니즘은 휴머노이드 로봇 시스템에서의 성능 경계를 결정합니다. 내부 구조, 신호 흐름 및 제어 인터페이스를 이해하면 시스템 통합 및 최적화에 도움이 됩니다.
+선정 및 통합 과정에서는 컨트롤러, 통신 버스, 전원 시스템 및 기계 구조와의 호환성을 고려해야 합니다.
+
+### 주요 파라미터와 선정 포인트
+엔지니어링 실무에서 온디바이스 VLA 추론을 선택할 때는 성능 지표, 신뢰성, 비용, 공급망 성숙도 및 전체 시스템과의 호환성을 종합적으로 고려해야 합니다.
+주요 파라미터에는 일반적으로 정밀도, 대역폭, 토크, 전력 소비, 무게, 인터페이스 프로토콜 및 환경 적응성 등이 포함됩니다.
+다양한 응용 시나리오에 따라 성능과 비용 간의 균형을 맞추고 적절한 여유와 안전 마진을 확보해야 할 수 있습니다.
+
+### 대표적인 응용과 발전 추세
+온디바이스 VLA 추론은 휴머노이드 로봇의 프로토타입 검증, 학술 연구 및 초기 상용화 제품에 널리 적용되었습니다.
+향후 산업 체인의 성숙에 따라 집적도, 지능화 수준 및 비용 효율성이 지속적으로 향상될 것으로 기대됩니다.
+
+### 관련 태그
+- vla
+- on_device_inference
+- edge_compute
+- latency
+- real_time_control
+- humanoid
+
+### 휴머노이드 로봇 시스템에서의 역할
+휴머노이드 로봇 산업 체인의 핵심 기술 중 하나로서, 온디바이스 VLA 추론은 시스템 설계, 성능 최적화 및 산업화 응용에서 중요한 역할을 합니다. 이는 인식, 의사 결정, 실행, 에너지, 구조 및 검증 등 여러 하위 시스템과 상호 결합되어 전체 기계의 성능을 결정합니다. 관련 연구와 응용은 실제 시나리오에서의 신뢰성, 효율성 및 경제성을 더욱 향상시키기 위해 지속적으로 추진되고 있습니다.

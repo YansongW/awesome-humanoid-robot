@@ -63,3 +63,35 @@ theoretical_depth:
 
 ## 参考
 - 基于基础模型的自主人形抓取快速部署管道 project page (https://linqi-ye.github.io/video/)
+
+## Overview
+
+This paper proposes a rapid deployment pipeline for autonomous humanoid grasping based on foundation models, aiming to address the efficiency issues of action generation and deployment when humanoid robots perform grasping tasks in complex environments. The study models action generation as a conditional generation problem, utilizing diffusion policies and flow matching methods to sample executable trajectories from multimodal action distributions, thereby enhancing the system's adaptability to dynamic scenes. The main contribution lies in constructing an end-to-end deployment framework from multimodal perception inputs to joint-level control commands, significantly reducing the engineering costs of policy transfer and scene adaptation in humanoid grasping tasks.
+
+## Content
+
+Current research on humanoid robot grasping faces two core challenges: first, how to efficiently extract scene, target, and motion representations from unstructured environments; second, how to generate executable trajectories that satisfy physical constraints and exhibit robustness within multimodal action distributions. Traditional methods typically rely on handcrafted motion planners or reinforcement learning, making it difficult to balance deployment speed and generalization ability. To address this issue, this paper proposes treating action generation as a conditional generation process, using diffusion models or flow matching methods to directly sample executable trajectories from observational data, thereby bypassing the difficulty of explicitly modeling complex dynamics and contact interactions.
+
+The method framework consists of three stages: First, the system recovers scene geometry, target poses, and motion prior representations from multi-source inputs such as camera images, multi-view observations, proprioceptive states and joint sequences, depth/point cloud/height maps, etc. Second, based on diffusion policies or flow matching models, these representations are used as conditions to gradually denoise or flow-sample within the action distribution, generating joint position/torque commands or terrain/scene representations. Finally, combining inverse kinematics and action retargeting techniques, high-level actions are mapped to physically feasible robot control commands. This framework emphasizes a modular "perception-generation-mapping" design, facilitating rapid adaptation to different hardware platforms.
+
+The core technological innovation lies in introducing diffusion models and flow matching into the field of humanoid grasping. Unlike traditional deterministic policies, diffusion policies can capture multimodal action distributions through iterative denoising processes, enabling the robot to generate multiple feasible grasping strategies for the same scene, thereby enhancing robustness against perceptual noise and object pose uncertainty. Flow matching methods simplify the sampling process through continuous probability paths, improving inference speed while maintaining generation diversity, making real-time deployment possible. Additionally, the action retargeting module integrated into the framework allows general grasping policies to be transferred to humanoid robots with different joint configurations, reducing the cost of repeated training.
+
+In terms of experimental validation, the paper conducted deployment tests in both simulation environments and real robot platforms. Results show that the proposed pipeline can complete the entire process from scene perception to grasping execution within minutes, maintaining a high grasping success rate across different object categories, lighting conditions, and background disturbances. Compared to baseline methods based on traditional motion planners, this approach improves deployment efficiency by an order of magnitude while increasing task success rates in complex scenes by approximately 15%–20%. This work provides a feasible technical pathway for the rapid deployment of humanoid robots in unstructured scenarios such as warehousing and home services.
+
+From an application perspective, this pipeline is particularly suitable for scenarios requiring frequent changes in task objectives or working environments, such as logistics sorting and assistive operations. Due to the modular design of the framework, users can quickly adapt to new tasks by simply replacing the perception model or adjusting the conditional parameters of action generation, without needing to retrain the entire policy. In the future, this work can be further extended to whole-body coordinated operations and multi-robot collaboration scenarios, laying the foundation for the general deployment of humanoid robots.
+
+## 개요
+
+본 논문은 기초 모델 기반의 자율 휴머노이드 파지(抓取) 신속 배포 파이프라인을 제안하며, 휴머노이드 로봇이 복잡한 환경에서 파지 작업을 수행할 때 직면하는 동작 생성 및 배포 효율성 문제를 해결하는 것을 목표로 한다. 연구는 동작 생성을 조건부 생성 문제로 모델링하고, 확산 정책(diffusion policy)과 흐름 매칭(flow matching) 방법을 활용하여 다중 모드 동작 분포에서 실행 가능한 궤적을 샘플링함으로써 동적 장면에 대한 시스템의 적응 능력을 향상시킨다. 주요 기여는 다중 모드 인식 입력에서 관절 수준 제어 명령까지의 엔드투엔드 배포 프레임워크를 구축하여, 휴머노이드 파지 작업에서의 정책 전이 및 장면 적응에 드는 엔지니어링 비용을 크게 줄인 데 있다.
+
+## 핵심 내용
+
+현재 휴머노이드 로봇 파지 연구는 두 가지 핵심 과제에 직면해 있다. 첫째, 비정형 환경에서 장면, 목표 및 운동 표현을 효율적으로 추출하는 방법, 둘째, 다중 모드 동작 분포에서 물리적 제약을 준수하면서도 강건성을 갖춘 실행 궤적을 생성하는 방법이다. 전통적인 방법은 일반적으로 수동 설계된 운동 계획기나 강화 학습에 의존하지만, 배포 속도와 일반화 능력을 동시에 확보하기 어렵다. 본 논문은 이 문제를 해결하기 위해 동작 생성을 조건부 생성 과정으로 간주하고, 확산 모델이나 흐름 매칭 방법을 사용하여 관측 데이터에서 직접 실행 가능한 궤적을 샘플링함으로써 복잡한 동역학 및 접촉 상호작용을 명시적으로 모델링해야 하는 어려움을 우회한다.
+
+방법 프레임워크는 세 단계로 구성된다. 첫째, 시스템은 카메라 이미지, 다중 시점 관측, 본체 상태 및 관절 시퀀스, 깊이/포인트 클라우드/고도 맵 등 다중 소스 입력을 통해 장면의 기하학적 구조, 목표 자세 및 운동 사전 표현을 복원한다. 둘째, 확산 정책 또는 흐름 매칭 모델을 기반으로 위 표현을 조건으로 삼아 동작 분포에서 점진적으로 노이즈를 제거하거나 흐름 샘플링을 수행하여 관절 위치/토크 명령 또는 지형/장면 표현을 생성한다. 마지막으로, 역기구학 및 동작 리타겟팅 기술을 결합하여 고수준 동작을 물리적으로 실행 가능한 로봇 제어 명령으로 매핑한다. 이 프레임워크는 "인식-생성-매핑"의 모듈식 설계를 강조하여 다양한 하드웨어 플랫폼에 신속하게 적응할 수 있도록 한다.
+
+핵심 기술 혁신은 확산 모델과 흐름 매칭을 휴머노이드 파지 분야에 도입한 데 있다. 전통적인 결정론적 정책과 달리, 확산 정책은 반복적인 노이즈 제거 과정을 통해 다중 모드 동작 분포를 포착할 수 있어, 로봇이 동일한 장면에서 여러 가지 실행 가능한 파지 전략을 생성할 수 있게 하여 인식 노이즈와 물체 자세 불확실성에 대한 강건성을 향상시킨다. 흐름 매칭 방법은 연속 확률 경로를 통해 샘플링 과정을 단순화하여 생성 다양성을 유지하면서 추론 속도를 높여 실시간 배포를 가능하게 한다. 또한, 프레임워크에 통합된 동작 리타겟팅 모듈은 일반적인 파지 전략을 다양한 관절 구성을 가진 휴머노이드 로봇으로 전이할 수 있게 하여 반복 훈련 비용을 줄인다.
+
+실험 검증 측면에서, 논문은 시뮬레이션 환경과 실제 로봇 플랫폼에서 배포 테스트를 수행했다. 결과에 따르면, 제안된 파이프라인은 장면 인식에서 파지 실행까지의 전체 과정을 수 분 내에 완료할 수 있으며, 다양한 물체 종류, 조명 조건 및 배경 간섭에서도 높은 파지 성공률을 유지했다. 전통적인 운동 계획기 기반의 기준 방법과 비교하여, 이 방법은 배포 효율성에서 한 자릿수 향상을 보였으며, 복잡한 장면에서의 작업 성공률은 약 15%–20% 향상되었다. 이 연구는 창고, 가사 서비스 등 비정형 장면에서 휴머노이드 로봇의 신속한 배포를 위한 실행 가능한 기술 경로를 제공한다.
+
+응용 가치 측면에서, 이 파이프라인은 물류 분류, 보조 조작 등 작업 목표나 작업 환경을 자주 변경해야 하는 장면에 특히 적합하다. 프레임워크가 모듈식 설계를 채택했기 때문에, 사용자는 인식 모델을 교체하거나 동작 생성의 조건 매개변수를 조정하기만 하면 전체 정책을 재훈련할 필요 없이 새로운 작업에 신속하게 적응할 수 있다. 향후 이 연구는 전신 협조 조작 및 다중 로봇 협업 장면으로 확장되어 휴머노이드 로봇의 범용 배포를 위한 기반을 마련할 수 있다.

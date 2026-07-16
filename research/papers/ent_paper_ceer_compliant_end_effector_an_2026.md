@@ -64,3 +64,31 @@ theoretical_depth:
 ## 参考
 
 - CEER project page (https://robotproject8.github.io/ceer_page/)
+
+## Overview
+
+This study proposes a unified interface framework called CEER (Compliant End-Effector and Root Control), aimed at addressing the challenges of data closure and policy generalization in whole-body mobile manipulation tasks for humanoid robots. By integrating the control of the end-effector and the robot's root in a compatible manner, CEER constructs a full-chain solution from human operation data collection to the generation of reusable whole-body action sequences. Its main contribution lies in leveraging a teacher-student knowledge distillation mechanism to transform a whole-body control policy trained with privileged information into a low-level controller objective that relies only on deployment-level observations, thereby significantly enhancing the operational robustness and data utilization efficiency of humanoid robots in complex environments.
+
+## Content
+
+The core challenge of whole-body loco-manipulation for humanoid robots lies in coordinating high-dimensional whole-body joint movements with fine-grained end-effector operations while maintaining dynamic balance during motion. Existing methods typically separate motion planning from manipulation control, resulting in a lack of flexibility and data closure when dealing with unstructured environments. The CEER framework addresses this bottleneck by integrating body states, joint sequences, teleoperation/exoskeleton data, and simulation interaction data into a trainable data loop, thus bridging the gap between human operation demonstrations and autonomous robot execution.
+
+At the methodological level, CEER designs a hierarchical control architecture that decomposes the whole-body control task into two levels: high-level skill policies and low-level controller objectives. The high-level policy is trained using a teacher network with privileged information (e.g., complete environmental states, physical parameters) to learn whole-body trajectories and action sequences from human operation data. The low-level controller, via a student network, relies only on deployment-available observations (e.g., joint angles, IMU data) to execute end-effector and wrist-hand objectives. This hierarchical design allows the system to maintain high-level abstraction capabilities for complex tasks while ensuring real-time performance and robustness of low-level control.
+
+Key technological innovations are reflected in three aspects: First, CEER proposes a compatible end-effector and root control interface, unifying originally independent manipulation and locomotion controls into the same representation space, simplifying the complexity of policy transfer. Second, it introduces a teacher-student knowledge distillation mechanism to address the unavailability of privileged information during deployment, enabling the student policy to inherit whole-body coordination capabilities from the teacher policy. Third, it constructs a multi-source data fusion framework that aligns and augments teleoperation data, simulation interaction data, and body state sequences to generate reusable training samples, effectively alleviating the scarcity of real robot data.
+
+In terms of experimental validation, CEER was evaluated on multiple mobile manipulation tasks in both simulation environments and real humanoid robot platforms, including typical scenarios such as object grasping, carrying, and placement. Results show that whole-body control policies trained with the CEER framework outperform baseline methods in task success rate, motion smoothness, and robustness to external disturbances. Additionally, ablation experiments verify the improvement in data efficiency brought by the teacher-student distillation mechanism and the contribution of the unified interface design to cross-task generalization. This framework provides a feasible technical pathway for humanoid robots in application scenarios requiring whole-body coordinated operations, such as home services and industrial assembly.
+
+## 개요
+
+본 연구는 CEER(Compliant End-Effector and Root Control)라는 통합 인터페이스 프레임워크를 제안하여, 휴머노이드 로봇의 전신 이동 조작 작업에서 데이터 폐루프 및 정책 일반화의 어려움을 해결하고자 합니다. 말단 효과기와 로봇 루트의 제어를 호환 가능하게 통합함으로써, CEER는 인간 조작 데이터 수집부터 재사용 가능한 전신 동작 시퀀스 생성까지의 전 과정을 아우르는 파이프라인을 구축합니다. 주요 기여는 교사-학생 지식 증류 메커니즘을 활용하여, 특권 정보를 기반으로 훈련된 전신 제어 정책을 배포 시 관측 가능한 수준에만 의존하는 저수준 제어기 목표로 변환함으로써, 복잡한 환경에서 휴머노이드 로봇의 조작 강건성과 데이터 활용 효율성을 크게 향상시키는 데 있습니다.
+
+## 핵심 내용
+
+휴머노이드 로봇의 전신 이동 조작(loco-manipulation)이 직면한 핵심 과제는 고차원의 전신 관절 운동과 말단 효과기의 정밀 조작을 조정하면서 동시에 움직임 중 동적 균형을 유지하는 방법입니다. 기존 방법은 일반적으로 운동 계획과 조작 제어를 분리하여, 비구조화된 환경에서 시스템이 유연성과 데이터 폐루프 능력을 결여하게 만듭니다. CEER 프레임워크는 바로 이러한 병목 현상을 해결하기 위해, 본체 상태, 관절 시퀀스, 원격 조작/외골격 데이터 및 시뮬레이션 상호작용 데이터를 훈련 가능한 데이터 폐루프로 통합하여, 인간 조작 시연과 로봇 자율 실행 간의 격차를 메웁니다.
+
+방법론 측면에서 CEER는 계층적 제어 아키텍처를 설계하여, 전신 제어 작업을 고수준 스킬 정책과 저수준 제어기 목표라는 두 계층으로 분해합니다. 고수준 정책은 교사 네트워크를 통해 특권 정보(예: 완전한 환경 상태, 물리적 매개변수 등)를 활용하여 훈련되며, 인간 조작 데이터로부터 전신 궤적과 동작 시퀀스를 추출하는 방법을 학습합니다. 저수준 제어기는 학생 네트워크를 통해 배포 시 획득 가능한 관측(예: 관절 각도, IMU 데이터 등)만을 사용하여 말단 효과기와 손목-손 목표를 실행합니다. 이러한 계층적 설계는 시스템이 복잡한 작업에 대한 고수준 추상화 능력을 유지하면서도, 저수준 제어의 실시간성과 강건성을 보장할 수 있게 합니다.
+
+핵심 기술 혁신은 세 가지 측면에서 나타납니다. 첫째, CEER는 호환 가능한 말단 효과기와 루트 제어 인터페이스를 제안하여, 원래 독립적이었던 조작과 이동 제어를 동일한 표현 공간으로 통합함으로써 정책 전이의 복잡성을 단순화합니다. 둘째, 교사-학생 지식 증류 메커니즘을 도입하여 배포 단계에서 특권 정보를 사용할 수 없는 문제를 해결하고, 학생 정책이 교사 정책으로부터 전신 조정 능력을 상속받을 수 있게 합니다. 셋째, 다중 소스 데이터 융합 프레임워크를 구축하여 원격 조작 데이터, 시뮬레이션 상호작용 데이터 및 본체 상태 시퀀스를 정렬 및 증강함으로써 재사용 가능한 훈련 샘플을 생성하고, 실제 로봇 데이터 부족 문제를 효과적으로 완화합니다.
+
+실험 검증 측면에서 CEER는 시뮬레이션 환경과 실제 휴머노이드 로봇 플랫폼에서 여러 이동 조작 작업(물체 잡기, 운반 및 배치 등 전형적인 시나리오 포함)에 대한 평가를 수행했습니다. 결과는 CEER 프레임워크로 훈련된 전신 제어 정책이 작업 성공률, 움직임의 부드러움 및 외부 교란에 대한 강건성에서 기준 방법보다 우수함을 보여줍니다. 또한, 소거 실험을 통해 교사-학생 증류 메커니즘이 데이터 효율성을 향상시키는 효과와 통합 인터페이스 설계가 작업 간 일반화 능력에 기여하는 바를 확인했습니다. 이 프레임워크는 가사 서비스, 산업 조립 등 전신 조정이 필요한 응용 시나리오에서 휴머노이드 로봇을 위한 실현 가능한 기술 경로를 제공합니다.

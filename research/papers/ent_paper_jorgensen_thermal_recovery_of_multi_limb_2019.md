@@ -58,3 +58,14 @@ The problem of finding thermally minimizing configurations of a humanoid robot t
 ## 参考
 - http://arxiv.org/abs/1902.00187v4
 
+## Overview
+The problem of finding thermally minimizing configurations of a humanoid robot to recover its actuators from unsafe thermal states is addressed. A first-order, data-driven, effort-based, thermal model of the robot's actuators is devised, which is used to predict future thermal states. Given this predictive capability, a map between configurations and future temperatures is formulated to find what configurations, subject to valid contact constraints, can be taken now to minimize future thermal states. Effectively, this approach is a realization of a contact-constrained thermal inverse-kinematics (IK) process. Experimental validation of the proposed approach is performed on the NASA Valkyrie robot hardware.
+
+## Content
+The problem of finding thermally minimizing configurations of a humanoid robot to recover its actuators from unsafe thermal states is addressed. A first-order, data-driven, effort-based, thermal model of the robot's actuators is devised, which is used to predict future thermal states. Given this predictive capability, a map between configurations and future temperatures is formulated to find what configurations, subject to valid contact constraints, can be taken now to minimize future thermal states. Effectively, this approach is a realization of a contact-constrained thermal inverse-kinematics (IK) process. Experimental validation of the proposed approach is performed on the NASA Valkyrie robot hardware.
+
+## 개요
+휴머노이드 로봇의 액추에이터를 안전하지 않은 열 상태로부터 회복시키기 위해 열적으로 최소화하는 구성을 찾는 문제를 다룹니다. 로봇 액추에이터의 1차, 데이터 기반, 노력 기반 열 모델을 고안하여 미래의 열 상태를 예측하는 데 사용합니다. 이러한 예측 능력을 바탕으로, 구성과 미래 온도 간의 매핑을 공식화하여 유효한 접촉 제약 조건을 만족하는 현재 취할 수 있는 구성을 찾아 미래 열 상태를 최소화합니다. 효과적으로, 이 접근 방식은 접촉 제약 조건이 있는 열 역기구학(IK) 프로세스의 구현입니다. 제안된 접근 방식의 실험적 검증은 NASA Valkyrie 로봇 하드웨어에서 수행되었습니다.
+
+## 핵심 내용
+휴머노이드 로봇의 액추에이터를 안전하지 않은 열 상태로부터 회복시키기 위해 열적으로 최소화하는 구성을 찾는 문제를 다룹니다. 로봇 액추에이터의 1차, 데이터 기반, 노력 기반 열 모델을 고안하여 미래의 열 상태를 예측하는 데 사용합니다. 이러한 예측 능력을 바탕으로, 구성과 미래 온도 간의 매핑을 공식화하여 유효한 접촉 제약 조건을 만족하는 현재 취할 수 있는 구성을 찾아 미래 열 상태를 최소화합니다. 효과적으로, 이 접근 방식은 접촉 제약 조건이 있는 열 역기구학(IK) 프로세스의 구현입니다. 제안된 접근 방식의 실험적 검증은 NASA Valkyrie 로봇 하드웨어에서 수행되었습니다.

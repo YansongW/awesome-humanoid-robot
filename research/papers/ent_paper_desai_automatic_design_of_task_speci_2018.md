@@ -58,4 +58,14 @@ We present an interactive, computational design system for creating custom robot
 ## 参考
 - http://arxiv.org/abs/1806.07419v1
 
+## Overview
+We present an interactive, computational design system for creating custom robotic arms given high-level task descriptions and environmental constraints. Various task requirements can be encoded as desired motion trajectories for the robot arm's end-effector. Given such end-effector trajectories, our system enables on-demand design of custom robot arms using a library of modular and reconfigurable parts such as actuators and connecting links. By searching through the combinatorial set of possible arrangements of these parts, our method generates a functional, as-simple-as-possible robot arm that is capable of tracking the desired trajectories. We demonstrate our system's capabilities by creating robot arm designs in simulation, for various trajectory following scenarios.
 
+## Content
+We present an interactive, computational design system for creating custom robotic arms given high-level task descriptions and environmental constraints. Various task requirements can be encoded as desired motion trajectories for the robot arm's end-effector. Given such end-effector trajectories, our system enables on-demand design of custom robot arms using a library of modular and reconfigurable parts such as actuators and connecting links. By searching through the combinatorial set of possible arrangements of these parts, our method generates a functional, as-simple-as-possible robot arm that is capable of tracking the desired trajectories. We demonstrate our system's capabilities by creating robot arm designs in simulation, for various trajectory following scenarios.
+
+## 개요
+본 논문에서는 고수준 작업 설명과 환경적 제약 조건이 주어졌을 때 맞춤형 로봇 팔을 제작하기 위한 대화형 컴퓨터 설계 시스템을 제시합니다. 다양한 작업 요구 사항은 로봇 팔 엔드 이펙터의 원하는 운동 궤적으로 인코딩될 수 있습니다. 이러한 엔드 이펙터 궤적이 주어지면, 본 시스템은 액추에이터 및 연결 링크와 같은 모듈식 재구성 가능 부품 라이브러리를 사용하여 맞춤형 로봇 팔의 주문형 설계를 가능하게 합니다. 이러한 부품들의 조합 가능한 배열 집합을 검색함으로써, 본 방법은 원하는 궤적을 추적할 수 있는 기능적이면서도 가능한 한 단순한 로봇 팔을 생성합니다. 다양한 궤적 추종 시나리오에 대해 시뮬레이션에서 로봇 팔 설계를 생성함으로써 시스템의 성능을 입증합니다.
+
+## 핵심 내용
+본 논문에서는 고수준 작업 설명과 환경적 제약 조건이 주어졌을 때 맞춤형 로봇 팔을 제작하기 위한 대화형 컴퓨터 설계 시스템을 제시합니다. 다양한 작업 요구 사항은 로봇 팔 엔드 이펙터의 원하는 운동 궤적으로 인코딩될 수 있습니다. 이러한 엔드 이펙터 궤적이 주어지면, 본 시스템은 액추에이터 및 연결 링크와 같은 모듈식 재구성 가능 부품 라이브러리를 사용하여 맞춤형 로봇 팔의 주문형 설계를 가능하게 합니다. 이러한 부품들의 조합 가능한 배열 집합을 검색함으로써, 본 방법은 원하는 궤적을 추적할 수 있는 기능적이면서도 가능한 한 단순한 로봇 팔을 생성합니다. 다양한 궤적 추종 시나리오에 대해 시뮬레이션에서 로봇 팔 설계를 생성함으로써 시스템의 성능을 입증합니다.

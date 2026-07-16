@@ -57,3 +57,14 @@ This paper discusses modelling two 6 DOF arm robots. The first step of modelling
 ## 参考
 - http://arxiv.org/abs/1707.04820v2
 
+## Overview
+This paper discusses modeling two 6 DOF arm robots. The first step of modeling a robot is establishing its Denavit-Hartenberg parameters. It requires assigning proper coordinates for each link and finding their exact dimensions. In this project we will develop the direct kinematics and workspace representations for two manipulators: the Smokie Robot and the Barrett WAM. After finding the D-H parameters and creating Transformation Matrices, MATLAB programming is used to represent their workspaces.
+
+## Content
+This paper discusses modeling two 6 DOF arm robots. The first step of modeling a robot is establishing its Denavit-Hartenberg parameters. It requires assigning proper coordinates for each link and finding their exact dimensions. In this project we will develop the direct kinematics and workspace representations for two manipulators: the Smokie Robot and the Barrett WAM. After finding the D-H parameters and creating Transformation Matrices, MATLAB programming is used to represent their workspaces.
+
+## 개요
+본 논문은 두 개의 6 자유도(DOF) 암 로봇을 모델링하는 방법에 대해 논의합니다. 로봇 모델링의 첫 번째 단계는 Denavit-Hartenberg 매개변수를 설정하는 것입니다. 이를 위해서는 각 링크에 적절한 좌표를 할당하고 정확한 치수를 찾아야 합니다. 이 프로젝트에서는 Smokie Robot과 Barrett WAM이라는 두 매니퓰레이터의 직접 기구학(direct kinematics)과 작업 공간(workspace) 표현을 개발할 것입니다. D-H 매개변수를 찾고 변환 행렬(Transformation Matrices)을 생성한 후, MATLAB 프로그래밍을 사용하여 이들의 작업 공간을 표현합니다.
+
+## 핵심 내용
+본 논문은 두 개의 6 자유도(DOF) 암 로봇을 모델링하는 방법에 대해 논의합니다. 로봇 모델링의 첫 번째 단계는 Denavit-Hartenberg 매개변수를 설정하는 것입니다. 이를 위해서는 각 링크에 적절한 좌표를 할당하고 정확한 치수를 찾아야 합니다. 이 프로젝트에서는 Smokie Robot과 Barrett WAM이라는 두 매니퓰레이터의 직접 기구학(direct kinematics)과 작업 공간(workspace) 표현을 개발할 것입니다. D-H 매개변수를 찾고 변환 행렬(Transformation Matrices)을 생성한 후, MATLAB 프로그래밍을 사용하여 이들의 작업 공간을 표현합니다.

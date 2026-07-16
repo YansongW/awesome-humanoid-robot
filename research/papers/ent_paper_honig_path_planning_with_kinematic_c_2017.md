@@ -58,4 +58,14 @@ Path planning for multiple robots is well studied in the AI and robotics communi
 ## 参考
 - http://arxiv.org/abs/1704.07538v1
 
+## Overview
+Path planning for multiple robots is well studied in the AI and robotics communities. For a given discretized environment, robots need to find collision-free paths to a set of specified goal locations. Robots can be fully anonymous, non-anonymous, or organized in groups. Although powerful solvers for this abstract problem exist, they make simplifying assumptions by ignoring kinematic constraints, making it difficult to use the resulting plans on actual robots. In this paper, we present a solution which takes kinematic constraints, such as maximum velocities, into account, while guaranteeing a user-specified minimum safety distance between robots. We demonstrate our approach in simulation and on real robots in 2D and 3D environments.
 
+## Content
+Path planning for multiple robots is well studied in the AI and robotics communities. For a given discretized environment, robots need to find collision-free paths to a set of specified goal locations. Robots can be fully anonymous, non-anonymous, or organized in groups. Although powerful solvers for this abstract problem exist, they make simplifying assumptions by ignoring kinematic constraints, making it difficult to use the resulting plans on actual robots. In this paper, we present a solution which takes kinematic constraints, such as maximum velocities, into account, while guaranteeing a user-specified minimum safety distance between robots. We demonstrate our approach in simulation and on real robots in 2D and 3D environments.
+
+## 개요
+다중 로봇의 경로 계획은 AI 및 로봇 공학 커뮤니티에서 널리 연구되어 왔습니다. 주어진 이산화된 환경에서 로봇은 지정된 목표 위치 집합까지 충돌 없는 경로를 찾아야 합니다. 로봇은 완전히 익명일 수도, 비익명일 수도, 또는 그룹으로 조직될 수도 있습니다. 이 추상적인 문제에 대한 강력한 솔버가 존재하지만, 운동학적 제약을 무시하는 단순화 가정을 하여 실제 로봇에서 결과 계획을 사용하기 어렵게 만듭니다. 본 논문에서는 최대 속도와 같은 운동학적 제약을 고려하면서 사용자가 지정한 최소 안전 거리를 보장하는 솔루션을 제시합니다. 우리는 2D 및 3D 환경에서 시뮬레이션과 실제 로봇을 통해 접근 방식을 시연합니다.
+
+## 핵심 내용
+다중 로봇의 경로 계획은 AI 및 로봇 공학 커뮤니티에서 널리 연구되어 왔습니다. 주어진 이산화된 환경에서 로봇은 지정된 목표 위치 집합까지 충돌 없는 경로를 찾아야 합니다. 로봇은 완전히 익명일 수도, 비익명일 수도, 또는 그룹으로 조직될 수도 있습니다. 이 추상적인 문제에 대한 강력한 솔버가 존재하지만, 운동학적 제약을 무시하는 단순화 가정을 하여 실제 로봇에서 결과 계획을 사용하기 어렵게 만듭니다. 본 논문에서는 최대 속도와 같은 운동학적 제약을 고려하면서 사용자가 지정한 최소 안전 거리를 보장하는 솔루션을 제시합니다. 우리는 2D 및 3D 환경에서 시뮬레이션과 실제 로봇을 통해 접근 방식을 시연합니다.

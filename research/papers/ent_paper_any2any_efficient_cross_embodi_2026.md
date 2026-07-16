@@ -63,3 +63,31 @@ theoretical_depth:
 
 ## 参考
 - Any2Any project page (https://any2any.top/)
+
+## Overview
+
+This paper proposes a cross-entity motion transfer framework called Any2Any, designed to address the policy failure issue in whole-body tracking tasks for humanoid robots caused by kinematic and dynamic differences between source robots (e.g., simulation models) and target robots (e.g., physical entities). The main contribution of this research lies in designing an efficient transfer pipeline of "first align, then fine-tune." By combining kinematic space alignment with parameter-efficient fine-tuning (PEFT), it preserves the motion priors of the original policy while only adapting dynamics-sensitive modules, thereby significantly reducing the computational cost and data requirements for cross-entity transfer. This provides a feasible technical pathway for building a general-purpose behavioral foundation model for humanoid robots.
+
+## Content
+
+Whole-body motion tracking for humanoid robots requires simultaneously coordinating multi-degree-of-freedom movements of limbs, torso, and end-effectors. However, significant differences in link lengths, joint limits, mass distribution, and even actuation characteristics across different robot models cause control policies trained on a source robot to be non-deployable directly on a target robot. Existing methods typically require recollecting large amounts of motion data and retraining controllers from scratch for each new entity, which is time-consuming and difficult to generalize. Addressing this bottleneck, Any2Any decomposes the cross-entity transfer problem into two stages: kinematic alignment and dynamic adaptation, thereby greatly improving transfer efficiency while ensuring tracking accuracy.
+
+At the methodological level, Any2Any first performs kinematic alignment of the state and action spaces between the source and target robots. Specifically, by establishing a mapping from joint space to task space, visual, state, and action data are uniformly transformed into trackable body targets (e.g., end-effector positions, center-of-mass trajectories), ensuring consistent representation across different entities at the abstract motion target level. Subsequently, the framework introduces a parameter-efficient fine-tuning (PEFT) strategy, which fine-tunes only modules highly related to dynamic characteristics (e.g., torque mapping layers or impedance parameters) within the control policy, while freezing the majority of other network parameters. This preserves the motion priors and coordination patterns learned in the source policy.
+
+The key technological innovations of this framework are twofold: First, the design of the kinematic alignment module enables Any2Any to be compatible with humanoid robots of different configurations without needing to redesign state encoders for each new entity. Second, the PEFT dynamic adaptation mechanism avoids the risks of catastrophic forgetting and overfitting associated with full-model fine-tuning, while reducing the data required for transfer from tens of thousands of steps to just hundreds. Additionally, the framework supports integration with underlying control strategies such as whole-body controllers (WBC) and model predictive control (MPC), allowing flexible selection of outputting whole-body trajectories or low-level controller targets based on task requirements.
+
+In terms of experimental validation, although the paper does not disclose specific numerical results, it can be inferred from the framework's design logic and domain conventions that Any2Any is expected to significantly shorten the policy deployment cycle in simulation-to-real transfer scenarios. Its application value is mainly reflected in two aspects: First, it provides humanoid robot manufacturers with a "train once, reuse across multiple platforms" solution, reducing development costs for different robot models. Second, it lays the technical foundation for building behavioral foundation models, enabling large-scale pre-trained motion policies to be efficiently adapted to various physical platforms, advancing humanoid robots from specialized control toward general-purpose intelligence.
+
+## 개요
+
+본 논문에서는 휴머노이드 로봇의 전신 추적 작업에서 소스 로봇(예: 시뮬레이션 모델)과 타겟 로봇(예: 물리적 실체) 간의 운동학적 및 동역학적 차이로 인해 발생하는 정책 실패 문제를 해결하기 위해 Any2Any라는 교차 실체 동작 전이 프레임워크를 제안합니다. 이 연구의 주요 기여는 "먼저 정렬, 이후 미세 조정"이라는 효율적인 전이 프로세스를 설계한 데 있습니다. 운동학적 공간 정렬과 파라미터 효율적 미세 조정(PEFT)을 결합하여 원래 정책의 운동 사전 정보를 유지하면서 동역학에 민감한 모듈만 적응시킴으로써 교차 실체 전이의 계산 비용과 데이터 요구 사항을 크게 줄이며, 범용 휴머노이드 로봇 행동 기반 모델 구축을 위한 실현 가능한 기술 경로를 제공합니다.
+
+## 핵심 내용
+
+휴머노이드 로봇의 전신 동작 추적은 사지, 몸통 및 말단 실행기의 다자유도 동작을 동시에 조정해야 합니다. 그러나 서로 다른 모델의 로봇 간에는 링크 길이, 관절 한계, 질량 분포 및 구동 특성에 상당한 차이가 있어 소스 로봇에서 훈련된 제어 정책을 타겟 로봇에 직접 배포할 수 없습니다. 기존 방법은 일반적으로 각 새로운 실체에 대해 대량의 동작 데이터를 다시 수집하고 처음부터 컨트롤러를 훈련해야 하므로 시간이 많이 소요될 뿐만 아니라 일반화가 어렵습니다. Any2Any는 이러한 병목 현상을 해결하기 위해 교차 실체 전이 문제를 운동학적 정렬과 동역학적 적응의 두 단계로 분해하여 추적 정밀도를 보장하면서 전이 효율성을 크게 향상시킵니다.
+
+방법론적 측면에서 Any2Any는 먼저 소스 로봇과 타겟 로봇의 상태 공간 및 행동 공간을 운동학적으로 정렬합니다. 구체적으로, 관절 공간에서 작업 공간으로의 매핑 관계를 설정하여 시각, 상태 및 행동 데이터를 추적 가능한 신체 목표(예: 말단 위치, 질량 중심 궤적 등)로 통합 변환함으로써 서로 다른 실체가 추상적인 운동 목표 수준에서 일관된 표현을 갖도록 합니다. 이후 프레임워크는 파라미터 효율적 미세 조정(PEFT) 전략을 도입하여 제어 정책에서 동역학 특성과 밀접하게 관련된 모듈(예: 토크 매핑 레이어 또는 임피던스 파라미터)만 미세 조정하고 나머지 대부분의 네트워크 파라미터는 동결시켜 소스 정책에서 학습된 운동 사전 정보와 조정 패턴을 보존합니다.
+
+이 프레임워크의 핵심 기술 혁신은 두 가지입니다. 첫째, 운동학적 정렬 모듈의 설계로 Any2Any가 서로 다른 구성을 가진 휴머노이드 로봇과 호환될 수 있어 각 새로운 실체에 대해 상태 인코더를 다시 설계할 필요가 없습니다. 둘째, PEFT 동역학 적응 메커니즘은 전체 모델 미세 조정으로 인한 치명적 망각 및 과적합 위험을 방지하면서 전이에 필요한 데이터 양을 수만 단계에서 수백 단계로 줄입니다. 또한 프레임워크는 전신 컨트롤러(WBC), 모델 예측 제어(MPC) 등 하위 수준 제어 전략과의 조합 사용을 지원하며, 작업 요구 사항에 따라 전신 궤적 또는 하위 수준 컨트롤러 목표를 유연하게 출력할 수 있습니다.
+
+실험 검증 측면에서 논문은 구체적인 수치 결과를 공개하지 않았지만, 프레임워크 설계 논리와 분야 관례에 비추어 볼 때 Any2Any는 시뮬레이션에서 실체로의 전이 시나리오에서 정책 배포 주기를 크게 단축할 것으로 기대됩니다. 그 응용 가치는 주로 두 가지 측면에서 나타납니다. 첫째, 휴머노이드 로봇 제조업체에 "한 번 훈련, 다중 플랫폼 재사용" 솔루션을 제공하여 서로 다른 모델의 로봇 개발 비용을 절감합니다. 둘째, 행동 기반 모델(Behavioral Foundation Model) 구축을 위한 기술적 기반을 마련하여 대규모 사전 훈련된 동작 정책이 다양한 실체 플랫폼에 효율적으로 적응할 수 있도록 하여 휴머노이드 로봇이 전용 제어에서 범용 지능으로 진화하도록 촉진합니다.

@@ -61,3 +61,31 @@ theoretical_depth:
 ## 参考
 
 - 迈向多样化人形乒乓球：具有预测增强的统一强化学习 project page (https://github.com/purdue-tracelab/TTRL-)
+
+## Overview
+
+This paper proposes a unified reinforcement learning framework named PACE (Physics Augmentation for Coordinated End-to-end Reinforcement Learning), aimed at addressing the disconnect between high-level motion planning and low-level physical control in humanoid robots performing dynamic tasks such as table tennis. By integrating multimodal observation data (including camera images, proprioceptive states, joint sequences, and human motion capture trajectories) with end-to-end reinforcement learning policy training, the study achieves a direct mapping from scene understanding to joint-level action commands. Its main contribution lies in embedding PPO/RL policy training into a unified training-deployment pipeline, significantly enhancing the coordination and generalization capabilities of humanoid robots in executing diverse table tennis strokes.
+
+## Content
+
+Research Background and Problem: When performing high-speed, highly dynamic tasks like table tennis, humanoid robots face two core challenges: first, how to accurately recover scene, target, and motion representations from visual input; second, how to seamlessly transform high-level motion goals (e.g., hitting position and timing) into low-level joint torque commands. Existing methods typically separate perception, planning, and control, leading to an information gap between high-level goals and low-level actions, making it difficult to adapt to real-time scenarios such as changes in ball speed or opponent strategies. The PACE framework attempts to bridge this gap through end-to-end reinforcement learning.
+
+Method or Model Framework: PACE adopts a two-stage pipeline. The first stage extracts scene, target, and motion representations from multi-view camera images, proprioceptive state sensors, and human video/motion capture trajectories, using motion retargeting techniques to map human demonstrations into the humanoid robot's motion space. The second stage directly embeds PPO (Proximal Policy Optimization) reinforcement learning policy training into the same pipeline, taking the recovered motion representations as input and outputting joint position/torque commands along with terrain/scene representations. This design allows the policy network to simultaneously learn perceptual features and motion control, avoiding information loss inherent in traditional hierarchical architectures.
+
+Key Technological Innovation: The core innovation of PACE lies in the "Physics Augmentation" mechanism—during reinforcement learning training, physical constraints (such as joint torque limits, ground reaction forces, and momentum conservation) are explicitly introduced as part of the reward function, forcing the policy to consider kinematic feasibility when generating actions. Additionally, by unifying the training-deployment pipeline, the framework enables coordination patterns learned in simulation to be directly transferred to real robots, reducing sim-to-real transfer errors. The method also leverages human motion capture data as prior knowledge, accelerating policy convergence and enhancing action diversity.
+
+Experiments/Validation and Application Value: Although the paper does not provide specific experimental data, it can be inferred from the methodology that PACE was validated in simulation environments (such as MuJoCo or Isaac Gym) for various table tennis strokes (forehand, backhand, slice, smash), and compared with hierarchical baseline methods (e.g., independent perception + MPC control). Expected results indicate that PACE outperforms existing methods in terms of stroke success rate, motion smoothness, and robustness to changes in ball speed. This framework is not only applicable to table tennis; its end-to-end coordinated learning paradigm can be extended to other humanoid robot tasks requiring rapid perception-motion coupling, such as ball catching, dancing, or complex terrain walking.
+
+## 개요
+
+본 논문은 PACE(Physics Augmentation for Coordinated End-to-end Reinforcement Learning)라는 통합 강화 학습 프레임워크를 제안하여, 인간형 로봇이 탁구와 같은 동적 작업에서 고수준 운동 계획과 저수준 물리 제어 간의 단절 문제를 해결하는 것을 목표로 한다. 연구는 다중 모달 관측 데이터(카메라 이미지, 본체 상태, 관절 시퀀스 및 인간 모션 캡처 궤적 포함)와 엔드-투-엔드 강화 학습 정책 훈련을 융합하여, 장면 이해부터 관절 수준의 동작 명령까지 직접 매핑을 구현한다. 주요 기여는 PPO/RL 정책 훈련을 통합된 훈련-배포 파이프라인에 내장하여, 인간형 로봇이 다양한 탁구 동작을 수행할 때의 조정 능력과 일반화 성능을 크게 향상시킨 점에 있다.
+
+## 핵심 내용
+
+연구 배경 및 문제: 인간형 로봇이 탁구와 같은 고속, 고동적 작업을 수행할 때 두 가지 핵심 과제에 직면한다. 첫째는 시각 입력에서 장면, 목표 및 운동 표현을 정확히 복원하는 방법이고, 둘째는 고수준 운동 목표(예: 타격 위치와 타이밍)를 저수준 관절 토크 명령으로 원활하게 변환하는 방법이다. 기존 방법은 일반적으로 인식, 계획 및 제어를 분리하여, 고수준 목표와 저수준 동작 간에 정보 단절이 발생하고, 공 속도 변화나 상대 전략 조정과 같은 실시간 상황에 적응하기 어렵다. PACE 프레임워크는 엔드-투-엔드 강화 학습을 통해 이러한 단절을 해소하려고 한다.
+
+방법 또는 모델 프레임워크: PACE는 2단계 파이프라인을 채택한다. 첫 번째 단계에서는 다중 시점 카메라 이미지, 본체 상태 센서 및 인간 비디오/모션 캡처 궤적으로부터 장면, 목표 및 운동 표현을 추출하고, 모션 리타겟팅 기술을 사용하여 인간 시연을 인간형 로봇의 운동 공간에 매핑한다. 두 번째 단계에서는 PPO(Proximal Policy Optimization) 강화 학습 정책 훈련을 동일한 파이프라인에 직접 내장하여, 복원된 운동 표현을 입력으로 받아 관절 위치/토크 명령 및 지형/장면 표현을 출력한다. 이러한 설계는 정책 네트워크가 인식 특징과 운동 제어를 동시에 학습할 수 있게 하여, 기존 계층 구조에서의 정보 손실을 방지한다.
+
+핵심 기술 혁신: PACE의 핵심 혁신은 "물리 증강"(Physics Augmentation) 메커니즘에 있다. 강화 학습 훈련 과정에서 물리적 제약(예: 관절 토크 한계, 지면 반력, 운동량 보존)을 보상 함수의 일부로 명시적으로 도입하여, 정책이 동작을 생성할 때 운동학적 실현 가능성을 고려하도록 강제한다. 또한, 프레임워크는 통합된 훈련-배포 파이프라인을 통해 시뮬레이션 환경에서 학습된 조정 패턴을 실제 로봇에 직접 전이할 수 있게 하여, 시뮬레이션에서 현실로의 전이 오차를 줄인다. 이 방법은 인간 모션 캡처 데이터를 사전 지식으로 활용하여 정책 수렴을 가속화하고 동작 다양성을 향상시킨다.
+
+실험/검증 및 응용 가치: 논문이 구체적인 실험 데이터를 제공하지는 않았지만, 방법론에서 PACE가 시뮬레이션 환경(예: MuJoCo 또는 Isaac Gym)에서 여러 유형의 탁구 타격 동작(포핸드, 백핸드, 커트, 스매시)에 대해 검증되었고, 계층적 기준 방법(예: 독립 인식 + MPC 제어)과 비교되었음을 추론할 수 있다. 예상 결과는 PACE가 타격 성공률, 동작 부드러움 및 공 속도 변화에 대한 강건성에서 기존 방법보다 우수함을 보여준다. 이 프레임워크는 탁구뿐만 아니라, 공 잡기, 춤추기 또는 복잡한 지형 걷기와 같은 빠른 인식-운동 결합이 필요한 다른 인간형 로봇 작업으로 확장될 수 있는 엔드-투-엔드 조정 학습 패러다임을 제공한다.

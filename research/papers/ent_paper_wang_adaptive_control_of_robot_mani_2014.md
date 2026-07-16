@@ -60,4 +60,14 @@ In this paper, we investigate the adaptive control problem for robot manipulator
 ## 参考
 - http://arxiv.org/abs/1403.5204v3
 
+## Overview
+In this paper, we investigate the adaptive control problem for robot manipulators with both the uncertain kinematics and dynamics. We propose two adaptive control schemes to realize the objective of task-space trajectory tracking irrespective of the uncertain kinematics and dynamics. The proposed controllers have the desirable separation property, and we also show that the first adaptive controller with appropriate modifications can yield improved performance, without the expense of conservative gain choice. The performance of the proposed controllers is shown by numerical simulations.
 
+## Content
+In this paper, we investigate the adaptive control problem for robot manipulators with both the uncertain kinematics and dynamics. We propose two adaptive control schemes to realize the objective of task-space trajectory tracking irrespective of the uncertain kinematics and dynamics. The proposed controllers have the desirable separation property, and we also show that the first adaptive controller with appropriate modifications can yield improved performance, without the expense of conservative gain choice. The performance of the proposed controllers is shown by numerical simulations.
+
+## 개요
+본 논문에서는 불확실한 운동학과 동역학을 모두 가진 로봇 매니퓰레이터의 적응 제어 문제를 연구합니다. 우리는 불확실한 운동학과 동역학에 관계없이 작업 공간 궤적 추종 목표를 달성하기 위해 두 가지 적응 제어 기법을 제안합니다. 제안된 제어기는 바람직한 분리 특성을 가지며, 첫 번째 적응 제어기에 적절한 수정을 가하면 보수적인 이득 선택 없이도 향상된 성능을 얻을 수 있음을 보여줍니다. 제안된 제어기의 성능은 수치 시뮬레이션을 통해 입증됩니다.
+
+## 핵심 내용
+본 논문에서는 불확실한 운동학과 동역학을 모두 가진 로봇 매니퓰레이터의 적응 제어 문제를 연구합니다. 우리는 불확실한 운동학과 동역학에 관계없이 작업 공간 궤적 추종 목표를 달성하기 위해 두 가지 적응 제어 기법을 제안합니다. 제안된 제어기는 바람직한 분리 특성을 가지며, 첫 번째 적응 제어기에 적절한 수정을 가하면 보수적인 이득 선택 없이도 향상된 성능을 얻을 수 있음을 보여줍니다. 제안된 제어기의 성능은 수치 시뮬레이션을 통해 입증됩니다.
