@@ -26,6 +26,8 @@ description:
   zh: Isaac Lab用于大规模训练GR00T N1策略。
   ko: Isaac Lab은 GR00T N1 정책을 대규모로 학습하는 데 사용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

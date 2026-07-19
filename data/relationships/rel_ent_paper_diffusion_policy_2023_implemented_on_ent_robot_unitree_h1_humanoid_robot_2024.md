@@ -26,6 +26,8 @@ description:
   zh: Diffusion Policy可部署在Unitree H1上执行操作任务。
   ko: Diffusion Policy는 Unitree H1에 배포되어 조작 작업을 수행할 수 있습니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

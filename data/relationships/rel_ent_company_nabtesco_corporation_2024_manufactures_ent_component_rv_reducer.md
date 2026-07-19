@@ -26,6 +26,8 @@ description:
   zh: Nabtesco生产RV和摆线减速器。
   ko: Nabtesco는 RV 및 사이클로이드 감속기를 제조합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

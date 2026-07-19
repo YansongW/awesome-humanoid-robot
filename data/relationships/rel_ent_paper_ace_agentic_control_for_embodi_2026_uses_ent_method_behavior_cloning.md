@@ -23,8 +23,8 @@ verification:
   status: partially_verified
   reviewed_by: ai
   reviewed_at: '2026-07-16'
-  confidence: medium
-  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 框架通过自然语言理解进行零样本操作，可能使用了行为克隆。'
+  confidence: low
+  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 框架通过自然语言理解进行零样本操作，可能使用了行为克隆。 [downgraded to low on 2026-07-17: hedged LLM evidence]'
 sources:
 - id: src_001
   type: other

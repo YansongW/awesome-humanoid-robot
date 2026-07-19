@@ -23,8 +23,8 @@ verification:
   status: partially_verified
   reviewed_by: ai
   reviewed_at: '2026-07-16'
-  confidence: medium
-  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 论文可能在Unitree H1人形机器人上评估感知运动'
+  confidence: low
+  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 论文可能在Unitree H1人形机器人上评估感知运动 [downgraded to low on 2026-07-17: hedged LLM evidence]'
 sources:
 - id: src_001
   type: other

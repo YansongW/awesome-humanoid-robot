@@ -25,6 +25,8 @@ description:
   zh: 谐波减速器是旋转关节执行器的核心子部件。
   ko: 하모닉 감속기는 회전 관절 액추에이터의 핵심 하위 부품입니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

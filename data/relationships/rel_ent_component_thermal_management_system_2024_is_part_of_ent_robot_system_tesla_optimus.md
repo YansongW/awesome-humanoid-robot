@@ -28,6 +28,8 @@ description:
   zh: 热管理系统保持Tesla Optimus的计算和执行器冷却。
   ko: 열 관리 시스템은 Tesla Optimus의 컴퓨팅 및 액추에이터를 시원하게 유지합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

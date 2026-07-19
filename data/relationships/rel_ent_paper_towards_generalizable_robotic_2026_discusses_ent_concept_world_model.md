@@ -23,8 +23,8 @@ verification:
   status: partially_verified
   reviewed_by: ai
   reviewed_at: '2026-07-16'
-  confidence: medium
-  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 该论文可能涉及世界模型以处理动态环境'
+  confidence: low
+  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 该论文可能涉及世界模型以处理动态环境 [downgraded to low on 2026-07-17: hedged LLM evidence]'
 sources:
 - id: src_001
   type: other

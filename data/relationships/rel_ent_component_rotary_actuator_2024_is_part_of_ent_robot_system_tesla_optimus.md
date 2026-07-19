@@ -27,6 +27,8 @@ description:
   zh: 旋转执行器用于Tesla Optimus的臂部和髋部关节。
   ko: 회전 액추에이터는 Tesla Optimus의 팔과 엉덩이 관절에 사용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

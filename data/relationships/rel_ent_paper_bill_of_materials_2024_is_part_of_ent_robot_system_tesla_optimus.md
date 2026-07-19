@@ -28,6 +28,8 @@ description:
   zh: BOM结构化Tesla Optimus的所有零件和子装配件。
   ko: BOM은 Tesla Optimus의 모든 부품 및 하위 조립품을 구조화합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

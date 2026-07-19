@@ -28,6 +28,8 @@ description:
   zh: HIL测试用于在完整装配前验证Tesla Optimus控制器。
   ko: HIL 테스트는 완전한 조립 전 Tesla Optimus 컨트롤러를 검증하는 데 사용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

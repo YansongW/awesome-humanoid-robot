@@ -169,7 +169,9 @@ def main() -> None:
     MAPPING.write_text(HEADER + body, encoding="utf-8")
     total_bindings = sum(len(v) for v in entities.values())
     print(f"bound {len(entities)} entities with {total_bindings} stage bindings")
+    return 1 if missing else 0
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    sys.exit(main())

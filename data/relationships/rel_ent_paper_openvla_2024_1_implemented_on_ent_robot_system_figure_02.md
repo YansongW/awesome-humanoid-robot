@@ -26,6 +26,8 @@ description:
   zh: OpenVLA可在Figure 02上微调并部署用于操作。
   ko: OpenVLA는 Figure 02에서 미세 조정 및 배포되어 조작에 사용될 수 있습니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

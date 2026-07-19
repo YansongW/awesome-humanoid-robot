@@ -26,6 +26,8 @@ description:
   zh: Maxon生产用于机器人关节的精密电机和齿轮头。
   ko: Maxon은 로봇 관절용 정밀 모터 및 기어헤드를 제조합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

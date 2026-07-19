@@ -27,6 +27,8 @@ description:
   zh: Mobile ALOHA扩展ALOHA以采集用于ACT的全身移动操作数据。
   ko: Mobile ALOHA는 ACT를 위한 전신 이동 조작 데이터를 수집하도록 ALOHA를 확장합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

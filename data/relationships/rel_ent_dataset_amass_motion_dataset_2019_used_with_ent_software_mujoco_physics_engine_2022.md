@@ -27,6 +27,8 @@ description:
   zh: AMASS动作用于在MuJoCo仿真中初始化人形跟踪。
   ko: AMASS 동작은 MuJoCo 시뮬레이션에서 휨로봇 추적을 위한 시드를 만드는 데 사용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

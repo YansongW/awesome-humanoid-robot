@@ -26,6 +26,8 @@ description:
   zh: 绿的谐波是国产谐波减速器制造商。
   ko: Leaderdrive는 중국 하모닉 감속기 제조업체입니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

@@ -25,6 +25,8 @@ description:
   zh: 无框力矩电机集成到旋转执行器中。
   ko: 프레임리스 토크 모터는 회전 액추에이터에 통합됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

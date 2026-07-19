@@ -26,6 +26,8 @@ description:
   zh: ACT通常使用通过ALOHA采集的演示数据训练。
   ko: ACT는 일반적으로 ALOHA를 통해 수집된 시연 데이터로 학습됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

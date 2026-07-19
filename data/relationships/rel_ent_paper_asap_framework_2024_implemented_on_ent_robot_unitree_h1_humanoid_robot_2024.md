@@ -26,6 +26,8 @@ description:
   zh: ASAP Sim-to-Real框架使Unitree H1能够实现敏捷控制。
   ko: ASAP Sim-to-Real 프레임워크는 Unitree H1에서 민첩한 제어를 가능하게 합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

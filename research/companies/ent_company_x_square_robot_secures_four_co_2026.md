@@ -2,7 +2,7 @@
 $id: ent_company_x_square_robot_secures_four_co_2026
 $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
-type: company
+type: report
 names:
   en: X Square Robot Secures Four Consecutive Financing Rounds, Surpasses US$2.8 Billion Valuation in Push for Physical AI
     Foundation Models
@@ -37,7 +37,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
 sources:
 - id: src_001
   type: website

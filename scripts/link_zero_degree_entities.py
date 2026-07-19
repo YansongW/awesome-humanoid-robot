@@ -67,7 +67,9 @@ ORG_VERB_RE = re.compile(
 PAPER_TYPES_WHITELIST = [
     "proposes", "introduces", "studies", "discusses", "uses", "evaluates_on",
     "benchmarks", "cites", "extends", "is_based_on", "developed_by",
-    "demonstrates_on", "mentions", "none",
+    "demonstrates_on", "mentions", "produces", "develops", "supplies",
+    "manufactured_by", "is_regulated_by", "compares_with", "is_alternative_to",
+    "is_version_of", "serves", "targets", "none",
 ]
 
 # ------------------------------------------------------------ acronym index
@@ -177,15 +179,15 @@ def get_api_key() -> str:
     ).read_text(encoding="utf-8").split("DEEPSEEK_API_KEY=")[1].split("\n")[0].strip()
 
 
-P6_PROMPT = """You are linking isolated papers/reports in a humanoid-robot knowledge graph.
-For each paper, choose up to 3 relationships FROM the paper TO a candidate entity.
-Use ONLY candidate IDs from that paper's candidate list. Choose "none" if nothing fits.
+P6_PROMPT = """You are linking isolated entities in a humanoid-robot knowledge graph.
+For each entity, choose up to 3 relationships FROM the entity TO a candidate entity.
+Use ONLY candidate IDs from that entity's candidate list. Choose "none" if nothing fits.
 Allowed types: {types}
 
 Return ONLY a JSON array:
 [{{"i": 0, "links": [{{"target_id": "ent_...", "type": "proposes", "reason_zh": "一句中文理由", "reason_en": "one English reason"}}]}}, ...]
 
-Papers:
+Entities:
 {items}"""
 
 
@@ -213,7 +215,8 @@ def compute_degrees(existing_pairs):
 
 def rule_llm_link(ents, existing, args, out, stats):
     degrees = compute_degrees(existing)
-    zero = [eid for eid in ents if degrees[eid] == 0]
+    include = set(args.include_types.split(",")) if args.include_types else None
+    zero = [eid for eid in ents if degrees[eid] == 0 and (include is None or ents[eid]["type"] in include)]
     done = set()
     if PROGRESS.exists():
         for line in PROGRESS.read_text(encoding="utf-8").splitlines():
@@ -307,6 +310,7 @@ def main() -> None:
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--batch", type=int, default=8)
     ap.add_argument("--limit", type=int, default=0)
+    ap.add_argument("--include-types", default="", help="comma-separated entity types to restrict LLM linking")
     args = ap.parse_args()
 
     ents = load_entities()

@@ -26,6 +26,8 @@ description:
   zh: 旋转执行器驱动Unitree H1的关节。
   ko: 회전 액추에이터는 Unitree H1의 관절을 구동합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

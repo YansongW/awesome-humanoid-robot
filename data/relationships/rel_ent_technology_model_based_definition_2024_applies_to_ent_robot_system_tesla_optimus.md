@@ -28,6 +28,8 @@ description:
   zh: MBD保持Tesla Optimus的CAD、运动学和标注同步。
   ko: MBD는 Tesla Optimus의 CAD, 운 동학 및 주석을 동기화된 상태로 유지합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

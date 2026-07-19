@@ -27,6 +27,8 @@ description:
   zh: MPC用于Unitree H1的全身运动生成。
   ko: MPC는 Unitree H1의 전신 동작 생성에 사용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

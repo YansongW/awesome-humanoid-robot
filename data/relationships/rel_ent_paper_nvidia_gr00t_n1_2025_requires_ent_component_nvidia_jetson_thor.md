@@ -27,6 +27,8 @@ description:
   zh: GR00T N1需要Jetson Thor级计算进行实时 onboard 推理。
   ko: GR00T N1은 실시간 온보드 추론을 위해 Jetson Thor급 컴퓨팅이 필요합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

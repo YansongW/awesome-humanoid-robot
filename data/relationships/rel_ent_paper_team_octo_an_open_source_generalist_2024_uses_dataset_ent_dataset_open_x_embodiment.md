@@ -26,6 +26,8 @@ description:
   zh: Open X-Embodiment数据用于训练Octo通才策略。
   ko: Open X-Embodiment 데이터는 Octo 제너럴리스트 정책 학습에 사용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

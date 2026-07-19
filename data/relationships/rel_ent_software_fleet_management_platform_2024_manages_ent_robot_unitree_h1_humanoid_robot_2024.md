@@ -27,6 +27,8 @@ description:
   zh: 机群管理平台编排已部署的Unitree H1机器人。
   ko: 플릿 관리 플랫폼은 배포된 Unitree H1 로봇을 오케스트레이션합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

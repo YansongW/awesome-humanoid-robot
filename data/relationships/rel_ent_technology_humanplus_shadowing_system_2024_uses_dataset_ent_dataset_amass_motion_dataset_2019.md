@@ -27,6 +27,8 @@ description:
   zh: AMASS用于在仿真中预训练HumanPlus低层策略。
   ko: AMASS는 시뮬레이션에서 HumanPlus 저수준 정책을 사전 학습하는 데 사용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

@@ -27,6 +27,8 @@ description:
   zh: DFM原则应用于Unitree H1的机械零件以实现批量生产。
   ko: DFM 원칙은 Unitree H1 기계 부품의 볼륨 생산을 위해 적용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

@@ -23,8 +23,8 @@ verification:
   status: partially_verified
   reviewed_by: ai
   reviewed_at: '2026-07-16'
-  confidence: medium
-  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 该论文综述了机器人操作鲁棒性的基础，可能讨论了行为克隆等方法。'
+  confidence: low
+  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 该论文综述了机器人操作鲁棒性的基础，可能讨论了行为克隆等方法。 [downgraded to low on 2026-07-17: hedged LLM evidence]'
 sources:
 - id: src_001
   type: other

@@ -26,6 +26,8 @@ description:
   zh: CubeMars生产一体化机器人关节电机和执行器。
   ko: CubeMars는 통합 로봇 관절 모터 및 액추에이터를 제조합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

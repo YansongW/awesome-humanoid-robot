@@ -26,6 +26,8 @@ description:
   zh: 鸣志电器生产用于灵巧手的空心杯电机。
   ko: Mingzhi는 능숙한 손을 위한 홀컵 모터를 제조합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

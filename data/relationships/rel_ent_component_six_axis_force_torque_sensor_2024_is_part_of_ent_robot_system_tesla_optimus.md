@@ -27,6 +27,8 @@ description:
   zh: 腕部/踝部力矩传感器使Tesla Optimus能够实现接触控制。
   ko: 손목/발목 힘-토크 센서는 Tesla Optimus의 접촉 제어를 가능하게 합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

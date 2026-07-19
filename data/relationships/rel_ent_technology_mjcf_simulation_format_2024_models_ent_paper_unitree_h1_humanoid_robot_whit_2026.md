@@ -27,6 +27,8 @@ description:
   zh: MJCF用于在MuJoCo中对Unitree H1建模。
   ko: MJCF는 MuJoCo에서 Unitree H1을 모델링하는 데 사용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

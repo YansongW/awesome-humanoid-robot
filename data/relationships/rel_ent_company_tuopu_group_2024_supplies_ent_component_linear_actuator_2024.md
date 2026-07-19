@@ -26,6 +26,8 @@ description:
   zh: 拓普集团供应一体化线性执行器总成， reportedly 用于Tesla Optimus。
   ko: Tuopu는 통합 선형 액추에이터 어셈블리를 공급하며 Tesla Optimus용으로 알려져 있습니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

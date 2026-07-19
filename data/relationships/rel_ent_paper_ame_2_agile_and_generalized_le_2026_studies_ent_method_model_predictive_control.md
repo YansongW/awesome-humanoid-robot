@@ -24,8 +24,8 @@ verification:
   status: partially_verified
   reviewed_by: ai
   reviewed_at: '2026-07-16'
-  confidence: medium
-  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 论文研究基于注意力神经地图编码的敏捷腿部运动，可能与MPC方法相关。'
+  confidence: low
+  notes: 'Mined by build_latent_relationships.py rule p6_llm_link. Evidence: 论文研究基于注意力神经地图编码的敏捷腿部运动，可能与MPC方法相关。 [downgraded to low on 2026-07-17: hedged LLM evidence]'
 sources:
 - id: src_001
   type: other

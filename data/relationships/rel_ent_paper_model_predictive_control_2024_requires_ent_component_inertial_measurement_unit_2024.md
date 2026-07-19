@@ -27,6 +27,8 @@ description:
   zh: MPC需要IMU反馈进行状态估计。
   ko: MPC는 상태 추정을 위해 IMU 피드백이 필요합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

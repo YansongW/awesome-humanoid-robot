@@ -27,6 +27,8 @@ description:
   zh: RealSense深度相机为Unitree H1提供视觉感知。
   ko: RealSense 깊이 칩차는 Unitree H1에 시각 인식을 제공합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

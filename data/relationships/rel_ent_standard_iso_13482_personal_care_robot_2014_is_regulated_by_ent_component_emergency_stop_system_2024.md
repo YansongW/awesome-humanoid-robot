@@ -26,6 +26,8 @@ description:
   zh: ISO 13482要求个人护理机器人配备急停系统。
   ko: ISO 13482는 개인 돌봄 로봇에 비상 정지 시스템을 요구합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

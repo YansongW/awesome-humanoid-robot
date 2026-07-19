@@ -28,6 +28,8 @@ description:
   zh: 据报道，Tesla从拓普集团采购Optimus的线性执行器总成。
   ko: Tesla는 Optimus용 선형 액추에이터 어셈블리를 Tuopu에서 조달하는 것으로 알려져 있습니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

@@ -26,6 +26,8 @@ description:
   zh: Isaac Sim用于为GR00T N1生成合成训练数据。
   ko: Isaac Sim은 GR00T N1을 위한 합성 학습 데이터를 생성하는 데 사용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

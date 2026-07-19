@@ -27,6 +27,8 @@ description:
   zh: 汇川技术供应用于机器人关节的伺服驱动和电机。
   ko: Inovance는 로봇 관절용 서보 드라이브 및 모터를 공급합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

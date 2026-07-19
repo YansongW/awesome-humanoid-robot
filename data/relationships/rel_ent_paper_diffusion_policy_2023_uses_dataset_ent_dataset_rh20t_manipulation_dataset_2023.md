@@ -26,6 +26,8 @@ description:
   zh: Diffusion Policy可以在RH20T接触丰富的操作数据上训练。
   ko: Diffusion Policy는 RH20T 접촉이 풍부한 조작 데이터로 학습할 수 있습니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

@@ -27,6 +27,8 @@ description:
   zh: 集成测试台验证Unitree H1的关节和控制回路。
   ko: 통합 테스트 벤치는 Unitree H1의 관절 및 제어 루프를 검증합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

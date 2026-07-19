@@ -27,6 +27,8 @@ description:
   zh: 在量产采购前对三花智控进行供应商认证。
   ko: 양산 조달 전 Sanhua에 대한 공급업체 자격을 적용합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

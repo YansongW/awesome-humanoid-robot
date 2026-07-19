@@ -27,6 +27,8 @@ description:
   zh: URDF对Unitree H1的连杆、关节和几何进行仿真建模。
   ko: URDF는 Unitree H1의 링크, 관절 및 기하를 시뮬레이션을 위해 모델링합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

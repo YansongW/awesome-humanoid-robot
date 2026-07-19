@@ -26,6 +26,8 @@ description:
   zh: DROID数据可在Isaac Sim中回放或增强以训练策略。
   ko: DROID 데이터는 Isaac Sim에서 정책 학습을 위해 재생 또는 증강될 수 있습니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

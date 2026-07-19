@@ -27,6 +27,8 @@ description:
   zh: 每台Unitree H1装配后都进行关节标定。
   ko: 모든 Unitree H1은 조립 후 관절 보정을 수행합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

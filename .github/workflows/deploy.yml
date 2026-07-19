@@ -44,8 +44,14 @@ jobs:
           print(f"Entries: {r['total_entries']}, critical: {r['severity_counts'].get('critical', 0)}, warning: {r['severity_counts'].get('warning', 0)}")
           print(f"Relationships: {rel['total']}, dangling: {len(rel['dangling'])}, missing_type: {len(rel['missing_type'])}, duplicates: {len(rel['duplicates'])}")
           print(f"Parse errors: {len(r['parse_errors'])}")
+          conn = rel.get('connectivity', {})
+          print(f"Connectivity: zero-degree {conn.get('zero_degree_count')} ({conn.get('zero_degree_ratio', 0):.2%}), avg_degree {conn.get('avg_degree')}")
           if rel['dangling'] or rel['missing_type'] or rel['duplicates'] or r['parse_errors']:
               print("Quality gate failed: relationship or parse errors detected.")
+              failed = True
+          # Connectivity regression gate: zero-degree share must stay below 5%.
+          if conn.get('zero_degree_ratio', 0) > 0.05:
+              print("Quality gate failed: zero-degree ratio above 5%.")
               failed = True
           # Future gate: fail on any critical entry once the backlog is cleared.
           # if r['severity_counts'].get('critical', 0) > 0:
@@ -53,6 +59,11 @@ jobs:
           #     failed = True
           sys.exit(1 if failed else 0)
           PY
+
+      - name: Regenerate and validate roadmap bindings
+        run: |
+          python scripts/build_roadmap_mapping.py
+          git diff --exit-code --stat data/roadmap_mapping.yaml || echo "note: mapping regenerated (content drift)"
 
       - name: Upload quality report
         uses: actions/upload-artifact@v4

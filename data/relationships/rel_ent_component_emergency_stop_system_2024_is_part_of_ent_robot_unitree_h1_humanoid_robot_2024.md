@@ -27,6 +27,8 @@ description:
   zh: 急停系统是Unitree H1的必备安全子系统。
   ko: 비상 정지 시스템은 Unitree H1의 필수 안전 하위 시스템입니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

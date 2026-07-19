@@ -25,6 +25,8 @@ description:
   zh: 行星滚柱丝杠将旋转运动转换为线性执行器的直线运动。
   ko: 행성 롤러 스크류는 선형 액추에이터에서 회전 운 동을 선형 운 동으로 변환합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

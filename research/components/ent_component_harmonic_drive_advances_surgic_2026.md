@@ -2,7 +2,7 @@
 $id: ent_component_harmonic_drive_advances_surgic_2026
 $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
-type: component
+type: report
 names:
   en: Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component
   zh: Harmonic Drive Advances Surgical Robotics Supply With Innovative LPA 20 Compact Actuator Control Component
@@ -37,7 +37,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-08'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py. [retyped component->report on 2026-07-17 by fix_headline_entity_types.py]
 sources:
 - id: src_001
   type: website

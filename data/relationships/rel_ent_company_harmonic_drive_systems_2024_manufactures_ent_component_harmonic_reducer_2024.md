@@ -26,6 +26,8 @@ description:
   zh: Harmonic Drive Systems生产谐波减速器。
   ko: Harmonic Drive Systems는 하모닉 감속기를 제조합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

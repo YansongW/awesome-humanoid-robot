@@ -26,6 +26,8 @@ description:
   zh: ALOHA硬件采集用于训练ACT的演示数据。
   ko: ALOHA 하드웨어는 ACT 학습에 사용되는 시연 데이터를 수집합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

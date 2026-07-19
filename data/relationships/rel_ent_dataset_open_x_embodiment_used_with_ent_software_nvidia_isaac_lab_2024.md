@@ -26,6 +26,8 @@ description:
   zh: Open X-Embodiment数据可与Isaac Lab中的合成数据混合。
   ko: Open X-Embodiment 데이터는 Isaac Lab의 합성 데이터와 혼합할 수 있습니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

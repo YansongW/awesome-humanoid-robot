@@ -26,6 +26,8 @@ description:
   zh: pi0是Figure 02双臂任务的VLA策略候选。
   ko: pi0는 Figure 02 양손 작업을 위한 VLA 정책 후보입니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

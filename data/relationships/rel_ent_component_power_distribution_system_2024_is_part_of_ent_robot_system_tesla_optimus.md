@@ -28,6 +28,8 @@ description:
   zh: 配电系统将电池能量分配给Tesla Optimus的计算和执行器。
   ko: 전력 분배 시스템은 Tesla Optimus의 컴퓨팅 및 액추에이터에 배터리 에너지를 분배합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

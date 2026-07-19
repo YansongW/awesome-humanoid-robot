@@ -27,6 +27,8 @@ description:
   zh: Jetson AGX Orin作为Unitree H1的车载计算。
   ko: Jetson AGX Orin은 Unitree H1의 온보드 컴퓨팅 역할을 합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

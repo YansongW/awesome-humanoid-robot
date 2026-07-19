@@ -25,6 +25,8 @@ description:
   zh: DROID被用于训练Diffusion Policy模型。
   ko: DROID은 Diffusion Policy 모델 학습에 사용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

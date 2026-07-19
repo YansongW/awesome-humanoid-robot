@@ -28,6 +28,8 @@ description:
   zh: 产能爬坡将Tesla Optimus从试产过渡到批量生产。
   ko: 생산 램프는 Tesla Optimus를 파일럿에서 볼륨 빌드로 전환합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

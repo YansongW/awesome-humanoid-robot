@@ -27,6 +27,8 @@ description:
   zh: OTA更新向Unitree H1机群部署新策略和固件。
   ko: OTA 업데이트는 Unitree H1 플릿에 새로운 정책 및 펌웨어를 배포합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

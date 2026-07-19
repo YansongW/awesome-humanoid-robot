@@ -26,6 +26,8 @@ description:
   zh: Unitree H1必须符合ISO 13482服务机器人安全标准。
   ko: Unitree H1은 서비스 로봇 안전을 위해 ISO 13482를 준수해야 합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

@@ -27,6 +27,8 @@ description:
   zh: Drake为MPC开发提供基于优化的控制工具。
   ko: Drake는 MPC 개발을 위한 최적화 기반 제어 도구를 제공합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

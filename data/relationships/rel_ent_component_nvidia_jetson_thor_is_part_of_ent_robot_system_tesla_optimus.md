@@ -30,6 +30,8 @@ description:
   zh: Jetson Thor级计算面向Tesla Optimus等下一代人形机器人。
   ko: Jetson Thor급 컴퓨팅은 Tesla Optimus와 같은 차세대 휨로봇을 대상으로 합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

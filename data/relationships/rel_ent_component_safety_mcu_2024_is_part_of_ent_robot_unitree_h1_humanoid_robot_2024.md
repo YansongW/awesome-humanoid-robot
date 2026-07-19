@@ -27,6 +27,8 @@ description:
   zh: 安全MCU监控Unitree H1的急停和关节限位。
   ko: 안전 MCU는 Unitree H1의 비상 정지 및 관절 한계를 모니터링합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

@@ -27,6 +27,8 @@ description:
   zh: GR00T N1面向包括Tesla Optimus级硬件在内的通用人形控制。
   ko: GR00T N1은 Tesla Optimus급 하드웨어를 포함한 범용 휨로봇 제어를 목표로 합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

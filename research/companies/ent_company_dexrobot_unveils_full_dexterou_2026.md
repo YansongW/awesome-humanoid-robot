@@ -2,7 +2,7 @@
 $id: ent_company_dexrobot_unveils_full_dexterou_2026
 $schema: ../../data/schema/v1/entry_schema.json
 $version: 1
-type: company
+type: report
 names:
   en: DexRobot Unveils Full Dexterous Hand Series and New DexTele Teleoperation System at Automate 2026
   zh: DexRobot Unveils Full Dexterous Hand Series and New DexTele Teleoperation System at Automate 2026
@@ -38,7 +38,7 @@ verification:
   reviewed_by: ai
   reviewed_at: '2026-07-01'
   confidence: medium
-  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py.
+  notes: Imported via ingestion framework from source_type=website. Body backfilled from entity metadata by scripts/backfill_critical_entities.py. [retyped company->report on 2026-07-17 by fix_headline_entity_types.py]
 sources:
 - id: src_001
   type: website

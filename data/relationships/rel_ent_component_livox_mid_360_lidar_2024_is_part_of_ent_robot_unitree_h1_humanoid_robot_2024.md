@@ -27,6 +27,8 @@ description:
   zh: Livox LiDAR为Unitree H1导航提供360度建图。
   ko: Livox LiDAR는 Unitree H1 납치를 위한 360도 매핑을 제공합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

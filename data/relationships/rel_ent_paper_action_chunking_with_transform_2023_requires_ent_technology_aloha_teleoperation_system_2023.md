@@ -26,6 +26,8 @@ description:
   zh: ACT需要ALOHA等遥操作接口来采集演示。
   ko: ACT는 시연을 수집하기 위해 ALOHA와 같은 텔레오퍼레이션 인터페이스가 필요합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

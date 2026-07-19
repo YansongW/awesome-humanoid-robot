@@ -27,6 +27,8 @@ description:
   zh: MoveIt在ROS 2之上运行以进行运动规划。
   ko: MoveIt은 조작 계획을 위해 ROS 2 위에서 실행됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

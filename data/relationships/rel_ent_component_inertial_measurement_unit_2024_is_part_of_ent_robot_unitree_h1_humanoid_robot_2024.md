@@ -27,6 +27,8 @@ description:
   zh: IMU安装在Unitree H1躯干用于平衡估计。
   ko: IMU는 Unitree H1 몸통에 장착되어 균형 추정에 사용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

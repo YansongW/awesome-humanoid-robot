@@ -27,6 +27,8 @@ description:
   zh: FEA在样机前分析Unitree H1的结构和热行为。
   ko: FEA는 프로토타입 전 Unitree H1의 구조적 및 열적 거동을 분석합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

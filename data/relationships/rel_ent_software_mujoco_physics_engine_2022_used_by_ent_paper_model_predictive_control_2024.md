@@ -27,6 +27,8 @@ description:
   zh: MuJoCo常用于原型化和评估MPC控制器。
   ko: MuJoCo는 MPC 컨트롤러의 프로토타입 및 평가에 일반적으로 사용됩니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

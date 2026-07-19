@@ -26,6 +26,8 @@ description:
   zh: Kollmorgen供应用于机器人关节的无框力矩电机。
   ko: Kollmorgen은 로봇 관절용 프레임리스 토크 모터를 공급합니다.
 verification:
+  confidence: medium
+  notes: bulk-added confidence on 2026-07-17 by backfill_rel_confidence.py; pending human review
   status: partially_verified
   sources: []
   reviewed_by: ai_autonomous

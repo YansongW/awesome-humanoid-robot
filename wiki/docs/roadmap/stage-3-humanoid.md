@@ -139,3 +139,10 @@
 | VLA 端侧跑不动 | 未量化；显存/算力不足 | 量化测延迟；降输入分辨率；升 Orin 64 GB/Thor |
 | 急停拍了不断电 | 急停走了软件路径 | 急停必须硬接线切断动力回路，独立测试 |
 | OTA 后起不来 | 无回滚；更新中断电 | A/B 分区；更新前查电量；留串口恢复通道 |
+
+## 配套阅读
+
+- [传感器选型手册](playbooks/sensor-selection.md) —— 感知栈的指标与价位档
+- [计算平台选型手册](playbooks/compute-selection.md) —— 分层大脑与端侧推理
+- [执行器选型手册](playbooks/actuator-selection.md) —— 手臂与灵巧手的执行器方案
+- [路线图总览](index.md)
