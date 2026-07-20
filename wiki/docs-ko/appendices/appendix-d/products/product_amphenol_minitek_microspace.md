@@ -1,0 +1,81 @@
+# Amphenol Minitek MicroSpace 1.27mm 와이어-투-보드 커넥터
+
+> 이 항목은 [부록 D 주요 제품 Wiki](../../appendix-d.md)에 속합니다.
+> 돌아가기: [부록 D.4 주요 제품 Wiki 목차](../index-products.md)
+> 데이터 업데이트: 2026-07-01. 모든 매개변수는 공식 공개 자료를 기준으로 하며, 누락된 항목은 "미공개"로 표시합니다.
+
+---
+
+## 제품 정보 카드
+
+| 항목 | 내용 |
+|------|------|
+| **제조사** | [암페놀 / Amphenol](../companies/company_amphenol.md) |
+| **제품 카테고리** | 1.27mm 와이어-투-보드 커넥터 |
+| **출시일** | 현재 판매 중 |
+| **상태** | 양산/상용 |
+| **공식 홈페이지/출처** | [Amphenol 공식 홈페이지](https://www.amphenol.com) |
+
+## 제품 개요
+
+Amphenol Minitek MicroSpace 1.27mm 와이어-투-보드 커넥터는 암페놀이 자동차 전장, 로봇 컨트롤러, 센서 인터페이스를 대상으로 출시한 1.27mm 와이어-투-보드 커넥터입니다. 이 제품은 표준화된 인터페이스, 안정적인 접촉 및 높은 신뢰성의 산업용 설계를 통해 로봇 시스템의 신호, 전원 또는 데이터 연결에 대한 장기적인 안정적 요구를 충족합니다.
+
+## 제품 이미지
+
+> Amphenol Minitek MicroSpace 1.27mm 와이어-투-보드 커넥터: [공식 자료](https://www.amphenol.com)를 방문하여 확인하십시오.
+
+## 사양 매개변수 표
+
+| 사양 항목 | 값 | 비고/출처 |
+|--------|------|-----------|
+| 핀 수 | 2 – 40 (선택 가능) | 공식 카탈로그 |
+| 정격 전류 | 미공개 | 공식 데이터시트 |
+| 정격 전압 | 미공개 | 공식 데이터시트 |
+| 보호 등급 | IP20 | 제품 자료 |
+| 피치 | 1.27mm | 공식 카탈로그 |
+| 적용 분야 | 자동차 전장, 로봇 컨트롤러, 센서 인터페이스 | 제품 자료 |
+| 가격 | 미공개 | 미공개 |
+
+## 공급망 위치
+
+- **제조사**: [암페놀 / Amphenol](../companies/company_amphenol.md)
+- **핵심 부품/기술 출처**: 구리 합금, 고성능 플라스틱, 도금 재료, 케이블, 자성 재료
+- **하위 응용/고객**: 로봇 제어 보드, 모터 드라이브, BMS, 산업용 컨트롤러, 차량용 ECU.
+
+## 지식 그래프 노드 및 관계
+
+- 제품 엔터티: `ent_product_amphenol_minitek_microspace`
+- 부품 엔터티: `ent_component_amphenol_minitek_microspace`
+- 제조사 엔터티: `ent_company_amphenol`
+- 주요 관계:
+  - `rel_ent_company_amphenol_manufactures_ent_product_amphenol_minitek_microspace` (`ent_company_amphenol` → `manufactures` → `ent_product_amphenol_minitek_microspace`)
+  - `rel_ent_company_amphenol_manufactures_ent_component_amphenol_minitek_microspace` (`ent_company_amphenol` → `manufactures` → `ent_component_amphenol_minitek_microspace`)
+
+## 적용 분야
+
+- **로봇 제어 보드**: 해당 분야의 연결 및 배선 요구 사항에 적합.
+- **모터 드라이브**: 해당 분야의 연결 및 배선 요구 사항에 적합.
+- **BMS**: 해당 분야의 연결 및 배선 요구 사항에 적합.
+- **산업용 컨트롤러**: 해당 분야의 연결 및 배선 요구 사항에 적합.
+- **차량용 ECU.**: 해당 분야의 연결 및 배선 요구 사항에 적합.
+
+## 경쟁 비교
+
+| 비교 항목 | 본 제품 | 국제 브랜드 | 국내 대응 제품 |
+|--------|--------|----------|----------|
+| 핵심 장점 | 품질 안정, 사양 다양, 글로벌 공급 | 고급 신뢰성 | 비용 및 납기 우위 |
+| 납기 | 구성에 따라/안정적 | 중간 | 짧음 |
+| 서비스 대응 | 글로벌 유통 네트워크 | 중간 | 신속 |
+| 가격 수준 | 중고급 | 고급 | 중저가 |
+
+## 선정 및 배치 권장 사항
+
+- 선정 전 핀 수, 전류, 전압, 보호 등급 및 설치 공간을 확인하고, 필요시 공식 데이터시트와 샘플을 요청하십시오.
+- 로봇 응용 분야에서는 내진동, 내굴곡, 내유성 및 EMC 차폐 요구 사항을 중점적으로 평가해야 하며, 프로토타입 검증을 권장합니다.
+- 대량 구매 시 공인 대리점 또는 원제조사를 통해 납기, MOQ 및 RoHS/REACH 적합 증명을 확인하는 것이 좋습니다.
+
+## 참고 자료
+
+1. [Amphenol 공식 홈페이지](https://www.amphenol.com)
+2. 제품 데이터시트 및 공개 기술 보도
+3. [부록 D 기업 목록](../index-companies.md)

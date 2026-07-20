@@ -380,6 +380,39 @@ def _norm_text(text: str) -> str:
     return re.sub(r"\s+", "", text)
 
 
+_ENTRY_LINK_BASE = {
+    1: "/wiki/appendices/appendix-d/",
+    2: "/wiki/appendices/",
+    3: "/wiki/",
+}
+
+
+def rewrite_entry_links(text: str) -> str:
+    """Rewrite relative .md links copied from wiki pages into absolute /wiki/ URLs.
+
+    Entry bodies backfilled from appendix-d wiki pages contain links relative to
+    their original location (e.g. ../index-products.md, ../../appendix-d.md,
+    ../../../chapters/chapter-04.md); on /entry/<id>/ pages they resolve to
+    garbage. Resolution base is the appendix-d source tree those bodies came from.
+    """
+
+    def repl(m: re.Match) -> str:
+        label, href = m.group(1), m.group(2)
+        if href.startswith(("http://", "https://", "#", "/", "mailto:")):
+            return m.group(0)
+        mm = re.match(r"^((?:\.\./)*)(.+?)\.md(#.*)?$", href)
+        if not mm:
+            return m.group(0)
+        ups = mm.group(1).count("../")
+        path, anchor = mm.group(2), mm.group(3) or ""
+        base = _ENTRY_LINK_BASE.get(ups)
+        if base is None:
+            return m.group(0)
+        return f"[{label}]({base}{path}/{anchor})"
+
+    return re.sub(r"(?<!!)\[([^\]]*)\]\(([^)\s]+)\)", repl, text)
+
+
 def dedup_render_body(body: str, summary: str) -> str:
     """Remove body sections that duplicate the summary or each other.
 
@@ -485,7 +518,17 @@ class KGStore:
         import markdown
 
         md = markdown.Markdown(
-            extensions=["extra", "toc", "tables", "pymdownx.arithmatex"],
+            extensions=[
+                "extra",
+                "toc",
+                "tables",
+                "admonition",
+                "pymdownx.details",
+                "pymdownx.superfences",
+                "pymdownx.arithmatex",
+                "pymdownx.mark",
+                "pymdownx.tilde",
+            ],
             extension_configs={"pymdownx.arithmatex": {"generic": True}},
         )
 
@@ -508,7 +551,7 @@ class KGStore:
                 if len(zh_body.strip()) >= 100:
                     filtered_body = zh_body
                     body_fallback = True
-            render_body = dedup_render_body(filtered_body, summary_text)
+            render_body = rewrite_entry_links(dedup_render_body(filtered_body, summary_text))
             body_html = md.convert(render_body)
             toc_html = md.toc if "<li>" in (md.toc or "") else ""
             entry = Entry(

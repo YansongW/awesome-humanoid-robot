@@ -1,0 +1,107 @@
+# 부록 G 용어집
+
+> 본 부록은 `scripts/build_appendices.py`가 지식 그래프 데이터에서 자동 생성하며, KG 업데이트에 따라 갱신됩니다.
+
+지식 그래프 내 개념, 원리, 연산자, 알고리즘 등 형식적 개체의 한 문장 정의를 범주별로 그룹화했습니다.
+
+
+## G.1 개념 (17)
+
+| 용어 | 정의 |
+|---|---|
+| [세계 모델](/entry/ent_concept_world_model/) | 환경의 미래 상태를 예측하는 학습 또는 수작업 내부 모델로, 로봇 및 AI에서 계획과 추론을 지원합니다. |
+| [제조물 책임](/entry/ent_concept_product_liability/) | 결함 또는 안전하지 않은 제품으로 인한 인적 피해 또는 재산 손실에 대한 제조사와 판매자의 법적 책임으로, 휴머노이드 로봇에 직접 적용됩니다. |
+| [생산량 증대](/entry/ent_paper_production_ramp_2024/) | 현재 휴머노이드 로봇 액추에이터 공급망은 고급 감속기와 고급 엔코더가 고도로 집중된 특징을 보입니다: 고조파 감속기 글로벌 선두 기업 Harmonic Drive, RV 감속기 Nabtesco가 큰 시장 점유율을 차지하고 있으며, 고급 자기 엔코더/광학 엔코더도 주로 일본, 유럽 기업이 공급합니다. |
+| [인간-로봇 협업 안전](/entry/ent_concept_human_robot_collaboration_safety/) | 인간과 로봇의 안전한 공존 및 협업을 보장하는 표준, 센서, 제어 법칙 및 작업 환경 설계의 집합으로, ISO 13482, ISO/TS 15066, IEC 61508, ISO 13849, IEC 62368 등 핵심 표준과 CE, UL, FCC, CR, CCC 등 지역 시장 인증을 포함합니다… |
+| [0에서 1로의 일곱 가지 도약](/entry/ent_concept_seven_transitions/) | 휴머노이드 로봇을 시제품에서 제품으로 전환하는 데 필요한 기술, 시스템, 공급망, 제조, 비용, 검증 및 시장의 일곱 가지 핵심 도약 프레임워크입니다. |
+| [체화된 범용 지능](/entry/ent_concept_embodied_general_intelligence/) | $$ \dot{x}(t) = f\big(x(t), u(t)\big), \quad y(t) = h\big(x(t), u(t)\big) $$ |
+| [의사 결정 스택](/entry/ent_concept_decision_stack/) | 인식 결과와 작업 목표를 계획, 전략 및 행동 결정으로 변환하는 소프트웨어 하위 시스템입니다. |
+| [인식 스택](/entry/ent_concept_perception_stack/) | 센서 데이터를 처리하여 상태를 추정하고, 객체를 감지하며, 환경 표현을 구축하여 의사 결정에 입력을 제공하는 소프트웨어 하위 시스템입니다. |
+| [액추에이션 스택](/entry/ent_concept_actuation_stack/) | 의사 결정 출력에 따라 하위 수준 모터 명령, 안전 리미트 및 오류 대응을 실행하는 소프트웨어 및 하드웨어 하위 시스템입니다. |
+| [디지털 트윈](/entry/ent_concept_digital_twin/) | 디지털 트윈(digital twin)은 물리적 개체의 디지털 공간 내 실시간 매핑으로, 설계 검증, 가상 시운전, 상태 모니터링 및 예측 유지보수에 사용될 수 있습니다. |
+| [데이터 플라이휠](/entry/ent_concept_data_flywheel/) | 배치된 로봇이 데이터를 생성하고, 데이터가 AI 모델을 개선하며, 모델이 로봇 성능을 향상시키고 더 많은 데이터를 생성하는 자기 강화 순환입니다. |
+| [로봇 서비스(RaaS)](/entry/ent_concept_robot_as_a_service/) | 로봇을 매각이 아닌 임대 또는 구독 방식으로 제공하고, 유지보수, 소프트웨어 업데이트 및 차량 관리(플릿 관리)를 패키지로 제공하는 비즈니스 모델입니다. |
+| [데모 지표와 제품 지표의 격차](/entry/ent_concept_demo_to_product_gap/) | ASIMO 및 초기 Atlas와 달리, 2025–2026년의 새로운 물결은 실제 환경에서의 장기 배치와 양산 가능성을 강조합니다: |
+| [자재 명세서](/entry/ent_paper_bill_of_materials_2024/) | 휴머노이드 로봇 한 대를 구축하는 데 필요한 모든 부품, 하위 조립품 및 원자재의 구조화된 목록입니다. |
+| [제약 조건 규정](/entry/ent_constraint_qualification/) | 최적화 문제 제약 조건의 정규성 조건을 개괄하며, 국소 최적점에서 Karush-Kuhn-Tucker 최적성 필요 조건의 유효성을 보장합니다. |
+| [토크 밀도](/entry/ent_metric_torque_density/) | 1. |
+| [프라이버시 및 생체 인식](/entry/ent_concept_privacy_biometrics/) | 로봇이 수집하는 개인 정보 및 생체 인식 데이터(예: 얼굴, 음성, 보행)의 거버넌스입니다. |
+
+## G.2 원리 (10)
+
+| 용어 | 정의 |
+|---|---|
+| [힘 폐쇄](/entry/ent_principle_force_closure/) | 접촉 구성을 변경하지 않고 접촉력이 물체의 임의의 외부 힘 나선을 평형시킬 수 있는 파지 조건입니다. |
+| [형상 폐쇄](/entry/ent_principle_form_closure/) | 마찰 없는 접촉의 기하학적 구조와 배치만으로 물체의 움직임을 완전히 구속하는 파지 조건입니다. |
+| [포착점](/entry/ent_principle_capture_point/) | 포착점(Capture Point, CP)은 휴머노이드 로봇의 푸시 리커버리(push recovery) 및 보행 계획의 핵심 개념입니다: 로봇이 해당 지점에 즉시 발을 내딛고 질량 중심을 지지하는 발 바로 위에 위치시킬 수 있다면, 더 이상 다음 걸음을 내딛지 않고도 멈출 수 있는 지면 위의 점입니다[44][45]. |
+| [최대 우도 추정](/entry/ent_principle_maximum_likelihood_estimation/) | 훈련 데이터가 나타날 확률을 최대화하는 모델 매개변수를 선택하는 통계적 원리로, 교차 엔트로피 및 다음 토큰 예측 손실의 기초입니다. |
+| [뉴턴-오일러 운동 방정식](/entry/ent_principle_newton_euler_equations/) | 힘과 토크가 강체의 병진 및 회전 가속도를 어떻게 생성하는지 설명하는 결합된 병진 및 회전 방정식입니다. |
+| [전류 루프/속도 루프/위치 루프](/entry/ent_principle_current_velocity_position_loops/) | 4. |
+| [전하 보존](/entry/ent_principle_conservation_of_charge/) | 전하는 생성되거나 소멸될 수 없으며 재분배만 가능하다는 기본 원리입니다. 이는 키르히호프 전류 법칙과 전기화학 시스템의 전하 평형 방정식의 기초입니다. |
+| [픽의 법칙](/entry/ent_ficks_law/) | 물질의 확산 플럭스가 농도 구배의 음의 값에 비례한다는 구성 원리입니다. |
+| [질량 중심(COM)](/entry/ent_principle_center_of_mass/) | 휴머노이드 로봇은 다중 링크 시스템으로, 전체 운동 상태는 각 링크 속도뿐만 아니라 질량 중심 운동량(centroidal momentum)을 통해 통합적으로 설명될 수 있습니다. |
+| [영점 모멘트 점(ZMP)](/entry/ent_principle_zero_moment_point/) | 8. |
+
+## G.3 연산자 (3)
+
+| 용어 | 정의 |
+|---|---|
+| [Softmax 함수](/entry/ent_operator_softmax_function/) | 실수 값 점수 벡터를 확률 분포로 변환하는 미분 가능한 연산자로, 최대값을 강조하면서 모든 확률이 양수이고 합이 1이 되도록 유지합니다. |
+| [작업 야코비안](/entry/ent_operator_task_jacobian/) | 관절 공간 속도 및 가속도를 작업 공간 작업 좌표의 속도/가속도에 매핑하는 행렬입니다. |
+| [분압기](/entry/ent_operator_voltage_divider/) | 저항 값 비율에 따라 총 전압을 직렬 저항에 분배하는 선형 회로 연산자입니다. |
+
+## G.4 알고리즘 (9)
+
+| 용어 | 정의 |
+|---|---|
+| [DDPM 역과정](/entry/ent_ddpm_reverse_process/) | 잡음 제거 확산 확률 모델(DDPM)에서 학습된 역방향 마르코프 체인으로, 가우시안 잡음을 점진적으로 데이터와 유사한 샘플로 변환합니다. |
+| [이차 계획법의 유효 집합법](/entry/ent_algorithm_active_set_method/) | 이차 계획법을 풀기 위한 반복 알고리즘으로, 활성 제약 조건 작업 집합을 유지하고 최적성 조건이 충족될 때까지 등식 제약 하위 문제를 해결합니다. |
+| [내점법](/entry/ent_interior_point_method/) | 장벽 또는 페널티 함수를 통해 실행 가능 영역 내부의 매끄러운 중심 경로를 따라 제약 최적화 문제를 해결하는 최적화 알고리즘 클래스입니다. |
+| [점수 매칭](/entry/ent_score_matching/) | 정규화되지 않은 확률 밀도 없이 알려지지 않은 로그 확률 밀도의 기울기(점수라고 함)를 학습하는 매개변수 추정 기법입니다. |
+| [역전파](/entry/ent_backpropagation/) | 역순으로 계층별로 연쇄 법칙을 적용하여 순방향 신경망의 모든 매개변수에 대한 손실 함수의 기울기를 효율적으로 계산하는 알고리즘입니다. |
+| [경사 하강법](/entry/ent_gradient_descent/) | > 생활 예시: 산에서 눈을 가린 채 가장 낮은 지점을 찾으려고 한다고 상상해보세요. |
+| [유효 집합법](/entry/ent_active_set_method/) | > 생활 예시: 퍼즐을 맞출 때 먼저 테두리에 닿는 조각(활성 제약 조건)을 추측하고, 이 테두리 조각만 맞춘 다음 내부에 튀어나온 조각이 있는지 확인하는 것을 상상해보세요. |
+| [소프트 액터-크리틱 (SAC)](/entry/ent_algorithm_sac/) | 기대 보상을 최대화하면서 정책 엔트로피를 최대화하여 탐험을 촉진하는 오프폴리시 액터-크리틱 강화 학습 알고리즘입니다. |
+| [근접 정책 최적화 (PPO)](/entry/ent_algorithm_ppo/) | 정책 업데이트 단계 크기를 제한하여 파괴적인 변화를 방지하고 샘플 효율성을 높이는 정책 기울기 강화 학습 알고리즘입니다. |
+
+## G.5 형식적 방법 (8)
+
+| 용어 | 정의 |
+|---|---|
+| [테브난 등가 회로](/entry/ent_formalism_thevenin_equivalent_circuit/) | 임의의 선형 전기 네트워크를 두 단자에서 바라볼 때 등가 이상 전압원과 직렬 등가 저항으로 대체하는 형식적 방법입니다. |
+| [Transformer 동작 디코더 형식화](/entry/ent_formalism_transformer_action_decoder/) | Transformer 아키텍처와 학습된 동작 토큰 어휘를 사용하여 시각-언어 맥락에서 로봇 동작을 디코딩하는 형식적 생성 프레임워크입니다. |
+| [라그랑지안](/entry/ent_lagrangian/) | 운동 에너지와 위치 에너지의 차이(또는 더 일반적인 조합)를 통해 시스템 동역학을 특성화하고 변분 원리로부터 운동 방정식을 도출하는 스칼라 함수입니다. |
+| [표준 이차 계획법 (QP)](/entry/ent_qp_standard_form/) | 현대 WBC의 주류 구현은 전신 QP 제어입니다. |
+| [오일러-라그랑주 방정식](/entry/ent_formalism_euler_lagrange_equations/) | 작용량 변분 정류 조건에서 도출된 2차 미분 방정식 시스템으로, 일반화 좌표에서 기계 시스템의 운동 방정식을 제공합니다. |
+| [부유 기반 동역학](/entry/ent_formalism_floating_base_dynamics/) | 휴머노이드 로봇은 고정 기반의 산업용 로봇 팔과 달리 기반(몸통)이 공간에서 자유롭게 이동할 수 있습니다. |
+| [베이지안 필터링](/entry/ent_bayesian_filtering/) | 동역학 모델과 잡음이 있는 관측을 사용하여 숨겨진 상태의 신뢰 분포를 반복적으로 유지하고 업데이트하는 확률적 프레임워크입니다. |
+| [역동역학 이차 계획법 형식화](/entry/ent_formalism_inverse_dynamics_qp/) | 작업 추적 오차를 최소화하고 부유 기반 동역학 및 물리적 제약 조건을 적용하여 일반화 가속도, 접촉력 및 관절 토크를 계산하는 이차 계획법 형식화입니다. |
+
+## G.6 정리 (2)
+
+| 용어 | 정의 |
+|---|---|
+| [Karush-Kuhn-Tucker (KKT) 조건](/entry/ent_kkt_conditions/) | > 생활 예시: 쇼핑몰에서 출구에 가장 가까운 위치를 찾고 싶지만 "어떤 가게 안으로도 들어갈 수 없다"(부등식 제약)는 조건과 "반드시 복도 중앙선 위에 서 있어야 한다"(등식 제약)는 조건이 있다고 상상해보세요. |
+| [연쇄 법칙](/entry/ent_chain_rule/) | 합성 함수의 도함수가 각 구성 함수 도함수의 곱과 같다는 기본 미적분 법칙입니다. |
+
+## G.7 방정식 (7)
+
+| 용어 | 정의 |
+|---|---|
+| [Butler-Volmer 방정식](/entry/ent_butler_volmer_equation/) | > 생활 예시: 배터리 충전은 많은 사람들이 동시에 회전문을 통과하는 것과 같습니다. |
+| [테브난 단자 전압 방정식](/entry/ent_equation_thevenin_terminal_voltage/) | 테브난 등가 회로의 단자 전압이 개방 회로 전압에서 등가 저항의 전압 강하를 뺀 것과 같다는 방정식입니다. |
+| [가중 작업 오차 목적 함수](/entry/ent_equation_weighted_task_error_objective/) | 기대 작업 가속도와 예측 작업 가속도 간의 가중 제곱 오차를 페널티로 부과하고 일반화 가속도에 정규화 항을 추가하는 QP 목적 함수입니다. |
+| [뉴턴-오일러 방정식](/entry/ent_newton_euler_equations/) | 강체 또는 힌지 연결 다물체 시스템의 운동을 설명하는 결합된 힘 평형 및 모멘트 평형 방정식 세트입니다. |
+| [스케일링된 내적 자기 주의](/entry/ent_self_attention_equation/) | > 생활 예시: 문장을 읽을 때 각 단어가 전체 문장을 "되돌아보고" 관련성에 따라 주의를 기울일 단어를 결정하는 것을 상상해보세요. |
+| [네른스트-플랑크 방정식](/entry/ent_nernst_planck_equation/) | 농도 구배와 전기장의 공동 작용 하에서 하전 입자의 플럭스를 설명하며, 확산과 전기 이동을 통합한 수송 방정식입니다. |
+| [연속 방정식](/entry/ent_continuity_equation/) | 특정 물리량의 변화율을 해당 플럭스의 발산 음수 값과 같게 하여 국소 보존을 표현하는 편미분 방정식입니다. |
+
+## G.8 기초 학문 (5)
+
+| 용어 | 정의 |
+|---|---|
+| [볼록 최적화](/entry/ent_foundation_convex_optimization/) | 볼록 집합에서 볼록 함수를 최소화하는 수학 분야로, 모든 국소 최적해가 전역 최적해임을 보장합니다. |
+| [확률론](/entry/ent_foundation_probability_theory/) | 불확실성, 확률 변수, 분포 및 기대값에 관한 수학적 기초로, 로봇 공학 및 머신 러닝의 모든 확률 모델의 기반입니다. |
+| [전기화학](/entry/ent_foundation_electrochemistry/) | 리튬 이온 배터리의 에너지 저장은 본질적으로 양극 및 음극 활물질 격자 내에서 리튬의 가역적인 삽입/탈리 반응입니다. |
+| [선형대수학](/entry/ent_foundation_linear_algebra/) | 벡터 공간, 선형 변환, 행렬 및 선형 방정식 시스템을 연구하는 수학 분야입니다. |
+| [고전 역학](/entry/ent_foundation_classical_mechanics/) | 힘의 작용 하에서 거시적 물체의 운동을 설명하는 물리학 분야로, 뉴턴의 법칙, 보존 원리 및 강체 동역학을 포함합니다. |

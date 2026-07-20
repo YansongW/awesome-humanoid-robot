@@ -3,7 +3,7 @@
 {% block title %}{{ entry.name }} · {{ ui.site_title }}{% endblock %}
 
 {% block head %}
-{% if entry.body_html and 'arithmatex' in entry.body_html %}
+{% if entry.body_html and ('arithmatex' in entry.body_html or 'language-mermaid' in entry.body_html) %}
 <link rel="stylesheet" href="/lib/katex/katex.min.css">
 {% endif %}
 {% endblock %}
@@ -244,6 +244,10 @@
 {% if entry.body_html and 'arithmatex' in entry.body_html %}
 <script defer src="/lib/katex/katex.min.js" onload="if(window.renderArithmatexMath) renderArithmatexMath();"></script>
 <script defer src="/js/math.js"></script>
+{% endif %}
+{% if entry.body_html and ('language-mermaid' in entry.body_html or 'mermaid' in entry.body_html) %}
+<script src="/lib/mermaid/mermaid.min.js"></script>
+<script src="/js/wiki.js"></script>
 {% endif %}
 {% if outgoing or incoming %}
 <script src="/lib/cytoscape/cytoscape.min.js"></script>

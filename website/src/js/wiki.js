@@ -5,7 +5,7 @@
 
   function initWiki() {
     // Convert fenced mermaid code blocks into native mermaid containers.
-    document.querySelectorAll('.wiki-body pre code.language-mermaid, .wiki-body pre code.mermaid').forEach(function (code) {
+    document.querySelectorAll('.wiki-body pre code.language-mermaid, .wiki-body pre code.mermaid, .entry-body pre code.language-mermaid, .entry-body pre code.mermaid').forEach(function (code) {
       var pre = code.parentElement;
       if (!pre || !pre.parentElement) return;
       var figure = document.createElement('pre');
@@ -16,7 +16,7 @@
     });
 
     // Style terminology / example / note blockquotes as info panels.
-    document.querySelectorAll('.wiki-body blockquote').forEach(function (bq) {
+    document.querySelectorAll('.wiki-body blockquote, .entry-body blockquote').forEach(function (bq) {
       var text = (bq.textContent || '').trim();
       if (/^(术语解释框|生活实例|自然语言逻辑|Note|提示|注意|Note:|Tip:|Info:|Warning:)/i.test(text)) {
         bq.classList.add('info-box');

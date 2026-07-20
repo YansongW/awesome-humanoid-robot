@@ -22,9 +22,18 @@
       </div>
     {% endif %}
     {% if node.children %}
+      {% if node.children | length > 40 %}
+      <details class="wiki-tree-collapsible wiki-list-item-level-{{ depth + 1 }}">
+        <summary class="wiki-tree-collapsible-summary">{% if lang == 'zh' %}展开全部 {{ node.children | length }} 条{% elif lang == 'ko' %}모두 펼치기 ({{ node.children | length }}){% else %}Show all {{ node.children | length }}{% endif %}</summary>
+        {% for child in node.children %}
+          {{ render_tree(child, depth + 1) }}
+        {% endfor %}
+      </details>
+      {% else %}
       {% for child in node.children %}
         {{ render_tree(child, depth + 1) }}
       {% endfor %}
+      {% endif %}
     {% endif %}
   {% endif %}
 {% endmacro %}

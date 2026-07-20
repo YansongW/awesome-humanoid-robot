@@ -2024,3 +2024,20 @@ a:hover { text-decoration: underline; }
 .about-card h3 { margin-top: 0; font-size: 1rem; }
 .about-card p { font-size: 0.9rem; color: var(--color-text-secondary); }
 .about-card a { font-weight: 600; }
+
+/* Collapsible mega-lists in the wiki index tree */
+.wiki-tree-collapsible {
+  margin-top: 0.25rem;
+}
+
+.wiki-tree-collapsible-summary {
+  cursor: pointer;
+  color: var(--color-primary, #4f46e5);
+  font-size: 0.95rem;
+  padding: 0.4rem 0;
+  user-select: none;
+}
+
+.wiki-tree-collapsible-summary:hover {
+  text-decoration: underline;
+}
