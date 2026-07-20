@@ -11,6 +11,11 @@ import markdown
 ROOT = Path(__file__).resolve().parent.parent.parent
 WIKI_DIR = ROOT / "wiki" / "docs"
 ROADMAP_DIR = ROOT / "roadmap" / "docs"
+# Per-language translated mirrors produced by scripts/translate_wiki_pages.py.
+MIRROR_DIRS = {
+    "wiki": {"en": ROOT / "wiki" / "docs-en", "ko": ROOT / "wiki" / "docs-ko"},
+    "roadmap": {"en": ROOT / "roadmap" / "docs-en", "ko": ROOT / "roadmap" / "docs-ko"},
+}
 
 
 def slugify_path(path: Path, base_dir: Path = WIKI_DIR, prefix: str = "wiki") -> str:
@@ -72,10 +77,10 @@ def build_wiki_tree(pages: list[dict[str, Any]]) -> dict[str, Any]:
 
     # Process deepest pages first so that directories are created before their
     # matching index file (e.g. appendices/appendix-d/ before appendix-d.md).
-    sorted_pages = sorted(pages, key=lambda p: -len(Path(p["path"]).relative_to(WIKI_DIR).parts))
+    sorted_pages = sorted(pages, key=lambda p: -len(Path(p["rel"]).parts))
 
     for page in sorted_pages:
-        rel = Path(page["path"]).relative_to(WIKI_DIR)
+        rel = Path(page["rel"])
         current = root
         parts = list(rel.with_suffix("").parts)
         # Build/create intermediate directory nodes
@@ -151,13 +156,14 @@ def is_stub_page(text: str) -> bool:
     return len(text.strip()) < 500 or "正在撰写中" in text
 
 
-def _render_pages(base_dir: Path, prefix: str) -> list[dict[str, Any]]:
+def _render_pages(base_dir: Path, prefix: str, page_lang: str = "zh") -> list[dict[str, Any]]:
     """Load Markdown files under ``base_dir`` and convert them to HTML.
 
     Relative .md links are rewritten to ``/<prefix>/`` URLs. Returns a list of
     page dicts with title, url, body_html, toc_html, stub flag, and metadata.
     Prev/next links are NOT set here — each product applies its own reading
-    order.
+    order. ``rel`` is the source path relative to ``base_dir``; ``page_lang``
+    records which language the content is actually in (for fallback notices).
     """
     if not base_dir.exists():
         return []
@@ -204,12 +210,28 @@ def _render_pages(base_dir: Path, prefix: str) -> list[dict[str, Any]]:
                 "title": title,
                 "url": url,
                 "path": str(path),
+                "rel": path.relative_to(base_dir).as_posix(),
+                "page_lang": page_lang,
                 "body_html": body_html,
                 "toc_html": toc_html,
                 "stub": is_stub_page(text),
             }
         )
     return pages
+
+
+def _pages_for_lang(product: str, src_dir: Path, prefix: str, lang: str) -> list[dict[str, Any]]:
+    """Load zh pages for a product, overlaying translated mirror pages for
+    ``lang`` where they exist (untranslated pages keep zh content and
+    ``page_lang='zh'`` so templates can show a fallback notice)."""
+    pages = _render_pages(src_dir, prefix, page_lang="zh")
+    if lang == "zh":
+        return pages
+    mirror = MIRROR_DIRS.get(product, {}).get(lang)
+    if not mirror or not mirror.exists():
+        return pages
+    by_rel = {mp["rel"]: mp for mp in _render_pages(mirror, prefix, page_lang=lang)}
+    return [by_rel.get(p["rel"], p) for p in pages]
 
 
 def _link_prev_next(pages: list[dict[str, Any]]) -> None:
@@ -219,14 +241,14 @@ def _link_prev_next(pages: list[dict[str, Any]]) -> None:
         page["next_page"] = pages[i + 1] if i < len(pages) - 1 else None
 
 
-def build_wiki_pages() -> list[dict[str, Any]]:
-    """Load all wiki Markdown files and convert them to HTML."""
-    pages = _render_pages(WIKI_DIR, "wiki")
+def build_wiki_pages(lang: str = "zh") -> list[dict[str, Any]]:
+    """Load wiki pages for ``lang`` (zh source overlaid with translated mirrors)."""
+    pages = _pages_for_lang("wiki", WIKI_DIR, "wiki", lang)
 
     # Prev/next navigation across substantive pages in reading order:
     # chapters -> appendices -> everything else.
     def order_key(p: dict[str, Any]) -> tuple[int, str]:
-        rel = Path(p["path"]).relative_to(WIKI_DIR).as_posix()
+        rel = p["rel"]
         if rel.startswith("chapters/"):
             return (1, rel)
         if rel.startswith("appendices/"):
@@ -254,17 +276,18 @@ ROADMAP_ORDER = [
 ]
 
 
-def build_roadmap_pages() -> list[dict[str, Any]]:
+def build_roadmap_pages(lang: str = "zh") -> list[dict[str, Any]]:
     """Load the 0→1 roadmap pages (roadmap/docs/) and convert them to HTML.
 
     Roadmap is a separate product from the wiki: URLs live under /roadmap/
     and prev/next follows the fixed ROADMAP_ORDER chain. Pages are returned
-    in that order.
+    in that order. For ``lang != zh`` translated mirror pages overlay the
+    zh source where available.
     """
-    pages = _render_pages(ROADMAP_DIR, "roadmap")
+    pages = _pages_for_lang("roadmap", ROADMAP_DIR, "roadmap", lang)
 
     def order_key(p: dict[str, Any]) -> tuple[int, str]:
-        rel = Path(p["path"]).relative_to(ROADMAP_DIR).with_suffix("").as_posix()
+        rel = Path(p["rel"]).with_suffix("").as_posix()
         return (ROADMAP_ORDER.index(rel) if rel in ROADMAP_ORDER else len(ROADMAP_ORDER), rel)
 
     readable = [p for p in pages if not p["stub"]]

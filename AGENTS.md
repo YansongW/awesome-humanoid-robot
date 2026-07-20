@@ -31,6 +31,8 @@
 - `data/relationships/*.md` — 关系（纯 frontmatter，schema：`data/schema/v1/relationship_schema.json`）
 - `data/roadmap_mapping.yaml` — 路线图↔卡片绑定（entities 区块由脚本生成，**勿手改**）
 - `data/roadmap/research/` — 开源方案调研档案（带 URL 的一手来源）
+- `wiki/docs/`、`roadmap/docs/` — Wiki 教科书与 0→1 路线图中文稿（两个独立产品，勿合并）
+- `wiki/docs-en|ko/`、`roadmap/docs-en|ko/` — 对应 en/ko 翻译镜像（`translate_wiki_pages.py` 生成，结构同 zh）
 - `website/builder/` — 静态站构建器（zh 根路径，en/ko 子路径）；模板在 `website/templates/`
 - `web/` — FastAPI 本地 GUI（检索 / 子图 / LLM 问答 / 路线图视图）
 - `scripts/` — 摄取、挖掘、审计、翻译脚本（见下）

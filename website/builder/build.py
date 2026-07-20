@@ -55,24 +55,17 @@ def build_language(
 
 
 def main() -> int:
-    try:
-        print("Loading wiki pages...")
-        wiki_pages = build_wiki_pages()
-        wiki_tree = build_wiki_tree(wiki_pages) if wiki_pages else None
-        print(f"Loaded {len(wiki_pages)} wiki pages.")
-        print("Loading roadmap pages...")
-        roadmap_pages = build_roadmap_pages()
-        roadmap_tree = build_roadmap_tree(roadmap_pages) if roadmap_pages else None
-        print(f"Loaded {len(roadmap_pages)} roadmap pages.")
-    except Exception as exc:
-        print(f"Failed to load content pages: {exc}", file=sys.stderr)
-        return 1
-
     base_dist = Path(__file__).resolve().parent.parent / "dist"
 
     for lang in LANGUAGES:
         dist_dir = base_dist if lang == "zh" else base_dist / lang
         try:
+            print(f"Loading content pages for '{lang}'...")
+            wiki_pages = build_wiki_pages(lang)
+            wiki_tree = build_wiki_tree(wiki_pages) if wiki_pages else None
+            roadmap_pages = build_roadmap_pages(lang)
+            roadmap_tree = build_roadmap_tree(roadmap_pages) if roadmap_pages else None
+            print(f"Loaded {len(wiki_pages)} wiki pages, {len(roadmap_pages)} roadmap pages.")
             build_language(lang, dist_dir, wiki_pages, wiki_tree, roadmap_pages, roadmap_tree)
         except Exception as exc:
             print(f"Failed to build language '{lang}': {exc}", file=sys.stderr)

@@ -1,0 +1,121 @@
+# Phase 1: Build a Joint (Actuator)
+
+> ⚠️ The content of this roadmap is compiled based on public information and theoretical knowledge, and has not been verified on actual hardware; please verify safety regulations yourself when dealing with electrical and mechanical operations.
+
+A humanoid robot typically has 20–50 degrees of freedom, but each degree of freedom boils down to the same problem: **Motor + Gearbox + Sensing + Drive + Control, housed in a single shell, outputting controllable torque and angle**. The goal of this phase: Build a joint module on a test bench that passes acceptance—master it, and the entire leg and arm are just replication and engineering.
+
+Two publicly validated routes run through this page; it is recommended to refer to them throughout:
+
+- **ODRI (Open Dynamic Robot Initiative) BLMC Force-Controlled Actuator**: Off-the-shelf frameless motor + dual encoders + self-developed MicroDriver drive board, low reduction ratio, high torque transparency, fully BSD open-source (Source: `data/roadmap/research/open-dynamic-robot-initiative.md`, survey accessed 2026-07-01).
+- **Berkeley Humanoid Lite 6512/5010 Cycloidal Quasi-Direct Drive Actuator**: 3D-printed cycloidal pinwheel reducer + drone brushless motor, BOM for a single 6512 unit approximately $188 (US) / $157 (China) (Source: `data/roadmap/research/berkeley-humanoid-lite.md`, from arXiv:2504.17249 and EECS-2025-207 technical report).
+
+For theoretical background, first read [Chapter 4: Actuators: The "Muscles" of Humanoid Robots](/wiki/chapters/chapter-04/); for control theory, see [Chapter 14: Fundamentals of Robot Control](/wiki/chapters/chapter-14/).
+
+## Step 1: Define Joint Specifications
+
+【What to do】Before buying anything, write down five numbers: peak torque, rated speed, mass budget, backlash limit, and single-joint cost limit. Typical ranges for a desktop-level single joint (anchor data indicates source, others are engineering recommendations; verify against your design):
+
+| Specification | Typical Desktop Range | Basis |
+|---|---|---|
+| Peak Torque | 0.5–3 N·m level | [Dynamixel XL330-M288-T](/entry/ent_component_dynamixel_xl330_m288_t/) stall torque 0.52 N·m, [Dynamixel XM430-W210-T](/entry/ent_component_dynamixel_xm430_w210_t/) stall torque 3.0 N·m (Source: Entity card/ROBOTIS e-Manual) |
+| Output Speed | Motor speed ÷ Reduction ratio | Arithmetic example: A certain 50 W [servo motor](/entry/ent_comp_servo_motor/) max 6000 rpm (entity card), with 288:1 reduction (XL330 reduction ratio 288.4:1) yields approximately 20 rpm output; recalculate based on chosen motor |
+| Mass Budget | Recommended ≤ 3–5% of total robot mass budget/joint | Engineering experience recommendation, not supplier data; confirm specific model mass with supplier |
+| Backlash | Precision grade near zero, servo grade noticeably perceptible | [Harmonic drive reducer](/entry/ent_component_harmonic_drive_reducer/) core advantage is zero backlash (entity card); plastic gear servos have significant backlash; confirm specific angular value with supplier |
+| Single-Joint Cost | $157–188 achievable for QDD | Berkeley 6512 actuator BOM: Motor $129 + Drive board $19 + Encoder $3 + Structural parts (berkeley-humanoid-lite survey archive) |
+
+【Why】Specifications conflict with each other: Torque is obtained through reduction ratio, but a high reduction ratio eliminates speed and backdrivability; torque density is obtained through a large-diameter motor, but the mass budget is exceeded. The physical root is found in the formula τ = 2πr²l·B_gap·J_s on the [Frameless Torque Motor](/entry/ent_component_frameless_torque_motor_2024/) card—torque grows with the square of the radius, so joint motors are made like "pancakes". Hip and shoulder main joints often require tens to hundreds of N·m (frameless torque motor entity card). Reducing the weight of a desktop robot is essentially loosening the constraints on joint specifications.
+
+【How to analyze your situation】Answer three questions first: ① How much weight must the joint lift, and how fast must it move? Lever arm length × end load, plus a 1.5–2x safety factor, gives the lower limit for peak torque. ② Total budget ÷ Number of degrees of freedom = Single-joint cost limit—below $160, you are essentially limited to Berkeley-style self-developed QDD or servos. ③ Is force control required? If yes, write "backdrivable, low reduction ratio" into hard requirements; if no, high reduction ratio solutions offer much more choice.
+
+## Step 2: Actuator Topology Selection
+
+【What to do】Choose one of four mainstream topologies and first perform single-joint validation:
+
+| Topology | Backlash | Torque Density | Backdrivability | Cost | Suitable For |
+|---|---|---|---|---|---|
+| Smart Servo ([XL330](/entry/ent_component_dynamixel_xl330_m288_t/) / [XM430](/entry/ent_component_dynamixel_xm430_w210_t/)) | Relatively Large | Low-Medium | Poor (high reduction ratios like 288:1) | Confirm with supplier | Beginners, first getting the whole robot running |
+| [Harmonic Drive Reducer](/entry/ent_component_harmonic_drive_reducer/) + Motor | Zero Backlash (entity card) | High | Poor-Medium | Confirm with supplier | Upper limb solutions prioritizing precision |
+| [Quasi-Direct Drive QDD](/entry/ent_technology_quasi_direct_drive_actuator_2024/) | Small | Medium | Good (force transparency) | $157–188 (Berkeley archive) | Need force control, doing RL locomotion research |
+| [Frameless Torque Motor](/entry/ent_component_frameless_torque_motor_2024/) Direct Drive | Zero (no reducer) | High | Best | Confirm with supplier | Have machining capabilities |
+
+【Why】Choosing a topology is essentially choosing sides in the "precision-transparency-cost" triangle. High reduction ratios (servos, harmonic drives) use small motors for large torque, but the output end cannot "feel" the motor current, so force can only be estimated; QDD uses a low reduction ratio to preserve bandwidth and force transparency (QDD entity card), at the cost of the motor itself needing to be large—Berkeley directly uses a 150 KV drone motor (MAD M6C12, $129, berkeley-humanoid-lite archive). ODRI's BLMC is the scientific benchmark for this path: off-the-shelf frameless motor + low reduction ratio, relying on dual encoders for proprioceptive force control (odri survey archive).
+
+【How to analyze your situation】Match based on skills and budget: Beginner, want to get a joint moving quickly—XM430-class servo, one command and it rotates. Can do FDM printing, can flash firmware, target RL walking—copy Berkeley 6512, print structural parts with a desktop FDM printer using PLA (berkeley-humanoid-lite archive). Have motion control/power electronics background—study ODRI's `open_robot_actuator_hardware` repository (BSD license). Need industrial-grade precision with ample budget—harmonic drive route, confirm price and lead time with supplier.
+
+## Step 3: Motor Body and Driver
+
+【What to do】Choose one of two motor types: [Brushless DC Motor (BLDC)](/entry/ent_component_bldc_motor/) or AC Permanent Magnet Synchronous [Servo Motor](/entry/ent_comp_servo_motor/) (PMSM type); for the driver, either buy a finished [Servo Drive](/entry/ent_component_servo_drive_2024/), or use an open-source drive board supporting [FOC (Field-Oriented Control)](/entry/ent_method_foc_motor_control/) (Berkeley uses ST B-G431B-ESC1, $19, also compatible with Moteus / ODrive / VESC—berkeley-humanoid-lite archive).
+
+【Why】BLDC back-EMF is trapezoidal, paired with six-step commutation (switching the conducting phase every 60° electrical angle), simple control and low cost; PMSM back-EMF is sinusoidal, paired with FOC for lower torque ripple and higher efficiency (BLDC entity card). [FOC](/entry/ent_method_field_oriented_control/) transforms the three-phase current into a d-q coordinate system that rotates with the rotor, decoupling torque and flux linkage, giving AC motors speed regulation performance similar to DC motors (FOC entity card). Joint drives are typically "FOC + current/speed/position three loops", with high demands on size, heat dissipation, EMI, and current loop bandwidth (servo drive entity card).
+
+【How to analyze your situation】Tight budget, hands-on ability: Hobby BLDC + open-source FOC board is the cheapest entry point; Berkeley has validated that the "$129 motor + $19 drive board" combination can run zero-shot sim-to-real RL walking. Absolutely do not want to touch power electronics: Buy integrated servos or smart servos, saving energy for control algorithms. Planning to develop your own drive board: First read the ODRI MicroDriver design files before deciding—high threshold, the odri archive rates beginner-friendliness only 2/5.
+
+## Step 4: Position Sensing – Joint Encoders
+
+[What to Do] Install at least one output-side [joint encoder](/entry/ent_component_joint_encoder_2024/); for force control, use dual encoders: one on the motor side (for FOC commutation and velocity loop) and one on the output side (for true joint angle). Low-cost magnetic encoders are sufficient to start—Berkeley uses the AS5600 at $3/unit (berkeley-humanoid-lite archive).
+
+[Why] Encoder resolution directly determines the controllable bandwidth of the velocity loop and position accuracy—the reference point for industrial servos is the Yaskawa Sigma-7 built-in 24-bit serial encoder (servo motor entity card). The value of dual encoders lies in "seeing through" the gearbox: the output-side encoder can measure gearbox deformation and backlash. ODRI achieves proprioceptive force control precisely through dual motor-side/output-side encoders (odri survey archive). High-reduction-ratio solutions with only a motor-side encoder will systematically overestimate accuracy.
+
+[How to Analyze Your Situation] Servo route: built-in feedback is sufficient, don't overcomplicate. QDD force control route: the motor-side encoder is the lifeline of FOC—must be installed firmly and accurately; install the output-side encoder if budget allows (magnetic encoder solution = few-dollar chip + radial magnet + printed bracket). Magnetic encoders are sensitive to installation coaxiality and phase-line electromagnetic interference; route wiring away from high-current phase lines.
+
+## Step 5: Communication Bus – CAN vs EtherCAT
+
+[What to Do] For desktop-level, default to [CAN bus](/entry/ent_technology_can_bus_2024/): Berkeley Humanoid Lite uses one CAN 2.0 bus per limb (1 Mbps, connected to the main controller via USB-CAN adapter), actuators and IMU communicate at 250 Hz, single bus supports up to 64 devices (berkeley-humanoid-lite archive). For advanced needs, evaluate [EtherCAT](/entry/ent_technology_ethercat_2024/).
+
+[Why] CAN is cheap, interference-resistant, and has a mature ecosystem; 1 Mbps is sufficient for a dozen joints running at 250–500 Hz; its shortcomings are bandwidth and determinism. EtherCAT's killer feature is "processing on the fly"—slaves read/write immediately as the frame passes, without receiving and forwarding the entire frame, offering far better determinism than CAN (EtherCAT entity card), at the cost of expensive slave chips and a real-time system for the master. The servo route uses TTL half-duplex serial (XL330/XM430 both use TTL communication, entity card), which is simplest but limited in speed and topology.
+
+[How to Analyze Your Situation] Joint count ≤ 12, control frequency ≤ 500 Hz: use CAN, don't hesitate; a USB-CAN adapter costs tens of yuan to get started. For multi-joint high-bandwidth force control (≥ 1 kHz): evaluate EtherCAT, but first confirm you can handle a real-time Linux master (refer to the ODRI Master Board approach, odri survey archive). More discussion in [Chapter 6: Computing, Power, and Thermal Management](/wiki/chapters/chapter-06/).
+
+## Step 6: Closed-Loop Control Ladder
+
+[What to Do] Climb the ladder step by step, verifying each level before moving up:
+
+1. **[PID Control](/entry/ent_method_pid_control/)**: Position loop PID to rotate the shaft to a specified angle; tune the proportional-integral-derivative terms to track error; this is the foundation for everything.
+2. **[Current-Velocity-Position Cascaded Loops](/entry/ent_principle_current_velocity_position_loops/)**: Innermost current loop (torque loop), middle velocity loop, outermost position loop; each layer's bandwidth should be 5–10 times the next to ensure stability (three-loop entity card).
+3. **[Impedance Control](/entry/ent_method_impedance_control/)**: No longer separates position/force; makes the joint exhibit desired "mass-damper-spring" characteristics: F = M_d(ẍ_d−ẍ) + D_d(ẋ_d−ẋ) + K_d(x_d−x) (formula source: impedance control entity card).
+
+[Why] A single-loop PID can control position but not "feel"—the motor will still push hard against collisions. Cascaded loops turn torque (current) into an independently assignable command, a prerequisite for impedance control; impedance control allows the joint to respond compliantly with desired dynamics when disturbed—this is the very purpose of QDD/ODRI-type actuators. Theoretical details in [Chapter 14: Fundamentals of Robot Control](/wiki/chapters/chapter-14/) and [Chapter 8: Humanoid Robot Design Principles](/wiki/chapters/chapter-08/).
+
+[How to Analyze Your Situation] Servo route: the three loops are sealed inside the servo; you only have a position command interface, focus on trajectory planning. Self-developed QDD: FOC boards (B-G431B / ODrive, etc.) generally come with built-in current and velocity loops; you write the outer position loop + feedforward; impedance control requires high current loop bandwidth and low communication latency; start with a "virtual spring" experiment (set K_d, manually push the output shaft to feel the restoring force) before moving to complex control.
+
+## Step 7: Bench Testing and Acceptance
+
+[What to Do] Fix the joint to a bench (profile + fixture, output shaft loaded with a known-mass weight rod), perform four tests sequentially. Criteria are engineering recommendations; adjust according to your specification sheet:
+
+1. **Step Response**: 30° step, record angle curve. Criteria: rise time < 0.2 s, overshoot < 10%, steady-state error < 0.5°.
+2. **Sine Tracking**: 1 Hz, ±20° sine command. Criteria: amplitude attenuation < 10%, phase lag < 15°; sweep to −3 dB to quantify bandwidth.
+3. **Backdrivability Feel** (QDD/Direct Drive only): Easily movable when powered off; with zero stiffness when powered on, should allow "zero-gravity" dragging. High-reduction-ratio servos will inherently fail this—determined by topology, not tunable.
+4. **Temperature Rise**: Continuous operation at rated load for 30 min; motor case temperature recommended < 60 °C (insulation class limit must be confirmed with motor supplier). Durability reference: Berkeley used a 60-hour endurance test to verify printed cycloidal gear reliability (berkeley-humanoid-lite archive); test self-developed gearboxes at a similar scale.
+
+[Why] Step response tests rigidity and damping, sine tracking tests bandwidth, backdrivability tests transparency, temperature rise tests thermal design margin—these four together provide all key information for "can it be installed in the leg." Problems found at the bench stage require removing only one motor; problems found after integration require removing an entire leg. Test methods in [Chapter 11: Assembly, Integration, and Testing](/wiki/chapters/chapter-11/).
+
+[How to Analyze Your Situation] No oscilloscope? Use the driver's USB host software (ODrive Tool, Dynamixel Wizard, etc.) to record curves—sufficient. Calculate load mass as "peak torque ÷ rod length." If time is tight, thoroughly complete step response and temperature rise; defer sine sweep to the full robot stage.
+
+## Acceptance Criteria
+
+- [ ] Specification sheet documented: peak torque/speed/mass/backlash/cost five items have numbers and sources (or marked "needs confirmation with supplier").
+- [ ] Topology selection has documented rationale: explain which edge of the "precision-transparency-cost" triangle was chosen and why other routes were not selected.
+- [ ] Communication link established: master sends/receives stably at target frequency (CAN ≥ 250 Hz recommended, per Berkeley solution), no disconnection for 1 continuous hour.
+- [ ] Step response: 30° step, overshoot < 10%, steady-state error < 0.5° (or self-defined value in spec sheet).
+- [ ] Sine tracking: 1 Hz ±20°, amplitude attenuation < 10% (or self-defined value), curve recorded and archived.
+- [ ] QDD/Direct Drive solution: smooth manual backdrivability; for dual encoder solutions, deviation between motor-side and output-side readings quantified.
+- [ ] Temperature rise: 30 min at rated load, case temperature < 60 °C or within supplier's specified limit.
+- [ ] Gearbox assembly: no jamming, no abnormal noise throughout; no-load current consistent with baseline from first article measurement.
+
+## Common Pitfalls and Troubleshooting
+
+| Symptom | Possible Cause | Troubleshooting Action |
+|---|---|---|
+| CAN bus frame loss, random communication interruption with multiple nodes | Missing or duplicate termination resistors | Measure resistance between CANH-CANL with power off: should be ~60 Ω with two 120 Ω resistors at each end; infinite = missing, far below 60 Ω = too many |
+| Encoder reading jitter, velocity loop oscillation | Ground loop / improper shield grounding / magnetic encoder interference from phase lines | Single-point ground for signal ground; use twisted shielded pair for encoder wires, keep away from phase lines |
+| FOC auto-tuning fails, motor hums but doesn't rotate | Incorrect pole pairs / wrong phase sequence / encoder electrical angle offset not calibrated | Verify pole pairs; perform open-loop low-current rotation test to confirm phase sequence; redo encoder offset calibration |
+| Gearbox jamming, overheating, high no-load current after assembly | Bearing/gear preload too tight, axis misalignment, printed part warping | Tighten in a cross pattern and manually rotate step by step; disassemble and check coaxiality; compare no-load current before and after assembly |
+| Large overshoot, ringing in step response | Position loop gain too high, missing velocity feedforward, load inertia exceeds expectations | Reduce P, increase D, or add feedforward; measure actual load inertia and retune |
+| Motor gets hot after a few minutes of stall | Continuous current exceeds rating, no thermal protection | Verify phase current (not supply current) against motor rating; add current limiting and I²t thermal protection |
+| Bus chaos when multiple actuators power on simultaneously | Duplicate default node IDs | Power on each actuator individually, rewrite IDs, label them, then network |
+
+## Companion Reading
+
+- [Actuator Selection Playbook](playbooks/actuator-selection.md) — More complete route comparison, manufacturer quick reference, and verification methods
+- [Computing Platform Selection Playbook](playbooks/compute-selection.md) — Board selection for the low-level real-time control layer
+- [Roadmap Overview](index.md)

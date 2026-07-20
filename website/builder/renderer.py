@@ -620,8 +620,8 @@ class Renderer:
         html = template.render(**self._ctx(
             title=f"{page['title']} · Wiki · {self.ui['site_title']}",
             page=page,
-            # All wiki source is Chinese; en/ko readers get an honest notice.
-            untranslated=self.lang != "zh",
+            # Pages still in zh under a non-zh build get an honest notice.
+            untranslated=page.get("page_lang", "zh") != self.lang,
         ))
         page_dir = self.dist_dir / page["url"].rstrip("/")
         ensure_dir(page_dir)
@@ -643,8 +643,8 @@ class Renderer:
         html = template.render(**self._ctx(
             title=f"{page['title']} · {self.ui['nav_roadmap']} · {self.ui['site_title']}",
             page=page,
-            # Roadmap source is Chinese-only, same as the wiki.
-            untranslated=self.lang != "zh",
+            # Pages still in zh under a non-zh build get an honest notice.
+            untranslated=page.get("page_lang", "zh") != self.lang,
             active_nav="roadmap",
             section_name=self.ui["nav_roadmap"],
             section_url="roadmap",
